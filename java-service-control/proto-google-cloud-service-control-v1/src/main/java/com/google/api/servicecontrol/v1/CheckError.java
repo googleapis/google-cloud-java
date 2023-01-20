@@ -638,7 +638,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CODE_FIELD_NUMBER = 1;
-  private int code_;
+  private int code_ = 0;
   /**
    *
    *
@@ -667,14 +667,15 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.servicecontrol.v1.CheckError.Code getCode() {
-    @SuppressWarnings("deprecation")
     com.google.api.servicecontrol.v1.CheckError.Code result =
-        com.google.api.servicecontrol.v1.CheckError.Code.valueOf(code_);
+        com.google.api.servicecontrol.v1.CheckError.Code.forNumber(code_);
     return result == null ? com.google.api.servicecontrol.v1.CheckError.Code.UNRECOGNIZED : result;
   }
 
   public static final int SUBJECT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object subject_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subject_ = "";
   /**
    *
    *
@@ -731,7 +732,9 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DETAIL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object detail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object detail_ = "";
   /**
    *
    *
@@ -828,7 +831,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
-    return getStatus();
+    return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1063,16 +1066,13 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       code_ = 0;
-
       subject_ = "";
-
       detail_ = "";
-
-      if (statusBuilder_ == null) {
-        status_ = null;
-      } else {
-        status_ = null;
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
       return this;
@@ -1102,16 +1102,27 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.servicecontrol.v1.CheckError buildPartial() {
       com.google.api.servicecontrol.v1.CheckError result =
           new com.google.api.servicecontrol.v1.CheckError(this);
-      result.code_ = code_;
-      result.subject_ = subject_;
-      result.detail_ = detail_;
-      if (statusBuilder_ == null) {
-        result.status_ = status_;
-      } else {
-        result.status_ = statusBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.api.servicecontrol.v1.CheckError result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.code_ = code_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.subject_ = subject_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.detail_ = detail_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1164,10 +1175,12 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getSubject().isEmpty()) {
         subject_ = other.subject_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDetail().isEmpty()) {
         detail_ = other.detail_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasStatus()) {
@@ -1202,25 +1215,25 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 code_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 detail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 subject_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             default:
@@ -1239,6 +1252,8 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int code_ = 0;
     /**
@@ -1269,8 +1284,8 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
-
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1287,9 +1302,8 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.api.servicecontrol.v1.CheckError.Code getCode() {
-      @SuppressWarnings("deprecation")
       com.google.api.servicecontrol.v1.CheckError.Code result =
-          com.google.api.servicecontrol.v1.CheckError.Code.valueOf(code_);
+          com.google.api.servicecontrol.v1.CheckError.Code.forNumber(code_);
       return result == null
           ? com.google.api.servicecontrol.v1.CheckError.Code.UNRECOGNIZED
           : result;
@@ -1310,7 +1324,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       code_ = value.getNumber();
       onChanged();
       return this;
@@ -1327,7 +1341,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       code_ = 0;
       onChanged();
       return this;
@@ -1406,8 +1420,8 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       subject_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1427,8 +1441,8 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubject() {
-
       subject_ = getDefaultInstance().getSubject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1453,8 +1467,8 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subject_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1520,8 +1534,8 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       detail_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1537,8 +1551,8 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDetail() {
-
       detail_ = getDefaultInstance().getDetail();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1559,8 +1573,8 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       detail_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1583,7 +1597,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return statusBuilder_ != null || status_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1622,11 +1636,11 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         status_ = value;
-        onChanged();
       } else {
         statusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1643,11 +1657,11 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
     public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
       if (statusBuilder_ == null) {
         status_ = builderForValue.build();
-        onChanged();
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1663,16 +1677,18 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStatus(com.google.rpc.Status value) {
       if (statusBuilder_ == null) {
-        if (status_ != null) {
-          status_ = com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && status_ != null
+            && status_ != com.google.rpc.Status.getDefaultInstance()) {
+          getStatusBuilder().mergeFrom(value);
         } else {
           status_ = value;
         }
-        onChanged();
       } else {
         statusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1687,14 +1703,13 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status status = 3;</code>
      */
     public Builder clearStatus() {
-      if (statusBuilder_ == null) {
-        status_ = null;
-        onChanged();
-      } else {
-        status_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1709,7 +1724,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status status = 3;</code>
      */
     public com.google.rpc.Status.Builder getStatusBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }

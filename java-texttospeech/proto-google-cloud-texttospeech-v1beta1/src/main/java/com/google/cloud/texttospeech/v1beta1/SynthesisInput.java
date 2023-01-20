@@ -490,6 +490,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       inputSourceCase_ = 0;
       inputSource_ = null;
       return this;
@@ -519,15 +520,21 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.texttospeech.v1beta1.SynthesisInput buildPartial() {
       com.google.cloud.texttospeech.v1beta1.SynthesisInput result =
           new com.google.cloud.texttospeech.v1beta1.SynthesisInput(this);
-      if (inputSourceCase_ == 1) {
-        result.inputSource_ = inputSource_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (inputSourceCase_ == 2) {
-        result.inputSource_ = inputSource_;
-      }
-      result.inputSourceCase_ = inputSourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.texttospeech.v1beta1.SynthesisInput result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.texttospeech.v1beta1.SynthesisInput result) {
+      result.inputSourceCase_ = inputSourceCase_;
+      result.inputSource_ = this.inputSource_;
     }
 
     @java.lang.Override
@@ -666,6 +673,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *

@@ -176,7 +176,6 @@ public interface ServiceOrBuilder
    * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
       java.lang.String key,

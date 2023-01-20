@@ -70,7 +70,9 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -175,11 +177,15 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.video.livestream.v1.EventOrBuilder getEventOrBuilder() {
-    return getEvent();
+    return event_ == null
+        ? com.google.cloud.video.livestream.v1.Event.getDefaultInstance()
+        : event_;
   }
 
   public static final int EVENT_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object eventId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object eventId_ = "";
   /**
    *
    *
@@ -232,7 +238,9 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -530,18 +538,15 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (eventBuilder_ == null) {
-        event_ = null;
-      } else {
-        event_ = null;
+      event_ = null;
+      if (eventBuilder_ != null) {
+        eventBuilder_.dispose();
         eventBuilder_ = null;
       }
       eventId_ = "";
-
       requestId_ = "";
-
       return this;
     }
 
@@ -569,16 +574,27 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.video.livestream.v1.CreateEventRequest buildPartial() {
       com.google.cloud.video.livestream.v1.CreateEventRequest result =
           new com.google.cloud.video.livestream.v1.CreateEventRequest(this);
-      result.parent_ = parent_;
-      if (eventBuilder_ == null) {
-        result.event_ = event_;
-      } else {
-        result.event_ = eventBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.eventId_ = eventId_;
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.livestream.v1.CreateEventRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.event_ = eventBuilder_ == null ? event_ : eventBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.eventId_ = eventId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -629,6 +645,7 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasEvent()) {
@@ -636,10 +653,12 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getEventId().isEmpty()) {
         eventId_ = other.eventId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -671,25 +690,25 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEventFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 eventId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -708,6 +727,8 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -779,8 +800,8 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -799,8 +820,8 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -824,8 +845,8 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -850,7 +871,7 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the event field is set.
      */
     public boolean hasEvent() {
-      return eventBuilder_ != null || event_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -891,11 +912,11 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         event_ = value;
-        onChanged();
       } else {
         eventBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -912,11 +933,11 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
     public Builder setEvent(com.google.cloud.video.livestream.v1.Event.Builder builderForValue) {
       if (eventBuilder_ == null) {
         event_ = builderForValue.build();
-        onChanged();
       } else {
         eventBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -932,19 +953,18 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeEvent(com.google.cloud.video.livestream.v1.Event value) {
       if (eventBuilder_ == null) {
-        if (event_ != null) {
-          event_ =
-              com.google.cloud.video.livestream.v1.Event.newBuilder(event_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && event_ != null
+            && event_ != com.google.cloud.video.livestream.v1.Event.getDefaultInstance()) {
+          getEventBuilder().mergeFrom(value);
         } else {
           event_ = value;
         }
-        onChanged();
       } else {
         eventBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -959,14 +979,13 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearEvent() {
-      if (eventBuilder_ == null) {
-        event_ = null;
-        onChanged();
-      } else {
-        event_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      event_ = null;
+      if (eventBuilder_ != null) {
+        eventBuilder_.dispose();
         eventBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -981,7 +1000,7 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.video.livestream.v1.Event.Builder getEventBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEventFieldBuilder().getBuilder();
     }
@@ -1100,8 +1119,8 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       eventId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1119,8 +1138,8 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearEventId() {
-
       eventId_ = getDefaultInstance().getEventId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1143,8 +1162,8 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       eventId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1240,8 +1259,8 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1267,8 +1286,8 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1299,8 +1318,8 @@ public final class CreateEventRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

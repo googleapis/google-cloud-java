@@ -68,7 +68,9 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CODEC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object codec_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object codec_ = "";
   /**
    *
    *
@@ -117,7 +119,7 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WIDTH_PIXELS_FIELD_NUMBER = 2;
-  private int widthPixels_;
+  private int widthPixels_ = 0;
   /**
    *
    *
@@ -135,7 +137,7 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HEIGHT_PIXELS_FIELD_NUMBER = 3;
-  private int heightPixels_;
+  private int heightPixels_ = 0;
   /**
    *
    *
@@ -153,7 +155,7 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FRAME_RATE_FIELD_NUMBER = 4;
-  private double frameRate_;
+  private double frameRate_ = 0D;
   /**
    *
    *
@@ -398,14 +400,11 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       codec_ = "";
-
       widthPixels_ = 0;
-
       heightPixels_ = 0;
-
       frameRate_ = 0D;
-
       return this;
     }
 
@@ -433,12 +432,27 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.livestream.v1.VideoFormat buildPartial() {
       com.google.cloud.video.livestream.v1.VideoFormat result =
           new com.google.cloud.video.livestream.v1.VideoFormat(this);
-      result.codec_ = codec_;
-      result.widthPixels_ = widthPixels_;
-      result.heightPixels_ = heightPixels_;
-      result.frameRate_ = frameRate_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.livestream.v1.VideoFormat result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.codec_ = codec_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.widthPixels_ = widthPixels_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.heightPixels_ = heightPixels_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.frameRate_ = frameRate_;
+      }
     }
 
     @java.lang.Override
@@ -489,6 +503,7 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getCodec().isEmpty()) {
         codec_ = other.codec_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getWidthPixels() != 0) {
@@ -529,25 +544,25 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 codec_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 widthPixels_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 heightPixels_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 33:
               {
                 frameRate_ = input.readDouble();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 33
             default:
@@ -566,6 +581,8 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object codec_ = "";
     /**
@@ -628,8 +645,8 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       codec_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -645,8 +662,8 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCodec() {
-
       codec_ = getDefaultInstance().getCodec();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -667,8 +684,8 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       codec_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -704,6 +721,7 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
     public Builder setWidthPixels(int value) {
 
       widthPixels_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -719,7 +737,7 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWidthPixels() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       widthPixels_ = 0;
       onChanged();
       return this;
@@ -756,6 +774,7 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
     public Builder setHeightPixels(int value) {
 
       heightPixels_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -771,7 +790,7 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHeightPixels() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       heightPixels_ = 0;
       onChanged();
       return this;
@@ -808,6 +827,7 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
     public Builder setFrameRate(double value) {
 
       frameRate_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -823,7 +843,7 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFrameRate() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       frameRate_ = 0D;
       onChanged();
       return this;

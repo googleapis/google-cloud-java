@@ -114,7 +114,7 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.video.stitcher.v1.SlateOrBuilder getSlateOrBuilder() {
-    return getSlate();
+    return slate_ == null ? com.google.cloud.video.stitcher.v1.Slate.getDefaultInstance() : slate_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -163,7 +163,7 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -383,16 +383,15 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (slateBuilder_ == null) {
-        slate_ = null;
-      } else {
-        slate_ = null;
+      bitField0_ = 0;
+      slate_ = null;
+      if (slateBuilder_ != null) {
+        slateBuilder_.dispose();
         slateBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -422,18 +421,21 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.video.stitcher.v1.UpdateSlateRequest buildPartial() {
       com.google.cloud.video.stitcher.v1.UpdateSlateRequest result =
           new com.google.cloud.video.stitcher.v1.UpdateSlateRequest(this);
-      if (slateBuilder_ == null) {
-        result.slate_ = slate_;
-      } else {
-        result.slate_ = slateBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.UpdateSlateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.slate_ = slateBuilder_ == null ? slate_ : slateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -517,13 +519,13 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getSlateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -542,6 +544,8 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.video.stitcher.v1.Slate slate_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -563,7 +567,7 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the slate field is set.
      */
     public boolean hasSlate() {
-      return slateBuilder_ != null || slate_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -604,11 +608,11 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         slate_ = value;
-        onChanged();
       } else {
         slateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -625,11 +629,11 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
     public Builder setSlate(com.google.cloud.video.stitcher.v1.Slate.Builder builderForValue) {
       if (slateBuilder_ == null) {
         slate_ = builderForValue.build();
-        onChanged();
       } else {
         slateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -645,19 +649,18 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeSlate(com.google.cloud.video.stitcher.v1.Slate value) {
       if (slateBuilder_ == null) {
-        if (slate_ != null) {
-          slate_ =
-              com.google.cloud.video.stitcher.v1.Slate.newBuilder(slate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && slate_ != null
+            && slate_ != com.google.cloud.video.stitcher.v1.Slate.getDefaultInstance()) {
+          getSlateBuilder().mergeFrom(value);
         } else {
           slate_ = value;
         }
-        onChanged();
       } else {
         slateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -672,14 +675,13 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearSlate() {
-      if (slateBuilder_ == null) {
-        slate_ = null;
-        onChanged();
-      } else {
-        slate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      slate_ = null;
+      if (slateBuilder_ != null) {
+        slateBuilder_.dispose();
         slateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -694,7 +696,7 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.video.stitcher.v1.Slate.Builder getSlateBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSlateFieldBuilder().getBuilder();
     }
@@ -765,7 +767,7 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -804,11 +806,11 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -824,11 +826,11 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -843,17 +845,18 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -867,14 +870,13 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -888,7 +890,7 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

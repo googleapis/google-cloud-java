@@ -742,7 +742,6 @@ public interface CertificateAuthorityOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,

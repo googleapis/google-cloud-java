@@ -71,7 +71,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int DATA_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString data_;
+  private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -89,7 +89,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_CRC32C_FIELD_NUMBER = 2;
-  private long dataCrc32C_;
+  private long dataCrc32C_ = 0L;
   /**
    *
    *
@@ -362,10 +362,9 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       data_ = com.google.protobuf.ByteString.EMPTY;
-
       dataCrc32C_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -393,16 +392,24 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.secretmanager.v1.SecretPayload buildPartial() {
       com.google.cloud.secretmanager.v1.SecretPayload result =
           new com.google.cloud.secretmanager.v1.SecretPayload(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.secretmanager.v1.SecretPayload result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.data_ = data_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.data_ = data_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.dataCrc32C_ = dataCrc32C_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -486,13 +493,13 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 data_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 dataCrc32C_ = input.readInt64();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -546,8 +553,8 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       data_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -563,7 +570,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearData() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       data_ = getDefaultInstance().getData();
       onChanged();
       return this;
@@ -597,7 +604,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasDataCrc32C() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -655,8 +662,9 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDataCrc32C(long value) {
-      bitField0_ |= 0x00000001;
+
       dataCrc32C_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -686,7 +694,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDataCrc32C() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       dataCrc32C_ = 0L;
       onChanged();
       return this;

@@ -69,7 +69,9 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KEY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object key_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -222,7 +226,9 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.video.transcoder.v1.PreprocessingConfigOrBuilder
       getPreprocessingConfigOrBuilder() {
-    return getPreprocessingConfig();
+    return preprocessingConfig_ == null
+        ? com.google.cloud.video.transcoder.v1.PreprocessingConfig.getDefaultInstance()
+        : preprocessingConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -445,14 +451,12 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       key_ = "";
-
       uri_ = "";
-
-      if (preprocessingConfigBuilder_ == null) {
-        preprocessingConfig_ = null;
-      } else {
-        preprocessingConfig_ = null;
+      preprocessingConfig_ = null;
+      if (preprocessingConfigBuilder_ != null) {
+        preprocessingConfigBuilder_.dispose();
         preprocessingConfigBuilder_ = null;
       }
       return this;
@@ -482,15 +486,27 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.Input buildPartial() {
       com.google.cloud.video.transcoder.v1.Input result =
           new com.google.cloud.video.transcoder.v1.Input(this);
-      result.key_ = key_;
-      result.uri_ = uri_;
-      if (preprocessingConfigBuilder_ == null) {
-        result.preprocessingConfig_ = preprocessingConfig_;
-      } else {
-        result.preprocessingConfig_ = preprocessingConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.transcoder.v1.Input result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.key_ = key_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.preprocessingConfig_ =
+            preprocessingConfigBuilder_ == null
+                ? preprocessingConfig_
+                : preprocessingConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -540,10 +556,12 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.video.transcoder.v1.Input.getDefaultInstance()) return this;
       if (!other.getKey().isEmpty()) {
         key_ = other.key_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPreprocessingConfig()) {
@@ -578,20 +596,20 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 key_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getPreprocessingConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -610,6 +628,8 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object key_ = "";
     /**
@@ -675,8 +695,8 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -693,8 +713,8 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-
       key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -716,8 +736,8 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -795,8 +815,8 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -816,8 +836,8 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -842,8 +862,8 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -866,7 +886,7 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the preprocessingConfig field is set.
      */
     public boolean hasPreprocessingConfig() {
-      return preprocessingConfigBuilder_ != null || preprocessingConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -904,11 +924,11 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         preprocessingConfig_ = value;
-        onChanged();
       } else {
         preprocessingConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -924,11 +944,11 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Builder builderForValue) {
       if (preprocessingConfigBuilder_ == null) {
         preprocessingConfig_ = builderForValue.build();
-        onChanged();
       } else {
         preprocessingConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -943,20 +963,19 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
     public Builder mergePreprocessingConfig(
         com.google.cloud.video.transcoder.v1.PreprocessingConfig value) {
       if (preprocessingConfigBuilder_ == null) {
-        if (preprocessingConfig_ != null) {
-          preprocessingConfig_ =
-              com.google.cloud.video.transcoder.v1.PreprocessingConfig.newBuilder(
-                      preprocessingConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && preprocessingConfig_ != null
+            && preprocessingConfig_
+                != com.google.cloud.video.transcoder.v1.PreprocessingConfig.getDefaultInstance()) {
+          getPreprocessingConfigBuilder().mergeFrom(value);
         } else {
           preprocessingConfig_ = value;
         }
-        onChanged();
       } else {
         preprocessingConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -969,14 +988,13 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.transcoder.v1.PreprocessingConfig preprocessing_config = 3;</code>
      */
     public Builder clearPreprocessingConfig() {
-      if (preprocessingConfigBuilder_ == null) {
-        preprocessingConfig_ = null;
-        onChanged();
-      } else {
-        preprocessingConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      preprocessingConfig_ = null;
+      if (preprocessingConfigBuilder_ != null) {
+        preprocessingConfigBuilder_.dispose();
         preprocessingConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -990,7 +1008,7 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.video.transcoder.v1.PreprocessingConfig.Builder
         getPreprocessingConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPreprocessingConfigFieldBuilder().getBuilder();
     }

@@ -69,7 +69,9 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -165,11 +167,13 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.videointelligence.v1.NormalizedVertexOrBuilder getPointOrBuilder() {
-    return getPoint();
+    return point_ == null
+        ? com.google.cloud.videointelligence.v1.NormalizedVertex.getDefaultInstance()
+        : point_;
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 3;
-  private float confidence_;
+  private float confidence_ = 0F;
   /**
    *
    *
@@ -409,16 +413,14 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (pointBuilder_ == null) {
-        point_ = null;
-      } else {
-        point_ = null;
+      point_ = null;
+      if (pointBuilder_ != null) {
+        pointBuilder_.dispose();
         pointBuilder_ = null;
       }
       confidence_ = 0F;
-
       return this;
     }
 
@@ -446,15 +448,24 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.videointelligence.v1.DetectedLandmark buildPartial() {
       com.google.cloud.videointelligence.v1.DetectedLandmark result =
           new com.google.cloud.videointelligence.v1.DetectedLandmark(this);
-      result.name_ = name_;
-      if (pointBuilder_ == null) {
-        result.point_ = point_;
-      } else {
-        result.point_ = pointBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.confidence_ = confidence_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.videointelligence.v1.DetectedLandmark result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.point_ = pointBuilder_ == null ? point_ : pointBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.confidence_ = confidence_;
+      }
     }
 
     @java.lang.Override
@@ -505,6 +516,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPoint()) {
@@ -542,19 +554,19 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getPointFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 29:
               {
                 confidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29
             default:
@@ -573,6 +585,8 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -635,8 +649,8 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -652,8 +666,8 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -674,8 +688,8 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -699,7 +713,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
      * @return Whether the point field is set.
      */
     public boolean hasPoint() {
-      return pointBuilder_ != null || point_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -738,11 +752,11 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         point_ = value;
-        onChanged();
       } else {
         pointBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -759,11 +773,11 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
         com.google.cloud.videointelligence.v1.NormalizedVertex.Builder builderForValue) {
       if (pointBuilder_ == null) {
         point_ = builderForValue.build();
-        onChanged();
       } else {
         pointBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -778,19 +792,19 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergePoint(com.google.cloud.videointelligence.v1.NormalizedVertex value) {
       if (pointBuilder_ == null) {
-        if (point_ != null) {
-          point_ =
-              com.google.cloud.videointelligence.v1.NormalizedVertex.newBuilder(point_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && point_ != null
+            && point_
+                != com.google.cloud.videointelligence.v1.NormalizedVertex.getDefaultInstance()) {
+          getPointBuilder().mergeFrom(value);
         } else {
           point_ = value;
         }
-        onChanged();
       } else {
         pointBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -804,14 +818,13 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.videointelligence.v1.NormalizedVertex point = 2;</code>
      */
     public Builder clearPoint() {
-      if (pointBuilder_ == null) {
-        point_ = null;
-        onChanged();
-      } else {
-        point_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      point_ = null;
+      if (pointBuilder_ != null) {
+        pointBuilder_.dispose();
         pointBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -825,7 +838,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.videointelligence.v1.NormalizedVertex point = 2;</code>
      */
     public com.google.cloud.videointelligence.v1.NormalizedVertex.Builder getPointBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPointFieldBuilder().getBuilder();
     }
@@ -906,6 +919,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
     public Builder setConfidence(float value) {
 
       confidence_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -921,7 +935,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       confidence_ = 0F;
       onChanged();
       return this;

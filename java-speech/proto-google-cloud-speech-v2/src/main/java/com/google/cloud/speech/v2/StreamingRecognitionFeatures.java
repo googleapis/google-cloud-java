@@ -251,7 +251,9 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getSpeechStartTimeoutOrBuilder() {
-      return getSpeechStartTimeout();
+      return speechStartTimeout_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : speechStartTimeout_;
     }
 
     public static final int SPEECH_END_TIMEOUT_FIELD_NUMBER = 2;
@@ -305,7 +307,9 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getSpeechEndTimeoutOrBuilder() {
-      return getSpeechEndTimeout();
+      return speechEndTimeout_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : speechEndTimeout_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -539,16 +543,15 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (speechStartTimeoutBuilder_ == null) {
-          speechStartTimeout_ = null;
-        } else {
-          speechStartTimeout_ = null;
+        bitField0_ = 0;
+        speechStartTimeout_ = null;
+        if (speechStartTimeoutBuilder_ != null) {
+          speechStartTimeoutBuilder_.dispose();
           speechStartTimeoutBuilder_ = null;
         }
-        if (speechEndTimeoutBuilder_ == null) {
-          speechEndTimeout_ = null;
-        } else {
-          speechEndTimeout_ = null;
+        speechEndTimeout_ = null;
+        if (speechEndTimeoutBuilder_ != null) {
+          speechEndTimeoutBuilder_.dispose();
           speechEndTimeoutBuilder_ = null;
         }
         return this;
@@ -582,18 +585,28 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
           buildPartial() {
         com.google.cloud.speech.v2.StreamingRecognitionFeatures.VoiceActivityTimeout result =
             new com.google.cloud.speech.v2.StreamingRecognitionFeatures.VoiceActivityTimeout(this);
-        if (speechStartTimeoutBuilder_ == null) {
-          result.speechStartTimeout_ = speechStartTimeout_;
-        } else {
-          result.speechStartTimeout_ = speechStartTimeoutBuilder_.build();
-        }
-        if (speechEndTimeoutBuilder_ == null) {
-          result.speechEndTimeout_ = speechEndTimeout_;
-        } else {
-          result.speechEndTimeout_ = speechEndTimeoutBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.speech.v2.StreamingRecognitionFeatures.VoiceActivityTimeout result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.speechStartTimeout_ =
+              speechStartTimeoutBuilder_ == null
+                  ? speechStartTimeout_
+                  : speechStartTimeoutBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.speechEndTimeout_ =
+              speechEndTimeoutBuilder_ == null
+                  ? speechEndTimeout_
+                  : speechEndTimeoutBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -685,14 +698,14 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
                 {
                   input.readMessage(
                       getSpeechStartTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getSpeechEndTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -711,6 +724,8 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.Duration speechStartTimeout_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -732,7 +747,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
        * @return Whether the speechStartTimeout field is set.
        */
       public boolean hasSpeechStartTimeout() {
-        return speechStartTimeoutBuilder_ != null || speechStartTimeout_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -773,11 +788,11 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
             throw new NullPointerException();
           }
           speechStartTimeout_ = value;
-          onChanged();
         } else {
           speechStartTimeoutBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -794,11 +809,11 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
       public Builder setSpeechStartTimeout(com.google.protobuf.Duration.Builder builderForValue) {
         if (speechStartTimeoutBuilder_ == null) {
           speechStartTimeout_ = builderForValue.build();
-          onChanged();
         } else {
           speechStartTimeoutBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -814,19 +829,18 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
        */
       public Builder mergeSpeechStartTimeout(com.google.protobuf.Duration value) {
         if (speechStartTimeoutBuilder_ == null) {
-          if (speechStartTimeout_ != null) {
-            speechStartTimeout_ =
-                com.google.protobuf.Duration.newBuilder(speechStartTimeout_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && speechStartTimeout_ != null
+              && speechStartTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getSpeechStartTimeoutBuilder().mergeFrom(value);
           } else {
             speechStartTimeout_ = value;
           }
-          onChanged();
         } else {
           speechStartTimeoutBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -841,14 +855,13 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
        * <code>.google.protobuf.Duration speech_start_timeout = 1;</code>
        */
       public Builder clearSpeechStartTimeout() {
-        if (speechStartTimeoutBuilder_ == null) {
-          speechStartTimeout_ = null;
-          onChanged();
-        } else {
-          speechStartTimeout_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        speechStartTimeout_ = null;
+        if (speechStartTimeoutBuilder_ != null) {
+          speechStartTimeoutBuilder_.dispose();
           speechStartTimeoutBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -863,7 +876,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
        * <code>.google.protobuf.Duration speech_start_timeout = 1;</code>
        */
       public com.google.protobuf.Duration.Builder getSpeechStartTimeoutBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getSpeechStartTimeoutFieldBuilder().getBuilder();
       }
@@ -935,7 +948,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
        * @return Whether the speechEndTimeout field is set.
        */
       public boolean hasSpeechEndTimeout() {
-        return speechEndTimeoutBuilder_ != null || speechEndTimeout_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -976,11 +989,11 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
             throw new NullPointerException();
           }
           speechEndTimeout_ = value;
-          onChanged();
         } else {
           speechEndTimeoutBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -997,11 +1010,11 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
       public Builder setSpeechEndTimeout(com.google.protobuf.Duration.Builder builderForValue) {
         if (speechEndTimeoutBuilder_ == null) {
           speechEndTimeout_ = builderForValue.build();
-          onChanged();
         } else {
           speechEndTimeoutBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1017,19 +1030,18 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
        */
       public Builder mergeSpeechEndTimeout(com.google.protobuf.Duration value) {
         if (speechEndTimeoutBuilder_ == null) {
-          if (speechEndTimeout_ != null) {
-            speechEndTimeout_ =
-                com.google.protobuf.Duration.newBuilder(speechEndTimeout_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && speechEndTimeout_ != null
+              && speechEndTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getSpeechEndTimeoutBuilder().mergeFrom(value);
           } else {
             speechEndTimeout_ = value;
           }
-          onChanged();
         } else {
           speechEndTimeoutBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1044,14 +1056,13 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
        * <code>.google.protobuf.Duration speech_end_timeout = 2;</code>
        */
       public Builder clearSpeechEndTimeout() {
-        if (speechEndTimeoutBuilder_ == null) {
-          speechEndTimeout_ = null;
-          onChanged();
-        } else {
-          speechEndTimeout_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        speechEndTimeout_ = null;
+        if (speechEndTimeoutBuilder_ != null) {
+          speechEndTimeoutBuilder_.dispose();
           speechEndTimeoutBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1066,7 +1077,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
        * <code>.google.protobuf.Duration speech_end_timeout = 2;</code>
        */
       public com.google.protobuf.Duration.Builder getSpeechEndTimeoutBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getSpeechEndTimeoutFieldBuilder().getBuilder();
       }
@@ -1188,7 +1199,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
   }
 
   public static final int ENABLE_VOICE_ACTIVITY_EVENTS_FIELD_NUMBER = 1;
-  private boolean enableVoiceActivityEvents_;
+  private boolean enableVoiceActivityEvents_ = false;
   /**
    *
    *
@@ -1207,7 +1218,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
   }
 
   public static final int INTERIM_RESULTS_FIELD_NUMBER = 2;
-  private boolean interimResults_;
+  private boolean interimResults_ = false;
   /**
    *
    *
@@ -1287,7 +1298,10 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.cloud.speech.v2.StreamingRecognitionFeatures.VoiceActivityTimeoutOrBuilder
       getVoiceActivityTimeoutOrBuilder() {
-    return getVoiceActivityTimeout();
+    return voiceActivityTimeout_ == null
+        ? com.google.cloud.speech.v2.StreamingRecognitionFeatures.VoiceActivityTimeout
+            .getDefaultInstance()
+        : voiceActivityTimeout_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1512,14 +1526,12 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableVoiceActivityEvents_ = false;
-
       interimResults_ = false;
-
-      if (voiceActivityTimeoutBuilder_ == null) {
-        voiceActivityTimeout_ = null;
-      } else {
-        voiceActivityTimeout_ = null;
+      voiceActivityTimeout_ = null;
+      if (voiceActivityTimeoutBuilder_ != null) {
+        voiceActivityTimeoutBuilder_.dispose();
         voiceActivityTimeoutBuilder_ = null;
       }
       return this;
@@ -1549,15 +1561,27 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
     public com.google.cloud.speech.v2.StreamingRecognitionFeatures buildPartial() {
       com.google.cloud.speech.v2.StreamingRecognitionFeatures result =
           new com.google.cloud.speech.v2.StreamingRecognitionFeatures(this);
-      result.enableVoiceActivityEvents_ = enableVoiceActivityEvents_;
-      result.interimResults_ = interimResults_;
-      if (voiceActivityTimeoutBuilder_ == null) {
-        result.voiceActivityTimeout_ = voiceActivityTimeout_;
-      } else {
-        result.voiceActivityTimeout_ = voiceActivityTimeoutBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.StreamingRecognitionFeatures result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableVoiceActivityEvents_ = enableVoiceActivityEvents_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.interimResults_ = interimResults_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.voiceActivityTimeout_ =
+            voiceActivityTimeoutBuilder_ == null
+                ? voiceActivityTimeout_
+                : voiceActivityTimeoutBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1644,20 +1668,20 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
             case 8:
               {
                 enableVoiceActivityEvents_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 interimResults_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(
                     getVoiceActivityTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -1676,6 +1700,8 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enableVoiceActivityEvents_;
     /**
@@ -1710,6 +1736,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
     public Builder setEnableVoiceActivityEvents(boolean value) {
 
       enableVoiceActivityEvents_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1726,7 +1753,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearEnableVoiceActivityEvents() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableVoiceActivityEvents_ = false;
       onChanged();
       return this;
@@ -1767,6 +1794,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
     public Builder setInterimResults(boolean value) {
 
       interimResults_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1784,7 +1812,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearInterimResults() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       interimResults_ = false;
       onChanged();
       return this;
@@ -1813,7 +1841,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
      * @return Whether the voiceActivityTimeout field is set.
      */
     public boolean hasVoiceActivityTimeout() {
-      return voiceActivityTimeoutBuilder_ != null || voiceActivityTimeout_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1861,11 +1889,11 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         voiceActivityTimeout_ = value;
-        onChanged();
       } else {
         voiceActivityTimeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1886,11 +1914,11 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
             builderForValue) {
       if (voiceActivityTimeoutBuilder_ == null) {
         voiceActivityTimeout_ = builderForValue.build();
-        onChanged();
       } else {
         voiceActivityTimeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1909,20 +1937,20 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
     public Builder mergeVoiceActivityTimeout(
         com.google.cloud.speech.v2.StreamingRecognitionFeatures.VoiceActivityTimeout value) {
       if (voiceActivityTimeoutBuilder_ == null) {
-        if (voiceActivityTimeout_ != null) {
-          voiceActivityTimeout_ =
-              com.google.cloud.speech.v2.StreamingRecognitionFeatures.VoiceActivityTimeout
-                  .newBuilder(voiceActivityTimeout_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && voiceActivityTimeout_ != null
+            && voiceActivityTimeout_
+                != com.google.cloud.speech.v2.StreamingRecognitionFeatures.VoiceActivityTimeout
+                    .getDefaultInstance()) {
+          getVoiceActivityTimeoutBuilder().mergeFrom(value);
         } else {
           voiceActivityTimeout_ = value;
         }
-        onChanged();
       } else {
         voiceActivityTimeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1939,14 +1967,13 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearVoiceActivityTimeout() {
-      if (voiceActivityTimeoutBuilder_ == null) {
-        voiceActivityTimeout_ = null;
-        onChanged();
-      } else {
-        voiceActivityTimeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      voiceActivityTimeout_ = null;
+      if (voiceActivityTimeoutBuilder_ != null) {
+        voiceActivityTimeoutBuilder_.dispose();
         voiceActivityTimeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1964,7 +1991,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
      */
     public com.google.cloud.speech.v2.StreamingRecognitionFeatures.VoiceActivityTimeout.Builder
         getVoiceActivityTimeoutBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getVoiceActivityTimeoutFieldBuilder().getBuilder();
     }

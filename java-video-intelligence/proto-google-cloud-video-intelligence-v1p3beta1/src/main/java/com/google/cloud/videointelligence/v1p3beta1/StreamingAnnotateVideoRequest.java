@@ -464,6 +464,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (videoConfigBuilder_ != null) {
         videoConfigBuilder_.clear();
       }
@@ -500,19 +501,26 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
         buildPartial() {
       com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest result =
           new com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest(this);
-      if (streamingRequestCase_ == 1) {
-        if (videoConfigBuilder_ == null) {
-          result.streamingRequest_ = streamingRequest_;
-        } else {
-          result.streamingRequest_ = videoConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (streamingRequestCase_ == 2) {
-        result.streamingRequest_ = streamingRequest_;
-      }
-      result.streamingRequestCase_ = streamingRequestCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest result) {
+      result.streamingRequestCase_ = streamingRequestCase_;
+      result.streamingRequest_ = this.streamingRequest_;
+      if (streamingRequestCase_ == 1 && videoConfigBuilder_ != null) {
+        result.streamingRequest_ = videoConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -649,6 +657,8 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig,
@@ -889,7 +899,6 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
       }
       streamingRequestCase_ = 1;
       onChanged();
-      ;
       return videoConfigBuilder_;
     }
 

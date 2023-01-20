@@ -258,11 +258,13 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.EntityOrBuilder getEntityOrBuilder() {
-    return getEntity();
+    return entity_ == null
+        ? com.google.cloud.videointelligence.v1p3beta1.Entity.getDefaultInstance()
+        : entity_;
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 4;
-  private float confidence_;
+  private float confidence_ = 0F;
   /**
    *
    *
@@ -280,6 +282,8 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
   }
 
   public static final int FRAMES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame> frames_;
   /**
    *
@@ -632,24 +636,23 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (segmentBuilder_ != null) {
         segmentBuilder_.clear();
       }
-      if (entityBuilder_ == null) {
-        entity_ = null;
-      } else {
-        entity_ = null;
+      entity_ = null;
+      if (entityBuilder_ != null) {
+        entityBuilder_.dispose();
         entityBuilder_ = null;
       }
       confidence_ = 0F;
-
       if (framesBuilder_ == null) {
         frames_ = java.util.Collections.emptyList();
       } else {
         frames_ = null;
         framesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       trackInfoCase_ = 0;
       trackInfo_ = null;
       return this;
@@ -681,35 +684,46 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     public com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation buildPartial() {
       com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation result =
           new com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation(this);
-      int from_bitField0_ = bitField0_;
-      if (trackInfoCase_ == 3) {
-        if (segmentBuilder_ == null) {
-          result.trackInfo_ = trackInfo_;
-        } else {
-          result.trackInfo_ = segmentBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (trackInfoCase_ == 5) {
-        result.trackInfo_ = trackInfo_;
-      }
-      if (entityBuilder_ == null) {
-        result.entity_ = entity_;
-      } else {
-        result.entity_ = entityBuilder_.build();
-      }
-      result.confidence_ = confidence_;
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation result) {
       if (framesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           frames_ = java.util.Collections.unmodifiableList(frames_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.frames_ = frames_;
       } else {
         result.frames_ = framesBuilder_.build();
       }
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.entity_ = entityBuilder_ == null ? entity_ : entityBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.confidence_ = confidence_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation result) {
       result.trackInfoCase_ = trackInfoCase_;
-      onBuilt();
-      return result;
+      result.trackInfo_ = this.trackInfo_;
+      if (trackInfoCase_ == 3 && segmentBuilder_ != null) {
+        result.trackInfo_ = segmentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -771,7 +785,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         if (!other.frames_.isEmpty()) {
           if (frames_.isEmpty()) {
             frames_ = other.frames_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureFramesIsMutable();
             frames_.addAll(other.frames_);
@@ -784,7 +798,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
             framesBuilder_.dispose();
             framesBuilder_ = null;
             frames_ = other.frames_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             framesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFramesFieldBuilder()
@@ -839,7 +853,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
             case 10:
               {
                 input.readMessage(getEntityFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
@@ -865,7 +879,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
             case 37:
               {
                 confidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 37
             case 40:
@@ -1125,7 +1139,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       }
       trackInfoCase_ = 3;
       onChanged();
-      ;
       return segmentBuilder_;
     }
 
@@ -1188,6 +1201,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder setTrackId(long value) {
+
       trackInfoCase_ = 5;
       trackInfo_ = value;
       onChanged();
@@ -1236,7 +1250,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
      * @return Whether the entity field is set.
      */
     public boolean hasEntity() {
-      return entityBuilder_ != null || entity_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1273,11 +1287,11 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         entity_ = value;
-        onChanged();
       } else {
         entityBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1293,11 +1307,11 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         com.google.cloud.videointelligence.v1p3beta1.Entity.Builder builderForValue) {
       if (entityBuilder_ == null) {
         entity_ = builderForValue.build();
-        onChanged();
       } else {
         entityBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1311,19 +1325,19 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
      */
     public Builder mergeEntity(com.google.cloud.videointelligence.v1p3beta1.Entity value) {
       if (entityBuilder_ == null) {
-        if (entity_ != null) {
-          entity_ =
-              com.google.cloud.videointelligence.v1p3beta1.Entity.newBuilder(entity_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && entity_ != null
+            && entity_
+                != com.google.cloud.videointelligence.v1p3beta1.Entity.getDefaultInstance()) {
+          getEntityBuilder().mergeFrom(value);
         } else {
           entity_ = value;
         }
-        onChanged();
       } else {
         entityBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1336,14 +1350,13 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
      * <code>.google.cloud.videointelligence.v1p3beta1.Entity entity = 1;</code>
      */
     public Builder clearEntity() {
-      if (entityBuilder_ == null) {
-        entity_ = null;
-        onChanged();
-      } else {
-        entity_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      entity_ = null;
+      if (entityBuilder_ != null) {
+        entityBuilder_.dispose();
         entityBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1356,7 +1369,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
      * <code>.google.cloud.videointelligence.v1p3beta1.Entity entity = 1;</code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.Entity.Builder getEntityBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getEntityFieldBuilder().getBuilder();
     }
@@ -1435,6 +1448,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     public Builder setConfidence(float value) {
 
       confidence_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1450,7 +1464,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       confidence_ = 0F;
       onChanged();
       return this;
@@ -1460,11 +1474,11 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         frames_ = java.util.Collections.emptyList();
 
     private void ensureFramesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         frames_ =
             new java.util.ArrayList<
                 com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame>(frames_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1732,7 +1746,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     public Builder clearFrames() {
       if (framesBuilder_ == null) {
         frames_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         framesBuilder_.clear();
@@ -1892,7 +1906,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
                 com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame,
                 com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame.Builder,
                 com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrameOrBuilder>(
-                frames_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                frames_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         frames_ = null;
       }
       return framesBuilder_;

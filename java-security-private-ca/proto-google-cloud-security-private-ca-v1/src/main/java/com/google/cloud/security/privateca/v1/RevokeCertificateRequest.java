@@ -71,7 +71,9 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -128,7 +130,7 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
   }
 
   public static final int REASON_FIELD_NUMBER = 2;
-  private int reason_;
+  private int reason_ = 0;
   /**
    *
    *
@@ -161,16 +163,17 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.security.privateca.v1.RevocationReason getReason() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.security.privateca.v1.RevocationReason result =
-        com.google.cloud.security.privateca.v1.RevocationReason.valueOf(reason_);
+        com.google.cloud.security.privateca.v1.RevocationReason.forNumber(reason_);
     return result == null
         ? com.google.cloud.security.privateca.v1.RevocationReason.UNRECOGNIZED
         : result;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -459,12 +462,10 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       reason_ = 0;
-
       requestId_ = "";
-
       return this;
     }
 
@@ -493,11 +494,25 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
     public com.google.cloud.security.privateca.v1.RevokeCertificateRequest buildPartial() {
       com.google.cloud.security.privateca.v1.RevokeCertificateRequest result =
           new com.google.cloud.security.privateca.v1.RevokeCertificateRequest(this);
-      result.name_ = name_;
-      result.reason_ = reason_;
-      result.requestId_ = requestId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.security.privateca.v1.RevokeCertificateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.reason_ = reason_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -550,6 +565,7 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.reason_ != 0) {
@@ -557,6 +573,7 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -588,19 +605,19 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 reason_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -619,6 +636,8 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -693,8 +712,8 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -714,8 +733,8 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -740,8 +759,8 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -779,8 +798,8 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder setReasonValue(int value) {
-
       reason_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -799,9 +818,8 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
      */
     @java.lang.Override
     public com.google.cloud.security.privateca.v1.RevocationReason getReason() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.security.privateca.v1.RevocationReason result =
-          com.google.cloud.security.privateca.v1.RevocationReason.valueOf(reason_);
+          com.google.cloud.security.privateca.v1.RevocationReason.forNumber(reason_);
       return result == null
           ? com.google.cloud.security.privateca.v1.RevocationReason.UNRECOGNIZED
           : result;
@@ -824,7 +842,7 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       reason_ = value.getNumber();
       onChanged();
       return this;
@@ -843,7 +861,7 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearReason() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       reason_ = 0;
       onChanged();
       return this;
@@ -940,8 +958,8 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -967,8 +985,8 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -999,8 +1017,8 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

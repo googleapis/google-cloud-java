@@ -77,7 +77,9 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DETECTOR_FIELD_NUMBER = 1;
-  private volatile java.lang.Object detector_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object detector_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COMPONENT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object component_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object component_ = "";
   /**
    *
    *
@@ -177,7 +181,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BILLING_TIER_FIELD_NUMBER = 3;
-  private int billingTier_;
+  private int billingTier_ = 0;
   /**
    *
    *
@@ -212,15 +216,16 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.BillingTier getBillingTier() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.securitycenter.settings.v1beta1.BillingTier result =
-        com.google.cloud.securitycenter.settings.v1beta1.BillingTier.valueOf(billingTier_);
+        com.google.cloud.securitycenter.settings.v1beta1.BillingTier.forNumber(billingTier_);
     return result == null
         ? com.google.cloud.securitycenter.settings.v1beta1.BillingTier.UNRECOGNIZED
         : result;
   }
 
   public static final int DETECTOR_LABELS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList detectorLabels_;
   /**
    *
@@ -535,14 +540,12 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       detector_ = "";
-
       component_ = "";
-
       billingTier_ = 0;
-
       detectorLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -570,17 +573,34 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.settings.v1beta1.Detector buildPartial() {
       com.google.cloud.securitycenter.settings.v1beta1.Detector result =
           new com.google.cloud.securitycenter.settings.v1beta1.Detector(this);
-      int from_bitField0_ = bitField0_;
-      result.detector_ = detector_;
-      result.component_ = component_;
-      result.billingTier_ = billingTier_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        detectorLabels_ = detectorLabels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.detectorLabels_ = detectorLabels_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.securitycenter.settings.v1beta1.Detector result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        detectorLabels_ = detectorLabels_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.detectorLabels_ = detectorLabels_;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.settings.v1beta1.Detector result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.detector_ = detector_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.component_ = component_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.billingTier_ = billingTier_;
+      }
     }
 
     @java.lang.Override
@@ -631,10 +651,12 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getDetector().isEmpty()) {
         detector_ = other.detector_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getComponent().isEmpty()) {
         component_ = other.component_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.billingTier_ != 0) {
@@ -643,7 +665,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       if (!other.detectorLabels_.isEmpty()) {
         if (detectorLabels_.isEmpty()) {
           detectorLabels_ = other.detectorLabels_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureDetectorLabelsIsMutable();
           detectorLabels_.addAll(other.detectorLabels_);
@@ -679,19 +701,19 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 detector_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 component_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 billingTier_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -781,8 +803,8 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       detector_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -798,8 +820,8 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDetector() {
-
       detector_ = getDefaultInstance().getDetector();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -820,8 +842,8 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       detector_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -890,8 +912,8 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       component_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -908,8 +930,8 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearComponent() {
-
       component_ = getDefaultInstance().getComponent();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -931,8 +953,8 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       component_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -972,8 +994,8 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBillingTierValue(int value) {
-
       billingTier_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -993,9 +1015,8 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.BillingTier getBillingTier() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.settings.v1beta1.BillingTier result =
-          com.google.cloud.securitycenter.settings.v1beta1.BillingTier.valueOf(billingTier_);
+          com.google.cloud.securitycenter.settings.v1beta1.BillingTier.forNumber(billingTier_);
       return result == null
           ? com.google.cloud.securitycenter.settings.v1beta1.BillingTier.UNRECOGNIZED
           : result;
@@ -1020,7 +1041,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       billingTier_ = value.getNumber();
       onChanged();
       return this;
@@ -1040,7 +1061,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBillingTier() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       billingTier_ = 0;
       onChanged();
       return this;
@@ -1050,9 +1071,9 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDetectorLabelsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         detectorLabels_ = new com.google.protobuf.LazyStringArrayList(detectorLabels_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1219,7 +1240,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDetectorLabels() {
       detectorLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }

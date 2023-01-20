@@ -70,7 +70,9 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -176,7 +180,7 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SUPPORT_SOURCE_FIELD_NUMBER = 3;
-  private boolean supportSource_;
+  private boolean supportSource_ = false;
   /**
    *
    *
@@ -194,7 +198,7 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SUPPORT_TARGET_FIELD_NUMBER = 4;
-  private boolean supportTarget_;
+  private boolean supportTarget_ = false;
   /**
    *
    *
@@ -436,14 +440,11 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       languageCode_ = "";
-
       displayName_ = "";
-
       supportSource_ = false;
-
       supportTarget_ = false;
-
       return this;
     }
 
@@ -471,12 +472,27 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.translate.v3beta1.SupportedLanguage buildPartial() {
       com.google.cloud.translate.v3beta1.SupportedLanguage result =
           new com.google.cloud.translate.v3beta1.SupportedLanguage(this);
-      result.languageCode_ = languageCode_;
-      result.displayName_ = displayName_;
-      result.supportSource_ = supportSource_;
-      result.supportTarget_ = supportTarget_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.translate.v3beta1.SupportedLanguage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.supportSource_ = supportSource_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.supportTarget_ = supportTarget_;
+      }
     }
 
     @java.lang.Override
@@ -527,10 +543,12 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getSupportSource() != false) {
@@ -568,25 +586,25 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 supportSource_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 supportTarget_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -605,6 +623,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object languageCode_ = "";
     /**
@@ -676,8 +696,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -696,8 +716,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -721,8 +741,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -791,8 +811,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -809,8 +829,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -832,8 +852,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -869,6 +889,7 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
     public Builder setSupportSource(boolean value) {
 
       supportSource_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -884,7 +905,7 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSupportSource() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       supportSource_ = false;
       onChanged();
       return this;
@@ -921,6 +942,7 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
     public Builder setSupportTarget(boolean value) {
 
       supportTarget_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -936,7 +958,7 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSupportTarget() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       supportTarget_ = false;
       onChanged();
       return this;

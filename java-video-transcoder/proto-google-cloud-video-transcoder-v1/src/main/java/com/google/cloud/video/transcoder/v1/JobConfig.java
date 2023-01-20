@@ -75,6 +75,8 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INPUTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.Input> inputs_;
   /**
    *
@@ -144,6 +146,8 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EDIT_LIST_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.EditAtom> editList_;
   /**
    *
@@ -218,6 +222,8 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ELEMENTARY_STREAMS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.ElementaryStream> elementaryStreams_;
   /**
    *
@@ -294,6 +300,8 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MUX_STREAMS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.MuxStream> muxStreams_;
   /**
    *
@@ -363,6 +371,8 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MANIFESTS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.Manifest> manifests_;
   /**
    *
@@ -476,10 +486,14 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.video.transcoder.v1.OutputOrBuilder getOutputOrBuilder() {
-    return getOutput();
+    return output_ == null
+        ? com.google.cloud.video.transcoder.v1.Output.getDefaultInstance()
+        : output_;
   }
 
   public static final int AD_BREAKS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.AdBreak> adBreaks_;
   /**
    *
@@ -599,10 +613,14 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.video.transcoder.v1.PubsubDestinationOrBuilder
       getPubsubDestinationOrBuilder() {
-    return getPubsubDestination();
+    return pubsubDestination_ == null
+        ? com.google.cloud.video.transcoder.v1.PubsubDestination.getDefaultInstance()
+        : pubsubDestination_;
   }
 
   public static final int SPRITE_SHEETS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.SpriteSheet> spriteSheets_;
   /**
    *
@@ -678,6 +696,8 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OVERLAYS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.Overlay> overlays_;
   /**
    *
@@ -1051,6 +1071,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (inputsBuilder_ == null) {
         inputs_ = java.util.Collections.emptyList();
       } else {
@@ -1086,10 +1107,9 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         manifestsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
-      if (outputBuilder_ == null) {
-        output_ = null;
-      } else {
-        output_ = null;
+      output_ = null;
+      if (outputBuilder_ != null) {
+        outputBuilder_.dispose();
         outputBuilder_ = null;
       }
       if (adBreaksBuilder_ == null) {
@@ -1098,11 +1118,10 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         adBreaks_ = null;
         adBreaksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
-      if (pubsubDestinationBuilder_ == null) {
-        pubsubDestination_ = null;
-      } else {
-        pubsubDestination_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      pubsubDestination_ = null;
+      if (pubsubDestinationBuilder_ != null) {
+        pubsubDestinationBuilder_.dispose();
         pubsubDestinationBuilder_ = null;
       }
       if (spriteSheetsBuilder_ == null) {
@@ -1111,14 +1130,14 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         spriteSheets_ = null;
         spriteSheetsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       if (overlaysBuilder_ == null) {
         overlays_ = java.util.Collections.emptyList();
       } else {
         overlays_ = null;
         overlaysBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -1146,7 +1165,15 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.JobConfig buildPartial() {
       com.google.cloud.video.transcoder.v1.JobConfig result =
           new com.google.cloud.video.transcoder.v1.JobConfig(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.video.transcoder.v1.JobConfig result) {
       if (inputsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           inputs_ = java.util.Collections.unmodifiableList(inputs_);
@@ -1192,45 +1219,46 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.manifests_ = manifestsBuilder_.build();
       }
-      if (outputBuilder_ == null) {
-        result.output_ = output_;
-      } else {
-        result.output_ = outputBuilder_.build();
-      }
       if (adBreaksBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           adBreaks_ = java.util.Collections.unmodifiableList(adBreaks_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.adBreaks_ = adBreaks_;
       } else {
         result.adBreaks_ = adBreaksBuilder_.build();
       }
-      if (pubsubDestinationBuilder_ == null) {
-        result.pubsubDestination_ = pubsubDestination_;
-      } else {
-        result.pubsubDestination_ = pubsubDestinationBuilder_.build();
-      }
       if (spriteSheetsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           spriteSheets_ = java.util.Collections.unmodifiableList(spriteSheets_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.spriteSheets_ = spriteSheets_;
       } else {
         result.spriteSheets_ = spriteSheetsBuilder_.build();
       }
       if (overlaysBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           overlays_ = java.util.Collections.unmodifiableList(overlays_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.overlays_ = overlays_;
       } else {
         result.overlays_ = overlaysBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.transcoder.v1.JobConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.output_ = outputBuilder_ == null ? output_ : outputBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.pubsubDestination_ =
+            pubsubDestinationBuilder_ == null
+                ? pubsubDestination_
+                : pubsubDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1420,7 +1448,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.adBreaks_.isEmpty()) {
           if (adBreaks_.isEmpty()) {
             adBreaks_ = other.adBreaks_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureAdBreaksIsMutable();
             adBreaks_.addAll(other.adBreaks_);
@@ -1433,7 +1461,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
             adBreaksBuilder_.dispose();
             adBreaksBuilder_ = null;
             adBreaks_ = other.adBreaks_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
             adBreaksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAdBreaksFieldBuilder()
@@ -1450,7 +1478,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.spriteSheets_.isEmpty()) {
           if (spriteSheets_.isEmpty()) {
             spriteSheets_ = other.spriteSheets_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureSpriteSheetsIsMutable();
             spriteSheets_.addAll(other.spriteSheets_);
@@ -1463,7 +1491,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
             spriteSheetsBuilder_.dispose();
             spriteSheetsBuilder_ = null;
             spriteSheets_ = other.spriteSheets_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000100);
             spriteSheetsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSpriteSheetsFieldBuilder()
@@ -1477,7 +1505,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.overlays_.isEmpty()) {
           if (overlays_.isEmpty()) {
             overlays_ = other.overlays_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureOverlaysIsMutable();
             overlays_.addAll(other.overlays_);
@@ -1490,7 +1518,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
             overlaysBuilder_.dispose();
             overlaysBuilder_ = null;
             overlays_ = other.overlays_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000200);
             overlaysBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getOverlaysFieldBuilder()
@@ -1595,7 +1623,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
             case 50:
               {
                 input.readMessage(getOutputFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
@@ -1615,7 +1643,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getPubsubDestinationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
@@ -3486,7 +3514,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the output field is set.
      */
     public boolean hasOutput() {
-      return outputBuilder_ != null || output_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3523,11 +3551,11 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         output_ = value;
-        onChanged();
       } else {
         outputBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3542,11 +3570,11 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setOutput(com.google.cloud.video.transcoder.v1.Output.Builder builderForValue) {
       if (outputBuilder_ == null) {
         output_ = builderForValue.build();
-        onChanged();
       } else {
         outputBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3560,19 +3588,18 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeOutput(com.google.cloud.video.transcoder.v1.Output value) {
       if (outputBuilder_ == null) {
-        if (output_ != null) {
-          output_ =
-              com.google.cloud.video.transcoder.v1.Output.newBuilder(output_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && output_ != null
+            && output_ != com.google.cloud.video.transcoder.v1.Output.getDefaultInstance()) {
+          getOutputBuilder().mergeFrom(value);
         } else {
           output_ = value;
         }
-        onChanged();
       } else {
         outputBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3585,14 +3612,13 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.transcoder.v1.Output output = 6;</code>
      */
     public Builder clearOutput() {
-      if (outputBuilder_ == null) {
-        output_ = null;
-        onChanged();
-      } else {
-        output_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      output_ = null;
+      if (outputBuilder_ != null) {
+        outputBuilder_.dispose();
         outputBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3605,7 +3631,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.transcoder.v1.Output output = 6;</code>
      */
     public com.google.cloud.video.transcoder.v1.Output.Builder getOutputBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getOutputFieldBuilder().getBuilder();
     }
@@ -3657,10 +3683,10 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAdBreaksIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         adBreaks_ =
             new java.util.ArrayList<com.google.cloud.video.transcoder.v1.AdBreak>(adBreaks_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -3887,7 +3913,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAdBreaks() {
       if (adBreaksBuilder_ == null) {
         adBreaks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         adBreaksBuilder_.clear();
@@ -4016,7 +4042,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.video.transcoder.v1.AdBreak,
                 com.google.cloud.video.transcoder.v1.AdBreak.Builder,
                 com.google.cloud.video.transcoder.v1.AdBreakOrBuilder>(
-                adBreaks_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+                adBreaks_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
         adBreaks_ = null;
       }
       return adBreaksBuilder_;
@@ -4040,7 +4066,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the pubsubDestination field is set.
      */
     public boolean hasPubsubDestination() {
-      return pubsubDestinationBuilder_ != null || pubsubDestination_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -4078,11 +4104,11 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         pubsubDestination_ = value;
-        onChanged();
       } else {
         pubsubDestinationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4098,11 +4124,11 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.video.transcoder.v1.PubsubDestination.Builder builderForValue) {
       if (pubsubDestinationBuilder_ == null) {
         pubsubDestination_ = builderForValue.build();
-        onChanged();
       } else {
         pubsubDestinationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4117,19 +4143,19 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergePubsubDestination(
         com.google.cloud.video.transcoder.v1.PubsubDestination value) {
       if (pubsubDestinationBuilder_ == null) {
-        if (pubsubDestination_ != null) {
-          pubsubDestination_ =
-              com.google.cloud.video.transcoder.v1.PubsubDestination.newBuilder(pubsubDestination_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && pubsubDestination_ != null
+            && pubsubDestination_
+                != com.google.cloud.video.transcoder.v1.PubsubDestination.getDefaultInstance()) {
+          getPubsubDestinationBuilder().mergeFrom(value);
         } else {
           pubsubDestination_ = value;
         }
-        onChanged();
       } else {
         pubsubDestinationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4142,14 +4168,13 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.transcoder.v1.PubsubDestination pubsub_destination = 8;</code>
      */
     public Builder clearPubsubDestination() {
-      if (pubsubDestinationBuilder_ == null) {
-        pubsubDestination_ = null;
-        onChanged();
-      } else {
-        pubsubDestination_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      pubsubDestination_ = null;
+      if (pubsubDestinationBuilder_ != null) {
+        pubsubDestinationBuilder_.dispose();
         pubsubDestinationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4163,7 +4188,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.video.transcoder.v1.PubsubDestination.Builder
         getPubsubDestinationBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getPubsubDestinationFieldBuilder().getBuilder();
     }
@@ -4216,11 +4241,11 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSpriteSheetsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         spriteSheets_ =
             new java.util.ArrayList<com.google.cloud.video.transcoder.v1.SpriteSheet>(
                 spriteSheets_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -4449,7 +4474,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSpriteSheets() {
       if (spriteSheetsBuilder_ == null) {
         spriteSheets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         spriteSheetsBuilder_.clear();
@@ -4581,7 +4606,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.video.transcoder.v1.SpriteSheet,
                 com.google.cloud.video.transcoder.v1.SpriteSheet.Builder,
                 com.google.cloud.video.transcoder.v1.SpriteSheetOrBuilder>(
-                spriteSheets_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+                spriteSheets_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
         spriteSheets_ = null;
       }
       return spriteSheetsBuilder_;
@@ -4591,10 +4616,10 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureOverlaysIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         overlays_ =
             new java.util.ArrayList<com.google.cloud.video.transcoder.v1.Overlay>(overlays_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -4810,7 +4835,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearOverlays() {
       if (overlaysBuilder_ == null) {
         overlays_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         overlaysBuilder_.clear();
@@ -4932,7 +4957,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.video.transcoder.v1.Overlay,
                 com.google.cloud.video.transcoder.v1.Overlay.Builder,
                 com.google.cloud.video.transcoder.v1.OverlayOrBuilder>(
-                overlays_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
+                overlays_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
         overlays_ = null;
       }
       return overlaysBuilder_;

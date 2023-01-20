@@ -68,7 +68,9 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -328,8 +330,8 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       languageCode_ = "";
-
       return this;
     }
 
@@ -357,9 +359,18 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.texttospeech.v1beta1.ListVoicesRequest buildPartial() {
       com.google.cloud.texttospeech.v1beta1.ListVoicesRequest result =
           new com.google.cloud.texttospeech.v1beta1.ListVoicesRequest(this);
-      result.languageCode_ = languageCode_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.texttospeech.v1beta1.ListVoicesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
     }
 
     @java.lang.Override
@@ -410,6 +421,7 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -441,7 +453,7 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -460,6 +472,8 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object languageCode_ = "";
     /**
@@ -543,8 +557,8 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -567,8 +581,8 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -596,8 +610,8 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

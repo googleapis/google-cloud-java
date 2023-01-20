@@ -68,6 +68,8 @@ public final class BatchGetServicesResponse extends com.google.protobuf.Generate
   }
 
   public static final int SERVICES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.serviceusage.v1.Service> services_;
   /**
    *
@@ -336,6 +338,7 @@ public final class BatchGetServicesResponse extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (servicesBuilder_ == null) {
         services_ = java.util.Collections.emptyList();
       } else {
@@ -370,7 +373,16 @@ public final class BatchGetServicesResponse extends com.google.protobuf.Generate
     public com.google.api.serviceusage.v1.BatchGetServicesResponse buildPartial() {
       com.google.api.serviceusage.v1.BatchGetServicesResponse result =
           new com.google.api.serviceusage.v1.BatchGetServicesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.api.serviceusage.v1.BatchGetServicesResponse result) {
       if (servicesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           services_ = java.util.Collections.unmodifiableList(services_);
@@ -380,8 +392,10 @@ public final class BatchGetServicesResponse extends com.google.protobuf.Generate
       } else {
         result.services_ = servicesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.api.serviceusage.v1.BatchGetServicesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

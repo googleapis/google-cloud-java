@@ -68,7 +68,7 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ADAPTATION_TIMEOUT_FIELD_NUMBER = 1;
-  private boolean adaptationTimeout_;
+  private boolean adaptationTimeout_ = false;
   /**
    *
    *
@@ -87,7 +87,9 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TIMEOUT_MESSAGE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object timeoutMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object timeoutMessage_ = "";
   /**
    *
    *
@@ -343,10 +345,9 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       adaptationTimeout_ = false;
-
       timeoutMessage_ = "";
-
       return this;
     }
 
@@ -374,10 +375,21 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
     public com.google.cloud.speech.v1.SpeechAdaptationInfo buildPartial() {
       com.google.cloud.speech.v1.SpeechAdaptationInfo result =
           new com.google.cloud.speech.v1.SpeechAdaptationInfo(this);
-      result.adaptationTimeout_ = adaptationTimeout_;
-      result.timeoutMessage_ = timeoutMessage_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v1.SpeechAdaptationInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.adaptationTimeout_ = adaptationTimeout_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.timeoutMessage_ = timeoutMessage_;
+      }
     }
 
     @java.lang.Override
@@ -431,6 +443,7 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
       }
       if (!other.getTimeoutMessage().isEmpty()) {
         timeoutMessage_ = other.timeoutMessage_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -462,13 +475,13 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 adaptationTimeout_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 34:
               {
                 timeoutMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             default:
@@ -487,6 +500,8 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean adaptationTimeout_;
     /**
@@ -521,6 +536,7 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
     public Builder setAdaptationTimeout(boolean value) {
 
       adaptationTimeout_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -537,7 +553,7 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearAdaptationTimeout() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       adaptationTimeout_ = false;
       onChanged();
       return this;
@@ -607,8 +623,8 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       timeoutMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -625,8 +641,8 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTimeoutMessage() {
-
       timeoutMessage_ = getDefaultInstance().getTimeoutMessage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -648,8 +664,8 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       timeoutMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

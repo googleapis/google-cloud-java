@@ -113,7 +113,9 @@ public final class ImportAdminOverridesRequest extends com.google.protobuf.Gener
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -218,7 +220,7 @@ public final class ImportAdminOverridesRequest extends com.google.protobuf.Gener
   }
 
   public static final int FORCE_FIELD_NUMBER = 3;
-  private boolean force_;
+  private boolean force_ = false;
   /**
    *
    *
@@ -238,7 +240,10 @@ public final class ImportAdminOverridesRequest extends com.google.protobuf.Gener
   }
 
   public static final int FORCE_ONLY_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> forceOnly_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.api.serviceusage.v1beta1.QuotaSafetyCheck>
       forceOnly_converter_ =
@@ -246,9 +251,8 @@ public final class ImportAdminOverridesRequest extends com.google.protobuf.Gener
               java.lang.Integer, com.google.api.serviceusage.v1beta1.QuotaSafetyCheck>() {
             public com.google.api.serviceusage.v1beta1.QuotaSafetyCheck convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.api.serviceusage.v1beta1.QuotaSafetyCheck result =
-                  com.google.api.serviceusage.v1beta1.QuotaSafetyCheck.valueOf(from);
+                  com.google.api.serviceusage.v1beta1.QuotaSafetyCheck.forNumber(from);
               return result == null
                   ? com.google.api.serviceusage.v1beta1.QuotaSafetyCheck.UNRECOGNIZED
                   : result;
@@ -607,15 +611,14 @@ public final class ImportAdminOverridesRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (inlineSourceBuilder_ != null) {
         inlineSourceBuilder_.clear();
       }
       force_ = false;
-
       forceOnly_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -646,24 +649,42 @@ public final class ImportAdminOverridesRequest extends com.google.protobuf.Gener
     public com.google.api.serviceusage.v1beta1.ImportAdminOverridesRequest buildPartial() {
       com.google.api.serviceusage.v1beta1.ImportAdminOverridesRequest result =
           new com.google.api.serviceusage.v1beta1.ImportAdminOverridesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      if (sourceCase_ == 2) {
-        if (inlineSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = inlineSourceBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.force_ = force_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        forceOnly_ = java.util.Collections.unmodifiableList(forceOnly_);
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.forceOnly_ = forceOnly_;
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.api.serviceusage.v1beta1.ImportAdminOverridesRequest result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        forceOnly_ = java.util.Collections.unmodifiableList(forceOnly_);
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.forceOnly_ = forceOnly_;
+    }
+
+    private void buildPartial0(
+        com.google.api.serviceusage.v1beta1.ImportAdminOverridesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.force_ = force_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.api.serviceusage.v1beta1.ImportAdminOverridesRequest result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 2 && inlineSourceBuilder_ != null) {
+        result.source_ = inlineSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -716,6 +737,7 @@ public final class ImportAdminOverridesRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getForce() != false) {
@@ -724,7 +746,7 @@ public final class ImportAdminOverridesRequest extends com.google.protobuf.Gener
       if (!other.forceOnly_.isEmpty()) {
         if (forceOnly_.isEmpty()) {
           forceOnly_ = other.forceOnly_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureForceOnlyIsMutable();
           forceOnly_.addAll(other.forceOnly_);
@@ -771,7 +793,7 @@ public final class ImportAdminOverridesRequest extends com.google.protobuf.Gener
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -783,7 +805,7 @@ public final class ImportAdminOverridesRequest extends com.google.protobuf.Gener
             case 24:
               {
                 force_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
@@ -905,8 +927,8 @@ public final class ImportAdminOverridesRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -924,8 +946,8 @@ public final class ImportAdminOverridesRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -948,8 +970,8 @@ public final class ImportAdminOverridesRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1164,7 +1186,6 @@ public final class ImportAdminOverridesRequest extends com.google.protobuf.Gener
       }
       sourceCase_ = 2;
       onChanged();
-      ;
       return inlineSourceBuilder_;
     }
 
@@ -1203,6 +1224,7 @@ public final class ImportAdminOverridesRequest extends com.google.protobuf.Gener
     public Builder setForce(boolean value) {
 
       force_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1220,7 +1242,7 @@ public final class ImportAdminOverridesRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearForce() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       force_ = false;
       onChanged();
       return this;
@@ -1229,9 +1251,9 @@ public final class ImportAdminOverridesRequest extends com.google.protobuf.Gener
     private java.util.List<java.lang.Integer> forceOnly_ = java.util.Collections.emptyList();
 
     private void ensureForceOnlyIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         forceOnly_ = new java.util.ArrayList<java.lang.Integer>(forceOnly_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1378,7 +1400,7 @@ public final class ImportAdminOverridesRequest extends com.google.protobuf.Gener
      */
     public Builder clearForceOnly() {
       forceOnly_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }

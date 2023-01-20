@@ -334,7 +334,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -385,7 +387,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INPUT_URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object inputUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object inputUri_ = "";
   /**
    *
    *
@@ -444,7 +448,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OUTPUT_URI_FIELD_NUMBER = 3;
-  private volatile java.lang.Object outputUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputUri_ = "";
   /**
    *
    *
@@ -637,7 +643,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 8;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -670,9 +676,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.video.transcoder.v1.Job.ProcessingState getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.video.transcoder.v1.Job.ProcessingState result =
-        com.google.cloud.video.transcoder.v1.Job.ProcessingState.valueOf(state_);
+        com.google.cloud.video.transcoder.v1.Job.ProcessingState.forNumber(state_);
     return result == null
         ? com.google.cloud.video.transcoder.v1.Job.ProcessingState.UNRECOGNIZED
         : result;
@@ -724,7 +729,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int START_TIME_FIELD_NUMBER = 13;
@@ -773,7 +778,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 14;
@@ -822,11 +827,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int TTL_AFTER_COMPLETION_DAYS_FIELD_NUMBER = 15;
-  private int ttlAfterCompletionDays_;
+  private int ttlAfterCompletionDays_ = 0;
   /**
    *
    *
@@ -858,6 +863,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -918,7 +924,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 16;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -993,7 +1002,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
-    return getError();
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1362,42 +1371,34 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       inputUri_ = "";
-
       outputUri_ = "";
-
       if (configBuilder_ != null) {
         configBuilder_.clear();
       }
       state_ = 0;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       ttlAfterCompletionDays_ = 0;
-
       internalGetMutableLabels().clear();
-      if (errorBuilder_ == null) {
-        error_ = null;
-      } else {
-        error_ = null;
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
       jobConfigCase_ = 0;
@@ -1429,47 +1430,55 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.Job buildPartial() {
       com.google.cloud.video.transcoder.v1.Job result =
           new com.google.cloud.video.transcoder.v1.Job(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.inputUri_ = inputUri_;
-      result.outputUri_ = outputUri_;
-      if (jobConfigCase_ == 4) {
-        result.jobConfig_ = jobConfig_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (jobConfigCase_ == 5) {
-        if (configBuilder_ == null) {
-          result.jobConfig_ = jobConfig_;
-        } else {
-          result.jobConfig_ = configBuilder_.build();
-        }
-      }
-      result.state_ = state_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
-      }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      result.ttlAfterCompletionDays_ = ttlAfterCompletionDays_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (errorBuilder_ == null) {
-        result.error_ = error_;
-      } else {
-        result.error_ = errorBuilder_.build();
-      }
-      result.jobConfigCase_ = jobConfigCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.transcoder.v1.Job result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.inputUri_ = inputUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.outputUri_ = outputUri_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.ttlAfterCompletionDays_ = ttlAfterCompletionDays_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.video.transcoder.v1.Job result) {
+      result.jobConfigCase_ = jobConfigCase_;
+      result.jobConfig_ = this.jobConfig_;
+      if (jobConfigCase_ == 5 && configBuilder_ != null) {
+        result.jobConfig_ = configBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1519,14 +1528,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.video.transcoder.v1.Job.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getInputUri().isEmpty()) {
         inputUri_ = other.inputUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getOutputUri().isEmpty()) {
         outputUri_ = other.outputUri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -1545,6 +1557,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         setTtlAfterCompletionDays(other.getTtlAfterCompletionDays());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000400;
       if (other.hasError()) {
         mergeError(other.getError());
       }
@@ -1595,19 +1608,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 inputUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 outputUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1626,31 +1639,31 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             case 64:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 64
             case 98:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 114
             case 120:
               {
                 ttlAfterCompletionDays_ = input.readInt32();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 120
             case 130:
@@ -1662,12 +1675,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000400;
                 break;
               } // case 130
             case 138:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 138
             default:
@@ -1767,8 +1781,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1785,8 +1799,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1808,8 +1822,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1890,8 +1904,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       inputUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1912,8 +1926,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInputUri() {
-
       inputUri_ = getDefaultInstance().getInputUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1939,8 +1953,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       inputUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2018,8 +2032,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2039,8 +2053,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOutputUri() {
-
       outputUri_ = getDefaultInstance().getOutputUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2065,8 +2079,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       outputUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2441,7 +2455,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       jobConfigCase_ = 5;
       onChanged();
-      ;
       return configBuilder_;
     }
 
@@ -2478,8 +2491,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2498,9 +2511,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.video.transcoder.v1.Job.ProcessingState getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.video.transcoder.v1.Job.ProcessingState result =
-          com.google.cloud.video.transcoder.v1.Job.ProcessingState.valueOf(state_);
+          com.google.cloud.video.transcoder.v1.Job.ProcessingState.forNumber(state_);
       return result == null
           ? com.google.cloud.video.transcoder.v1.Job.ProcessingState.UNRECOGNIZED
           : result;
@@ -2523,7 +2535,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2542,7 +2554,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;
@@ -2568,7 +2580,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2609,11 +2621,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2630,11 +2642,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2650,17 +2662,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2675,14 +2688,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2697,7 +2709,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2769,7 +2781,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2808,11 +2820,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2829,11 +2841,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2849,17 +2861,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2874,14 +2887,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2896,7 +2908,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -2965,7 +2977,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3002,11 +3014,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3022,11 +3034,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3041,17 +3053,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3065,14 +3078,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3086,7 +3098,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -3169,6 +3181,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setTtlAfterCompletionDays(int value) {
 
       ttlAfterCompletionDays_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3186,7 +3199,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTtlAfterCompletionDays() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       ttlAfterCompletionDays_ = 0;
       onChanged();
       return this;
@@ -3203,14 +3216,14 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000400;
+      onChanged();
       return labels_;
     }
 
@@ -3265,8 +3278,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 16;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3296,6 +3311,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000400);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3319,6 +3335,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000400;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -3338,8 +3355,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000400;
       return this;
     }
     /**
@@ -3354,6 +3371,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000400;
       return this;
     }
 
@@ -3374,7 +3392,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return errorBuilder_ != null || error_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3411,11 +3429,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         error_ = value;
-        onChanged();
       } else {
         errorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3431,11 +3449,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
-        onChanged();
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3450,16 +3468,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (error_ != null) {
-          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && error_ != null
+            && error_ != com.google.rpc.Status.getDefaultInstance()) {
+          getErrorBuilder().mergeFrom(value);
         } else {
           error_ = value;
         }
-        onChanged();
       } else {
         errorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3473,14 +3493,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      if (errorBuilder_ == null) {
-        error_ = null;
-        onChanged();
-      } else {
-        error_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3494,7 +3513,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }

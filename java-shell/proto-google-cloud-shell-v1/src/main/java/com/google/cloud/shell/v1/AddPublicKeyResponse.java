@@ -69,7 +69,9 @@ public final class AddPublicKeyResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int KEY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object key_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
   /**
    *
    *
@@ -315,8 +317,8 @@ public final class AddPublicKeyResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       key_ = "";
-
       return this;
     }
 
@@ -344,9 +346,18 @@ public final class AddPublicKeyResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.shell.v1.AddPublicKeyResponse buildPartial() {
       com.google.cloud.shell.v1.AddPublicKeyResponse result =
           new com.google.cloud.shell.v1.AddPublicKeyResponse(this);
-      result.key_ = key_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.shell.v1.AddPublicKeyResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.key_ = key_;
+      }
     }
 
     @java.lang.Override
@@ -396,6 +407,7 @@ public final class AddPublicKeyResponse extends com.google.protobuf.GeneratedMes
       if (other == com.google.cloud.shell.v1.AddPublicKeyResponse.getDefaultInstance()) return this;
       if (!other.getKey().isEmpty()) {
         key_ = other.key_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -427,7 +439,7 @@ public final class AddPublicKeyResponse extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 key_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -446,6 +458,8 @@ public final class AddPublicKeyResponse extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object key_ = "";
     /**
@@ -508,8 +522,8 @@ public final class AddPublicKeyResponse extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -525,8 +539,8 @@ public final class AddPublicKeyResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-
       key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -547,8 +561,8 @@ public final class AddPublicKeyResponse extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

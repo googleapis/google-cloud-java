@@ -70,7 +70,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARENT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -229,11 +233,13 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.serviceusage.v1.ServiceConfigOrBuilder getConfigOrBuilder() {
-    return getConfig();
+    return config_ == null
+        ? com.google.api.serviceusage.v1.ServiceConfig.getDefaultInstance()
+        : config_;
   }
 
   public static final int STATE_FIELD_NUMBER = 4;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -262,9 +268,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.serviceusage.v1.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.api.serviceusage.v1.State result =
-        com.google.api.serviceusage.v1.State.valueOf(state_);
+        com.google.api.serviceusage.v1.State.forNumber(state_);
     return result == null ? com.google.api.serviceusage.v1.State.UNRECOGNIZED : result;
   }
 
@@ -496,18 +501,15 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       parent_ = "";
-
-      if (configBuilder_ == null) {
-        config_ = null;
-      } else {
-        config_ = null;
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
       state_ = 0;
-
       return this;
     }
 
@@ -535,16 +537,27 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.serviceusage.v1.Service buildPartial() {
       com.google.api.serviceusage.v1.Service result =
           new com.google.api.serviceusage.v1.Service(this);
-      result.name_ = name_;
-      result.parent_ = parent_;
-      if (configBuilder_ == null) {
-        result.config_ = config_;
-      } else {
-        result.config_ = configBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.state_ = state_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.api.serviceusage.v1.Service result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.config_ = configBuilder_ == null ? config_ : configBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.state_ = state_;
+      }
     }
 
     @java.lang.Override
@@ -594,10 +607,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.api.serviceusage.v1.Service.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasConfig()) {
@@ -635,25 +650,25 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 32:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 42
             default:
@@ -672,6 +687,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -740,8 +757,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -759,8 +776,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -783,8 +800,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -856,8 +873,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -875,8 +892,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -899,8 +916,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -926,7 +943,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the config field is set.
      */
     public boolean hasConfig() {
-      return configBuilder_ != null || config_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -969,11 +986,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         config_ = value;
-        onChanged();
       } else {
         configBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -991,11 +1008,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder setConfig(com.google.api.serviceusage.v1.ServiceConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
         config_ = builderForValue.build();
-        onChanged();
       } else {
         configBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1012,19 +1029,18 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeConfig(com.google.api.serviceusage.v1.ServiceConfig value) {
       if (configBuilder_ == null) {
-        if (config_ != null) {
-          config_ =
-              com.google.api.serviceusage.v1.ServiceConfig.newBuilder(config_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && config_ != null
+            && config_ != com.google.api.serviceusage.v1.ServiceConfig.getDefaultInstance()) {
+          getConfigBuilder().mergeFrom(value);
         } else {
           config_ = value;
         }
-        onChanged();
       } else {
         configBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1040,14 +1056,13 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.api.serviceusage.v1.ServiceConfig config = 2;</code>
      */
     public Builder clearConfig() {
-      if (configBuilder_ == null) {
-        config_ = null;
-        onChanged();
-      } else {
-        config_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1063,7 +1078,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.api.serviceusage.v1.ServiceConfig config = 2;</code>
      */
     public com.google.api.serviceusage.v1.ServiceConfig.Builder getConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
@@ -1146,8 +1161,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1164,9 +1179,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.api.serviceusage.v1.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.api.serviceusage.v1.State result =
-          com.google.api.serviceusage.v1.State.valueOf(state_);
+          com.google.api.serviceusage.v1.State.forNumber(state_);
       return result == null ? com.google.api.serviceusage.v1.State.UNRECOGNIZED : result;
     }
     /**
@@ -1185,7 +1199,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1202,7 +1216,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       state_ = 0;
       onChanged();
       return this;

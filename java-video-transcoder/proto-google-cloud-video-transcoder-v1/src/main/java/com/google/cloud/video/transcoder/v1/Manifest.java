@@ -227,7 +227,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object fileName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fileName_ = "";
   /**
    *
    *
@@ -278,7 +280,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -311,15 +313,16 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.video.transcoder.v1.Manifest.ManifestType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.video.transcoder.v1.Manifest.ManifestType result =
-        com.google.cloud.video.transcoder.v1.Manifest.ManifestType.valueOf(type_);
+        com.google.cloud.video.transcoder.v1.Manifest.ManifestType.forNumber(type_);
     return result == null
         ? com.google.cloud.video.transcoder.v1.Manifest.ManifestType.UNRECOGNIZED
         : result;
   }
 
   public static final int MUX_STREAMS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList muxStreams_;
   /**
    *
@@ -618,12 +621,11 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       fileName_ = "";
-
       type_ = 0;
-
       muxStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -651,16 +653,30 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.Manifest buildPartial() {
       com.google.cloud.video.transcoder.v1.Manifest result =
           new com.google.cloud.video.transcoder.v1.Manifest(this);
-      int from_bitField0_ = bitField0_;
-      result.fileName_ = fileName_;
-      result.type_ = type_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        muxStreams_ = muxStreams_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.muxStreams_ = muxStreams_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.video.transcoder.v1.Manifest result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        muxStreams_ = muxStreams_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.muxStreams_ = muxStreams_;
+    }
+
+    private void buildPartial0(com.google.cloud.video.transcoder.v1.Manifest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fileName_ = fileName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
     }
 
     @java.lang.Override
@@ -710,6 +726,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.video.transcoder.v1.Manifest.getDefaultInstance()) return this;
       if (!other.getFileName().isEmpty()) {
         fileName_ = other.fileName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -718,7 +735,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       if (!other.muxStreams_.isEmpty()) {
         if (muxStreams_.isEmpty()) {
           muxStreams_ = other.muxStreams_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureMuxStreamsIsMutable();
           muxStreams_.addAll(other.muxStreams_);
@@ -754,13 +771,13 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 fileName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -853,8 +870,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       fileName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -871,8 +888,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFileName() {
-
       fileName_ = getDefaultInstance().getFileName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -894,8 +911,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fileName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -933,8 +950,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -953,9 +970,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.video.transcoder.v1.Manifest.ManifestType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.video.transcoder.v1.Manifest.ManifestType result =
-          com.google.cloud.video.transcoder.v1.Manifest.ManifestType.valueOf(type_);
+          com.google.cloud.video.transcoder.v1.Manifest.ManifestType.forNumber(type_);
       return result == null
           ? com.google.cloud.video.transcoder.v1.Manifest.ManifestType.UNRECOGNIZED
           : result;
@@ -978,7 +994,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -997,7 +1013,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
       onChanged();
       return this;
@@ -1007,9 +1023,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureMuxStreamsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         muxStreams_ = new com.google.protobuf.LazyStringArrayList(muxStreams_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1168,7 +1184,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMuxStreams() {
       muxStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

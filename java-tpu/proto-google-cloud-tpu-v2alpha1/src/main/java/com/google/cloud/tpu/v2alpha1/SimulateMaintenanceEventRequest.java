@@ -71,7 +71,9 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -124,6 +126,8 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
   }
 
   public static final int WORKER_IDS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList workerIds_;
   /**
    *
@@ -411,10 +415,10 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       workerIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -443,15 +447,29 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
     public com.google.cloud.tpu.v2alpha1.SimulateMaintenanceEventRequest buildPartial() {
       com.google.cloud.tpu.v2alpha1.SimulateMaintenanceEventRequest result =
           new com.google.cloud.tpu.v2alpha1.SimulateMaintenanceEventRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        workerIds_ = workerIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.workerIds_ = workerIds_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.tpu.v2alpha1.SimulateMaintenanceEventRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        workerIds_ = workerIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.workerIds_ = workerIds_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.tpu.v2alpha1.SimulateMaintenanceEventRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -503,12 +521,13 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.workerIds_.isEmpty()) {
         if (workerIds_.isEmpty()) {
           workerIds_ = other.workerIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureWorkerIdsIsMutable();
           workerIds_.addAll(other.workerIds_);
@@ -544,7 +563,7 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -640,8 +659,8 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -659,8 +678,8 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -683,8 +702,8 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -693,9 +712,9 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureWorkerIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         workerIds_ = new com.google.protobuf.LazyStringArrayList(workerIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -854,7 +873,7 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
      */
     public Builder clearWorkerIds() {
       workerIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

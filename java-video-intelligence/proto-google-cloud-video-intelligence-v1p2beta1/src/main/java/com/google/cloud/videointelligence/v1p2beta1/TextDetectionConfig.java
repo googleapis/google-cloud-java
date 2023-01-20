@@ -68,6 +68,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int LANGUAGE_HINTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList languageHints_;
   /**
    *
@@ -345,6 +347,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -375,14 +378,26 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
     public com.google.cloud.videointelligence.v1p2beta1.TextDetectionConfig buildPartial() {
       com.google.cloud.videointelligence.v1p2beta1.TextDetectionConfig result =
           new com.google.cloud.videointelligence.v1p2beta1.TextDetectionConfig(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.videointelligence.v1p2beta1.TextDetectionConfig result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         languageHints_ = languageHints_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.languageHints_ = languageHints_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1p2beta1.TextDetectionConfig result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

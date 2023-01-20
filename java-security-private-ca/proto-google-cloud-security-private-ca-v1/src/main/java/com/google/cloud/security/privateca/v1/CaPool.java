@@ -333,7 +333,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PUBLISH_CA_CERT_FIELD_NUMBER = 1;
-    private boolean publishCaCert_;
+    private boolean publishCaCert_ = false;
     /**
      *
      *
@@ -355,7 +355,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PUBLISH_CRL_FIELD_NUMBER = 2;
-    private boolean publishCrl_;
+    private boolean publishCrl_ = false;
     /**
      *
      *
@@ -592,10 +592,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         publishCaCert_ = false;
-
         publishCrl_ = false;
-
         return this;
       }
 
@@ -624,10 +623,22 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.security.privateca.v1.CaPool.PublishingOptions buildPartial() {
         com.google.cloud.security.privateca.v1.CaPool.PublishingOptions result =
             new com.google.cloud.security.privateca.v1.CaPool.PublishingOptions(this);
-        result.publishCaCert_ = publishCaCert_;
-        result.publishCrl_ = publishCrl_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.security.privateca.v1.CaPool.PublishingOptions result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.publishCaCert_ = publishCaCert_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.publishCrl_ = publishCrl_;
+        }
       }
 
       @java.lang.Override
@@ -715,13 +726,13 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   publishCaCert_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   publishCrl_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -740,6 +751,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean publishCaCert_;
       /**
@@ -780,6 +793,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       public Builder setPublishCaCert(boolean value) {
 
         publishCaCert_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -799,7 +813,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPublishCaCert() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         publishCaCert_ = false;
         onChanged();
         return this;
@@ -848,6 +862,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       public Builder setPublishCrl(boolean value) {
 
         publishCrl_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -869,7 +884,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPublishCrl() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         publishCrl_ = false;
         onChanged();
         return this;
@@ -1584,7 +1599,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int MIN_MODULUS_SIZE_FIELD_NUMBER = 1;
-        private long minModulusSize_;
+        private long minModulusSize_ = 0L;
         /**
          *
          *
@@ -1604,7 +1619,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int MAX_MODULUS_SIZE_FIELD_NUMBER = 2;
-        private long maxModulusSize_;
+        private long maxModulusSize_ = 0L;
         /**
          *
          *
@@ -1868,10 +1883,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             minModulusSize_ = 0L;
-
             maxModulusSize_ = 0L;
-
             return this;
           }
 
@@ -1909,10 +1923,23 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                 result =
                     new com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
                         .RsaKeyType(this);
-            result.minModulusSize_ = minModulusSize_;
-            result.maxModulusSize_ = maxModulusSize_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.RsaKeyType
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.minModulusSize_ = minModulusSize_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.maxModulusSize_ = maxModulusSize_;
+            }
           }
 
           @java.lang.Override
@@ -2007,13 +2034,13 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                   case 8:
                     {
                       minModulusSize_ = input.readInt64();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 8
                   case 16:
                     {
                       maxModulusSize_ = input.readInt64();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 16
                   default:
@@ -2032,6 +2059,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private long minModulusSize_;
           /**
@@ -2068,6 +2097,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           public Builder setMinModulusSize(long value) {
 
             minModulusSize_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -2085,7 +2115,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearMinModulusSize() {
-
+            bitField0_ = (bitField0_ & ~0x00000001);
             minModulusSize_ = 0L;
             onChanged();
             return this;
@@ -2126,6 +2156,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           public Builder setMaxModulusSize(long value) {
 
             maxModulusSize_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -2143,7 +2174,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearMaxModulusSize() {
-
+            bitField0_ = (bitField0_ & ~0x00000002);
             maxModulusSize_ = 0L;
             onChanged();
             return this;
@@ -2507,7 +2538,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int SIGNATURE_ALGORITHM_FIELD_NUMBER = 1;
-        private int signatureAlgorithm_;
+        private int signatureAlgorithm_ = 0;
         /**
          *
          *
@@ -2544,12 +2575,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
                 .EcSignatureAlgorithm
             getSignatureAlgorithm() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
                   .EcSignatureAlgorithm
               result =
                   com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
-                      .EcKeyType.EcSignatureAlgorithm.valueOf(signatureAlgorithm_);
+                      .EcKeyType.EcSignatureAlgorithm.forNumber(signatureAlgorithm_);
           return result == null
               ? com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
                   .EcKeyType.EcSignatureAlgorithm.UNRECOGNIZED
@@ -2798,8 +2828,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             signatureAlgorithm_ = 0;
-
             return this;
           }
 
@@ -2837,9 +2867,20 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                 result =
                     new com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
                         .EcKeyType(this);
-            result.signatureAlgorithm_ = signatureAlgorithm_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.signatureAlgorithm_ = signatureAlgorithm_;
+            }
           }
 
           @java.lang.Override
@@ -2931,7 +2972,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                   case 8:
                     {
                       signatureAlgorithm_ = input.readEnum();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 8
                   default:
@@ -2950,6 +2991,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private int signatureAlgorithm_ = 0;
           /**
@@ -2986,8 +3029,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder setSignatureAlgorithmValue(int value) {
-
             signatureAlgorithm_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -3009,12 +3052,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
                   .EcKeyType.EcSignatureAlgorithm
               getSignatureAlgorithm() {
-            @SuppressWarnings("deprecation")
             com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
                     .EcSignatureAlgorithm
                 result =
                     com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
-                        .EcKeyType.EcSignatureAlgorithm.valueOf(signatureAlgorithm_);
+                        .EcKeyType.EcSignatureAlgorithm.forNumber(signatureAlgorithm_);
             return result == null
                 ? com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
                     .EcKeyType.EcSignatureAlgorithm.UNRECOGNIZED
@@ -3042,7 +3084,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
+            bitField0_ |= 0x00000001;
             signatureAlgorithm_ = value.getNumber();
             onChanged();
             return this;
@@ -3062,7 +3104,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearSignatureAlgorithm() {
-
+            bitField0_ = (bitField0_ & ~0x00000001);
             signatureAlgorithm_ = 0;
             onChanged();
             return this;
@@ -3579,6 +3621,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (rsaBuilder_ != null) {
             rsaBuilder_.clear();
           }
@@ -3618,23 +3661,29 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             buildPartial() {
           com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType result =
               new com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType(this);
-          if (keyTypeCase_ == 1) {
-            if (rsaBuilder_ == null) {
-              result.keyType_ = keyType_;
-            } else {
-              result.keyType_ = rsaBuilder_.build();
-            }
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          if (keyTypeCase_ == 2) {
-            if (ellipticCurveBuilder_ == null) {
-              result.keyType_ = keyType_;
-            } else {
-              result.keyType_ = ellipticCurveBuilder_.build();
-            }
-          }
-          result.keyTypeCase_ = keyTypeCase_;
+          buildPartialOneofs(result);
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType result) {
+          result.keyTypeCase_ = keyTypeCase_;
+          result.keyType_ = this.keyType_;
+          if (keyTypeCase_ == 1 && rsaBuilder_ != null) {
+            result.keyType_ = rsaBuilder_.build();
+          }
+          if (keyTypeCase_ == 2 && ellipticCurveBuilder_ != null) {
+            result.keyType_ = ellipticCurveBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -3776,6 +3825,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
+        private int bitField0_;
 
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
@@ -4038,7 +4089,6 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           }
           keyTypeCase_ = 1;
           onChanged();
-          ;
           return rsaBuilder_;
         }
 
@@ -4302,7 +4352,6 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           }
           keyTypeCase_ = 2;
           onChanged();
-          ;
           return ellipticCurveBuilder_;
         }
 
@@ -4460,7 +4509,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int ALLOW_CSR_BASED_ISSUANCE_FIELD_NUMBER = 1;
-      private boolean allowCsrBasedIssuance_;
+      private boolean allowCsrBasedIssuance_ = false;
       /**
        *
        *
@@ -4479,7 +4528,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int ALLOW_CONFIG_BASED_ISSUANCE_FIELD_NUMBER = 2;
-      private boolean allowConfigBasedIssuance_;
+      private boolean allowConfigBasedIssuance_ = false;
       /**
        *
        *
@@ -4724,10 +4773,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           allowCsrBasedIssuance_ = false;
-
           allowConfigBasedIssuance_ = false;
-
           return this;
         }
 
@@ -4759,10 +4807,22 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             buildPartial() {
           com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes result =
               new com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes(this);
-          result.allowCsrBasedIssuance_ = allowCsrBasedIssuance_;
-          result.allowConfigBasedIssuance_ = allowConfigBasedIssuance_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.allowCsrBasedIssuance_ = allowCsrBasedIssuance_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.allowConfigBasedIssuance_ = allowConfigBasedIssuance_;
+          }
         }
 
         @java.lang.Override
@@ -4853,13 +4913,13 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                 case 8:
                   {
                     allowCsrBasedIssuance_ = input.readBool();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 16:
                   {
                     allowConfigBasedIssuance_ = input.readBool();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 default:
@@ -4878,6 +4938,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private boolean allowCsrBasedIssuance_;
         /**
@@ -4912,6 +4974,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         public Builder setAllowCsrBasedIssuance(boolean value) {
 
           allowCsrBasedIssuance_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -4928,7 +4991,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearAllowCsrBasedIssuance() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           allowCsrBasedIssuance_ = false;
           onChanged();
           return this;
@@ -4969,6 +5032,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         public Builder setAllowConfigBasedIssuance(boolean value) {
 
           allowConfigBasedIssuance_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -4986,7 +5050,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearAllowConfigBasedIssuance() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           allowConfigBasedIssuance_ = false;
           onChanged();
           return this;
@@ -5062,6 +5126,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ALLOWED_KEY_TYPES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType>
         allowedKeyTypes_;
@@ -5219,7 +5285,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getMaximumLifetimeOrBuilder() {
-      return getMaximumLifetime();
+      return maximumLifetime_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : maximumLifetime_;
     }
 
     public static final int ALLOWED_ISSUANCE_MODES_FIELD_NUMBER = 3;
@@ -5280,7 +5348,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModesOrBuilder
         getAllowedIssuanceModesOrBuilder() {
-      return getAllowedIssuanceModes();
+      return allowedIssuanceModes_ == null
+          ? com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes
+              .getDefaultInstance()
+          : allowedIssuanceModes_;
     }
 
     public static final int BASELINE_VALUES_FIELD_NUMBER = 4;
@@ -5353,7 +5424,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.security.privateca.v1.X509ParametersOrBuilder
         getBaselineValuesOrBuilder() {
-      return getBaselineValues();
+      return baselineValues_ == null
+          ? com.google.cloud.security.privateca.v1.X509Parameters.getDefaultInstance()
+          : baselineValues_;
     }
 
     public static final int IDENTITY_CONSTRAINTS_FIELD_NUMBER = 5;
@@ -5420,7 +5493,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.security.privateca.v1.CertificateIdentityConstraintsOrBuilder
         getIdentityConstraintsOrBuilder() {
-      return getIdentityConstraints();
+      return identityConstraints_ == null
+          ? com.google.cloud.security.privateca.v1.CertificateIdentityConstraints
+              .getDefaultInstance()
+          : identityConstraints_;
     }
 
     public static final int PASSTHROUGH_EXTENSIONS_FIELD_NUMBER = 6;
@@ -5505,7 +5581,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.security.privateca.v1.CertificateExtensionConstraintsOrBuilder
         getPassthroughExtensionsOrBuilder() {
-      return getPassthroughExtensions();
+      return passthroughExtensions_ == null
+          ? com.google.cloud.security.privateca.v1.CertificateExtensionConstraints
+              .getDefaultInstance()
+          : passthroughExtensions_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5784,6 +5863,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (allowedKeyTypesBuilder_ == null) {
           allowedKeyTypes_ = java.util.Collections.emptyList();
         } else {
@@ -5791,34 +5871,29 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           allowedKeyTypesBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
-        if (maximumLifetimeBuilder_ == null) {
-          maximumLifetime_ = null;
-        } else {
-          maximumLifetime_ = null;
+        maximumLifetime_ = null;
+        if (maximumLifetimeBuilder_ != null) {
+          maximumLifetimeBuilder_.dispose();
           maximumLifetimeBuilder_ = null;
         }
-        if (allowedIssuanceModesBuilder_ == null) {
-          allowedIssuanceModes_ = null;
-        } else {
-          allowedIssuanceModes_ = null;
+        allowedIssuanceModes_ = null;
+        if (allowedIssuanceModesBuilder_ != null) {
+          allowedIssuanceModesBuilder_.dispose();
           allowedIssuanceModesBuilder_ = null;
         }
-        if (baselineValuesBuilder_ == null) {
-          baselineValues_ = null;
-        } else {
-          baselineValues_ = null;
+        baselineValues_ = null;
+        if (baselineValuesBuilder_ != null) {
+          baselineValuesBuilder_.dispose();
           baselineValuesBuilder_ = null;
         }
-        if (identityConstraintsBuilder_ == null) {
-          identityConstraints_ = null;
-        } else {
-          identityConstraints_ = null;
+        identityConstraints_ = null;
+        if (identityConstraintsBuilder_ != null) {
+          identityConstraintsBuilder_.dispose();
           identityConstraintsBuilder_ = null;
         }
-        if (passthroughExtensionsBuilder_ == null) {
-          passthroughExtensions_ = null;
-        } else {
-          passthroughExtensions_ = null;
+        passthroughExtensions_ = null;
+        if (passthroughExtensionsBuilder_ != null) {
+          passthroughExtensionsBuilder_.dispose();
           passthroughExtensionsBuilder_ = null;
         }
         return this;
@@ -5849,7 +5924,16 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy buildPartial() {
         com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy result =
             new com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy result) {
         if (allowedKeyTypesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             allowedKeyTypes_ = java.util.Collections.unmodifiableList(allowedKeyTypes_);
@@ -5859,33 +5943,37 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.allowedKeyTypes_ = allowedKeyTypesBuilder_.build();
         }
-        if (maximumLifetimeBuilder_ == null) {
-          result.maximumLifetime_ = maximumLifetime_;
-        } else {
-          result.maximumLifetime_ = maximumLifetimeBuilder_.build();
+      }
+
+      private void buildPartial0(
+          com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maximumLifetime_ =
+              maximumLifetimeBuilder_ == null ? maximumLifetime_ : maximumLifetimeBuilder_.build();
         }
-        if (allowedIssuanceModesBuilder_ == null) {
-          result.allowedIssuanceModes_ = allowedIssuanceModes_;
-        } else {
-          result.allowedIssuanceModes_ = allowedIssuanceModesBuilder_.build();
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.allowedIssuanceModes_ =
+              allowedIssuanceModesBuilder_ == null
+                  ? allowedIssuanceModes_
+                  : allowedIssuanceModesBuilder_.build();
         }
-        if (baselineValuesBuilder_ == null) {
-          result.baselineValues_ = baselineValues_;
-        } else {
-          result.baselineValues_ = baselineValuesBuilder_.build();
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.baselineValues_ =
+              baselineValuesBuilder_ == null ? baselineValues_ : baselineValuesBuilder_.build();
         }
-        if (identityConstraintsBuilder_ == null) {
-          result.identityConstraints_ = identityConstraints_;
-        } else {
-          result.identityConstraints_ = identityConstraintsBuilder_.build();
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.identityConstraints_ =
+              identityConstraintsBuilder_ == null
+                  ? identityConstraints_
+                  : identityConstraintsBuilder_.build();
         }
-        if (passthroughExtensionsBuilder_ == null) {
-          result.passthroughExtensions_ = passthroughExtensions_;
-        } else {
-          result.passthroughExtensions_ = passthroughExtensionsBuilder_.build();
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.passthroughExtensions_ =
+              passthroughExtensionsBuilder_ == null
+                  ? passthroughExtensions_
+                  : passthroughExtensionsBuilder_.build();
         }
-        onBuilt();
-        return result;
       }
 
       @java.lang.Override
@@ -6024,35 +6112,35 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                 {
                   input.readMessage(
                       getMaximumLifetimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(
                       getAllowedIssuanceModesFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   input.readMessage(
                       getBaselineValuesFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 42:
                 {
                   input.readMessage(
                       getIdentityConstraintsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               case 50:
                 {
                   input.readMessage(
                       getPassthroughExtensionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 50
               default:
@@ -6557,7 +6645,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the maximumLifetime field is set.
        */
       public boolean hasMaximumLifetime() {
-        return maximumLifetimeBuilder_ != null || maximumLifetime_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -6604,11 +6692,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           maximumLifetime_ = value;
-          onChanged();
         } else {
           maximumLifetimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -6628,11 +6716,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       public Builder setMaximumLifetime(com.google.protobuf.Duration.Builder builderForValue) {
         if (maximumLifetimeBuilder_ == null) {
           maximumLifetime_ = builderForValue.build();
-          onChanged();
         } else {
           maximumLifetimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -6651,19 +6739,18 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeMaximumLifetime(com.google.protobuf.Duration value) {
         if (maximumLifetimeBuilder_ == null) {
-          if (maximumLifetime_ != null) {
-            maximumLifetime_ =
-                com.google.protobuf.Duration.newBuilder(maximumLifetime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && maximumLifetime_ != null
+              && maximumLifetime_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getMaximumLifetimeBuilder().mergeFrom(value);
           } else {
             maximumLifetime_ = value;
           }
-          onChanged();
         } else {
           maximumLifetimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -6681,14 +6768,13 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearMaximumLifetime() {
-        if (maximumLifetimeBuilder_ == null) {
-          maximumLifetime_ = null;
-          onChanged();
-        } else {
-          maximumLifetime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maximumLifetime_ = null;
+        if (maximumLifetimeBuilder_ != null) {
+          maximumLifetimeBuilder_.dispose();
           maximumLifetimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -6706,7 +6792,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public com.google.protobuf.Duration.Builder getMaximumLifetimeBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getMaximumLifetimeFieldBuilder().getBuilder();
       }
@@ -6786,7 +6872,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the allowedIssuanceModes field is set.
        */
       public boolean hasAllowedIssuanceModes() {
-        return allowedIssuanceModesBuilder_ != null || allowedIssuanceModes_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -6832,11 +6918,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           allowedIssuanceModes_ = value;
-          onChanged();
         } else {
           allowedIssuanceModesBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -6856,11 +6942,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
               builderForValue) {
         if (allowedIssuanceModesBuilder_ == null) {
           allowedIssuanceModes_ = builderForValue.build();
-          onChanged();
         } else {
           allowedIssuanceModesBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -6878,20 +6964,20 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeAllowedIssuanceModes(
           com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes value) {
         if (allowedIssuanceModesBuilder_ == null) {
-          if (allowedIssuanceModes_ != null) {
-            allowedIssuanceModes_ =
-                com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes
-                    .newBuilder(allowedIssuanceModes_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && allowedIssuanceModes_ != null
+              && allowedIssuanceModes_
+                  != com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes
+                      .getDefaultInstance()) {
+            getAllowedIssuanceModesBuilder().mergeFrom(value);
           } else {
             allowedIssuanceModes_ = value;
           }
-          onChanged();
         } else {
           allowedIssuanceModesBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -6907,14 +6993,13 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearAllowedIssuanceModes() {
-        if (allowedIssuanceModesBuilder_ == null) {
-          allowedIssuanceModes_ = null;
-          onChanged();
-        } else {
-          allowedIssuanceModes_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        allowedIssuanceModes_ = null;
+        if (allowedIssuanceModesBuilder_ != null) {
+          allowedIssuanceModesBuilder_.dispose();
           allowedIssuanceModesBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -6931,7 +7016,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes.Builder
           getAllowedIssuanceModesBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getAllowedIssuanceModesFieldBuilder().getBuilder();
       }
@@ -7015,7 +7100,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the baselineValues field is set.
        */
       public boolean hasBaselineValues() {
-        return baselineValuesBuilder_ != null || baselineValues_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -7069,11 +7154,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           baselineValues_ = value;
-          onChanged();
         } else {
           baselineValuesBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -7097,11 +7182,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.security.privateca.v1.X509Parameters.Builder builderForValue) {
         if (baselineValuesBuilder_ == null) {
           baselineValues_ = builderForValue.build();
-          onChanged();
         } else {
           baselineValuesBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -7124,19 +7209,19 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeBaselineValues(
           com.google.cloud.security.privateca.v1.X509Parameters value) {
         if (baselineValuesBuilder_ == null) {
-          if (baselineValues_ != null) {
-            baselineValues_ =
-                com.google.cloud.security.privateca.v1.X509Parameters.newBuilder(baselineValues_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && baselineValues_ != null
+              && baselineValues_
+                  != com.google.cloud.security.privateca.v1.X509Parameters.getDefaultInstance()) {
+            getBaselineValuesBuilder().mergeFrom(value);
           } else {
             baselineValues_ = value;
           }
-          onChanged();
         } else {
           baselineValuesBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -7157,14 +7242,13 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearBaselineValues() {
-        if (baselineValuesBuilder_ == null) {
-          baselineValues_ = null;
-          onChanged();
-        } else {
-          baselineValues_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        baselineValues_ = null;
+        if (baselineValuesBuilder_ != null) {
+          baselineValuesBuilder_.dispose();
           baselineValuesBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -7186,7 +7270,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.security.privateca.v1.X509Parameters.Builder
           getBaselineValuesBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getBaselineValuesFieldBuilder().getBuilder();
       }
@@ -7275,7 +7359,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the identityConstraints field is set.
        */
       public boolean hasIdentityConstraints() {
-        return identityConstraintsBuilder_ != null || identityConstraints_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -7325,11 +7409,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           identityConstraints_ = value;
-          onChanged();
         } else {
           identityConstraintsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -7351,11 +7435,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
               builderForValue) {
         if (identityConstraintsBuilder_ == null) {
           identityConstraints_ = builderForValue.build();
-          onChanged();
         } else {
           identityConstraintsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -7375,20 +7459,20 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeIdentityConstraints(
           com.google.cloud.security.privateca.v1.CertificateIdentityConstraints value) {
         if (identityConstraintsBuilder_ == null) {
-          if (identityConstraints_ != null) {
-            identityConstraints_ =
-                com.google.cloud.security.privateca.v1.CertificateIdentityConstraints.newBuilder(
-                        identityConstraints_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000010) != 0)
+              && identityConstraints_ != null
+              && identityConstraints_
+                  != com.google.cloud.security.privateca.v1.CertificateIdentityConstraints
+                      .getDefaultInstance()) {
+            getIdentityConstraintsBuilder().mergeFrom(value);
           } else {
             identityConstraints_ = value;
           }
-          onChanged();
         } else {
           identityConstraintsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -7406,14 +7490,13 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearIdentityConstraints() {
-        if (identityConstraintsBuilder_ == null) {
-          identityConstraints_ = null;
-          onChanged();
-        } else {
-          identityConstraints_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        identityConstraints_ = null;
+        if (identityConstraintsBuilder_ != null) {
+          identityConstraintsBuilder_.dispose();
           identityConstraintsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -7432,7 +7515,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.security.privateca.v1.CertificateIdentityConstraints.Builder
           getIdentityConstraintsBuilder() {
-
+        bitField0_ |= 0x00000010;
         onChanged();
         return getIdentityConstraintsFieldBuilder().getBuilder();
       }
@@ -7522,7 +7605,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the passthroughExtensions field is set.
        */
       public boolean hasPassthroughExtensions() {
-        return passthroughExtensionsBuilder_ != null || passthroughExtensions_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        *
@@ -7584,11 +7667,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           passthroughExtensions_ = value;
-          onChanged();
         } else {
           passthroughExtensionsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -7616,11 +7699,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
               builderForValue) {
         if (passthroughExtensionsBuilder_ == null) {
           passthroughExtensions_ = builderForValue.build();
-          onChanged();
         } else {
           passthroughExtensionsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -7646,20 +7729,20 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       public Builder mergePassthroughExtensions(
           com.google.cloud.security.privateca.v1.CertificateExtensionConstraints value) {
         if (passthroughExtensionsBuilder_ == null) {
-          if (passthroughExtensions_ != null) {
-            passthroughExtensions_ =
-                com.google.cloud.security.privateca.v1.CertificateExtensionConstraints.newBuilder(
-                        passthroughExtensions_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000020) != 0)
+              && passthroughExtensions_ != null
+              && passthroughExtensions_
+                  != com.google.cloud.security.privateca.v1.CertificateExtensionConstraints
+                      .getDefaultInstance()) {
+            getPassthroughExtensionsBuilder().mergeFrom(value);
           } else {
             passthroughExtensions_ = value;
           }
-          onChanged();
         } else {
           passthroughExtensionsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -7683,14 +7766,13 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearPassthroughExtensions() {
-        if (passthroughExtensionsBuilder_ == null) {
-          passthroughExtensions_ = null;
-          onChanged();
-        } else {
-          passthroughExtensions_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        passthroughExtensions_ = null;
+        if (passthroughExtensionsBuilder_ != null) {
+          passthroughExtensionsBuilder_.dispose();
           passthroughExtensionsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -7715,7 +7797,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.security.privateca.v1.CertificateExtensionConstraints.Builder
           getPassthroughExtensionsBuilder() {
-
+        bitField0_ |= 0x00000020;
         onChanged();
         return getPassthroughExtensionsFieldBuilder().getBuilder();
       }
@@ -7855,7 +7937,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -7906,7 +7990,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIER_FIELD_NUMBER = 2;
-  private int tier_;
+  private int tier_ = 0;
   /**
    *
    *
@@ -7939,9 +8023,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.security.privateca.v1.CaPool.Tier getTier() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.security.privateca.v1.CaPool.Tier result =
-        com.google.cloud.security.privateca.v1.CaPool.Tier.valueOf(tier_);
+        com.google.cloud.security.privateca.v1.CaPool.Tier.forNumber(tier_);
     return result == null
         ? com.google.cloud.security.privateca.v1.CaPool.Tier.UNRECOGNIZED
         : result;
@@ -8002,7 +8085,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicyOrBuilder
       getIssuancePolicyOrBuilder() {
-    return getIssuancePolicy();
+    return issuancePolicy_ == null
+        ? com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.getDefaultInstance()
+        : issuancePolicy_;
   }
 
   public static final int PUBLISHING_OPTIONS_FIELD_NUMBER = 4;
@@ -8063,7 +8148,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.security.privateca.v1.CaPool.PublishingOptionsOrBuilder
       getPublishingOptionsOrBuilder() {
-    return getPublishingOptions();
+    return publishingOptions_ == null
+        ? com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.getDefaultInstance()
+        : publishingOptions_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 5;
@@ -8079,6 +8166,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -8136,7 +8224,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -8439,20 +8530,17 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       tier_ = 0;
-
-      if (issuancePolicyBuilder_ == null) {
-        issuancePolicy_ = null;
-      } else {
-        issuancePolicy_ = null;
+      issuancePolicy_ = null;
+      if (issuancePolicyBuilder_ != null) {
+        issuancePolicyBuilder_.dispose();
         issuancePolicyBuilder_ = null;
       }
-      if (publishingOptionsBuilder_ == null) {
-        publishingOptions_ = null;
-      } else {
-        publishingOptions_ = null;
+      publishingOptions_ = null;
+      if (publishingOptionsBuilder_ != null) {
+        publishingOptionsBuilder_.dispose();
         publishingOptionsBuilder_ = null;
       }
       internalGetMutableLabels().clear();
@@ -8483,23 +8571,35 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.security.privateca.v1.CaPool buildPartial() {
       com.google.cloud.security.privateca.v1.CaPool result =
           new com.google.cloud.security.privateca.v1.CaPool(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.tier_ = tier_;
-      if (issuancePolicyBuilder_ == null) {
-        result.issuancePolicy_ = issuancePolicy_;
-      } else {
-        result.issuancePolicy_ = issuancePolicyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (publishingOptionsBuilder_ == null) {
-        result.publishingOptions_ = publishingOptions_;
-      } else {
-        result.publishingOptions_ = publishingOptionsBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.security.privateca.v1.CaPool result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tier_ = tier_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.issuancePolicy_ =
+            issuancePolicyBuilder_ == null ? issuancePolicy_ : issuancePolicyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.publishingOptions_ =
+            publishingOptionsBuilder_ == null
+                ? publishingOptions_
+                : publishingOptionsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -8549,6 +8649,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.security.privateca.v1.CaPool.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.tier_ != 0) {
@@ -8561,6 +8662,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         mergePublishingOptions(other.getPublishingOptions());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000010;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -8590,26 +8692,26 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 tier_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getIssuancePolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getPublishingOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -8621,6 +8723,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -8706,8 +8809,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -8724,8 +8827,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -8747,8 +8850,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -8786,8 +8889,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTierValue(int value) {
-
       tier_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -8806,9 +8909,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.security.privateca.v1.CaPool.Tier getTier() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.security.privateca.v1.CaPool.Tier result =
-          com.google.cloud.security.privateca.v1.CaPool.Tier.valueOf(tier_);
+          com.google.cloud.security.privateca.v1.CaPool.Tier.forNumber(tier_);
       return result == null
           ? com.google.cloud.security.privateca.v1.CaPool.Tier.UNRECOGNIZED
           : result;
@@ -8831,7 +8933,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       tier_ = value.getNumber();
       onChanged();
       return this;
@@ -8850,7 +8952,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTier() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       tier_ = 0;
       onChanged();
       return this;
@@ -8877,7 +8979,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the issuancePolicy field is set.
      */
     public boolean hasIssuancePolicy() {
-      return issuancePolicyBuilder_ != null || issuancePolicy_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -8921,11 +9023,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         issuancePolicy_ = value;
-        onChanged();
       } else {
         issuancePolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -8944,11 +9046,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.Builder builderForValue) {
       if (issuancePolicyBuilder_ == null) {
         issuancePolicy_ = builderForValue.build();
-        onChanged();
       } else {
         issuancePolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -8966,20 +9068,20 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeIssuancePolicy(
         com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy value) {
       if (issuancePolicyBuilder_ == null) {
-        if (issuancePolicy_ != null) {
-          issuancePolicy_ =
-              com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.newBuilder(
-                      issuancePolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && issuancePolicy_ != null
+            && issuancePolicy_
+                != com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy
+                    .getDefaultInstance()) {
+          getIssuancePolicyBuilder().mergeFrom(value);
         } else {
           issuancePolicy_ = value;
         }
-        onChanged();
       } else {
         issuancePolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -8995,14 +9097,13 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearIssuancePolicy() {
-      if (issuancePolicyBuilder_ == null) {
-        issuancePolicy_ = null;
-        onChanged();
-      } else {
-        issuancePolicy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      issuancePolicy_ = null;
+      if (issuancePolicyBuilder_ != null) {
+        issuancePolicyBuilder_.dispose();
         issuancePolicyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -9019,7 +9120,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.Builder
         getIssuancePolicyBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getIssuancePolicyFieldBuilder().getBuilder();
     }
@@ -9096,7 +9197,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the publishingOptions field is set.
      */
     public boolean hasPublishingOptions() {
-      return publishingOptionsBuilder_ != null || publishingOptions_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -9142,11 +9243,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         publishingOptions_ = value;
-        onChanged();
       } else {
         publishingOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -9166,11 +9267,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.Builder builderForValue) {
       if (publishingOptionsBuilder_ == null) {
         publishingOptions_ = builderForValue.build();
-        onChanged();
       } else {
         publishingOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -9189,20 +9290,20 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
     public Builder mergePublishingOptions(
         com.google.cloud.security.privateca.v1.CaPool.PublishingOptions value) {
       if (publishingOptionsBuilder_ == null) {
-        if (publishingOptions_ != null) {
-          publishingOptions_ =
-              com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.newBuilder(
-                      publishingOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && publishingOptions_ != null
+            && publishingOptions_
+                != com.google.cloud.security.privateca.v1.CaPool.PublishingOptions
+                    .getDefaultInstance()) {
+          getPublishingOptionsBuilder().mergeFrom(value);
         } else {
           publishingOptions_ = value;
         }
-        onChanged();
       } else {
         publishingOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -9219,14 +9320,13 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPublishingOptions() {
-      if (publishingOptionsBuilder_ == null) {
-        publishingOptions_ = null;
-        onChanged();
-      } else {
-        publishingOptions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      publishingOptions_ = null;
+      if (publishingOptionsBuilder_ != null) {
+        publishingOptionsBuilder_.dispose();
         publishingOptionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -9244,7 +9344,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.Builder
         getPublishingOptionsBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getPublishingOptionsFieldBuilder().getBuilder();
     }
@@ -9312,14 +9412,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return labels_;
     }
 
@@ -9371,8 +9471,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -9401,6 +9503,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -9423,6 +9526,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -9441,8 +9545,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -9456,6 +9560,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 

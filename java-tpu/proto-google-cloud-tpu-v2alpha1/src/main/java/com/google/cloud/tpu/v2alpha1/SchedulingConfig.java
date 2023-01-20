@@ -66,7 +66,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PREEMPTIBLE_FIELD_NUMBER = 1;
-  private boolean preemptible_;
+  private boolean preemptible_ = false;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int RESERVED_FIELD_NUMBER = 2;
-  private boolean reserved_;
+  private boolean reserved_ = false;
   /**
    *
    *
@@ -307,10 +307,9 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       preemptible_ = false;
-
       reserved_ = false;
-
       return this;
     }
 
@@ -338,10 +337,21 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.tpu.v2alpha1.SchedulingConfig buildPartial() {
       com.google.cloud.tpu.v2alpha1.SchedulingConfig result =
           new com.google.cloud.tpu.v2alpha1.SchedulingConfig(this);
-      result.preemptible_ = preemptible_;
-      result.reserved_ = reserved_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tpu.v2alpha1.SchedulingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.preemptible_ = preemptible_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.reserved_ = reserved_;
+      }
     }
 
     @java.lang.Override
@@ -424,13 +434,13 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 preemptible_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 reserved_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -449,6 +459,8 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean preemptible_;
     /**
@@ -481,6 +493,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     public Builder setPreemptible(boolean value) {
 
       preemptible_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -496,7 +509,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPreemptible() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       preemptible_ = false;
       onChanged();
       return this;
@@ -533,6 +546,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     public Builder setReserved(boolean value) {
 
       reserved_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -548,7 +562,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearReserved() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       reserved_ = false;
       onChanged();
       return this;

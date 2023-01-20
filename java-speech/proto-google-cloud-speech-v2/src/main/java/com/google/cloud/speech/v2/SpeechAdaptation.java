@@ -602,6 +602,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (inlinePhraseSetBuilder_ != null) {
           inlinePhraseSetBuilder_.clear();
         }
@@ -635,19 +636,26 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet buildPartial() {
         com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet result =
             new com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet(this);
-        if (valueCase_ == 1) {
-          result.value_ = value_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (valueCase_ == 2) {
-          if (inlinePhraseSetBuilder_ == null) {
-            result.value_ = value_;
-          } else {
-            result.value_ = inlinePhraseSetBuilder_.build();
-          }
-        }
-        result.valueCase_ = valueCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet result) {
+        result.valueCase_ = valueCase_;
+        result.value_ = this.value_;
+        if (valueCase_ == 2 && inlinePhraseSetBuilder_ != null) {
+          result.value_ = inlinePhraseSetBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -788,6 +796,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       /**
        *
@@ -1133,7 +1143,6 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         }
         valueCase_ = 2;
         onChanged();
-        ;
         return inlinePhraseSetBuilder_;
       }
 
@@ -1205,6 +1214,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PHRASE_SETS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet>
       phraseSets_;
   /**
@@ -1283,6 +1294,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CUSTOM_CLASSES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v2.CustomClass> customClasses_;
   /**
    *
@@ -1568,6 +1581,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (phraseSetsBuilder_ == null) {
         phraseSets_ = java.util.Collections.emptyList();
       } else {
@@ -1609,7 +1623,15 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.speech.v2.SpeechAdaptation buildPartial() {
       com.google.cloud.speech.v2.SpeechAdaptation result =
           new com.google.cloud.speech.v2.SpeechAdaptation(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.speech.v2.SpeechAdaptation result) {
       if (phraseSetsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           phraseSets_ = java.util.Collections.unmodifiableList(phraseSets_);
@@ -1628,8 +1650,10 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       } else {
         result.customClasses_ = customClassesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.SpeechAdaptation result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

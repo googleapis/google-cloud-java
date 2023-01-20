@@ -173,7 +173,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NUM_FINITE_BUCKETS_FIELD_NUMBER = 1;
-    private int numFiniteBuckets_;
+    private int numFiniteBuckets_ = 0;
     /**
      *
      *
@@ -193,7 +193,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int WIDTH_FIELD_NUMBER = 2;
-    private double width_;
+    private double width_ = 0D;
     /**
      *
      *
@@ -214,7 +214,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int OFFSET_FIELD_NUMBER = 3;
-    private double offset_;
+    private double offset_ = 0D;
     /**
      *
      *
@@ -459,12 +459,10 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         numFiniteBuckets_ = 0;
-
         width_ = 0D;
-
         offset_ = 0D;
-
         return this;
       }
 
@@ -493,11 +491,25 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       public com.google.api.servicecontrol.v1.Distribution.LinearBuckets buildPartial() {
         com.google.api.servicecontrol.v1.Distribution.LinearBuckets result =
             new com.google.api.servicecontrol.v1.Distribution.LinearBuckets(this);
-        result.numFiniteBuckets_ = numFiniteBuckets_;
-        result.width_ = width_;
-        result.offset_ = offset_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.api.servicecontrol.v1.Distribution.LinearBuckets result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.numFiniteBuckets_ = numFiniteBuckets_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.width_ = width_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.offset_ = offset_;
+        }
       }
 
       @java.lang.Override
@@ -587,19 +599,19 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   numFiniteBuckets_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 17:
                 {
                   width_ = input.readDouble();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 17
               case 25:
                 {
                   offset_ = input.readDouble();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 25
               default:
@@ -618,6 +630,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int numFiniteBuckets_;
       /**
@@ -654,6 +668,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       public Builder setNumFiniteBuckets(int value) {
 
         numFiniteBuckets_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -671,7 +686,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearNumFiniteBuckets() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         numFiniteBuckets_ = 0;
         onChanged();
         return this;
@@ -714,6 +729,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       public Builder setWidth(double value) {
 
         width_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -732,7 +748,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearWidth() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         width_ = 0D;
         onChanged();
         return this;
@@ -773,6 +789,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       public Builder setOffset(double value) {
 
         offset_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -790,7 +807,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearOffset() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         offset_ = 0D;
         onChanged();
         return this;
@@ -961,7 +978,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NUM_FINITE_BUCKETS_FIELD_NUMBER = 1;
-    private int numFiniteBuckets_;
+    private int numFiniteBuckets_ = 0;
     /**
      *
      *
@@ -981,7 +998,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GROWTH_FACTOR_FIELD_NUMBER = 2;
-    private double growthFactor_;
+    private double growthFactor_ = 0D;
     /**
      *
      *
@@ -1002,7 +1019,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SCALE_FIELD_NUMBER = 3;
-    private double scale_;
+    private double scale_ = 0D;
     /**
      *
      *
@@ -1250,12 +1267,10 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         numFiniteBuckets_ = 0;
-
         growthFactor_ = 0D;
-
         scale_ = 0D;
-
         return this;
       }
 
@@ -1285,11 +1300,25 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       public com.google.api.servicecontrol.v1.Distribution.ExponentialBuckets buildPartial() {
         com.google.api.servicecontrol.v1.Distribution.ExponentialBuckets result =
             new com.google.api.servicecontrol.v1.Distribution.ExponentialBuckets(this);
-        result.numFiniteBuckets_ = numFiniteBuckets_;
-        result.growthFactor_ = growthFactor_;
-        result.scale_ = scale_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.api.servicecontrol.v1.Distribution.ExponentialBuckets result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.numFiniteBuckets_ = numFiniteBuckets_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.growthFactor_ = growthFactor_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.scale_ = scale_;
+        }
       }
 
       @java.lang.Override
@@ -1381,19 +1410,19 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   numFiniteBuckets_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 17:
                 {
                   growthFactor_ = input.readDouble();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 17
               case 25:
                 {
                   scale_ = input.readDouble();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 25
               default:
@@ -1412,6 +1441,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int numFiniteBuckets_;
       /**
@@ -1448,6 +1479,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       public Builder setNumFiniteBuckets(int value) {
 
         numFiniteBuckets_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1465,7 +1497,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearNumFiniteBuckets() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         numFiniteBuckets_ = 0;
         onChanged();
         return this;
@@ -1508,6 +1540,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       public Builder setGrowthFactor(double value) {
 
         growthFactor_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1526,7 +1559,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearGrowthFactor() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         growthFactor_ = 0D;
         onChanged();
         return this;
@@ -1569,6 +1602,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       public Builder setScale(double value) {
 
         scale_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1587,7 +1621,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearScale() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         scale_ = 0D;
         onChanged();
         return this;
@@ -1789,6 +1823,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int BOUNDS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.DoubleList bounds_;
     /**
      *
@@ -2087,8 +2123,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         bounds_ = emptyDoubleList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -2117,14 +2153,26 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       public com.google.api.servicecontrol.v1.Distribution.ExplicitBuckets buildPartial() {
         com.google.api.servicecontrol.v1.Distribution.ExplicitBuckets result =
             new com.google.api.servicecontrol.v1.Distribution.ExplicitBuckets(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.api.servicecontrol.v1.Distribution.ExplicitBuckets result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           bounds_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.bounds_ = bounds_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.api.servicecontrol.v1.Distribution.ExplicitBuckets result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -2365,6 +2413,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setBounds(int index, double value) {
+
         ensureBoundsIsMutable();
         bounds_.setDouble(index, value);
         onChanged();
@@ -2395,6 +2444,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder addBounds(double value) {
+
         ensureBoundsIsMutable();
         bounds_.addDouble(value);
         onChanged();
@@ -2578,7 +2628,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COUNT_FIELD_NUMBER = 1;
-  private long count_;
+  private long count_ = 0L;
   /**
    *
    *
@@ -2596,7 +2646,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEAN_FIELD_NUMBER = 2;
-  private double mean_;
+  private double mean_ = 0D;
   /**
    *
    *
@@ -2615,7 +2665,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MINIMUM_FIELD_NUMBER = 3;
-  private double minimum_;
+  private double minimum_ = 0D;
   /**
    *
    *
@@ -2633,7 +2683,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAXIMUM_FIELD_NUMBER = 4;
-  private double maximum_;
+  private double maximum_ = 0D;
   /**
    *
    *
@@ -2651,7 +2701,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUM_OF_SQUARED_DEVIATION_FIELD_NUMBER = 5;
-  private double sumOfSquaredDeviation_;
+  private double sumOfSquaredDeviation_ = 0D;
   /**
    *
    *
@@ -2672,6 +2722,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BUCKET_COUNTS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList bucketCounts_;
   /**
    *
@@ -2904,6 +2956,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXEMPLARS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.Distribution.Exemplar> exemplars_;
   /**
    *
@@ -3320,18 +3374,13 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       count_ = 0L;
-
       mean_ = 0D;
-
       minimum_ = 0D;
-
       maximum_ = 0D;
-
       sumOfSquaredDeviation_ = 0D;
-
       bucketCounts_ = emptyLongList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       if (linearBucketsBuilder_ != null) {
         linearBucketsBuilder_.clear();
       }
@@ -3347,7 +3396,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
         exemplars_ = null;
         exemplarsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000200);
       bucketOptionCase_ = 0;
       bucketOption_ = null;
       return this;
@@ -3377,50 +3426,63 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.servicecontrol.v1.Distribution buildPartial() {
       com.google.api.servicecontrol.v1.Distribution result =
           new com.google.api.servicecontrol.v1.Distribution(this);
-      int from_bitField0_ = bitField0_;
-      result.count_ = count_;
-      result.mean_ = mean_;
-      result.minimum_ = minimum_;
-      result.maximum_ = maximum_;
-      result.sumOfSquaredDeviation_ = sumOfSquaredDeviation_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.api.servicecontrol.v1.Distribution result) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         bucketCounts_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.bucketCounts_ = bucketCounts_;
-      if (bucketOptionCase_ == 7) {
-        if (linearBucketsBuilder_ == null) {
-          result.bucketOption_ = bucketOption_;
-        } else {
-          result.bucketOption_ = linearBucketsBuilder_.build();
-        }
-      }
-      if (bucketOptionCase_ == 8) {
-        if (exponentialBucketsBuilder_ == null) {
-          result.bucketOption_ = bucketOption_;
-        } else {
-          result.bucketOption_ = exponentialBucketsBuilder_.build();
-        }
-      }
-      if (bucketOptionCase_ == 9) {
-        if (explicitBucketsBuilder_ == null) {
-          result.bucketOption_ = bucketOption_;
-        } else {
-          result.bucketOption_ = explicitBucketsBuilder_.build();
-        }
-      }
       if (exemplarsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           exemplars_ = java.util.Collections.unmodifiableList(exemplars_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.exemplars_ = exemplars_;
       } else {
         result.exemplars_ = exemplarsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.api.servicecontrol.v1.Distribution result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.count_ = count_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.mean_ = mean_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.minimum_ = minimum_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.maximum_ = maximum_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.sumOfSquaredDeviation_ = sumOfSquaredDeviation_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.api.servicecontrol.v1.Distribution result) {
       result.bucketOptionCase_ = bucketOptionCase_;
-      onBuilt();
-      return result;
+      result.bucketOption_ = this.bucketOption_;
+      if (bucketOptionCase_ == 7 && linearBucketsBuilder_ != null) {
+        result.bucketOption_ = linearBucketsBuilder_.build();
+      }
+      if (bucketOptionCase_ == 8 && exponentialBucketsBuilder_ != null) {
+        result.bucketOption_ = exponentialBucketsBuilder_.build();
+      }
+      if (bucketOptionCase_ == 9 && explicitBucketsBuilder_ != null) {
+        result.bucketOption_ = explicitBucketsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3486,7 +3548,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       if (!other.bucketCounts_.isEmpty()) {
         if (bucketCounts_.isEmpty()) {
           bucketCounts_ = other.bucketCounts_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureBucketCountsIsMutable();
           bucketCounts_.addAll(other.bucketCounts_);
@@ -3497,7 +3559,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
         if (!other.exemplars_.isEmpty()) {
           if (exemplars_.isEmpty()) {
             exemplars_ = other.exemplars_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureExemplarsIsMutable();
             exemplars_.addAll(other.exemplars_);
@@ -3510,7 +3572,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
             exemplarsBuilder_.dispose();
             exemplarsBuilder_ = null;
             exemplars_ = other.exemplars_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000200);
             exemplarsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getExemplarsFieldBuilder()
@@ -3570,31 +3632,31 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 count_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 17:
               {
                 mean_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             case 25:
               {
                 minimum_ = input.readDouble();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 25
             case 33:
               {
                 maximum_ = input.readDouble();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 33
             case 41:
               {
                 sumOfSquaredDeviation_ = input.readDouble();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 41
             case 48:
@@ -3711,6 +3773,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     public Builder setCount(long value) {
 
       count_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3726,7 +3789,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       count_ = 0L;
       onChanged();
       return this;
@@ -3765,6 +3828,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     public Builder setMean(double value) {
 
       mean_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3781,7 +3845,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMean() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       mean_ = 0D;
       onChanged();
       return this;
@@ -3818,6 +3882,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     public Builder setMinimum(double value) {
 
       minimum_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3833,7 +3898,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMinimum() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       minimum_ = 0D;
       onChanged();
       return this;
@@ -3870,6 +3935,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaximum(double value) {
 
       maximum_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3885,7 +3951,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaximum() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       maximum_ = 0D;
       onChanged();
       return this;
@@ -3928,6 +3994,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     public Builder setSumOfSquaredDeviation(double value) {
 
       sumOfSquaredDeviation_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3946,7 +4013,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSumOfSquaredDeviation() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       sumOfSquaredDeviation_ = 0D;
       onChanged();
       return this;
@@ -3955,9 +4022,9 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.Internal.LongList bucketCounts_ = emptyLongList();
 
     private void ensureBucketCountsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         bucketCounts_ = mutableCopy(bucketCounts_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -3980,7 +4047,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the bucketCounts.
      */
     public java.util.List<java.lang.Long> getBucketCountsList() {
-      return ((bitField0_ & 0x00000001) != 0)
+      return ((bitField0_ & 0x00000020) != 0)
           ? java.util.Collections.unmodifiableList(bucketCounts_)
           : bucketCounts_;
     }
@@ -4051,6 +4118,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBucketCounts(int index, long value) {
+
       ensureBucketCountsIsMutable();
       bucketCounts_.setLong(index, value);
       onChanged();
@@ -4077,6 +4145,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder addBucketCounts(long value) {
+
       ensureBucketCountsIsMutable();
       bucketCounts_.addLong(value);
       onChanged();
@@ -4129,7 +4198,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearBucketCounts() {
       bucketCounts_ = emptyLongList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -4347,7 +4416,6 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       }
       bucketOptionCase_ = 7;
       onChanged();
-      ;
       return linearBucketsBuilder_;
     }
 
@@ -4578,7 +4646,6 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       }
       bucketOptionCase_ = 8;
       onChanged();
-      ;
       return exponentialBucketsBuilder_;
     }
 
@@ -4795,7 +4862,6 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       }
       bucketOptionCase_ = 9;
       onChanged();
-      ;
       return explicitBucketsBuilder_;
     }
 
@@ -4803,9 +4869,9 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureExemplarsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         exemplars_ = new java.util.ArrayList<com.google.api.Distribution.Exemplar>(exemplars_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -5020,7 +5086,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     public Builder clearExemplars() {
       if (exemplarsBuilder_ == null) {
         exemplars_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         exemplarsBuilder_.clear();
@@ -5141,7 +5207,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
                 com.google.api.Distribution.Exemplar,
                 com.google.api.Distribution.Exemplar.Builder,
                 com.google.api.Distribution.ExemplarOrBuilder>(
-                exemplars_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                exemplars_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
         exemplars_ = null;
       }
       return exemplarsBuilder_;

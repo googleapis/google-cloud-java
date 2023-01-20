@@ -123,7 +123,6 @@ public interface PubsubTargetOrBuilder
    *
    * <code>map&lt;string, string&gt; attributes = 4;</code>
    */
-
   /* nullable */
   java.lang.String getAttributesOrDefault(
       java.lang.String key,

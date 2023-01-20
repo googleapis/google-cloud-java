@@ -69,7 +69,9 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SECRET_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object secretId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object secretId_ = "";
   /**
    *
    *
@@ -229,7 +233,9 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.secretmanager.v1.SecretOrBuilder getSecretOrBuilder() {
-    return getSecret();
+    return secret_ == null
+        ? com.google.cloud.secretmanager.v1.Secret.getDefaultInstance()
+        : secret_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -453,14 +459,12 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       secretId_ = "";
-
-      if (secretBuilder_ == null) {
-        secret_ = null;
-      } else {
-        secret_ = null;
+      secret_ = null;
+      if (secretBuilder_ != null) {
+        secretBuilder_.dispose();
         secretBuilder_ = null;
       }
       return this;
@@ -490,15 +494,24 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.secretmanager.v1.CreateSecretRequest buildPartial() {
       com.google.cloud.secretmanager.v1.CreateSecretRequest result =
           new com.google.cloud.secretmanager.v1.CreateSecretRequest(this);
-      result.parent_ = parent_;
-      result.secretId_ = secretId_;
-      if (secretBuilder_ == null) {
-        result.secret_ = secret_;
-      } else {
-        result.secret_ = secretBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.secretmanager.v1.CreateSecretRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.secretId_ = secretId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.secret_ = secretBuilder_ == null ? secret_ : secretBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -549,10 +562,12 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSecretId().isEmpty()) {
         secretId_ = other.secretId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSecret()) {
@@ -587,19 +602,19 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 secretId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getSecretFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -618,6 +633,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -689,8 +706,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -709,8 +726,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -734,8 +751,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -810,8 +827,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       secretId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -830,8 +847,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSecretId() {
-
       secretId_ = getDefaultInstance().getSecretId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -855,8 +872,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       secretId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -881,7 +898,7 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the secret field is set.
      */
     public boolean hasSecret() {
-      return secretBuilder_ != null || secret_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -922,11 +939,11 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         secret_ = value;
-        onChanged();
       } else {
         secretBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -943,11 +960,11 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
     public Builder setSecret(com.google.cloud.secretmanager.v1.Secret.Builder builderForValue) {
       if (secretBuilder_ == null) {
         secret_ = builderForValue.build();
-        onChanged();
       } else {
         secretBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -963,19 +980,18 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeSecret(com.google.cloud.secretmanager.v1.Secret value) {
       if (secretBuilder_ == null) {
-        if (secret_ != null) {
-          secret_ =
-              com.google.cloud.secretmanager.v1.Secret.newBuilder(secret_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && secret_ != null
+            && secret_ != com.google.cloud.secretmanager.v1.Secret.getDefaultInstance()) {
+          getSecretBuilder().mergeFrom(value);
         } else {
           secret_ = value;
         }
-        onChanged();
       } else {
         secretBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -990,14 +1006,13 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearSecret() {
-      if (secretBuilder_ == null) {
-        secret_ = null;
-        onChanged();
-      } else {
-        secret_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      secret_ = null;
+      if (secretBuilder_ != null) {
+        secretBuilder_.dispose();
         secretBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1012,7 +1027,7 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.secretmanager.v1.Secret.Builder getSecretBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSecretFieldBuilder().getBuilder();
     }

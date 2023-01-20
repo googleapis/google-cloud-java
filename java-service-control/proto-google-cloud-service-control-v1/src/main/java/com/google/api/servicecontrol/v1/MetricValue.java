@@ -145,6 +145,7 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -211,7 +212,10 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 1;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -297,7 +301,7 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 3;
@@ -349,7 +353,7 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int BOOL_VALUE_FIELD_NUMBER = 4;
@@ -917,17 +921,16 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableLabels().clear();
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       if (distributionValueBuilder_ != null) {
@@ -962,41 +965,34 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.servicecontrol.v1.MetricValue buildPartial() {
       com.google.api.servicecontrol.v1.MetricValue result =
           new com.google.api.servicecontrol.v1.MetricValue(this);
-      int from_bitField0_ = bitField0_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      if (valueCase_ == 4) {
-        result.value_ = value_;
-      }
-      if (valueCase_ == 5) {
-        result.value_ = value_;
-      }
-      if (valueCase_ == 6) {
-        result.value_ = value_;
-      }
-      if (valueCase_ == 7) {
-        result.value_ = value_;
-      }
-      if (valueCase_ == 8) {
-        if (distributionValueBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = distributionValueBuilder_.build();
-        }
-      }
-      result.valueCase_ = valueCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.api.servicecontrol.v1.MetricValue result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.api.servicecontrol.v1.MetricValue result) {
+      result.valueCase_ = valueCase_;
+      result.value_ = this.value_;
+      if (valueCase_ == 8 && distributionValueBuilder_ != null) {
+        result.value_ = distributionValueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1045,6 +1041,7 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.api.servicecontrol.v1.MetricValue other) {
       if (other == com.google.api.servicecontrol.v1.MetricValue.getDefaultInstance()) return this;
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000001;
       if (other.hasStartTime()) {
         mergeStartTime(other.getStartTime());
       }
@@ -1119,18 +1116,19 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
@@ -1209,14 +1207,14 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return labels_;
     }
 
@@ -1277,8 +1275,10 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 1;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1310,6 +1310,7 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -1335,6 +1336,7 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -1356,8 +1358,8 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1374,6 +1376,7 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -1399,7 +1402,7 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1442,11 +1445,11 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1465,11 +1468,11 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1487,17 +1490,18 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1514,14 +1518,13 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 2;</code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1538,7 +1541,7 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -1612,7 +1615,7 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1651,11 +1654,11 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1672,11 +1675,11 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1692,17 +1695,18 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1717,14 +1721,13 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1739,7 +1742,7 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -1833,6 +1836,7 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBoolValue(boolean value) {
+
       valueCase_ = 4;
       value_ = value;
       onChanged();
@@ -1902,6 +1906,7 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setInt64Value(long value) {
+
       valueCase_ = 5;
       value_ = value;
       onChanged();
@@ -1971,6 +1976,7 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDoubleValue(double value) {
+
       valueCase_ = 6;
       value_ = value;
       onChanged();
@@ -2336,7 +2342,6 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
       }
       valueCase_ = 8;
       onChanged();
-      ;
       return distributionValueBuilder_;
     }
 

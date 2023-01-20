@@ -69,7 +69,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AUDIO_ENCODING_FIELD_NUMBER = 1;
-  private int audioEncoding_;
+  private int audioEncoding_ = 0;
   /**
    *
    *
@@ -102,16 +102,15 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.texttospeech.v1beta1.AudioEncoding getAudioEncoding() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.texttospeech.v1beta1.AudioEncoding result =
-        com.google.cloud.texttospeech.v1beta1.AudioEncoding.valueOf(audioEncoding_);
+        com.google.cloud.texttospeech.v1beta1.AudioEncoding.forNumber(audioEncoding_);
     return result == null
         ? com.google.cloud.texttospeech.v1beta1.AudioEncoding.UNRECOGNIZED
         : result;
   }
 
   public static final int SPEAKING_RATE_FIELD_NUMBER = 2;
-  private double speakingRate_;
+  private double speakingRate_ = 0D;
   /**
    *
    *
@@ -134,7 +133,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PITCH_FIELD_NUMBER = 3;
-  private double pitch_;
+  private double pitch_ = 0D;
   /**
    *
    *
@@ -156,7 +155,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VOLUME_GAIN_DB_FIELD_NUMBER = 4;
-  private double volumeGainDb_;
+  private double volumeGainDb_ = 0D;
   /**
    *
    *
@@ -183,7 +182,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SAMPLE_RATE_HERTZ_FIELD_NUMBER = 5;
-  private int sampleRateHertz_;
+  private int sampleRateHertz_ = 0;
   /**
    *
    *
@@ -207,6 +206,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EFFECTS_PROFILE_ID_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList effectsProfileId_;
   /**
    *
@@ -559,18 +560,14 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       audioEncoding_ = 0;
-
       speakingRate_ = 0D;
-
       pitch_ = 0D;
-
       volumeGainDb_ = 0D;
-
       sampleRateHertz_ = 0;
-
       effectsProfileId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -598,19 +595,40 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.texttospeech.v1beta1.AudioConfig buildPartial() {
       com.google.cloud.texttospeech.v1beta1.AudioConfig result =
           new com.google.cloud.texttospeech.v1beta1.AudioConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.audioEncoding_ = audioEncoding_;
-      result.speakingRate_ = speakingRate_;
-      result.pitch_ = pitch_;
-      result.volumeGainDb_ = volumeGainDb_;
-      result.sampleRateHertz_ = sampleRateHertz_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        effectsProfileId_ = effectsProfileId_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.effectsProfileId_ = effectsProfileId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.texttospeech.v1beta1.AudioConfig result) {
+      if (((bitField0_ & 0x00000020) != 0)) {
+        effectsProfileId_ = effectsProfileId_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.effectsProfileId_ = effectsProfileId_;
+    }
+
+    private void buildPartial0(com.google.cloud.texttospeech.v1beta1.AudioConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.audioEncoding_ = audioEncoding_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.speakingRate_ = speakingRate_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pitch_ = pitch_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.volumeGainDb_ = volumeGainDb_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.sampleRateHertz_ = sampleRateHertz_;
+      }
     }
 
     @java.lang.Override
@@ -677,7 +695,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.effectsProfileId_.isEmpty()) {
         if (effectsProfileId_.isEmpty()) {
           effectsProfileId_ = other.effectsProfileId_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureEffectsProfileIdIsMutable();
           effectsProfileId_.addAll(other.effectsProfileId_);
@@ -713,31 +731,31 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 audioEncoding_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 17:
               {
                 speakingRate_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             case 25:
               {
                 pitch_ = input.readDouble();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 25
             case 33:
               {
                 volumeGainDb_ = input.readDouble();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 33
             case 40:
               {
                 sampleRateHertz_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
@@ -799,8 +817,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAudioEncodingValue(int value) {
-
       audioEncoding_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -819,9 +837,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.texttospeech.v1beta1.AudioEncoding getAudioEncoding() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.texttospeech.v1beta1.AudioEncoding result =
-          com.google.cloud.texttospeech.v1beta1.AudioEncoding.valueOf(audioEncoding_);
+          com.google.cloud.texttospeech.v1beta1.AudioEncoding.forNumber(audioEncoding_);
       return result == null
           ? com.google.cloud.texttospeech.v1beta1.AudioEncoding.UNRECOGNIZED
           : result;
@@ -844,7 +861,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       audioEncoding_ = value.getNumber();
       onChanged();
       return this;
@@ -863,7 +880,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAudioEncoding() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       audioEncoding_ = 0;
       onChanged();
       return this;
@@ -910,6 +927,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setSpeakingRate(double value) {
 
       speakingRate_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -930,7 +948,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSpeakingRate() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       speakingRate_ = 0D;
       onChanged();
       return this;
@@ -975,6 +993,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setPitch(double value) {
 
       pitch_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -994,7 +1013,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPitch() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       pitch_ = 0D;
       onChanged();
       return this;
@@ -1049,6 +1068,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setVolumeGainDb(double value) {
 
       volumeGainDb_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1073,7 +1093,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVolumeGainDb() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       volumeGainDb_ = 0D;
       onChanged();
       return this;
@@ -1122,6 +1142,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setSampleRateHertz(int value) {
 
       sampleRateHertz_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1143,7 +1164,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSampleRateHertz() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       sampleRateHertz_ = 0;
       onChanged();
       return this;
@@ -1153,9 +1174,9 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEffectsProfileIdIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         effectsProfileId_ = new com.google.protobuf.LazyStringArrayList(effectsProfileId_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -1346,7 +1367,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEffectsProfileId() {
       effectsProfileId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }

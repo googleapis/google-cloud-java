@@ -81,7 +81,9 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TOPIC_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object topicName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object topicName_ = "";
   /**
    *
    *
@@ -140,7 +142,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_FIELD_NUMBER = 3;
-  private com.google.protobuf.ByteString data_;
+  private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -172,6 +174,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> attributes_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetAttributes() {
@@ -235,8 +238,10 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; attributes = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getAttributesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAttributesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -510,10 +515,9 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       topicName_ = "";
-
       data_ = com.google.protobuf.ByteString.EMPTY;
-
       internalGetMutableAttributes().clear();
       return this;
     }
@@ -542,13 +546,25 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.scheduler.v1beta1.PubsubTarget buildPartial() {
       com.google.cloud.scheduler.v1beta1.PubsubTarget result =
           new com.google.cloud.scheduler.v1beta1.PubsubTarget(this);
-      int from_bitField0_ = bitField0_;
-      result.topicName_ = topicName_;
-      result.data_ = data_;
-      result.attributes_ = internalGetAttributes();
-      result.attributes_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.scheduler.v1beta1.PubsubTarget result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.topicName_ = topicName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.data_ = data_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.attributes_ = internalGetAttributes();
+        result.attributes_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -599,12 +615,14 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getTopicName().isEmpty()) {
         topicName_ = other.topicName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
         setData(other.getData());
       }
       internalGetMutableAttributes().mergeFrom(other.internalGetAttributes());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -634,13 +652,13 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 topicName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 data_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
@@ -652,6 +670,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAttributes()
                     .getMutableMap()
                     .put(attributes__.getKey(), attributes__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -749,8 +768,8 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       topicName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -771,8 +790,8 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTopicName() {
-
       topicName_ = getDefaultInstance().getTopicName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -798,8 +817,8 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       topicName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -840,8 +859,8 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       data_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -859,7 +878,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearData() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       data_ = getDefaultInstance().getData();
       onChanged();
       return this;
@@ -878,8 +897,6 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAttributes() {
-      onChanged();
-      ;
       if (attributes_ == null) {
         attributes_ =
             com.google.protobuf.MapField.newMapField(AttributesDefaultEntryHolder.defaultEntry);
@@ -887,6 +904,8 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
       if (!attributes_.isMutable()) {
         attributes_ = attributes_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return attributes_;
     }
 
@@ -944,8 +963,10 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; attributes = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getAttributesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAttributesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -976,6 +997,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAttributes() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableAttributes().getMutableMap().clear();
       return this;
     }
@@ -1000,6 +1022,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAttributes() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableAttributes().getMutableMap();
     }
     /**
@@ -1020,8 +1043,8 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAttributes().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1037,6 +1060,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllAttributes(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAttributes().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 

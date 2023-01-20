@@ -68,7 +68,9 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int EMAIL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object email_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object email_ = "";
   /**
    *
    *
@@ -312,8 +314,8 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       email_ = "";
-
       return this;
     }
 
@@ -341,9 +343,18 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.tpu.v2.ServiceIdentity buildPartial() {
       com.google.cloud.tpu.v2.ServiceIdentity result =
           new com.google.cloud.tpu.v2.ServiceIdentity(this);
-      result.email_ = email_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tpu.v2.ServiceIdentity result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.email_ = email_;
+      }
     }
 
     @java.lang.Override
@@ -393,6 +404,7 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.tpu.v2.ServiceIdentity.getDefaultInstance()) return this;
       if (!other.getEmail().isEmpty()) {
         email_ = other.email_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -424,7 +436,7 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 email_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -443,6 +455,8 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object email_ = "";
     /**
@@ -505,8 +519,8 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       email_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -522,8 +536,8 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearEmail() {
-
       email_ = getDefaultInstance().getEmail();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -544,8 +558,8 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       email_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

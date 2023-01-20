@@ -68,6 +68,8 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRACES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.cloudtrace.v1.Trace> traces_;
   /**
    *
@@ -334,6 +336,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (tracesBuilder_ == null) {
         traces_ = java.util.Collections.emptyList();
       } else {
@@ -368,7 +371,15 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.cloudtrace.v1.Traces buildPartial() {
       com.google.devtools.cloudtrace.v1.Traces result =
           new com.google.devtools.cloudtrace.v1.Traces(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.devtools.cloudtrace.v1.Traces result) {
       if (tracesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           traces_ = java.util.Collections.unmodifiableList(traces_);
@@ -378,8 +389,10 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.traces_ = tracesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.devtools.cloudtrace.v1.Traces result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -69,7 +69,9 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -183,7 +185,9 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder() {
-    return getScheduleTime();
+    return scheduleTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : scheduleTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -399,12 +403,11 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (scheduleTimeBuilder_ == null) {
-        scheduleTime_ = null;
-      } else {
-        scheduleTime_ = null;
+      scheduleTime_ = null;
+      if (scheduleTimeBuilder_ != null) {
+        scheduleTimeBuilder_.dispose();
         scheduleTimeBuilder_ = null;
       }
       return this;
@@ -434,14 +437,22 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.tasks.v2beta2.AcknowledgeTaskRequest buildPartial() {
       com.google.cloud.tasks.v2beta2.AcknowledgeTaskRequest result =
           new com.google.cloud.tasks.v2beta2.AcknowledgeTaskRequest(this);
-      result.name_ = name_;
-      if (scheduleTimeBuilder_ == null) {
-        result.scheduleTime_ = scheduleTime_;
-      } else {
-        result.scheduleTime_ = scheduleTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tasks.v2beta2.AcknowledgeTaskRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.scheduleTime_ =
+            scheduleTimeBuilder_ == null ? scheduleTime_ : scheduleTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -492,6 +503,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasScheduleTime()) {
@@ -526,13 +538,13 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getScheduleTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -551,6 +563,8 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -622,8 +636,8 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -642,8 +656,8 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -667,8 +681,8 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -696,7 +710,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      * @return Whether the scheduleTime field is set.
      */
     public boolean hasScheduleTime() {
-      return scheduleTimeBuilder_ != null || scheduleTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -743,11 +757,11 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         scheduleTime_ = value;
-        onChanged();
       } else {
         scheduleTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -767,11 +781,11 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
     public Builder setScheduleTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (scheduleTimeBuilder_ == null) {
         scheduleTime_ = builderForValue.build();
-        onChanged();
       } else {
         scheduleTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -790,19 +804,18 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeScheduleTime(com.google.protobuf.Timestamp value) {
       if (scheduleTimeBuilder_ == null) {
-        if (scheduleTime_ != null) {
-          scheduleTime_ =
-              com.google.protobuf.Timestamp.newBuilder(scheduleTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && scheduleTime_ != null
+            && scheduleTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getScheduleTimeBuilder().mergeFrom(value);
         } else {
           scheduleTime_ = value;
         }
-        onChanged();
       } else {
         scheduleTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -820,14 +833,13 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearScheduleTime() {
-      if (scheduleTimeBuilder_ == null) {
-        scheduleTime_ = null;
-        onChanged();
-      } else {
-        scheduleTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      scheduleTime_ = null;
+      if (scheduleTimeBuilder_ != null) {
+        scheduleTimeBuilder_.dispose();
         scheduleTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -845,7 +857,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getScheduleTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getScheduleTimeFieldBuilder().getBuilder();
     }

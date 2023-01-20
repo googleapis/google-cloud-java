@@ -69,6 +69,8 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ALTERNATIVES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.SpeechRecognitionAlternative>
       alternatives_;
   /**
@@ -168,7 +170,9 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -429,6 +433,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (alternativesBuilder_ == null) {
         alternatives_ = java.util.Collections.emptyList();
       } else {
@@ -437,7 +442,6 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       languageCode_ = "";
-
       return this;
     }
 
@@ -465,7 +469,16 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
     public com.google.cloud.videointelligence.v1.SpeechTranscription buildPartial() {
       com.google.cloud.videointelligence.v1.SpeechTranscription result =
           new com.google.cloud.videointelligence.v1.SpeechTranscription(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.videointelligence.v1.SpeechTranscription result) {
       if (alternativesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           alternatives_ = java.util.Collections.unmodifiableList(alternatives_);
@@ -475,9 +488,13 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       } else {
         result.alternatives_ = alternativesBuilder_.build();
       }
-      result.languageCode_ = languageCode_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.videointelligence.v1.SpeechTranscription result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
     }
 
     @java.lang.Override
@@ -555,6 +572,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -600,7 +618,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
             case 18:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1154,8 +1172,8 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1173,8 +1191,8 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1197,8 +1215,8 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

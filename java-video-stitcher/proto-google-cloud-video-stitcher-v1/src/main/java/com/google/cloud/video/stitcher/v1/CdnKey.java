@@ -274,7 +274,9 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -327,7 +329,9 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HOSTNAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object hostname_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object hostname_ = "";
   /**
    *
    *
@@ -637,6 +641,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (googleCdnKeyBuilder_ != null) {
         googleCdnKeyBuilder_.clear();
       }
@@ -647,9 +652,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
         mediaCdnKeyBuilder_.clear();
       }
       name_ = "";
-
       hostname_ = "";
-
       cdnKeyConfigCase_ = 0;
       cdnKeyConfig_ = null;
       return this;
@@ -679,32 +682,36 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.stitcher.v1.CdnKey buildPartial() {
       com.google.cloud.video.stitcher.v1.CdnKey result =
           new com.google.cloud.video.stitcher.v1.CdnKey(this);
-      if (cdnKeyConfigCase_ == 5) {
-        if (googleCdnKeyBuilder_ == null) {
-          result.cdnKeyConfig_ = cdnKeyConfig_;
-        } else {
-          result.cdnKeyConfig_ = googleCdnKeyBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (cdnKeyConfigCase_ == 6) {
-        if (akamaiCdnKeyBuilder_ == null) {
-          result.cdnKeyConfig_ = cdnKeyConfig_;
-        } else {
-          result.cdnKeyConfig_ = akamaiCdnKeyBuilder_.build();
-        }
-      }
-      if (cdnKeyConfigCase_ == 8) {
-        if (mediaCdnKeyBuilder_ == null) {
-          result.cdnKeyConfig_ = cdnKeyConfig_;
-        } else {
-          result.cdnKeyConfig_ = mediaCdnKeyBuilder_.build();
-        }
-      }
-      result.name_ = name_;
-      result.hostname_ = hostname_;
-      result.cdnKeyConfigCase_ = cdnKeyConfigCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.CdnKey result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.hostname_ = hostname_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.video.stitcher.v1.CdnKey result) {
+      result.cdnKeyConfigCase_ = cdnKeyConfigCase_;
+      result.cdnKeyConfig_ = this.cdnKeyConfig_;
+      if (cdnKeyConfigCase_ == 5 && googleCdnKeyBuilder_ != null) {
+        result.cdnKeyConfig_ = googleCdnKeyBuilder_.build();
+      }
+      if (cdnKeyConfigCase_ == 6 && akamaiCdnKeyBuilder_ != null) {
+        result.cdnKeyConfig_ = akamaiCdnKeyBuilder_.build();
+      }
+      if (cdnKeyConfigCase_ == 8 && mediaCdnKeyBuilder_ != null) {
+        result.cdnKeyConfig_ = mediaCdnKeyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -754,10 +761,12 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.video.stitcher.v1.CdnKey.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getHostname().isEmpty()) {
         hostname_ = other.hostname_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       switch (other.getCdnKeyConfigCase()) {
@@ -810,13 +819,13 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 34:
               {
                 hostname_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
@@ -867,6 +876,8 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.video.stitcher.v1.GoogleCdnKey,
@@ -1075,7 +1086,6 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       }
       cdnKeyConfigCase_ = 5;
       onChanged();
-      ;
       return googleCdnKeyBuilder_;
     }
 
@@ -1286,7 +1296,6 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       }
       cdnKeyConfigCase_ = 6;
       onChanged();
-      ;
       return akamaiCdnKeyBuilder_;
     }
 
@@ -1497,7 +1506,6 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       }
       cdnKeyConfigCase_ = 8;
       onChanged();
-      ;
       return mediaCdnKeyBuilder_;
     }
 
@@ -1568,8 +1576,8 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1587,8 +1595,8 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1611,8 +1619,8 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1678,8 +1686,8 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       hostname_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1695,8 +1703,8 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHostname() {
-
       hostname_ = getDefaultInstance().getHostname();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1717,8 +1725,8 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       hostname_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

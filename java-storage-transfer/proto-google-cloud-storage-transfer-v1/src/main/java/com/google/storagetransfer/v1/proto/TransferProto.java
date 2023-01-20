@@ -113,7 +113,9 @@ public final class TransferProto {
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object projectId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object projectId_ = "";
     /**
      *
      *
@@ -375,8 +377,8 @@ public final class TransferProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         projectId_ = "";
-
         return this;
       }
 
@@ -410,9 +412,19 @@ public final class TransferProto {
         com.google.storagetransfer.v1.proto.TransferProto.GetGoogleServiceAccountRequest result =
             new com.google.storagetransfer.v1.proto.TransferProto.GetGoogleServiceAccountRequest(
                 this);
-        result.projectId_ = projectId_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferProto.GetGoogleServiceAccountRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.projectId_ = projectId_;
+        }
       }
 
       @java.lang.Override
@@ -471,6 +483,7 @@ public final class TransferProto {
                 .getDefaultInstance()) return this;
         if (!other.getProjectId().isEmpty()) {
           projectId_ = other.projectId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -502,7 +515,7 @@ public final class TransferProto {
               case 10:
                 {
                   projectId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -521,6 +534,8 @@ public final class TransferProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object projectId_ = "";
       /**
@@ -586,8 +601,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         projectId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -604,8 +619,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
-
         projectId_ = getDefaultInstance().getProjectId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -627,8 +642,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         projectId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -849,7 +864,9 @@ public final class TransferProto {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.TransferJobOrBuilder
         getTransferJobOrBuilder() {
-      return getTransferJob();
+      return transferJob_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.TransferJob.getDefaultInstance()
+          : transferJob_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1066,10 +1083,10 @@ public final class TransferProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (transferJobBuilder_ == null) {
-          transferJob_ = null;
-        } else {
-          transferJob_ = null;
+        bitField0_ = 0;
+        transferJob_ = null;
+        if (transferJobBuilder_ != null) {
+          transferJobBuilder_.dispose();
           transferJobBuilder_ = null;
         }
         return this;
@@ -1103,13 +1120,20 @@ public final class TransferProto {
           buildPartial() {
         com.google.storagetransfer.v1.proto.TransferProto.CreateTransferJobRequest result =
             new com.google.storagetransfer.v1.proto.TransferProto.CreateTransferJobRequest(this);
-        if (transferJobBuilder_ == null) {
-          result.transferJob_ = transferJob_;
-        } else {
-          result.transferJob_ = transferJobBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferProto.CreateTransferJobRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.transferJob_ =
+              transferJobBuilder_ == null ? transferJob_ : transferJobBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1196,7 +1220,7 @@ public final class TransferProto {
               case 10:
                 {
                   input.readMessage(getTransferJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1215,6 +1239,8 @@ public final class TransferProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.storagetransfer.v1.proto.TransferTypes.TransferJob transferJob_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1236,7 +1262,7 @@ public final class TransferProto {
        * @return Whether the transferJob field is set.
        */
       public boolean hasTransferJob() {
-        return transferJobBuilder_ != null || transferJob_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1278,11 +1304,11 @@ public final class TransferProto {
             throw new NullPointerException();
           }
           transferJob_ = value;
-          onChanged();
         } else {
           transferJobBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1300,11 +1326,11 @@ public final class TransferProto {
           com.google.storagetransfer.v1.proto.TransferTypes.TransferJob.Builder builderForValue) {
         if (transferJobBuilder_ == null) {
           transferJob_ = builderForValue.build();
-          onChanged();
         } else {
           transferJobBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1321,20 +1347,20 @@ public final class TransferProto {
       public Builder mergeTransferJob(
           com.google.storagetransfer.v1.proto.TransferTypes.TransferJob value) {
         if (transferJobBuilder_ == null) {
-          if (transferJob_ != null) {
-            transferJob_ =
-                com.google.storagetransfer.v1.proto.TransferTypes.TransferJob.newBuilder(
-                        transferJob_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && transferJob_ != null
+              && transferJob_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.TransferJob
+                      .getDefaultInstance()) {
+            getTransferJobBuilder().mergeFrom(value);
           } else {
             transferJob_ = value;
           }
-          onChanged();
         } else {
           transferJobBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1349,14 +1375,13 @@ public final class TransferProto {
        * </code>
        */
       public Builder clearTransferJob() {
-        if (transferJobBuilder_ == null) {
-          transferJob_ = null;
-          onChanged();
-        } else {
-          transferJob_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        transferJob_ = null;
+        if (transferJobBuilder_ != null) {
+          transferJobBuilder_.dispose();
           transferJobBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1372,7 +1397,7 @@ public final class TransferProto {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferJob.Builder
           getTransferJobBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getTransferJobFieldBuilder().getBuilder();
       }
@@ -1733,7 +1758,9 @@ public final class TransferProto {
     }
 
     public static final int JOB_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object jobName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object jobName_ = "";
     /**
      *
      *
@@ -1782,7 +1809,9 @@ public final class TransferProto {
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object projectId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object projectId_ = "";
     /**
      *
      *
@@ -1911,7 +1940,9 @@ public final class TransferProto {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.TransferJobOrBuilder
         getTransferJobOrBuilder() {
-      return getTransferJob();
+      return transferJob_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.TransferJob.getDefaultInstance()
+          : transferJob_;
     }
 
     public static final int UPDATE_TRANSFER_JOB_FIELD_MASK_FIELD_NUMBER = 4;
@@ -1986,7 +2017,9 @@ public final class TransferProto {
      */
     @java.lang.Override
     public com.google.protobuf.FieldMaskOrBuilder getUpdateTransferJobFieldMaskOrBuilder() {
-      return getUpdateTransferJobFieldMask();
+      return updateTransferJobFieldMask_ == null
+          ? com.google.protobuf.FieldMask.getDefaultInstance()
+          : updateTransferJobFieldMask_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2238,20 +2271,17 @@ public final class TransferProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         jobName_ = "";
-
         projectId_ = "";
-
-        if (transferJobBuilder_ == null) {
-          transferJob_ = null;
-        } else {
-          transferJob_ = null;
+        transferJob_ = null;
+        if (transferJobBuilder_ != null) {
+          transferJobBuilder_.dispose();
           transferJobBuilder_ = null;
         }
-        if (updateTransferJobFieldMaskBuilder_ == null) {
-          updateTransferJobFieldMask_ = null;
-        } else {
-          updateTransferJobFieldMask_ = null;
+        updateTransferJobFieldMask_ = null;
+        if (updateTransferJobFieldMaskBuilder_ != null) {
+          updateTransferJobFieldMaskBuilder_.dispose();
           updateTransferJobFieldMaskBuilder_ = null;
         }
         return this;
@@ -2285,20 +2315,32 @@ public final class TransferProto {
           buildPartial() {
         com.google.storagetransfer.v1.proto.TransferProto.UpdateTransferJobRequest result =
             new com.google.storagetransfer.v1.proto.TransferProto.UpdateTransferJobRequest(this);
-        result.jobName_ = jobName_;
-        result.projectId_ = projectId_;
-        if (transferJobBuilder_ == null) {
-          result.transferJob_ = transferJob_;
-        } else {
-          result.transferJob_ = transferJobBuilder_.build();
-        }
-        if (updateTransferJobFieldMaskBuilder_ == null) {
-          result.updateTransferJobFieldMask_ = updateTransferJobFieldMask_;
-        } else {
-          result.updateTransferJobFieldMask_ = updateTransferJobFieldMaskBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferProto.UpdateTransferJobRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.jobName_ = jobName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.projectId_ = projectId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.transferJob_ =
+              transferJobBuilder_ == null ? transferJob_ : transferJobBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.updateTransferJobFieldMask_ =
+              updateTransferJobFieldMaskBuilder_ == null
+                  ? updateTransferJobFieldMask_
+                  : updateTransferJobFieldMaskBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -2355,10 +2397,12 @@ public final class TransferProto {
                 .getDefaultInstance()) return this;
         if (!other.getJobName().isEmpty()) {
           jobName_ = other.jobName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getProjectId().isEmpty()) {
           projectId_ = other.projectId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasTransferJob()) {
@@ -2396,26 +2440,26 @@ public final class TransferProto {
               case 10:
                 {
                   jobName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   projectId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getTransferJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   input.readMessage(
                       getUpdateTransferJobFieldMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               default:
@@ -2434,6 +2478,8 @@ public final class TransferProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object jobName_ = "";
       /**
@@ -2496,8 +2542,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         jobName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2513,8 +2559,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearJobName() {
-
         jobName_ = getDefaultInstance().getJobName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2535,8 +2581,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         jobName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2605,8 +2651,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         projectId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2623,8 +2669,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
-
         projectId_ = getDefaultInstance().getProjectId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2646,8 +2692,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         projectId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2681,7 +2727,7 @@ public final class TransferProto {
        * @return Whether the transferJob field is set.
        */
       public boolean hasTransferJob() {
-        return transferJobBuilder_ != null || transferJob_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -2741,11 +2787,11 @@ public final class TransferProto {
             throw new NullPointerException();
           }
           transferJob_ = value;
-          onChanged();
         } else {
           transferJobBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2772,11 +2818,11 @@ public final class TransferProto {
           com.google.storagetransfer.v1.proto.TransferTypes.TransferJob.Builder builderForValue) {
         if (transferJobBuilder_ == null) {
           transferJob_ = builderForValue.build();
-          onChanged();
         } else {
           transferJobBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2802,20 +2848,20 @@ public final class TransferProto {
       public Builder mergeTransferJob(
           com.google.storagetransfer.v1.proto.TransferTypes.TransferJob value) {
         if (transferJobBuilder_ == null) {
-          if (transferJob_ != null) {
-            transferJob_ =
-                com.google.storagetransfer.v1.proto.TransferTypes.TransferJob.newBuilder(
-                        transferJob_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && transferJob_ != null
+              && transferJob_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.TransferJob
+                      .getDefaultInstance()) {
+            getTransferJobBuilder().mergeFrom(value);
           } else {
             transferJob_ = value;
           }
-          onChanged();
         } else {
           transferJobBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2839,14 +2885,13 @@ public final class TransferProto {
        * </code>
        */
       public Builder clearTransferJob() {
-        if (transferJobBuilder_ == null) {
-          transferJob_ = null;
-          onChanged();
-        } else {
-          transferJob_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        transferJob_ = null;
+        if (transferJobBuilder_ != null) {
+          transferJobBuilder_.dispose();
           transferJobBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2871,7 +2916,7 @@ public final class TransferProto {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferJob.Builder
           getTransferJobBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getTransferJobFieldBuilder().getBuilder();
       }
@@ -2969,7 +3014,7 @@ public final class TransferProto {
        * @return Whether the updateTransferJobFieldMask field is set.
        */
       public boolean hasUpdateTransferJobFieldMask() {
-        return updateTransferJobFieldMaskBuilder_ != null || updateTransferJobFieldMask_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -3024,11 +3069,11 @@ public final class TransferProto {
             throw new NullPointerException();
           }
           updateTransferJobFieldMask_ = value;
-          onChanged();
         } else {
           updateTransferJobFieldMaskBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -3053,11 +3098,11 @@ public final class TransferProto {
           com.google.protobuf.FieldMask.Builder builderForValue) {
         if (updateTransferJobFieldMaskBuilder_ == null) {
           updateTransferJobFieldMask_ = builderForValue.build();
-          onChanged();
         } else {
           updateTransferJobFieldMaskBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -3080,19 +3125,19 @@ public final class TransferProto {
        */
       public Builder mergeUpdateTransferJobFieldMask(com.google.protobuf.FieldMask value) {
         if (updateTransferJobFieldMaskBuilder_ == null) {
-          if (updateTransferJobFieldMask_ != null) {
-            updateTransferJobFieldMask_ =
-                com.google.protobuf.FieldMask.newBuilder(updateTransferJobFieldMask_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && updateTransferJobFieldMask_ != null
+              && updateTransferJobFieldMask_
+                  != com.google.protobuf.FieldMask.getDefaultInstance()) {
+            getUpdateTransferJobFieldMaskBuilder().mergeFrom(value);
           } else {
             updateTransferJobFieldMask_ = value;
           }
-          onChanged();
         } else {
           updateTransferJobFieldMaskBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -3114,14 +3159,13 @@ public final class TransferProto {
        * <code>.google.protobuf.FieldMask update_transfer_job_field_mask = 4;</code>
        */
       public Builder clearUpdateTransferJobFieldMask() {
-        if (updateTransferJobFieldMaskBuilder_ == null) {
-          updateTransferJobFieldMask_ = null;
-          onChanged();
-        } else {
-          updateTransferJobFieldMask_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        updateTransferJobFieldMask_ = null;
+        if (updateTransferJobFieldMaskBuilder_ != null) {
+          updateTransferJobFieldMaskBuilder_.dispose();
           updateTransferJobFieldMaskBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3143,7 +3187,7 @@ public final class TransferProto {
        * <code>.google.protobuf.FieldMask update_transfer_job_field_mask = 4;</code>
        */
       public com.google.protobuf.FieldMask.Builder getUpdateTransferJobFieldMaskBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getUpdateTransferJobFieldMaskFieldBuilder().getBuilder();
       }
@@ -3386,7 +3430,9 @@ public final class TransferProto {
     }
 
     public static final int JOB_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object jobName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object jobName_ = "";
     /**
      *
      *
@@ -3435,7 +3481,9 @@ public final class TransferProto {
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object projectId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object projectId_ = "";
     /**
      *
      *
@@ -3698,10 +3746,9 @@ public final class TransferProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         jobName_ = "";
-
         projectId_ = "";
-
         return this;
       }
 
@@ -3733,10 +3780,22 @@ public final class TransferProto {
           buildPartial() {
         com.google.storagetransfer.v1.proto.TransferProto.GetTransferJobRequest result =
             new com.google.storagetransfer.v1.proto.TransferProto.GetTransferJobRequest(this);
-        result.jobName_ = jobName_;
-        result.projectId_ = projectId_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferProto.GetTransferJobRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.jobName_ = jobName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.projectId_ = projectId_;
+        }
       }
 
       @java.lang.Override
@@ -3793,10 +3852,12 @@ public final class TransferProto {
                 .getDefaultInstance()) return this;
         if (!other.getJobName().isEmpty()) {
           jobName_ = other.jobName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getProjectId().isEmpty()) {
           projectId_ = other.projectId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -3828,13 +3889,13 @@ public final class TransferProto {
               case 10:
                 {
                   jobName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   projectId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -3853,6 +3914,8 @@ public final class TransferProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object jobName_ = "";
       /**
@@ -3915,8 +3978,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         jobName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3932,8 +3995,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearJobName() {
-
         jobName_ = getDefaultInstance().getJobName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -3954,8 +4017,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         jobName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4024,8 +4087,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         projectId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4042,8 +4105,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
-
         projectId_ = getDefaultInstance().getProjectId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -4065,8 +4128,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         projectId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4248,7 +4311,9 @@ public final class TransferProto {
     }
 
     public static final int JOB_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object jobName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object jobName_ = "";
     /**
      *
      *
@@ -4297,7 +4362,9 @@ public final class TransferProto {
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object projectId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object projectId_ = "";
     /**
      *
      *
@@ -4565,10 +4632,9 @@ public final class TransferProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         jobName_ = "";
-
         projectId_ = "";
-
         return this;
       }
 
@@ -4600,10 +4666,22 @@ public final class TransferProto {
           buildPartial() {
         com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest result =
             new com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest(this);
-        result.jobName_ = jobName_;
-        result.projectId_ = projectId_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.jobName_ = jobName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.projectId_ = projectId_;
+        }
       }
 
       @java.lang.Override
@@ -4660,10 +4738,12 @@ public final class TransferProto {
                 .getDefaultInstance()) return this;
         if (!other.getJobName().isEmpty()) {
           jobName_ = other.jobName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getProjectId().isEmpty()) {
           projectId_ = other.projectId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -4695,13 +4775,13 @@ public final class TransferProto {
               case 10:
                 {
                   jobName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   projectId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -4720,6 +4800,8 @@ public final class TransferProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object jobName_ = "";
       /**
@@ -4782,8 +4864,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         jobName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4799,8 +4881,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearJobName() {
-
         jobName_ = getDefaultInstance().getJobName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -4821,8 +4903,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         jobName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4891,8 +4973,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         projectId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4909,8 +4991,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
-
         projectId_ = getDefaultInstance().getProjectId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -4932,8 +5014,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         projectId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5147,7 +5229,9 @@ public final class TransferProto {
     }
 
     public static final int FILTER_FIELD_NUMBER = 1;
-    private volatile java.lang.Object filter_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object filter_ = "";
     /**
      *
      *
@@ -5216,7 +5300,7 @@ public final class TransferProto {
     }
 
     public static final int PAGE_SIZE_FIELD_NUMBER = 4;
-    private int pageSize_;
+    private int pageSize_ = 0;
     /**
      *
      *
@@ -5234,7 +5318,9 @@ public final class TransferProto {
     }
 
     public static final int PAGE_TOKEN_FIELD_NUMBER = 5;
-    private volatile java.lang.Object pageToken_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pageToken_ = "";
     /**
      *
      *
@@ -5510,12 +5596,10 @@ public final class TransferProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         filter_ = "";
-
         pageSize_ = 0;
-
         pageToken_ = "";
-
         return this;
       }
 
@@ -5547,11 +5631,25 @@ public final class TransferProto {
           buildPartial() {
         com.google.storagetransfer.v1.proto.TransferProto.ListTransferJobsRequest result =
             new com.google.storagetransfer.v1.proto.TransferProto.ListTransferJobsRequest(this);
-        result.filter_ = filter_;
-        result.pageSize_ = pageSize_;
-        result.pageToken_ = pageToken_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferProto.ListTransferJobsRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.filter_ = filter_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.pageSize_ = pageSize_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.pageToken_ = pageToken_;
+        }
       }
 
       @java.lang.Override
@@ -5608,6 +5706,7 @@ public final class TransferProto {
                 .getDefaultInstance()) return this;
         if (!other.getFilter().isEmpty()) {
           filter_ = other.filter_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getPageSize() != 0) {
@@ -5615,6 +5714,7 @@ public final class TransferProto {
         }
         if (!other.getPageToken().isEmpty()) {
           pageToken_ = other.pageToken_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -5646,19 +5746,19 @@ public final class TransferProto {
               case 10:
                 {
                   filter_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 32:
                 {
                   pageSize_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 32
               case 42:
                 {
                   pageToken_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 42
               default:
@@ -5677,6 +5777,8 @@ public final class TransferProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object filter_ = "";
       /**
@@ -5769,8 +5871,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         filter_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5796,8 +5898,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearFilter() {
-
         filter_ = getDefaultInstance().getFilter();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -5828,8 +5930,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         filter_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5865,6 +5967,7 @@ public final class TransferProto {
       public Builder setPageSize(int value) {
 
         pageSize_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5880,7 +5983,7 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearPageSize() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         pageSize_ = 0;
         onChanged();
         return this;
@@ -5947,8 +6050,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         pageToken_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5964,8 +6067,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearPageToken() {
-
         pageToken_ = getDefaultInstance().getPageToken();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -5986,8 +6089,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         pageToken_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -6196,6 +6299,8 @@ public final class TransferProto {
     }
 
     public static final int TRANSFER_JOBS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.storagetransfer.v1.proto.TransferTypes.TransferJob>
         transferJobs_;
     /**
@@ -6270,7 +6375,9 @@ public final class TransferProto {
     }
 
     public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-    private volatile java.lang.Object nextPageToken_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object nextPageToken_ = "";
     /**
      *
      *
@@ -6538,6 +6645,7 @@ public final class TransferProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (transferJobsBuilder_ == null) {
           transferJobs_ = java.util.Collections.emptyList();
         } else {
@@ -6546,7 +6654,6 @@ public final class TransferProto {
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         nextPageToken_ = "";
-
         return this;
       }
 
@@ -6578,7 +6685,16 @@ public final class TransferProto {
           buildPartial() {
         com.google.storagetransfer.v1.proto.TransferProto.ListTransferJobsResponse result =
             new com.google.storagetransfer.v1.proto.TransferProto.ListTransferJobsResponse(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.storagetransfer.v1.proto.TransferProto.ListTransferJobsResponse result) {
         if (transferJobsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             transferJobs_ = java.util.Collections.unmodifiableList(transferJobs_);
@@ -6588,9 +6704,14 @@ public final class TransferProto {
         } else {
           result.transferJobs_ = transferJobsBuilder_.build();
         }
-        result.nextPageToken_ = nextPageToken_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferProto.ListTransferJobsResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.nextPageToken_ = nextPageToken_;
+        }
       }
 
       @java.lang.Override
@@ -6674,6 +6795,7 @@ public final class TransferProto {
         }
         if (!other.getNextPageToken().isEmpty()) {
           nextPageToken_ = other.nextPageToken_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -6719,7 +6841,7 @@ public final class TransferProto {
               case 18:
                 {
                   nextPageToken_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -7174,8 +7296,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         nextPageToken_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -7191,8 +7313,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearNextPageToken() {
-
         nextPageToken_ = getDefaultInstance().getNextPageToken();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -7213,8 +7335,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         nextPageToken_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -7370,7 +7492,9 @@ public final class TransferProto {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -7629,8 +7753,8 @@ public final class TransferProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         return this;
       }
 
@@ -7664,9 +7788,19 @@ public final class TransferProto {
         com.google.storagetransfer.v1.proto.TransferProto.PauseTransferOperationRequest result =
             new com.google.storagetransfer.v1.proto.TransferProto.PauseTransferOperationRequest(
                 this);
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferProto.PauseTransferOperationRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -7725,6 +7859,7 @@ public final class TransferProto {
                 .getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -7756,7 +7891,7 @@ public final class TransferProto {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -7775,6 +7910,8 @@ public final class TransferProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -7837,8 +7974,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -7854,8 +7991,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -7876,8 +8013,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -8035,7 +8172,9 @@ public final class TransferProto {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -8295,8 +8434,8 @@ public final class TransferProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         return this;
       }
 
@@ -8330,9 +8469,19 @@ public final class TransferProto {
         com.google.storagetransfer.v1.proto.TransferProto.ResumeTransferOperationRequest result =
             new com.google.storagetransfer.v1.proto.TransferProto.ResumeTransferOperationRequest(
                 this);
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferProto.ResumeTransferOperationRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -8391,6 +8540,7 @@ public final class TransferProto {
                 .getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -8422,7 +8572,7 @@ public final class TransferProto {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -8441,6 +8591,8 @@ public final class TransferProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -8503,8 +8655,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -8520,8 +8672,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -8542,8 +8694,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -8726,7 +8878,9 @@ public final class TransferProto {
     }
 
     public static final int JOB_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object jobName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object jobName_ = "";
     /**
      *
      *
@@ -8775,7 +8929,9 @@ public final class TransferProto {
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object projectId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object projectId_ = "";
     /**
      *
      *
@@ -9038,10 +9194,9 @@ public final class TransferProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         jobName_ = "";
-
         projectId_ = "";
-
         return this;
       }
 
@@ -9073,10 +9228,22 @@ public final class TransferProto {
           buildPartial() {
         com.google.storagetransfer.v1.proto.TransferProto.RunTransferJobRequest result =
             new com.google.storagetransfer.v1.proto.TransferProto.RunTransferJobRequest(this);
-        result.jobName_ = jobName_;
-        result.projectId_ = projectId_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferProto.RunTransferJobRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.jobName_ = jobName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.projectId_ = projectId_;
+        }
       }
 
       @java.lang.Override
@@ -9133,10 +9300,12 @@ public final class TransferProto {
                 .getDefaultInstance()) return this;
         if (!other.getJobName().isEmpty()) {
           jobName_ = other.jobName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getProjectId().isEmpty()) {
           projectId_ = other.projectId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -9168,13 +9337,13 @@ public final class TransferProto {
               case 10:
                 {
                   jobName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   projectId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -9193,6 +9362,8 @@ public final class TransferProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object jobName_ = "";
       /**
@@ -9255,8 +9426,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         jobName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -9272,8 +9443,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearJobName() {
-
         jobName_ = getDefaultInstance().getJobName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -9294,8 +9465,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         jobName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -9364,8 +9535,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         projectId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -9382,8 +9553,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
-
         projectId_ = getDefaultInstance().getProjectId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -9405,8 +9576,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         projectId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -9647,7 +9818,9 @@ public final class TransferProto {
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object projectId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object projectId_ = "";
     /**
      *
      *
@@ -9749,11 +9922,15 @@ public final class TransferProto {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder
         getAgentPoolOrBuilder() {
-      return getAgentPool();
+      return agentPool_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.getDefaultInstance()
+          : agentPool_;
     }
 
     public static final int AGENT_POOL_ID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object agentPoolId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object agentPoolId_ = "";
     /**
      *
      *
@@ -10051,16 +10228,14 @@ public final class TransferProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         projectId_ = "";
-
-        if (agentPoolBuilder_ == null) {
-          agentPool_ = null;
-        } else {
-          agentPool_ = null;
+        agentPool_ = null;
+        if (agentPoolBuilder_ != null) {
+          agentPoolBuilder_.dispose();
           agentPoolBuilder_ = null;
         }
         agentPoolId_ = "";
-
         return this;
       }
 
@@ -10092,15 +10267,25 @@ public final class TransferProto {
           buildPartial() {
         com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest result =
             new com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest(this);
-        result.projectId_ = projectId_;
-        if (agentPoolBuilder_ == null) {
-          result.agentPool_ = agentPool_;
-        } else {
-          result.agentPool_ = agentPoolBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.agentPoolId_ = agentPoolId_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.projectId_ = projectId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.agentPool_ = agentPoolBuilder_ == null ? agentPool_ : agentPoolBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.agentPoolId_ = agentPoolId_;
+        }
       }
 
       @java.lang.Override
@@ -10157,6 +10342,7 @@ public final class TransferProto {
                 .getDefaultInstance()) return this;
         if (!other.getProjectId().isEmpty()) {
           projectId_ = other.projectId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasAgentPool()) {
@@ -10164,6 +10350,7 @@ public final class TransferProto {
         }
         if (!other.getAgentPoolId().isEmpty()) {
           agentPoolId_ = other.agentPoolId_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -10195,19 +10382,19 @@ public final class TransferProto {
               case 10:
                 {
                   projectId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getAgentPoolFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   agentPoolId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -10226,6 +10413,8 @@ public final class TransferProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object projectId_ = "";
       /**
@@ -10291,8 +10480,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         projectId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -10309,8 +10498,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
-
         projectId_ = getDefaultInstance().getProjectId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -10332,8 +10521,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         projectId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -10358,7 +10547,7 @@ public final class TransferProto {
        * @return Whether the agentPool field is set.
        */
       public boolean hasAgentPool() {
-        return agentPoolBuilder_ != null || agentPool_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -10400,11 +10589,11 @@ public final class TransferProto {
             throw new NullPointerException();
           }
           agentPool_ = value;
-          onChanged();
         } else {
           agentPoolBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -10422,11 +10611,11 @@ public final class TransferProto {
           com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder builderForValue) {
         if (agentPoolBuilder_ == null) {
           agentPool_ = builderForValue.build();
-          onChanged();
         } else {
           agentPoolBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -10443,19 +10632,20 @@ public final class TransferProto {
       public Builder mergeAgentPool(
           com.google.storagetransfer.v1.proto.TransferTypes.AgentPool value) {
         if (agentPoolBuilder_ == null) {
-          if (agentPool_ != null) {
-            agentPool_ =
-                com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.newBuilder(agentPool_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && agentPool_ != null
+              && agentPool_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.AgentPool
+                      .getDefaultInstance()) {
+            getAgentPoolBuilder().mergeFrom(value);
           } else {
             agentPool_ = value;
           }
-          onChanged();
         } else {
           agentPoolBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -10470,14 +10660,13 @@ public final class TransferProto {
        * </code>
        */
       public Builder clearAgentPool() {
-        if (agentPoolBuilder_ == null) {
-          agentPool_ = null;
-          onChanged();
-        } else {
-          agentPool_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        agentPool_ = null;
+        if (agentPoolBuilder_ != null) {
+          agentPoolBuilder_.dispose();
           agentPoolBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -10493,7 +10682,7 @@ public final class TransferProto {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder
           getAgentPoolBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getAgentPoolFieldBuilder().getBuilder();
       }
@@ -10634,8 +10823,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         agentPoolId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -10660,8 +10849,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearAgentPoolId() {
-
         agentPoolId_ = getDefaultInstance().getAgentPoolId();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -10691,8 +10880,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         agentPoolId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -10997,7 +11186,9 @@ public final class TransferProto {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder
         getAgentPoolOrBuilder() {
-      return getAgentPool();
+      return agentPool_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.getDefaultInstance()
+          : agentPool_;
     }
 
     public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -11058,7 +11249,7 @@ public final class TransferProto {
      */
     @java.lang.Override
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-      return getUpdateMask();
+      return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -11289,16 +11480,15 @@ public final class TransferProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (agentPoolBuilder_ == null) {
-          agentPool_ = null;
-        } else {
-          agentPool_ = null;
+        bitField0_ = 0;
+        agentPool_ = null;
+        if (agentPoolBuilder_ != null) {
+          agentPoolBuilder_.dispose();
           agentPoolBuilder_ = null;
         }
-        if (updateMaskBuilder_ == null) {
-          updateMask_ = null;
-        } else {
-          updateMask_ = null;
+        updateMask_ = null;
+        if (updateMaskBuilder_ != null) {
+          updateMaskBuilder_.dispose();
           updateMaskBuilder_ = null;
         }
         return this;
@@ -11332,18 +11522,23 @@ public final class TransferProto {
           buildPartial() {
         com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest result =
             new com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest(this);
-        if (agentPoolBuilder_ == null) {
-          result.agentPool_ = agentPool_;
-        } else {
-          result.agentPool_ = agentPoolBuilder_.build();
-        }
-        if (updateMaskBuilder_ == null) {
-          result.updateMask_ = updateMask_;
-        } else {
-          result.updateMask_ = updateMaskBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.agentPool_ = agentPoolBuilder_ == null ? agentPool_ : agentPoolBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.updateMask_ =
+              updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -11433,13 +11628,13 @@ public final class TransferProto {
               case 10:
                 {
                   input.readMessage(getAgentPoolFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -11458,6 +11653,8 @@ public final class TransferProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.storagetransfer.v1.proto.TransferTypes.AgentPool agentPool_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -11485,7 +11682,7 @@ public final class TransferProto {
        * @return Whether the agentPool field is set.
        */
       public boolean hasAgentPool() {
-        return agentPoolBuilder_ != null || agentPool_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -11539,11 +11736,11 @@ public final class TransferProto {
             throw new NullPointerException();
           }
           agentPool_ = value;
-          onChanged();
         } else {
           agentPoolBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -11567,11 +11764,11 @@ public final class TransferProto {
           com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder builderForValue) {
         if (agentPoolBuilder_ == null) {
           agentPool_ = builderForValue.build();
-          onChanged();
         } else {
           agentPoolBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -11594,19 +11791,20 @@ public final class TransferProto {
       public Builder mergeAgentPool(
           com.google.storagetransfer.v1.proto.TransferTypes.AgentPool value) {
         if (agentPoolBuilder_ == null) {
-          if (agentPool_ != null) {
-            agentPool_ =
-                com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.newBuilder(agentPool_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && agentPool_ != null
+              && agentPool_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.AgentPool
+                      .getDefaultInstance()) {
+            getAgentPoolBuilder().mergeFrom(value);
           } else {
             agentPool_ = value;
           }
-          onChanged();
         } else {
           agentPoolBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -11627,14 +11825,13 @@ public final class TransferProto {
        * </code>
        */
       public Builder clearAgentPool() {
-        if (agentPoolBuilder_ == null) {
-          agentPool_ = null;
-          onChanged();
-        } else {
-          agentPool_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        agentPool_ = null;
+        if (agentPoolBuilder_ != null) {
+          agentPoolBuilder_.dispose();
           agentPoolBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -11656,7 +11853,7 @@ public final class TransferProto {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder
           getAgentPoolBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getAgentPoolFieldBuilder().getBuilder();
       }
@@ -11744,7 +11941,7 @@ public final class TransferProto {
        * @return Whether the updateMask field is set.
        */
       public boolean hasUpdateMask() {
-        return updateMaskBuilder_ != null || updateMask_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -11791,11 +11988,11 @@ public final class TransferProto {
             throw new NullPointerException();
           }
           updateMask_ = value;
-          onChanged();
         } else {
           updateMaskBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -11815,11 +12012,11 @@ public final class TransferProto {
       public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
         if (updateMaskBuilder_ == null) {
           updateMask_ = builderForValue.build();
-          onChanged();
         } else {
           updateMaskBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -11838,19 +12035,18 @@ public final class TransferProto {
        */
       public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
         if (updateMaskBuilder_ == null) {
-          if (updateMask_ != null) {
-            updateMask_ =
-                com.google.protobuf.FieldMask.newBuilder(updateMask_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && updateMask_ != null
+              && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+            getUpdateMaskBuilder().mergeFrom(value);
           } else {
             updateMask_ = value;
           }
-          onChanged();
         } else {
           updateMaskBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -11868,14 +12064,13 @@ public final class TransferProto {
        * <code>.google.protobuf.FieldMask update_mask = 2;</code>
        */
       public Builder clearUpdateMask() {
-        if (updateMaskBuilder_ == null) {
-          updateMask_ = null;
-          onChanged();
-        } else {
-          updateMask_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        updateMask_ = null;
+        if (updateMaskBuilder_ != null) {
+          updateMaskBuilder_.dispose();
           updateMaskBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -11893,7 +12088,7 @@ public final class TransferProto {
        * <code>.google.protobuf.FieldMask update_mask = 2;</code>
        */
       public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getUpdateMaskFieldBuilder().getBuilder();
       }
@@ -12099,7 +12294,9 @@ public final class TransferProto {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -12350,8 +12547,8 @@ public final class TransferProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         return this;
       }
 
@@ -12382,9 +12579,19 @@ public final class TransferProto {
       public com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest buildPartial() {
         com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest result =
             new com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest(this);
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -12441,6 +12648,7 @@ public final class TransferProto {
                 .getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -12472,7 +12680,7 @@ public final class TransferProto {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -12491,6 +12699,8 @@ public final class TransferProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -12553,8 +12763,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -12570,8 +12780,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -12592,8 +12802,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -12747,7 +12957,9 @@ public final class TransferProto {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -13004,8 +13216,8 @@ public final class TransferProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         return this;
       }
 
@@ -13037,9 +13249,19 @@ public final class TransferProto {
           buildPartial() {
         com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest result =
             new com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest(this);
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -13096,6 +13318,7 @@ public final class TransferProto {
                 .getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -13127,7 +13350,7 @@ public final class TransferProto {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -13146,6 +13369,8 @@ public final class TransferProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -13208,8 +13433,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -13225,8 +13450,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -13247,8 +13472,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -13477,7 +13702,9 @@ public final class TransferProto {
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object projectId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object projectId_ = "";
     /**
      *
      *
@@ -13526,7 +13753,9 @@ public final class TransferProto {
     }
 
     public static final int FILTER_FIELD_NUMBER = 2;
-    private volatile java.lang.Object filter_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object filter_ = "";
     /**
      *
      *
@@ -13585,7 +13814,7 @@ public final class TransferProto {
     }
 
     public static final int PAGE_SIZE_FIELD_NUMBER = 3;
-    private int pageSize_;
+    private int pageSize_ = 0;
     /**
      *
      *
@@ -13603,7 +13832,9 @@ public final class TransferProto {
     }
 
     public static final int PAGE_TOKEN_FIELD_NUMBER = 4;
-    private volatile java.lang.Object pageToken_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pageToken_ = "";
     /**
      *
      *
@@ -13882,14 +14113,11 @@ public final class TransferProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         projectId_ = "";
-
         filter_ = "";
-
         pageSize_ = 0;
-
         pageToken_ = "";
-
         return this;
       }
 
@@ -13921,12 +14149,28 @@ public final class TransferProto {
           buildPartial() {
         com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest result =
             new com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest(this);
-        result.projectId_ = projectId_;
-        result.filter_ = filter_;
-        result.pageSize_ = pageSize_;
-        result.pageToken_ = pageToken_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.projectId_ = projectId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.filter_ = filter_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.pageSize_ = pageSize_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.pageToken_ = pageToken_;
+        }
       }
 
       @java.lang.Override
@@ -13983,10 +14227,12 @@ public final class TransferProto {
                 .getDefaultInstance()) return this;
         if (!other.getProjectId().isEmpty()) {
           projectId_ = other.projectId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getFilter().isEmpty()) {
           filter_ = other.filter_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getPageSize() != 0) {
@@ -13994,6 +14240,7 @@ public final class TransferProto {
         }
         if (!other.getPageToken().isEmpty()) {
           pageToken_ = other.pageToken_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -14025,25 +14272,25 @@ public final class TransferProto {
               case 10:
                 {
                   projectId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   filter_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   pageSize_ = input.readInt32();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 34:
                 {
                   pageToken_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               default:
@@ -14062,6 +14309,8 @@ public final class TransferProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object projectId_ = "";
       /**
@@ -14124,8 +14373,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         projectId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -14141,8 +14390,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
-
         projectId_ = getDefaultInstance().getProjectId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -14163,8 +14412,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         projectId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -14245,8 +14494,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         filter_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -14267,8 +14516,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearFilter() {
-
         filter_ = getDefaultInstance().getFilter();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -14294,8 +14543,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         filter_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -14331,6 +14580,7 @@ public final class TransferProto {
       public Builder setPageSize(int value) {
 
         pageSize_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -14346,7 +14596,7 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearPageSize() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         pageSize_ = 0;
         onChanged();
         return this;
@@ -14413,8 +14663,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         pageToken_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -14430,8 +14680,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearPageToken() {
-
         pageToken_ = getDefaultInstance().getPageToken();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -14452,8 +14702,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         pageToken_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -14661,6 +14911,8 @@ public final class TransferProto {
     }
 
     public static final int AGENT_POOLS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.storagetransfer.v1.proto.TransferTypes.AgentPool> agentPools_;
     /**
      *
@@ -14733,7 +14985,9 @@ public final class TransferProto {
     }
 
     public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-    private volatile java.lang.Object nextPageToken_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object nextPageToken_ = "";
     /**
      *
      *
@@ -15001,6 +15255,7 @@ public final class TransferProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (agentPoolsBuilder_ == null) {
           agentPools_ = java.util.Collections.emptyList();
         } else {
@@ -15009,7 +15264,6 @@ public final class TransferProto {
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         nextPageToken_ = "";
-
         return this;
       }
 
@@ -15041,7 +15295,16 @@ public final class TransferProto {
           buildPartial() {
         com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse result =
             new com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse result) {
         if (agentPoolsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             agentPools_ = java.util.Collections.unmodifiableList(agentPools_);
@@ -15051,9 +15314,14 @@ public final class TransferProto {
         } else {
           result.agentPools_ = agentPoolsBuilder_.build();
         }
-        result.nextPageToken_ = nextPageToken_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.nextPageToken_ = nextPageToken_;
+        }
       }
 
       @java.lang.Override
@@ -15137,6 +15405,7 @@ public final class TransferProto {
         }
         if (!other.getNextPageToken().isEmpty()) {
           nextPageToken_ = other.nextPageToken_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -15182,7 +15451,7 @@ public final class TransferProto {
               case 18:
                 {
                   nextPageToken_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -15632,8 +15901,8 @@ public final class TransferProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         nextPageToken_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -15649,8 +15918,8 @@ public final class TransferProto {
        * @return This builder for chaining.
        */
       public Builder clearNextPageToken() {
-
         nextPageToken_ = getDefaultInstance().getNextPageToken();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -15671,8 +15940,8 @@ public final class TransferProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         nextPageToken_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }

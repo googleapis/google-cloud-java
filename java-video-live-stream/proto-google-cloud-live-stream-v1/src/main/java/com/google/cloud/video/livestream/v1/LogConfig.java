@@ -301,7 +301,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOG_SEVERITY_FIELD_NUMBER = 1;
-  private int logSeverity_;
+  private int logSeverity_ = 0;
   /**
    *
    *
@@ -330,9 +330,8 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.video.livestream.v1.LogConfig.LogSeverity getLogSeverity() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.video.livestream.v1.LogConfig.LogSeverity result =
-        com.google.cloud.video.livestream.v1.LogConfig.LogSeverity.valueOf(logSeverity_);
+        com.google.cloud.video.livestream.v1.LogConfig.LogSeverity.forNumber(logSeverity_);
     return result == null
         ? com.google.cloud.video.livestream.v1.LogConfig.LogSeverity.UNRECOGNIZED
         : result;
@@ -542,8 +541,8 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       logSeverity_ = 0;
-
       return this;
     }
 
@@ -571,9 +570,18 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.livestream.v1.LogConfig buildPartial() {
       com.google.cloud.video.livestream.v1.LogConfig result =
           new com.google.cloud.video.livestream.v1.LogConfig(this);
-      result.logSeverity_ = logSeverity_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.livestream.v1.LogConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.logSeverity_ = logSeverity_;
+      }
     }
 
     @java.lang.Override
@@ -653,7 +661,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 logSeverity_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -672,6 +680,8 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int logSeverity_ = 0;
     /**
@@ -702,8 +712,8 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLogSeverityValue(int value) {
-
       logSeverity_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -720,9 +730,8 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.video.livestream.v1.LogConfig.LogSeverity getLogSeverity() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.video.livestream.v1.LogConfig.LogSeverity result =
-          com.google.cloud.video.livestream.v1.LogConfig.LogSeverity.valueOf(logSeverity_);
+          com.google.cloud.video.livestream.v1.LogConfig.LogSeverity.forNumber(logSeverity_);
       return result == null
           ? com.google.cloud.video.livestream.v1.LogConfig.LogSeverity.UNRECOGNIZED
           : result;
@@ -744,7 +753,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       logSeverity_ = value.getNumber();
       onChanged();
       return this;
@@ -761,7 +770,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLogSeverity() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       logSeverity_ = 0;
       onChanged();
       return this;

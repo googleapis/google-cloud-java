@@ -189,7 +189,9 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
     }
 
     public static final int SEARCH_FIELD_NUMBER = 1;
-    private volatile java.lang.Object search_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object search_ = "";
     /**
      *
      *
@@ -238,7 +240,9 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
     }
 
     public static final int REPLACE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object replace_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object replace_ = "";
     /**
      *
      *
@@ -287,7 +291,7 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
     }
 
     public static final int CASE_SENSITIVE_FIELD_NUMBER = 3;
-    private boolean caseSensitive_;
+    private boolean caseSensitive_ = false;
     /**
      *
      *
@@ -524,12 +528,10 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         search_ = "";
-
         replace_ = "";
-
         caseSensitive_ = false;
-
         return this;
       }
 
@@ -558,11 +560,25 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       public com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry buildPartial() {
         com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry result =
             new com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry(this);
-        result.search_ = search_;
-        result.replace_ = replace_;
-        result.caseSensitive_ = caseSensitive_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.search_ = search_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.replace_ = replace_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.caseSensitive_ = caseSensitive_;
+        }
       }
 
       @java.lang.Override
@@ -617,10 +633,12 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
           return this;
         if (!other.getSearch().isEmpty()) {
           search_ = other.search_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getReplace().isEmpty()) {
           replace_ = other.replace_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getCaseSensitive() != false) {
@@ -655,19 +673,19 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
               case 10:
                 {
                   search_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   replace_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   caseSensitive_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -686,6 +704,8 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object search_ = "";
       /**
@@ -748,8 +768,8 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
         if (value == null) {
           throw new NullPointerException();
         }
-
         search_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -765,8 +785,8 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearSearch() {
-
         search_ = getDefaultInstance().getSearch();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -787,8 +807,8 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         search_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -854,8 +874,8 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
         if (value == null) {
           throw new NullPointerException();
         }
-
         replace_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -871,8 +891,8 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearReplace() {
-
         replace_ = getDefaultInstance().getReplace();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -893,8 +913,8 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         replace_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -930,6 +950,7 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       public Builder setCaseSensitive(boolean value) {
 
         caseSensitive_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -945,7 +966,7 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearCaseSensitive() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         caseSensitive_ = false;
         onChanged();
         return this;
@@ -1019,6 +1040,8 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
   }
 
   public static final int ENTRIES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry> entries_;
   /**
    *
@@ -1308,6 +1331,7 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (entriesBuilder_ == null) {
         entries_ = java.util.Collections.emptyList();
       } else {
@@ -1342,7 +1366,16 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
     public com.google.cloud.speech.v1p1beta1.TranscriptNormalization buildPartial() {
       com.google.cloud.speech.v1p1beta1.TranscriptNormalization result =
           new com.google.cloud.speech.v1p1beta1.TranscriptNormalization(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.speech.v1p1beta1.TranscriptNormalization result) {
       if (entriesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
@@ -1352,8 +1385,10 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       } else {
         result.entries_ = entriesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v1p1beta1.TranscriptNormalization result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

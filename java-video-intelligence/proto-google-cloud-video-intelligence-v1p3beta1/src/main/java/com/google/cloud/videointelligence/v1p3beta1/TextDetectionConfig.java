@@ -69,6 +69,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int LANGUAGE_HINTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList languageHints_;
   /**
    *
@@ -142,7 +144,9 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int MODEL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object model_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
   /**
    *
    *
@@ -408,10 +412,10 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       model_ = "";
-
       return this;
     }
 
@@ -440,15 +444,29 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
     public com.google.cloud.videointelligence.v1p3beta1.TextDetectionConfig buildPartial() {
       com.google.cloud.videointelligence.v1p3beta1.TextDetectionConfig result =
           new com.google.cloud.videointelligence.v1p3beta1.TextDetectionConfig(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.videointelligence.v1p3beta1.TextDetectionConfig result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         languageHints_ = languageHints_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.languageHints_ = languageHints_;
-      result.model_ = model_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1p3beta1.TextDetectionConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.model_ = model_;
+      }
     }
 
     @java.lang.Override
@@ -511,6 +529,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       }
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -549,7 +568,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
             case 18:
               {
                 model_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -833,8 +852,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       model_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -852,8 +871,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearModel() {
-
       model_ = getDefaultInstance().getModel();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -876,8 +895,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       model_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

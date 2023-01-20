@@ -68,6 +68,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int LANGUAGES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.translate.v3.DetectedLanguage> languages_;
   /**
    *
@@ -340,6 +342,7 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (languagesBuilder_ == null) {
         languages_ = java.util.Collections.emptyList();
       } else {
@@ -374,7 +377,16 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.translate.v3.DetectLanguageResponse buildPartial() {
       com.google.cloud.translate.v3.DetectLanguageResponse result =
           new com.google.cloud.translate.v3.DetectLanguageResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.translate.v3.DetectLanguageResponse result) {
       if (languagesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           languages_ = java.util.Collections.unmodifiableList(languages_);
@@ -384,8 +396,10 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
       } else {
         result.languages_ = languagesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.translate.v3.DetectLanguageResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

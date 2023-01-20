@@ -470,6 +470,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       audioSourceCase_ = 0;
       audioSource_ = null;
       return this;
@@ -499,15 +500,21 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.speech.v1p1beta1.RecognitionAudio buildPartial() {
       com.google.cloud.speech.v1p1beta1.RecognitionAudio result =
           new com.google.cloud.speech.v1p1beta1.RecognitionAudio(this);
-      if (audioSourceCase_ == 1) {
-        result.audioSource_ = audioSource_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (audioSourceCase_ == 2) {
-        result.audioSource_ = audioSource_;
-      }
-      result.audioSourceCase_ = audioSourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v1p1beta1.RecognitionAudio result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.speech.v1p1beta1.RecognitionAudio result) {
+      result.audioSourceCase_ = audioSourceCase_;
+      result.audioSource_ = this.audioSource_;
     }
 
     @java.lang.Override
@@ -643,6 +650,8 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *

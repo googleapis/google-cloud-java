@@ -74,7 +74,9 @@ public final class ActivateCertificateAuthorityRequest
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -129,7 +131,9 @@ public final class ActivateCertificateAuthorityRequest
   }
 
   public static final int PEM_CA_CERTIFICATE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object pemCaCertificate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pemCaCertificate_ = "";
   /**
    *
    *
@@ -234,11 +238,15 @@ public final class ActivateCertificateAuthorityRequest
   @java.lang.Override
   public com.google.cloud.security.privateca.v1.SubordinateConfigOrBuilder
       getSubordinateConfigOrBuilder() {
-    return getSubordinateConfig();
+    return subordinateConfig_ == null
+        ? com.google.cloud.security.privateca.v1.SubordinateConfig.getDefaultInstance()
+        : subordinateConfig_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -546,18 +554,15 @@ public final class ActivateCertificateAuthorityRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       pemCaCertificate_ = "";
-
-      if (subordinateConfigBuilder_ == null) {
-        subordinateConfig_ = null;
-      } else {
-        subordinateConfig_ = null;
+      subordinateConfig_ = null;
+      if (subordinateConfigBuilder_ != null) {
+        subordinateConfigBuilder_.dispose();
         subordinateConfigBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -589,16 +594,31 @@ public final class ActivateCertificateAuthorityRequest
         buildPartial() {
       com.google.cloud.security.privateca.v1.ActivateCertificateAuthorityRequest result =
           new com.google.cloud.security.privateca.v1.ActivateCertificateAuthorityRequest(this);
-      result.name_ = name_;
-      result.pemCaCertificate_ = pemCaCertificate_;
-      if (subordinateConfigBuilder_ == null) {
-        result.subordinateConfig_ = subordinateConfig_;
-      } else {
-        result.subordinateConfig_ = subordinateConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.security.privateca.v1.ActivateCertificateAuthorityRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pemCaCertificate_ = pemCaCertificate_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.subordinateConfig_ =
+            subordinateConfigBuilder_ == null
+                ? subordinateConfig_
+                : subordinateConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -653,10 +673,12 @@ public final class ActivateCertificateAuthorityRequest
               .getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPemCaCertificate().isEmpty()) {
         pemCaCertificate_ = other.pemCaCertificate_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSubordinateConfig()) {
@@ -664,6 +686,7 @@ public final class ActivateCertificateAuthorityRequest
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -695,26 +718,26 @@ public final class ActivateCertificateAuthorityRequest
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 pemCaCertificate_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getSubordinateConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -733,6 +756,8 @@ public final class ActivateCertificateAuthorityRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -804,8 +829,8 @@ public final class ActivateCertificateAuthorityRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -824,8 +849,8 @@ public final class ActivateCertificateAuthorityRequest
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -849,8 +874,8 @@ public final class ActivateCertificateAuthorityRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -919,8 +944,8 @@ public final class ActivateCertificateAuthorityRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       pemCaCertificate_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -937,8 +962,8 @@ public final class ActivateCertificateAuthorityRequest
      * @return This builder for chaining.
      */
     public Builder clearPemCaCertificate() {
-
       pemCaCertificate_ = getDefaultInstance().getPemCaCertificate();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -960,8 +985,8 @@ public final class ActivateCertificateAuthorityRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pemCaCertificate_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -987,7 +1012,7 @@ public final class ActivateCertificateAuthorityRequest
      * @return Whether the subordinateConfig field is set.
      */
     public boolean hasSubordinateConfig() {
-      return subordinateConfigBuilder_ != null || subordinateConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1031,11 +1056,11 @@ public final class ActivateCertificateAuthorityRequest
           throw new NullPointerException();
         }
         subordinateConfig_ = value;
-        onChanged();
       } else {
         subordinateConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1054,11 +1079,11 @@ public final class ActivateCertificateAuthorityRequest
         com.google.cloud.security.privateca.v1.SubordinateConfig.Builder builderForValue) {
       if (subordinateConfigBuilder_ == null) {
         subordinateConfig_ = builderForValue.build();
-        onChanged();
       } else {
         subordinateConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1076,20 +1101,19 @@ public final class ActivateCertificateAuthorityRequest
     public Builder mergeSubordinateConfig(
         com.google.cloud.security.privateca.v1.SubordinateConfig value) {
       if (subordinateConfigBuilder_ == null) {
-        if (subordinateConfig_ != null) {
-          subordinateConfig_ =
-              com.google.cloud.security.privateca.v1.SubordinateConfig.newBuilder(
-                      subordinateConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && subordinateConfig_ != null
+            && subordinateConfig_
+                != com.google.cloud.security.privateca.v1.SubordinateConfig.getDefaultInstance()) {
+          getSubordinateConfigBuilder().mergeFrom(value);
         } else {
           subordinateConfig_ = value;
         }
-        onChanged();
       } else {
         subordinateConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1105,14 +1129,13 @@ public final class ActivateCertificateAuthorityRequest
      * </code>
      */
     public Builder clearSubordinateConfig() {
-      if (subordinateConfigBuilder_ == null) {
-        subordinateConfig_ = null;
-        onChanged();
-      } else {
-        subordinateConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      subordinateConfig_ = null;
+      if (subordinateConfigBuilder_ != null) {
+        subordinateConfigBuilder_.dispose();
         subordinateConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1129,7 +1152,7 @@ public final class ActivateCertificateAuthorityRequest
      */
     public com.google.cloud.security.privateca.v1.SubordinateConfig.Builder
         getSubordinateConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSubordinateConfigFieldBuilder().getBuilder();
     }
@@ -1275,8 +1298,8 @@ public final class ActivateCertificateAuthorityRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1302,8 +1325,8 @@ public final class ActivateCertificateAuthorityRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1334,8 +1357,8 @@ public final class ActivateCertificateAuthorityRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

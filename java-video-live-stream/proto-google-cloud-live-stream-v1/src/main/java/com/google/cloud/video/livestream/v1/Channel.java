@@ -446,7 +446,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int URI_FIELD_NUMBER = 1;
-    private volatile java.lang.Object uri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uri_ = "";
     /**
      *
      *
@@ -694,8 +696,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         uri_ = "";
-
         return this;
       }
 
@@ -723,9 +725,18 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.video.livestream.v1.Channel.Output buildPartial() {
         com.google.cloud.video.livestream.v1.Channel.Output result =
             new com.google.cloud.video.livestream.v1.Channel.Output(this);
-        result.uri_ = uri_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.video.livestream.v1.Channel.Output result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uri_ = uri_;
+        }
       }
 
       @java.lang.Override
@@ -778,6 +789,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getUri().isEmpty()) {
           uri_ = other.uri_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -809,7 +821,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   uri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -828,6 +840,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object uri_ = "";
       /**
@@ -890,8 +904,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         uri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -907,8 +921,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearUri() {
-
         uri_ = getDefaultInstance().getUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -929,8 +943,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         uri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1000,7 +1014,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1096,7 +1112,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
@@ -1145,7 +1161,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 4;
@@ -1161,6 +1177,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -1218,7 +1235,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1247,6 +1267,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INPUT_ATTACHMENTS_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.InputAttachment> inputAttachments_;
   /**
    *
@@ -1328,7 +1350,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ACTIVE_INPUT_FIELD_NUMBER = 6;
-  private volatile java.lang.Object activeInput_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object activeInput_ = "";
   /**
    *
    *
@@ -1432,10 +1456,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.video.livestream.v1.Channel.OutputOrBuilder getOutputOrBuilder() {
-    return getOutput();
+    return output_ == null
+        ? com.google.cloud.video.livestream.v1.Channel.Output.getDefaultInstance()
+        : output_;
   }
 
   public static final int ELEMENTARY_STREAMS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.ElementaryStream> elementaryStreams_;
   /**
    *
@@ -1512,6 +1540,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MUX_STREAMS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.MuxStream> muxStreams_;
   /**
    *
@@ -1581,6 +1611,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MANIFESTS_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.Manifest> manifests_;
   /**
    *
@@ -1650,6 +1682,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPRITE_SHEETS_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.SpriteSheet> spriteSheets_;
   /**
    *
@@ -1720,7 +1754,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STREAMING_STATE_FIELD_NUMBER = 14;
-  private int streamingState_;
+  private int streamingState_ = 0;
   /**
    *
    *
@@ -1753,9 +1787,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.video.livestream.v1.Channel.StreamingState getStreamingState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.video.livestream.v1.Channel.StreamingState result =
-        com.google.cloud.video.livestream.v1.Channel.StreamingState.valueOf(streamingState_);
+        com.google.cloud.video.livestream.v1.Channel.StreamingState.forNumber(streamingState_);
     return result == null
         ? com.google.cloud.video.livestream.v1.Channel.StreamingState.UNRECOGNIZED
         : result;
@@ -1813,7 +1846,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getStreamingErrorOrBuilder() {
-    return getStreamingError();
+    return streamingError_ == null ? com.google.rpc.Status.getDefaultInstance() : streamingError_;
   }
 
   public static final int LOG_CONFIG_FIELD_NUMBER = 19;
@@ -1861,7 +1894,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.video.livestream.v1.LogConfigOrBuilder getLogConfigOrBuilder() {
-    return getLogConfig();
+    return logConfig_ == null
+        ? com.google.cloud.video.livestream.v1.LogConfig.getDefaultInstance()
+        : logConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2251,18 +2286,16 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
@@ -2272,13 +2305,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         inputAttachments_ = null;
         inputAttachmentsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       activeInput_ = "";
-
-      if (outputBuilder_ == null) {
-        output_ = null;
-      } else {
-        output_ = null;
+      output_ = null;
+      if (outputBuilder_ != null) {
+        outputBuilder_.dispose();
         outputBuilder_ = null;
       }
       if (elementaryStreamsBuilder_ == null) {
@@ -2287,40 +2318,37 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         elementaryStreams_ = null;
         elementaryStreamsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000080);
       if (muxStreamsBuilder_ == null) {
         muxStreams_ = java.util.Collections.emptyList();
       } else {
         muxStreams_ = null;
         muxStreamsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000100);
       if (manifestsBuilder_ == null) {
         manifests_ = java.util.Collections.emptyList();
       } else {
         manifests_ = null;
         manifestsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000200);
       if (spriteSheetsBuilder_ == null) {
         spriteSheets_ = java.util.Collections.emptyList();
       } else {
         spriteSheets_ = null;
         spriteSheetsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000400);
       streamingState_ = 0;
-
-      if (streamingErrorBuilder_ == null) {
-        streamingError_ = null;
-      } else {
-        streamingError_ = null;
+      streamingError_ = null;
+      if (streamingErrorBuilder_ != null) {
+        streamingErrorBuilder_.dispose();
         streamingErrorBuilder_ = null;
       }
-      if (logConfigBuilder_ == null) {
-        logConfig_ = null;
-      } else {
-        logConfig_ = null;
+      logConfig_ = null;
+      if (logConfigBuilder_ != null) {
+        logConfigBuilder_.dispose();
         logConfigBuilder_ = null;
       }
       return this;
@@ -2350,84 +2378,93 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.livestream.v1.Channel buildPartial() {
       com.google.cloud.video.livestream.v1.Channel result =
           new com.google.cloud.video.livestream.v1.Channel(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.video.livestream.v1.Channel result) {
       if (inputAttachmentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           inputAttachments_ = java.util.Collections.unmodifiableList(inputAttachments_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.inputAttachments_ = inputAttachments_;
       } else {
         result.inputAttachments_ = inputAttachmentsBuilder_.build();
       }
-      result.activeInput_ = activeInput_;
-      if (outputBuilder_ == null) {
-        result.output_ = output_;
-      } else {
-        result.output_ = outputBuilder_.build();
-      }
       if (elementaryStreamsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           elementaryStreams_ = java.util.Collections.unmodifiableList(elementaryStreams_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.elementaryStreams_ = elementaryStreams_;
       } else {
         result.elementaryStreams_ = elementaryStreamsBuilder_.build();
       }
       if (muxStreamsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           muxStreams_ = java.util.Collections.unmodifiableList(muxStreams_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.muxStreams_ = muxStreams_;
       } else {
         result.muxStreams_ = muxStreamsBuilder_.build();
       }
       if (manifestsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           manifests_ = java.util.Collections.unmodifiableList(manifests_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.manifests_ = manifests_;
       } else {
         result.manifests_ = manifestsBuilder_.build();
       }
       if (spriteSheetsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           spriteSheets_ = java.util.Collections.unmodifiableList(spriteSheets_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.spriteSheets_ = spriteSheets_;
       } else {
         result.spriteSheets_ = spriteSheetsBuilder_.build();
       }
-      result.streamingState_ = streamingState_;
-      if (streamingErrorBuilder_ == null) {
-        result.streamingError_ = streamingError_;
-      } else {
-        result.streamingError_ = streamingErrorBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.video.livestream.v1.Channel result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      if (logConfigBuilder_ == null) {
-        result.logConfig_ = logConfig_;
-      } else {
-        result.logConfig_ = logConfigBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.activeInput_ = activeInput_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.output_ = outputBuilder_ == null ? output_ : outputBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.streamingState_ = streamingState_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.streamingError_ =
+            streamingErrorBuilder_ == null ? streamingError_ : streamingErrorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.logConfig_ = logConfigBuilder_ == null ? logConfig_ : logConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2477,6 +2514,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.video.livestream.v1.Channel.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -2486,11 +2524,12 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000008;
       if (inputAttachmentsBuilder_ == null) {
         if (!other.inputAttachments_.isEmpty()) {
           if (inputAttachments_.isEmpty()) {
             inputAttachments_ = other.inputAttachments_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureInputAttachmentsIsMutable();
             inputAttachments_.addAll(other.inputAttachments_);
@@ -2503,7 +2542,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             inputAttachmentsBuilder_.dispose();
             inputAttachmentsBuilder_ = null;
             inputAttachments_ = other.inputAttachments_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
             inputAttachmentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInputAttachmentsFieldBuilder()
@@ -2515,6 +2554,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getActiveInput().isEmpty()) {
         activeInput_ = other.activeInput_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasOutput()) {
@@ -2524,7 +2564,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         if (!other.elementaryStreams_.isEmpty()) {
           if (elementaryStreams_.isEmpty()) {
             elementaryStreams_ = other.elementaryStreams_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureElementaryStreamsIsMutable();
             elementaryStreams_.addAll(other.elementaryStreams_);
@@ -2537,7 +2577,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             elementaryStreamsBuilder_.dispose();
             elementaryStreamsBuilder_ = null;
             elementaryStreams_ = other.elementaryStreams_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000080);
             elementaryStreamsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getElementaryStreamsFieldBuilder()
@@ -2551,7 +2591,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         if (!other.muxStreams_.isEmpty()) {
           if (muxStreams_.isEmpty()) {
             muxStreams_ = other.muxStreams_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureMuxStreamsIsMutable();
             muxStreams_.addAll(other.muxStreams_);
@@ -2564,7 +2604,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             muxStreamsBuilder_.dispose();
             muxStreamsBuilder_ = null;
             muxStreams_ = other.muxStreams_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000100);
             muxStreamsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMuxStreamsFieldBuilder()
@@ -2578,7 +2618,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         if (!other.manifests_.isEmpty()) {
           if (manifests_.isEmpty()) {
             manifests_ = other.manifests_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureManifestsIsMutable();
             manifests_.addAll(other.manifests_);
@@ -2591,7 +2631,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             manifestsBuilder_.dispose();
             manifestsBuilder_ = null;
             manifests_ = other.manifests_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000200);
             manifestsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getManifestsFieldBuilder()
@@ -2605,7 +2645,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         if (!other.spriteSheets_.isEmpty()) {
           if (spriteSheets_.isEmpty()) {
             spriteSheets_ = other.spriteSheets_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureSpriteSheetsIsMutable();
             spriteSheets_.addAll(other.spriteSheets_);
@@ -2618,7 +2658,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             spriteSheetsBuilder_.dispose();
             spriteSheetsBuilder_ = null;
             spriteSheets_ = other.spriteSheets_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000400);
             spriteSheetsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSpriteSheetsFieldBuilder()
@@ -2666,19 +2706,19 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -2690,18 +2730,19 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 50:
               {
                 activeInput_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 74:
               {
                 input.readMessage(getOutputFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 74
             case 82:
@@ -2761,7 +2802,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             case 112:
               {
                 streamingState_ = input.readEnum();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 112
             case 130:
@@ -2781,13 +2822,13 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             case 146:
               {
                 input.readMessage(getStreamingErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 146
             case 154:
               {
                 input.readMessage(getLogConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 154
             default:
@@ -2873,8 +2914,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2891,8 +2932,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2914,8 +2955,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2940,7 +2981,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2981,11 +3022,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3002,11 +3043,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3022,17 +3063,18 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3047,14 +3089,13 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3069,7 +3110,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3141,7 +3182,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -3182,11 +3223,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3203,11 +3244,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3223,17 +3264,18 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3248,14 +3290,13 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3270,7 +3311,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3333,14 +3374,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return labels_;
     }
 
@@ -3392,8 +3433,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3422,6 +3465,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3444,6 +3488,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -3462,8 +3507,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -3477,6 +3522,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -3484,11 +3530,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureInputAttachmentsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         inputAttachments_ =
             new java.util.ArrayList<com.google.cloud.video.livestream.v1.InputAttachment>(
                 inputAttachments_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -3740,7 +3786,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public Builder clearInputAttachments() {
       if (inputAttachmentsBuilder_ == null) {
         inputAttachments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         inputAttachmentsBuilder_.clear();
@@ -3889,7 +3935,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.video.livestream.v1.InputAttachment.Builder,
                 com.google.cloud.video.livestream.v1.InputAttachmentOrBuilder>(
                 inputAttachments_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         inputAttachments_ = null;
@@ -3961,8 +4007,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       activeInput_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3979,8 +4025,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearActiveInput() {
-
       activeInput_ = getDefaultInstance().getActiveInput();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -4002,8 +4048,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       activeInput_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4029,7 +4075,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the output field is set.
      */
     public boolean hasOutput() {
-      return outputBuilder_ != null || output_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -4072,11 +4118,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         output_ = value;
-        onChanged();
       } else {
         outputBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4095,11 +4141,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.video.livestream.v1.Channel.Output.Builder builderForValue) {
       if (outputBuilder_ == null) {
         output_ = builderForValue.build();
-        onChanged();
       } else {
         outputBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4116,19 +4162,19 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeOutput(com.google.cloud.video.livestream.v1.Channel.Output value) {
       if (outputBuilder_ == null) {
-        if (output_ != null) {
-          output_ =
-              com.google.cloud.video.livestream.v1.Channel.Output.newBuilder(output_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && output_ != null
+            && output_
+                != com.google.cloud.video.livestream.v1.Channel.Output.getDefaultInstance()) {
+          getOutputBuilder().mergeFrom(value);
         } else {
           output_ = value;
         }
-        onChanged();
       } else {
         outputBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4144,14 +4190,13 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearOutput() {
-      if (outputBuilder_ == null) {
-        output_ = null;
-        onChanged();
-      } else {
-        output_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      output_ = null;
+      if (outputBuilder_ != null) {
+        outputBuilder_.dispose();
         outputBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4167,7 +4212,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.video.livestream.v1.Channel.Output.Builder getOutputBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getOutputFieldBuilder().getBuilder();
     }
@@ -4225,11 +4270,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         elementaryStreams_ = java.util.Collections.emptyList();
 
     private void ensureElementaryStreamsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         elementaryStreams_ =
             new java.util.ArrayList<com.google.cloud.video.livestream.v1.ElementaryStream>(
                 elementaryStreams_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -4461,7 +4506,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public Builder clearElementaryStreams() {
       if (elementaryStreamsBuilder_ == null) {
         elementaryStreams_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         elementaryStreamsBuilder_.clear();
@@ -4596,7 +4641,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.video.livestream.v1.ElementaryStream.Builder,
                 com.google.cloud.video.livestream.v1.ElementaryStreamOrBuilder>(
                 elementaryStreams_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         elementaryStreams_ = null;
@@ -4608,10 +4653,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMuxStreamsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         muxStreams_ =
             new java.util.ArrayList<com.google.cloud.video.livestream.v1.MuxStream>(muxStreams_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -4827,7 +4872,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMuxStreams() {
       if (muxStreamsBuilder_ == null) {
         muxStreams_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         muxStreamsBuilder_.clear();
@@ -4950,7 +4995,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.video.livestream.v1.MuxStream,
                 com.google.cloud.video.livestream.v1.MuxStream.Builder,
                 com.google.cloud.video.livestream.v1.MuxStreamOrBuilder>(
-                muxStreams_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                muxStreams_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
         muxStreams_ = null;
       }
       return muxStreamsBuilder_;
@@ -4960,10 +5005,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureManifestsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         manifests_ =
             new java.util.ArrayList<com.google.cloud.video.livestream.v1.Manifest>(manifests_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -5179,7 +5224,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public Builder clearManifests() {
       if (manifestsBuilder_ == null) {
         manifests_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         manifestsBuilder_.clear();
@@ -5301,7 +5346,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.video.livestream.v1.Manifest,
                 com.google.cloud.video.livestream.v1.Manifest.Builder,
                 com.google.cloud.video.livestream.v1.ManifestOrBuilder>(
-                manifests_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                manifests_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
         manifests_ = null;
       }
       return manifestsBuilder_;
@@ -5311,11 +5356,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSpriteSheetsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         spriteSheets_ =
             new java.util.ArrayList<com.google.cloud.video.livestream.v1.SpriteSheet>(
                 spriteSheets_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -5533,7 +5578,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSpriteSheets() {
       if (spriteSheetsBuilder_ == null) {
         spriteSheets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         spriteSheetsBuilder_.clear();
@@ -5658,7 +5703,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.video.livestream.v1.SpriteSheet,
                 com.google.cloud.video.livestream.v1.SpriteSheet.Builder,
                 com.google.cloud.video.livestream.v1.SpriteSheetOrBuilder>(
-                spriteSheets_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+                spriteSheets_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
         spriteSheets_ = null;
       }
       return spriteSheetsBuilder_;
@@ -5697,8 +5742,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStreamingStateValue(int value) {
-
       streamingState_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5717,9 +5762,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.video.livestream.v1.Channel.StreamingState getStreamingState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.video.livestream.v1.Channel.StreamingState result =
-          com.google.cloud.video.livestream.v1.Channel.StreamingState.valueOf(streamingState_);
+          com.google.cloud.video.livestream.v1.Channel.StreamingState.forNumber(streamingState_);
       return result == null
           ? com.google.cloud.video.livestream.v1.Channel.StreamingState.UNRECOGNIZED
           : result;
@@ -5743,7 +5787,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000800;
       streamingState_ = value.getNumber();
       onChanged();
       return this;
@@ -5762,7 +5806,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStreamingState() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       streamingState_ = 0;
       onChanged();
       return this;
@@ -5787,7 +5831,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the streamingError field is set.
      */
     public boolean hasStreamingError() {
-      return streamingErrorBuilder_ != null || streamingError_ != null;
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -5830,11 +5874,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         streamingError_ = value;
-        onChanged();
       } else {
         streamingErrorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -5852,11 +5896,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public Builder setStreamingError(com.google.rpc.Status.Builder builderForValue) {
       if (streamingErrorBuilder_ == null) {
         streamingError_ = builderForValue.build();
-        onChanged();
       } else {
         streamingErrorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -5873,17 +5917,18 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStreamingError(com.google.rpc.Status value) {
       if (streamingErrorBuilder_ == null) {
-        if (streamingError_ != null) {
-          streamingError_ =
-              com.google.rpc.Status.newBuilder(streamingError_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00001000) != 0)
+            && streamingError_ != null
+            && streamingError_ != com.google.rpc.Status.getDefaultInstance()) {
+          getStreamingErrorBuilder().mergeFrom(value);
         } else {
           streamingError_ = value;
         }
-        onChanged();
       } else {
         streamingErrorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -5899,14 +5944,13 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStreamingError() {
-      if (streamingErrorBuilder_ == null) {
-        streamingError_ = null;
-        onChanged();
-      } else {
-        streamingError_ = null;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      streamingError_ = null;
+      if (streamingErrorBuilder_ != null) {
+        streamingErrorBuilder_.dispose();
         streamingErrorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5922,7 +5966,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.rpc.Status.Builder getStreamingErrorBuilder() {
-
+      bitField0_ |= 0x00001000;
       onChanged();
       return getStreamingErrorFieldBuilder().getBuilder();
     }
@@ -5992,7 +6036,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the logConfig field is set.
      */
     public boolean hasLogConfig() {
-      return logConfigBuilder_ != null || logConfig_ != null;
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -6029,11 +6073,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         logConfig_ = value;
-        onChanged();
       } else {
         logConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -6049,11 +6093,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.video.livestream.v1.LogConfig.Builder builderForValue) {
       if (logConfigBuilder_ == null) {
         logConfig_ = builderForValue.build();
-        onChanged();
       } else {
         logConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -6067,19 +6111,18 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLogConfig(com.google.cloud.video.livestream.v1.LogConfig value) {
       if (logConfigBuilder_ == null) {
-        if (logConfig_ != null) {
-          logConfig_ =
-              com.google.cloud.video.livestream.v1.LogConfig.newBuilder(logConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00002000) != 0)
+            && logConfig_ != null
+            && logConfig_ != com.google.cloud.video.livestream.v1.LogConfig.getDefaultInstance()) {
+          getLogConfigBuilder().mergeFrom(value);
         } else {
           logConfig_ = value;
         }
-        onChanged();
       } else {
         logConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -6092,14 +6135,13 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.livestream.v1.LogConfig log_config = 19;</code>
      */
     public Builder clearLogConfig() {
-      if (logConfigBuilder_ == null) {
-        logConfig_ = null;
-        onChanged();
-      } else {
-        logConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00002000);
+      logConfig_ = null;
+      if (logConfigBuilder_ != null) {
+        logConfigBuilder_.dispose();
         logConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -6112,7 +6154,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.livestream.v1.LogConfig log_config = 19;</code>
      */
     public com.google.cloud.video.livestream.v1.LogConfig.Builder getLogConfigBuilder() {
-
+      bitField0_ |= 0x00002000;
       onChanged();
       return getLogConfigFieldBuilder().getBuilder();
     }

@@ -149,7 +149,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object url_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object url_ = "";
   /**
    *
    *
@@ -210,7 +212,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HTTP_METHOD_FIELD_NUMBER = 2;
-  private int httpMethod_;
+  private int httpMethod_ = 0;
   /**
    *
    *
@@ -239,9 +241,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.tasks.v2beta3.HttpMethod getHttpMethod() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.tasks.v2beta3.HttpMethod result =
-        com.google.cloud.tasks.v2beta3.HttpMethod.valueOf(httpMethod_);
+        com.google.cloud.tasks.v2beta3.HttpMethod.forNumber(httpMethod_);
     return result == null ? com.google.cloud.tasks.v2beta3.HttpMethod.UNRECOGNIZED : result;
   }
 
@@ -258,6 +259,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> headers_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetHeaders() {
@@ -375,7 +377,10 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; headers = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getHeadersOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getHeadersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -424,7 +429,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BODY_FIELD_NUMBER = 4;
-  private com.google.protobuf.ByteString body_;
+  private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -893,13 +898,11 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       url_ = "";
-
       httpMethod_ = 0;
-
       internalGetMutableHeaders().clear();
       body_ = com.google.protobuf.ByteString.EMPTY;
-
       if (oauthTokenBuilder_ != null) {
         oauthTokenBuilder_.clear();
       }
@@ -935,29 +938,40 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.tasks.v2beta3.HttpRequest buildPartial() {
       com.google.cloud.tasks.v2beta3.HttpRequest result =
           new com.google.cloud.tasks.v2beta3.HttpRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.url_ = url_;
-      result.httpMethod_ = httpMethod_;
-      result.headers_ = internalGetHeaders();
-      result.headers_.makeImmutable();
-      result.body_ = body_;
-      if (authorizationHeaderCase_ == 5) {
-        if (oauthTokenBuilder_ == null) {
-          result.authorizationHeader_ = authorizationHeader_;
-        } else {
-          result.authorizationHeader_ = oauthTokenBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (authorizationHeaderCase_ == 6) {
-        if (oidcTokenBuilder_ == null) {
-          result.authorizationHeader_ = authorizationHeader_;
-        } else {
-          result.authorizationHeader_ = oidcTokenBuilder_.build();
-        }
-      }
-      result.authorizationHeaderCase_ = authorizationHeaderCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tasks.v2beta3.HttpRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.url_ = url_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.httpMethod_ = httpMethod_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.headers_ = internalGetHeaders();
+        result.headers_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.body_ = body_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.tasks.v2beta3.HttpRequest result) {
+      result.authorizationHeaderCase_ = authorizationHeaderCase_;
+      result.authorizationHeader_ = this.authorizationHeader_;
+      if (authorizationHeaderCase_ == 5 && oauthTokenBuilder_ != null) {
+        result.authorizationHeader_ = oauthTokenBuilder_.build();
+      }
+      if (authorizationHeaderCase_ == 6 && oidcTokenBuilder_ != null) {
+        result.authorizationHeader_ = oidcTokenBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1007,12 +1021,14 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.tasks.v2beta3.HttpRequest.getDefaultInstance()) return this;
       if (!other.getUrl().isEmpty()) {
         url_ = other.url_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.httpMethod_ != 0) {
         setHttpMethodValue(other.getHttpMethodValue());
       }
       internalGetMutableHeaders().mergeFrom(other.internalGetHeaders());
+      bitField0_ |= 0x00000004;
       if (other.getBody() != com.google.protobuf.ByteString.EMPTY) {
         setBody(other.getBody());
       }
@@ -1061,13 +1077,13 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 url_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 httpMethod_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -1079,12 +1095,13 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableHeaders()
                     .getMutableMap()
                     .put(headers__.getKey(), headers__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 body_ = input.readBytes();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1211,8 +1228,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       url_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1234,8 +1251,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUrl() {
-
       url_ = getDefaultInstance().getUrl();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1262,8 +1279,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       url_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1297,8 +1314,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setHttpMethodValue(int value) {
-
       httpMethod_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1315,9 +1332,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.tasks.v2beta3.HttpMethod getHttpMethod() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.tasks.v2beta3.HttpMethod result =
-          com.google.cloud.tasks.v2beta3.HttpMethod.valueOf(httpMethod_);
+          com.google.cloud.tasks.v2beta3.HttpMethod.forNumber(httpMethod_);
       return result == null ? com.google.cloud.tasks.v2beta3.HttpMethod.UNRECOGNIZED : result;
     }
     /**
@@ -1336,7 +1352,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       httpMethod_ = value.getNumber();
       onChanged();
       return this;
@@ -1353,7 +1369,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHttpMethod() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       httpMethod_ = 0;
       onChanged();
       return this;
@@ -1370,14 +1386,14 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableHeaders() {
-      onChanged();
-      ;
       if (headers_ == null) {
         headers_ = com.google.protobuf.MapField.newMapField(HeadersDefaultEntryHolder.defaultEntry);
       }
       if (!headers_.isMutable()) {
         headers_ = headers_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return headers_;
     }
 
@@ -1489,8 +1505,10 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; headers = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getHeadersOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getHeadersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1539,6 +1557,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearHeaders() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableHeaders().getMutableMap().clear();
       return this;
     }
@@ -1581,6 +1600,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableHeaders() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableHeaders().getMutableMap();
     }
     /**
@@ -1619,8 +1639,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableHeaders().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1654,6 +1674,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableHeaders().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1695,8 +1716,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       body_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1715,7 +1736,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBody() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       body_ = getDefaultInstance().getBody();
       onChanged();
       return this;
@@ -1973,7 +1994,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       }
       authorizationHeaderCase_ = 5;
       onChanged();
-      ;
       return oauthTokenBuilder_;
     }
 
@@ -2237,7 +2257,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       }
       authorizationHeaderCase_ = 6;
       onChanged();
-      ;
       return oidcTokenBuilder_;
     }
 

@@ -70,6 +70,8 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
   }
 
   public static final int CELEBRITY_TRACKS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack>
       celebrityTracks_;
   /**
@@ -361,6 +363,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (celebrityTracksBuilder_ == null) {
         celebrityTracks_ = java.util.Collections.emptyList();
       } else {
@@ -399,7 +402,16 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
         buildPartial() {
       com.google.cloud.videointelligence.v1p3beta1.CelebrityRecognitionAnnotation result =
           new com.google.cloud.videointelligence.v1p3beta1.CelebrityRecognitionAnnotation(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.videointelligence.v1p3beta1.CelebrityRecognitionAnnotation result) {
       if (celebrityTracksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           celebrityTracks_ = java.util.Collections.unmodifiableList(celebrityTracks_);
@@ -409,8 +421,11 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
       } else {
         result.celebrityTracks_ = celebrityTracksBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1p3beta1.CelebrityRecognitionAnnotation result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

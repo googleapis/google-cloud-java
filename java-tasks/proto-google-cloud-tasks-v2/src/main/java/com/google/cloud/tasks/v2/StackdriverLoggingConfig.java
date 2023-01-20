@@ -67,7 +67,7 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
   }
 
   public static final int SAMPLING_RATIO_FIELD_NUMBER = 1;
-  private double samplingRatio_;
+  private double samplingRatio_ = 0D;
   /**
    *
    *
@@ -289,8 +289,8 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       samplingRatio_ = 0D;
-
       return this;
     }
 
@@ -318,9 +318,18 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
     public com.google.cloud.tasks.v2.StackdriverLoggingConfig buildPartial() {
       com.google.cloud.tasks.v2.StackdriverLoggingConfig result =
           new com.google.cloud.tasks.v2.StackdriverLoggingConfig(this);
-      result.samplingRatio_ = samplingRatio_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tasks.v2.StackdriverLoggingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.samplingRatio_ = samplingRatio_;
+      }
     }
 
     @java.lang.Override
@@ -401,7 +410,7 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
             case 9:
               {
                 samplingRatio_ = input.readDouble();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 9
             default:
@@ -420,6 +429,8 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private double samplingRatio_;
     /**
@@ -458,6 +469,7 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
     public Builder setSamplingRatio(double value) {
 
       samplingRatio_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -476,7 +488,7 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearSamplingRatio() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       samplingRatio_ = 0D;
       onChanged();
       return this;

@@ -69,7 +69,7 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RETRY_COUNT_FIELD_NUMBER = 1;
-  private int retryCount_;
+  private int retryCount_ = 0;
   /**
    *
    *
@@ -157,7 +157,9 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getMaxRetryDurationOrBuilder() {
-    return getMaxRetryDuration();
+    return maxRetryDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : maxRetryDuration_;
   }
 
   public static final int MIN_BACKOFF_DURATION_FIELD_NUMBER = 3;
@@ -211,7 +213,9 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getMinBackoffDurationOrBuilder() {
-    return getMinBackoffDuration();
+    return minBackoffDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : minBackoffDuration_;
   }
 
   public static final int MAX_BACKOFF_DURATION_FIELD_NUMBER = 4;
@@ -265,11 +269,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getMaxBackoffDurationOrBuilder() {
-    return getMaxBackoffDuration();
+    return maxBackoffDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : maxBackoffDuration_;
   }
 
   public static final int MAX_DOUBLINGS_FIELD_NUMBER = 5;
-  private int maxDoublings_;
+  private int maxDoublings_ = 0;
   /**
    *
    *
@@ -552,28 +558,24 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       retryCount_ = 0;
-
-      if (maxRetryDurationBuilder_ == null) {
-        maxRetryDuration_ = null;
-      } else {
-        maxRetryDuration_ = null;
+      maxRetryDuration_ = null;
+      if (maxRetryDurationBuilder_ != null) {
+        maxRetryDurationBuilder_.dispose();
         maxRetryDurationBuilder_ = null;
       }
-      if (minBackoffDurationBuilder_ == null) {
-        minBackoffDuration_ = null;
-      } else {
-        minBackoffDuration_ = null;
+      minBackoffDuration_ = null;
+      if (minBackoffDurationBuilder_ != null) {
+        minBackoffDurationBuilder_.dispose();
         minBackoffDurationBuilder_ = null;
       }
-      if (maxBackoffDurationBuilder_ == null) {
-        maxBackoffDuration_ = null;
-      } else {
-        maxBackoffDuration_ = null;
+      maxBackoffDuration_ = null;
+      if (maxBackoffDurationBuilder_ != null) {
+        maxBackoffDurationBuilder_.dispose();
         maxBackoffDurationBuilder_ = null;
       }
       maxDoublings_ = 0;
-
       return this;
     }
 
@@ -601,25 +603,37 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.scheduler.v1.RetryConfig buildPartial() {
       com.google.cloud.scheduler.v1.RetryConfig result =
           new com.google.cloud.scheduler.v1.RetryConfig(this);
-      result.retryCount_ = retryCount_;
-      if (maxRetryDurationBuilder_ == null) {
-        result.maxRetryDuration_ = maxRetryDuration_;
-      } else {
-        result.maxRetryDuration_ = maxRetryDurationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (minBackoffDurationBuilder_ == null) {
-        result.minBackoffDuration_ = minBackoffDuration_;
-      } else {
-        result.minBackoffDuration_ = minBackoffDurationBuilder_.build();
-      }
-      if (maxBackoffDurationBuilder_ == null) {
-        result.maxBackoffDuration_ = maxBackoffDuration_;
-      } else {
-        result.maxBackoffDuration_ = maxBackoffDurationBuilder_.build();
-      }
-      result.maxDoublings_ = maxDoublings_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.scheduler.v1.RetryConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.retryCount_ = retryCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxRetryDuration_ =
+            maxRetryDurationBuilder_ == null ? maxRetryDuration_ : maxRetryDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.minBackoffDuration_ =
+            minBackoffDurationBuilder_ == null
+                ? minBackoffDuration_
+                : minBackoffDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.maxBackoffDuration_ =
+            maxBackoffDurationBuilder_ == null
+                ? maxBackoffDuration_
+                : maxBackoffDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.maxDoublings_ = maxDoublings_;
+      }
     }
 
     @java.lang.Override
@@ -711,34 +725,34 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 retryCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(
                     getMaxRetryDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getMinBackoffDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getMaxBackoffDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 maxDoublings_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -757,6 +771,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int retryCount_;
     /**
@@ -811,6 +827,7 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setRetryCount(int value) {
 
       retryCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -837,7 +854,7 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRetryCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       retryCount_ = 0;
       onChanged();
       return this;
@@ -866,7 +883,7 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maxRetryDuration field is set.
      */
     public boolean hasMaxRetryDuration() {
-      return maxRetryDurationBuilder_ != null || maxRetryDuration_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -913,11 +930,11 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         maxRetryDuration_ = value;
-        onChanged();
       } else {
         maxRetryDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -937,11 +954,11 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxRetryDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (maxRetryDurationBuilder_ == null) {
         maxRetryDuration_ = builderForValue.build();
-        onChanged();
       } else {
         maxRetryDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -960,19 +977,18 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMaxRetryDuration(com.google.protobuf.Duration value) {
       if (maxRetryDurationBuilder_ == null) {
-        if (maxRetryDuration_ != null) {
-          maxRetryDuration_ =
-              com.google.protobuf.Duration.newBuilder(maxRetryDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && maxRetryDuration_ != null
+            && maxRetryDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getMaxRetryDurationBuilder().mergeFrom(value);
         } else {
           maxRetryDuration_ = value;
         }
-        onChanged();
       } else {
         maxRetryDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -990,14 +1006,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration max_retry_duration = 2;</code>
      */
     public Builder clearMaxRetryDuration() {
-      if (maxRetryDurationBuilder_ == null) {
-        maxRetryDuration_ = null;
-        onChanged();
-      } else {
-        maxRetryDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      maxRetryDuration_ = null;
+      if (maxRetryDurationBuilder_ != null) {
+        maxRetryDurationBuilder_.dispose();
         maxRetryDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1015,7 +1030,7 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration max_retry_duration = 2;</code>
      */
     public com.google.protobuf.Duration.Builder getMaxRetryDurationBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMaxRetryDurationFieldBuilder().getBuilder();
     }
@@ -1093,7 +1108,7 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the minBackoffDuration field is set.
      */
     public boolean hasMinBackoffDuration() {
-      return minBackoffDurationBuilder_ != null || minBackoffDuration_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1134,11 +1149,11 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         minBackoffDuration_ = value;
-        onChanged();
       } else {
         minBackoffDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1155,11 +1170,11 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setMinBackoffDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (minBackoffDurationBuilder_ == null) {
         minBackoffDuration_ = builderForValue.build();
-        onChanged();
       } else {
         minBackoffDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1175,19 +1190,18 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMinBackoffDuration(com.google.protobuf.Duration value) {
       if (minBackoffDurationBuilder_ == null) {
-        if (minBackoffDuration_ != null) {
-          minBackoffDuration_ =
-              com.google.protobuf.Duration.newBuilder(minBackoffDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && minBackoffDuration_ != null
+            && minBackoffDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getMinBackoffDurationBuilder().mergeFrom(value);
         } else {
           minBackoffDuration_ = value;
         }
-        onChanged();
       } else {
         minBackoffDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1202,14 +1216,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration min_backoff_duration = 3;</code>
      */
     public Builder clearMinBackoffDuration() {
-      if (minBackoffDurationBuilder_ == null) {
-        minBackoffDuration_ = null;
-        onChanged();
-      } else {
-        minBackoffDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      minBackoffDuration_ = null;
+      if (minBackoffDurationBuilder_ != null) {
+        minBackoffDurationBuilder_.dispose();
         minBackoffDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1224,7 +1237,7 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration min_backoff_duration = 3;</code>
      */
     public com.google.protobuf.Duration.Builder getMinBackoffDurationBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getMinBackoffDurationFieldBuilder().getBuilder();
     }
@@ -1296,7 +1309,7 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maxBackoffDuration field is set.
      */
     public boolean hasMaxBackoffDuration() {
-      return maxBackoffDurationBuilder_ != null || maxBackoffDuration_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1337,11 +1350,11 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         maxBackoffDuration_ = value;
-        onChanged();
       } else {
         maxBackoffDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1358,11 +1371,11 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxBackoffDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (maxBackoffDurationBuilder_ == null) {
         maxBackoffDuration_ = builderForValue.build();
-        onChanged();
       } else {
         maxBackoffDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1378,19 +1391,18 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMaxBackoffDuration(com.google.protobuf.Duration value) {
       if (maxBackoffDurationBuilder_ == null) {
-        if (maxBackoffDuration_ != null) {
-          maxBackoffDuration_ =
-              com.google.protobuf.Duration.newBuilder(maxBackoffDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && maxBackoffDuration_ != null
+            && maxBackoffDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getMaxBackoffDurationBuilder().mergeFrom(value);
         } else {
           maxBackoffDuration_ = value;
         }
-        onChanged();
       } else {
         maxBackoffDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1405,14 +1417,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration max_backoff_duration = 4;</code>
      */
     public Builder clearMaxBackoffDuration() {
-      if (maxBackoffDurationBuilder_ == null) {
-        maxBackoffDuration_ = null;
-        onChanged();
-      } else {
-        maxBackoffDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      maxBackoffDuration_ = null;
+      if (maxBackoffDurationBuilder_ != null) {
+        maxBackoffDurationBuilder_.dispose();
         maxBackoffDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1427,7 +1438,7 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration max_backoff_duration = 4;</code>
      */
     public com.google.protobuf.Duration.Builder getMaxBackoffDurationBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getMaxBackoffDurationFieldBuilder().getBuilder();
     }
@@ -1540,6 +1551,7 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxDoublings(int value) {
 
       maxDoublings_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1570,7 +1582,7 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxDoublings() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       maxDoublings_ = 0;
       onChanged();
       return this;

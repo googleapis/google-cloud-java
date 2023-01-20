@@ -71,7 +71,9 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
   }
 
   public static final int ACCESS_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object accessToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object accessToken_ = "";
   /**
    *
    *
@@ -179,6 +183,8 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
   }
 
   public static final int PUBLIC_KEYS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList publicKeys_;
   /**
    *
@@ -462,12 +468,11 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       accessToken_ = "";
-
       publicKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -495,16 +500,31 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
     public com.google.cloud.shell.v1.StartEnvironmentRequest buildPartial() {
       com.google.cloud.shell.v1.StartEnvironmentRequest result =
           new com.google.cloud.shell.v1.StartEnvironmentRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.accessToken_ = accessToken_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        publicKeys_ = publicKeys_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.publicKeys_ = publicKeys_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.shell.v1.StartEnvironmentRequest result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        publicKeys_ = publicKeys_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.publicKeys_ = publicKeys_;
+    }
+
+    private void buildPartial0(com.google.cloud.shell.v1.StartEnvironmentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.accessToken_ = accessToken_;
+      }
     }
 
     @java.lang.Override
@@ -555,16 +575,18 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAccessToken().isEmpty()) {
         accessToken_ = other.accessToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.publicKeys_.isEmpty()) {
         if (publicKeys_.isEmpty()) {
           publicKeys_ = other.publicKeys_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensurePublicKeysIsMutable();
           publicKeys_.addAll(other.publicKeys_);
@@ -600,13 +622,13 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 accessToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -702,8 +724,8 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -721,8 +743,8 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -745,8 +767,8 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -821,8 +843,8 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       accessToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -841,8 +863,8 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearAccessToken() {
-
       accessToken_ = getDefaultInstance().getAccessToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -866,8 +888,8 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       accessToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -876,9 +898,9 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePublicKeysIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         publicKeys_ = new com.google.protobuf.LazyStringArrayList(publicKeys_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1013,7 +1035,7 @@ public final class StartEnvironmentRequest extends com.google.protobuf.Generated
      */
     public Builder clearPublicKeys() {
       publicKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

@@ -192,7 +192,9 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int OPERATION_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object operationId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object operationId_ = "";
     /**
      *
      *
@@ -290,7 +292,7 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
-      return getStatus();
+      return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -508,12 +510,11 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         operationId_ = "";
-
-        if (statusBuilder_ == null) {
-          status_ = null;
-        } else {
-          status_ = null;
+        status_ = null;
+        if (statusBuilder_ != null) {
+          statusBuilder_.dispose();
           statusBuilder_ = null;
         }
         return this;
@@ -544,14 +545,22 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
       public com.google.api.servicecontrol.v1.ReportResponse.ReportError buildPartial() {
         com.google.api.servicecontrol.v1.ReportResponse.ReportError result =
             new com.google.api.servicecontrol.v1.ReportResponse.ReportError(this);
-        result.operationId_ = operationId_;
-        if (statusBuilder_ == null) {
-          result.status_ = status_;
-        } else {
-          result.status_ = statusBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.api.servicecontrol.v1.ReportResponse.ReportError result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.operationId_ = operationId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -605,6 +614,7 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getOperationId().isEmpty()) {
           operationId_ = other.operationId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasStatus()) {
@@ -639,13 +649,13 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   operationId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -664,6 +674,8 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object operationId_ = "";
       /**
@@ -732,8 +744,8 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         operationId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -751,8 +763,8 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearOperationId() {
-
         operationId_ = getDefaultInstance().getOperationId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -775,8 +787,8 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         operationId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -798,7 +810,7 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the status field is set.
        */
       public boolean hasStatus() {
-        return statusBuilder_ != null || status_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -835,11 +847,11 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           status_ = value;
-          onChanged();
         } else {
           statusBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -855,11 +867,11 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
       public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
         if (statusBuilder_ == null) {
           status_ = builderForValue.build();
-          onChanged();
         } else {
           statusBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -874,16 +886,18 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeStatus(com.google.rpc.Status value) {
         if (statusBuilder_ == null) {
-          if (status_ != null) {
-            status_ = com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && status_ != null
+              && status_ != com.google.rpc.Status.getDefaultInstance()) {
+            getStatusBuilder().mergeFrom(value);
           } else {
             status_ = value;
           }
-          onChanged();
         } else {
           statusBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -897,14 +911,13 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.rpc.Status status = 2;</code>
        */
       public Builder clearStatus() {
-        if (statusBuilder_ == null) {
-          status_ = null;
-          onChanged();
-        } else {
-          status_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        status_ = null;
+        if (statusBuilder_ != null) {
+          statusBuilder_.dispose();
           statusBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -918,7 +931,7 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.rpc.Status status = 2;</code>
        */
       public com.google.rpc.Status.Builder getStatusBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
@@ -1029,6 +1042,8 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REPORT_ERRORS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.servicecontrol.v1.ReportResponse.ReportError> reportErrors_;
   /**
    *
@@ -1166,7 +1181,9 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_CONFIG_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object serviceConfigId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceConfigId_ = "";
   /**
    *
    *
@@ -1215,7 +1232,9 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_ROLLOUT_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object serviceRolloutId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceRolloutId_ = "";
   /**
    *
    *
@@ -1480,6 +1499,7 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (reportErrorsBuilder_ == null) {
         reportErrors_ = java.util.Collections.emptyList();
       } else {
@@ -1488,9 +1508,7 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       serviceConfigId_ = "";
-
       serviceRolloutId_ = "";
-
       return this;
     }
 
@@ -1518,7 +1536,16 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.servicecontrol.v1.ReportResponse buildPartial() {
       com.google.api.servicecontrol.v1.ReportResponse result =
           new com.google.api.servicecontrol.v1.ReportResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.api.servicecontrol.v1.ReportResponse result) {
       if (reportErrorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           reportErrors_ = java.util.Collections.unmodifiableList(reportErrors_);
@@ -1528,10 +1555,16 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.reportErrors_ = reportErrorsBuilder_.build();
       }
-      result.serviceConfigId_ = serviceConfigId_;
-      result.serviceRolloutId_ = serviceRolloutId_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.api.servicecontrol.v1.ReportResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.serviceConfigId_ = serviceConfigId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.serviceRolloutId_ = serviceRolloutId_;
+      }
     }
 
     @java.lang.Override
@@ -1609,10 +1642,12 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getServiceConfigId().isEmpty()) {
         serviceConfigId_ = other.serviceConfigId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getServiceRolloutId().isEmpty()) {
         serviceRolloutId_ = other.serviceRolloutId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1658,13 +1693,13 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 serviceConfigId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 serviceRolloutId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -2348,8 +2383,8 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceConfigId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2365,8 +2400,8 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceConfigId() {
-
       serviceConfigId_ = getDefaultInstance().getServiceConfigId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2387,8 +2422,8 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceConfigId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2454,8 +2489,8 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceRolloutId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2471,8 +2506,8 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceRolloutId() {
-
       serviceRolloutId_ = getDefaultInstance().getServiceRolloutId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2493,8 +2528,8 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceRolloutId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

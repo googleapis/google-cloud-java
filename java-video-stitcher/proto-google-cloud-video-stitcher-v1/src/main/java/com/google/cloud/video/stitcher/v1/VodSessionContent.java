@@ -111,7 +111,7 @@ public final class VodSessionContent extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
-    return getDuration();
+    return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -316,10 +316,10 @@ public final class VodSessionContent extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (durationBuilder_ == null) {
-        duration_ = null;
-      } else {
-        duration_ = null;
+      bitField0_ = 0;
+      duration_ = null;
+      if (durationBuilder_ != null) {
+        durationBuilder_.dispose();
         durationBuilder_ = null;
       }
       return this;
@@ -349,13 +349,18 @@ public final class VodSessionContent extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.video.stitcher.v1.VodSessionContent buildPartial() {
       com.google.cloud.video.stitcher.v1.VodSessionContent result =
           new com.google.cloud.video.stitcher.v1.VodSessionContent(this);
-      if (durationBuilder_ == null) {
-        result.duration_ = duration_;
-      } else {
-        result.duration_ = durationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.VodSessionContent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -436,7 +441,7 @@ public final class VodSessionContent extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 input.readMessage(getDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -455,6 +460,8 @@ public final class VodSessionContent extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Duration duration_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -475,7 +482,7 @@ public final class VodSessionContent extends com.google.protobuf.GeneratedMessag
      * @return Whether the duration field is set.
      */
     public boolean hasDuration() {
-      return durationBuilder_ != null || duration_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -512,11 +519,11 @@ public final class VodSessionContent extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         duration_ = value;
-        onChanged();
       } else {
         durationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -532,11 +539,11 @@ public final class VodSessionContent extends com.google.protobuf.GeneratedMessag
     public Builder setDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (durationBuilder_ == null) {
         duration_ = builderForValue.build();
-        onChanged();
       } else {
         durationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -551,17 +558,18 @@ public final class VodSessionContent extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeDuration(com.google.protobuf.Duration value) {
       if (durationBuilder_ == null) {
-        if (duration_ != null) {
-          duration_ =
-              com.google.protobuf.Duration.newBuilder(duration_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && duration_ != null
+            && duration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getDurationBuilder().mergeFrom(value);
         } else {
           duration_ = value;
         }
-        onChanged();
       } else {
         durationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -575,14 +583,13 @@ public final class VodSessionContent extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration duration = 1;</code>
      */
     public Builder clearDuration() {
-      if (durationBuilder_ == null) {
-        duration_ = null;
-        onChanged();
-      } else {
-        duration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      duration_ = null;
+      if (durationBuilder_ != null) {
+        durationBuilder_.dispose();
         durationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -596,7 +603,7 @@ public final class VodSessionContent extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration duration = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getDurationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDurationFieldBuilder().getBuilder();
     }

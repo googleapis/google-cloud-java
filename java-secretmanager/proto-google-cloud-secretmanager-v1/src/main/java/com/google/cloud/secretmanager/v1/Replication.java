@@ -256,7 +256,9 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder
         getCustomerManagedEncryptionOrBuilder() {
-      return getCustomerManagedEncryption();
+      return customerManagedEncryption_ == null
+          ? com.google.cloud.secretmanager.v1.CustomerManagedEncryption.getDefaultInstance()
+          : customerManagedEncryption_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -469,10 +471,10 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (customerManagedEncryptionBuilder_ == null) {
-          customerManagedEncryption_ = null;
-        } else {
-          customerManagedEncryption_ = null;
+        bitField0_ = 0;
+        customerManagedEncryption_ = null;
+        if (customerManagedEncryptionBuilder_ != null) {
+          customerManagedEncryptionBuilder_.dispose();
           customerManagedEncryptionBuilder_ = null;
         }
         return this;
@@ -502,13 +504,21 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.secretmanager.v1.Replication.Automatic buildPartial() {
         com.google.cloud.secretmanager.v1.Replication.Automatic result =
             new com.google.cloud.secretmanager.v1.Replication.Automatic(this);
-        if (customerManagedEncryptionBuilder_ == null) {
-          result.customerManagedEncryption_ = customerManagedEncryption_;
-        } else {
-          result.customerManagedEncryption_ = customerManagedEncryptionBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.secretmanager.v1.Replication.Automatic result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.customerManagedEncryption_ =
+              customerManagedEncryptionBuilder_ == null
+                  ? customerManagedEncryption_
+                  : customerManagedEncryptionBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -592,7 +602,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
                 {
                   input.readMessage(
                       getCustomerManagedEncryptionFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -611,6 +621,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.secretmanager.v1.CustomerManagedEncryption
           customerManagedEncryption_;
@@ -640,7 +652,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the customerManagedEncryption field is set.
        */
       public boolean hasCustomerManagedEncryption() {
-        return customerManagedEncryptionBuilder_ != null || customerManagedEncryption_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -697,11 +709,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           customerManagedEncryption_ = value;
-          onChanged();
         } else {
           customerManagedEncryptionBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -726,11 +738,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder builderForValue) {
         if (customerManagedEncryptionBuilder_ == null) {
           customerManagedEncryption_ = builderForValue.build();
-          onChanged();
         } else {
           customerManagedEncryptionBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -754,20 +766,20 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeCustomerManagedEncryption(
           com.google.cloud.secretmanager.v1.CustomerManagedEncryption value) {
         if (customerManagedEncryptionBuilder_ == null) {
-          if (customerManagedEncryption_ != null) {
-            customerManagedEncryption_ =
-                com.google.cloud.secretmanager.v1.CustomerManagedEncryption.newBuilder(
-                        customerManagedEncryption_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && customerManagedEncryption_ != null
+              && customerManagedEncryption_
+                  != com.google.cloud.secretmanager.v1.CustomerManagedEncryption
+                      .getDefaultInstance()) {
+            getCustomerManagedEncryptionBuilder().mergeFrom(value);
           } else {
             customerManagedEncryption_ = value;
           }
-          onChanged();
         } else {
           customerManagedEncryptionBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -789,14 +801,13 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearCustomerManagedEncryption() {
-        if (customerManagedEncryptionBuilder_ == null) {
-          customerManagedEncryption_ = null;
-          onChanged();
-        } else {
-          customerManagedEncryption_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        customerManagedEncryption_ = null;
+        if (customerManagedEncryptionBuilder_ != null) {
+          customerManagedEncryptionBuilder_.dispose();
           customerManagedEncryptionBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -819,7 +830,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder
           getCustomerManagedEncryptionBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getCustomerManagedEncryptionFieldBuilder().getBuilder();
       }
@@ -1227,7 +1238,9 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int LOCATION_FIELD_NUMBER = 1;
-      private volatile java.lang.Object location_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object location_ = "";
       /**
        *
        *
@@ -1352,7 +1365,9 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder
           getCustomerManagedEncryptionOrBuilder() {
-        return getCustomerManagedEncryption();
+        return customerManagedEncryption_ == null
+            ? com.google.cloud.secretmanager.v1.CustomerManagedEncryption.getDefaultInstance()
+            : customerManagedEncryption_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -1576,12 +1591,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           location_ = "";
-
-          if (customerManagedEncryptionBuilder_ == null) {
-            customerManagedEncryption_ = null;
-          } else {
-            customerManagedEncryption_ = null;
+          customerManagedEncryption_ = null;
+          if (customerManagedEncryptionBuilder_ != null) {
+            customerManagedEncryptionBuilder_.dispose();
             customerManagedEncryptionBuilder_ = null;
           }
           return this;
@@ -1613,14 +1627,25 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica buildPartial() {
           com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica result =
               new com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica(this);
-          result.location_ = location_;
-          if (customerManagedEncryptionBuilder_ == null) {
-            result.customerManagedEncryption_ = customerManagedEncryption_;
-          } else {
-            result.customerManagedEncryption_ = customerManagedEncryptionBuilder_.build();
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.location_ = location_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.customerManagedEncryption_ =
+                customerManagedEncryptionBuilder_ == null
+                    ? customerManagedEncryption_
+                    : customerManagedEncryptionBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -1676,6 +1701,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getLocation().isEmpty()) {
             location_ = other.location_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (other.hasCustomerManagedEncryption()) {
@@ -1710,14 +1736,14 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     location_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     input.readMessage(
                         getCustomerManagedEncryptionFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 default:
@@ -1736,6 +1762,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object location_ = "";
         /**
@@ -1801,8 +1829,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           location_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1819,8 +1847,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearLocation() {
-
           location_ = getDefaultInstance().getLocation();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -1842,8 +1870,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           location_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1876,7 +1904,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the customerManagedEncryption field is set.
          */
         public boolean hasCustomerManagedEncryption() {
-          return customerManagedEncryptionBuilder_ != null || customerManagedEncryption_ != null;
+          return ((bitField0_ & 0x00000002) != 0);
         }
         /**
          *
@@ -1933,11 +1961,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             customerManagedEncryption_ = value;
-            onChanged();
           } else {
             customerManagedEncryptionBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -1962,11 +1990,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder builderForValue) {
           if (customerManagedEncryptionBuilder_ == null) {
             customerManagedEncryption_ = builderForValue.build();
-            onChanged();
           } else {
             customerManagedEncryptionBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -1990,20 +2018,20 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         public Builder mergeCustomerManagedEncryption(
             com.google.cloud.secretmanager.v1.CustomerManagedEncryption value) {
           if (customerManagedEncryptionBuilder_ == null) {
-            if (customerManagedEncryption_ != null) {
-              customerManagedEncryption_ =
-                  com.google.cloud.secretmanager.v1.CustomerManagedEncryption.newBuilder(
-                          customerManagedEncryption_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000002) != 0)
+                && customerManagedEncryption_ != null
+                && customerManagedEncryption_
+                    != com.google.cloud.secretmanager.v1.CustomerManagedEncryption
+                        .getDefaultInstance()) {
+              getCustomerManagedEncryptionBuilder().mergeFrom(value);
             } else {
               customerManagedEncryption_ = value;
             }
-            onChanged();
           } else {
             customerManagedEncryptionBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -2025,14 +2053,13 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         public Builder clearCustomerManagedEncryption() {
-          if (customerManagedEncryptionBuilder_ == null) {
-            customerManagedEncryption_ = null;
-            onChanged();
-          } else {
-            customerManagedEncryption_ = null;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          customerManagedEncryption_ = null;
+          if (customerManagedEncryptionBuilder_ != null) {
+            customerManagedEncryptionBuilder_.dispose();
             customerManagedEncryptionBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -2055,7 +2082,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          */
         public com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder
             getCustomerManagedEncryptionBuilder() {
-
+          bitField0_ |= 0x00000002;
           onChanged();
           return getCustomerManagedEncryptionFieldBuilder().getBuilder();
         }
@@ -2190,6 +2217,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int REPLICAS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica>
         replicas_;
     /**
@@ -2487,6 +2516,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (replicasBuilder_ == null) {
           replicas_ = java.util.Collections.emptyList();
         } else {
@@ -2521,7 +2551,16 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.secretmanager.v1.Replication.UserManaged buildPartial() {
         com.google.cloud.secretmanager.v1.Replication.UserManaged result =
             new com.google.cloud.secretmanager.v1.Replication.UserManaged(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.secretmanager.v1.Replication.UserManaged result) {
         if (replicasBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             replicas_ = java.util.Collections.unmodifiableList(replicas_);
@@ -2531,8 +2570,10 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.replicas_ = replicasBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.secretmanager.v1.Replication.UserManaged result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -3566,6 +3607,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (automaticBuilder_ != null) {
         automaticBuilder_.clear();
       }
@@ -3601,23 +3643,27 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.secretmanager.v1.Replication buildPartial() {
       com.google.cloud.secretmanager.v1.Replication result =
           new com.google.cloud.secretmanager.v1.Replication(this);
-      if (replicationCase_ == 1) {
-        if (automaticBuilder_ == null) {
-          result.replication_ = replication_;
-        } else {
-          result.replication_ = automaticBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (replicationCase_ == 2) {
-        if (userManagedBuilder_ == null) {
-          result.replication_ = replication_;
-        } else {
-          result.replication_ = userManagedBuilder_.build();
-        }
-      }
-      result.replicationCase_ = replicationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.secretmanager.v1.Replication result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.secretmanager.v1.Replication result) {
+      result.replicationCase_ = replicationCase_;
+      result.replication_ = this.replication_;
+      if (replicationCase_ == 1 && automaticBuilder_ != null) {
+        result.replication_ = automaticBuilder_.build();
+      }
+      if (replicationCase_ == 2 && userManagedBuilder_ != null) {
+        result.replication_ = userManagedBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3749,6 +3795,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.secretmanager.v1.Replication.Automatic,
@@ -3968,7 +4016,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       replicationCase_ = 1;
       onChanged();
-      ;
       return automaticBuilder_;
     }
 
@@ -4192,7 +4239,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       replicationCase_ = 2;
       onChanged();
-      ;
       return userManagedBuilder_;
     }
 

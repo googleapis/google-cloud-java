@@ -87,7 +87,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SERVICE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -162,7 +164,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -237,7 +241,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int INSTANCE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object instance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
   /**
    *
    *
@@ -306,7 +312,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int HOST_FIELD_NUMBER = 4;
-  private volatile java.lang.Object host_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object host_ = "";
   /**
    *
    *
@@ -610,14 +618,11 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       service_ = "";
-
       version_ = "";
-
       instance_ = "";
-
       host_ = "";
-
       return this;
     }
 
@@ -645,12 +650,27 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.tasks.v2.AppEngineRouting buildPartial() {
       com.google.cloud.tasks.v2.AppEngineRouting result =
           new com.google.cloud.tasks.v2.AppEngineRouting(this);
-      result.service_ = service_;
-      result.version_ = version_;
-      result.instance_ = instance_;
-      result.host_ = host_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tasks.v2.AppEngineRouting result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.service_ = service_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.instance_ = instance_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.host_ = host_;
+      }
     }
 
     @java.lang.Override
@@ -700,18 +720,22 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.tasks.v2.AppEngineRouting.getDefaultInstance()) return this;
       if (!other.getService().isEmpty()) {
         service_ = other.service_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getInstance().isEmpty()) {
         instance_ = other.instance_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getHost().isEmpty()) {
         host_ = other.host_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -743,25 +767,25 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 service_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 instance_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 host_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -780,6 +804,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object service_ = "";
     /**
@@ -881,8 +907,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -911,8 +937,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -946,8 +972,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1052,8 +1078,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1082,8 +1108,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1117,8 +1143,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1214,8 +1240,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       instance_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1241,8 +1267,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-
       instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1273,8 +1299,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instance_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1364,8 +1390,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       host_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1389,8 +1415,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearHost() {
-
       host_ = getDefaultInstance().getHost();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1419,8 +1445,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       host_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -164,7 +164,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     public static final int SATURATION_FIELD_NUMBER = 1;
-    private double saturation_;
+    private double saturation_ = 0D;
     /**
      *
      *
@@ -184,7 +184,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     public static final int CONTRAST_FIELD_NUMBER = 2;
-    private double contrast_;
+    private double contrast_ = 0D;
     /**
      *
      *
@@ -204,7 +204,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     public static final int BRIGHTNESS_FIELD_NUMBER = 3;
-    private double brightness_;
+    private double brightness_ = 0D;
     /**
      *
      *
@@ -454,12 +454,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         saturation_ = 0D;
-
         contrast_ = 0D;
-
         brightness_ = 0D;
-
         return this;
       }
 
@@ -488,11 +486,25 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public com.google.cloud.video.transcoder.v1.PreprocessingConfig.Color buildPartial() {
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Color result =
             new com.google.cloud.video.transcoder.v1.PreprocessingConfig.Color(this);
-        result.saturation_ = saturation_;
-        result.contrast_ = contrast_;
-        result.brightness_ = brightness_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.video.transcoder.v1.PreprocessingConfig.Color result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.saturation_ = saturation_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.contrast_ = contrast_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.brightness_ = brightness_;
+        }
       }
 
       @java.lang.Override
@@ -583,19 +595,19 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
               case 9:
                 {
                   saturation_ = input.readDouble();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 9
               case 17:
                 {
                   contrast_ = input.readDouble();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 17
               case 25:
                 {
                   brightness_ = input.readDouble();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 25
               default:
@@ -614,6 +626,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private double saturation_;
       /**
@@ -650,6 +664,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public Builder setSaturation(double value) {
 
         saturation_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -667,7 +682,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearSaturation() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         saturation_ = 0D;
         onChanged();
         return this;
@@ -708,6 +723,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public Builder setContrast(double value) {
 
         contrast_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -725,7 +741,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearContrast() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         contrast_ = 0D;
         onChanged();
         return this;
@@ -766,6 +782,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public Builder setBrightness(double value) {
 
         brightness_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -783,7 +800,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearBrightness() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         brightness_ = 0D;
         onChanged();
         return this;
@@ -957,7 +974,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     public static final int STRENGTH_FIELD_NUMBER = 1;
-    private double strength_;
+    private double strength_ = 0D;
     /**
      *
      *
@@ -976,7 +993,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     public static final int TUNE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object tune_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object tune_ = "";
     /**
      *
      *
@@ -1246,10 +1265,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         strength_ = 0D;
-
         tune_ = "";
-
         return this;
       }
 
@@ -1279,10 +1297,22 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public com.google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise buildPartial() {
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise result =
             new com.google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise(this);
-        result.strength_ = strength_;
-        result.tune_ = tune_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.strength_ = strength_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.tune_ = tune_;
+        }
       }
 
       @java.lang.Override
@@ -1341,6 +1371,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         }
         if (!other.getTune().isEmpty()) {
           tune_ = other.tune_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1372,13 +1403,13 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
               case 9:
                 {
                   strength_ = input.readDouble();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 9
               case 18:
                 {
                   tune_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -1397,6 +1428,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private double strength_;
       /**
@@ -1431,6 +1464,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public Builder setStrength(double value) {
 
         strength_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1447,7 +1481,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearStrength() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         strength_ = 0D;
         onChanged();
         return this;
@@ -1523,8 +1557,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
         tune_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1543,8 +1577,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearTune() {
-
         tune_ = getDefaultInstance().getTune();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1568,8 +1602,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         tune_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1723,7 +1757,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     public static final int STRENGTH_FIELD_NUMBER = 1;
-    private double strength_;
+    private double strength_ = 0D;
     /**
      *
      *
@@ -1743,7 +1777,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     public static final int ENABLED_FIELD_NUMBER = 2;
-    private boolean enabled_;
+    private boolean enabled_ = false;
     /**
      *
      *
@@ -1976,10 +2010,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         strength_ = 0D;
-
         enabled_ = false;
-
         return this;
       }
 
@@ -2009,10 +2042,22 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock buildPartial() {
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock result =
             new com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock(this);
-        result.strength_ = strength_;
-        result.enabled_ = enabled_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.strength_ = strength_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.enabled_ = enabled_;
+        }
       }
 
       @java.lang.Override
@@ -2101,13 +2146,13 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
               case 9:
                 {
                   strength_ = input.readDouble();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 9
               case 16:
                 {
                   enabled_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -2126,6 +2171,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private double strength_;
       /**
@@ -2162,6 +2209,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public Builder setStrength(double value) {
 
         strength_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2179,7 +2227,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearStrength() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         strength_ = 0D;
         onChanged();
         return this;
@@ -2216,6 +2264,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public Builder setEnabled(boolean value) {
 
         enabled_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2231,7 +2280,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearEnabled() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         enabled_ = false;
         onChanged();
         return this;
@@ -2407,7 +2456,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     public static final int LUFS_FIELD_NUMBER = 1;
-    private double lufs_;
+    private double lufs_ = 0D;
     /**
      *
      *
@@ -2434,7 +2483,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     public static final int HIGH_BOOST_FIELD_NUMBER = 2;
-    private boolean highBoost_;
+    private boolean highBoost_ = false;
     /**
      *
      *
@@ -2453,7 +2502,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     public static final int LOW_BOOST_FIELD_NUMBER = 3;
-    private boolean lowBoost_;
+    private boolean lowBoost_ = false;
     /**
      *
      *
@@ -2692,12 +2741,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         lufs_ = 0D;
-
         highBoost_ = false;
-
         lowBoost_ = false;
-
         return this;
       }
 
@@ -2726,11 +2773,25 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public com.google.cloud.video.transcoder.v1.PreprocessingConfig.Audio buildPartial() {
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Audio result =
             new com.google.cloud.video.transcoder.v1.PreprocessingConfig.Audio(this);
-        result.lufs_ = lufs_;
-        result.highBoost_ = highBoost_;
-        result.lowBoost_ = lowBoost_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.video.transcoder.v1.PreprocessingConfig.Audio result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.lufs_ = lufs_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.highBoost_ = highBoost_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.lowBoost_ = lowBoost_;
+        }
       }
 
       @java.lang.Override
@@ -2821,19 +2882,19 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
               case 9:
                 {
                   lufs_ = input.readDouble();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 9
               case 16:
                 {
                   highBoost_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   lowBoost_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -2852,6 +2913,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private double lufs_;
       /**
@@ -2902,6 +2965,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public Builder setLufs(double value) {
 
         lufs_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2926,7 +2990,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearLufs() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         lufs_ = 0D;
         onChanged();
         return this;
@@ -2965,6 +3029,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public Builder setHighBoost(boolean value) {
 
         highBoost_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2981,7 +3046,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearHighBoost() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         highBoost_ = false;
         onChanged();
         return this;
@@ -3020,6 +3085,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public Builder setLowBoost(boolean value) {
 
         lowBoost_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3036,7 +3102,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearLowBoost() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         lowBoost_ = false;
         onChanged();
         return this;
@@ -3215,7 +3281,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     public static final int TOP_PIXELS_FIELD_NUMBER = 1;
-    private int topPixels_;
+    private int topPixels_ = 0;
     /**
      *
      *
@@ -3233,7 +3299,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     public static final int BOTTOM_PIXELS_FIELD_NUMBER = 2;
-    private int bottomPixels_;
+    private int bottomPixels_ = 0;
     /**
      *
      *
@@ -3251,7 +3317,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     public static final int LEFT_PIXELS_FIELD_NUMBER = 3;
-    private int leftPixels_;
+    private int leftPixels_ = 0;
     /**
      *
      *
@@ -3269,7 +3335,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     public static final int RIGHT_PIXELS_FIELD_NUMBER = 4;
-    private int rightPixels_;
+    private int rightPixels_ = 0;
     /**
      *
      *
@@ -3514,14 +3580,11 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         topPixels_ = 0;
-
         bottomPixels_ = 0;
-
         leftPixels_ = 0;
-
         rightPixels_ = 0;
-
         return this;
       }
 
@@ -3550,12 +3613,28 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public com.google.cloud.video.transcoder.v1.PreprocessingConfig.Crop buildPartial() {
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Crop result =
             new com.google.cloud.video.transcoder.v1.PreprocessingConfig.Crop(this);
-        result.topPixels_ = topPixels_;
-        result.bottomPixels_ = bottomPixels_;
-        result.leftPixels_ = leftPixels_;
-        result.rightPixels_ = rightPixels_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.video.transcoder.v1.PreprocessingConfig.Crop result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.topPixels_ = topPixels_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.bottomPixels_ = bottomPixels_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.leftPixels_ = leftPixels_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.rightPixels_ = rightPixels_;
+        }
       }
 
       @java.lang.Override
@@ -3649,25 +3728,25 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
               case 8:
                 {
                   topPixels_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   bottomPixels_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   leftPixels_ = input.readInt32();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 32:
                 {
                   rightPixels_ = input.readInt32();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               default:
@@ -3686,6 +3765,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int topPixels_;
       /**
@@ -3718,6 +3799,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public Builder setTopPixels(int value) {
 
         topPixels_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3733,7 +3815,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearTopPixels() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         topPixels_ = 0;
         onChanged();
         return this;
@@ -3770,6 +3852,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public Builder setBottomPixels(int value) {
 
         bottomPixels_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3785,7 +3868,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearBottomPixels() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         bottomPixels_ = 0;
         onChanged();
         return this;
@@ -3822,6 +3905,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public Builder setLeftPixels(int value) {
 
         leftPixels_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3837,7 +3921,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearLeftPixels() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         leftPixels_ = 0;
         onChanged();
         return this;
@@ -3874,6 +3958,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public Builder setRightPixels(int value) {
 
         rightPixels_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3889,7 +3974,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearRightPixels() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         rightPixels_ = 0;
         onChanged();
         return this;
@@ -4068,7 +4153,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     public static final int TOP_PIXELS_FIELD_NUMBER = 1;
-    private int topPixels_;
+    private int topPixels_ = 0;
     /**
      *
      *
@@ -4086,7 +4171,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     public static final int BOTTOM_PIXELS_FIELD_NUMBER = 2;
-    private int bottomPixels_;
+    private int bottomPixels_ = 0;
     /**
      *
      *
@@ -4104,7 +4189,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     public static final int LEFT_PIXELS_FIELD_NUMBER = 3;
-    private int leftPixels_;
+    private int leftPixels_ = 0;
     /**
      *
      *
@@ -4122,7 +4207,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     public static final int RIGHT_PIXELS_FIELD_NUMBER = 4;
-    private int rightPixels_;
+    private int rightPixels_ = 0;
     /**
      *
      *
@@ -4367,14 +4452,11 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         topPixels_ = 0;
-
         bottomPixels_ = 0;
-
         leftPixels_ = 0;
-
         rightPixels_ = 0;
-
         return this;
       }
 
@@ -4403,12 +4485,28 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public com.google.cloud.video.transcoder.v1.PreprocessingConfig.Pad buildPartial() {
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Pad result =
             new com.google.cloud.video.transcoder.v1.PreprocessingConfig.Pad(this);
-        result.topPixels_ = topPixels_;
-        result.bottomPixels_ = bottomPixels_;
-        result.leftPixels_ = leftPixels_;
-        result.rightPixels_ = rightPixels_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.video.transcoder.v1.PreprocessingConfig.Pad result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.topPixels_ = topPixels_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.bottomPixels_ = bottomPixels_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.leftPixels_ = leftPixels_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.rightPixels_ = rightPixels_;
+        }
       }
 
       @java.lang.Override
@@ -4501,25 +4599,25 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
               case 8:
                 {
                   topPixels_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   bottomPixels_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   leftPixels_ = input.readInt32();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 32:
                 {
                   rightPixels_ = input.readInt32();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               default:
@@ -4538,6 +4636,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int topPixels_;
       /**
@@ -4570,6 +4670,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public Builder setTopPixels(int value) {
 
         topPixels_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4585,7 +4686,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearTopPixels() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         topPixels_ = 0;
         onChanged();
         return this;
@@ -4622,6 +4723,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public Builder setBottomPixels(int value) {
 
         bottomPixels_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4637,7 +4739,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearBottomPixels() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         bottomPixels_ = 0;
         onChanged();
         return this;
@@ -4674,6 +4776,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public Builder setLeftPixels(int value) {
 
         leftPixels_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4689,7 +4792,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearLeftPixels() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         leftPixels_ = 0;
         onChanged();
         return this;
@@ -4726,6 +4829,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public Builder setRightPixels(int value) {
 
         rightPixels_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -4741,7 +4845,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearRightPixels() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         rightPixels_ = 0;
         onChanged();
         return this;
@@ -5109,7 +5213,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
 
       public static final int MODE_FIELD_NUMBER = 1;
-      private volatile java.lang.Object mode_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object mode_ = "";
       /**
        *
        *
@@ -5166,7 +5272,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
 
       public static final int DISABLE_SPATIAL_INTERLACING_FIELD_NUMBER = 2;
-      private boolean disableSpatialInterlacing_;
+      private boolean disableSpatialInterlacing_ = false;
       /**
        *
        *
@@ -5185,7 +5291,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
 
       public static final int PARITY_FIELD_NUMBER = 3;
-      private volatile java.lang.Object parity_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object parity_ = "";
       /**
        *
        *
@@ -5244,7 +5352,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
 
       public static final int DEINTERLACE_ALL_FRAMES_FIELD_NUMBER = 4;
-      private boolean deinterlaceAllFrames_;
+      private boolean deinterlaceAllFrames_ = false;
       /**
        *
        *
@@ -5507,14 +5615,11 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           mode_ = "";
-
           disableSpatialInterlacing_ = false;
-
           parity_ = "";
-
           deinterlaceAllFrames_ = false;
-
           return this;
         }
 
@@ -5548,12 +5653,29 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace.YadifConfig result =
               new com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace.YadifConfig(
                   this);
-          result.mode_ = mode_;
-          result.disableSpatialInterlacing_ = disableSpatialInterlacing_;
-          result.parity_ = parity_;
-          result.deinterlaceAllFrames_ = deinterlaceAllFrames_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace.YadifConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.mode_ = mode_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.disableSpatialInterlacing_ = disableSpatialInterlacing_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.parity_ = parity_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.deinterlaceAllFrames_ = deinterlaceAllFrames_;
+          }
         }
 
         @java.lang.Override
@@ -5613,6 +5735,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
                   .getDefaultInstance()) return this;
           if (!other.getMode().isEmpty()) {
             mode_ = other.mode_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (other.getDisableSpatialInterlacing() != false) {
@@ -5620,6 +5743,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           }
           if (!other.getParity().isEmpty()) {
             parity_ = other.parity_;
+            bitField0_ |= 0x00000004;
             onChanged();
           }
           if (other.getDeinterlaceAllFrames() != false) {
@@ -5654,25 +5778,25 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
                 case 10:
                   {
                     mode_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 16:
                   {
                     disableSpatialInterlacing_ = input.readBool();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 case 26:
                   {
                     parity_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 26
                 case 32:
                   {
                     deinterlaceAllFrames_ = input.readBool();
-
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 32
                 default:
@@ -5691,6 +5815,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object mode_ = "";
         /**
@@ -5765,8 +5891,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           if (value == null) {
             throw new NullPointerException();
           }
-
           mode_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -5786,8 +5912,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearMode() {
-
           mode_ = getDefaultInstance().getMode();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -5812,8 +5938,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           mode_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -5851,6 +5977,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         public Builder setDisableSpatialInterlacing(boolean value) {
 
           disableSpatialInterlacing_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -5867,7 +5994,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearDisableSpatialInterlacing() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           disableSpatialInterlacing_ = false;
           onChanged();
           return this;
@@ -5949,8 +6076,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           if (value == null) {
             throw new NullPointerException();
           }
-
           parity_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -5971,8 +6098,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearParity() {
-
           parity_ = getDefaultInstance().getParity();
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
@@ -5998,8 +6125,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           parity_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -6037,6 +6164,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         public Builder setDeinterlaceAllFrames(boolean value) {
 
           deinterlaceAllFrames_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -6053,7 +6181,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearDeinterlaceAllFrames() {
-
+          bitField0_ = (bitField0_ & ~0x00000008);
           deinterlaceAllFrames_ = false;
           onChanged();
           return this;
@@ -6269,7 +6397,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
 
       public static final int MODE_FIELD_NUMBER = 1;
-      private volatile java.lang.Object mode_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object mode_ = "";
       /**
        *
        *
@@ -6326,7 +6456,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
 
       public static final int PARITY_FIELD_NUMBER = 2;
-      private volatile java.lang.Object parity_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object parity_ = "";
       /**
        *
        *
@@ -6385,7 +6517,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
 
       public static final int DEINTERLACE_ALL_FRAMES_FIELD_NUMBER = 3;
-      private boolean deinterlaceAllFrames_;
+      private boolean deinterlaceAllFrames_ = false;
       /**
        *
        *
@@ -6637,12 +6769,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           mode_ = "";
-
           parity_ = "";
-
           deinterlaceAllFrames_ = false;
-
           return this;
         }
 
@@ -6676,11 +6806,26 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace.BwdifConfig result =
               new com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace.BwdifConfig(
                   this);
-          result.mode_ = mode_;
-          result.parity_ = parity_;
-          result.deinterlaceAllFrames_ = deinterlaceAllFrames_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace.BwdifConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.mode_ = mode_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.parity_ = parity_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.deinterlaceAllFrames_ = deinterlaceAllFrames_;
+          }
         }
 
         @java.lang.Override
@@ -6740,10 +6885,12 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
                   .getDefaultInstance()) return this;
           if (!other.getMode().isEmpty()) {
             mode_ = other.mode_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getParity().isEmpty()) {
             parity_ = other.parity_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           if (other.getDeinterlaceAllFrames() != false) {
@@ -6778,19 +6925,19 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
                 case 10:
                   {
                     mode_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     parity_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 case 24:
                   {
                     deinterlaceAllFrames_ = input.readBool();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 24
                 default:
@@ -6809,6 +6956,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object mode_ = "";
         /**
@@ -6883,8 +7032,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           if (value == null) {
             throw new NullPointerException();
           }
-
           mode_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -6904,8 +7053,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearMode() {
-
           mode_ = getDefaultInstance().getMode();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -6930,8 +7079,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           mode_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -7012,8 +7161,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           if (value == null) {
             throw new NullPointerException();
           }
-
           parity_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -7034,8 +7183,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearParity() {
-
           parity_ = getDefaultInstance().getParity();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -7061,8 +7210,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           parity_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -7100,6 +7249,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         public Builder setDeinterlaceAllFrames(boolean value) {
 
           deinterlaceAllFrames_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -7116,7 +7266,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearDeinterlaceAllFrames() {
-
+          bitField0_ = (bitField0_ & ~0x00000004);
           deinterlaceAllFrames_ = false;
           onChanged();
           return this;
@@ -7606,6 +7756,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (yadifBuilder_ != null) {
           yadifBuilder_.clear();
         }
@@ -7644,23 +7795,29 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace buildPartial() {
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace result =
             new com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace(this);
-        if (deinterlacingFilterCase_ == 1) {
-          if (yadifBuilder_ == null) {
-            result.deinterlacingFilter_ = deinterlacingFilter_;
-          } else {
-            result.deinterlacingFilter_ = yadifBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (deinterlacingFilterCase_ == 2) {
-          if (bwdifBuilder_ == null) {
-            result.deinterlacingFilter_ = deinterlacingFilter_;
-          } else {
-            result.deinterlacingFilter_ = bwdifBuilder_.build();
-          }
-        }
-        result.deinterlacingFilterCase_ = deinterlacingFilterCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace result) {
+        result.deinterlacingFilterCase_ = deinterlacingFilterCase_;
+        result.deinterlacingFilter_ = this.deinterlacingFilter_;
+        if (deinterlacingFilterCase_ == 1 && yadifBuilder_ != null) {
+          result.deinterlacingFilter_ = yadifBuilder_.build();
+        }
+        if (deinterlacingFilterCase_ == 2 && bwdifBuilder_ != null) {
+          result.deinterlacingFilter_ = bwdifBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -7798,6 +7955,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace.YadifConfig,
@@ -8052,7 +8211,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         }
         deinterlacingFilterCase_ = 1;
         onChanged();
-        ;
         return yadifBuilder_;
       }
 
@@ -8309,7 +8467,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         }
         deinterlacingFilterCase_ = 2;
         onChanged();
-        ;
         return bwdifBuilder_;
       }
 
@@ -8426,7 +8583,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.video.transcoder.v1.PreprocessingConfig.ColorOrBuilder
       getColorOrBuilder() {
-    return getColor();
+    return color_ == null
+        ? com.google.cloud.video.transcoder.v1.PreprocessingConfig.Color.getDefaultInstance()
+        : color_;
   }
 
   public static final int DENOISE_FIELD_NUMBER = 2;
@@ -8475,7 +8634,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.video.transcoder.v1.PreprocessingConfig.DenoiseOrBuilder
       getDenoiseOrBuilder() {
-    return getDenoise();
+    return denoise_ == null
+        ? com.google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise.getDefaultInstance()
+        : denoise_;
   }
 
   public static final int DEBLOCK_FIELD_NUMBER = 3;
@@ -8524,7 +8685,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.video.transcoder.v1.PreprocessingConfig.DeblockOrBuilder
       getDeblockOrBuilder() {
-    return getDeblock();
+    return deblock_ == null
+        ? com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock.getDefaultInstance()
+        : deblock_;
   }
 
   public static final int AUDIO_FIELD_NUMBER = 4;
@@ -8573,7 +8736,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.video.transcoder.v1.PreprocessingConfig.AudioOrBuilder
       getAudioOrBuilder() {
-    return getAudio();
+    return audio_ == null
+        ? com.google.cloud.video.transcoder.v1.PreprocessingConfig.Audio.getDefaultInstance()
+        : audio_;
   }
 
   public static final int CROP_FIELD_NUMBER = 5;
@@ -8621,7 +8786,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.video.transcoder.v1.PreprocessingConfig.CropOrBuilder getCropOrBuilder() {
-    return getCrop();
+    return crop_ == null
+        ? com.google.cloud.video.transcoder.v1.PreprocessingConfig.Crop.getDefaultInstance()
+        : crop_;
   }
 
   public static final int PAD_FIELD_NUMBER = 6;
@@ -8669,7 +8836,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.video.transcoder.v1.PreprocessingConfig.PadOrBuilder getPadOrBuilder() {
-    return getPad();
+    return pad_ == null
+        ? com.google.cloud.video.transcoder.v1.PreprocessingConfig.Pad.getDefaultInstance()
+        : pad_;
   }
 
   public static final int DEINTERLACE_FIELD_NUMBER = 7;
@@ -8718,7 +8887,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.video.transcoder.v1.PreprocessingConfig.DeinterlaceOrBuilder
       getDeinterlaceOrBuilder() {
-    return getDeinterlace();
+    return deinterlace_ == null
+        ? com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace.getDefaultInstance()
+        : deinterlace_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -9008,46 +9179,40 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (colorBuilder_ == null) {
-        color_ = null;
-      } else {
-        color_ = null;
+      bitField0_ = 0;
+      color_ = null;
+      if (colorBuilder_ != null) {
+        colorBuilder_.dispose();
         colorBuilder_ = null;
       }
-      if (denoiseBuilder_ == null) {
-        denoise_ = null;
-      } else {
-        denoise_ = null;
+      denoise_ = null;
+      if (denoiseBuilder_ != null) {
+        denoiseBuilder_.dispose();
         denoiseBuilder_ = null;
       }
-      if (deblockBuilder_ == null) {
-        deblock_ = null;
-      } else {
-        deblock_ = null;
+      deblock_ = null;
+      if (deblockBuilder_ != null) {
+        deblockBuilder_.dispose();
         deblockBuilder_ = null;
       }
-      if (audioBuilder_ == null) {
-        audio_ = null;
-      } else {
-        audio_ = null;
+      audio_ = null;
+      if (audioBuilder_ != null) {
+        audioBuilder_.dispose();
         audioBuilder_ = null;
       }
-      if (cropBuilder_ == null) {
-        crop_ = null;
-      } else {
-        crop_ = null;
+      crop_ = null;
+      if (cropBuilder_ != null) {
+        cropBuilder_.dispose();
         cropBuilder_ = null;
       }
-      if (padBuilder_ == null) {
-        pad_ = null;
-      } else {
-        pad_ = null;
+      pad_ = null;
+      if (padBuilder_ != null) {
+        padBuilder_.dispose();
         padBuilder_ = null;
       }
-      if (deinterlaceBuilder_ == null) {
-        deinterlace_ = null;
-      } else {
-        deinterlace_ = null;
+      deinterlace_ = null;
+      if (deinterlaceBuilder_ != null) {
+        deinterlaceBuilder_.dispose();
         deinterlaceBuilder_ = null;
       }
       return this;
@@ -9077,43 +9242,37 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     public com.google.cloud.video.transcoder.v1.PreprocessingConfig buildPartial() {
       com.google.cloud.video.transcoder.v1.PreprocessingConfig result =
           new com.google.cloud.video.transcoder.v1.PreprocessingConfig(this);
-      if (colorBuilder_ == null) {
-        result.color_ = color_;
-      } else {
-        result.color_ = colorBuilder_.build();
-      }
-      if (denoiseBuilder_ == null) {
-        result.denoise_ = denoise_;
-      } else {
-        result.denoise_ = denoiseBuilder_.build();
-      }
-      if (deblockBuilder_ == null) {
-        result.deblock_ = deblock_;
-      } else {
-        result.deblock_ = deblockBuilder_.build();
-      }
-      if (audioBuilder_ == null) {
-        result.audio_ = audio_;
-      } else {
-        result.audio_ = audioBuilder_.build();
-      }
-      if (cropBuilder_ == null) {
-        result.crop_ = crop_;
-      } else {
-        result.crop_ = cropBuilder_.build();
-      }
-      if (padBuilder_ == null) {
-        result.pad_ = pad_;
-      } else {
-        result.pad_ = padBuilder_.build();
-      }
-      if (deinterlaceBuilder_ == null) {
-        result.deinterlace_ = deinterlace_;
-      } else {
-        result.deinterlace_ = deinterlaceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.transcoder.v1.PreprocessingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.color_ = colorBuilder_ == null ? color_ : colorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.denoise_ = denoiseBuilder_ == null ? denoise_ : denoiseBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.deblock_ = deblockBuilder_ == null ? deblock_ : deblockBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.audio_ = audioBuilder_ == null ? audio_ : audioBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.crop_ = cropBuilder_ == null ? crop_ : cropBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.pad_ = padBuilder_ == null ? pad_ : padBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.deinterlace_ =
+            deinterlaceBuilder_ == null ? deinterlace_ : deinterlaceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -9212,43 +9371,43 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getColorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDenoiseFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getDeblockFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getAudioFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getCropFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getPadFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getDeinterlaceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -9268,6 +9427,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.video.transcoder.v1.PreprocessingConfig.Color color_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.video.transcoder.v1.PreprocessingConfig.Color,
@@ -9286,7 +9447,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the color field is set.
      */
     public boolean hasColor() {
-      return colorBuilder_ != null || color_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -9323,11 +9484,11 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         color_ = value;
-        onChanged();
       } else {
         colorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -9343,11 +9504,11 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Color.Builder builderForValue) {
       if (colorBuilder_ == null) {
         color_ = builderForValue.build();
-        onChanged();
       } else {
         colorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -9362,19 +9523,20 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     public Builder mergeColor(
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Color value) {
       if (colorBuilder_ == null) {
-        if (color_ != null) {
-          color_ =
-              com.google.cloud.video.transcoder.v1.PreprocessingConfig.Color.newBuilder(color_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && color_ != null
+            && color_
+                != com.google.cloud.video.transcoder.v1.PreprocessingConfig.Color
+                    .getDefaultInstance()) {
+          getColorBuilder().mergeFrom(value);
         } else {
           color_ = value;
         }
-        onChanged();
       } else {
         colorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -9387,14 +9549,13 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.video.transcoder.v1.PreprocessingConfig.Color color = 1;</code>
      */
     public Builder clearColor() {
-      if (colorBuilder_ == null) {
-        color_ = null;
-        onChanged();
-      } else {
-        color_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      color_ = null;
+      if (colorBuilder_ != null) {
+        colorBuilder_.dispose();
         colorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -9408,7 +9569,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.video.transcoder.v1.PreprocessingConfig.Color.Builder
         getColorBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getColorFieldBuilder().getBuilder();
     }
@@ -9475,7 +9636,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the denoise field is set.
      */
     public boolean hasDenoise() {
-      return denoiseBuilder_ != null || denoise_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -9513,11 +9674,11 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         denoise_ = value;
-        onChanged();
       } else {
         denoiseBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -9533,11 +9694,11 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise.Builder builderForValue) {
       if (denoiseBuilder_ == null) {
         denoise_ = builderForValue.build();
-        onChanged();
       } else {
         denoiseBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -9552,19 +9713,20 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     public Builder mergeDenoise(
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise value) {
       if (denoiseBuilder_ == null) {
-        if (denoise_ != null) {
-          denoise_ =
-              com.google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise.newBuilder(denoise_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && denoise_ != null
+            && denoise_
+                != com.google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise
+                    .getDefaultInstance()) {
+          getDenoiseBuilder().mergeFrom(value);
         } else {
           denoise_ = value;
         }
-        onChanged();
       } else {
         denoiseBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -9577,14 +9739,13 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise denoise = 2;</code>
      */
     public Builder clearDenoise() {
-      if (denoiseBuilder_ == null) {
-        denoise_ = null;
-        onChanged();
-      } else {
-        denoise_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      denoise_ = null;
+      if (denoiseBuilder_ != null) {
+        denoiseBuilder_.dispose();
         denoiseBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -9598,7 +9759,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise.Builder
         getDenoiseBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDenoiseFieldBuilder().getBuilder();
     }
@@ -9665,7 +9826,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the deblock field is set.
      */
     public boolean hasDeblock() {
-      return deblockBuilder_ != null || deblock_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -9703,11 +9864,11 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         deblock_ = value;
-        onChanged();
       } else {
         deblockBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -9723,11 +9884,11 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock.Builder builderForValue) {
       if (deblockBuilder_ == null) {
         deblock_ = builderForValue.build();
-        onChanged();
       } else {
         deblockBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -9742,19 +9903,20 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     public Builder mergeDeblock(
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock value) {
       if (deblockBuilder_ == null) {
-        if (deblock_ != null) {
-          deblock_ =
-              com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock.newBuilder(deblock_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && deblock_ != null
+            && deblock_
+                != com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock
+                    .getDefaultInstance()) {
+          getDeblockBuilder().mergeFrom(value);
         } else {
           deblock_ = value;
         }
-        onChanged();
       } else {
         deblockBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -9767,14 +9929,13 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock deblock = 3;</code>
      */
     public Builder clearDeblock() {
-      if (deblockBuilder_ == null) {
-        deblock_ = null;
-        onChanged();
-      } else {
-        deblock_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      deblock_ = null;
+      if (deblockBuilder_ != null) {
+        deblockBuilder_.dispose();
         deblockBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -9788,7 +9949,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock.Builder
         getDeblockBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDeblockFieldBuilder().getBuilder();
     }
@@ -9855,7 +10016,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the audio field is set.
      */
     public boolean hasAudio() {
-      return audioBuilder_ != null || audio_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -9892,11 +10053,11 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         audio_ = value;
-        onChanged();
       } else {
         audioBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -9912,11 +10073,11 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Audio.Builder builderForValue) {
       if (audioBuilder_ == null) {
         audio_ = builderForValue.build();
-        onChanged();
       } else {
         audioBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -9931,19 +10092,20 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     public Builder mergeAudio(
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Audio value) {
       if (audioBuilder_ == null) {
-        if (audio_ != null) {
-          audio_ =
-              com.google.cloud.video.transcoder.v1.PreprocessingConfig.Audio.newBuilder(audio_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && audio_ != null
+            && audio_
+                != com.google.cloud.video.transcoder.v1.PreprocessingConfig.Audio
+                    .getDefaultInstance()) {
+          getAudioBuilder().mergeFrom(value);
         } else {
           audio_ = value;
         }
-        onChanged();
       } else {
         audioBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -9956,14 +10118,13 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.video.transcoder.v1.PreprocessingConfig.Audio audio = 4;</code>
      */
     public Builder clearAudio() {
-      if (audioBuilder_ == null) {
-        audio_ = null;
-        onChanged();
-      } else {
-        audio_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      audio_ = null;
+      if (audioBuilder_ != null) {
+        audioBuilder_.dispose();
         audioBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -9977,7 +10138,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.video.transcoder.v1.PreprocessingConfig.Audio.Builder
         getAudioBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getAudioFieldBuilder().getBuilder();
     }
@@ -10044,7 +10205,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the crop field is set.
      */
     public boolean hasCrop() {
-      return cropBuilder_ != null || crop_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -10081,11 +10242,11 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         crop_ = value;
-        onChanged();
       } else {
         cropBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -10101,11 +10262,11 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Crop.Builder builderForValue) {
       if (cropBuilder_ == null) {
         crop_ = builderForValue.build();
-        onChanged();
       } else {
         cropBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -10119,19 +10280,20 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeCrop(com.google.cloud.video.transcoder.v1.PreprocessingConfig.Crop value) {
       if (cropBuilder_ == null) {
-        if (crop_ != null) {
-          crop_ =
-              com.google.cloud.video.transcoder.v1.PreprocessingConfig.Crop.newBuilder(crop_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && crop_ != null
+            && crop_
+                != com.google.cloud.video.transcoder.v1.PreprocessingConfig.Crop
+                    .getDefaultInstance()) {
+          getCropBuilder().mergeFrom(value);
         } else {
           crop_ = value;
         }
-        onChanged();
       } else {
         cropBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -10144,14 +10306,13 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.video.transcoder.v1.PreprocessingConfig.Crop crop = 5;</code>
      */
     public Builder clearCrop() {
-      if (cropBuilder_ == null) {
-        crop_ = null;
-        onChanged();
-      } else {
-        crop_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      crop_ = null;
+      if (cropBuilder_ != null) {
+        cropBuilder_.dispose();
         cropBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -10164,7 +10325,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.video.transcoder.v1.PreprocessingConfig.Crop crop = 5;</code>
      */
     public com.google.cloud.video.transcoder.v1.PreprocessingConfig.Crop.Builder getCropBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCropFieldBuilder().getBuilder();
     }
@@ -10231,7 +10392,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the pad field is set.
      */
     public boolean hasPad() {
-      return padBuilder_ != null || pad_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -10268,11 +10429,11 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         pad_ = value;
-        onChanged();
       } else {
         padBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -10288,11 +10449,11 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Pad.Builder builderForValue) {
       if (padBuilder_ == null) {
         pad_ = builderForValue.build();
-        onChanged();
       } else {
         padBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -10306,19 +10467,20 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder mergePad(com.google.cloud.video.transcoder.v1.PreprocessingConfig.Pad value) {
       if (padBuilder_ == null) {
-        if (pad_ != null) {
-          pad_ =
-              com.google.cloud.video.transcoder.v1.PreprocessingConfig.Pad.newBuilder(pad_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && pad_ != null
+            && pad_
+                != com.google.cloud.video.transcoder.v1.PreprocessingConfig.Pad
+                    .getDefaultInstance()) {
+          getPadBuilder().mergeFrom(value);
         } else {
           pad_ = value;
         }
-        onChanged();
       } else {
         padBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -10331,14 +10493,13 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.video.transcoder.v1.PreprocessingConfig.Pad pad = 6;</code>
      */
     public Builder clearPad() {
-      if (padBuilder_ == null) {
-        pad_ = null;
-        onChanged();
-      } else {
-        pad_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      pad_ = null;
+      if (padBuilder_ != null) {
+        padBuilder_.dispose();
         padBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -10351,7 +10512,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.video.transcoder.v1.PreprocessingConfig.Pad pad = 6;</code>
      */
     public com.google.cloud.video.transcoder.v1.PreprocessingConfig.Pad.Builder getPadBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getPadFieldBuilder().getBuilder();
     }
@@ -10418,7 +10579,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the deinterlace field is set.
      */
     public boolean hasDeinterlace() {
-      return deinterlaceBuilder_ != null || deinterlace_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -10459,11 +10620,11 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         deinterlace_ = value;
-        onChanged();
       } else {
         deinterlaceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -10481,11 +10642,11 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
             builderForValue) {
       if (deinterlaceBuilder_ == null) {
         deinterlace_ = builderForValue.build();
-        onChanged();
       } else {
         deinterlaceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -10501,20 +10662,20 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     public Builder mergeDeinterlace(
         com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace value) {
       if (deinterlaceBuilder_ == null) {
-        if (deinterlace_ != null) {
-          deinterlace_ =
-              com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace.newBuilder(
-                      deinterlace_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && deinterlace_ != null
+            && deinterlace_
+                != com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace
+                    .getDefaultInstance()) {
+          getDeinterlaceBuilder().mergeFrom(value);
         } else {
           deinterlace_ = value;
         }
-        onChanged();
       } else {
         deinterlaceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -10528,14 +10689,13 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearDeinterlace() {
-      if (deinterlaceBuilder_ == null) {
-        deinterlace_ = null;
-        onChanged();
-      } else {
-        deinterlace_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      deinterlace_ = null;
+      if (deinterlaceBuilder_ != null) {
+        deinterlaceBuilder_.dispose();
         deinterlaceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -10550,7 +10710,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace.Builder
         getDeinterlaceBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getDeinterlaceFieldBuilder().getBuilder();
     }

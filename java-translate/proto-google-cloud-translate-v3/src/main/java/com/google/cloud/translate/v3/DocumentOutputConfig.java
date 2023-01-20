@@ -268,7 +268,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MIME_TYPE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object mimeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mimeType_ = "";
   /**
    *
    *
@@ -553,11 +555,11 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsDestinationBuilder_ != null) {
         gcsDestinationBuilder_.clear();
       }
       mimeType_ = "";
-
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -587,17 +589,27 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.translate.v3.DocumentOutputConfig buildPartial() {
       com.google.cloud.translate.v3.DocumentOutputConfig result =
           new com.google.cloud.translate.v3.DocumentOutputConfig(this);
-      if (destinationCase_ == 1) {
-        if (gcsDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = gcsDestinationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.mimeType_ = mimeType_;
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.translate.v3.DocumentOutputConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.mimeType_ = mimeType_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.translate.v3.DocumentOutputConfig result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
+      if (destinationCase_ == 1 && gcsDestinationBuilder_ != null) {
+        result.destination_ = gcsDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -648,6 +660,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getMimeType().isEmpty()) {
         mimeType_ = other.mimeType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       switch (other.getDestinationCase()) {
@@ -696,7 +709,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
             case 26:
               {
                 mimeType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -729,6 +742,8 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.translate.v3.GcsDestination,
@@ -1251,7 +1266,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       }
       destinationCase_ = 1;
       onChanged();
-      ;
       return gcsDestinationBuilder_;
     }
 
@@ -1340,8 +1354,8 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       mimeType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1365,8 +1379,8 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMimeType() {
-
       mimeType_ = getDefaultInstance().getMimeType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1395,8 +1409,8 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mimeType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -69,7 +69,9 @@ public final class DeleteConsumerOverrideRequest extends com.google.protobuf.Gen
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -122,7 +124,7 @@ public final class DeleteConsumerOverrideRequest extends com.google.protobuf.Gen
   }
 
   public static final int FORCE_FIELD_NUMBER = 2;
-  private boolean force_;
+  private boolean force_ = false;
   /**
    *
    *
@@ -142,7 +144,10 @@ public final class DeleteConsumerOverrideRequest extends com.google.protobuf.Gen
   }
 
   public static final int FORCE_ONLY_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> forceOnly_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.api.serviceusage.v1beta1.QuotaSafetyCheck>
       forceOnly_converter_ =
@@ -150,9 +155,8 @@ public final class DeleteConsumerOverrideRequest extends com.google.protobuf.Gen
               java.lang.Integer, com.google.api.serviceusage.v1beta1.QuotaSafetyCheck>() {
             public com.google.api.serviceusage.v1beta1.QuotaSafetyCheck convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.api.serviceusage.v1beta1.QuotaSafetyCheck result =
-                  com.google.api.serviceusage.v1beta1.QuotaSafetyCheck.valueOf(from);
+                  com.google.api.serviceusage.v1beta1.QuotaSafetyCheck.forNumber(from);
               return result == null
                   ? com.google.api.serviceusage.v1beta1.QuotaSafetyCheck.UNRECOGNIZED
                   : result;
@@ -489,12 +493,11 @@ public final class DeleteConsumerOverrideRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       force_ = false;
-
       forceOnly_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -523,16 +526,32 @@ public final class DeleteConsumerOverrideRequest extends com.google.protobuf.Gen
     public com.google.api.serviceusage.v1beta1.DeleteConsumerOverrideRequest buildPartial() {
       com.google.api.serviceusage.v1beta1.DeleteConsumerOverrideRequest result =
           new com.google.api.serviceusage.v1beta1.DeleteConsumerOverrideRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.force_ = force_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        forceOnly_ = java.util.Collections.unmodifiableList(forceOnly_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.forceOnly_ = forceOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.api.serviceusage.v1beta1.DeleteConsumerOverrideRequest result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        forceOnly_ = java.util.Collections.unmodifiableList(forceOnly_);
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.forceOnly_ = forceOnly_;
+    }
+
+    private void buildPartial0(
+        com.google.api.serviceusage.v1beta1.DeleteConsumerOverrideRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.force_ = force_;
+      }
     }
 
     @java.lang.Override
@@ -585,6 +604,7 @@ public final class DeleteConsumerOverrideRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getForce() != false) {
@@ -593,7 +613,7 @@ public final class DeleteConsumerOverrideRequest extends com.google.protobuf.Gen
       if (!other.forceOnly_.isEmpty()) {
         if (forceOnly_.isEmpty()) {
           forceOnly_ = other.forceOnly_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureForceOnlyIsMutable();
           forceOnly_.addAll(other.forceOnly_);
@@ -629,13 +649,13 @@ public final class DeleteConsumerOverrideRequest extends com.google.protobuf.Gen
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 force_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
@@ -743,8 +763,8 @@ public final class DeleteConsumerOverrideRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -762,8 +782,8 @@ public final class DeleteConsumerOverrideRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -786,8 +806,8 @@ public final class DeleteConsumerOverrideRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -827,6 +847,7 @@ public final class DeleteConsumerOverrideRequest extends com.google.protobuf.Gen
     public Builder setForce(boolean value) {
 
       force_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -844,7 +865,7 @@ public final class DeleteConsumerOverrideRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearForce() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       force_ = false;
       onChanged();
       return this;
@@ -853,9 +874,9 @@ public final class DeleteConsumerOverrideRequest extends com.google.protobuf.Gen
     private java.util.List<java.lang.Integer> forceOnly_ = java.util.Collections.emptyList();
 
     private void ensureForceOnlyIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         forceOnly_ = new java.util.ArrayList<java.lang.Integer>(forceOnly_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1002,7 +1023,7 @@ public final class DeleteConsumerOverrideRequest extends com.google.protobuf.Gen
      */
     public Builder clearForceOnly() {
       forceOnly_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

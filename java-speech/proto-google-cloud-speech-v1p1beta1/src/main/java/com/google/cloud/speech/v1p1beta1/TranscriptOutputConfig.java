@@ -396,6 +396,7 @@ public final class TranscriptOutputConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       outputTypeCase_ = 0;
       outputType_ = null;
       return this;
@@ -425,12 +426,22 @@ public final class TranscriptOutputConfig extends com.google.protobuf.GeneratedM
     public com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig buildPartial() {
       com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig result =
           new com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig(this);
-      if (outputTypeCase_ == 1) {
-        result.outputType_ = outputType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.outputTypeCase_ = outputTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig result) {
+      result.outputTypeCase_ = outputTypeCase_;
+      result.outputType_ = this.outputType_;
     }
 
     @java.lang.Override
@@ -555,6 +566,8 @@ public final class TranscriptOutputConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *

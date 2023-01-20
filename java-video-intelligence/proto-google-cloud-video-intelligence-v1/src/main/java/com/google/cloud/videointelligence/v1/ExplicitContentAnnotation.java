@@ -71,6 +71,8 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
   }
 
   public static final int FRAMES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.ExplicitContentFrame> frames_;
   /**
    *
@@ -143,7 +145,9 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
   }
 
   public static final int VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -402,6 +406,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (framesBuilder_ == null) {
         frames_ = java.util.Collections.emptyList();
       } else {
@@ -410,7 +415,6 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       version_ = "";
-
       return this;
     }
 
@@ -439,7 +443,16 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
     public com.google.cloud.videointelligence.v1.ExplicitContentAnnotation buildPartial() {
       com.google.cloud.videointelligence.v1.ExplicitContentAnnotation result =
           new com.google.cloud.videointelligence.v1.ExplicitContentAnnotation(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.videointelligence.v1.ExplicitContentAnnotation result) {
       if (framesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           frames_ = java.util.Collections.unmodifiableList(frames_);
@@ -449,9 +462,14 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       } else {
         result.frames_ = framesBuilder_.build();
       }
-      result.version_ = version_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1.ExplicitContentAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.version_ = version_;
+      }
     }
 
     @java.lang.Override
@@ -531,6 +549,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -576,7 +595,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
             case 18:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1024,8 +1043,8 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1041,8 +1060,8 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1063,8 +1082,8 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

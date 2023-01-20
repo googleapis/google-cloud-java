@@ -240,7 +240,6 @@ public interface VodSessionOrBuilder
    *
    * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
    */
-
   /* nullable */
   java.lang.String getAdTagMacroMapOrDefault(
       java.lang.String key,

@@ -121,7 +121,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : startTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 2;
@@ -176,11 +176,13 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : endTime_;
   }
 
   public static final int WORD_FIELD_NUMBER = 3;
-  private volatile java.lang.Object word_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object word_ = "";
   /**
    *
    *
@@ -229,7 +231,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 4;
-  private float confidence_;
+  private float confidence_ = 0F;
   /**
    *
    *
@@ -252,7 +254,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPEAKER_TAG_FIELD_NUMBER = 5;
-  private int speakerTag_;
+  private int speakerTag_ = 0;
   /**
    *
    *
@@ -518,24 +520,20 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      bitField0_ = 0;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       word_ = "";
-
       confidence_ = 0F;
-
       speakerTag_ = 0;
-
       return this;
     }
 
@@ -563,21 +561,30 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.videointelligence.v1.WordInfo buildPartial() {
       com.google.cloud.videointelligence.v1.WordInfo result =
           new com.google.cloud.videointelligence.v1.WordInfo(this);
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      result.word_ = word_;
-      result.confidence_ = confidence_;
-      result.speakerTag_ = speakerTag_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.videointelligence.v1.WordInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.word_ = word_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.confidence_ = confidence_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.speakerTag_ = speakerTag_;
+      }
     }
 
     @java.lang.Override
@@ -633,6 +640,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getWord().isEmpty()) {
         word_ = other.word_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getConfidence() != 0F) {
@@ -670,31 +678,31 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 word_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 37:
               {
                 confidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 37
             case 40:
               {
                 speakerTag_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -713,6 +721,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Duration startTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -735,7 +745,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -776,11 +786,11 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -798,11 +808,11 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartTime(com.google.protobuf.Duration.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -819,17 +829,18 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTime(com.google.protobuf.Duration value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Duration.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -845,14 +856,13 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration start_time = 1;</code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -868,7 +878,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration start_time = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -941,7 +951,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -982,11 +992,11 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1004,11 +1014,11 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndTime(com.google.protobuf.Duration.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1025,17 +1035,18 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Duration value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Duration.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1051,14 +1062,13 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration end_time = 2;</code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1074,7 +1084,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration end_time = 2;</code>
      */
     public com.google.protobuf.Duration.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -1187,8 +1197,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       word_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1204,8 +1214,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWord() {
-
       word_ = getDefaultInstance().getWord();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1226,8 +1236,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       word_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1273,6 +1283,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setConfidence(float value) {
 
       confidence_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1293,7 +1304,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       confidence_ = 0F;
       onChanged();
       return this;
@@ -1336,6 +1347,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setSpeakerTag(int value) {
 
       speakerTag_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1354,7 +1366,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSpeakerTag() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       speakerTag_ = 0;
       onChanged();
       return this;

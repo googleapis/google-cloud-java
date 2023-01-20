@@ -82,6 +82,8 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
   }
 
   public static final int VERTICES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex> vertices_;
   /**
    *
@@ -369,6 +371,7 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (verticesBuilder_ == null) {
         vertices_ = java.util.Collections.emptyList();
       } else {
@@ -405,7 +408,16 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
     public com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly buildPartial() {
       com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly result =
           new com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly result) {
       if (verticesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           vertices_ = java.util.Collections.unmodifiableList(vertices_);
@@ -415,8 +427,11 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
       } else {
         result.vertices_ = verticesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

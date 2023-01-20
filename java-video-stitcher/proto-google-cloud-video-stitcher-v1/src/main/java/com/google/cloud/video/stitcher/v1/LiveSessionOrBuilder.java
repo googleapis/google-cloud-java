@@ -177,7 +177,6 @@ public interface LiveSessionOrBuilder
    *
    * <code>map&lt;string, .google.cloud.video.stitcher.v1.AdTag&gt; ad_tag_map = 5;</code>
    */
-
   /* nullable */
   com.google.cloud.video.stitcher.v1.AdTag getAdTagMapOrDefault(
       java.lang.String key,
@@ -269,7 +268,6 @@ public interface LiveSessionOrBuilder
    *
    * <code>map&lt;string, string&gt; ad_tag_macros = 6;</code>
    */
-
   /* nullable */
   java.lang.String getAdTagMacrosOrDefault(
       java.lang.String key,

@@ -69,6 +69,8 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PHRASES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList phrases_;
   /**
    *
@@ -354,6 +356,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       phrases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -383,14 +386,25 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.videointelligence.v1.SpeechContext buildPartial() {
       com.google.cloud.videointelligence.v1.SpeechContext result =
           new com.google.cloud.videointelligence.v1.SpeechContext(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.videointelligence.v1.SpeechContext result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         phrases_ = phrases_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.phrases_ = phrases_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.videointelligence.v1.SpeechContext result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

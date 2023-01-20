@@ -110,7 +110,7 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
-    return getDuration();
+    return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
 
   public static final int COMPANION_ADS_FIELD_NUMBER = 2;
@@ -158,10 +158,14 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.video.stitcher.v1.CompanionAdsOrBuilder getCompanionAdsOrBuilder() {
-    return getCompanionAds();
+    return companionAds_ == null
+        ? com.google.cloud.video.stitcher.v1.CompanionAds.getDefaultInstance()
+        : companionAds_;
   }
 
   public static final int ACTIVITY_EVENTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.Event> activityEvents_;
   /**
    *
@@ -477,16 +481,15 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (durationBuilder_ == null) {
-        duration_ = null;
-      } else {
-        duration_ = null;
+      bitField0_ = 0;
+      duration_ = null;
+      if (durationBuilder_ != null) {
+        durationBuilder_.dispose();
         durationBuilder_ = null;
       }
-      if (companionAdsBuilder_ == null) {
-        companionAds_ = null;
-      } else {
-        companionAds_ = null;
+      companionAds_ = null;
+      if (companionAdsBuilder_ != null) {
+        companionAdsBuilder_.dispose();
         companionAdsBuilder_ = null;
       }
       if (activityEventsBuilder_ == null) {
@@ -495,7 +498,7 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
         activityEvents_ = null;
         activityEventsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -523,28 +526,36 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.stitcher.v1.VodSessionAd buildPartial() {
       com.google.cloud.video.stitcher.v1.VodSessionAd result =
           new com.google.cloud.video.stitcher.v1.VodSessionAd(this);
-      int from_bitField0_ = bitField0_;
-      if (durationBuilder_ == null) {
-        result.duration_ = duration_;
-      } else {
-        result.duration_ = durationBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (companionAdsBuilder_ == null) {
-        result.companionAds_ = companionAds_;
-      } else {
-        result.companionAds_ = companionAdsBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.video.stitcher.v1.VodSessionAd result) {
       if (activityEventsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           activityEvents_ = java.util.Collections.unmodifiableList(activityEvents_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.activityEvents_ = activityEvents_;
       } else {
         result.activityEvents_ = activityEventsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.VodSessionAd result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.companionAds_ =
+            companionAdsBuilder_ == null ? companionAds_ : companionAdsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -603,7 +614,7 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
         if (!other.activityEvents_.isEmpty()) {
           if (activityEvents_.isEmpty()) {
             activityEvents_ = other.activityEvents_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureActivityEventsIsMutable();
             activityEvents_.addAll(other.activityEvents_);
@@ -616,7 +627,7 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
             activityEventsBuilder_.dispose();
             activityEventsBuilder_ = null;
             activityEvents_ = other.activityEvents_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             activityEventsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getActivityEventsFieldBuilder()
@@ -655,13 +666,13 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCompanionAdsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -714,7 +725,7 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the duration field is set.
      */
     public boolean hasDuration() {
-      return durationBuilder_ != null || duration_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -749,11 +760,11 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         duration_ = value;
-        onChanged();
       } else {
         durationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -768,11 +779,11 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
     public Builder setDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (durationBuilder_ == null) {
         duration_ = builderForValue.build();
-        onChanged();
       } else {
         durationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -786,17 +797,18 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDuration(com.google.protobuf.Duration value) {
       if (durationBuilder_ == null) {
-        if (duration_ != null) {
-          duration_ =
-              com.google.protobuf.Duration.newBuilder(duration_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && duration_ != null
+            && duration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getDurationBuilder().mergeFrom(value);
         } else {
           duration_ = value;
         }
-        onChanged();
       } else {
         durationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -809,14 +821,13 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration duration = 1;</code>
      */
     public Builder clearDuration() {
-      if (durationBuilder_ == null) {
-        duration_ = null;
-        onChanged();
-      } else {
-        duration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      duration_ = null;
+      if (durationBuilder_ != null) {
+        durationBuilder_.dispose();
         durationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -829,7 +840,7 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration duration = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getDurationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDurationFieldBuilder().getBuilder();
     }
@@ -893,7 +904,7 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the companionAds field is set.
      */
     public boolean hasCompanionAds() {
-      return companionAdsBuilder_ != null || companionAds_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -930,11 +941,11 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         companionAds_ = value;
-        onChanged();
       } else {
         companionAdsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -950,11 +961,11 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.video.stitcher.v1.CompanionAds.Builder builderForValue) {
       if (companionAdsBuilder_ == null) {
         companionAds_ = builderForValue.build();
-        onChanged();
       } else {
         companionAdsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -968,19 +979,19 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCompanionAds(com.google.cloud.video.stitcher.v1.CompanionAds value) {
       if (companionAdsBuilder_ == null) {
-        if (companionAds_ != null) {
-          companionAds_ =
-              com.google.cloud.video.stitcher.v1.CompanionAds.newBuilder(companionAds_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && companionAds_ != null
+            && companionAds_
+                != com.google.cloud.video.stitcher.v1.CompanionAds.getDefaultInstance()) {
+          getCompanionAdsBuilder().mergeFrom(value);
         } else {
           companionAds_ = value;
         }
-        onChanged();
       } else {
         companionAdsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -993,14 +1004,13 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.stitcher.v1.CompanionAds companion_ads = 2;</code>
      */
     public Builder clearCompanionAds() {
-      if (companionAdsBuilder_ == null) {
-        companionAds_ = null;
-        onChanged();
-      } else {
-        companionAds_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      companionAds_ = null;
+      if (companionAdsBuilder_ != null) {
+        companionAdsBuilder_.dispose();
         companionAdsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1013,7 +1023,7 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.stitcher.v1.CompanionAds companion_ads = 2;</code>
      */
     public com.google.cloud.video.stitcher.v1.CompanionAds.Builder getCompanionAdsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCompanionAdsFieldBuilder().getBuilder();
     }
@@ -1065,10 +1075,10 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureActivityEventsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         activityEvents_ =
             new java.util.ArrayList<com.google.cloud.video.stitcher.v1.Event>(activityEvents_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1328,7 +1338,7 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
     public Builder clearActivityEvents() {
       if (activityEventsBuilder_ == null) {
         activityEvents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         activityEventsBuilder_.clear();
@@ -1479,7 +1489,7 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.video.stitcher.v1.Event.Builder,
                 com.google.cloud.video.stitcher.v1.EventOrBuilder>(
                 activityEvents_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         activityEvents_ = null;

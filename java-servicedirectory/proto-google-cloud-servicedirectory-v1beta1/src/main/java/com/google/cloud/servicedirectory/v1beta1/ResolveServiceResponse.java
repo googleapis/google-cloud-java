@@ -90,7 +90,9 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
   /** <code>.google.cloud.servicedirectory.v1beta1.Service service = 1;</code> */
   @java.lang.Override
   public com.google.cloud.servicedirectory.v1beta1.ServiceOrBuilder getServiceOrBuilder() {
-    return getService();
+    return service_ == null
+        ? com.google.cloud.servicedirectory.v1beta1.Service.getDefaultInstance()
+        : service_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -296,10 +298,10 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (serviceBuilder_ == null) {
-        service_ = null;
-      } else {
-        service_ = null;
+      bitField0_ = 0;
+      service_ = null;
+      if (serviceBuilder_ != null) {
+        serviceBuilder_.dispose();
         serviceBuilder_ = null;
       }
       return this;
@@ -330,13 +332,19 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.servicedirectory.v1beta1.ResolveServiceResponse buildPartial() {
       com.google.cloud.servicedirectory.v1beta1.ResolveServiceResponse result =
           new com.google.cloud.servicedirectory.v1beta1.ResolveServiceResponse(this);
-      if (serviceBuilder_ == null) {
-        result.service_ = service_;
-      } else {
-        result.service_ = serviceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.servicedirectory.v1beta1.ResolveServiceResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.service_ = serviceBuilder_ == null ? service_ : serviceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -419,7 +427,7 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getServiceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -439,6 +447,8 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.servicedirectory.v1beta1.Service service_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.servicedirectory.v1beta1.Service,
@@ -451,7 +461,7 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
      * @return Whether the service field is set.
      */
     public boolean hasService() {
-      return serviceBuilder_ != null || service_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>.google.cloud.servicedirectory.v1beta1.Service service = 1;</code>
@@ -474,11 +484,11 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         service_ = value;
-        onChanged();
       } else {
         serviceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /** <code>.google.cloud.servicedirectory.v1beta1.Service service = 1;</code> */
@@ -486,46 +496,44 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
         com.google.cloud.servicedirectory.v1beta1.Service.Builder builderForValue) {
       if (serviceBuilder_ == null) {
         service_ = builderForValue.build();
-        onChanged();
       } else {
         serviceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /** <code>.google.cloud.servicedirectory.v1beta1.Service service = 1;</code> */
     public Builder mergeService(com.google.cloud.servicedirectory.v1beta1.Service value) {
       if (serviceBuilder_ == null) {
-        if (service_ != null) {
-          service_ =
-              com.google.cloud.servicedirectory.v1beta1.Service.newBuilder(service_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && service_ != null
+            && service_ != com.google.cloud.servicedirectory.v1beta1.Service.getDefaultInstance()) {
+          getServiceBuilder().mergeFrom(value);
         } else {
           service_ = value;
         }
-        onChanged();
       } else {
         serviceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /** <code>.google.cloud.servicedirectory.v1beta1.Service service = 1;</code> */
     public Builder clearService() {
-      if (serviceBuilder_ == null) {
-        service_ = null;
-        onChanged();
-      } else {
-        service_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      service_ = null;
+      if (serviceBuilder_ != null) {
+        serviceBuilder_.dispose();
         serviceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /** <code>.google.cloud.servicedirectory.v1beta1.Service service = 1;</code> */
     public com.google.cloud.servicedirectory.v1beta1.Service.Builder getServiceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getServiceFieldBuilder().getBuilder();
     }

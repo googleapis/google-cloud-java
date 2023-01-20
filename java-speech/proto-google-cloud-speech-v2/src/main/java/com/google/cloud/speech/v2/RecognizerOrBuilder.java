@@ -340,7 +340,6 @@ public interface RecognizerOrBuilder
    *
    * <code>map&lt;string, string&gt; annotations = 7;</code>
    */
-
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
       java.lang.String key,

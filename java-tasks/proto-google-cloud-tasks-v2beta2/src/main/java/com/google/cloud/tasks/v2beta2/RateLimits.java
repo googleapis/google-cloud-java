@@ -70,7 +70,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_TASKS_DISPATCHED_PER_SECOND_FIELD_NUMBER = 1;
-  private double maxTasksDispatchedPerSecond_;
+  private double maxTasksDispatchedPerSecond_ = 0D;
   /**
    *
    *
@@ -98,7 +98,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_BURST_SIZE_FIELD_NUMBER = 2;
-  private int maxBurstSize_;
+  private int maxBurstSize_ = 0;
   /**
    *
    *
@@ -142,7 +142,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_CONCURRENT_TASKS_FIELD_NUMBER = 3;
-  private int maxConcurrentTasks_;
+  private int maxConcurrentTasks_ = 0;
   /**
    *
    *
@@ -395,12 +395,10 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       maxTasksDispatchedPerSecond_ = 0D;
-
       maxBurstSize_ = 0;
-
       maxConcurrentTasks_ = 0;
-
       return this;
     }
 
@@ -428,11 +426,24 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.tasks.v2beta2.RateLimits buildPartial() {
       com.google.cloud.tasks.v2beta2.RateLimits result =
           new com.google.cloud.tasks.v2beta2.RateLimits(this);
-      result.maxTasksDispatchedPerSecond_ = maxTasksDispatchedPerSecond_;
-      result.maxBurstSize_ = maxBurstSize_;
-      result.maxConcurrentTasks_ = maxConcurrentTasks_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tasks.v2beta2.RateLimits result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.maxTasksDispatchedPerSecond_ = maxTasksDispatchedPerSecond_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxBurstSize_ = maxBurstSize_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.maxConcurrentTasks_ = maxConcurrentTasks_;
+      }
     }
 
     @java.lang.Override
@@ -518,19 +529,19 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
             case 9:
               {
                 maxTasksDispatchedPerSecond_ = input.readDouble();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 9
             case 16:
               {
                 maxBurstSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 maxConcurrentTasks_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -549,6 +560,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private double maxTasksDispatchedPerSecond_;
     /**
@@ -601,6 +614,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxTasksDispatchedPerSecond(double value) {
 
       maxTasksDispatchedPerSecond_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -626,7 +640,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxTasksDispatchedPerSecond() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       maxTasksDispatchedPerSecond_ = 0D;
       onChanged();
       return this;
@@ -715,6 +729,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxBurstSize(int value) {
 
       maxBurstSize_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -756,7 +771,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxBurstSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxBurstSize_ = 0;
       onChanged();
       return this;
@@ -817,6 +832,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxConcurrentTasks(int value) {
 
       maxConcurrentTasks_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -844,7 +860,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxConcurrentTasks() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       maxConcurrentTasks_ = 0;
       onChanged();
       return this;

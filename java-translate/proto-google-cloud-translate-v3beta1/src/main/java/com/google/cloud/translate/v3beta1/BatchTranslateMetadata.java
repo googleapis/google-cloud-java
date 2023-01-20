@@ -301,7 +301,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int STATE_FIELD_NUMBER = 1;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -330,16 +330,15 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.translate.v3beta1.BatchTranslateMetadata.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.translate.v3beta1.BatchTranslateMetadata.State result =
-        com.google.cloud.translate.v3beta1.BatchTranslateMetadata.State.valueOf(state_);
+        com.google.cloud.translate.v3beta1.BatchTranslateMetadata.State.forNumber(state_);
     return result == null
         ? com.google.cloud.translate.v3beta1.BatchTranslateMetadata.State.UNRECOGNIZED
         : result;
   }
 
   public static final int TRANSLATED_CHARACTERS_FIELD_NUMBER = 2;
-  private long translatedCharacters_;
+  private long translatedCharacters_ = 0L;
   /**
    *
    *
@@ -357,7 +356,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int FAILED_CHARACTERS_FIELD_NUMBER = 3;
-  private long failedCharacters_;
+  private long failedCharacters_ = 0L;
   /**
    *
    *
@@ -376,7 +375,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int TOTAL_CHARACTERS_FIELD_NUMBER = 4;
-  private long totalCharacters_;
+  private long totalCharacters_ = 0L;
   /**
    *
    *
@@ -438,7 +437,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder() {
-    return getSubmitTime();
+    return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -684,18 +683,14 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       state_ = 0;
-
       translatedCharacters_ = 0L;
-
       failedCharacters_ = 0L;
-
       totalCharacters_ = 0L;
-
-      if (submitTimeBuilder_ == null) {
-        submitTime_ = null;
-      } else {
-        submitTime_ = null;
+      submitTime_ = null;
+      if (submitTimeBuilder_ != null) {
+        submitTimeBuilder_.dispose();
         submitTimeBuilder_ = null;
       }
       return this;
@@ -725,17 +720,30 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
     public com.google.cloud.translate.v3beta1.BatchTranslateMetadata buildPartial() {
       com.google.cloud.translate.v3beta1.BatchTranslateMetadata result =
           new com.google.cloud.translate.v3beta1.BatchTranslateMetadata(this);
-      result.state_ = state_;
-      result.translatedCharacters_ = translatedCharacters_;
-      result.failedCharacters_ = failedCharacters_;
-      result.totalCharacters_ = totalCharacters_;
-      if (submitTimeBuilder_ == null) {
-        result.submitTime_ = submitTime_;
-      } else {
-        result.submitTime_ = submitTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.translate.v3beta1.BatchTranslateMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.translatedCharacters_ = translatedCharacters_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.failedCharacters_ = failedCharacters_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.totalCharacters_ = totalCharacters_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.submitTime_ = submitTimeBuilder_ == null ? submitTime_ : submitTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -828,31 +836,31 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
             case 8:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 translatedCharacters_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 failedCharacters_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 totalCharacters_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getSubmitTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -871,6 +879,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int state_ = 0;
     /**
@@ -901,8 +911,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -919,9 +929,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.cloud.translate.v3beta1.BatchTranslateMetadata.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.translate.v3beta1.BatchTranslateMetadata.State result =
-          com.google.cloud.translate.v3beta1.BatchTranslateMetadata.State.valueOf(state_);
+          com.google.cloud.translate.v3beta1.BatchTranslateMetadata.State.forNumber(state_);
       return result == null
           ? com.google.cloud.translate.v3beta1.BatchTranslateMetadata.State.UNRECOGNIZED
           : result;
@@ -942,7 +951,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -959,7 +968,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = 0;
       onChanged();
       return this;
@@ -996,6 +1005,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
     public Builder setTranslatedCharacters(long value) {
 
       translatedCharacters_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1011,7 +1021,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearTranslatedCharacters() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       translatedCharacters_ = 0L;
       onChanged();
       return this;
@@ -1050,6 +1060,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
     public Builder setFailedCharacters(long value) {
 
       failedCharacters_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1066,7 +1077,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearFailedCharacters() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       failedCharacters_ = 0L;
       onChanged();
       return this;
@@ -1107,6 +1118,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
     public Builder setTotalCharacters(long value) {
 
       totalCharacters_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1124,7 +1136,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearTotalCharacters() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       totalCharacters_ = 0L;
       onChanged();
       return this;
@@ -1148,7 +1160,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the submitTime field is set.
      */
     public boolean hasSubmitTime() {
-      return submitTimeBuilder_ != null || submitTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1185,11 +1197,11 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         submitTime_ = value;
-        onChanged();
       } else {
         submitTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1204,11 +1216,11 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
     public Builder setSubmitTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (submitTimeBuilder_ == null) {
         submitTime_ = builderForValue.build();
-        onChanged();
       } else {
         submitTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1222,17 +1234,18 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      */
     public Builder mergeSubmitTime(com.google.protobuf.Timestamp value) {
       if (submitTimeBuilder_ == null) {
-        if (submitTime_ != null) {
-          submitTime_ =
-              com.google.protobuf.Timestamp.newBuilder(submitTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && submitTime_ != null
+            && submitTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getSubmitTimeBuilder().mergeFrom(value);
         } else {
           submitTime_ = value;
         }
-        onChanged();
       } else {
         submitTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1245,14 +1258,13 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp submit_time = 5;</code>
      */
     public Builder clearSubmitTime() {
-      if (submitTimeBuilder_ == null) {
-        submitTime_ = null;
-        onChanged();
-      } else {
-        submitTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      submitTime_ = null;
+      if (submitTimeBuilder_ != null) {
+        submitTimeBuilder_.dispose();
         submitTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1265,7 +1277,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp submit_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getSubmitTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getSubmitTimeFieldBuilder().getBuilder();
     }

@@ -219,6 +219,8 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int UNUSED_ARGUMENTS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList unusedArguments_;
     /**
      *
@@ -333,7 +335,9 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfoOrBuilder
         getConsumerInfoOrBuilder() {
-      return getConsumerInfo();
+      return consumerInfo_ == null
+          ? com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo.getDefaultInstance()
+          : consumerInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -557,12 +561,12 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unusedArguments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
-        if (consumerInfoBuilder_ == null) {
-          consumerInfo_ = null;
-        } else {
-          consumerInfo_ = null;
+        consumerInfo_ = null;
+        if (consumerInfoBuilder_ != null) {
+          consumerInfoBuilder_.dispose();
           consumerInfoBuilder_ = null;
         }
         return this;
@@ -592,19 +596,29 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       public com.google.api.servicecontrol.v1.CheckResponse.CheckInfo buildPartial() {
         com.google.api.servicecontrol.v1.CheckResponse.CheckInfo result =
             new com.google.api.servicecontrol.v1.CheckResponse.CheckInfo(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.api.servicecontrol.v1.CheckResponse.CheckInfo result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           unusedArguments_ = unusedArguments_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.unusedArguments_ = unusedArguments_;
-        if (consumerInfoBuilder_ == null) {
-          result.consumerInfo_ = consumerInfo_;
-        } else {
-          result.consumerInfo_ = consumerInfoBuilder_.build();
+      }
+
+      private void buildPartial0(com.google.api.servicecontrol.v1.CheckResponse.CheckInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.consumerInfo_ =
+              consumerInfoBuilder_ == null ? consumerInfo_ : consumerInfoBuilder_.build();
         }
-        onBuilt();
-        return result;
       }
 
       @java.lang.Override
@@ -704,7 +718,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
               case 18:
                 {
                   input.readMessage(getConsumerInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -930,7 +944,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the consumerInfo field is set.
        */
       public boolean hasConsumerInfo() {
-        return consumerInfoBuilder_ != null || consumerInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -968,11 +982,11 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           consumerInfo_ = value;
-          onChanged();
         } else {
           consumerInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -988,11 +1002,11 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
           com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo.Builder builderForValue) {
         if (consumerInfoBuilder_ == null) {
           consumerInfo_ = builderForValue.build();
-          onChanged();
         } else {
           consumerInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1007,20 +1021,20 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeConsumerInfo(
           com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo value) {
         if (consumerInfoBuilder_ == null) {
-          if (consumerInfo_ != null) {
-            consumerInfo_ =
-                com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo.newBuilder(
-                        consumerInfo_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && consumerInfo_ != null
+              && consumerInfo_
+                  != com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo
+                      .getDefaultInstance()) {
+            getConsumerInfoBuilder().mergeFrom(value);
           } else {
             consumerInfo_ = value;
           }
-          onChanged();
         } else {
           consumerInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1033,14 +1047,13 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo consumer_info = 2;</code>
        */
       public Builder clearConsumerInfo() {
-        if (consumerInfoBuilder_ == null) {
-          consumerInfo_ = null;
-          onChanged();
-        } else {
-          consumerInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        consumerInfo_ = null;
+        if (consumerInfoBuilder_ != null) {
+          consumerInfoBuilder_.dispose();
           consumerInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1054,7 +1067,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo.Builder
           getConsumerInfoBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getConsumerInfoFieldBuilder().getBuilder();
       }
@@ -1488,7 +1501,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PROJECT_NUMBER_FIELD_NUMBER = 1;
-    private long projectNumber_;
+    private long projectNumber_ = 0L;
     /**
      *
      *
@@ -1509,7 +1522,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TYPE_FIELD_NUMBER = 2;
-    private int type_;
+    private int type_ = 0;
     /**
      *
      *
@@ -1540,16 +1553,15 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo.ConsumerType getType() {
-      @SuppressWarnings("deprecation")
       com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo.ConsumerType result =
-          com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo.ConsumerType.valueOf(type_);
+          com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo.ConsumerType.forNumber(type_);
       return result == null
           ? com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo.ConsumerType.UNRECOGNIZED
           : result;
     }
 
     public static final int CONSUMER_NUMBER_FIELD_NUMBER = 3;
-    private long consumerNumber_;
+    private long consumerNumber_ = 0L;
     /**
      *
      *
@@ -1792,12 +1804,10 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         projectNumber_ = 0L;
-
         type_ = 0;
-
         consumerNumber_ = 0L;
-
         return this;
       }
 
@@ -1826,11 +1836,25 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       public com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo buildPartial() {
         com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo result =
             new com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo(this);
-        result.projectNumber_ = projectNumber_;
-        result.type_ = type_;
-        result.consumerNumber_ = consumerNumber_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.projectNumber_ = projectNumber_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.consumerNumber_ = consumerNumber_;
+        }
       }
 
       @java.lang.Override
@@ -1920,19 +1944,19 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   projectNumber_ = input.readInt64();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   consumerNumber_ = input.readInt64();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -1951,6 +1975,8 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private long projectNumber_;
       /**
@@ -1989,6 +2015,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       public Builder setProjectNumber(long value) {
 
         projectNumber_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2007,7 +2034,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearProjectNumber() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         projectNumber_ = 0L;
         onChanged();
         return this;
@@ -2046,8 +2073,8 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2066,9 +2093,9 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo.ConsumerType getType() {
-        @SuppressWarnings("deprecation")
         com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo.ConsumerType result =
-            com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo.ConsumerType.valueOf(type_);
+            com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo.ConsumerType.forNumber(
+                type_);
         return result == null
             ? com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo.ConsumerType.UNRECOGNIZED
             : result;
@@ -2092,7 +2119,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -2111,7 +2138,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         type_ = 0;
         onChanged();
         return this;
@@ -2152,6 +2179,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       public Builder setConsumerNumber(long value) {
 
         consumerNumber_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2169,7 +2197,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearConsumerNumber() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         consumerNumber_ = 0L;
         onChanged();
         return this;
@@ -2241,7 +2269,9 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OPERATION_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object operationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object operationId_ = "";
   /**
    *
    *
@@ -2294,6 +2324,8 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CHECK_ERRORS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.servicecontrol.v1.CheckError> checkErrors_;
   /**
    *
@@ -2378,7 +2410,9 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_CONFIG_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object serviceConfigId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceConfigId_ = "";
   /**
    *
    *
@@ -2427,7 +2461,9 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_ROLLOUT_ID_FIELD_NUMBER = 11;
-  private volatile java.lang.Object serviceRolloutId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceRolloutId_ = "";
   /**
    *
    *
@@ -2520,7 +2556,9 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.servicecontrol.v1.CheckResponse.CheckInfoOrBuilder getCheckInfoOrBuilder() {
-    return getCheckInfo();
+    return checkInfo_ == null
+        ? com.google.api.servicecontrol.v1.CheckResponse.CheckInfo.getDefaultInstance()
+        : checkInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2763,23 +2801,20 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       operationId_ = "";
-
       if (checkErrorsBuilder_ == null) {
         checkErrors_ = java.util.Collections.emptyList();
       } else {
         checkErrors_ = null;
         checkErrorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       serviceConfigId_ = "";
-
       serviceRolloutId_ = "";
-
-      if (checkInfoBuilder_ == null) {
-        checkInfo_ = null;
-      } else {
-        checkInfo_ = null;
+      checkInfo_ = null;
+      if (checkInfoBuilder_ != null) {
+        checkInfoBuilder_.dispose();
         checkInfoBuilder_ = null;
       }
       return this;
@@ -2809,26 +2844,40 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.servicecontrol.v1.CheckResponse buildPartial() {
       com.google.api.servicecontrol.v1.CheckResponse result =
           new com.google.api.servicecontrol.v1.CheckResponse(this);
-      int from_bitField0_ = bitField0_;
-      result.operationId_ = operationId_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.api.servicecontrol.v1.CheckResponse result) {
       if (checkErrorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           checkErrors_ = java.util.Collections.unmodifiableList(checkErrors_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.checkErrors_ = checkErrors_;
       } else {
         result.checkErrors_ = checkErrorsBuilder_.build();
       }
-      result.serviceConfigId_ = serviceConfigId_;
-      result.serviceRolloutId_ = serviceRolloutId_;
-      if (checkInfoBuilder_ == null) {
-        result.checkInfo_ = checkInfo_;
-      } else {
-        result.checkInfo_ = checkInfoBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.api.servicecontrol.v1.CheckResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.operationId_ = operationId_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.serviceConfigId_ = serviceConfigId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.serviceRolloutId_ = serviceRolloutId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.checkInfo_ = checkInfoBuilder_ == null ? checkInfo_ : checkInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2878,13 +2927,14 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.api.servicecontrol.v1.CheckResponse.getDefaultInstance()) return this;
       if (!other.getOperationId().isEmpty()) {
         operationId_ = other.operationId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (checkErrorsBuilder_ == null) {
         if (!other.checkErrors_.isEmpty()) {
           if (checkErrors_.isEmpty()) {
             checkErrors_ = other.checkErrors_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureCheckErrorsIsMutable();
             checkErrors_.addAll(other.checkErrors_);
@@ -2897,7 +2947,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
             checkErrorsBuilder_.dispose();
             checkErrorsBuilder_ = null;
             checkErrors_ = other.checkErrors_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             checkErrorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCheckErrorsFieldBuilder()
@@ -2909,10 +2959,12 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getServiceConfigId().isEmpty()) {
         serviceConfigId_ = other.serviceConfigId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getServiceRolloutId().isEmpty()) {
         serviceRolloutId_ = other.serviceRolloutId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasCheckInfo()) {
@@ -2947,7 +2999,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 operationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -2966,19 +3018,19 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 serviceConfigId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getCheckInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 90:
               {
                 serviceRolloutId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 90
             default:
@@ -3067,8 +3119,8 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       operationId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3086,8 +3138,8 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOperationId() {
-
       operationId_ = getDefaultInstance().getOperationId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -3110,8 +3162,8 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       operationId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3120,10 +3172,10 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureCheckErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         checkErrors_ =
             new java.util.ArrayList<com.google.api.servicecontrol.v1.CheckError>(checkErrors_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -3372,7 +3424,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCheckErrors() {
       if (checkErrorsBuilder_ == null) {
         checkErrors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         checkErrorsBuilder_.clear();
@@ -3515,7 +3567,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
                 com.google.api.servicecontrol.v1.CheckError,
                 com.google.api.servicecontrol.v1.CheckError.Builder,
                 com.google.api.servicecontrol.v1.CheckErrorOrBuilder>(
-                checkErrors_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                checkErrors_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         checkErrors_ = null;
       }
       return checkErrorsBuilder_;
@@ -3582,8 +3634,8 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceConfigId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3599,8 +3651,8 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceConfigId() {
-
       serviceConfigId_ = getDefaultInstance().getServiceConfigId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3621,8 +3673,8 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceConfigId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3688,8 +3740,8 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceRolloutId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3705,8 +3757,8 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceRolloutId() {
-
       serviceRolloutId_ = getDefaultInstance().getServiceRolloutId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3727,8 +3779,8 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceRolloutId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3751,7 +3803,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the checkInfo field is set.
      */
     public boolean hasCheckInfo() {
-      return checkInfoBuilder_ != null || checkInfo_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -3788,11 +3840,11 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkInfo_ = value;
-        onChanged();
       } else {
         checkInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3808,11 +3860,11 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
         com.google.api.servicecontrol.v1.CheckResponse.CheckInfo.Builder builderForValue) {
       if (checkInfoBuilder_ == null) {
         checkInfo_ = builderForValue.build();
-        onChanged();
       } else {
         checkInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3826,19 +3878,19 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCheckInfo(com.google.api.servicecontrol.v1.CheckResponse.CheckInfo value) {
       if (checkInfoBuilder_ == null) {
-        if (checkInfo_ != null) {
-          checkInfo_ =
-              com.google.api.servicecontrol.v1.CheckResponse.CheckInfo.newBuilder(checkInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && checkInfo_ != null
+            && checkInfo_
+                != com.google.api.servicecontrol.v1.CheckResponse.CheckInfo.getDefaultInstance()) {
+          getCheckInfoBuilder().mergeFrom(value);
         } else {
           checkInfo_ = value;
         }
-        onChanged();
       } else {
         checkInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3851,14 +3903,13 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.api.servicecontrol.v1.CheckResponse.CheckInfo check_info = 6;</code>
      */
     public Builder clearCheckInfo() {
-      if (checkInfoBuilder_ == null) {
-        checkInfo_ = null;
-        onChanged();
-      } else {
-        checkInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      checkInfo_ = null;
+      if (checkInfoBuilder_ != null) {
+        checkInfoBuilder_.dispose();
         checkInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3871,7 +3922,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.api.servicecontrol.v1.CheckResponse.CheckInfo check_info = 6;</code>
      */
     public com.google.api.servicecontrol.v1.CheckResponse.CheckInfo.Builder getCheckInfoBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCheckInfoFieldBuilder().getBuilder();
     }

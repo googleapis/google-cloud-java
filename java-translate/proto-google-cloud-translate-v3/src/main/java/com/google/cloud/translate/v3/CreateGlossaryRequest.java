@@ -68,7 +68,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -171,7 +173,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.translate.v3.GlossaryOrBuilder getGlossaryOrBuilder() {
-    return getGlossary();
+    return glossary_ == null
+        ? com.google.cloud.translate.v3.Glossary.getDefaultInstance()
+        : glossary_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,12 +389,11 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (glossaryBuilder_ == null) {
-        glossary_ = null;
-      } else {
-        glossary_ = null;
+      glossary_ = null;
+      if (glossaryBuilder_ != null) {
+        glossaryBuilder_.dispose();
         glossaryBuilder_ = null;
       }
       return this;
@@ -420,14 +423,21 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.translate.v3.CreateGlossaryRequest buildPartial() {
       com.google.cloud.translate.v3.CreateGlossaryRequest result =
           new com.google.cloud.translate.v3.CreateGlossaryRequest(this);
-      result.parent_ = parent_;
-      if (glossaryBuilder_ == null) {
-        result.glossary_ = glossary_;
-      } else {
-        result.glossary_ = glossaryBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.translate.v3.CreateGlossaryRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.glossary_ = glossaryBuilder_ == null ? glossary_ : glossaryBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -478,6 +488,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasGlossary()) {
@@ -512,13 +523,13 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getGlossaryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -537,6 +548,8 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -605,8 +618,8 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -624,8 +637,8 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -648,8 +661,8 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -674,7 +687,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the glossary field is set.
      */
     public boolean hasGlossary() {
-      return glossaryBuilder_ != null || glossary_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -715,11 +728,11 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         glossary_ = value;
-        onChanged();
       } else {
         glossaryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -736,11 +749,11 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
     public Builder setGlossary(com.google.cloud.translate.v3.Glossary.Builder builderForValue) {
       if (glossaryBuilder_ == null) {
         glossary_ = builderForValue.build();
-        onChanged();
       } else {
         glossaryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -756,19 +769,18 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeGlossary(com.google.cloud.translate.v3.Glossary value) {
       if (glossaryBuilder_ == null) {
-        if (glossary_ != null) {
-          glossary_ =
-              com.google.cloud.translate.v3.Glossary.newBuilder(glossary_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && glossary_ != null
+            && glossary_ != com.google.cloud.translate.v3.Glossary.getDefaultInstance()) {
+          getGlossaryBuilder().mergeFrom(value);
         } else {
           glossary_ = value;
         }
-        onChanged();
       } else {
         glossaryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -783,14 +795,13 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearGlossary() {
-      if (glossaryBuilder_ == null) {
-        glossary_ = null;
-        onChanged();
-      } else {
-        glossary_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      glossary_ = null;
+      if (glossaryBuilder_ != null) {
+        glossaryBuilder_.dispose();
         glossaryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -805,7 +816,7 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.translate.v3.Glossary.Builder getGlossaryBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getGlossaryFieldBuilder().getBuilder();
     }

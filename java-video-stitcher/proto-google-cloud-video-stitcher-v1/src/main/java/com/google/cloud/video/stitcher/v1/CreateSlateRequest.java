@@ -69,7 +69,9 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SLATE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object slateId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object slateId_ = "";
   /**
    *
    *
@@ -227,7 +231,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.video.stitcher.v1.SlateOrBuilder getSlateOrBuilder() {
-    return getSlate();
+    return slate_ == null ? com.google.cloud.video.stitcher.v1.Slate.getDefaultInstance() : slate_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -451,14 +455,12 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       slateId_ = "";
-
-      if (slateBuilder_ == null) {
-        slate_ = null;
-      } else {
-        slate_ = null;
+      slate_ = null;
+      if (slateBuilder_ != null) {
+        slateBuilder_.dispose();
         slateBuilder_ = null;
       }
       return this;
@@ -488,15 +490,24 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.video.stitcher.v1.CreateSlateRequest buildPartial() {
       com.google.cloud.video.stitcher.v1.CreateSlateRequest result =
           new com.google.cloud.video.stitcher.v1.CreateSlateRequest(this);
-      result.parent_ = parent_;
-      result.slateId_ = slateId_;
-      if (slateBuilder_ == null) {
-        result.slate_ = slate_;
-      } else {
-        result.slate_ = slateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.CreateSlateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.slateId_ = slateId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.slate_ = slateBuilder_ == null ? slate_ : slateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -547,10 +558,12 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSlateId().isEmpty()) {
         slateId_ = other.slateId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSlate()) {
@@ -585,19 +598,19 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 slateId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getSlateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -616,6 +629,8 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -687,8 +702,8 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -707,8 +722,8 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -732,8 +747,8 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -808,8 +823,8 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       slateId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -828,8 +843,8 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearSlateId() {
-
       slateId_ = getDefaultInstance().getSlateId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -853,8 +868,8 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       slateId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -879,7 +894,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the slate field is set.
      */
     public boolean hasSlate() {
-      return slateBuilder_ != null || slate_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -920,11 +935,11 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         slate_ = value;
-        onChanged();
       } else {
         slateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -941,11 +956,11 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
     public Builder setSlate(com.google.cloud.video.stitcher.v1.Slate.Builder builderForValue) {
       if (slateBuilder_ == null) {
         slate_ = builderForValue.build();
-        onChanged();
       } else {
         slateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -961,19 +976,18 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeSlate(com.google.cloud.video.stitcher.v1.Slate value) {
       if (slateBuilder_ == null) {
-        if (slate_ != null) {
-          slate_ =
-              com.google.cloud.video.stitcher.v1.Slate.newBuilder(slate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && slate_ != null
+            && slate_ != com.google.cloud.video.stitcher.v1.Slate.getDefaultInstance()) {
+          getSlateBuilder().mergeFrom(value);
         } else {
           slate_ = value;
         }
-        onChanged();
       } else {
         slateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -988,14 +1002,13 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearSlate() {
-      if (slateBuilder_ == null) {
-        slate_ = null;
-        onChanged();
-      } else {
-        slate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      slate_ = null;
+      if (slateBuilder_ != null) {
+        slateBuilder_.dispose();
         slateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1010,7 +1023,7 @@ public final class CreateSlateRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.video.stitcher.v1.Slate.Builder getSlateBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSlateFieldBuilder().getBuilder();
     }

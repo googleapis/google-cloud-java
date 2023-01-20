@@ -69,7 +69,9 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int NAMESPACE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object namespaceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object namespaceId_ = "";
   /**
    *
    *
@@ -235,7 +239,9 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.servicedirectory.v1beta1.NamespaceOrBuilder getNamespaceOrBuilder() {
-    return getNamespace();
+    return namespace_ == null
+        ? com.google.cloud.servicedirectory.v1beta1.Namespace.getDefaultInstance()
+        : namespace_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -459,14 +465,12 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       namespaceId_ = "";
-
-      if (namespaceBuilder_ == null) {
-        namespace_ = null;
-      } else {
-        namespace_ = null;
+      namespace_ = null;
+      if (namespaceBuilder_ != null) {
+        namespaceBuilder_.dispose();
         namespaceBuilder_ = null;
       }
       return this;
@@ -497,15 +501,25 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.servicedirectory.v1beta1.CreateNamespaceRequest buildPartial() {
       com.google.cloud.servicedirectory.v1beta1.CreateNamespaceRequest result =
           new com.google.cloud.servicedirectory.v1beta1.CreateNamespaceRequest(this);
-      result.parent_ = parent_;
-      result.namespaceId_ = namespaceId_;
-      if (namespaceBuilder_ == null) {
-        result.namespace_ = namespace_;
-      } else {
-        result.namespace_ = namespaceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.servicedirectory.v1beta1.CreateNamespaceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.namespaceId_ = namespaceId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.namespace_ = namespaceBuilder_ == null ? namespace_ : namespaceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -558,10 +572,12 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getNamespaceId().isEmpty()) {
         namespaceId_ = other.namespaceId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasNamespace()) {
@@ -596,19 +612,19 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 namespaceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getNamespaceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -627,6 +643,8 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -698,8 +716,8 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -718,8 +736,8 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -743,8 +761,8 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -828,8 +846,8 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       namespaceId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -851,8 +869,8 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearNamespaceId() {
-
       namespaceId_ = getDefaultInstance().getNamespaceId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -879,8 +897,8 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       namespaceId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -905,7 +923,7 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
      * @return Whether the namespace field is set.
      */
     public boolean hasNamespace() {
-      return namespaceBuilder_ != null || namespace_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -946,11 +964,11 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         namespace_ = value;
-        onChanged();
       } else {
         namespaceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -968,11 +986,11 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
         com.google.cloud.servicedirectory.v1beta1.Namespace.Builder builderForValue) {
       if (namespaceBuilder_ == null) {
         namespace_ = builderForValue.build();
-        onChanged();
       } else {
         namespaceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -988,19 +1006,19 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeNamespace(com.google.cloud.servicedirectory.v1beta1.Namespace value) {
       if (namespaceBuilder_ == null) {
-        if (namespace_ != null) {
-          namespace_ =
-              com.google.cloud.servicedirectory.v1beta1.Namespace.newBuilder(namespace_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && namespace_ != null
+            && namespace_
+                != com.google.cloud.servicedirectory.v1beta1.Namespace.getDefaultInstance()) {
+          getNamespaceBuilder().mergeFrom(value);
         } else {
           namespace_ = value;
         }
-        onChanged();
       } else {
         namespaceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1015,14 +1033,13 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearNamespace() {
-      if (namespaceBuilder_ == null) {
-        namespace_ = null;
-        onChanged();
-      } else {
-        namespace_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      namespace_ = null;
+      if (namespaceBuilder_ != null) {
+        namespaceBuilder_.dispose();
         namespaceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1037,7 +1054,7 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.servicedirectory.v1beta1.Namespace.Builder getNamespaceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getNamespaceFieldBuilder().getBuilder();
     }

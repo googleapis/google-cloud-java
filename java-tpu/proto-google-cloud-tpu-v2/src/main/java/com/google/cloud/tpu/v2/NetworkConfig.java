@@ -69,7 +69,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETWORK_FIELD_NUMBER = 1;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBNETWORK_FIELD_NUMBER = 2;
-  private volatile java.lang.Object subnetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetwork_ = "";
   /**
    *
    *
@@ -173,7 +177,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_EXTERNAL_IPS_FIELD_NUMBER = 3;
-  private boolean enableExternalIps_;
+  private boolean enableExternalIps_ = false;
   /**
    *
    *
@@ -193,7 +197,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CAN_IP_FORWARD_FIELD_NUMBER = 4;
-  private boolean canIpForward_;
+  private boolean canIpForward_ = false;
   /**
    *
    *
@@ -434,14 +438,11 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       network_ = "";
-
       subnetwork_ = "";
-
       enableExternalIps_ = false;
-
       canIpForward_ = false;
-
       return this;
     }
 
@@ -469,12 +470,27 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.tpu.v2.NetworkConfig buildPartial() {
       com.google.cloud.tpu.v2.NetworkConfig result =
           new com.google.cloud.tpu.v2.NetworkConfig(this);
-      result.network_ = network_;
-      result.subnetwork_ = subnetwork_;
-      result.enableExternalIps_ = enableExternalIps_;
-      result.canIpForward_ = canIpForward_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tpu.v2.NetworkConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.subnetwork_ = subnetwork_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.enableExternalIps_ = enableExternalIps_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.canIpForward_ = canIpForward_;
+      }
     }
 
     @java.lang.Override
@@ -524,10 +540,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.tpu.v2.NetworkConfig.getDefaultInstance()) return this;
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSubnetwork().isEmpty()) {
         subnetwork_ = other.subnetwork_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getEnableExternalIps() != false) {
@@ -565,25 +583,25 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 enableExternalIps_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 canIpForward_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -602,6 +620,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object network_ = "";
     /**
@@ -667,8 +687,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -685,8 +705,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -708,8 +728,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -781,8 +801,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       subnetwork_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -800,8 +820,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-
       subnetwork_ = getDefaultInstance().getSubnetwork();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -824,8 +844,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subnetwork_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -865,6 +885,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableExternalIps(boolean value) {
 
       enableExternalIps_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -882,7 +903,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableExternalIps() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       enableExternalIps_ = false;
       onChanged();
       return this;
@@ -923,6 +944,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setCanIpForward(boolean value) {
 
       canIpForward_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -940,7 +962,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCanIpForward() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       canIpForward_ = false;
       onChanged();
       return this;

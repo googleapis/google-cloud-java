@@ -240,7 +240,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DIGITAL_SIGNATURE_FIELD_NUMBER = 1;
-    private boolean digitalSignature_;
+    private boolean digitalSignature_ = false;
     /**
      *
      *
@@ -258,7 +258,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CONTENT_COMMITMENT_FIELD_NUMBER = 2;
-    private boolean contentCommitment_;
+    private boolean contentCommitment_ = false;
     /**
      *
      *
@@ -277,7 +277,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int KEY_ENCIPHERMENT_FIELD_NUMBER = 3;
-    private boolean keyEncipherment_;
+    private boolean keyEncipherment_ = false;
     /**
      *
      *
@@ -295,7 +295,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DATA_ENCIPHERMENT_FIELD_NUMBER = 4;
-    private boolean dataEncipherment_;
+    private boolean dataEncipherment_ = false;
     /**
      *
      *
@@ -313,7 +313,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int KEY_AGREEMENT_FIELD_NUMBER = 5;
-    private boolean keyAgreement_;
+    private boolean keyAgreement_ = false;
     /**
      *
      *
@@ -331,7 +331,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CERT_SIGN_FIELD_NUMBER = 6;
-    private boolean certSign_;
+    private boolean certSign_ = false;
     /**
      *
      *
@@ -349,7 +349,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CRL_SIGN_FIELD_NUMBER = 7;
-    private boolean crlSign_;
+    private boolean crlSign_ = false;
     /**
      *
      *
@@ -367,7 +367,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ENCIPHER_ONLY_FIELD_NUMBER = 8;
-    private boolean encipherOnly_;
+    private boolean encipherOnly_ = false;
     /**
      *
      *
@@ -385,7 +385,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DECIPHER_ONLY_FIELD_NUMBER = 9;
-    private boolean decipherOnly_;
+    private boolean decipherOnly_ = false;
     /**
      *
      *
@@ -677,24 +677,16 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         digitalSignature_ = false;
-
         contentCommitment_ = false;
-
         keyEncipherment_ = false;
-
         dataEncipherment_ = false;
-
         keyAgreement_ = false;
-
         certSign_ = false;
-
         crlSign_ = false;
-
         encipherOnly_ = false;
-
         decipherOnly_ = false;
-
         return this;
       }
 
@@ -725,17 +717,43 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.security.privateca.v1beta1.KeyUsage.KeyUsageOptions buildPartial() {
         com.google.cloud.security.privateca.v1beta1.KeyUsage.KeyUsageOptions result =
             new com.google.cloud.security.privateca.v1beta1.KeyUsage.KeyUsageOptions(this);
-        result.digitalSignature_ = digitalSignature_;
-        result.contentCommitment_ = contentCommitment_;
-        result.keyEncipherment_ = keyEncipherment_;
-        result.dataEncipherment_ = dataEncipherment_;
-        result.keyAgreement_ = keyAgreement_;
-        result.certSign_ = certSign_;
-        result.crlSign_ = crlSign_;
-        result.encipherOnly_ = encipherOnly_;
-        result.decipherOnly_ = decipherOnly_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.security.privateca.v1beta1.KeyUsage.KeyUsageOptions result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.digitalSignature_ = digitalSignature_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.contentCommitment_ = contentCommitment_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.keyEncipherment_ = keyEncipherment_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.dataEncipherment_ = dataEncipherment_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.keyAgreement_ = keyAgreement_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.certSign_ = certSign_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.crlSign_ = crlSign_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.encipherOnly_ = encipherOnly_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.decipherOnly_ = decipherOnly_;
+        }
       }
 
       @java.lang.Override
@@ -845,55 +863,55 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   digitalSignature_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   contentCommitment_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   keyEncipherment_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 32:
                 {
                   dataEncipherment_ = input.readBool();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               case 40:
                 {
                   keyAgreement_ = input.readBool();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               case 48:
                 {
                   certSign_ = input.readBool();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 48
               case 56:
                 {
                   crlSign_ = input.readBool();
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 56
               case 64:
                 {
                   encipherOnly_ = input.readBool();
-
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 64
               case 72:
                 {
                   decipherOnly_ = input.readBool();
-
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 72
               default:
@@ -912,6 +930,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean digitalSignature_;
       /**
@@ -944,6 +964,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       public Builder setDigitalSignature(boolean value) {
 
         digitalSignature_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -959,7 +980,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDigitalSignature() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         digitalSignature_ = false;
         onChanged();
         return this;
@@ -998,6 +1019,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       public Builder setContentCommitment(boolean value) {
 
         contentCommitment_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1014,7 +1036,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearContentCommitment() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         contentCommitment_ = false;
         onChanged();
         return this;
@@ -1051,6 +1073,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       public Builder setKeyEncipherment(boolean value) {
 
         keyEncipherment_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1066,7 +1089,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearKeyEncipherment() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         keyEncipherment_ = false;
         onChanged();
         return this;
@@ -1103,6 +1126,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       public Builder setDataEncipherment(boolean value) {
 
         dataEncipherment_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1118,7 +1142,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDataEncipherment() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         dataEncipherment_ = false;
         onChanged();
         return this;
@@ -1155,6 +1179,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       public Builder setKeyAgreement(boolean value) {
 
         keyAgreement_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1170,7 +1195,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearKeyAgreement() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         keyAgreement_ = false;
         onChanged();
         return this;
@@ -1207,6 +1232,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       public Builder setCertSign(boolean value) {
 
         certSign_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1222,7 +1248,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearCertSign() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         certSign_ = false;
         onChanged();
         return this;
@@ -1259,6 +1285,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       public Builder setCrlSign(boolean value) {
 
         crlSign_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1274,7 +1301,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearCrlSign() {
-
+        bitField0_ = (bitField0_ & ~0x00000040);
         crlSign_ = false;
         onChanged();
         return this;
@@ -1311,6 +1338,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       public Builder setEncipherOnly(boolean value) {
 
         encipherOnly_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1326,7 +1354,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEncipherOnly() {
-
+        bitField0_ = (bitField0_ & ~0x00000080);
         encipherOnly_ = false;
         onChanged();
         return this;
@@ -1363,6 +1391,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       public Builder setDecipherOnly(boolean value) {
 
         decipherOnly_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1378,7 +1407,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDecipherOnly() {
-
+        bitField0_ = (bitField0_ & ~0x00000100);
         decipherOnly_ = false;
         onChanged();
         return this;
@@ -1590,7 +1619,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SERVER_AUTH_FIELD_NUMBER = 1;
-    private boolean serverAuth_;
+    private boolean serverAuth_ = false;
     /**
      *
      *
@@ -1609,7 +1638,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CLIENT_AUTH_FIELD_NUMBER = 2;
-    private boolean clientAuth_;
+    private boolean clientAuth_ = false;
     /**
      *
      *
@@ -1628,7 +1657,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CODE_SIGNING_FIELD_NUMBER = 3;
-    private boolean codeSigning_;
+    private boolean codeSigning_ = false;
     /**
      *
      *
@@ -1647,7 +1676,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int EMAIL_PROTECTION_FIELD_NUMBER = 4;
-    private boolean emailProtection_;
+    private boolean emailProtection_ = false;
     /**
      *
      *
@@ -1666,7 +1695,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TIME_STAMPING_FIELD_NUMBER = 5;
-    private boolean timeStamping_;
+    private boolean timeStamping_ = false;
     /**
      *
      *
@@ -1685,7 +1714,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int OCSP_SIGNING_FIELD_NUMBER = 6;
-    private boolean ocspSigning_;
+    private boolean ocspSigning_ = false;
     /**
      *
      *
@@ -1960,18 +1989,13 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         serverAuth_ = false;
-
         clientAuth_ = false;
-
         codeSigning_ = false;
-
         emailProtection_ = false;
-
         timeStamping_ = false;
-
         ocspSigning_ = false;
-
         return this;
       }
 
@@ -2003,14 +2027,34 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
           buildPartial() {
         com.google.cloud.security.privateca.v1beta1.KeyUsage.ExtendedKeyUsageOptions result =
             new com.google.cloud.security.privateca.v1beta1.KeyUsage.ExtendedKeyUsageOptions(this);
-        result.serverAuth_ = serverAuth_;
-        result.clientAuth_ = clientAuth_;
-        result.codeSigning_ = codeSigning_;
-        result.emailProtection_ = emailProtection_;
-        result.timeStamping_ = timeStamping_;
-        result.ocspSigning_ = ocspSigning_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.security.privateca.v1beta1.KeyUsage.ExtendedKeyUsageOptions result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.serverAuth_ = serverAuth_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.clientAuth_ = clientAuth_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.codeSigning_ = codeSigning_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.emailProtection_ = emailProtection_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.timeStamping_ = timeStamping_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.ocspSigning_ = ocspSigning_;
+        }
       }
 
       @java.lang.Override
@@ -2113,37 +2157,37 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   serverAuth_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   clientAuth_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   codeSigning_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 32:
                 {
                   emailProtection_ = input.readBool();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               case 40:
                 {
                   timeStamping_ = input.readBool();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               case 48:
                 {
                   ocspSigning_ = input.readBool();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 48
               default:
@@ -2162,6 +2206,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean serverAuth_;
       /**
@@ -2196,6 +2242,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       public Builder setServerAuth(boolean value) {
 
         serverAuth_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2212,7 +2259,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearServerAuth() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         serverAuth_ = false;
         onChanged();
         return this;
@@ -2251,6 +2298,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       public Builder setClientAuth(boolean value) {
 
         clientAuth_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2267,7 +2315,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearClientAuth() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         clientAuth_ = false;
         onChanged();
         return this;
@@ -2306,6 +2354,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       public Builder setCodeSigning(boolean value) {
 
         codeSigning_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2322,7 +2371,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearCodeSigning() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         codeSigning_ = false;
         onChanged();
         return this;
@@ -2361,6 +2410,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       public Builder setEmailProtection(boolean value) {
 
         emailProtection_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2377,7 +2427,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEmailProtection() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         emailProtection_ = false;
         onChanged();
         return this;
@@ -2416,6 +2466,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       public Builder setTimeStamping(boolean value) {
 
         timeStamping_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2432,7 +2483,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTimeStamping() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         timeStamping_ = false;
         onChanged();
         return this;
@@ -2471,6 +2522,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       public Builder setOcspSigning(boolean value) {
 
         ocspSigning_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2487,7 +2539,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearOcspSigning() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         ocspSigning_ = false;
         onChanged();
         return this;
@@ -2611,7 +2663,9 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.security.privateca.v1beta1.KeyUsage.KeyUsageOptionsOrBuilder
       getBaseKeyUsageOrBuilder() {
-    return getBaseKeyUsage();
+    return baseKeyUsage_ == null
+        ? com.google.cloud.security.privateca.v1beta1.KeyUsage.KeyUsageOptions.getDefaultInstance()
+        : baseKeyUsage_;
   }
 
   public static final int EXTENDED_KEY_USAGE_FIELD_NUMBER = 2;
@@ -2669,10 +2723,15 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.security.privateca.v1beta1.KeyUsage.ExtendedKeyUsageOptionsOrBuilder
       getExtendedKeyUsageOrBuilder() {
-    return getExtendedKeyUsage();
+    return extendedKeyUsage_ == null
+        ? com.google.cloud.security.privateca.v1beta1.KeyUsage.ExtendedKeyUsageOptions
+            .getDefaultInstance()
+        : extendedKeyUsage_;
   }
 
   public static final int UNKNOWN_EXTENDED_KEY_USAGES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.security.privateca.v1beta1.ObjectId>
       unknownExtendedKeyUsages_;
   /**
@@ -2991,16 +3050,15 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseKeyUsageBuilder_ == null) {
-        baseKeyUsage_ = null;
-      } else {
-        baseKeyUsage_ = null;
+      bitField0_ = 0;
+      baseKeyUsage_ = null;
+      if (baseKeyUsageBuilder_ != null) {
+        baseKeyUsageBuilder_.dispose();
         baseKeyUsageBuilder_ = null;
       }
-      if (extendedKeyUsageBuilder_ == null) {
-        extendedKeyUsage_ = null;
-      } else {
-        extendedKeyUsage_ = null;
+      extendedKeyUsage_ = null;
+      if (extendedKeyUsageBuilder_ != null) {
+        extendedKeyUsageBuilder_.dispose();
         extendedKeyUsageBuilder_ = null;
       }
       if (unknownExtendedKeyUsagesBuilder_ == null) {
@@ -3009,7 +3067,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
         unknownExtendedKeyUsages_ = null;
         unknownExtendedKeyUsagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -3037,29 +3095,38 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.security.privateca.v1beta1.KeyUsage buildPartial() {
       com.google.cloud.security.privateca.v1beta1.KeyUsage result =
           new com.google.cloud.security.privateca.v1beta1.KeyUsage(this);
-      int from_bitField0_ = bitField0_;
-      if (baseKeyUsageBuilder_ == null) {
-        result.baseKeyUsage_ = baseKeyUsage_;
-      } else {
-        result.baseKeyUsage_ = baseKeyUsageBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (extendedKeyUsageBuilder_ == null) {
-        result.extendedKeyUsage_ = extendedKeyUsage_;
-      } else {
-        result.extendedKeyUsage_ = extendedKeyUsageBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.security.privateca.v1beta1.KeyUsage result) {
       if (unknownExtendedKeyUsagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           unknownExtendedKeyUsages_ =
               java.util.Collections.unmodifiableList(unknownExtendedKeyUsages_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.unknownExtendedKeyUsages_ = unknownExtendedKeyUsages_;
       } else {
         result.unknownExtendedKeyUsages_ = unknownExtendedKeyUsagesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.security.privateca.v1beta1.KeyUsage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.baseKeyUsage_ =
+            baseKeyUsageBuilder_ == null ? baseKeyUsage_ : baseKeyUsageBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.extendedKeyUsage_ =
+            extendedKeyUsageBuilder_ == null ? extendedKeyUsage_ : extendedKeyUsageBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3118,7 +3185,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
         if (!other.unknownExtendedKeyUsages_.isEmpty()) {
           if (unknownExtendedKeyUsages_.isEmpty()) {
             unknownExtendedKeyUsages_ = other.unknownExtendedKeyUsages_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureUnknownExtendedKeyUsagesIsMutable();
             unknownExtendedKeyUsages_.addAll(other.unknownExtendedKeyUsages_);
@@ -3131,7 +3198,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
             unknownExtendedKeyUsagesBuilder_.dispose();
             unknownExtendedKeyUsagesBuilder_ = null;
             unknownExtendedKeyUsages_ = other.unknownExtendedKeyUsages_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             unknownExtendedKeyUsagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getUnknownExtendedKeyUsagesFieldBuilder()
@@ -3170,14 +3237,14 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getBaseKeyUsageFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getExtendedKeyUsageFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -3232,7 +3299,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the baseKeyUsage field is set.
      */
     public boolean hasBaseKeyUsage() {
-      return baseKeyUsageBuilder_ != null || baseKeyUsage_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -3273,11 +3340,11 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         baseKeyUsage_ = value;
-        onChanged();
       } else {
         baseKeyUsageBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3295,11 +3362,11 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (baseKeyUsageBuilder_ == null) {
         baseKeyUsage_ = builderForValue.build();
-        onChanged();
       } else {
         baseKeyUsageBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3315,20 +3382,20 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeBaseKeyUsage(
         com.google.cloud.security.privateca.v1beta1.KeyUsage.KeyUsageOptions value) {
       if (baseKeyUsageBuilder_ == null) {
-        if (baseKeyUsage_ != null) {
-          baseKeyUsage_ =
-              com.google.cloud.security.privateca.v1beta1.KeyUsage.KeyUsageOptions.newBuilder(
-                      baseKeyUsage_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && baseKeyUsage_ != null
+            && baseKeyUsage_
+                != com.google.cloud.security.privateca.v1beta1.KeyUsage.KeyUsageOptions
+                    .getDefaultInstance()) {
+          getBaseKeyUsageBuilder().mergeFrom(value);
         } else {
           baseKeyUsage_ = value;
         }
-        onChanged();
       } else {
         baseKeyUsageBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3342,14 +3409,13 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearBaseKeyUsage() {
-      if (baseKeyUsageBuilder_ == null) {
-        baseKeyUsage_ = null;
-        onChanged();
-      } else {
-        baseKeyUsage_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      baseKeyUsage_ = null;
+      if (baseKeyUsageBuilder_ != null) {
+        baseKeyUsageBuilder_.dispose();
         baseKeyUsageBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3364,7 +3430,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.security.privateca.v1beta1.KeyUsage.KeyUsageOptions.Builder
         getBaseKeyUsageBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBaseKeyUsageFieldBuilder().getBuilder();
     }
@@ -3437,7 +3503,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the extendedKeyUsage field is set.
      */
     public boolean hasExtendedKeyUsage() {
-      return extendedKeyUsageBuilder_ != null || extendedKeyUsage_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -3481,11 +3547,11 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         extendedKeyUsage_ = value;
-        onChanged();
       } else {
         extendedKeyUsageBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3504,11 +3570,11 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (extendedKeyUsageBuilder_ == null) {
         extendedKeyUsage_ = builderForValue.build();
-        onChanged();
       } else {
         extendedKeyUsageBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3525,20 +3591,20 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeExtendedKeyUsage(
         com.google.cloud.security.privateca.v1beta1.KeyUsage.ExtendedKeyUsageOptions value) {
       if (extendedKeyUsageBuilder_ == null) {
-        if (extendedKeyUsage_ != null) {
-          extendedKeyUsage_ =
-              com.google.cloud.security.privateca.v1beta1.KeyUsage.ExtendedKeyUsageOptions
-                  .newBuilder(extendedKeyUsage_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && extendedKeyUsage_ != null
+            && extendedKeyUsage_
+                != com.google.cloud.security.privateca.v1beta1.KeyUsage.ExtendedKeyUsageOptions
+                    .getDefaultInstance()) {
+          getExtendedKeyUsageBuilder().mergeFrom(value);
         } else {
           extendedKeyUsage_ = value;
         }
-        onChanged();
       } else {
         extendedKeyUsageBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3553,14 +3619,13 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearExtendedKeyUsage() {
-      if (extendedKeyUsageBuilder_ == null) {
-        extendedKeyUsage_ = null;
-        onChanged();
-      } else {
-        extendedKeyUsage_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      extendedKeyUsage_ = null;
+      if (extendedKeyUsageBuilder_ != null) {
+        extendedKeyUsageBuilder_.dispose();
         extendedKeyUsageBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3576,7 +3641,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.security.privateca.v1beta1.KeyUsage.ExtendedKeyUsageOptions.Builder
         getExtendedKeyUsageBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getExtendedKeyUsageFieldBuilder().getBuilder();
     }
@@ -3636,11 +3701,11 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
         unknownExtendedKeyUsages_ = java.util.Collections.emptyList();
 
     private void ensureUnknownExtendedKeyUsagesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         unknownExtendedKeyUsages_ =
             new java.util.ArrayList<com.google.cloud.security.privateca.v1beta1.ObjectId>(
                 unknownExtendedKeyUsages_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -3894,7 +3959,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     public Builder clearUnknownExtendedKeyUsages() {
       if (unknownExtendedKeyUsagesBuilder_ == null) {
         unknownExtendedKeyUsages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         unknownExtendedKeyUsagesBuilder_.clear();
@@ -4043,7 +4108,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.security.privateca.v1beta1.ObjectId.Builder,
                 com.google.cloud.security.privateca.v1beta1.ObjectIdOrBuilder>(
                 unknownExtendedKeyUsages_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         unknownExtendedKeyUsages_ = null;

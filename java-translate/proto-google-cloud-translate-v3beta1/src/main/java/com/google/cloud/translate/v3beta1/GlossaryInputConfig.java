@@ -421,6 +421,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsSourceBuilder_ != null) {
         gcsSourceBuilder_.clear();
       }
@@ -453,16 +454,24 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
     public com.google.cloud.translate.v3beta1.GlossaryInputConfig buildPartial() {
       com.google.cloud.translate.v3beta1.GlossaryInputConfig result =
           new com.google.cloud.translate.v3beta1.GlossaryInputConfig(this);
-      if (sourceCase_ == 1) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.translate.v3beta1.GlossaryInputConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.translate.v3beta1.GlossaryInputConfig result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 1 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -584,6 +593,8 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.translate.v3beta1.GcsSource,
@@ -935,7 +946,6 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
       }
       sourceCase_ = 1;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 

@@ -217,6 +217,8 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     }
 
     public static final int APPROVED_IDENTITIES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList approvedIdentities_;
     /**
      *
@@ -557,6 +559,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         approvedIdentities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -598,14 +601,30 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
             result =
                 new com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
                     .NonOrgIamMemberSettings(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
+                  .NonOrgIamMemberSettings
+              result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           approvedIdentities_ = approvedIdentities_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.approvedIdentities_ = approvedIdentities_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
+                  .NonOrgIamMemberSettings
+              result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -1204,6 +1223,8 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     }
 
     public static final int APPROVED_IDENTITIES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList approvedIdentities_;
     /**
      *
@@ -1540,6 +1561,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         approvedIdentities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -1581,14 +1603,30 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
             result =
                 new com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
                     .AdminServiceAccountSettings(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
+                  .AdminServiceAccountSettings
+              result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           approvedIdentities_ = approvedIdentities_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.approvedIdentities_ = approvedIdentities_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
+                  .AdminServiceAccountSettings
+              result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -2090,7 +2128,10 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
   public com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
           .NonOrgIamMemberSettingsOrBuilder
       getNonOrgIamMemberSettingsOrBuilder() {
-    return getNonOrgIamMemberSettings();
+    return nonOrgIamMemberSettings_ == null
+        ? com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
+            .NonOrgIamMemberSettings.getDefaultInstance()
+        : nonOrgIamMemberSettings_;
   }
 
   public static final int ADMIN_SERVICE_ACCOUNT_SETTINGS_FIELD_NUMBER = 2;
@@ -2151,7 +2192,10 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
   public com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
           .AdminServiceAccountSettingsOrBuilder
       getAdminServiceAccountSettingsOrBuilder() {
-    return getAdminServiceAccountSettings();
+    return adminServiceAccountSettings_ == null
+        ? com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
+            .AdminServiceAccountSettings.getDefaultInstance()
+        : adminServiceAccountSettings_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2387,16 +2431,15 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (nonOrgIamMemberSettingsBuilder_ == null) {
-        nonOrgIamMemberSettings_ = null;
-      } else {
-        nonOrgIamMemberSettings_ = null;
+      bitField0_ = 0;
+      nonOrgIamMemberSettings_ = null;
+      if (nonOrgIamMemberSettingsBuilder_ != null) {
+        nonOrgIamMemberSettingsBuilder_.dispose();
         nonOrgIamMemberSettingsBuilder_ = null;
       }
-      if (adminServiceAccountSettingsBuilder_ == null) {
-        adminServiceAccountSettings_ = null;
-      } else {
-        adminServiceAccountSettings_ = null;
+      adminServiceAccountSettings_ = null;
+      if (adminServiceAccountSettingsBuilder_ != null) {
+        adminServiceAccountSettingsBuilder_.dispose();
         adminServiceAccountSettingsBuilder_ = null;
       }
       return this;
@@ -2432,18 +2475,28 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings result =
           new com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings(
               this);
-      if (nonOrgIamMemberSettingsBuilder_ == null) {
-        result.nonOrgIamMemberSettings_ = nonOrgIamMemberSettings_;
-      } else {
-        result.nonOrgIamMemberSettings_ = nonOrgIamMemberSettingsBuilder_.build();
-      }
-      if (adminServiceAccountSettingsBuilder_ == null) {
-        result.adminServiceAccountSettings_ = adminServiceAccountSettings_;
-      } else {
-        result.adminServiceAccountSettings_ = adminServiceAccountSettingsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.nonOrgIamMemberSettings_ =
+            nonOrgIamMemberSettingsBuilder_ == null
+                ? nonOrgIamMemberSettings_
+                : nonOrgIamMemberSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.adminServiceAccountSettings_ =
+            adminServiceAccountSettingsBuilder_ == null
+                ? adminServiceAccountSettings_
+                : adminServiceAccountSettingsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2534,14 +2587,14 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
               {
                 input.readMessage(
                     getNonOrgIamMemberSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getAdminServiceAccountSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -2560,6 +2613,8 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
             .NonOrgIamMemberSettings
@@ -2586,7 +2641,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
      * @return Whether the nonOrgIamMemberSettings field is set.
      */
     public boolean hasNonOrgIamMemberSettings() {
-      return nonOrgIamMemberSettingsBuilder_ != null || nonOrgIamMemberSettings_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -2633,11 +2688,11 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
           throw new NullPointerException();
         }
         nonOrgIamMemberSettings_ = value;
-        onChanged();
       } else {
         nonOrgIamMemberSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2657,11 +2712,11 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
             builderForValue) {
       if (nonOrgIamMemberSettingsBuilder_ == null) {
         nonOrgIamMemberSettings_ = builderForValue.build();
-        onChanged();
       } else {
         nonOrgIamMemberSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2680,20 +2735,20 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
                 .NonOrgIamMemberSettings
             value) {
       if (nonOrgIamMemberSettingsBuilder_ == null) {
-        if (nonOrgIamMemberSettings_ != null) {
-          nonOrgIamMemberSettings_ =
-              com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
-                  .NonOrgIamMemberSettings.newBuilder(nonOrgIamMemberSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && nonOrgIamMemberSettings_ != null
+            && nonOrgIamMemberSettings_
+                != com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
+                    .NonOrgIamMemberSettings.getDefaultInstance()) {
+          getNonOrgIamMemberSettingsBuilder().mergeFrom(value);
         } else {
           nonOrgIamMemberSettings_ = value;
         }
-        onChanged();
       } else {
         nonOrgIamMemberSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2708,14 +2763,13 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
      * </code>
      */
     public Builder clearNonOrgIamMemberSettings() {
-      if (nonOrgIamMemberSettingsBuilder_ == null) {
-        nonOrgIamMemberSettings_ = null;
-        onChanged();
-      } else {
-        nonOrgIamMemberSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      nonOrgIamMemberSettings_ = null;
+      if (nonOrgIamMemberSettingsBuilder_ != null) {
+        nonOrgIamMemberSettingsBuilder_.dispose();
         nonOrgIamMemberSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2732,7 +2786,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     public com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
             .NonOrgIamMemberSettings.Builder
         getNonOrgIamMemberSettingsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getNonOrgIamMemberSettingsFieldBuilder().getBuilder();
     }
@@ -2818,7 +2872,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
      * @return Whether the adminServiceAccountSettings field is set.
      */
     public boolean hasAdminServiceAccountSettings() {
-      return adminServiceAccountSettingsBuilder_ != null || adminServiceAccountSettings_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2865,11 +2919,11 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
           throw new NullPointerException();
         }
         adminServiceAccountSettings_ = value;
-        onChanged();
       } else {
         adminServiceAccountSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2889,11 +2943,11 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
             builderForValue) {
       if (adminServiceAccountSettingsBuilder_ == null) {
         adminServiceAccountSettings_ = builderForValue.build();
-        onChanged();
       } else {
         adminServiceAccountSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2912,20 +2966,20 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
                 .AdminServiceAccountSettings
             value) {
       if (adminServiceAccountSettingsBuilder_ == null) {
-        if (adminServiceAccountSettings_ != null) {
-          adminServiceAccountSettings_ =
-              com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
-                  .AdminServiceAccountSettings.newBuilder(adminServiceAccountSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && adminServiceAccountSettings_ != null
+            && adminServiceAccountSettings_
+                != com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
+                    .AdminServiceAccountSettings.getDefaultInstance()) {
+          getAdminServiceAccountSettingsBuilder().mergeFrom(value);
         } else {
           adminServiceAccountSettings_ = value;
         }
-        onChanged();
       } else {
         adminServiceAccountSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2940,14 +2994,13 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
      * </code>
      */
     public Builder clearAdminServiceAccountSettings() {
-      if (adminServiceAccountSettingsBuilder_ == null) {
-        adminServiceAccountSettings_ = null;
-        onChanged();
-      } else {
-        adminServiceAccountSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      adminServiceAccountSettings_ = null;
+      if (adminServiceAccountSettingsBuilder_ != null) {
+        adminServiceAccountSettingsBuilder_.dispose();
         adminServiceAccountSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2964,7 +3017,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     public com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
             .AdminServiceAccountSettings.Builder
         getAdminServiceAccountSettingsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAdminServiceAccountSettingsFieldBuilder().getBuilder();
     }

@@ -421,6 +421,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsSourceBuilder_ != null) {
         gcsSourceBuilder_.clear();
       }
@@ -453,16 +454,24 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
     public com.google.cloud.translate.v3.BatchDocumentInputConfig buildPartial() {
       com.google.cloud.translate.v3.BatchDocumentInputConfig result =
           new com.google.cloud.translate.v3.BatchDocumentInputConfig(this);
-      if (sourceCase_ == 1) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.translate.v3.BatchDocumentInputConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.translate.v3.BatchDocumentInputConfig result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 1 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -584,6 +593,8 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.translate.v3.GcsSource,
@@ -934,7 +945,6 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
       }
       sourceCase_ = 1;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 

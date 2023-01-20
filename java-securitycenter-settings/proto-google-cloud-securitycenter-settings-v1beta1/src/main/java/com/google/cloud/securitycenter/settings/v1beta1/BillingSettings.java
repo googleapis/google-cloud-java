@@ -69,7 +69,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int BILLING_TIER_FIELD_NUMBER = 1;
-  private int billingTier_;
+  private int billingTier_ = 0;
   /**
    *
    *
@@ -102,16 +102,15 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.BillingTier getBillingTier() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.securitycenter.settings.v1beta1.BillingTier result =
-        com.google.cloud.securitycenter.settings.v1beta1.BillingTier.valueOf(billingTier_);
+        com.google.cloud.securitycenter.settings.v1beta1.BillingTier.forNumber(billingTier_);
     return result == null
         ? com.google.cloud.securitycenter.settings.v1beta1.BillingTier.UNRECOGNIZED
         : result;
   }
 
   public static final int BILLING_TYPE_FIELD_NUMBER = 2;
-  private int billingType_;
+  private int billingType_ = 0;
   /**
    *
    *
@@ -144,9 +143,8 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.BillingType getBillingType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.securitycenter.settings.v1beta1.BillingType result =
-        com.google.cloud.securitycenter.settings.v1beta1.BillingType.valueOf(billingType_);
+        com.google.cloud.securitycenter.settings.v1beta1.BillingType.forNumber(billingType_);
     return result == null
         ? com.google.cloud.securitycenter.settings.v1beta1.BillingType.UNRECOGNIZED
         : result;
@@ -201,7 +199,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 4;
@@ -256,7 +254,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
-    return getExpireTime();
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -502,20 +500,17 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       billingTier_ = 0;
-
       billingType_ = 0;
-
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-      } else {
-        expireTime_ = null;
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
       return this;
@@ -546,20 +541,28 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.securitycenter.settings.v1beta1.BillingSettings buildPartial() {
       com.google.cloud.securitycenter.settings.v1beta1.BillingSettings result =
           new com.google.cloud.securitycenter.settings.v1beta1.BillingSettings(this);
-      result.billingTier_ = billingTier_;
-      result.billingType_ = billingType_;
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
-      }
-      if (expireTimeBuilder_ == null) {
-        result.expireTime_ = expireTime_;
-      } else {
-        result.expireTime_ = expireTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.securitycenter.settings.v1beta1.BillingSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.billingTier_ = billingTier_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.billingType_ = billingType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -651,25 +654,25 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 billingTier_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 billingType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -688,6 +691,8 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int billingTier_ = 0;
     /**
@@ -722,8 +727,8 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setBillingTierValue(int value) {
-
       billingTier_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -742,9 +747,8 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.BillingTier getBillingTier() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.settings.v1beta1.BillingTier result =
-          com.google.cloud.securitycenter.settings.v1beta1.BillingTier.valueOf(billingTier_);
+          com.google.cloud.securitycenter.settings.v1beta1.BillingTier.forNumber(billingTier_);
       return result == null
           ? com.google.cloud.securitycenter.settings.v1beta1.BillingTier.UNRECOGNIZED
           : result;
@@ -768,7 +772,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       billingTier_ = value.getNumber();
       onChanged();
       return this;
@@ -787,7 +791,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearBillingTier() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       billingTier_ = 0;
       onChanged();
       return this;
@@ -826,8 +830,8 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setBillingTypeValue(int value) {
-
       billingType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -846,9 +850,8 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.BillingType getBillingType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.settings.v1beta1.BillingType result =
-          com.google.cloud.securitycenter.settings.v1beta1.BillingType.valueOf(billingType_);
+          com.google.cloud.securitycenter.settings.v1beta1.BillingType.forNumber(billingType_);
       return result == null
           ? com.google.cloud.securitycenter.settings.v1beta1.BillingType.UNRECOGNIZED
           : result;
@@ -872,7 +875,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       billingType_ = value.getNumber();
       onChanged();
       return this;
@@ -891,7 +894,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearBillingType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       billingType_ = 0;
       onChanged();
       return this;
@@ -917,7 +920,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -956,11 +959,11 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -977,11 +980,11 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -997,17 +1000,18 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1022,14 +1026,13 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1044,7 +1047,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -1116,7 +1119,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
-      return expireTimeBuilder_ != null || expireTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1161,11 +1164,11 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         expireTime_ = value;
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1184,11 +1187,11 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
     public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expireTimeBuilder_ == null) {
         expireTime_ = builderForValue.build();
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1206,17 +1209,18 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
-        if (expireTime_ != null) {
-          expireTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expireTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && expireTime_ != null
+            && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireTimeBuilder().mergeFrom(value);
         } else {
           expireTime_ = value;
         }
-        onChanged();
       } else {
         expireTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1233,14 +1237,13 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearExpireTime() {
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-        onChanged();
-      } else {
-        expireTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1257,7 +1260,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }

@@ -68,7 +68,9 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
   }
 
   public static final int SERVICE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object serviceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceName_ = "";
   /**
    *
    *
@@ -171,7 +173,9 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.api.servicemanagement.v1.RolloutOrBuilder getRolloutOrBuilder() {
-    return getRollout();
+    return rollout_ == null
+        ? com.google.api.servicemanagement.v1.Rollout.getDefaultInstance()
+        : rollout_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -386,12 +390,11 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serviceName_ = "";
-
-      if (rolloutBuilder_ == null) {
-        rollout_ = null;
-      } else {
-        rollout_ = null;
+      rollout_ = null;
+      if (rolloutBuilder_ != null) {
+        rolloutBuilder_.dispose();
         rolloutBuilder_ = null;
       }
       return this;
@@ -422,14 +425,22 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
     public com.google.api.servicemanagement.v1.CreateServiceRolloutRequest buildPartial() {
       com.google.api.servicemanagement.v1.CreateServiceRolloutRequest result =
           new com.google.api.servicemanagement.v1.CreateServiceRolloutRequest(this);
-      result.serviceName_ = serviceName_;
-      if (rolloutBuilder_ == null) {
-        result.rollout_ = rollout_;
-      } else {
-        result.rollout_ = rolloutBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.api.servicemanagement.v1.CreateServiceRolloutRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serviceName_ = serviceName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rollout_ = rolloutBuilder_ == null ? rollout_ : rolloutBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -482,6 +493,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getServiceName().isEmpty()) {
         serviceName_ = other.serviceName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRollout()) {
@@ -516,13 +528,13 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
             case 10:
               {
                 serviceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getRolloutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -541,6 +553,8 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object serviceName_ = "";
     /**
@@ -609,8 +623,8 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -628,8 +642,8 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearServiceName() {
-
       serviceName_ = getDefaultInstance().getServiceName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -652,8 +666,8 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -678,7 +692,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
      * @return Whether the rollout field is set.
      */
     public boolean hasRollout() {
-      return rolloutBuilder_ != null || rollout_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -719,11 +733,11 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         rollout_ = value;
-        onChanged();
       } else {
         rolloutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -740,11 +754,11 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
     public Builder setRollout(com.google.api.servicemanagement.v1.Rollout.Builder builderForValue) {
       if (rolloutBuilder_ == null) {
         rollout_ = builderForValue.build();
-        onChanged();
       } else {
         rolloutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -760,19 +774,18 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
      */
     public Builder mergeRollout(com.google.api.servicemanagement.v1.Rollout value) {
       if (rolloutBuilder_ == null) {
-        if (rollout_ != null) {
-          rollout_ =
-              com.google.api.servicemanagement.v1.Rollout.newBuilder(rollout_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && rollout_ != null
+            && rollout_ != com.google.api.servicemanagement.v1.Rollout.getDefaultInstance()) {
+          getRolloutBuilder().mergeFrom(value);
         } else {
           rollout_ = value;
         }
-        onChanged();
       } else {
         rolloutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -787,14 +800,13 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearRollout() {
-      if (rolloutBuilder_ == null) {
-        rollout_ = null;
-        onChanged();
-      } else {
-        rollout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      rollout_ = null;
+      if (rolloutBuilder_ != null) {
+        rolloutBuilder_.dispose();
         rolloutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -809,7 +821,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.api.servicemanagement.v1.Rollout.Builder getRolloutBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRolloutFieldBuilder().getBuilder();
     }

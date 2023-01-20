@@ -70,7 +70,9 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -123,7 +125,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int MAX_ENDPOINTS_FIELD_NUMBER = 2;
-  private int maxEndpoints_;
+  private int maxEndpoints_ = 0;
   /**
    *
    *
@@ -143,7 +145,9 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ENDPOINT_FILTER_FIELD_NUMBER = 3;
-  private volatile java.lang.Object endpointFilter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object endpointFilter_ = "";
   /**
    *
    *
@@ -462,12 +466,10 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       maxEndpoints_ = 0;
-
       endpointFilter_ = "";
-
       return this;
     }
 
@@ -496,11 +498,25 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.servicedirectory.v1beta1.ResolveServiceRequest buildPartial() {
       com.google.cloud.servicedirectory.v1beta1.ResolveServiceRequest result =
           new com.google.cloud.servicedirectory.v1beta1.ResolveServiceRequest(this);
-      result.name_ = name_;
-      result.maxEndpoints_ = maxEndpoints_;
-      result.endpointFilter_ = endpointFilter_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.servicedirectory.v1beta1.ResolveServiceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxEndpoints_ = maxEndpoints_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.endpointFilter_ = endpointFilter_;
+      }
     }
 
     @java.lang.Override
@@ -553,6 +569,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getMaxEndpoints() != 0) {
@@ -560,6 +577,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getEndpointFilter().isEmpty()) {
         endpointFilter_ = other.endpointFilter_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -591,19 +609,19 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 maxEndpoints_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 endpointFilter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -622,6 +640,8 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -690,8 +710,8 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -709,8 +729,8 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -733,8 +753,8 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -774,6 +794,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
     public Builder setMaxEndpoints(int value) {
 
       maxEndpoints_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -791,7 +812,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearMaxEndpoints() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxEndpoints_ = 0;
       onChanged();
       return this;
@@ -939,8 +960,8 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       endpointFilter_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -983,8 +1004,8 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearEndpointFilter() {
-
       endpointFilter_ = getDefaultInstance().getEndpointFilter();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1032,8 +1053,8 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       endpointFilter_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -72,7 +72,9 @@ public final class StreamingAutomlObjectTrackingConfig
   }
 
   public static final int MODEL_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object modelName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object modelName_ = "";
   /**
    *
    *
@@ -332,8 +334,8 @@ public final class StreamingAutomlObjectTrackingConfig
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       modelName_ = "";
-
       return this;
     }
 
@@ -367,9 +369,19 @@ public final class StreamingAutomlObjectTrackingConfig
       com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig result =
           new com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig(
               this);
-      result.modelName_ = modelName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.modelName_ = modelName_;
+      }
     }
 
     @java.lang.Override
@@ -426,6 +438,7 @@ public final class StreamingAutomlObjectTrackingConfig
               .getDefaultInstance()) return this;
       if (!other.getModelName().isEmpty()) {
         modelName_ = other.modelName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -457,7 +470,7 @@ public final class StreamingAutomlObjectTrackingConfig
             case 10:
               {
                 modelName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -476,6 +489,8 @@ public final class StreamingAutomlObjectTrackingConfig
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object modelName_ = "";
     /**
@@ -541,8 +556,8 @@ public final class StreamingAutomlObjectTrackingConfig
       if (value == null) {
         throw new NullPointerException();
       }
-
       modelName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -559,8 +574,8 @@ public final class StreamingAutomlObjectTrackingConfig
      * @return This builder for chaining.
      */
     public Builder clearModelName() {
-
       modelName_ = getDefaultInstance().getModelName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -582,8 +597,8 @@ public final class StreamingAutomlObjectTrackingConfig
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       modelName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

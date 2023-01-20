@@ -240,7 +240,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 2;
@@ -286,11 +286,13 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -339,7 +341,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int METHOD_FIELD_NUMBER = 4;
-  private volatile java.lang.Object method_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object method_ = "";
   /**
    *
    *
@@ -388,7 +392,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int KMS_KEY_NAME_FIELD_NUMBER = 6;
-  private volatile java.lang.Object kmsKeyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyName_ = "";
   /**
    *
    *
@@ -443,7 +449,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int KMS_KEY_VERSION_NAME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object kmsKeyVersionName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyVersionName_ = "";
   /**
    *
    *
@@ -1231,7 +1239,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 22;
-  private int progressPercent_;
+  private int progressPercent_ = 0;
   /**
    *
    *
@@ -1811,26 +1819,21 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      bitField0_ = 0;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       resource_ = "";
-
       method_ = "";
-
       kmsKeyName_ = "";
-
       kmsKeyVersionName_ = "";
-
       if (batchRecognizeRequestBuilder_ != null) {
         batchRecognizeRequestBuilder_.clear();
       }
@@ -1874,7 +1877,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         updateConfigRequestBuilder_.clear();
       }
       progressPercent_ = 0;
-
       if (batchRecognizeMetadataBuilder_ != null) {
         batchRecognizeMetadataBuilder_.clear();
       }
@@ -1909,130 +1911,89 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.speech.v2.OperationMetadata buildPartial() {
       com.google.cloud.speech.v2.OperationMetadata result =
           new com.google.cloud.speech.v2.OperationMetadata(this);
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.resource_ = resource_;
-      result.method_ = method_;
-      result.kmsKeyName_ = kmsKeyName_;
-      result.kmsKeyVersionName_ = kmsKeyVersionName_;
-      if (requestCase_ == 8) {
-        if (batchRecognizeRequestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = batchRecognizeRequestBuilder_.build();
-        }
-      }
-      if (requestCase_ == 9) {
-        if (createRecognizerRequestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = createRecognizerRequestBuilder_.build();
-        }
-      }
-      if (requestCase_ == 10) {
-        if (updateRecognizerRequestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = updateRecognizerRequestBuilder_.build();
-        }
-      }
-      if (requestCase_ == 11) {
-        if (deleteRecognizerRequestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = deleteRecognizerRequestBuilder_.build();
-        }
-      }
-      if (requestCase_ == 12) {
-        if (undeleteRecognizerRequestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = undeleteRecognizerRequestBuilder_.build();
-        }
-      }
-      if (requestCase_ == 13) {
-        if (createCustomClassRequestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = createCustomClassRequestBuilder_.build();
-        }
-      }
-      if (requestCase_ == 14) {
-        if (updateCustomClassRequestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = updateCustomClassRequestBuilder_.build();
-        }
-      }
-      if (requestCase_ == 15) {
-        if (deleteCustomClassRequestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = deleteCustomClassRequestBuilder_.build();
-        }
-      }
-      if (requestCase_ == 16) {
-        if (undeleteCustomClassRequestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = undeleteCustomClassRequestBuilder_.build();
-        }
-      }
-      if (requestCase_ == 17) {
-        if (createPhraseSetRequestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = createPhraseSetRequestBuilder_.build();
-        }
-      }
-      if (requestCase_ == 18) {
-        if (updatePhraseSetRequestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = updatePhraseSetRequestBuilder_.build();
-        }
-      }
-      if (requestCase_ == 19) {
-        if (deletePhraseSetRequestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = deletePhraseSetRequestBuilder_.build();
-        }
-      }
-      if (requestCase_ == 20) {
-        if (undeletePhraseSetRequestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = undeletePhraseSetRequestBuilder_.build();
-        }
-      }
-      if (requestCase_ == 21) {
-        if (updateConfigRequestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = updateConfigRequestBuilder_.build();
-        }
-      }
-      result.progressPercent_ = progressPercent_;
-      if (metadataCase_ == 23) {
-        if (batchRecognizeMetadataBuilder_ == null) {
-          result.metadata_ = metadata_;
-        } else {
-          result.metadata_ = batchRecognizeMetadataBuilder_.build();
-        }
-      }
-      result.requestCase_ = requestCase_;
-      result.metadataCase_ = metadataCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.OperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.resource_ = resource_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.method_ = method_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.kmsKeyName_ = kmsKeyName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.kmsKeyVersionName_ = kmsKeyVersionName_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.progressPercent_ = progressPercent_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.speech.v2.OperationMetadata result) {
+      result.requestCase_ = requestCase_;
+      result.request_ = this.request_;
+      if (requestCase_ == 8 && batchRecognizeRequestBuilder_ != null) {
+        result.request_ = batchRecognizeRequestBuilder_.build();
+      }
+      if (requestCase_ == 9 && createRecognizerRequestBuilder_ != null) {
+        result.request_ = createRecognizerRequestBuilder_.build();
+      }
+      if (requestCase_ == 10 && updateRecognizerRequestBuilder_ != null) {
+        result.request_ = updateRecognizerRequestBuilder_.build();
+      }
+      if (requestCase_ == 11 && deleteRecognizerRequestBuilder_ != null) {
+        result.request_ = deleteRecognizerRequestBuilder_.build();
+      }
+      if (requestCase_ == 12 && undeleteRecognizerRequestBuilder_ != null) {
+        result.request_ = undeleteRecognizerRequestBuilder_.build();
+      }
+      if (requestCase_ == 13 && createCustomClassRequestBuilder_ != null) {
+        result.request_ = createCustomClassRequestBuilder_.build();
+      }
+      if (requestCase_ == 14 && updateCustomClassRequestBuilder_ != null) {
+        result.request_ = updateCustomClassRequestBuilder_.build();
+      }
+      if (requestCase_ == 15 && deleteCustomClassRequestBuilder_ != null) {
+        result.request_ = deleteCustomClassRequestBuilder_.build();
+      }
+      if (requestCase_ == 16 && undeleteCustomClassRequestBuilder_ != null) {
+        result.request_ = undeleteCustomClassRequestBuilder_.build();
+      }
+      if (requestCase_ == 17 && createPhraseSetRequestBuilder_ != null) {
+        result.request_ = createPhraseSetRequestBuilder_.build();
+      }
+      if (requestCase_ == 18 && updatePhraseSetRequestBuilder_ != null) {
+        result.request_ = updatePhraseSetRequestBuilder_.build();
+      }
+      if (requestCase_ == 19 && deletePhraseSetRequestBuilder_ != null) {
+        result.request_ = deletePhraseSetRequestBuilder_.build();
+      }
+      if (requestCase_ == 20 && undeletePhraseSetRequestBuilder_ != null) {
+        result.request_ = undeletePhraseSetRequestBuilder_.build();
+      }
+      if (requestCase_ == 21 && updateConfigRequestBuilder_ != null) {
+        result.request_ = updateConfigRequestBuilder_.build();
+      }
+      result.metadataCase_ = metadataCase_;
+      result.metadata_ = this.metadata_;
+      if (metadataCase_ == 23 && batchRecognizeMetadataBuilder_ != null) {
+        result.metadata_ = batchRecognizeMetadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2088,18 +2049,22 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getMethod().isEmpty()) {
         method_ = other.method_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getKmsKeyName().isEmpty()) {
         kmsKeyName_ = other.kmsKeyName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getKmsKeyVersionName().isEmpty()) {
         kmsKeyVersionName_ = other.kmsKeyVersionName_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.getProgressPercent() != 0) {
@@ -2221,37 +2186,37 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 method_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 50:
               {
                 kmsKeyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 58:
               {
                 kmsKeyVersionName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 66:
@@ -2355,7 +2320,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             case 176:
               {
                 progressPercent_ = input.readInt32();
-
+                bitField0_ |= 0x00100000;
                 break;
               } // case 176
             case 186:
@@ -2410,6 +2375,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -2428,7 +2395,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -2465,11 +2432,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2484,11 +2451,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2502,17 +2469,18 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2525,14 +2493,13 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2545,7 +2512,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2611,7 +2578,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2648,11 +2615,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2667,11 +2634,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2685,17 +2652,18 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2708,14 +2676,13 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2728,7 +2695,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2837,8 +2804,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2854,8 +2821,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2876,8 +2843,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2943,8 +2910,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       method_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2960,8 +2927,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMethod() {
-
       method_ = getDefaultInstance().getMethod();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2982,8 +2949,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       method_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3058,8 +3025,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       kmsKeyName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3078,8 +3045,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearKmsKeyName() {
-
       kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3103,8 +3070,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kmsKeyName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3179,8 +3146,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       kmsKeyVersionName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3199,8 +3166,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearKmsKeyVersionName() {
-
       kmsKeyVersionName_ = getDefaultInstance().getKmsKeyVersionName();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3224,8 +3191,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kmsKeyVersionName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3440,7 +3407,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       requestCase_ = 8;
       onChanged();
-      ;
       return batchRecognizeRequestBuilder_;
     }
 
@@ -3655,7 +3621,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       requestCase_ = 9;
       onChanged();
-      ;
       return createRecognizerRequestBuilder_;
     }
 
@@ -3870,7 +3835,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       requestCase_ = 10;
       onChanged();
-      ;
       return updateRecognizerRequestBuilder_;
     }
 
@@ -4085,7 +4049,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       requestCase_ = 11;
       onChanged();
-      ;
       return deleteRecognizerRequestBuilder_;
     }
 
@@ -4309,7 +4272,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       requestCase_ = 12;
       onChanged();
-      ;
       return undeleteRecognizerRequestBuilder_;
     }
 
@@ -4533,7 +4495,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       requestCase_ = 13;
       onChanged();
-      ;
       return createCustomClassRequestBuilder_;
     }
 
@@ -4757,7 +4718,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       requestCase_ = 14;
       onChanged();
-      ;
       return updateCustomClassRequestBuilder_;
     }
 
@@ -4981,7 +4941,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       requestCase_ = 15;
       onChanged();
-      ;
       return deleteCustomClassRequestBuilder_;
     }
 
@@ -5205,7 +5164,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       requestCase_ = 16;
       onChanged();
-      ;
       return undeleteCustomClassRequestBuilder_;
     }
 
@@ -5419,7 +5377,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       requestCase_ = 17;
       onChanged();
-      ;
       return createPhraseSetRequestBuilder_;
     }
 
@@ -5633,7 +5590,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       requestCase_ = 18;
       onChanged();
-      ;
       return updatePhraseSetRequestBuilder_;
     }
 
@@ -5847,7 +5803,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       requestCase_ = 19;
       onChanged();
-      ;
       return deletePhraseSetRequestBuilder_;
     }
 
@@ -6071,7 +6026,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       requestCase_ = 20;
       onChanged();
-      ;
       return undeletePhraseSetRequestBuilder_;
     }
 
@@ -6282,7 +6236,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       requestCase_ = 21;
       onChanged();
-      ;
       return updateConfigRequestBuilder_;
     }
 
@@ -6319,6 +6272,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public Builder setProgressPercent(int value) {
 
       progressPercent_ = value;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6335,7 +6289,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearProgressPercent() {
-
+      bitField0_ = (bitField0_ & ~0x00100000);
       progressPercent_ = 0;
       onChanged();
       return this;
@@ -6552,7 +6506,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       metadataCase_ = 23;
       onChanged();
-      ;
       return batchRecognizeMetadataBuilder_;
     }
 

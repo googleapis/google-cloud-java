@@ -81,7 +81,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -205,7 +207,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.security.privateca.v1.X509ParametersOrBuilder
       getPredefinedValuesOrBuilder() {
-    return getPredefinedValues();
+    return predefinedValues_ == null
+        ? com.google.cloud.security.privateca.v1.X509Parameters.getDefaultInstance()
+        : predefinedValues_;
   }
 
   public static final int IDENTITY_CONSTRAINTS_FIELD_NUMBER = 3;
@@ -268,7 +272,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.security.privateca.v1.CertificateIdentityConstraintsOrBuilder
       getIdentityConstraintsOrBuilder() {
-    return getIdentityConstraints();
+    return identityConstraints_ == null
+        ? com.google.cloud.security.privateca.v1.CertificateIdentityConstraints.getDefaultInstance()
+        : identityConstraints_;
   }
 
   public static final int PASSTHROUGH_EXTENSIONS_FIELD_NUMBER = 4;
@@ -353,11 +359,16 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.security.privateca.v1.CertificateExtensionConstraintsOrBuilder
       getPassthroughExtensionsOrBuilder() {
-    return getPassthroughExtensions();
+    return passthroughExtensions_ == null
+        ? com.google.cloud.security.privateca.v1.CertificateExtensionConstraints
+            .getDefaultInstance()
+        : passthroughExtensions_;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -451,7 +462,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 7;
@@ -500,7 +511,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 8;
@@ -516,6 +527,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -573,7 +585,10 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -917,38 +932,32 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (predefinedValuesBuilder_ == null) {
-        predefinedValues_ = null;
-      } else {
-        predefinedValues_ = null;
+      predefinedValues_ = null;
+      if (predefinedValuesBuilder_ != null) {
+        predefinedValuesBuilder_.dispose();
         predefinedValuesBuilder_ = null;
       }
-      if (identityConstraintsBuilder_ == null) {
-        identityConstraints_ = null;
-      } else {
-        identityConstraints_ = null;
+      identityConstraints_ = null;
+      if (identityConstraintsBuilder_ != null) {
+        identityConstraintsBuilder_.dispose();
         identityConstraintsBuilder_ = null;
       }
-      if (passthroughExtensionsBuilder_ == null) {
-        passthroughExtensions_ = null;
-      } else {
-        passthroughExtensions_ = null;
+      passthroughExtensions_ = null;
+      if (passthroughExtensionsBuilder_ != null) {
+        passthroughExtensionsBuilder_.dispose();
         passthroughExtensionsBuilder_ = null;
       }
       description_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
@@ -979,38 +988,47 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     public com.google.cloud.security.privateca.v1.CertificateTemplate buildPartial() {
       com.google.cloud.security.privateca.v1.CertificateTemplate result =
           new com.google.cloud.security.privateca.v1.CertificateTemplate(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (predefinedValuesBuilder_ == null) {
-        result.predefinedValues_ = predefinedValues_;
-      } else {
-        result.predefinedValues_ = predefinedValuesBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (identityConstraintsBuilder_ == null) {
-        result.identityConstraints_ = identityConstraints_;
-      } else {
-        result.identityConstraints_ = identityConstraintsBuilder_.build();
-      }
-      if (passthroughExtensionsBuilder_ == null) {
-        result.passthroughExtensions_ = passthroughExtensions_;
-      } else {
-        result.passthroughExtensions_ = passthroughExtensionsBuilder_.build();
-      }
-      result.description_ = description_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.security.privateca.v1.CertificateTemplate result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.predefinedValues_ =
+            predefinedValuesBuilder_ == null ? predefinedValues_ : predefinedValuesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.identityConstraints_ =
+            identityConstraintsBuilder_ == null
+                ? identityConstraints_
+                : identityConstraintsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.passthroughExtensions_ =
+            passthroughExtensionsBuilder_ == null
+                ? passthroughExtensions_
+                : passthroughExtensionsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -1061,6 +1079,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPredefinedValues()) {
@@ -1074,6 +1093,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1083,6 +1103,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000080;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1112,46 +1133,46 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getPredefinedValuesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getIdentityConstraintsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getPassthroughExtensionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
@@ -1163,6 +1184,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             default:
@@ -1254,8 +1276,8 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1274,8 +1296,8 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1299,8 +1321,8 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1331,7 +1353,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * @return Whether the predefinedValues field is set.
      */
     public boolean hasPredefinedValues() {
-      return predefinedValuesBuilder_ != null || predefinedValues_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1385,11 +1407,11 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         predefinedValues_ = value;
-        onChanged();
       } else {
         predefinedValuesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1413,11 +1435,11 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
         com.google.cloud.security.privateca.v1.X509Parameters.Builder builderForValue) {
       if (predefinedValuesBuilder_ == null) {
         predefinedValues_ = builderForValue.build();
-        onChanged();
       } else {
         predefinedValuesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1440,19 +1462,19 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     public Builder mergePredefinedValues(
         com.google.cloud.security.privateca.v1.X509Parameters value) {
       if (predefinedValuesBuilder_ == null) {
-        if (predefinedValues_ != null) {
-          predefinedValues_ =
-              com.google.cloud.security.privateca.v1.X509Parameters.newBuilder(predefinedValues_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && predefinedValues_ != null
+            && predefinedValues_
+                != com.google.cloud.security.privateca.v1.X509Parameters.getDefaultInstance()) {
+          getPredefinedValuesBuilder().mergeFrom(value);
         } else {
           predefinedValues_ = value;
         }
-        onChanged();
       } else {
         predefinedValuesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1473,14 +1495,13 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearPredefinedValues() {
-      if (predefinedValuesBuilder_ == null) {
-        predefinedValues_ = null;
-        onChanged();
-      } else {
-        predefinedValues_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      predefinedValues_ = null;
+      if (predefinedValuesBuilder_ != null) {
+        predefinedValuesBuilder_.dispose();
         predefinedValuesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1502,7 +1523,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.security.privateca.v1.X509Parameters.Builder
         getPredefinedValuesBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPredefinedValuesFieldBuilder().getBuilder();
     }
@@ -1590,7 +1611,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * @return Whether the identityConstraints field is set.
      */
     public boolean hasIdentityConstraints() {
-      return identityConstraintsBuilder_ != null || identityConstraints_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1638,11 +1659,11 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         identityConstraints_ = value;
-        onChanged();
       } else {
         identityConstraintsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1663,11 +1684,11 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
             builderForValue) {
       if (identityConstraintsBuilder_ == null) {
         identityConstraints_ = builderForValue.build();
-        onChanged();
       } else {
         identityConstraintsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1686,20 +1707,20 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     public Builder mergeIdentityConstraints(
         com.google.cloud.security.privateca.v1.CertificateIdentityConstraints value) {
       if (identityConstraintsBuilder_ == null) {
-        if (identityConstraints_ != null) {
-          identityConstraints_ =
-              com.google.cloud.security.privateca.v1.CertificateIdentityConstraints.newBuilder(
-                      identityConstraints_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && identityConstraints_ != null
+            && identityConstraints_
+                != com.google.cloud.security.privateca.v1.CertificateIdentityConstraints
+                    .getDefaultInstance()) {
+          getIdentityConstraintsBuilder().mergeFrom(value);
         } else {
           identityConstraints_ = value;
         }
-        onChanged();
       } else {
         identityConstraintsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1716,14 +1737,13 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearIdentityConstraints() {
-      if (identityConstraintsBuilder_ == null) {
-        identityConstraints_ = null;
-        onChanged();
-      } else {
-        identityConstraints_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      identityConstraints_ = null;
+      if (identityConstraintsBuilder_ != null) {
+        identityConstraintsBuilder_.dispose();
         identityConstraintsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1741,7 +1761,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.security.privateca.v1.CertificateIdentityConstraints.Builder
         getIdentityConstraintsBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getIdentityConstraintsFieldBuilder().getBuilder();
     }
@@ -1829,7 +1849,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * @return Whether the passthroughExtensions field is set.
      */
     public boolean hasPassthroughExtensions() {
-      return passthroughExtensionsBuilder_ != null || passthroughExtensions_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1891,11 +1911,11 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         passthroughExtensions_ = value;
-        onChanged();
       } else {
         passthroughExtensionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1923,11 +1943,11 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
             builderForValue) {
       if (passthroughExtensionsBuilder_ == null) {
         passthroughExtensions_ = builderForValue.build();
-        onChanged();
       } else {
         passthroughExtensionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1953,20 +1973,20 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     public Builder mergePassthroughExtensions(
         com.google.cloud.security.privateca.v1.CertificateExtensionConstraints value) {
       if (passthroughExtensionsBuilder_ == null) {
-        if (passthroughExtensions_ != null) {
-          passthroughExtensions_ =
-              com.google.cloud.security.privateca.v1.CertificateExtensionConstraints.newBuilder(
-                      passthroughExtensions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && passthroughExtensions_ != null
+            && passthroughExtensions_
+                != com.google.cloud.security.privateca.v1.CertificateExtensionConstraints
+                    .getDefaultInstance()) {
+          getPassthroughExtensionsBuilder().mergeFrom(value);
         } else {
           passthroughExtensions_ = value;
         }
-        onChanged();
       } else {
         passthroughExtensionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1990,14 +2010,13 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearPassthroughExtensions() {
-      if (passthroughExtensionsBuilder_ == null) {
-        passthroughExtensions_ = null;
-        onChanged();
-      } else {
-        passthroughExtensions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      passthroughExtensions_ = null;
+      if (passthroughExtensionsBuilder_ != null) {
+        passthroughExtensionsBuilder_.dispose();
         passthroughExtensionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2022,7 +2041,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.security.privateca.v1.CertificateExtensionConstraints.Builder
         getPassthroughExtensionsBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getPassthroughExtensionsFieldBuilder().getBuilder();
     }
@@ -2155,8 +2174,8 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2172,8 +2191,8 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2194,8 +2213,8 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2220,7 +2239,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2261,11 +2280,11 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2282,11 +2301,11 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2302,17 +2321,18 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2327,14 +2347,13 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2349,7 +2368,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2421,7 +2440,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2462,11 +2481,11 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2483,11 +2502,11 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2503,17 +2522,18 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2528,14 +2548,13 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2550,7 +2569,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2613,14 +2632,14 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000080;
+      onChanged();
       return labels_;
     }
 
@@ -2672,8 +2691,10 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2702,6 +2723,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2724,6 +2746,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2742,8 +2765,8 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2757,6 +2780,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000080;
       return this;
     }
 

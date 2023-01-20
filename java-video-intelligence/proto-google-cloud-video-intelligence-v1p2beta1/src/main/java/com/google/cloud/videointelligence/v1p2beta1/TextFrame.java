@@ -120,7 +120,9 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPolyOrBuilder
       getRotatedBoundingBoxOrBuilder() {
-    return getRotatedBoundingBox();
+    return rotatedBoundingBox_ == null
+        ? com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly.getDefaultInstance()
+        : rotatedBoundingBox_;
   }
 
   public static final int TIME_OFFSET_FIELD_NUMBER = 2;
@@ -166,7 +168,7 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeOffsetOrBuilder() {
-    return getTimeOffset();
+    return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -388,16 +390,15 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (rotatedBoundingBoxBuilder_ == null) {
-        rotatedBoundingBox_ = null;
-      } else {
-        rotatedBoundingBox_ = null;
+      bitField0_ = 0;
+      rotatedBoundingBox_ = null;
+      if (rotatedBoundingBoxBuilder_ != null) {
+        rotatedBoundingBoxBuilder_.dispose();
         rotatedBoundingBoxBuilder_ = null;
       }
-      if (timeOffsetBuilder_ == null) {
-        timeOffset_ = null;
-      } else {
-        timeOffset_ = null;
+      timeOffset_ = null;
+      if (timeOffsetBuilder_ != null) {
+        timeOffsetBuilder_.dispose();
         timeOffsetBuilder_ = null;
       }
       return this;
@@ -427,18 +428,24 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.videointelligence.v1p2beta1.TextFrame buildPartial() {
       com.google.cloud.videointelligence.v1p2beta1.TextFrame result =
           new com.google.cloud.videointelligence.v1p2beta1.TextFrame(this);
-      if (rotatedBoundingBoxBuilder_ == null) {
-        result.rotatedBoundingBox_ = rotatedBoundingBox_;
-      } else {
-        result.rotatedBoundingBox_ = rotatedBoundingBoxBuilder_.build();
-      }
-      if (timeOffsetBuilder_ == null) {
-        result.timeOffset_ = timeOffset_;
-      } else {
-        result.timeOffset_ = timeOffsetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.videointelligence.v1p2beta1.TextFrame result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.rotatedBoundingBox_ =
+            rotatedBoundingBoxBuilder_ == null
+                ? rotatedBoundingBox_
+                : rotatedBoundingBoxBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.timeOffset_ = timeOffsetBuilder_ == null ? timeOffset_ : timeOffsetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -523,13 +530,13 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getRotatedBoundingBoxFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTimeOffsetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -548,6 +555,8 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly rotatedBoundingBox_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -569,7 +578,7 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the rotatedBoundingBox field is set.
      */
     public boolean hasRotatedBoundingBox() {
-      return rotatedBoundingBoxBuilder_ != null || rotatedBoundingBox_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -613,11 +622,11 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         rotatedBoundingBox_ = value;
-        onChanged();
       } else {
         rotatedBoundingBoxBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -636,11 +645,11 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (rotatedBoundingBoxBuilder_ == null) {
         rotatedBoundingBox_ = builderForValue.build();
-        onChanged();
       } else {
         rotatedBoundingBoxBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -657,20 +666,20 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeRotatedBoundingBox(
         com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly value) {
       if (rotatedBoundingBoxBuilder_ == null) {
-        if (rotatedBoundingBox_ != null) {
-          rotatedBoundingBox_ =
-              com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly.newBuilder(
-                      rotatedBoundingBox_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && rotatedBoundingBox_ != null
+            && rotatedBoundingBox_
+                != com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly
+                    .getDefaultInstance()) {
+          getRotatedBoundingBoxBuilder().mergeFrom(value);
         } else {
           rotatedBoundingBox_ = value;
         }
-        onChanged();
       } else {
         rotatedBoundingBoxBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -685,14 +694,13 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRotatedBoundingBox() {
-      if (rotatedBoundingBoxBuilder_ == null) {
-        rotatedBoundingBox_ = null;
-        onChanged();
-      } else {
-        rotatedBoundingBox_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      rotatedBoundingBox_ = null;
+      if (rotatedBoundingBoxBuilder_ != null) {
+        rotatedBoundingBoxBuilder_.dispose();
         rotatedBoundingBoxBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -708,7 +716,7 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly.Builder
         getRotatedBoundingBoxBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRotatedBoundingBoxFieldBuilder().getBuilder();
     }
@@ -780,7 +788,7 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeOffset field is set.
      */
     public boolean hasTimeOffset() {
-      return timeOffsetBuilder_ != null || timeOffset_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -817,11 +825,11 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         timeOffset_ = value;
-        onChanged();
       } else {
         timeOffsetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -836,11 +844,11 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimeOffset(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeOffsetBuilder_ == null) {
         timeOffset_ = builderForValue.build();
-        onChanged();
       } else {
         timeOffsetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -854,17 +862,18 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTimeOffset(com.google.protobuf.Duration value) {
       if (timeOffsetBuilder_ == null) {
-        if (timeOffset_ != null) {
-          timeOffset_ =
-              com.google.protobuf.Duration.newBuilder(timeOffset_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && timeOffset_ != null
+            && timeOffset_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeOffsetBuilder().mergeFrom(value);
         } else {
           timeOffset_ = value;
         }
-        onChanged();
       } else {
         timeOffsetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -877,14 +886,13 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration time_offset = 2;</code>
      */
     public Builder clearTimeOffset() {
-      if (timeOffsetBuilder_ == null) {
-        timeOffset_ = null;
-        onChanged();
-      } else {
-        timeOffset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      timeOffset_ = null;
+      if (timeOffsetBuilder_ != null) {
+        timeOffsetBuilder_.dispose();
         timeOffsetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -897,7 +905,7 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration time_offset = 2;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeOffsetBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTimeOffsetFieldBuilder().getBuilder();
     }

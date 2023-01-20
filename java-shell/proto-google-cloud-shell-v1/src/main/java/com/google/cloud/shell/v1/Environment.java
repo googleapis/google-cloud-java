@@ -287,7 +287,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -344,7 +346,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -395,7 +399,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOCKER_IMAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object dockerImage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dockerImage_ = "";
   /**
    *
    *
@@ -450,7 +456,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 4;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -483,14 +489,15 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.shell.v1.Environment.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.shell.v1.Environment.State result =
-        com.google.cloud.shell.v1.Environment.State.valueOf(state_);
+        com.google.cloud.shell.v1.Environment.State.forNumber(state_);
     return result == null ? com.google.cloud.shell.v1.Environment.State.UNRECOGNIZED : result;
   }
 
   public static final int WEB_HOST_FIELD_NUMBER = 12;
-  private volatile java.lang.Object webHost_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object webHost_ = "";
   /**
    *
    *
@@ -541,7 +548,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SSH_USERNAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object sshUsername_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sshUsername_ = "";
   /**
    *
    *
@@ -592,7 +601,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SSH_HOST_FIELD_NUMBER = 6;
-  private volatile java.lang.Object sshHost_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sshHost_ = "";
   /**
    *
    *
@@ -643,7 +654,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SSH_PORT_FIELD_NUMBER = 7;
-  private int sshPort_;
+  private int sshPort_ = 0;
   /**
    *
    *
@@ -662,6 +673,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PUBLIC_KEYS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList publicKeys_;
   /**
    *
@@ -1015,24 +1028,17 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       id_ = "";
-
       dockerImage_ = "";
-
       state_ = 0;
-
       webHost_ = "";
-
       sshUsername_ = "";
-
       sshHost_ = "";
-
       sshPort_ = 0;
-
       publicKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -1060,22 +1066,48 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.shell.v1.Environment buildPartial() {
       com.google.cloud.shell.v1.Environment result =
           new com.google.cloud.shell.v1.Environment(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.id_ = id_;
-      result.dockerImage_ = dockerImage_;
-      result.state_ = state_;
-      result.webHost_ = webHost_;
-      result.sshUsername_ = sshUsername_;
-      result.sshHost_ = sshHost_;
-      result.sshPort_ = sshPort_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        publicKeys_ = publicKeys_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.publicKeys_ = publicKeys_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.shell.v1.Environment result) {
+      if (((bitField0_ & 0x00000100) != 0)) {
+        publicKeys_ = publicKeys_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      }
+      result.publicKeys_ = publicKeys_;
+    }
+
+    private void buildPartial0(com.google.cloud.shell.v1.Environment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dockerImage_ = dockerImage_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.webHost_ = webHost_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.sshUsername_ = sshUsername_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.sshHost_ = sshHost_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.sshPort_ = sshPort_;
+      }
     }
 
     @java.lang.Override
@@ -1125,14 +1157,17 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.shell.v1.Environment.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDockerImage().isEmpty()) {
         dockerImage_ = other.dockerImage_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -1140,14 +1175,17 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getWebHost().isEmpty()) {
         webHost_ = other.webHost_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getSshUsername().isEmpty()) {
         sshUsername_ = other.sshUsername_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getSshHost().isEmpty()) {
         sshHost_ = other.sshHost_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.getSshPort() != 0) {
@@ -1156,7 +1194,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (!other.publicKeys_.isEmpty()) {
         if (publicKeys_.isEmpty()) {
           publicKeys_ = other.publicKeys_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensurePublicKeysIsMutable();
           publicKeys_.addAll(other.publicKeys_);
@@ -1192,43 +1230,43 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 dockerImage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 sshUsername_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 sshHost_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 56:
               {
                 sshPort_ = input.readInt32();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 56
             case 66:
@@ -1241,7 +1279,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             case 98:
               {
                 webHost_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 98
             default:
@@ -1336,8 +1374,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1357,8 +1395,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1383,8 +1421,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1453,8 +1491,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1471,8 +1509,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1494,8 +1532,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1570,8 +1608,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dockerImage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1590,8 +1628,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDockerImage() {
-
       dockerImage_ = getDefaultInstance().getDockerImage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1615,8 +1653,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dockerImage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1654,8 +1692,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1674,9 +1712,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.shell.v1.Environment.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.shell.v1.Environment.State result =
-          com.google.cloud.shell.v1.Environment.State.valueOf(state_);
+          com.google.cloud.shell.v1.Environment.State.forNumber(state_);
       return result == null ? com.google.cloud.shell.v1.Environment.State.UNRECOGNIZED : result;
     }
     /**
@@ -1697,7 +1734,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1716,7 +1753,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       state_ = 0;
       onChanged();
       return this;
@@ -1786,8 +1823,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       webHost_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1804,8 +1841,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWebHost() {
-
       webHost_ = getDefaultInstance().getWebHost();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1827,8 +1864,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       webHost_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1897,8 +1934,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sshUsername_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1915,8 +1952,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSshUsername() {
-
       sshUsername_ = getDefaultInstance().getSshUsername();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1938,8 +1975,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sshUsername_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2008,8 +2045,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sshHost_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2026,8 +2063,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSshHost() {
-
       sshHost_ = getDefaultInstance().getSshHost();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2049,8 +2086,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sshHost_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2088,6 +2125,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public Builder setSshPort(int value) {
 
       sshPort_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2104,7 +2142,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSshPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       sshPort_ = 0;
       onChanged();
       return this;
@@ -2114,9 +2152,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePublicKeysIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         publicKeys_ = new com.google.protobuf.LazyStringArrayList(publicKeys_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -2283,7 +2321,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPublicKeys() {
       publicKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }

@@ -71,7 +71,9 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int CA_POOL_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object caPoolId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object caPoolId_ = "";
   /**
    *
    *
@@ -227,11 +231,15 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.security.privateca.v1.CaPoolOrBuilder getCaPoolOrBuilder() {
-    return getCaPool();
+    return caPool_ == null
+        ? com.google.cloud.security.privateca.v1.CaPool.getDefaultInstance()
+        : caPool_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -530,18 +538,15 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       caPoolId_ = "";
-
-      if (caPoolBuilder_ == null) {
-        caPool_ = null;
-      } else {
-        caPool_ = null;
+      caPool_ = null;
+      if (caPoolBuilder_ != null) {
+        caPoolBuilder_.dispose();
         caPoolBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -569,16 +574,27 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.security.privateca.v1.CreateCaPoolRequest buildPartial() {
       com.google.cloud.security.privateca.v1.CreateCaPoolRequest result =
           new com.google.cloud.security.privateca.v1.CreateCaPoolRequest(this);
-      result.parent_ = parent_;
-      result.caPoolId_ = caPoolId_;
-      if (caPoolBuilder_ == null) {
-        result.caPool_ = caPool_;
-      } else {
-        result.caPool_ = caPoolBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.security.privateca.v1.CreateCaPoolRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.caPoolId_ = caPoolId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.caPool_ = caPoolBuilder_ == null ? caPool_ : caPoolBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -629,10 +645,12 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCaPoolId().isEmpty()) {
         caPoolId_ = other.caPoolId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCaPool()) {
@@ -640,6 +658,7 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -671,25 +690,25 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 caPoolId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCaPoolFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -708,6 +727,8 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -779,8 +800,8 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -799,8 +820,8 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -824,8 +845,8 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -894,8 +915,8 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       caPoolId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -912,8 +933,8 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearCaPoolId() {
-
       caPoolId_ = getDefaultInstance().getCaPoolId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -935,8 +956,8 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       caPoolId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -961,7 +982,7 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the caPool field is set.
      */
     public boolean hasCaPool() {
-      return caPoolBuilder_ != null || caPool_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1002,11 +1023,11 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         caPool_ = value;
-        onChanged();
       } else {
         caPoolBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1024,11 +1045,11 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
         com.google.cloud.security.privateca.v1.CaPool.Builder builderForValue) {
       if (caPoolBuilder_ == null) {
         caPool_ = builderForValue.build();
-        onChanged();
       } else {
         caPoolBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1044,19 +1065,18 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeCaPool(com.google.cloud.security.privateca.v1.CaPool value) {
       if (caPoolBuilder_ == null) {
-        if (caPool_ != null) {
-          caPool_ =
-              com.google.cloud.security.privateca.v1.CaPool.newBuilder(caPool_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && caPool_ != null
+            && caPool_ != com.google.cloud.security.privateca.v1.CaPool.getDefaultInstance()) {
+          getCaPoolBuilder().mergeFrom(value);
         } else {
           caPool_ = value;
         }
-        onChanged();
       } else {
         caPoolBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1071,14 +1091,13 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearCaPool() {
-      if (caPoolBuilder_ == null) {
-        caPool_ = null;
-        onChanged();
-      } else {
-        caPool_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      caPool_ = null;
+      if (caPoolBuilder_ != null) {
+        caPoolBuilder_.dispose();
         caPoolBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1093,7 +1112,7 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.security.privateca.v1.CaPool.Builder getCaPoolBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCaPoolFieldBuilder().getBuilder();
     }
@@ -1236,8 +1255,8 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1263,8 +1282,8 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1295,8 +1314,8 @@ public final class CreateCaPoolRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

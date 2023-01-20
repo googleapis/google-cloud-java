@@ -68,6 +68,8 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ALTERNATIVES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative>
       alternatives_;
   /**
@@ -367,6 +369,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (alternativesBuilder_ == null) {
         alternatives_ = java.util.Collections.emptyList();
       } else {
@@ -402,7 +405,16 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
     public com.google.cloud.videointelligence.v1p1beta1.SpeechTranscription buildPartial() {
       com.google.cloud.videointelligence.v1p1beta1.SpeechTranscription result =
           new com.google.cloud.videointelligence.v1p1beta1.SpeechTranscription(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.videointelligence.v1p1beta1.SpeechTranscription result) {
       if (alternativesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           alternatives_ = java.util.Collections.unmodifiableList(alternatives_);
@@ -412,8 +424,11 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       } else {
         result.alternatives_ = alternativesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1p1beta1.SpeechTranscription result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

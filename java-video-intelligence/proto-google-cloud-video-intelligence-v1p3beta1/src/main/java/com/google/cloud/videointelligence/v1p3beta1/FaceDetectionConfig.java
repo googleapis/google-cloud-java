@@ -68,7 +68,9 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int MODEL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object model_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
   /**
    *
    *
@@ -121,7 +123,7 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int INCLUDE_BOUNDING_BOXES_FIELD_NUMBER = 2;
-  private boolean includeBoundingBoxes_;
+  private boolean includeBoundingBoxes_ = false;
   /**
    *
    *
@@ -139,7 +141,7 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int INCLUDE_ATTRIBUTES_FIELD_NUMBER = 5;
-  private boolean includeAttributes_;
+  private boolean includeAttributes_ = false;
   /**
    *
    *
@@ -373,12 +375,10 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       model_ = "";
-
       includeBoundingBoxes_ = false;
-
       includeAttributes_ = false;
-
       return this;
     }
 
@@ -407,11 +407,25 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
     public com.google.cloud.videointelligence.v1p3beta1.FaceDetectionConfig buildPartial() {
       com.google.cloud.videointelligence.v1p3beta1.FaceDetectionConfig result =
           new com.google.cloud.videointelligence.v1p3beta1.FaceDetectionConfig(this);
-      result.model_ = model_;
-      result.includeBoundingBoxes_ = includeBoundingBoxes_;
-      result.includeAttributes_ = includeAttributes_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1p3beta1.FaceDetectionConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.model_ = model_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.includeBoundingBoxes_ = includeBoundingBoxes_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.includeAttributes_ = includeAttributes_;
+      }
     }
 
     @java.lang.Override
@@ -464,6 +478,7 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getIncludeBoundingBoxes() != false) {
@@ -501,19 +516,19 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 model_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 includeBoundingBoxes_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 40:
               {
                 includeAttributes_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 40
             default:
@@ -532,6 +547,8 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object model_ = "";
     /**
@@ -600,8 +617,8 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       model_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -619,8 +636,8 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearModel() {
-
       model_ = getDefaultInstance().getModel();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -643,8 +660,8 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       model_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -680,6 +697,7 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
     public Builder setIncludeBoundingBoxes(boolean value) {
 
       includeBoundingBoxes_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -695,7 +713,7 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearIncludeBoundingBoxes() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       includeBoundingBoxes_ = false;
       onChanged();
       return this;
@@ -734,6 +752,7 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
     public Builder setIncludeAttributes(boolean value) {
 
       includeAttributes_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -750,7 +769,7 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearIncludeAttributes() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       includeAttributes_ = false;
       onChanged();
       return this;

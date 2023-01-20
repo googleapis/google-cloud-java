@@ -75,7 +75,7 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PAYLOAD_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString payload_;
+  private com.google.protobuf.ByteString payload_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -93,7 +93,9 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TAG_FIELD_NUMBER = 2;
-  private volatile java.lang.Object tag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tag_ = "";
   /**
    *
    *
@@ -365,10 +367,9 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       payload_ = com.google.protobuf.ByteString.EMPTY;
-
       tag_ = "";
-
       return this;
     }
 
@@ -396,10 +397,21 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.tasks.v2beta3.PullMessage buildPartial() {
       com.google.cloud.tasks.v2beta3.PullMessage result =
           new com.google.cloud.tasks.v2beta3.PullMessage(this);
-      result.payload_ = payload_;
-      result.tag_ = tag_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tasks.v2beta3.PullMessage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.payload_ = payload_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tag_ = tag_;
+      }
     }
 
     @java.lang.Override
@@ -452,6 +464,7 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getTag().isEmpty()) {
         tag_ = other.tag_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -483,13 +496,13 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 payload_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 tag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -508,6 +521,8 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.ByteString payload_ = com.google.protobuf.ByteString.EMPTY;
     /**
@@ -541,8 +556,8 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       payload_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -558,7 +573,7 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPayload() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       payload_ = getDefaultInstance().getPayload();
       onChanged();
       return this;
@@ -643,8 +658,8 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       tag_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -666,8 +681,8 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTag() {
-
       tag_ = getDefaultInstance().getTag();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -694,8 +709,8 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tag_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

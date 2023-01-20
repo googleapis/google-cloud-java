@@ -68,7 +68,9 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
   }
 
   public static final int URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -159,7 +161,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
-    return getError();
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -373,12 +375,11 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       uri_ = "";
-
-      if (errorBuilder_ == null) {
-        error_ = null;
-      } else {
-        error_ = null;
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
       return this;
@@ -408,14 +409,21 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     public com.google.cloud.speech.v2.BatchRecognizeFileResult buildPartial() {
       com.google.cloud.speech.v2.BatchRecognizeFileResult result =
           new com.google.cloud.speech.v2.BatchRecognizeFileResult(this);
-      result.uri_ = uri_;
-      if (errorBuilder_ == null) {
-        result.error_ = error_;
-      } else {
-        result.error_ = errorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.BatchRecognizeFileResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -466,6 +474,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
         return this;
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasError()) {
@@ -500,13 +509,13 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
             case 10:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -525,6 +534,8 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object uri_ = "";
     /**
@@ -587,8 +598,8 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -604,8 +615,8 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -626,8 +637,8 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -648,7 +659,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return errorBuilder_ != null || error_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -683,11 +694,11 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         error_ = value;
-        onChanged();
       } else {
         errorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -702,11 +713,11 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
-        onChanged();
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -720,16 +731,18 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (error_ != null) {
-          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && error_ != null
+            && error_ != com.google.rpc.Status.getDefaultInstance()) {
+          getErrorBuilder().mergeFrom(value);
         } else {
           error_ = value;
         }
-        onChanged();
       } else {
         errorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -742,14 +755,13 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      * <code>.google.rpc.Status error = 2;</code>
      */
     public Builder clearError() {
-      if (errorBuilder_ == null) {
-        error_ = null;
-        onChanged();
-      } else {
-        error_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -762,7 +774,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      * <code>.google.rpc.Status error = 2;</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }

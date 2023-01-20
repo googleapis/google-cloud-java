@@ -68,6 +68,8 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ITEMS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.tpu.v2.GuestAttributesEntry> items_;
   /**
    *
@@ -335,6 +337,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (itemsBuilder_ == null) {
         items_ = java.util.Collections.emptyList();
       } else {
@@ -369,7 +372,15 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
     public com.google.cloud.tpu.v2.GuestAttributesValue buildPartial() {
       com.google.cloud.tpu.v2.GuestAttributesValue result =
           new com.google.cloud.tpu.v2.GuestAttributesValue(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.tpu.v2.GuestAttributesValue result) {
       if (itemsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           items_ = java.util.Collections.unmodifiableList(items_);
@@ -379,8 +390,10 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       } else {
         result.items_ = itemsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tpu.v2.GuestAttributesValue result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

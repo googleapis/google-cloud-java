@@ -189,7 +189,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ATOM_KEY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object atomKey_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object atomKey_ = "";
     /**
      *
      *
@@ -240,7 +242,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int INPUT_KEY_FIELD_NUMBER = 2;
-    private volatile java.lang.Object inputKey_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object inputKey_ = "";
     /**
      *
      *
@@ -289,7 +293,7 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int INPUT_TRACK_FIELD_NUMBER = 3;
-    private int inputTrack_;
+    private int inputTrack_ = 0;
     /**
      *
      *
@@ -524,12 +528,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         atomKey_ = "";
-
         inputKey_ = "";
-
         inputTrack_ = 0;
-
         return this;
       }
 
@@ -558,11 +560,25 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.video.transcoder.v1.TextStream.TextMapping buildPartial() {
         com.google.cloud.video.transcoder.v1.TextStream.TextMapping result =
             new com.google.cloud.video.transcoder.v1.TextStream.TextMapping(this);
-        result.atomKey_ = atomKey_;
-        result.inputKey_ = inputKey_;
-        result.inputTrack_ = inputTrack_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.video.transcoder.v1.TextStream.TextMapping result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.atomKey_ = atomKey_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.inputKey_ = inputKey_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.inputTrack_ = inputTrack_;
+        }
       }
 
       @java.lang.Override
@@ -616,10 +632,12 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getAtomKey().isEmpty()) {
           atomKey_ = other.atomKey_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getInputKey().isEmpty()) {
           inputKey_ = other.inputKey_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getInputTrack() != 0) {
@@ -654,19 +672,19 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   atomKey_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   inputKey_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   inputTrack_ = input.readInt32();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -685,6 +703,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object atomKey_ = "";
       /**
@@ -750,8 +770,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         atomKey_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -768,8 +788,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAtomKey() {
-
         atomKey_ = getDefaultInstance().getAtomKey();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -791,8 +811,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         atomKey_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -858,8 +878,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         inputKey_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -875,8 +895,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearInputKey() {
-
         inputKey_ = getDefaultInstance().getInputKey();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -897,8 +917,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         inputKey_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -934,6 +954,7 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setInputTrack(int value) {
 
         inputTrack_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -949,7 +970,7 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearInputTrack() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         inputTrack_ = 0;
         onChanged();
         return this;
@@ -1021,7 +1042,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CODEC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object codec_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object codec_ = "";
   /**
    *
    *
@@ -1082,6 +1105,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAPPING_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.TextStream.TextMapping> mapping_;
   /**
    *
@@ -1361,15 +1386,15 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       codec_ = "";
-
       if (mappingBuilder_ == null) {
         mapping_ = java.util.Collections.emptyList();
       } else {
         mapping_ = null;
         mappingBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1397,19 +1422,32 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.TextStream buildPartial() {
       com.google.cloud.video.transcoder.v1.TextStream result =
           new com.google.cloud.video.transcoder.v1.TextStream(this);
-      int from_bitField0_ = bitField0_;
-      result.codec_ = codec_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.video.transcoder.v1.TextStream result) {
       if (mappingBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           mapping_ = java.util.Collections.unmodifiableList(mapping_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.mapping_ = mapping_;
       } else {
         result.mapping_ = mappingBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.transcoder.v1.TextStream result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.codec_ = codec_;
+      }
     }
 
     @java.lang.Override
@@ -1460,13 +1498,14 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getCodec().isEmpty()) {
         codec_ = other.codec_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (mappingBuilder_ == null) {
         if (!other.mapping_.isEmpty()) {
           if (mapping_.isEmpty()) {
             mapping_ = other.mapping_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureMappingIsMutable();
             mapping_.addAll(other.mapping_);
@@ -1479,7 +1518,7 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
             mappingBuilder_.dispose();
             mappingBuilder_ = null;
             mapping_ = other.mapping_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             mappingBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMappingFieldBuilder()
@@ -1518,7 +1557,7 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 codec_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
@@ -1633,8 +1672,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       codec_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1656,8 +1695,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCodec() {
-
       codec_ = getDefaultInstance().getCodec();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1684,8 +1723,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       codec_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1694,11 +1733,11 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMappingIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         mapping_ =
             new java.util.ArrayList<com.google.cloud.video.transcoder.v1.TextStream.TextMapping>(
                 mapping_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1920,7 +1959,7 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMapping() {
       if (mappingBuilder_ == null) {
         mapping_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         mappingBuilder_.clear();
@@ -2049,7 +2088,7 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.video.transcoder.v1.TextStream.TextMapping,
                 com.google.cloud.video.transcoder.v1.TextStream.TextMapping.Builder,
                 com.google.cloud.video.transcoder.v1.TextStream.TextMappingOrBuilder>(
-                mapping_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                mapping_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         mapping_ = null;
       }
       return mappingBuilder_;

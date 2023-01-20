@@ -66,7 +66,6 @@ public interface BatchRecognizeResponseOrBuilder
    *
    * <code>map&lt;string, .google.cloud.speech.v2.BatchRecognizeFileResult&gt; results = 1;</code>
    */
-
   /* nullable */
   com.google.cloud.speech.v2.BatchRecognizeFileResult getResultsOrDefault(
       java.lang.String key,

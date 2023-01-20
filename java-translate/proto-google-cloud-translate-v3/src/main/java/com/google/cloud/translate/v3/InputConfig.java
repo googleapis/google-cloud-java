@@ -112,7 +112,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MIME_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object mimeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mimeType_ = "";
   /**
    *
    *
@@ -483,8 +485,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       mimeType_ = "";
-
       if (gcsSourceBuilder_ != null) {
         gcsSourceBuilder_.clear();
       }
@@ -517,17 +519,27 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.translate.v3.InputConfig buildPartial() {
       com.google.cloud.translate.v3.InputConfig result =
           new com.google.cloud.translate.v3.InputConfig(this);
-      result.mimeType_ = mimeType_;
-      if (sourceCase_ == 2) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.translate.v3.InputConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.mimeType_ = mimeType_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.translate.v3.InputConfig result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 2 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -577,6 +589,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.translate.v3.InputConfig.getDefaultInstance()) return this;
       if (!other.getMimeType().isEmpty()) {
         mimeType_ = other.mimeType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getSourceCase()) {
@@ -619,7 +632,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 mimeType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -658,6 +671,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object mimeType_ = "";
     /**
@@ -729,8 +744,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       mimeType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -749,8 +764,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMimeType() {
-
       mimeType_ = getDefaultInstance().getMimeType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -774,8 +789,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mimeType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1120,7 +1135,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 2;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 

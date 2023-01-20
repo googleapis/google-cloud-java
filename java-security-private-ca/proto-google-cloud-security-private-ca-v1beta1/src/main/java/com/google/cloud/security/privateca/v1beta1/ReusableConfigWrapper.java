@@ -475,6 +475,7 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (reusableConfigValuesBuilder_ != null) {
         reusableConfigValuesBuilder_.clear();
       }
@@ -508,19 +509,26 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
     public com.google.cloud.security.privateca.v1beta1.ReusableConfigWrapper buildPartial() {
       com.google.cloud.security.privateca.v1beta1.ReusableConfigWrapper result =
           new com.google.cloud.security.privateca.v1beta1.ReusableConfigWrapper(this);
-      if (configValuesCase_ == 1) {
-        result.configValues_ = configValues_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (configValuesCase_ == 2) {
-        if (reusableConfigValuesBuilder_ == null) {
-          result.configValues_ = configValues_;
-        } else {
-          result.configValues_ = reusableConfigValuesBuilder_.build();
-        }
-      }
-      result.configValuesCase_ = configValuesCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.security.privateca.v1beta1.ReusableConfigWrapper result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.security.privateca.v1beta1.ReusableConfigWrapper result) {
+      result.configValuesCase_ = configValuesCase_;
+      result.configValues_ = this.configValues_;
+      if (configValuesCase_ == 2 && reusableConfigValuesBuilder_ != null) {
+        result.configValues_ = reusableConfigValuesBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -659,6 +667,8 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -1036,7 +1046,6 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
       }
       configValuesCase_ = 2;
       onChanged();
-      ;
       return reusableConfigValuesBuilder_;
     }
 

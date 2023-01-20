@@ -70,7 +70,9 @@ public final class RemovePublicKeyRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object environment_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object environment_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class RemovePublicKeyRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int KEY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object key_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
   /**
    *
    *
@@ -376,10 +380,9 @@ public final class RemovePublicKeyRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       environment_ = "";
-
       key_ = "";
-
       return this;
     }
 
@@ -407,10 +410,21 @@ public final class RemovePublicKeyRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.shell.v1.RemovePublicKeyRequest buildPartial() {
       com.google.cloud.shell.v1.RemovePublicKeyRequest result =
           new com.google.cloud.shell.v1.RemovePublicKeyRequest(this);
-      result.environment_ = environment_;
-      result.key_ = key_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.shell.v1.RemovePublicKeyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.environment_ = environment_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.key_ = key_;
+      }
     }
 
     @java.lang.Override
@@ -461,10 +475,12 @@ public final class RemovePublicKeyRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getEnvironment().isEmpty()) {
         environment_ = other.environment_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getKey().isEmpty()) {
         key_ = other.key_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -496,13 +512,13 @@ public final class RemovePublicKeyRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 environment_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 key_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -521,6 +537,8 @@ public final class RemovePublicKeyRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object environment_ = "";
     /**
@@ -586,8 +604,8 @@ public final class RemovePublicKeyRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       environment_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -604,8 +622,8 @@ public final class RemovePublicKeyRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearEnvironment() {
-
       environment_ = getDefaultInstance().getEnvironment();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -627,8 +645,8 @@ public final class RemovePublicKeyRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       environment_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -694,8 +712,8 @@ public final class RemovePublicKeyRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       key_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -711,8 +729,8 @@ public final class RemovePublicKeyRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-
       key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -733,8 +751,8 @@ public final class RemovePublicKeyRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       key_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

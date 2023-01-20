@@ -390,7 +390,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.devtools.cloudtrace.v2.AttributeValue&gt; attribute_map = 1;
      * </code>
      */
-
     /* nullable */
     com.google.devtools.cloudtrace.v2.AttributeValue getAttributeMapOrDefault(
         java.lang.String key,
@@ -503,6 +502,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
                           com.google.devtools.cloudtrace.v2.AttributeValue.getDefaultInstance());
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
             java.lang.String, com.google.devtools.cloudtrace.v2.AttributeValue>
         attributeMap_;
@@ -585,8 +585,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.devtools.cloudtrace.v2.AttributeValue getAttributeMapOrDefault(
-        java.lang.String key, com.google.devtools.cloudtrace.v2.AttributeValue defaultValue) {
+    public /* nullable */ com.google.devtools.cloudtrace.v2.AttributeValue getAttributeMapOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.devtools.cloudtrace.v2.AttributeValue defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -624,7 +626,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DROPPED_ATTRIBUTES_COUNT_FIELD_NUMBER = 2;
-    private int droppedAttributesCount_;
+    private int droppedAttributesCount_ = 0;
     /**
      *
      *
@@ -881,9 +883,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableAttributeMap().clear();
         droppedAttributesCount_ = 0;
-
         return this;
       }
 
@@ -911,12 +913,22 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public com.google.devtools.cloudtrace.v2.Span.Attributes buildPartial() {
         com.google.devtools.cloudtrace.v2.Span.Attributes result =
             new com.google.devtools.cloudtrace.v2.Span.Attributes(this);
-        int from_bitField0_ = bitField0_;
-        result.attributeMap_ = internalGetAttributeMap();
-        result.attributeMap_.makeImmutable();
-        result.droppedAttributesCount_ = droppedAttributesCount_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.devtools.cloudtrace.v2.Span.Attributes result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.attributeMap_ = internalGetAttributeMap();
+          result.attributeMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.droppedAttributesCount_ = droppedAttributesCount_;
+        }
       }
 
       @java.lang.Override
@@ -968,6 +980,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         if (other == com.google.devtools.cloudtrace.v2.Span.Attributes.getDefaultInstance())
           return this;
         internalGetMutableAttributeMap().mergeFrom(other.internalGetAttributeMap());
+        bitField0_ |= 0x00000001;
         if (other.getDroppedAttributesCount() != 0) {
           setDroppedAttributesCount(other.getDroppedAttributesCount());
         }
@@ -1008,12 +1021,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
                   internalGetMutableAttributeMap()
                       .getMutableMap()
                       .put(attributeMap__.getKey(), attributeMap__.getValue());
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   droppedAttributesCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -1052,8 +1066,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       private com.google.protobuf.MapField<
               java.lang.String, com.google.devtools.cloudtrace.v2.AttributeValue>
           internalGetMutableAttributeMap() {
-        onChanged();
-        ;
         if (attributeMap_ == null) {
           attributeMap_ =
               com.google.protobuf.MapField.newMapField(AttributeMapDefaultEntryHolder.defaultEntry);
@@ -1061,6 +1073,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         if (!attributeMap_.isMutable()) {
           attributeMap_ = attributeMap_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return attributeMap_;
       }
 
@@ -1132,8 +1146,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       @java.lang.Override
-      public com.google.devtools.cloudtrace.v2.AttributeValue getAttributeMapOrDefault(
-          java.lang.String key, com.google.devtools.cloudtrace.v2.AttributeValue defaultValue) {
+      public /* nullable */ com.google.devtools.cloudtrace.v2.AttributeValue
+          getAttributeMapOrDefault(
+              java.lang.String key,
+              /* nullable */
+              com.google.devtools.cloudtrace.v2.AttributeValue defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -1171,6 +1188,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
 
       public Builder clearAttributeMap() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableAttributeMap().getMutableMap().clear();
         return this;
       }
@@ -1200,6 +1218,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.devtools.cloudtrace.v2.AttributeValue>
           getMutableAttributeMap() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableAttributeMap().getMutableMap();
       }
       /**
@@ -1225,8 +1244,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableAttributeMap().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -1248,6 +1267,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           java.util.Map<java.lang.String, com.google.devtools.cloudtrace.v2.AttributeValue>
               values) {
         internalGetMutableAttributeMap().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -1286,6 +1306,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public Builder setDroppedAttributesCount(int value) {
 
         droppedAttributesCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1303,7 +1324,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDroppedAttributesCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         droppedAttributesCount_ = 0;
         onChanged();
         return this;
@@ -1710,7 +1731,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder
           getDescriptionOrBuilder() {
-        return getDescription();
+        return description_ == null
+            ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
+            : description_;
       }
 
       public static final int ATTRIBUTES_FIELD_NUMBER = 2;
@@ -1761,7 +1784,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.devtools.cloudtrace.v2.Span.AttributesOrBuilder getAttributesOrBuilder() {
-        return getAttributes();
+        return attributes_ == null
+            ? com.google.devtools.cloudtrace.v2.Span.Attributes.getDefaultInstance()
+            : attributes_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -1983,16 +2008,15 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          if (descriptionBuilder_ == null) {
-            description_ = null;
-          } else {
-            description_ = null;
+          bitField0_ = 0;
+          description_ = null;
+          if (descriptionBuilder_ != null) {
+            descriptionBuilder_.dispose();
             descriptionBuilder_ = null;
           }
-          if (attributesBuilder_ == null) {
-            attributes_ = null;
-          } else {
-            attributes_ = null;
+          attributes_ = null;
+          if (attributesBuilder_ != null) {
+            attributesBuilder_.dispose();
             attributesBuilder_ = null;
           }
           return this;
@@ -2023,18 +2047,24 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         public com.google.devtools.cloudtrace.v2.Span.TimeEvent.Annotation buildPartial() {
           com.google.devtools.cloudtrace.v2.Span.TimeEvent.Annotation result =
               new com.google.devtools.cloudtrace.v2.Span.TimeEvent.Annotation(this);
-          if (descriptionBuilder_ == null) {
-            result.description_ = description_;
-          } else {
-            result.description_ = descriptionBuilder_.build();
-          }
-          if (attributesBuilder_ == null) {
-            result.attributes_ = attributes_;
-          } else {
-            result.attributes_ = attributesBuilder_.build();
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.devtools.cloudtrace.v2.Span.TimeEvent.Annotation result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.description_ =
+                descriptionBuilder_ == null ? description_ : descriptionBuilder_.build();
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.attributes_ =
+                attributesBuilder_ == null ? attributes_ : attributesBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -2122,13 +2152,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     input.readMessage(getDescriptionFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     input.readMessage(getAttributesFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 default:
@@ -2147,6 +2177,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private com.google.devtools.cloudtrace.v2.TruncatableString description_;
         private com.google.protobuf.SingleFieldBuilderV3<
@@ -2167,7 +2199,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the description field is set.
          */
         public boolean hasDescription() {
-          return descriptionBuilder_ != null || description_ != null;
+          return ((bitField0_ & 0x00000001) != 0);
         }
         /**
          *
@@ -2206,11 +2238,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             description_ = value;
-            onChanged();
           } else {
             descriptionBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -2227,11 +2259,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.cloudtrace.v2.TruncatableString.Builder builderForValue) {
           if (descriptionBuilder_ == null) {
             description_ = builderForValue.build();
-            onChanged();
           } else {
             descriptionBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -2246,19 +2278,19 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder mergeDescription(com.google.devtools.cloudtrace.v2.TruncatableString value) {
           if (descriptionBuilder_ == null) {
-            if (description_ != null) {
-              description_ =
-                  com.google.devtools.cloudtrace.v2.TruncatableString.newBuilder(description_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000001) != 0)
+                && description_ != null
+                && description_
+                    != com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()) {
+              getDescriptionBuilder().mergeFrom(value);
             } else {
               description_ = value;
             }
-            onChanged();
           } else {
             descriptionBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -2272,14 +2304,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          * <code>.google.devtools.cloudtrace.v2.TruncatableString description = 1;</code>
          */
         public Builder clearDescription() {
-          if (descriptionBuilder_ == null) {
-            description_ = null;
-            onChanged();
-          } else {
-            description_ = null;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          description_ = null;
+          if (descriptionBuilder_ != null) {
+            descriptionBuilder_.dispose();
             descriptionBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -2293,7 +2324,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          * <code>.google.devtools.cloudtrace.v2.TruncatableString description = 1;</code>
          */
         public com.google.devtools.cloudtrace.v2.TruncatableString.Builder getDescriptionBuilder() {
-
+          bitField0_ |= 0x00000001;
           onChanged();
           return getDescriptionFieldBuilder().getBuilder();
         }
@@ -2363,7 +2394,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the attributes field is set.
          */
         public boolean hasAttributes() {
-          return attributesBuilder_ != null || attributes_ != null;
+          return ((bitField0_ & 0x00000002) != 0);
         }
         /**
          *
@@ -2402,11 +2433,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             attributes_ = value;
-            onChanged();
           } else {
             attributesBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -2423,11 +2454,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.cloudtrace.v2.Span.Attributes.Builder builderForValue) {
           if (attributesBuilder_ == null) {
             attributes_ = builderForValue.build();
-            onChanged();
           } else {
             attributesBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -2442,19 +2473,19 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder mergeAttributes(com.google.devtools.cloudtrace.v2.Span.Attributes value) {
           if (attributesBuilder_ == null) {
-            if (attributes_ != null) {
-              attributes_ =
-                  com.google.devtools.cloudtrace.v2.Span.Attributes.newBuilder(attributes_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000002) != 0)
+                && attributes_ != null
+                && attributes_
+                    != com.google.devtools.cloudtrace.v2.Span.Attributes.getDefaultInstance()) {
+              getAttributesBuilder().mergeFrom(value);
             } else {
               attributes_ = value;
             }
-            onChanged();
           } else {
             attributesBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -2468,14 +2499,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 2;</code>
          */
         public Builder clearAttributes() {
-          if (attributesBuilder_ == null) {
-            attributes_ = null;
-            onChanged();
-          } else {
-            attributes_ = null;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          attributes_ = null;
+          if (attributesBuilder_ != null) {
+            attributesBuilder_.dispose();
             attributesBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -2489,7 +2519,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 2;</code>
          */
         public com.google.devtools.cloudtrace.v2.Span.Attributes.Builder getAttributesBuilder() {
-
+          bitField0_ |= 0x00000002;
           onChanged();
           return getAttributesFieldBuilder().getBuilder();
         }
@@ -2890,7 +2920,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int TYPE_FIELD_NUMBER = 1;
-      private int type_;
+      private int type_ = 0;
       /**
        *
        *
@@ -2921,16 +2951,15 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent.Type getType() {
-        @SuppressWarnings("deprecation")
         com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent.Type result =
-            com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent.Type.valueOf(type_);
+            com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent.Type.forNumber(type_);
         return result == null
             ? com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent.Type.UNRECOGNIZED
             : result;
       }
 
       public static final int ID_FIELD_NUMBER = 2;
-      private long id_;
+      private long id_ = 0L;
       /**
        *
        *
@@ -2950,7 +2979,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int UNCOMPRESSED_SIZE_BYTES_FIELD_NUMBER = 3;
-      private long uncompressedSizeBytes_;
+      private long uncompressedSizeBytes_ = 0L;
       /**
        *
        *
@@ -2968,7 +2997,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int COMPRESSED_SIZE_BYTES_FIELD_NUMBER = 4;
-      private long compressedSizeBytes_;
+      private long compressedSizeBytes_ = 0L;
       /**
        *
        *
@@ -3220,14 +3249,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           type_ = 0;
-
           id_ = 0L;
-
           uncompressedSizeBytes_ = 0L;
-
           compressedSizeBytes_ = 0L;
-
           return this;
         }
 
@@ -3256,12 +3282,28 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         public com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent buildPartial() {
           com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent result =
               new com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent(this);
-          result.type_ = type_;
-          result.id_ = id_;
-          result.uncompressedSizeBytes_ = uncompressedSizeBytes_;
-          result.compressedSizeBytes_ = compressedSizeBytes_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.type_ = type_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.id_ = id_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.uncompressedSizeBytes_ = uncompressedSizeBytes_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.compressedSizeBytes_ = compressedSizeBytes_;
+          }
         }
 
         @java.lang.Override
@@ -3355,25 +3397,25 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
                 case 8:
                   {
                     type_ = input.readEnum();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 16:
                   {
                     id_ = input.readInt64();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 case 24:
                   {
                     uncompressedSizeBytes_ = input.readInt64();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 24
                 case 32:
                   {
                     compressedSizeBytes_ = input.readInt64();
-
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 32
                 default:
@@ -3392,6 +3434,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private int type_ = 0;
         /**
@@ -3424,8 +3468,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setTypeValue(int value) {
-
           type_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -3443,9 +3487,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          */
         @java.lang.Override
         public com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent.Type getType() {
-          @SuppressWarnings("deprecation")
           com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent.Type result =
-              com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent.Type.valueOf(type_);
+              com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent.Type.forNumber(type_);
           return result == null
               ? com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent.Type.UNRECOGNIZED
               : result;
@@ -3468,7 +3511,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000001;
           type_ = value.getNumber();
           onChanged();
           return this;
@@ -3486,7 +3529,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearType() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           type_ = 0;
           onChanged();
           return this;
@@ -3527,6 +3570,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         public Builder setId(long value) {
 
           id_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -3544,7 +3588,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearId() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           id_ = 0L;
           onChanged();
           return this;
@@ -3581,6 +3625,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         public Builder setUncompressedSizeBytes(long value) {
 
           uncompressedSizeBytes_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -3596,7 +3641,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearUncompressedSizeBytes() {
-
+          bitField0_ = (bitField0_ & ~0x00000004);
           uncompressedSizeBytes_ = 0L;
           onChanged();
           return this;
@@ -3635,6 +3680,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         public Builder setCompressedSizeBytes(long value) {
 
           compressedSizeBytes_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -3651,7 +3697,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearCompressedSizeBytes() {
-
+          bitField0_ = (bitField0_ & ~0x00000008);
           compressedSizeBytes_ = 0L;
           onChanged();
           return this;
@@ -3814,7 +3860,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
-      return getTime();
+      return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
     }
 
     public static final int ANNOTATION_FIELD_NUMBER = 2;
@@ -4166,10 +4212,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (timeBuilder_ == null) {
-          time_ = null;
-        } else {
-          time_ = null;
+        bitField0_ = 0;
+        time_ = null;
+        if (timeBuilder_ != null) {
+          timeBuilder_.dispose();
           timeBuilder_ = null;
         }
         if (annotationBuilder_ != null) {
@@ -4207,28 +4253,30 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public com.google.devtools.cloudtrace.v2.Span.TimeEvent buildPartial() {
         com.google.devtools.cloudtrace.v2.Span.TimeEvent result =
             new com.google.devtools.cloudtrace.v2.Span.TimeEvent(this);
-        if (timeBuilder_ == null) {
-          result.time_ = time_;
-        } else {
-          result.time_ = timeBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (valueCase_ == 2) {
-          if (annotationBuilder_ == null) {
-            result.value_ = value_;
-          } else {
-            result.value_ = annotationBuilder_.build();
-          }
-        }
-        if (valueCase_ == 3) {
-          if (messageEventBuilder_ == null) {
-            result.value_ = value_;
-          } else {
-            result.value_ = messageEventBuilder_.build();
-          }
-        }
-        result.valueCase_ = valueCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.devtools.cloudtrace.v2.Span.TimeEvent result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.time_ = timeBuilder_ == null ? time_ : timeBuilder_.build();
+        }
+      }
+
+      private void buildPartialOneofs(com.google.devtools.cloudtrace.v2.Span.TimeEvent result) {
+        result.valueCase_ = valueCase_;
+        result.value_ = this.value_;
+        if (valueCase_ == 2 && annotationBuilder_ != null) {
+          result.value_ = annotationBuilder_.build();
+        }
+        if (valueCase_ == 3 && messageEventBuilder_ != null) {
+          result.value_ = messageEventBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -4327,7 +4375,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   input.readMessage(getTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -4373,6 +4421,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.protobuf.Timestamp time_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp,
@@ -4391,7 +4441,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the time field is set.
        */
       public boolean hasTime() {
-        return timeBuilder_ != null || time_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -4426,11 +4476,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           time_ = value;
-          onChanged();
         } else {
           timeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4445,11 +4495,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public Builder setTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (timeBuilder_ == null) {
           time_ = builderForValue.build();
-          onChanged();
         } else {
           timeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4463,16 +4513,18 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeTime(com.google.protobuf.Timestamp value) {
         if (timeBuilder_ == null) {
-          if (time_ != null) {
-            time_ = com.google.protobuf.Timestamp.newBuilder(time_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && time_ != null
+              && time_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getTimeBuilder().mergeFrom(value);
           } else {
             time_ = value;
           }
-          onChanged();
         } else {
           timeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4485,14 +4537,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp time = 1;</code>
        */
       public Builder clearTime() {
-        if (timeBuilder_ == null) {
-          time_ = null;
-          onChanged();
-        } else {
-          time_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        time_ = null;
+        if (timeBuilder_ != null) {
+          timeBuilder_.dispose();
           timeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -4505,7 +4556,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp time = 1;</code>
        */
       public com.google.protobuf.Timestamp.Builder getTimeBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getTimeFieldBuilder().getBuilder();
       }
@@ -4764,7 +4815,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         valueCase_ = 2;
         onChanged();
-        ;
         return annotationBuilder_;
       }
 
@@ -4981,7 +5031,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         valueCase_ = 3;
         onChanged();
-        ;
         return messageEventBuilder_;
       }
 
@@ -5186,6 +5235,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TIME_EVENT_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.devtools.cloudtrace.v2.Span.TimeEvent> timeEvent_;
     /**
      *
@@ -5256,7 +5307,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DROPPED_ANNOTATIONS_COUNT_FIELD_NUMBER = 2;
-    private int droppedAnnotationsCount_;
+    private int droppedAnnotationsCount_ = 0;
     /**
      *
      *
@@ -5275,7 +5326,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DROPPED_MESSAGE_EVENTS_COUNT_FIELD_NUMBER = 3;
-    private int droppedMessageEventsCount_;
+    private int droppedMessageEventsCount_ = 0;
     /**
      *
      *
@@ -5515,6 +5566,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (timeEventBuilder_ == null) {
           timeEvent_ = java.util.Collections.emptyList();
         } else {
@@ -5523,9 +5575,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         droppedAnnotationsCount_ = 0;
-
         droppedMessageEventsCount_ = 0;
-
         return this;
       }
 
@@ -5553,7 +5603,16 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public com.google.devtools.cloudtrace.v2.Span.TimeEvents buildPartial() {
         com.google.devtools.cloudtrace.v2.Span.TimeEvents result =
             new com.google.devtools.cloudtrace.v2.Span.TimeEvents(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.devtools.cloudtrace.v2.Span.TimeEvents result) {
         if (timeEventBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             timeEvent_ = java.util.Collections.unmodifiableList(timeEvent_);
@@ -5563,10 +5622,16 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.timeEvent_ = timeEventBuilder_.build();
         }
-        result.droppedAnnotationsCount_ = droppedAnnotationsCount_;
-        result.droppedMessageEventsCount_ = droppedMessageEventsCount_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.devtools.cloudtrace.v2.Span.TimeEvents result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.droppedAnnotationsCount_ = droppedAnnotationsCount_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.droppedMessageEventsCount_ = droppedMessageEventsCount_;
+        }
       }
 
       @java.lang.Override
@@ -5693,13 +5758,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
               case 16:
                 {
                   droppedAnnotationsCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   droppedMessageEventsCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -6111,6 +6176,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public Builder setDroppedAnnotationsCount(int value) {
 
         droppedAnnotationsCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6127,7 +6193,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDroppedAnnotationsCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         droppedAnnotationsCount_ = 0;
         onChanged();
         return this;
@@ -6166,6 +6232,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public Builder setDroppedMessageEventsCount(int value) {
 
         droppedMessageEventsCount_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -6182,7 +6249,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDroppedMessageEventsCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         droppedMessageEventsCount_ = 0;
         onChanged();
         return this;
@@ -6583,7 +6650,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TRACE_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object traceId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object traceId_ = "";
     /**
      *
      *
@@ -6632,7 +6701,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SPAN_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object spanId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object spanId_ = "";
     /**
      *
      *
@@ -6681,7 +6752,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TYPE_FIELD_NUMBER = 3;
-    private int type_;
+    private int type_ = 0;
     /**
      *
      *
@@ -6710,9 +6781,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.devtools.cloudtrace.v2.Span.Link.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.devtools.cloudtrace.v2.Span.Link.Type result =
-          com.google.devtools.cloudtrace.v2.Span.Link.Type.valueOf(type_);
+          com.google.devtools.cloudtrace.v2.Span.Link.Type.forNumber(type_);
       return result == null
           ? com.google.devtools.cloudtrace.v2.Span.Link.Type.UNRECOGNIZED
           : result;
@@ -6766,7 +6836,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.devtools.cloudtrace.v2.Span.AttributesOrBuilder getAttributesOrBuilder() {
-      return getAttributes();
+      return attributes_ == null
+          ? com.google.devtools.cloudtrace.v2.Span.Attributes.getDefaultInstance()
+          : attributes_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7003,16 +7075,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         traceId_ = "";
-
         spanId_ = "";
-
         type_ = 0;
-
-        if (attributesBuilder_ == null) {
-          attributes_ = null;
-        } else {
-          attributes_ = null;
+        attributes_ = null;
+        if (attributesBuilder_ != null) {
+          attributesBuilder_.dispose();
           attributesBuilder_ = null;
         }
         return this;
@@ -7042,16 +7111,28 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public com.google.devtools.cloudtrace.v2.Span.Link buildPartial() {
         com.google.devtools.cloudtrace.v2.Span.Link result =
             new com.google.devtools.cloudtrace.v2.Span.Link(this);
-        result.traceId_ = traceId_;
-        result.spanId_ = spanId_;
-        result.type_ = type_;
-        if (attributesBuilder_ == null) {
-          result.attributes_ = attributes_;
-        } else {
-          result.attributes_ = attributesBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.devtools.cloudtrace.v2.Span.Link result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.traceId_ = traceId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.spanId_ = spanId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.attributes_ =
+              attributesBuilder_ == null ? attributes_ : attributesBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -7103,10 +7184,12 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         if (other == com.google.devtools.cloudtrace.v2.Span.Link.getDefaultInstance()) return this;
         if (!other.getTraceId().isEmpty()) {
           traceId_ = other.traceId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getSpanId().isEmpty()) {
           spanId_ = other.spanId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.type_ != 0) {
@@ -7144,25 +7227,25 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   traceId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   spanId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 34:
                 {
                   input.readMessage(getAttributesFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               default:
@@ -7181,6 +7264,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object traceId_ = "";
       /**
@@ -7243,8 +7328,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         traceId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -7260,8 +7345,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTraceId() {
-
         traceId_ = getDefaultInstance().getTraceId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -7282,8 +7367,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         traceId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -7349,8 +7434,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         spanId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -7366,8 +7451,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSpanId() {
-
         spanId_ = getDefaultInstance().getSpanId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -7388,8 +7473,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         spanId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -7423,8 +7508,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -7441,9 +7526,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.devtools.cloudtrace.v2.Span.Link.Type getType() {
-        @SuppressWarnings("deprecation")
         com.google.devtools.cloudtrace.v2.Span.Link.Type result =
-            com.google.devtools.cloudtrace.v2.Span.Link.Type.valueOf(type_);
+            com.google.devtools.cloudtrace.v2.Span.Link.Type.forNumber(type_);
         return result == null
             ? com.google.devtools.cloudtrace.v2.Span.Link.Type.UNRECOGNIZED
             : result;
@@ -7464,7 +7548,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -7481,7 +7565,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         type_ = 0;
         onChanged();
         return this;
@@ -7506,7 +7590,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the attributes field is set.
        */
       public boolean hasAttributes() {
-        return attributesBuilder_ != null || attributes_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -7545,11 +7629,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           attributes_ = value;
-          onChanged();
         } else {
           attributesBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -7566,11 +7650,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           com.google.devtools.cloudtrace.v2.Span.Attributes.Builder builderForValue) {
         if (attributesBuilder_ == null) {
           attributes_ = builderForValue.build();
-          onChanged();
         } else {
           attributesBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -7585,19 +7669,19 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeAttributes(com.google.devtools.cloudtrace.v2.Span.Attributes value) {
         if (attributesBuilder_ == null) {
-          if (attributes_ != null) {
-            attributes_ =
-                com.google.devtools.cloudtrace.v2.Span.Attributes.newBuilder(attributes_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && attributes_ != null
+              && attributes_
+                  != com.google.devtools.cloudtrace.v2.Span.Attributes.getDefaultInstance()) {
+            getAttributesBuilder().mergeFrom(value);
           } else {
             attributes_ = value;
           }
-          onChanged();
         } else {
           attributesBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -7611,14 +7695,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 4;</code>
        */
       public Builder clearAttributes() {
-        if (attributesBuilder_ == null) {
-          attributes_ = null;
-          onChanged();
-        } else {
-          attributes_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        attributes_ = null;
+        if (attributesBuilder_ != null) {
+          attributesBuilder_.dispose();
           attributesBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -7632,7 +7715,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 4;</code>
        */
       public com.google.devtools.cloudtrace.v2.Span.Attributes.Builder getAttributesBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getAttributesFieldBuilder().getBuilder();
       }
@@ -7868,6 +7951,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int LINK_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.devtools.cloudtrace.v2.Span.Link> link_;
     /**
      *
@@ -7937,7 +8022,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DROPPED_LINKS_COUNT_FIELD_NUMBER = 2;
-    private int droppedLinksCount_;
+    private int droppedLinksCount_ = 0;
     /**
      *
      *
@@ -8166,6 +8251,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (linkBuilder_ == null) {
           link_ = java.util.Collections.emptyList();
         } else {
@@ -8174,7 +8260,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         droppedLinksCount_ = 0;
-
         return this;
       }
 
@@ -8202,7 +8287,15 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public com.google.devtools.cloudtrace.v2.Span.Links buildPartial() {
         com.google.devtools.cloudtrace.v2.Span.Links result =
             new com.google.devtools.cloudtrace.v2.Span.Links(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.google.devtools.cloudtrace.v2.Span.Links result) {
         if (linkBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             link_ = java.util.Collections.unmodifiableList(link_);
@@ -8212,9 +8305,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.link_ = linkBuilder_.build();
         }
-        result.droppedLinksCount_ = droppedLinksCount_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.devtools.cloudtrace.v2.Span.Links result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.droppedLinksCount_ = droppedLinksCount_;
+        }
       }
 
       @java.lang.Override
@@ -8336,7 +8433,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
               case 16:
                 {
                   droppedLinksCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -8740,6 +8837,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public Builder setDroppedLinksCount(int value) {
 
         droppedLinksCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -8756,7 +8854,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDroppedLinksCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         droppedLinksCount_ = 0;
         onChanged();
         return this;
@@ -8827,7 +8925,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -8886,7 +8986,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPAN_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object spanId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object spanId_ = "";
   /**
    *
    *
@@ -8935,7 +9037,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARENT_SPAN_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object parentSpanId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parentSpanId_ = "";
   /**
    *
    *
@@ -9054,7 +9158,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getDisplayNameOrBuilder() {
-    return getDisplayName();
+    return displayName_ == null
+        ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
+        : displayName_;
   }
 
   public static final int START_TIME_FIELD_NUMBER = 5;
@@ -9109,7 +9215,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 6;
@@ -9161,7 +9267,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int ATTRIBUTES_FIELD_NUMBER = 7;
@@ -9212,7 +9318,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.cloudtrace.v2.Span.AttributesOrBuilder getAttributesOrBuilder() {
-    return getAttributes();
+    return attributes_ == null
+        ? com.google.devtools.cloudtrace.v2.Span.Attributes.getDefaultInstance()
+        : attributes_;
   }
 
   public static final int STACK_TRACE_FIELD_NUMBER = 8;
@@ -9260,7 +9368,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.cloudtrace.v2.StackTraceOrBuilder getStackTraceOrBuilder() {
-    return getStackTrace();
+    return stackTrace_ == null
+        ? com.google.devtools.cloudtrace.v2.StackTrace.getDefaultInstance()
+        : stackTrace_;
   }
 
   public static final int TIME_EVENTS_FIELD_NUMBER = 9;
@@ -9311,7 +9421,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.cloudtrace.v2.Span.TimeEventsOrBuilder getTimeEventsOrBuilder() {
-    return getTimeEvents();
+    return timeEvents_ == null
+        ? com.google.devtools.cloudtrace.v2.Span.TimeEvents.getDefaultInstance()
+        : timeEvents_;
   }
 
   public static final int LINKS_FIELD_NUMBER = 10;
@@ -9359,7 +9471,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.cloudtrace.v2.Span.LinksOrBuilder getLinksOrBuilder() {
-    return getLinks();
+    return links_ == null
+        ? com.google.devtools.cloudtrace.v2.Span.Links.getDefaultInstance()
+        : links_;
   }
 
   public static final int STATUS_FIELD_NUMBER = 11;
@@ -9405,7 +9519,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
-    return getStatus();
+    return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
 
   public static final int SAME_PROCESS_AS_PARENT_SPAN_FIELD_NUMBER = 12;
@@ -9468,7 +9582,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getSameProcessAsParentSpanOrBuilder() {
-    return getSameProcessAsParentSpan();
+    return sameProcessAsParentSpan_ == null
+        ? com.google.protobuf.BoolValue.getDefaultInstance()
+        : sameProcessAsParentSpan_;
   }
 
   public static final int CHILD_SPAN_COUNT_FIELD_NUMBER = 13;
@@ -9525,11 +9641,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.Int32ValueOrBuilder getChildSpanCountOrBuilder() {
-    return getChildSpanCount();
+    return childSpanCount_ == null
+        ? com.google.protobuf.Int32Value.getDefaultInstance()
+        : childSpanCount_;
   }
 
   public static final int SPAN_KIND_FIELD_NUMBER = 14;
-  private int spanKind_;
+  private int spanKind_ = 0;
   /**
    *
    *
@@ -9566,9 +9684,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.cloudtrace.v2.Span.SpanKind getSpanKind() {
-    @SuppressWarnings("deprecation")
     com.google.devtools.cloudtrace.v2.Span.SpanKind result =
-        com.google.devtools.cloudtrace.v2.Span.SpanKind.valueOf(spanKind_);
+        com.google.devtools.cloudtrace.v2.Span.SpanKind.forNumber(spanKind_);
     return result == null ? com.google.devtools.cloudtrace.v2.Span.SpanKind.UNRECOGNIZED : result;
   }
 
@@ -9944,74 +10061,61 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       spanId_ = "";
-
       parentSpanId_ = "";
-
-      if (displayNameBuilder_ == null) {
-        displayName_ = null;
-      } else {
-        displayName_ = null;
+      displayName_ = null;
+      if (displayNameBuilder_ != null) {
+        displayNameBuilder_.dispose();
         displayNameBuilder_ = null;
       }
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-      if (attributesBuilder_ == null) {
-        attributes_ = null;
-      } else {
-        attributes_ = null;
+      attributes_ = null;
+      if (attributesBuilder_ != null) {
+        attributesBuilder_.dispose();
         attributesBuilder_ = null;
       }
-      if (stackTraceBuilder_ == null) {
-        stackTrace_ = null;
-      } else {
-        stackTrace_ = null;
+      stackTrace_ = null;
+      if (stackTraceBuilder_ != null) {
+        stackTraceBuilder_.dispose();
         stackTraceBuilder_ = null;
       }
-      if (timeEventsBuilder_ == null) {
-        timeEvents_ = null;
-      } else {
-        timeEvents_ = null;
+      timeEvents_ = null;
+      if (timeEventsBuilder_ != null) {
+        timeEventsBuilder_.dispose();
         timeEventsBuilder_ = null;
       }
-      if (linksBuilder_ == null) {
-        links_ = null;
-      } else {
-        links_ = null;
+      links_ = null;
+      if (linksBuilder_ != null) {
+        linksBuilder_.dispose();
         linksBuilder_ = null;
       }
-      if (statusBuilder_ == null) {
-        status_ = null;
-      } else {
-        status_ = null;
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
-      if (sameProcessAsParentSpanBuilder_ == null) {
-        sameProcessAsParentSpan_ = null;
-      } else {
-        sameProcessAsParentSpan_ = null;
+      sameProcessAsParentSpan_ = null;
+      if (sameProcessAsParentSpanBuilder_ != null) {
+        sameProcessAsParentSpanBuilder_.dispose();
         sameProcessAsParentSpanBuilder_ = null;
       }
-      if (childSpanCountBuilder_ == null) {
-        childSpanCount_ = null;
-      } else {
-        childSpanCount_ = null;
+      childSpanCount_ = null;
+      if (childSpanCountBuilder_ != null) {
+        childSpanCountBuilder_.dispose();
         childSpanCountBuilder_ = null;
       }
       spanKind_ = 0;
-
       return this;
     }
 
@@ -10039,62 +10143,62 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.cloudtrace.v2.Span buildPartial() {
       com.google.devtools.cloudtrace.v2.Span result =
           new com.google.devtools.cloudtrace.v2.Span(this);
-      result.name_ = name_;
-      result.spanId_ = spanId_;
-      result.parentSpanId_ = parentSpanId_;
-      if (displayNameBuilder_ == null) {
-        result.displayName_ = displayName_;
-      } else {
-        result.displayName_ = displayNameBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
-      }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      if (attributesBuilder_ == null) {
-        result.attributes_ = attributes_;
-      } else {
-        result.attributes_ = attributesBuilder_.build();
-      }
-      if (stackTraceBuilder_ == null) {
-        result.stackTrace_ = stackTrace_;
-      } else {
-        result.stackTrace_ = stackTraceBuilder_.build();
-      }
-      if (timeEventsBuilder_ == null) {
-        result.timeEvents_ = timeEvents_;
-      } else {
-        result.timeEvents_ = timeEventsBuilder_.build();
-      }
-      if (linksBuilder_ == null) {
-        result.links_ = links_;
-      } else {
-        result.links_ = linksBuilder_.build();
-      }
-      if (statusBuilder_ == null) {
-        result.status_ = status_;
-      } else {
-        result.status_ = statusBuilder_.build();
-      }
-      if (sameProcessAsParentSpanBuilder_ == null) {
-        result.sameProcessAsParentSpan_ = sameProcessAsParentSpan_;
-      } else {
-        result.sameProcessAsParentSpan_ = sameProcessAsParentSpanBuilder_.build();
-      }
-      if (childSpanCountBuilder_ == null) {
-        result.childSpanCount_ = childSpanCount_;
-      } else {
-        result.childSpanCount_ = childSpanCountBuilder_.build();
-      }
-      result.spanKind_ = spanKind_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.cloudtrace.v2.Span result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.spanId_ = spanId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.parentSpanId_ = parentSpanId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.displayName_ =
+            displayNameBuilder_ == null ? displayName_ : displayNameBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.attributes_ = attributesBuilder_ == null ? attributes_ : attributesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.stackTrace_ = stackTraceBuilder_ == null ? stackTrace_ : stackTraceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.timeEvents_ = timeEventsBuilder_ == null ? timeEvents_ : timeEventsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.links_ = linksBuilder_ == null ? links_ : linksBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.sameProcessAsParentSpan_ =
+            sameProcessAsParentSpanBuilder_ == null
+                ? sameProcessAsParentSpan_
+                : sameProcessAsParentSpanBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.childSpanCount_ =
+            childSpanCountBuilder_ == null ? childSpanCount_ : childSpanCountBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.spanKind_ = spanKind_;
+      }
     }
 
     @java.lang.Override
@@ -10144,14 +10248,17 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.devtools.cloudtrace.v2.Span.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSpanId().isEmpty()) {
         spanId_ = other.spanId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getParentSpanId().isEmpty()) {
         parentSpanId_ = other.parentSpanId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasDisplayName()) {
@@ -10216,86 +10323,86 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 spanId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 parentSpanId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getDisplayNameFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getAttributesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getStackTraceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getTimeEventsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getLinksFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(
                     getSameProcessAsParentSpanFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(getChildSpanCountFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 112:
               {
                 spanKind_ = input.readEnum();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 112
             default:
@@ -10314,6 +10421,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -10391,8 +10500,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -10413,8 +10522,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -10440,8 +10549,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -10507,8 +10616,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       spanId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -10524,8 +10633,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSpanId() {
-
       spanId_ = getDefaultInstance().getSpanId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -10546,8 +10655,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       spanId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -10616,8 +10725,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       parentSpanId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -10634,8 +10743,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearParentSpanId() {
-
       parentSpanId_ = getDefaultInstance().getParentSpanId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -10657,8 +10766,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parentSpanId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -10689,7 +10798,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the displayName field is set.
      */
     public boolean hasDisplayName() {
-      return displayNameBuilder_ != null || displayName_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -10742,11 +10851,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         displayName_ = value;
-        onChanged();
       } else {
         displayNameBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -10770,11 +10879,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         com.google.devtools.cloudtrace.v2.TruncatableString.Builder builderForValue) {
       if (displayNameBuilder_ == null) {
         displayName_ = builderForValue.build();
-        onChanged();
       } else {
         displayNameBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -10796,19 +10905,19 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDisplayName(com.google.devtools.cloudtrace.v2.TruncatableString value) {
       if (displayNameBuilder_ == null) {
-        if (displayName_ != null) {
-          displayName_ =
-              com.google.devtools.cloudtrace.v2.TruncatableString.newBuilder(displayName_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && displayName_ != null
+            && displayName_
+                != com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()) {
+          getDisplayNameBuilder().mergeFrom(value);
         } else {
           displayName_ = value;
         }
-        onChanged();
       } else {
         displayNameBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -10829,14 +10938,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDisplayName() {
-      if (displayNameBuilder_ == null) {
-        displayName_ = null;
-        onChanged();
-      } else {
-        displayName_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      displayName_ = null;
+      if (displayNameBuilder_ != null) {
+        displayNameBuilder_.dispose();
         displayNameBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -10857,7 +10965,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.devtools.cloudtrace.v2.TruncatableString.Builder getDisplayNameBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDisplayNameFieldBuilder().getBuilder();
     }
@@ -10942,7 +11050,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -10983,11 +11091,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -11005,11 +11113,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -11026,17 +11134,18 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -11052,14 +11161,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -11075,7 +11183,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -11148,7 +11256,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -11189,11 +11297,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -11211,11 +11319,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -11232,17 +11340,18 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -11258,14 +11367,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -11281,7 +11389,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -11352,7 +11460,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the attributes field is set.
      */
     public boolean hasAttributes() {
-      return attributesBuilder_ != null || attributes_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -11391,11 +11499,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         attributes_ = value;
-        onChanged();
       } else {
         attributesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -11412,11 +11520,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         com.google.devtools.cloudtrace.v2.Span.Attributes.Builder builderForValue) {
       if (attributesBuilder_ == null) {
         attributes_ = builderForValue.build();
-        onChanged();
       } else {
         attributesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -11431,19 +11539,19 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAttributes(com.google.devtools.cloudtrace.v2.Span.Attributes value) {
       if (attributesBuilder_ == null) {
-        if (attributes_ != null) {
-          attributes_ =
-              com.google.devtools.cloudtrace.v2.Span.Attributes.newBuilder(attributes_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && attributes_ != null
+            && attributes_
+                != com.google.devtools.cloudtrace.v2.Span.Attributes.getDefaultInstance()) {
+          getAttributesBuilder().mergeFrom(value);
         } else {
           attributes_ = value;
         }
-        onChanged();
       } else {
         attributesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -11457,14 +11565,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 7;</code>
      */
     public Builder clearAttributes() {
-      if (attributesBuilder_ == null) {
-        attributes_ = null;
-        onChanged();
-      } else {
-        attributes_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      attributes_ = null;
+      if (attributesBuilder_ != null) {
+        attributesBuilder_.dispose();
         attributesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -11478,7 +11585,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 7;</code>
      */
     public com.google.devtools.cloudtrace.v2.Span.Attributes.Builder getAttributesBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getAttributesFieldBuilder().getBuilder();
     }
@@ -11546,7 +11653,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stackTrace field is set.
      */
     public boolean hasStackTrace() {
-      return stackTraceBuilder_ != null || stackTrace_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -11583,11 +11690,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         stackTrace_ = value;
-        onChanged();
       } else {
         stackTraceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -11603,11 +11710,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         com.google.devtools.cloudtrace.v2.StackTrace.Builder builderForValue) {
       if (stackTraceBuilder_ == null) {
         stackTrace_ = builderForValue.build();
-        onChanged();
       } else {
         stackTraceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -11621,19 +11728,18 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStackTrace(com.google.devtools.cloudtrace.v2.StackTrace value) {
       if (stackTraceBuilder_ == null) {
-        if (stackTrace_ != null) {
-          stackTrace_ =
-              com.google.devtools.cloudtrace.v2.StackTrace.newBuilder(stackTrace_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && stackTrace_ != null
+            && stackTrace_ != com.google.devtools.cloudtrace.v2.StackTrace.getDefaultInstance()) {
+          getStackTraceBuilder().mergeFrom(value);
         } else {
           stackTrace_ = value;
         }
-        onChanged();
       } else {
         stackTraceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -11646,14 +11752,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudtrace.v2.StackTrace stack_trace = 8;</code>
      */
     public Builder clearStackTrace() {
-      if (stackTraceBuilder_ == null) {
-        stackTrace_ = null;
-        onChanged();
-      } else {
-        stackTrace_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      stackTrace_ = null;
+      if (stackTraceBuilder_ != null) {
+        stackTraceBuilder_.dispose();
         stackTraceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -11666,7 +11771,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudtrace.v2.StackTrace stack_trace = 8;</code>
      */
     public com.google.devtools.cloudtrace.v2.StackTrace.Builder getStackTraceBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getStackTraceFieldBuilder().getBuilder();
     }
@@ -11733,7 +11838,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeEvents field is set.
      */
     public boolean hasTimeEvents() {
-      return timeEventsBuilder_ != null || timeEvents_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -11772,11 +11877,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         timeEvents_ = value;
-        onChanged();
       } else {
         timeEventsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -11793,11 +11898,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         com.google.devtools.cloudtrace.v2.Span.TimeEvents.Builder builderForValue) {
       if (timeEventsBuilder_ == null) {
         timeEvents_ = builderForValue.build();
-        onChanged();
       } else {
         timeEventsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -11812,19 +11917,19 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTimeEvents(com.google.devtools.cloudtrace.v2.Span.TimeEvents value) {
       if (timeEventsBuilder_ == null) {
-        if (timeEvents_ != null) {
-          timeEvents_ =
-              com.google.devtools.cloudtrace.v2.Span.TimeEvents.newBuilder(timeEvents_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && timeEvents_ != null
+            && timeEvents_
+                != com.google.devtools.cloudtrace.v2.Span.TimeEvents.getDefaultInstance()) {
+          getTimeEventsBuilder().mergeFrom(value);
         } else {
           timeEvents_ = value;
         }
-        onChanged();
       } else {
         timeEventsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -11838,14 +11943,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudtrace.v2.Span.TimeEvents time_events = 9;</code>
      */
     public Builder clearTimeEvents() {
-      if (timeEventsBuilder_ == null) {
-        timeEvents_ = null;
-        onChanged();
-      } else {
-        timeEvents_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      timeEvents_ = null;
+      if (timeEventsBuilder_ != null) {
+        timeEventsBuilder_.dispose();
         timeEventsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -11859,7 +11963,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudtrace.v2.Span.TimeEvents time_events = 9;</code>
      */
     public com.google.devtools.cloudtrace.v2.Span.TimeEvents.Builder getTimeEventsBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getTimeEventsFieldBuilder().getBuilder();
     }
@@ -11927,7 +12031,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the links field is set.
      */
     public boolean hasLinks() {
-      return linksBuilder_ != null || links_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -11964,11 +12068,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         links_ = value;
-        onChanged();
       } else {
         linksBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -11983,11 +12087,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public Builder setLinks(com.google.devtools.cloudtrace.v2.Span.Links.Builder builderForValue) {
       if (linksBuilder_ == null) {
         links_ = builderForValue.build();
-        onChanged();
       } else {
         linksBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -12001,19 +12105,18 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLinks(com.google.devtools.cloudtrace.v2.Span.Links value) {
       if (linksBuilder_ == null) {
-        if (links_ != null) {
-          links_ =
-              com.google.devtools.cloudtrace.v2.Span.Links.newBuilder(links_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && links_ != null
+            && links_ != com.google.devtools.cloudtrace.v2.Span.Links.getDefaultInstance()) {
+          getLinksBuilder().mergeFrom(value);
         } else {
           links_ = value;
         }
-        onChanged();
       } else {
         linksBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -12026,14 +12129,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudtrace.v2.Span.Links links = 10;</code>
      */
     public Builder clearLinks() {
-      if (linksBuilder_ == null) {
-        links_ = null;
-        onChanged();
-      } else {
-        links_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      links_ = null;
+      if (linksBuilder_ != null) {
+        linksBuilder_.dispose();
         linksBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -12046,7 +12148,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudtrace.v2.Span.Links links = 10;</code>
      */
     public com.google.devtools.cloudtrace.v2.Span.Links.Builder getLinksBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getLinksFieldBuilder().getBuilder();
     }
@@ -12110,7 +12212,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return statusBuilder_ != null || status_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -12145,11 +12247,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         status_ = value;
-        onChanged();
       } else {
         statusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -12164,11 +12266,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
       if (statusBuilder_ == null) {
         status_ = builderForValue.build();
-        onChanged();
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -12182,16 +12284,18 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStatus(com.google.rpc.Status value) {
       if (statusBuilder_ == null) {
-        if (status_ != null) {
-          status_ = com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && status_ != null
+            && status_ != com.google.rpc.Status.getDefaultInstance()) {
+          getStatusBuilder().mergeFrom(value);
         } else {
           status_ = value;
         }
-        onChanged();
       } else {
         statusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -12204,14 +12308,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearStatus() {
-      if (statusBuilder_ == null) {
-        status_ = null;
-        onChanged();
-      } else {
-        status_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -12224,7 +12327,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.rpc.Status.Builder getStatusBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
@@ -12290,7 +12393,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sameProcessAsParentSpan field is set.
      */
     public boolean hasSameProcessAsParentSpan() {
-      return sameProcessAsParentSpanBuilder_ != null || sameProcessAsParentSpan_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -12337,11 +12440,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sameProcessAsParentSpan_ = value;
-        onChanged();
       } else {
         sameProcessAsParentSpanBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -12362,11 +12465,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.BoolValue.Builder builderForValue) {
       if (sameProcessAsParentSpanBuilder_ == null) {
         sameProcessAsParentSpan_ = builderForValue.build();
-        onChanged();
       } else {
         sameProcessAsParentSpanBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -12385,19 +12488,18 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSameProcessAsParentSpan(com.google.protobuf.BoolValue value) {
       if (sameProcessAsParentSpanBuilder_ == null) {
-        if (sameProcessAsParentSpan_ != null) {
-          sameProcessAsParentSpan_ =
-              com.google.protobuf.BoolValue.newBuilder(sameProcessAsParentSpan_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && sameProcessAsParentSpan_ != null
+            && sameProcessAsParentSpan_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getSameProcessAsParentSpanBuilder().mergeFrom(value);
         } else {
           sameProcessAsParentSpan_ = value;
         }
-        onChanged();
       } else {
         sameProcessAsParentSpanBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -12415,14 +12517,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSameProcessAsParentSpan() {
-      if (sameProcessAsParentSpanBuilder_ == null) {
-        sameProcessAsParentSpan_ = null;
-        onChanged();
-      } else {
-        sameProcessAsParentSpan_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      sameProcessAsParentSpan_ = null;
+      if (sameProcessAsParentSpanBuilder_ != null) {
+        sameProcessAsParentSpanBuilder_.dispose();
         sameProcessAsParentSpanBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -12440,7 +12541,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.BoolValue.Builder getSameProcessAsParentSpanBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getSameProcessAsParentSpanFieldBuilder().getBuilder();
     }
@@ -12519,7 +12620,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the childSpanCount field is set.
      */
     public boolean hasChildSpanCount() {
-      return childSpanCountBuilder_ != null || childSpanCount_ != null;
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -12562,11 +12663,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         childSpanCount_ = value;
-        onChanged();
       } else {
         childSpanCountBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -12584,11 +12685,11 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public Builder setChildSpanCount(com.google.protobuf.Int32Value.Builder builderForValue) {
       if (childSpanCountBuilder_ == null) {
         childSpanCount_ = builderForValue.build();
-        onChanged();
       } else {
         childSpanCountBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -12605,19 +12706,18 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeChildSpanCount(com.google.protobuf.Int32Value value) {
       if (childSpanCountBuilder_ == null) {
-        if (childSpanCount_ != null) {
-          childSpanCount_ =
-              com.google.protobuf.Int32Value.newBuilder(childSpanCount_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00001000) != 0)
+            && childSpanCount_ != null
+            && childSpanCount_ != com.google.protobuf.Int32Value.getDefaultInstance()) {
+          getChildSpanCountBuilder().mergeFrom(value);
         } else {
           childSpanCount_ = value;
         }
-        onChanged();
       } else {
         childSpanCountBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -12633,14 +12733,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearChildSpanCount() {
-      if (childSpanCountBuilder_ == null) {
-        childSpanCount_ = null;
-        onChanged();
-      } else {
-        childSpanCount_ = null;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      childSpanCount_ = null;
+      if (childSpanCountBuilder_ != null) {
+        childSpanCountBuilder_.dispose();
         childSpanCountBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -12656,7 +12755,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Int32Value.Builder getChildSpanCountBuilder() {
-
+      bitField0_ |= 0x00001000;
       onChanged();
       return getChildSpanCountFieldBuilder().getBuilder();
     }
@@ -12747,8 +12846,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSpanKindValue(int value) {
-
       spanKind_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -12769,9 +12868,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.devtools.cloudtrace.v2.Span.SpanKind getSpanKind() {
-      @SuppressWarnings("deprecation")
       com.google.devtools.cloudtrace.v2.Span.SpanKind result =
-          com.google.devtools.cloudtrace.v2.Span.SpanKind.valueOf(spanKind_);
+          com.google.devtools.cloudtrace.v2.Span.SpanKind.forNumber(spanKind_);
       return result == null ? com.google.devtools.cloudtrace.v2.Span.SpanKind.UNRECOGNIZED : result;
     }
     /**
@@ -12794,7 +12892,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00002000;
       spanKind_ = value.getNumber();
       onChanged();
       return this;
@@ -12815,7 +12913,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSpanKind() {
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       spanKind_ = 0;
       onChanged();
       return this;

@@ -189,7 +189,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
     public static final int IS_CA_FIELD_NUMBER = 1;
-    private boolean isCa_;
+    private boolean isCa_ = false;
     /**
      *
      *
@@ -224,7 +224,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MAX_ISSUER_PATH_LENGTH_FIELD_NUMBER = 2;
-    private int maxIssuerPathLength_;
+    private int maxIssuerPathLength_ = 0;
     /**
      *
      *
@@ -489,10 +489,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isCa_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         maxIssuerPathLength_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -521,6 +520,15 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.security.privateca.v1.X509Parameters.CaOptions buildPartial() {
         com.google.cloud.security.privateca.v1.X509Parameters.CaOptions result =
             new com.google.cloud.security.privateca.v1.X509Parameters.CaOptions(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.security.privateca.v1.X509Parameters.CaOptions result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -531,9 +539,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
           result.maxIssuerPathLength_ = maxIssuerPathLength_;
           to_bitField0_ |= 0x00000002;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -696,8 +702,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setIsCa(boolean value) {
-        bitField0_ |= 0x00000001;
+
         isCa_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -782,8 +789,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setMaxIssuerPathLength(int value) {
-        bitField0_ |= 0x00000002;
+
         maxIssuerPathLength_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -929,7 +937,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.security.privateca.v1.KeyUsageOrBuilder getKeyUsageOrBuilder() {
-    return getKeyUsage();
+    return keyUsage_ == null
+        ? com.google.cloud.security.privateca.v1.KeyUsage.getDefaultInstance()
+        : keyUsage_;
   }
 
   public static final int CA_OPTIONS_FIELD_NUMBER = 2;
@@ -987,10 +997,14 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.security.privateca.v1.X509Parameters.CaOptionsOrBuilder
       getCaOptionsOrBuilder() {
-    return getCaOptions();
+    return caOptions_ == null
+        ? com.google.cloud.security.privateca.v1.X509Parameters.CaOptions.getDefaultInstance()
+        : caOptions_;
   }
 
   public static final int POLICY_IDS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.security.privateca.v1.ObjectId> policyIds_;
   /**
    *
@@ -1075,6 +1089,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AIA_OCSP_SERVERS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList aiaOcspServers_;
   /**
    *
@@ -1144,6 +1160,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADDITIONAL_EXTENSIONS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.security.privateca.v1.X509Extension>
       additionalExtensions_;
   /**
@@ -1483,16 +1501,15 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (keyUsageBuilder_ == null) {
-        keyUsage_ = null;
-      } else {
-        keyUsage_ = null;
+      bitField0_ = 0;
+      keyUsage_ = null;
+      if (keyUsageBuilder_ != null) {
+        keyUsageBuilder_.dispose();
         keyUsageBuilder_ = null;
       }
-      if (caOptionsBuilder_ == null) {
-        caOptions_ = null;
-      } else {
-        caOptions_ = null;
+      caOptions_ = null;
+      if (caOptionsBuilder_ != null) {
+        caOptionsBuilder_.dispose();
         caOptionsBuilder_ = null;
       }
       if (policyIdsBuilder_ == null) {
@@ -1501,16 +1518,16 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         policyIds_ = null;
         policyIdsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       aiaOcspServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (additionalExtensionsBuilder_ == null) {
         additionalExtensions_ = java.util.Collections.emptyList();
       } else {
         additionalExtensions_ = null;
         additionalExtensionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -1538,42 +1555,49 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.security.privateca.v1.X509Parameters buildPartial() {
       com.google.cloud.security.privateca.v1.X509Parameters result =
           new com.google.cloud.security.privateca.v1.X509Parameters(this);
-      int from_bitField0_ = bitField0_;
-      if (keyUsageBuilder_ == null) {
-        result.keyUsage_ = keyUsage_;
-      } else {
-        result.keyUsage_ = keyUsageBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (caOptionsBuilder_ == null) {
-        result.caOptions_ = caOptions_;
-      } else {
-        result.caOptions_ = caOptionsBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.security.privateca.v1.X509Parameters result) {
       if (policyIdsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           policyIds_ = java.util.Collections.unmodifiableList(policyIds_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.policyIds_ = policyIds_;
       } else {
         result.policyIds_ = policyIdsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         aiaOcspServers_ = aiaOcspServers_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.aiaOcspServers_ = aiaOcspServers_;
       if (additionalExtensionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           additionalExtensions_ = java.util.Collections.unmodifiableList(additionalExtensions_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.additionalExtensions_ = additionalExtensions_;
       } else {
         result.additionalExtensions_ = additionalExtensionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.security.privateca.v1.X509Parameters result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.keyUsage_ = keyUsageBuilder_ == null ? keyUsage_ : keyUsageBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.caOptions_ = caOptionsBuilder_ == null ? caOptions_ : caOptionsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1632,7 +1656,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         if (!other.policyIds_.isEmpty()) {
           if (policyIds_.isEmpty()) {
             policyIds_ = other.policyIds_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensurePolicyIdsIsMutable();
             policyIds_.addAll(other.policyIds_);
@@ -1645,7 +1669,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
             policyIdsBuilder_.dispose();
             policyIdsBuilder_ = null;
             policyIds_ = other.policyIds_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             policyIdsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPolicyIdsFieldBuilder()
@@ -1658,7 +1682,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       if (!other.aiaOcspServers_.isEmpty()) {
         if (aiaOcspServers_.isEmpty()) {
           aiaOcspServers_ = other.aiaOcspServers_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureAiaOcspServersIsMutable();
           aiaOcspServers_.addAll(other.aiaOcspServers_);
@@ -1669,7 +1693,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         if (!other.additionalExtensions_.isEmpty()) {
           if (additionalExtensions_.isEmpty()) {
             additionalExtensions_ = other.additionalExtensions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureAdditionalExtensionsIsMutable();
             additionalExtensions_.addAll(other.additionalExtensions_);
@@ -1682,7 +1706,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
             additionalExtensionsBuilder_.dispose();
             additionalExtensionsBuilder_ = null;
             additionalExtensions_ = other.additionalExtensions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
             additionalExtensionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAdditionalExtensionsFieldBuilder()
@@ -1721,13 +1745,13 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getKeyUsageFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCaOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1804,7 +1828,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the keyUsage field is set.
      */
     public boolean hasKeyUsage() {
-      return keyUsageBuilder_ != null || keyUsage_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1845,11 +1869,11 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         keyUsage_ = value;
-        onChanged();
       } else {
         keyUsageBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1867,11 +1891,11 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.security.privateca.v1.KeyUsage.Builder builderForValue) {
       if (keyUsageBuilder_ == null) {
         keyUsage_ = builderForValue.build();
-        onChanged();
       } else {
         keyUsageBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1887,19 +1911,18 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeKeyUsage(com.google.cloud.security.privateca.v1.KeyUsage value) {
       if (keyUsageBuilder_ == null) {
-        if (keyUsage_ != null) {
-          keyUsage_ =
-              com.google.cloud.security.privateca.v1.KeyUsage.newBuilder(keyUsage_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && keyUsage_ != null
+            && keyUsage_ != com.google.cloud.security.privateca.v1.KeyUsage.getDefaultInstance()) {
+          getKeyUsageBuilder().mergeFrom(value);
         } else {
           keyUsage_ = value;
         }
-        onChanged();
       } else {
         keyUsageBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1914,14 +1937,13 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearKeyUsage() {
-      if (keyUsageBuilder_ == null) {
-        keyUsage_ = null;
-        onChanged();
-      } else {
-        keyUsage_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      keyUsage_ = null;
+      if (keyUsageBuilder_ != null) {
+        keyUsageBuilder_.dispose();
         keyUsageBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1936,7 +1958,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.security.privateca.v1.KeyUsage.Builder getKeyUsageBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getKeyUsageFieldBuilder().getBuilder();
     }
@@ -2009,7 +2031,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the caOptions field is set.
      */
     public boolean hasCaOptions() {
-      return caOptionsBuilder_ != null || caOptions_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2053,11 +2075,11 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         caOptions_ = value;
-        onChanged();
       } else {
         caOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2076,11 +2098,11 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.security.privateca.v1.X509Parameters.CaOptions.Builder builderForValue) {
       if (caOptionsBuilder_ == null) {
         caOptions_ = builderForValue.build();
-        onChanged();
       } else {
         caOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2098,19 +2120,20 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCaOptions(
         com.google.cloud.security.privateca.v1.X509Parameters.CaOptions value) {
       if (caOptionsBuilder_ == null) {
-        if (caOptions_ != null) {
-          caOptions_ =
-              com.google.cloud.security.privateca.v1.X509Parameters.CaOptions.newBuilder(caOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && caOptions_ != null
+            && caOptions_
+                != com.google.cloud.security.privateca.v1.X509Parameters.CaOptions
+                    .getDefaultInstance()) {
+          getCaOptionsBuilder().mergeFrom(value);
         } else {
           caOptions_ = value;
         }
-        onChanged();
       } else {
         caOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2126,14 +2149,13 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCaOptions() {
-      if (caOptionsBuilder_ == null) {
-        caOptions_ = null;
-        onChanged();
-      } else {
-        caOptions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      caOptions_ = null;
+      if (caOptionsBuilder_ != null) {
+        caOptionsBuilder_.dispose();
         caOptionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2150,7 +2172,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.security.privateca.v1.X509Parameters.CaOptions.Builder
         getCaOptionsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCaOptionsFieldBuilder().getBuilder();
     }
@@ -2209,10 +2231,10 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePolicyIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         policyIds_ =
             new java.util.ArrayList<com.google.cloud.security.privateca.v1.ObjectId>(policyIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2461,7 +2483,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPolicyIds() {
       if (policyIdsBuilder_ == null) {
         policyIds_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         policyIdsBuilder_.clear();
@@ -2605,7 +2627,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.security.privateca.v1.ObjectId,
                 com.google.cloud.security.privateca.v1.ObjectId.Builder,
                 com.google.cloud.security.privateca.v1.ObjectIdOrBuilder>(
-                policyIds_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                policyIds_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         policyIds_ = null;
       }
       return policyIdsBuilder_;
@@ -2615,9 +2637,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAiaOcspServersIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         aiaOcspServers_ = new com.google.protobuf.LazyStringArrayList(aiaOcspServers_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -2768,7 +2790,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAiaOcspServers() {
       aiaOcspServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2801,11 +2823,11 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         additionalExtensions_ = java.util.Collections.emptyList();
 
     private void ensureAdditionalExtensionsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         additionalExtensions_ =
             new java.util.ArrayList<com.google.cloud.security.privateca.v1.X509Extension>(
                 additionalExtensions_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -3047,7 +3069,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAdditionalExtensions() {
       if (additionalExtensionsBuilder_ == null) {
         additionalExtensions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         additionalExtensionsBuilder_.clear();
@@ -3189,7 +3211,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.security.privateca.v1.X509Extension.Builder,
                 com.google.cloud.security.privateca.v1.X509ExtensionOrBuilder>(
                 additionalExtensions_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         additionalExtensions_ = null;

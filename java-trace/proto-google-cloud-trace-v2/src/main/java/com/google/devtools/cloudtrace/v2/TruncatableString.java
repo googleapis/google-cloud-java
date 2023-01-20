@@ -68,7 +68,9 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VALUE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object value_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object value_ = "";
   /**
    *
    *
@@ -127,7 +129,7 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TRUNCATED_BYTE_COUNT_FIELD_NUMBER = 2;
-  private int truncatedByteCount_;
+  private int truncatedByteCount_ = 0;
   /**
    *
    *
@@ -351,10 +353,9 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       value_ = "";
-
       truncatedByteCount_ = 0;
-
       return this;
     }
 
@@ -382,10 +383,21 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
     public com.google.devtools.cloudtrace.v2.TruncatableString buildPartial() {
       com.google.devtools.cloudtrace.v2.TruncatableString result =
           new com.google.devtools.cloudtrace.v2.TruncatableString(this);
-      result.value_ = value_;
-      result.truncatedByteCount_ = truncatedByteCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.cloudtrace.v2.TruncatableString result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.value_ = value_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.truncatedByteCount_ = truncatedByteCount_;
+      }
     }
 
     @java.lang.Override
@@ -436,6 +448,7 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getValue().isEmpty()) {
         value_ = other.value_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getTruncatedByteCount() != 0) {
@@ -470,13 +483,13 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 value_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 truncatedByteCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -495,6 +508,8 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object value_ = "";
     /**
@@ -572,8 +587,8 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       value_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -594,8 +609,8 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-
       value_ = getDefaultInstance().getValue();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -621,8 +636,8 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       value_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -660,6 +675,7 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
     public Builder setTruncatedByteCount(int value) {
 
       truncatedByteCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -676,7 +692,7 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearTruncatedByteCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       truncatedByteCount_ = 0;
       onChanged();
       return this;

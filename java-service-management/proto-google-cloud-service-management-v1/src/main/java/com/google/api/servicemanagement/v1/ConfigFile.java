@@ -301,7 +301,9 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILE_PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object filePath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filePath_ = "";
   /**
    *
    *
@@ -350,7 +352,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILE_CONTENTS_FIELD_NUMBER = 3;
-  private com.google.protobuf.ByteString fileContents_;
+  private com.google.protobuf.ByteString fileContents_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -368,7 +370,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILE_TYPE_FIELD_NUMBER = 4;
-  private int fileType_;
+  private int fileType_ = 0;
   /**
    *
    *
@@ -397,9 +399,8 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.servicemanagement.v1.ConfigFile.FileType getFileType() {
-    @SuppressWarnings("deprecation")
     com.google.api.servicemanagement.v1.ConfigFile.FileType result =
-        com.google.api.servicemanagement.v1.ConfigFile.FileType.valueOf(fileType_);
+        com.google.api.servicemanagement.v1.ConfigFile.FileType.forNumber(fileType_);
     return result == null
         ? com.google.api.servicemanagement.v1.ConfigFile.FileType.UNRECOGNIZED
         : result;
@@ -624,12 +625,10 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       filePath_ = "";
-
       fileContents_ = com.google.protobuf.ByteString.EMPTY;
-
       fileType_ = 0;
-
       return this;
     }
 
@@ -657,11 +656,24 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.servicemanagement.v1.ConfigFile buildPartial() {
       com.google.api.servicemanagement.v1.ConfigFile result =
           new com.google.api.servicemanagement.v1.ConfigFile(this);
-      result.filePath_ = filePath_;
-      result.fileContents_ = fileContents_;
-      result.fileType_ = fileType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.api.servicemanagement.v1.ConfigFile result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.filePath_ = filePath_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fileContents_ = fileContents_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.fileType_ = fileType_;
+      }
     }
 
     @java.lang.Override
@@ -711,6 +723,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.api.servicemanagement.v1.ConfigFile.getDefaultInstance()) return this;
       if (!other.getFilePath().isEmpty()) {
         filePath_ = other.filePath_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getFileContents() != com.google.protobuf.ByteString.EMPTY) {
@@ -748,19 +761,19 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 filePath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 fileContents_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 32:
               {
                 fileType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             default:
@@ -779,6 +792,8 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object filePath_ = "";
     /**
@@ -841,8 +856,8 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       filePath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -858,8 +873,8 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFilePath() {
-
       filePath_ = getDefaultInstance().getFilePath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -880,8 +895,8 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filePath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -918,8 +933,8 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       fileContents_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -935,7 +950,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFileContents() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       fileContents_ = getDefaultInstance().getFileContents();
       onChanged();
       return this;
@@ -970,8 +985,8 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFileTypeValue(int value) {
-
       fileType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -988,9 +1003,8 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.api.servicemanagement.v1.ConfigFile.FileType getFileType() {
-      @SuppressWarnings("deprecation")
       com.google.api.servicemanagement.v1.ConfigFile.FileType result =
-          com.google.api.servicemanagement.v1.ConfigFile.FileType.valueOf(fileType_);
+          com.google.api.servicemanagement.v1.ConfigFile.FileType.forNumber(fileType_);
       return result == null
           ? com.google.api.servicemanagement.v1.ConfigFile.FileType.UNRECOGNIZED
           : result;
@@ -1011,7 +1025,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       fileType_ = value.getNumber();
       onChanged();
       return this;
@@ -1028,7 +1042,7 @@ public final class ConfigFile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFileType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       fileType_ = 0;
       onChanged();
       return this;

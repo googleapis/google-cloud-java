@@ -69,7 +69,9 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MARK_NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object markName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object markName_ = "";
   /**
    *
    *
@@ -118,7 +120,7 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIME_SECONDS_FIELD_NUMBER = 3;
-  private double timeSeconds_;
+  private double timeSeconds_ = 0D;
   /**
    *
    *
@@ -346,10 +348,9 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       markName_ = "";
-
       timeSeconds_ = 0D;
-
       return this;
     }
 
@@ -377,10 +378,21 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.texttospeech.v1beta1.Timepoint buildPartial() {
       com.google.cloud.texttospeech.v1beta1.Timepoint result =
           new com.google.cloud.texttospeech.v1beta1.Timepoint(this);
-      result.markName_ = markName_;
-      result.timeSeconds_ = timeSeconds_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.texttospeech.v1beta1.Timepoint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.markName_ = markName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.timeSeconds_ = timeSeconds_;
+      }
     }
 
     @java.lang.Override
@@ -431,6 +443,7 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getMarkName().isEmpty()) {
         markName_ = other.markName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getTimeSeconds() != 0D) {
@@ -465,13 +478,13 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
             case 25:
               {
                 timeSeconds_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 25
             case 34:
               {
                 markName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 34
             default:
@@ -490,6 +503,8 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object markName_ = "";
     /**
@@ -552,8 +567,8 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       markName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -569,8 +584,8 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMarkName() {
-
       markName_ = getDefaultInstance().getMarkName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -591,8 +606,8 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       markName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -628,6 +643,7 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimeSeconds(double value) {
 
       timeSeconds_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -643,7 +659,7 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTimeSeconds() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       timeSeconds_ = 0D;
       onChanged();
       return this;

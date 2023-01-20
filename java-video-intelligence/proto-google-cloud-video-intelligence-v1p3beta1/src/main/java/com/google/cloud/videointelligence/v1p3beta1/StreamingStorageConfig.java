@@ -68,7 +68,7 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int ENABLE_STORAGE_ANNOTATION_RESULT_FIELD_NUMBER = 1;
-  private boolean enableStorageAnnotationResult_;
+  private boolean enableStorageAnnotationResult_ = false;
   /**
    *
    *
@@ -86,7 +86,9 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int ANNOTATION_RESULT_STORAGE_DIRECTORY_FIELD_NUMBER = 3;
-  private volatile java.lang.Object annotationResultStorageDirectory_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object annotationResultStorageDirectory_ = "";
   /**
    *
    *
@@ -368,10 +370,9 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableStorageAnnotationResult_ = false;
-
       annotationResultStorageDirectory_ = "";
-
       return this;
     }
 
@@ -401,10 +402,22 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
     public com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig buildPartial() {
       com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig result =
           new com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig(this);
-      result.enableStorageAnnotationResult_ = enableStorageAnnotationResult_;
-      result.annotationResultStorageDirectory_ = annotationResultStorageDirectory_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableStorageAnnotationResult_ = enableStorageAnnotationResult_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.annotationResultStorageDirectory_ = annotationResultStorageDirectory_;
+      }
     }
 
     @java.lang.Override
@@ -461,6 +474,7 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
       }
       if (!other.getAnnotationResultStorageDirectory().isEmpty()) {
         annotationResultStorageDirectory_ = other.annotationResultStorageDirectory_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -492,13 +506,13 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
             case 8:
               {
                 enableStorageAnnotationResult_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 26:
               {
                 annotationResultStorageDirectory_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -517,6 +531,8 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enableStorageAnnotationResult_;
     /**
@@ -549,6 +565,7 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
     public Builder setEnableStorageAnnotationResult(boolean value) {
 
       enableStorageAnnotationResult_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -564,7 +581,7 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearEnableStorageAnnotationResult() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableStorageAnnotationResult_ = false;
       onChanged();
       return this;
@@ -658,8 +675,8 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       annotationResultStorageDirectory_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -684,9 +701,9 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearAnnotationResultStorageDirectory() {
-
       annotationResultStorageDirectory_ =
           getDefaultInstance().getAnnotationResultStorageDirectory();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -716,8 +733,8 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       annotationResultStorageDirectory_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

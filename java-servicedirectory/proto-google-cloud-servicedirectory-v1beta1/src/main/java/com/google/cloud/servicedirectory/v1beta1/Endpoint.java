@@ -83,7 +83,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -134,7 +136,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADDRESS_FIELD_NUMBER = 2;
-  private volatile java.lang.Object address_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object address_ = "";
   /**
    *
    *
@@ -195,7 +199,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PORT_FIELD_NUMBER = 3;
-  private int port_;
+  private int port_ = 0;
   /**
    *
    *
@@ -225,6 +229,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
@@ -342,8 +347,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -392,7 +399,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETWORK_FIELD_NUMBER = 5;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -500,7 +509,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 7;
@@ -549,7 +558,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -843,25 +852,20 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       address_ = "";
-
       port_ = 0;
-
       internalGetMutableMetadata().clear();
       network_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       return this;
@@ -891,25 +895,37 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.servicedirectory.v1beta1.Endpoint buildPartial() {
       com.google.cloud.servicedirectory.v1beta1.Endpoint result =
           new com.google.cloud.servicedirectory.v1beta1.Endpoint(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.address_ = address_;
-      result.port_ = port_;
-      result.metadata_ = internalGetMetadata();
-      result.metadata_.makeImmutable();
-      result.network_ = network_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.servicedirectory.v1beta1.Endpoint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.address_ = address_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.port_ = port_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -960,18 +976,22 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAddress().isEmpty()) {
         address_ = other.address_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getPort() != 0) {
         setPort(other.getPort());
       }
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00000008;
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1009,19 +1029,19 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 address_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 port_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -1033,24 +1053,25 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -1136,8 +1157,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1154,8 +1175,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1177,8 +1198,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1262,8 +1283,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       address_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1285,8 +1306,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAddress() {
-
       address_ = getDefaultInstance().getAddress();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1313,8 +1334,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       address_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1350,6 +1371,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder setPort(int value) {
 
       port_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1365,7 +1387,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       port_ = 0;
       onChanged();
       return this;
@@ -1382,8 +1404,6 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMetadata() {
-      onChanged();
-      ;
       if (metadata_ == null) {
         metadata_ =
             com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -1391,6 +1411,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return metadata_;
     }
 
@@ -1505,8 +1527,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1556,6 +1580,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -1599,6 +1624,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -1638,8 +1664,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1674,6 +1700,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -1759,8 +1786,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1783,8 +1810,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1812,8 +1839,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1838,7 +1865,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1879,11 +1906,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1900,11 +1927,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1920,17 +1947,18 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1945,14 +1973,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1967,7 +1994,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2039,7 +2066,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2080,11 +2107,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2101,11 +2128,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2121,17 +2148,18 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2146,14 +2174,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2168,7 +2195,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }

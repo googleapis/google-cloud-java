@@ -331,7 +331,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
   }
 
   public static final int KNOWN_EXTENSIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> knownExtensions_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer,
           com.google.cloud.security.privateca.v1.CertificateExtensionConstraints
@@ -344,12 +347,11 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
             public com.google.cloud.security.privateca.v1.CertificateExtensionConstraints
                     .KnownCertificateExtension
                 convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.security.privateca.v1.CertificateExtensionConstraints
                       .KnownCertificateExtension
                   result =
                       com.google.cloud.security.privateca.v1.CertificateExtensionConstraints
-                          .KnownCertificateExtension.valueOf(from);
+                          .KnownCertificateExtension.forNumber(from);
               return result == null
                   ? com.google.cloud.security.privateca.v1.CertificateExtensionConstraints
                       .KnownCertificateExtension.UNRECOGNIZED
@@ -460,6 +462,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
   private int knownExtensionsMemoizedSerializedSize;
 
   public static final int ADDITIONAL_EXTENSIONS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.security.privateca.v1.ObjectId> additionalExtensions_;
   /**
    *
@@ -780,6 +784,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       knownExtensions_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
       if (additionalExtensionsBuilder_ == null) {
@@ -819,7 +824,16 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
     public com.google.cloud.security.privateca.v1.CertificateExtensionConstraints buildPartial() {
       com.google.cloud.security.privateca.v1.CertificateExtensionConstraints result =
           new com.google.cloud.security.privateca.v1.CertificateExtensionConstraints(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.security.privateca.v1.CertificateExtensionConstraints result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         knownExtensions_ = java.util.Collections.unmodifiableList(knownExtensions_);
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -834,8 +848,11 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       } else {
         result.additionalExtensions_ = additionalExtensionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.security.privateca.v1.CertificateExtensionConstraints result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -106,7 +106,6 @@ public interface CheckResponseOrBuilder
    *
    * <code>map&lt;string, string&gt; headers = 2;</code>
    */
-
   /* nullable */
   java.lang.String getHeadersOrDefault(
       java.lang.String key,

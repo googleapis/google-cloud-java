@@ -113,7 +113,9 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder() {
-    return getScheduleTime();
+    return scheduleTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : scheduleTime_;
   }
 
   public static final int DISPATCH_TIME_FIELD_NUMBER = 2;
@@ -164,7 +166,9 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDispatchTimeOrBuilder() {
-    return getDispatchTime();
+    return dispatchTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : dispatchTime_;
   }
 
   public static final int RESPONSE_TIME_FIELD_NUMBER = 3;
@@ -215,7 +219,9 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getResponseTimeOrBuilder() {
-    return getResponseTime();
+    return responseTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : responseTime_;
   }
 
   public static final int RESPONSE_STATUS_FIELD_NUMBER = 4;
@@ -267,7 +273,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getResponseStatusOrBuilder() {
-    return getResponseStatus();
+    return responseStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : responseStatus_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -514,28 +520,25 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (scheduleTimeBuilder_ == null) {
-        scheduleTime_ = null;
-      } else {
-        scheduleTime_ = null;
+      bitField0_ = 0;
+      scheduleTime_ = null;
+      if (scheduleTimeBuilder_ != null) {
+        scheduleTimeBuilder_.dispose();
         scheduleTimeBuilder_ = null;
       }
-      if (dispatchTimeBuilder_ == null) {
-        dispatchTime_ = null;
-      } else {
-        dispatchTime_ = null;
+      dispatchTime_ = null;
+      if (dispatchTimeBuilder_ != null) {
+        dispatchTimeBuilder_.dispose();
         dispatchTimeBuilder_ = null;
       }
-      if (responseTimeBuilder_ == null) {
-        responseTime_ = null;
-      } else {
-        responseTime_ = null;
+      responseTime_ = null;
+      if (responseTimeBuilder_ != null) {
+        responseTimeBuilder_.dispose();
         responseTimeBuilder_ = null;
       }
-      if (responseStatusBuilder_ == null) {
-        responseStatus_ = null;
-      } else {
-        responseStatus_ = null;
+      responseStatus_ = null;
+      if (responseStatusBuilder_ != null) {
+        responseStatusBuilder_.dispose();
         responseStatusBuilder_ = null;
       }
       return this;
@@ -565,28 +568,31 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.tasks.v2beta2.AttemptStatus buildPartial() {
       com.google.cloud.tasks.v2beta2.AttemptStatus result =
           new com.google.cloud.tasks.v2beta2.AttemptStatus(this);
-      if (scheduleTimeBuilder_ == null) {
-        result.scheduleTime_ = scheduleTime_;
-      } else {
-        result.scheduleTime_ = scheduleTimeBuilder_.build();
-      }
-      if (dispatchTimeBuilder_ == null) {
-        result.dispatchTime_ = dispatchTime_;
-      } else {
-        result.dispatchTime_ = dispatchTimeBuilder_.build();
-      }
-      if (responseTimeBuilder_ == null) {
-        result.responseTime_ = responseTime_;
-      } else {
-        result.responseTime_ = responseTimeBuilder_.build();
-      }
-      if (responseStatusBuilder_ == null) {
-        result.responseStatus_ = responseStatus_;
-      } else {
-        result.responseStatus_ = responseStatusBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tasks.v2beta2.AttemptStatus result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.scheduleTime_ =
+            scheduleTimeBuilder_ == null ? scheduleTime_ : scheduleTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dispatchTime_ =
+            dispatchTimeBuilder_ == null ? dispatchTime_ : dispatchTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.responseTime_ =
+            responseTimeBuilder_ == null ? responseTime_ : responseTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.responseStatus_ =
+            responseStatusBuilder_ == null ? responseStatus_ : responseStatusBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -675,25 +681,25 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getScheduleTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDispatchTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getResponseTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getResponseStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -712,6 +718,8 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Timestamp scheduleTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -732,7 +740,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the scheduleTime field is set.
      */
     public boolean hasScheduleTime() {
-      return scheduleTimeBuilder_ != null || scheduleTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -771,11 +779,11 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         scheduleTime_ = value;
-        onChanged();
       } else {
         scheduleTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -791,11 +799,11 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder setScheduleTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (scheduleTimeBuilder_ == null) {
         scheduleTime_ = builderForValue.build();
-        onChanged();
       } else {
         scheduleTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -810,19 +818,18 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeScheduleTime(com.google.protobuf.Timestamp value) {
       if (scheduleTimeBuilder_ == null) {
-        if (scheduleTime_ != null) {
-          scheduleTime_ =
-              com.google.protobuf.Timestamp.newBuilder(scheduleTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && scheduleTime_ != null
+            && scheduleTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getScheduleTimeBuilder().mergeFrom(value);
         } else {
           scheduleTime_ = value;
         }
-        onChanged();
       } else {
         scheduleTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -836,14 +843,13 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
      */
     public Builder clearScheduleTime() {
-      if (scheduleTimeBuilder_ == null) {
-        scheduleTime_ = null;
-        onChanged();
-      } else {
-        scheduleTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      scheduleTime_ = null;
+      if (scheduleTimeBuilder_ != null) {
+        scheduleTimeBuilder_.dispose();
         scheduleTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -857,7 +863,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getScheduleTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getScheduleTimeFieldBuilder().getBuilder();
     }
@@ -926,7 +932,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the dispatchTime field is set.
      */
     public boolean hasDispatchTime() {
-      return dispatchTimeBuilder_ != null || dispatchTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -965,11 +971,11 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         dispatchTime_ = value;
-        onChanged();
       } else {
         dispatchTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -985,11 +991,11 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder setDispatchTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (dispatchTimeBuilder_ == null) {
         dispatchTime_ = builderForValue.build();
-        onChanged();
       } else {
         dispatchTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1004,19 +1010,18 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDispatchTime(com.google.protobuf.Timestamp value) {
       if (dispatchTimeBuilder_ == null) {
-        if (dispatchTime_ != null) {
-          dispatchTime_ =
-              com.google.protobuf.Timestamp.newBuilder(dispatchTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && dispatchTime_ != null
+            && dispatchTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDispatchTimeBuilder().mergeFrom(value);
         } else {
           dispatchTime_ = value;
         }
-        onChanged();
       } else {
         dispatchTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1030,14 +1035,13 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp dispatch_time = 2;</code>
      */
     public Builder clearDispatchTime() {
-      if (dispatchTimeBuilder_ == null) {
-        dispatchTime_ = null;
-        onChanged();
-      } else {
-        dispatchTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      dispatchTime_ = null;
+      if (dispatchTimeBuilder_ != null) {
+        dispatchTimeBuilder_.dispose();
         dispatchTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1051,7 +1055,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp dispatch_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getDispatchTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDispatchTimeFieldBuilder().getBuilder();
     }
@@ -1120,7 +1124,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the responseTime field is set.
      */
     public boolean hasResponseTime() {
-      return responseTimeBuilder_ != null || responseTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1159,11 +1163,11 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         responseTime_ = value;
-        onChanged();
       } else {
         responseTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1179,11 +1183,11 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder setResponseTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (responseTimeBuilder_ == null) {
         responseTime_ = builderForValue.build();
-        onChanged();
       } else {
         responseTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1198,19 +1202,18 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeResponseTime(com.google.protobuf.Timestamp value) {
       if (responseTimeBuilder_ == null) {
-        if (responseTime_ != null) {
-          responseTime_ =
-              com.google.protobuf.Timestamp.newBuilder(responseTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && responseTime_ != null
+            && responseTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getResponseTimeBuilder().mergeFrom(value);
         } else {
           responseTime_ = value;
         }
-        onChanged();
       } else {
         responseTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1224,14 +1227,13 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp response_time = 3;</code>
      */
     public Builder clearResponseTime() {
-      if (responseTimeBuilder_ == null) {
-        responseTime_ = null;
-        onChanged();
-      } else {
-        responseTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      responseTime_ = null;
+      if (responseTimeBuilder_ != null) {
+        responseTimeBuilder_.dispose();
         responseTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1245,7 +1247,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp response_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getResponseTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getResponseTimeFieldBuilder().getBuilder();
     }
@@ -1313,7 +1315,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the responseStatus field is set.
      */
     public boolean hasResponseStatus() {
-      return responseStatusBuilder_ != null || responseStatus_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1354,11 +1356,11 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         responseStatus_ = value;
-        onChanged();
       } else {
         responseStatusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1375,11 +1377,11 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder setResponseStatus(com.google.rpc.Status.Builder builderForValue) {
       if (responseStatusBuilder_ == null) {
         responseStatus_ = builderForValue.build();
-        onChanged();
       } else {
         responseStatusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1395,17 +1397,18 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeResponseStatus(com.google.rpc.Status value) {
       if (responseStatusBuilder_ == null) {
-        if (responseStatus_ != null) {
-          responseStatus_ =
-              com.google.rpc.Status.newBuilder(responseStatus_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && responseStatus_ != null
+            && responseStatus_ != com.google.rpc.Status.getDefaultInstance()) {
+          getResponseStatusBuilder().mergeFrom(value);
         } else {
           responseStatus_ = value;
         }
-        onChanged();
       } else {
         responseStatusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1420,14 +1423,13 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status response_status = 4;</code>
      */
     public Builder clearResponseStatus() {
-      if (responseStatusBuilder_ == null) {
-        responseStatus_ = null;
-        onChanged();
-      } else {
-        responseStatus_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      responseStatus_ = null;
+      if (responseStatusBuilder_ != null) {
+        responseStatusBuilder_.dispose();
         responseStatusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1442,7 +1444,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status response_status = 4;</code>
      */
     public com.google.rpc.Status.Builder getResponseStatusBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getResponseStatusFieldBuilder().getBuilder();
     }

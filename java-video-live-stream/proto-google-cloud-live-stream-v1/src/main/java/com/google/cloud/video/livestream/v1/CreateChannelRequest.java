@@ -70,7 +70,9 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -175,11 +177,15 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.video.livestream.v1.ChannelOrBuilder getChannelOrBuilder() {
-    return getChannel();
+    return channel_ == null
+        ? com.google.cloud.video.livestream.v1.Channel.getDefaultInstance()
+        : channel_;
   }
 
   public static final int CHANNEL_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object channelId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object channelId_ = "";
   /**
    *
    *
@@ -232,7 +238,9 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -530,18 +538,15 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (channelBuilder_ == null) {
-        channel_ = null;
-      } else {
-        channel_ = null;
+      channel_ = null;
+      if (channelBuilder_ != null) {
+        channelBuilder_.dispose();
         channelBuilder_ = null;
       }
       channelId_ = "";
-
       requestId_ = "";
-
       return this;
     }
 
@@ -569,16 +574,27 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.video.livestream.v1.CreateChannelRequest buildPartial() {
       com.google.cloud.video.livestream.v1.CreateChannelRequest result =
           new com.google.cloud.video.livestream.v1.CreateChannelRequest(this);
-      result.parent_ = parent_;
-      if (channelBuilder_ == null) {
-        result.channel_ = channel_;
-      } else {
-        result.channel_ = channelBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.channelId_ = channelId_;
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.livestream.v1.CreateChannelRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.channel_ = channelBuilder_ == null ? channel_ : channelBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.channelId_ = channelId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -629,6 +645,7 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasChannel()) {
@@ -636,10 +653,12 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getChannelId().isEmpty()) {
         channelId_ = other.channelId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -671,25 +690,25 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getChannelFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 channelId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -708,6 +727,8 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -779,8 +800,8 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -799,8 +820,8 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -824,8 +845,8 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -850,7 +871,7 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the channel field is set.
      */
     public boolean hasChannel() {
-      return channelBuilder_ != null || channel_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -891,11 +912,11 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         channel_ = value;
-        onChanged();
       } else {
         channelBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -913,11 +934,11 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.video.livestream.v1.Channel.Builder builderForValue) {
       if (channelBuilder_ == null) {
         channel_ = builderForValue.build();
-        onChanged();
       } else {
         channelBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -933,19 +954,18 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeChannel(com.google.cloud.video.livestream.v1.Channel value) {
       if (channelBuilder_ == null) {
-        if (channel_ != null) {
-          channel_ =
-              com.google.cloud.video.livestream.v1.Channel.newBuilder(channel_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && channel_ != null
+            && channel_ != com.google.cloud.video.livestream.v1.Channel.getDefaultInstance()) {
+          getChannelBuilder().mergeFrom(value);
         } else {
           channel_ = value;
         }
-        onChanged();
       } else {
         channelBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -960,14 +980,13 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearChannel() {
-      if (channelBuilder_ == null) {
-        channel_ = null;
-        onChanged();
-      } else {
-        channel_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      channel_ = null;
+      if (channelBuilder_ != null) {
+        channelBuilder_.dispose();
         channelBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -982,7 +1001,7 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.video.livestream.v1.Channel.Builder getChannelBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getChannelFieldBuilder().getBuilder();
     }
@@ -1101,8 +1120,8 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       channelId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1120,8 +1139,8 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearChannelId() {
-
       channelId_ = getDefaultInstance().getChannelId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1144,8 +1163,8 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       channelId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1241,8 +1260,8 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1268,8 +1287,8 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1300,8 +1319,8 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -456,6 +456,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (streamingConfigBuilder_ != null) {
         streamingConfigBuilder_.clear();
       }
@@ -488,19 +489,25 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
     public com.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest buildPartial() {
       com.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest result =
           new com.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest(this);
-      if (streamingRequestCase_ == 1) {
-        if (streamingConfigBuilder_ == null) {
-          result.streamingRequest_ = streamingRequest_;
-        } else {
-          result.streamingRequest_ = streamingConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (streamingRequestCase_ == 2) {
-        result.streamingRequest_ = streamingRequest_;
-      }
-      result.streamingRequestCase_ = streamingRequestCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest result) {
+      result.streamingRequestCase_ = streamingRequestCase_;
+      result.streamingRequest_ = this.streamingRequest_;
+      if (streamingRequestCase_ == 1 && streamingConfigBuilder_ != null) {
+        result.streamingRequest_ = streamingConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -633,6 +640,8 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig,
@@ -866,7 +875,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
       }
       streamingRequestCase_ = 1;
       onChanged();
-      ;
       return streamingConfigBuilder_;
     }
 

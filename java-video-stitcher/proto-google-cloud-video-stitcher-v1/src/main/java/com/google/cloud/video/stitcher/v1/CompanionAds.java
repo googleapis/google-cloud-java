@@ -251,7 +251,7 @@ public final class CompanionAds extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_REQUIREMENT_FIELD_NUMBER = 1;
-  private int displayRequirement_;
+  private int displayRequirement_ = 0;
   /**
    *
    *
@@ -283,9 +283,8 @@ public final class CompanionAds extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.video.stitcher.v1.CompanionAds.DisplayRequirement
       getDisplayRequirement() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.video.stitcher.v1.CompanionAds.DisplayRequirement result =
-        com.google.cloud.video.stitcher.v1.CompanionAds.DisplayRequirement.valueOf(
+        com.google.cloud.video.stitcher.v1.CompanionAds.DisplayRequirement.forNumber(
             displayRequirement_);
     return result == null
         ? com.google.cloud.video.stitcher.v1.CompanionAds.DisplayRequirement.UNRECOGNIZED
@@ -293,6 +292,8 @@ public final class CompanionAds extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COMPANIONS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.Companion> companions_;
   /**
    *
@@ -575,15 +576,15 @@ public final class CompanionAds extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       displayRequirement_ = 0;
-
       if (companionsBuilder_ == null) {
         companions_ = java.util.Collections.emptyList();
       } else {
         companions_ = null;
         companionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -611,19 +612,32 @@ public final class CompanionAds extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.stitcher.v1.CompanionAds buildPartial() {
       com.google.cloud.video.stitcher.v1.CompanionAds result =
           new com.google.cloud.video.stitcher.v1.CompanionAds(this);
-      int from_bitField0_ = bitField0_;
-      result.displayRequirement_ = displayRequirement_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.video.stitcher.v1.CompanionAds result) {
       if (companionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           companions_ = java.util.Collections.unmodifiableList(companions_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.companions_ = companions_;
       } else {
         result.companions_ = companionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.CompanionAds result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.displayRequirement_ = displayRequirement_;
+      }
     }
 
     @java.lang.Override
@@ -679,7 +693,7 @@ public final class CompanionAds extends com.google.protobuf.GeneratedMessageV3
         if (!other.companions_.isEmpty()) {
           if (companions_.isEmpty()) {
             companions_ = other.companions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureCompanionsIsMutable();
             companions_.addAll(other.companions_);
@@ -692,7 +706,7 @@ public final class CompanionAds extends com.google.protobuf.GeneratedMessageV3
             companionsBuilder_.dispose();
             companionsBuilder_ = null;
             companions_ = other.companions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             companionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCompanionsFieldBuilder()
@@ -731,7 +745,7 @@ public final class CompanionAds extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 displayRequirement_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -799,8 +813,8 @@ public final class CompanionAds extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDisplayRequirementValue(int value) {
-
       displayRequirement_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -820,9 +834,8 @@ public final class CompanionAds extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.video.stitcher.v1.CompanionAds.DisplayRequirement
         getDisplayRequirement() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.video.stitcher.v1.CompanionAds.DisplayRequirement result =
-          com.google.cloud.video.stitcher.v1.CompanionAds.DisplayRequirement.valueOf(
+          com.google.cloud.video.stitcher.v1.CompanionAds.DisplayRequirement.forNumber(
               displayRequirement_);
       return result == null
           ? com.google.cloud.video.stitcher.v1.CompanionAds.DisplayRequirement.UNRECOGNIZED
@@ -847,7 +860,7 @@ public final class CompanionAds extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       displayRequirement_ = value.getNumber();
       onChanged();
       return this;
@@ -866,7 +879,7 @@ public final class CompanionAds extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayRequirement() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       displayRequirement_ = 0;
       onChanged();
       return this;
@@ -876,10 +889,10 @@ public final class CompanionAds extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureCompanionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         companions_ =
             new java.util.ArrayList<com.google.cloud.video.stitcher.v1.Companion>(companions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1095,7 +1108,7 @@ public final class CompanionAds extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCompanions() {
       if (companionsBuilder_ == null) {
         companions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         companionsBuilder_.clear();
@@ -1217,7 +1230,7 @@ public final class CompanionAds extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.video.stitcher.v1.Companion,
                 com.google.cloud.video.stitcher.v1.Companion.Builder,
                 com.google.cloud.video.stitcher.v1.CompanionOrBuilder>(
-                companions_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                companions_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         companions_ = null;
       }
       return companionsBuilder_;

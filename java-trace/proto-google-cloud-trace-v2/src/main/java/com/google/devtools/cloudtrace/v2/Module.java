@@ -113,7 +113,9 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getModuleOrBuilder() {
-    return getModule();
+    return module_ == null
+        ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
+        : module_;
   }
 
   public static final int BUILD_ID_FIELD_NUMBER = 2;
@@ -164,7 +166,9 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getBuildIdOrBuilder() {
-    return getBuildId();
+    return buildId_ == null
+        ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
+        : buildId_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -382,16 +386,15 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (moduleBuilder_ == null) {
-        module_ = null;
-      } else {
-        module_ = null;
+      bitField0_ = 0;
+      module_ = null;
+      if (moduleBuilder_ != null) {
+        moduleBuilder_.dispose();
         moduleBuilder_ = null;
       }
-      if (buildIdBuilder_ == null) {
-        buildId_ = null;
-      } else {
-        buildId_ = null;
+      buildId_ = null;
+      if (buildIdBuilder_ != null) {
+        buildIdBuilder_.dispose();
         buildIdBuilder_ = null;
       }
       return this;
@@ -421,18 +424,21 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.cloudtrace.v2.Module buildPartial() {
       com.google.devtools.cloudtrace.v2.Module result =
           new com.google.devtools.cloudtrace.v2.Module(this);
-      if (moduleBuilder_ == null) {
-        result.module_ = module_;
-      } else {
-        result.module_ = moduleBuilder_.build();
-      }
-      if (buildIdBuilder_ == null) {
-        result.buildId_ = buildId_;
-      } else {
-        result.buildId_ = buildIdBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.cloudtrace.v2.Module result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.module_ = moduleBuilder_ == null ? module_ : moduleBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.buildId_ = buildIdBuilder_ == null ? buildId_ : buildIdBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -515,13 +521,13 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getModuleFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getBuildIdFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -540,6 +546,8 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.devtools.cloudtrace.v2.TruncatableString module_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -560,7 +568,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the module field is set.
      */
     public boolean hasModule() {
-      return moduleBuilder_ != null || module_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -599,11 +607,11 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         module_ = value;
-        onChanged();
       } else {
         moduleBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -620,11 +628,11 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
         com.google.devtools.cloudtrace.v2.TruncatableString.Builder builderForValue) {
       if (moduleBuilder_ == null) {
         module_ = builderForValue.build();
-        onChanged();
       } else {
         moduleBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -639,19 +647,19 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeModule(com.google.devtools.cloudtrace.v2.TruncatableString value) {
       if (moduleBuilder_ == null) {
-        if (module_ != null) {
-          module_ =
-              com.google.devtools.cloudtrace.v2.TruncatableString.newBuilder(module_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && module_ != null
+            && module_
+                != com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()) {
+          getModuleBuilder().mergeFrom(value);
         } else {
           module_ = value;
         }
-        onChanged();
       } else {
         moduleBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -665,14 +673,13 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudtrace.v2.TruncatableString module = 1;</code>
      */
     public Builder clearModule() {
-      if (moduleBuilder_ == null) {
-        module_ = null;
-        onChanged();
-      } else {
-        module_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      module_ = null;
+      if (moduleBuilder_ != null) {
+        moduleBuilder_.dispose();
         moduleBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -686,7 +693,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudtrace.v2.TruncatableString module = 1;</code>
      */
     public com.google.devtools.cloudtrace.v2.TruncatableString.Builder getModuleBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getModuleFieldBuilder().getBuilder();
     }
@@ -755,7 +762,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the buildId field is set.
      */
     public boolean hasBuildId() {
-      return buildIdBuilder_ != null || buildId_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -794,11 +801,11 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         buildId_ = value;
-        onChanged();
       } else {
         buildIdBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -815,11 +822,11 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
         com.google.devtools.cloudtrace.v2.TruncatableString.Builder builderForValue) {
       if (buildIdBuilder_ == null) {
         buildId_ = builderForValue.build();
-        onChanged();
       } else {
         buildIdBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -834,19 +841,19 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBuildId(com.google.devtools.cloudtrace.v2.TruncatableString value) {
       if (buildIdBuilder_ == null) {
-        if (buildId_ != null) {
-          buildId_ =
-              com.google.devtools.cloudtrace.v2.TruncatableString.newBuilder(buildId_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && buildId_ != null
+            && buildId_
+                != com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()) {
+          getBuildIdBuilder().mergeFrom(value);
         } else {
           buildId_ = value;
         }
-        onChanged();
       } else {
         buildIdBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -860,14 +867,13 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudtrace.v2.TruncatableString build_id = 2;</code>
      */
     public Builder clearBuildId() {
-      if (buildIdBuilder_ == null) {
-        buildId_ = null;
-        onChanged();
-      } else {
-        buildId_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      buildId_ = null;
+      if (buildIdBuilder_ != null) {
+        buildIdBuilder_.dispose();
         buildIdBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -881,7 +887,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudtrace.v2.TruncatableString build_id = 2;</code>
      */
     public com.google.devtools.cloudtrace.v2.TruncatableString.Builder getBuildIdBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getBuildIdFieldBuilder().getBuilder();
     }

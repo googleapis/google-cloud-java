@@ -298,7 +298,9 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -347,7 +349,7 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int STATE_FIELD_NUMBER = 2;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -376,9 +378,8 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.translate.v3.CreateGlossaryMetadata.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.translate.v3.CreateGlossaryMetadata.State result =
-        com.google.cloud.translate.v3.CreateGlossaryMetadata.State.valueOf(state_);
+        com.google.cloud.translate.v3.CreateGlossaryMetadata.State.forNumber(state_);
     return result == null
         ? com.google.cloud.translate.v3.CreateGlossaryMetadata.State.UNRECOGNIZED
         : result;
@@ -427,7 +428,7 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder() {
-    return getSubmitTime();
+    return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -656,14 +657,12 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       state_ = 0;
-
-      if (submitTimeBuilder_ == null) {
-        submitTime_ = null;
-      } else {
-        submitTime_ = null;
+      submitTime_ = null;
+      if (submitTimeBuilder_ != null) {
+        submitTimeBuilder_.dispose();
         submitTimeBuilder_ = null;
       }
       return this;
@@ -693,15 +692,24 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
     public com.google.cloud.translate.v3.CreateGlossaryMetadata buildPartial() {
       com.google.cloud.translate.v3.CreateGlossaryMetadata result =
           new com.google.cloud.translate.v3.CreateGlossaryMetadata(this);
-      result.name_ = name_;
-      result.state_ = state_;
-      if (submitTimeBuilder_ == null) {
-        result.submitTime_ = submitTime_;
-      } else {
-        result.submitTime_ = submitTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.translate.v3.CreateGlossaryMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.submitTime_ = submitTimeBuilder_ == null ? submitTime_ : submitTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -752,6 +760,7 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -789,19 +798,19 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getSubmitTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -820,6 +829,8 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -882,8 +893,8 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -899,8 +910,8 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -921,8 +932,8 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -956,8 +967,8 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -974,9 +985,8 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.cloud.translate.v3.CreateGlossaryMetadata.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.translate.v3.CreateGlossaryMetadata.State result =
-          com.google.cloud.translate.v3.CreateGlossaryMetadata.State.valueOf(state_);
+          com.google.cloud.translate.v3.CreateGlossaryMetadata.State.forNumber(state_);
       return result == null
           ? com.google.cloud.translate.v3.CreateGlossaryMetadata.State.UNRECOGNIZED
           : result;
@@ -997,7 +1007,7 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1014,7 +1024,7 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       state_ = 0;
       onChanged();
       return this;
@@ -1038,7 +1048,7 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the submitTime field is set.
      */
     public boolean hasSubmitTime() {
-      return submitTimeBuilder_ != null || submitTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1075,11 +1085,11 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         submitTime_ = value;
-        onChanged();
       } else {
         submitTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1094,11 +1104,11 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
     public Builder setSubmitTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (submitTimeBuilder_ == null) {
         submitTime_ = builderForValue.build();
-        onChanged();
       } else {
         submitTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1112,17 +1122,18 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
      */
     public Builder mergeSubmitTime(com.google.protobuf.Timestamp value) {
       if (submitTimeBuilder_ == null) {
-        if (submitTime_ != null) {
-          submitTime_ =
-              com.google.protobuf.Timestamp.newBuilder(submitTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && submitTime_ != null
+            && submitTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getSubmitTimeBuilder().mergeFrom(value);
         } else {
           submitTime_ = value;
         }
-        onChanged();
       } else {
         submitTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1135,14 +1146,13 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp submit_time = 3;</code>
      */
     public Builder clearSubmitTime() {
-      if (submitTimeBuilder_ == null) {
-        submitTime_ = null;
-        onChanged();
-      } else {
-        submitTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      submitTime_ = null;
+      if (submitTimeBuilder_ != null) {
+        submitTimeBuilder_.dispose();
         submitTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1155,7 +1165,7 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp submit_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getSubmitTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSubmitTimeFieldBuilder().getBuilder();
     }

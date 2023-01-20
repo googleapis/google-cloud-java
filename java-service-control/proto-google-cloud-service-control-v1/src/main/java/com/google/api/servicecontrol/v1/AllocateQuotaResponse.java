@@ -71,7 +71,9 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int OPERATION_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object operationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object operationId_ = "";
   /**
    *
    *
@@ -122,6 +124,8 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ALLOCATE_ERRORS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.servicecontrol.v1.QuotaError> allocateErrors_;
   /**
    *
@@ -192,6 +196,8 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int QUOTA_METRICS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.servicecontrol.v1.MetricValueSet> quotaMetrics_;
   /**
    *
@@ -297,7 +303,9 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SERVICE_CONFIG_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object serviceConfigId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceConfigId_ = "";
   /**
    *
    *
@@ -574,24 +582,23 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       operationId_ = "";
-
       if (allocateErrorsBuilder_ == null) {
         allocateErrors_ = java.util.Collections.emptyList();
       } else {
         allocateErrors_ = null;
         allocateErrorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (quotaMetricsBuilder_ == null) {
         quotaMetrics_ = java.util.Collections.emptyList();
       } else {
         quotaMetrics_ = null;
         quotaMetricsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       serviceConfigId_ = "";
-
       return this;
     }
 
@@ -619,29 +626,44 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
     public com.google.api.servicecontrol.v1.AllocateQuotaResponse buildPartial() {
       com.google.api.servicecontrol.v1.AllocateQuotaResponse result =
           new com.google.api.servicecontrol.v1.AllocateQuotaResponse(this);
-      int from_bitField0_ = bitField0_;
-      result.operationId_ = operationId_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.api.servicecontrol.v1.AllocateQuotaResponse result) {
       if (allocateErrorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           allocateErrors_ = java.util.Collections.unmodifiableList(allocateErrors_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.allocateErrors_ = allocateErrors_;
       } else {
         result.allocateErrors_ = allocateErrorsBuilder_.build();
       }
       if (quotaMetricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           quotaMetrics_ = java.util.Collections.unmodifiableList(quotaMetrics_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.quotaMetrics_ = quotaMetrics_;
       } else {
         result.quotaMetrics_ = quotaMetricsBuilder_.build();
       }
-      result.serviceConfigId_ = serviceConfigId_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.api.servicecontrol.v1.AllocateQuotaResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.operationId_ = operationId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.serviceConfigId_ = serviceConfigId_;
+      }
     }
 
     @java.lang.Override
@@ -692,13 +714,14 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getOperationId().isEmpty()) {
         operationId_ = other.operationId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (allocateErrorsBuilder_ == null) {
         if (!other.allocateErrors_.isEmpty()) {
           if (allocateErrors_.isEmpty()) {
             allocateErrors_ = other.allocateErrors_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAllocateErrorsIsMutable();
             allocateErrors_.addAll(other.allocateErrors_);
@@ -711,7 +734,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
             allocateErrorsBuilder_.dispose();
             allocateErrorsBuilder_ = null;
             allocateErrors_ = other.allocateErrors_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             allocateErrorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAllocateErrorsFieldBuilder()
@@ -725,7 +748,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         if (!other.quotaMetrics_.isEmpty()) {
           if (quotaMetrics_.isEmpty()) {
             quotaMetrics_ = other.quotaMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureQuotaMetricsIsMutable();
             quotaMetrics_.addAll(other.quotaMetrics_);
@@ -738,7 +761,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
             quotaMetricsBuilder_.dispose();
             quotaMetricsBuilder_ = null;
             quotaMetrics_ = other.quotaMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             quotaMetricsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getQuotaMetricsFieldBuilder()
@@ -750,6 +773,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       }
       if (!other.getServiceConfigId().isEmpty()) {
         serviceConfigId_ = other.serviceConfigId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -781,7 +805,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 operationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -814,7 +838,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
             case 34:
               {
                 serviceConfigId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -900,8 +924,8 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       operationId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -918,8 +942,8 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearOperationId() {
-
       operationId_ = getDefaultInstance().getOperationId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -941,8 +965,8 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       operationId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -951,10 +975,10 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         java.util.Collections.emptyList();
 
     private void ensureAllocateErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         allocateErrors_ =
             new java.util.ArrayList<com.google.api.servicecontrol.v1.QuotaError>(allocateErrors_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1170,7 +1194,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
     public Builder clearAllocateErrors() {
       if (allocateErrorsBuilder_ == null) {
         allocateErrors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         allocateErrorsBuilder_.clear();
@@ -1294,7 +1318,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
                 com.google.api.servicecontrol.v1.QuotaError.Builder,
                 com.google.api.servicecontrol.v1.QuotaErrorOrBuilder>(
                 allocateErrors_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         allocateErrors_ = null;
@@ -1306,10 +1330,10 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         java.util.Collections.emptyList();
 
     private void ensureQuotaMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         quotaMetrics_ =
             new java.util.ArrayList<com.google.api.servicecontrol.v1.MetricValueSet>(quotaMetrics_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1604,7 +1628,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
     public Builder clearQuotaMetrics() {
       if (quotaMetricsBuilder_ == null) {
         quotaMetrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         quotaMetricsBuilder_.clear();
@@ -1778,7 +1802,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
                 com.google.api.servicecontrol.v1.MetricValueSet,
                 com.google.api.servicecontrol.v1.MetricValueSet.Builder,
                 com.google.api.servicecontrol.v1.MetricValueSetOrBuilder>(
-                quotaMetrics_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                quotaMetrics_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         quotaMetrics_ = null;
       }
       return quotaMetricsBuilder_;
@@ -1845,8 +1869,8 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceConfigId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1862,8 +1886,8 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearServiceConfigId() {
-
       serviceConfigId_ = getDefaultInstance().getServiceConfigId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1884,8 +1908,8 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceConfigId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

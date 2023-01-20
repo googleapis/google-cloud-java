@@ -82,7 +82,9 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -145,7 +147,9 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
   }
 
   public static final int SOURCE_LANGUAGE_CODE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object sourceLanguageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceLanguageCode_ = "";
   /**
    *
    *
@@ -204,7 +208,9 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
   }
 
   public static final int TARGET_LANGUAGE_CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object targetLanguageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetLanguageCode_ = "";
   /**
    *
    *
@@ -306,7 +312,9 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
   @java.lang.Override
   public com.google.cloud.translate.v3.DocumentInputConfigOrBuilder
       getDocumentInputConfigOrBuilder() {
-    return getDocumentInputConfig();
+    return documentInputConfig_ == null
+        ? com.google.cloud.translate.v3.DocumentInputConfig.getDefaultInstance()
+        : documentInputConfig_;
   }
 
   public static final int DOCUMENT_OUTPUT_CONFIG_FIELD_NUMBER = 5;
@@ -373,11 +381,15 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
   @java.lang.Override
   public com.google.cloud.translate.v3.DocumentOutputConfigOrBuilder
       getDocumentOutputConfigOrBuilder() {
-    return getDocumentOutputConfig();
+    return documentOutputConfig_ == null
+        ? com.google.cloud.translate.v3.DocumentOutputConfig.getDefaultInstance()
+        : documentOutputConfig_;
   }
 
   public static final int MODEL_FIELD_NUMBER = 6;
-  private volatile java.lang.Object model_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
   /**
    *
    *
@@ -497,7 +509,9 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
   @java.lang.Override
   public com.google.cloud.translate.v3.TranslateTextGlossaryConfigOrBuilder
       getGlossaryConfigOrBuilder() {
-    return getGlossaryConfig();
+    return glossaryConfig_ == null
+        ? com.google.cloud.translate.v3.TranslateTextGlossaryConfig.getDefaultInstance()
+        : glossaryConfig_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 8;
@@ -513,6 +527,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -588,7 +603,10 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -927,30 +945,24 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       sourceLanguageCode_ = "";
-
       targetLanguageCode_ = "";
-
-      if (documentInputConfigBuilder_ == null) {
-        documentInputConfig_ = null;
-      } else {
-        documentInputConfig_ = null;
+      documentInputConfig_ = null;
+      if (documentInputConfigBuilder_ != null) {
+        documentInputConfigBuilder_.dispose();
         documentInputConfigBuilder_ = null;
       }
-      if (documentOutputConfigBuilder_ == null) {
-        documentOutputConfig_ = null;
-      } else {
-        documentOutputConfig_ = null;
+      documentOutputConfig_ = null;
+      if (documentOutputConfigBuilder_ != null) {
+        documentOutputConfigBuilder_.dispose();
         documentOutputConfigBuilder_ = null;
       }
       model_ = "";
-
-      if (glossaryConfigBuilder_ == null) {
-        glossaryConfig_ = null;
-      } else {
-        glossaryConfig_ = null;
+      glossaryConfig_ = null;
+      if (glossaryConfigBuilder_ != null) {
+        glossaryConfigBuilder_.dispose();
         glossaryConfigBuilder_ = null;
       }
       internalGetMutableLabels().clear();
@@ -981,30 +993,47 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
     public com.google.cloud.translate.v3.TranslateDocumentRequest buildPartial() {
       com.google.cloud.translate.v3.TranslateDocumentRequest result =
           new com.google.cloud.translate.v3.TranslateDocumentRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      result.sourceLanguageCode_ = sourceLanguageCode_;
-      result.targetLanguageCode_ = targetLanguageCode_;
-      if (documentInputConfigBuilder_ == null) {
-        result.documentInputConfig_ = documentInputConfig_;
-      } else {
-        result.documentInputConfig_ = documentInputConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (documentOutputConfigBuilder_ == null) {
-        result.documentOutputConfig_ = documentOutputConfig_;
-      } else {
-        result.documentOutputConfig_ = documentOutputConfigBuilder_.build();
-      }
-      result.model_ = model_;
-      if (glossaryConfigBuilder_ == null) {
-        result.glossaryConfig_ = glossaryConfig_;
-      } else {
-        result.glossaryConfig_ = glossaryConfigBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.translate.v3.TranslateDocumentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sourceLanguageCode_ = sourceLanguageCode_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.targetLanguageCode_ = targetLanguageCode_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.documentInputConfig_ =
+            documentInputConfigBuilder_ == null
+                ? documentInputConfig_
+                : documentInputConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.documentOutputConfig_ =
+            documentOutputConfigBuilder_ == null
+                ? documentOutputConfig_
+                : documentOutputConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.model_ = model_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.glossaryConfig_ =
+            glossaryConfigBuilder_ == null ? glossaryConfig_ : glossaryConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -1055,14 +1084,17 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSourceLanguageCode().isEmpty()) {
         sourceLanguageCode_ = other.sourceLanguageCode_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getTargetLanguageCode().isEmpty()) {
         targetLanguageCode_ = other.targetLanguageCode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasDocumentInputConfig()) {
@@ -1073,12 +1105,14 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
       }
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasGlossaryConfig()) {
         mergeGlossaryConfig(other.getGlossaryConfig());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000080;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1108,45 +1142,45 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 sourceLanguageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 targetLanguageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getDocumentInputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getDocumentOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 model_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getGlossaryConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
@@ -1158,6 +1192,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             default:
@@ -1261,8 +1296,8 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1285,8 +1320,8 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1314,8 +1349,8 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1396,8 +1431,8 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceLanguageCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1418,8 +1453,8 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearSourceLanguageCode() {
-
       sourceLanguageCode_ = getDefaultInstance().getSourceLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1445,8 +1480,8 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceLanguageCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1515,8 +1550,8 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetLanguageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1533,8 +1568,8 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearTargetLanguageCode() {
-
       targetLanguageCode_ = getDefaultInstance().getTargetLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1556,8 +1591,8 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetLanguageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1582,7 +1617,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      * @return Whether the documentInputConfig field is set.
      */
     public boolean hasDocumentInputConfig() {
-      return documentInputConfigBuilder_ != null || documentInputConfig_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1623,11 +1658,11 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         documentInputConfig_ = value;
-        onChanged();
       } else {
         documentInputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1645,11 +1680,11 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
         com.google.cloud.translate.v3.DocumentInputConfig.Builder builderForValue) {
       if (documentInputConfigBuilder_ == null) {
         documentInputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         documentInputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1666,19 +1701,19 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
     public Builder mergeDocumentInputConfig(
         com.google.cloud.translate.v3.DocumentInputConfig value) {
       if (documentInputConfigBuilder_ == null) {
-        if (documentInputConfig_ != null) {
-          documentInputConfig_ =
-              com.google.cloud.translate.v3.DocumentInputConfig.newBuilder(documentInputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && documentInputConfig_ != null
+            && documentInputConfig_
+                != com.google.cloud.translate.v3.DocumentInputConfig.getDefaultInstance()) {
+          getDocumentInputConfigBuilder().mergeFrom(value);
         } else {
           documentInputConfig_ = value;
         }
-        onChanged();
       } else {
         documentInputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1693,14 +1728,13 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearDocumentInputConfig() {
-      if (documentInputConfigBuilder_ == null) {
-        documentInputConfig_ = null;
-        onChanged();
-      } else {
-        documentInputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      documentInputConfig_ = null;
+      if (documentInputConfigBuilder_ != null) {
+        documentInputConfigBuilder_.dispose();
         documentInputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1716,7 +1750,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      */
     public com.google.cloud.translate.v3.DocumentInputConfig.Builder
         getDocumentInputConfigBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDocumentInputConfigFieldBuilder().getBuilder();
     }
@@ -1793,7 +1827,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      * @return Whether the documentOutputConfig field is set.
      */
     public boolean hasDocumentOutputConfig() {
-      return documentOutputConfigBuilder_ != null || documentOutputConfig_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1843,11 +1877,11 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         documentOutputConfig_ = value;
-        onChanged();
       } else {
         documentOutputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1869,11 +1903,11 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
         com.google.cloud.translate.v3.DocumentOutputConfig.Builder builderForValue) {
       if (documentOutputConfigBuilder_ == null) {
         documentOutputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         documentOutputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1894,19 +1928,19 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
     public Builder mergeDocumentOutputConfig(
         com.google.cloud.translate.v3.DocumentOutputConfig value) {
       if (documentOutputConfigBuilder_ == null) {
-        if (documentOutputConfig_ != null) {
-          documentOutputConfig_ =
-              com.google.cloud.translate.v3.DocumentOutputConfig.newBuilder(documentOutputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && documentOutputConfig_ != null
+            && documentOutputConfig_
+                != com.google.cloud.translate.v3.DocumentOutputConfig.getDefaultInstance()) {
+          getDocumentOutputConfigBuilder().mergeFrom(value);
         } else {
           documentOutputConfig_ = value;
         }
-        onChanged();
       } else {
         documentOutputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1925,14 +1959,13 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearDocumentOutputConfig() {
-      if (documentOutputConfigBuilder_ == null) {
-        documentOutputConfig_ = null;
-        onChanged();
-      } else {
-        documentOutputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      documentOutputConfig_ = null;
+      if (documentOutputConfigBuilder_ != null) {
+        documentOutputConfigBuilder_.dispose();
         documentOutputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1952,7 +1985,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      */
     public com.google.cloud.translate.v3.DocumentOutputConfig.Builder
         getDocumentOutputConfigBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getDocumentOutputConfigFieldBuilder().getBuilder();
     }
@@ -2095,8 +2128,8 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       model_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2119,8 +2152,8 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearModel() {
-
       model_ = getDefaultInstance().getModel();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2148,8 +2181,8 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       model_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2176,7 +2209,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      * @return Whether the glossaryConfig field is set.
      */
     public boolean hasGlossaryConfig() {
-      return glossaryConfigBuilder_ != null || glossaryConfig_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2222,11 +2255,11 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         glossaryConfig_ = value;
-        onChanged();
       } else {
         glossaryConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2246,11 +2279,11 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
         com.google.cloud.translate.v3.TranslateTextGlossaryConfig.Builder builderForValue) {
       if (glossaryConfigBuilder_ == null) {
         glossaryConfig_ = builderForValue.build();
-        onChanged();
       } else {
         glossaryConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2269,19 +2302,19 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
     public Builder mergeGlossaryConfig(
         com.google.cloud.translate.v3.TranslateTextGlossaryConfig value) {
       if (glossaryConfigBuilder_ == null) {
-        if (glossaryConfig_ != null) {
-          glossaryConfig_ =
-              com.google.cloud.translate.v3.TranslateTextGlossaryConfig.newBuilder(glossaryConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && glossaryConfig_ != null
+            && glossaryConfig_
+                != com.google.cloud.translate.v3.TranslateTextGlossaryConfig.getDefaultInstance()) {
+          getGlossaryConfigBuilder().mergeFrom(value);
         } else {
           glossaryConfig_ = value;
         }
-        onChanged();
       } else {
         glossaryConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2298,14 +2331,13 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearGlossaryConfig() {
-      if (glossaryConfigBuilder_ == null) {
-        glossaryConfig_ = null;
-        onChanged();
-      } else {
-        glossaryConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      glossaryConfig_ = null;
+      if (glossaryConfigBuilder_ != null) {
+        glossaryConfigBuilder_.dispose();
         glossaryConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2323,7 +2355,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      */
     public com.google.cloud.translate.v3.TranslateTextGlossaryConfig.Builder
         getGlossaryConfigBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getGlossaryConfigFieldBuilder().getBuilder();
     }
@@ -2391,14 +2423,14 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000080;
+      onChanged();
       return labels_;
     }
 
@@ -2468,8 +2500,10 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2504,6 +2538,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2532,6 +2567,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2556,8 +2592,8 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2577,6 +2613,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000080;
       return this;
     }
 

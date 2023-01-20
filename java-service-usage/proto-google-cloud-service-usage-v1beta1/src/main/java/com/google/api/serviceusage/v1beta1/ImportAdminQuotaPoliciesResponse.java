@@ -69,6 +69,8 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
   }
 
   public static final int POLICIES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.serviceusage.v1beta1.AdminQuotaPolicy> policies_;
   /**
    *
@@ -340,6 +342,7 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (policiesBuilder_ == null) {
         policies_ = java.util.Collections.emptyList();
       } else {
@@ -376,7 +379,16 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
     public com.google.api.serviceusage.v1beta1.ImportAdminQuotaPoliciesResponse buildPartial() {
       com.google.api.serviceusage.v1beta1.ImportAdminQuotaPoliciesResponse result =
           new com.google.api.serviceusage.v1beta1.ImportAdminQuotaPoliciesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.api.serviceusage.v1beta1.ImportAdminQuotaPoliciesResponse result) {
       if (policiesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           policies_ = java.util.Collections.unmodifiableList(policies_);
@@ -386,8 +398,11 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
       } else {
         result.policies_ = policiesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.api.serviceusage.v1beta1.ImportAdminQuotaPoliciesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

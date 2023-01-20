@@ -205,7 +205,9 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCATION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -254,7 +256,7 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 2;
-  private int kind_;
+  private int kind_ = 0;
   /**
    *
    *
@@ -283,16 +285,17 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.servicemanagement.v1.Diagnostic.Kind getKind() {
-    @SuppressWarnings("deprecation")
     com.google.api.servicemanagement.v1.Diagnostic.Kind result =
-        com.google.api.servicemanagement.v1.Diagnostic.Kind.valueOf(kind_);
+        com.google.api.servicemanagement.v1.Diagnostic.Kind.forNumber(kind_);
     return result == null
         ? com.google.api.servicemanagement.v1.Diagnostic.Kind.UNRECOGNIZED
         : result;
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -555,12 +558,10 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       location_ = "";
-
       kind_ = 0;
-
       message_ = "";
-
       return this;
     }
 
@@ -588,11 +589,24 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.servicemanagement.v1.Diagnostic buildPartial() {
       com.google.api.servicemanagement.v1.Diagnostic result =
           new com.google.api.servicemanagement.v1.Diagnostic(this);
-      result.location_ = location_;
-      result.kind_ = kind_;
-      result.message_ = message_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.api.servicemanagement.v1.Diagnostic result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.location_ = location_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.kind_ = kind_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.message_ = message_;
+      }
     }
 
     @java.lang.Override
@@ -642,6 +656,7 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.api.servicemanagement.v1.Diagnostic.getDefaultInstance()) return this;
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.kind_ != 0) {
@@ -649,6 +664,7 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -680,19 +696,19 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 kind_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 message_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -711,6 +727,8 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object location_ = "";
     /**
@@ -773,8 +791,8 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -790,8 +808,8 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -812,8 +830,8 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -847,8 +865,8 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
-
       kind_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -865,9 +883,8 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.api.servicemanagement.v1.Diagnostic.Kind getKind() {
-      @SuppressWarnings("deprecation")
       com.google.api.servicemanagement.v1.Diagnostic.Kind result =
-          com.google.api.servicemanagement.v1.Diagnostic.Kind.valueOf(kind_);
+          com.google.api.servicemanagement.v1.Diagnostic.Kind.forNumber(kind_);
       return result == null
           ? com.google.api.servicemanagement.v1.Diagnostic.Kind.UNRECOGNIZED
           : result;
@@ -888,7 +905,7 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       kind_ = value.getNumber();
       onChanged();
       return this;
@@ -905,7 +922,7 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       kind_ = 0;
       onChanged();
       return this;
@@ -972,8 +989,8 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       message_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -989,8 +1006,8 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1011,8 +1028,8 @@ public final class Diagnostic extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       message_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

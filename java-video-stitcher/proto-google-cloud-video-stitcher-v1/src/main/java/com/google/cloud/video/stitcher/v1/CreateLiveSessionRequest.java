@@ -68,7 +68,9 @@ public final class CreateLiveSessionRequest extends com.google.protobuf.Generate
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -173,7 +175,9 @@ public final class CreateLiveSessionRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.video.stitcher.v1.LiveSessionOrBuilder getLiveSessionOrBuilder() {
-    return getLiveSession();
+    return liveSession_ == null
+        ? com.google.cloud.video.stitcher.v1.LiveSession.getDefaultInstance()
+        : liveSession_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -388,12 +392,11 @@ public final class CreateLiveSessionRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (liveSessionBuilder_ == null) {
-        liveSession_ = null;
-      } else {
-        liveSession_ = null;
+      liveSession_ = null;
+      if (liveSessionBuilder_ != null) {
+        liveSessionBuilder_.dispose();
         liveSessionBuilder_ = null;
       }
       return this;
@@ -423,14 +426,22 @@ public final class CreateLiveSessionRequest extends com.google.protobuf.Generate
     public com.google.cloud.video.stitcher.v1.CreateLiveSessionRequest buildPartial() {
       com.google.cloud.video.stitcher.v1.CreateLiveSessionRequest result =
           new com.google.cloud.video.stitcher.v1.CreateLiveSessionRequest(this);
-      result.parent_ = parent_;
-      if (liveSessionBuilder_ == null) {
-        result.liveSession_ = liveSession_;
-      } else {
-        result.liveSession_ = liveSessionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.CreateLiveSessionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.liveSession_ =
+            liveSessionBuilder_ == null ? liveSession_ : liveSessionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -481,6 +492,7 @@ public final class CreateLiveSessionRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasLiveSession()) {
@@ -515,13 +527,13 @@ public final class CreateLiveSessionRequest extends com.google.protobuf.Generate
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getLiveSessionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -540,6 +552,8 @@ public final class CreateLiveSessionRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -611,8 +625,8 @@ public final class CreateLiveSessionRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -631,8 +645,8 @@ public final class CreateLiveSessionRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -656,8 +670,8 @@ public final class CreateLiveSessionRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -682,7 +696,7 @@ public final class CreateLiveSessionRequest extends com.google.protobuf.Generate
      * @return Whether the liveSession field is set.
      */
     public boolean hasLiveSession() {
-      return liveSessionBuilder_ != null || liveSession_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -723,11 +737,11 @@ public final class CreateLiveSessionRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         liveSession_ = value;
-        onChanged();
       } else {
         liveSessionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -745,11 +759,11 @@ public final class CreateLiveSessionRequest extends com.google.protobuf.Generate
         com.google.cloud.video.stitcher.v1.LiveSession.Builder builderForValue) {
       if (liveSessionBuilder_ == null) {
         liveSession_ = builderForValue.build();
-        onChanged();
       } else {
         liveSessionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -765,19 +779,19 @@ public final class CreateLiveSessionRequest extends com.google.protobuf.Generate
      */
     public Builder mergeLiveSession(com.google.cloud.video.stitcher.v1.LiveSession value) {
       if (liveSessionBuilder_ == null) {
-        if (liveSession_ != null) {
-          liveSession_ =
-              com.google.cloud.video.stitcher.v1.LiveSession.newBuilder(liveSession_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && liveSession_ != null
+            && liveSession_
+                != com.google.cloud.video.stitcher.v1.LiveSession.getDefaultInstance()) {
+          getLiveSessionBuilder().mergeFrom(value);
         } else {
           liveSession_ = value;
         }
-        onChanged();
       } else {
         liveSessionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -792,14 +806,13 @@ public final class CreateLiveSessionRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearLiveSession() {
-      if (liveSessionBuilder_ == null) {
-        liveSession_ = null;
-        onChanged();
-      } else {
-        liveSession_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      liveSession_ = null;
+      if (liveSessionBuilder_ != null) {
+        liveSessionBuilder_.dispose();
         liveSessionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -814,7 +827,7 @@ public final class CreateLiveSessionRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.video.stitcher.v1.LiveSession.Builder getLiveSessionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getLiveSessionFieldBuilder().getBuilder();
     }

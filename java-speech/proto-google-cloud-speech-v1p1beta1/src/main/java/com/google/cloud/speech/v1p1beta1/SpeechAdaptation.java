@@ -171,6 +171,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int ABNF_STRINGS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList abnfStrings_;
     /**
      *
@@ -434,6 +436,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         abnfStrings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -464,14 +467,26 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar buildPartial() {
         com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar result =
             new com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           abnfStrings_ = abnfStrings_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.abnfStrings_ = abnfStrings_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -831,6 +846,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PHRASE_SETS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v1p1beta1.PhraseSet> phraseSets_;
   /**
    *
@@ -910,6 +927,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PHRASE_SET_REFERENCES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList phraseSetReferences_;
   /**
    *
@@ -975,6 +994,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CUSTOM_CLASSES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v1p1beta1.CustomClass> customClasses_;
   /**
    *
@@ -1111,7 +1132,9 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammarOrBuilder
       getAbnfGrammarOrBuilder() {
-    return getAbnfGrammar();
+    return abnfGrammar_ == null
+        ? com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.getDefaultInstance()
+        : abnfGrammar_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1354,6 +1377,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (phraseSetsBuilder_ == null) {
         phraseSets_ = java.util.Collections.emptyList();
       } else {
@@ -1370,10 +1394,9 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         customClassesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
-      if (abnfGrammarBuilder_ == null) {
-        abnfGrammar_ = null;
-      } else {
-        abnfGrammar_ = null;
+      abnfGrammar_ = null;
+      if (abnfGrammarBuilder_ != null) {
+        abnfGrammarBuilder_.dispose();
         abnfGrammarBuilder_ = null;
       }
       return this;
@@ -1403,7 +1426,16 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.speech.v1p1beta1.SpeechAdaptation buildPartial() {
       com.google.cloud.speech.v1p1beta1.SpeechAdaptation result =
           new com.google.cloud.speech.v1p1beta1.SpeechAdaptation(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.speech.v1p1beta1.SpeechAdaptation result) {
       if (phraseSetsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           phraseSets_ = java.util.Collections.unmodifiableList(phraseSets_);
@@ -1427,13 +1459,14 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       } else {
         result.customClasses_ = customClassesBuilder_.build();
       }
-      if (abnfGrammarBuilder_ == null) {
-        result.abnfGrammar_ = abnfGrammar_;
-      } else {
-        result.abnfGrammar_ = abnfGrammarBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v1p1beta1.SpeechAdaptation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.abnfGrammar_ =
+            abnfGrammarBuilder_ == null ? abnfGrammar_ : abnfGrammarBuilder_.build();
       }
-      onBuilt();
-      return result;
     }
 
     @java.lang.Override
@@ -1611,7 +1644,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
             case 34:
               {
                 input.readMessage(getAbnfGrammarFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -2630,7 +2663,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      * @return Whether the abnfGrammar field is set.
      */
     public boolean hasAbnfGrammar() {
-      return abnfGrammarBuilder_ != null || abnfGrammar_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2672,11 +2705,11 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         abnfGrammar_ = value;
-        onChanged();
       } else {
         abnfGrammarBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2694,11 +2727,11 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.Builder builderForValue) {
       if (abnfGrammarBuilder_ == null) {
         abnfGrammar_ = builderForValue.build();
-        onChanged();
       } else {
         abnfGrammarBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2715,20 +2748,20 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     public Builder mergeAbnfGrammar(
         com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar value) {
       if (abnfGrammarBuilder_ == null) {
-        if (abnfGrammar_ != null) {
-          abnfGrammar_ =
-              com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.newBuilder(
-                      abnfGrammar_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && abnfGrammar_ != null
+            && abnfGrammar_
+                != com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar
+                    .getDefaultInstance()) {
+          getAbnfGrammarBuilder().mergeFrom(value);
         } else {
           abnfGrammar_ = value;
         }
-        onChanged();
       } else {
         abnfGrammarBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2743,14 +2776,13 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar abnf_grammar = 4;</code>
      */
     public Builder clearAbnfGrammar() {
-      if (abnfGrammarBuilder_ == null) {
-        abnfGrammar_ = null;
-        onChanged();
-      } else {
-        abnfGrammar_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      abnfGrammar_ = null;
+      if (abnfGrammarBuilder_ != null) {
+        abnfGrammarBuilder_.dispose();
         abnfGrammarBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2766,7 +2798,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.Builder
         getAbnfGrammarBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getAbnfGrammarFieldBuilder().getBuilder();
     }

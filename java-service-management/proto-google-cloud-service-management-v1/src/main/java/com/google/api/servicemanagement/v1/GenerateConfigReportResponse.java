@@ -71,7 +71,9 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
   }
 
   public static final int SERVICE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object serviceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceName_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
   }
 
   public static final int ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -169,6 +173,8 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
   }
 
   public static final int CHANGE_REPORTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.servicemanagement.v1.ChangeReport> changeReports_;
   /**
    *
@@ -244,6 +250,8 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
   }
 
   public static final int DIAGNOSTICS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.servicemanagement.v1.Diagnostic> diagnostics_;
   /**
    *
@@ -552,24 +560,23 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serviceName_ = "";
-
       id_ = "";
-
       if (changeReportsBuilder_ == null) {
         changeReports_ = java.util.Collections.emptyList();
       } else {
         changeReports_ = null;
         changeReportsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (diagnosticsBuilder_ == null) {
         diagnostics_ = java.util.Collections.emptyList();
       } else {
         diagnostics_ = null;
         diagnosticsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -598,29 +605,45 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
     public com.google.api.servicemanagement.v1.GenerateConfigReportResponse buildPartial() {
       com.google.api.servicemanagement.v1.GenerateConfigReportResponse result =
           new com.google.api.servicemanagement.v1.GenerateConfigReportResponse(this);
-      int from_bitField0_ = bitField0_;
-      result.serviceName_ = serviceName_;
-      result.id_ = id_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.api.servicemanagement.v1.GenerateConfigReportResponse result) {
       if (changeReportsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           changeReports_ = java.util.Collections.unmodifiableList(changeReports_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.changeReports_ = changeReports_;
       } else {
         result.changeReports_ = changeReportsBuilder_.build();
       }
       if (diagnosticsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           diagnostics_ = java.util.Collections.unmodifiableList(diagnostics_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.diagnostics_ = diagnostics_;
       } else {
         result.diagnostics_ = diagnosticsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.api.servicemanagement.v1.GenerateConfigReportResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serviceName_ = serviceName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.id_ = id_;
+      }
     }
 
     @java.lang.Override
@@ -673,17 +696,19 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
         return this;
       if (!other.getServiceName().isEmpty()) {
         serviceName_ = other.serviceName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (changeReportsBuilder_ == null) {
         if (!other.changeReports_.isEmpty()) {
           if (changeReports_.isEmpty()) {
             changeReports_ = other.changeReports_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureChangeReportsIsMutable();
             changeReports_.addAll(other.changeReports_);
@@ -696,7 +721,7 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
             changeReportsBuilder_.dispose();
             changeReportsBuilder_ = null;
             changeReports_ = other.changeReports_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             changeReportsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getChangeReportsFieldBuilder()
@@ -710,7 +735,7 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
         if (!other.diagnostics_.isEmpty()) {
           if (diagnostics_.isEmpty()) {
             diagnostics_ = other.diagnostics_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureDiagnosticsIsMutable();
             diagnostics_.addAll(other.diagnostics_);
@@ -723,7 +748,7 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
             diagnosticsBuilder_.dispose();
             diagnosticsBuilder_ = null;
             diagnostics_ = other.diagnostics_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
             diagnosticsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDiagnosticsFieldBuilder()
@@ -762,13 +787,13 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
             case 10:
               {
                 serviceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -878,8 +903,8 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -895,8 +920,8 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearServiceName() {
-
       serviceName_ = getDefaultInstance().getServiceName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -917,8 +942,8 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -984,8 +1009,8 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1001,8 +1026,8 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1023,8 +1048,8 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1033,11 +1058,11 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
         java.util.Collections.emptyList();
 
     private void ensureChangeReportsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         changeReports_ =
             new java.util.ArrayList<com.google.api.servicemanagement.v1.ChangeReport>(
                 changeReports_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1266,7 +1291,7 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
     public Builder clearChangeReports() {
       if (changeReportsBuilder_ == null) {
         changeReports_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         changeReportsBuilder_.clear();
@@ -1399,7 +1424,7 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
                 com.google.api.servicemanagement.v1.ChangeReport.Builder,
                 com.google.api.servicemanagement.v1.ChangeReportOrBuilder>(
                 changeReports_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         changeReports_ = null;
@@ -1411,10 +1436,10 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
         java.util.Collections.emptyList();
 
     private void ensureDiagnosticsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         diagnostics_ =
             new java.util.ArrayList<com.google.api.servicemanagement.v1.Diagnostic>(diagnostics_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1652,7 +1677,7 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
     public Builder clearDiagnostics() {
       if (diagnosticsBuilder_ == null) {
         diagnostics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         diagnosticsBuilder_.clear();
@@ -1789,7 +1814,7 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
                 com.google.api.servicemanagement.v1.Diagnostic,
                 com.google.api.servicemanagement.v1.Diagnostic.Builder,
                 com.google.api.servicemanagement.v1.DiagnosticOrBuilder>(
-                diagnostics_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                diagnostics_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         diagnostics_ = null;
       }
       return diagnosticsBuilder_;

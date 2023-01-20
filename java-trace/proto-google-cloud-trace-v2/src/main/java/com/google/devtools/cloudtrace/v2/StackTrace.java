@@ -379,7 +379,9 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getFunctionNameOrBuilder() {
-      return getFunctionName();
+      return functionName_ == null
+          ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
+          : functionName_;
     }
 
     public static final int ORIGINAL_FUNCTION_NAME_FIELD_NUMBER = 2;
@@ -434,7 +436,9 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder
         getOriginalFunctionNameOrBuilder() {
-      return getOriginalFunctionName();
+      return originalFunctionName_ == null
+          ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
+          : originalFunctionName_;
     }
 
     public static final int FILE_NAME_FIELD_NUMBER = 3;
@@ -485,11 +489,13 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getFileNameOrBuilder() {
-      return getFileName();
+      return fileName_ == null
+          ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
+          : fileName_;
     }
 
     public static final int LINE_NUMBER_FIELD_NUMBER = 4;
-    private long lineNumber_;
+    private long lineNumber_ = 0L;
     /**
      *
      *
@@ -507,7 +513,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int COLUMN_NUMBER_FIELD_NUMBER = 5;
-    private long columnNumber_;
+    private long columnNumber_ = 0L;
     /**
      *
      *
@@ -570,7 +576,9 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.devtools.cloudtrace.v2.ModuleOrBuilder getLoadModuleOrBuilder() {
-      return getLoadModule();
+      return loadModule_ == null
+          ? com.google.devtools.cloudtrace.v2.Module.getDefaultInstance()
+          : loadModule_;
     }
 
     public static final int SOURCE_VERSION_FIELD_NUMBER = 7;
@@ -619,7 +627,9 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder
         getSourceVersionOrBuilder() {
-      return getSourceVersion();
+      return sourceVersion_ == null
+          ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
+          : sourceVersion_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -902,38 +912,32 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (functionNameBuilder_ == null) {
-          functionName_ = null;
-        } else {
-          functionName_ = null;
+        bitField0_ = 0;
+        functionName_ = null;
+        if (functionNameBuilder_ != null) {
+          functionNameBuilder_.dispose();
           functionNameBuilder_ = null;
         }
-        if (originalFunctionNameBuilder_ == null) {
-          originalFunctionName_ = null;
-        } else {
-          originalFunctionName_ = null;
+        originalFunctionName_ = null;
+        if (originalFunctionNameBuilder_ != null) {
+          originalFunctionNameBuilder_.dispose();
           originalFunctionNameBuilder_ = null;
         }
-        if (fileNameBuilder_ == null) {
-          fileName_ = null;
-        } else {
-          fileName_ = null;
+        fileName_ = null;
+        if (fileNameBuilder_ != null) {
+          fileNameBuilder_.dispose();
           fileNameBuilder_ = null;
         }
         lineNumber_ = 0L;
-
         columnNumber_ = 0L;
-
-        if (loadModuleBuilder_ == null) {
-          loadModule_ = null;
-        } else {
-          loadModule_ = null;
+        loadModule_ = null;
+        if (loadModuleBuilder_ != null) {
+          loadModuleBuilder_.dispose();
           loadModuleBuilder_ = null;
         }
-        if (sourceVersionBuilder_ == null) {
-          sourceVersion_ = null;
-        } else {
-          sourceVersion_ = null;
+        sourceVersion_ = null;
+        if (sourceVersionBuilder_ != null) {
+          sourceVersionBuilder_.dispose();
           sourceVersionBuilder_ = null;
         }
         return this;
@@ -963,35 +967,42 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       public com.google.devtools.cloudtrace.v2.StackTrace.StackFrame buildPartial() {
         com.google.devtools.cloudtrace.v2.StackTrace.StackFrame result =
             new com.google.devtools.cloudtrace.v2.StackTrace.StackFrame(this);
-        if (functionNameBuilder_ == null) {
-          result.functionName_ = functionName_;
-        } else {
-          result.functionName_ = functionNameBuilder_.build();
-        }
-        if (originalFunctionNameBuilder_ == null) {
-          result.originalFunctionName_ = originalFunctionName_;
-        } else {
-          result.originalFunctionName_ = originalFunctionNameBuilder_.build();
-        }
-        if (fileNameBuilder_ == null) {
-          result.fileName_ = fileName_;
-        } else {
-          result.fileName_ = fileNameBuilder_.build();
-        }
-        result.lineNumber_ = lineNumber_;
-        result.columnNumber_ = columnNumber_;
-        if (loadModuleBuilder_ == null) {
-          result.loadModule_ = loadModule_;
-        } else {
-          result.loadModule_ = loadModuleBuilder_.build();
-        }
-        if (sourceVersionBuilder_ == null) {
-          result.sourceVersion_ = sourceVersion_;
-        } else {
-          result.sourceVersion_ = sourceVersionBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.devtools.cloudtrace.v2.StackTrace.StackFrame result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.functionName_ =
+              functionNameBuilder_ == null ? functionName_ : functionNameBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.originalFunctionName_ =
+              originalFunctionNameBuilder_ == null
+                  ? originalFunctionName_
+                  : originalFunctionNameBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.fileName_ = fileNameBuilder_ == null ? fileName_ : fileNameBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.lineNumber_ = lineNumber_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.columnNumber_ = columnNumber_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.loadModule_ =
+              loadModuleBuilder_ == null ? loadModule_ : loadModuleBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.sourceVersion_ =
+              sourceVersionBuilder_ == null ? sourceVersion_ : sourceVersionBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1092,44 +1103,44 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   input.readMessage(getFunctionNameFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getOriginalFunctionNameFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getFileNameFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 32:
                 {
                   lineNumber_ = input.readInt64();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               case 40:
                 {
                   columnNumber_ = input.readInt64();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               case 50:
                 {
                   input.readMessage(getLoadModuleFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 50
               case 58:
                 {
                   input.readMessage(getSourceVersionFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 58
               default:
@@ -1148,6 +1159,8 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.devtools.cloudtrace.v2.TruncatableString functionName_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1168,7 +1181,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the functionName field is set.
        */
       public boolean hasFunctionName() {
-        return functionNameBuilder_ != null || functionName_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1207,11 +1220,11 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           functionName_ = value;
-          onChanged();
         } else {
           functionNameBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1228,11 +1241,11 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           com.google.devtools.cloudtrace.v2.TruncatableString.Builder builderForValue) {
         if (functionNameBuilder_ == null) {
           functionName_ = builderForValue.build();
-          onChanged();
         } else {
           functionNameBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1247,19 +1260,19 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeFunctionName(com.google.devtools.cloudtrace.v2.TruncatableString value) {
         if (functionNameBuilder_ == null) {
-          if (functionName_ != null) {
-            functionName_ =
-                com.google.devtools.cloudtrace.v2.TruncatableString.newBuilder(functionName_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && functionName_ != null
+              && functionName_
+                  != com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()) {
+            getFunctionNameBuilder().mergeFrom(value);
           } else {
             functionName_ = value;
           }
-          onChanged();
         } else {
           functionNameBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1273,14 +1286,13 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.devtools.cloudtrace.v2.TruncatableString function_name = 1;</code>
        */
       public Builder clearFunctionName() {
-        if (functionNameBuilder_ == null) {
-          functionName_ = null;
-          onChanged();
-        } else {
-          functionName_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        functionName_ = null;
+        if (functionNameBuilder_ != null) {
+          functionNameBuilder_.dispose();
           functionNameBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1294,7 +1306,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.devtools.cloudtrace.v2.TruncatableString function_name = 1;</code>
        */
       public com.google.devtools.cloudtrace.v2.TruncatableString.Builder getFunctionNameBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getFunctionNameFieldBuilder().getBuilder();
       }
@@ -1365,7 +1377,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the originalFunctionName field is set.
        */
       public boolean hasOriginalFunctionName() {
-        return originalFunctionNameBuilder_ != null || originalFunctionName_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1407,11 +1419,11 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           originalFunctionName_ = value;
-          onChanged();
         } else {
           originalFunctionNameBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1429,11 +1441,11 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           com.google.devtools.cloudtrace.v2.TruncatableString.Builder builderForValue) {
         if (originalFunctionNameBuilder_ == null) {
           originalFunctionName_ = builderForValue.build();
-          onChanged();
         } else {
           originalFunctionNameBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1450,20 +1462,19 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeOriginalFunctionName(
           com.google.devtools.cloudtrace.v2.TruncatableString value) {
         if (originalFunctionNameBuilder_ == null) {
-          if (originalFunctionName_ != null) {
-            originalFunctionName_ =
-                com.google.devtools.cloudtrace.v2.TruncatableString.newBuilder(
-                        originalFunctionName_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && originalFunctionName_ != null
+              && originalFunctionName_
+                  != com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()) {
+            getOriginalFunctionNameBuilder().mergeFrom(value);
           } else {
             originalFunctionName_ = value;
           }
-          onChanged();
         } else {
           originalFunctionNameBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1478,14 +1489,13 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.devtools.cloudtrace.v2.TruncatableString original_function_name = 2;</code>
        */
       public Builder clearOriginalFunctionName() {
-        if (originalFunctionNameBuilder_ == null) {
-          originalFunctionName_ = null;
-          onChanged();
-        } else {
-          originalFunctionName_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        originalFunctionName_ = null;
+        if (originalFunctionNameBuilder_ != null) {
+          originalFunctionNameBuilder_.dispose();
           originalFunctionNameBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1501,7 +1511,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.devtools.cloudtrace.v2.TruncatableString.Builder
           getOriginalFunctionNameBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getOriginalFunctionNameFieldBuilder().getBuilder();
       }
@@ -1573,7 +1583,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the fileName field is set.
        */
       public boolean hasFileName() {
-        return fileNameBuilder_ != null || fileName_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1612,11 +1622,11 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           fileName_ = value;
-          onChanged();
         } else {
           fileNameBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1633,11 +1643,11 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           com.google.devtools.cloudtrace.v2.TruncatableString.Builder builderForValue) {
         if (fileNameBuilder_ == null) {
           fileName_ = builderForValue.build();
-          onChanged();
         } else {
           fileNameBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1652,19 +1662,19 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeFileName(com.google.devtools.cloudtrace.v2.TruncatableString value) {
         if (fileNameBuilder_ == null) {
-          if (fileName_ != null) {
-            fileName_ =
-                com.google.devtools.cloudtrace.v2.TruncatableString.newBuilder(fileName_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && fileName_ != null
+              && fileName_
+                  != com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()) {
+            getFileNameBuilder().mergeFrom(value);
           } else {
             fileName_ = value;
           }
-          onChanged();
         } else {
           fileNameBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1678,14 +1688,13 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.devtools.cloudtrace.v2.TruncatableString file_name = 3;</code>
        */
       public Builder clearFileName() {
-        if (fileNameBuilder_ == null) {
-          fileName_ = null;
-          onChanged();
-        } else {
-          fileName_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        fileName_ = null;
+        if (fileNameBuilder_ != null) {
+          fileNameBuilder_.dispose();
           fileNameBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1699,7 +1708,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.devtools.cloudtrace.v2.TruncatableString file_name = 3;</code>
        */
       public com.google.devtools.cloudtrace.v2.TruncatableString.Builder getFileNameBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getFileNameFieldBuilder().getBuilder();
       }
@@ -1780,6 +1789,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       public Builder setLineNumber(long value) {
 
         lineNumber_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1795,7 +1805,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearLineNumber() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         lineNumber_ = 0L;
         onChanged();
         return this;
@@ -1834,6 +1844,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       public Builder setColumnNumber(long value) {
 
         columnNumber_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1850,7 +1861,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearColumnNumber() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         columnNumber_ = 0L;
         onChanged();
         return this;
@@ -1874,7 +1885,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the loadModule field is set.
        */
       public boolean hasLoadModule() {
-        return loadModuleBuilder_ != null || loadModule_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        *
@@ -1911,11 +1922,11 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           loadModule_ = value;
-          onChanged();
         } else {
           loadModuleBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -1931,11 +1942,11 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           com.google.devtools.cloudtrace.v2.Module.Builder builderForValue) {
         if (loadModuleBuilder_ == null) {
           loadModule_ = builderForValue.build();
-          onChanged();
         } else {
           loadModuleBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -1949,19 +1960,18 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeLoadModule(com.google.devtools.cloudtrace.v2.Module value) {
         if (loadModuleBuilder_ == null) {
-          if (loadModule_ != null) {
-            loadModule_ =
-                com.google.devtools.cloudtrace.v2.Module.newBuilder(loadModule_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000020) != 0)
+              && loadModule_ != null
+              && loadModule_ != com.google.devtools.cloudtrace.v2.Module.getDefaultInstance()) {
+            getLoadModuleBuilder().mergeFrom(value);
           } else {
             loadModule_ = value;
           }
-          onChanged();
         } else {
           loadModuleBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -1974,14 +1984,13 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.devtools.cloudtrace.v2.Module load_module = 6;</code>
        */
       public Builder clearLoadModule() {
-        if (loadModuleBuilder_ == null) {
-          loadModule_ = null;
-          onChanged();
-        } else {
-          loadModule_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        loadModule_ = null;
+        if (loadModuleBuilder_ != null) {
+          loadModuleBuilder_.dispose();
           loadModuleBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1994,7 +2003,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.devtools.cloudtrace.v2.Module load_module = 6;</code>
        */
       public com.google.devtools.cloudtrace.v2.Module.Builder getLoadModuleBuilder() {
-
+        bitField0_ |= 0x00000020;
         onChanged();
         return getLoadModuleFieldBuilder().getBuilder();
       }
@@ -2060,7 +2069,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the sourceVersion field is set.
        */
       public boolean hasSourceVersion() {
-        return sourceVersionBuilder_ != null || sourceVersion_ != null;
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        *
@@ -2097,11 +2106,11 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           sourceVersion_ = value;
-          onChanged();
         } else {
           sourceVersionBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -2117,11 +2126,11 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           com.google.devtools.cloudtrace.v2.TruncatableString.Builder builderForValue) {
         if (sourceVersionBuilder_ == null) {
           sourceVersion_ = builderForValue.build();
-          onChanged();
         } else {
           sourceVersionBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -2135,19 +2144,19 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeSourceVersion(com.google.devtools.cloudtrace.v2.TruncatableString value) {
         if (sourceVersionBuilder_ == null) {
-          if (sourceVersion_ != null) {
-            sourceVersion_ =
-                com.google.devtools.cloudtrace.v2.TruncatableString.newBuilder(sourceVersion_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000040) != 0)
+              && sourceVersion_ != null
+              && sourceVersion_
+                  != com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()) {
+            getSourceVersionBuilder().mergeFrom(value);
           } else {
             sourceVersion_ = value;
           }
-          onChanged();
         } else {
           sourceVersionBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -2160,14 +2169,13 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.devtools.cloudtrace.v2.TruncatableString source_version = 7;</code>
        */
       public Builder clearSourceVersion() {
-        if (sourceVersionBuilder_ == null) {
-          sourceVersion_ = null;
-          onChanged();
-        } else {
-          sourceVersion_ = null;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        sourceVersion_ = null;
+        if (sourceVersionBuilder_ != null) {
+          sourceVersionBuilder_.dispose();
           sourceVersionBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2180,7 +2188,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.devtools.cloudtrace.v2.TruncatableString source_version = 7;</code>
        */
       public com.google.devtools.cloudtrace.v2.TruncatableString.Builder getSourceVersionBuilder() {
-
+        bitField0_ |= 0x00000040;
         onChanged();
         return getSourceVersionFieldBuilder().getBuilder();
       }
@@ -2415,6 +2423,8 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int FRAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.devtools.cloudtrace.v2.StackTrace.StackFrame> frame_;
     /**
      *
@@ -2486,7 +2496,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DROPPED_FRAMES_COUNT_FIELD_NUMBER = 2;
-    private int droppedFramesCount_;
+    private int droppedFramesCount_ = 0;
     /**
      *
      *
@@ -2716,6 +2726,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (frameBuilder_ == null) {
           frame_ = java.util.Collections.emptyList();
         } else {
@@ -2724,7 +2735,6 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         droppedFramesCount_ = 0;
-
         return this;
       }
 
@@ -2752,7 +2762,16 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       public com.google.devtools.cloudtrace.v2.StackTrace.StackFrames buildPartial() {
         com.google.devtools.cloudtrace.v2.StackTrace.StackFrames result =
             new com.google.devtools.cloudtrace.v2.StackTrace.StackFrames(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.devtools.cloudtrace.v2.StackTrace.StackFrames result) {
         if (frameBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             frame_ = java.util.Collections.unmodifiableList(frame_);
@@ -2762,9 +2781,13 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.frame_ = frameBuilder_.build();
         }
-        result.droppedFramesCount_ = droppedFramesCount_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.devtools.cloudtrace.v2.StackTrace.StackFrames result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.droppedFramesCount_ = droppedFramesCount_;
+        }
       }
 
       @java.lang.Override
@@ -2888,7 +2911,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
               case 16:
                 {
                   droppedFramesCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -3310,6 +3333,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       public Builder setDroppedFramesCount(int value) {
 
         droppedFramesCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3327,7 +3351,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDroppedFramesCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         droppedFramesCount_ = 0;
         onChanged();
         return this;
@@ -3443,11 +3467,13 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.devtools.cloudtrace.v2.StackTrace.StackFramesOrBuilder
       getStackFramesOrBuilder() {
-    return getStackFrames();
+    return stackFrames_ == null
+        ? com.google.devtools.cloudtrace.v2.StackTrace.StackFrames.getDefaultInstance()
+        : stackFrames_;
   }
 
   public static final int STACK_TRACE_HASH_ID_FIELD_NUMBER = 2;
-  private long stackTraceHashId_;
+  private long stackTraceHashId_ = 0L;
   /**
    *
    *
@@ -3681,14 +3707,13 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (stackFramesBuilder_ == null) {
-        stackFrames_ = null;
-      } else {
-        stackFrames_ = null;
+      bitField0_ = 0;
+      stackFrames_ = null;
+      if (stackFramesBuilder_ != null) {
+        stackFramesBuilder_.dispose();
         stackFramesBuilder_ = null;
       }
       stackTraceHashId_ = 0L;
-
       return this;
     }
 
@@ -3716,14 +3741,22 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.cloudtrace.v2.StackTrace buildPartial() {
       com.google.devtools.cloudtrace.v2.StackTrace result =
           new com.google.devtools.cloudtrace.v2.StackTrace(this);
-      if (stackFramesBuilder_ == null) {
-        result.stackFrames_ = stackFrames_;
-      } else {
-        result.stackFrames_ = stackFramesBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.stackTraceHashId_ = stackTraceHashId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.cloudtrace.v2.StackTrace result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.stackFrames_ =
+            stackFramesBuilder_ == null ? stackFrames_ : stackFramesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.stackTraceHashId_ = stackTraceHashId_;
+      }
     }
 
     @java.lang.Override
@@ -3806,13 +3839,13 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getStackFramesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 stackTraceHashId_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -3832,6 +3865,8 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.devtools.cloudtrace.v2.StackTrace.StackFrames stackFrames_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.cloudtrace.v2.StackTrace.StackFrames,
@@ -3850,7 +3885,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stackFrames field is set.
      */
     public boolean hasStackFrames() {
-      return stackFramesBuilder_ != null || stackFrames_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -3887,11 +3922,11 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         stackFrames_ = value;
-        onChanged();
       } else {
         stackFramesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3907,11 +3942,11 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         com.google.devtools.cloudtrace.v2.StackTrace.StackFrames.Builder builderForValue) {
       if (stackFramesBuilder_ == null) {
         stackFrames_ = builderForValue.build();
-        onChanged();
       } else {
         stackFramesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3926,19 +3961,19 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeStackFrames(
         com.google.devtools.cloudtrace.v2.StackTrace.StackFrames value) {
       if (stackFramesBuilder_ == null) {
-        if (stackFrames_ != null) {
-          stackFrames_ =
-              com.google.devtools.cloudtrace.v2.StackTrace.StackFrames.newBuilder(stackFrames_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && stackFrames_ != null
+            && stackFrames_
+                != com.google.devtools.cloudtrace.v2.StackTrace.StackFrames.getDefaultInstance()) {
+          getStackFramesBuilder().mergeFrom(value);
         } else {
           stackFrames_ = value;
         }
-        onChanged();
       } else {
         stackFramesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3951,14 +3986,13 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudtrace.v2.StackTrace.StackFrames stack_frames = 1;</code>
      */
     public Builder clearStackFrames() {
-      if (stackFramesBuilder_ == null) {
-        stackFrames_ = null;
-        onChanged();
-      } else {
-        stackFrames_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      stackFrames_ = null;
+      if (stackFramesBuilder_ != null) {
+        stackFramesBuilder_.dispose();
         stackFramesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3972,7 +4006,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.devtools.cloudtrace.v2.StackTrace.StackFrames.Builder
         getStackFramesBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getStackFramesFieldBuilder().getBuilder();
     }
@@ -4064,6 +4098,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     public Builder setStackTraceHashId(long value) {
 
       stackTraceHashId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -4085,7 +4120,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStackTraceHashId() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       stackTraceHashId_ = 0L;
       onChanged();
       return this;

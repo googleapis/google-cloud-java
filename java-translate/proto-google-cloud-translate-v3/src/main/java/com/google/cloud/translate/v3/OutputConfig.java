@@ -546,6 +546,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsDestinationBuilder_ != null) {
         gcsDestinationBuilder_.clear();
       }
@@ -578,16 +579,24 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.translate.v3.OutputConfig buildPartial() {
       com.google.cloud.translate.v3.OutputConfig result =
           new com.google.cloud.translate.v3.OutputConfig(this);
-      if (destinationCase_ == 1) {
-        if (gcsDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = gcsDestinationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.translate.v3.OutputConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.translate.v3.OutputConfig result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
+      if (destinationCase_ == 1 && gcsDestinationBuilder_ != null) {
+        result.destination_ = gcsDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -708,6 +717,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.translate.v3.GcsDestination,
@@ -1437,7 +1448,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       destinationCase_ = 1;
       onChanged();
-      ;
       return gcsDestinationBuilder_;
     }
 

@@ -70,7 +70,9 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int EMAIL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object email_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object email_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int UNIQUE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uniqueId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uniqueId_ = "";
   /**
    *
    *
@@ -378,10 +382,9 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       email_ = "";
-
       uniqueId_ = "";
-
       return this;
     }
 
@@ -409,10 +412,21 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
     public com.google.api.serviceusage.v1beta1.ServiceIdentity buildPartial() {
       com.google.api.serviceusage.v1beta1.ServiceIdentity result =
           new com.google.api.serviceusage.v1beta1.ServiceIdentity(this);
-      result.email_ = email_;
-      result.uniqueId_ = uniqueId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.api.serviceusage.v1beta1.ServiceIdentity result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.email_ = email_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uniqueId_ = uniqueId_;
+      }
     }
 
     @java.lang.Override
@@ -463,10 +477,12 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getEmail().isEmpty()) {
         email_ = other.email_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUniqueId().isEmpty()) {
         uniqueId_ = other.uniqueId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -498,13 +514,13 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 email_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uniqueId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -523,6 +539,8 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object email_ = "";
     /**
@@ -588,8 +606,8 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       email_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -606,8 +624,8 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearEmail() {
-
       email_ = getDefaultInstance().getEmail();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -629,8 +647,8 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       email_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -699,8 +717,8 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       uniqueId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -717,8 +735,8 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearUniqueId() {
-
       uniqueId_ = getDefaultInstance().getUniqueId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -740,8 +758,8 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uniqueId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

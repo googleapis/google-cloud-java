@@ -341,7 +341,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -609,7 +611,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.tasks.v2beta2.RateLimitsOrBuilder getRateLimitsOrBuilder() {
-    return getRateLimits();
+    return rateLimits_ == null
+        ? com.google.cloud.tasks.v2beta2.RateLimits.getDefaultInstance()
+        : rateLimits_;
   }
 
   public static final int RETRY_CONFIG_FIELD_NUMBER = 6;
@@ -681,11 +685,13 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.tasks.v2beta2.RetryConfigOrBuilder getRetryConfigOrBuilder() {
-    return getRetryConfig();
+    return retryConfig_ == null
+        ? com.google.cloud.tasks.v2beta2.RetryConfig.getDefaultInstance()
+        : retryConfig_;
   }
 
   public static final int STATE_FIELD_NUMBER = 7;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -724,9 +730,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.tasks.v2beta2.Queue.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.tasks.v2beta2.Queue.State result =
-        com.google.cloud.tasks.v2beta2.Queue.State.valueOf(state_);
+        com.google.cloud.tasks.v2beta2.Queue.State.forNumber(state_);
     return result == null ? com.google.cloud.tasks.v2beta2.Queue.State.UNRECOGNIZED : result;
   }
 
@@ -794,7 +799,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getPurgeTimeOrBuilder() {
-    return getPurgeTime();
+    return purgeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : purgeTime_;
   }
 
   public static final int TASK_TTL_FIELD_NUMBER = 9;
@@ -867,7 +872,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTaskTtlOrBuilder() {
-    return getTaskTtl();
+    return taskTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : taskTtl_;
   }
 
   public static final int TOMBSTONE_TTL_FIELD_NUMBER = 10;
@@ -936,7 +941,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTombstoneTtlOrBuilder() {
-    return getTombstoneTtl();
+    return tombstoneTtl_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : tombstoneTtl_;
   }
 
   public static final int STATS_FIELD_NUMBER = 16;
@@ -994,7 +1001,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.tasks.v2beta2.QueueStatsOrBuilder getStatsOrBuilder() {
-    return getStats();
+    return stats_ == null ? com.google.cloud.tasks.v2beta2.QueueStats.getDefaultInstance() : stats_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1326,50 +1333,43 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (appEngineHttpTargetBuilder_ != null) {
         appEngineHttpTargetBuilder_.clear();
       }
       if (pullTargetBuilder_ != null) {
         pullTargetBuilder_.clear();
       }
-      if (rateLimitsBuilder_ == null) {
-        rateLimits_ = null;
-      } else {
-        rateLimits_ = null;
+      rateLimits_ = null;
+      if (rateLimitsBuilder_ != null) {
+        rateLimitsBuilder_.dispose();
         rateLimitsBuilder_ = null;
       }
-      if (retryConfigBuilder_ == null) {
-        retryConfig_ = null;
-      } else {
-        retryConfig_ = null;
+      retryConfig_ = null;
+      if (retryConfigBuilder_ != null) {
+        retryConfigBuilder_.dispose();
         retryConfigBuilder_ = null;
       }
       state_ = 0;
-
-      if (purgeTimeBuilder_ == null) {
-        purgeTime_ = null;
-      } else {
-        purgeTime_ = null;
+      purgeTime_ = null;
+      if (purgeTimeBuilder_ != null) {
+        purgeTimeBuilder_.dispose();
         purgeTimeBuilder_ = null;
       }
-      if (taskTtlBuilder_ == null) {
-        taskTtl_ = null;
-      } else {
-        taskTtl_ = null;
+      taskTtl_ = null;
+      if (taskTtlBuilder_ != null) {
+        taskTtlBuilder_.dispose();
         taskTtlBuilder_ = null;
       }
-      if (tombstoneTtlBuilder_ == null) {
-        tombstoneTtl_ = null;
-      } else {
-        tombstoneTtl_ = null;
+      tombstoneTtl_ = null;
+      if (tombstoneTtlBuilder_ != null) {
+        tombstoneTtlBuilder_.dispose();
         tombstoneTtlBuilder_ = null;
       }
-      if (statsBuilder_ == null) {
-        stats_ = null;
-      } else {
-        stats_ = null;
+      stats_ = null;
+      if (statsBuilder_ != null) {
+        statsBuilder_.dispose();
         statsBuilder_ = null;
       }
       targetTypeCase_ = 0;
@@ -1400,55 +1400,53 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.tasks.v2beta2.Queue buildPartial() {
       com.google.cloud.tasks.v2beta2.Queue result = new com.google.cloud.tasks.v2beta2.Queue(this);
-      result.name_ = name_;
-      if (targetTypeCase_ == 3) {
-        if (appEngineHttpTargetBuilder_ == null) {
-          result.targetType_ = targetType_;
-        } else {
-          result.targetType_ = appEngineHttpTargetBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (targetTypeCase_ == 4) {
-        if (pullTargetBuilder_ == null) {
-          result.targetType_ = targetType_;
-        } else {
-          result.targetType_ = pullTargetBuilder_.build();
-        }
-      }
-      if (rateLimitsBuilder_ == null) {
-        result.rateLimits_ = rateLimits_;
-      } else {
-        result.rateLimits_ = rateLimitsBuilder_.build();
-      }
-      if (retryConfigBuilder_ == null) {
-        result.retryConfig_ = retryConfig_;
-      } else {
-        result.retryConfig_ = retryConfigBuilder_.build();
-      }
-      result.state_ = state_;
-      if (purgeTimeBuilder_ == null) {
-        result.purgeTime_ = purgeTime_;
-      } else {
-        result.purgeTime_ = purgeTimeBuilder_.build();
-      }
-      if (taskTtlBuilder_ == null) {
-        result.taskTtl_ = taskTtl_;
-      } else {
-        result.taskTtl_ = taskTtlBuilder_.build();
-      }
-      if (tombstoneTtlBuilder_ == null) {
-        result.tombstoneTtl_ = tombstoneTtl_;
-      } else {
-        result.tombstoneTtl_ = tombstoneTtlBuilder_.build();
-      }
-      if (statsBuilder_ == null) {
-        result.stats_ = stats_;
-      } else {
-        result.stats_ = statsBuilder_.build();
-      }
-      result.targetTypeCase_ = targetTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tasks.v2beta2.Queue result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.rateLimits_ = rateLimitsBuilder_ == null ? rateLimits_ : rateLimitsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.retryConfig_ =
+            retryConfigBuilder_ == null ? retryConfig_ : retryConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.purgeTime_ = purgeTimeBuilder_ == null ? purgeTime_ : purgeTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.taskTtl_ = taskTtlBuilder_ == null ? taskTtl_ : taskTtlBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.tombstoneTtl_ =
+            tombstoneTtlBuilder_ == null ? tombstoneTtl_ : tombstoneTtlBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.stats_ = statsBuilder_ == null ? stats_ : statsBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.tasks.v2beta2.Queue result) {
+      result.targetTypeCase_ = targetTypeCase_;
+      result.targetType_ = this.targetType_;
+      if (targetTypeCase_ == 3 && appEngineHttpTargetBuilder_ != null) {
+        result.targetType_ = appEngineHttpTargetBuilder_.build();
+      }
+      if (targetTypeCase_ == 4 && pullTargetBuilder_ != null) {
+        result.targetType_ = pullTargetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1498,6 +1496,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.tasks.v2beta2.Queue.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRateLimits()) {
@@ -1566,7 +1565,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
@@ -1585,43 +1584,43 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getRateLimitsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getRetryConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 56:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             case 66:
               {
                 input.readMessage(getPurgeTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getTaskTtlFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getTombstoneTtlFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             case 130:
               {
                 input.readMessage(getStatsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 130
             default:
@@ -1654,6 +1653,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1761,8 +1762,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1793,8 +1794,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1830,8 +1831,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2056,7 +2057,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       }
       targetTypeCase_ = 3;
       onChanged();
-      ;
       return appEngineHttpTargetBuilder_;
     }
 
@@ -2275,7 +2275,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       }
       targetTypeCase_ = 4;
       onChanged();
-      ;
       return pullTargetBuilder_;
     }
 
@@ -2309,7 +2308,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the rateLimits field is set.
      */
     public boolean hasRateLimits() {
-      return rateLimitsBuilder_ != null || rateLimits_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2370,11 +2369,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         rateLimits_ = value;
-        onChanged();
       } else {
         rateLimitsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2402,11 +2401,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.tasks.v2beta2.RateLimits.Builder builderForValue) {
       if (rateLimitsBuilder_ == null) {
         rateLimits_ = builderForValue.build();
-        onChanged();
       } else {
         rateLimitsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2432,19 +2431,18 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRateLimits(com.google.cloud.tasks.v2beta2.RateLimits value) {
       if (rateLimitsBuilder_ == null) {
-        if (rateLimits_ != null) {
-          rateLimits_ =
-              com.google.cloud.tasks.v2beta2.RateLimits.newBuilder(rateLimits_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && rateLimits_ != null
+            && rateLimits_ != com.google.cloud.tasks.v2beta2.RateLimits.getDefaultInstance()) {
+          getRateLimitsBuilder().mergeFrom(value);
         } else {
           rateLimits_ = value;
         }
-        onChanged();
       } else {
         rateLimitsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2469,14 +2467,13 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tasks.v2beta2.RateLimits rate_limits = 5;</code>
      */
     public Builder clearRateLimits() {
-      if (rateLimitsBuilder_ == null) {
-        rateLimits_ = null;
-        onChanged();
-      } else {
-        rateLimits_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      rateLimits_ = null;
+      if (rateLimitsBuilder_ != null) {
+        rateLimitsBuilder_.dispose();
         rateLimitsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2501,7 +2498,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tasks.v2beta2.RateLimits rate_limits = 5;</code>
      */
     public com.google.cloud.tasks.v2beta2.RateLimits.Builder getRateLimitsBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRateLimitsFieldBuilder().getBuilder();
     }
@@ -2599,7 +2596,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the retryConfig field is set.
      */
     public boolean hasRetryConfig() {
-      return retryConfigBuilder_ != null || retryConfig_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2652,11 +2649,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         retryConfig_ = value;
-        onChanged();
       } else {
         retryConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2680,11 +2677,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.tasks.v2beta2.RetryConfig.Builder builderForValue) {
       if (retryConfigBuilder_ == null) {
         retryConfig_ = builderForValue.build();
-        onChanged();
       } else {
         retryConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2706,19 +2703,18 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRetryConfig(com.google.cloud.tasks.v2beta2.RetryConfig value) {
       if (retryConfigBuilder_ == null) {
-        if (retryConfig_ != null) {
-          retryConfig_ =
-              com.google.cloud.tasks.v2beta2.RetryConfig.newBuilder(retryConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && retryConfig_ != null
+            && retryConfig_ != com.google.cloud.tasks.v2beta2.RetryConfig.getDefaultInstance()) {
+          getRetryConfigBuilder().mergeFrom(value);
         } else {
           retryConfig_ = value;
         }
-        onChanged();
       } else {
         retryConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2739,14 +2735,13 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tasks.v2beta2.RetryConfig retry_config = 6;</code>
      */
     public Builder clearRetryConfig() {
-      if (retryConfigBuilder_ == null) {
-        retryConfig_ = null;
-        onChanged();
-      } else {
-        retryConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      retryConfig_ = null;
+      if (retryConfigBuilder_ != null) {
+        retryConfigBuilder_.dispose();
         retryConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2767,7 +2762,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tasks.v2beta2.RetryConfig retry_config = 6;</code>
      */
     public com.google.cloud.tasks.v2beta2.RetryConfig.Builder getRetryConfigBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getRetryConfigFieldBuilder().getBuilder();
     }
@@ -2870,8 +2865,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2893,9 +2888,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.tasks.v2beta2.Queue.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.tasks.v2beta2.Queue.State result =
-          com.google.cloud.tasks.v2beta2.Queue.State.valueOf(state_);
+          com.google.cloud.tasks.v2beta2.Queue.State.forNumber(state_);
       return result == null ? com.google.cloud.tasks.v2beta2.Queue.State.UNRECOGNIZED : result;
     }
     /**
@@ -2919,7 +2913,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2941,7 +2935,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;
@@ -2972,7 +2966,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the purgeTime field is set.
      */
     public boolean hasPurgeTime() {
-      return purgeTimeBuilder_ != null || purgeTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3021,11 +3015,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         purgeTime_ = value;
-        onChanged();
       } else {
         purgeTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3047,11 +3041,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     public Builder setPurgeTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (purgeTimeBuilder_ == null) {
         purgeTime_ = builderForValue.build();
-        onChanged();
       } else {
         purgeTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3072,17 +3066,18 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePurgeTime(com.google.protobuf.Timestamp value) {
       if (purgeTimeBuilder_ == null) {
-        if (purgeTime_ != null) {
-          purgeTime_ =
-              com.google.protobuf.Timestamp.newBuilder(purgeTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && purgeTime_ != null
+            && purgeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getPurgeTimeBuilder().mergeFrom(value);
         } else {
           purgeTime_ = value;
         }
-        onChanged();
       } else {
         purgeTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3102,14 +3097,13 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp purge_time = 8;</code>
      */
     public Builder clearPurgeTime() {
-      if (purgeTimeBuilder_ == null) {
-        purgeTime_ = null;
-        onChanged();
-      } else {
-        purgeTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      purgeTime_ = null;
+      if (purgeTimeBuilder_ != null) {
+        purgeTimeBuilder_.dispose();
         purgeTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3129,7 +3123,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp purge_time = 8;</code>
      */
     public com.google.protobuf.Timestamp.Builder getPurgeTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getPurgeTimeFieldBuilder().getBuilder();
     }
@@ -3216,7 +3210,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the taskTtl field is set.
      */
     public boolean hasTaskTtl() {
-      return taskTtlBuilder_ != null || taskTtl_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3269,11 +3263,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         taskTtl_ = value;
-        onChanged();
       } else {
         taskTtlBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3297,11 +3291,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     public Builder setTaskTtl(com.google.protobuf.Duration.Builder builderForValue) {
       if (taskTtlBuilder_ == null) {
         taskTtl_ = builderForValue.build();
-        onChanged();
       } else {
         taskTtlBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3324,17 +3318,18 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTaskTtl(com.google.protobuf.Duration value) {
       if (taskTtlBuilder_ == null) {
-        if (taskTtl_ != null) {
-          taskTtl_ =
-              com.google.protobuf.Duration.newBuilder(taskTtl_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && taskTtl_ != null
+            && taskTtl_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTaskTtlBuilder().mergeFrom(value);
         } else {
           taskTtl_ = value;
         }
-        onChanged();
       } else {
         taskTtlBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3356,14 +3351,13 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration task_ttl = 9;</code>
      */
     public Builder clearTaskTtl() {
-      if (taskTtlBuilder_ == null) {
-        taskTtl_ = null;
-        onChanged();
-      } else {
-        taskTtl_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      taskTtl_ = null;
+      if (taskTtlBuilder_ != null) {
+        taskTtlBuilder_.dispose();
         taskTtlBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3385,7 +3379,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration task_ttl = 9;</code>
      */
     public com.google.protobuf.Duration.Builder getTaskTtlBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getTaskTtlFieldBuilder().getBuilder();
     }
@@ -3474,7 +3468,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tombstoneTtl field is set.
      */
     public boolean hasTombstoneTtl() {
-      return tombstoneTtlBuilder_ != null || tombstoneTtl_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3525,11 +3519,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         tombstoneTtl_ = value;
-        onChanged();
       } else {
         tombstoneTtlBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3551,11 +3545,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     public Builder setTombstoneTtl(com.google.protobuf.Duration.Builder builderForValue) {
       if (tombstoneTtlBuilder_ == null) {
         tombstoneTtl_ = builderForValue.build();
-        onChanged();
       } else {
         tombstoneTtlBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3576,19 +3570,18 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTombstoneTtl(com.google.protobuf.Duration value) {
       if (tombstoneTtlBuilder_ == null) {
-        if (tombstoneTtl_ != null) {
-          tombstoneTtl_ =
-              com.google.protobuf.Duration.newBuilder(tombstoneTtl_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && tombstoneTtl_ != null
+            && tombstoneTtl_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTombstoneTtlBuilder().mergeFrom(value);
         } else {
           tombstoneTtl_ = value;
         }
-        onChanged();
       } else {
         tombstoneTtlBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3608,14 +3601,13 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration tombstone_ttl = 10;</code>
      */
     public Builder clearTombstoneTtl() {
-      if (tombstoneTtlBuilder_ == null) {
-        tombstoneTtl_ = null;
-        onChanged();
-      } else {
-        tombstoneTtl_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      tombstoneTtl_ = null;
+      if (tombstoneTtlBuilder_ != null) {
+        tombstoneTtlBuilder_.dispose();
         tombstoneTtlBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3635,7 +3627,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration tombstone_ttl = 10;</code>
      */
     public com.google.protobuf.Duration.Builder getTombstoneTtlBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getTombstoneTtlFieldBuilder().getBuilder();
     }
@@ -3719,7 +3711,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stats field is set.
      */
     public boolean hasStats() {
-      return statsBuilder_ != null || stats_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3764,11 +3756,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         stats_ = value;
-        onChanged();
       } else {
         statsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3787,11 +3779,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     public Builder setStats(com.google.cloud.tasks.v2beta2.QueueStats.Builder builderForValue) {
       if (statsBuilder_ == null) {
         stats_ = builderForValue.build();
-        onChanged();
       } else {
         statsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3809,19 +3801,18 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStats(com.google.cloud.tasks.v2beta2.QueueStats value) {
       if (statsBuilder_ == null) {
-        if (stats_ != null) {
-          stats_ =
-              com.google.cloud.tasks.v2beta2.QueueStats.newBuilder(stats_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && stats_ != null
+            && stats_ != com.google.cloud.tasks.v2beta2.QueueStats.getDefaultInstance()) {
+          getStatsBuilder().mergeFrom(value);
         } else {
           stats_ = value;
         }
-        onChanged();
       } else {
         statsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3838,14 +3829,13 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStats() {
-      if (statsBuilder_ == null) {
-        stats_ = null;
-        onChanged();
-      } else {
-        stats_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      stats_ = null;
+      if (statsBuilder_ != null) {
+        statsBuilder_.dispose();
         statsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3862,7 +3852,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.tasks.v2beta2.QueueStats.Builder getStatsBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getStatsFieldBuilder().getBuilder();
     }

@@ -172,7 +172,6 @@ public interface ServiceOrBuilder
    *
    * <code>map&lt;string, string&gt; metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-
   /* nullable */
   java.lang.String getMetadataOrDefault(
       java.lang.String key,

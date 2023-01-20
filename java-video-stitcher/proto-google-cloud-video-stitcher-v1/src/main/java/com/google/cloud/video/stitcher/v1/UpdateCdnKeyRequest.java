@@ -116,7 +116,9 @@ public final class UpdateCdnKeyRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.video.stitcher.v1.CdnKeyOrBuilder getCdnKeyOrBuilder() {
-    return getCdnKey();
+    return cdnKey_ == null
+        ? com.google.cloud.video.stitcher.v1.CdnKey.getDefaultInstance()
+        : cdnKey_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -171,7 +173,7 @@ public final class UpdateCdnKeyRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -391,16 +393,15 @@ public final class UpdateCdnKeyRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (cdnKeyBuilder_ == null) {
-        cdnKey_ = null;
-      } else {
-        cdnKey_ = null;
+      bitField0_ = 0;
+      cdnKey_ = null;
+      if (cdnKeyBuilder_ != null) {
+        cdnKeyBuilder_.dispose();
         cdnKeyBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -430,18 +431,21 @@ public final class UpdateCdnKeyRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.video.stitcher.v1.UpdateCdnKeyRequest buildPartial() {
       com.google.cloud.video.stitcher.v1.UpdateCdnKeyRequest result =
           new com.google.cloud.video.stitcher.v1.UpdateCdnKeyRequest(this);
-      if (cdnKeyBuilder_ == null) {
-        result.cdnKey_ = cdnKey_;
-      } else {
-        result.cdnKey_ = cdnKeyBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.UpdateCdnKeyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cdnKey_ = cdnKeyBuilder_ == null ? cdnKey_ : cdnKeyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -525,13 +529,13 @@ public final class UpdateCdnKeyRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getCdnKeyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -550,6 +554,8 @@ public final class UpdateCdnKeyRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.video.stitcher.v1.CdnKey cdnKey_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -571,7 +577,7 @@ public final class UpdateCdnKeyRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the cdnKey field is set.
      */
     public boolean hasCdnKey() {
-      return cdnKeyBuilder_ != null || cdnKey_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -612,11 +618,11 @@ public final class UpdateCdnKeyRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         cdnKey_ = value;
-        onChanged();
       } else {
         cdnKeyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -633,11 +639,11 @@ public final class UpdateCdnKeyRequest extends com.google.protobuf.GeneratedMess
     public Builder setCdnKey(com.google.cloud.video.stitcher.v1.CdnKey.Builder builderForValue) {
       if (cdnKeyBuilder_ == null) {
         cdnKey_ = builderForValue.build();
-        onChanged();
       } else {
         cdnKeyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -653,19 +659,18 @@ public final class UpdateCdnKeyRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeCdnKey(com.google.cloud.video.stitcher.v1.CdnKey value) {
       if (cdnKeyBuilder_ == null) {
-        if (cdnKey_ != null) {
-          cdnKey_ =
-              com.google.cloud.video.stitcher.v1.CdnKey.newBuilder(cdnKey_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && cdnKey_ != null
+            && cdnKey_ != com.google.cloud.video.stitcher.v1.CdnKey.getDefaultInstance()) {
+          getCdnKeyBuilder().mergeFrom(value);
         } else {
           cdnKey_ = value;
         }
-        onChanged();
       } else {
         cdnKeyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -680,14 +685,13 @@ public final class UpdateCdnKeyRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearCdnKey() {
-      if (cdnKeyBuilder_ == null) {
-        cdnKey_ = null;
-        onChanged();
-      } else {
-        cdnKey_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      cdnKey_ = null;
+      if (cdnKeyBuilder_ != null) {
+        cdnKeyBuilder_.dispose();
         cdnKeyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -702,7 +706,7 @@ public final class UpdateCdnKeyRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.video.stitcher.v1.CdnKey.Builder getCdnKeyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCdnKeyFieldBuilder().getBuilder();
     }
@@ -775,7 +779,7 @@ public final class UpdateCdnKeyRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -818,11 +822,11 @@ public final class UpdateCdnKeyRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -840,11 +844,11 @@ public final class UpdateCdnKeyRequest extends com.google.protobuf.GeneratedMess
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -861,17 +865,18 @@ public final class UpdateCdnKeyRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -887,14 +892,13 @@ public final class UpdateCdnKeyRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -910,7 +914,7 @@ public final class UpdateCdnKeyRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
