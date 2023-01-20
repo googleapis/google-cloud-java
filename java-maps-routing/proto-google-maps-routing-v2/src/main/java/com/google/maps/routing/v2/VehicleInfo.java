@@ -69,7 +69,7 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EMISSION_TYPE_FIELD_NUMBER = 2;
-  private int emissionType_;
+  private int emissionType_ = 0;
   /**
    *
    *
@@ -100,9 +100,8 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.maps.routing.v2.VehicleEmissionType getEmissionType() {
-    @SuppressWarnings("deprecation")
     com.google.maps.routing.v2.VehicleEmissionType result =
-        com.google.maps.routing.v2.VehicleEmissionType.valueOf(emissionType_);
+        com.google.maps.routing.v2.VehicleEmissionType.forNumber(emissionType_);
     return result == null ? com.google.maps.routing.v2.VehicleEmissionType.UNRECOGNIZED : result;
   }
 
@@ -307,8 +306,8 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       emissionType_ = 0;
-
       return this;
     }
 
@@ -336,9 +335,18 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.routing.v2.VehicleInfo buildPartial() {
       com.google.maps.routing.v2.VehicleInfo result =
           new com.google.maps.routing.v2.VehicleInfo(this);
-      result.emissionType_ = emissionType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.maps.routing.v2.VehicleInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.emissionType_ = emissionType_;
+      }
     }
 
     @java.lang.Override
@@ -418,7 +426,7 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 emissionType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 16
             default:
@@ -437,6 +445,8 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int emissionType_ = 0;
     /**
@@ -469,8 +479,8 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setEmissionTypeValue(int value) {
-
       emissionType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -488,9 +498,8 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.maps.routing.v2.VehicleEmissionType getEmissionType() {
-      @SuppressWarnings("deprecation")
       com.google.maps.routing.v2.VehicleEmissionType result =
-          com.google.maps.routing.v2.VehicleEmissionType.valueOf(emissionType_);
+          com.google.maps.routing.v2.VehicleEmissionType.forNumber(emissionType_);
       return result == null ? com.google.maps.routing.v2.VehicleEmissionType.UNRECOGNIZED : result;
     }
     /**
@@ -510,7 +519,7 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       emissionType_ = value.getNumber();
       onChanged();
       return this;
@@ -528,7 +537,7 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEmissionType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       emissionType_ = 0;
       onChanged();
       return this;

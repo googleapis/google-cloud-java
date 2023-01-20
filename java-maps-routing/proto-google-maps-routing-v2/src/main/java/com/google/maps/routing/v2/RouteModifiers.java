@@ -69,7 +69,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AVOID_TOLLS_FIELD_NUMBER = 1;
-  private boolean avoidTolls_;
+  private boolean avoidTolls_ = false;
   /**
    *
    *
@@ -89,7 +89,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AVOID_HIGHWAYS_FIELD_NUMBER = 2;
-  private boolean avoidHighways_;
+  private boolean avoidHighways_ = false;
   /**
    *
    *
@@ -109,7 +109,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AVOID_FERRIES_FIELD_NUMBER = 3;
-  private boolean avoidFerries_;
+  private boolean avoidFerries_ = false;
   /**
    *
    *
@@ -129,7 +129,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AVOID_INDOOR_FIELD_NUMBER = 4;
-  private boolean avoidIndoor_;
+  private boolean avoidIndoor_ = false;
   /**
    *
    *
@@ -193,20 +193,24 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.maps.routing.v2.VehicleInfoOrBuilder getVehicleInfoOrBuilder() {
-    return getVehicleInfo();
+    return vehicleInfo_ == null
+        ? com.google.maps.routing.v2.VehicleInfo.getDefaultInstance()
+        : vehicleInfo_;
   }
 
   public static final int TOLL_PASSES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> tollPasses_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.maps.routing.v2.TollPass>
       tollPasses_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.maps.routing.v2.TollPass>() {
             public com.google.maps.routing.v2.TollPass convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.maps.routing.v2.TollPass result =
-                  com.google.maps.routing.v2.TollPass.valueOf(from);
+                  com.google.maps.routing.v2.TollPass.forNumber(from);
               return result == null ? com.google.maps.routing.v2.TollPass.UNRECOGNIZED : result;
             }
           };
@@ -575,22 +579,18 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       avoidTolls_ = false;
-
       avoidHighways_ = false;
-
       avoidFerries_ = false;
-
       avoidIndoor_ = false;
-
-      if (vehicleInfoBuilder_ == null) {
-        vehicleInfo_ = null;
-      } else {
-        vehicleInfo_ = null;
+      vehicleInfo_ = null;
+      if (vehicleInfoBuilder_ != null) {
+        vehicleInfoBuilder_.dispose();
         vehicleInfoBuilder_ = null;
       }
       tollPasses_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -618,23 +618,40 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.routing.v2.RouteModifiers buildPartial() {
       com.google.maps.routing.v2.RouteModifiers result =
           new com.google.maps.routing.v2.RouteModifiers(this);
-      int from_bitField0_ = bitField0_;
-      result.avoidTolls_ = avoidTolls_;
-      result.avoidHighways_ = avoidHighways_;
-      result.avoidFerries_ = avoidFerries_;
-      result.avoidIndoor_ = avoidIndoor_;
-      if (vehicleInfoBuilder_ == null) {
-        result.vehicleInfo_ = vehicleInfo_;
-      } else {
-        result.vehicleInfo_ = vehicleInfoBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        tollPasses_ = java.util.Collections.unmodifiableList(tollPasses_);
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.tollPasses_ = tollPasses_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.maps.routing.v2.RouteModifiers result) {
+      if (((bitField0_ & 0x00000020) != 0)) {
+        tollPasses_ = java.util.Collections.unmodifiableList(tollPasses_);
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.tollPasses_ = tollPasses_;
+    }
+
+    private void buildPartial0(com.google.maps.routing.v2.RouteModifiers result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.avoidTolls_ = avoidTolls_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.avoidHighways_ = avoidHighways_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.avoidFerries_ = avoidFerries_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.avoidIndoor_ = avoidIndoor_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.vehicleInfo_ =
+            vehicleInfoBuilder_ == null ? vehicleInfo_ : vehicleInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -700,7 +717,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       if (!other.tollPasses_.isEmpty()) {
         if (tollPasses_.isEmpty()) {
           tollPasses_ = other.tollPasses_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureTollPassesIsMutable();
           tollPasses_.addAll(other.tollPasses_);
@@ -736,31 +753,31 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 avoidTolls_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 avoidHighways_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 avoidFerries_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 avoidIndoor_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getVehicleInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
@@ -836,6 +853,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public Builder setAvoidTolls(boolean value) {
 
       avoidTolls_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -853,7 +871,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAvoidTolls() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       avoidTolls_ = false;
       onChanged();
       return this;
@@ -894,6 +912,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public Builder setAvoidHighways(boolean value) {
 
       avoidHighways_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -911,7 +930,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAvoidHighways() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       avoidHighways_ = false;
       onChanged();
       return this;
@@ -952,6 +971,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public Builder setAvoidFerries(boolean value) {
 
       avoidFerries_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -969,7 +989,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAvoidFerries() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       avoidFerries_ = false;
       onChanged();
       return this;
@@ -1010,6 +1030,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public Builder setAvoidIndoor(boolean value) {
 
       avoidIndoor_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1027,7 +1048,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAvoidIndoor() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       avoidIndoor_ = false;
       onChanged();
       return this;
@@ -1051,7 +1072,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the vehicleInfo field is set.
      */
     public boolean hasVehicleInfo() {
-      return vehicleInfoBuilder_ != null || vehicleInfo_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1088,11 +1109,11 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         vehicleInfo_ = value;
-        onChanged();
       } else {
         vehicleInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1107,11 +1128,11 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public Builder setVehicleInfo(com.google.maps.routing.v2.VehicleInfo.Builder builderForValue) {
       if (vehicleInfoBuilder_ == null) {
         vehicleInfo_ = builderForValue.build();
-        onChanged();
       } else {
         vehicleInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1125,19 +1146,18 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeVehicleInfo(com.google.maps.routing.v2.VehicleInfo value) {
       if (vehicleInfoBuilder_ == null) {
-        if (vehicleInfo_ != null) {
-          vehicleInfo_ =
-              com.google.maps.routing.v2.VehicleInfo.newBuilder(vehicleInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && vehicleInfo_ != null
+            && vehicleInfo_ != com.google.maps.routing.v2.VehicleInfo.getDefaultInstance()) {
+          getVehicleInfoBuilder().mergeFrom(value);
         } else {
           vehicleInfo_ = value;
         }
-        onChanged();
       } else {
         vehicleInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1150,14 +1170,13 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.maps.routing.v2.VehicleInfo vehicle_info = 5;</code>
      */
     public Builder clearVehicleInfo() {
-      if (vehicleInfoBuilder_ == null) {
-        vehicleInfo_ = null;
-        onChanged();
-      } else {
-        vehicleInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      vehicleInfo_ = null;
+      if (vehicleInfoBuilder_ != null) {
+        vehicleInfoBuilder_.dispose();
         vehicleInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1170,7 +1189,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.maps.routing.v2.VehicleInfo vehicle_info = 5;</code>
      */
     public com.google.maps.routing.v2.VehicleInfo.Builder getVehicleInfoBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getVehicleInfoFieldBuilder().getBuilder();
     }
@@ -1221,9 +1240,9 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> tollPasses_ = java.util.Collections.emptyList();
 
     private void ensureTollPassesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         tollPasses_ = new java.util.ArrayList<java.lang.Integer>(tollPasses_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -1376,7 +1395,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTollPasses() {
       tollPasses_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }

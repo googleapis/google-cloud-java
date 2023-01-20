@@ -69,6 +69,8 @@ public final class RouteLegStepTravelAdvisory extends com.google.protobuf.Genera
   }
 
   public static final int SPEED_READING_INTERVALS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routing.v2.SpeedReadingInterval> speedReadingIntervals_;
   /**
    *
@@ -377,6 +379,7 @@ public final class RouteLegStepTravelAdvisory extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (speedReadingIntervalsBuilder_ == null) {
         speedReadingIntervals_ = java.util.Collections.emptyList();
       } else {
@@ -411,7 +414,16 @@ public final class RouteLegStepTravelAdvisory extends com.google.protobuf.Genera
     public com.google.maps.routing.v2.RouteLegStepTravelAdvisory buildPartial() {
       com.google.maps.routing.v2.RouteLegStepTravelAdvisory result =
           new com.google.maps.routing.v2.RouteLegStepTravelAdvisory(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.maps.routing.v2.RouteLegStepTravelAdvisory result) {
       if (speedReadingIntervalsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           speedReadingIntervals_ = java.util.Collections.unmodifiableList(speedReadingIntervals_);
@@ -421,8 +433,10 @@ public final class RouteLegStepTravelAdvisory extends com.google.protobuf.Genera
       } else {
         result.speedReadingIntervals_ = speedReadingIntervalsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.maps.routing.v2.RouteLegStepTravelAdvisory result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
