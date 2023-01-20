@@ -28,6 +28,7 @@ import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -48,7 +49,7 @@ public class ConnectionWorkerPool {
 
   private static final Logger log = Logger.getLogger(ConnectionWorkerPool.class.getName());
   /*
-   * Max allowed inflight requests in the stream. Method append is blocked at this.
+   * Max allowed inflight requests in the stream.getInflightWaitSeconds Method append is blocked at this.
    */
   private final long maxInflightRequests;
 
@@ -68,12 +69,10 @@ public class ConnectionWorkerPool {
   private final FlowController.LimitExceededBehavior limitExceededBehavior;
 
   /** Map from write stream to corresponding connection. */
-  private final Map<StreamWriter, ConnectionWorker> streamWriterToConnection =
-      new ConcurrentHashMap<>();
+  private final Map<StreamWriter, ConnectionWorker> streamWriterToConnection = new HashMap<>();
 
   /** Map from a connection to a set of write stream that have sent requests onto it. */
-  private final Map<ConnectionWorker, Set<StreamWriter>> connectionToWriteStream =
-      new ConcurrentHashMap<>();
+  private final Map<ConnectionWorker, Set<StreamWriter>> connectionToWriteStream = new HashMap<>();
 
   /** Collection of all the created connections. */
   private final Set<ConnectionWorker> connectionWorkerPool =
@@ -227,14 +226,13 @@ public class ConnectionWorkerPool {
   public ApiFuture<AppendRowsResponse> append(
       StreamWriter streamWriter, ProtoRows rows, long offset) {
     // We are in multiplexing mode after entering the following logic.
-    ConnectionWorker connectionWorker =
-        streamWriterToConnection.compute(
-            streamWriter,
-            (key, existingStream) -> {
-              // Though compute on concurrent map is atomic, we still do explicit locking as we
-              // may have concurrent close(...) triggered.
-              lock.lock();
-              try {
+    ConnectionWorker connectionWorker;
+    lock.lock();
+    try {
+      connectionWorker =
+          streamWriterToConnection.compute(
+              streamWriter,
+              (key, existingStream) -> {
                 // Stick to the existing stream if it's not overwhelmed.
                 if (existingStream != null && !existingStream.getLoad().isOverwhelmed()) {
                   return existingStream;
@@ -252,10 +250,10 @@ public class ConnectionWorkerPool {
                     createdOrExistingConnection, (ConnectionWorker k) -> new HashSet<>());
                 connectionToWriteStream.get(createdOrExistingConnection).add(streamWriter);
                 return createdOrExistingConnection;
-              } finally {
-                lock.unlock();
-              }
-            });
+              });
+    } finally {
+      lock.unlock();
+    }
     Stopwatch stopwatch = Stopwatch.createStarted();
     ApiFuture<AppendRowsResponse> responseFuture =
         connectionWorker.append(

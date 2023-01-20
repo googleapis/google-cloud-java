@@ -642,6 +642,7 @@ public class ConnectionWorker implements AutoCloseable {
     if (response.hasError()) {
       Exceptions.StorageException storageException =
           Exceptions.toStorageException(response.getError(), null);
+      log.fine(String.format("Got error message: %s", response.toString()));
       if (storageException != null) {
         requestWrapper.appendResult.setException(storageException);
       } else if (response.getRowErrorsCount() > 0) {

@@ -25,6 +25,9 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorkerPool.Settings;
+import com.google.common.util.concurrent.ListeningExecutorService;
+import com.google.common.util.concurrent.MoreExecutors;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.Int64Value;
@@ -35,6 +38,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import org.junit.Before;
 import org.junit.Test;
@@ -312,6 +317,46 @@ public class ConnectionWorkerPoolTest {
     // 5. Close write stream 2, all should be closed.
     connectionWorkerPool.close(writeStream2);
     assertThat(connectionWorkerPool.getTotalConnectionCount()).isEqualTo(0);
+  }
+
+  @Test
+  public void testCloseWhileAppending_noDeadlockHappen() throws Exception {
+    ConnectionWorkerPool.setOptions(
+        Settings.builder().setMaxConnectionsPerRegion(10).setMinConnectionsPerRegion(5).build());
+    ConnectionWorkerPool connectionWorkerPool =
+        createConnectionWorkerPool(
+            /*maxRequests=*/ 1500, /*maxBytes=*/ 100000, java.time.Duration.ofSeconds(5));
+
+    // Sets the sleep time to simulate requests stuck in connection.
+    testBigQueryWrite.setResponseSleep(Duration.ofMillis(20L));
+    StreamWriter writeStream1 = getTestStreamWriter(TEST_STREAM_1);
+
+    ListeningExecutorService threadPool =
+        MoreExecutors.listeningDecorator(
+            Executors.newCachedThreadPool(
+                new ThreadFactoryBuilder()
+                    .setDaemon(true)
+                    .setNameFormat("AsyncStreamReadThread")
+                    .build()));
+
+    long appendCount = 10;
+    for (long i = 0; i < appendCount; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+    List<Future<?>> futures = new ArrayList<>();
+
+    for (int i = 0; i < 500; i++) {
+      futures.add(
+          threadPool.submit(
+              () -> {
+                sendFooStringTestMessage(
+                    writeStream1, connectionWorkerPool, new String[] {String.valueOf(0)}, 0);
+              }));
+    }
+    connectionWorkerPool.close(writeStream1);
+    for (int i = 0; i < 500; i++) {
+      futures.get(i).get();
+    }
   }
 
   @Test
