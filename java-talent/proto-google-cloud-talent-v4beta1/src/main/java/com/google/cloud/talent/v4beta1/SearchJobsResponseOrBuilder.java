@@ -27,7 +27,8 @@ public interface SearchJobsResponseOrBuilder
    *
    *
    * <pre>
-   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified
+   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -39,7 +40,8 @@ public interface SearchJobsResponseOrBuilder
    *
    *
    * <pre>
-   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified
+   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -50,7 +52,8 @@ public interface SearchJobsResponseOrBuilder
    *
    *
    * <pre>
-   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified
+   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -61,7 +64,8 @@ public interface SearchJobsResponseOrBuilder
    *
    *
    * <pre>
-   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified
+   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -73,7 +77,8 @@ public interface SearchJobsResponseOrBuilder
    *
    *
    * <pre>
-   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified
+   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -178,7 +183,9 @@ public interface SearchJobsResponseOrBuilder
    *
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+   * any filters are lat-lng based, the
+   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+   * is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -190,7 +197,9 @@ public interface SearchJobsResponseOrBuilder
    *
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+   * any filters are lat-lng based, the
+   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+   * is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -202,7 +211,9 @@ public interface SearchJobsResponseOrBuilder
    *
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+   * any filters are lat-lng based, the
+   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+   * is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -214,7 +225,9 @@ public interface SearchJobsResponseOrBuilder
    *
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+   * any filters are lat-lng based, the
+   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+   * is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -227,7 +240,9 @@ public interface SearchJobsResponseOrBuilder
    *
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+   * any filters are lat-lng based, the
+   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+   * is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -241,7 +256,8 @@ public interface SearchJobsResponseOrBuilder
    * <pre>
    * An estimation of the number of jobs that match the specified query.
    * This number isn't guaranteed to be accurate. For accurate results,
-   * see [SearchJobsResponse.total_size][google.cloud.talent.v4beta1.SearchJobsResponse.total_size].
+   * see
+   * [SearchJobsResponse.total_size][google.cloud.talent.v4beta1.SearchJobsResponse.total_size].
    * </pre>
    *
    * <code>int32 estimated_total_size = 5;</code>

@@ -69,7 +69,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -126,6 +128,8 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int JOBS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4.Job> jobs_;
   /**
    *
@@ -411,15 +415,15 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (jobsBuilder_ == null) {
         jobs_ = java.util.Collections.emptyList();
       } else {
         jobs_ = null;
         jobsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -447,19 +451,32 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.talent.v4.BatchCreateJobsRequest buildPartial() {
       com.google.cloud.talent.v4.BatchCreateJobsRequest result =
           new com.google.cloud.talent.v4.BatchCreateJobsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.talent.v4.BatchCreateJobsRequest result) {
       if (jobsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           jobs_ = java.util.Collections.unmodifiableList(jobs_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.jobs_ = jobs_;
       } else {
         result.jobs_ = jobsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.BatchCreateJobsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -510,13 +527,14 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (jobsBuilder_ == null) {
         if (!other.jobs_.isEmpty()) {
           if (jobs_.isEmpty()) {
             jobs_ = other.jobs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureJobsIsMutable();
             jobs_.addAll(other.jobs_);
@@ -529,7 +547,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
             jobsBuilder_.dispose();
             jobsBuilder_ = null;
             jobs_ = other.jobs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             jobsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getJobsFieldBuilder()
@@ -568,7 +586,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -675,8 +693,8 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -696,8 +714,8 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -722,8 +740,8 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -732,9 +750,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureJobsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         jobs_ = new java.util.ArrayList<com.google.cloud.talent.v4.Job>(jobs_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -979,7 +997,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
     public Builder clearJobs() {
       if (jobsBuilder_ == null) {
         jobs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         jobsBuilder_.clear();
@@ -1120,7 +1138,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
                 com.google.cloud.talent.v4.Job,
                 com.google.cloud.talent.v4.Job.Builder,
                 com.google.cloud.talent.v4.JobOrBuilder>(
-                jobs_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                jobs_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         jobs_ = null;
       }
       return jobsBuilder_;

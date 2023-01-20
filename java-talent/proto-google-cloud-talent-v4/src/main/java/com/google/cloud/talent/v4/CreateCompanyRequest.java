@@ -68,7 +68,9 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -170,7 +172,7 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.talent.v4.CompanyOrBuilder getCompanyOrBuilder() {
-    return getCompany();
+    return company_ == null ? com.google.cloud.talent.v4.Company.getDefaultInstance() : company_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -384,12 +386,11 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (companyBuilder_ == null) {
-        company_ = null;
-      } else {
-        company_ = null;
+      company_ = null;
+      if (companyBuilder_ != null) {
+        companyBuilder_.dispose();
         companyBuilder_ = null;
       }
       return this;
@@ -419,14 +420,21 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.talent.v4.CreateCompanyRequest buildPartial() {
       com.google.cloud.talent.v4.CreateCompanyRequest result =
           new com.google.cloud.talent.v4.CreateCompanyRequest(this);
-      result.parent_ = parent_;
-      if (companyBuilder_ == null) {
-        result.company_ = company_;
-      } else {
-        result.company_ = companyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.CreateCompanyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.company_ = companyBuilder_ == null ? company_ : companyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -477,6 +485,7 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCompany()) {
@@ -511,13 +520,13 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCompanyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -536,6 +545,8 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -610,8 +621,8 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -631,8 +642,8 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -657,8 +668,8 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -682,7 +693,7 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the company field is set.
      */
     public boolean hasCompany() {
-      return companyBuilder_ != null || company_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -721,11 +732,11 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         company_ = value;
-        onChanged();
       } else {
         companyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -741,11 +752,11 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
     public Builder setCompany(com.google.cloud.talent.v4.Company.Builder builderForValue) {
       if (companyBuilder_ == null) {
         company_ = builderForValue.build();
-        onChanged();
       } else {
         companyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -760,19 +771,18 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeCompany(com.google.cloud.talent.v4.Company value) {
       if (companyBuilder_ == null) {
-        if (company_ != null) {
-          company_ =
-              com.google.cloud.talent.v4.Company.newBuilder(company_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && company_ != null
+            && company_ != com.google.cloud.talent.v4.Company.getDefaultInstance()) {
+          getCompanyBuilder().mergeFrom(value);
         } else {
           company_ = value;
         }
-        onChanged();
       } else {
         companyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -786,14 +796,13 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearCompany() {
-      if (companyBuilder_ == null) {
-        company_ = null;
-        onChanged();
-      } else {
-        company_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      company_ = null;
+      if (companyBuilder_ != null) {
+        companyBuilder_.dispose();
         companyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -807,7 +816,7 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.talent.v4.Company.Builder getCompanyBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCompanyFieldBuilder().getBuilder();
     }

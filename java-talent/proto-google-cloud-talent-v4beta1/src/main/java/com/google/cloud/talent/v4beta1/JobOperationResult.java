@@ -22,9 +22,13 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * The result of [JobService.BatchCreateJobs][google.cloud.talent.v4beta1.JobService.BatchCreateJobs] or
- * [JobService.BatchUpdateJobs][google.cloud.talent.v4beta1.JobService.BatchUpdateJobs] APIs. It's used to
- * replace [google.longrunning.Operation.response][google.longrunning.Operation.response] in case of success.
+ * The result of
+ * [JobService.BatchCreateJobs][google.cloud.talent.v4beta1.JobService.BatchCreateJobs]
+ * or
+ * [JobService.BatchUpdateJobs][google.cloud.talent.v4beta1.JobService.BatchUpdateJobs]
+ * APIs. It's used to replace
+ * [google.longrunning.Operation.response][google.longrunning.Operation.response]
+ * in case of success.
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.JobOperationResult}
@@ -78,10 +82,13 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
-     * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
-     * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
-     * detailed information of the created/updated job.
+     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
+     * information including [name][google.cloud.talent.v4beta1.Job.name],
+     * [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
+     * getJob method to retrieve detailed information of the created/updated
+     * job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -93,10 +100,13 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
-     * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
-     * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
-     * detailed information of the created/updated job.
+     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
+     * information including [name][google.cloud.talent.v4beta1.Job.name],
+     * [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
+     * getJob method to retrieve detailed information of the created/updated
+     * job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -108,10 +118,13 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
-     * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
-     * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
-     * detailed information of the created/updated job.
+     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
+     * information including [name][google.cloud.talent.v4beta1.Job.name],
+     * [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
+     * getJob method to retrieve detailed information of the created/updated
+     * job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -123,7 +136,9 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The status of the job processed. This field is populated if the
-     * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
+     * processing of the
+     * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
+     * fails.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -136,7 +151,9 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The status of the job processed. This field is populated if the
-     * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
+     * processing of the
+     * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
+     * fails.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -149,7 +166,9 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The status of the job processed. This field is populated if the
-     * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
+     * processing of the
+     * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
+     * fails.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -209,10 +228,13 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
-     * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
-     * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
-     * detailed information of the created/updated job.
+     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
+     * information including [name][google.cloud.talent.v4beta1.Job.name],
+     * [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
+     * getJob method to retrieve detailed information of the created/updated
+     * job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -227,10 +249,13 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
-     * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
-     * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
-     * detailed information of the created/updated job.
+     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
+     * information including [name][google.cloud.talent.v4beta1.Job.name],
+     * [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
+     * getJob method to retrieve detailed information of the created/updated
+     * job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -245,17 +270,20 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
-     * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
-     * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
-     * detailed information of the created/updated job.
+     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
+     * information including [name][google.cloud.talent.v4beta1.Job.name],
+     * [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
+     * getJob method to retrieve detailed information of the created/updated
+     * job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
      */
     @java.lang.Override
     public com.google.cloud.talent.v4beta1.JobOrBuilder getJobOrBuilder() {
-      return getJob();
+      return job_ == null ? com.google.cloud.talent.v4beta1.Job.getDefaultInstance() : job_;
     }
 
     public static final int STATUS_FIELD_NUMBER = 2;
@@ -265,7 +293,9 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The status of the job processed. This field is populated if the
-     * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
+     * processing of the
+     * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
+     * fails.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -281,7 +311,9 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The status of the job processed. This field is populated if the
-     * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
+     * processing of the
+     * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
+     * fails.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -297,14 +329,16 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The status of the job processed. This field is populated if the
-     * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
+     * processing of the
+     * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
+     * fails.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
      */
     @java.lang.Override
     public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
-      return getStatus();
+      return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -526,16 +560,15 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (jobBuilder_ == null) {
-          job_ = null;
-        } else {
-          job_ = null;
+        bitField0_ = 0;
+        job_ = null;
+        if (jobBuilder_ != null) {
+          jobBuilder_.dispose();
           jobBuilder_ = null;
         }
-        if (statusBuilder_ == null) {
-          status_ = null;
-        } else {
-          status_ = null;
+        status_ = null;
+        if (statusBuilder_ != null) {
+          statusBuilder_.dispose();
           statusBuilder_ = null;
         }
         return this;
@@ -566,18 +599,22 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.talent.v4beta1.JobOperationResult.JobResult buildPartial() {
         com.google.cloud.talent.v4beta1.JobOperationResult.JobResult result =
             new com.google.cloud.talent.v4beta1.JobOperationResult.JobResult(this);
-        if (jobBuilder_ == null) {
-          result.job_ = job_;
-        } else {
-          result.job_ = jobBuilder_.build();
-        }
-        if (statusBuilder_ == null) {
-          result.status_ = status_;
-        } else {
-          result.status_ = statusBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.talent.v4beta1.JobOperationResult.JobResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.job_ = jobBuilder_ == null ? job_ : jobBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -664,13 +701,13 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
               case 10:
                 {
                   input.readMessage(getJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -690,6 +727,8 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.cloud.talent.v4beta1.Job job_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.talent.v4beta1.Job,
@@ -700,10 +739,13 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
-       * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
-       * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
-       * detailed information of the created/updated job.
+       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
+       * information including [name][google.cloud.talent.v4beta1.Job.name],
+       * [company][google.cloud.talent.v4beta1.Job.company],
+       * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+       * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
+       * getJob method to retrieve detailed information of the created/updated
+       * job.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -711,16 +753,19 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
        * @return Whether the job field is set.
        */
       public boolean hasJob() {
-        return jobBuilder_ != null || job_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
        *
        * <pre>
-       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
-       * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
-       * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
-       * detailed information of the created/updated job.
+       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
+       * information including [name][google.cloud.talent.v4beta1.Job.name],
+       * [company][google.cloud.talent.v4beta1.Job.company],
+       * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+       * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
+       * getJob method to retrieve detailed information of the created/updated
+       * job.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -738,10 +783,13 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
-       * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
-       * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
-       * detailed information of the created/updated job.
+       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
+       * information including [name][google.cloud.talent.v4beta1.Job.name],
+       * [company][google.cloud.talent.v4beta1.Job.company],
+       * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+       * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
+       * getJob method to retrieve detailed information of the created/updated
+       * job.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -752,21 +800,24 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           job_ = value;
-          onChanged();
         } else {
           jobBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        *
        *
        * <pre>
-       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
-       * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
-       * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
-       * detailed information of the created/updated job.
+       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
+       * information including [name][google.cloud.talent.v4beta1.Job.name],
+       * [company][google.cloud.talent.v4beta1.Job.company],
+       * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+       * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
+       * getJob method to retrieve detailed information of the created/updated
+       * job.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -774,79 +825,86 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       public Builder setJob(com.google.cloud.talent.v4beta1.Job.Builder builderForValue) {
         if (jobBuilder_ == null) {
           job_ = builderForValue.build();
-          onChanged();
         } else {
           jobBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        *
        *
        * <pre>
-       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
-       * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
-       * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
-       * detailed information of the created/updated job.
+       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
+       * information including [name][google.cloud.talent.v4beta1.Job.name],
+       * [company][google.cloud.talent.v4beta1.Job.company],
+       * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+       * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
+       * getJob method to retrieve detailed information of the created/updated
+       * job.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
        */
       public Builder mergeJob(com.google.cloud.talent.v4beta1.Job value) {
         if (jobBuilder_ == null) {
-          if (job_ != null) {
-            job_ =
-                com.google.cloud.talent.v4beta1.Job.newBuilder(job_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && job_ != null
+              && job_ != com.google.cloud.talent.v4beta1.Job.getDefaultInstance()) {
+            getJobBuilder().mergeFrom(value);
           } else {
             job_ = value;
           }
-          onChanged();
         } else {
           jobBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        *
        *
        * <pre>
-       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
-       * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
-       * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
-       * detailed information of the created/updated job.
+       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
+       * information including [name][google.cloud.talent.v4beta1.Job.name],
+       * [company][google.cloud.talent.v4beta1.Job.company],
+       * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+       * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
+       * getJob method to retrieve detailed information of the created/updated
+       * job.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
        */
       public Builder clearJob() {
-        if (jobBuilder_ == null) {
-          job_ = null;
-          onChanged();
-        } else {
-          job_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        job_ = null;
+        if (jobBuilder_ != null) {
+          jobBuilder_.dispose();
           jobBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        *
        *
        * <pre>
-       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
-       * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
-       * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
-       * detailed information of the created/updated job.
+       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
+       * information including [name][google.cloud.talent.v4beta1.Job.name],
+       * [company][google.cloud.talent.v4beta1.Job.company],
+       * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+       * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
+       * getJob method to retrieve detailed information of the created/updated
+       * job.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
        */
       public com.google.cloud.talent.v4beta1.Job.Builder getJobBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getJobFieldBuilder().getBuilder();
       }
@@ -854,10 +912,13 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
-       * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
-       * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
-       * detailed information of the created/updated job.
+       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
+       * information including [name][google.cloud.talent.v4beta1.Job.name],
+       * [company][google.cloud.talent.v4beta1.Job.company],
+       * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+       * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
+       * getJob method to retrieve detailed information of the created/updated
+       * job.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -873,10 +934,13 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
-       * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
-       * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
-       * detailed information of the created/updated job.
+       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
+       * information including [name][google.cloud.talent.v4beta1.Job.name],
+       * [company][google.cloud.talent.v4beta1.Job.company],
+       * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+       * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
+       * getJob method to retrieve detailed information of the created/updated
+       * job.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -907,7 +971,9 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The status of the job processed. This field is populated if the
-       * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
+       * processing of the
+       * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
+       * fails.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -915,14 +981,16 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
        * @return Whether the status field is set.
        */
       public boolean hasStatus() {
-        return statusBuilder_ != null || status_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
        *
        * <pre>
        * The status of the job processed. This field is populated if the
-       * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
+       * processing of the
+       * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
+       * fails.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -941,7 +1009,9 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The status of the job processed. This field is populated if the
-       * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
+       * processing of the
+       * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
+       * fails.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -952,11 +1022,11 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           status_ = value;
-          onChanged();
         } else {
           statusBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -964,7 +1034,9 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The status of the job processed. This field is populated if the
-       * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
+       * processing of the
+       * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
+       * fails.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -972,11 +1044,11 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
         if (statusBuilder_ == null) {
           status_ = builderForValue.build();
-          onChanged();
         } else {
           statusBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -984,23 +1056,27 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The status of the job processed. This field is populated if the
-       * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
+       * processing of the
+       * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
+       * fails.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
        */
       public Builder mergeStatus(com.google.rpc.Status value) {
         if (statusBuilder_ == null) {
-          if (status_ != null) {
-            status_ = com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && status_ != null
+              && status_ != com.google.rpc.Status.getDefaultInstance()) {
+            getStatusBuilder().mergeFrom(value);
           } else {
             status_ = value;
           }
-          onChanged();
         } else {
           statusBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1008,20 +1084,21 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The status of the job processed. This field is populated if the
-       * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
+       * processing of the
+       * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
+       * fails.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
        */
       public Builder clearStatus() {
-        if (statusBuilder_ == null) {
-          status_ = null;
-          onChanged();
-        } else {
-          status_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        status_ = null;
+        if (statusBuilder_ != null) {
+          statusBuilder_.dispose();
           statusBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1029,13 +1106,15 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The status of the job processed. This field is populated if the
-       * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
+       * processing of the
+       * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
+       * fails.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
        */
       public com.google.rpc.Status.Builder getStatusBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
@@ -1044,7 +1123,9 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The status of the job processed. This field is populated if the
-       * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
+       * processing of the
+       * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
+       * fails.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1061,7 +1142,9 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The status of the job processed. This field is populated if the
-       * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
+       * processing of the
+       * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
+       * fails.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1148,6 +1231,8 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int JOB_RESULTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4beta1.JobOperationResult.JobResult> jobResults_;
   /**
    *
@@ -1394,9 +1479,13 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The result of [JobService.BatchCreateJobs][google.cloud.talent.v4beta1.JobService.BatchCreateJobs] or
-   * [JobService.BatchUpdateJobs][google.cloud.talent.v4beta1.JobService.BatchUpdateJobs] APIs. It's used to
-   * replace [google.longrunning.Operation.response][google.longrunning.Operation.response] in case of success.
+   * The result of
+   * [JobService.BatchCreateJobs][google.cloud.talent.v4beta1.JobService.BatchCreateJobs]
+   * or
+   * [JobService.BatchUpdateJobs][google.cloud.talent.v4beta1.JobService.BatchUpdateJobs]
+   * APIs. It's used to replace
+   * [google.longrunning.Operation.response][google.longrunning.Operation.response]
+   * in case of success.
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.JobOperationResult}
@@ -1430,6 +1519,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (jobResultsBuilder_ == null) {
         jobResults_ = java.util.Collections.emptyList();
       } else {
@@ -1464,7 +1554,16 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.talent.v4beta1.JobOperationResult buildPartial() {
       com.google.cloud.talent.v4beta1.JobOperationResult result =
           new com.google.cloud.talent.v4beta1.JobOperationResult(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.talent.v4beta1.JobOperationResult result) {
       if (jobResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           jobResults_ = java.util.Collections.unmodifiableList(jobResults_);
@@ -1474,8 +1573,10 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       } else {
         result.jobResults_ = jobResultsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4beta1.JobOperationResult result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

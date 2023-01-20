@@ -71,7 +71,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The tenant resource to replace the current resource in the system.
+   * Required. The tenant resource to replace the current resource in the
+   * system.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -87,7 +88,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The tenant resource to replace the current resource in the system.
+   * Required. The tenant resource to replace the current resource in the
+   * system.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -103,7 +105,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The tenant resource to replace the current resource in the system.
+   * Required. The tenant resource to replace the current resource in the
+   * system.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -111,7 +114,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.talent.v4beta1.TenantOrBuilder getTenantOrBuilder() {
-    return getTenant();
+    return tenant_ == null ? com.google.cloud.talent.v4beta1.Tenant.getDefaultInstance() : tenant_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -121,10 +124,14 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Strongly recommended for the best service experience.
-   * If [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask] is provided, only the specified fields in
-   * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are updated. Otherwise all the fields are updated.
+   * If
+   * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
+   * is provided, only the specified fields in
+   * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are
+   * updated. Otherwise all the fields are updated.
    * A field mask to specify the tenant fields to be updated. Only
-   * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are supported.
+   * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are
+   * supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -140,10 +147,14 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Strongly recommended for the best service experience.
-   * If [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask] is provided, only the specified fields in
-   * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are updated. Otherwise all the fields are updated.
+   * If
+   * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
+   * is provided, only the specified fields in
+   * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are
+   * updated. Otherwise all the fields are updated.
    * A field mask to specify the tenant fields to be updated. Only
-   * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are supported.
+   * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are
+   * supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -159,17 +170,21 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Strongly recommended for the best service experience.
-   * If [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask] is provided, only the specified fields in
-   * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are updated. Otherwise all the fields are updated.
+   * If
+   * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
+   * is provided, only the specified fields in
+   * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are
+   * updated. Otherwise all the fields are updated.
    * A field mask to specify the tenant fields to be updated. Only
-   * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are supported.
+   * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are
+   * supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -388,16 +403,15 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (tenantBuilder_ == null) {
-        tenant_ = null;
-      } else {
-        tenant_ = null;
+      bitField0_ = 0;
+      tenant_ = null;
+      if (tenantBuilder_ != null) {
+        tenantBuilder_.dispose();
         tenantBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -427,18 +441,21 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.talent.v4beta1.UpdateTenantRequest buildPartial() {
       com.google.cloud.talent.v4beta1.UpdateTenantRequest result =
           new com.google.cloud.talent.v4beta1.UpdateTenantRequest(this);
-      if (tenantBuilder_ == null) {
-        result.tenant_ = tenant_;
-      } else {
-        result.tenant_ = tenantBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4beta1.UpdateTenantRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tenant_ = tenantBuilder_ == null ? tenant_ : tenantBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -522,13 +539,13 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getTenantFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -548,6 +565,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.talent.v4beta1.Tenant tenant_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Tenant,
@@ -558,7 +577,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The tenant resource to replace the current resource in the system.
+     * Required. The tenant resource to replace the current resource in the
+     * system.
      * </pre>
      *
      * <code>
@@ -568,13 +588,14 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the tenant field is set.
      */
     public boolean hasTenant() {
-      return tenantBuilder_ != null || tenant_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Required. The tenant resource to replace the current resource in the system.
+     * Required. The tenant resource to replace the current resource in the
+     * system.
      * </pre>
      *
      * <code>
@@ -596,7 +617,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The tenant resource to replace the current resource in the system.
+     * Required. The tenant resource to replace the current resource in the
+     * system.
      * </pre>
      *
      * <code>
@@ -609,18 +631,19 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         tenant_ = value;
-        onChanged();
       } else {
         tenantBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The tenant resource to replace the current resource in the system.
+     * Required. The tenant resource to replace the current resource in the
+     * system.
      * </pre>
      *
      * <code>
@@ -630,18 +653,19 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
     public Builder setTenant(com.google.cloud.talent.v4beta1.Tenant.Builder builderForValue) {
       if (tenantBuilder_ == null) {
         tenant_ = builderForValue.build();
-        onChanged();
       } else {
         tenantBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The tenant resource to replace the current resource in the system.
+     * Required. The tenant resource to replace the current resource in the
+     * system.
      * </pre>
      *
      * <code>
@@ -650,26 +674,26 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeTenant(com.google.cloud.talent.v4beta1.Tenant value) {
       if (tenantBuilder_ == null) {
-        if (tenant_ != null) {
-          tenant_ =
-              com.google.cloud.talent.v4beta1.Tenant.newBuilder(tenant_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && tenant_ != null
+            && tenant_ != com.google.cloud.talent.v4beta1.Tenant.getDefaultInstance()) {
+          getTenantBuilder().mergeFrom(value);
         } else {
           tenant_ = value;
         }
-        onChanged();
       } else {
         tenantBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The tenant resource to replace the current resource in the system.
+     * Required. The tenant resource to replace the current resource in the
+     * system.
      * </pre>
      *
      * <code>
@@ -677,21 +701,21 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearTenant() {
-      if (tenantBuilder_ == null) {
-        tenant_ = null;
-        onChanged();
-      } else {
-        tenant_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      tenant_ = null;
+      if (tenantBuilder_ != null) {
+        tenantBuilder_.dispose();
         tenantBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The tenant resource to replace the current resource in the system.
+     * Required. The tenant resource to replace the current resource in the
+     * system.
      * </pre>
      *
      * <code>
@@ -699,7 +723,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.talent.v4beta1.Tenant.Builder getTenantBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTenantFieldBuilder().getBuilder();
     }
@@ -707,7 +731,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The tenant resource to replace the current resource in the system.
+     * Required. The tenant resource to replace the current resource in the
+     * system.
      * </pre>
      *
      * <code>
@@ -727,7 +752,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The tenant resource to replace the current resource in the system.
+     * Required. The tenant resource to replace the current resource in the
+     * system.
      * </pre>
      *
      * <code>
@@ -762,10 +788,14 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask] is provided, only the specified fields in
-     * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are updated. Otherwise all the fields are updated.
+     * If
+     * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
+     * is provided, only the specified fields in
+     * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are
+     * updated. Otherwise all the fields are updated.
      * A field mask to specify the tenant fields to be updated. Only
-     * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are supported.
+     * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are
+     * supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -773,17 +803,21 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask] is provided, only the specified fields in
-     * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are updated. Otherwise all the fields are updated.
+     * If
+     * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
+     * is provided, only the specified fields in
+     * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are
+     * updated. Otherwise all the fields are updated.
      * A field mask to specify the tenant fields to be updated. Only
-     * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are supported.
+     * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are
+     * supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -804,10 +838,14 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask] is provided, only the specified fields in
-     * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are updated. Otherwise all the fields are updated.
+     * If
+     * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
+     * is provided, only the specified fields in
+     * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are
+     * updated. Otherwise all the fields are updated.
      * A field mask to specify the tenant fields to be updated. Only
-     * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are supported.
+     * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are
+     * supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -818,11 +856,11 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -830,10 +868,14 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask] is provided, only the specified fields in
-     * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are updated. Otherwise all the fields are updated.
+     * If
+     * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
+     * is provided, only the specified fields in
+     * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are
+     * updated. Otherwise all the fields are updated.
      * A field mask to specify the tenant fields to be updated. Only
-     * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are supported.
+     * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are
+     * supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -841,11 +883,11 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -853,27 +895,32 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask] is provided, only the specified fields in
-     * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are updated. Otherwise all the fields are updated.
+     * If
+     * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
+     * is provided, only the specified fields in
+     * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are
+     * updated. Otherwise all the fields are updated.
      * A field mask to specify the tenant fields to be updated. Only
-     * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are supported.
+     * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are
+     * supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -881,23 +928,26 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask] is provided, only the specified fields in
-     * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are updated. Otherwise all the fields are updated.
+     * If
+     * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
+     * is provided, only the specified fields in
+     * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are
+     * updated. Otherwise all the fields are updated.
      * A field mask to specify the tenant fields to be updated. Only
-     * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are supported.
+     * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are
+     * supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -905,16 +955,20 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask] is provided, only the specified fields in
-     * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are updated. Otherwise all the fields are updated.
+     * If
+     * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
+     * is provided, only the specified fields in
+     * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are
+     * updated. Otherwise all the fields are updated.
      * A field mask to specify the tenant fields to be updated. Only
-     * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are supported.
+     * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are
+     * supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -923,10 +977,14 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask] is provided, only the specified fields in
-     * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are updated. Otherwise all the fields are updated.
+     * If
+     * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
+     * is provided, only the specified fields in
+     * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are
+     * updated. Otherwise all the fields are updated.
      * A field mask to specify the tenant fields to be updated. Only
-     * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are supported.
+     * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are
+     * supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -945,10 +1003,14 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask] is provided, only the specified fields in
-     * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are updated. Otherwise all the fields are updated.
+     * If
+     * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
+     * is provided, only the specified fields in
+     * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are
+     * updated. Otherwise all the fields are updated.
      * A field mask to specify the tenant fields to be updated. Only
-     * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are supported.
+     * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are
+     * supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

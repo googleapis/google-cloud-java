@@ -88,7 +88,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A structured headquarters location of the company, resolved from
-     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
+     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
+     * if provided.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -101,7 +102,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A structured headquarters location of the company, resolved from
-     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
+     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
+     * if provided.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -114,7 +116,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A structured headquarters location of the company, resolved from
-     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
+     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
+     * if provided.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -175,7 +178,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A structured headquarters location of the company, resolved from
-     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
+     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
+     * if provided.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -191,7 +195,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A structured headquarters location of the company, resolved from
-     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
+     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
+     * if provided.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -209,14 +214,17 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A structured headquarters location of the company, resolved from
-     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
+     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
+     * if provided.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
      */
     @java.lang.Override
     public com.google.cloud.talent.v4beta1.LocationOrBuilder getHeadquartersLocationOrBuilder() {
-      return getHeadquartersLocation();
+      return headquartersLocation_ == null
+          ? com.google.cloud.talent.v4beta1.Location.getDefaultInstance()
+          : headquartersLocation_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -425,10 +433,10 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (headquartersLocationBuilder_ == null) {
-          headquartersLocation_ = null;
-        } else {
-          headquartersLocation_ = null;
+        bitField0_ = 0;
+        headquartersLocation_ = null;
+        if (headquartersLocationBuilder_ != null) {
+          headquartersLocationBuilder_.dispose();
           headquartersLocationBuilder_ = null;
         }
         return this;
@@ -458,13 +466,21 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.talent.v4beta1.Company.DerivedInfo buildPartial() {
         com.google.cloud.talent.v4beta1.Company.DerivedInfo result =
             new com.google.cloud.talent.v4beta1.Company.DerivedInfo(this);
-        if (headquartersLocationBuilder_ == null) {
-          result.headquartersLocation_ = headquartersLocation_;
-        } else {
-          result.headquartersLocation_ = headquartersLocationBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.talent.v4beta1.Company.DerivedInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.headquartersLocation_ =
+              headquartersLocationBuilder_ == null
+                  ? headquartersLocation_
+                  : headquartersLocationBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -548,7 +564,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
                 {
                   input.readMessage(
                       getHeadquartersLocationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -568,6 +584,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.cloud.talent.v4beta1.Location headquartersLocation_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.talent.v4beta1.Location,
@@ -579,7 +597,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A structured headquarters location of the company, resolved from
-       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
+       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
+       * if provided.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -587,14 +606,15 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the headquartersLocation field is set.
        */
       public boolean hasHeadquartersLocation() {
-        return headquartersLocationBuilder_ != null || headquartersLocation_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
        *
        * <pre>
        * A structured headquarters location of the company, resolved from
-       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
+       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
+       * if provided.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -615,7 +635,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A structured headquarters location of the company, resolved from
-       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
+       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
+       * if provided.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -626,11 +647,11 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           headquartersLocation_ = value;
-          onChanged();
         } else {
           headquartersLocationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -638,7 +659,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A structured headquarters location of the company, resolved from
-       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
+       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
+       * if provided.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -647,11 +669,11 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.talent.v4beta1.Location.Builder builderForValue) {
         if (headquartersLocationBuilder_ == null) {
           headquartersLocation_ = builderForValue.build();
-          onChanged();
         } else {
           headquartersLocationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -659,26 +681,27 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A structured headquarters location of the company, resolved from
-       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
+       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
+       * if provided.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
        */
       public Builder mergeHeadquartersLocation(com.google.cloud.talent.v4beta1.Location value) {
         if (headquartersLocationBuilder_ == null) {
-          if (headquartersLocation_ != null) {
-            headquartersLocation_ =
-                com.google.cloud.talent.v4beta1.Location.newBuilder(headquartersLocation_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && headquartersLocation_ != null
+              && headquartersLocation_
+                  != com.google.cloud.talent.v4beta1.Location.getDefaultInstance()) {
+            getHeadquartersLocationBuilder().mergeFrom(value);
           } else {
             headquartersLocation_ = value;
           }
-          onChanged();
         } else {
           headquartersLocationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -686,20 +709,20 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A structured headquarters location of the company, resolved from
-       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
+       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
+       * if provided.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
        */
       public Builder clearHeadquartersLocation() {
-        if (headquartersLocationBuilder_ == null) {
-          headquartersLocation_ = null;
-          onChanged();
-        } else {
-          headquartersLocation_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        headquartersLocation_ = null;
+        if (headquartersLocationBuilder_ != null) {
+          headquartersLocationBuilder_.dispose();
           headquartersLocationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -707,13 +730,14 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A structured headquarters location of the company, resolved from
-       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
+       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
+       * if provided.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
        */
       public com.google.cloud.talent.v4beta1.Location.Builder getHeadquartersLocationBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getHeadquartersLocationFieldBuilder().getBuilder();
       }
@@ -722,7 +746,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A structured headquarters location of the company, resolved from
-       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
+       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
+       * if provided.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -741,7 +766,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A structured headquarters location of the company, resolved from
-       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
+       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
+       * if provided.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -828,7 +854,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -891,7 +919,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -940,7 +970,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXTERNAL_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object externalId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object externalId_ = "";
   /**
    *
    *
@@ -993,7 +1025,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SIZE_FIELD_NUMBER = 4;
-  private int size_;
+  private int size_ = 0;
   /**
    *
    *
@@ -1022,14 +1054,15 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompanySize getSize() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.CompanySize result =
-        com.google.cloud.talent.v4beta1.CompanySize.valueOf(size_);
+        com.google.cloud.talent.v4beta1.CompanySize.forNumber(size_);
     return result == null ? com.google.cloud.talent.v4beta1.CompanySize.UNRECOGNIZED : result;
   }
 
   public static final int HEADQUARTERS_ADDRESS_FIELD_NUMBER = 5;
-  private volatile java.lang.Object headquartersAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object headquartersAddress_ = "";
   /**
    *
    *
@@ -1037,7 +1070,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * The street address of the company's main headquarters, which may be
    * different from the job location. The service attempts
    * to geolocate the provided address, and populates a more specific
-   * location wherever possible in [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
+   * location wherever possible in
+   * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
    * </pre>
    *
    * <code>string headquarters_address = 5;</code>
@@ -1063,7 +1097,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * The street address of the company's main headquarters, which may be
    * different from the job location. The service attempts
    * to geolocate the provided address, and populates a more specific
-   * location wherever possible in [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
+   * location wherever possible in
+   * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
    * </pre>
    *
    * <code>string headquarters_address = 5;</code>
@@ -1084,7 +1119,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HIRING_AGENCY_FIELD_NUMBER = 6;
-  private boolean hiringAgency_;
+  private boolean hiringAgency_ = false;
   /**
    *
    *
@@ -1104,7 +1139,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EEO_TEXT_FIELD_NUMBER = 7;
-  private volatile java.lang.Object eeoText_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object eeoText_ = "";
   /**
    *
    *
@@ -1159,7 +1196,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WEBSITE_URI_FIELD_NUMBER = 8;
-  private volatile java.lang.Object websiteUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object websiteUri_ = "";
   /**
    *
    *
@@ -1212,7 +1251,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CAREER_SITE_URI_FIELD_NUMBER = 9;
-  private volatile java.lang.Object careerSiteUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object careerSiteUri_ = "";
   /**
    *
    *
@@ -1263,7 +1304,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_URI_FIELD_NUMBER = 10;
-  private volatile java.lang.Object imageUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageUri_ = "";
   /**
    *
    *
@@ -1312,15 +1355,20 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KEYWORD_SEARCHABLE_JOB_CUSTOM_ATTRIBUTES_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList keywordSearchableJobCustomAttributes_;
   /**
    *
    *
    * <pre>
    * This field is deprecated. Please set the searchability of the custom
-   * attribute in the [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] going forward.
-   * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
-   * corresponding `string_values` are used in keyword searches. Jobs with
+   * attribute in the
+   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
+   * going forward.
+   * A list of keys of filterable
+   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
+   * whose corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
@@ -1330,7 +1378,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated string keyword_searchable_job_custom_attributes = 11 [deprecated = true];</code>
    *
    * @deprecated google.cloud.talent.v4beta1.Company.keyword_searchable_job_custom_attributes is
-   *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=111
+   *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=116
    * @return A list containing the keywordSearchableJobCustomAttributes.
    */
   @java.lang.Deprecated
@@ -1342,9 +1390,12 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This field is deprecated. Please set the searchability of the custom
-   * attribute in the [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] going forward.
-   * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
-   * corresponding `string_values` are used in keyword searches. Jobs with
+   * attribute in the
+   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
+   * going forward.
+   * A list of keys of filterable
+   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
+   * whose corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
@@ -1354,7 +1405,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated string keyword_searchable_job_custom_attributes = 11 [deprecated = true];</code>
    *
    * @deprecated google.cloud.talent.v4beta1.Company.keyword_searchable_job_custom_attributes is
-   *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=111
+   *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=116
    * @return The count of keywordSearchableJobCustomAttributes.
    */
   @java.lang.Deprecated
@@ -1366,9 +1417,12 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This field is deprecated. Please set the searchability of the custom
-   * attribute in the [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] going forward.
-   * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
-   * corresponding `string_values` are used in keyword searches. Jobs with
+   * attribute in the
+   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
+   * going forward.
+   * A list of keys of filterable
+   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
+   * whose corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
@@ -1378,7 +1432,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated string keyword_searchable_job_custom_attributes = 11 [deprecated = true];</code>
    *
    * @deprecated google.cloud.talent.v4beta1.Company.keyword_searchable_job_custom_attributes is
-   *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=111
+   *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=116
    * @param index The index of the element to return.
    * @return The keywordSearchableJobCustomAttributes at the given index.
    */
@@ -1391,9 +1445,12 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This field is deprecated. Please set the searchability of the custom
-   * attribute in the [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] going forward.
-   * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
-   * corresponding `string_values` are used in keyword searches. Jobs with
+   * attribute in the
+   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
+   * going forward.
+   * A list of keys of filterable
+   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
+   * whose corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
@@ -1403,7 +1460,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated string keyword_searchable_job_custom_attributes = 11 [deprecated = true];</code>
    *
    * @deprecated google.cloud.talent.v4beta1.Company.keyword_searchable_job_custom_attributes is
-   *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=111
+   *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=116
    * @param index The index of the value to return.
    * @return The bytes of the keywordSearchableJobCustomAttributes at the given index.
    */
@@ -1463,11 +1520,13 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.talent.v4beta1.Company.DerivedInfoOrBuilder getDerivedInfoOrBuilder() {
-    return getDerivedInfo();
+    return derivedInfo_ == null
+        ? com.google.cloud.talent.v4beta1.Company.DerivedInfo.getDefaultInstance()
+        : derivedInfo_;
   }
 
   public static final int SUSPENDED_FIELD_NUMBER = 13;
-  private boolean suspended_;
+  private boolean suspended_ = false;
   /**
    *
    *
@@ -1806,36 +1865,25 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       externalId_ = "";
-
       size_ = 0;
-
       headquartersAddress_ = "";
-
       hiringAgency_ = false;
-
       eeoText_ = "";
-
       websiteUri_ = "";
-
       careerSiteUri_ = "";
-
       imageUri_ = "";
-
       keywordSearchableJobCustomAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (derivedInfoBuilder_ == null) {
-        derivedInfo_ = null;
-      } else {
-        derivedInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      derivedInfo_ = null;
+      if (derivedInfoBuilder_ != null) {
+        derivedInfoBuilder_.dispose();
         derivedInfoBuilder_ = null;
       }
       suspended_ = false;
-
       return this;
     }
 
@@ -1863,31 +1911,62 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.talent.v4beta1.Company buildPartial() {
       com.google.cloud.talent.v4beta1.Company result =
           new com.google.cloud.talent.v4beta1.Company(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.externalId_ = externalId_;
-      result.size_ = size_;
-      result.headquartersAddress_ = headquartersAddress_;
-      result.hiringAgency_ = hiringAgency_;
-      result.eeoText_ = eeoText_;
-      result.websiteUri_ = websiteUri_;
-      result.careerSiteUri_ = careerSiteUri_;
-      result.imageUri_ = imageUri_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        keywordSearchableJobCustomAttributes_ =
-            keywordSearchableJobCustomAttributes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.keywordSearchableJobCustomAttributes_ = keywordSearchableJobCustomAttributes_;
-      if (derivedInfoBuilder_ == null) {
-        result.derivedInfo_ = derivedInfo_;
-      } else {
-        result.derivedInfo_ = derivedInfoBuilder_.build();
-      }
-      result.suspended_ = suspended_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.talent.v4beta1.Company result) {
+      if (((bitField0_ & 0x00000400) != 0)) {
+        keywordSearchableJobCustomAttributes_ =
+            keywordSearchableJobCustomAttributes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000400);
+      }
+      result.keywordSearchableJobCustomAttributes_ = keywordSearchableJobCustomAttributes_;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4beta1.Company result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.externalId_ = externalId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.size_ = size_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.headquartersAddress_ = headquartersAddress_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.hiringAgency_ = hiringAgency_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.eeoText_ = eeoText_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.websiteUri_ = websiteUri_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.careerSiteUri_ = careerSiteUri_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.imageUri_ = imageUri_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.derivedInfo_ =
+            derivedInfoBuilder_ == null ? derivedInfo_ : derivedInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.suspended_ = suspended_;
+      }
     }
 
     @java.lang.Override
@@ -1937,14 +2016,17 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.talent.v4beta1.Company.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getExternalId().isEmpty()) {
         externalId_ = other.externalId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.size_ != 0) {
@@ -1952,6 +2034,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getHeadquartersAddress().isEmpty()) {
         headquartersAddress_ = other.headquartersAddress_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getHiringAgency() != false) {
@@ -1959,24 +2042,28 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEeoText().isEmpty()) {
         eeoText_ = other.eeoText_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getWebsiteUri().isEmpty()) {
         websiteUri_ = other.websiteUri_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getCareerSiteUri().isEmpty()) {
         careerSiteUri_ = other.careerSiteUri_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getImageUri().isEmpty()) {
         imageUri_ = other.imageUri_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.keywordSearchableJobCustomAttributes_.isEmpty()) {
         if (keywordSearchableJobCustomAttributes_.isEmpty()) {
           keywordSearchableJobCustomAttributes_ = other.keywordSearchableJobCustomAttributes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureKeywordSearchableJobCustomAttributesIsMutable();
           keywordSearchableJobCustomAttributes_.addAll(other.keywordSearchableJobCustomAttributes_);
@@ -2018,61 +2105,61 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 externalId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 size_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 headquartersAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 hiringAgency_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 eeoText_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 websiteUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 careerSiteUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 imageUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
@@ -2085,13 +2172,13 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
             case 98:
               {
                 input.readMessage(getDerivedInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 104:
               {
                 suspended_ = input.readBool();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 104
             default:
@@ -2195,8 +2282,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2219,8 +2306,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2248,8 +2335,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2315,8 +2402,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2332,8 +2419,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2354,8 +2441,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2427,8 +2514,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       externalId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2446,8 +2533,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExternalId() {
-
       externalId_ = getDefaultInstance().getExternalId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2470,8 +2557,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       externalId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2505,8 +2592,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSizeValue(int value) {
-
       size_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2523,9 +2610,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.talent.v4beta1.CompanySize getSize() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.CompanySize result =
-          com.google.cloud.talent.v4beta1.CompanySize.valueOf(size_);
+          com.google.cloud.talent.v4beta1.CompanySize.forNumber(size_);
       return result == null ? com.google.cloud.talent.v4beta1.CompanySize.UNRECOGNIZED : result;
     }
     /**
@@ -2544,7 +2630,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       size_ = value.getNumber();
       onChanged();
       return this;
@@ -2561,7 +2647,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       size_ = 0;
       onChanged();
       return this;
@@ -2575,7 +2661,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * The street address of the company's main headquarters, which may be
      * different from the job location. The service attempts
      * to geolocate the provided address, and populates a more specific
-     * location wherever possible in [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
+     * location wherever possible in
+     * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
      * </pre>
      *
      * <code>string headquarters_address = 5;</code>
@@ -2600,7 +2687,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * The street address of the company's main headquarters, which may be
      * different from the job location. The service attempts
      * to geolocate the provided address, and populates a more specific
-     * location wherever possible in [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
+     * location wherever possible in
+     * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
      * </pre>
      *
      * <code>string headquarters_address = 5;</code>
@@ -2625,7 +2713,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * The street address of the company's main headquarters, which may be
      * different from the job location. The service attempts
      * to geolocate the provided address, and populates a more specific
-     * location wherever possible in [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
+     * location wherever possible in
+     * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
      * </pre>
      *
      * <code>string headquarters_address = 5;</code>
@@ -2637,8 +2726,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       headquartersAddress_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2649,7 +2738,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * The street address of the company's main headquarters, which may be
      * different from the job location. The service attempts
      * to geolocate the provided address, and populates a more specific
-     * location wherever possible in [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
+     * location wherever possible in
+     * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
      * </pre>
      *
      * <code>string headquarters_address = 5;</code>
@@ -2657,8 +2747,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHeadquartersAddress() {
-
       headquartersAddress_ = getDefaultInstance().getHeadquartersAddress();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2669,7 +2759,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * The street address of the company's main headquarters, which may be
      * different from the job location. The service attempts
      * to geolocate the provided address, and populates a more specific
-     * location wherever possible in [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
+     * location wherever possible in
+     * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
      * </pre>
      *
      * <code>string headquarters_address = 5;</code>
@@ -2682,8 +2773,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       headquartersAddress_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2723,6 +2814,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     public Builder setHiringAgency(boolean value) {
 
       hiringAgency_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2740,7 +2832,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHiringAgency() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       hiringAgency_ = false;
       onChanged();
       return this;
@@ -2816,8 +2908,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       eeoText_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2836,8 +2928,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEeoText() {
-
       eeoText_ = getDefaultInstance().getEeoText();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2861,8 +2953,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       eeoText_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2934,8 +3026,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       websiteUri_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2953,8 +3045,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWebsiteUri() {
-
       websiteUri_ = getDefaultInstance().getWebsiteUri();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2977,8 +3069,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       websiteUri_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3047,8 +3139,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       careerSiteUri_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3065,8 +3157,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCareerSiteUri() {
-
       careerSiteUri_ = getDefaultInstance().getCareerSiteUri();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3088,8 +3180,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       careerSiteUri_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3155,8 +3247,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       imageUri_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3172,8 +3264,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImageUri() {
-
       imageUri_ = getDefaultInstance().getImageUri();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3194,8 +3286,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       imageUri_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3204,10 +3296,10 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureKeywordSearchableJobCustomAttributesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         keywordSearchableJobCustomAttributes_ =
             new com.google.protobuf.LazyStringArrayList(keywordSearchableJobCustomAttributes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000400;
       }
     }
     /**
@@ -3215,9 +3307,12 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field is deprecated. Please set the searchability of the custom
-     * attribute in the [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] going forward.
-     * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
-     * corresponding `string_values` are used in keyword searches. Jobs with
+     * attribute in the
+     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
+     * going forward.
+     * A list of keys of filterable
+     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
+     * whose corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
@@ -3228,7 +3323,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.talent.v4beta1.Company.keyword_searchable_job_custom_attributes is
-     *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=111
+     *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=116
      * @return A list containing the keywordSearchableJobCustomAttributes.
      */
     @java.lang.Deprecated
@@ -3240,9 +3335,12 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field is deprecated. Please set the searchability of the custom
-     * attribute in the [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] going forward.
-     * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
-     * corresponding `string_values` are used in keyword searches. Jobs with
+     * attribute in the
+     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
+     * going forward.
+     * A list of keys of filterable
+     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
+     * whose corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
@@ -3253,7 +3351,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.talent.v4beta1.Company.keyword_searchable_job_custom_attributes is
-     *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=111
+     *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=116
      * @return The count of keywordSearchableJobCustomAttributes.
      */
     @java.lang.Deprecated
@@ -3265,9 +3363,12 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field is deprecated. Please set the searchability of the custom
-     * attribute in the [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] going forward.
-     * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
-     * corresponding `string_values` are used in keyword searches. Jobs with
+     * attribute in the
+     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
+     * going forward.
+     * A list of keys of filterable
+     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
+     * whose corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
@@ -3278,7 +3379,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.talent.v4beta1.Company.keyword_searchable_job_custom_attributes is
-     *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=111
+     *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=116
      * @param index The index of the element to return.
      * @return The keywordSearchableJobCustomAttributes at the given index.
      */
@@ -3291,9 +3392,12 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field is deprecated. Please set the searchability of the custom
-     * attribute in the [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] going forward.
-     * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
-     * corresponding `string_values` are used in keyword searches. Jobs with
+     * attribute in the
+     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
+     * going forward.
+     * A list of keys of filterable
+     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
+     * whose corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
@@ -3304,7 +3408,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.talent.v4beta1.Company.keyword_searchable_job_custom_attributes is
-     *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=111
+     *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=116
      * @param index The index of the value to return.
      * @return The bytes of the keywordSearchableJobCustomAttributes at the given index.
      */
@@ -3317,9 +3421,12 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field is deprecated. Please set the searchability of the custom
-     * attribute in the [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] going forward.
-     * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
-     * corresponding `string_values` are used in keyword searches. Jobs with
+     * attribute in the
+     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
+     * going forward.
+     * A list of keys of filterable
+     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
+     * whose corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
@@ -3330,7 +3437,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.talent.v4beta1.Company.keyword_searchable_job_custom_attributes is
-     *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=111
+     *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=116
      * @param index The index to set the value at.
      * @param value The keywordSearchableJobCustomAttributes to set.
      * @return This builder for chaining.
@@ -3350,9 +3457,12 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field is deprecated. Please set the searchability of the custom
-     * attribute in the [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] going forward.
-     * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
-     * corresponding `string_values` are used in keyword searches. Jobs with
+     * attribute in the
+     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
+     * going forward.
+     * A list of keys of filterable
+     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
+     * whose corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
@@ -3363,7 +3473,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.talent.v4beta1.Company.keyword_searchable_job_custom_attributes is
-     *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=111
+     *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=116
      * @param value The keywordSearchableJobCustomAttributes to add.
      * @return This builder for chaining.
      */
@@ -3382,9 +3492,12 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field is deprecated. Please set the searchability of the custom
-     * attribute in the [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] going forward.
-     * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
-     * corresponding `string_values` are used in keyword searches. Jobs with
+     * attribute in the
+     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
+     * going forward.
+     * A list of keys of filterable
+     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
+     * whose corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
@@ -3395,7 +3508,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.talent.v4beta1.Company.keyword_searchable_job_custom_attributes is
-     *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=111
+     *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=116
      * @param values The keywordSearchableJobCustomAttributes to add.
      * @return This builder for chaining.
      */
@@ -3413,9 +3526,12 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field is deprecated. Please set the searchability of the custom
-     * attribute in the [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] going forward.
-     * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
-     * corresponding `string_values` are used in keyword searches. Jobs with
+     * attribute in the
+     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
+     * going forward.
+     * A list of keys of filterable
+     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
+     * whose corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
@@ -3426,13 +3542,13 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.talent.v4beta1.Company.keyword_searchable_job_custom_attributes is
-     *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=111
+     *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=116
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearKeywordSearchableJobCustomAttributes() {
       keywordSearchableJobCustomAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3441,9 +3557,12 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field is deprecated. Please set the searchability of the custom
-     * attribute in the [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] going forward.
-     * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
-     * corresponding `string_values` are used in keyword searches. Jobs with
+     * attribute in the
+     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
+     * going forward.
+     * A list of keys of filterable
+     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
+     * whose corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
@@ -3454,7 +3573,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.talent.v4beta1.Company.keyword_searchable_job_custom_attributes is
-     *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=111
+     *     deprecated. See google/cloud/talent/v4beta1/company.proto;l=116
      * @param value The bytes of the keywordSearchableJobCustomAttributes to add.
      * @return This builder for chaining.
      */
@@ -3491,7 +3610,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the derivedInfo field is set.
      */
     public boolean hasDerivedInfo() {
-      return derivedInfoBuilder_ != null || derivedInfo_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3532,11 +3651,11 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         derivedInfo_ = value;
-        onChanged();
       } else {
         derivedInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3554,11 +3673,11 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.talent.v4beta1.Company.DerivedInfo.Builder builderForValue) {
       if (derivedInfoBuilder_ == null) {
         derivedInfo_ = builderForValue.build();
-        onChanged();
       } else {
         derivedInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3574,19 +3693,19 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDerivedInfo(com.google.cloud.talent.v4beta1.Company.DerivedInfo value) {
       if (derivedInfoBuilder_ == null) {
-        if (derivedInfo_ != null) {
-          derivedInfo_ =
-              com.google.cloud.talent.v4beta1.Company.DerivedInfo.newBuilder(derivedInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && derivedInfo_ != null
+            && derivedInfo_
+                != com.google.cloud.talent.v4beta1.Company.DerivedInfo.getDefaultInstance()) {
+          getDerivedInfoBuilder().mergeFrom(value);
         } else {
           derivedInfo_ = value;
         }
-        onChanged();
       } else {
         derivedInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3601,14 +3720,13 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDerivedInfo() {
-      if (derivedInfoBuilder_ == null) {
-        derivedInfo_ = null;
-        onChanged();
-      } else {
-        derivedInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      derivedInfo_ = null;
+      if (derivedInfoBuilder_ != null) {
+        derivedInfoBuilder_.dispose();
         derivedInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3623,7 +3741,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.talent.v4beta1.Company.DerivedInfo.Builder getDerivedInfoBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getDerivedInfoFieldBuilder().getBuilder();
     }
@@ -3710,6 +3828,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     public Builder setSuspended(boolean value) {
 
       suspended_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3727,7 +3846,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSuspended() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       suspended_ = false;
       onChanged();
       return this;

@@ -71,7 +71,8 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The company resource to replace the current resource in the system.
+   * Required. The company resource to replace the current resource in the
+   * system.
    * </pre>
    *
    * <code>
@@ -88,7 +89,8 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The company resource to replace the current resource in the system.
+   * Required. The company resource to replace the current resource in the
+   * system.
    * </pre>
    *
    * <code>
@@ -107,7 +109,8 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The company resource to replace the current resource in the system.
+   * Required. The company resource to replace the current resource in the
+   * system.
    * </pre>
    *
    * <code>
@@ -116,7 +119,9 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompanyOrBuilder getCompanyOrBuilder() {
-    return getCompany();
+    return company_ == null
+        ? com.google.cloud.talent.v4beta1.Company.getDefaultInstance()
+        : company_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -126,10 +131,14 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Strongly recommended for the best service experience.
-   * If [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask] is provided, only the specified fields in
-   * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are updated. Otherwise all the fields are updated.
+   * If
+   * [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask]
+   * is provided, only the specified fields in
+   * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are
+   * updated. Otherwise all the fields are updated.
    * A field mask to specify the company fields to be updated. Only
-   * top level fields of [Company][google.cloud.talent.v4beta1.Company] are supported.
+   * top level fields of [Company][google.cloud.talent.v4beta1.Company] are
+   * supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -145,10 +154,14 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Strongly recommended for the best service experience.
-   * If [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask] is provided, only the specified fields in
-   * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are updated. Otherwise all the fields are updated.
+   * If
+   * [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask]
+   * is provided, only the specified fields in
+   * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are
+   * updated. Otherwise all the fields are updated.
    * A field mask to specify the company fields to be updated. Only
-   * top level fields of [Company][google.cloud.talent.v4beta1.Company] are supported.
+   * top level fields of [Company][google.cloud.talent.v4beta1.Company] are
+   * supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -164,17 +177,21 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Strongly recommended for the best service experience.
-   * If [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask] is provided, only the specified fields in
-   * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are updated. Otherwise all the fields are updated.
+   * If
+   * [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask]
+   * is provided, only the specified fields in
+   * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are
+   * updated. Otherwise all the fields are updated.
    * A field mask to specify the company fields to be updated. Only
-   * top level fields of [Company][google.cloud.talent.v4beta1.Company] are supported.
+   * top level fields of [Company][google.cloud.talent.v4beta1.Company] are
+   * supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -393,16 +410,15 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (companyBuilder_ == null) {
-        company_ = null;
-      } else {
-        company_ = null;
+      bitField0_ = 0;
+      company_ = null;
+      if (companyBuilder_ != null) {
+        companyBuilder_.dispose();
         companyBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -432,18 +448,21 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.talent.v4beta1.UpdateCompanyRequest buildPartial() {
       com.google.cloud.talent.v4beta1.UpdateCompanyRequest result =
           new com.google.cloud.talent.v4beta1.UpdateCompanyRequest(this);
-      if (companyBuilder_ == null) {
-        result.company_ = company_;
-      } else {
-        result.company_ = companyBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4beta1.UpdateCompanyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.company_ = companyBuilder_ == null ? company_ : companyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -527,13 +546,13 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getCompanyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -553,6 +572,8 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.talent.v4beta1.Company company_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Company,
@@ -563,7 +584,8 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The company resource to replace the current resource in the system.
+     * Required. The company resource to replace the current resource in the
+     * system.
      * </pre>
      *
      * <code>
@@ -573,13 +595,14 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the company field is set.
      */
     public boolean hasCompany() {
-      return companyBuilder_ != null || company_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Required. The company resource to replace the current resource in the system.
+     * Required. The company resource to replace the current resource in the
+     * system.
      * </pre>
      *
      * <code>
@@ -601,7 +624,8 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The company resource to replace the current resource in the system.
+     * Required. The company resource to replace the current resource in the
+     * system.
      * </pre>
      *
      * <code>
@@ -614,18 +638,19 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         company_ = value;
-        onChanged();
       } else {
         companyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The company resource to replace the current resource in the system.
+     * Required. The company resource to replace the current resource in the
+     * system.
      * </pre>
      *
      * <code>
@@ -635,18 +660,19 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
     public Builder setCompany(com.google.cloud.talent.v4beta1.Company.Builder builderForValue) {
       if (companyBuilder_ == null) {
         company_ = builderForValue.build();
-        onChanged();
       } else {
         companyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The company resource to replace the current resource in the system.
+     * Required. The company resource to replace the current resource in the
+     * system.
      * </pre>
      *
      * <code>
@@ -655,26 +681,26 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeCompany(com.google.cloud.talent.v4beta1.Company value) {
       if (companyBuilder_ == null) {
-        if (company_ != null) {
-          company_ =
-              com.google.cloud.talent.v4beta1.Company.newBuilder(company_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && company_ != null
+            && company_ != com.google.cloud.talent.v4beta1.Company.getDefaultInstance()) {
+          getCompanyBuilder().mergeFrom(value);
         } else {
           company_ = value;
         }
-        onChanged();
       } else {
         companyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The company resource to replace the current resource in the system.
+     * Required. The company resource to replace the current resource in the
+     * system.
      * </pre>
      *
      * <code>
@@ -682,21 +708,21 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearCompany() {
-      if (companyBuilder_ == null) {
-        company_ = null;
-        onChanged();
-      } else {
-        company_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      company_ = null;
+      if (companyBuilder_ != null) {
+        companyBuilder_.dispose();
         companyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The company resource to replace the current resource in the system.
+     * Required. The company resource to replace the current resource in the
+     * system.
      * </pre>
      *
      * <code>
@@ -704,7 +730,7 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.talent.v4beta1.Company.Builder getCompanyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCompanyFieldBuilder().getBuilder();
     }
@@ -712,7 +738,8 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The company resource to replace the current resource in the system.
+     * Required. The company resource to replace the current resource in the
+     * system.
      * </pre>
      *
      * <code>
@@ -732,7 +759,8 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The company resource to replace the current resource in the system.
+     * Required. The company resource to replace the current resource in the
+     * system.
      * </pre>
      *
      * <code>
@@ -767,10 +795,14 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask] is provided, only the specified fields in
-     * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are updated. Otherwise all the fields are updated.
+     * If
+     * [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask]
+     * is provided, only the specified fields in
+     * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are
+     * updated. Otherwise all the fields are updated.
      * A field mask to specify the company fields to be updated. Only
-     * top level fields of [Company][google.cloud.talent.v4beta1.Company] are supported.
+     * top level fields of [Company][google.cloud.talent.v4beta1.Company] are
+     * supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -778,17 +810,21 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask] is provided, only the specified fields in
-     * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are updated. Otherwise all the fields are updated.
+     * If
+     * [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask]
+     * is provided, only the specified fields in
+     * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are
+     * updated. Otherwise all the fields are updated.
      * A field mask to specify the company fields to be updated. Only
-     * top level fields of [Company][google.cloud.talent.v4beta1.Company] are supported.
+     * top level fields of [Company][google.cloud.talent.v4beta1.Company] are
+     * supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -809,10 +845,14 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask] is provided, only the specified fields in
-     * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are updated. Otherwise all the fields are updated.
+     * If
+     * [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask]
+     * is provided, only the specified fields in
+     * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are
+     * updated. Otherwise all the fields are updated.
      * A field mask to specify the company fields to be updated. Only
-     * top level fields of [Company][google.cloud.talent.v4beta1.Company] are supported.
+     * top level fields of [Company][google.cloud.talent.v4beta1.Company] are
+     * supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -823,11 +863,11 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -835,10 +875,14 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask] is provided, only the specified fields in
-     * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are updated. Otherwise all the fields are updated.
+     * If
+     * [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask]
+     * is provided, only the specified fields in
+     * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are
+     * updated. Otherwise all the fields are updated.
      * A field mask to specify the company fields to be updated. Only
-     * top level fields of [Company][google.cloud.talent.v4beta1.Company] are supported.
+     * top level fields of [Company][google.cloud.talent.v4beta1.Company] are
+     * supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -846,11 +890,11 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -858,27 +902,32 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask] is provided, only the specified fields in
-     * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are updated. Otherwise all the fields are updated.
+     * If
+     * [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask]
+     * is provided, only the specified fields in
+     * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are
+     * updated. Otherwise all the fields are updated.
      * A field mask to specify the company fields to be updated. Only
-     * top level fields of [Company][google.cloud.talent.v4beta1.Company] are supported.
+     * top level fields of [Company][google.cloud.talent.v4beta1.Company] are
+     * supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -886,23 +935,26 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask] is provided, only the specified fields in
-     * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are updated. Otherwise all the fields are updated.
+     * If
+     * [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask]
+     * is provided, only the specified fields in
+     * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are
+     * updated. Otherwise all the fields are updated.
      * A field mask to specify the company fields to be updated. Only
-     * top level fields of [Company][google.cloud.talent.v4beta1.Company] are supported.
+     * top level fields of [Company][google.cloud.talent.v4beta1.Company] are
+     * supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -910,16 +962,20 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask] is provided, only the specified fields in
-     * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are updated. Otherwise all the fields are updated.
+     * If
+     * [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask]
+     * is provided, only the specified fields in
+     * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are
+     * updated. Otherwise all the fields are updated.
      * A field mask to specify the company fields to be updated. Only
-     * top level fields of [Company][google.cloud.talent.v4beta1.Company] are supported.
+     * top level fields of [Company][google.cloud.talent.v4beta1.Company] are
+     * supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -928,10 +984,14 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask] is provided, only the specified fields in
-     * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are updated. Otherwise all the fields are updated.
+     * If
+     * [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask]
+     * is provided, only the specified fields in
+     * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are
+     * updated. Otherwise all the fields are updated.
      * A field mask to specify the company fields to be updated. Only
-     * top level fields of [Company][google.cloud.talent.v4beta1.Company] are supported.
+     * top level fields of [Company][google.cloud.talent.v4beta1.Company] are
+     * supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -950,10 +1010,14 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask] is provided, only the specified fields in
-     * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are updated. Otherwise all the fields are updated.
+     * If
+     * [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask]
+     * is provided, only the specified fields in
+     * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are
+     * updated. Otherwise all the fields are updated.
      * A field mask to specify the company fields to be updated. Only
-     * top level fields of [Company][google.cloud.talent.v4beta1.Company] are supported.
+     * top level fields of [Company][google.cloud.talent.v4beta1.Company] are
+     * supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

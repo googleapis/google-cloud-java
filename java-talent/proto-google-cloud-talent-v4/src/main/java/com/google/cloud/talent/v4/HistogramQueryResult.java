@@ -22,7 +22,9 @@ package com.google.cloud.talent.v4;
  *
  *
  * <pre>
- * Histogram result that matches [HistogramQuery][google.cloud.talent.v4.HistogramQuery] specified in searches.
+ * Histogram result that matches
+ * [HistogramQuery][google.cloud.talent.v4.HistogramQuery] specified in
+ * searches.
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4.HistogramQueryResult}
@@ -79,7 +81,9 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int HISTOGRAM_QUERY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object histogramQuery_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object histogramQuery_ = "";
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
             0L);
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.Long> histogram_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.Long> internalGetHistogram() {
@@ -433,7 +438,9 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Histogram result that matches [HistogramQuery][google.cloud.talent.v4.HistogramQuery] specified in searches.
+   * Histogram result that matches
+   * [HistogramQuery][google.cloud.talent.v4.HistogramQuery] specified in
+   * searches.
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4.HistogramQueryResult}
@@ -487,8 +494,8 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       histogramQuery_ = "";
-
       internalGetMutableHistogram().clear();
       return this;
     }
@@ -517,12 +524,22 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
     public com.google.cloud.talent.v4.HistogramQueryResult buildPartial() {
       com.google.cloud.talent.v4.HistogramQueryResult result =
           new com.google.cloud.talent.v4.HistogramQueryResult(this);
-      int from_bitField0_ = bitField0_;
-      result.histogramQuery_ = histogramQuery_;
-      result.histogram_ = internalGetHistogram();
-      result.histogram_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.HistogramQueryResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.histogramQuery_ = histogramQuery_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.histogram_ = internalGetHistogram();
+        result.histogram_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -573,9 +590,11 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getHistogramQuery().isEmpty()) {
         histogramQuery_ = other.histogramQuery_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableHistogram().mergeFrom(other.internalGetHistogram());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -605,7 +624,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 histogramQuery_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -617,6 +636,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
                 internalGetMutableHistogram()
                     .getMutableMap()
                     .put(histogram__.getKey(), histogram__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -699,8 +719,8 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       histogramQuery_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -716,8 +736,8 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearHistogramQuery() {
-
       histogramQuery_ = getDefaultInstance().getHistogramQuery();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -738,8 +758,8 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       histogramQuery_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -755,8 +775,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
         internalGetMutableHistogram() {
-      onChanged();
-      ;
       if (histogram_ == null) {
         histogram_ =
             com.google.protobuf.MapField.newMapField(HistogramDefaultEntryHolder.defaultEntry);
@@ -764,6 +782,8 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
       if (!histogram_.isMutable()) {
         histogram_ = histogram_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return histogram_;
     }
 
@@ -872,6 +892,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearHistogram() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableHistogram().getMutableMap().clear();
       return this;
     }
@@ -901,6 +922,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getMutableHistogram() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableHistogram().getMutableMap();
     }
     /**
@@ -925,6 +947,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
       }
 
       internalGetMutableHistogram().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -945,6 +968,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      */
     public Builder putAllHistogram(java.util.Map<java.lang.String, java.lang.Long> values) {
       internalGetMutableHistogram().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

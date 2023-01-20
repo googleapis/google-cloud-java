@@ -22,8 +22,11 @@ package com.google.cloud.talent.v4;
  *
  *
  * <pre>
- * The result of [JobService.BatchDeleteJobs][google.cloud.talent.v4.JobService.BatchDeleteJobs]. It's used to
- * replace [google.longrunning.Operation.response][google.longrunning.Operation.response] in case of success.
+ * The result of
+ * [JobService.BatchDeleteJobs][google.cloud.talent.v4.JobService.BatchDeleteJobs].
+ * It's used to replace
+ * [google.longrunning.Operation.response][google.longrunning.Operation.response]
+ * in case of success.
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4.BatchDeleteJobsResponse}
@@ -69,6 +72,8 @@ public final class BatchDeleteJobsResponse extends com.google.protobuf.Generated
   }
 
   public static final int JOB_RESULTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4.JobResult> jobResults_;
   /**
    *
@@ -307,8 +312,11 @@ public final class BatchDeleteJobsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The result of [JobService.BatchDeleteJobs][google.cloud.talent.v4.JobService.BatchDeleteJobs]. It's used to
-   * replace [google.longrunning.Operation.response][google.longrunning.Operation.response] in case of success.
+   * The result of
+   * [JobService.BatchDeleteJobs][google.cloud.talent.v4.JobService.BatchDeleteJobs].
+   * It's used to replace
+   * [google.longrunning.Operation.response][google.longrunning.Operation.response]
+   * in case of success.
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4.BatchDeleteJobsResponse}
@@ -342,6 +350,7 @@ public final class BatchDeleteJobsResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (jobResultsBuilder_ == null) {
         jobResults_ = java.util.Collections.emptyList();
       } else {
@@ -376,7 +385,16 @@ public final class BatchDeleteJobsResponse extends com.google.protobuf.Generated
     public com.google.cloud.talent.v4.BatchDeleteJobsResponse buildPartial() {
       com.google.cloud.talent.v4.BatchDeleteJobsResponse result =
           new com.google.cloud.talent.v4.BatchDeleteJobsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.talent.v4.BatchDeleteJobsResponse result) {
       if (jobResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           jobResults_ = java.util.Collections.unmodifiableList(jobResults_);
@@ -386,8 +404,10 @@ public final class BatchDeleteJobsResponse extends com.google.protobuf.Generated
       } else {
         result.jobResults_ = jobResultsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.BatchDeleteJobsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

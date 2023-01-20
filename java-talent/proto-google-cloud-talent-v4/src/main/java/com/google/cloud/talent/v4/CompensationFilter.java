@@ -94,10 +94,12 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Filter by `base compensation entry's` unit. A job is a match if and
      * only if the job contains a base CompensationEntry and the base
-     * CompensationEntry's unit matches provided [units][google.cloud.talent.v4.CompensationFilter.units].
-     * Populate one or more [units][google.cloud.talent.v4.CompensationFilter.units].
-     * See [CompensationInfo.CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for definition of
-     * base compensation entry.
+     * CompensationEntry's unit matches provided
+     * [units][google.cloud.talent.v4.CompensationFilter.units]. Populate one or
+     * more [units][google.cloud.talent.v4.CompensationFilter.units].
+     * See
+     * [CompensationInfo.CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for definition of base compensation entry.
      * </pre>
      *
      * <code>UNIT_ONLY = 1;</code>
@@ -110,12 +112,14 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * Filter by `base compensation entry's` unit and amount / range. A job
      * is a match if and only if the job contains a base CompensationEntry, and
      * the base entry's unit matches provided
-     * [CompensationUnit][google.cloud.talent.v4.CompensationInfo.CompensationUnit] and
-     * amount or range overlaps with provided
+     * [CompensationUnit][google.cloud.talent.v4.CompensationInfo.CompensationUnit]
+     * and amount or range overlaps with provided
      * [CompensationRange][google.cloud.talent.v4.CompensationInfo.CompensationRange].
-     * See [CompensationInfo.CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for definition of
-     * base compensation entry.
-     * Set exactly one [units][google.cloud.talent.v4.CompensationFilter.units] and populate [range][google.cloud.talent.v4.CompensationFilter.range].
+     * See
+     * [CompensationInfo.CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for definition of base compensation entry.
+     * Set exactly one [units][google.cloud.talent.v4.CompensationFilter.units]
+     * and populate [range][google.cloud.talent.v4.CompensationFilter.range].
      * </pre>
      *
      * <code>UNIT_AND_AMOUNT = 2;</code>
@@ -126,7 +130,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Filter by annualized base compensation amount and `base compensation
-     * entry's` unit. Populate [range][google.cloud.talent.v4.CompensationFilter.range] and zero or more [units][google.cloud.talent.v4.CompensationFilter.units].
+     * entry's` unit. Populate
+     * [range][google.cloud.talent.v4.CompensationFilter.range] and zero or more
+     * [units][google.cloud.talent.v4.CompensationFilter.units].
      * </pre>
      *
      * <code>ANNUALIZED_BASE_AMOUNT = 3;</code>
@@ -137,7 +143,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Filter by annualized total compensation amount and `base compensation
-     * entry's` unit . Populate [range][google.cloud.talent.v4.CompensationFilter.range] and zero or more [units][google.cloud.talent.v4.CompensationFilter.units].
+     * entry's` unit . Populate
+     * [range][google.cloud.talent.v4.CompensationFilter.range] and zero or more
+     * [units][google.cloud.talent.v4.CompensationFilter.units].
      * </pre>
      *
      * <code>ANNUALIZED_TOTAL_AMOUNT = 4;</code>
@@ -162,10 +170,12 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Filter by `base compensation entry's` unit. A job is a match if and
      * only if the job contains a base CompensationEntry and the base
-     * CompensationEntry's unit matches provided [units][google.cloud.talent.v4.CompensationFilter.units].
-     * Populate one or more [units][google.cloud.talent.v4.CompensationFilter.units].
-     * See [CompensationInfo.CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for definition of
-     * base compensation entry.
+     * CompensationEntry's unit matches provided
+     * [units][google.cloud.talent.v4.CompensationFilter.units]. Populate one or
+     * more [units][google.cloud.talent.v4.CompensationFilter.units].
+     * See
+     * [CompensationInfo.CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for definition of base compensation entry.
      * </pre>
      *
      * <code>UNIT_ONLY = 1;</code>
@@ -178,12 +188,14 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * Filter by `base compensation entry's` unit and amount / range. A job
      * is a match if and only if the job contains a base CompensationEntry, and
      * the base entry's unit matches provided
-     * [CompensationUnit][google.cloud.talent.v4.CompensationInfo.CompensationUnit] and
-     * amount or range overlaps with provided
+     * [CompensationUnit][google.cloud.talent.v4.CompensationInfo.CompensationUnit]
+     * and amount or range overlaps with provided
      * [CompensationRange][google.cloud.talent.v4.CompensationInfo.CompensationRange].
-     * See [CompensationInfo.CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for definition of
-     * base compensation entry.
-     * Set exactly one [units][google.cloud.talent.v4.CompensationFilter.units] and populate [range][google.cloud.talent.v4.CompensationFilter.range].
+     * See
+     * [CompensationInfo.CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for definition of base compensation entry.
+     * Set exactly one [units][google.cloud.talent.v4.CompensationFilter.units]
+     * and populate [range][google.cloud.talent.v4.CompensationFilter.range].
      * </pre>
      *
      * <code>UNIT_AND_AMOUNT = 2;</code>
@@ -194,7 +206,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Filter by annualized base compensation amount and `base compensation
-     * entry's` unit. Populate [range][google.cloud.talent.v4.CompensationFilter.range] and zero or more [units][google.cloud.talent.v4.CompensationFilter.units].
+     * entry's` unit. Populate
+     * [range][google.cloud.talent.v4.CompensationFilter.range] and zero or more
+     * [units][google.cloud.talent.v4.CompensationFilter.units].
      * </pre>
      *
      * <code>ANNUALIZED_BASE_AMOUNT = 3;</code>
@@ -205,7 +219,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Filter by annualized total compensation amount and `base compensation
-     * entry's` unit . Populate [range][google.cloud.talent.v4.CompensationFilter.range] and zero or more [units][google.cloud.talent.v4.CompensationFilter.units].
+     * entry's` unit . Populate
+     * [range][google.cloud.talent.v4.CompensationFilter.range] and zero or more
+     * [units][google.cloud.talent.v4.CompensationFilter.units].
      * </pre>
      *
      * <code>ANNUALIZED_TOTAL_AMOUNT = 4;</code>
@@ -300,7 +316,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -333,16 +349,18 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.talent.v4.CompensationFilter.FilterType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4.CompensationFilter.FilterType result =
-        com.google.cloud.talent.v4.CompensationFilter.FilterType.valueOf(type_);
+        com.google.cloud.talent.v4.CompensationFilter.FilterType.forNumber(type_);
     return result == null
         ? com.google.cloud.talent.v4.CompensationFilter.FilterType.UNRECOGNIZED
         : result;
   }
 
   public static final int UNITS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> units_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.talent.v4.CompensationInfo.CompensationUnit>
       units_converter_ =
@@ -350,9 +368,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
               java.lang.Integer, com.google.cloud.talent.v4.CompensationInfo.CompensationUnit>() {
             public com.google.cloud.talent.v4.CompensationInfo.CompensationUnit convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.talent.v4.CompensationInfo.CompensationUnit result =
-                  com.google.cloud.talent.v4.CompensationInfo.CompensationUnit.valueOf(from);
+                  com.google.cloud.talent.v4.CompensationInfo.CompensationUnit.forNumber(from);
               return result == null
                   ? com.google.cloud.talent.v4.CompensationInfo.CompensationUnit.UNRECOGNIZED
                   : result;
@@ -502,11 +519,13 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.cloud.talent.v4.CompensationInfo.CompensationRangeOrBuilder
       getRangeOrBuilder() {
-    return getRange();
+    return range_ == null
+        ? com.google.cloud.talent.v4.CompensationInfo.CompensationRange.getDefaultInstance()
+        : range_;
   }
 
   public static final int INCLUDE_JOBS_WITH_UNSPECIFIED_COMPENSATION_RANGE_FIELD_NUMBER = 4;
-  private boolean includeJobsWithUnspecifiedCompensationRange_;
+  private boolean includeJobsWithUnspecifiedCompensationRange_ = false;
   /**
    *
    *
@@ -779,18 +798,16 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       units_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (rangeBuilder_ == null) {
-        range_ = null;
-      } else {
-        range_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      range_ = null;
+      if (rangeBuilder_ != null) {
+        rangeBuilder_.dispose();
         rangeBuilder_ = null;
       }
       includeJobsWithUnspecifiedCompensationRange_ = false;
-
       return this;
     }
 
@@ -818,22 +835,34 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.talent.v4.CompensationFilter buildPartial() {
       com.google.cloud.talent.v4.CompensationFilter result =
           new com.google.cloud.talent.v4.CompensationFilter(this);
-      int from_bitField0_ = bitField0_;
-      result.type_ = type_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        units_ = java.util.Collections.unmodifiableList(units_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.units_ = units_;
-      if (rangeBuilder_ == null) {
-        result.range_ = range_;
-      } else {
-        result.range_ = rangeBuilder_.build();
-      }
-      result.includeJobsWithUnspecifiedCompensationRange_ =
-          includeJobsWithUnspecifiedCompensationRange_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.talent.v4.CompensationFilter result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        units_ = java.util.Collections.unmodifiableList(units_);
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.units_ = units_;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.CompensationFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.range_ = rangeBuilder_ == null ? range_ : rangeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.includeJobsWithUnspecifiedCompensationRange_ =
+            includeJobsWithUnspecifiedCompensationRange_;
+      }
     }
 
     @java.lang.Override
@@ -887,7 +916,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
       if (!other.units_.isEmpty()) {
         if (units_.isEmpty()) {
           units_ = other.units_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureUnitsIsMutable();
           units_.addAll(other.units_);
@@ -930,7 +959,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
@@ -955,13 +984,13 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
             case 26:
               {
                 input.readMessage(getRangeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 includeJobsWithUnspecifiedCompensationRange_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -1016,8 +1045,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1036,9 +1065,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.cloud.talent.v4.CompensationFilter.FilterType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4.CompensationFilter.FilterType result =
-          com.google.cloud.talent.v4.CompensationFilter.FilterType.valueOf(type_);
+          com.google.cloud.talent.v4.CompensationFilter.FilterType.forNumber(type_);
       return result == null
           ? com.google.cloud.talent.v4.CompensationFilter.FilterType.UNRECOGNIZED
           : result;
@@ -1061,7 +1089,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1080,7 +1108,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -1089,9 +1117,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
     private java.util.List<java.lang.Integer> units_ = java.util.Collections.emptyList();
 
     private void ensureUnitsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         units_ = new java.util.ArrayList<java.lang.Integer>(units_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1240,7 +1268,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearUnits() {
       units_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1364,7 +1392,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * @return Whether the range field is set.
      */
     public boolean hasRange() {
-      return rangeBuilder_ != null || range_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1401,11 +1429,11 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         range_ = value;
-        onChanged();
       } else {
         rangeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1421,11 +1449,11 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
         com.google.cloud.talent.v4.CompensationInfo.CompensationRange.Builder builderForValue) {
       if (rangeBuilder_ == null) {
         range_ = builderForValue.build();
-        onChanged();
       } else {
         rangeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1439,19 +1467,20 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeRange(com.google.cloud.talent.v4.CompensationInfo.CompensationRange value) {
       if (rangeBuilder_ == null) {
-        if (range_ != null) {
-          range_ =
-              com.google.cloud.talent.v4.CompensationInfo.CompensationRange.newBuilder(range_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && range_ != null
+            && range_
+                != com.google.cloud.talent.v4.CompensationInfo.CompensationRange
+                    .getDefaultInstance()) {
+          getRangeBuilder().mergeFrom(value);
         } else {
           range_ = value;
         }
-        onChanged();
       } else {
         rangeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1464,14 +1493,13 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.talent.v4.CompensationInfo.CompensationRange range = 3;</code>
      */
     public Builder clearRange() {
-      if (rangeBuilder_ == null) {
-        range_ = null;
-        onChanged();
-      } else {
-        range_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      range_ = null;
+      if (rangeBuilder_ != null) {
+        rangeBuilder_.dispose();
         rangeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1484,7 +1512,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.talent.v4.CompensationInfo.CompensationRange range = 3;</code>
      */
     public com.google.cloud.talent.v4.CompensationInfo.CompensationRange.Builder getRangeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getRangeFieldBuilder().getBuilder();
     }
@@ -1566,6 +1594,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
     public Builder setIncludeJobsWithUnspecifiedCompensationRange(boolean value) {
 
       includeJobsWithUnspecifiedCompensationRange_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1582,7 +1611,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearIncludeJobsWithUnspecifiedCompensationRange() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       includeJobsWithUnspecifiedCompensationRange_ = false;
       onChanged();
       return this;

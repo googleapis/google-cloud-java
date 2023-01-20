@@ -29,8 +29,8 @@ public interface CompensationInfoOrBuilder
    * <pre>
    * Job compensation information.
    * At most one entry can be of type
-   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-   * referred as **base compensation entry** for the job.
+   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+   * which is referred as **base compensation entry** for the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -42,8 +42,8 @@ public interface CompensationInfoOrBuilder
    * <pre>
    * Job compensation information.
    * At most one entry can be of type
-   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-   * referred as **base compensation entry** for the job.
+   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+   * which is referred as **base compensation entry** for the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -55,8 +55,8 @@ public interface CompensationInfoOrBuilder
    * <pre>
    * Job compensation information.
    * At most one entry can be of type
-   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-   * referred as **base compensation entry** for the job.
+   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+   * which is referred as **base compensation entry** for the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -68,8 +68,8 @@ public interface CompensationInfoOrBuilder
    * <pre>
    * Job compensation information.
    * At most one entry can be of type
-   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-   * referred as **base compensation entry** for the job.
+   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+   * which is referred as **base compensation entry** for the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -82,8 +82,8 @@ public interface CompensationInfoOrBuilder
    * <pre>
    * Job compensation information.
    * At most one entry can be of type
-   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-   * referred as **base compensation entry** for the job.
+   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+   * which is referred as **base compensation entry** for the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -95,10 +95,14 @@ public interface CompensationInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Annualized base compensation range. Computed as base compensation entry's
-   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+   * Output only. Annualized base compensation range. Computed as base
+   * compensation entry's
+   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+   * times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-   * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+   * See
+   * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+   * for explanation on compensation annualization.
    * </pre>
    *
    * <code>
@@ -112,10 +116,14 @@ public interface CompensationInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Annualized base compensation range. Computed as base compensation entry's
-   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+   * Output only. Annualized base compensation range. Computed as base
+   * compensation entry's
+   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+   * times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-   * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+   * See
+   * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+   * for explanation on compensation annualization.
    * </pre>
    *
    * <code>
@@ -130,10 +138,14 @@ public interface CompensationInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Annualized base compensation range. Computed as base compensation entry's
-   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+   * Output only. Annualized base compensation range. Computed as base
+   * compensation entry's
+   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+   * times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-   * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+   * See
+   * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+   * for explanation on compensation annualization.
    * </pre>
    *
    * <code>
@@ -147,10 +159,14 @@ public interface CompensationInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Annualized total compensation range. Computed as all compensation entries'
-   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+   * Output only. Annualized total compensation range. Computed as all
+   * compensation entries'
+   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+   * times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-   * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+   * See
+   * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+   * for explanation on compensation annualization.
    * </pre>
    *
    * <code>
@@ -164,10 +180,14 @@ public interface CompensationInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Annualized total compensation range. Computed as all compensation entries'
-   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+   * Output only. Annualized total compensation range. Computed as all
+   * compensation entries'
+   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+   * times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-   * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+   * See
+   * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+   * for explanation on compensation annualization.
    * </pre>
    *
    * <code>
@@ -182,10 +202,14 @@ public interface CompensationInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Annualized total compensation range. Computed as all compensation entries'
-   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+   * Output only. Annualized total compensation range. Computed as all
+   * compensation entries'
+   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+   * times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-   * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+   * See
+   * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+   * for explanation on compensation annualization.
    * </pre>
    *
    * <code>

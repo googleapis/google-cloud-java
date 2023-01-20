@@ -71,10 +71,12 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Here [Job][google.cloud.talent.v4.Job] only contains basic information including [name][google.cloud.talent.v4.Job.name],
-   * [company][google.cloud.talent.v4.Job.company], [language_code][google.cloud.talent.v4.Job.language_code]
-   * and [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob method to retrieve
-   * detailed information of the created/updated job.
+   * Here [Job][google.cloud.talent.v4.Job] only contains basic information
+   * including [name][google.cloud.talent.v4.Job.name],
+   * [company][google.cloud.talent.v4.Job.company],
+   * [language_code][google.cloud.talent.v4.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob
+   * method to retrieve detailed information of the created/updated job.
    * </pre>
    *
    * <code>.google.cloud.talent.v4.Job job = 1;</code>
@@ -89,10 +91,12 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Here [Job][google.cloud.talent.v4.Job] only contains basic information including [name][google.cloud.talent.v4.Job.name],
-   * [company][google.cloud.talent.v4.Job.company], [language_code][google.cloud.talent.v4.Job.language_code]
-   * and [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob method to retrieve
-   * detailed information of the created/updated job.
+   * Here [Job][google.cloud.talent.v4.Job] only contains basic information
+   * including [name][google.cloud.talent.v4.Job.name],
+   * [company][google.cloud.talent.v4.Job.company],
+   * [language_code][google.cloud.talent.v4.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob
+   * method to retrieve detailed information of the created/updated job.
    * </pre>
    *
    * <code>.google.cloud.talent.v4.Job job = 1;</code>
@@ -107,17 +111,19 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Here [Job][google.cloud.talent.v4.Job] only contains basic information including [name][google.cloud.talent.v4.Job.name],
-   * [company][google.cloud.talent.v4.Job.company], [language_code][google.cloud.talent.v4.Job.language_code]
-   * and [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob method to retrieve
-   * detailed information of the created/updated job.
+   * Here [Job][google.cloud.talent.v4.Job] only contains basic information
+   * including [name][google.cloud.talent.v4.Job.name],
+   * [company][google.cloud.talent.v4.Job.company],
+   * [language_code][google.cloud.talent.v4.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob
+   * method to retrieve detailed information of the created/updated job.
    * </pre>
    *
    * <code>.google.cloud.talent.v4.Job job = 1;</code>
    */
   @java.lang.Override
   public com.google.cloud.talent.v4.JobOrBuilder getJobOrBuilder() {
-    return getJob();
+    return job_ == null ? com.google.cloud.talent.v4.Job.getDefaultInstance() : job_;
   }
 
   public static final int STATUS_FIELD_NUMBER = 2;
@@ -166,7 +172,7 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
-    return getStatus();
+    return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -383,16 +389,15 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (jobBuilder_ == null) {
-        job_ = null;
-      } else {
-        job_ = null;
+      bitField0_ = 0;
+      job_ = null;
+      if (jobBuilder_ != null) {
+        jobBuilder_.dispose();
         jobBuilder_ = null;
       }
-      if (statusBuilder_ == null) {
-        status_ = null;
-      } else {
-        status_ = null;
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
       return this;
@@ -421,18 +426,21 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.talent.v4.JobResult buildPartial() {
       com.google.cloud.talent.v4.JobResult result = new com.google.cloud.talent.v4.JobResult(this);
-      if (jobBuilder_ == null) {
-        result.job_ = job_;
-      } else {
-        result.job_ = jobBuilder_.build();
-      }
-      if (statusBuilder_ == null) {
-        result.status_ = status_;
-      } else {
-        result.status_ = statusBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.JobResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.job_ = jobBuilder_ == null ? job_ : jobBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -515,13 +523,13 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -541,6 +549,8 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.talent.v4.Job job_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4.Job,
@@ -551,10 +561,12 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Here [Job][google.cloud.talent.v4.Job] only contains basic information including [name][google.cloud.talent.v4.Job.name],
-     * [company][google.cloud.talent.v4.Job.company], [language_code][google.cloud.talent.v4.Job.language_code]
-     * and [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob method to retrieve
-     * detailed information of the created/updated job.
+     * Here [Job][google.cloud.talent.v4.Job] only contains basic information
+     * including [name][google.cloud.talent.v4.Job.name],
+     * [company][google.cloud.talent.v4.Job.company],
+     * [language_code][google.cloud.talent.v4.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob
+     * method to retrieve detailed information of the created/updated job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.Job job = 1;</code>
@@ -562,16 +574,18 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the job field is set.
      */
     public boolean hasJob() {
-      return jobBuilder_ != null || job_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Here [Job][google.cloud.talent.v4.Job] only contains basic information including [name][google.cloud.talent.v4.Job.name],
-     * [company][google.cloud.talent.v4.Job.company], [language_code][google.cloud.talent.v4.Job.language_code]
-     * and [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob method to retrieve
-     * detailed information of the created/updated job.
+     * Here [Job][google.cloud.talent.v4.Job] only contains basic information
+     * including [name][google.cloud.talent.v4.Job.name],
+     * [company][google.cloud.talent.v4.Job.company],
+     * [language_code][google.cloud.talent.v4.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob
+     * method to retrieve detailed information of the created/updated job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.Job job = 1;</code>
@@ -589,10 +603,12 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Here [Job][google.cloud.talent.v4.Job] only contains basic information including [name][google.cloud.talent.v4.Job.name],
-     * [company][google.cloud.talent.v4.Job.company], [language_code][google.cloud.talent.v4.Job.language_code]
-     * and [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob method to retrieve
-     * detailed information of the created/updated job.
+     * Here [Job][google.cloud.talent.v4.Job] only contains basic information
+     * including [name][google.cloud.talent.v4.Job.name],
+     * [company][google.cloud.talent.v4.Job.company],
+     * [language_code][google.cloud.talent.v4.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob
+     * method to retrieve detailed information of the created/updated job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.Job job = 1;</code>
@@ -603,21 +619,23 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         job_ = value;
-        onChanged();
       } else {
         jobBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Here [Job][google.cloud.talent.v4.Job] only contains basic information including [name][google.cloud.talent.v4.Job.name],
-     * [company][google.cloud.talent.v4.Job.company], [language_code][google.cloud.talent.v4.Job.language_code]
-     * and [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob method to retrieve
-     * detailed information of the created/updated job.
+     * Here [Job][google.cloud.talent.v4.Job] only contains basic information
+     * including [name][google.cloud.talent.v4.Job.name],
+     * [company][google.cloud.talent.v4.Job.company],
+     * [language_code][google.cloud.talent.v4.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob
+     * method to retrieve detailed information of the created/updated job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.Job job = 1;</code>
@@ -625,76 +643,83 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
     public Builder setJob(com.google.cloud.talent.v4.Job.Builder builderForValue) {
       if (jobBuilder_ == null) {
         job_ = builderForValue.build();
-        onChanged();
       } else {
         jobBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Here [Job][google.cloud.talent.v4.Job] only contains basic information including [name][google.cloud.talent.v4.Job.name],
-     * [company][google.cloud.talent.v4.Job.company], [language_code][google.cloud.talent.v4.Job.language_code]
-     * and [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob method to retrieve
-     * detailed information of the created/updated job.
+     * Here [Job][google.cloud.talent.v4.Job] only contains basic information
+     * including [name][google.cloud.talent.v4.Job.name],
+     * [company][google.cloud.talent.v4.Job.company],
+     * [language_code][google.cloud.talent.v4.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob
+     * method to retrieve detailed information of the created/updated job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.Job job = 1;</code>
      */
     public Builder mergeJob(com.google.cloud.talent.v4.Job value) {
       if (jobBuilder_ == null) {
-        if (job_ != null) {
-          job_ = com.google.cloud.talent.v4.Job.newBuilder(job_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && job_ != null
+            && job_ != com.google.cloud.talent.v4.Job.getDefaultInstance()) {
+          getJobBuilder().mergeFrom(value);
         } else {
           job_ = value;
         }
-        onChanged();
       } else {
         jobBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Here [Job][google.cloud.talent.v4.Job] only contains basic information including [name][google.cloud.talent.v4.Job.name],
-     * [company][google.cloud.talent.v4.Job.company], [language_code][google.cloud.talent.v4.Job.language_code]
-     * and [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob method to retrieve
-     * detailed information of the created/updated job.
+     * Here [Job][google.cloud.talent.v4.Job] only contains basic information
+     * including [name][google.cloud.talent.v4.Job.name],
+     * [company][google.cloud.talent.v4.Job.company],
+     * [language_code][google.cloud.talent.v4.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob
+     * method to retrieve detailed information of the created/updated job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.Job job = 1;</code>
      */
     public Builder clearJob() {
-      if (jobBuilder_ == null) {
-        job_ = null;
-        onChanged();
-      } else {
-        job_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      job_ = null;
+      if (jobBuilder_ != null) {
+        jobBuilder_.dispose();
         jobBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Here [Job][google.cloud.talent.v4.Job] only contains basic information including [name][google.cloud.talent.v4.Job.name],
-     * [company][google.cloud.talent.v4.Job.company], [language_code][google.cloud.talent.v4.Job.language_code]
-     * and [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob method to retrieve
-     * detailed information of the created/updated job.
+     * Here [Job][google.cloud.talent.v4.Job] only contains basic information
+     * including [name][google.cloud.talent.v4.Job.name],
+     * [company][google.cloud.talent.v4.Job.company],
+     * [language_code][google.cloud.talent.v4.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob
+     * method to retrieve detailed information of the created/updated job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.Job job = 1;</code>
      */
     public com.google.cloud.talent.v4.Job.Builder getJobBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getJobFieldBuilder().getBuilder();
     }
@@ -702,10 +727,12 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Here [Job][google.cloud.talent.v4.Job] only contains basic information including [name][google.cloud.talent.v4.Job.name],
-     * [company][google.cloud.talent.v4.Job.company], [language_code][google.cloud.talent.v4.Job.language_code]
-     * and [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob method to retrieve
-     * detailed information of the created/updated job.
+     * Here [Job][google.cloud.talent.v4.Job] only contains basic information
+     * including [name][google.cloud.talent.v4.Job.name],
+     * [company][google.cloud.talent.v4.Job.company],
+     * [language_code][google.cloud.talent.v4.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob
+     * method to retrieve detailed information of the created/updated job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.Job job = 1;</code>
@@ -721,10 +748,12 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Here [Job][google.cloud.talent.v4.Job] only contains basic information including [name][google.cloud.talent.v4.Job.name],
-     * [company][google.cloud.talent.v4.Job.company], [language_code][google.cloud.talent.v4.Job.language_code]
-     * and [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob method to retrieve
-     * detailed information of the created/updated job.
+     * Here [Job][google.cloud.talent.v4.Job] only contains basic information
+     * including [name][google.cloud.talent.v4.Job.name],
+     * [company][google.cloud.talent.v4.Job.company],
+     * [language_code][google.cloud.talent.v4.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4.Job.requisition_id], use getJob
+     * method to retrieve detailed information of the created/updated job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.Job job = 1;</code>
@@ -763,7 +792,7 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return statusBuilder_ != null || status_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -800,11 +829,11 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         status_ = value;
-        onChanged();
       } else {
         statusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -820,11 +849,11 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
     public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
       if (statusBuilder_ == null) {
         status_ = builderForValue.build();
-        onChanged();
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -839,16 +868,18 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStatus(com.google.rpc.Status value) {
       if (statusBuilder_ == null) {
-        if (status_ != null) {
-          status_ = com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && status_ != null
+            && status_ != com.google.rpc.Status.getDefaultInstance()) {
+          getStatusBuilder().mergeFrom(value);
         } else {
           status_ = value;
         }
-        onChanged();
       } else {
         statusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -862,14 +893,13 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status status = 2;</code>
      */
     public Builder clearStatus() {
-      if (statusBuilder_ == null) {
-        status_ = null;
-        onChanged();
-      } else {
-        status_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -883,7 +913,7 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status status = 2;</code>
      */
     public com.google.rpc.Status.Builder getStatusBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }

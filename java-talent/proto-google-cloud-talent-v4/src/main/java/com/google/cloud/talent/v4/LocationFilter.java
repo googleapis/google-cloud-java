@@ -255,7 +255,9 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADDRESS_FIELD_NUMBER = 1;
-  private volatile java.lang.Object address_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object address_ = "";
   /**
    *
    *
@@ -304,7 +306,9 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REGION_CODE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object regionCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object regionCode_ = "";
   /**
    *
    *
@@ -420,11 +424,11 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.LatLngOrBuilder getLatLngOrBuilder() {
-    return getLatLng();
+    return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
   }
 
   public static final int DISTANCE_IN_MILES_FIELD_NUMBER = 4;
-  private double distanceInMiles_;
+  private double distanceInMiles_ = 0D;
   /**
    *
    *
@@ -444,7 +448,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TELECOMMUTE_PREFERENCE_FIELD_NUMBER = 5;
-  private int telecommutePreference_;
+  private int telecommutePreference_ = 0;
   /**
    *
    *
@@ -452,14 +456,19 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
    * Allows the client to return jobs without a
    * set location, specifically, telecommuting jobs (telecommuting is considered
    * by the service as a special location).
-   * [Job.posting_region][google.cloud.talent.v4.Job.posting_region] indicates if a job permits telecommuting.
-   * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
-   * telecommuting jobs are searched, and [address][google.cloud.talent.v4.LocationFilter.address] and [lat_lng][google.cloud.talent.v4.LocationFilter.lat_lng] are
-   * ignored. If not set or set to
-   * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], the telecommute status of
-   * the jobs is ignored. Jobs that have [PostingRegion.TELECOMMUTE][google.cloud.talent.v4.PostingRegion.TELECOMMUTE] and have
-   * additional [Job.addresses][google.cloud.talent.v4.Job.addresses] may still be matched based on other location
-   * filters using [address][google.cloud.talent.v4.LocationFilter.address] or [latlng][].
+   * [Job.posting_region][google.cloud.talent.v4.Job.posting_region] indicates
+   * if a job permits telecommuting. If this field is set to
+   * [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
+   * telecommuting jobs are searched, and
+   * [address][google.cloud.talent.v4.LocationFilter.address] and
+   * [lat_lng][google.cloud.talent.v4.LocationFilter.lat_lng] are ignored. If
+   * not set or set to
+   * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED],
+   * the telecommute status of the jobs is ignored. Jobs that have
+   * [PostingRegion.TELECOMMUTE][google.cloud.talent.v4.PostingRegion.TELECOMMUTE]
+   * and have additional [Job.addresses][google.cloud.talent.v4.Job.addresses]
+   * may still be matched based on other location filters using
+   * [address][google.cloud.talent.v4.LocationFilter.address] or [latlng][].
    * This filter can be used by itself to search exclusively for telecommuting
    * jobs, or it can be combined with another location
    * filter to search for a combination of job locations,
@@ -485,14 +494,19 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
    * Allows the client to return jobs without a
    * set location, specifically, telecommuting jobs (telecommuting is considered
    * by the service as a special location).
-   * [Job.posting_region][google.cloud.talent.v4.Job.posting_region] indicates if a job permits telecommuting.
-   * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
-   * telecommuting jobs are searched, and [address][google.cloud.talent.v4.LocationFilter.address] and [lat_lng][google.cloud.talent.v4.LocationFilter.lat_lng] are
-   * ignored. If not set or set to
-   * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], the telecommute status of
-   * the jobs is ignored. Jobs that have [PostingRegion.TELECOMMUTE][google.cloud.talent.v4.PostingRegion.TELECOMMUTE] and have
-   * additional [Job.addresses][google.cloud.talent.v4.Job.addresses] may still be matched based on other location
-   * filters using [address][google.cloud.talent.v4.LocationFilter.address] or [latlng][].
+   * [Job.posting_region][google.cloud.talent.v4.Job.posting_region] indicates
+   * if a job permits telecommuting. If this field is set to
+   * [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
+   * telecommuting jobs are searched, and
+   * [address][google.cloud.talent.v4.LocationFilter.address] and
+   * [lat_lng][google.cloud.talent.v4.LocationFilter.lat_lng] are ignored. If
+   * not set or set to
+   * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED],
+   * the telecommute status of the jobs is ignored. Jobs that have
+   * [PostingRegion.TELECOMMUTE][google.cloud.talent.v4.PostingRegion.TELECOMMUTE]
+   * and have additional [Job.addresses][google.cloud.talent.v4.Job.addresses]
+   * may still be matched based on other location filters using
+   * [address][google.cloud.talent.v4.LocationFilter.address] or [latlng][].
    * This filter can be used by itself to search exclusively for telecommuting
    * jobs, or it can be combined with another location
    * filter to search for a combination of job locations,
@@ -510,9 +524,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.talent.v4.LocationFilter.TelecommutePreference
       getTelecommutePreference() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4.LocationFilter.TelecommutePreference result =
-        com.google.cloud.talent.v4.LocationFilter.TelecommutePreference.valueOf(
+        com.google.cloud.talent.v4.LocationFilter.TelecommutePreference.forNumber(
             telecommutePreference_);
     return result == null
         ? com.google.cloud.talent.v4.LocationFilter.TelecommutePreference.UNRECOGNIZED
@@ -767,20 +780,16 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       address_ = "";
-
       regionCode_ = "";
-
-      if (latLngBuilder_ == null) {
-        latLng_ = null;
-      } else {
-        latLng_ = null;
+      latLng_ = null;
+      if (latLngBuilder_ != null) {
+        latLngBuilder_.dispose();
         latLngBuilder_ = null;
       }
       distanceInMiles_ = 0D;
-
       telecommutePreference_ = 0;
-
       return this;
     }
 
@@ -808,17 +817,30 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.talent.v4.LocationFilter buildPartial() {
       com.google.cloud.talent.v4.LocationFilter result =
           new com.google.cloud.talent.v4.LocationFilter(this);
-      result.address_ = address_;
-      result.regionCode_ = regionCode_;
-      if (latLngBuilder_ == null) {
-        result.latLng_ = latLng_;
-      } else {
-        result.latLng_ = latLngBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.distanceInMiles_ = distanceInMiles_;
-      result.telecommutePreference_ = telecommutePreference_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.LocationFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.address_ = address_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.regionCode_ = regionCode_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.latLng_ = latLngBuilder_ == null ? latLng_ : latLngBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.distanceInMiles_ = distanceInMiles_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.telecommutePreference_ = telecommutePreference_;
+      }
     }
 
     @java.lang.Override
@@ -868,10 +890,12 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.talent.v4.LocationFilter.getDefaultInstance()) return this;
       if (!other.getAddress().isEmpty()) {
         address_ = other.address_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRegionCode().isEmpty()) {
         regionCode_ = other.regionCode_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasLatLng()) {
@@ -912,31 +936,31 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 address_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 regionCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getLatLngFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 33:
               {
                 distanceInMiles_ = input.readDouble();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 33
             case 40:
               {
                 telecommutePreference_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -955,6 +979,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object address_ = "";
     /**
@@ -1017,8 +1043,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       address_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1034,8 +1060,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAddress() {
-
       address_ = getDefaultInstance().getAddress();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1056,8 +1082,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       address_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1156,8 +1182,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       regionCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1184,8 +1210,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegionCode() {
-
       regionCode_ = getDefaultInstance().getRegionCode();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1217,8 +1243,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       regionCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1240,7 +1266,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the latLng field is set.
      */
     public boolean hasLatLng() {
-      return latLngBuilder_ != null || latLng_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1277,11 +1303,11 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         latLng_ = value;
-        onChanged();
       } else {
         latLngBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1297,11 +1323,11 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     public Builder setLatLng(com.google.type.LatLng.Builder builderForValue) {
       if (latLngBuilder_ == null) {
         latLng_ = builderForValue.build();
-        onChanged();
       } else {
         latLngBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1316,16 +1342,18 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLatLng(com.google.type.LatLng value) {
       if (latLngBuilder_ == null) {
-        if (latLng_ != null) {
-          latLng_ = com.google.type.LatLng.newBuilder(latLng_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && latLng_ != null
+            && latLng_ != com.google.type.LatLng.getDefaultInstance()) {
+          getLatLngBuilder().mergeFrom(value);
         } else {
           latLng_ = value;
         }
-        onChanged();
       } else {
         latLngBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1339,14 +1367,13 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.LatLng lat_lng = 3;</code>
      */
     public Builder clearLatLng() {
-      if (latLngBuilder_ == null) {
-        latLng_ = null;
-        onChanged();
-      } else {
-        latLng_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      latLng_ = null;
+      if (latLngBuilder_ != null) {
+        latLngBuilder_.dispose();
         latLngBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1360,7 +1387,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.LatLng lat_lng = 3;</code>
      */
     public com.google.type.LatLng.Builder getLatLngBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getLatLngFieldBuilder().getBuilder();
     }
@@ -1440,6 +1467,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     public Builder setDistanceInMiles(double value) {
 
       distanceInMiles_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1457,7 +1485,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDistanceInMiles() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       distanceInMiles_ = 0D;
       onChanged();
       return this;
@@ -1471,14 +1499,19 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * Allows the client to return jobs without a
      * set location, specifically, telecommuting jobs (telecommuting is considered
      * by the service as a special location).
-     * [Job.posting_region][google.cloud.talent.v4.Job.posting_region] indicates if a job permits telecommuting.
-     * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
-     * telecommuting jobs are searched, and [address][google.cloud.talent.v4.LocationFilter.address] and [lat_lng][google.cloud.talent.v4.LocationFilter.lat_lng] are
-     * ignored. If not set or set to
-     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], the telecommute status of
-     * the jobs is ignored. Jobs that have [PostingRegion.TELECOMMUTE][google.cloud.talent.v4.PostingRegion.TELECOMMUTE] and have
-     * additional [Job.addresses][google.cloud.talent.v4.Job.addresses] may still be matched based on other location
-     * filters using [address][google.cloud.talent.v4.LocationFilter.address] or [latlng][].
+     * [Job.posting_region][google.cloud.talent.v4.Job.posting_region] indicates
+     * if a job permits telecommuting. If this field is set to
+     * [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
+     * telecommuting jobs are searched, and
+     * [address][google.cloud.talent.v4.LocationFilter.address] and
+     * [lat_lng][google.cloud.talent.v4.LocationFilter.lat_lng] are ignored. If
+     * not set or set to
+     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED],
+     * the telecommute status of the jobs is ignored. Jobs that have
+     * [PostingRegion.TELECOMMUTE][google.cloud.talent.v4.PostingRegion.TELECOMMUTE]
+     * and have additional [Job.addresses][google.cloud.talent.v4.Job.addresses]
+     * may still be matched based on other location filters using
+     * [address][google.cloud.talent.v4.LocationFilter.address] or [latlng][].
      * This filter can be used by itself to search exclusively for telecommuting
      * jobs, or it can be combined with another location
      * filter to search for a combination of job locations,
@@ -1505,14 +1538,19 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * Allows the client to return jobs without a
      * set location, specifically, telecommuting jobs (telecommuting is considered
      * by the service as a special location).
-     * [Job.posting_region][google.cloud.talent.v4.Job.posting_region] indicates if a job permits telecommuting.
-     * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
-     * telecommuting jobs are searched, and [address][google.cloud.talent.v4.LocationFilter.address] and [lat_lng][google.cloud.talent.v4.LocationFilter.lat_lng] are
-     * ignored. If not set or set to
-     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], the telecommute status of
-     * the jobs is ignored. Jobs that have [PostingRegion.TELECOMMUTE][google.cloud.talent.v4.PostingRegion.TELECOMMUTE] and have
-     * additional [Job.addresses][google.cloud.talent.v4.Job.addresses] may still be matched based on other location
-     * filters using [address][google.cloud.talent.v4.LocationFilter.address] or [latlng][].
+     * [Job.posting_region][google.cloud.talent.v4.Job.posting_region] indicates
+     * if a job permits telecommuting. If this field is set to
+     * [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
+     * telecommuting jobs are searched, and
+     * [address][google.cloud.talent.v4.LocationFilter.address] and
+     * [lat_lng][google.cloud.talent.v4.LocationFilter.lat_lng] are ignored. If
+     * not set or set to
+     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED],
+     * the telecommute status of the jobs is ignored. Jobs that have
+     * [PostingRegion.TELECOMMUTE][google.cloud.talent.v4.PostingRegion.TELECOMMUTE]
+     * and have additional [Job.addresses][google.cloud.talent.v4.Job.addresses]
+     * may still be matched based on other location filters using
+     * [address][google.cloud.talent.v4.LocationFilter.address] or [latlng][].
      * This filter can be used by itself to search exclusively for telecommuting
      * jobs, or it can be combined with another location
      * filter to search for a combination of job locations,
@@ -1530,8 +1568,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTelecommutePreferenceValue(int value) {
-
       telecommutePreference_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1542,14 +1580,19 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * Allows the client to return jobs without a
      * set location, specifically, telecommuting jobs (telecommuting is considered
      * by the service as a special location).
-     * [Job.posting_region][google.cloud.talent.v4.Job.posting_region] indicates if a job permits telecommuting.
-     * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
-     * telecommuting jobs are searched, and [address][google.cloud.talent.v4.LocationFilter.address] and [lat_lng][google.cloud.talent.v4.LocationFilter.lat_lng] are
-     * ignored. If not set or set to
-     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], the telecommute status of
-     * the jobs is ignored. Jobs that have [PostingRegion.TELECOMMUTE][google.cloud.talent.v4.PostingRegion.TELECOMMUTE] and have
-     * additional [Job.addresses][google.cloud.talent.v4.Job.addresses] may still be matched based on other location
-     * filters using [address][google.cloud.talent.v4.LocationFilter.address] or [latlng][].
+     * [Job.posting_region][google.cloud.talent.v4.Job.posting_region] indicates
+     * if a job permits telecommuting. If this field is set to
+     * [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
+     * telecommuting jobs are searched, and
+     * [address][google.cloud.talent.v4.LocationFilter.address] and
+     * [lat_lng][google.cloud.talent.v4.LocationFilter.lat_lng] are ignored. If
+     * not set or set to
+     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED],
+     * the telecommute status of the jobs is ignored. Jobs that have
+     * [PostingRegion.TELECOMMUTE][google.cloud.talent.v4.PostingRegion.TELECOMMUTE]
+     * and have additional [Job.addresses][google.cloud.talent.v4.Job.addresses]
+     * may still be matched based on other location filters using
+     * [address][google.cloud.talent.v4.LocationFilter.address] or [latlng][].
      * This filter can be used by itself to search exclusively for telecommuting
      * jobs, or it can be combined with another location
      * filter to search for a combination of job locations,
@@ -1568,9 +1611,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.talent.v4.LocationFilter.TelecommutePreference
         getTelecommutePreference() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4.LocationFilter.TelecommutePreference result =
-          com.google.cloud.talent.v4.LocationFilter.TelecommutePreference.valueOf(
+          com.google.cloud.talent.v4.LocationFilter.TelecommutePreference.forNumber(
               telecommutePreference_);
       return result == null
           ? com.google.cloud.talent.v4.LocationFilter.TelecommutePreference.UNRECOGNIZED
@@ -1583,14 +1625,19 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * Allows the client to return jobs without a
      * set location, specifically, telecommuting jobs (telecommuting is considered
      * by the service as a special location).
-     * [Job.posting_region][google.cloud.talent.v4.Job.posting_region] indicates if a job permits telecommuting.
-     * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
-     * telecommuting jobs are searched, and [address][google.cloud.talent.v4.LocationFilter.address] and [lat_lng][google.cloud.talent.v4.LocationFilter.lat_lng] are
-     * ignored. If not set or set to
-     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], the telecommute status of
-     * the jobs is ignored. Jobs that have [PostingRegion.TELECOMMUTE][google.cloud.talent.v4.PostingRegion.TELECOMMUTE] and have
-     * additional [Job.addresses][google.cloud.talent.v4.Job.addresses] may still be matched based on other location
-     * filters using [address][google.cloud.talent.v4.LocationFilter.address] or [latlng][].
+     * [Job.posting_region][google.cloud.talent.v4.Job.posting_region] indicates
+     * if a job permits telecommuting. If this field is set to
+     * [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
+     * telecommuting jobs are searched, and
+     * [address][google.cloud.talent.v4.LocationFilter.address] and
+     * [lat_lng][google.cloud.talent.v4.LocationFilter.lat_lng] are ignored. If
+     * not set or set to
+     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED],
+     * the telecommute status of the jobs is ignored. Jobs that have
+     * [PostingRegion.TELECOMMUTE][google.cloud.talent.v4.PostingRegion.TELECOMMUTE]
+     * and have additional [Job.addresses][google.cloud.talent.v4.Job.addresses]
+     * may still be matched based on other location filters using
+     * [address][google.cloud.talent.v4.LocationFilter.address] or [latlng][].
      * This filter can be used by itself to search exclusively for telecommuting
      * jobs, or it can be combined with another location
      * filter to search for a combination of job locations,
@@ -1612,7 +1659,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       telecommutePreference_ = value.getNumber();
       onChanged();
       return this;
@@ -1624,14 +1671,19 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * Allows the client to return jobs without a
      * set location, specifically, telecommuting jobs (telecommuting is considered
      * by the service as a special location).
-     * [Job.posting_region][google.cloud.talent.v4.Job.posting_region] indicates if a job permits telecommuting.
-     * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
-     * telecommuting jobs are searched, and [address][google.cloud.talent.v4.LocationFilter.address] and [lat_lng][google.cloud.talent.v4.LocationFilter.lat_lng] are
-     * ignored. If not set or set to
-     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], the telecommute status of
-     * the jobs is ignored. Jobs that have [PostingRegion.TELECOMMUTE][google.cloud.talent.v4.PostingRegion.TELECOMMUTE] and have
-     * additional [Job.addresses][google.cloud.talent.v4.Job.addresses] may still be matched based on other location
-     * filters using [address][google.cloud.talent.v4.LocationFilter.address] or [latlng][].
+     * [Job.posting_region][google.cloud.talent.v4.Job.posting_region] indicates
+     * if a job permits telecommuting. If this field is set to
+     * [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
+     * telecommuting jobs are searched, and
+     * [address][google.cloud.talent.v4.LocationFilter.address] and
+     * [lat_lng][google.cloud.talent.v4.LocationFilter.lat_lng] are ignored. If
+     * not set or set to
+     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED],
+     * the telecommute status of the jobs is ignored. Jobs that have
+     * [PostingRegion.TELECOMMUTE][google.cloud.talent.v4.PostingRegion.TELECOMMUTE]
+     * and have additional [Job.addresses][google.cloud.talent.v4.Job.addresses]
+     * may still be matched based on other location filters using
+     * [address][google.cloud.talent.v4.LocationFilter.address] or [latlng][].
      * This filter can be used by itself to search exclusively for telecommuting
      * jobs, or it can be combined with another location
      * filter to search for a combination of job locations,
@@ -1648,7 +1700,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTelecommutePreference() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       telecommutePreference_ = 0;
       onChanged();
       return this;

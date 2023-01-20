@@ -409,15 +409,17 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCATION_TYPE_FIELD_NUMBER = 1;
-  private int locationType_;
+  private int locationType_ = 0;
   /**
    *
    *
    * <pre>
    * The type of a location, which corresponds to the address lines field of
-   * [google.type.PostalAddress][google.type.PostalAddress]. For example, "Downtown, Atlanta, GA, USA"
-   * has a type of [LocationType.NEIGHBORHOOD][google.cloud.talent.v4.Location.LocationType.NEIGHBORHOOD], and "Kansas City, KS, USA"
-   * has a type of [LocationType.LOCALITY][google.cloud.talent.v4.Location.LocationType.LOCALITY].
+   * [google.type.PostalAddress][google.type.PostalAddress]. For example,
+   * "Downtown, Atlanta, GA, USA" has a type of
+   * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4.Location.LocationType.NEIGHBORHOOD],
+   * and "Kansas City, KS, USA" has a type of
+   * [LocationType.LOCALITY][google.cloud.talent.v4.Location.LocationType.LOCALITY].
    * </pre>
    *
    * <code>.google.cloud.talent.v4.Location.LocationType location_type = 1;</code>
@@ -433,9 +435,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The type of a location, which corresponds to the address lines field of
-   * [google.type.PostalAddress][google.type.PostalAddress]. For example, "Downtown, Atlanta, GA, USA"
-   * has a type of [LocationType.NEIGHBORHOOD][google.cloud.talent.v4.Location.LocationType.NEIGHBORHOOD], and "Kansas City, KS, USA"
-   * has a type of [LocationType.LOCALITY][google.cloud.talent.v4.Location.LocationType.LOCALITY].
+   * [google.type.PostalAddress][google.type.PostalAddress]. For example,
+   * "Downtown, Atlanta, GA, USA" has a type of
+   * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4.Location.LocationType.NEIGHBORHOOD],
+   * and "Kansas City, KS, USA" has a type of
+   * [LocationType.LOCALITY][google.cloud.talent.v4.Location.LocationType.LOCALITY].
    * </pre>
    *
    * <code>.google.cloud.talent.v4.Location.LocationType location_type = 1;</code>
@@ -444,9 +448,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.talent.v4.Location.LocationType getLocationType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4.Location.LocationType result =
-        com.google.cloud.talent.v4.Location.LocationType.valueOf(locationType_);
+        com.google.cloud.talent.v4.Location.LocationType.forNumber(locationType_);
     return result == null ? com.google.cloud.talent.v4.Location.LocationType.UNRECOGNIZED : result;
   }
 
@@ -504,7 +507,9 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.PostalAddressOrBuilder getPostalAddressOrBuilder() {
-    return getPostalAddress();
+    return postalAddress_ == null
+        ? com.google.type.PostalAddress.getDefaultInstance()
+        : postalAddress_;
   }
 
   public static final int LAT_LNG_FIELD_NUMBER = 3;
@@ -550,21 +555,20 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.LatLngOrBuilder getLatLngOrBuilder() {
-    return getLatLng();
+    return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
   }
 
   public static final int RADIUS_MILES_FIELD_NUMBER = 4;
-  private double radiusMiles_;
+  private double radiusMiles_ = 0D;
   /**
    *
    *
    * <pre>
    * Radius in miles of the job location. This value is derived from the
    * location bounding box in which a circle with the specified radius
-   * centered from [google.type.LatLng][google.type.LatLng] covers the area associated with the
-   * job location.
-   * For example, currently, "Mountain View, CA, USA" has a radius of
-   * 6.17 miles.
+   * centered from [google.type.LatLng][google.type.LatLng] covers the area
+   * associated with the job location. For example, currently, "Mountain View,
+   * CA, USA" has a radius of 6.17 miles.
    * </pre>
    *
    * <code>double radius_miles = 4;</code>
@@ -814,22 +818,19 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       locationType_ = 0;
-
-      if (postalAddressBuilder_ == null) {
-        postalAddress_ = null;
-      } else {
-        postalAddress_ = null;
+      postalAddress_ = null;
+      if (postalAddressBuilder_ != null) {
+        postalAddressBuilder_.dispose();
         postalAddressBuilder_ = null;
       }
-      if (latLngBuilder_ == null) {
-        latLng_ = null;
-      } else {
-        latLng_ = null;
+      latLng_ = null;
+      if (latLngBuilder_ != null) {
+        latLngBuilder_.dispose();
         latLngBuilder_ = null;
       }
       radiusMiles_ = 0D;
-
       return this;
     }
 
@@ -856,20 +857,28 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.talent.v4.Location buildPartial() {
       com.google.cloud.talent.v4.Location result = new com.google.cloud.talent.v4.Location(this);
-      result.locationType_ = locationType_;
-      if (postalAddressBuilder_ == null) {
-        result.postalAddress_ = postalAddress_;
-      } else {
-        result.postalAddress_ = postalAddressBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (latLngBuilder_ == null) {
-        result.latLng_ = latLng_;
-      } else {
-        result.latLng_ = latLngBuilder_.build();
-      }
-      result.radiusMiles_ = radiusMiles_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.Location result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.locationType_ = locationType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.postalAddress_ =
+            postalAddressBuilder_ == null ? postalAddress_ : postalAddressBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.latLng_ = latLngBuilder_ == null ? latLng_ : latLngBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.radiusMiles_ = radiusMiles_;
+      }
     }
 
     @java.lang.Override
@@ -958,25 +967,25 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 locationType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getPostalAddressFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getLatLngFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 33:
               {
                 radiusMiles_ = input.readDouble();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 33
             default:
@@ -996,15 +1005,19 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int locationType_ = 0;
     /**
      *
      *
      * <pre>
      * The type of a location, which corresponds to the address lines field of
-     * [google.type.PostalAddress][google.type.PostalAddress]. For example, "Downtown, Atlanta, GA, USA"
-     * has a type of [LocationType.NEIGHBORHOOD][google.cloud.talent.v4.Location.LocationType.NEIGHBORHOOD], and "Kansas City, KS, USA"
-     * has a type of [LocationType.LOCALITY][google.cloud.talent.v4.Location.LocationType.LOCALITY].
+     * [google.type.PostalAddress][google.type.PostalAddress]. For example,
+     * "Downtown, Atlanta, GA, USA" has a type of
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4.Location.LocationType.NEIGHBORHOOD],
+     * and "Kansas City, KS, USA" has a type of
+     * [LocationType.LOCALITY][google.cloud.talent.v4.Location.LocationType.LOCALITY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.Location.LocationType location_type = 1;</code>
@@ -1020,9 +1033,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The type of a location, which corresponds to the address lines field of
-     * [google.type.PostalAddress][google.type.PostalAddress]. For example, "Downtown, Atlanta, GA, USA"
-     * has a type of [LocationType.NEIGHBORHOOD][google.cloud.talent.v4.Location.LocationType.NEIGHBORHOOD], and "Kansas City, KS, USA"
-     * has a type of [LocationType.LOCALITY][google.cloud.talent.v4.Location.LocationType.LOCALITY].
+     * [google.type.PostalAddress][google.type.PostalAddress]. For example,
+     * "Downtown, Atlanta, GA, USA" has a type of
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4.Location.LocationType.NEIGHBORHOOD],
+     * and "Kansas City, KS, USA" has a type of
+     * [LocationType.LOCALITY][google.cloud.talent.v4.Location.LocationType.LOCALITY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.Location.LocationType location_type = 1;</code>
@@ -1031,8 +1046,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLocationTypeValue(int value) {
-
       locationType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1041,9 +1056,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The type of a location, which corresponds to the address lines field of
-     * [google.type.PostalAddress][google.type.PostalAddress]. For example, "Downtown, Atlanta, GA, USA"
-     * has a type of [LocationType.NEIGHBORHOOD][google.cloud.talent.v4.Location.LocationType.NEIGHBORHOOD], and "Kansas City, KS, USA"
-     * has a type of [LocationType.LOCALITY][google.cloud.talent.v4.Location.LocationType.LOCALITY].
+     * [google.type.PostalAddress][google.type.PostalAddress]. For example,
+     * "Downtown, Atlanta, GA, USA" has a type of
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4.Location.LocationType.NEIGHBORHOOD],
+     * and "Kansas City, KS, USA" has a type of
+     * [LocationType.LOCALITY][google.cloud.talent.v4.Location.LocationType.LOCALITY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.Location.LocationType location_type = 1;</code>
@@ -1052,9 +1069,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.talent.v4.Location.LocationType getLocationType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4.Location.LocationType result =
-          com.google.cloud.talent.v4.Location.LocationType.valueOf(locationType_);
+          com.google.cloud.talent.v4.Location.LocationType.forNumber(locationType_);
       return result == null
           ? com.google.cloud.talent.v4.Location.LocationType.UNRECOGNIZED
           : result;
@@ -1064,9 +1080,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The type of a location, which corresponds to the address lines field of
-     * [google.type.PostalAddress][google.type.PostalAddress]. For example, "Downtown, Atlanta, GA, USA"
-     * has a type of [LocationType.NEIGHBORHOOD][google.cloud.talent.v4.Location.LocationType.NEIGHBORHOOD], and "Kansas City, KS, USA"
-     * has a type of [LocationType.LOCALITY][google.cloud.talent.v4.Location.LocationType.LOCALITY].
+     * [google.type.PostalAddress][google.type.PostalAddress]. For example,
+     * "Downtown, Atlanta, GA, USA" has a type of
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4.Location.LocationType.NEIGHBORHOOD],
+     * and "Kansas City, KS, USA" has a type of
+     * [LocationType.LOCALITY][google.cloud.talent.v4.Location.LocationType.LOCALITY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.Location.LocationType location_type = 1;</code>
@@ -1078,7 +1096,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       locationType_ = value.getNumber();
       onChanged();
       return this;
@@ -1088,9 +1106,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The type of a location, which corresponds to the address lines field of
-     * [google.type.PostalAddress][google.type.PostalAddress]. For example, "Downtown, Atlanta, GA, USA"
-     * has a type of [LocationType.NEIGHBORHOOD][google.cloud.talent.v4.Location.LocationType.NEIGHBORHOOD], and "Kansas City, KS, USA"
-     * has a type of [LocationType.LOCALITY][google.cloud.talent.v4.Location.LocationType.LOCALITY].
+     * [google.type.PostalAddress][google.type.PostalAddress]. For example,
+     * "Downtown, Atlanta, GA, USA" has a type of
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4.Location.LocationType.NEIGHBORHOOD],
+     * and "Kansas City, KS, USA" has a type of
+     * [LocationType.LOCALITY][google.cloud.talent.v4.Location.LocationType.LOCALITY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.Location.LocationType location_type = 1;</code>
@@ -1098,7 +1118,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocationType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       locationType_ = 0;
       onChanged();
       return this;
@@ -1125,7 +1145,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the postalAddress field is set.
      */
     public boolean hasPostalAddress() {
-      return postalAddressBuilder_ != null || postalAddress_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1168,11 +1188,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         postalAddress_ = value;
-        onChanged();
       } else {
         postalAddressBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1190,11 +1210,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public Builder setPostalAddress(com.google.type.PostalAddress.Builder builderForValue) {
       if (postalAddressBuilder_ == null) {
         postalAddress_ = builderForValue.build();
-        onChanged();
       } else {
         postalAddressBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1211,19 +1231,18 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePostalAddress(com.google.type.PostalAddress value) {
       if (postalAddressBuilder_ == null) {
-        if (postalAddress_ != null) {
-          postalAddress_ =
-              com.google.type.PostalAddress.newBuilder(postalAddress_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && postalAddress_ != null
+            && postalAddress_ != com.google.type.PostalAddress.getDefaultInstance()) {
+          getPostalAddressBuilder().mergeFrom(value);
         } else {
           postalAddress_ = value;
         }
-        onChanged();
       } else {
         postalAddressBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1239,14 +1258,13 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.PostalAddress postal_address = 2;</code>
      */
     public Builder clearPostalAddress() {
-      if (postalAddressBuilder_ == null) {
-        postalAddress_ = null;
-        onChanged();
-      } else {
-        postalAddress_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      postalAddress_ = null;
+      if (postalAddressBuilder_ != null) {
+        postalAddressBuilder_.dispose();
         postalAddressBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1262,7 +1280,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.PostalAddress postal_address = 2;</code>
      */
     public com.google.type.PostalAddress.Builder getPostalAddressBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPostalAddressFieldBuilder().getBuilder();
     }
@@ -1332,7 +1350,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the latLng field is set.
      */
     public boolean hasLatLng() {
-      return latLngBuilder_ != null || latLng_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1367,11 +1385,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         latLng_ = value;
-        onChanged();
       } else {
         latLngBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1386,11 +1404,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public Builder setLatLng(com.google.type.LatLng.Builder builderForValue) {
       if (latLngBuilder_ == null) {
         latLng_ = builderForValue.build();
-        onChanged();
       } else {
         latLngBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1404,16 +1422,18 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLatLng(com.google.type.LatLng value) {
       if (latLngBuilder_ == null) {
-        if (latLng_ != null) {
-          latLng_ = com.google.type.LatLng.newBuilder(latLng_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && latLng_ != null
+            && latLng_ != com.google.type.LatLng.getDefaultInstance()) {
+          getLatLngBuilder().mergeFrom(value);
         } else {
           latLng_ = value;
         }
-        onChanged();
       } else {
         latLngBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1426,14 +1446,13 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.LatLng lat_lng = 3;</code>
      */
     public Builder clearLatLng() {
-      if (latLngBuilder_ == null) {
-        latLng_ = null;
-        onChanged();
-      } else {
-        latLng_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      latLng_ = null;
+      if (latLngBuilder_ != null) {
+        latLngBuilder_.dispose();
         latLngBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1446,7 +1465,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.LatLng lat_lng = 3;</code>
      */
     public com.google.type.LatLng.Builder getLatLngBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getLatLngFieldBuilder().getBuilder();
     }
@@ -1496,10 +1515,9 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Radius in miles of the job location. This value is derived from the
      * location bounding box in which a circle with the specified radius
-     * centered from [google.type.LatLng][google.type.LatLng] covers the area associated with the
-     * job location.
-     * For example, currently, "Mountain View, CA, USA" has a radius of
-     * 6.17 miles.
+     * centered from [google.type.LatLng][google.type.LatLng] covers the area
+     * associated with the job location. For example, currently, "Mountain View,
+     * CA, USA" has a radius of 6.17 miles.
      * </pre>
      *
      * <code>double radius_miles = 4;</code>
@@ -1516,10 +1534,9 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Radius in miles of the job location. This value is derived from the
      * location bounding box in which a circle with the specified radius
-     * centered from [google.type.LatLng][google.type.LatLng] covers the area associated with the
-     * job location.
-     * For example, currently, "Mountain View, CA, USA" has a radius of
-     * 6.17 miles.
+     * centered from [google.type.LatLng][google.type.LatLng] covers the area
+     * associated with the job location. For example, currently, "Mountain View,
+     * CA, USA" has a radius of 6.17 miles.
      * </pre>
      *
      * <code>double radius_miles = 4;</code>
@@ -1530,6 +1547,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public Builder setRadiusMiles(double value) {
 
       radiusMiles_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1539,10 +1557,9 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Radius in miles of the job location. This value is derived from the
      * location bounding box in which a circle with the specified radius
-     * centered from [google.type.LatLng][google.type.LatLng] covers the area associated with the
-     * job location.
-     * For example, currently, "Mountain View, CA, USA" has a radius of
-     * 6.17 miles.
+     * centered from [google.type.LatLng][google.type.LatLng] covers the area
+     * associated with the job location. For example, currently, "Mountain View,
+     * CA, USA" has a radius of 6.17 miles.
      * </pre>
      *
      * <code>double radius_miles = 4;</code>
@@ -1550,7 +1567,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRadiusMiles() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       radiusMiles_ = 0D;
       onChanged();
       return this;

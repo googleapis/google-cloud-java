@@ -71,7 +71,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -128,7 +130,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int FILTER_FIELD_NUMBER = 2;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -209,7 +213,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -258,14 +264,16 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 4;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
    * <pre>
    * The maximum number of jobs to be returned per page of results.
-   * If [job_view][google.cloud.talent.v4.ListJobsRequest.job_view] is set to [JobView.JOB_VIEW_ID_ONLY][google.cloud.talent.v4.JobView.JOB_VIEW_ID_ONLY], the maximum allowed
-   * page size is 1000. Otherwise, the maximum allowed page size is 100.
+   * If [job_view][google.cloud.talent.v4.ListJobsRequest.job_view] is set to
+   * [JobView.JOB_VIEW_ID_ONLY][google.cloud.talent.v4.JobView.JOB_VIEW_ID_ONLY],
+   * the maximum allowed page size is 1000. Otherwise, the maximum allowed page
+   * size is 100.
    * Default is 100 if empty or a number &lt; 1 is specified.
    * </pre>
    *
@@ -279,14 +287,15 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int JOB_VIEW_FIELD_NUMBER = 5;
-  private int jobView_;
+  private int jobView_ = 0;
   /**
    *
    *
    * <pre>
    * The desired job attributes returned for jobs in the
-   * search response. Defaults to [JobView.JOB_VIEW_FULL][google.cloud.talent.v4.JobView.JOB_VIEW_FULL] if no value is
-   * specified.
+   * search response. Defaults to
+   * [JobView.JOB_VIEW_FULL][google.cloud.talent.v4.JobView.JOB_VIEW_FULL] if no
+   * value is specified.
    * </pre>
    *
    * <code>.google.cloud.talent.v4.JobView job_view = 5;</code>
@@ -302,8 +311,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The desired job attributes returned for jobs in the
-   * search response. Defaults to [JobView.JOB_VIEW_FULL][google.cloud.talent.v4.JobView.JOB_VIEW_FULL] if no value is
-   * specified.
+   * search response. Defaults to
+   * [JobView.JOB_VIEW_FULL][google.cloud.talent.v4.JobView.JOB_VIEW_FULL] if no
+   * value is specified.
    * </pre>
    *
    * <code>.google.cloud.talent.v4.JobView job_view = 5;</code>
@@ -312,9 +322,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.talent.v4.JobView getJobView() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4.JobView result =
-        com.google.cloud.talent.v4.JobView.valueOf(jobView_);
+        com.google.cloud.talent.v4.JobView.forNumber(jobView_);
     return result == null ? com.google.cloud.talent.v4.JobView.UNRECOGNIZED : result;
   }
 
@@ -551,16 +560,12 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       filter_ = "";
-
       pageToken_ = "";
-
       pageSize_ = 0;
-
       jobView_ = 0;
-
       return this;
     }
 
@@ -588,13 +593,30 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.talent.v4.ListJobsRequest buildPartial() {
       com.google.cloud.talent.v4.ListJobsRequest result =
           new com.google.cloud.talent.v4.ListJobsRequest(this);
-      result.parent_ = parent_;
-      result.filter_ = filter_;
-      result.pageToken_ = pageToken_;
-      result.pageSize_ = pageSize_;
-      result.jobView_ = jobView_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.ListJobsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.jobView_ = jobView_;
+      }
     }
 
     @java.lang.Override
@@ -644,14 +666,17 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.talent.v4.ListJobsRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -689,31 +714,31 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 jobView_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -732,6 +757,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -806,8 +833,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -827,8 +854,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -853,8 +880,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -968,8 +995,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1001,8 +1028,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1039,8 +1066,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1106,8 +1133,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1123,8 +1150,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1145,8 +1172,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1157,8 +1184,10 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The maximum number of jobs to be returned per page of results.
-     * If [job_view][google.cloud.talent.v4.ListJobsRequest.job_view] is set to [JobView.JOB_VIEW_ID_ONLY][google.cloud.talent.v4.JobView.JOB_VIEW_ID_ONLY], the maximum allowed
-     * page size is 1000. Otherwise, the maximum allowed page size is 100.
+     * If [job_view][google.cloud.talent.v4.ListJobsRequest.job_view] is set to
+     * [JobView.JOB_VIEW_ID_ONLY][google.cloud.talent.v4.JobView.JOB_VIEW_ID_ONLY],
+     * the maximum allowed page size is 1000. Otherwise, the maximum allowed page
+     * size is 100.
      * Default is 100 if empty or a number &lt; 1 is specified.
      * </pre>
      *
@@ -1175,8 +1204,10 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The maximum number of jobs to be returned per page of results.
-     * If [job_view][google.cloud.talent.v4.ListJobsRequest.job_view] is set to [JobView.JOB_VIEW_ID_ONLY][google.cloud.talent.v4.JobView.JOB_VIEW_ID_ONLY], the maximum allowed
-     * page size is 1000. Otherwise, the maximum allowed page size is 100.
+     * If [job_view][google.cloud.talent.v4.ListJobsRequest.job_view] is set to
+     * [JobView.JOB_VIEW_ID_ONLY][google.cloud.talent.v4.JobView.JOB_VIEW_ID_ONLY],
+     * the maximum allowed page size is 1000. Otherwise, the maximum allowed page
+     * size is 100.
      * Default is 100 if empty or a number &lt; 1 is specified.
      * </pre>
      *
@@ -1188,6 +1219,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1196,8 +1228,10 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The maximum number of jobs to be returned per page of results.
-     * If [job_view][google.cloud.talent.v4.ListJobsRequest.job_view] is set to [JobView.JOB_VIEW_ID_ONLY][google.cloud.talent.v4.JobView.JOB_VIEW_ID_ONLY], the maximum allowed
-     * page size is 1000. Otherwise, the maximum allowed page size is 100.
+     * If [job_view][google.cloud.talent.v4.ListJobsRequest.job_view] is set to
+     * [JobView.JOB_VIEW_ID_ONLY][google.cloud.talent.v4.JobView.JOB_VIEW_ID_ONLY],
+     * the maximum allowed page size is 1000. Otherwise, the maximum allowed page
+     * size is 100.
      * Default is 100 if empty or a number &lt; 1 is specified.
      * </pre>
      *
@@ -1206,7 +1240,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1218,8 +1252,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The desired job attributes returned for jobs in the
-     * search response. Defaults to [JobView.JOB_VIEW_FULL][google.cloud.talent.v4.JobView.JOB_VIEW_FULL] if no value is
-     * specified.
+     * search response. Defaults to
+     * [JobView.JOB_VIEW_FULL][google.cloud.talent.v4.JobView.JOB_VIEW_FULL] if no
+     * value is specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.JobView job_view = 5;</code>
@@ -1235,8 +1270,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The desired job attributes returned for jobs in the
-     * search response. Defaults to [JobView.JOB_VIEW_FULL][google.cloud.talent.v4.JobView.JOB_VIEW_FULL] if no value is
-     * specified.
+     * search response. Defaults to
+     * [JobView.JOB_VIEW_FULL][google.cloud.talent.v4.JobView.JOB_VIEW_FULL] if no
+     * value is specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.JobView job_view = 5;</code>
@@ -1245,8 +1281,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setJobViewValue(int value) {
-
       jobView_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1255,8 +1291,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The desired job attributes returned for jobs in the
-     * search response. Defaults to [JobView.JOB_VIEW_FULL][google.cloud.talent.v4.JobView.JOB_VIEW_FULL] if no value is
-     * specified.
+     * search response. Defaults to
+     * [JobView.JOB_VIEW_FULL][google.cloud.talent.v4.JobView.JOB_VIEW_FULL] if no
+     * value is specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.JobView job_view = 5;</code>
@@ -1265,9 +1302,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.talent.v4.JobView getJobView() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4.JobView result =
-          com.google.cloud.talent.v4.JobView.valueOf(jobView_);
+          com.google.cloud.talent.v4.JobView.forNumber(jobView_);
       return result == null ? com.google.cloud.talent.v4.JobView.UNRECOGNIZED : result;
     }
     /**
@@ -1275,8 +1311,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The desired job attributes returned for jobs in the
-     * search response. Defaults to [JobView.JOB_VIEW_FULL][google.cloud.talent.v4.JobView.JOB_VIEW_FULL] if no value is
-     * specified.
+     * search response. Defaults to
+     * [JobView.JOB_VIEW_FULL][google.cloud.talent.v4.JobView.JOB_VIEW_FULL] if no
+     * value is specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.JobView job_view = 5;</code>
@@ -1288,7 +1325,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       jobView_ = value.getNumber();
       onChanged();
       return this;
@@ -1298,8 +1335,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The desired job attributes returned for jobs in the
-     * search response. Defaults to [JobView.JOB_VIEW_FULL][google.cloud.talent.v4.JobView.JOB_VIEW_FULL] if no value is
-     * specified.
+     * search response. Defaults to
+     * [JobView.JOB_VIEW_FULL][google.cloud.talent.v4.JobView.JOB_VIEW_FULL] if no
+     * value is specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.JobView job_view = 5;</code>
@@ -1307,7 +1345,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearJobView() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       jobView_ = 0;
       onChanged();
       return this;

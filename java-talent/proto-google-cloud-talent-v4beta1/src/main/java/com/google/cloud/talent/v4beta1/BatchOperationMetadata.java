@@ -23,7 +23,8 @@ package com.google.cloud.talent.v4beta1;
  *
  * <pre>
  * Metadata used for long running operations returned by CTS batch APIs.
- * It's used to replace [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata].
+ * It's used to replace
+ * [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata].
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.BatchOperationMetadata}
@@ -127,7 +128,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The batch operation is in the process of cancelling after
-     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation] is called.
+     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation]
+     * is called.
      * </pre>
      *
      * <code>CANCELLING = 5;</code>
@@ -138,8 +140,9 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The batch operation is done after
-     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation] is called. Any items
-     * processed before cancelling are returned in the response.
+     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation]
+     * is called. Any items processed before cancelling are returned in the
+     * response.
      * </pre>
      *
      * <code>CANCELLED = 6;</code>
@@ -204,7 +207,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The batch operation is in the process of cancelling after
-     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation] is called.
+     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation]
+     * is called.
      * </pre>
      *
      * <code>CANCELLING = 5;</code>
@@ -215,8 +219,9 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The batch operation is done after
-     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation] is called. Any items
-     * processed before cancelling are returned in the response.
+     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation]
+     * is called. Any items processed before cancelling are returned in the
+     * response.
      * </pre>
      *
      * <code>CANCELLED = 6;</code>
@@ -317,7 +322,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int STATE_FIELD_NUMBER = 1;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -346,16 +351,17 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.talent.v4beta1.BatchOperationMetadata.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.BatchOperationMetadata.State result =
-        com.google.cloud.talent.v4beta1.BatchOperationMetadata.State.valueOf(state_);
+        com.google.cloud.talent.v4beta1.BatchOperationMetadata.State.forNumber(state_);
     return result == null
         ? com.google.cloud.talent.v4beta1.BatchOperationMetadata.State.UNRECOGNIZED
         : result;
   }
 
   public static final int STATE_DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object stateDescription_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stateDescription_ = "";
   /**
    *
    *
@@ -404,7 +410,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int SUCCESS_COUNT_FIELD_NUMBER = 3;
-  private int successCount_;
+  private int successCount_ = 0;
   /**
    *
    *
@@ -422,7 +428,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int FAILURE_COUNT_FIELD_NUMBER = 4;
-  private int failureCount_;
+  private int failureCount_ = 0;
   /**
    *
    *
@@ -440,7 +446,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int TOTAL_COUNT_FIELD_NUMBER = 5;
-  private int totalCount_;
+  private int totalCount_ = 0;
   /**
    *
    *
@@ -500,7 +506,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 7;
@@ -510,8 +516,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The time when the batch operation status is updated. The metadata and the
-   * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
-   * returned.
+   * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
+   * is refreshed every minute otherwise cached data is returned.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -527,8 +533,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The time when the batch operation status is updated. The metadata and the
-   * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
-   * returned.
+   * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
+   * is refreshed every minute otherwise cached data is returned.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -544,15 +550,15 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The time when the batch operation status is updated. The metadata and the
-   * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
-   * returned.
+   * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
+   * is refreshed every minute otherwise cached data is returned.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 8;
@@ -562,7 +568,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The time when the batch operation is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+   * set to `true`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -578,7 +585,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The time when the batch operation is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+   * set to `true`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -594,14 +602,15 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The time when the batch operation is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+   * set to `true`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -851,7 +860,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Metadata used for long running operations returned by CTS batch APIs.
-   * It's used to replace [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata].
+   * It's used to replace
+   * [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata].
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.BatchOperationMetadata}
@@ -885,32 +895,25 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       state_ = 0;
-
       stateDescription_ = "";
-
       successCount_ = 0;
-
       failureCount_ = 0;
-
       totalCount_ = 0;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       return this;
@@ -940,28 +943,39 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public com.google.cloud.talent.v4beta1.BatchOperationMetadata buildPartial() {
       com.google.cloud.talent.v4beta1.BatchOperationMetadata result =
           new com.google.cloud.talent.v4beta1.BatchOperationMetadata(this);
-      result.state_ = state_;
-      result.stateDescription_ = stateDescription_;
-      result.successCount_ = successCount_;
-      result.failureCount_ = failureCount_;
-      result.totalCount_ = totalCount_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4beta1.BatchOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.stateDescription_ = stateDescription_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.successCount_ = successCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.failureCount_ = failureCount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.totalCount_ = totalCount_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1015,6 +1029,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       }
       if (!other.getStateDescription().isEmpty()) {
         stateDescription_ = other.stateDescription_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getSuccessCount() != 0) {
@@ -1064,49 +1079,49 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
             case 8:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 stateDescription_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 successCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 failureCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 totalCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             default:
@@ -1125,6 +1140,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int state_ = 0;
     /**
@@ -1155,8 +1172,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1173,9 +1190,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.cloud.talent.v4beta1.BatchOperationMetadata.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.BatchOperationMetadata.State result =
-          com.google.cloud.talent.v4beta1.BatchOperationMetadata.State.valueOf(state_);
+          com.google.cloud.talent.v4beta1.BatchOperationMetadata.State.forNumber(state_);
       return result == null
           ? com.google.cloud.talent.v4beta1.BatchOperationMetadata.State.UNRECOGNIZED
           : result;
@@ -1196,7 +1212,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1213,7 +1229,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = 0;
       onChanged();
       return this;
@@ -1280,8 +1296,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       stateDescription_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1297,8 +1313,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearStateDescription() {
-
       stateDescription_ = getDefaultInstance().getStateDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1319,8 +1335,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       stateDescription_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1356,6 +1372,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public Builder setSuccessCount(int value) {
 
       successCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1371,7 +1388,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearSuccessCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       successCount_ = 0;
       onChanged();
       return this;
@@ -1408,6 +1425,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public Builder setFailureCount(int value) {
 
       failureCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1423,7 +1441,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearFailureCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       failureCount_ = 0;
       onChanged();
       return this;
@@ -1460,6 +1478,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public Builder setTotalCount(int value) {
 
       totalCount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1475,7 +1494,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearTotalCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       totalCount_ = 0;
       onChanged();
       return this;
@@ -1499,7 +1518,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1536,11 +1555,11 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1555,11 +1574,11 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1573,17 +1592,18 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1596,14 +1616,13 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1616,7 +1635,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1675,8 +1694,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
-     * returned.
+     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
+     * is refreshed every minute otherwise cached data is returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1684,15 +1703,15 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
      *
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
-     * returned.
+     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
+     * is refreshed every minute otherwise cached data is returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1713,8 +1732,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
-     * returned.
+     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
+     * is refreshed every minute otherwise cached data is returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1725,11 +1744,11 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1737,8 +1756,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
-     * returned.
+     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
+     * is refreshed every minute otherwise cached data is returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1746,11 +1765,11 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1758,25 +1777,26 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
-     * returned.
+     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
+     * is refreshed every minute otherwise cached data is returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1784,21 +1804,20 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
-     * returned.
+     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
+     * is refreshed every minute otherwise cached data is returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1806,14 +1825,14 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
-     * returned.
+     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
+     * is refreshed every minute otherwise cached data is returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1822,8 +1841,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
-     * returned.
+     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
+     * is refreshed every minute otherwise cached data is returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1842,8 +1861,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
-     * returned.
+     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
+     * is refreshed every minute otherwise cached data is returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1876,7 +1895,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -1884,14 +1904,15 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
      *
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -1910,7 +1931,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -1921,11 +1943,11 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1933,7 +1955,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -1941,11 +1964,11 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1953,24 +1976,26 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1978,20 +2003,20 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1999,13 +2024,14 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -2014,7 +2040,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -2031,7 +2058,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>

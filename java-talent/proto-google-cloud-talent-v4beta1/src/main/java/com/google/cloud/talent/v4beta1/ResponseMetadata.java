@@ -68,7 +68,9 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -315,8 +317,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       requestId_ = "";
-
       return this;
     }
 
@@ -344,9 +346,18 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.talent.v4beta1.ResponseMetadata buildPartial() {
       com.google.cloud.talent.v4beta1.ResponseMetadata result =
           new com.google.cloud.talent.v4beta1.ResponseMetadata(this);
-      result.requestId_ = requestId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4beta1.ResponseMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -397,6 +408,7 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -428,7 +440,7 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -447,6 +459,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object requestId_ = "";
     /**
@@ -512,8 +526,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -530,8 +544,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -553,8 +567,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

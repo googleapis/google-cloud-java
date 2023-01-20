@@ -27,7 +27,10 @@ public interface CustomAttributeOrBuilder
    *
    *
    * <pre>
-   * Exactly one of [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be specified.
+   * Exactly one of
+   * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
+   * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
+   * specified.
    * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
    * `CASE_INSENSITIVE_MATCH`) search.
    * For filterable `string_value`s, a maximum total number of 200 values
@@ -46,7 +49,10 @@ public interface CustomAttributeOrBuilder
    *
    *
    * <pre>
-   * Exactly one of [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be specified.
+   * Exactly one of
+   * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
+   * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
+   * specified.
    * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
    * `CASE_INSENSITIVE_MATCH`) search.
    * For filterable `string_value`s, a maximum total number of 200 values
@@ -65,7 +71,10 @@ public interface CustomAttributeOrBuilder
    *
    *
    * <pre>
-   * Exactly one of [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be specified.
+   * Exactly one of
+   * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
+   * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
+   * specified.
    * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
    * `CASE_INSENSITIVE_MATCH`) search.
    * For filterable `string_value`s, a maximum total number of 200 values
@@ -85,7 +94,10 @@ public interface CustomAttributeOrBuilder
    *
    *
    * <pre>
-   * Exactly one of [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be specified.
+   * Exactly one of
+   * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
+   * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
+   * specified.
    * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
    * `CASE_INSENSITIVE_MATCH`) search.
    * For filterable `string_value`s, a maximum total number of 200 values
@@ -106,10 +118,15 @@ public interface CustomAttributeOrBuilder
    *
    *
    * <pre>
-   * Exactly one of [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be specified.
+   * Exactly one of
+   * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
+   * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
+   * specified.
    * This field is used to perform number range search.
    * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
-   * Currently at most 1 [long_values][google.cloud.talent.v4.CustomAttribute.long_values] is supported.
+   * Currently at most 1
+   * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] is
+   * supported.
    * </pre>
    *
    * <code>repeated int64 long_values = 2;</code>
@@ -121,10 +138,15 @@ public interface CustomAttributeOrBuilder
    *
    *
    * <pre>
-   * Exactly one of [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be specified.
+   * Exactly one of
+   * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
+   * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
+   * specified.
    * This field is used to perform number range search.
    * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
-   * Currently at most 1 [long_values][google.cloud.talent.v4.CustomAttribute.long_values] is supported.
+   * Currently at most 1
+   * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] is
+   * supported.
    * </pre>
    *
    * <code>repeated int64 long_values = 2;</code>
@@ -136,10 +158,15 @@ public interface CustomAttributeOrBuilder
    *
    *
    * <pre>
-   * Exactly one of [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be specified.
+   * Exactly one of
+   * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
+   * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
+   * specified.
    * This field is used to perform number range search.
    * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
-   * Currently at most 1 [long_values][google.cloud.talent.v4.CustomAttribute.long_values] is supported.
+   * Currently at most 1
+   * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] is
+   * supported.
    * </pre>
    *
    * <code>repeated int64 long_values = 2;</code>
@@ -154,7 +181,8 @@ public interface CustomAttributeOrBuilder
    *
    * <pre>
    * If the `filterable` flag is true, the custom field values may be used for
-   * custom attribute filters [JobQuery.custom_attribute_filter][google.cloud.talent.v4.JobQuery.custom_attribute_filter].
+   * custom attribute filters
+   * [JobQuery.custom_attribute_filter][google.cloud.talent.v4.JobQuery.custom_attribute_filter].
    * If false, these values may not be used for custom attribute filters.
    * Default is false.
    * </pre>
