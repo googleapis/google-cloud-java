@@ -236,7 +236,8 @@ def generate(
         output_name=str(workdir / owlbot_yaml_location_from_module),
         artifact_name=distribution_name_short,
         proto_path=proto_path,
-        module_name=f"java-{output_name}"
+        module_name=f"java-{output_name}",
+        api_shortname=api_shortname
     )
 
     # get the sha256 digets for the owlbot image
