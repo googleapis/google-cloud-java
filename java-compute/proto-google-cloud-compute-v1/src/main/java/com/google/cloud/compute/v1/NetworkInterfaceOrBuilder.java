@@ -433,6 +433,43 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
+   * The URL of the network attachment that this interface should connect to in the following format: projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+   * </pre>
+   *
+   * <code>optional string network_attachment = 224644052;</code>
+   *
+   * @return Whether the networkAttachment field is set.
+   */
+  boolean hasNetworkAttachment();
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the network attachment that this interface should connect to in the following format: projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+   * </pre>
+   *
+   * <code>optional string network_attachment = 224644052;</code>
+   *
+   * @return The networkAttachment.
+   */
+  java.lang.String getNetworkAttachment();
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the network attachment that this interface should connect to in the following format: projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+   * </pre>
+   *
+   * <code>optional string network_attachment = 224644052;</code>
+   *
+   * @return The bytes for networkAttachment.
+   */
+  com.google.protobuf.ByteString getNetworkAttachmentBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * An IPv4 internal IP address to assign to the instance for this network interface. If not specified by the user, an unused internal IP is assigned by the system.
    * </pre>
    *

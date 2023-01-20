@@ -140,4 +140,41 @@ public interface AllocationSpecificSKUReservationOrBuilder
    */
   com.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuilder
       getInstancePropertiesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+   * </pre>
+   *
+   * <code>optional string source_instance_template = 332423616;</code>
+   *
+   * @return Whether the sourceInstanceTemplate field is set.
+   */
+  boolean hasSourceInstanceTemplate();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+   * </pre>
+   *
+   * <code>optional string source_instance_template = 332423616;</code>
+   *
+   * @return The sourceInstanceTemplate.
+   */
+  java.lang.String getSourceInstanceTemplate();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+   * </pre>
+   *
+   * <code>optional string source_instance_template = 332423616;</code>
+   *
+   * @return The bytes for sourceInstanceTemplate.
+   */
+  com.google.protobuf.ByteString getSourceInstanceTemplateBytes();
 }

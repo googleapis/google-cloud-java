@@ -215,6 +215,7 @@ public class ReservationsClientTest {
             .setKind("kind3292052")
             .setName("name3373707")
             .putAllResourcePolicies(new HashMap<String, String>())
+            .setResourceStatus(AllocationResourceStatus.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSelfLink("selfLink1191800166")
             .setShareSettings(ShareSettings.newBuilder().build())

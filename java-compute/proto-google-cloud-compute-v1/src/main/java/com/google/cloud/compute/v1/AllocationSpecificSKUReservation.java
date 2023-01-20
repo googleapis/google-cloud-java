@@ -38,7 +38,9 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     super(builder);
   }
 
-  private AllocationSpecificSKUReservation() {}
+  private AllocationSpecificSKUReservation() {
+    sourceInstanceTemplate_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -228,6 +230,72 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
         : instanceProperties_;
   }
 
+  public static final int SOURCE_INSTANCE_TEMPLATE_FIELD_NUMBER = 332423616;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceInstanceTemplate_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+   * </pre>
+   *
+   * <code>optional string source_instance_template = 332423616;</code>
+   *
+   * @return Whether the sourceInstanceTemplate field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceInstanceTemplate() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+   * </pre>
+   *
+   * <code>optional string source_instance_template = 332423616;</code>
+   *
+   * @return The sourceInstanceTemplate.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceInstanceTemplate() {
+    java.lang.Object ref = sourceInstanceTemplate_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceInstanceTemplate_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+   * </pre>
+   *
+   * <code>optional string source_instance_template = 332423616;</code>
+   *
+   * @return The bytes for sourceInstanceTemplate.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceInstanceTemplateBytes() {
+    java.lang.Object ref = sourceInstanceTemplate_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceInstanceTemplate_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -251,6 +319,10 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt64(281197645, assuredCount_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 332423616, sourceInstanceTemplate_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeInt64(493458877, inUseCount_);
     }
@@ -273,6 +345,11 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(281197645, assuredCount_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              332423616, sourceInstanceTemplate_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(493458877, inUseCount_);
@@ -309,6 +386,10 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     if (hasInstanceProperties()) {
       if (!getInstanceProperties().equals(other.getInstanceProperties())) return false;
     }
+    if (hasSourceInstanceTemplate() != other.hasSourceInstanceTemplate()) return false;
+    if (hasSourceInstanceTemplate()) {
+      if (!getSourceInstanceTemplate().equals(other.getSourceInstanceTemplate())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -335,6 +416,10 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     if (hasInstanceProperties()) {
       hash = (37 * hash) + INSTANCE_PROPERTIES_FIELD_NUMBER;
       hash = (53 * hash) + getInstanceProperties().hashCode();
+    }
+    if (hasSourceInstanceTemplate()) {
+      hash = (37 * hash) + SOURCE_INSTANCE_TEMPLATE_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceInstanceTemplate().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -493,6 +578,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
         instancePropertiesBuilder_.dispose();
         instancePropertiesBuilder_ = null;
       }
+      sourceInstanceTemplate_ = "";
       return this;
     }
 
@@ -550,6 +636,10 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
                 ? instanceProperties_
                 : instancePropertiesBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.sourceInstanceTemplate_ = sourceInstanceTemplate_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -613,6 +703,11 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       if (other.hasInstanceProperties()) {
         mergeInstanceProperties(other.getInstanceProperties());
       }
+      if (other.hasSourceInstanceTemplate()) {
+        sourceInstanceTemplate_ = other.sourceInstanceTemplate_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -658,6 +753,12 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
                 bitField0_ |= 0x00000001;
                 break;
               } // case -2045386136
+            case -1635578366:
+              {
+                sourceInstanceTemplate_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case -1635578366
             case -347296280:
               {
                 inUseCount_ = input.readInt64();
@@ -1111,6 +1212,126 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
         instanceProperties_ = null;
       }
       return instancePropertiesBuilder_;
+    }
+
+    private java.lang.Object sourceInstanceTemplate_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+     * </pre>
+     *
+     * <code>optional string source_instance_template = 332423616;</code>
+     *
+     * @return Whether the sourceInstanceTemplate field is set.
+     */
+    public boolean hasSourceInstanceTemplate() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+     * </pre>
+     *
+     * <code>optional string source_instance_template = 332423616;</code>
+     *
+     * @return The sourceInstanceTemplate.
+     */
+    public java.lang.String getSourceInstanceTemplate() {
+      java.lang.Object ref = sourceInstanceTemplate_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceInstanceTemplate_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+     * </pre>
+     *
+     * <code>optional string source_instance_template = 332423616;</code>
+     *
+     * @return The bytes for sourceInstanceTemplate.
+     */
+    public com.google.protobuf.ByteString getSourceInstanceTemplateBytes() {
+      java.lang.Object ref = sourceInstanceTemplate_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceInstanceTemplate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+     * </pre>
+     *
+     * <code>optional string source_instance_template = 332423616;</code>
+     *
+     * @param value The sourceInstanceTemplate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceInstanceTemplate(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceInstanceTemplate_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+     * </pre>
+     *
+     * <code>optional string source_instance_template = 332423616;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceInstanceTemplate() {
+      sourceInstanceTemplate_ = getDefaultInstance().getSourceInstanceTemplate();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+     * </pre>
+     *
+     * <code>optional string source_instance_template = 332423616;</code>
+     *
+     * @param value The bytes for sourceInstanceTemplate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceInstanceTemplateBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceInstanceTemplate_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
