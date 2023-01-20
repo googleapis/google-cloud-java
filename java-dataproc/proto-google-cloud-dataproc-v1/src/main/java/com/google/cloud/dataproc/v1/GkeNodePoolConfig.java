@@ -292,7 +292,9 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int MACHINE_TYPE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object machineType_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object machineType_ = "";
     /**
      *
      *
@@ -343,7 +345,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int PREEMPTIBLE_FIELD_NUMBER = 10;
-    private boolean preemptible_;
+    private boolean preemptible_ = false;
     /**
      *
      *
@@ -362,7 +364,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int LOCAL_SSD_COUNT_FIELD_NUMBER = 7;
-    private int localSsdCount_;
+    private int localSsdCount_ = 0;
     /**
      *
      *
@@ -382,6 +384,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int ACCELERATORS_FIELD_NUMBER = 11;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAcceleratorConfig>
         accelerators_;
@@ -480,7 +484,9 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int MIN_CPU_PLATFORM_FIELD_NUMBER = 13;
-    private volatile java.lang.Object minCpuPlatform_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object minCpuPlatform_ = "";
     /**
      *
      *
@@ -774,21 +780,18 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         machineType_ = "";
-
         preemptible_ = false;
-
         localSsdCount_ = 0;
-
         if (acceleratorsBuilder_ == null) {
           accelerators_ = java.util.Collections.emptyList();
         } else {
           accelerators_ = null;
           acceleratorsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         minCpuPlatform_ = "";
-
         return this;
       }
 
@@ -817,22 +820,42 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       public com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig buildPartial() {
         com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig result =
             new com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig(this);
-        int from_bitField0_ = bitField0_;
-        result.machineType_ = machineType_;
-        result.preemptible_ = preemptible_;
-        result.localSsdCount_ = localSsdCount_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig result) {
         if (acceleratorsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.accelerators_ = accelerators_;
         } else {
           result.accelerators_ = acceleratorsBuilder_.build();
         }
-        result.minCpuPlatform_ = minCpuPlatform_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.machineType_ = machineType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.preemptible_ = preemptible_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.localSsdCount_ = localSsdCount_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.minCpuPlatform_ = minCpuPlatform_;
+        }
       }
 
       @java.lang.Override
@@ -886,6 +909,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           return this;
         if (!other.getMachineType().isEmpty()) {
           machineType_ = other.machineType_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getPreemptible() != false) {
@@ -898,7 +922,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           if (!other.accelerators_.isEmpty()) {
             if (accelerators_.isEmpty()) {
               accelerators_ = other.accelerators_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureAcceleratorsIsMutable();
               accelerators_.addAll(other.accelerators_);
@@ -911,7 +935,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
               acceleratorsBuilder_.dispose();
               acceleratorsBuilder_ = null;
               accelerators_ = other.accelerators_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
               acceleratorsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getAcceleratorsFieldBuilder()
@@ -923,6 +947,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         }
         if (!other.getMinCpuPlatform().isEmpty()) {
           minCpuPlatform_ = other.minCpuPlatform_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -954,19 +979,19 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
               case 10:
                 {
                   machineType_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 56:
                 {
                   localSsdCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 56
               case 80:
                 {
                   preemptible_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 80
               case 90:
@@ -987,7 +1012,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
               case 106:
                 {
                   minCpuPlatform_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 106
               default:
@@ -1073,8 +1098,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
         machineType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1091,8 +1116,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearMachineType() {
-
         machineType_ = getDefaultInstance().getMachineType();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1114,8 +1139,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         machineType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1153,6 +1178,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       public Builder setPreemptible(boolean value) {
 
         preemptible_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1169,7 +1195,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearPreemptible() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         preemptible_ = false;
         onChanged();
         return this;
@@ -1210,6 +1236,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       public Builder setLocalSsdCount(int value) {
 
         localSsdCount_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1227,7 +1254,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearLocalSsdCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         localSsdCount_ = 0;
         onChanged();
         return this;
@@ -1238,12 +1265,12 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           accelerators_ = java.util.Collections.emptyList();
 
       private void ensureAcceleratorsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           accelerators_ =
               new java.util.ArrayList<
                   com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAcceleratorConfig>(
                   accelerators_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
         }
       }
 
@@ -1519,7 +1546,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       public Builder clearAccelerators() {
         if (acceleratorsBuilder_ == null) {
           accelerators_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           acceleratorsBuilder_.clear();
@@ -1685,7 +1712,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
                   com.google.cloud.dataproc.v1.GkeNodePoolConfig
                       .GkeNodePoolAcceleratorConfigOrBuilder>(
                   accelerators_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           accelerators_ = null;
@@ -1766,8 +1793,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
         minCpuPlatform_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1787,8 +1814,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearMinCpuPlatform() {
-
         minCpuPlatform_ = getDefaultInstance().getMinCpuPlatform();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1813,8 +1840,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         minCpuPlatform_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1983,7 +2010,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int ACCELERATOR_COUNT_FIELD_NUMBER = 1;
-    private long acceleratorCount_;
+    private long acceleratorCount_ = 0L;
     /**
      *
      *
@@ -2001,7 +2028,9 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int ACCELERATOR_TYPE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object acceleratorType_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object acceleratorType_ = "";
     /**
      *
      *
@@ -2268,10 +2297,9 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         acceleratorCount_ = 0L;
-
         acceleratorType_ = "";
-
         return this;
       }
 
@@ -2303,10 +2331,22 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           buildPartial() {
         com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAcceleratorConfig result =
             new com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAcceleratorConfig(this);
-        result.acceleratorCount_ = acceleratorCount_;
-        result.acceleratorType_ = acceleratorType_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAcceleratorConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.acceleratorCount_ = acceleratorCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.acceleratorType_ = acceleratorType_;
+        }
       }
 
       @java.lang.Override
@@ -2367,6 +2407,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         }
         if (!other.getAcceleratorType().isEmpty()) {
           acceleratorType_ = other.acceleratorType_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2398,13 +2439,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
               case 8:
                 {
                   acceleratorCount_ = input.readInt64();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   acceleratorType_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -2423,6 +2464,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private long acceleratorCount_;
       /**
@@ -2455,6 +2498,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       public Builder setAcceleratorCount(long value) {
 
         acceleratorCount_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2470,7 +2514,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearAcceleratorCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         acceleratorCount_ = 0L;
         onChanged();
         return this;
@@ -2537,8 +2581,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
         acceleratorType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2554,8 +2598,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearAcceleratorType() {
-
         acceleratorType_ = getDefaultInstance().getAcceleratorType();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2576,8 +2620,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         acceleratorType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2735,7 +2779,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int MIN_NODE_COUNT_FIELD_NUMBER = 2;
-    private int minNodeCount_;
+    private int minNodeCount_ = 0;
     /**
      *
      *
@@ -2754,7 +2798,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int MAX_NODE_COUNT_FIELD_NUMBER = 3;
-    private int maxNodeCount_;
+    private int maxNodeCount_ = 0;
     /**
      *
      *
@@ -2991,10 +3035,9 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         minNodeCount_ = 0;
-
         maxNodeCount_ = 0;
-
         return this;
       }
 
@@ -3026,10 +3069,22 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           buildPartial() {
         com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAutoscalingConfig result =
             new com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAutoscalingConfig(this);
-        result.minNodeCount_ = minNodeCount_;
-        result.maxNodeCount_ = maxNodeCount_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAutoscalingConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.minNodeCount_ = minNodeCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxNodeCount_ = maxNodeCount_;
+        }
       }
 
       @java.lang.Override
@@ -3120,13 +3175,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
               case 16:
                 {
                   minNodeCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 16
               case 24:
                 {
                   maxNodeCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 24
               default:
@@ -3145,6 +3200,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int minNodeCount_;
       /**
@@ -3179,6 +3236,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       public Builder setMinNodeCount(int value) {
 
         minNodeCount_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3195,7 +3253,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearMinNodeCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         minNodeCount_ = 0;
         onChanged();
         return this;
@@ -3234,6 +3292,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       public Builder setMaxNodeCount(int value) {
 
         maxNodeCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3250,7 +3309,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearMaxNodeCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         maxNodeCount_ = 0;
         onChanged();
         return this;
@@ -3376,10 +3435,14 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfigOrBuilder
       getConfigOrBuilder() {
-    return getConfig();
+    return config_ == null
+        ? com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig.getDefaultInstance()
+        : config_;
   }
 
   public static final int LOCATIONS_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList locations_;
   /**
    *
@@ -3517,7 +3580,10 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAutoscalingConfigOrBuilder
       getAutoscalingOrBuilder() {
-    return getAutoscaling();
+    return autoscaling_ == null
+        ? com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAutoscalingConfig
+            .getDefaultInstance()
+        : autoscaling_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3753,18 +3819,17 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (configBuilder_ == null) {
-        config_ = null;
-      } else {
-        config_ = null;
+      bitField0_ = 0;
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
       locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (autoscalingBuilder_ == null) {
-        autoscaling_ = null;
-      } else {
-        autoscaling_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      autoscaling_ = null;
+      if (autoscalingBuilder_ != null) {
+        autoscalingBuilder_.dispose();
         autoscalingBuilder_ = null;
       }
       return this;
@@ -3794,24 +3859,31 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dataproc.v1.GkeNodePoolConfig buildPartial() {
       com.google.cloud.dataproc.v1.GkeNodePoolConfig result =
           new com.google.cloud.dataproc.v1.GkeNodePoolConfig(this);
-      int from_bitField0_ = bitField0_;
-      if (configBuilder_ == null) {
-        result.config_ = config_;
-      } else {
-        result.config_ = configBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        locations_ = locations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.locations_ = locations_;
-      if (autoscalingBuilder_ == null) {
-        result.autoscaling_ = autoscaling_;
-      } else {
-        result.autoscaling_ = autoscalingBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.GkeNodePoolConfig result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        locations_ = locations_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.locations_ = locations_;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.GkeNodePoolConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.config_ = configBuilder_ == null ? config_ : configBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.autoscaling_ =
+            autoscalingBuilder_ == null ? autoscaling_ : autoscalingBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3865,7 +3937,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       if (!other.locations_.isEmpty()) {
         if (locations_.isEmpty()) {
           locations_ = other.locations_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureLocationsIsMutable();
           locations_.addAll(other.locations_);
@@ -3904,13 +3976,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
             case 18:
               {
                 input.readMessage(getConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 34:
               {
                 input.readMessage(getAutoscalingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 106:
@@ -3959,7 +4031,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the config field is set.
      */
     public boolean hasConfig() {
-      return configBuilder_ != null || config_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -4000,11 +4072,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         config_ = value;
-        onChanged();
       } else {
         configBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -4022,11 +4094,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
         config_ = builderForValue.build();
-        onChanged();
       } else {
         configBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -4042,19 +4114,20 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeConfig(com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig value) {
       if (configBuilder_ == null) {
-        if (config_ != null) {
-          config_ =
-              com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig.newBuilder(config_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && config_ != null
+            && config_
+                != com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig
+                    .getDefaultInstance()) {
+          getConfigBuilder().mergeFrom(value);
         } else {
           config_ = value;
         }
-        onChanged();
       } else {
         configBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -4069,14 +4142,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearConfig() {
-      if (configBuilder_ == null) {
-        config_ = null;
-        onChanged();
-      } else {
-        config_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4091,7 +4163,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig.Builder getConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
@@ -4148,9 +4220,9 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -4325,7 +4397,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearLocations() {
       locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -4379,7 +4451,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the autoscaling field is set.
      */
     public boolean hasAutoscaling() {
-      return autoscalingBuilder_ != null || autoscaling_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -4425,11 +4497,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         autoscaling_ = value;
-        onChanged();
       } else {
         autoscalingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -4449,11 +4521,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
             builderForValue) {
       if (autoscalingBuilder_ == null) {
         autoscaling_ = builderForValue.build();
-        onChanged();
       } else {
         autoscalingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -4471,20 +4543,20 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeAutoscaling(
         com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAutoscalingConfig value) {
       if (autoscalingBuilder_ == null) {
-        if (autoscaling_ != null) {
-          autoscaling_ =
-              com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAutoscalingConfig
-                  .newBuilder(autoscaling_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && autoscaling_ != null
+            && autoscaling_
+                != com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAutoscalingConfig
+                    .getDefaultInstance()) {
+          getAutoscalingBuilder().mergeFrom(value);
         } else {
           autoscaling_ = value;
         }
-        onChanged();
       } else {
         autoscalingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -4500,14 +4572,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearAutoscaling() {
-      if (autoscalingBuilder_ == null) {
-        autoscaling_ = null;
-        onChanged();
-      } else {
-        autoscaling_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      autoscaling_ = null;
+      if (autoscalingBuilder_ != null) {
+        autoscalingBuilder_.dispose();
         autoscalingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4524,7 +4595,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAutoscalingConfig.Builder
         getAutoscalingBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAutoscalingFieldBuilder().getBuilder();
     }

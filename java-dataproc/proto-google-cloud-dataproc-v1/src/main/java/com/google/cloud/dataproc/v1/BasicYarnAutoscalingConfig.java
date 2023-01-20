@@ -128,11 +128,13 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getGracefulDecommissionTimeoutOrBuilder() {
-    return getGracefulDecommissionTimeout();
+    return gracefulDecommissionTimeout_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : gracefulDecommissionTimeout_;
   }
 
   public static final int SCALE_UP_FACTOR_FIELD_NUMBER = 1;
-  private double scaleUpFactor_;
+  private double scaleUpFactor_ = 0D;
   /**
    *
    *
@@ -158,7 +160,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
   }
 
   public static final int SCALE_DOWN_FACTOR_FIELD_NUMBER = 2;
-  private double scaleDownFactor_;
+  private double scaleDownFactor_ = 0D;
   /**
    *
    *
@@ -184,7 +186,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
   }
 
   public static final int SCALE_UP_MIN_WORKER_FRACTION_FIELD_NUMBER = 3;
-  private double scaleUpMinWorkerFraction_;
+  private double scaleUpMinWorkerFraction_ = 0D;
   /**
    *
    *
@@ -207,7 +209,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
   }
 
   public static final int SCALE_DOWN_MIN_WORKER_FRACTION_FIELD_NUMBER = 4;
-  private double scaleDownMinWorkerFraction_;
+  private double scaleDownMinWorkerFraction_ = 0D;
   /**
    *
    *
@@ -489,20 +491,16 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (gracefulDecommissionTimeoutBuilder_ == null) {
-        gracefulDecommissionTimeout_ = null;
-      } else {
-        gracefulDecommissionTimeout_ = null;
+      bitField0_ = 0;
+      gracefulDecommissionTimeout_ = null;
+      if (gracefulDecommissionTimeoutBuilder_ != null) {
+        gracefulDecommissionTimeoutBuilder_.dispose();
         gracefulDecommissionTimeoutBuilder_ = null;
       }
       scaleUpFactor_ = 0D;
-
       scaleDownFactor_ = 0D;
-
       scaleUpMinWorkerFraction_ = 0D;
-
       scaleDownMinWorkerFraction_ = 0D;
-
       return this;
     }
 
@@ -530,17 +528,33 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     public com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig buildPartial() {
       com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig result =
           new com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig(this);
-      if (gracefulDecommissionTimeoutBuilder_ == null) {
-        result.gracefulDecommissionTimeout_ = gracefulDecommissionTimeout_;
-      } else {
-        result.gracefulDecommissionTimeout_ = gracefulDecommissionTimeoutBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.scaleUpFactor_ = scaleUpFactor_;
-      result.scaleDownFactor_ = scaleDownFactor_;
-      result.scaleUpMinWorkerFraction_ = scaleUpMinWorkerFraction_;
-      result.scaleDownMinWorkerFraction_ = scaleDownMinWorkerFraction_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.gracefulDecommissionTimeout_ =
+            gracefulDecommissionTimeoutBuilder_ == null
+                ? gracefulDecommissionTimeout_
+                : gracefulDecommissionTimeoutBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.scaleUpFactor_ = scaleUpFactor_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.scaleDownFactor_ = scaleDownFactor_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.scaleUpMinWorkerFraction_ = scaleUpMinWorkerFraction_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.scaleDownMinWorkerFraction_ = scaleDownMinWorkerFraction_;
+      }
     }
 
     @java.lang.Override
@@ -633,32 +647,32 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
             case 9:
               {
                 scaleUpFactor_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 9
             case 17:
               {
                 scaleDownFactor_ = input.readDouble();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 17
             case 25:
               {
                 scaleUpMinWorkerFraction_ = input.readDouble();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 25
             case 33:
               {
                 scaleDownMinWorkerFraction_ = input.readDouble();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 33
             case 42:
               {
                 input.readMessage(
                     getGracefulDecommissionTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 42
             default:
@@ -677,6 +691,8 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Duration gracefulDecommissionTimeout_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -702,7 +718,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * @return Whether the gracefulDecommissionTimeout field is set.
      */
     public boolean hasGracefulDecommissionTimeout() {
-      return gracefulDecommissionTimeoutBuilder_ != null || gracefulDecommissionTimeout_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -751,11 +767,11 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         gracefulDecommissionTimeout_ = value;
-        onChanged();
       } else {
         gracefulDecommissionTimeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -777,11 +793,11 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
         com.google.protobuf.Duration.Builder builderForValue) {
       if (gracefulDecommissionTimeoutBuilder_ == null) {
         gracefulDecommissionTimeout_ = builderForValue.build();
-        onChanged();
       } else {
         gracefulDecommissionTimeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -801,19 +817,18 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      */
     public Builder mergeGracefulDecommissionTimeout(com.google.protobuf.Duration value) {
       if (gracefulDecommissionTimeoutBuilder_ == null) {
-        if (gracefulDecommissionTimeout_ != null) {
-          gracefulDecommissionTimeout_ =
-              com.google.protobuf.Duration.newBuilder(gracefulDecommissionTimeout_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && gracefulDecommissionTimeout_ != null
+            && gracefulDecommissionTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getGracefulDecommissionTimeoutBuilder().mergeFrom(value);
         } else {
           gracefulDecommissionTimeout_ = value;
         }
-        onChanged();
       } else {
         gracefulDecommissionTimeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -832,14 +847,13 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearGracefulDecommissionTimeout() {
-      if (gracefulDecommissionTimeoutBuilder_ == null) {
-        gracefulDecommissionTimeout_ = null;
-        onChanged();
-      } else {
-        gracefulDecommissionTimeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      gracefulDecommissionTimeout_ = null;
+      if (gracefulDecommissionTimeoutBuilder_ != null) {
+        gracefulDecommissionTimeoutBuilder_.dispose();
         gracefulDecommissionTimeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -858,7 +872,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.protobuf.Duration.Builder getGracefulDecommissionTimeoutBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getGracefulDecommissionTimeoutFieldBuilder().getBuilder();
     }
@@ -965,6 +979,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     public Builder setScaleUpFactor(double value) {
 
       scaleUpFactor_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -988,7 +1003,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearScaleUpFactor() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       scaleUpFactor_ = 0D;
       onChanged();
       return this;
@@ -1041,6 +1056,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     public Builder setScaleDownFactor(double value) {
 
       scaleDownFactor_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1064,7 +1080,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearScaleDownFactor() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       scaleDownFactor_ = 0D;
       onChanged();
       return this;
@@ -1113,6 +1129,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     public Builder setScaleUpMinWorkerFraction(double value) {
 
       scaleUpMinWorkerFraction_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1134,7 +1151,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearScaleUpMinWorkerFraction() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       scaleUpMinWorkerFraction_ = 0D;
       onChanged();
       return this;
@@ -1183,6 +1200,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     public Builder setScaleDownMinWorkerFraction(double value) {
 
       scaleDownMinWorkerFraction_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1204,7 +1222,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearScaleDownMinWorkerFraction() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       scaleDownMinWorkerFraction_ = 0D;
       onChanged();
       return this;

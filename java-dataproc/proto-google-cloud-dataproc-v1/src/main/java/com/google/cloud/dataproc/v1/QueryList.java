@@ -68,6 +68,8 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUERIES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList queries_;
   /**
    *
@@ -379,6 +381,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       queries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -408,14 +411,24 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.QueryList buildPartial() {
       com.google.cloud.dataproc.v1.QueryList result =
           new com.google.cloud.dataproc.v1.QueryList(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.QueryList result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         queries_ = queries_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.queries_ = queries_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.QueryList result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

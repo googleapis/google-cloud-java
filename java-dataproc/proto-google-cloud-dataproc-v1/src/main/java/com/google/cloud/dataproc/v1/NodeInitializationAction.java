@@ -69,7 +69,9 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
   }
 
   public static final int EXECUTABLE_FILE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object executableFile_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object executableFile_ = "";
   /**
    *
    *
@@ -183,7 +185,9 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getExecutionTimeoutOrBuilder() {
-    return getExecutionTimeout();
+    return executionTimeout_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : executionTimeout_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -399,12 +403,11 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       executableFile_ = "";
-
-      if (executionTimeoutBuilder_ == null) {
-        executionTimeout_ = null;
-      } else {
-        executionTimeout_ = null;
+      executionTimeout_ = null;
+      if (executionTimeoutBuilder_ != null) {
+        executionTimeoutBuilder_.dispose();
         executionTimeoutBuilder_ = null;
       }
       return this;
@@ -434,14 +437,22 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
     public com.google.cloud.dataproc.v1.NodeInitializationAction buildPartial() {
       com.google.cloud.dataproc.v1.NodeInitializationAction result =
           new com.google.cloud.dataproc.v1.NodeInitializationAction(this);
-      result.executableFile_ = executableFile_;
-      if (executionTimeoutBuilder_ == null) {
-        result.executionTimeout_ = executionTimeout_;
-      } else {
-        result.executionTimeout_ = executionTimeoutBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.NodeInitializationAction result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.executableFile_ = executableFile_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.executionTimeout_ =
+            executionTimeoutBuilder_ == null ? executionTimeout_ : executionTimeoutBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -492,6 +503,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
         return this;
       if (!other.getExecutableFile().isEmpty()) {
         executableFile_ = other.executableFile_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasExecutionTimeout()) {
@@ -526,14 +538,14 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
             case 10:
               {
                 executableFile_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getExecutionTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -552,6 +564,8 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object executableFile_ = "";
     /**
@@ -614,8 +628,8 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       executableFile_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -631,8 +645,8 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearExecutableFile() {
-
       executableFile_ = getDefaultInstance().getExecutableFile();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -653,8 +667,8 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       executableFile_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,7 +698,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * @return Whether the executionTimeout field is set.
      */
     public boolean hasExecutionTimeout() {
-      return executionTimeoutBuilder_ != null || executionTimeout_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -735,11 +749,11 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         executionTimeout_ = value;
-        onChanged();
       } else {
         executionTimeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -761,11 +775,11 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
     public Builder setExecutionTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (executionTimeoutBuilder_ == null) {
         executionTimeout_ = builderForValue.build();
-        onChanged();
       } else {
         executionTimeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -786,19 +800,18 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      */
     public Builder mergeExecutionTimeout(com.google.protobuf.Duration value) {
       if (executionTimeoutBuilder_ == null) {
-        if (executionTimeout_ != null) {
-          executionTimeout_ =
-              com.google.protobuf.Duration.newBuilder(executionTimeout_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && executionTimeout_ != null
+            && executionTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getExecutionTimeoutBuilder().mergeFrom(value);
         } else {
           executionTimeout_ = value;
         }
-        onChanged();
       } else {
         executionTimeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -818,14 +831,13 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearExecutionTimeout() {
-      if (executionTimeoutBuilder_ == null) {
-        executionTimeout_ = null;
-        onChanged();
-      } else {
-        executionTimeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      executionTimeout_ = null;
+      if (executionTimeoutBuilder_ != null) {
+        executionTimeoutBuilder_.dispose();
         executionTimeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -845,7 +857,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.protobuf.Duration.Builder getExecutionTimeoutBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getExecutionTimeoutFieldBuilder().getBuilder();
     }

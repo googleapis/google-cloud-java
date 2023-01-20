@@ -118,11 +118,15 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.NodeGroupOrBuilder getNodeGroupOrBuilder() {
-    return getNodeGroup();
+    return nodeGroup_ == null
+        ? com.google.cloud.dataproc.v1.NodeGroup.getDefaultInstance()
+        : nodeGroup_;
   }
 
   public static final int NODE_GROUP_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nodeGroupId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nodeGroupId_ = "";
   /**
    *
    *
@@ -387,14 +391,13 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (nodeGroupBuilder_ == null) {
-        nodeGroup_ = null;
-      } else {
-        nodeGroup_ = null;
+      bitField0_ = 0;
+      nodeGroup_ = null;
+      if (nodeGroupBuilder_ != null) {
+        nodeGroupBuilder_.dispose();
         nodeGroupBuilder_ = null;
       }
       nodeGroupId_ = "";
-
       return this;
     }
 
@@ -422,14 +425,21 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dataproc.v1.AuxiliaryNodeGroup buildPartial() {
       com.google.cloud.dataproc.v1.AuxiliaryNodeGroup result =
           new com.google.cloud.dataproc.v1.AuxiliaryNodeGroup(this);
-      if (nodeGroupBuilder_ == null) {
-        result.nodeGroup_ = nodeGroup_;
-      } else {
-        result.nodeGroup_ = nodeGroupBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.nodeGroupId_ = nodeGroupId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.AuxiliaryNodeGroup result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.nodeGroup_ = nodeGroupBuilder_ == null ? nodeGroup_ : nodeGroupBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nodeGroupId_ = nodeGroupId_;
+      }
     }
 
     @java.lang.Override
@@ -483,6 +493,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getNodeGroupId().isEmpty()) {
         nodeGroupId_ = other.nodeGroupId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -514,13 +525,13 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getNodeGroupFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 nodeGroupId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -539,6 +550,8 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dataproc.v1.NodeGroup nodeGroup_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -560,7 +573,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
      * @return Whether the nodeGroup field is set.
      */
     public boolean hasNodeGroup() {
-      return nodeGroupBuilder_ != null || nodeGroup_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -601,11 +614,11 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         nodeGroup_ = value;
-        onChanged();
       } else {
         nodeGroupBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -622,11 +635,11 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
     public Builder setNodeGroup(com.google.cloud.dataproc.v1.NodeGroup.Builder builderForValue) {
       if (nodeGroupBuilder_ == null) {
         nodeGroup_ = builderForValue.build();
-        onChanged();
       } else {
         nodeGroupBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -642,19 +655,18 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeNodeGroup(com.google.cloud.dataproc.v1.NodeGroup value) {
       if (nodeGroupBuilder_ == null) {
-        if (nodeGroup_ != null) {
-          nodeGroup_ =
-              com.google.cloud.dataproc.v1.NodeGroup.newBuilder(nodeGroup_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && nodeGroup_ != null
+            && nodeGroup_ != com.google.cloud.dataproc.v1.NodeGroup.getDefaultInstance()) {
+          getNodeGroupBuilder().mergeFrom(value);
         } else {
           nodeGroup_ = value;
         }
-        onChanged();
       } else {
         nodeGroupBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -669,14 +681,13 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearNodeGroup() {
-      if (nodeGroupBuilder_ == null) {
-        nodeGroup_ = null;
-        onChanged();
-      } else {
-        nodeGroup_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      nodeGroup_ = null;
+      if (nodeGroupBuilder_ != null) {
+        nodeGroupBuilder_.dispose();
         nodeGroupBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -691,7 +702,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.dataproc.v1.NodeGroup.Builder getNodeGroupBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getNodeGroupFieldBuilder().getBuilder();
     }
@@ -813,8 +824,8 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       nodeGroupId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -833,8 +844,8 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearNodeGroupId() {
-
       nodeGroupId_ = getDefaultInstance().getNodeGroupId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -858,8 +869,8 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nodeGroupId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

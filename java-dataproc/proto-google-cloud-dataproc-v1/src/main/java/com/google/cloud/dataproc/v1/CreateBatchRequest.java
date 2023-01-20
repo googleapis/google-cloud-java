@@ -70,7 +70,9 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -168,11 +170,13 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.BatchOrBuilder getBatchOrBuilder() {
-    return getBatch();
+    return batch_ == null ? com.google.cloud.dataproc.v1.Batch.getDefaultInstance() : batch_;
   }
 
   public static final int BATCH_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object batchId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object batchId_ = "";
   /**
    *
    *
@@ -225,7 +229,9 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -520,18 +526,15 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (batchBuilder_ == null) {
-        batch_ = null;
-      } else {
-        batch_ = null;
+      batch_ = null;
+      if (batchBuilder_ != null) {
+        batchBuilder_.dispose();
         batchBuilder_ = null;
       }
       batchId_ = "";
-
       requestId_ = "";
-
       return this;
     }
 
@@ -559,16 +562,27 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dataproc.v1.CreateBatchRequest buildPartial() {
       com.google.cloud.dataproc.v1.CreateBatchRequest result =
           new com.google.cloud.dataproc.v1.CreateBatchRequest(this);
-      result.parent_ = parent_;
-      if (batchBuilder_ == null) {
-        result.batch_ = batch_;
-      } else {
-        result.batch_ = batchBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.batchId_ = batchId_;
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.CreateBatchRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.batch_ = batchBuilder_ == null ? batch_ : batchBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.batchId_ = batchId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -619,6 +633,7 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasBatch()) {
@@ -626,10 +641,12 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getBatchId().isEmpty()) {
         batchId_ = other.batchId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -661,25 +678,25 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getBatchFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 batchId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -698,6 +715,8 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -766,8 +785,8 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -785,8 +804,8 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -809,8 +828,8 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -834,7 +853,7 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the batch field is set.
      */
     public boolean hasBatch() {
-      return batchBuilder_ != null || batch_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -871,11 +890,11 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         batch_ = value;
-        onChanged();
       } else {
         batchBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -891,11 +910,11 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
     public Builder setBatch(com.google.cloud.dataproc.v1.Batch.Builder builderForValue) {
       if (batchBuilder_ == null) {
         batch_ = builderForValue.build();
-        onChanged();
       } else {
         batchBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -910,17 +929,18 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeBatch(com.google.cloud.dataproc.v1.Batch value) {
       if (batchBuilder_ == null) {
-        if (batch_ != null) {
-          batch_ =
-              com.google.cloud.dataproc.v1.Batch.newBuilder(batch_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && batch_ != null
+            && batch_ != com.google.cloud.dataproc.v1.Batch.getDefaultInstance()) {
+          getBatchBuilder().mergeFrom(value);
         } else {
           batch_ = value;
         }
-        onChanged();
       } else {
         batchBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -934,14 +954,13 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearBatch() {
-      if (batchBuilder_ == null) {
-        batch_ = null;
-        onChanged();
-      } else {
-        batch_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      batch_ = null;
+      if (batchBuilder_ != null) {
+        batchBuilder_.dispose();
         batchBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -955,7 +974,7 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.dataproc.v1.Batch.Builder getBatchBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getBatchFieldBuilder().getBuilder();
     }
@@ -1070,8 +1089,8 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       batchId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1089,8 +1108,8 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearBatchId() {
-
       batchId_ = getDefaultInstance().getBatchId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1113,8 +1132,8 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       batchId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1207,8 +1226,8 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1233,8 +1252,8 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1264,8 +1283,8 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

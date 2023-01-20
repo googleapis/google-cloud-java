@@ -92,6 +92,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> endpoints_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetEndpoints() {
@@ -155,8 +156,10 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getEndpointsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getEndpointsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -187,7 +190,9 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OUTPUT_URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object outputUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputUri_ = "";
   /**
    *
    *
@@ -236,7 +241,9 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIAGNOSTIC_OUTPUT_URI_FIELD_NUMBER = 3;
-  private volatile java.lang.Object diagnosticOutputUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object diagnosticOutputUri_ = "";
   /**
    *
    *
@@ -526,11 +533,10 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableEndpoints().clear();
       outputUri_ = "";
-
       diagnosticOutputUri_ = "";
-
       return this;
     }
 
@@ -558,13 +564,25 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.RuntimeInfo buildPartial() {
       com.google.cloud.dataproc.v1.RuntimeInfo result =
           new com.google.cloud.dataproc.v1.RuntimeInfo(this);
-      int from_bitField0_ = bitField0_;
-      result.endpoints_ = internalGetEndpoints();
-      result.endpoints_.makeImmutable();
-      result.outputUri_ = outputUri_;
-      result.diagnosticOutputUri_ = diagnosticOutputUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.RuntimeInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.endpoints_ = internalGetEndpoints();
+        result.endpoints_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.outputUri_ = outputUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.diagnosticOutputUri_ = diagnosticOutputUri_;
+      }
     }
 
     @java.lang.Override
@@ -613,12 +631,15 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.dataproc.v1.RuntimeInfo other) {
       if (other == com.google.cloud.dataproc.v1.RuntimeInfo.getDefaultInstance()) return this;
       internalGetMutableEndpoints().mergeFrom(other.internalGetEndpoints());
+      bitField0_ |= 0x00000001;
       if (!other.getOutputUri().isEmpty()) {
         outputUri_ = other.outputUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDiagnosticOutputUri().isEmpty()) {
         diagnosticOutputUri_ = other.diagnosticOutputUri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -656,18 +677,19 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableEndpoints()
                     .getMutableMap()
                     .put(endpoints__.getKey(), endpoints__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 outputUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 diagnosticOutputUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -701,8 +723,6 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableEndpoints() {
-      onChanged();
-      ;
       if (endpoints_ == null) {
         endpoints_ =
             com.google.protobuf.MapField.newMapField(EndpointsDefaultEntryHolder.defaultEntry);
@@ -710,6 +730,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       if (!endpoints_.isMutable()) {
         endpoints_ = endpoints_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return endpoints_;
     }
 
@@ -767,8 +789,10 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getEndpointsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getEndpointsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -799,6 +823,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearEndpoints() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableEndpoints().getMutableMap().clear();
       return this;
     }
@@ -823,6 +848,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableEndpoints() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableEndpoints().getMutableMap();
     }
     /**
@@ -843,8 +869,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableEndpoints().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -860,6 +886,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllEndpoints(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableEndpoints().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -924,8 +951,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -941,8 +968,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOutputUri() {
-
       outputUri_ = getDefaultInstance().getOutputUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -963,8 +990,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       outputUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1030,8 +1057,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       diagnosticOutputUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1047,8 +1074,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiagnosticOutputUri() {
-
       diagnosticOutputUri_ = getDefaultInstance().getDiagnosticOutputUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1069,8 +1096,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       diagnosticOutputUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

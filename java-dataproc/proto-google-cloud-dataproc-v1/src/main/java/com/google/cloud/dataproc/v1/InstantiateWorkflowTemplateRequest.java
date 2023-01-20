@@ -81,7 +81,9 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -148,7 +150,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
   }
 
   public static final int VERSION_FIELD_NUMBER = 2;
-  private int version_;
+  private int version_ = 0;
   /**
    *
    *
@@ -170,7 +172,9 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -243,6 +247,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> parameters_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetParameters() {
@@ -306,8 +311,10 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getParametersOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getParametersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -590,12 +597,10 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       version_ = 0;
-
       requestId_ = "";
-
       internalGetMutableParameters().clear();
       return this;
     }
@@ -625,14 +630,29 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
     public com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest buildPartial() {
       com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest result =
           new com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.version_ = version_;
-      result.requestId_ = requestId_;
-      result.parameters_ = internalGetParameters();
-      result.parameters_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.parameters_ = internalGetParameters();
+        result.parameters_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -685,6 +705,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getVersion() != 0) {
@@ -692,9 +713,11 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       internalGetMutableParameters().mergeFrom(other.internalGetParameters());
+      bitField0_ |= 0x00000008;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -724,19 +747,19 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 version_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 42:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             case 50:
@@ -748,6 +771,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
                 internalGetMutableParameters()
                     .getMutableMap()
                     .put(parameters__.getKey(), parameters__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             default:
@@ -857,8 +881,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -883,8 +907,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -914,8 +938,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -959,6 +983,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
     public Builder setVersion(int value) {
 
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -978,7 +1003,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       version_ = 0;
       onChanged();
       return this;
@@ -1063,8 +1088,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1086,8 +1111,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1114,8 +1139,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1133,8 +1158,6 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableParameters() {
-      onChanged();
-      ;
       if (parameters_ == null) {
         parameters_ =
             com.google.protobuf.MapField.newMapField(ParametersDefaultEntryHolder.defaultEntry);
@@ -1142,6 +1165,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
       if (!parameters_.isMutable()) {
         parameters_ = parameters_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return parameters_;
     }
 
@@ -1199,8 +1224,10 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getParametersOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getParametersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1231,6 +1258,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
     }
 
     public Builder clearParameters() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableParameters().getMutableMap().clear();
       return this;
     }
@@ -1255,6 +1283,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableParameters() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableParameters().getMutableMap();
     }
     /**
@@ -1275,8 +1304,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableParameters().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1292,6 +1321,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      */
     public Builder putAllParameters(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableParameters().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 

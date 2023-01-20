@@ -116,7 +116,9 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.MetastoreConfigOrBuilder getMetastoreConfigOrBuilder() {
-    return getMetastoreConfig();
+    return metastoreConfig_ == null
+        ? com.google.cloud.dataproc.v1.MetastoreConfig.getDefaultInstance()
+        : metastoreConfig_;
   }
 
   public static final int SPARK_HISTORY_SERVER_CONFIG_FIELD_NUMBER = 2;
@@ -171,7 +173,9 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.dataproc.v1.SparkHistoryServerConfigOrBuilder
       getSparkHistoryServerConfigOrBuilder() {
-    return getSparkHistoryServerConfig();
+    return sparkHistoryServerConfig_ == null
+        ? com.google.cloud.dataproc.v1.SparkHistoryServerConfig.getDefaultInstance()
+        : sparkHistoryServerConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -392,16 +396,15 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (metastoreConfigBuilder_ == null) {
-        metastoreConfig_ = null;
-      } else {
-        metastoreConfig_ = null;
+      bitField0_ = 0;
+      metastoreConfig_ = null;
+      if (metastoreConfigBuilder_ != null) {
+        metastoreConfigBuilder_.dispose();
         metastoreConfigBuilder_ = null;
       }
-      if (sparkHistoryServerConfigBuilder_ == null) {
-        sparkHistoryServerConfig_ = null;
-      } else {
-        sparkHistoryServerConfig_ = null;
+      sparkHistoryServerConfig_ = null;
+      if (sparkHistoryServerConfigBuilder_ != null) {
+        sparkHistoryServerConfigBuilder_.dispose();
         sparkHistoryServerConfigBuilder_ = null;
       }
       return this;
@@ -431,18 +434,25 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
     public com.google.cloud.dataproc.v1.AuxiliaryServicesConfig buildPartial() {
       com.google.cloud.dataproc.v1.AuxiliaryServicesConfig result =
           new com.google.cloud.dataproc.v1.AuxiliaryServicesConfig(this);
-      if (metastoreConfigBuilder_ == null) {
-        result.metastoreConfig_ = metastoreConfig_;
-      } else {
-        result.metastoreConfig_ = metastoreConfigBuilder_.build();
-      }
-      if (sparkHistoryServerConfigBuilder_ == null) {
-        result.sparkHistoryServerConfig_ = sparkHistoryServerConfig_;
-      } else {
-        result.sparkHistoryServerConfig_ = sparkHistoryServerConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.AuxiliaryServicesConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.metastoreConfig_ =
+            metastoreConfigBuilder_ == null ? metastoreConfig_ : metastoreConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sparkHistoryServerConfig_ =
+            sparkHistoryServerConfigBuilder_ == null
+                ? sparkHistoryServerConfig_
+                : sparkHistoryServerConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -526,14 +536,14 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getMetastoreConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getSparkHistoryServerConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -552,6 +562,8 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dataproc.v1.MetastoreConfig metastoreConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -573,7 +585,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
      * @return Whether the metastoreConfig field is set.
      */
     public boolean hasMetastoreConfig() {
-      return metastoreConfigBuilder_ != null || metastoreConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -614,11 +626,11 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         metastoreConfig_ = value;
-        onChanged();
       } else {
         metastoreConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -636,11 +648,11 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
         com.google.cloud.dataproc.v1.MetastoreConfig.Builder builderForValue) {
       if (metastoreConfigBuilder_ == null) {
         metastoreConfig_ = builderForValue.build();
-        onChanged();
       } else {
         metastoreConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -656,19 +668,19 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
      */
     public Builder mergeMetastoreConfig(com.google.cloud.dataproc.v1.MetastoreConfig value) {
       if (metastoreConfigBuilder_ == null) {
-        if (metastoreConfig_ != null) {
-          metastoreConfig_ =
-              com.google.cloud.dataproc.v1.MetastoreConfig.newBuilder(metastoreConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && metastoreConfig_ != null
+            && metastoreConfig_
+                != com.google.cloud.dataproc.v1.MetastoreConfig.getDefaultInstance()) {
+          getMetastoreConfigBuilder().mergeFrom(value);
         } else {
           metastoreConfig_ = value;
         }
-        onChanged();
       } else {
         metastoreConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -683,14 +695,13 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearMetastoreConfig() {
-      if (metastoreConfigBuilder_ == null) {
-        metastoreConfig_ = null;
-        onChanged();
-      } else {
-        metastoreConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      metastoreConfig_ = null;
+      if (metastoreConfigBuilder_ != null) {
+        metastoreConfigBuilder_.dispose();
         metastoreConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -705,7 +716,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.dataproc.v1.MetastoreConfig.Builder getMetastoreConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getMetastoreConfigFieldBuilder().getBuilder();
     }
@@ -777,7 +788,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
      * @return Whether the sparkHistoryServerConfig field is set.
      */
     public boolean hasSparkHistoryServerConfig() {
-      return sparkHistoryServerConfigBuilder_ != null || sparkHistoryServerConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -819,11 +830,11 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         sparkHistoryServerConfig_ = value;
-        onChanged();
       } else {
         sparkHistoryServerConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -841,11 +852,11 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
         com.google.cloud.dataproc.v1.SparkHistoryServerConfig.Builder builderForValue) {
       if (sparkHistoryServerConfigBuilder_ == null) {
         sparkHistoryServerConfig_ = builderForValue.build();
-        onChanged();
       } else {
         sparkHistoryServerConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -862,20 +873,19 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
     public Builder mergeSparkHistoryServerConfig(
         com.google.cloud.dataproc.v1.SparkHistoryServerConfig value) {
       if (sparkHistoryServerConfigBuilder_ == null) {
-        if (sparkHistoryServerConfig_ != null) {
-          sparkHistoryServerConfig_ =
-              com.google.cloud.dataproc.v1.SparkHistoryServerConfig.newBuilder(
-                      sparkHistoryServerConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && sparkHistoryServerConfig_ != null
+            && sparkHistoryServerConfig_
+                != com.google.cloud.dataproc.v1.SparkHistoryServerConfig.getDefaultInstance()) {
+          getSparkHistoryServerConfigBuilder().mergeFrom(value);
         } else {
           sparkHistoryServerConfig_ = value;
         }
-        onChanged();
       } else {
         sparkHistoryServerConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -890,14 +900,13 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearSparkHistoryServerConfig() {
-      if (sparkHistoryServerConfigBuilder_ == null) {
-        sparkHistoryServerConfig_ = null;
-        onChanged();
-      } else {
-        sparkHistoryServerConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      sparkHistoryServerConfig_ = null;
+      if (sparkHistoryServerConfigBuilder_ != null) {
+        sparkHistoryServerConfigBuilder_.dispose();
         sparkHistoryServerConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -913,7 +922,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
      */
     public com.google.cloud.dataproc.v1.SparkHistoryServerConfig.Builder
         getSparkHistoryServerConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSparkHistoryServerConfigFieldBuilder().getBuilder();
     }

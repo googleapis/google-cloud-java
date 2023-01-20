@@ -262,6 +262,8 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARGS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList args_;
   /**
    *
@@ -331,6 +333,8 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int JAR_FILE_URIS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList jarFileUris_;
   /**
    *
@@ -396,6 +400,8 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILE_URIS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList fileUris_;
   /**
    *
@@ -461,6 +467,8 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARCHIVE_URIS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList archiveUris_;
   /**
    *
@@ -816,14 +824,15 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
-      archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
+      fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
       driverCase_ = 0;
       driver_ = null;
       return this;
@@ -853,36 +862,45 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.SparkBatch buildPartial() {
       com.google.cloud.dataproc.v1.SparkBatch result =
           new com.google.cloud.dataproc.v1.SparkBatch(this);
-      int from_bitField0_ = bitField0_;
-      if (driverCase_ == 1) {
-        result.driver_ = driver_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (driverCase_ == 2) {
-        result.driver_ = driver_;
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        args_ = args_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.args_ = args_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        jarFileUris_ = jarFileUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.jarFileUris_ = jarFileUris_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        fileUris_ = fileUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.fileUris_ = fileUris_;
-      if (((bitField0_ & 0x00000008) != 0)) {
-        archiveUris_ = archiveUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.archiveUris_ = archiveUris_;
-      result.driverCase_ = driverCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.SparkBatch result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        args_ = args_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.args_ = args_;
+      if (((bitField0_ & 0x00000008) != 0)) {
+        jarFileUris_ = jarFileUris_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.jarFileUris_ = jarFileUris_;
+      if (((bitField0_ & 0x00000010) != 0)) {
+        fileUris_ = fileUris_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.fileUris_ = fileUris_;
+      if (((bitField0_ & 0x00000020) != 0)) {
+        archiveUris_ = archiveUris_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.archiveUris_ = archiveUris_;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.SparkBatch result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataproc.v1.SparkBatch result) {
+      result.driverCase_ = driverCase_;
+      result.driver_ = this.driver_;
     }
 
     @java.lang.Override
@@ -933,7 +951,7 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
       if (!other.args_.isEmpty()) {
         if (args_.isEmpty()) {
           args_ = other.args_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureArgsIsMutable();
           args_.addAll(other.args_);
@@ -943,7 +961,7 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
       if (!other.jarFileUris_.isEmpty()) {
         if (jarFileUris_.isEmpty()) {
           jarFileUris_ = other.jarFileUris_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureJarFileUrisIsMutable();
           jarFileUris_.addAll(other.jarFileUris_);
@@ -953,7 +971,7 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
       if (!other.fileUris_.isEmpty()) {
         if (fileUris_.isEmpty()) {
           fileUris_ = other.fileUris_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureFileUrisIsMutable();
           fileUris_.addAll(other.fileUris_);
@@ -963,7 +981,7 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
       if (!other.archiveUris_.isEmpty()) {
         if (archiveUris_.isEmpty()) {
           archiveUris_ = other.archiveUris_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureArchiveUrisIsMutable();
           archiveUris_.addAll(other.archiveUris_);
@@ -1369,9 +1387,9 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureArgsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         args_ = new com.google.protobuf.LazyStringArrayList(args_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1522,7 +1540,7 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearArgs() {
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1555,9 +1573,9 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureJarFileUrisIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         jarFileUris_ = new com.google.protobuf.LazyStringArrayList(jarFileUris_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1700,7 +1718,7 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearJarFileUris() {
       jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1732,9 +1750,9 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFileUrisIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         fileUris_ = new com.google.protobuf.LazyStringArrayList(fileUris_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1877,7 +1895,7 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearFileUris() {
       fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1909,9 +1927,9 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureArchiveUrisIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         archiveUris_ = new com.google.protobuf.LazyStringArrayList(archiveUris_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -2062,7 +2080,7 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearArchiveUris() {
       archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }

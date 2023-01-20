@@ -78,7 +78,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -139,6 +141,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FIELDS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList fields_;
   /**
    *
@@ -340,7 +344,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -441,7 +447,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.ParameterValidationOrBuilder getValidationOrBuilder() {
-    return getValidation();
+    return validation_ == null
+        ? com.google.cloud.dataproc.v1.ParameterValidation.getDefaultInstance()
+        : validation_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -688,16 +696,14 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       fields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = "";
-
-      if (validationBuilder_ == null) {
-        validation_ = null;
-      } else {
-        validation_ = null;
+      validation_ = null;
+      if (validationBuilder_ != null) {
+        validationBuilder_.dispose();
         validationBuilder_ = null;
       }
       return this;
@@ -727,21 +733,33 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dataproc.v1.TemplateParameter buildPartial() {
       com.google.cloud.dataproc.v1.TemplateParameter result =
           new com.google.cloud.dataproc.v1.TemplateParameter(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        fields_ = fields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.fields_ = fields_;
-      result.description_ = description_;
-      if (validationBuilder_ == null) {
-        result.validation_ = validation_;
-      } else {
-        result.validation_ = validationBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.TemplateParameter result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        fields_ = fields_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.fields_ = fields_;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.TemplateParameter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validation_ = validationBuilder_ == null ? validation_ : validationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -791,12 +809,13 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       if (other == com.google.cloud.dataproc.v1.TemplateParameter.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.fields_.isEmpty()) {
         if (fields_.isEmpty()) {
           fields_ = other.fields_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureFieldsIsMutable();
           fields_.addAll(other.fields_);
@@ -805,6 +824,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasValidation()) {
@@ -839,7 +859,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -852,13 +872,13 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getValidationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -959,8 +979,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -982,8 +1002,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1010,8 +1030,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1020,9 +1040,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         fields_ = new com.google.protobuf.LazyStringArrayList(fields_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1437,7 +1457,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearFields() {
       fields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1563,8 +1583,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1581,8 +1601,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1604,8 +1624,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1630,7 +1650,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * @return Whether the validation field is set.
      */
     public boolean hasValidation() {
-      return validationBuilder_ != null || validation_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1671,11 +1691,11 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         validation_ = value;
-        onChanged();
       } else {
         validationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1693,11 +1713,11 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
         com.google.cloud.dataproc.v1.ParameterValidation.Builder builderForValue) {
       if (validationBuilder_ == null) {
         validation_ = builderForValue.build();
-        onChanged();
       } else {
         validationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1713,19 +1733,19 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeValidation(com.google.cloud.dataproc.v1.ParameterValidation value) {
       if (validationBuilder_ == null) {
-        if (validation_ != null) {
-          validation_ =
-              com.google.cloud.dataproc.v1.ParameterValidation.newBuilder(validation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && validation_ != null
+            && validation_
+                != com.google.cloud.dataproc.v1.ParameterValidation.getDefaultInstance()) {
+          getValidationBuilder().mergeFrom(value);
         } else {
           validation_ = value;
         }
-        onChanged();
       } else {
         validationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1740,14 +1760,13 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearValidation() {
-      if (validationBuilder_ == null) {
-        validation_ = null;
-        onChanged();
-      } else {
-        validation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      validation_ = null;
+      if (validationBuilder_ != null) {
+        validationBuilder_.dispose();
         validationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1762,7 +1781,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.dataproc.v1.ParameterValidation.Builder getValidationBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getValidationFieldBuilder().getBuilder();
     }

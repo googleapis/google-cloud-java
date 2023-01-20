@@ -295,7 +295,6 @@ public interface WorkflowMetadataOrBuilder
    *
    * <code>map&lt;string, string&gt; parameters = 8;</code>
    */
-
   /* nullable */
   java.lang.String getParametersOrDefault(
       java.lang.String key,

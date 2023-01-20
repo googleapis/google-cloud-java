@@ -117,7 +117,9 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.AutoscalingPolicyOrBuilder getPolicyOrBuilder() {
-    return getPolicy();
+    return policy_ == null
+        ? com.google.cloud.dataproc.v1.AutoscalingPolicy.getDefaultInstance()
+        : policy_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -323,10 +325,10 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (policyBuilder_ == null) {
-        policy_ = null;
-      } else {
-        policy_ = null;
+      bitField0_ = 0;
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
       return this;
@@ -356,13 +358,18 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
     public com.google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest buildPartial() {
       com.google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest result =
           new com.google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest(this);
-      if (policyBuilder_ == null) {
-        result.policy_ = policy_;
-      } else {
-        result.policy_ = policyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.policy_ = policyBuilder_ == null ? policy_ : policyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -443,7 +450,7 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
             case 10:
               {
                 input.readMessage(getPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -462,6 +469,8 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dataproc.v1.AutoscalingPolicy policy_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -483,7 +492,7 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      * @return Whether the policy field is set.
      */
     public boolean hasPolicy() {
-      return policyBuilder_ != null || policy_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -524,11 +533,11 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         policy_ = value;
-        onChanged();
       } else {
         policyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -546,11 +555,11 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
         com.google.cloud.dataproc.v1.AutoscalingPolicy.Builder builderForValue) {
       if (policyBuilder_ == null) {
         policy_ = builderForValue.build();
-        onChanged();
       } else {
         policyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -566,19 +575,18 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      */
     public Builder mergePolicy(com.google.cloud.dataproc.v1.AutoscalingPolicy value) {
       if (policyBuilder_ == null) {
-        if (policy_ != null) {
-          policy_ =
-              com.google.cloud.dataproc.v1.AutoscalingPolicy.newBuilder(policy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && policy_ != null
+            && policy_ != com.google.cloud.dataproc.v1.AutoscalingPolicy.getDefaultInstance()) {
+          getPolicyBuilder().mergeFrom(value);
         } else {
           policy_ = value;
         }
-        onChanged();
       } else {
         policyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -593,14 +601,13 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearPolicy() {
-      if (policyBuilder_ == null) {
-        policy_ = null;
-        onChanged();
-      } else {
-        policy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -615,7 +622,7 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      * </code>
      */
     public com.google.cloud.dataproc.v1.AutoscalingPolicy.Builder getPolicyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }

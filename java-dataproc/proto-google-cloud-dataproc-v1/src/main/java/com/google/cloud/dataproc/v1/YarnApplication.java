@@ -363,7 +363,9 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -412,7 +414,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int STATE_FIELD_NUMBER = 2;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -445,16 +447,15 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.YarnApplication.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dataproc.v1.YarnApplication.State result =
-        com.google.cloud.dataproc.v1.YarnApplication.State.valueOf(state_);
+        com.google.cloud.dataproc.v1.YarnApplication.State.forNumber(state_);
     return result == null
         ? com.google.cloud.dataproc.v1.YarnApplication.State.UNRECOGNIZED
         : result;
   }
 
   public static final int PROGRESS_FIELD_NUMBER = 3;
-  private float progress_;
+  private float progress_ = 0F;
   /**
    *
    *
@@ -472,7 +473,9 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TRACKING_URL_FIELD_NUMBER = 4;
-  private volatile java.lang.Object trackingUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object trackingUrl_ = "";
   /**
    *
    *
@@ -756,14 +759,11 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       state_ = 0;
-
       progress_ = 0F;
-
       trackingUrl_ = "";
-
       return this;
     }
 
@@ -791,12 +791,27 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.dataproc.v1.YarnApplication buildPartial() {
       com.google.cloud.dataproc.v1.YarnApplication result =
           new com.google.cloud.dataproc.v1.YarnApplication(this);
-      result.name_ = name_;
-      result.state_ = state_;
-      result.progress_ = progress_;
-      result.trackingUrl_ = trackingUrl_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.YarnApplication result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.progress_ = progress_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.trackingUrl_ = trackingUrl_;
+      }
     }
 
     @java.lang.Override
@@ -846,6 +861,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.dataproc.v1.YarnApplication.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -856,6 +872,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getTrackingUrl().isEmpty()) {
         trackingUrl_ = other.trackingUrl_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -887,25 +904,25 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 29:
               {
                 progress_ = input.readFloat();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29
             case 34:
               {
                 trackingUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -924,6 +941,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -986,8 +1005,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1003,8 +1022,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1025,8 +1044,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1064,8 +1083,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1084,9 +1103,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.dataproc.v1.YarnApplication.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataproc.v1.YarnApplication.State result =
-          com.google.cloud.dataproc.v1.YarnApplication.State.valueOf(state_);
+          com.google.cloud.dataproc.v1.YarnApplication.State.forNumber(state_);
       return result == null
           ? com.google.cloud.dataproc.v1.YarnApplication.State.UNRECOGNIZED
           : result;
@@ -1109,7 +1127,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1128,7 +1146,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       state_ = 0;
       onChanged();
       return this;
@@ -1165,6 +1183,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
     public Builder setProgress(float value) {
 
       progress_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1180,7 +1199,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearProgress() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       progress_ = 0F;
       onChanged();
       return this;
@@ -1256,8 +1275,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       trackingUrl_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1276,8 +1295,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearTrackingUrl() {
-
       trackingUrl_ = getDefaultInstance().getTrackingUrl();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1301,8 +1320,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       trackingUrl_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

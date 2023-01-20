@@ -73,7 +73,6 @@ public interface RuntimeInfoOrBuilder
    * <code>map&lt;string, string&gt; endpoints = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-
   /* nullable */
   java.lang.String getEndpointsOrDefault(
       java.lang.String key,

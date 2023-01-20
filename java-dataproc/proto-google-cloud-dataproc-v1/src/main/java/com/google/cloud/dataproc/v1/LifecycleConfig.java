@@ -172,7 +172,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getIdleDeleteTtlOrBuilder() {
-    return getIdleDeleteTtl();
+    return idleDeleteTtl_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : idleDeleteTtl_;
   }
 
   public static final int AUTO_DELETE_TIME_FIELD_NUMBER = 2;
@@ -361,7 +363,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getIdleStartTimeOrBuilder() {
-    return getIdleStartTime();
+    return idleStartTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : idleStartTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -619,10 +623,10 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idleDeleteTtlBuilder_ == null) {
-        idleDeleteTtl_ = null;
-      } else {
-        idleDeleteTtl_ = null;
+      bitField0_ = 0;
+      idleDeleteTtl_ = null;
+      if (idleDeleteTtlBuilder_ != null) {
+        idleDeleteTtlBuilder_.dispose();
         idleDeleteTtlBuilder_ = null;
       }
       if (autoDeleteTimeBuilder_ != null) {
@@ -631,10 +635,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       if (autoDeleteTtlBuilder_ != null) {
         autoDeleteTtlBuilder_.clear();
       }
-      if (idleStartTimeBuilder_ == null) {
-        idleStartTime_ = null;
-      } else {
-        idleStartTime_ = null;
+      idleStartTime_ = null;
+      if (idleStartTimeBuilder_ != null) {
+        idleStartTimeBuilder_.dispose();
         idleStartTimeBuilder_ = null;
       }
       ttlCase_ = 0;
@@ -666,33 +669,35 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.dataproc.v1.LifecycleConfig buildPartial() {
       com.google.cloud.dataproc.v1.LifecycleConfig result =
           new com.google.cloud.dataproc.v1.LifecycleConfig(this);
-      if (idleDeleteTtlBuilder_ == null) {
-        result.idleDeleteTtl_ = idleDeleteTtl_;
-      } else {
-        result.idleDeleteTtl_ = idleDeleteTtlBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (ttlCase_ == 2) {
-        if (autoDeleteTimeBuilder_ == null) {
-          result.ttl_ = ttl_;
-        } else {
-          result.ttl_ = autoDeleteTimeBuilder_.build();
-        }
-      }
-      if (ttlCase_ == 3) {
-        if (autoDeleteTtlBuilder_ == null) {
-          result.ttl_ = ttl_;
-        } else {
-          result.ttl_ = autoDeleteTtlBuilder_.build();
-        }
-      }
-      if (idleStartTimeBuilder_ == null) {
-        result.idleStartTime_ = idleStartTime_;
-      } else {
-        result.idleStartTime_ = idleStartTimeBuilder_.build();
-      }
-      result.ttlCase_ = ttlCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.LifecycleConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.idleDeleteTtl_ =
+            idleDeleteTtlBuilder_ == null ? idleDeleteTtl_ : idleDeleteTtlBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.idleStartTime_ =
+            idleStartTimeBuilder_ == null ? idleStartTime_ : idleStartTimeBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataproc.v1.LifecycleConfig result) {
+      result.ttlCase_ = ttlCase_;
+      result.ttl_ = this.ttl_;
+      if (ttlCase_ == 2 && autoDeleteTimeBuilder_ != null) {
+        result.ttl_ = autoDeleteTimeBuilder_.build();
+      }
+      if (ttlCase_ == 3 && autoDeleteTtlBuilder_ != null) {
+        result.ttl_ = autoDeleteTtlBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -791,7 +796,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 input.readMessage(getIdleDeleteTtlFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -809,7 +814,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
             case 34:
               {
                 input.readMessage(getIdleStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -843,6 +848,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.Duration idleDeleteTtl_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -867,7 +874,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * @return Whether the idleDeleteTtl field is set.
      */
     public boolean hasIdleDeleteTtl() {
-      return idleDeleteTtlBuilder_ != null || idleDeleteTtl_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -916,11 +923,11 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         idleDeleteTtl_ = value;
-        onChanged();
       } else {
         idleDeleteTtlBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -941,11 +948,11 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     public Builder setIdleDeleteTtl(com.google.protobuf.Duration.Builder builderForValue) {
       if (idleDeleteTtlBuilder_ == null) {
         idleDeleteTtl_ = builderForValue.build();
-        onChanged();
       } else {
         idleDeleteTtlBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -965,19 +972,18 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeIdleDeleteTtl(com.google.protobuf.Duration value) {
       if (idleDeleteTtlBuilder_ == null) {
-        if (idleDeleteTtl_ != null) {
-          idleDeleteTtl_ =
-              com.google.protobuf.Duration.newBuilder(idleDeleteTtl_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && idleDeleteTtl_ != null
+            && idleDeleteTtl_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getIdleDeleteTtlBuilder().mergeFrom(value);
         } else {
           idleDeleteTtl_ = value;
         }
-        onChanged();
       } else {
         idleDeleteTtlBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -996,14 +1002,13 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearIdleDeleteTtl() {
-      if (idleDeleteTtlBuilder_ == null) {
-        idleDeleteTtl_ = null;
-        onChanged();
-      } else {
-        idleDeleteTtl_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      idleDeleteTtl_ = null;
+      if (idleDeleteTtlBuilder_ != null) {
+        idleDeleteTtlBuilder_.dispose();
         idleDeleteTtlBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1022,7 +1027,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.protobuf.Duration.Builder getIdleDeleteTtlBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getIdleDeleteTtlFieldBuilder().getBuilder();
     }
@@ -1319,7 +1324,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       }
       ttlCase_ = 2;
       onChanged();
-      ;
       return autoDeleteTimeBuilder_;
     }
 
@@ -1569,7 +1573,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       }
       ttlCase_ = 3;
       onChanged();
-      ;
       return autoDeleteTtlBuilder_;
     }
 
@@ -1596,7 +1599,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * @return Whether the idleStartTime field is set.
      */
     public boolean hasIdleStartTime() {
-      return idleStartTimeBuilder_ != null || idleStartTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1643,11 +1646,11 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         idleStartTime_ = value;
-        onChanged();
       } else {
         idleStartTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1667,11 +1670,11 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     public Builder setIdleStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (idleStartTimeBuilder_ == null) {
         idleStartTime_ = builderForValue.build();
-        onChanged();
       } else {
         idleStartTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1690,19 +1693,18 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeIdleStartTime(com.google.protobuf.Timestamp value) {
       if (idleStartTimeBuilder_ == null) {
-        if (idleStartTime_ != null) {
-          idleStartTime_ =
-              com.google.protobuf.Timestamp.newBuilder(idleStartTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && idleStartTime_ != null
+            && idleStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getIdleStartTimeBuilder().mergeFrom(value);
         } else {
           idleStartTime_ = value;
         }
-        onChanged();
       } else {
         idleStartTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1720,14 +1722,13 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearIdleStartTime() {
-      if (idleStartTimeBuilder_ == null) {
-        idleStartTime_ = null;
-        onChanged();
-      } else {
-        idleStartTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      idleStartTime_ = null;
+      if (idleStartTimeBuilder_ != null) {
+        idleStartTimeBuilder_.dispose();
         idleStartTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1745,7 +1746,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getIdleStartTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getIdleStartTimeFieldBuilder().getBuilder();
     }

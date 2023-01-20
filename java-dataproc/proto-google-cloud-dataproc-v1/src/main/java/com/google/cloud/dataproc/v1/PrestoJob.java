@@ -252,7 +252,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTINUE_ON_FAILURE_FIELD_NUMBER = 3;
-  private boolean continueOnFailure_;
+  private boolean continueOnFailure_ = false;
   /**
    *
    *
@@ -272,7 +272,9 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OUTPUT_FORMAT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object outputFormat_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputFormat_ = "";
   /**
    *
    *
@@ -323,6 +325,8 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLIENT_TAGS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList clientTags_;
   /**
    *
@@ -396,6 +400,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> properties_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetProperties() {
@@ -462,8 +467,10 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getPropertiesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getPropertiesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -545,7 +552,9 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder() {
-    return getLoggingConfig();
+    return loggingConfig_ == null
+        ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance()
+        : loggingConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -861,20 +870,18 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (queryListBuilder_ != null) {
         queryListBuilder_.clear();
       }
       continueOnFailure_ = false;
-
       outputFormat_ = "";
-
       clientTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableProperties().clear();
-      if (loggingConfigBuilder_ == null) {
-        loggingConfig_ = null;
-      } else {
-        loggingConfig_ = null;
+      loggingConfig_ = null;
+      if (loggingConfigBuilder_ != null) {
+        loggingConfigBuilder_.dispose();
         loggingConfigBuilder_ = null;
       }
       queriesCase_ = 0;
@@ -906,34 +913,47 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.PrestoJob buildPartial() {
       com.google.cloud.dataproc.v1.PrestoJob result =
           new com.google.cloud.dataproc.v1.PrestoJob(this);
-      int from_bitField0_ = bitField0_;
-      if (queriesCase_ == 1) {
-        result.queries_ = queries_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (queriesCase_ == 2) {
-        if (queryListBuilder_ == null) {
-          result.queries_ = queries_;
-        } else {
-          result.queries_ = queryListBuilder_.build();
-        }
-      }
-      result.continueOnFailure_ = continueOnFailure_;
-      result.outputFormat_ = outputFormat_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        clientTags_ = clientTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.clientTags_ = clientTags_;
-      result.properties_ = internalGetProperties();
-      result.properties_.makeImmutable();
-      if (loggingConfigBuilder_ == null) {
-        result.loggingConfig_ = loggingConfig_;
-      } else {
-        result.loggingConfig_ = loggingConfigBuilder_.build();
-      }
-      result.queriesCase_ = queriesCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.PrestoJob result) {
+      if (((bitField0_ & 0x00000010) != 0)) {
+        clientTags_ = clientTags_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.clientTags_ = clientTags_;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.PrestoJob result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.continueOnFailure_ = continueOnFailure_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.outputFormat_ = outputFormat_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.properties_ = internalGetProperties();
+        result.properties_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.loggingConfig_ =
+            loggingConfigBuilder_ == null ? loggingConfig_ : loggingConfigBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataproc.v1.PrestoJob result) {
+      result.queriesCase_ = queriesCase_;
+      result.queries_ = this.queries_;
+      if (queriesCase_ == 2 && queryListBuilder_ != null) {
+        result.queries_ = queryListBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -986,12 +1006,13 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getOutputFormat().isEmpty()) {
         outputFormat_ = other.outputFormat_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.clientTags_.isEmpty()) {
         if (clientTags_.isEmpty()) {
           clientTags_ = other.clientTags_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureClientTagsIsMutable();
           clientTags_.addAll(other.clientTags_);
@@ -999,6 +1020,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       internalGetMutableProperties().mergeFrom(other.internalGetProperties());
+      bitField0_ |= 0x00000020;
       if (other.hasLoggingConfig()) {
         mergeLoggingConfig(other.getLoggingConfig());
       }
@@ -1062,13 +1084,13 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 continueOnFailure_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 outputFormat_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1087,12 +1109,13 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableProperties()
                     .getMutableMap()
                     .put(properties__.getKey(), properties__.getValue());
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getLoggingConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -1467,7 +1490,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       }
       queriesCase_ = 2;
       onChanged();
-      ;
       return queryListBuilder_;
     }
 
@@ -1506,6 +1528,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setContinueOnFailure(boolean value) {
 
       continueOnFailure_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1523,7 +1546,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearContinueOnFailure() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       continueOnFailure_ = false;
       onChanged();
       return this;
@@ -1593,8 +1616,8 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputFormat_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1611,8 +1634,8 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOutputFormat() {
-
       outputFormat_ = getDefaultInstance().getOutputFormat();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1634,8 +1657,8 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       outputFormat_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1644,9 +1667,9 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureClientTagsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         clientTags_ = new com.google.protobuf.LazyStringArrayList(clientTags_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1781,7 +1804,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearClientTags() {
       clientTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1821,8 +1844,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableProperties() {
-      onChanged();
-      ;
       if (properties_ == null) {
         properties_ =
             com.google.protobuf.MapField.newMapField(PropertiesDefaultEntryHolder.defaultEntry);
@@ -1830,6 +1851,8 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       if (!properties_.isMutable()) {
         properties_ = properties_.copy();
       }
+      bitField0_ |= 0x00000020;
+      onChanged();
       return properties_;
     }
 
@@ -1890,8 +1913,10 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getPropertiesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getPropertiesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1923,6 +1948,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearProperties() {
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableProperties().getMutableMap().clear();
       return this;
     }
@@ -1948,6 +1974,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableProperties() {
+      bitField0_ |= 0x00000020;
       return internalGetMutableProperties().getMutableMap();
     }
     /**
@@ -1969,8 +1996,8 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableProperties().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -1987,6 +2014,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllProperties(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableProperties().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -2010,7 +2038,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the loggingConfig field is set.
      */
     public boolean hasLoggingConfig() {
-      return loggingConfigBuilder_ != null || loggingConfig_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2051,11 +2079,11 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         loggingConfig_ = value;
-        onChanged();
       } else {
         loggingConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2073,11 +2101,11 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dataproc.v1.LoggingConfig.Builder builderForValue) {
       if (loggingConfigBuilder_ == null) {
         loggingConfig_ = builderForValue.build();
-        onChanged();
       } else {
         loggingConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2093,19 +2121,18 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLoggingConfig(com.google.cloud.dataproc.v1.LoggingConfig value) {
       if (loggingConfigBuilder_ == null) {
-        if (loggingConfig_ != null) {
-          loggingConfig_ =
-              com.google.cloud.dataproc.v1.LoggingConfig.newBuilder(loggingConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && loggingConfig_ != null
+            && loggingConfig_ != com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance()) {
+          getLoggingConfigBuilder().mergeFrom(value);
         } else {
           loggingConfig_ = value;
         }
-        onChanged();
       } else {
         loggingConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2120,14 +2147,13 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLoggingConfig() {
-      if (loggingConfigBuilder_ == null) {
-        loggingConfig_ = null;
-        onChanged();
-      } else {
-        loggingConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      loggingConfig_ = null;
+      if (loggingConfigBuilder_ != null) {
+        loggingConfigBuilder_.dispose();
         loggingConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2142,7 +2168,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.dataproc.v1.LoggingConfig.Builder getLoggingConfigBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getLoggingConfigFieldBuilder().getBuilder();
     }

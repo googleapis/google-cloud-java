@@ -242,7 +242,6 @@ public interface PrestoJobOrBuilder
    * <code>map&lt;string, string&gt; properties = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-
   /* nullable */
   java.lang.String getPropertiesOrDefault(
       java.lang.String key,

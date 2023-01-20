@@ -91,6 +91,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> componentVersion_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -159,8 +160,10 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
    * <code>map&lt;string, string&gt; component_version = 1;</code>
    */
   @java.lang.Override
-  public java.lang.String getComponentVersionOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getComponentVersionOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -204,6 +207,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> properties_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetProperties() {
@@ -279,8 +283,10 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
    * <code>map&lt;string, string&gt; properties = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getPropertiesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getPropertiesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -561,6 +567,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableComponentVersion().clear();
       internalGetMutableProperties().clear();
       return this;
@@ -590,13 +597,23 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     public com.google.cloud.dataproc.v1.KubernetesSoftwareConfig buildPartial() {
       com.google.cloud.dataproc.v1.KubernetesSoftwareConfig result =
           new com.google.cloud.dataproc.v1.KubernetesSoftwareConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.componentVersion_ = internalGetComponentVersion();
-      result.componentVersion_.makeImmutable();
-      result.properties_ = internalGetProperties();
-      result.properties_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.KubernetesSoftwareConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.componentVersion_ = internalGetComponentVersion();
+        result.componentVersion_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.properties_ = internalGetProperties();
+        result.properties_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -646,7 +663,9 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
       if (other == com.google.cloud.dataproc.v1.KubernetesSoftwareConfig.getDefaultInstance())
         return this;
       internalGetMutableComponentVersion().mergeFrom(other.internalGetComponentVersion());
+      bitField0_ |= 0x00000001;
       internalGetMutableProperties().mergeFrom(other.internalGetProperties());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -683,6 +702,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
                 internalGetMutableComponentVersion()
                     .getMutableMap()
                     .put(componentVersion__.getKey(), componentVersion__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -694,6 +714,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
                 internalGetMutableProperties()
                     .getMutableMap()
                     .put(properties__.getKey(), properties__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -728,8 +749,6 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableComponentVersion() {
-      onChanged();
-      ;
       if (componentVersion_ == null) {
         componentVersion_ =
             com.google.protobuf.MapField.newMapField(
@@ -738,6 +757,8 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
       if (!componentVersion_.isMutable()) {
         componentVersion_ = componentVersion_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return componentVersion_;
     }
 
@@ -798,8 +819,10 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
      * <code>map&lt;string, string&gt; component_version = 1;</code>
      */
     @java.lang.Override
-    public java.lang.String getComponentVersionOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getComponentVersionOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -833,6 +856,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     }
 
     public Builder clearComponentVersion() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableComponentVersion().getMutableMap().clear();
       return this;
     }
@@ -858,6 +882,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableComponentVersion() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableComponentVersion().getMutableMap();
     }
     /**
@@ -879,8 +904,8 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableComponentVersion().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -898,6 +923,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     public Builder putAllComponentVersion(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableComponentVersion().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -914,8 +940,6 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableProperties() {
-      onChanged();
-      ;
       if (properties_ == null) {
         properties_ =
             com.google.protobuf.MapField.newMapField(PropertiesDefaultEntryHolder.defaultEntry);
@@ -923,6 +947,8 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
       if (!properties_.isMutable()) {
         properties_ = properties_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return properties_;
     }
 
@@ -992,8 +1018,10 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
      * <code>map&lt;string, string&gt; properties = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getPropertiesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getPropertiesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1028,6 +1056,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     }
 
     public Builder clearProperties() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableProperties().getMutableMap().clear();
       return this;
     }
@@ -1056,6 +1085,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableProperties() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableProperties().getMutableMap();
     }
     /**
@@ -1080,8 +1110,8 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableProperties().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1101,6 +1131,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
      */
     public Builder putAllProperties(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableProperties().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

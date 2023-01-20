@@ -90,6 +90,7 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
       userServiceAccountMapping_;
 
@@ -156,8 +157,10 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getUserServiceAccountMappingOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getUserServiceAccountMappingOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -420,6 +423,7 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableUserServiceAccountMapping().clear();
       return this;
     }
@@ -448,11 +452,19 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.IdentityConfig buildPartial() {
       com.google.cloud.dataproc.v1.IdentityConfig result =
           new com.google.cloud.dataproc.v1.IdentityConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.userServiceAccountMapping_ = internalGetUserServiceAccountMapping();
-      result.userServiceAccountMapping_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.IdentityConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.userServiceAccountMapping_ = internalGetUserServiceAccountMapping();
+        result.userServiceAccountMapping_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -502,6 +514,7 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dataproc.v1.IdentityConfig.getDefaultInstance()) return this;
       internalGetMutableUserServiceAccountMapping()
           .mergeFrom(other.internalGetUserServiceAccountMapping());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -541,6 +554,7 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
                     .put(
                         userServiceAccountMapping__.getKey(),
                         userServiceAccountMapping__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -576,8 +590,6 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableUserServiceAccountMapping() {
-      onChanged();
-      ;
       if (userServiceAccountMapping_ == null) {
         userServiceAccountMapping_ =
             com.google.protobuf.MapField.newMapField(
@@ -586,6 +598,8 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
       if (!userServiceAccountMapping_.isMutable()) {
         userServiceAccountMapping_ = userServiceAccountMapping_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return userServiceAccountMapping_;
     }
 
@@ -643,8 +657,10 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getUserServiceAccountMappingOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getUserServiceAccountMappingOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -677,6 +693,7 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearUserServiceAccountMapping() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableUserServiceAccountMapping().getMutableMap().clear();
       return this;
     }
@@ -701,6 +718,7 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableUserServiceAccountMapping() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableUserServiceAccountMapping().getMutableMap();
     }
     /**
@@ -721,8 +739,8 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableUserServiceAccountMapping().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -739,6 +757,7 @@ public final class IdentityConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllUserServiceAccountMapping(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableUserServiceAccountMapping().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

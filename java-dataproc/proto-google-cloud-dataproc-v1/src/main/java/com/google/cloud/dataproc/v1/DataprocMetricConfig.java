@@ -556,7 +556,7 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
     }
 
     public static final int METRIC_SOURCE_FIELD_NUMBER = 1;
-    private int metricSource_;
+    private int metricSource_ = 0;
     /**
      *
      *
@@ -595,15 +595,16 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.dataproc.v1.DataprocMetricConfig.MetricSource getMetricSource() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataproc.v1.DataprocMetricConfig.MetricSource result =
-          com.google.cloud.dataproc.v1.DataprocMetricConfig.MetricSource.valueOf(metricSource_);
+          com.google.cloud.dataproc.v1.DataprocMetricConfig.MetricSource.forNumber(metricSource_);
       return result == null
           ? com.google.cloud.dataproc.v1.DataprocMetricConfig.MetricSource.UNRECOGNIZED
           : result;
     }
 
     public static final int METRIC_OVERRIDES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList metricOverrides_;
     /**
      *
@@ -978,10 +979,10 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         metricSource_ = 0;
-
         metricOverrides_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1009,15 +1010,28 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       public com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric buildPartial() {
         com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric result =
             new com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric(this);
-        int from_bitField0_ = bitField0_;
-        result.metricSource_ = metricSource_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          metricOverrides_ = metricOverrides_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.metricOverrides_ = metricOverrides_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          metricOverrides_ = metricOverrides_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.metricOverrides_ = metricOverrides_;
+      }
+
+      private void buildPartial0(com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.metricSource_ = metricSource_;
+        }
       }
 
       @java.lang.Override
@@ -1074,7 +1088,7 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         if (!other.metricOverrides_.isEmpty()) {
           if (metricOverrides_.isEmpty()) {
             metricOverrides_ = other.metricOverrides_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureMetricOverridesIsMutable();
             metricOverrides_.addAll(other.metricOverrides_);
@@ -1110,7 +1124,7 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
               case 8:
                 {
                   metricSource_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
@@ -1178,8 +1192,8 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder setMetricSourceValue(int value) {
-
         metricSource_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1201,9 +1215,8 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        */
       @java.lang.Override
       public com.google.cloud.dataproc.v1.DataprocMetricConfig.MetricSource getMetricSource() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dataproc.v1.DataprocMetricConfig.MetricSource result =
-            com.google.cloud.dataproc.v1.DataprocMetricConfig.MetricSource.valueOf(metricSource_);
+            com.google.cloud.dataproc.v1.DataprocMetricConfig.MetricSource.forNumber(metricSource_);
         return result == null
             ? com.google.cloud.dataproc.v1.DataprocMetricConfig.MetricSource.UNRECOGNIZED
             : result;
@@ -1230,7 +1243,7 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         metricSource_ = value.getNumber();
         onChanged();
         return this;
@@ -1252,7 +1265,7 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearMetricSource() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         metricSource_ = 0;
         onChanged();
         return this;
@@ -1262,9 +1275,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureMetricOverridesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           metricOverrides_ = new com.google.protobuf.LazyStringArrayList(metricOverrides_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -1591,7 +1604,7 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        */
       public Builder clearMetricOverrides() {
         metricOverrides_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1707,6 +1720,8 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int METRICS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric> metrics_;
   /**
    *
@@ -1985,6 +2000,7 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
       } else {
@@ -2019,7 +2035,16 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dataproc.v1.DataprocMetricConfig buildPartial() {
       com.google.cloud.dataproc.v1.DataprocMetricConfig result =
           new com.google.cloud.dataproc.v1.DataprocMetricConfig(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dataproc.v1.DataprocMetricConfig result) {
       if (metricsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           metrics_ = java.util.Collections.unmodifiableList(metrics_);
@@ -2029,8 +2054,10 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       } else {
         result.metrics_ = metricsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.DataprocMetricConfig result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

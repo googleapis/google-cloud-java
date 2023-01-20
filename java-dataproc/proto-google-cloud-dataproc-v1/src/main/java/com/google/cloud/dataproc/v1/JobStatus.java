@@ -582,7 +582,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 1;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -615,14 +615,15 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.JobStatus.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dataproc.v1.JobStatus.State result =
-        com.google.cloud.dataproc.v1.JobStatus.State.valueOf(state_);
+        com.google.cloud.dataproc.v1.JobStatus.State.forNumber(state_);
     return result == null ? com.google.cloud.dataproc.v1.JobStatus.State.UNRECOGNIZED : result;
   }
 
   public static final int DETAILS_FIELD_NUMBER = 2;
-  private volatile java.lang.Object details_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object details_ = "";
   /**
    *
    *
@@ -727,11 +728,13 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStateStartTimeOrBuilder() {
-    return getStateStartTime();
+    return stateStartTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : stateStartTime_;
   }
 
   public static final int SUBSTATE_FIELD_NUMBER = 7;
-  private int substate_;
+  private int substate_ = 0;
   /**
    *
    *
@@ -766,9 +769,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.JobStatus.Substate getSubstate() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dataproc.v1.JobStatus.Substate result =
-        com.google.cloud.dataproc.v1.JobStatus.Substate.valueOf(substate_);
+        com.google.cloud.dataproc.v1.JobStatus.Substate.forNumber(substate_);
     return result == null ? com.google.cloud.dataproc.v1.JobStatus.Substate.UNRECOGNIZED : result;
   }
 
@@ -1000,18 +1002,15 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       state_ = 0;
-
       details_ = "";
-
-      if (stateStartTimeBuilder_ == null) {
-        stateStartTime_ = null;
-      } else {
-        stateStartTime_ = null;
+      stateStartTime_ = null;
+      if (stateStartTimeBuilder_ != null) {
+        stateStartTimeBuilder_.dispose();
         stateStartTimeBuilder_ = null;
       }
       substate_ = 0;
-
       return this;
     }
 
@@ -1039,16 +1038,28 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.JobStatus buildPartial() {
       com.google.cloud.dataproc.v1.JobStatus result =
           new com.google.cloud.dataproc.v1.JobStatus(this);
-      result.state_ = state_;
-      result.details_ = details_;
-      if (stateStartTimeBuilder_ == null) {
-        result.stateStartTime_ = stateStartTime_;
-      } else {
-        result.stateStartTime_ = stateStartTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.substate_ = substate_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.JobStatus result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.details_ = details_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.stateStartTime_ =
+            stateStartTimeBuilder_ == null ? stateStartTime_ : stateStartTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.substate_ = substate_;
+      }
     }
 
     @java.lang.Override
@@ -1101,6 +1112,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDetails().isEmpty()) {
         details_ = other.details_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasStateStartTime()) {
@@ -1138,25 +1150,25 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 details_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 50:
               {
                 input.readMessage(getStateStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 50
             case 56:
               {
                 substate_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 56
             default:
@@ -1175,6 +1187,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int state_ = 0;
     /**
@@ -1209,8 +1223,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1229,9 +1243,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dataproc.v1.JobStatus.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataproc.v1.JobStatus.State result =
-          com.google.cloud.dataproc.v1.JobStatus.State.valueOf(state_);
+          com.google.cloud.dataproc.v1.JobStatus.State.forNumber(state_);
       return result == null ? com.google.cloud.dataproc.v1.JobStatus.State.UNRECOGNIZED : result;
     }
     /**
@@ -1252,7 +1265,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1271,7 +1284,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = 0;
       onChanged();
       return this;
@@ -1347,8 +1360,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       details_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1367,8 +1380,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDetails() {
-
       details_ = getDefaultInstance().getDetails();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1392,8 +1405,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       details_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1418,7 +1431,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stateStartTime field is set.
      */
     public boolean hasStateStartTime() {
-      return stateStartTimeBuilder_ != null || stateStartTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1459,11 +1472,11 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         stateStartTime_ = value;
-        onChanged();
       } else {
         stateStartTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1480,11 +1493,11 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder setStateStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (stateStartTimeBuilder_ == null) {
         stateStartTime_ = builderForValue.build();
-        onChanged();
       } else {
         stateStartTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1500,19 +1513,18 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStateStartTime(com.google.protobuf.Timestamp value) {
       if (stateStartTimeBuilder_ == null) {
-        if (stateStartTime_ != null) {
-          stateStartTime_ =
-              com.google.protobuf.Timestamp.newBuilder(stateStartTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && stateStartTime_ != null
+            && stateStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStateStartTimeBuilder().mergeFrom(value);
         } else {
           stateStartTime_ = value;
         }
-        onChanged();
       } else {
         stateStartTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1527,14 +1539,13 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStateStartTime() {
-      if (stateStartTimeBuilder_ == null) {
-        stateStartTime_ = null;
-        onChanged();
-      } else {
-        stateStartTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      stateStartTime_ = null;
+      if (stateStartTimeBuilder_ != null) {
+        stateStartTimeBuilder_.dispose();
         stateStartTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1549,7 +1560,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStateStartTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getStateStartTimeFieldBuilder().getBuilder();
     }
@@ -1636,8 +1647,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSubstateValue(int value) {
-
       substate_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1657,9 +1668,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dataproc.v1.JobStatus.Substate getSubstate() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataproc.v1.JobStatus.Substate result =
-          com.google.cloud.dataproc.v1.JobStatus.Substate.valueOf(substate_);
+          com.google.cloud.dataproc.v1.JobStatus.Substate.forNumber(substate_);
       return result == null ? com.google.cloud.dataproc.v1.JobStatus.Substate.UNRECOGNIZED : result;
     }
     /**
@@ -1681,7 +1691,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       substate_ = value.getNumber();
       onChanged();
       return this;
@@ -1701,7 +1711,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubstate() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       substate_ = 0;
       onChanged();
       return this;

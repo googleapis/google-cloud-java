@@ -160,7 +160,6 @@ public interface HiveJobOrBuilder
    * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-
   /* nullable */
   java.lang.String getScriptVariablesOrDefault(
       java.lang.String key,
@@ -237,7 +236,6 @@ public interface HiveJobOrBuilder
    * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-
   /* nullable */
   java.lang.String getPropertiesOrDefault(
       java.lang.String key,

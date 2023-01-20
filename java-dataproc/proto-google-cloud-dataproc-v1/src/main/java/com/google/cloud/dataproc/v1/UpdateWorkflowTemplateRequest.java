@@ -119,7 +119,9 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.WorkflowTemplateOrBuilder getTemplateOrBuilder() {
-    return getTemplate();
+    return template_ == null
+        ? com.google.cloud.dataproc.v1.WorkflowTemplate.getDefaultInstance()
+        : template_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -325,10 +327,10 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (templateBuilder_ == null) {
-        template_ = null;
-      } else {
-        template_ = null;
+      bitField0_ = 0;
+      template_ = null;
+      if (templateBuilder_ != null) {
+        templateBuilder_.dispose();
         templateBuilder_ = null;
       }
       return this;
@@ -358,13 +360,18 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
     public com.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest buildPartial() {
       com.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest result =
           new com.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest(this);
-      if (templateBuilder_ == null) {
-        result.template_ = template_;
-      } else {
-        result.template_ = templateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.template_ = templateBuilder_ == null ? template_ : templateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -445,7 +452,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
             case 10:
               {
                 input.readMessage(getTemplateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -464,6 +471,8 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dataproc.v1.WorkflowTemplate template_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -486,7 +495,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * @return Whether the template field is set.
      */
     public boolean hasTemplate() {
-      return templateBuilder_ != null || template_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -529,11 +538,11 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         template_ = value;
-        onChanged();
       } else {
         templateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -552,11 +561,11 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
         com.google.cloud.dataproc.v1.WorkflowTemplate.Builder builderForValue) {
       if (templateBuilder_ == null) {
         template_ = builderForValue.build();
-        onChanged();
       } else {
         templateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -573,19 +582,18 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      */
     public Builder mergeTemplate(com.google.cloud.dataproc.v1.WorkflowTemplate value) {
       if (templateBuilder_ == null) {
-        if (template_ != null) {
-          template_ =
-              com.google.cloud.dataproc.v1.WorkflowTemplate.newBuilder(template_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && template_ != null
+            && template_ != com.google.cloud.dataproc.v1.WorkflowTemplate.getDefaultInstance()) {
+          getTemplateBuilder().mergeFrom(value);
         } else {
           template_ = value;
         }
-        onChanged();
       } else {
         templateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -601,14 +609,13 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearTemplate() {
-      if (templateBuilder_ == null) {
-        template_ = null;
-        onChanged();
-      } else {
-        template_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      template_ = null;
+      if (templateBuilder_ != null) {
+        templateBuilder_.dispose();
         templateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -624,7 +631,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.cloud.dataproc.v1.WorkflowTemplate.Builder getTemplateBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTemplateFieldBuilder().getBuilder();
     }

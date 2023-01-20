@@ -117,7 +117,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object serviceAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
   /**
    *
    *
@@ -306,6 +308,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NETWORK_TAGS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList networkTags_;
   /**
    *
@@ -367,7 +371,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int KMS_KEY_FIELD_NUMBER = 7;
-  private volatile java.lang.Object kmsKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKey_ = "";
   /**
    *
    *
@@ -672,12 +678,11 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serviceAccount_ = "";
-
       networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       kmsKey_ = "";
-
       networkCase_ = 0;
       network_ = null;
       return this;
@@ -707,23 +712,36 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.dataproc.v1.ExecutionConfig buildPartial() {
       com.google.cloud.dataproc.v1.ExecutionConfig result =
           new com.google.cloud.dataproc.v1.ExecutionConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.serviceAccount_ = serviceAccount_;
-      if (networkCase_ == 4) {
-        result.network_ = network_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (networkCase_ == 5) {
-        result.network_ = network_;
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        networkTags_ = networkTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.networkTags_ = networkTags_;
-      result.kmsKey_ = kmsKey_;
-      result.networkCase_ = networkCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.ExecutionConfig result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        networkTags_ = networkTags_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.networkTags_ = networkTags_;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.ExecutionConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.kmsKey_ = kmsKey_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataproc.v1.ExecutionConfig result) {
+      result.networkCase_ = networkCase_;
+      result.network_ = this.network_;
     }
 
     @java.lang.Override
@@ -773,12 +791,13 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.dataproc.v1.ExecutionConfig.getDefaultInstance()) return this;
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.networkTags_.isEmpty()) {
         if (networkTags_.isEmpty()) {
           networkTags_ = other.networkTags_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureNetworkTagsIsMutable();
           networkTags_.addAll(other.networkTags_);
@@ -787,6 +806,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getKmsKey().isEmpty()) {
         kmsKey_ = other.kmsKey_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       switch (other.getNetworkCase()) {
@@ -838,7 +858,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
             case 18:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 34:
@@ -865,7 +885,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
             case 58:
               {
                 kmsKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             default:
@@ -962,8 +982,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -979,8 +999,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearServiceAccount() {
-
       serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1001,8 +1021,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1279,9 +1299,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNetworkTagsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         networkTags_ = new com.google.protobuf.LazyStringArrayList(networkTags_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1416,7 +1436,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearNetworkTags() {
       networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1504,8 +1524,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       kmsKey_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1521,8 +1541,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearKmsKey() {
-
       kmsKey_ = getDefaultInstance().getKmsKey();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1543,8 +1563,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kmsKey_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -69,7 +69,9 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int INSTANCE_TEMPLATE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object instanceTemplateName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceTemplateName_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int INSTANCE_GROUP_MANAGER_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object instanceGroupManagerName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceGroupManagerName_ = "";
   /**
    *
    *
@@ -377,10 +381,9 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceTemplateName_ = "";
-
       instanceGroupManagerName_ = "";
-
       return this;
     }
 
@@ -408,10 +411,21 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dataproc.v1.ManagedGroupConfig buildPartial() {
       com.google.cloud.dataproc.v1.ManagedGroupConfig result =
           new com.google.cloud.dataproc.v1.ManagedGroupConfig(this);
-      result.instanceTemplateName_ = instanceTemplateName_;
-      result.instanceGroupManagerName_ = instanceGroupManagerName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.ManagedGroupConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceTemplateName_ = instanceTemplateName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instanceGroupManagerName_ = instanceGroupManagerName_;
+      }
     }
 
     @java.lang.Override
@@ -462,10 +476,12 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getInstanceTemplateName().isEmpty()) {
         instanceTemplateName_ = other.instanceTemplateName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getInstanceGroupManagerName().isEmpty()) {
         instanceGroupManagerName_ = other.instanceGroupManagerName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -497,13 +513,13 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 instanceTemplateName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 instanceGroupManagerName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -522,6 +538,8 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object instanceTemplateName_ = "";
     /**
@@ -587,8 +605,8 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceTemplateName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -605,8 +623,8 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearInstanceTemplateName() {
-
       instanceTemplateName_ = getDefaultInstance().getInstanceTemplateName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -628,8 +646,8 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceTemplateName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -698,8 +716,8 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceGroupManagerName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -716,8 +734,8 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearInstanceGroupManagerName() {
-
       instanceGroupManagerName_ = getDefaultInstance().getInstanceGroupManagerName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -739,8 +757,8 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceGroupManagerName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

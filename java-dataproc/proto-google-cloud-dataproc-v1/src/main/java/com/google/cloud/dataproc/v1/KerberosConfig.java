@@ -80,7 +80,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_KERBEROS_FIELD_NUMBER = 1;
-  private boolean enableKerberos_;
+  private boolean enableKerberos_ = false;
   /**
    *
    *
@@ -99,7 +99,9 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROOT_PRINCIPAL_PASSWORD_URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object rootPrincipalPasswordUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rootPrincipalPasswordUri_ = "";
   /**
    *
    *
@@ -150,7 +152,9 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KMS_KEY_URI_FIELD_NUMBER = 3;
-  private volatile java.lang.Object kmsKeyUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyUri_ = "";
   /**
    *
    *
@@ -201,7 +205,9 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KEYSTORE_URI_FIELD_NUMBER = 4;
-  private volatile java.lang.Object keystoreUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keystoreUri_ = "";
   /**
    *
    *
@@ -254,7 +260,9 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRUSTSTORE_URI_FIELD_NUMBER = 5;
-  private volatile java.lang.Object truststoreUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object truststoreUri_ = "";
   /**
    *
    *
@@ -307,7 +315,9 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KEYSTORE_PASSWORD_URI_FIELD_NUMBER = 6;
-  private volatile java.lang.Object keystorePasswordUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keystorePasswordUri_ = "";
   /**
    *
    *
@@ -360,7 +370,9 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KEY_PASSWORD_URI_FIELD_NUMBER = 7;
-  private volatile java.lang.Object keyPasswordUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keyPasswordUri_ = "";
   /**
    *
    *
@@ -413,7 +425,9 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRUSTSTORE_PASSWORD_URI_FIELD_NUMBER = 8;
-  private volatile java.lang.Object truststorePasswordUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object truststorePasswordUri_ = "";
   /**
    *
    *
@@ -466,7 +480,9 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CROSS_REALM_TRUST_REALM_FIELD_NUMBER = 9;
-  private volatile java.lang.Object crossRealmTrustRealm_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object crossRealmTrustRealm_ = "";
   /**
    *
    *
@@ -517,7 +533,9 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CROSS_REALM_TRUST_KDC_FIELD_NUMBER = 10;
-  private volatile java.lang.Object crossRealmTrustKdc_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object crossRealmTrustKdc_ = "";
   /**
    *
    *
@@ -568,7 +586,9 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CROSS_REALM_TRUST_ADMIN_SERVER_FIELD_NUMBER = 11;
-  private volatile java.lang.Object crossRealmTrustAdminServer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object crossRealmTrustAdminServer_ = "";
   /**
    *
    *
@@ -621,7 +641,9 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CROSS_REALM_TRUST_SHARED_PASSWORD_URI_FIELD_NUMBER = 12;
-  private volatile java.lang.Object crossRealmTrustSharedPasswordUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object crossRealmTrustSharedPasswordUri_ = "";
   /**
    *
    *
@@ -678,7 +700,9 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KDC_DB_KEY_URI_FIELD_NUMBER = 13;
-  private volatile java.lang.Object kdcDbKeyUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kdcDbKeyUri_ = "";
   /**
    *
    *
@@ -729,7 +753,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TGT_LIFETIME_HOURS_FIELD_NUMBER = 14;
-  private int tgtLifetimeHours_;
+  private int tgtLifetimeHours_ = 0;
   /**
    *
    *
@@ -749,7 +773,9 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REALM_FIELD_NUMBER = 15;
-  private volatile java.lang.Object realm_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object realm_ = "";
   /**
    *
    *
@@ -1129,36 +1155,22 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableKerberos_ = false;
-
       rootPrincipalPasswordUri_ = "";
-
       kmsKeyUri_ = "";
-
       keystoreUri_ = "";
-
       truststoreUri_ = "";
-
       keystorePasswordUri_ = "";
-
       keyPasswordUri_ = "";
-
       truststorePasswordUri_ = "";
-
       crossRealmTrustRealm_ = "";
-
       crossRealmTrustKdc_ = "";
-
       crossRealmTrustAdminServer_ = "";
-
       crossRealmTrustSharedPasswordUri_ = "";
-
       kdcDbKeyUri_ = "";
-
       tgtLifetimeHours_ = 0;
-
       realm_ = "";
-
       return this;
     }
 
@@ -1186,23 +1198,60 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.KerberosConfig buildPartial() {
       com.google.cloud.dataproc.v1.KerberosConfig result =
           new com.google.cloud.dataproc.v1.KerberosConfig(this);
-      result.enableKerberos_ = enableKerberos_;
-      result.rootPrincipalPasswordUri_ = rootPrincipalPasswordUri_;
-      result.kmsKeyUri_ = kmsKeyUri_;
-      result.keystoreUri_ = keystoreUri_;
-      result.truststoreUri_ = truststoreUri_;
-      result.keystorePasswordUri_ = keystorePasswordUri_;
-      result.keyPasswordUri_ = keyPasswordUri_;
-      result.truststorePasswordUri_ = truststorePasswordUri_;
-      result.crossRealmTrustRealm_ = crossRealmTrustRealm_;
-      result.crossRealmTrustKdc_ = crossRealmTrustKdc_;
-      result.crossRealmTrustAdminServer_ = crossRealmTrustAdminServer_;
-      result.crossRealmTrustSharedPasswordUri_ = crossRealmTrustSharedPasswordUri_;
-      result.kdcDbKeyUri_ = kdcDbKeyUri_;
-      result.tgtLifetimeHours_ = tgtLifetimeHours_;
-      result.realm_ = realm_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.KerberosConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableKerberos_ = enableKerberos_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rootPrincipalPasswordUri_ = rootPrincipalPasswordUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.kmsKeyUri_ = kmsKeyUri_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.keystoreUri_ = keystoreUri_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.truststoreUri_ = truststoreUri_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.keystorePasswordUri_ = keystorePasswordUri_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.keyPasswordUri_ = keyPasswordUri_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.truststorePasswordUri_ = truststorePasswordUri_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.crossRealmTrustRealm_ = crossRealmTrustRealm_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.crossRealmTrustKdc_ = crossRealmTrustKdc_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.crossRealmTrustAdminServer_ = crossRealmTrustAdminServer_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.crossRealmTrustSharedPasswordUri_ = crossRealmTrustSharedPasswordUri_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.kdcDbKeyUri_ = kdcDbKeyUri_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.tgtLifetimeHours_ = tgtLifetimeHours_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.realm_ = realm_;
+      }
     }
 
     @java.lang.Override
@@ -1255,50 +1304,62 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getRootPrincipalPasswordUri().isEmpty()) {
         rootPrincipalPasswordUri_ = other.rootPrincipalPasswordUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getKmsKeyUri().isEmpty()) {
         kmsKeyUri_ = other.kmsKeyUri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getKeystoreUri().isEmpty()) {
         keystoreUri_ = other.keystoreUri_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getTruststoreUri().isEmpty()) {
         truststoreUri_ = other.truststoreUri_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getKeystorePasswordUri().isEmpty()) {
         keystorePasswordUri_ = other.keystorePasswordUri_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getKeyPasswordUri().isEmpty()) {
         keyPasswordUri_ = other.keyPasswordUri_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getTruststorePasswordUri().isEmpty()) {
         truststorePasswordUri_ = other.truststorePasswordUri_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getCrossRealmTrustRealm().isEmpty()) {
         crossRealmTrustRealm_ = other.crossRealmTrustRealm_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getCrossRealmTrustKdc().isEmpty()) {
         crossRealmTrustKdc_ = other.crossRealmTrustKdc_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.getCrossRealmTrustAdminServer().isEmpty()) {
         crossRealmTrustAdminServer_ = other.crossRealmTrustAdminServer_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getCrossRealmTrustSharedPasswordUri().isEmpty()) {
         crossRealmTrustSharedPasswordUri_ = other.crossRealmTrustSharedPasswordUri_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.getKdcDbKeyUri().isEmpty()) {
         kdcDbKeyUri_ = other.kdcDbKeyUri_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.getTgtLifetimeHours() != 0) {
@@ -1306,6 +1367,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getRealm().isEmpty()) {
         realm_ = other.realm_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1337,91 +1399,91 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 enableKerberos_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 rootPrincipalPasswordUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 kmsKeyUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 keystoreUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 truststoreUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 keystorePasswordUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 keyPasswordUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 truststorePasswordUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 crossRealmTrustRealm_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 crossRealmTrustKdc_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
               {
                 crossRealmTrustAdminServer_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 98:
               {
                 crossRealmTrustSharedPasswordUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 kdcDbKeyUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 112:
               {
                 tgtLifetimeHours_ = input.readInt32();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 112
             case 122:
               {
                 realm_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 122
             default:
@@ -1440,6 +1502,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enableKerberos_;
     /**
@@ -1474,6 +1538,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableKerberos(boolean value) {
 
       enableKerberos_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1490,7 +1555,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableKerberos() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableKerberos_ = false;
       onChanged();
       return this;
@@ -1563,8 +1628,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       rootPrincipalPasswordUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1582,8 +1647,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRootPrincipalPasswordUri() {
-
       rootPrincipalPasswordUri_ = getDefaultInstance().getRootPrincipalPasswordUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1606,8 +1671,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       rootPrincipalPasswordUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1676,8 +1741,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       kmsKeyUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1694,8 +1759,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKmsKeyUri() {
-
       kmsKeyUri_ = getDefaultInstance().getKmsKeyUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1717,8 +1782,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kmsKeyUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1790,8 +1855,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       keystoreUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1809,8 +1874,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKeystoreUri() {
-
       keystoreUri_ = getDefaultInstance().getKeystoreUri();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1833,8 +1898,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       keystoreUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1906,8 +1971,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       truststoreUri_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1925,8 +1990,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTruststoreUri() {
-
       truststoreUri_ = getDefaultInstance().getTruststoreUri();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1949,8 +2014,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       truststoreUri_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2022,8 +2087,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       keystorePasswordUri_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2041,8 +2106,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKeystorePasswordUri() {
-
       keystorePasswordUri_ = getDefaultInstance().getKeystorePasswordUri();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2065,8 +2130,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       keystorePasswordUri_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2138,8 +2203,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       keyPasswordUri_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2157,8 +2222,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKeyPasswordUri() {
-
       keyPasswordUri_ = getDefaultInstance().getKeyPasswordUri();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2181,8 +2246,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       keyPasswordUri_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2254,8 +2319,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       truststorePasswordUri_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2273,8 +2338,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTruststorePasswordUri() {
-
       truststorePasswordUri_ = getDefaultInstance().getTruststorePasswordUri();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2297,8 +2362,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       truststorePasswordUri_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2367,8 +2432,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       crossRealmTrustRealm_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2385,8 +2450,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCrossRealmTrustRealm() {
-
       crossRealmTrustRealm_ = getDefaultInstance().getCrossRealmTrustRealm();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2408,8 +2473,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       crossRealmTrustRealm_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2478,8 +2543,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       crossRealmTrustKdc_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2496,8 +2561,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCrossRealmTrustKdc() {
-
       crossRealmTrustKdc_ = getDefaultInstance().getCrossRealmTrustKdc();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2519,8 +2584,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       crossRealmTrustKdc_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2592,8 +2657,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       crossRealmTrustAdminServer_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2611,8 +2676,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCrossRealmTrustAdminServer() {
-
       crossRealmTrustAdminServer_ = getDefaultInstance().getCrossRealmTrustAdminServer();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2635,8 +2700,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       crossRealmTrustAdminServer_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2714,8 +2779,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       crossRealmTrustSharedPasswordUri_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2735,9 +2800,9 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCrossRealmTrustSharedPasswordUri() {
-
       crossRealmTrustSharedPasswordUri_ =
           getDefaultInstance().getCrossRealmTrustSharedPasswordUri();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -2762,8 +2827,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       crossRealmTrustSharedPasswordUri_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2832,8 +2897,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       kdcDbKeyUri_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2850,8 +2915,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKdcDbKeyUri() {
-
       kdcDbKeyUri_ = getDefaultInstance().getKdcDbKeyUri();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -2873,8 +2938,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kdcDbKeyUri_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2914,6 +2979,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setTgtLifetimeHours(int value) {
 
       tgtLifetimeHours_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -2931,7 +2997,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTgtLifetimeHours() {
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       tgtLifetimeHours_ = 0;
       onChanged();
       return this;
@@ -3001,8 +3067,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       realm_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3019,8 +3085,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRealm() {
-
       realm_ = getDefaultInstance().getRealm();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -3042,8 +3108,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       realm_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

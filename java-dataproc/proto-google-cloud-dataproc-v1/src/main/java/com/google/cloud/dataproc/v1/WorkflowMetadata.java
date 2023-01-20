@@ -261,7 +261,9 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int TEMPLATE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object template_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object template_ = "";
   /**
    *
    *
@@ -324,7 +326,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int VERSION_FIELD_NUMBER = 2;
-  private int version_;
+  private int version_ = 0;
   /**
    *
    *
@@ -393,7 +395,9 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.ClusterOperationOrBuilder getCreateClusterOrBuilder() {
-    return getCreateCluster();
+    return createCluster_ == null
+        ? com.google.cloud.dataproc.v1.ClusterOperation.getDefaultInstance()
+        : createCluster_;
   }
 
   public static final int GRAPH_FIELD_NUMBER = 4;
@@ -447,7 +451,9 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.WorkflowGraphOrBuilder getGraphOrBuilder() {
-    return getGraph();
+    return graph_ == null
+        ? com.google.cloud.dataproc.v1.WorkflowGraph.getDefaultInstance()
+        : graph_;
   }
 
   public static final int DELETE_CLUSTER_FIELD_NUMBER = 5;
@@ -501,11 +507,13 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.ClusterOperationOrBuilder getDeleteClusterOrBuilder() {
-    return getDeleteCluster();
+    return deleteCluster_ == null
+        ? com.google.cloud.dataproc.v1.ClusterOperation.getDefaultInstance()
+        : deleteCluster_;
   }
 
   public static final int STATE_FIELD_NUMBER = 6;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -538,16 +546,17 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.WorkflowMetadata.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dataproc.v1.WorkflowMetadata.State result =
-        com.google.cloud.dataproc.v1.WorkflowMetadata.State.valueOf(state_);
+        com.google.cloud.dataproc.v1.WorkflowMetadata.State.forNumber(state_);
     return result == null
         ? com.google.cloud.dataproc.v1.WorkflowMetadata.State.UNRECOGNIZED
         : result;
   }
 
   public static final int CLUSTER_NAME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object clusterName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterName_ = "";
   /**
    *
    *
@@ -608,6 +617,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> parameters_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetParameters() {
@@ -665,8 +675,10 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * <code>map&lt;string, string&gt; parameters = 8;</code>
    */
   @java.lang.Override
-  public java.lang.String getParametersOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getParametersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -740,7 +752,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 10;
@@ -789,11 +801,13 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int CLUSTER_UUID_FIELD_NUMBER = 11;
-  private volatile java.lang.Object clusterUuid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterUuid_ = "";
   /**
    *
    *
@@ -893,7 +907,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getDagTimeoutOrBuilder() {
-    return getDagTimeout();
+    return dagTimeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : dagTimeout_;
   }
 
   public static final int DAG_START_TIME_FIELD_NUMBER = 13;
@@ -950,7 +964,9 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDagStartTimeOrBuilder() {
-    return getDagStartTime();
+    return dagStartTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : dagStartTime_;
   }
 
   public static final int DAG_END_TIME_FIELD_NUMBER = 14;
@@ -1002,7 +1018,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDagEndTimeOrBuilder() {
-    return getDagEndTime();
+    return dagEndTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dagEndTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1387,63 +1403,51 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       template_ = "";
-
       version_ = 0;
-
-      if (createClusterBuilder_ == null) {
-        createCluster_ = null;
-      } else {
-        createCluster_ = null;
+      createCluster_ = null;
+      if (createClusterBuilder_ != null) {
+        createClusterBuilder_.dispose();
         createClusterBuilder_ = null;
       }
-      if (graphBuilder_ == null) {
-        graph_ = null;
-      } else {
-        graph_ = null;
+      graph_ = null;
+      if (graphBuilder_ != null) {
+        graphBuilder_.dispose();
         graphBuilder_ = null;
       }
-      if (deleteClusterBuilder_ == null) {
-        deleteCluster_ = null;
-      } else {
-        deleteCluster_ = null;
+      deleteCluster_ = null;
+      if (deleteClusterBuilder_ != null) {
+        deleteClusterBuilder_.dispose();
         deleteClusterBuilder_ = null;
       }
       state_ = 0;
-
       clusterName_ = "";
-
       internalGetMutableParameters().clear();
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       clusterUuid_ = "";
-
-      if (dagTimeoutBuilder_ == null) {
-        dagTimeout_ = null;
-      } else {
-        dagTimeout_ = null;
+      dagTimeout_ = null;
+      if (dagTimeoutBuilder_ != null) {
+        dagTimeoutBuilder_.dispose();
         dagTimeoutBuilder_ = null;
       }
-      if (dagStartTimeBuilder_ == null) {
-        dagStartTime_ = null;
-      } else {
-        dagStartTime_ = null;
+      dagStartTime_ = null;
+      if (dagStartTimeBuilder_ != null) {
+        dagStartTimeBuilder_.dispose();
         dagStartTimeBuilder_ = null;
       }
-      if (dagEndTimeBuilder_ == null) {
-        dagEndTime_ = null;
-      } else {
-        dagEndTime_ = null;
+      dagEndTime_ = null;
+      if (dagEndTimeBuilder_ != null) {
+        dagEndTimeBuilder_.dispose();
         dagEndTimeBuilder_ = null;
       }
       return this;
@@ -1473,56 +1477,61 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dataproc.v1.WorkflowMetadata buildPartial() {
       com.google.cloud.dataproc.v1.WorkflowMetadata result =
           new com.google.cloud.dataproc.v1.WorkflowMetadata(this);
-      int from_bitField0_ = bitField0_;
-      result.template_ = template_;
-      result.version_ = version_;
-      if (createClusterBuilder_ == null) {
-        result.createCluster_ = createCluster_;
-      } else {
-        result.createCluster_ = createClusterBuilder_.build();
-      }
-      if (graphBuilder_ == null) {
-        result.graph_ = graph_;
-      } else {
-        result.graph_ = graphBuilder_.build();
-      }
-      if (deleteClusterBuilder_ == null) {
-        result.deleteCluster_ = deleteCluster_;
-      } else {
-        result.deleteCluster_ = deleteClusterBuilder_.build();
-      }
-      result.state_ = state_;
-      result.clusterName_ = clusterName_;
-      result.parameters_ = internalGetParameters();
-      result.parameters_.makeImmutable();
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
-      }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      result.clusterUuid_ = clusterUuid_;
-      if (dagTimeoutBuilder_ == null) {
-        result.dagTimeout_ = dagTimeout_;
-      } else {
-        result.dagTimeout_ = dagTimeoutBuilder_.build();
-      }
-      if (dagStartTimeBuilder_ == null) {
-        result.dagStartTime_ = dagStartTime_;
-      } else {
-        result.dagStartTime_ = dagStartTimeBuilder_.build();
-      }
-      if (dagEndTimeBuilder_ == null) {
-        result.dagEndTime_ = dagEndTime_;
-      } else {
-        result.dagEndTime_ = dagEndTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.WorkflowMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.template_ = template_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createCluster_ =
+            createClusterBuilder_ == null ? createCluster_ : createClusterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.graph_ = graphBuilder_ == null ? graph_ : graphBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.deleteCluster_ =
+            deleteClusterBuilder_ == null ? deleteCluster_ : deleteClusterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.clusterName_ = clusterName_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.parameters_ = internalGetParameters();
+        result.parameters_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.clusterUuid_ = clusterUuid_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.dagTimeout_ = dagTimeoutBuilder_ == null ? dagTimeout_ : dagTimeoutBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.dagStartTime_ =
+            dagStartTimeBuilder_ == null ? dagStartTime_ : dagStartTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.dagEndTime_ = dagEndTimeBuilder_ == null ? dagEndTime_ : dagEndTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1572,6 +1581,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.dataproc.v1.WorkflowMetadata.getDefaultInstance()) return this;
       if (!other.getTemplate().isEmpty()) {
         template_ = other.template_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getVersion() != 0) {
@@ -1591,9 +1601,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getClusterName().isEmpty()) {
         clusterName_ = other.clusterName_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       internalGetMutableParameters().mergeFrom(other.internalGetParameters());
+      bitField0_ |= 0x00000080;
       if (other.hasStartTime()) {
         mergeStartTime(other.getStartTime());
       }
@@ -1602,6 +1614,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getClusterUuid().isEmpty()) {
         clusterUuid_ = other.clusterUuid_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasDagTimeout()) {
@@ -1642,43 +1655,43 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 template_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 version_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getCreateClusterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getGraphFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getDeleteClusterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 clusterName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
@@ -1690,42 +1703,43 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
                 internalGetMutableParameters()
                     .getMutableMap()
                     .put(parameters__.getKey(), parameters__.getValue());
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
               {
                 clusterUuid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(getDagTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(getDagStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(getDagEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 114
             default:
@@ -1829,8 +1843,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       template_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1853,8 +1867,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTemplate() {
-
       template_ = getDefaultInstance().getTemplate();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1882,8 +1896,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       template_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1921,6 +1935,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setVersion(int value) {
 
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1937,7 +1952,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       version_ = 0;
       onChanged();
       return this;
@@ -1963,7 +1978,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * @return Whether the createCluster field is set.
      */
     public boolean hasCreateCluster() {
-      return createClusterBuilder_ != null || createCluster_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2004,11 +2019,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         createCluster_ = value;
-        onChanged();
       } else {
         createClusterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2026,11 +2041,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
         com.google.cloud.dataproc.v1.ClusterOperation.Builder builderForValue) {
       if (createClusterBuilder_ == null) {
         createCluster_ = builderForValue.build();
-        onChanged();
       } else {
         createClusterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2046,19 +2061,19 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateCluster(com.google.cloud.dataproc.v1.ClusterOperation value) {
       if (createClusterBuilder_ == null) {
-        if (createCluster_ != null) {
-          createCluster_ =
-              com.google.cloud.dataproc.v1.ClusterOperation.newBuilder(createCluster_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && createCluster_ != null
+            && createCluster_
+                != com.google.cloud.dataproc.v1.ClusterOperation.getDefaultInstance()) {
+          getCreateClusterBuilder().mergeFrom(value);
         } else {
           createCluster_ = value;
         }
-        onChanged();
       } else {
         createClusterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2073,14 +2088,13 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateCluster() {
-      if (createClusterBuilder_ == null) {
-        createCluster_ = null;
-        onChanged();
-      } else {
-        createCluster_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createCluster_ = null;
+      if (createClusterBuilder_ != null) {
+        createClusterBuilder_.dispose();
         createClusterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2095,7 +2109,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.dataproc.v1.ClusterOperation.Builder getCreateClusterBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCreateClusterFieldBuilder().getBuilder();
     }
@@ -2167,7 +2181,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * @return Whether the graph field is set.
      */
     public boolean hasGraph() {
-      return graphBuilder_ != null || graph_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2208,11 +2222,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         graph_ = value;
-        onChanged();
       } else {
         graphBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2229,11 +2243,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setGraph(com.google.cloud.dataproc.v1.WorkflowGraph.Builder builderForValue) {
       if (graphBuilder_ == null) {
         graph_ = builderForValue.build();
-        onChanged();
       } else {
         graphBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2249,19 +2263,18 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeGraph(com.google.cloud.dataproc.v1.WorkflowGraph value) {
       if (graphBuilder_ == null) {
-        if (graph_ != null) {
-          graph_ =
-              com.google.cloud.dataproc.v1.WorkflowGraph.newBuilder(graph_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && graph_ != null
+            && graph_ != com.google.cloud.dataproc.v1.WorkflowGraph.getDefaultInstance()) {
+          getGraphBuilder().mergeFrom(value);
         } else {
           graph_ = value;
         }
-        onChanged();
       } else {
         graphBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2276,14 +2289,13 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearGraph() {
-      if (graphBuilder_ == null) {
-        graph_ = null;
-        onChanged();
-      } else {
-        graph_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      graph_ = null;
+      if (graphBuilder_ != null) {
+        graphBuilder_.dispose();
         graphBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2298,7 +2310,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.dataproc.v1.WorkflowGraph.Builder getGraphBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getGraphFieldBuilder().getBuilder();
     }
@@ -2370,7 +2382,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * @return Whether the deleteCluster field is set.
      */
     public boolean hasDeleteCluster() {
-      return deleteClusterBuilder_ != null || deleteCluster_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2411,11 +2423,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         deleteCluster_ = value;
-        onChanged();
       } else {
         deleteClusterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2433,11 +2445,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
         com.google.cloud.dataproc.v1.ClusterOperation.Builder builderForValue) {
       if (deleteClusterBuilder_ == null) {
         deleteCluster_ = builderForValue.build();
-        onChanged();
       } else {
         deleteClusterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2453,19 +2465,19 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeDeleteCluster(com.google.cloud.dataproc.v1.ClusterOperation value) {
       if (deleteClusterBuilder_ == null) {
-        if (deleteCluster_ != null) {
-          deleteCluster_ =
-              com.google.cloud.dataproc.v1.ClusterOperation.newBuilder(deleteCluster_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && deleteCluster_ != null
+            && deleteCluster_
+                != com.google.cloud.dataproc.v1.ClusterOperation.getDefaultInstance()) {
+          getDeleteClusterBuilder().mergeFrom(value);
         } else {
           deleteCluster_ = value;
         }
-        onChanged();
       } else {
         deleteClusterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2480,14 +2492,13 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDeleteCluster() {
-      if (deleteClusterBuilder_ == null) {
-        deleteCluster_ = null;
-        onChanged();
-      } else {
-        deleteCluster_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      deleteCluster_ = null;
+      if (deleteClusterBuilder_ != null) {
+        deleteClusterBuilder_.dispose();
         deleteClusterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2502,7 +2513,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.dataproc.v1.ClusterOperation.Builder getDeleteClusterBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getDeleteClusterFieldBuilder().getBuilder();
     }
@@ -2587,8 +2598,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2607,9 +2618,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.dataproc.v1.WorkflowMetadata.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataproc.v1.WorkflowMetadata.State result =
-          com.google.cloud.dataproc.v1.WorkflowMetadata.State.valueOf(state_);
+          com.google.cloud.dataproc.v1.WorkflowMetadata.State.forNumber(state_);
       return result == null
           ? com.google.cloud.dataproc.v1.WorkflowMetadata.State.UNRECOGNIZED
           : result;
@@ -2632,7 +2642,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2651,7 +2661,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;
@@ -2718,8 +2728,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2735,8 +2745,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearClusterName() {
-
       clusterName_ = getDefaultInstance().getClusterName();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2757,8 +2767,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2776,8 +2786,6 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableParameters() {
-      onChanged();
-      ;
       if (parameters_ == null) {
         parameters_ =
             com.google.protobuf.MapField.newMapField(ParametersDefaultEntryHolder.defaultEntry);
@@ -2785,6 +2793,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       if (!parameters_.isMutable()) {
         parameters_ = parameters_.copy();
       }
+      bitField0_ |= 0x00000080;
+      onChanged();
       return parameters_;
     }
 
@@ -2836,8 +2846,10 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * <code>map&lt;string, string&gt; parameters = 8;</code>
      */
     @java.lang.Override
-    public java.lang.String getParametersOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getParametersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2866,6 +2878,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearParameters() {
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableParameters().getMutableMap().clear();
       return this;
     }
@@ -2888,6 +2901,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableParameters() {
+      bitField0_ |= 0x00000080;
       return internalGetMutableParameters().getMutableMap();
     }
     /**
@@ -2906,8 +2920,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableParameters().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2921,6 +2935,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllParameters(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableParameters().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -2943,7 +2958,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2980,11 +2995,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3000,11 +3015,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3019,17 +3034,18 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3043,14 +3059,13 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3064,7 +3079,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -3131,7 +3146,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3168,11 +3183,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3188,11 +3203,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3207,17 +3222,18 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3231,14 +3247,13 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3252,7 +3267,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -3361,8 +3376,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterUuid_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3378,8 +3393,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearClusterUuid() {
-
       clusterUuid_ = getDefaultInstance().getClusterUuid();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3400,8 +3415,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterUuid_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3428,7 +3443,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * @return Whether the dagTimeout field is set.
      */
     public boolean hasDagTimeout() {
-      return dagTimeoutBuilder_ != null || dagTimeout_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3473,11 +3488,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         dagTimeout_ = value;
-        onChanged();
       } else {
         dagTimeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3496,11 +3511,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setDagTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (dagTimeoutBuilder_ == null) {
         dagTimeout_ = builderForValue.build();
-        onChanged();
       } else {
         dagTimeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3518,17 +3533,18 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeDagTimeout(com.google.protobuf.Duration value) {
       if (dagTimeoutBuilder_ == null) {
-        if (dagTimeout_ != null) {
-          dagTimeout_ =
-              com.google.protobuf.Duration.newBuilder(dagTimeout_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && dagTimeout_ != null
+            && dagTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getDagTimeoutBuilder().mergeFrom(value);
         } else {
           dagTimeout_ = value;
         }
-        onChanged();
       } else {
         dagTimeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3545,14 +3561,13 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDagTimeout() {
-      if (dagTimeoutBuilder_ == null) {
-        dagTimeout_ = null;
-        onChanged();
-      } else {
-        dagTimeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      dagTimeout_ = null;
+      if (dagTimeoutBuilder_ != null) {
+        dagTimeoutBuilder_.dispose();
         dagTimeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3569,7 +3584,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Duration.Builder getDagTimeoutBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getDagTimeoutFieldBuilder().getBuilder();
     }
@@ -3646,7 +3661,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * @return Whether the dagStartTime field is set.
      */
     public boolean hasDagStartTime() {
-      return dagStartTimeBuilder_ != null || dagStartTime_ != null;
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3689,11 +3704,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         dagStartTime_ = value;
-        onChanged();
       } else {
         dagStartTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -3711,11 +3726,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setDagStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (dagStartTimeBuilder_ == null) {
         dagStartTime_ = builderForValue.build();
-        onChanged();
       } else {
         dagStartTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -3732,19 +3747,18 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeDagStartTime(com.google.protobuf.Timestamp value) {
       if (dagStartTimeBuilder_ == null) {
-        if (dagStartTime_ != null) {
-          dagStartTime_ =
-              com.google.protobuf.Timestamp.newBuilder(dagStartTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00001000) != 0)
+            && dagStartTime_ != null
+            && dagStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDagStartTimeBuilder().mergeFrom(value);
         } else {
           dagStartTime_ = value;
         }
-        onChanged();
       } else {
         dagStartTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -3760,14 +3774,13 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDagStartTime() {
-      if (dagStartTimeBuilder_ == null) {
-        dagStartTime_ = null;
-        onChanged();
-      } else {
-        dagStartTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      dagStartTime_ = null;
+      if (dagStartTimeBuilder_ != null) {
+        dagStartTimeBuilder_.dispose();
         dagStartTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3783,7 +3796,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getDagStartTimeBuilder() {
-
+      bitField0_ |= 0x00001000;
       onChanged();
       return getDagStartTimeFieldBuilder().getBuilder();
     }
@@ -3857,7 +3870,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * @return Whether the dagEndTime field is set.
      */
     public boolean hasDagEndTime() {
-      return dagEndTimeBuilder_ != null || dagEndTime_ != null;
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -3898,11 +3911,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         dagEndTime_ = value;
-        onChanged();
       } else {
         dagEndTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -3919,11 +3932,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setDagEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (dagEndTimeBuilder_ == null) {
         dagEndTime_ = builderForValue.build();
-        onChanged();
       } else {
         dagEndTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -3939,17 +3952,18 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeDagEndTime(com.google.protobuf.Timestamp value) {
       if (dagEndTimeBuilder_ == null) {
-        if (dagEndTime_ != null) {
-          dagEndTime_ =
-              com.google.protobuf.Timestamp.newBuilder(dagEndTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00002000) != 0)
+            && dagEndTime_ != null
+            && dagEndTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDagEndTimeBuilder().mergeFrom(value);
         } else {
           dagEndTime_ = value;
         }
-        onChanged();
       } else {
         dagEndTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -3964,14 +3978,13 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDagEndTime() {
-      if (dagEndTimeBuilder_ == null) {
-        dagEndTime_ = null;
-        onChanged();
-      } else {
-        dagEndTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00002000);
+      dagEndTime_ = null;
+      if (dagEndTimeBuilder_ != null) {
+        dagEndTimeBuilder_.dispose();
         dagEndTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3986,7 +3999,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getDagEndTimeBuilder() {
-
+      bitField0_ |= 0x00002000;
       onChanged();
       return getDagEndTimeFieldBuilder().getBuilder();
     }

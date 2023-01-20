@@ -79,7 +79,9 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ZONE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -146,6 +148,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> clusterLabels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -211,8 +214,10 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getClusterLabelsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getClusterLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -476,8 +481,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       zone_ = "";
-
       internalGetMutableClusterLabels().clear();
       return this;
     }
@@ -506,12 +511,22 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.dataproc.v1.ClusterSelector buildPartial() {
       com.google.cloud.dataproc.v1.ClusterSelector result =
           new com.google.cloud.dataproc.v1.ClusterSelector(this);
-      int from_bitField0_ = bitField0_;
-      result.zone_ = zone_;
-      result.clusterLabels_ = internalGetClusterLabels();
-      result.clusterLabels_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.ClusterSelector result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.zone_ = zone_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clusterLabels_ = internalGetClusterLabels();
+        result.clusterLabels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -561,9 +576,11 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.dataproc.v1.ClusterSelector.getDefaultInstance()) return this;
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableClusterLabels().mergeFrom(other.internalGetClusterLabels());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -593,7 +610,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -605,6 +622,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
                 internalGetMutableClusterLabels()
                     .getMutableMap()
                     .put(clusterLabels__.getKey(), clusterLabels__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -696,8 +714,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -716,8 +734,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -741,8 +759,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -760,8 +778,6 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableClusterLabels() {
-      onChanged();
-      ;
       if (clusterLabels_ == null) {
         clusterLabels_ =
             com.google.protobuf.MapField.newMapField(ClusterLabelsDefaultEntryHolder.defaultEntry);
@@ -769,6 +785,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
       if (!clusterLabels_.isMutable()) {
         clusterLabels_ = clusterLabels_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return clusterLabels_;
     }
 
@@ -826,8 +844,10 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getClusterLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getClusterLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -858,6 +878,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
     }
 
     public Builder clearClusterLabels() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableClusterLabels().getMutableMap().clear();
       return this;
     }
@@ -882,6 +903,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableClusterLabels() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableClusterLabels().getMutableMap();
     }
     /**
@@ -902,8 +924,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableClusterLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -919,6 +941,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      */
     public Builder putAllClusterLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableClusterLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

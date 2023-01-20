@@ -441,6 +441,7 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (regexBuilder_ != null) {
         regexBuilder_.clear();
       }
@@ -476,23 +477,27 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
     public com.google.cloud.dataproc.v1.ParameterValidation buildPartial() {
       com.google.cloud.dataproc.v1.ParameterValidation result =
           new com.google.cloud.dataproc.v1.ParameterValidation(this);
-      if (validationTypeCase_ == 1) {
-        if (regexBuilder_ == null) {
-          result.validationType_ = validationType_;
-        } else {
-          result.validationType_ = regexBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (validationTypeCase_ == 2) {
-        if (valuesBuilder_ == null) {
-          result.validationType_ = validationType_;
-        } else {
-          result.validationType_ = valuesBuilder_.build();
-        }
-      }
-      result.validationTypeCase_ = validationTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.ParameterValidation result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataproc.v1.ParameterValidation result) {
+      result.validationTypeCase_ = validationTypeCase_;
+      result.validationType_ = this.validationType_;
+      if (validationTypeCase_ == 1 && regexBuilder_ != null) {
+        result.validationType_ = regexBuilder_.build();
+      }
+      if (validationTypeCase_ == 2 && valuesBuilder_ != null) {
+        result.validationType_ = valuesBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -625,6 +630,8 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.RegexValidation,
@@ -832,7 +839,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
       }
       validationTypeCase_ = 1;
       onChanged();
-      ;
       return regexBuilder_;
     }
 
@@ -1042,7 +1048,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
       }
       validationTypeCase_ = 2;
       onChanged();
-      ;
       return valuesBuilder_;
     }
 

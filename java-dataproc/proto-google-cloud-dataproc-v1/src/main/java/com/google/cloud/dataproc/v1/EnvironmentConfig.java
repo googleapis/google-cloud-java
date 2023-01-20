@@ -116,7 +116,9 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.ExecutionConfigOrBuilder getExecutionConfigOrBuilder() {
-    return getExecutionConfig();
+    return executionConfig_ == null
+        ? com.google.cloud.dataproc.v1.ExecutionConfig.getDefaultInstance()
+        : executionConfig_;
   }
 
   public static final int PERIPHERALS_CONFIG_FIELD_NUMBER = 2;
@@ -170,7 +172,9 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.PeripheralsConfigOrBuilder getPeripheralsConfigOrBuilder() {
-    return getPeripheralsConfig();
+    return peripheralsConfig_ == null
+        ? com.google.cloud.dataproc.v1.PeripheralsConfig.getDefaultInstance()
+        : peripheralsConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -389,16 +393,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (executionConfigBuilder_ == null) {
-        executionConfig_ = null;
-      } else {
-        executionConfig_ = null;
+      bitField0_ = 0;
+      executionConfig_ = null;
+      if (executionConfigBuilder_ != null) {
+        executionConfigBuilder_.dispose();
         executionConfigBuilder_ = null;
       }
-      if (peripheralsConfigBuilder_ == null) {
-        peripheralsConfig_ = null;
-      } else {
-        peripheralsConfig_ = null;
+      peripheralsConfig_ = null;
+      if (peripheralsConfigBuilder_ != null) {
+        peripheralsConfigBuilder_.dispose();
         peripheralsConfigBuilder_ = null;
       }
       return this;
@@ -428,18 +431,25 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dataproc.v1.EnvironmentConfig buildPartial() {
       com.google.cloud.dataproc.v1.EnvironmentConfig result =
           new com.google.cloud.dataproc.v1.EnvironmentConfig(this);
-      if (executionConfigBuilder_ == null) {
-        result.executionConfig_ = executionConfig_;
-      } else {
-        result.executionConfig_ = executionConfigBuilder_.build();
-      }
-      if (peripheralsConfigBuilder_ == null) {
-        result.peripheralsConfig_ = peripheralsConfig_;
-      } else {
-        result.peripheralsConfig_ = peripheralsConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.EnvironmentConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.executionConfig_ =
+            executionConfigBuilder_ == null ? executionConfig_ : executionConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.peripheralsConfig_ =
+            peripheralsConfigBuilder_ == null
+                ? peripheralsConfig_
+                : peripheralsConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -522,14 +532,14 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 input.readMessage(getExecutionConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getPeripheralsConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -548,6 +558,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dataproc.v1.ExecutionConfig executionConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -569,7 +581,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the executionConfig field is set.
      */
     public boolean hasExecutionConfig() {
-      return executionConfigBuilder_ != null || executionConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -610,11 +622,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         executionConfig_ = value;
-        onChanged();
       } else {
         executionConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -632,11 +644,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         com.google.cloud.dataproc.v1.ExecutionConfig.Builder builderForValue) {
       if (executionConfigBuilder_ == null) {
         executionConfig_ = builderForValue.build();
-        onChanged();
       } else {
         executionConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -652,19 +664,19 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeExecutionConfig(com.google.cloud.dataproc.v1.ExecutionConfig value) {
       if (executionConfigBuilder_ == null) {
-        if (executionConfig_ != null) {
-          executionConfig_ =
-              com.google.cloud.dataproc.v1.ExecutionConfig.newBuilder(executionConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && executionConfig_ != null
+            && executionConfig_
+                != com.google.cloud.dataproc.v1.ExecutionConfig.getDefaultInstance()) {
+          getExecutionConfigBuilder().mergeFrom(value);
         } else {
           executionConfig_ = value;
         }
-        onChanged();
       } else {
         executionConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -679,14 +691,13 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearExecutionConfig() {
-      if (executionConfigBuilder_ == null) {
-        executionConfig_ = null;
-        onChanged();
-      } else {
-        executionConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      executionConfig_ = null;
+      if (executionConfigBuilder_ != null) {
+        executionConfigBuilder_.dispose();
         executionConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -701,7 +712,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.dataproc.v1.ExecutionConfig.Builder getExecutionConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getExecutionConfigFieldBuilder().getBuilder();
     }
@@ -773,7 +784,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the peripheralsConfig field is set.
      */
     public boolean hasPeripheralsConfig() {
-      return peripheralsConfigBuilder_ != null || peripheralsConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -814,11 +825,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         peripheralsConfig_ = value;
-        onChanged();
       } else {
         peripheralsConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -836,11 +847,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         com.google.cloud.dataproc.v1.PeripheralsConfig.Builder builderForValue) {
       if (peripheralsConfigBuilder_ == null) {
         peripheralsConfig_ = builderForValue.build();
-        onChanged();
       } else {
         peripheralsConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -856,19 +867,19 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergePeripheralsConfig(com.google.cloud.dataproc.v1.PeripheralsConfig value) {
       if (peripheralsConfigBuilder_ == null) {
-        if (peripheralsConfig_ != null) {
-          peripheralsConfig_ =
-              com.google.cloud.dataproc.v1.PeripheralsConfig.newBuilder(peripheralsConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && peripheralsConfig_ != null
+            && peripheralsConfig_
+                != com.google.cloud.dataproc.v1.PeripheralsConfig.getDefaultInstance()) {
+          getPeripheralsConfigBuilder().mergeFrom(value);
         } else {
           peripheralsConfig_ = value;
         }
-        onChanged();
       } else {
         peripheralsConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -883,14 +894,13 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearPeripheralsConfig() {
-      if (peripheralsConfigBuilder_ == null) {
-        peripheralsConfig_ = null;
-        onChanged();
-      } else {
-        peripheralsConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      peripheralsConfig_ = null;
+      if (peripheralsConfigBuilder_ != null) {
+        peripheralsConfigBuilder_.dispose();
         peripheralsConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -905,7 +915,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.dataproc.v1.PeripheralsConfig.Builder getPeripheralsConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPeripheralsConfigFieldBuilder().getBuilder();
     }

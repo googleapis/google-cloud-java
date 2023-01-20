@@ -69,7 +69,9 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int GKE_CLUSTER_TARGET_FIELD_NUMBER = 2;
-  private volatile java.lang.Object gkeClusterTarget_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gkeClusterTarget_ = "";
   /**
    *
    *
@@ -122,6 +124,8 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NODE_POOL_TARGET_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataproc.v1.GkeNodePoolTarget> nodePoolTarget_;
   /**
    *
@@ -429,15 +433,15 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       gkeClusterTarget_ = "";
-
       if (nodePoolTargetBuilder_ == null) {
         nodePoolTarget_ = java.util.Collections.emptyList();
       } else {
         nodePoolTarget_ = null;
         nodePoolTargetBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -465,19 +469,31 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dataproc.v1.GkeClusterConfig buildPartial() {
       com.google.cloud.dataproc.v1.GkeClusterConfig result =
           new com.google.cloud.dataproc.v1.GkeClusterConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.gkeClusterTarget_ = gkeClusterTarget_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.GkeClusterConfig result) {
       if (nodePoolTargetBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           nodePoolTarget_ = java.util.Collections.unmodifiableList(nodePoolTarget_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.nodePoolTarget_ = nodePoolTarget_;
       } else {
         result.nodePoolTarget_ = nodePoolTargetBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.GkeClusterConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.gkeClusterTarget_ = gkeClusterTarget_;
+      }
     }
 
     @java.lang.Override
@@ -527,13 +543,14 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.dataproc.v1.GkeClusterConfig.getDefaultInstance()) return this;
       if (!other.getGkeClusterTarget().isEmpty()) {
         gkeClusterTarget_ = other.gkeClusterTarget_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (nodePoolTargetBuilder_ == null) {
         if (!other.nodePoolTarget_.isEmpty()) {
           if (nodePoolTarget_.isEmpty()) {
             nodePoolTarget_ = other.nodePoolTarget_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureNodePoolTargetIsMutable();
             nodePoolTarget_.addAll(other.nodePoolTarget_);
@@ -546,7 +563,7 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
             nodePoolTargetBuilder_.dispose();
             nodePoolTargetBuilder_ = null;
             nodePoolTarget_ = other.nodePoolTarget_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             nodePoolTargetBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNodePoolTargetFieldBuilder()
@@ -585,7 +602,7 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
             case 18:
               {
                 gkeClusterTarget_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 26:
@@ -687,8 +704,8 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       gkeClusterTarget_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -706,8 +723,8 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearGkeClusterTarget() {
-
       gkeClusterTarget_ = getDefaultInstance().getGkeClusterTarget();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -730,8 +747,8 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       gkeClusterTarget_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -740,11 +757,11 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureNodePoolTargetIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         nodePoolTarget_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1.GkeNodePoolTarget>(
                 nodePoolTarget_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1028,7 +1045,7 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearNodePoolTarget() {
       if (nodePoolTargetBuilder_ == null) {
         nodePoolTarget_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         nodePoolTargetBuilder_.clear();
@@ -1196,7 +1213,7 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.dataproc.v1.GkeNodePoolTarget.Builder,
                 com.google.cloud.dataproc.v1.GkeNodePoolTargetOrBuilder>(
                 nodePoolTarget_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         nodePoolTarget_ = null;

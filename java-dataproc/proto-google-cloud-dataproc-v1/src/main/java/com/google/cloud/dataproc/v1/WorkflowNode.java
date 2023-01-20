@@ -297,7 +297,9 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STEP_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object stepId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stepId_ = "";
   /**
    *
    *
@@ -346,6 +348,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PREREQUISITE_STEP_IDS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList prerequisiteStepIds_;
   /**
    *
@@ -411,7 +415,9 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int JOB_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object jobId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object jobId_ = "";
   /**
    *
    *
@@ -460,7 +466,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 5;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -493,16 +499,17 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.WorkflowNode.NodeState getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dataproc.v1.WorkflowNode.NodeState result =
-        com.google.cloud.dataproc.v1.WorkflowNode.NodeState.valueOf(state_);
+        com.google.cloud.dataproc.v1.WorkflowNode.NodeState.forNumber(state_);
     return result == null
         ? com.google.cloud.dataproc.v1.WorkflowNode.NodeState.UNRECOGNIZED
         : result;
   }
 
   public static final int ERROR_FIELD_NUMBER = 6;
-  private volatile java.lang.Object error_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object error_ = "";
   /**
    *
    *
@@ -792,16 +799,13 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       stepId_ = "";
-
       prerequisiteStepIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       jobId_ = "";
-
       state_ = 0;
-
       error_ = "";
-
       return this;
     }
 
@@ -829,18 +833,36 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.WorkflowNode buildPartial() {
       com.google.cloud.dataproc.v1.WorkflowNode result =
           new com.google.cloud.dataproc.v1.WorkflowNode(this);
-      int from_bitField0_ = bitField0_;
-      result.stepId_ = stepId_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        prerequisiteStepIds_ = prerequisiteStepIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.prerequisiteStepIds_ = prerequisiteStepIds_;
-      result.jobId_ = jobId_;
-      result.state_ = state_;
-      result.error_ = error_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.WorkflowNode result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        prerequisiteStepIds_ = prerequisiteStepIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.prerequisiteStepIds_ = prerequisiteStepIds_;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.WorkflowNode result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.stepId_ = stepId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.jobId_ = jobId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.error_ = error_;
+      }
     }
 
     @java.lang.Override
@@ -890,12 +912,13 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dataproc.v1.WorkflowNode.getDefaultInstance()) return this;
       if (!other.getStepId().isEmpty()) {
         stepId_ = other.stepId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.prerequisiteStepIds_.isEmpty()) {
         if (prerequisiteStepIds_.isEmpty()) {
           prerequisiteStepIds_ = other.prerequisiteStepIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensurePrerequisiteStepIdsIsMutable();
           prerequisiteStepIds_.addAll(other.prerequisiteStepIds_);
@@ -904,6 +927,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getJobId().isEmpty()) {
         jobId_ = other.jobId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -911,6 +935,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getError().isEmpty()) {
         error_ = other.error_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -942,7 +967,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 stepId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -955,19 +980,19 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 jobId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 40:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             case 50:
               {
                 error_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             default:
@@ -1050,8 +1075,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       stepId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1067,8 +1092,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStepId() {
-
       stepId_ = getDefaultInstance().getStepId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1089,8 +1114,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       stepId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1099,9 +1124,9 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePrerequisiteStepIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         prerequisiteStepIds_ = new com.google.protobuf.LazyStringArrayList(prerequisiteStepIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1244,7 +1269,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPrerequisiteStepIds() {
       prerequisiteStepIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1333,8 +1358,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       jobId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1350,8 +1375,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearJobId() {
-
       jobId_ = getDefaultInstance().getJobId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1372,8 +1397,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       jobId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1411,8 +1436,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1431,9 +1456,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dataproc.v1.WorkflowNode.NodeState getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataproc.v1.WorkflowNode.NodeState result =
-          com.google.cloud.dataproc.v1.WorkflowNode.NodeState.valueOf(state_);
+          com.google.cloud.dataproc.v1.WorkflowNode.NodeState.forNumber(state_);
       return result == null
           ? com.google.cloud.dataproc.v1.WorkflowNode.NodeState.UNRECOGNIZED
           : result;
@@ -1456,7 +1480,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1475,7 +1499,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       state_ = 0;
       onChanged();
       return this;
@@ -1542,8 +1566,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       error_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1559,8 +1583,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearError() {
-
       error_ = getDefaultInstance().getError();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1581,8 +1605,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       error_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
