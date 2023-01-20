@@ -50,4 +50,5 @@
     <module>proto-google-cloud-securitycenter-settings-v1beta1</module>
     <module>google-cloud-securitycenter-settings-bom</module>
   </modules>
-</project>
+
+  </project>
