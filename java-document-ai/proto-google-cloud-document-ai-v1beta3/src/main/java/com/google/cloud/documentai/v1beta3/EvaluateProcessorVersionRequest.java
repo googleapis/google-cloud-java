@@ -69,7 +69,9 @@ public final class EvaluateProcessorVersionRequest extends com.google.protobuf.G
   }
 
   public static final int PROCESSOR_VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object processorVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object processorVersion_ = "";
   /**
    *
    *
@@ -182,7 +184,9 @@ public final class EvaluateProcessorVersionRequest extends com.google.protobuf.G
   @java.lang.Override
   public com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfigOrBuilder
       getEvaluationDocumentsOrBuilder() {
-    return getEvaluationDocuments();
+    return evaluationDocuments_ == null
+        ? com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.getDefaultInstance()
+        : evaluationDocuments_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -399,12 +403,11 @@ public final class EvaluateProcessorVersionRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       processorVersion_ = "";
-
-      if (evaluationDocumentsBuilder_ == null) {
-        evaluationDocuments_ = null;
-      } else {
-        evaluationDocuments_ = null;
+      evaluationDocuments_ = null;
+      if (evaluationDocumentsBuilder_ != null) {
+        evaluationDocumentsBuilder_.dispose();
         evaluationDocumentsBuilder_ = null;
       }
       return this;
@@ -436,14 +439,25 @@ public final class EvaluateProcessorVersionRequest extends com.google.protobuf.G
     public com.google.cloud.documentai.v1beta3.EvaluateProcessorVersionRequest buildPartial() {
       com.google.cloud.documentai.v1beta3.EvaluateProcessorVersionRequest result =
           new com.google.cloud.documentai.v1beta3.EvaluateProcessorVersionRequest(this);
-      result.processorVersion_ = processorVersion_;
-      if (evaluationDocumentsBuilder_ == null) {
-        result.evaluationDocuments_ = evaluationDocuments_;
-      } else {
-        result.evaluationDocuments_ = evaluationDocumentsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.documentai.v1beta3.EvaluateProcessorVersionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.processorVersion_ = processorVersion_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.evaluationDocuments_ =
+            evaluationDocumentsBuilder_ == null
+                ? evaluationDocuments_
+                : evaluationDocumentsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -497,6 +511,7 @@ public final class EvaluateProcessorVersionRequest extends com.google.protobuf.G
               .getDefaultInstance()) return this;
       if (!other.getProcessorVersion().isEmpty()) {
         processorVersion_ = other.processorVersion_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasEvaluationDocuments()) {
@@ -531,14 +546,14 @@ public final class EvaluateProcessorVersionRequest extends com.google.protobuf.G
             case 10:
               {
                 processorVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(
                     getEvaluationDocumentsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -557,6 +572,8 @@ public final class EvaluateProcessorVersionRequest extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object processorVersion_ = "";
     /**
@@ -634,8 +651,8 @@ public final class EvaluateProcessorVersionRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       processorVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -656,8 +673,8 @@ public final class EvaluateProcessorVersionRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearProcessorVersion() {
-
       processorVersion_ = getDefaultInstance().getProcessorVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -683,8 +700,8 @@ public final class EvaluateProcessorVersionRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       processorVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -710,7 +727,7 @@ public final class EvaluateProcessorVersionRequest extends com.google.protobuf.G
      * @return Whether the evaluationDocuments field is set.
      */
     public boolean hasEvaluationDocuments() {
-      return evaluationDocumentsBuilder_ != null || evaluationDocuments_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -754,11 +771,11 @@ public final class EvaluateProcessorVersionRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         evaluationDocuments_ = value;
-        onChanged();
       } else {
         evaluationDocumentsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -777,11 +794,11 @@ public final class EvaluateProcessorVersionRequest extends com.google.protobuf.G
         com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.Builder builderForValue) {
       if (evaluationDocumentsBuilder_ == null) {
         evaluationDocuments_ = builderForValue.build();
-        onChanged();
       } else {
         evaluationDocumentsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -799,20 +816,20 @@ public final class EvaluateProcessorVersionRequest extends com.google.protobuf.G
     public Builder mergeEvaluationDocuments(
         com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig value) {
       if (evaluationDocumentsBuilder_ == null) {
-        if (evaluationDocuments_ != null) {
-          evaluationDocuments_ =
-              com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.newBuilder(
-                      evaluationDocuments_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && evaluationDocuments_ != null
+            && evaluationDocuments_
+                != com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig
+                    .getDefaultInstance()) {
+          getEvaluationDocumentsBuilder().mergeFrom(value);
         } else {
           evaluationDocuments_ = value;
         }
-        onChanged();
       } else {
         evaluationDocumentsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -828,14 +845,13 @@ public final class EvaluateProcessorVersionRequest extends com.google.protobuf.G
      * </code>
      */
     public Builder clearEvaluationDocuments() {
-      if (evaluationDocumentsBuilder_ == null) {
-        evaluationDocuments_ = null;
-        onChanged();
-      } else {
-        evaluationDocuments_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      evaluationDocuments_ = null;
+      if (evaluationDocumentsBuilder_ != null) {
+        evaluationDocumentsBuilder_.dispose();
         evaluationDocumentsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -852,7 +868,7 @@ public final class EvaluateProcessorVersionRequest extends com.google.protobuf.G
      */
     public com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.Builder
         getEvaluationDocumentsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEvaluationDocumentsFieldBuilder().getBuilder();
     }

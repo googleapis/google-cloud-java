@@ -70,7 +70,9 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FORMAT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object format_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object format_ = "";
   /**
    *
    *
@@ -149,7 +151,9 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUE_FORMAT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object valueFormat_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object valueFormat_ = "";
   /**
    *
    *
@@ -226,7 +230,9 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RAW_VALUE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object rawValue_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rawValue_ = "";
   /**
    *
    *
@@ -490,12 +496,10 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       format_ = "";
-
       valueFormat_ = "";
-
       rawValue_ = "";
-
       return this;
     }
 
@@ -523,11 +527,24 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1.Barcode buildPartial() {
       com.google.cloud.documentai.v1.Barcode result =
           new com.google.cloud.documentai.v1.Barcode(this);
-      result.format_ = format_;
-      result.valueFormat_ = valueFormat_;
-      result.rawValue_ = rawValue_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1.Barcode result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.format_ = format_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.valueFormat_ = valueFormat_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.rawValue_ = rawValue_;
+      }
     }
 
     @java.lang.Override
@@ -577,14 +594,17 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.documentai.v1.Barcode.getDefaultInstance()) return this;
       if (!other.getFormat().isEmpty()) {
         format_ = other.format_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getValueFormat().isEmpty()) {
         valueFormat_ = other.valueFormat_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRawValue().isEmpty()) {
         rawValue_ = other.rawValue_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -616,19 +636,19 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 format_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 valueFormat_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 rawValue_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -647,6 +667,8 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object format_ = "";
     /**
@@ -754,8 +776,8 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       format_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -786,8 +808,8 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFormat() {
-
       format_ = getDefaultInstance().getFormat();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -823,8 +845,8 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       format_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -932,8 +954,8 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       valueFormat_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -963,8 +985,8 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearValueFormat() {
-
       valueFormat_ = getDefaultInstance().getValueFormat();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -999,8 +1021,8 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       valueFormat_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1069,8 +1091,8 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       rawValue_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1087,8 +1109,8 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRawValue() {
-
       rawValue_ = getDefaultInstance().getRawValue();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1110,8 +1132,8 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       rawValue_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

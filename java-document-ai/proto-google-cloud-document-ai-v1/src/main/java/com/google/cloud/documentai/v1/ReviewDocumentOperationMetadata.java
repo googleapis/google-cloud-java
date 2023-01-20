@@ -114,11 +114,15 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
   @java.lang.Override
   public com.google.cloud.documentai.v1.CommonOperationMetadataOrBuilder
       getCommonMetadataOrBuilder() {
-    return getCommonMetadata();
+    return commonMetadata_ == null
+        ? com.google.cloud.documentai.v1.CommonOperationMetadata.getDefaultInstance()
+        : commonMetadata_;
   }
 
   public static final int QUESTION_ID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object questionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object questionId_ = "";
   /**
    *
    *
@@ -378,14 +382,13 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (commonMetadataBuilder_ == null) {
-        commonMetadata_ = null;
-      } else {
-        commonMetadata_ = null;
+      bitField0_ = 0;
+      commonMetadata_ = null;
+      if (commonMetadataBuilder_ != null) {
+        commonMetadataBuilder_.dispose();
         commonMetadataBuilder_ = null;
       }
       questionId_ = "";
-
       return this;
     }
 
@@ -414,14 +417,23 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     public com.google.cloud.documentai.v1.ReviewDocumentOperationMetadata buildPartial() {
       com.google.cloud.documentai.v1.ReviewDocumentOperationMetadata result =
           new com.google.cloud.documentai.v1.ReviewDocumentOperationMetadata(this);
-      if (commonMetadataBuilder_ == null) {
-        result.commonMetadata_ = commonMetadata_;
-      } else {
-        result.commonMetadata_ = commonMetadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.questionId_ = questionId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.documentai.v1.ReviewDocumentOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.commonMetadata_ =
+            commonMetadataBuilder_ == null ? commonMetadata_ : commonMetadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.questionId_ = questionId_;
+      }
     }
 
     @java.lang.Override
@@ -476,6 +488,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       }
       if (!other.getQuestionId().isEmpty()) {
         questionId_ = other.questionId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -507,13 +520,13 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
             case 42:
               {
                 input.readMessage(getCommonMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 42
             case 50:
               {
                 questionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 50
             default:
@@ -533,6 +546,8 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.documentai.v1.CommonOperationMetadata commonMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.documentai.v1.CommonOperationMetadata,
@@ -551,7 +566,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      * @return Whether the commonMetadata field is set.
      */
     public boolean hasCommonMetadata() {
-      return commonMetadataBuilder_ != null || commonMetadata_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -588,11 +603,11 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
           throw new NullPointerException();
         }
         commonMetadata_ = value;
-        onChanged();
       } else {
         commonMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -608,11 +623,11 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
         com.google.cloud.documentai.v1.CommonOperationMetadata.Builder builderForValue) {
       if (commonMetadataBuilder_ == null) {
         commonMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         commonMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -627,19 +642,19 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     public Builder mergeCommonMetadata(
         com.google.cloud.documentai.v1.CommonOperationMetadata value) {
       if (commonMetadataBuilder_ == null) {
-        if (commonMetadata_ != null) {
-          commonMetadata_ =
-              com.google.cloud.documentai.v1.CommonOperationMetadata.newBuilder(commonMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && commonMetadata_ != null
+            && commonMetadata_
+                != com.google.cloud.documentai.v1.CommonOperationMetadata.getDefaultInstance()) {
+          getCommonMetadataBuilder().mergeFrom(value);
         } else {
           commonMetadata_ = value;
         }
-        onChanged();
       } else {
         commonMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -652,14 +667,13 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
      */
     public Builder clearCommonMetadata() {
-      if (commonMetadataBuilder_ == null) {
-        commonMetadata_ = null;
-        onChanged();
-      } else {
-        commonMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      commonMetadata_ = null;
+      if (commonMetadataBuilder_ != null) {
+        commonMetadataBuilder_.dispose();
         commonMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -673,7 +687,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      */
     public com.google.cloud.documentai.v1.CommonOperationMetadata.Builder
         getCommonMetadataBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCommonMetadataFieldBuilder().getBuilder();
     }
@@ -783,8 +797,8 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       questionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -800,8 +814,8 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearQuestionId() {
-
       questionId_ = getDefaultInstance().getQuestionId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -822,8 +836,8 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       questionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

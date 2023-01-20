@@ -218,7 +218,6 @@ public interface EvaluationOrBuilder
    * map&lt;string, .google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics&gt; entity_metrics = 4;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics getEntityMetricsOrDefault(
       java.lang.String key,

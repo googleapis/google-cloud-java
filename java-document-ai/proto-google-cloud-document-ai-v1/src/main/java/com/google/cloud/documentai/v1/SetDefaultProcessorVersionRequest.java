@@ -70,7 +70,9 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
   }
 
   public static final int PROCESSOR_FIELD_NUMBER = 1;
-  private volatile java.lang.Object processor_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object processor_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
   }
 
   public static final int DEFAULT_PROCESSOR_VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object defaultProcessorVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object defaultProcessorVersion_ = "";
   /**
    *
    *
@@ -392,10 +396,9 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       processor_ = "";
-
       defaultProcessorVersion_ = "";
-
       return this;
     }
 
@@ -424,10 +427,22 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
     public com.google.cloud.documentai.v1.SetDefaultProcessorVersionRequest buildPartial() {
       com.google.cloud.documentai.v1.SetDefaultProcessorVersionRequest result =
           new com.google.cloud.documentai.v1.SetDefaultProcessorVersionRequest(this);
-      result.processor_ = processor_;
-      result.defaultProcessorVersion_ = defaultProcessorVersion_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.documentai.v1.SetDefaultProcessorVersionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.processor_ = processor_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.defaultProcessorVersion_ = defaultProcessorVersion_;
+      }
     }
 
     @java.lang.Override
@@ -480,10 +495,12 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
         return this;
       if (!other.getProcessor().isEmpty()) {
         processor_ = other.processor_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDefaultProcessorVersion().isEmpty()) {
         defaultProcessorVersion_ = other.defaultProcessorVersion_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -515,13 +532,13 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
             case 10:
               {
                 processor_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 defaultProcessorVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -540,6 +557,8 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object processor_ = "";
     /**
@@ -614,8 +633,8 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       processor_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -635,8 +654,8 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearProcessor() {
-
       processor_ = getDefaultInstance().getProcessor();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -661,8 +680,8 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       processor_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -743,8 +762,8 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       defaultProcessorVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -765,8 +784,8 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearDefaultProcessorVersion() {
-
       defaultProcessorVersion_ = getDefaultInstance().getDefaultProcessorVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -792,8 +811,8 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       defaultProcessorVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -70,6 +70,7 @@ import com.google.cloud.documentai.v1.EnableProcessorResponse;
 import com.google.cloud.documentai.v1.FetchProcessorTypesRequest;
 import com.google.cloud.documentai.v1.FetchProcessorTypesResponse;
 import com.google.cloud.documentai.v1.GetProcessorRequest;
+import com.google.cloud.documentai.v1.GetProcessorTypeRequest;
 import com.google.cloud.documentai.v1.GetProcessorVersionRequest;
 import com.google.cloud.documentai.v1.ListProcessorTypesRequest;
 import com.google.cloud.documentai.v1.ListProcessorTypesResponse;
@@ -161,6 +162,7 @@ public class DocumentProcessorServiceStubSettings
   private final PagedCallSettings<
           ListProcessorTypesRequest, ListProcessorTypesResponse, ListProcessorTypesPagedResponse>
       listProcessorTypesSettings;
+  private final UnaryCallSettings<GetProcessorTypeRequest, ProcessorType> getProcessorTypeSettings;
   private final PagedCallSettings<
           ListProcessorsRequest, ListProcessorsResponse, ListProcessorsPagedResponse>
       listProcessorsSettings;
@@ -481,6 +483,11 @@ public class DocumentProcessorServiceStubSettings
     return listProcessorTypesSettings;
   }
 
+  /** Returns the object with the settings used for calls to getProcessorType. */
+  public UnaryCallSettings<GetProcessorTypeRequest, ProcessorType> getProcessorTypeSettings() {
+    return getProcessorTypeSettings;
+  }
+
   /** Returns the object with the settings used for calls to listProcessors. */
   public PagedCallSettings<
           ListProcessorsRequest, ListProcessorsResponse, ListProcessorsPagedResponse>
@@ -740,6 +747,7 @@ public class DocumentProcessorServiceStubSettings
         settingsBuilder.batchProcessDocumentsOperationSettings().build();
     fetchProcessorTypesSettings = settingsBuilder.fetchProcessorTypesSettings().build();
     listProcessorTypesSettings = settingsBuilder.listProcessorTypesSettings().build();
+    getProcessorTypeSettings = settingsBuilder.getProcessorTypeSettings().build();
     listProcessorsSettings = settingsBuilder.listProcessorsSettings().build();
     getProcessorSettings = settingsBuilder.getProcessorSettings().build();
     getProcessorVersionSettings = settingsBuilder.getProcessorVersionSettings().build();
@@ -786,6 +794,8 @@ public class DocumentProcessorServiceStubSettings
     private final PagedCallSettings.Builder<
             ListProcessorTypesRequest, ListProcessorTypesResponse, ListProcessorTypesPagedResponse>
         listProcessorTypesSettings;
+    private final UnaryCallSettings.Builder<GetProcessorTypeRequest, ProcessorType>
+        getProcessorTypeSettings;
     private final PagedCallSettings.Builder<
             ListProcessorsRequest, ListProcessorsResponse, ListProcessorsPagedResponse>
         listProcessorsSettings;
@@ -897,6 +907,7 @@ public class DocumentProcessorServiceStubSettings
       batchProcessDocumentsOperationSettings = OperationCallSettings.newBuilder();
       fetchProcessorTypesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listProcessorTypesSettings = PagedCallSettings.newBuilder(LIST_PROCESSOR_TYPES_PAGE_STR_FACT);
+      getProcessorTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listProcessorsSettings = PagedCallSettings.newBuilder(LIST_PROCESSORS_PAGE_STR_FACT);
       getProcessorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getProcessorVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -928,6 +939,7 @@ public class DocumentProcessorServiceStubSettings
               batchProcessDocumentsSettings,
               fetchProcessorTypesSettings,
               listProcessorTypesSettings,
+              getProcessorTypeSettings,
               listProcessorsSettings,
               getProcessorSettings,
               getProcessorVersionSettings,
@@ -955,6 +967,7 @@ public class DocumentProcessorServiceStubSettings
           settings.batchProcessDocumentsOperationSettings.toBuilder();
       fetchProcessorTypesSettings = settings.fetchProcessorTypesSettings.toBuilder();
       listProcessorTypesSettings = settings.listProcessorTypesSettings.toBuilder();
+      getProcessorTypeSettings = settings.getProcessorTypeSettings.toBuilder();
       listProcessorsSettings = settings.listProcessorsSettings.toBuilder();
       getProcessorSettings = settings.getProcessorSettings.toBuilder();
       getProcessorVersionSettings = settings.getProcessorVersionSettings.toBuilder();
@@ -989,6 +1002,7 @@ public class DocumentProcessorServiceStubSettings
               batchProcessDocumentsSettings,
               fetchProcessorTypesSettings,
               listProcessorTypesSettings,
+              getProcessorTypeSettings,
               listProcessorsSettings,
               getProcessorSettings,
               getProcessorVersionSettings,
@@ -1050,6 +1064,11 @@ public class DocumentProcessorServiceStubSettings
 
       builder
           .listProcessorTypesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getProcessorTypeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1402,6 +1421,12 @@ public class DocumentProcessorServiceStubSettings
             ListProcessorTypesRequest, ListProcessorTypesResponse, ListProcessorTypesPagedResponse>
         listProcessorTypesSettings() {
       return listProcessorTypesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getProcessorType. */
+    public UnaryCallSettings.Builder<GetProcessorTypeRequest, ProcessorType>
+        getProcessorTypeSettings() {
+      return getProcessorTypeSettings;
     }
 
     /** Returns the builder for the settings used for calls to listProcessors. */

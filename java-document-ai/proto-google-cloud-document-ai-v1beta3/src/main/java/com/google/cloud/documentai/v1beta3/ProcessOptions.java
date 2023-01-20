@@ -113,7 +113,9 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.documentai.v1beta3.OcrConfigOrBuilder getOcrConfigOrBuilder() {
-    return getOcrConfig();
+    return ocrConfig_ == null
+        ? com.google.cloud.documentai.v1beta3.OcrConfig.getDefaultInstance()
+        : ocrConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -318,10 +320,10 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (ocrConfigBuilder_ == null) {
-        ocrConfig_ = null;
-      } else {
-        ocrConfig_ = null;
+      bitField0_ = 0;
+      ocrConfig_ = null;
+      if (ocrConfigBuilder_ != null) {
+        ocrConfigBuilder_.dispose();
         ocrConfigBuilder_ = null;
       }
       return this;
@@ -351,13 +353,18 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1beta3.ProcessOptions buildPartial() {
       com.google.cloud.documentai.v1beta3.ProcessOptions result =
           new com.google.cloud.documentai.v1beta3.ProcessOptions(this);
-      if (ocrConfigBuilder_ == null) {
-        result.ocrConfig_ = ocrConfig_;
-      } else {
-        result.ocrConfig_ = ocrConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1beta3.ProcessOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ocrConfig_ = ocrConfigBuilder_ == null ? ocrConfig_ : ocrConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -438,7 +445,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getOcrConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -457,6 +464,8 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.documentai.v1beta3.OcrConfig ocrConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -477,7 +486,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the ocrConfig field is set.
      */
     public boolean hasOcrConfig() {
-      return ocrConfigBuilder_ != null || ocrConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -516,11 +525,11 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         ocrConfig_ = value;
-        onChanged();
       } else {
         ocrConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -537,11 +546,11 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.documentai.v1beta3.OcrConfig.Builder builderForValue) {
       if (ocrConfigBuilder_ == null) {
         ocrConfig_ = builderForValue.build();
-        onChanged();
       } else {
         ocrConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -556,19 +565,18 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeOcrConfig(com.google.cloud.documentai.v1beta3.OcrConfig value) {
       if (ocrConfigBuilder_ == null) {
-        if (ocrConfig_ != null) {
-          ocrConfig_ =
-              com.google.cloud.documentai.v1beta3.OcrConfig.newBuilder(ocrConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && ocrConfig_ != null
+            && ocrConfig_ != com.google.cloud.documentai.v1beta3.OcrConfig.getDefaultInstance()) {
+          getOcrConfigBuilder().mergeFrom(value);
         } else {
           ocrConfig_ = value;
         }
-        onChanged();
       } else {
         ocrConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -582,14 +590,13 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.OcrConfig ocr_config = 1;</code>
      */
     public Builder clearOcrConfig() {
-      if (ocrConfigBuilder_ == null) {
-        ocrConfig_ = null;
-        onChanged();
-      } else {
-        ocrConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      ocrConfig_ = null;
+      if (ocrConfigBuilder_ != null) {
+        ocrConfigBuilder_.dispose();
         ocrConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -603,7 +610,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.OcrConfig ocr_config = 1;</code>
      */
     public com.google.cloud.documentai.v1beta3.OcrConfig.Builder getOcrConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getOcrConfigFieldBuilder().getBuilder();
     }

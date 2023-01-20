@@ -146,6 +146,27 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
   }
 
   @Override
+  public void getProcessorType(
+      GetProcessorTypeRequest request, StreamObserver<ProcessorType> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ProcessorType) {
+      requests.add(request);
+      responseObserver.onNext(((ProcessorType) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetProcessorType, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ProcessorType.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listProcessors(
       ListProcessorsRequest request, StreamObserver<ListProcessorsResponse> responseObserver) {
     Object response = responses.poll();

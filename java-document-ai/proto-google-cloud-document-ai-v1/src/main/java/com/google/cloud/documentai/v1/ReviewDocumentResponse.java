@@ -229,7 +229,9 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int GCS_DESTINATION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object gcsDestination_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gcsDestination_ = "";
   /**
    *
    *
@@ -280,7 +282,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int STATE_FIELD_NUMBER = 2;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -309,16 +311,17 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.documentai.v1.ReviewDocumentResponse.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.documentai.v1.ReviewDocumentResponse.State result =
-        com.google.cloud.documentai.v1.ReviewDocumentResponse.State.valueOf(state_);
+        com.google.cloud.documentai.v1.ReviewDocumentResponse.State.forNumber(state_);
     return result == null
         ? com.google.cloud.documentai.v1.ReviewDocumentResponse.State.UNRECOGNIZED
         : result;
   }
 
   public static final int REJECTION_REASON_FIELD_NUMBER = 3;
-  private volatile java.lang.Object rejectionReason_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rejectionReason_ = "";
   /**
    *
    *
@@ -586,12 +589,10 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       gcsDestination_ = "";
-
       state_ = 0;
-
       rejectionReason_ = "";
-
       return this;
     }
 
@@ -619,11 +620,24 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.documentai.v1.ReviewDocumentResponse buildPartial() {
       com.google.cloud.documentai.v1.ReviewDocumentResponse result =
           new com.google.cloud.documentai.v1.ReviewDocumentResponse(this);
-      result.gcsDestination_ = gcsDestination_;
-      result.state_ = state_;
-      result.rejectionReason_ = rejectionReason_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1.ReviewDocumentResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.gcsDestination_ = gcsDestination_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.rejectionReason_ = rejectionReason_;
+      }
     }
 
     @java.lang.Override
@@ -674,6 +688,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getGcsDestination().isEmpty()) {
         gcsDestination_ = other.gcsDestination_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -681,6 +696,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
       }
       if (!other.getRejectionReason().isEmpty()) {
         rejectionReason_ = other.rejectionReason_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -712,19 +728,19 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
             case 10:
               {
                 gcsDestination_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 rejectionReason_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -743,6 +759,8 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object gcsDestination_ = "";
     /**
@@ -808,8 +826,8 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       gcsDestination_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -826,8 +844,8 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearGcsDestination() {
-
       gcsDestination_ = getDefaultInstance().getGcsDestination();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -849,8 +867,8 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       gcsDestination_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -884,8 +902,8 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -902,9 +920,8 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.cloud.documentai.v1.ReviewDocumentResponse.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.documentai.v1.ReviewDocumentResponse.State result =
-          com.google.cloud.documentai.v1.ReviewDocumentResponse.State.valueOf(state_);
+          com.google.cloud.documentai.v1.ReviewDocumentResponse.State.forNumber(state_);
       return result == null
           ? com.google.cloud.documentai.v1.ReviewDocumentResponse.State.UNRECOGNIZED
           : result;
@@ -925,7 +942,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -942,7 +959,7 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       state_ = 0;
       onChanged();
       return this;
@@ -1009,8 +1026,8 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       rejectionReason_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1026,8 +1043,8 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearRejectionReason() {
-
       rejectionReason_ = getDefaultInstance().getRejectionReason();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1048,8 +1065,8 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       rejectionReason_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

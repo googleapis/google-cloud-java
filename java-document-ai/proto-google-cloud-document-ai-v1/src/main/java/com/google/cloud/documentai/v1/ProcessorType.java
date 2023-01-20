@@ -153,7 +153,9 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int LOCATION_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object locationId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object locationId_ = "";
     /**
      *
      *
@@ -401,8 +403,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         locationId_ = "";
-
         return this;
       }
 
@@ -430,9 +432,18 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.documentai.v1.ProcessorType.LocationInfo buildPartial() {
         com.google.cloud.documentai.v1.ProcessorType.LocationInfo result =
             new com.google.cloud.documentai.v1.ProcessorType.LocationInfo(this);
-        result.locationId_ = locationId_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.documentai.v1.ProcessorType.LocationInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.locationId_ = locationId_;
+        }
       }
 
       @java.lang.Override
@@ -485,6 +496,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getLocationId().isEmpty()) {
           locationId_ = other.locationId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -516,7 +528,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   locationId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -535,6 +547,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object locationId_ = "";
       /**
@@ -597,8 +611,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         locationId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -614,8 +628,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearLocationId() {
-
         locationId_ = getDefaultInstance().getLocationId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -636,8 +650,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         locationId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -707,7 +721,9 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -758,7 +774,9 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -807,7 +825,9 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CATEGORY_FIELD_NUMBER = 3;
-  private volatile java.lang.Object category_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object category_ = "";
   /**
    *
    *
@@ -856,6 +876,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AVAILABLE_LOCATIONS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.documentai.v1.ProcessorType.LocationInfo>
       availableLocations_;
   /**
@@ -935,7 +957,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALLOW_CREATION_FIELD_NUMBER = 6;
-  private boolean allowCreation_;
+  private boolean allowCreation_ = false;
   /**
    *
    *
@@ -954,7 +976,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LAUNCH_STAGE_FIELD_NUMBER = 8;
-  private int launchStage_;
+  private int launchStage_ = 0;
   /**
    *
    *
@@ -983,12 +1005,13 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.LaunchStage getLaunchStage() {
-    @SuppressWarnings("deprecation")
-    com.google.api.LaunchStage result = com.google.api.LaunchStage.valueOf(launchStage_);
+    com.google.api.LaunchStage result = com.google.api.LaunchStage.forNumber(launchStage_);
     return result == null ? com.google.api.LaunchStage.UNRECOGNIZED : result;
   }
 
   public static final int SAMPLE_DOCUMENT_URIS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList sampleDocumentUris_;
   /**
    *
@@ -1311,25 +1334,21 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       type_ = "";
-
       category_ = "";
-
       if (availableLocationsBuilder_ == null) {
         availableLocations_ = java.util.Collections.emptyList();
       } else {
         availableLocations_ = null;
         availableLocationsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       allowCreation_ = false;
-
       launchStage_ = 0;
-
       sampleDocumentUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -1357,28 +1376,48 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1.ProcessorType buildPartial() {
       com.google.cloud.documentai.v1.ProcessorType result =
           new com.google.cloud.documentai.v1.ProcessorType(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.type_ = type_;
-      result.category_ = category_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.documentai.v1.ProcessorType result) {
       if (availableLocationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           availableLocations_ = java.util.Collections.unmodifiableList(availableLocations_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.availableLocations_ = availableLocations_;
       } else {
         result.availableLocations_ = availableLocationsBuilder_.build();
       }
-      result.allowCreation_ = allowCreation_;
-      result.launchStage_ = launchStage_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         sampleDocumentUris_ = sampleDocumentUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.sampleDocumentUris_ = sampleDocumentUris_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1.ProcessorType result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.category_ = category_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.allowCreation_ = allowCreation_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.launchStage_ = launchStage_;
+      }
     }
 
     @java.lang.Override
@@ -1428,21 +1467,24 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.documentai.v1.ProcessorType.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getCategory().isEmpty()) {
         category_ = other.category_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (availableLocationsBuilder_ == null) {
         if (!other.availableLocations_.isEmpty()) {
           if (availableLocations_.isEmpty()) {
             availableLocations_ = other.availableLocations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureAvailableLocationsIsMutable();
             availableLocations_.addAll(other.availableLocations_);
@@ -1455,7 +1497,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
             availableLocationsBuilder_.dispose();
             availableLocationsBuilder_ = null;
             availableLocations_ = other.availableLocations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             availableLocationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAvailableLocationsFieldBuilder()
@@ -1474,7 +1516,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       if (!other.sampleDocumentUris_.isEmpty()) {
         if (sampleDocumentUris_.isEmpty()) {
           sampleDocumentUris_ = other.sampleDocumentUris_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureSampleDocumentUrisIsMutable();
           sampleDocumentUris_.addAll(other.sampleDocumentUris_);
@@ -1510,19 +1552,19 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 category_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1542,13 +1584,13 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
             case 48:
               {
                 allowCreation_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 48
             case 64:
               {
                 launchStage_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 64
             case 74:
@@ -1641,8 +1683,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1659,8 +1701,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1682,8 +1724,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1749,8 +1791,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1766,8 +1808,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1788,8 +1830,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1855,8 +1897,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       category_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1872,8 +1914,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCategory() {
-
       category_ = getDefaultInstance().getCategory();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1894,8 +1936,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       category_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1904,11 +1946,11 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         availableLocations_ = java.util.Collections.emptyList();
 
     private void ensureAvailableLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         availableLocations_ =
             new java.util.ArrayList<com.google.cloud.documentai.v1.ProcessorType.LocationInfo>(
                 availableLocations_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2154,7 +2196,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAvailableLocations() {
       if (availableLocationsBuilder_ == null) {
         availableLocations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         availableLocationsBuilder_.clear();
@@ -2299,7 +2341,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.documentai.v1.ProcessorType.LocationInfo.Builder,
                 com.google.cloud.documentai.v1.ProcessorType.LocationInfoOrBuilder>(
                 availableLocations_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         availableLocations_ = null;
@@ -2340,6 +2382,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     public Builder setAllowCreation(boolean value) {
 
       allowCreation_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2356,7 +2399,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowCreation() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       allowCreation_ = false;
       onChanged();
       return this;
@@ -2391,8 +2434,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLaunchStageValue(int value) {
-
       launchStage_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2409,8 +2452,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.api.LaunchStage getLaunchStage() {
-      @SuppressWarnings("deprecation")
-      com.google.api.LaunchStage result = com.google.api.LaunchStage.valueOf(launchStage_);
+      com.google.api.LaunchStage result = com.google.api.LaunchStage.forNumber(launchStage_);
       return result == null ? com.google.api.LaunchStage.UNRECOGNIZED : result;
     }
     /**
@@ -2429,7 +2471,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       launchStage_ = value.getNumber();
       onChanged();
       return this;
@@ -2446,7 +2488,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLaunchStage() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       launchStage_ = 0;
       onChanged();
       return this;
@@ -2456,9 +2498,9 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSampleDocumentUrisIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         sampleDocumentUris_ = new com.google.protobuf.LazyStringArrayList(sampleDocumentUris_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -2593,7 +2635,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSampleDocumentUris() {
       sampleDocumentUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }

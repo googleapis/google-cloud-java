@@ -113,7 +113,9 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.documentai.v1beta1.InputConfigOrBuilder getInputConfigOrBuilder() {
-    return getInputConfig();
+    return inputConfig_ == null
+        ? com.google.cloud.documentai.v1beta1.InputConfig.getDefaultInstance()
+        : inputConfig_;
   }
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 2;
@@ -164,7 +166,9 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.documentai.v1beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
-    return getOutputConfig();
+    return outputConfig_ == null
+        ? com.google.cloud.documentai.v1beta1.OutputConfig.getDefaultInstance()
+        : outputConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -384,16 +388,15 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-      } else {
-        inputConfig_ = null;
+      bitField0_ = 0;
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-      } else {
-        outputConfig_ = null;
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
       return this;
@@ -423,18 +426,23 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
     public com.google.cloud.documentai.v1beta1.ProcessDocumentResponse buildPartial() {
       com.google.cloud.documentai.v1beta1.ProcessDocumentResponse result =
           new com.google.cloud.documentai.v1beta1.ProcessDocumentResponse(this);
-      if (inputConfigBuilder_ == null) {
-        result.inputConfig_ = inputConfig_;
-      } else {
-        result.inputConfig_ = inputConfigBuilder_.build();
-      }
-      if (outputConfigBuilder_ == null) {
-        result.outputConfig_ = outputConfig_;
-      } else {
-        result.outputConfig_ = outputConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1beta1.ProcessDocumentResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.inputConfig_ =
+            inputConfigBuilder_ == null ? inputConfig_ : inputConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.outputConfig_ =
+            outputConfigBuilder_ == null ? outputConfig_ : outputConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -518,13 +526,13 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -543,6 +551,8 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.documentai.v1beta1.InputConfig inputConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -563,7 +573,7 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
      * @return Whether the inputConfig field is set.
      */
     public boolean hasInputConfig() {
-      return inputConfigBuilder_ != null || inputConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -602,11 +612,11 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         inputConfig_ = value;
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -623,11 +633,11 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
         com.google.cloud.documentai.v1beta1.InputConfig.Builder builderForValue) {
       if (inputConfigBuilder_ == null) {
         inputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -642,19 +652,19 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
      */
     public Builder mergeInputConfig(com.google.cloud.documentai.v1beta1.InputConfig value) {
       if (inputConfigBuilder_ == null) {
-        if (inputConfig_ != null) {
-          inputConfig_ =
-              com.google.cloud.documentai.v1beta1.InputConfig.newBuilder(inputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && inputConfig_ != null
+            && inputConfig_
+                != com.google.cloud.documentai.v1beta1.InputConfig.getDefaultInstance()) {
+          getInputConfigBuilder().mergeFrom(value);
         } else {
           inputConfig_ = value;
         }
-        onChanged();
       } else {
         inputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -668,14 +678,13 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
      * <code>.google.cloud.documentai.v1beta1.InputConfig input_config = 1;</code>
      */
     public Builder clearInputConfig() {
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-        onChanged();
-      } else {
-        inputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -689,7 +698,7 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
      * <code>.google.cloud.documentai.v1beta1.InputConfig input_config = 1;</code>
      */
     public com.google.cloud.documentai.v1beta1.InputConfig.Builder getInputConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
@@ -758,7 +767,7 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
      * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
-      return outputConfigBuilder_ != null || outputConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -797,11 +806,11 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         outputConfig_ = value;
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -818,11 +827,11 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
         com.google.cloud.documentai.v1beta1.OutputConfig.Builder builderForValue) {
       if (outputConfigBuilder_ == null) {
         outputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -837,19 +846,19 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
      */
     public Builder mergeOutputConfig(com.google.cloud.documentai.v1beta1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
-        if (outputConfig_ != null) {
-          outputConfig_ =
-              com.google.cloud.documentai.v1beta1.OutputConfig.newBuilder(outputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && outputConfig_ != null
+            && outputConfig_
+                != com.google.cloud.documentai.v1beta1.OutputConfig.getDefaultInstance()) {
+          getOutputConfigBuilder().mergeFrom(value);
         } else {
           outputConfig_ = value;
         }
-        onChanged();
       } else {
         outputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -863,14 +872,13 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
      * <code>.google.cloud.documentai.v1beta1.OutputConfig output_config = 2;</code>
      */
     public Builder clearOutputConfig() {
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-        onChanged();
-      } else {
-        outputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -884,7 +892,7 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
      * <code>.google.cloud.documentai.v1beta1.OutputConfig output_config = 2;</code>
      */
     public com.google.cloud.documentai.v1beta1.OutputConfig.Builder getOutputConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }

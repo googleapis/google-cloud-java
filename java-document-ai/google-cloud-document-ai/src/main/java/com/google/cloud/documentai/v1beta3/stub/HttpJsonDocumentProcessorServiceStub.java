@@ -62,6 +62,7 @@ import com.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest;
 import com.google.cloud.documentai.v1beta3.FetchProcessorTypesResponse;
 import com.google.cloud.documentai.v1beta3.GetEvaluationRequest;
 import com.google.cloud.documentai.v1beta3.GetProcessorRequest;
+import com.google.cloud.documentai.v1beta3.GetProcessorTypeRequest;
 import com.google.cloud.documentai.v1beta3.GetProcessorVersionRequest;
 import com.google.cloud.documentai.v1beta3.ListEvaluationsRequest;
 import com.google.cloud.documentai.v1beta3.ListEvaluationsResponse;
@@ -74,6 +75,7 @@ import com.google.cloud.documentai.v1beta3.ListProcessorsResponse;
 import com.google.cloud.documentai.v1beta3.ProcessRequest;
 import com.google.cloud.documentai.v1beta3.ProcessResponse;
 import com.google.cloud.documentai.v1beta3.Processor;
+import com.google.cloud.documentai.v1beta3.ProcessorType;
 import com.google.cloud.documentai.v1beta3.ProcessorVersion;
 import com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata;
 import com.google.cloud.documentai.v1beta3.ReviewDocumentRequest;
@@ -287,6 +289,41 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
               .setResponseParser(
                   ProtoMessageResponseParser.<ListProcessorTypesResponse>newBuilder()
                       .setDefaultInstance(ListProcessorTypesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetProcessorTypeRequest, ProcessorType>
+      getProcessorTypeMethodDescriptor =
+          ApiMethodDescriptor.<GetProcessorTypeRequest, ProcessorType>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.documentai.v1beta3.DocumentProcessorService/GetProcessorType")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetProcessorTypeRequest>newBuilder()
+                      .setPath(
+                          "/v1beta3/{name=projects/*/locations/*/processorTypes/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetProcessorTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetProcessorTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ProcessorType>newBuilder()
+                      .setDefaultInstance(ProcessorType.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1039,6 +1076,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
       listProcessorTypesCallable;
   private final UnaryCallable<ListProcessorTypesRequest, ListProcessorTypesPagedResponse>
       listProcessorTypesPagedCallable;
+  private final UnaryCallable<GetProcessorTypeRequest, ProcessorType> getProcessorTypeCallable;
   private final UnaryCallable<ListProcessorsRequest, ListProcessorsResponse> listProcessorsCallable;
   private final UnaryCallable<ListProcessorsRequest, ListProcessorsPagedResponse>
       listProcessorsPagedCallable;
@@ -1186,6 +1224,11 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                 .setMethodDescriptor(listProcessorTypesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<GetProcessorTypeRequest, ProcessorType> getProcessorTypeTransportSettings =
+        HttpJsonCallSettings.<GetProcessorTypeRequest, ProcessorType>newBuilder()
+            .setMethodDescriptor(getProcessorTypeMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<ListProcessorsRequest, ListProcessorsResponse>
         listProcessorsTransportSettings =
             HttpJsonCallSettings.<ListProcessorsRequest, ListProcessorsResponse>newBuilder()
@@ -1323,6 +1366,9 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
             listProcessorTypesTransportSettings,
             settings.listProcessorTypesSettings(),
             clientContext);
+    this.getProcessorTypeCallable =
+        callableFactory.createUnaryCallable(
+            getProcessorTypeTransportSettings, settings.getProcessorTypeSettings(), clientContext);
     this.listProcessorsCallable =
         callableFactory.createUnaryCallable(
             listProcessorsTransportSettings, settings.listProcessorsSettings(), clientContext);
@@ -1482,6 +1528,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
     methodDescriptors.add(batchProcessDocumentsMethodDescriptor);
     methodDescriptors.add(fetchProcessorTypesMethodDescriptor);
     methodDescriptors.add(listProcessorTypesMethodDescriptor);
+    methodDescriptors.add(getProcessorTypeMethodDescriptor);
     methodDescriptors.add(listProcessorsMethodDescriptor);
     methodDescriptors.add(getProcessorMethodDescriptor);
     methodDescriptors.add(trainProcessorVersionMethodDescriptor);
@@ -1540,6 +1587,11 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
   public UnaryCallable<ListProcessorTypesRequest, ListProcessorTypesPagedResponse>
       listProcessorTypesPagedCallable() {
     return listProcessorTypesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetProcessorTypeRequest, ProcessorType> getProcessorTypeCallable() {
+    return getProcessorTypeCallable;
   }
 
   @Override

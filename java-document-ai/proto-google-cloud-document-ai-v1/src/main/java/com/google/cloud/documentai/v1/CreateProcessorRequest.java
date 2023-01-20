@@ -70,7 +70,9 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -181,7 +183,9 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.documentai.v1.ProcessorOrBuilder getProcessorOrBuilder() {
-    return getProcessor();
+    return processor_ == null
+        ? com.google.cloud.documentai.v1.Processor.getDefaultInstance()
+        : processor_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -398,12 +402,11 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (processorBuilder_ == null) {
-        processor_ = null;
-      } else {
-        processor_ = null;
+      processor_ = null;
+      if (processorBuilder_ != null) {
+        processorBuilder_.dispose();
         processorBuilder_ = null;
       }
       return this;
@@ -433,14 +436,21 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.documentai.v1.CreateProcessorRequest buildPartial() {
       com.google.cloud.documentai.v1.CreateProcessorRequest result =
           new com.google.cloud.documentai.v1.CreateProcessorRequest(this);
-      result.parent_ = parent_;
-      if (processorBuilder_ == null) {
-        result.processor_ = processor_;
-      } else {
-        result.processor_ = processorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1.CreateProcessorRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.processor_ = processorBuilder_ == null ? processor_ : processorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -491,6 +501,7 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasProcessor()) {
@@ -525,13 +536,13 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getProcessorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -550,6 +561,8 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -621,8 +634,8 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -641,8 +654,8 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -666,8 +679,8 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -694,7 +707,7 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
      * @return Whether the processor field is set.
      */
     public boolean hasProcessor() {
-      return processorBuilder_ != null || processor_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -739,11 +752,11 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         processor_ = value;
-        onChanged();
       } else {
         processorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -762,11 +775,11 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
     public Builder setProcessor(com.google.cloud.documentai.v1.Processor.Builder builderForValue) {
       if (processorBuilder_ == null) {
         processor_ = builderForValue.build();
-        onChanged();
       } else {
         processorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -784,19 +797,18 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeProcessor(com.google.cloud.documentai.v1.Processor value) {
       if (processorBuilder_ == null) {
-        if (processor_ != null) {
-          processor_ =
-              com.google.cloud.documentai.v1.Processor.newBuilder(processor_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && processor_ != null
+            && processor_ != com.google.cloud.documentai.v1.Processor.getDefaultInstance()) {
+          getProcessorBuilder().mergeFrom(value);
         } else {
           processor_ = value;
         }
-        onChanged();
       } else {
         processorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -813,14 +825,13 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearProcessor() {
-      if (processorBuilder_ == null) {
-        processor_ = null;
-        onChanged();
-      } else {
-        processor_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      processor_ = null;
+      if (processorBuilder_ != null) {
+        processorBuilder_.dispose();
         processorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -837,7 +848,7 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.documentai.v1.Processor.Builder getProcessorBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getProcessorFieldBuilder().getBuilder();
     }

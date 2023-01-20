@@ -484,6 +484,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int VALUES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList values_;
       /**
        *
@@ -762,6 +764,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000001);
           return this;
@@ -795,14 +798,26 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             buildPartial() {
           com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.EnumValues result =
               new com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.EnumValues(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.EnumValues result) {
           if (((bitField0_ & 0x00000001) != 0)) {
             values_ = values_.getUnmodifiableView();
             bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.values_ = values_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.EnumValues result) {
+          int from_bitField0_ = bitField0_;
         }
 
         @java.lang.Override
@@ -1510,7 +1525,9 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object name_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object name_ = "";
       /**
        *
        *
@@ -1561,7 +1578,9 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int VALUE_TYPE_FIELD_NUMBER = 2;
-      private volatile java.lang.Object valueType_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object valueType_ = "";
       /**
        *
        *
@@ -1612,7 +1631,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int OCCURRENCE_TYPE_FIELD_NUMBER = 3;
-      private int occurrenceType_;
+      private int occurrenceType_ = 0;
       /**
        *
        *
@@ -1648,11 +1667,10 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.Property.OccurrenceType
           getOccurrenceType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.Property.OccurrenceType
             result =
                 com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.Property
-                    .OccurrenceType.valueOf(occurrenceType_);
+                    .OccurrenceType.forNumber(occurrenceType_);
         return result == null
             ? com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.Property.OccurrenceType
                 .UNRECOGNIZED
@@ -1894,12 +1912,10 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           name_ = "";
-
           valueType_ = "";
-
           occurrenceType_ = 0;
-
           return this;
         }
 
@@ -1931,11 +1947,25 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             buildPartial() {
           com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.Property result =
               new com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.Property(this);
-          result.name_ = name_;
-          result.valueType_ = valueType_;
-          result.occurrenceType_ = occurrenceType_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.Property result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.name_ = name_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.valueType_ = valueType_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.occurrenceType_ = occurrenceType_;
+          }
         }
 
         @java.lang.Override
@@ -1992,10 +2022,12 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getName().isEmpty()) {
             name_ = other.name_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getValueType().isEmpty()) {
             valueType_ = other.valueType_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           if (other.occurrenceType_ != 0) {
@@ -2030,19 +2062,19 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     name_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     valueType_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 case 24:
                   {
                     occurrenceType_ = input.readEnum();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 24
                 default:
@@ -2061,6 +2093,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object name_ = "";
         /**
@@ -2126,8 +2160,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           name_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2144,8 +2178,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearName() {
-
           name_ = getDefaultInstance().getName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -2167,8 +2201,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           name_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2237,8 +2271,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           valueType_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2255,8 +2289,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearValueType() {
-
           valueType_ = getDefaultInstance().getValueType();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -2278,8 +2312,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           valueType_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2319,8 +2353,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setOccurrenceTypeValue(int value) {
-
           occurrenceType_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2341,11 +2375,10 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.Property.OccurrenceType
             getOccurrenceType() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.Property.OccurrenceType
               result =
                   com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.Property
-                      .OccurrenceType.valueOf(occurrenceType_);
+                      .OccurrenceType.forNumber(occurrenceType_);
           return result == null
               ? com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.Property
                   .OccurrenceType.UNRECOGNIZED
@@ -2372,7 +2405,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000004;
           occurrenceType_ = value.getNumber();
           onChanged();
           return this;
@@ -2392,7 +2425,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearOccurrenceType() {
-
+          bitField0_ = (bitField0_ & ~0x00000004);
           occurrenceType_ = 0;
           onChanged();
           return this;
@@ -2583,7 +2616,9 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DISPLAY_NAME_FIELD_NUMBER = 13;
-    private volatile java.lang.Object displayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
     /**
      *
      *
@@ -2632,7 +2667,9 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -2705,6 +2742,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int BASE_TYPES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList baseTypes_;
     /**
      *
@@ -2770,6 +2809,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PROPERTIES_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.Property>
         properties_;
     /**
@@ -3121,22 +3162,21 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (enumValuesBuilder_ != null) {
           enumValuesBuilder_.clear();
         }
         displayName_ = "";
-
         name_ = "";
-
         baseTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (propertiesBuilder_ == null) {
           properties_ = java.util.Collections.emptyList();
         } else {
           properties_ = null;
           propertiesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         valueSourceCase_ = 0;
         valueSource_ = null;
         return this;
@@ -3167,33 +3207,51 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType buildPartial() {
         com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType result =
             new com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType(this);
-        int from_bitField0_ = bitField0_;
-        if (valueSourceCase_ == 14) {
-          if (enumValuesBuilder_ == null) {
-            result.valueSource_ = valueSource_;
-          } else {
-            result.valueSource_ = enumValuesBuilder_.build();
-          }
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.displayName_ = displayName_;
-        result.name_ = name_;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType result) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           baseTypes_ = baseTypes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.baseTypes_ = baseTypes_;
         if (propertiesBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             properties_ = java.util.Collections.unmodifiableList(properties_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.properties_ = properties_;
         } else {
           result.properties_ = propertiesBuilder_.build();
         }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.displayName_ = displayName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.name_ = name_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType result) {
         result.valueSourceCase_ = valueSourceCase_;
-        onBuilt();
-        return result;
+        result.valueSource_ = this.valueSource_;
+        if (valueSourceCase_ == 14 && enumValuesBuilder_ != null) {
+          result.valueSource_ = enumValuesBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3248,16 +3306,18 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.baseTypes_.isEmpty()) {
           if (baseTypes_.isEmpty()) {
             baseTypes_ = other.baseTypes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureBaseTypesIsMutable();
             baseTypes_.addAll(other.baseTypes_);
@@ -3268,7 +3328,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           if (!other.properties_.isEmpty()) {
             if (properties_.isEmpty()) {
               properties_ = other.properties_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensurePropertiesIsMutable();
               properties_.addAll(other.properties_);
@@ -3281,7 +3341,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
               propertiesBuilder_.dispose();
               propertiesBuilder_ = null;
               properties_ = other.properties_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000010);
               propertiesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getPropertiesFieldBuilder()
@@ -3331,7 +3391,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 10
               case 18:
@@ -3359,7 +3419,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
               case 106:
                 {
                   displayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 106
               case 114:
@@ -3679,7 +3739,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
         valueSourceCase_ = 14;
         onChanged();
-        ;
         return enumValuesBuilder_;
       }
 
@@ -3744,8 +3803,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         displayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3761,8 +3820,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
-
         displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -3783,8 +3842,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         displayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3886,8 +3945,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3915,8 +3974,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -3949,8 +4008,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3959,9 +4018,9 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureBaseTypesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           baseTypes_ = new com.google.protobuf.LazyStringArrayList(baseTypes_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
         }
       }
       /**
@@ -4104,7 +4163,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearBaseTypes() {
         baseTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -4136,12 +4195,12 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           properties_ = java.util.Collections.emptyList();
 
       private void ensurePropertiesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           properties_ =
               new java.util.ArrayList<
                   com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.Property>(
                   properties_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000010;
         }
       }
 
@@ -4391,7 +4450,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public Builder clearProperties() {
         if (propertiesBuilder_ == null) {
           properties_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           propertiesBuilder_.clear();
@@ -4539,7 +4598,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.Property,
                   com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.Property.Builder,
                   com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.PropertyOrBuilder>(
-                  properties_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                  properties_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
           properties_ = null;
         }
         return propertiesBuilder_;
@@ -4722,7 +4781,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DOCUMENT_SPLITTER_FIELD_NUMBER = 1;
-    private boolean documentSplitter_;
+    private boolean documentSplitter_ = false;
     /**
      *
      *
@@ -4742,7 +4801,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DOCUMENT_ALLOW_MULTIPLE_LABELS_FIELD_NUMBER = 2;
-    private boolean documentAllowMultipleLabels_;
+    private boolean documentAllowMultipleLabels_ = false;
     /**
      *
      *
@@ -4761,7 +4820,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PREFIXED_NAMING_ON_PROPERTIES_FIELD_NUMBER = 6;
-    private boolean prefixedNamingOnProperties_;
+    private boolean prefixedNamingOnProperties_ = false;
     /**
      *
      *
@@ -4779,7 +4838,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SKIP_NAMING_VALIDATION_FIELD_NUMBER = 7;
-    private boolean skipNamingValidation_;
+    private boolean skipNamingValidation_ = false;
     /**
      *
      *
@@ -5029,14 +5088,11 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         documentSplitter_ = false;
-
         documentAllowMultipleLabels_ = false;
-
         prefixedNamingOnProperties_ = false;
-
         skipNamingValidation_ = false;
-
         return this;
       }
 
@@ -5065,12 +5121,28 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.documentai.v1beta3.DocumentSchema.Metadata buildPartial() {
         com.google.cloud.documentai.v1beta3.DocumentSchema.Metadata result =
             new com.google.cloud.documentai.v1beta3.DocumentSchema.Metadata(this);
-        result.documentSplitter_ = documentSplitter_;
-        result.documentAllowMultipleLabels_ = documentAllowMultipleLabels_;
-        result.prefixedNamingOnProperties_ = prefixedNamingOnProperties_;
-        result.skipNamingValidation_ = skipNamingValidation_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.documentai.v1beta3.DocumentSchema.Metadata result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.documentSplitter_ = documentSplitter_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.documentAllowMultipleLabels_ = documentAllowMultipleLabels_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.prefixedNamingOnProperties_ = prefixedNamingOnProperties_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.skipNamingValidation_ = skipNamingValidation_;
+        }
       }
 
       @java.lang.Override
@@ -5163,25 +5235,25 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   documentSplitter_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   documentAllowMultipleLabels_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 48:
                 {
                   prefixedNamingOnProperties_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 48
               case 56:
                 {
                   skipNamingValidation_ = input.readBool();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 56
               default:
@@ -5200,6 +5272,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean documentSplitter_;
       /**
@@ -5236,6 +5310,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public Builder setDocumentSplitter(boolean value) {
 
         documentSplitter_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5253,7 +5328,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDocumentSplitter() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         documentSplitter_ = false;
         onChanged();
         return this;
@@ -5292,6 +5367,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public Builder setDocumentAllowMultipleLabels(boolean value) {
 
         documentAllowMultipleLabels_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5308,7 +5384,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDocumentAllowMultipleLabels() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         documentAllowMultipleLabels_ = false;
         onChanged();
         return this;
@@ -5345,6 +5421,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public Builder setPrefixedNamingOnProperties(boolean value) {
 
         prefixedNamingOnProperties_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5360,7 +5437,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPrefixedNamingOnProperties() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         prefixedNamingOnProperties_ = false;
         onChanged();
         return this;
@@ -5401,6 +5478,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public Builder setSkipNamingValidation(boolean value) {
 
         skipNamingValidation_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -5418,7 +5496,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSkipNamingValidation() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         skipNamingValidation_ = false;
         onChanged();
         return this;
@@ -5490,7 +5568,9 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -5539,7 +5619,9 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -5588,6 +5670,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENTITY_TYPES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType>
       entityTypes_;
   /**
@@ -5711,7 +5795,9 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.documentai.v1beta3.DocumentSchema.MetadataOrBuilder
       getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.cloud.documentai.v1beta3.DocumentSchema.Metadata.getDefaultInstance()
+        : metadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -5945,21 +6031,19 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       displayName_ = "";
-
       description_ = "";
-
       if (entityTypesBuilder_ == null) {
         entityTypes_ = java.util.Collections.emptyList();
       } else {
         entityTypes_ = null;
         entityTypesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
       return this;
@@ -5989,25 +6073,38 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1beta3.DocumentSchema buildPartial() {
       com.google.cloud.documentai.v1beta3.DocumentSchema result =
           new com.google.cloud.documentai.v1beta3.DocumentSchema(this);
-      int from_bitField0_ = bitField0_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.documentai.v1beta3.DocumentSchema result) {
       if (entityTypesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           entityTypes_ = java.util.Collections.unmodifiableList(entityTypes_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.entityTypes_ = entityTypes_;
       } else {
         result.entityTypes_ = entityTypesBuilder_.build();
       }
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1beta3.DocumentSchema result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.displayName_ = displayName_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -6058,17 +6155,19 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (entityTypesBuilder_ == null) {
         if (!other.entityTypes_.isEmpty()) {
           if (entityTypes_.isEmpty()) {
             entityTypes_ = other.entityTypes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureEntityTypesIsMutable();
             entityTypes_.addAll(other.entityTypes_);
@@ -6081,7 +6180,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             entityTypesBuilder_.dispose();
             entityTypesBuilder_ = null;
             entityTypes_ = other.entityTypes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             entityTypesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEntityTypesFieldBuilder()
@@ -6123,13 +6222,13 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -6149,7 +6248,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -6232,8 +6331,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -6249,8 +6348,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -6271,8 +6370,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -6338,8 +6437,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -6355,8 +6454,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -6377,8 +6476,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -6387,11 +6486,11 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         entityTypes_ = java.util.Collections.emptyList();
 
     private void ensureEntityTypesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         entityTypes_ =
             new java.util.ArrayList<com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType>(
                 entityTypes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -6625,7 +6724,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEntityTypes() {
       if (entityTypesBuilder_ == null) {
         entityTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         entityTypesBuilder_.clear();
@@ -6762,7 +6861,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType,
                 com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.Builder,
                 com.google.cloud.documentai.v1beta3.DocumentSchema.EntityTypeOrBuilder>(
-                entityTypes_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                entityTypes_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         entityTypes_ = null;
       }
       return entityTypesBuilder_;
@@ -6786,7 +6885,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -6823,11 +6922,11 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -6843,11 +6942,11 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.documentai.v1beta3.DocumentSchema.Metadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -6862,19 +6961,20 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeMetadata(
         com.google.cloud.documentai.v1beta3.DocumentSchema.Metadata value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.cloud.documentai.v1beta3.DocumentSchema.Metadata.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && metadata_ != null
+            && metadata_
+                != com.google.cloud.documentai.v1beta3.DocumentSchema.Metadata
+                    .getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -6887,14 +6987,13 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.DocumentSchema.Metadata metadata = 4;</code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -6908,7 +7007,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.documentai.v1beta3.DocumentSchema.Metadata.Builder
         getMetadataBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }

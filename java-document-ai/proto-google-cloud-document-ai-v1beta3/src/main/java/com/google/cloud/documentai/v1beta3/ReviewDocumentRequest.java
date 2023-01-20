@@ -303,7 +303,9 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int HUMAN_REVIEW_CONFIG_FIELD_NUMBER = 1;
-  private volatile java.lang.Object humanReviewConfig_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object humanReviewConfig_ = "";
   /**
    *
    *
@@ -369,7 +371,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=948
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=967
    * @return Whether the document field is set.
    */
   @java.lang.Override
@@ -387,7 +389,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=948
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=967
    * @return The document.
    */
   @java.lang.Override
@@ -409,11 +411,13 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   @java.lang.Deprecated
   public com.google.cloud.documentai.v1beta3.DocumentOrBuilder getDocumentOrBuilder() {
-    return getDocument();
+    return document_ == null
+        ? com.google.cloud.documentai.v1beta3.Document.getDefaultInstance()
+        : document_;
   }
 
   public static final int ENABLE_SCHEMA_VALIDATION_FIELD_NUMBER = 3;
-  private boolean enableSchemaValidation_;
+  private boolean enableSchemaValidation_ = false;
   /**
    *
    *
@@ -431,7 +435,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PRIORITY_FIELD_NUMBER = 5;
-  private int priority_;
+  private int priority_ = 0;
   /**
    *
    *
@@ -460,9 +464,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority getPriority() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority result =
-        com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority.valueOf(priority_);
+        com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority.forNumber(priority_);
     return result == null
         ? com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority.UNRECOGNIZED
         : result;
@@ -513,7 +516,9 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder getDocumentSchemaOrBuilder() {
-    return getDocumentSchema();
+    return documentSchema_ == null
+        ? com.google.cloud.documentai.v1beta3.DocumentSchema.getDefaultInstance()
+        : documentSchema_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -786,25 +791,21 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (inlineDocumentBuilder_ != null) {
         inlineDocumentBuilder_.clear();
       }
       humanReviewConfig_ = "";
-
-      if (documentBuilder_ == null) {
-        document_ = null;
-      } else {
-        document_ = null;
+      document_ = null;
+      if (documentBuilder_ != null) {
+        documentBuilder_.dispose();
         documentBuilder_ = null;
       }
       enableSchemaValidation_ = false;
-
       priority_ = 0;
-
-      if (documentSchemaBuilder_ == null) {
-        documentSchema_ = null;
-      } else {
-        documentSchema_ = null;
+      documentSchema_ = null;
+      if (documentSchemaBuilder_ != null) {
+        documentSchemaBuilder_.dispose();
         documentSchemaBuilder_ = null;
       }
       sourceCase_ = 0;
@@ -836,29 +837,41 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.documentai.v1beta3.ReviewDocumentRequest buildPartial() {
       com.google.cloud.documentai.v1beta3.ReviewDocumentRequest result =
           new com.google.cloud.documentai.v1beta3.ReviewDocumentRequest(this);
-      if (sourceCase_ == 4) {
-        if (inlineDocumentBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = inlineDocumentBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.humanReviewConfig_ = humanReviewConfig_;
-      if (documentBuilder_ == null) {
-        result.document_ = document_;
-      } else {
-        result.document_ = documentBuilder_.build();
-      }
-      result.enableSchemaValidation_ = enableSchemaValidation_;
-      result.priority_ = priority_;
-      if (documentSchemaBuilder_ == null) {
-        result.documentSchema_ = documentSchema_;
-      } else {
-        result.documentSchema_ = documentSchemaBuilder_.build();
-      }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1beta3.ReviewDocumentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.humanReviewConfig_ = humanReviewConfig_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.document_ = documentBuilder_ == null ? document_ : documentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.enableSchemaValidation_ = enableSchemaValidation_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.priority_ = priority_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.documentSchema_ =
+            documentSchemaBuilder_ == null ? documentSchema_ : documentSchemaBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.documentai.v1beta3.ReviewDocumentRequest result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 4 && inlineDocumentBuilder_ != null) {
+        result.source_ = inlineDocumentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -909,6 +922,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getHumanReviewConfig().isEmpty()) {
         humanReviewConfig_ = other.humanReviewConfig_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasDocument()) {
@@ -963,19 +977,19 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 humanReviewConfig_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDocumentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 24:
               {
                 enableSchemaValidation_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 34:
@@ -987,13 +1001,13 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
             case 40:
               {
                 priority_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getDocumentSchemaFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -1026,6 +1040,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.documentai.v1beta3.Document,
@@ -1233,7 +1249,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       sourceCase_ = 4;
       onChanged();
-      ;
       return inlineDocumentBuilder_;
     }
 
@@ -1307,8 +1322,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       humanReviewConfig_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1327,8 +1342,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearHumanReviewConfig() {
-
       humanReviewConfig_ = getDefaultInstance().getHumanReviewConfig();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1352,8 +1367,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       humanReviewConfig_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1374,12 +1389,12 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=948
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=967
      * @return Whether the document field is set.
      */
     @java.lang.Deprecated
     public boolean hasDocument() {
-      return documentBuilder_ != null || document_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1391,7 +1406,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=948
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=967
      * @return The document.
      */
     @java.lang.Deprecated
@@ -1420,11 +1435,11 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         document_ = value;
-        onChanged();
       } else {
         documentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1441,11 +1456,11 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.documentai.v1beta3.Document.Builder builderForValue) {
       if (documentBuilder_ == null) {
         document_ = builderForValue.build();
-        onChanged();
       } else {
         documentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1460,19 +1475,18 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Deprecated
     public Builder mergeDocument(com.google.cloud.documentai.v1beta3.Document value) {
       if (documentBuilder_ == null) {
-        if (document_ != null) {
-          document_ =
-              com.google.cloud.documentai.v1beta3.Document.newBuilder(document_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && document_ != null
+            && document_ != com.google.cloud.documentai.v1beta3.Document.getDefaultInstance()) {
+          getDocumentBuilder().mergeFrom(value);
         } else {
           document_ = value;
         }
-        onChanged();
       } else {
         documentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1486,14 +1500,13 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Deprecated
     public Builder clearDocument() {
-      if (documentBuilder_ == null) {
-        document_ = null;
-        onChanged();
-      } else {
-        document_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      document_ = null;
+      if (documentBuilder_ != null) {
+        documentBuilder_.dispose();
         documentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1507,7 +1520,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.Document.Builder getDocumentBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
@@ -1587,6 +1600,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     public Builder setEnableSchemaValidation(boolean value) {
 
       enableSchemaValidation_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1602,7 +1616,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearEnableSchemaValidation() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       enableSchemaValidation_ = false;
       onChanged();
       return this;
@@ -1637,8 +1651,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setPriorityValue(int value) {
-
       priority_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1655,9 +1669,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority getPriority() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority result =
-          com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority.valueOf(priority_);
+          com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority.forNumber(priority_);
       return result == null
           ? com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority.UNRECOGNIZED
           : result;
@@ -1679,7 +1692,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       priority_ = value.getNumber();
       onChanged();
       return this;
@@ -1696,7 +1709,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPriority() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       priority_ = 0;
       onChanged();
       return this;
@@ -1720,7 +1733,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the documentSchema field is set.
      */
     public boolean hasDocumentSchema() {
-      return documentSchemaBuilder_ != null || documentSchema_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1757,11 +1770,11 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         documentSchema_ = value;
-        onChanged();
       } else {
         documentSchemaBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1777,11 +1790,11 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.documentai.v1beta3.DocumentSchema.Builder builderForValue) {
       if (documentSchemaBuilder_ == null) {
         documentSchema_ = builderForValue.build();
-        onChanged();
       } else {
         documentSchemaBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1795,19 +1808,19 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeDocumentSchema(com.google.cloud.documentai.v1beta3.DocumentSchema value) {
       if (documentSchemaBuilder_ == null) {
-        if (documentSchema_ != null) {
-          documentSchema_ =
-              com.google.cloud.documentai.v1beta3.DocumentSchema.newBuilder(documentSchema_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && documentSchema_ != null
+            && documentSchema_
+                != com.google.cloud.documentai.v1beta3.DocumentSchema.getDefaultInstance()) {
+          getDocumentSchemaBuilder().mergeFrom(value);
         } else {
           documentSchema_ = value;
         }
-        onChanged();
       } else {
         documentSchemaBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1820,14 +1833,13 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 6;</code>
      */
     public Builder clearDocumentSchema() {
-      if (documentSchemaBuilder_ == null) {
-        documentSchema_ = null;
-        onChanged();
-      } else {
-        documentSchema_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      documentSchema_ = null;
+      if (documentSchemaBuilder_ != null) {
+        documentSchemaBuilder_.dispose();
         documentSchemaBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1840,7 +1852,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 6;</code>
      */
     public com.google.cloud.documentai.v1beta3.DocumentSchema.Builder getDocumentSchemaBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getDocumentSchemaFieldBuilder().getBuilder();
     }

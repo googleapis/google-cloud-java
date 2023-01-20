@@ -187,7 +187,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int INPUT_DOCUMENTS_COUNT_FIELD_NUMBER = 1;
-    private int inputDocumentsCount_;
+    private int inputDocumentsCount_ = 0;
     /**
      *
      *
@@ -205,7 +205,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int INVALID_DOCUMENTS_COUNT_FIELD_NUMBER = 2;
-    private int invalidDocumentsCount_;
+    private int invalidDocumentsCount_ = 0;
     /**
      *
      *
@@ -224,7 +224,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int FAILED_DOCUMENTS_COUNT_FIELD_NUMBER = 3;
-    private int failedDocumentsCount_;
+    private int failedDocumentsCount_ = 0;
     /**
      *
      *
@@ -243,7 +243,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int EVALUATED_DOCUMENTS_COUNT_FIELD_NUMBER = 4;
-    private int evaluatedDocumentsCount_;
+    private int evaluatedDocumentsCount_ = 0;
     /**
      *
      *
@@ -487,14 +487,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         inputDocumentsCount_ = 0;
-
         invalidDocumentsCount_ = 0;
-
         failedDocumentsCount_ = 0;
-
         evaluatedDocumentsCount_ = 0;
-
         return this;
       }
 
@@ -522,12 +519,27 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.documentai.v1beta3.Evaluation.Counters buildPartial() {
         com.google.cloud.documentai.v1beta3.Evaluation.Counters result =
             new com.google.cloud.documentai.v1beta3.Evaluation.Counters(this);
-        result.inputDocumentsCount_ = inputDocumentsCount_;
-        result.invalidDocumentsCount_ = invalidDocumentsCount_;
-        result.failedDocumentsCount_ = failedDocumentsCount_;
-        result.evaluatedDocumentsCount_ = evaluatedDocumentsCount_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.documentai.v1beta3.Evaluation.Counters result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.inputDocumentsCount_ = inputDocumentsCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.invalidDocumentsCount_ = invalidDocumentsCount_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.failedDocumentsCount_ = failedDocumentsCount_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.evaluatedDocumentsCount_ = evaluatedDocumentsCount_;
+        }
       }
 
       @java.lang.Override
@@ -619,25 +631,25 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   inputDocumentsCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   invalidDocumentsCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   failedDocumentsCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 32:
                 {
                   evaluatedDocumentsCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               default:
@@ -656,6 +668,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int inputDocumentsCount_;
       /**
@@ -688,6 +702,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setInputDocumentsCount(int value) {
 
         inputDocumentsCount_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -703,7 +718,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearInputDocumentsCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         inputDocumentsCount_ = 0;
         onChanged();
         return this;
@@ -742,6 +757,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setInvalidDocumentsCount(int value) {
 
         invalidDocumentsCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -758,7 +774,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearInvalidDocumentsCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         invalidDocumentsCount_ = 0;
         onChanged();
         return this;
@@ -797,6 +813,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setFailedDocumentsCount(int value) {
 
         failedDocumentsCount_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -813,7 +830,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearFailedDocumentsCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         failedDocumentsCount_ = 0;
         onChanged();
         return this;
@@ -850,6 +867,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setEvaluatedDocumentsCount(int value) {
 
         evaluatedDocumentsCount_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -865,7 +883,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEvaluatedDocumentsCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         evaluatedDocumentsCount_ = 0;
         onChanged();
         return this;
@@ -1131,7 +1149,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PRECISION_FIELD_NUMBER = 1;
-    private float precision_;
+    private float precision_ = 0F;
     /**
      *
      *
@@ -1149,7 +1167,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RECALL_FIELD_NUMBER = 2;
-    private float recall_;
+    private float recall_ = 0F;
     /**
      *
      *
@@ -1167,7 +1185,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int F1_SCORE_FIELD_NUMBER = 3;
-    private float f1Score_;
+    private float f1Score_ = 0F;
     /**
      *
      *
@@ -1185,7 +1203,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PREDICTED_OCCURRENCES_COUNT_FIELD_NUMBER = 4;
-    private int predictedOccurrencesCount_;
+    private int predictedOccurrencesCount_ = 0;
     /**
      *
      *
@@ -1203,7 +1221,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GROUND_TRUTH_OCCURRENCES_COUNT_FIELD_NUMBER = 5;
-    private int groundTruthOccurrencesCount_;
+    private int groundTruthOccurrencesCount_ = 0;
     /**
      *
      *
@@ -1221,7 +1239,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PREDICTED_DOCUMENT_COUNT_FIELD_NUMBER = 10;
-    private int predictedDocumentCount_;
+    private int predictedDocumentCount_ = 0;
     /**
      *
      *
@@ -1239,7 +1257,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GROUND_TRUTH_DOCUMENT_COUNT_FIELD_NUMBER = 11;
-    private int groundTruthDocumentCount_;
+    private int groundTruthDocumentCount_ = 0;
     /**
      *
      *
@@ -1257,7 +1275,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TRUE_POSITIVES_COUNT_FIELD_NUMBER = 6;
-    private int truePositivesCount_;
+    private int truePositivesCount_ = 0;
     /**
      *
      *
@@ -1275,7 +1293,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int FALSE_POSITIVES_COUNT_FIELD_NUMBER = 7;
-    private int falsePositivesCount_;
+    private int falsePositivesCount_ = 0;
     /**
      *
      *
@@ -1293,7 +1311,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int FALSE_NEGATIVES_COUNT_FIELD_NUMBER = 8;
-    private int falseNegativesCount_;
+    private int falseNegativesCount_ = 0;
     /**
      *
      *
@@ -1311,7 +1329,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TOTAL_DOCUMENTS_COUNT_FIELD_NUMBER = 9;
-    private int totalDocumentsCount_;
+    private int totalDocumentsCount_ = 0;
     /**
      *
      *
@@ -1624,28 +1642,18 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         precision_ = 0F;
-
         recall_ = 0F;
-
         f1Score_ = 0F;
-
         predictedOccurrencesCount_ = 0;
-
         groundTruthOccurrencesCount_ = 0;
-
         predictedDocumentCount_ = 0;
-
         groundTruthDocumentCount_ = 0;
-
         truePositivesCount_ = 0;
-
         falsePositivesCount_ = 0;
-
         falseNegativesCount_ = 0;
-
         totalDocumentsCount_ = 0;
-
         return this;
       }
 
@@ -1673,19 +1681,48 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.documentai.v1beta3.Evaluation.Metrics buildPartial() {
         com.google.cloud.documentai.v1beta3.Evaluation.Metrics result =
             new com.google.cloud.documentai.v1beta3.Evaluation.Metrics(this);
-        result.precision_ = precision_;
-        result.recall_ = recall_;
-        result.f1Score_ = f1Score_;
-        result.predictedOccurrencesCount_ = predictedOccurrencesCount_;
-        result.groundTruthOccurrencesCount_ = groundTruthOccurrencesCount_;
-        result.predictedDocumentCount_ = predictedDocumentCount_;
-        result.groundTruthDocumentCount_ = groundTruthDocumentCount_;
-        result.truePositivesCount_ = truePositivesCount_;
-        result.falsePositivesCount_ = falsePositivesCount_;
-        result.falseNegativesCount_ = falseNegativesCount_;
-        result.totalDocumentsCount_ = totalDocumentsCount_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.documentai.v1beta3.Evaluation.Metrics result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.precision_ = precision_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.recall_ = recall_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.f1Score_ = f1Score_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.predictedOccurrencesCount_ = predictedOccurrencesCount_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.groundTruthOccurrencesCount_ = groundTruthOccurrencesCount_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.predictedDocumentCount_ = predictedDocumentCount_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.groundTruthDocumentCount_ = groundTruthDocumentCount_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.truePositivesCount_ = truePositivesCount_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.falsePositivesCount_ = falsePositivesCount_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.falseNegativesCount_ = falseNegativesCount_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.totalDocumentsCount_ = totalDocumentsCount_;
+        }
       }
 
       @java.lang.Override
@@ -1798,67 +1835,67 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
               case 13:
                 {
                   precision_ = input.readFloat();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 13
               case 21:
                 {
                   recall_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               case 29:
                 {
                   f1Score_ = input.readFloat();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 29
               case 32:
                 {
                   predictedOccurrencesCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               case 40:
                 {
                   groundTruthOccurrencesCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               case 48:
                 {
                   truePositivesCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 48
               case 56:
                 {
                   falsePositivesCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 56
               case 64:
                 {
                   falseNegativesCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000200;
                   break;
                 } // case 64
               case 72:
                 {
                   totalDocumentsCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000400;
                   break;
                 } // case 72
               case 80:
                 {
                   predictedDocumentCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 80
               case 88:
                 {
                   groundTruthDocumentCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 88
               default:
@@ -1877,6 +1914,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private float precision_;
       /**
@@ -1909,6 +1948,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setPrecision(float value) {
 
         precision_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1924,7 +1964,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPrecision() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         precision_ = 0F;
         onChanged();
         return this;
@@ -1961,6 +2001,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setRecall(float value) {
 
         recall_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1976,7 +2017,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearRecall() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         recall_ = 0F;
         onChanged();
         return this;
@@ -2013,6 +2054,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setF1Score(float value) {
 
         f1Score_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2028,7 +2070,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearF1Score() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         f1Score_ = 0F;
         onChanged();
         return this;
@@ -2065,6 +2107,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setPredictedOccurrencesCount(int value) {
 
         predictedOccurrencesCount_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2080,7 +2123,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPredictedOccurrencesCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         predictedOccurrencesCount_ = 0;
         onChanged();
         return this;
@@ -2117,6 +2160,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setGroundTruthOccurrencesCount(int value) {
 
         groundTruthOccurrencesCount_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2132,7 +2176,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearGroundTruthOccurrencesCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         groundTruthOccurrencesCount_ = 0;
         onChanged();
         return this;
@@ -2169,6 +2213,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setPredictedDocumentCount(int value) {
 
         predictedDocumentCount_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2184,7 +2229,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPredictedDocumentCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         predictedDocumentCount_ = 0;
         onChanged();
         return this;
@@ -2221,6 +2266,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setGroundTruthDocumentCount(int value) {
 
         groundTruthDocumentCount_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2236,7 +2282,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearGroundTruthDocumentCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000040);
         groundTruthDocumentCount_ = 0;
         onChanged();
         return this;
@@ -2273,6 +2319,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setTruePositivesCount(int value) {
 
         truePositivesCount_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -2288,7 +2335,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTruePositivesCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000080);
         truePositivesCount_ = 0;
         onChanged();
         return this;
@@ -2325,6 +2372,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setFalsePositivesCount(int value) {
 
         falsePositivesCount_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2340,7 +2388,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearFalsePositivesCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000100);
         falsePositivesCount_ = 0;
         onChanged();
         return this;
@@ -2377,6 +2425,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setFalseNegativesCount(int value) {
 
         falseNegativesCount_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -2392,7 +2441,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearFalseNegativesCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000200);
         falseNegativesCount_ = 0;
         onChanged();
         return this;
@@ -2429,6 +2478,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setTotalDocumentsCount(int value) {
 
         totalDocumentsCount_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -2444,7 +2494,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTotalDocumentsCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000400);
         totalDocumentsCount_ = 0;
         onChanged();
         return this;
@@ -2615,7 +2665,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CONFIDENCE_LEVEL_FIELD_NUMBER = 1;
-    private float confidenceLevel_;
+    private float confidenceLevel_ = 0F;
     /**
      *
      *
@@ -2677,7 +2727,9 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.documentai.v1beta3.Evaluation.MetricsOrBuilder getMetricsOrBuilder() {
-      return getMetrics();
+      return metrics_ == null
+          ? com.google.cloud.documentai.v1beta3.Evaluation.Metrics.getDefaultInstance()
+          : metrics_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2898,12 +2950,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         confidenceLevel_ = 0F;
-
-        if (metricsBuilder_ == null) {
-          metrics_ = null;
-        } else {
-          metrics_ = null;
+        metrics_ = null;
+        if (metricsBuilder_ != null) {
+          metricsBuilder_.dispose();
           metricsBuilder_ = null;
         }
         return this;
@@ -2936,14 +2987,22 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.documentai.v1beta3.Evaluation.ConfidenceLevelMetrics buildPartial() {
         com.google.cloud.documentai.v1beta3.Evaluation.ConfidenceLevelMetrics result =
             new com.google.cloud.documentai.v1beta3.Evaluation.ConfidenceLevelMetrics(this);
-        result.confidenceLevel_ = confidenceLevel_;
-        if (metricsBuilder_ == null) {
-          result.metrics_ = metrics_;
-        } else {
-          result.metrics_ = metricsBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.documentai.v1beta3.Evaluation.ConfidenceLevelMetrics result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.confidenceLevel_ = confidenceLevel_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.metrics_ = metricsBuilder_ == null ? metrics_ : metricsBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3033,13 +3092,13 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
               case 13:
                 {
                   confidenceLevel_ = input.readFloat();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 13
               case 18:
                 {
                   input.readMessage(getMetricsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -3058,6 +3117,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private float confidenceLevel_;
       /**
@@ -3090,6 +3151,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setConfidenceLevel(float value) {
 
         confidenceLevel_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3105,7 +3167,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearConfidenceLevel() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         confidenceLevel_ = 0F;
         onChanged();
         return this;
@@ -3129,7 +3191,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the metrics field is set.
        */
       public boolean hasMetrics() {
-        return metricsBuilder_ != null || metrics_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -3166,11 +3228,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           metrics_ = value;
-          onChanged();
         } else {
           metricsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3186,11 +3248,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.documentai.v1beta3.Evaluation.Metrics.Builder builderForValue) {
         if (metricsBuilder_ == null) {
           metrics_ = builderForValue.build();
-          onChanged();
         } else {
           metricsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3204,19 +3266,19 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeMetrics(com.google.cloud.documentai.v1beta3.Evaluation.Metrics value) {
         if (metricsBuilder_ == null) {
-          if (metrics_ != null) {
-            metrics_ =
-                com.google.cloud.documentai.v1beta3.Evaluation.Metrics.newBuilder(metrics_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && metrics_ != null
+              && metrics_
+                  != com.google.cloud.documentai.v1beta3.Evaluation.Metrics.getDefaultInstance()) {
+            getMetricsBuilder().mergeFrom(value);
           } else {
             metrics_ = value;
           }
-          onChanged();
         } else {
           metricsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3229,14 +3291,13 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.documentai.v1beta3.Evaluation.Metrics metrics = 2;</code>
        */
       public Builder clearMetrics() {
-        if (metricsBuilder_ == null) {
-          metrics_ = null;
-          onChanged();
-        } else {
-          metrics_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        metrics_ = null;
+        if (metricsBuilder_ != null) {
+          metricsBuilder_.dispose();
           metricsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3249,7 +3310,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.documentai.v1beta3.Evaluation.Metrics metrics = 2;</code>
        */
       public com.google.cloud.documentai.v1beta3.Evaluation.Metrics.Builder getMetricsBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getMetricsFieldBuilder().getBuilder();
       }
@@ -3792,6 +3853,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CONFIDENCE_LEVEL_METRICS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.documentai.v1beta3.Evaluation.ConfidenceLevelMetrics>
         confidenceLevelMetrics_;
     /**
@@ -3877,6 +3940,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CONFIDENCE_LEVEL_METRICS_EXACT_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.documentai.v1beta3.Evaluation.ConfidenceLevelMetrics>
         confidenceLevelMetricsExact_;
     /**
@@ -3962,7 +4027,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int AUPRC_FIELD_NUMBER = 2;
-    private float auprc_;
+    private float auprc_ = 0F;
     /**
      *
      *
@@ -3981,7 +4046,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ESTIMATED_CALIBRATION_ERROR_FIELD_NUMBER = 3;
-    private float estimatedCalibrationError_;
+    private float estimatedCalibrationError_ = 0F;
     /**
      *
      *
@@ -4000,7 +4065,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int AUPRC_EXACT_FIELD_NUMBER = 5;
-    private float auprcExact_;
+    private float auprcExact_ = 0F;
     /**
      *
      *
@@ -4019,7 +4084,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ESTIMATED_CALIBRATION_ERROR_EXACT_FIELD_NUMBER = 6;
-    private float estimatedCalibrationErrorExact_;
+    private float estimatedCalibrationErrorExact_ = 0F;
     /**
      *
      *
@@ -4038,7 +4103,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int METRICS_TYPE_FIELD_NUMBER = 7;
-    private int metricsType_;
+    private int metricsType_ = 0;
     /**
      *
      *
@@ -4072,10 +4137,9 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics.MetricsType
         getMetricsType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics.MetricsType result =
-          com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics.MetricsType.valueOf(
-              metricsType_);
+          com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics.MetricsType
+              .forNumber(metricsType_);
       return result == null
           ? com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics.MetricsType
               .UNRECOGNIZED
@@ -4363,6 +4427,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (confidenceLevelMetricsBuilder_ == null) {
           confidenceLevelMetrics_ = java.util.Collections.emptyList();
         } else {
@@ -4378,15 +4443,10 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ = (bitField0_ & ~0x00000002);
         auprc_ = 0F;
-
         estimatedCalibrationError_ = 0F;
-
         auprcExact_ = 0F;
-
         estimatedCalibrationErrorExact_ = 0F;
-
         metricsType_ = 0;
-
         return this;
       }
 
@@ -4417,7 +4477,16 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics buildPartial() {
         com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics result =
             new com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics result) {
         if (confidenceLevelMetricsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             confidenceLevelMetrics_ =
@@ -4438,13 +4507,26 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.confidenceLevelMetricsExact_ = confidenceLevelMetricsExactBuilder_.build();
         }
-        result.auprc_ = auprc_;
-        result.estimatedCalibrationError_ = estimatedCalibrationError_;
-        result.auprcExact_ = auprcExact_;
-        result.estimatedCalibrationErrorExact_ = estimatedCalibrationErrorExact_;
-        result.metricsType_ = metricsType_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.auprc_ = auprc_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.estimatedCalibrationError_ = estimatedCalibrationError_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.auprcExact_ = auprcExact_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.estimatedCalibrationErrorExact_ = estimatedCalibrationErrorExact_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.metricsType_ = metricsType_;
+        }
       }
 
       @java.lang.Override
@@ -4613,13 +4695,13 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
               case 21:
                 {
                   auprc_ = input.readFloat();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 21
               case 29:
                 {
                   estimatedCalibrationError_ = input.readFloat();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 29
               case 34:
@@ -4640,19 +4722,19 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
               case 45:
                 {
                   auprcExact_ = input.readFloat();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 45
               case 53:
                 {
                   estimatedCalibrationErrorExact_ = input.readFloat();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 53
               case 56:
                 {
                   metricsType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 56
               default:
@@ -5540,6 +5622,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setAuprc(float value) {
 
         auprc_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5556,7 +5639,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAuprc() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         auprc_ = 0F;
         onChanged();
         return this;
@@ -5595,6 +5678,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setEstimatedCalibrationError(float value) {
 
         estimatedCalibrationError_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -5611,7 +5695,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEstimatedCalibrationError() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         estimatedCalibrationError_ = 0F;
         onChanged();
         return this;
@@ -5650,6 +5734,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setAuprcExact(float value) {
 
         auprcExact_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -5666,7 +5751,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAuprcExact() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         auprcExact_ = 0F;
         onChanged();
         return this;
@@ -5705,6 +5790,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       public Builder setEstimatedCalibrationErrorExact(float value) {
 
         estimatedCalibrationErrorExact_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -5721,7 +5807,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEstimatedCalibrationErrorExact() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         estimatedCalibrationErrorExact_ = 0F;
         onChanged();
         return this;
@@ -5760,8 +5846,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setMetricsTypeValue(int value) {
-
         metricsType_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -5781,10 +5867,9 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics.MetricsType
           getMetricsType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics.MetricsType result =
             com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics.MetricsType
-                .valueOf(metricsType_);
+                .forNumber(metricsType_);
         return result == null
             ? com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics.MetricsType
                 .UNRECOGNIZED
@@ -5809,7 +5894,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000040;
         metricsType_ = value.getNumber();
         onChanged();
         return this;
@@ -5828,7 +5913,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMetricsType() {
-
+        bitField0_ = (bitField0_ & ~0x00000040);
         metricsType_ = 0;
         onChanged();
         return this;
@@ -5903,7 +5988,9 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -5998,7 +6085,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int DOCUMENT_COUNTERS_FIELD_NUMBER = 5;
@@ -6047,7 +6134,9 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.documentai.v1beta3.Evaluation.CountersOrBuilder
       getDocumentCountersOrBuilder() {
-    return getDocumentCounters();
+    return documentCounters_ == null
+        ? com.google.cloud.documentai.v1beta3.Evaluation.Counters.getDefaultInstance()
+        : documentCounters_;
   }
 
   public static final int ALL_ENTITIES_METRICS_FIELD_NUMBER = 3;
@@ -6103,7 +6192,9 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetricsOrBuilder
       getAllEntitiesMetricsOrBuilder() {
-    return getAllEntitiesMetrics();
+    return allEntitiesMetrics_ == null
+        ? com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics.getDefaultInstance()
+        : allEntitiesMetrics_;
   }
 
   public static final int ENTITY_METRICS_FIELD_NUMBER = 4;
@@ -6125,6 +6216,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics>
       entityMetrics_;
@@ -6197,9 +6289,10 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics
+  public /* nullable */ com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics
       getEntityMetricsOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
@@ -6236,7 +6329,9 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KMS_KEY_NAME_FIELD_NUMBER = 6;
-  private volatile java.lang.Object kmsKeyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyName_ = "";
   /**
    *
    *
@@ -6285,7 +6380,9 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KMS_KEY_VERSION_NAME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object kmsKeyVersionName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyVersionName_ = "";
   /**
    *
    *
@@ -6631,31 +6728,26 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (documentCountersBuilder_ == null) {
-        documentCounters_ = null;
-      } else {
-        documentCounters_ = null;
+      documentCounters_ = null;
+      if (documentCountersBuilder_ != null) {
+        documentCountersBuilder_.dispose();
         documentCountersBuilder_ = null;
       }
-      if (allEntitiesMetricsBuilder_ == null) {
-        allEntitiesMetrics_ = null;
-      } else {
-        allEntitiesMetrics_ = null;
+      allEntitiesMetrics_ = null;
+      if (allEntitiesMetricsBuilder_ != null) {
+        allEntitiesMetricsBuilder_.dispose();
         allEntitiesMetricsBuilder_ = null;
       }
       internalGetMutableEntityMetrics().clear();
       kmsKeyName_ = "";
-
       kmsKeyVersionName_ = "";
-
       return this;
     }
 
@@ -6683,29 +6775,41 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1beta3.Evaluation buildPartial() {
       com.google.cloud.documentai.v1beta3.Evaluation result =
           new com.google.cloud.documentai.v1beta3.Evaluation(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (documentCountersBuilder_ == null) {
-        result.documentCounters_ = documentCounters_;
-      } else {
-        result.documentCounters_ = documentCountersBuilder_.build();
-      }
-      if (allEntitiesMetricsBuilder_ == null) {
-        result.allEntitiesMetrics_ = allEntitiesMetrics_;
-      } else {
-        result.allEntitiesMetrics_ = allEntitiesMetricsBuilder_.build();
-      }
-      result.entityMetrics_ = internalGetEntityMetrics();
-      result.entityMetrics_.makeImmutable();
-      result.kmsKeyName_ = kmsKeyName_;
-      result.kmsKeyVersionName_ = kmsKeyVersionName_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1beta3.Evaluation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.documentCounters_ =
+            documentCountersBuilder_ == null ? documentCounters_ : documentCountersBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.allEntitiesMetrics_ =
+            allEntitiesMetricsBuilder_ == null
+                ? allEntitiesMetrics_
+                : allEntitiesMetricsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.entityMetrics_ = internalGetEntityMetrics();
+        result.entityMetrics_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.kmsKeyName_ = kmsKeyName_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.kmsKeyVersionName_ = kmsKeyVersionName_;
+      }
     }
 
     @java.lang.Override
@@ -6755,6 +6859,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.documentai.v1beta3.Evaluation.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -6767,12 +6872,15 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
         mergeAllEntitiesMetrics(other.getAllEntitiesMetrics());
       }
       internalGetMutableEntityMetrics().mergeFrom(other.internalGetEntityMetrics());
+      bitField0_ |= 0x00000010;
       if (!other.getKmsKeyName().isEmpty()) {
         kmsKeyName_ = other.kmsKeyName_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getKmsKeyVersionName().isEmpty()) {
         kmsKeyVersionName_ = other.kmsKeyVersionName_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -6804,20 +6912,20 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getAllEntitiesMetricsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
@@ -6832,25 +6940,26 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableEntityMetrics()
                     .getMutableMap()
                     .put(entityMetrics__.getKey(), entityMetrics__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getDocumentCountersFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             case 50:
               {
                 kmsKeyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 kmsKeyVersionName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -6939,8 +7048,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -6958,8 +7067,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -6982,8 +7091,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -7006,7 +7115,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -7043,11 +7152,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -7062,11 +7171,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -7080,17 +7189,18 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -7103,14 +7213,13 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7123,7 +7232,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -7189,7 +7298,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the documentCounters field is set.
      */
     public boolean hasDocumentCounters() {
-      return documentCountersBuilder_ != null || documentCounters_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -7227,11 +7336,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         documentCounters_ = value;
-        onChanged();
       } else {
         documentCountersBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -7247,11 +7356,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.documentai.v1beta3.Evaluation.Counters.Builder builderForValue) {
       if (documentCountersBuilder_ == null) {
         documentCounters_ = builderForValue.build();
-        onChanged();
       } else {
         documentCountersBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -7266,19 +7375,19 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDocumentCounters(
         com.google.cloud.documentai.v1beta3.Evaluation.Counters value) {
       if (documentCountersBuilder_ == null) {
-        if (documentCounters_ != null) {
-          documentCounters_ =
-              com.google.cloud.documentai.v1beta3.Evaluation.Counters.newBuilder(documentCounters_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && documentCounters_ != null
+            && documentCounters_
+                != com.google.cloud.documentai.v1beta3.Evaluation.Counters.getDefaultInstance()) {
+          getDocumentCountersBuilder().mergeFrom(value);
         } else {
           documentCounters_ = value;
         }
-        onChanged();
       } else {
         documentCountersBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -7291,14 +7400,13 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.Evaluation.Counters document_counters = 5;</code>
      */
     public Builder clearDocumentCounters() {
-      if (documentCountersBuilder_ == null) {
-        documentCounters_ = null;
-        onChanged();
-      } else {
-        documentCounters_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      documentCounters_ = null;
+      if (documentCountersBuilder_ != null) {
+        documentCountersBuilder_.dispose();
         documentCountersBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7312,7 +7420,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.documentai.v1beta3.Evaluation.Counters.Builder
         getDocumentCountersBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDocumentCountersFieldBuilder().getBuilder();
     }
@@ -7382,7 +7490,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the allEntitiesMetrics field is set.
      */
     public boolean hasAllEntitiesMetrics() {
-      return allEntitiesMetricsBuilder_ != null || allEntitiesMetrics_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -7426,11 +7534,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         allEntitiesMetrics_ = value;
-        onChanged();
       } else {
         allEntitiesMetricsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -7449,11 +7557,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (allEntitiesMetricsBuilder_ == null) {
         allEntitiesMetrics_ = builderForValue.build();
-        onChanged();
       } else {
         allEntitiesMetricsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -7470,20 +7578,20 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAllEntitiesMetrics(
         com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics value) {
       if (allEntitiesMetricsBuilder_ == null) {
-        if (allEntitiesMetrics_ != null) {
-          allEntitiesMetrics_ =
-              com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics.newBuilder(
-                      allEntitiesMetrics_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && allEntitiesMetrics_ != null
+            && allEntitiesMetrics_
+                != com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics
+                    .getDefaultInstance()) {
+          getAllEntitiesMetricsBuilder().mergeFrom(value);
         } else {
           allEntitiesMetrics_ = value;
         }
-        onChanged();
       } else {
         allEntitiesMetricsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -7498,14 +7606,13 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAllEntitiesMetrics() {
-      if (allEntitiesMetricsBuilder_ == null) {
-        allEntitiesMetrics_ = null;
-        onChanged();
-      } else {
-        allEntitiesMetrics_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      allEntitiesMetrics_ = null;
+      if (allEntitiesMetricsBuilder_ != null) {
+        allEntitiesMetricsBuilder_.dispose();
         allEntitiesMetricsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7521,7 +7628,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics.Builder
         getAllEntitiesMetricsBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getAllEntitiesMetricsFieldBuilder().getBuilder();
     }
@@ -7592,8 +7699,6 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics>
         internalGetMutableEntityMetrics() {
-      onChanged();
-      ;
       if (entityMetrics_ == null) {
         entityMetrics_ =
             com.google.protobuf.MapField.newMapField(EntityMetricsDefaultEntryHolder.defaultEntry);
@@ -7601,6 +7706,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       if (!entityMetrics_.isMutable()) {
         entityMetrics_ = entityMetrics_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return entityMetrics_;
     }
 
@@ -7662,9 +7769,10 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics
+    public /* nullable */ com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics
         getEntityMetricsOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -7703,6 +7811,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearEntityMetrics() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableEntityMetrics().getMutableMap().clear();
       return this;
     }
@@ -7729,6 +7838,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<
             java.lang.String, com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics>
         getMutableEntityMetrics() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableEntityMetrics().getMutableMap();
     }
     /**
@@ -7751,8 +7861,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableEntityMetrics().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -7772,6 +7882,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.documentai.v1beta3.Evaluation.MultiConfidenceMetrics>
             values) {
       internalGetMutableEntityMetrics().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -7836,8 +7947,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       kmsKeyName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -7853,8 +7964,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKmsKeyName() {
-
       kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -7875,8 +7986,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kmsKeyName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -7942,8 +8053,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       kmsKeyVersionName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -7959,8 +8070,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKmsKeyVersionName() {
-
       kmsKeyVersionName_ = getDefaultInstance().getKmsKeyVersionName();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -7981,8 +8092,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kmsKeyVersionName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

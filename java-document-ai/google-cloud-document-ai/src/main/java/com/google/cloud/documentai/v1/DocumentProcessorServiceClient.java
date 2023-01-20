@@ -825,6 +825,121 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Gets a processor type detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ProcessorTypeName name = ProcessorTypeName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR_TYPE]");
+   *   ProcessorType response = documentProcessorServiceClient.getProcessorType(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The processor type resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProcessorType getProcessorType(ProcessorTypeName name) {
+    GetProcessorTypeRequest request =
+        GetProcessorTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getProcessorType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a processor type detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   String name = ProcessorTypeName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR_TYPE]").toString();
+   *   ProcessorType response = documentProcessorServiceClient.getProcessorType(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The processor type resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProcessorType getProcessorType(String name) {
+    GetProcessorTypeRequest request = GetProcessorTypeRequest.newBuilder().setName(name).build();
+    return getProcessorType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a processor type detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   GetProcessorTypeRequest request =
+   *       GetProcessorTypeRequest.newBuilder()
+   *           .setName(
+   *               ProcessorTypeName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR_TYPE]").toString())
+   *           .build();
+   *   ProcessorType response = documentProcessorServiceClient.getProcessorType(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProcessorType getProcessorType(GetProcessorTypeRequest request) {
+    return getProcessorTypeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a processor type detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   GetProcessorTypeRequest request =
+   *       GetProcessorTypeRequest.newBuilder()
+   *           .setName(
+   *               ProcessorTypeName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR_TYPE]").toString())
+   *           .build();
+   *   ApiFuture<ProcessorType> future =
+   *       documentProcessorServiceClient.getProcessorTypeCallable().futureCall(request);
+   *   // Do something.
+   *   ProcessorType response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetProcessorTypeRequest, ProcessorType> getProcessorTypeCallable() {
+    return stub.getProcessorTypeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists all processors which belong to this project.
    *
    * <p>Sample code:

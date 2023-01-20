@@ -66,7 +66,7 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PAGE_NUMBER_FIELD_NUMBER = 1;
-  private int pageNumber_;
+  private int pageNumber_ = 0;
   /**
    *
    *
@@ -133,7 +133,9 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.documentai.v1beta1.BoundingPolyOrBuilder getBoundingBoxOrBuilder() {
-    return getBoundingBox();
+    return boundingBox_ == null
+        ? com.google.cloud.documentai.v1beta1.BoundingPoly.getDefaultInstance()
+        : boundingBox_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -347,12 +349,11 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       pageNumber_ = 0;
-
-      if (boundingBoxBuilder_ == null) {
-        boundingBox_ = null;
-      } else {
-        boundingBox_ = null;
+      boundingBox_ = null;
+      if (boundingBoxBuilder_ != null) {
+        boundingBoxBuilder_.dispose();
         boundingBoxBuilder_ = null;
       }
       return this;
@@ -382,14 +383,22 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1beta1.TableBoundHint buildPartial() {
       com.google.cloud.documentai.v1beta1.TableBoundHint result =
           new com.google.cloud.documentai.v1beta1.TableBoundHint(this);
-      result.pageNumber_ = pageNumber_;
-      if (boundingBoxBuilder_ == null) {
-        result.boundingBox_ = boundingBox_;
-      } else {
-        result.boundingBox_ = boundingBoxBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1beta1.TableBoundHint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.pageNumber_ = pageNumber_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.boundingBox_ =
+            boundingBoxBuilder_ == null ? boundingBox_ : boundingBoxBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -473,13 +482,13 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 pageNumber_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getBoundingBoxFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -498,6 +507,8 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int pageNumber_;
     /**
@@ -534,6 +545,7 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
     public Builder setPageNumber(int value) {
 
       pageNumber_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -551,7 +563,7 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPageNumber() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       pageNumber_ = 0;
       onChanged();
       return this;
@@ -576,7 +588,7 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the boundingBox field is set.
      */
     public boolean hasBoundingBox() {
-      return boundingBoxBuilder_ != null || boundingBox_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -615,11 +627,11 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         boundingBox_ = value;
-        onChanged();
       } else {
         boundingBoxBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -636,11 +648,11 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.documentai.v1beta1.BoundingPoly.Builder builderForValue) {
       if (boundingBoxBuilder_ == null) {
         boundingBox_ = builderForValue.build();
-        onChanged();
       } else {
         boundingBoxBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -655,19 +667,19 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBoundingBox(com.google.cloud.documentai.v1beta1.BoundingPoly value) {
       if (boundingBoxBuilder_ == null) {
-        if (boundingBox_ != null) {
-          boundingBox_ =
-              com.google.cloud.documentai.v1beta1.BoundingPoly.newBuilder(boundingBox_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && boundingBox_ != null
+            && boundingBox_
+                != com.google.cloud.documentai.v1beta1.BoundingPoly.getDefaultInstance()) {
+          getBoundingBoxBuilder().mergeFrom(value);
         } else {
           boundingBox_ = value;
         }
-        onChanged();
       } else {
         boundingBoxBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -681,14 +693,13 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta1.BoundingPoly bounding_box = 2;</code>
      */
     public Builder clearBoundingBox() {
-      if (boundingBoxBuilder_ == null) {
-        boundingBox_ = null;
-        onChanged();
-      } else {
-        boundingBox_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      boundingBox_ = null;
+      if (boundingBoxBuilder_ != null) {
+        boundingBoxBuilder_.dispose();
         boundingBoxBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -702,7 +713,7 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta1.BoundingPoly bounding_box = 2;</code>
      */
     public com.google.cloud.documentai.v1beta1.BoundingPoly.Builder getBoundingBoxBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getBoundingBoxFieldBuilder().getBuilder();
     }

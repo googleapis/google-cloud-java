@@ -70,7 +70,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ENABLED_FIELD_NUMBER = 1;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -88,6 +88,8 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
   }
 
   public static final int TABLE_BOUND_HINTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.documentai.v1beta1.TableBoundHint> tableBoundHints_;
   /**
    *
@@ -174,6 +176,8 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
   }
 
   public static final int HEADER_HINTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList headerHints_;
   /**
    *
@@ -239,7 +243,9 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
   }
 
   public static final int MODEL_VERSION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object modelVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object modelVersion_ = "";
   /**
    *
    *
@@ -523,19 +529,18 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enabled_ = false;
-
       if (tableBoundHintsBuilder_ == null) {
         tableBoundHints_ = java.util.Collections.emptyList();
       } else {
         tableBoundHints_ = null;
         tableBoundHintsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      headerHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      headerHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       modelVersion_ = "";
-
       return this;
     }
 
@@ -563,25 +568,40 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
     public com.google.cloud.documentai.v1beta1.TableExtractionParams buildPartial() {
       com.google.cloud.documentai.v1beta1.TableExtractionParams result =
           new com.google.cloud.documentai.v1beta1.TableExtractionParams(this);
-      int from_bitField0_ = bitField0_;
-      result.enabled_ = enabled_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.documentai.v1beta1.TableExtractionParams result) {
       if (tableBoundHintsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           tableBoundHints_ = java.util.Collections.unmodifiableList(tableBoundHints_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.tableBoundHints_ = tableBoundHints_;
       } else {
         result.tableBoundHints_ = tableBoundHintsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         headerHints_ = headerHints_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.headerHints_ = headerHints_;
-      result.modelVersion_ = modelVersion_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1beta1.TableExtractionParams result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enabled_ = enabled_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.modelVersion_ = modelVersion_;
+      }
     }
 
     @java.lang.Override
@@ -637,7 +657,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
         if (!other.tableBoundHints_.isEmpty()) {
           if (tableBoundHints_.isEmpty()) {
             tableBoundHints_ = other.tableBoundHints_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureTableBoundHintsIsMutable();
             tableBoundHints_.addAll(other.tableBoundHints_);
@@ -650,7 +670,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
             tableBoundHintsBuilder_.dispose();
             tableBoundHintsBuilder_ = null;
             tableBoundHints_ = other.tableBoundHints_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             tableBoundHintsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTableBoundHintsFieldBuilder()
@@ -663,7 +683,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
       if (!other.headerHints_.isEmpty()) {
         if (headerHints_.isEmpty()) {
           headerHints_ = other.headerHints_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureHeaderHintsIsMutable();
           headerHints_.addAll(other.headerHints_);
@@ -672,6 +692,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
       }
       if (!other.getModelVersion().isEmpty()) {
         modelVersion_ = other.modelVersion_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -703,7 +724,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
             case 8:
               {
                 enabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -730,7 +751,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
             case 34:
               {
                 modelVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -783,6 +804,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -798,7 +820,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enabled_ = false;
       onChanged();
       return this;
@@ -808,11 +830,11 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
         java.util.Collections.emptyList();
 
     private void ensureTableBoundHintsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         tableBoundHints_ =
             new java.util.ArrayList<com.google.cloud.documentai.v1beta1.TableBoundHint>(
                 tableBoundHints_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1064,7 +1086,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
     public Builder clearTableBoundHints() {
       if (tableBoundHintsBuilder_ == null) {
         tableBoundHints_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         tableBoundHintsBuilder_.clear();
@@ -1212,7 +1234,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
                 com.google.cloud.documentai.v1beta1.TableBoundHint.Builder,
                 com.google.cloud.documentai.v1beta1.TableBoundHintOrBuilder>(
                 tableBoundHints_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         tableBoundHints_ = null;
@@ -1224,9 +1246,9 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureHeaderHintsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         headerHints_ = new com.google.protobuf.LazyStringArrayList(headerHints_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1369,7 +1391,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      */
     public Builder clearHeaderHints() {
       headerHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1461,8 +1483,8 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       modelVersion_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1479,8 +1501,8 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearModelVersion() {
-
       modelVersion_ = getDefaultInstance().getModelVersion();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1502,8 +1524,8 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       modelVersion_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

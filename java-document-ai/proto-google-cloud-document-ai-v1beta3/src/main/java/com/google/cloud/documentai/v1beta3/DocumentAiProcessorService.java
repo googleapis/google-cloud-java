@@ -92,6 +92,10 @@ public final class DocumentAiProcessorService {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1beta3_ListProcessorsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1beta3_GetProcessorTypeRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1beta3_GetProcessorTypeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_documentai_v1beta3_GetProcessorRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1beta3_GetProcessorRequest_fieldAccessorTable;
@@ -344,290 +348,297 @@ public final class DocumentAiProcessorService {
           + "\npage_token\030\003 \001(\t\"q\n\026ListProcessorsRespo"
           + "nse\022>\n\nprocessors\030\001 \003(\0132*.google.cloud.d"
           + "ocumentai.v1beta3.Processor\022\027\n\017next_page"
-          + "_token\030\002 \001(\t\"P\n\023GetProcessorRequest\0229\n\004n"
-          + "ame\030\001 \001(\tB+\340A\002\372A%\n#documentai.googleapis"
-          + ".com/Processor\"^\n\032GetProcessorVersionReq"
-          + "uest\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*documentai.g"
-          + "oogleapis.com/ProcessorVersion\"\211\001\n\034ListP"
-          + "rocessorVersionsRequest\022B\n\006parent\030\001 \001(\tB"
-          + "2\340A\002\372A,\022*documentai.googleapis.com/Proce"
-          + "ssorVersion\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_t"
-          + "oken\030\003 \001(\t\"\207\001\n\035ListProcessorVersionsResp"
-          + "onse\022M\n\022processor_versions\030\001 \003(\01321.googl"
-          + "e.cloud.documentai.v1beta3.ProcessorVers"
-          + "ion\022\027\n\017next_page_token\030\002 \001(\t\"a\n\035DeletePr"
-          + "ocessorVersionRequest\022@\n\004name\030\001 \001(\tB2\340A\002"
-          + "\372A,\n*documentai.googleapis.com/Processor"
-          + "Version\"s\n\036DeleteProcessorVersionMetadat"
-          + "a\022Q\n\017common_metadata\030\001 \001(\01328.google.clou"
-          + "d.documentai.v1beta3.CommonOperationMeta"
-          + "data\"a\n\035DeployProcessorVersionRequest\022@\n"
-          + "\004name\030\001 \001(\tB2\340A\002\372A,\n*documentai.googleap"
-          + "is.com/ProcessorVersion\" \n\036DeployProcess"
-          + "orVersionResponse\"s\n\036DeployProcessorVers"
+          + "_token\030\002 \001(\t\"X\n\027GetProcessorTypeRequest\022"
+          + "=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'documentai.google"
+          + "apis.com/ProcessorType\"P\n\023GetProcessorRe"
+          + "quest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#documentai."
+          + "googleapis.com/Processor\"^\n\032GetProcessor"
+          + "VersionRequest\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*do"
+          + "cumentai.googleapis.com/ProcessorVersion"
+          + "\"\211\001\n\034ListProcessorVersionsRequest\022B\n\006par"
+          + "ent\030\001 \001(\tB2\340A\002\372A,\022*documentai.googleapis"
+          + ".com/ProcessorVersion\022\021\n\tpage_size\030\002 \001(\005"
+          + "\022\022\n\npage_token\030\003 \001(\t\"\207\001\n\035ListProcessorVe"
+          + "rsionsResponse\022M\n\022processor_versions\030\001 \003"
+          + "(\01321.google.cloud.documentai.v1beta3.Pro"
+          + "cessorVersion\022\027\n\017next_page_token\030\002 \001(\t\"a"
+          + "\n\035DeleteProcessorVersionRequest\022@\n\004name\030"
+          + "\001 \001(\tB2\340A\002\372A,\n*documentai.googleapis.com"
+          + "/ProcessorVersion\"s\n\036DeleteProcessorVers"
           + "ionMetadata\022Q\n\017common_metadata\030\001 \001(\01328.g"
           + "oogle.cloud.documentai.v1beta3.CommonOpe"
-          + "rationMetadata\"c\n\037UndeployProcessorVersi"
-          + "onRequest\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*documen"
-          + "tai.googleapis.com/ProcessorVersion\"\"\n U"
-          + "ndeployProcessorVersionResponse\"u\n Undep"
-          + "loyProcessorVersionMetadata\022Q\n\017common_me"
-          + "tadata\030\001 \001(\01328.google.cloud.documentai.v"
-          + "1beta3.CommonOperationMetadata\"\231\001\n\026Creat"
-          + "eProcessorRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A"
-          + "%\022#documentai.googleapis.com/Processor\022B"
-          + "\n\tprocessor\030\002 \001(\0132*.google.cloud.documen"
-          + "tai.v1beta3.ProcessorB\003\340A\002\"S\n\026DeleteProc"
-          + "essorRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#docu"
-          + "mentai.googleapis.com/Processor\"l\n\027Delet"
-          + "eProcessorMetadata\022Q\n\017common_metadata\030\005 "
-          + "\001(\01328.google.cloud.documentai.v1beta3.Co"
-          + "mmonOperationMetadata\"S\n\026EnableProcessor"
-          + "Request\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#documenta"
-          + "i.googleapis.com/Processor\"\031\n\027EnableProc"
-          + "essorResponse\"l\n\027EnableProcessorMetadata"
-          + "\022Q\n\017common_metadata\030\005 \001(\01328.google.cloud"
-          + ".documentai.v1beta3.CommonOperationMetad"
-          + "ata\"T\n\027DisableProcessorRequest\0229\n\004name\030\001"
-          + " \001(\tB+\340A\002\372A%\n#documentai.googleapis.com/"
-          + "Processor\"\032\n\030DisableProcessorResponse\"m\n"
-          + "\030DisableProcessorMetadata\022Q\n\017common_meta"
-          + "data\030\005 \001(\01328.google.cloud.documentai.v1b"
-          + "eta3.CommonOperationMetadata\"\272\001\n!SetDefa"
-          + "ultProcessorVersionRequest\022>\n\tprocessor\030"
-          + "\001 \001(\tB+\340A\002\372A%\n#documentai.googleapis.com"
-          + "/Processor\022U\n\031default_processor_version\030"
-          + "\002 \001(\tB2\340A\002\372A,\n*documentai.googleapis.com"
-          + "/ProcessorVersion\"$\n\"SetDefaultProcessor"
-          + "VersionResponse\"w\n\"SetDefaultProcessorVe"
-          + "rsionMetadata\022Q\n\017common_metadata\030\001 \001(\01328"
-          + ".google.cloud.documentai.v1beta3.CommonO"
-          + "perationMetadata\"\305\004\n\034TrainProcessorVersi"
-          + "onRequest\022B\n\006parent\030\001 \001(\tB2\340A\002\372A,\022*docum"
-          + "entai.googleapis.com/ProcessorVersion\022Q\n"
-          + "\021processor_version\030\002 \001(\01321.google.cloud."
-          + "documentai.v1beta3.ProcessorVersionB\003\340A\002"
-          + "\022M\n\017document_schema\030\n \001(\0132/.google.cloud"
-          + ".documentai.v1beta3.DocumentSchemaB\003\340A\001\022"
-          + "`\n\ninput_data\030\004 \001(\0132G.google.cloud.docum"
-          + "entai.v1beta3.TrainProcessorVersionReque"
-          + "st.InputDataB\003\340A\001\022#\n\026base_processor_vers"
-          + "ion\030\010 \001(\tB\003\340A\001\032\267\001\n\tInputData\022V\n\022training"
-          + "_documents\030\003 \001(\0132:.google.cloud.document"
-          + "ai.v1beta3.BatchDocumentsInputConfig\022R\n\016"
-          + "test_documents\030\004 \001(\0132:.google.cloud.docu"
-          + "mentai.v1beta3.BatchDocumentsInputConfig"
-          + "\":\n\035TrainProcessorVersionResponse\022\031\n\021pro"
-          + "cessor_version\030\001 \001(\t\"\206\004\n\035TrainProcessorV"
-          + "ersionMetadata\022Q\n\017common_metadata\030\001 \001(\0132"
-          + "8.google.cloud.documentai.v1beta3.Common"
-          + "OperationMetadata\022u\n\033training_dataset_va"
-          + "lidation\030\002 \001(\0132P.google.cloud.documentai"
-          + ".v1beta3.TrainProcessorVersionMetadata.D"
-          + "atasetValidation\022q\n\027test_dataset_validat"
-          + "ion\030\003 \001(\0132P.google.cloud.documentai.v1be"
-          + "ta3.TrainProcessorVersionMetadata.Datase"
-          + "tValidation\032\247\001\n\021DatasetValidation\022\034\n\024doc"
-          + "ument_error_count\030\003 \001(\005\022\033\n\023dataset_error"
-          + "_count\030\004 \001(\005\022+\n\017document_errors\030\001 \003(\0132\022."
-          + "google.rpc.Status\022*\n\016dataset_errors\030\002 \003("
-          + "\0132\022.google.rpc.Status\"\336\003\n\025ReviewDocument"
-          + "Request\022D\n\017inline_document\030\004 \001(\0132).googl"
-          + "e.cloud.documentai.v1beta3.DocumentH\000\022P\n"
-          + "\023human_review_config\030\001 \001(\tB3\340A\002\372A-\n+docu"
-          + "mentai.googleapis.com/HumanReviewConfig\022"
-          + "?\n\010document\030\002 \001(\0132).google.cloud.documen"
-          + "tai.v1beta3.DocumentB\002\030\001\022 \n\030enable_schem"
-          + "a_validation\030\003 \001(\010\022Q\n\010priority\030\005 \001(\0162?.g"
-          + "oogle.cloud.documentai.v1beta3.ReviewDoc"
-          + "umentRequest.Priority\022H\n\017document_schema"
-          + "\030\006 \001(\0132/.google.cloud.documentai.v1beta3"
-          + ".DocumentSchema\"#\n\010Priority\022\013\n\007DEFAULT\020\000"
-          + "\022\n\n\006URGENT\020\001B\010\n\006source\"\326\001\n\026ReviewDocumen"
-          + "tResponse\022\027\n\017gcs_destination\030\001 \001(\t\022L\n\005st"
-          + "ate\030\002 \001(\0162=.google.cloud.documentai.v1be"
-          + "ta3.ReviewDocumentResponse.State\022\030\n\020reje"
-          + "ction_reason\030\003 \001(\t\";\n\005State\022\025\n\021STATE_UNS"
-          + "PECIFIED\020\000\022\014\n\010REJECTED\020\001\022\r\n\tSUCCEEDED\020\002\""
-          + "\300\003\n\037ReviewDocumentOperationMetadata\022U\n\005s"
-          + "tate\030\001 \001(\0162F.google.cloud.documentai.v1b"
-          + "eta3.ReviewDocumentOperationMetadata.Sta"
-          + "te\022\025\n\rstate_message\030\002 \001(\t\022/\n\013create_time"
-          + "\030\003 \001(\0132\032.google.protobuf.Timestamp\022/\n\013up"
-          + "date_time\030\004 \001(\0132\032.google.protobuf.Timest"
-          + "amp\022Q\n\017common_metadata\030\005 \001(\01328.google.cl"
-          + "oud.documentai.v1beta3.CommonOperationMe"
-          + "tadata\022\023\n\013question_id\030\006 \001(\t\"e\n\005State\022\025\n\021"
-          + "STATE_UNSPECIFIED\020\000\022\013\n\007RUNNING\020\001\022\016\n\nCANC"
-          + "ELLING\020\002\022\r\n\tSUCCEEDED\020\003\022\n\n\006FAILED\020\004\022\r\n\tC"
-          + "ANCELLED\020\005\"\317\001\n\037EvaluateProcessorVersionR"
-          + "equest\022M\n\021processor_version\030\001 \001(\tB2\340A\002\372A"
+          + "rationMetadata\"a\n\035DeployProcessorVersion"
+          + "Request\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*documenta"
+          + "i.googleapis.com/ProcessorVersion\" \n\036Dep"
+          + "loyProcessorVersionResponse\"s\n\036DeployPro"
+          + "cessorVersionMetadata\022Q\n\017common_metadata"
+          + "\030\001 \001(\01328.google.cloud.documentai.v1beta3"
+          + ".CommonOperationMetadata\"c\n\037UndeployProc"
+          + "essorVersionRequest\022@\n\004name\030\001 \001(\tB2\340A\002\372A"
           + ",\n*documentai.googleapis.com/ProcessorVe"
-          + "rsion\022]\n\024evaluation_documents\030\003 \001(\0132:.go"
-          + "ogle.cloud.documentai.v1beta3.BatchDocum"
-          + "entsInputConfigB\003\340A\001\"u\n EvaluateProcesso"
-          + "rVersionMetadata\022Q\n\017common_metadata\030\001 \001("
-          + "\01328.google.cloud.documentai.v1beta3.Comm"
-          + "onOperationMetadata\"6\n EvaluateProcessor"
-          + "VersionResponse\022\022\n\nevaluation\030\002 \001(\t\"R\n\024G"
-          + "etEvaluationRequest\022:\n\004name\030\001 \001(\tB,\340A\002\372A"
-          + "&\n$documentai.googleapis.com/Evaluation\""
-          + "\203\001\n\026ListEvaluationsRequest\022B\n\006parent\030\001 \001"
-          + "(\tB2\340A\002\372A,\n*documentai.googleapis.com/Pr"
-          + "ocessorVersion\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npag"
-          + "e_token\030\003 \001(\t\"t\n\027ListEvaluationsResponse"
-          + "\022@\n\013evaluations\030\001 \003(\0132+.google.cloud.doc"
-          + "umentai.v1beta3.Evaluation\022\027\n\017next_page_"
-          + "token\030\002 \001(\t2\362*\n\030DocumentProcessorService"
-          + "\022\233\002\n\017ProcessDocument\022/.google.cloud.docu"
-          + "mentai.v1beta3.ProcessRequest\0320.google.c"
-          + "loud.documentai.v1beta3.ProcessResponse\""
-          + "\244\001\202\323\344\223\002\226\001\";/v1beta3/{name=projects/*/loc"
-          + "ations/*/processors/*}:process:\001*ZT\"O/v1"
-          + "beta3/{name=projects/*/locations/*/proce"
-          + "ssors/*/processorVersions/*}:process:\001*\332"
-          + "A\004name\022\314\002\n\025BatchProcessDocuments\0224.googl"
-          + "e.cloud.documentai.v1beta3.BatchProcessR"
-          + "equest\032\035.google.longrunning.Operation\"\335\001"
-          + "\202\323\344\223\002\240\001\"@/v1beta3/{name=projects/*/locat"
-          + "ions/*/processors/*}:batchProcess:\001*ZY\"T"
-          + "/v1beta3/{name=projects/*/locations/*/pr"
-          + "ocessors/*/processorVersions/*}:batchPro"
-          + "cess:\001*\332A\004name\312A,\n\024BatchProcessResponse\022"
-          + "\024BatchProcessMetadata\022\337\001\n\023FetchProcessor"
-          + "Types\022;.google.cloud.documentai.v1beta3."
-          + "FetchProcessorTypesRequest\032<.google.clou"
-          + "d.documentai.v1beta3.FetchProcessorTypes"
-          + "Response\"M\202\323\344\223\002>\022</v1beta3/{parent=proje"
-          + "cts/*/locations/*}:fetchProcessorTypes\332A"
-          + "\006parent\022\327\001\n\022ListProcessorTypes\022:.google."
-          + "cloud.documentai.v1beta3.ListProcessorTy"
-          + "pesRequest\032;.google.cloud.documentai.v1b"
-          + "eta3.ListProcessorTypesResponse\"H\202\323\344\223\0029\022"
-          + "7/v1beta3/{parent=projects/*/locations/*"
-          + "}/processorTypes\332A\006parent\022\307\001\n\016ListProces"
-          + "sors\0226.google.cloud.documentai.v1beta3.L"
-          + "istProcessorsRequest\0327.google.cloud.docu"
-          + "mentai.v1beta3.ListProcessorsResponse\"D\202"
-          + "\323\344\223\0025\0223/v1beta3/{parent=projects/*/locat"
-          + "ions/*}/processors\332A\006parent\022\264\001\n\014GetProce"
-          + "ssor\0224.google.cloud.documentai.v1beta3.G"
-          + "etProcessorRequest\032*.google.cloud.docume"
-          + "ntai.v1beta3.Processor\"B\202\323\344\223\0025\0223/v1beta3"
-          + "/{name=projects/*/locations/*/processors"
-          + "/*}\332A\004name\022\254\002\n\025TrainProcessorVersion\022=.g"
-          + "oogle.cloud.documentai.v1beta3.TrainProc"
-          + "essorVersionRequest\032\035.google.longrunning"
-          + ".Operation\"\264\001\202\323\344\223\002R\"M/v1beta3/{parent=pr"
-          + "ojects/*/locations/*/processors/*}/proce"
-          + "ssorVersions:train:\001*\332A\030parent,processor"
-          + "_version\312A>\n\035TrainProcessorVersionRespon"
-          + "se\022\035TrainProcessorVersionMetadata\022\335\001\n\023Ge"
-          + "tProcessorVersion\022;.google.cloud.documen"
-          + "tai.v1beta3.GetProcessorVersionRequest\0321"
-          + ".google.cloud.documentai.v1beta3.Process"
-          + "orVersion\"V\202\323\344\223\002I\022G/v1beta3/{name=projec"
-          + "ts/*/locations/*/processors/*/processorV"
-          + "ersions/*}\332A\004name\022\360\001\n\025ListProcessorVersi"
-          + "ons\022=.google.cloud.documentai.v1beta3.Li"
-          + "stProcessorVersionsRequest\032>.google.clou"
-          + "d.documentai.v1beta3.ListProcessorVersio"
-          + "nsResponse\"X\202\323\344\223\002I\022G/v1beta3/{parent=pro"
-          + "jects/*/locations/*/processors/*}/proces"
-          + "sorVersions\332A\006parent\022\212\002\n\026DeleteProcessor"
-          + "Version\022>.google.cloud.documentai.v1beta"
-          + "3.DeleteProcessorVersionRequest\032\035.google"
-          + ".longrunning.Operation\"\220\001\202\323\344\223\002I*G/v1beta"
-          + "3/{name=projects/*/locations/*/processor"
-          + "s/*/processorVersions/*}\332A\004name\312A7\n\025goog"
-          + "le.protobuf.Empty\022\036DeleteProcessorVersio"
-          + "nMetadata\022\235\002\n\026DeployProcessorVersion\022>.g"
-          + "oogle.cloud.documentai.v1beta3.DeployPro"
-          + "cessorVersionRequest\032\035.google.longrunnin"
-          + "g.Operation\"\243\001\202\323\344\223\002S\"N/v1beta3/{name=pro"
-          + "jects/*/locations/*/processors/*/process"
-          + "orVersions/*}:deploy:\001*\332A\004name\312A@\n\036Deplo"
-          + "yProcessorVersionResponse\022\036DeployProcess"
-          + "orVersionMetadata\022\247\002\n\030UndeployProcessorV"
-          + "ersion\022@.google.cloud.documentai.v1beta3"
-          + ".UndeployProcessorVersionRequest\032\035.googl"
-          + "e.longrunning.Operation\"\251\001\202\323\344\223\002U\"P/v1bet"
-          + "a3/{name=projects/*/locations/*/processo"
-          + "rs/*/processorVersions/*}:undeploy:\001*\332A\004"
-          + "name\312AD\n UndeployProcessorVersionRespons"
-          + "e\022 UndeployProcessorVersionMetadata\022\321\001\n\017"
-          + "CreateProcessor\0227.google.cloud.documenta"
-          + "i.v1beta3.CreateProcessorRequest\032*.googl"
-          + "e.cloud.documentai.v1beta3.Processor\"Y\202\323"
-          + "\344\223\002@\"3/v1beta3/{parent=projects/*/locati"
-          + "ons/*}/processors:\tprocessor\332A\020parent,pr"
-          + "ocessor\022\340\001\n\017DeleteProcessor\0227.google.clo"
-          + "ud.documentai.v1beta3.DeleteProcessorReq"
-          + "uest\032\035.google.longrunning.Operation\"u\202\323\344"
-          + "\223\0025*3/v1beta3/{name=projects/*/locations"
-          + "/*/processors/*}\332A\004name\312A0\n\025google.proto"
-          + "buf.Empty\022\027DeleteProcessorMetadata\022\345\001\n\017E"
-          + "nableProcessor\0227.google.cloud.documentai"
-          + ".v1beta3.EnableProcessorRequest\032\035.google"
-          + ".longrunning.Operation\"z\202\323\344\223\002?\":/v1beta3"
-          + "/{name=projects/*/locations/*/processors"
-          + "/*}:enable:\001*\312A2\n\027EnableProcessorRespons"
-          + "e\022\027EnableProcessorMetadata\022\352\001\n\020DisablePr"
-          + "ocessor\0228.google.cloud.documentai.v1beta"
-          + "3.DisableProcessorRequest\032\035.google.longr"
-          + "unning.Operation\"}\202\323\344\223\002@\";/v1beta3/{name"
-          + "=projects/*/locations/*/processors/*}:di"
-          + "sable:\001*\312A4\n\030DisableProcessorResponse\022\030D"
-          + "isableProcessorMetadata\022\253\002\n\032SetDefaultPr"
-          + "ocessorVersion\022B.google.cloud.documentai"
-          + ".v1beta3.SetDefaultProcessorVersionReque"
-          + "st\032\035.google.longrunning.Operation\"\251\001\202\323\344\223"
-          + "\002X\"S/v1beta3/{processor=projects/*/locat"
-          + "ions/*/processors/*}:setDefaultProcessor"
-          + "Version:\001*\312AH\n\"SetDefaultProcessorVersio"
-          + "nResponse\022\"SetDefaultProcessorVersionMet"
-          + "adata\022\252\002\n\016ReviewDocument\0226.google.cloud."
-          + "documentai.v1beta3.ReviewDocumentRequest"
-          + "\032\035.google.longrunning.Operation\"\300\001\202\323\344\223\002h"
-          + "\"c/v1beta3/{human_review_config=projects"
-          + "/*/locations/*/processors/*/humanReviewC"
-          + "onfig}:reviewDocument:\001*\332A\023human_review_"
-          + "config\312A9\n\026ReviewDocumentResponse\022\037Revie"
-          + "wDocumentOperationMetadata\022\321\002\n\030EvaluateP"
+          + "rsion\"\"\n UndeployProcessorVersionRespons"
+          + "e\"u\n UndeployProcessorVersionMetadata\022Q\n"
+          + "\017common_metadata\030\001 \001(\01328.google.cloud.do"
+          + "cumentai.v1beta3.CommonOperationMetadata"
+          + "\"\231\001\n\026CreateProcessorRequest\022;\n\006parent\030\001 "
+          + "\001(\tB+\340A\002\372A%\022#documentai.googleapis.com/P"
+          + "rocessor\022B\n\tprocessor\030\002 \001(\0132*.google.clo"
+          + "ud.documentai.v1beta3.ProcessorB\003\340A\002\"S\n\026"
+          + "DeleteProcessorRequest\0229\n\004name\030\001 \001(\tB+\340A"
+          + "\002\372A%\n#documentai.googleapis.com/Processo"
+          + "r\"l\n\027DeleteProcessorMetadata\022Q\n\017common_m"
+          + "etadata\030\005 \001(\01328.google.cloud.documentai."
+          + "v1beta3.CommonOperationMetadata\"S\n\026Enabl"
+          + "eProcessorRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#documentai.googleapis.com/Processor\"\031\n\027"
+          + "EnableProcessorResponse\"l\n\027EnableProcess"
+          + "orMetadata\022Q\n\017common_metadata\030\005 \001(\01328.go"
+          + "ogle.cloud.documentai.v1beta3.CommonOper"
+          + "ationMetadata\"T\n\027DisableProcessorRequest"
+          + "\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#documentai.googl"
+          + "eapis.com/Processor\"\032\n\030DisableProcessorR"
+          + "esponse\"m\n\030DisableProcessorMetadata\022Q\n\017c"
+          + "ommon_metadata\030\005 \001(\01328.google.cloud.docu"
+          + "mentai.v1beta3.CommonOperationMetadata\"\272"
+          + "\001\n!SetDefaultProcessorVersionRequest\022>\n\t"
+          + "processor\030\001 \001(\tB+\340A\002\372A%\n#documentai.goog"
+          + "leapis.com/Processor\022U\n\031default_processo"
+          + "r_version\030\002 \001(\tB2\340A\002\372A,\n*documentai.goog"
+          + "leapis.com/ProcessorVersion\"$\n\"SetDefaul"
+          + "tProcessorVersionResponse\"w\n\"SetDefaultP"
+          + "rocessorVersionMetadata\022Q\n\017common_metada"
+          + "ta\030\001 \001(\01328.google.cloud.documentai.v1bet"
+          + "a3.CommonOperationMetadata\"\305\004\n\034TrainProc"
+          + "essorVersionRequest\022B\n\006parent\030\001 \001(\tB2\340A\002"
+          + "\372A,\022*documentai.googleapis.com/Processor"
+          + "Version\022Q\n\021processor_version\030\002 \001(\01321.goo"
+          + "gle.cloud.documentai.v1beta3.ProcessorVe"
+          + "rsionB\003\340A\002\022M\n\017document_schema\030\n \001(\0132/.go"
+          + "ogle.cloud.documentai.v1beta3.DocumentSc"
+          + "hemaB\003\340A\001\022`\n\ninput_data\030\004 \001(\0132G.google.c"
+          + "loud.documentai.v1beta3.TrainProcessorVe"
+          + "rsionRequest.InputDataB\003\340A\001\022#\n\026base_proc"
+          + "essor_version\030\010 \001(\tB\003\340A\001\032\267\001\n\tInputData\022V"
+          + "\n\022training_documents\030\003 \001(\0132:.google.clou"
+          + "d.documentai.v1beta3.BatchDocumentsInput"
+          + "Config\022R\n\016test_documents\030\004 \001(\0132:.google."
+          + "cloud.documentai.v1beta3.BatchDocumentsI"
+          + "nputConfig\":\n\035TrainProcessorVersionRespo"
+          + "nse\022\031\n\021processor_version\030\001 \001(\t\"\206\004\n\035Train"
+          + "ProcessorVersionMetadata\022Q\n\017common_metad"
+          + "ata\030\001 \001(\01328.google.cloud.documentai.v1be"
+          + "ta3.CommonOperationMetadata\022u\n\033training_"
+          + "dataset_validation\030\002 \001(\0132P.google.cloud."
+          + "documentai.v1beta3.TrainProcessorVersion"
+          + "Metadata.DatasetValidation\022q\n\027test_datas"
+          + "et_validation\030\003 \001(\0132P.google.cloud.docum"
+          + "entai.v1beta3.TrainProcessorVersionMetad"
+          + "ata.DatasetValidation\032\247\001\n\021DatasetValidat"
+          + "ion\022\034\n\024document_error_count\030\003 \001(\005\022\033\n\023dat"
+          + "aset_error_count\030\004 \001(\005\022+\n\017document_error"
+          + "s\030\001 \003(\0132\022.google.rpc.Status\022*\n\016dataset_e"
+          + "rrors\030\002 \003(\0132\022.google.rpc.Status\"\336\003\n\025Revi"
+          + "ewDocumentRequest\022D\n\017inline_document\030\004 \001"
+          + "(\0132).google.cloud.documentai.v1beta3.Doc"
+          + "umentH\000\022P\n\023human_review_config\030\001 \001(\tB3\340A"
+          + "\002\372A-\n+documentai.googleapis.com/HumanRev"
+          + "iewConfig\022?\n\010document\030\002 \001(\0132).google.clo"
+          + "ud.documentai.v1beta3.DocumentB\002\030\001\022 \n\030en"
+          + "able_schema_validation\030\003 \001(\010\022Q\n\010priority"
+          + "\030\005 \001(\0162?.google.cloud.documentai.v1beta3"
+          + ".ReviewDocumentRequest.Priority\022H\n\017docum"
+          + "ent_schema\030\006 \001(\0132/.google.cloud.document"
+          + "ai.v1beta3.DocumentSchema\"#\n\010Priority\022\013\n"
+          + "\007DEFAULT\020\000\022\n\n\006URGENT\020\001B\010\n\006source\"\326\001\n\026Rev"
+          + "iewDocumentResponse\022\027\n\017gcs_destination\030\001"
+          + " \001(\t\022L\n\005state\030\002 \001(\0162=.google.cloud.docum"
+          + "entai.v1beta3.ReviewDocumentResponse.Sta"
+          + "te\022\030\n\020rejection_reason\030\003 \001(\t\";\n\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\014\n\010REJECTED\020\001\022\r\n\tSU"
+          + "CCEEDED\020\002\"\300\003\n\037ReviewDocumentOperationMet"
+          + "adata\022U\n\005state\030\001 \001(\0162F.google.cloud.docu"
+          + "mentai.v1beta3.ReviewDocumentOperationMe"
+          + "tadata.State\022\025\n\rstate_message\030\002 \001(\t\022/\n\013c"
+          + "reate_time\030\003 \001(\0132\032.google.protobuf.Times"
+          + "tamp\022/\n\013update_time\030\004 \001(\0132\032.google.proto"
+          + "buf.Timestamp\022Q\n\017common_metadata\030\005 \001(\01328"
+          + ".google.cloud.documentai.v1beta3.CommonO"
+          + "perationMetadata\022\023\n\013question_id\030\006 \001(\t\"e\n"
+          + "\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007RUNNING"
+          + "\020\001\022\016\n\nCANCELLING\020\002\022\r\n\tSUCCEEDED\020\003\022\n\n\006FAI"
+          + "LED\020\004\022\r\n\tCANCELLED\020\005\"\317\001\n\037EvaluateProcess"
+          + "orVersionRequest\022M\n\021processor_version\030\001 "
+          + "\001(\tB2\340A\002\372A,\n*documentai.googleapis.com/P"
+          + "rocessorVersion\022]\n\024evaluation_documents\030"
+          + "\003 \001(\0132:.google.cloud.documentai.v1beta3."
+          + "BatchDocumentsInputConfigB\003\340A\001\"u\n Evalua"
+          + "teProcessorVersionMetadata\022Q\n\017common_met"
+          + "adata\030\001 \001(\01328.google.cloud.documentai.v1"
+          + "beta3.CommonOperationMetadata\"6\n Evaluat"
+          + "eProcessorVersionResponse\022\022\n\nevaluation\030"
+          + "\002 \001(\t\"R\n\024GetEvaluationRequest\022:\n\004name\030\001 "
+          + "\001(\tB,\340A\002\372A&\n$documentai.googleapis.com/E"
+          + "valuation\"\203\001\n\026ListEvaluationsRequest\022B\n\006"
+          + "parent\030\001 \001(\tB2\340A\002\372A,\n*documentai.googlea"
+          + "pis.com/ProcessorVersion\022\021\n\tpage_size\030\002 "
+          + "\001(\005\022\022\n\npage_token\030\003 \001(\t\"t\n\027ListEvaluatio"
+          + "nsResponse\022@\n\013evaluations\030\001 \003(\0132+.google"
+          + ".cloud.documentai.v1beta3.Evaluation\022\027\n\017"
+          + "next_page_token\030\002 \001(\t2\271,\n\030DocumentProces"
+          + "sorService\022\233\002\n\017ProcessDocument\022/.google."
+          + "cloud.documentai.v1beta3.ProcessRequest\032"
+          + "0.google.cloud.documentai.v1beta3.Proces"
+          + "sResponse\"\244\001\202\323\344\223\002\226\001\";/v1beta3/{name=proj"
+          + "ects/*/locations/*/processors/*}:process"
+          + ":\001*ZT\"O/v1beta3/{name=projects/*/locatio"
+          + "ns/*/processors/*/processorVersions/*}:p"
+          + "rocess:\001*\332A\004name\022\314\002\n\025BatchProcessDocumen"
+          + "ts\0224.google.cloud.documentai.v1beta3.Bat"
+          + "chProcessRequest\032\035.google.longrunning.Op"
+          + "eration\"\335\001\202\323\344\223\002\240\001\"@/v1beta3/{name=projec"
+          + "ts/*/locations/*/processors/*}:batchProc"
+          + "ess:\001*ZY\"T/v1beta3/{name=projects/*/loca"
+          + "tions/*/processors/*/processorVersions/*"
+          + "}:batchProcess:\001*\332A\004name\312A,\n\024BatchProces"
+          + "sResponse\022\024BatchProcessMetadata\022\337\001\n\023Fetc"
+          + "hProcessorTypes\022;.google.cloud.documenta"
+          + "i.v1beta3.FetchProcessorTypesRequest\032<.g"
+          + "oogle.cloud.documentai.v1beta3.FetchProc"
+          + "essorTypesResponse\"M\202\323\344\223\002>\022</v1beta3/{pa"
+          + "rent=projects/*/locations/*}:fetchProces"
+          + "sorTypes\332A\006parent\022\327\001\n\022ListProcessorTypes"
+          + "\022:.google.cloud.documentai.v1beta3.ListP"
+          + "rocessorTypesRequest\032;.google.cloud.docu"
+          + "mentai.v1beta3.ListProcessorTypesRespons"
+          + "e\"H\202\323\344\223\0029\0227/v1beta3/{parent=projects/*/l"
+          + "ocations/*}/processorTypes\332A\006parent\022\304\001\n\020"
+          + "GetProcessorType\0228.google.cloud.document"
+          + "ai.v1beta3.GetProcessorTypeRequest\032..goo"
+          + "gle.cloud.documentai.v1beta3.ProcessorTy"
+          + "pe\"F\202\323\344\223\0029\0227/v1beta3/{name=projects/*/lo"
+          + "cations/*/processorTypes/*}\332A\004name\022\307\001\n\016L"
+          + "istProcessors\0226.google.cloud.documentai."
+          + "v1beta3.ListProcessorsRequest\0327.google.c"
+          + "loud.documentai.v1beta3.ListProcessorsRe"
+          + "sponse\"D\202\323\344\223\0025\0223/v1beta3/{parent=project"
+          + "s/*/locations/*}/processors\332A\006parent\022\264\001\n"
+          + "\014GetProcessor\0224.google.cloud.documentai."
+          + "v1beta3.GetProcessorRequest\032*.google.clo"
+          + "ud.documentai.v1beta3.Processor\"B\202\323\344\223\0025\022"
+          + "3/v1beta3/{name=projects/*/locations/*/p"
+          + "rocessors/*}\332A\004name\022\254\002\n\025TrainProcessorVe"
+          + "rsion\022=.google.cloud.documentai.v1beta3."
+          + "TrainProcessorVersionRequest\032\035.google.lo"
+          + "ngrunning.Operation\"\264\001\202\323\344\223\002R\"M/v1beta3/{"
+          + "parent=projects/*/locations/*/processors"
+          + "/*}/processorVersions:train:\001*\332A\030parent,"
+          + "processor_version\312A>\n\035TrainProcessorVers"
+          + "ionResponse\022\035TrainProcessorVersionMetada"
+          + "ta\022\335\001\n\023GetProcessorVersion\022;.google.clou"
+          + "d.documentai.v1beta3.GetProcessorVersion"
+          + "Request\0321.google.cloud.documentai.v1beta"
+          + "3.ProcessorVersion\"V\202\323\344\223\002I\022G/v1beta3/{na"
+          + "me=projects/*/locations/*/processors/*/p"
+          + "rocessorVersions/*}\332A\004name\022\360\001\n\025ListProce"
+          + "ssorVersions\022=.google.cloud.documentai.v"
+          + "1beta3.ListProcessorVersionsRequest\032>.go"
+          + "ogle.cloud.documentai.v1beta3.ListProces"
+          + "sorVersionsResponse\"X\202\323\344\223\002I\022G/v1beta3/{p"
+          + "arent=projects/*/locations/*/processors/"
+          + "*}/processorVersions\332A\006parent\022\212\002\n\026Delete"
+          + "ProcessorVersion\022>.google.cloud.document"
+          + "ai.v1beta3.DeleteProcessorVersionRequest"
+          + "\032\035.google.longrunning.Operation\"\220\001\202\323\344\223\002I"
+          + "*G/v1beta3/{name=projects/*/locations/*/"
+          + "processors/*/processorVersions/*}\332A\004name"
+          + "\312A7\n\025google.protobuf.Empty\022\036DeleteProces"
+          + "sorVersionMetadata\022\235\002\n\026DeployProcessorVe"
+          + "rsion\022>.google.cloud.documentai.v1beta3."
+          + "DeployProcessorVersionRequest\032\035.google.l"
+          + "ongrunning.Operation\"\243\001\202\323\344\223\002S\"N/v1beta3/"
+          + "{name=projects/*/locations/*/processors/"
+          + "*/processorVersions/*}:deploy:\001*\332A\004name\312"
+          + "A@\n\036DeployProcessorVersionResponse\022\036Depl"
+          + "oyProcessorVersionMetadata\022\247\002\n\030UndeployP"
           + "rocessorVersion\022@.google.cloud.documenta"
-          + "i.v1beta3.EvaluateProcessorVersionReques"
-          + "t\032\035.google.longrunning.Operation\"\323\001\202\323\344\223\002"
-          + "r\"m/v1beta3/{processor_version=projects/"
-          + "*/locations/*/processors/*/processorVers"
-          + "ions/*}:evaluateProcessorVersion:\001*\332A\021pr"
-          + "ocessor_version\312AD\n EvaluateProcessorVer"
-          + "sionResponse\022 EvaluateProcessorVersionMe"
-          + "tadata\022\331\001\n\rGetEvaluation\0225.google.cloud."
-          + "documentai.v1beta3.GetEvaluationRequest\032"
-          + "+.google.cloud.documentai.v1beta3.Evalua"
-          + "tion\"d\202\323\344\223\002W\022U/v1beta3/{name=projects/*/"
-          + "locations/*/processors/*/processorVersio"
-          + "ns/*/evaluations/*}\332A\004name\022\354\001\n\017ListEvalu"
-          + "ations\0227.google.cloud.documentai.v1beta3"
-          + ".ListEvaluationsRequest\0328.google.cloud.d"
-          + "ocumentai.v1beta3.ListEvaluationsRespons"
-          + "e\"f\202\323\344\223\002W\022U/v1beta3/{parent=projects/*/l"
-          + "ocations/*/processors/*/processorVersion"
-          + "s/*}/evaluations\332A\006parent\032M\312A\031documentai"
-          + ".googleapis.com\322A.https://www.googleapis"
-          + ".com/auth/cloud-platformB\311\003\n#com.google."
-          + "cloud.documentai.v1beta3B\032DocumentAiProc"
-          + "essorServiceP\001ZIgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/documentai/v1beta3;d"
-          + "ocumentai\252\002\037Google.Cloud.DocumentAI.V1Be"
-          + "ta3\312\002\037Google\\Cloud\\DocumentAI\\V1beta3\352\002\""
-          + "Google::Cloud::DocumentAI::V1beta3\352A\177\n+d"
-          + "ocumentai.googleapis.com/HumanReviewConf"
-          + "ig\022Pprojects/{project}/locations/{locati"
-          + "on}/processors/{processor}/humanReviewCo"
-          + "nfig\352AM\n\"documentai.googleapis.com/Locat"
-          + "ion\022\'projects/{project}/locations/{locat"
-          + "ion}b\006proto3"
+          + "i.v1beta3.UndeployProcessorVersionReques"
+          + "t\032\035.google.longrunning.Operation\"\251\001\202\323\344\223\002"
+          + "U\"P/v1beta3/{name=projects/*/locations/*"
+          + "/processors/*/processorVersions/*}:undep"
+          + "loy:\001*\332A\004name\312AD\n UndeployProcessorVersi"
+          + "onResponse\022 UndeployProcessorVersionMeta"
+          + "data\022\321\001\n\017CreateProcessor\0227.google.cloud."
+          + "documentai.v1beta3.CreateProcessorReques"
+          + "t\032*.google.cloud.documentai.v1beta3.Proc"
+          + "essor\"Y\202\323\344\223\002@\"3/v1beta3/{parent=projects"
+          + "/*/locations/*}/processors:\tprocessor\332A\020"
+          + "parent,processor\022\340\001\n\017DeleteProcessor\0227.g"
+          + "oogle.cloud.documentai.v1beta3.DeletePro"
+          + "cessorRequest\032\035.google.longrunning.Opera"
+          + "tion\"u\202\323\344\223\0025*3/v1beta3/{name=projects/*/"
+          + "locations/*/processors/*}\332A\004name\312A0\n\025goo"
+          + "gle.protobuf.Empty\022\027DeleteProcessorMetad"
+          + "ata\022\345\001\n\017EnableProcessor\0227.google.cloud.d"
+          + "ocumentai.v1beta3.EnableProcessorRequest"
+          + "\032\035.google.longrunning.Operation\"z\202\323\344\223\002?\""
+          + ":/v1beta3/{name=projects/*/locations/*/p"
+          + "rocessors/*}:enable:\001*\312A2\n\027EnableProcess"
+          + "orResponse\022\027EnableProcessorMetadata\022\352\001\n\020"
+          + "DisableProcessor\0228.google.cloud.document"
+          + "ai.v1beta3.DisableProcessorRequest\032\035.goo"
+          + "gle.longrunning.Operation\"}\202\323\344\223\002@\";/v1be"
+          + "ta3/{name=projects/*/locations/*/process"
+          + "ors/*}:disable:\001*\312A4\n\030DisableProcessorRe"
+          + "sponse\022\030DisableProcessorMetadata\022\253\002\n\032Set"
+          + "DefaultProcessorVersion\022B.google.cloud.d"
+          + "ocumentai.v1beta3.SetDefaultProcessorVer"
+          + "sionRequest\032\035.google.longrunning.Operati"
+          + "on\"\251\001\202\323\344\223\002X\"S/v1beta3/{processor=project"
+          + "s/*/locations/*/processors/*}:setDefault"
+          + "ProcessorVersion:\001*\312AH\n\"SetDefaultProces"
+          + "sorVersionResponse\022\"SetDefaultProcessorV"
+          + "ersionMetadata\022\252\002\n\016ReviewDocument\0226.goog"
+          + "le.cloud.documentai.v1beta3.ReviewDocume"
+          + "ntRequest\032\035.google.longrunning.Operation"
+          + "\"\300\001\202\323\344\223\002h\"c/v1beta3/{human_review_config"
+          + "=projects/*/locations/*/processors/*/hum"
+          + "anReviewConfig}:reviewDocument:\001*\332A\023huma"
+          + "n_review_config\312A9\n\026ReviewDocumentRespon"
+          + "se\022\037ReviewDocumentOperationMetadata\022\321\002\n\030"
+          + "EvaluateProcessorVersion\022@.google.cloud."
+          + "documentai.v1beta3.EvaluateProcessorVers"
+          + "ionRequest\032\035.google.longrunning.Operatio"
+          + "n\"\323\001\202\323\344\223\002r\"m/v1beta3/{processor_version="
+          + "projects/*/locations/*/processors/*/proc"
+          + "essorVersions/*}:evaluateProcessorVersio"
+          + "n:\001*\332A\021processor_version\312AD\n EvaluatePro"
+          + "cessorVersionResponse\022 EvaluateProcessor"
+          + "VersionMetadata\022\331\001\n\rGetEvaluation\0225.goog"
+          + "le.cloud.documentai.v1beta3.GetEvaluatio"
+          + "nRequest\032+.google.cloud.documentai.v1bet"
+          + "a3.Evaluation\"d\202\323\344\223\002W\022U/v1beta3/{name=pr"
+          + "ojects/*/locations/*/processors/*/proces"
+          + "sorVersions/*/evaluations/*}\332A\004name\022\354\001\n\017"
+          + "ListEvaluations\0227.google.cloud.documenta"
+          + "i.v1beta3.ListEvaluationsRequest\0328.googl"
+          + "e.cloud.documentai.v1beta3.ListEvaluatio"
+          + "nsResponse\"f\202\323\344\223\002W\022U/v1beta3/{parent=pro"
+          + "jects/*/locations/*/processors/*/process"
+          + "orVersions/*}/evaluations\332A\006parent\032M\312A\031d"
+          + "ocumentai.googleapis.com\322A.https://www.g"
+          + "oogleapis.com/auth/cloud-platformB\311\003\n#co"
+          + "m.google.cloud.documentai.v1beta3B\032Docum"
+          + "entAiProcessorServiceP\001ZIgoogle.golang.o"
+          + "rg/genproto/googleapis/cloud/documentai/"
+          + "v1beta3;documentai\252\002\037Google.Cloud.Docume"
+          + "ntAI.V1Beta3\312\002\037Google\\Cloud\\DocumentAI\\V"
+          + "1beta3\352\002\"Google::Cloud::DocumentAI::V1be"
+          + "ta3\352A\177\n+documentai.googleapis.com/HumanR"
+          + "eviewConfig\022Pprojects/{project}/location"
+          + "s/{location}/processors/{processor}/huma"
+          + "nReviewConfig\352AM\n\"documentai.googleapis."
+          + "com/Location\022\'projects/{project}/locatio"
+          + "ns/{location}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -798,8 +809,16 @@ public final class DocumentAiProcessorService {
             new java.lang.String[] {
               "Processors", "NextPageToken",
             });
-    internal_static_google_cloud_documentai_v1beta3_GetProcessorRequest_descriptor =
+    internal_static_google_cloud_documentai_v1beta3_GetProcessorTypeRequest_descriptor =
         getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_documentai_v1beta3_GetProcessorTypeRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1beta3_GetProcessorTypeRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_documentai_v1beta3_GetProcessorRequest_descriptor =
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_documentai_v1beta3_GetProcessorRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_GetProcessorRequest_descriptor,
@@ -807,7 +826,7 @@ public final class DocumentAiProcessorService {
               "Name",
             });
     internal_static_google_cloud_documentai_v1beta3_GetProcessorVersionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_documentai_v1beta3_GetProcessorVersionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_GetProcessorVersionRequest_descriptor,
@@ -815,7 +834,7 @@ public final class DocumentAiProcessorService {
               "Name",
             });
     internal_static_google_cloud_documentai_v1beta3_ListProcessorVersionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_documentai_v1beta3_ListProcessorVersionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_ListProcessorVersionsRequest_descriptor,
@@ -823,7 +842,7 @@ public final class DocumentAiProcessorService {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_documentai_v1beta3_ListProcessorVersionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_documentai_v1beta3_ListProcessorVersionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_ListProcessorVersionsResponse_descriptor,
@@ -831,7 +850,7 @@ public final class DocumentAiProcessorService {
               "ProcessorVersions", "NextPageToken",
             });
     internal_static_google_cloud_documentai_v1beta3_DeleteProcessorVersionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_documentai_v1beta3_DeleteProcessorVersionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_DeleteProcessorVersionRequest_descriptor,
@@ -839,7 +858,7 @@ public final class DocumentAiProcessorService {
               "Name",
             });
     internal_static_google_cloud_documentai_v1beta3_DeleteProcessorVersionMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_documentai_v1beta3_DeleteProcessorVersionMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_DeleteProcessorVersionMetadata_descriptor,
@@ -847,7 +866,7 @@ public final class DocumentAiProcessorService {
               "CommonMetadata",
             });
     internal_static_google_cloud_documentai_v1beta3_DeployProcessorVersionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_documentai_v1beta3_DeployProcessorVersionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_DeployProcessorVersionRequest_descriptor,
@@ -855,13 +874,13 @@ public final class DocumentAiProcessorService {
               "Name",
             });
     internal_static_google_cloud_documentai_v1beta3_DeployProcessorVersionResponse_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_documentai_v1beta3_DeployProcessorVersionResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_DeployProcessorVersionResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_documentai_v1beta3_DeployProcessorVersionMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_documentai_v1beta3_DeployProcessorVersionMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_DeployProcessorVersionMetadata_descriptor,
@@ -869,7 +888,7 @@ public final class DocumentAiProcessorService {
               "CommonMetadata",
             });
     internal_static_google_cloud_documentai_v1beta3_UndeployProcessorVersionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_documentai_v1beta3_UndeployProcessorVersionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_UndeployProcessorVersionRequest_descriptor,
@@ -877,13 +896,13 @@ public final class DocumentAiProcessorService {
               "Name",
             });
     internal_static_google_cloud_documentai_v1beta3_UndeployProcessorVersionResponse_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_documentai_v1beta3_UndeployProcessorVersionResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_UndeployProcessorVersionResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_documentai_v1beta3_UndeployProcessorVersionMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_documentai_v1beta3_UndeployProcessorVersionMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_UndeployProcessorVersionMetadata_descriptor,
@@ -891,7 +910,7 @@ public final class DocumentAiProcessorService {
               "CommonMetadata",
             });
     internal_static_google_cloud_documentai_v1beta3_CreateProcessorRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_documentai_v1beta3_CreateProcessorRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_CreateProcessorRequest_descriptor,
@@ -899,7 +918,7 @@ public final class DocumentAiProcessorService {
               "Parent", "Processor",
             });
     internal_static_google_cloud_documentai_v1beta3_DeleteProcessorRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_documentai_v1beta3_DeleteProcessorRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_DeleteProcessorRequest_descriptor,
@@ -907,7 +926,7 @@ public final class DocumentAiProcessorService {
               "Name",
             });
     internal_static_google_cloud_documentai_v1beta3_DeleteProcessorMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_documentai_v1beta3_DeleteProcessorMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_DeleteProcessorMetadata_descriptor,
@@ -915,7 +934,7 @@ public final class DocumentAiProcessorService {
               "CommonMetadata",
             });
     internal_static_google_cloud_documentai_v1beta3_EnableProcessorRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_documentai_v1beta3_EnableProcessorRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_EnableProcessorRequest_descriptor,
@@ -923,13 +942,13 @@ public final class DocumentAiProcessorService {
               "Name",
             });
     internal_static_google_cloud_documentai_v1beta3_EnableProcessorResponse_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_documentai_v1beta3_EnableProcessorResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_EnableProcessorResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_documentai_v1beta3_EnableProcessorMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_documentai_v1beta3_EnableProcessorMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_EnableProcessorMetadata_descriptor,
@@ -937,7 +956,7 @@ public final class DocumentAiProcessorService {
               "CommonMetadata",
             });
     internal_static_google_cloud_documentai_v1beta3_DisableProcessorRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_documentai_v1beta3_DisableProcessorRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_DisableProcessorRequest_descriptor,
@@ -945,13 +964,13 @@ public final class DocumentAiProcessorService {
               "Name",
             });
     internal_static_google_cloud_documentai_v1beta3_DisableProcessorResponse_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_documentai_v1beta3_DisableProcessorResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_DisableProcessorResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_documentai_v1beta3_DisableProcessorMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_documentai_v1beta3_DisableProcessorMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_DisableProcessorMetadata_descriptor,
@@ -959,7 +978,7 @@ public final class DocumentAiProcessorService {
               "CommonMetadata",
             });
     internal_static_google_cloud_documentai_v1beta3_SetDefaultProcessorVersionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_documentai_v1beta3_SetDefaultProcessorVersionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_SetDefaultProcessorVersionRequest_descriptor,
@@ -967,13 +986,13 @@ public final class DocumentAiProcessorService {
               "Processor", "DefaultProcessorVersion",
             });
     internal_static_google_cloud_documentai_v1beta3_SetDefaultProcessorVersionResponse_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_documentai_v1beta3_SetDefaultProcessorVersionResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_SetDefaultProcessorVersionResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_documentai_v1beta3_SetDefaultProcessorVersionMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_documentai_v1beta3_SetDefaultProcessorVersionMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_SetDefaultProcessorVersionMetadata_descriptor,
@@ -981,7 +1000,7 @@ public final class DocumentAiProcessorService {
               "CommonMetadata",
             });
     internal_static_google_cloud_documentai_v1beta3_TrainProcessorVersionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_documentai_v1beta3_TrainProcessorVersionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_TrainProcessorVersionRequest_descriptor,
@@ -999,7 +1018,7 @@ public final class DocumentAiProcessorService {
               "TrainingDocuments", "TestDocuments",
             });
     internal_static_google_cloud_documentai_v1beta3_TrainProcessorVersionResponse_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_documentai_v1beta3_TrainProcessorVersionResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_TrainProcessorVersionResponse_descriptor,
@@ -1007,7 +1026,7 @@ public final class DocumentAiProcessorService {
               "ProcessorVersion",
             });
     internal_static_google_cloud_documentai_v1beta3_TrainProcessorVersionMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_documentai_v1beta3_TrainProcessorVersionMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_TrainProcessorVersionMetadata_descriptor,
@@ -1025,7 +1044,7 @@ public final class DocumentAiProcessorService {
               "DocumentErrorCount", "DatasetErrorCount", "DocumentErrors", "DatasetErrors",
             });
     internal_static_google_cloud_documentai_v1beta3_ReviewDocumentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_documentai_v1beta3_ReviewDocumentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_ReviewDocumentRequest_descriptor,
@@ -1039,7 +1058,7 @@ public final class DocumentAiProcessorService {
               "Source",
             });
     internal_static_google_cloud_documentai_v1beta3_ReviewDocumentResponse_descriptor =
-        getDescriptor().getMessageTypes().get(41);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_documentai_v1beta3_ReviewDocumentResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_ReviewDocumentResponse_descriptor,
@@ -1047,7 +1066,7 @@ public final class DocumentAiProcessorService {
               "GcsDestination", "State", "RejectionReason",
             });
     internal_static_google_cloud_documentai_v1beta3_ReviewDocumentOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(42);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_cloud_documentai_v1beta3_ReviewDocumentOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_ReviewDocumentOperationMetadata_descriptor,
@@ -1055,7 +1074,7 @@ public final class DocumentAiProcessorService {
               "State", "StateMessage", "CreateTime", "UpdateTime", "CommonMetadata", "QuestionId",
             });
     internal_static_google_cloud_documentai_v1beta3_EvaluateProcessorVersionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(43);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_cloud_documentai_v1beta3_EvaluateProcessorVersionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_EvaluateProcessorVersionRequest_descriptor,
@@ -1063,7 +1082,7 @@ public final class DocumentAiProcessorService {
               "ProcessorVersion", "EvaluationDocuments",
             });
     internal_static_google_cloud_documentai_v1beta3_EvaluateProcessorVersionMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(44);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_cloud_documentai_v1beta3_EvaluateProcessorVersionMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_EvaluateProcessorVersionMetadata_descriptor,
@@ -1071,7 +1090,7 @@ public final class DocumentAiProcessorService {
               "CommonMetadata",
             });
     internal_static_google_cloud_documentai_v1beta3_EvaluateProcessorVersionResponse_descriptor =
-        getDescriptor().getMessageTypes().get(45);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_cloud_documentai_v1beta3_EvaluateProcessorVersionResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_EvaluateProcessorVersionResponse_descriptor,
@@ -1079,7 +1098,7 @@ public final class DocumentAiProcessorService {
               "Evaluation",
             });
     internal_static_google_cloud_documentai_v1beta3_GetEvaluationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(46);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_cloud_documentai_v1beta3_GetEvaluationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_GetEvaluationRequest_descriptor,
@@ -1087,7 +1106,7 @@ public final class DocumentAiProcessorService {
               "Name",
             });
     internal_static_google_cloud_documentai_v1beta3_ListEvaluationsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(47);
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_cloud_documentai_v1beta3_ListEvaluationsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_ListEvaluationsRequest_descriptor,
@@ -1095,7 +1114,7 @@ public final class DocumentAiProcessorService {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_documentai_v1beta3_ListEvaluationsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(48);
+        getDescriptor().getMessageTypes().get(49);
     internal_static_google_cloud_documentai_v1beta3_ListEvaluationsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_ListEvaluationsResponse_descriptor,

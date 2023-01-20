@@ -69,7 +69,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ENABLED_FIELD_NUMBER = 1;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -87,6 +87,8 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
   }
 
   public static final int KEY_VALUE_PAIR_HINTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.documentai.v1beta2.KeyValuePairHint> keyValuePairHints_;
   /**
    *
@@ -208,7 +210,9 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MODEL_VERSION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object modelVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object modelVersion_ = "";
   /**
    *
    *
@@ -483,17 +487,16 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enabled_ = false;
-
       if (keyValuePairHintsBuilder_ == null) {
         keyValuePairHints_ = java.util.Collections.emptyList();
       } else {
         keyValuePairHints_ = null;
         keyValuePairHintsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       modelVersion_ = "";
-
       return this;
     }
 
@@ -521,20 +524,35 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
     public com.google.cloud.documentai.v1beta2.FormExtractionParams buildPartial() {
       com.google.cloud.documentai.v1beta2.FormExtractionParams result =
           new com.google.cloud.documentai.v1beta2.FormExtractionParams(this);
-      int from_bitField0_ = bitField0_;
-      result.enabled_ = enabled_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.documentai.v1beta2.FormExtractionParams result) {
       if (keyValuePairHintsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           keyValuePairHints_ = java.util.Collections.unmodifiableList(keyValuePairHints_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.keyValuePairHints_ = keyValuePairHints_;
       } else {
         result.keyValuePairHints_ = keyValuePairHintsBuilder_.build();
       }
-      result.modelVersion_ = modelVersion_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1beta2.FormExtractionParams result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enabled_ = enabled_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.modelVersion_ = modelVersion_;
+      }
     }
 
     @java.lang.Override
@@ -590,7 +608,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
         if (!other.keyValuePairHints_.isEmpty()) {
           if (keyValuePairHints_.isEmpty()) {
             keyValuePairHints_ = other.keyValuePairHints_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureKeyValuePairHintsIsMutable();
             keyValuePairHints_.addAll(other.keyValuePairHints_);
@@ -603,7 +621,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
             keyValuePairHintsBuilder_.dispose();
             keyValuePairHintsBuilder_ = null;
             keyValuePairHints_ = other.keyValuePairHints_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             keyValuePairHintsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getKeyValuePairHintsFieldBuilder()
@@ -615,6 +633,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
       }
       if (!other.getModelVersion().isEmpty()) {
         modelVersion_ = other.modelVersion_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -646,7 +665,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 enabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -666,7 +685,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
             case 26:
               {
                 modelVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -719,6 +738,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -734,7 +754,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enabled_ = false;
       onChanged();
       return this;
@@ -744,11 +764,11 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
         keyValuePairHints_ = java.util.Collections.emptyList();
 
     private void ensureKeyValuePairHintsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         keyValuePairHints_ =
             new java.util.ArrayList<com.google.cloud.documentai.v1beta2.KeyValuePairHint>(
                 keyValuePairHints_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1078,7 +1098,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
     public Builder clearKeyValuePairHints() {
       if (keyValuePairHintsBuilder_ == null) {
         keyValuePairHints_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         keyValuePairHintsBuilder_.clear();
@@ -1276,7 +1296,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
                 com.google.cloud.documentai.v1beta2.KeyValuePairHint.Builder,
                 com.google.cloud.documentai.v1beta2.KeyValuePairHintOrBuilder>(
                 keyValuePairHints_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         keyValuePairHints_ = null;
@@ -1357,8 +1377,8 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       modelVersion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1378,8 +1398,8 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearModelVersion() {
-
       modelVersion_ = getDefaultInstance().getModelVersion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1404,8 +1424,8 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       modelVersion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

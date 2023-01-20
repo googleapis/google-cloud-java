@@ -44,6 +44,7 @@ import com.google.cloud.documentai.v1.EnableProcessorResponse;
 import com.google.cloud.documentai.v1.FetchProcessorTypesRequest;
 import com.google.cloud.documentai.v1.FetchProcessorTypesResponse;
 import com.google.cloud.documentai.v1.GetProcessorRequest;
+import com.google.cloud.documentai.v1.GetProcessorTypeRequest;
 import com.google.cloud.documentai.v1.GetProcessorVersionRequest;
 import com.google.cloud.documentai.v1.ListProcessorTypesRequest;
 import com.google.cloud.documentai.v1.ListProcessorTypesResponse;
@@ -54,6 +55,7 @@ import com.google.cloud.documentai.v1.ListProcessorsResponse;
 import com.google.cloud.documentai.v1.ProcessRequest;
 import com.google.cloud.documentai.v1.ProcessResponse;
 import com.google.cloud.documentai.v1.Processor;
+import com.google.cloud.documentai.v1.ProcessorType;
 import com.google.cloud.documentai.v1.ProcessorVersion;
 import com.google.cloud.documentai.v1.ReviewDocumentOperationMetadata;
 import com.google.cloud.documentai.v1.ReviewDocumentRequest;
@@ -117,6 +119,10 @@ public abstract class DocumentProcessorServiceStub implements BackgroundResource
   public UnaryCallable<ListProcessorTypesRequest, ListProcessorTypesResponse>
       listProcessorTypesCallable() {
     throw new UnsupportedOperationException("Not implemented: listProcessorTypesCallable()");
+  }
+
+  public UnaryCallable<GetProcessorTypeRequest, ProcessorType> getProcessorTypeCallable() {
+    throw new UnsupportedOperationException("Not implemented: getProcessorTypeCallable()");
   }
 
   public UnaryCallable<ListProcessorsRequest, ListProcessorsPagedResponse>

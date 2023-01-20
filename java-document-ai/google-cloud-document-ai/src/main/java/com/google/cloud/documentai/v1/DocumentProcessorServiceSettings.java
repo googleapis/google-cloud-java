@@ -118,6 +118,11 @@ public class DocumentProcessorServiceSettings
     return ((DocumentProcessorServiceStubSettings) getStubSettings()).listProcessorTypesSettings();
   }
 
+  /** Returns the object with the settings used for calls to getProcessorType. */
+  public UnaryCallSettings<GetProcessorTypeRequest, ProcessorType> getProcessorTypeSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings()).getProcessorTypeSettings();
+  }
+
   /** Returns the object with the settings used for calls to listProcessors. */
   public PagedCallSettings<
           ListProcessorsRequest, ListProcessorsResponse, ListProcessorsPagedResponse>
@@ -423,6 +428,12 @@ public class DocumentProcessorServiceSettings
             ListProcessorTypesRequest, ListProcessorTypesResponse, ListProcessorTypesPagedResponse>
         listProcessorTypesSettings() {
       return getStubSettingsBuilder().listProcessorTypesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getProcessorType. */
+    public UnaryCallSettings.Builder<GetProcessorTypeRequest, ProcessorType>
+        getProcessorTypeSettings() {
+      return getStubSettingsBuilder().getProcessorTypeSettings();
     }
 
     /** Returns the builder for the settings used for calls to listProcessors. */
