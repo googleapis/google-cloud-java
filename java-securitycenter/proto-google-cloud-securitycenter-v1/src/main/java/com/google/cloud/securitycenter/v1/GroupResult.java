@@ -91,6 +91,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
                     com.google.protobuf.Value.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value> properties_;
 
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
@@ -149,8 +150,10 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.protobuf.Value&gt; properties = 1;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.Value getPropertiesOrDefault(
-      java.lang.String key, com.google.protobuf.Value defaultValue) {
+  public /* nullable */ com.google.protobuf.Value getPropertiesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.Value defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -181,7 +184,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COUNT_FIELD_NUMBER = 2;
-  private long count_;
+  private long count_ = 0L;
   /**
    *
    *
@@ -432,9 +435,9 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableProperties().clear();
       count_ = 0L;
-
       return this;
     }
 
@@ -462,12 +465,22 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.GroupResult buildPartial() {
       com.google.cloud.securitycenter.v1.GroupResult result =
           new com.google.cloud.securitycenter.v1.GroupResult(this);
-      int from_bitField0_ = bitField0_;
-      result.properties_ = internalGetProperties();
-      result.properties_.makeImmutable();
-      result.count_ = count_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.GroupResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.properties_ = internalGetProperties();
+        result.properties_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.count_ = count_;
+      }
     }
 
     @java.lang.Override
@@ -516,6 +529,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.securitycenter.v1.GroupResult other) {
       if (other == com.google.cloud.securitycenter.v1.GroupResult.getDefaultInstance()) return this;
       internalGetMutableProperties().mergeFrom(other.internalGetProperties());
+      bitField0_ |= 0x00000001;
       if (other.getCount() != 0L) {
         setCount(other.getCount());
       }
@@ -555,12 +569,13 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableProperties()
                     .getMutableMap()
                     .put(properties__.getKey(), properties__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 count_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -595,8 +610,6 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
         internalGetMutableProperties() {
-      onChanged();
-      ;
       if (properties_ == null) {
         properties_ =
             com.google.protobuf.MapField.newMapField(PropertiesDefaultEntryHolder.defaultEntry);
@@ -604,6 +617,8 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
       if (!properties_.isMutable()) {
         properties_ = properties_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return properties_;
     }
 
@@ -655,8 +670,10 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.protobuf.Value&gt; properties = 1;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.Value getPropertiesOrDefault(
-        java.lang.String key, com.google.protobuf.Value defaultValue) {
+    public /* nullable */ com.google.protobuf.Value getPropertiesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.Value defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -687,6 +704,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearProperties() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableProperties().getMutableMap().clear();
       return this;
     }
@@ -709,6 +727,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableProperties() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableProperties().getMutableMap();
     }
     /**
@@ -727,8 +746,8 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableProperties().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -743,6 +762,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllProperties(
         java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
       internalGetMutableProperties().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -777,6 +797,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
     public Builder setCount(long value) {
 
       count_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -792,7 +813,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       count_ = 0L;
       onChanged();
       return this;

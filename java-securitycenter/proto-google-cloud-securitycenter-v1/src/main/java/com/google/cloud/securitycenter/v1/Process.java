@@ -71,7 +71,9 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 12;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -164,10 +166,12 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.securitycenter.v1.FileOrBuilder getBinaryOrBuilder() {
-    return getBinary();
+    return binary_ == null ? com.google.cloud.securitycenter.v1.File.getDefaultInstance() : binary_;
   }
 
   public static final int LIBRARIES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.File> libraries_;
   /**
    *
@@ -288,10 +292,12 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.securitycenter.v1.FileOrBuilder getScriptOrBuilder() {
-    return getScript();
+    return script_ == null ? com.google.cloud.securitycenter.v1.File.getDefaultInstance() : script_;
   }
 
   public static final int ARGS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList args_;
   /**
    *
@@ -353,7 +359,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARGUMENTS_TRUNCATED_FIELD_NUMBER = 7;
-  private boolean argumentsTruncated_;
+  private boolean argumentsTruncated_ = false;
   /**
    *
    *
@@ -371,6 +377,8 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENV_VARIABLES_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.EnvironmentVariable> envVariables_;
   /**
    *
@@ -442,7 +450,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENV_VARIABLES_TRUNCATED_FIELD_NUMBER = 9;
-  private boolean envVariablesTruncated_;
+  private boolean envVariablesTruncated_ = false;
   /**
    *
    *
@@ -460,7 +468,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PID_FIELD_NUMBER = 10;
-  private long pid_;
+  private long pid_ = 0L;
   /**
    *
    *
@@ -478,7 +486,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARENT_PID_FIELD_NUMBER = 11;
-  private long parentPid_;
+  private long parentPid_ = 0L;
   /**
    *
    *
@@ -794,12 +802,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (binaryBuilder_ == null) {
-        binary_ = null;
-      } else {
-        binary_ = null;
+      binary_ = null;
+      if (binaryBuilder_ != null) {
+        binaryBuilder_.dispose();
         binaryBuilder_ = null;
       }
       if (librariesBuilder_ == null) {
@@ -808,30 +815,25 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
         libraries_ = null;
         librariesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (scriptBuilder_ == null) {
-        script_ = null;
-      } else {
-        script_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      script_ = null;
+      if (scriptBuilder_ != null) {
+        scriptBuilder_.dispose();
         scriptBuilder_ = null;
       }
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       argumentsTruncated_ = false;
-
       if (envVariablesBuilder_ == null) {
         envVariables_ = java.util.Collections.emptyList();
       } else {
         envVariables_ = null;
         envVariablesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000040);
       envVariablesTruncated_ = false;
-
       pid_ = 0L;
-
       parentPid_ = 0L;
-
       return this;
     }
 
@@ -859,47 +861,63 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.Process buildPartial() {
       com.google.cloud.securitycenter.v1.Process result =
           new com.google.cloud.securitycenter.v1.Process(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (binaryBuilder_ == null) {
-        result.binary_ = binary_;
-      } else {
-        result.binary_ = binaryBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.securitycenter.v1.Process result) {
       if (librariesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           libraries_ = java.util.Collections.unmodifiableList(libraries_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.libraries_ = libraries_;
       } else {
         result.libraries_ = librariesBuilder_.build();
       }
-      if (scriptBuilder_ == null) {
-        result.script_ = script_;
-      } else {
-        result.script_ = scriptBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         args_ = args_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.args_ = args_;
-      result.argumentsTruncated_ = argumentsTruncated_;
       if (envVariablesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           envVariables_ = java.util.Collections.unmodifiableList(envVariables_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.envVariables_ = envVariables_;
       } else {
         result.envVariables_ = envVariablesBuilder_.build();
       }
-      result.envVariablesTruncated_ = envVariablesTruncated_;
-      result.pid_ = pid_;
-      result.parentPid_ = parentPid_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.Process result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.binary_ = binaryBuilder_ == null ? binary_ : binaryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.script_ = scriptBuilder_ == null ? script_ : scriptBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.argumentsTruncated_ = argumentsTruncated_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.envVariablesTruncated_ = envVariablesTruncated_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.pid_ = pid_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.parentPid_ = parentPid_;
+      }
     }
 
     @java.lang.Override
@@ -949,6 +967,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.securitycenter.v1.Process.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasBinary()) {
@@ -958,7 +977,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
         if (!other.libraries_.isEmpty()) {
           if (libraries_.isEmpty()) {
             libraries_ = other.libraries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureLibrariesIsMutable();
             libraries_.addAll(other.libraries_);
@@ -971,7 +990,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
             librariesBuilder_.dispose();
             librariesBuilder_ = null;
             libraries_ = other.libraries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             librariesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLibrariesFieldBuilder()
@@ -987,7 +1006,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
       if (!other.args_.isEmpty()) {
         if (args_.isEmpty()) {
           args_ = other.args_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureArgsIsMutable();
           args_.addAll(other.args_);
@@ -1001,7 +1020,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
         if (!other.envVariables_.isEmpty()) {
           if (envVariables_.isEmpty()) {
             envVariables_ = other.envVariables_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureEnvVariablesIsMutable();
             envVariables_.addAll(other.envVariables_);
@@ -1014,7 +1033,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
             envVariablesBuilder_.dispose();
             envVariablesBuilder_ = null;
             envVariables_ = other.envVariables_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000040);
             envVariablesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEnvVariablesFieldBuilder()
@@ -1062,7 +1081,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 input.readMessage(getBinaryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
@@ -1081,7 +1100,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getScriptFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
@@ -1094,7 +1113,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
             case 56:
               {
                 argumentsTruncated_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             case 66:
@@ -1114,25 +1133,25 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
             case 72:
               {
                 envVariablesTruncated_ = input.readBool();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 72
             case 80:
               {
                 pid_ = input.readInt64();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 80
             case 88:
               {
                 parentPid_ = input.readInt64();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 88
             case 98:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 98
             default:
@@ -1218,8 +1237,8 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1236,8 +1255,8 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1259,8 +1278,8 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1283,7 +1302,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the binary field is set.
      */
     public boolean hasBinary() {
-      return binaryBuilder_ != null || binary_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1320,11 +1339,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         binary_ = value;
-        onChanged();
       } else {
         binaryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1339,11 +1358,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     public Builder setBinary(com.google.cloud.securitycenter.v1.File.Builder builderForValue) {
       if (binaryBuilder_ == null) {
         binary_ = builderForValue.build();
-        onChanged();
       } else {
         binaryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1357,19 +1376,18 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBinary(com.google.cloud.securitycenter.v1.File value) {
       if (binaryBuilder_ == null) {
-        if (binary_ != null) {
-          binary_ =
-              com.google.cloud.securitycenter.v1.File.newBuilder(binary_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && binary_ != null
+            && binary_ != com.google.cloud.securitycenter.v1.File.getDefaultInstance()) {
+          getBinaryBuilder().mergeFrom(value);
         } else {
           binary_ = value;
         }
-        onChanged();
       } else {
         binaryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1382,14 +1400,13 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.securitycenter.v1.File binary = 3;</code>
      */
     public Builder clearBinary() {
-      if (binaryBuilder_ == null) {
-        binary_ = null;
-        onChanged();
-      } else {
-        binary_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      binary_ = null;
+      if (binaryBuilder_ != null) {
+        binaryBuilder_.dispose();
         binaryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1402,7 +1419,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.securitycenter.v1.File binary = 3;</code>
      */
     public com.google.cloud.securitycenter.v1.File.Builder getBinaryBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getBinaryFieldBuilder().getBuilder();
     }
@@ -1454,9 +1471,9 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureLibrariesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         libraries_ = new java.util.ArrayList<com.google.cloud.securitycenter.v1.File>(libraries_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1671,7 +1688,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLibraries() {
       if (librariesBuilder_ == null) {
         libraries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         librariesBuilder_.clear();
@@ -1793,7 +1810,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v1.File,
                 com.google.cloud.securitycenter.v1.File.Builder,
                 com.google.cloud.securitycenter.v1.FileOrBuilder>(
-                libraries_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                libraries_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         libraries_ = null;
       }
       return librariesBuilder_;
@@ -1820,7 +1837,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the script field is set.
      */
     public boolean hasScript() {
-      return scriptBuilder_ != null || script_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1863,11 +1880,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         script_ = value;
-        onChanged();
       } else {
         scriptBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1885,11 +1902,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     public Builder setScript(com.google.cloud.securitycenter.v1.File.Builder builderForValue) {
       if (scriptBuilder_ == null) {
         script_ = builderForValue.build();
-        onChanged();
       } else {
         scriptBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1906,19 +1923,18 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeScript(com.google.cloud.securitycenter.v1.File value) {
       if (scriptBuilder_ == null) {
-        if (script_ != null) {
-          script_ =
-              com.google.cloud.securitycenter.v1.File.newBuilder(script_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && script_ != null
+            && script_ != com.google.cloud.securitycenter.v1.File.getDefaultInstance()) {
+          getScriptBuilder().mergeFrom(value);
         } else {
           script_ = value;
         }
-        onChanged();
       } else {
         scriptBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1934,14 +1950,13 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.securitycenter.v1.File script = 5;</code>
      */
     public Builder clearScript() {
-      if (scriptBuilder_ == null) {
-        script_ = null;
-        onChanged();
-      } else {
-        script_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      script_ = null;
+      if (scriptBuilder_ != null) {
+        scriptBuilder_.dispose();
         scriptBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1957,7 +1972,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.securitycenter.v1.File script = 5;</code>
      */
     public com.google.cloud.securitycenter.v1.File.Builder getScriptBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getScriptFieldBuilder().getBuilder();
     }
@@ -2015,9 +2030,9 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureArgsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         args_ = new com.google.protobuf.LazyStringArrayList(args_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -2152,7 +2167,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearArgs() {
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2210,6 +2225,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     public Builder setArgumentsTruncated(boolean value) {
 
       argumentsTruncated_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2225,7 +2241,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearArgumentsTruncated() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       argumentsTruncated_ = false;
       onChanged();
       return this;
@@ -2235,11 +2251,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureEnvVariablesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         envVariables_ =
             new java.util.ArrayList<com.google.cloud.securitycenter.v1.EnvironmentVariable>(
                 envVariables_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -2459,7 +2475,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEnvVariables() {
       if (envVariablesBuilder_ == null) {
         envVariables_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         envVariablesBuilder_.clear();
@@ -2585,7 +2601,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v1.EnvironmentVariable,
                 com.google.cloud.securitycenter.v1.EnvironmentVariable.Builder,
                 com.google.cloud.securitycenter.v1.EnvironmentVariableOrBuilder>(
-                envVariables_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                envVariables_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
         envVariables_ = null;
       }
       return envVariablesBuilder_;
@@ -2622,6 +2638,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnvVariablesTruncated(boolean value) {
 
       envVariablesTruncated_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2637,7 +2654,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnvVariablesTruncated() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       envVariablesTruncated_ = false;
       onChanged();
       return this;
@@ -2674,6 +2691,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     public Builder setPid(long value) {
 
       pid_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2689,7 +2707,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPid() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       pid_ = 0L;
       onChanged();
       return this;
@@ -2726,6 +2744,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     public Builder setParentPid(long value) {
 
       parentPid_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2741,7 +2760,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearParentPid() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       parentPid_ = 0L;
       onChanged();
       return this;

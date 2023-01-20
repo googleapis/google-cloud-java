@@ -116,7 +116,9 @@ public final class UpdateExternalSystemRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.securitycenter.v1.ExternalSystemOrBuilder getExternalSystemOrBuilder() {
-    return getExternalSystem();
+    return externalSystem_ == null
+        ? com.google.cloud.securitycenter.v1.ExternalSystem.getDefaultInstance()
+        : externalSystem_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -165,7 +167,7 @@ public final class UpdateExternalSystemRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,16 +387,15 @@ public final class UpdateExternalSystemRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (externalSystemBuilder_ == null) {
-        externalSystem_ = null;
-      } else {
-        externalSystem_ = null;
+      bitField0_ = 0;
+      externalSystem_ = null;
+      if (externalSystemBuilder_ != null) {
+        externalSystemBuilder_.dispose();
         externalSystemBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -425,18 +426,23 @@ public final class UpdateExternalSystemRequest extends com.google.protobuf.Gener
     public com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest buildPartial() {
       com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest result =
           new com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest(this);
-      if (externalSystemBuilder_ == null) {
-        result.externalSystem_ = externalSystem_;
-      } else {
-        result.externalSystem_ = externalSystemBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.externalSystem_ =
+            externalSystemBuilder_ == null ? externalSystem_ : externalSystemBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -521,13 +527,13 @@ public final class UpdateExternalSystemRequest extends com.google.protobuf.Gener
             case 10:
               {
                 input.readMessage(getExternalSystemFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -546,6 +552,8 @@ public final class UpdateExternalSystemRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.securitycenter.v1.ExternalSystem externalSystem_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -567,7 +575,7 @@ public final class UpdateExternalSystemRequest extends com.google.protobuf.Gener
      * @return Whether the externalSystem field is set.
      */
     public boolean hasExternalSystem() {
-      return externalSystemBuilder_ != null || externalSystem_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -608,11 +616,11 @@ public final class UpdateExternalSystemRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         externalSystem_ = value;
-        onChanged();
       } else {
         externalSystemBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -630,11 +638,11 @@ public final class UpdateExternalSystemRequest extends com.google.protobuf.Gener
         com.google.cloud.securitycenter.v1.ExternalSystem.Builder builderForValue) {
       if (externalSystemBuilder_ == null) {
         externalSystem_ = builderForValue.build();
-        onChanged();
       } else {
         externalSystemBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -650,19 +658,19 @@ public final class UpdateExternalSystemRequest extends com.google.protobuf.Gener
      */
     public Builder mergeExternalSystem(com.google.cloud.securitycenter.v1.ExternalSystem value) {
       if (externalSystemBuilder_ == null) {
-        if (externalSystem_ != null) {
-          externalSystem_ =
-              com.google.cloud.securitycenter.v1.ExternalSystem.newBuilder(externalSystem_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && externalSystem_ != null
+            && externalSystem_
+                != com.google.cloud.securitycenter.v1.ExternalSystem.getDefaultInstance()) {
+          getExternalSystemBuilder().mergeFrom(value);
         } else {
           externalSystem_ = value;
         }
-        onChanged();
       } else {
         externalSystemBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -677,14 +685,13 @@ public final class UpdateExternalSystemRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearExternalSystem() {
-      if (externalSystemBuilder_ == null) {
-        externalSystem_ = null;
-        onChanged();
-      } else {
-        externalSystem_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      externalSystem_ = null;
+      if (externalSystemBuilder_ != null) {
+        externalSystemBuilder_.dispose();
         externalSystemBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -699,7 +706,7 @@ public final class UpdateExternalSystemRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.cloud.securitycenter.v1.ExternalSystem.Builder getExternalSystemBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getExternalSystemFieldBuilder().getBuilder();
     }
@@ -770,7 +777,7 @@ public final class UpdateExternalSystemRequest extends com.google.protobuf.Gener
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -809,11 +816,11 @@ public final class UpdateExternalSystemRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -829,11 +836,11 @@ public final class UpdateExternalSystemRequest extends com.google.protobuf.Gener
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -848,17 +855,18 @@ public final class UpdateExternalSystemRequest extends com.google.protobuf.Gener
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -872,14 +880,13 @@ public final class UpdateExternalSystemRequest extends com.google.protobuf.Gener
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -893,7 +900,7 @@ public final class UpdateExternalSystemRequest extends com.google.protobuf.Gener
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

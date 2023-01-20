@@ -71,7 +71,9 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int FILTER_FIELD_NUMBER = 2;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -213,7 +217,9 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int GROUP_BY_FIELD_NUMBER = 3;
-  private volatile java.lang.Object groupBy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object groupBy_ = "";
   /**
    *
    *
@@ -372,7 +378,9 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getCompareDurationOrBuilder() {
-    return getCompareDuration();
+    return compareDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : compareDuration_;
   }
 
   public static final int READ_TIME_FIELD_NUMBER = 5;
@@ -427,11 +435,13 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
-    return getReadTime();
+    return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 7;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -484,7 +494,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 8;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -764,28 +774,22 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       filter_ = "";
-
       groupBy_ = "";
-
-      if (compareDurationBuilder_ == null) {
-        compareDuration_ = null;
-      } else {
-        compareDuration_ = null;
+      compareDuration_ = null;
+      if (compareDurationBuilder_ != null) {
+        compareDurationBuilder_.dispose();
         compareDurationBuilder_ = null;
       }
-      if (readTimeBuilder_ == null) {
-        readTime_ = null;
-      } else {
-        readTime_ = null;
+      readTime_ = null;
+      if (readTimeBuilder_ != null) {
+        readTimeBuilder_.dispose();
         readTimeBuilder_ = null;
       }
       pageToken_ = "";
-
       pageSize_ = 0;
-
       return this;
     }
 
@@ -813,23 +817,37 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.securitycenter.v1beta1.GroupAssetsRequest buildPartial() {
       com.google.cloud.securitycenter.v1beta1.GroupAssetsRequest result =
           new com.google.cloud.securitycenter.v1beta1.GroupAssetsRequest(this);
-      result.parent_ = parent_;
-      result.filter_ = filter_;
-      result.groupBy_ = groupBy_;
-      if (compareDurationBuilder_ == null) {
-        result.compareDuration_ = compareDuration_;
-      } else {
-        result.compareDuration_ = compareDurationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (readTimeBuilder_ == null) {
-        result.readTime_ = readTime_;
-      } else {
-        result.readTime_ = readTimeBuilder_.build();
-      }
-      result.pageToken_ = pageToken_;
-      result.pageSize_ = pageSize_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1beta1.GroupAssetsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.groupBy_ = groupBy_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.compareDuration_ =
+            compareDurationBuilder_ == null ? compareDuration_ : compareDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.readTime_ = readTimeBuilder_ == null ? readTime_ : readTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
     }
 
     @java.lang.Override
@@ -880,14 +898,17 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getGroupBy().isEmpty()) {
         groupBy_ = other.groupBy_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasCompareDuration()) {
@@ -898,6 +919,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -932,43 +954,43 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 groupBy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getCompareDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getReadTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 58:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 64:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 64
             default:
@@ -987,6 +1009,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -1058,8 +1082,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1078,8 +1102,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1103,8 +1127,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1227,8 +1251,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1263,8 +1287,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1304,8 +1328,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1398,8 +1422,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       groupBy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1424,8 +1448,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearGroupBy() {
-
       groupBy_ = getDefaultInstance().getGroupBy();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1455,8 +1479,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       groupBy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1495,7 +1519,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the compareDuration field is set.
      */
     public boolean hasCompareDuration() {
-      return compareDurationBuilder_ != null || compareDuration_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1564,11 +1588,11 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         compareDuration_ = value;
-        onChanged();
       } else {
         compareDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1599,11 +1623,11 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
     public Builder setCompareDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (compareDurationBuilder_ == null) {
         compareDuration_ = builderForValue.build();
-        onChanged();
       } else {
         compareDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1633,19 +1657,18 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeCompareDuration(com.google.protobuf.Duration value) {
       if (compareDurationBuilder_ == null) {
-        if (compareDuration_ != null) {
-          compareDuration_ =
-              com.google.protobuf.Duration.newBuilder(compareDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && compareDuration_ != null
+            && compareDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getCompareDurationBuilder().mergeFrom(value);
         } else {
           compareDuration_ = value;
         }
-        onChanged();
       } else {
         compareDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1674,14 +1697,13 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Duration compare_duration = 4;</code>
      */
     public Builder clearCompareDuration() {
-      if (compareDurationBuilder_ == null) {
-        compareDuration_ = null;
-        onChanged();
-      } else {
-        compareDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      compareDuration_ = null;
+      if (compareDurationBuilder_ != null) {
+        compareDurationBuilder_.dispose();
         compareDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1710,7 +1732,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Duration compare_duration = 4;</code>
      */
     public com.google.protobuf.Duration.Builder getCompareDurationBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCompareDurationFieldBuilder().getBuilder();
     }
@@ -1811,7 +1833,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the readTime field is set.
      */
     public boolean hasReadTime() {
-      return readTimeBuilder_ != null || readTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1852,11 +1874,11 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         readTime_ = value;
-        onChanged();
       } else {
         readTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1874,11 +1896,11 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
     public Builder setReadTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (readTimeBuilder_ == null) {
         readTime_ = builderForValue.build();
-        onChanged();
       } else {
         readTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1895,17 +1917,18 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeReadTime(com.google.protobuf.Timestamp value) {
       if (readTimeBuilder_ == null) {
-        if (readTime_ != null) {
-          readTime_ =
-              com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && readTime_ != null
+            && readTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getReadTimeBuilder().mergeFrom(value);
         } else {
           readTime_ = value;
         }
-        onChanged();
       } else {
         readTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1921,14 +1944,13 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Timestamp read_time = 5;</code>
      */
     public Builder clearReadTime() {
-      if (readTimeBuilder_ == null) {
-        readTime_ = null;
-        onChanged();
-      } else {
-        readTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      readTime_ = null;
+      if (readTimeBuilder_ != null) {
+        readTimeBuilder_.dispose();
         readTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1944,7 +1966,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Timestamp read_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
@@ -2063,8 +2085,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2082,8 +2104,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2106,8 +2128,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2145,6 +2167,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2161,7 +2184,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       pageSize_ = 0;
       onChanged();
       return this;

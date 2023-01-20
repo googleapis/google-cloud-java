@@ -71,7 +71,9 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -126,6 +128,8 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASSIGNEES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList assignees_;
   /**
    *
@@ -187,7 +191,9 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXTERNAL_UID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object externalUid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object externalUid_ = "";
   /**
    *
    *
@@ -236,7 +242,9 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 4;
-  private volatile java.lang.Object status_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object status_ = "";
   /**
    *
    *
@@ -334,7 +342,9 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExternalSystemUpdateTimeOrBuilder() {
-    return getExternalSystemUpdateTime();
+    return externalSystemUpdateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : externalSystemUpdateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -584,18 +594,15 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       assignees_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       externalUid_ = "";
-
       status_ = "";
-
-      if (externalSystemUpdateTimeBuilder_ == null) {
-        externalSystemUpdateTime_ = null;
-      } else {
-        externalSystemUpdateTime_ = null;
+      externalSystemUpdateTime_ = null;
+      if (externalSystemUpdateTimeBuilder_ != null) {
+        externalSystemUpdateTimeBuilder_.dispose();
         externalSystemUpdateTimeBuilder_ = null;
       }
       return this;
@@ -625,22 +632,40 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.ExternalSystem buildPartial() {
       com.google.cloud.securitycenter.v1.ExternalSystem result =
           new com.google.cloud.securitycenter.v1.ExternalSystem(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        assignees_ = assignees_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.assignees_ = assignees_;
-      result.externalUid_ = externalUid_;
-      result.status_ = status_;
-      if (externalSystemUpdateTimeBuilder_ == null) {
-        result.externalSystemUpdateTime_ = externalSystemUpdateTime_;
-      } else {
-        result.externalSystemUpdateTime_ = externalSystemUpdateTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.securitycenter.v1.ExternalSystem result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        assignees_ = assignees_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.assignees_ = assignees_;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.ExternalSystem result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.externalUid_ = externalUid_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.status_ = status_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.externalSystemUpdateTime_ =
+            externalSystemUpdateTimeBuilder_ == null
+                ? externalSystemUpdateTime_
+                : externalSystemUpdateTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -691,12 +716,13 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.assignees_.isEmpty()) {
         if (assignees_.isEmpty()) {
           assignees_ = other.assignees_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureAssigneesIsMutable();
           assignees_.addAll(other.assignees_);
@@ -705,10 +731,12 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getExternalUid().isEmpty()) {
         externalUid_ = other.externalUid_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getStatus().isEmpty()) {
         status_ = other.status_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasExternalSystemUpdateTime()) {
@@ -743,7 +771,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -756,20 +784,20 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 externalUid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 status_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getExternalSystemUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -861,8 +889,8 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -881,8 +909,8 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -906,8 +934,8 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -916,9 +944,9 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAssigneesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         assignees_ = new com.google.protobuf.LazyStringArrayList(assignees_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1053,7 +1081,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAssignees() {
       assignees_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1141,8 +1169,8 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       externalUid_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1158,8 +1186,8 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExternalUid() {
-
       externalUid_ = getDefaultInstance().getExternalUid();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1180,8 +1208,8 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       externalUid_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1250,8 +1278,8 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       status_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1268,8 +1296,8 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-
       status_ = getDefaultInstance().getStatus();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1291,8 +1319,8 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       status_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1316,7 +1344,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the externalSystemUpdateTime field is set.
      */
     public boolean hasExternalSystemUpdateTime() {
-      return externalSystemUpdateTimeBuilder_ != null || externalSystemUpdateTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1355,11 +1383,11 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         externalSystemUpdateTime_ = value;
-        onChanged();
       } else {
         externalSystemUpdateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1376,11 +1404,11 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.Timestamp.Builder builderForValue) {
       if (externalSystemUpdateTimeBuilder_ == null) {
         externalSystemUpdateTime_ = builderForValue.build();
-        onChanged();
       } else {
         externalSystemUpdateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1395,19 +1423,18 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExternalSystemUpdateTime(com.google.protobuf.Timestamp value) {
       if (externalSystemUpdateTimeBuilder_ == null) {
-        if (externalSystemUpdateTime_ != null) {
-          externalSystemUpdateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(externalSystemUpdateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && externalSystemUpdateTime_ != null
+            && externalSystemUpdateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExternalSystemUpdateTimeBuilder().mergeFrom(value);
         } else {
           externalSystemUpdateTime_ = value;
         }
-        onChanged();
       } else {
         externalSystemUpdateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1421,14 +1448,13 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp external_system_update_time = 5;</code>
      */
     public Builder clearExternalSystemUpdateTime() {
-      if (externalSystemUpdateTimeBuilder_ == null) {
-        externalSystemUpdateTime_ = null;
-        onChanged();
-      } else {
-        externalSystemUpdateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      externalSystemUpdateTime_ = null;
+      if (externalSystemUpdateTimeBuilder_ != null) {
+        externalSystemUpdateTimeBuilder_.dispose();
         externalSystemUpdateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1442,7 +1468,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp external_system_update_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getExternalSystemUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getExternalSystemUpdateTimeFieldBuilder().getBuilder();
     }

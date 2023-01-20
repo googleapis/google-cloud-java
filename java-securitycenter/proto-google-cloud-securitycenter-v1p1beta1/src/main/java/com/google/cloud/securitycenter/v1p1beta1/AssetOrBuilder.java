@@ -146,7 +146,6 @@ public interface AssetOrBuilder
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
    */
-
   /* nullable */
   com.google.protobuf.Value getResourcePropertiesOrDefault(
       java.lang.String key,

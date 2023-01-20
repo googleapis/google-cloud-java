@@ -1379,7 +1379,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRIMARY_TACTIC_FIELD_NUMBER = 1;
-  private int primaryTactic_;
+  private int primaryTactic_ = 0;
   /**
    *
    *
@@ -1408,16 +1408,18 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.securitycenter.v1.MitreAttack.Tactic getPrimaryTactic() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.securitycenter.v1.MitreAttack.Tactic result =
-        com.google.cloud.securitycenter.v1.MitreAttack.Tactic.valueOf(primaryTactic_);
+        com.google.cloud.securitycenter.v1.MitreAttack.Tactic.forNumber(primaryTactic_);
     return result == null
         ? com.google.cloud.securitycenter.v1.MitreAttack.Tactic.UNRECOGNIZED
         : result;
   }
 
   public static final int PRIMARY_TECHNIQUES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> primaryTechniques_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.securitycenter.v1.MitreAttack.Technique>
       primaryTechniques_converter_ =
@@ -1425,9 +1427,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
               java.lang.Integer, com.google.cloud.securitycenter.v1.MitreAttack.Technique>() {
             public com.google.cloud.securitycenter.v1.MitreAttack.Technique convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.securitycenter.v1.MitreAttack.Technique result =
-                  com.google.cloud.securitycenter.v1.MitreAttack.Technique.valueOf(from);
+                  com.google.cloud.securitycenter.v1.MitreAttack.Technique.forNumber(from);
               return result == null
                   ? com.google.cloud.securitycenter.v1.MitreAttack.Technique.UNRECOGNIZED
                   : result;
@@ -1547,7 +1548,10 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
   private int primaryTechniquesMemoizedSerializedSize;
 
   public static final int ADDITIONAL_TACTICS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> additionalTactics_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.securitycenter.v1.MitreAttack.Tactic>
       additionalTactics_converter_ =
@@ -1555,9 +1559,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
               java.lang.Integer, com.google.cloud.securitycenter.v1.MitreAttack.Tactic>() {
             public com.google.cloud.securitycenter.v1.MitreAttack.Tactic convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.securitycenter.v1.MitreAttack.Tactic result =
-                  com.google.cloud.securitycenter.v1.MitreAttack.Tactic.valueOf(from);
+                  com.google.cloud.securitycenter.v1.MitreAttack.Tactic.forNumber(from);
               return result == null
                   ? com.google.cloud.securitycenter.v1.MitreAttack.Tactic.UNRECOGNIZED
                   : result;
@@ -1652,7 +1655,10 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
   private int additionalTacticsMemoizedSerializedSize;
 
   public static final int ADDITIONAL_TECHNIQUES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> additionalTechniques_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.securitycenter.v1.MitreAttack.Technique>
       additionalTechniques_converter_ =
@@ -1660,9 +1666,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
               java.lang.Integer, com.google.cloud.securitycenter.v1.MitreAttack.Technique>() {
             public com.google.cloud.securitycenter.v1.MitreAttack.Technique convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.securitycenter.v1.MitreAttack.Technique result =
-                  com.google.cloud.securitycenter.v1.MitreAttack.Technique.valueOf(from);
+                  com.google.cloud.securitycenter.v1.MitreAttack.Technique.forNumber(from);
               return result == null
                   ? com.google.cloud.securitycenter.v1.MitreAttack.Technique.UNRECOGNIZED
                   : result;
@@ -1763,7 +1768,9 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
   private int additionalTechniquesMemoizedSerializedSize;
 
   public static final int VERSION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -2097,16 +2104,15 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       primaryTactic_ = 0;
-
       primaryTechniques_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      additionalTactics_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
-      additionalTechniques_ = java.util.Collections.emptyList();
+      additionalTactics_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      additionalTechniques_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
       version_ = "";
-
       return this;
     }
 
@@ -2134,26 +2140,40 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.MitreAttack buildPartial() {
       com.google.cloud.securitycenter.v1.MitreAttack result =
           new com.google.cloud.securitycenter.v1.MitreAttack(this);
-      int from_bitField0_ = bitField0_;
-      result.primaryTactic_ = primaryTactic_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        primaryTechniques_ = java.util.Collections.unmodifiableList(primaryTechniques_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.primaryTechniques_ = primaryTechniques_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        additionalTactics_ = java.util.Collections.unmodifiableList(additionalTactics_);
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.additionalTactics_ = additionalTactics_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        additionalTechniques_ = java.util.Collections.unmodifiableList(additionalTechniques_);
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.additionalTechniques_ = additionalTechniques_;
-      result.version_ = version_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.securitycenter.v1.MitreAttack result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        primaryTechniques_ = java.util.Collections.unmodifiableList(primaryTechniques_);
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.primaryTechniques_ = primaryTechniques_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        additionalTactics_ = java.util.Collections.unmodifiableList(additionalTactics_);
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.additionalTactics_ = additionalTactics_;
+      if (((bitField0_ & 0x00000008) != 0)) {
+        additionalTechniques_ = java.util.Collections.unmodifiableList(additionalTechniques_);
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.additionalTechniques_ = additionalTechniques_;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.MitreAttack result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.primaryTactic_ = primaryTactic_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.version_ = version_;
+      }
     }
 
     @java.lang.Override
@@ -2207,7 +2227,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       if (!other.primaryTechniques_.isEmpty()) {
         if (primaryTechniques_.isEmpty()) {
           primaryTechniques_ = other.primaryTechniques_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensurePrimaryTechniquesIsMutable();
           primaryTechniques_.addAll(other.primaryTechniques_);
@@ -2217,7 +2237,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       if (!other.additionalTactics_.isEmpty()) {
         if (additionalTactics_.isEmpty()) {
           additionalTactics_ = other.additionalTactics_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureAdditionalTacticsIsMutable();
           additionalTactics_.addAll(other.additionalTactics_);
@@ -2227,7 +2247,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       if (!other.additionalTechniques_.isEmpty()) {
         if (additionalTechniques_.isEmpty()) {
           additionalTechniques_ = other.additionalTechniques_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureAdditionalTechniquesIsMutable();
           additionalTechniques_.addAll(other.additionalTechniques_);
@@ -2236,6 +2256,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2267,7 +2288,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 primaryTactic_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
@@ -2330,7 +2351,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -2381,8 +2402,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPrimaryTacticValue(int value) {
-
       primaryTactic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2399,9 +2420,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.securitycenter.v1.MitreAttack.Tactic getPrimaryTactic() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.v1.MitreAttack.Tactic result =
-          com.google.cloud.securitycenter.v1.MitreAttack.Tactic.valueOf(primaryTactic_);
+          com.google.cloud.securitycenter.v1.MitreAttack.Tactic.forNumber(primaryTactic_);
       return result == null
           ? com.google.cloud.securitycenter.v1.MitreAttack.Tactic.UNRECOGNIZED
           : result;
@@ -2422,7 +2442,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       primaryTactic_ = value.getNumber();
       onChanged();
       return this;
@@ -2439,7 +2459,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPrimaryTactic() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       primaryTactic_ = 0;
       onChanged();
       return this;
@@ -2449,9 +2469,9 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePrimaryTechniquesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         primaryTechniques_ = new java.util.ArrayList<java.lang.Integer>(primaryTechniques_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -2623,7 +2643,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPrimaryTechniques() {
       primaryTechniques_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2748,9 +2768,9 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAdditionalTacticsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         additionalTactics_ = new java.util.ArrayList<java.lang.Integer>(additionalTactics_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -2886,7 +2906,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAdditionalTactics() {
       additionalTactics_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2986,9 +3006,9 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAdditionalTechniquesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         additionalTechniques_ = new java.util.ArrayList<java.lang.Integer>(additionalTechniques_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -3139,7 +3159,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAdditionalTechniques() {
       additionalTechniques_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3306,8 +3326,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3323,8 +3343,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3345,8 +3365,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

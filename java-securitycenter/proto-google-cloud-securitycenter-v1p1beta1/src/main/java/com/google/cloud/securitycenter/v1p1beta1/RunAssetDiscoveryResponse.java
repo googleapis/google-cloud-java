@@ -251,7 +251,7 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
   }
 
   public static final int STATE_FIELD_NUMBER = 1;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -280,9 +280,8 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse.State result =
-        com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse.State.valueOf(state_);
+        com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse.State.forNumber(state_);
     return result == null
         ? com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse.State.UNRECOGNIZED
         : result;
@@ -331,7 +330,7 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
-    return getDuration();
+    return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -554,12 +553,11 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       state_ = 0;
-
-      if (durationBuilder_ == null) {
-        duration_ = null;
-      } else {
-        duration_ = null;
+      duration_ = null;
+      if (durationBuilder_ != null) {
+        durationBuilder_.dispose();
         durationBuilder_ = null;
       }
       return this;
@@ -591,14 +589,22 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
     public com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse buildPartial() {
       com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse result =
           new com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse(this);
-      result.state_ = state_;
-      if (durationBuilder_ == null) {
-        result.duration_ = duration_;
-      } else {
-        result.duration_ = durationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -685,13 +691,13 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
             case 8:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -710,6 +716,8 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int state_ = 0;
     /**
@@ -742,8 +750,8 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -761,9 +769,9 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse.State result =
-          com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse.State.valueOf(state_);
+          com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse.State.forNumber(
+              state_);
       return result == null
           ? com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse.State.UNRECOGNIZED
           : result;
@@ -786,7 +794,7 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -804,7 +812,7 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = 0;
       onChanged();
       return this;
@@ -828,7 +836,7 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
      * @return Whether the duration field is set.
      */
     public boolean hasDuration() {
-      return durationBuilder_ != null || duration_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -863,11 +871,11 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         duration_ = value;
-        onChanged();
       } else {
         durationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -882,11 +890,11 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
     public Builder setDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (durationBuilder_ == null) {
         duration_ = builderForValue.build();
-        onChanged();
       } else {
         durationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -900,17 +908,18 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
      */
     public Builder mergeDuration(com.google.protobuf.Duration value) {
       if (durationBuilder_ == null) {
-        if (duration_ != null) {
-          duration_ =
-              com.google.protobuf.Duration.newBuilder(duration_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && duration_ != null
+            && duration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getDurationBuilder().mergeFrom(value);
         } else {
           duration_ = value;
         }
-        onChanged();
       } else {
         durationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -923,14 +932,13 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
      * <code>.google.protobuf.Duration duration = 2;</code>
      */
     public Builder clearDuration() {
-      if (durationBuilder_ == null) {
-        duration_ = null;
-        onChanged();
-      } else {
-        duration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      duration_ = null;
+      if (durationBuilder_ != null) {
+        durationBuilder_.dispose();
         durationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -943,7 +951,7 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
      * <code>.google.protobuf.Duration duration = 2;</code>
      */
     public com.google.protobuf.Duration.Builder getDurationBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDurationFieldBuilder().getBuilder();
     }

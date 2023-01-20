@@ -69,7 +69,9 @@ public final class ServiceAccountDelegationInfo extends com.google.protobuf.Gene
   }
 
   public static final int PRINCIPAL_EMAIL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object principalEmail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object principalEmail_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class ServiceAccountDelegationInfo extends com.google.protobuf.Gene
   }
 
   public static final int PRINCIPAL_SUBJECT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object principalSubject_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object principalSubject_ = "";
   /**
    *
    *
@@ -385,10 +389,9 @@ public final class ServiceAccountDelegationInfo extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       principalEmail_ = "";
-
       principalSubject_ = "";
-
       return this;
     }
 
@@ -417,10 +420,22 @@ public final class ServiceAccountDelegationInfo extends com.google.protobuf.Gene
     public com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo buildPartial() {
       com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo result =
           new com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo(this);
-      result.principalEmail_ = principalEmail_;
-      result.principalSubject_ = principalSubject_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.principalEmail_ = principalEmail_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.principalSubject_ = principalSubject_;
+      }
     }
 
     @java.lang.Override
@@ -473,10 +488,12 @@ public final class ServiceAccountDelegationInfo extends com.google.protobuf.Gene
         return this;
       if (!other.getPrincipalEmail().isEmpty()) {
         principalEmail_ = other.principalEmail_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPrincipalSubject().isEmpty()) {
         principalSubject_ = other.principalSubject_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -508,13 +525,13 @@ public final class ServiceAccountDelegationInfo extends com.google.protobuf.Gene
             case 10:
               {
                 principalEmail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 principalSubject_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -533,6 +550,8 @@ public final class ServiceAccountDelegationInfo extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object principalEmail_ = "";
     /**
@@ -595,8 +614,8 @@ public final class ServiceAccountDelegationInfo extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       principalEmail_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -612,8 +631,8 @@ public final class ServiceAccountDelegationInfo extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearPrincipalEmail() {
-
       principalEmail_ = getDefaultInstance().getPrincipalEmail();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -634,8 +653,8 @@ public final class ServiceAccountDelegationInfo extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       principalEmail_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -719,8 +738,8 @@ public final class ServiceAccountDelegationInfo extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       principalSubject_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -742,8 +761,8 @@ public final class ServiceAccountDelegationInfo extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearPrincipalSubject() {
-
       principalSubject_ = getDefaultInstance().getPrincipalSubject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -770,8 +789,8 @@ public final class ServiceAccountDelegationInfo extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       principalSubject_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

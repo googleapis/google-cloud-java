@@ -68,7 +68,9 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -117,7 +119,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNEXPECTED_CODE_MODIFICATION_FIELD_NUMBER = 2;
-  private boolean unexpectedCodeModification_;
+  private boolean unexpectedCodeModification_ = false;
   /**
    *
    *
@@ -135,7 +137,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNEXPECTED_READ_ONLY_DATA_MODIFICATION_FIELD_NUMBER = 3;
-  private boolean unexpectedReadOnlyDataModification_;
+  private boolean unexpectedReadOnlyDataModification_ = false;
   /**
    *
    *
@@ -154,7 +156,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNEXPECTED_FTRACE_HANDLER_FIELD_NUMBER = 4;
-  private boolean unexpectedFtraceHandler_;
+  private boolean unexpectedFtraceHandler_ = false;
   /**
    *
    *
@@ -173,7 +175,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNEXPECTED_KPROBE_HANDLER_FIELD_NUMBER = 5;
-  private boolean unexpectedKprobeHandler_;
+  private boolean unexpectedKprobeHandler_ = false;
   /**
    *
    *
@@ -192,7 +194,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNEXPECTED_KERNEL_CODE_PAGES_FIELD_NUMBER = 6;
-  private boolean unexpectedKernelCodePages_;
+  private boolean unexpectedKernelCodePages_ = false;
   /**
    *
    *
@@ -211,7 +213,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNEXPECTED_SYSTEM_CALL_HANDLER_FIELD_NUMBER = 7;
-  private boolean unexpectedSystemCallHandler_;
+  private boolean unexpectedSystemCallHandler_ = false;
   /**
    *
    *
@@ -230,7 +232,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNEXPECTED_INTERRUPT_HANDLER_FIELD_NUMBER = 8;
-  private boolean unexpectedInterruptHandler_;
+  private boolean unexpectedInterruptHandler_ = false;
   /**
    *
    *
@@ -249,7 +251,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNEXPECTED_PROCESSES_IN_RUNQUEUE_FIELD_NUMBER = 9;
-  private boolean unexpectedProcessesInRunqueue_;
+  private boolean unexpectedProcessesInRunqueue_ = false;
   /**
    *
    *
@@ -545,24 +547,16 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       unexpectedCodeModification_ = false;
-
       unexpectedReadOnlyDataModification_ = false;
-
       unexpectedFtraceHandler_ = false;
-
       unexpectedKprobeHandler_ = false;
-
       unexpectedKernelCodePages_ = false;
-
       unexpectedSystemCallHandler_ = false;
-
       unexpectedInterruptHandler_ = false;
-
       unexpectedProcessesInRunqueue_ = false;
-
       return this;
     }
 
@@ -590,17 +584,42 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.KernelRootkit buildPartial() {
       com.google.cloud.securitycenter.v1.KernelRootkit result =
           new com.google.cloud.securitycenter.v1.KernelRootkit(this);
-      result.name_ = name_;
-      result.unexpectedCodeModification_ = unexpectedCodeModification_;
-      result.unexpectedReadOnlyDataModification_ = unexpectedReadOnlyDataModification_;
-      result.unexpectedFtraceHandler_ = unexpectedFtraceHandler_;
-      result.unexpectedKprobeHandler_ = unexpectedKprobeHandler_;
-      result.unexpectedKernelCodePages_ = unexpectedKernelCodePages_;
-      result.unexpectedSystemCallHandler_ = unexpectedSystemCallHandler_;
-      result.unexpectedInterruptHandler_ = unexpectedInterruptHandler_;
-      result.unexpectedProcessesInRunqueue_ = unexpectedProcessesInRunqueue_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.KernelRootkit result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.unexpectedCodeModification_ = unexpectedCodeModification_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.unexpectedReadOnlyDataModification_ = unexpectedReadOnlyDataModification_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.unexpectedFtraceHandler_ = unexpectedFtraceHandler_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.unexpectedKprobeHandler_ = unexpectedKprobeHandler_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.unexpectedKernelCodePages_ = unexpectedKernelCodePages_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.unexpectedSystemCallHandler_ = unexpectedSystemCallHandler_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.unexpectedInterruptHandler_ = unexpectedInterruptHandler_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.unexpectedProcessesInRunqueue_ = unexpectedProcessesInRunqueue_;
+      }
     }
 
     @java.lang.Override
@@ -651,6 +670,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getUnexpectedCodeModification() != false) {
@@ -706,55 +726,55 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 unexpectedCodeModification_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 unexpectedReadOnlyDataModification_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 unexpectedFtraceHandler_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 unexpectedKprobeHandler_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 unexpectedKernelCodePages_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 56:
               {
                 unexpectedSystemCallHandler_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 64:
               {
                 unexpectedInterruptHandler_ = input.readBool();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             case 72:
               {
                 unexpectedProcessesInRunqueue_ = input.readBool();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             default:
@@ -773,6 +793,8 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -835,8 +857,8 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -852,8 +874,8 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -874,8 +896,8 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -911,6 +933,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
     public Builder setUnexpectedCodeModification(boolean value) {
 
       unexpectedCodeModification_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -926,7 +949,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUnexpectedCodeModification() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       unexpectedCodeModification_ = false;
       onChanged();
       return this;
@@ -965,6 +988,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
     public Builder setUnexpectedReadOnlyDataModification(boolean value) {
 
       unexpectedReadOnlyDataModification_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -981,7 +1005,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUnexpectedReadOnlyDataModification() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       unexpectedReadOnlyDataModification_ = false;
       onChanged();
       return this;
@@ -1020,6 +1044,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
     public Builder setUnexpectedFtraceHandler(boolean value) {
 
       unexpectedFtraceHandler_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1036,7 +1061,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUnexpectedFtraceHandler() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       unexpectedFtraceHandler_ = false;
       onChanged();
       return this;
@@ -1075,6 +1100,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
     public Builder setUnexpectedKprobeHandler(boolean value) {
 
       unexpectedKprobeHandler_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1091,7 +1117,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUnexpectedKprobeHandler() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       unexpectedKprobeHandler_ = false;
       onChanged();
       return this;
@@ -1130,6 +1156,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
     public Builder setUnexpectedKernelCodePages(boolean value) {
 
       unexpectedKernelCodePages_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1146,7 +1173,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUnexpectedKernelCodePages() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       unexpectedKernelCodePages_ = false;
       onChanged();
       return this;
@@ -1185,6 +1212,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
     public Builder setUnexpectedSystemCallHandler(boolean value) {
 
       unexpectedSystemCallHandler_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1201,7 +1229,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUnexpectedSystemCallHandler() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       unexpectedSystemCallHandler_ = false;
       onChanged();
       return this;
@@ -1240,6 +1268,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
     public Builder setUnexpectedInterruptHandler(boolean value) {
 
       unexpectedInterruptHandler_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1256,7 +1285,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUnexpectedInterruptHandler() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       unexpectedInterruptHandler_ = false;
       onChanged();
       return this;
@@ -1295,6 +1324,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
     public Builder setUnexpectedProcessesInRunqueue(boolean value) {
 
       unexpectedProcessesInRunqueue_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1311,7 +1341,7 @@ public final class KernelRootkit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUnexpectedProcessesInRunqueue() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       unexpectedProcessesInRunqueue_ = false;
       onChanged();
       return this;

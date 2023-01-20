@@ -71,7 +71,9 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object path_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object path_ = "";
   /**
    *
    *
@@ -120,7 +122,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SIZE_FIELD_NUMBER = 2;
-  private long size_;
+  private long size_ = 0L;
   /**
    *
    *
@@ -138,7 +140,9 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SHA256_FIELD_NUMBER = 3;
-  private volatile java.lang.Object sha256_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sha256_ = "";
   /**
    *
    *
@@ -191,7 +195,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HASHED_SIZE_FIELD_NUMBER = 4;
-  private long hashedSize_;
+  private long hashedSize_ = 0L;
   /**
    *
    *
@@ -211,7 +215,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARTIALLY_HASHED_FIELD_NUMBER = 5;
-  private boolean partiallyHashed_;
+  private boolean partiallyHashed_ = false;
   /**
    *
    *
@@ -229,7 +233,9 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTENTS_FIELD_NUMBER = 6;
-  private volatile java.lang.Object contents_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object contents_ = "";
   /**
    *
    *
@@ -521,18 +527,13 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       path_ = "";
-
       size_ = 0L;
-
       sha256_ = "";
-
       hashedSize_ = 0L;
-
       partiallyHashed_ = false;
-
       contents_ = "";
-
       return this;
     }
 
@@ -560,14 +561,33 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.File buildPartial() {
       com.google.cloud.securitycenter.v1.File result =
           new com.google.cloud.securitycenter.v1.File(this);
-      result.path_ = path_;
-      result.size_ = size_;
-      result.sha256_ = sha256_;
-      result.hashedSize_ = hashedSize_;
-      result.partiallyHashed_ = partiallyHashed_;
-      result.contents_ = contents_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.File result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.path_ = path_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.size_ = size_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sha256_ = sha256_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.hashedSize_ = hashedSize_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.partiallyHashed_ = partiallyHashed_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.contents_ = contents_;
+      }
     }
 
     @java.lang.Override
@@ -617,6 +637,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.securitycenter.v1.File.getDefaultInstance()) return this;
       if (!other.getPath().isEmpty()) {
         path_ = other.path_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getSize() != 0L) {
@@ -624,6 +645,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getSha256().isEmpty()) {
         sha256_ = other.sha256_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getHashedSize() != 0L) {
@@ -634,6 +656,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getContents().isEmpty()) {
         contents_ = other.contents_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -665,37 +688,37 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 path_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 size_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 sha256_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 hashedSize_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 partiallyHashed_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 contents_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -714,6 +737,8 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object path_ = "";
     /**
@@ -776,8 +801,8 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       path_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -793,8 +818,8 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-
       path_ = getDefaultInstance().getPath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -815,8 +840,8 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       path_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -852,6 +877,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     public Builder setSize(long value) {
 
       size_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -867,7 +893,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       size_ = 0L;
       onChanged();
       return this;
@@ -940,8 +966,8 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sha256_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -959,8 +985,8 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSha256() {
-
       sha256_ = getDefaultInstance().getSha256();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -983,8 +1009,8 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sha256_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1024,6 +1050,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     public Builder setHashedSize(long value) {
 
       hashedSize_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1041,7 +1068,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHashedSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       hashedSize_ = 0L;
       onChanged();
       return this;
@@ -1078,6 +1105,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     public Builder setPartiallyHashed(boolean value) {
 
       partiallyHashed_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1093,7 +1121,7 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPartiallyHashed() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       partiallyHashed_ = false;
       onChanged();
       return this;
@@ -1163,8 +1191,8 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       contents_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1181,8 +1209,8 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearContents() {
-
       contents_ = getDefaultInstance().getContents();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1204,8 +1232,8 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       contents_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

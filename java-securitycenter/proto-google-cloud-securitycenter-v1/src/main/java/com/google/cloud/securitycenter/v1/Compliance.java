@@ -71,7 +71,9 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STANDARD_FIELD_NUMBER = 1;
-  private volatile java.lang.Object standard_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object standard_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -171,6 +175,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IDS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList ids_;
   /**
    *
@@ -454,12 +460,11 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       standard_ = "";
-
       version_ = "";
-
       ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -487,16 +492,30 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.Compliance buildPartial() {
       com.google.cloud.securitycenter.v1.Compliance result =
           new com.google.cloud.securitycenter.v1.Compliance(this);
-      int from_bitField0_ = bitField0_;
-      result.standard_ = standard_;
-      result.version_ = version_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        ids_ = ids_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.ids_ = ids_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.securitycenter.v1.Compliance result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        ids_ = ids_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.ids_ = ids_;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.Compliance result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.standard_ = standard_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.version_ = version_;
+      }
     }
 
     @java.lang.Override
@@ -546,16 +565,18 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.securitycenter.v1.Compliance.getDefaultInstance()) return this;
       if (!other.getStandard().isEmpty()) {
         standard_ = other.standard_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.ids_.isEmpty()) {
         if (ids_.isEmpty()) {
           ids_ = other.ids_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureIdsIsMutable();
           ids_.addAll(other.ids_);
@@ -591,13 +612,13 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 standard_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -690,8 +711,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       standard_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -708,8 +729,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStandard() {
-
       standard_ = getDefaultInstance().getStandard();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -731,8 +752,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       standard_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -798,8 +819,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -815,8 +836,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -837,8 +858,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -846,9 +867,9 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.LazyStringList ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         ids_ = new com.google.protobuf.LazyStringArrayList(ids_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -983,7 +1004,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearIds() {
       ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

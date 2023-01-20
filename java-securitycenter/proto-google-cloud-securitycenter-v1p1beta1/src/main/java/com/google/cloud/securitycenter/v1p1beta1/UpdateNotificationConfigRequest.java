@@ -119,7 +119,9 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
   @java.lang.Override
   public com.google.cloud.securitycenter.v1p1beta1.NotificationConfigOrBuilder
       getNotificationConfigOrBuilder() {
-    return getNotificationConfig();
+    return notificationConfig_ == null
+        ? com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.getDefaultInstance()
+        : notificationConfig_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -168,7 +170,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -392,16 +394,15 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (notificationConfigBuilder_ == null) {
-        notificationConfig_ = null;
-      } else {
-        notificationConfig_ = null;
+      bitField0_ = 0;
+      notificationConfig_ = null;
+      if (notificationConfigBuilder_ != null) {
+        notificationConfigBuilder_.dispose();
         notificationConfigBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -435,18 +436,25 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
         buildPartial() {
       com.google.cloud.securitycenter.v1p1beta1.UpdateNotificationConfigRequest result =
           new com.google.cloud.securitycenter.v1p1beta1.UpdateNotificationConfigRequest(this);
-      if (notificationConfigBuilder_ == null) {
-        result.notificationConfig_ = notificationConfig_;
-      } else {
-        result.notificationConfig_ = notificationConfigBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.securitycenter.v1p1beta1.UpdateNotificationConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.notificationConfig_ =
+            notificationConfigBuilder_ == null
+                ? notificationConfig_
+                : notificationConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -535,13 +543,13 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
               {
                 input.readMessage(
                     getNotificationConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -560,6 +568,8 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.securitycenter.v1p1beta1.NotificationConfig notificationConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -581,7 +591,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
      * @return Whether the notificationConfig field is set.
      */
     public boolean hasNotificationConfig() {
-      return notificationConfigBuilder_ != null || notificationConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -623,11 +633,11 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         notificationConfig_ = value;
-        onChanged();
       } else {
         notificationConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -645,11 +655,11 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
         com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.Builder builderForValue) {
       if (notificationConfigBuilder_ == null) {
         notificationConfig_ = builderForValue.build();
-        onChanged();
       } else {
         notificationConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -666,20 +676,20 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
     public Builder mergeNotificationConfig(
         com.google.cloud.securitycenter.v1p1beta1.NotificationConfig value) {
       if (notificationConfigBuilder_ == null) {
-        if (notificationConfig_ != null) {
-          notificationConfig_ =
-              com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.newBuilder(
-                      notificationConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && notificationConfig_ != null
+            && notificationConfig_
+                != com.google.cloud.securitycenter.v1p1beta1.NotificationConfig
+                    .getDefaultInstance()) {
+          getNotificationConfigBuilder().mergeFrom(value);
         } else {
           notificationConfig_ = value;
         }
-        onChanged();
       } else {
         notificationConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -694,14 +704,13 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
      * </code>
      */
     public Builder clearNotificationConfig() {
-      if (notificationConfigBuilder_ == null) {
-        notificationConfig_ = null;
-        onChanged();
-      } else {
-        notificationConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      notificationConfig_ = null;
+      if (notificationConfigBuilder_ != null) {
+        notificationConfigBuilder_.dispose();
         notificationConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -717,7 +726,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
      */
     public com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.Builder
         getNotificationConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getNotificationConfigFieldBuilder().getBuilder();
     }
@@ -789,7 +798,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -828,11 +837,11 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -848,11 +857,11 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -867,17 +876,18 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -891,14 +901,13 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -912,7 +921,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

@@ -69,6 +69,8 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
   }
 
   public static final int GROUP_BY_RESULTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1beta1.GroupResult> groupByResults_;
   /**
    *
@@ -192,11 +194,13 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
-    return getReadTime();
+    return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -469,6 +473,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (groupByResultsBuilder_ == null) {
         groupByResults_ = java.util.Collections.emptyList();
       } else {
@@ -476,14 +481,12 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
         groupByResultsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (readTimeBuilder_ == null) {
-        readTime_ = null;
-      } else {
-        readTime_ = null;
+      readTime_ = null;
+      if (readTimeBuilder_ != null) {
+        readTimeBuilder_.dispose();
         readTimeBuilder_ = null;
       }
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -511,7 +514,16 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.securitycenter.v1beta1.GroupAssetsResponse buildPartial() {
       com.google.cloud.securitycenter.v1beta1.GroupAssetsResponse result =
           new com.google.cloud.securitycenter.v1beta1.GroupAssetsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.securitycenter.v1beta1.GroupAssetsResponse result) {
       if (groupByResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           groupByResults_ = java.util.Collections.unmodifiableList(groupByResults_);
@@ -521,14 +533,16 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       } else {
         result.groupByResults_ = groupByResultsBuilder_.build();
       }
-      if (readTimeBuilder_ == null) {
-        result.readTime_ = readTime_;
-      } else {
-        result.readTime_ = readTimeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1beta1.GroupAssetsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.readTime_ = readTimeBuilder_ == null ? readTime_ : readTimeBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -609,6 +623,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -654,13 +669,13 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
             case 18:
               {
                 input.readMessage(getReadTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -1098,7 +1113,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
      * @return Whether the readTime field is set.
      */
     public boolean hasReadTime() {
-      return readTimeBuilder_ != null || readTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1133,11 +1148,11 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         readTime_ = value;
-        onChanged();
       } else {
         readTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1152,11 +1167,11 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
     public Builder setReadTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (readTimeBuilder_ == null) {
         readTime_ = builderForValue.build();
-        onChanged();
       } else {
         readTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1170,17 +1185,18 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeReadTime(com.google.protobuf.Timestamp value) {
       if (readTimeBuilder_ == null) {
-        if (readTime_ != null) {
-          readTime_ =
-              com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && readTime_ != null
+            && readTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getReadTimeBuilder().mergeFrom(value);
         } else {
           readTime_ = value;
         }
-        onChanged();
       } else {
         readTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1193,14 +1209,13 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
      */
     public Builder clearReadTime() {
-      if (readTimeBuilder_ == null) {
-        readTime_ = null;
-        onChanged();
-      } else {
-        readTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      readTime_ = null;
+      if (readTimeBuilder_ != null) {
+        readTimeBuilder_.dispose();
         readTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1213,7 +1228,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
@@ -1323,8 +1338,8 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1341,8 +1356,8 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1364,8 +1379,8 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

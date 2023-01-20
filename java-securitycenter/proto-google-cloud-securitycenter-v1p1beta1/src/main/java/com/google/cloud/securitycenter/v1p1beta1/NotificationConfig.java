@@ -323,7 +323,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int FILTER_FIELD_NUMBER = 1;
-    private volatile java.lang.Object filter_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object filter_ = "";
     /**
      *
      *
@@ -613,8 +615,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         filter_ = "";
-
         return this;
       }
 
@@ -646,9 +648,19 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           buildPartial() {
         com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.StreamingConfig result =
             new com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.StreamingConfig(this);
-        result.filter_ = filter_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.StreamingConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.filter_ = filter_;
+        }
       }
 
       @java.lang.Override
@@ -706,6 +718,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
                 .getDefaultInstance()) return this;
         if (!other.getFilter().isEmpty()) {
           filter_ = other.filter_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -737,7 +750,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
               case 10:
                 {
                   filter_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -756,6 +769,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object filter_ = "";
       /**
@@ -863,8 +878,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         filter_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -895,8 +910,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearFilter() {
-
         filter_ = getDefaultInstance().getFilter();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -932,8 +947,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         filter_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1052,7 +1067,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1107,7 +1124,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -1156,7 +1175,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int EVENT_TYPE_FIELD_NUMBER = 3;
-  private int eventType_;
+  private int eventType_ = 0;
   /**
    *
    *
@@ -1187,16 +1206,18 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.EventType getEventType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.EventType result =
-        com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.EventType.valueOf(eventType_);
+        com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.EventType.forNumber(
+            eventType_);
     return result == null
         ? com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.EventType.UNRECOGNIZED
         : result;
   }
 
   public static final int PUBSUB_TOPIC_FIELD_NUMBER = 4;
-  private volatile java.lang.Object pubsubTopic_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pubsubTopic_ = "";
   /**
    *
    *
@@ -1247,7 +1268,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object serviceAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
   /**
    *
    *
@@ -1632,16 +1655,12 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       description_ = "";
-
       eventType_ = 0;
-
       pubsubTopic_ = "";
-
       serviceAccount_ = "";
-
       if (streamingConfigBuilder_ != null) {
         streamingConfigBuilder_.clear();
       }
@@ -1675,21 +1694,41 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.securitycenter.v1p1beta1.NotificationConfig buildPartial() {
       com.google.cloud.securitycenter.v1p1beta1.NotificationConfig result =
           new com.google.cloud.securitycenter.v1p1beta1.NotificationConfig(this);
-      result.name_ = name_;
-      result.description_ = description_;
-      result.eventType_ = eventType_;
-      result.pubsubTopic_ = pubsubTopic_;
-      result.serviceAccount_ = serviceAccount_;
-      if (notifyConfigCase_ == 6) {
-        if (streamingConfigBuilder_ == null) {
-          result.notifyConfig_ = notifyConfig_;
-        } else {
-          result.notifyConfig_ = streamingConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.notifyConfigCase_ = notifyConfigCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.securitycenter.v1p1beta1.NotificationConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.eventType_ = eventType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pubsubTopic_ = pubsubTopic_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.securitycenter.v1p1beta1.NotificationConfig result) {
+      result.notifyConfigCase_ = notifyConfigCase_;
+      result.notifyConfig_ = this.notifyConfig_;
+      if (notifyConfigCase_ == 6 && streamingConfigBuilder_ != null) {
+        result.notifyConfig_ = streamingConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1741,10 +1780,12 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.eventType_ != 0) {
@@ -1752,10 +1793,12 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getPubsubTopic().isEmpty()) {
         pubsubTopic_ = other.pubsubTopic_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       switch (other.getNotifyConfigCase()) {
@@ -1798,31 +1841,31 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 eventType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 pubsubTopic_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -1861,6 +1904,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1932,8 +1977,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1952,8 +1997,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1977,8 +2022,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2044,8 +2089,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2061,8 +2106,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2083,8 +2128,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2120,8 +2165,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setEventTypeValue(int value) {
-
       eventType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2139,9 +2184,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.EventType getEventType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.EventType result =
-          com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.EventType.valueOf(
+          com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.EventType.forNumber(
               eventType_);
       return result == null
           ? com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.EventType.UNRECOGNIZED
@@ -2165,7 +2209,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       eventType_ = value.getNumber();
       onChanged();
       return this;
@@ -2183,7 +2227,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearEventType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       eventType_ = 0;
       onChanged();
       return this;
@@ -2253,8 +2297,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       pubsubTopic_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2271,8 +2315,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPubsubTopic() {
-
       pubsubTopic_ = getDefaultInstance().getPubsubTopic();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2294,8 +2338,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pubsubTopic_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2364,8 +2408,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2382,8 +2426,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearServiceAccount() {
-
       serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2405,8 +2449,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2655,7 +2699,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       }
       notifyConfigCase_ = 6;
       onChanged();
-      ;
       return streamingConfigBuilder_;
     }
 

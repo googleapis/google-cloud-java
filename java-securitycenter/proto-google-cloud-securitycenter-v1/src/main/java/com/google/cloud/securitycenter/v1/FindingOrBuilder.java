@@ -259,7 +259,6 @@ public interface FindingOrBuilder
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>
    */
-
   /* nullable */
   com.google.protobuf.Value getSourcePropertiesOrDefault(
       java.lang.String key,
@@ -715,7 +714,6 @@ public interface FindingOrBuilder
    * map&lt;string, .google.cloud.securitycenter.v1.ExternalSystem&gt; external_systems = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-
   /* nullable */
   com.google.cloud.securitycenter.v1.ExternalSystem getExternalSystemsOrDefault(
       java.lang.String key,
@@ -1057,7 +1055,6 @@ public interface FindingOrBuilder
    * map&lt;string, .google.cloud.securitycenter.v1.ContactDetails&gt; contacts = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-
   /* nullable */
   com.google.cloud.securitycenter.v1.ContactDetails getContactsOrDefault(
       java.lang.String key,

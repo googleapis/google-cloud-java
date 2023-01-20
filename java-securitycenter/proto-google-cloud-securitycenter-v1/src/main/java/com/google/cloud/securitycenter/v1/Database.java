@@ -78,7 +78,9 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -129,7 +131,9 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -178,7 +182,9 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USER_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object userName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userName_ = "";
   /**
    *
    *
@@ -229,7 +235,9 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUERY_FIELD_NUMBER = 4;
-  private volatile java.lang.Object query_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object query_ = "";
   /**
    *
    *
@@ -278,6 +286,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GRANTEES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList grantees_;
   /**
    *
@@ -588,16 +598,13 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       userName_ = "";
-
       query_ = "";
-
       grantees_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -625,18 +632,36 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.Database buildPartial() {
       com.google.cloud.securitycenter.v1.Database result =
           new com.google.cloud.securitycenter.v1.Database(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.userName_ = userName_;
-      result.query_ = query_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        grantees_ = grantees_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.grantees_ = grantees_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.securitycenter.v1.Database result) {
+      if (((bitField0_ & 0x00000010) != 0)) {
+        grantees_ = grantees_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.grantees_ = grantees_;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.Database result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.userName_ = userName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.query_ = query_;
+      }
     }
 
     @java.lang.Override
@@ -686,24 +711,28 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.securitycenter.v1.Database.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getUserName().isEmpty()) {
         userName_ = other.userName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getQuery().isEmpty()) {
         query_ = other.query_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.grantees_.isEmpty()) {
         if (grantees_.isEmpty()) {
           grantees_ = other.grantees_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureGranteesIsMutable();
           grantees_.addAll(other.grantees_);
@@ -739,25 +768,25 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 userName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 query_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -850,8 +879,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -868,8 +897,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -891,8 +920,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -958,8 +987,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -975,8 +1004,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -997,8 +1026,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1067,8 +1096,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       userName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1085,8 +1114,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUserName() {
-
       userName_ = getDefaultInstance().getUserName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1108,8 +1137,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       userName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1175,8 +1204,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       query_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1192,8 +1221,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearQuery() {
-
       query_ = getDefaultInstance().getQuery();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1214,8 +1243,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       query_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1224,9 +1253,9 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureGranteesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         grantees_ = new com.google.protobuf.LazyStringArrayList(grantees_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1369,7 +1398,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearGrantees() {
       grantees_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }

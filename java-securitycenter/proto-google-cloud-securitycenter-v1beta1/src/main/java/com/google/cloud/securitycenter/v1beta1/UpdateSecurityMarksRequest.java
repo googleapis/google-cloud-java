@@ -117,7 +117,9 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
   @java.lang.Override
   public com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder
       getSecurityMarksOrBuilder() {
-    return getSecurityMarks();
+    return securityMarks_ == null
+        ? com.google.cloud.securitycenter.v1beta1.SecurityMarks.getDefaultInstance()
+        : securityMarks_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -163,7 +165,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int START_TIME_FIELD_NUMBER = 3;
@@ -209,7 +211,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -445,22 +447,20 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (securityMarksBuilder_ == null) {
-        securityMarks_ = null;
-      } else {
-        securityMarks_ = null;
+      bitField0_ = 0;
+      securityMarks_ = null;
+      if (securityMarksBuilder_ != null) {
+        securityMarksBuilder_.dispose();
         securityMarksBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
       return this;
@@ -492,23 +492,26 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
     public com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest buildPartial() {
       com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest result =
           new com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest(this);
-      if (securityMarksBuilder_ == null) {
-        result.securityMarks_ = securityMarks_;
-      } else {
-        result.securityMarks_ = securityMarksBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.securityMarks_ =
+            securityMarksBuilder_ == null ? securityMarks_ : securityMarksBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -598,19 +601,19 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
             case 10:
               {
                 input.readMessage(getSecurityMarksFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -629,6 +632,8 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.securitycenter.v1beta1.SecurityMarks securityMarks_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -650,7 +655,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      * @return Whether the securityMarks field is set.
      */
     public boolean hasSecurityMarks() {
-      return securityMarksBuilder_ != null || securityMarks_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -691,11 +696,11 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         securityMarks_ = value;
-        onChanged();
       } else {
         securityMarksBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -713,11 +718,11 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
         com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder builderForValue) {
       if (securityMarksBuilder_ == null) {
         securityMarks_ = builderForValue.build();
-        onChanged();
       } else {
         securityMarksBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -733,19 +738,19 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      */
     public Builder mergeSecurityMarks(com.google.cloud.securitycenter.v1beta1.SecurityMarks value) {
       if (securityMarksBuilder_ == null) {
-        if (securityMarks_ != null) {
-          securityMarks_ =
-              com.google.cloud.securitycenter.v1beta1.SecurityMarks.newBuilder(securityMarks_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && securityMarks_ != null
+            && securityMarks_
+                != com.google.cloud.securitycenter.v1beta1.SecurityMarks.getDefaultInstance()) {
+          getSecurityMarksBuilder().mergeFrom(value);
         } else {
           securityMarks_ = value;
         }
-        onChanged();
       } else {
         securityMarksBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -760,14 +765,13 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearSecurityMarks() {
-      if (securityMarksBuilder_ == null) {
-        securityMarks_ = null;
-        onChanged();
-      } else {
-        securityMarks_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      securityMarks_ = null;
+      if (securityMarksBuilder_ != null) {
+        securityMarksBuilder_.dispose();
         securityMarksBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -782,7 +786,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder getSecurityMarksBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSecurityMarksFieldBuilder().getBuilder();
     }
@@ -853,7 +857,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -890,11 +894,11 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -909,11 +913,11 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -927,17 +931,18 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -950,14 +955,13 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -970,7 +974,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1036,7 +1040,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1071,11 +1075,11 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1090,11 +1094,11 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1108,17 +1112,18 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1131,14 +1136,13 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1151,7 +1155,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }

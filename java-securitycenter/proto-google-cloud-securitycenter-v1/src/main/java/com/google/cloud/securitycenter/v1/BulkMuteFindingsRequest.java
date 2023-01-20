@@ -74,7 +74,9 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -131,7 +133,9 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
   }
 
   public static final int FILTER_FIELD_NUMBER = 2;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -208,7 +212,9 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
   }
 
   public static final int MUTE_ANNOTATION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object muteAnnotation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object muteAnnotation_ = "";
   /**
    *
    *
@@ -484,12 +490,10 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       filter_ = "";
-
       muteAnnotation_ = "";
-
       return this;
     }
 
@@ -517,11 +521,24 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
     public com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest buildPartial() {
       com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest result =
           new com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest(this);
-      result.parent_ = parent_;
-      result.filter_ = filter_;
-      result.muteAnnotation_ = muteAnnotation_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.muteAnnotation_ = muteAnnotation_;
+      }
     }
 
     @java.lang.Override
@@ -572,14 +589,17 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getMuteAnnotation().isEmpty()) {
         muteAnnotation_ = other.muteAnnotation_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -611,19 +631,19 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 muteAnnotation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -642,6 +662,8 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -716,8 +738,8 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -737,8 +759,8 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -763,8 +785,8 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -872,8 +894,8 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -903,8 +925,8 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -939,8 +961,8 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1018,8 +1040,8 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       muteAnnotation_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1039,8 +1061,8 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
      */
     @java.lang.Deprecated
     public Builder clearMuteAnnotation() {
-
       muteAnnotation_ = getDefaultInstance().getMuteAnnotation();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1065,8 +1087,8 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       muteAnnotation_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

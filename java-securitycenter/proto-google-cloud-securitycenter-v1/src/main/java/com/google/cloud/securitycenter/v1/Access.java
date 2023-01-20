@@ -76,7 +76,9 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRINCIPAL_EMAIL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object principalEmail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object principalEmail_ = "";
   /**
    *
    *
@@ -137,7 +139,9 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CALLER_IP_FIELD_NUMBER = 2;
-  private volatile java.lang.Object callerIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object callerIp_ = "";
   /**
    *
    *
@@ -230,11 +234,15 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.securitycenter.v1.GeolocationOrBuilder getCallerIpGeoOrBuilder() {
-    return getCallerIpGeo();
+    return callerIpGeo_ == null
+        ? com.google.cloud.securitycenter.v1.Geolocation.getDefaultInstance()
+        : callerIpGeo_;
   }
 
   public static final int USER_AGENT_FAMILY_FIELD_NUMBER = 4;
-  private volatile java.lang.Object userAgentFamily_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userAgentFamily_ = "";
   /**
    *
    *
@@ -285,7 +293,9 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object serviceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceName_ = "";
   /**
    *
    *
@@ -336,7 +346,9 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int METHOD_NAME_FIELD_NUMBER = 6;
-  private volatile java.lang.Object methodName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object methodName_ = "";
   /**
    *
    *
@@ -385,7 +397,9 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRINCIPAL_SUBJECT_FIELD_NUMBER = 7;
-  private volatile java.lang.Object principalSubject_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object principalSubject_ = "";
   /**
    *
    *
@@ -446,7 +460,9 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_ACCOUNT_KEY_NAME_FIELD_NUMBER = 8;
-  private volatile java.lang.Object serviceAccountKeyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccountKeyName_ = "";
   /**
    *
    *
@@ -501,6 +517,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_ACCOUNT_DELEGATION_INFO_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo>
       serviceAccountDelegationInfo_;
   /**
@@ -605,7 +623,9 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USER_NAME_FIELD_NUMBER = 11;
-  private volatile java.lang.Object userName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userName_ = "";
   /**
    *
    *
@@ -953,35 +973,27 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       principalEmail_ = "";
-
       callerIp_ = "";
-
-      if (callerIpGeoBuilder_ == null) {
-        callerIpGeo_ = null;
-      } else {
-        callerIpGeo_ = null;
+      callerIpGeo_ = null;
+      if (callerIpGeoBuilder_ != null) {
+        callerIpGeoBuilder_.dispose();
         callerIpGeoBuilder_ = null;
       }
       userAgentFamily_ = "";
-
       serviceName_ = "";
-
       methodName_ = "";
-
       principalSubject_ = "";
-
       serviceAccountKeyName_ = "";
-
       if (serviceAccountDelegationInfoBuilder_ == null) {
         serviceAccountDelegationInfo_ = java.util.Collections.emptyList();
       } else {
         serviceAccountDelegationInfo_ = null;
         serviceAccountDelegationInfoBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000100);
       userName_ = "";
-
       return this;
     }
 
@@ -1009,32 +1021,57 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.Access buildPartial() {
       com.google.cloud.securitycenter.v1.Access result =
           new com.google.cloud.securitycenter.v1.Access(this);
-      int from_bitField0_ = bitField0_;
-      result.principalEmail_ = principalEmail_;
-      result.callerIp_ = callerIp_;
-      if (callerIpGeoBuilder_ == null) {
-        result.callerIpGeo_ = callerIpGeo_;
-      } else {
-        result.callerIpGeo_ = callerIpGeoBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.userAgentFamily_ = userAgentFamily_;
-      result.serviceName_ = serviceName_;
-      result.methodName_ = methodName_;
-      result.principalSubject_ = principalSubject_;
-      result.serviceAccountKeyName_ = serviceAccountKeyName_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.securitycenter.v1.Access result) {
       if (serviceAccountDelegationInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           serviceAccountDelegationInfo_ =
               java.util.Collections.unmodifiableList(serviceAccountDelegationInfo_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.serviceAccountDelegationInfo_ = serviceAccountDelegationInfo_;
       } else {
         result.serviceAccountDelegationInfo_ = serviceAccountDelegationInfoBuilder_.build();
       }
-      result.userName_ = userName_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.Access result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.principalEmail_ = principalEmail_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.callerIp_ = callerIp_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.callerIpGeo_ =
+            callerIpGeoBuilder_ == null ? callerIpGeo_ : callerIpGeoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.userAgentFamily_ = userAgentFamily_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.serviceName_ = serviceName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.methodName_ = methodName_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.principalSubject_ = principalSubject_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.serviceAccountKeyName_ = serviceAccountKeyName_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.userName_ = userName_;
+      }
     }
 
     @java.lang.Override
@@ -1084,10 +1121,12 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.securitycenter.v1.Access.getDefaultInstance()) return this;
       if (!other.getPrincipalEmail().isEmpty()) {
         principalEmail_ = other.principalEmail_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCallerIp().isEmpty()) {
         callerIp_ = other.callerIp_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCallerIpGeo()) {
@@ -1095,29 +1134,34 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUserAgentFamily().isEmpty()) {
         userAgentFamily_ = other.userAgentFamily_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getServiceName().isEmpty()) {
         serviceName_ = other.serviceName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getMethodName().isEmpty()) {
         methodName_ = other.methodName_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getPrincipalSubject().isEmpty()) {
         principalSubject_ = other.principalSubject_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getServiceAccountKeyName().isEmpty()) {
         serviceAccountKeyName_ = other.serviceAccountKeyName_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (serviceAccountDelegationInfoBuilder_ == null) {
         if (!other.serviceAccountDelegationInfo_.isEmpty()) {
           if (serviceAccountDelegationInfo_.isEmpty()) {
             serviceAccountDelegationInfo_ = other.serviceAccountDelegationInfo_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureServiceAccountDelegationInfoIsMutable();
             serviceAccountDelegationInfo_.addAll(other.serviceAccountDelegationInfo_);
@@ -1130,7 +1174,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
             serviceAccountDelegationInfoBuilder_.dispose();
             serviceAccountDelegationInfoBuilder_ = null;
             serviceAccountDelegationInfo_ = other.serviceAccountDelegationInfo_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000100);
             serviceAccountDelegationInfoBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getServiceAccountDelegationInfoFieldBuilder()
@@ -1143,6 +1187,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUserName().isEmpty()) {
         userName_ = other.userName_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1174,49 +1219,49 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 principalEmail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 callerIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCallerIpGeoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 userAgentFamily_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 serviceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 methodName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 principalSubject_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 serviceAccountKeyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
@@ -1236,7 +1281,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
             case 90:
               {
                 userName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
             default:
@@ -1337,8 +1382,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       principalEmail_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1360,8 +1405,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPrincipalEmail() {
-
       principalEmail_ = getDefaultInstance().getPrincipalEmail();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1388,8 +1433,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       principalEmail_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1455,8 +1500,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       callerIp_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1472,8 +1517,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCallerIp() {
-
       callerIp_ = getDefaultInstance().getCallerIp();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1494,8 +1539,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       callerIp_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1518,7 +1563,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the callerIpGeo field is set.
      */
     public boolean hasCallerIpGeo() {
-      return callerIpGeoBuilder_ != null || callerIpGeo_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1555,11 +1600,11 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         callerIpGeo_ = value;
-        onChanged();
       } else {
         callerIpGeoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1575,11 +1620,11 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.securitycenter.v1.Geolocation.Builder builderForValue) {
       if (callerIpGeoBuilder_ == null) {
         callerIpGeo_ = builderForValue.build();
-        onChanged();
       } else {
         callerIpGeoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1593,19 +1638,19 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCallerIpGeo(com.google.cloud.securitycenter.v1.Geolocation value) {
       if (callerIpGeoBuilder_ == null) {
-        if (callerIpGeo_ != null) {
-          callerIpGeo_ =
-              com.google.cloud.securitycenter.v1.Geolocation.newBuilder(callerIpGeo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && callerIpGeo_ != null
+            && callerIpGeo_
+                != com.google.cloud.securitycenter.v1.Geolocation.getDefaultInstance()) {
+          getCallerIpGeoBuilder().mergeFrom(value);
         } else {
           callerIpGeo_ = value;
         }
-        onChanged();
       } else {
         callerIpGeoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1618,14 +1663,13 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.securitycenter.v1.Geolocation caller_ip_geo = 3;</code>
      */
     public Builder clearCallerIpGeo() {
-      if (callerIpGeoBuilder_ == null) {
-        callerIpGeo_ = null;
-        onChanged();
-      } else {
-        callerIpGeo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      callerIpGeo_ = null;
+      if (callerIpGeoBuilder_ != null) {
+        callerIpGeoBuilder_.dispose();
         callerIpGeoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1638,7 +1682,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.securitycenter.v1.Geolocation caller_ip_geo = 3;</code>
      */
     public com.google.cloud.securitycenter.v1.Geolocation.Builder getCallerIpGeoBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCallerIpGeoFieldBuilder().getBuilder();
     }
@@ -1750,8 +1794,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       userAgentFamily_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1768,8 +1812,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUserAgentFamily() {
-
       userAgentFamily_ = getDefaultInstance().getUserAgentFamily();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1791,8 +1835,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       userAgentFamily_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1861,8 +1905,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1879,8 +1923,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceName() {
-
       serviceName_ = getDefaultInstance().getServiceName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1902,8 +1946,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1969,8 +2013,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       methodName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1986,8 +2030,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMethodName() {
-
       methodName_ = getDefaultInstance().getMethodName();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2008,8 +2052,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       methodName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2093,8 +2137,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       principalSubject_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2116,8 +2160,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPrincipalSubject() {
-
       principalSubject_ = getDefaultInstance().getPrincipalSubject();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2144,8 +2188,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       principalSubject_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2220,8 +2264,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccountKeyName_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2240,8 +2284,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceAccountKeyName() {
-
       serviceAccountKeyName_ = getDefaultInstance().getServiceAccountKeyName();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2265,8 +2309,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccountKeyName_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2275,12 +2319,12 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         serviceAccountDelegationInfo_ = java.util.Collections.emptyList();
 
     private void ensureServiceAccountDelegationInfoIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         serviceAccountDelegationInfo_ =
             new java.util.ArrayList<
                 com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo>(
                 serviceAccountDelegationInfo_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -2572,7 +2616,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     public Builder clearServiceAccountDelegationInfo() {
       if (serviceAccountDelegationInfoBuilder_ == null) {
         serviceAccountDelegationInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         serviceAccountDelegationInfoBuilder_.clear();
@@ -2745,7 +2789,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo.Builder,
                 com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfoOrBuilder>(
                 serviceAccountDelegationInfo_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000100) != 0),
                 getParentForChildren(),
                 isClean());
         serviceAccountDelegationInfo_ = null;
@@ -2832,8 +2876,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       userName_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2855,8 +2899,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUserName() {
-
       userName_ = getDefaultInstance().getUserName();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2883,8 +2927,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       userName_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
