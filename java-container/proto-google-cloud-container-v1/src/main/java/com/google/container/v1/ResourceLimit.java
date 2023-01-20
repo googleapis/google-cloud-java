@@ -69,7 +69,9 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object resourceType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceType_ = "";
   /**
    *
    *
@@ -118,7 +120,7 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MINIMUM_FIELD_NUMBER = 2;
-  private long minimum_;
+  private long minimum_ = 0L;
   /**
    *
    *
@@ -136,7 +138,7 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAXIMUM_FIELD_NUMBER = 3;
-  private long maximum_;
+  private long maximum_ = 0L;
   /**
    *
    *
@@ -367,12 +369,10 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resourceType_ = "";
-
       minimum_ = 0L;
-
       maximum_ = 0L;
-
       return this;
     }
 
@@ -400,11 +400,24 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1.ResourceLimit buildPartial() {
       com.google.container.v1.ResourceLimit result =
           new com.google.container.v1.ResourceLimit(this);
-      result.resourceType_ = resourceType_;
-      result.minimum_ = minimum_;
-      result.maximum_ = maximum_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.ResourceLimit result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resourceType_ = resourceType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.minimum_ = minimum_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.maximum_ = maximum_;
+      }
     }
 
     @java.lang.Override
@@ -454,6 +467,7 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.container.v1.ResourceLimit.getDefaultInstance()) return this;
       if (!other.getResourceType().isEmpty()) {
         resourceType_ = other.resourceType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getMinimum() != 0L) {
@@ -491,19 +505,19 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 resourceType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 minimum_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 maximum_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -522,6 +536,8 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object resourceType_ = "";
     /**
@@ -584,8 +600,8 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -601,8 +617,8 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceType() {
-
       resourceType_ = getDefaultInstance().getResourceType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -623,8 +639,8 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -660,6 +676,7 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
     public Builder setMinimum(long value) {
 
       minimum_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -675,7 +692,7 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMinimum() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       minimum_ = 0L;
       onChanged();
       return this;
@@ -712,6 +729,7 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaximum(long value) {
 
       maximum_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -727,7 +745,7 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaximum() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       maximum_ = 0L;
       onChanged();
       return this;

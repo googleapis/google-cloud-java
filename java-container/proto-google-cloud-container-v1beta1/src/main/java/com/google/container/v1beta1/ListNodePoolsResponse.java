@@ -68,6 +68,8 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NODE_POOLS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1beta1.NodePool> nodePools_;
   /**
    *
@@ -335,6 +337,7 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (nodePoolsBuilder_ == null) {
         nodePools_ = java.util.Collections.emptyList();
       } else {
@@ -369,7 +372,16 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
     public com.google.container.v1beta1.ListNodePoolsResponse buildPartial() {
       com.google.container.v1beta1.ListNodePoolsResponse result =
           new com.google.container.v1beta1.ListNodePoolsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.container.v1beta1.ListNodePoolsResponse result) {
       if (nodePoolsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           nodePools_ = java.util.Collections.unmodifiableList(nodePools_);
@@ -379,8 +391,10 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       } else {
         result.nodePools_ = nodePoolsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.ListNodePoolsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

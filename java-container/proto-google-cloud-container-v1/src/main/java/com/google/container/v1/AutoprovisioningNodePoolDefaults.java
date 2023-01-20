@@ -75,6 +75,8 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
   }
 
   public static final int OAUTH_SCOPES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList oauthScopes_;
   /**
    *
@@ -136,7 +138,9 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
   }
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object serviceAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
   /**
    *
    *
@@ -229,7 +233,9 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    */
   @java.lang.Override
   public com.google.container.v1.NodePool.UpgradeSettingsOrBuilder getUpgradeSettingsOrBuilder() {
-    return getUpgradeSettings();
+    return upgradeSettings_ == null
+        ? com.google.container.v1.NodePool.UpgradeSettings.getDefaultInstance()
+        : upgradeSettings_;
   }
 
   public static final int MANAGEMENT_FIELD_NUMBER = 4;
@@ -277,11 +283,15 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    */
   @java.lang.Override
   public com.google.container.v1.NodeManagementOrBuilder getManagementOrBuilder() {
-    return getManagement();
+    return management_ == null
+        ? com.google.container.v1.NodeManagement.getDefaultInstance()
+        : management_;
   }
 
   public static final int MIN_CPU_PLATFORM_FIELD_NUMBER = 5;
-  private volatile java.lang.Object minCpuPlatform_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object minCpuPlatform_ = "";
   /**
    *
    *
@@ -303,7 +313,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3481
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3504
    * @return The minCpuPlatform.
    */
   @java.lang.Override
@@ -340,7 +350,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3481
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3504
    * @return The bytes for minCpuPlatform.
    */
   @java.lang.Override
@@ -358,7 +368,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
   }
 
   public static final int DISK_SIZE_GB_FIELD_NUMBER = 6;
-  private int diskSizeGb_;
+  private int diskSizeGb_ = 0;
   /**
    *
    *
@@ -378,7 +388,9 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
   }
 
   public static final int DISK_TYPE_FIELD_NUMBER = 7;
-  private volatile java.lang.Object diskType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object diskType_ = "";
   /**
    *
    *
@@ -476,11 +488,15 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
   @java.lang.Override
   public com.google.container.v1.ShieldedInstanceConfigOrBuilder
       getShieldedInstanceConfigOrBuilder() {
-    return getShieldedInstanceConfig();
+    return shieldedInstanceConfig_ == null
+        ? com.google.container.v1.ShieldedInstanceConfig.getDefaultInstance()
+        : shieldedInstanceConfig_;
   }
 
   public static final int BOOT_DISK_KMS_KEY_FIELD_NUMBER = 9;
-  private volatile java.lang.Object bootDiskKmsKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object bootDiskKmsKey_ = "";
   /**
    *
    *
@@ -539,7 +555,9 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
   }
 
   public static final int IMAGE_TYPE_FIELD_NUMBER = 10;
-  private volatile java.lang.Object imageType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageType_ = "";
   /**
    *
    *
@@ -890,38 +908,30 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       serviceAccount_ = "";
-
-      if (upgradeSettingsBuilder_ == null) {
-        upgradeSettings_ = null;
-      } else {
-        upgradeSettings_ = null;
+      upgradeSettings_ = null;
+      if (upgradeSettingsBuilder_ != null) {
+        upgradeSettingsBuilder_.dispose();
         upgradeSettingsBuilder_ = null;
       }
-      if (managementBuilder_ == null) {
-        management_ = null;
-      } else {
-        management_ = null;
+      management_ = null;
+      if (managementBuilder_ != null) {
+        managementBuilder_.dispose();
         managementBuilder_ = null;
       }
       minCpuPlatform_ = "";
-
       diskSizeGb_ = 0;
-
       diskType_ = "";
-
-      if (shieldedInstanceConfigBuilder_ == null) {
-        shieldedInstanceConfig_ = null;
-      } else {
-        shieldedInstanceConfig_ = null;
+      shieldedInstanceConfig_ = null;
+      if (shieldedInstanceConfigBuilder_ != null) {
+        shieldedInstanceConfigBuilder_.dispose();
         shieldedInstanceConfigBuilder_ = null;
       }
       bootDiskKmsKey_ = "";
-
       imageType_ = "";
-
       return this;
     }
 
@@ -949,35 +959,56 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     public com.google.container.v1.AutoprovisioningNodePoolDefaults buildPartial() {
       com.google.container.v1.AutoprovisioningNodePoolDefaults result =
           new com.google.container.v1.AutoprovisioningNodePoolDefaults(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.container.v1.AutoprovisioningNodePoolDefaults result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         oauthScopes_ = oauthScopes_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.oauthScopes_ = oauthScopes_;
-      result.serviceAccount_ = serviceAccount_;
-      if (upgradeSettingsBuilder_ == null) {
-        result.upgradeSettings_ = upgradeSettings_;
-      } else {
-        result.upgradeSettings_ = upgradeSettingsBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.container.v1.AutoprovisioningNodePoolDefaults result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
       }
-      if (managementBuilder_ == null) {
-        result.management_ = management_;
-      } else {
-        result.management_ = managementBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.upgradeSettings_ =
+            upgradeSettingsBuilder_ == null ? upgradeSettings_ : upgradeSettingsBuilder_.build();
       }
-      result.minCpuPlatform_ = minCpuPlatform_;
-      result.diskSizeGb_ = diskSizeGb_;
-      result.diskType_ = diskType_;
-      if (shieldedInstanceConfigBuilder_ == null) {
-        result.shieldedInstanceConfig_ = shieldedInstanceConfig_;
-      } else {
-        result.shieldedInstanceConfig_ = shieldedInstanceConfigBuilder_.build();
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.management_ = managementBuilder_ == null ? management_ : managementBuilder_.build();
       }
-      result.bootDiskKmsKey_ = bootDiskKmsKey_;
-      result.imageType_ = imageType_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.minCpuPlatform_ = minCpuPlatform_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.diskSizeGb_ = diskSizeGb_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.diskType_ = diskType_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.shieldedInstanceConfig_ =
+            shieldedInstanceConfigBuilder_ == null
+                ? shieldedInstanceConfig_
+                : shieldedInstanceConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.bootDiskKmsKey_ = bootDiskKmsKey_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.imageType_ = imageType_;
+      }
     }
 
     @java.lang.Override
@@ -1038,6 +1069,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasUpgradeSettings()) {
@@ -1048,6 +1080,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       }
       if (!other.getMinCpuPlatform().isEmpty()) {
         minCpuPlatform_ = other.minCpuPlatform_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getDiskSizeGb() != 0) {
@@ -1055,6 +1088,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       }
       if (!other.getDiskType().isEmpty()) {
         diskType_ = other.diskType_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasShieldedInstanceConfig()) {
@@ -1062,10 +1096,12 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       }
       if (!other.getBootDiskKmsKey().isEmpty()) {
         bootDiskKmsKey_ = other.bootDiskKmsKey_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getImageType().isEmpty()) {
         imageType_ = other.imageType_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1104,56 +1140,56 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
             case 18:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpgradeSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getManagementFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 minCpuPlatform_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 diskSizeGb_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 diskType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(
                     getShieldedInstanceConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 bootDiskKmsKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 imageType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             default:
@@ -1404,8 +1440,8 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1421,8 +1457,8 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearServiceAccount() {
-
       serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1443,8 +1479,8 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1467,7 +1503,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * @return Whether the upgradeSettings field is set.
      */
     public boolean hasUpgradeSettings() {
-      return upgradeSettingsBuilder_ != null || upgradeSettings_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1504,11 +1540,11 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
           throw new NullPointerException();
         }
         upgradeSettings_ = value;
-        onChanged();
       } else {
         upgradeSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1524,11 +1560,11 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         com.google.container.v1.NodePool.UpgradeSettings.Builder builderForValue) {
       if (upgradeSettingsBuilder_ == null) {
         upgradeSettings_ = builderForValue.build();
-        onChanged();
       } else {
         upgradeSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1542,19 +1578,19 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      */
     public Builder mergeUpgradeSettings(com.google.container.v1.NodePool.UpgradeSettings value) {
       if (upgradeSettingsBuilder_ == null) {
-        if (upgradeSettings_ != null) {
-          upgradeSettings_ =
-              com.google.container.v1.NodePool.UpgradeSettings.newBuilder(upgradeSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && upgradeSettings_ != null
+            && upgradeSettings_
+                != com.google.container.v1.NodePool.UpgradeSettings.getDefaultInstance()) {
+          getUpgradeSettingsBuilder().mergeFrom(value);
         } else {
           upgradeSettings_ = value;
         }
-        onChanged();
       } else {
         upgradeSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1567,14 +1603,13 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 3;</code>
      */
     public Builder clearUpgradeSettings() {
-      if (upgradeSettingsBuilder_ == null) {
-        upgradeSettings_ = null;
-        onChanged();
-      } else {
-        upgradeSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      upgradeSettings_ = null;
+      if (upgradeSettingsBuilder_ != null) {
+        upgradeSettingsBuilder_.dispose();
         upgradeSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1587,7 +1622,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 3;</code>
      */
     public com.google.container.v1.NodePool.UpgradeSettings.Builder getUpgradeSettingsBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpgradeSettingsFieldBuilder().getBuilder();
     }
@@ -1653,7 +1688,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * @return Whether the management field is set.
      */
     public boolean hasManagement() {
-      return managementBuilder_ != null || management_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1690,11 +1725,11 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
           throw new NullPointerException();
         }
         management_ = value;
-        onChanged();
       } else {
         managementBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1709,11 +1744,11 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     public Builder setManagement(com.google.container.v1.NodeManagement.Builder builderForValue) {
       if (managementBuilder_ == null) {
         management_ = builderForValue.build();
-        onChanged();
       } else {
         managementBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1727,19 +1762,18 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      */
     public Builder mergeManagement(com.google.container.v1.NodeManagement value) {
       if (managementBuilder_ == null) {
-        if (management_ != null) {
-          management_ =
-              com.google.container.v1.NodeManagement.newBuilder(management_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && management_ != null
+            && management_ != com.google.container.v1.NodeManagement.getDefaultInstance()) {
+          getManagementBuilder().mergeFrom(value);
         } else {
           management_ = value;
         }
-        onChanged();
       } else {
         managementBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1752,14 +1786,13 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>.google.container.v1.NodeManagement management = 4;</code>
      */
     public Builder clearManagement() {
-      if (managementBuilder_ == null) {
-        management_ = null;
-        onChanged();
-      } else {
-        management_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      management_ = null;
+      if (managementBuilder_ != null) {
+        managementBuilder_.dispose();
         managementBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1772,7 +1805,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>.google.container.v1.NodeManagement management = 4;</code>
      */
     public com.google.container.v1.NodeManagement.Builder getManagementBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getManagementFieldBuilder().getBuilder();
     }
@@ -1842,7 +1875,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3481
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3504
      * @return The minCpuPlatform.
      */
     @java.lang.Deprecated
@@ -1878,7 +1911,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3481
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3504
      * @return The bytes for minCpuPlatform.
      */
     @java.lang.Deprecated
@@ -1914,7 +1947,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3481
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3504
      * @param value The minCpuPlatform to set.
      * @return This builder for chaining.
      */
@@ -1923,8 +1956,8 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       minCpuPlatform_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1949,13 +1982,13 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3481
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3504
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearMinCpuPlatform() {
-
       minCpuPlatform_ = getDefaultInstance().getMinCpuPlatform();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1980,7 +2013,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3481
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3504
      * @param value The bytes for minCpuPlatform to set.
      * @return This builder for chaining.
      */
@@ -1990,8 +2023,8 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       minCpuPlatform_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2031,6 +2064,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     public Builder setDiskSizeGb(int value) {
 
       diskSizeGb_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2048,7 +2082,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearDiskSizeGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       diskSizeGb_ = 0;
       onChanged();
       return this;
@@ -2121,8 +2155,8 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       diskType_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2140,8 +2174,8 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearDiskType() {
-
       diskType_ = getDefaultInstance().getDiskType();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2164,8 +2198,8 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       diskType_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2188,7 +2222,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * @return Whether the shieldedInstanceConfig field is set.
      */
     public boolean hasShieldedInstanceConfig() {
-      return shieldedInstanceConfigBuilder_ != null || shieldedInstanceConfig_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2225,11 +2259,11 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
           throw new NullPointerException();
         }
         shieldedInstanceConfig_ = value;
-        onChanged();
       } else {
         shieldedInstanceConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2245,11 +2279,11 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         com.google.container.v1.ShieldedInstanceConfig.Builder builderForValue) {
       if (shieldedInstanceConfigBuilder_ == null) {
         shieldedInstanceConfig_ = builderForValue.build();
-        onChanged();
       } else {
         shieldedInstanceConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2264,19 +2298,19 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     public Builder mergeShieldedInstanceConfig(
         com.google.container.v1.ShieldedInstanceConfig value) {
       if (shieldedInstanceConfigBuilder_ == null) {
-        if (shieldedInstanceConfig_ != null) {
-          shieldedInstanceConfig_ =
-              com.google.container.v1.ShieldedInstanceConfig.newBuilder(shieldedInstanceConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && shieldedInstanceConfig_ != null
+            && shieldedInstanceConfig_
+                != com.google.container.v1.ShieldedInstanceConfig.getDefaultInstance()) {
+          getShieldedInstanceConfigBuilder().mergeFrom(value);
         } else {
           shieldedInstanceConfig_ = value;
         }
-        onChanged();
       } else {
         shieldedInstanceConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2289,14 +2323,13 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 8;</code>
      */
     public Builder clearShieldedInstanceConfig() {
-      if (shieldedInstanceConfigBuilder_ == null) {
-        shieldedInstanceConfig_ = null;
-        onChanged();
-      } else {
-        shieldedInstanceConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      shieldedInstanceConfig_ = null;
+      if (shieldedInstanceConfigBuilder_ != null) {
+        shieldedInstanceConfigBuilder_.dispose();
         shieldedInstanceConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2310,7 +2343,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      */
     public com.google.container.v1.ShieldedInstanceConfig.Builder
         getShieldedInstanceConfigBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getShieldedInstanceConfigFieldBuilder().getBuilder();
     }
@@ -2435,8 +2468,8 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       bootDiskKmsKey_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2457,8 +2490,8 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearBootDiskKmsKey() {
-
       bootDiskKmsKey_ = getDefaultInstance().getBootDiskKmsKey();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2484,8 +2517,8 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       bootDiskKmsKey_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2551,8 +2584,8 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       imageType_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2568,8 +2601,8 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearImageType() {
-
       imageType_ = getDefaultInstance().getImageType();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2590,8 +2623,8 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       imageType_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

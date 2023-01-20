@@ -72,7 +72,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ENABLE_PRIVATE_NODES_FIELD_NUMBER = 1;
-  private boolean enablePrivateNodes_;
+  private boolean enablePrivateNodes_ = false;
   /**
    *
    *
@@ -92,7 +92,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ENABLE_PRIVATE_ENDPOINT_FIELD_NUMBER = 2;
-  private boolean enablePrivateEndpoint_;
+  private boolean enablePrivateEndpoint_ = false;
   /**
    *
    *
@@ -110,7 +110,9 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MASTER_IPV4_CIDR_BLOCK_FIELD_NUMBER = 3;
-  private volatile java.lang.Object masterIpv4CidrBlock_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object masterIpv4CidrBlock_ = "";
   /**
    *
    *
@@ -165,7 +167,9 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PRIVATE_ENDPOINT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object privateEndpoint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object privateEndpoint_ = "";
   /**
    *
    *
@@ -214,7 +218,9 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PUBLIC_ENDPOINT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object publicEndpoint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object publicEndpoint_ = "";
   /**
    *
    *
@@ -263,7 +269,9 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PEERING_NAME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object peeringName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object peeringName_ = "";
   /**
    *
    *
@@ -365,11 +373,15 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.container.v1beta1.PrivateClusterMasterGlobalAccessConfigOrBuilder
       getMasterGlobalAccessConfigOrBuilder() {
-    return getMasterGlobalAccessConfig();
+    return masterGlobalAccessConfig_ == null
+        ? com.google.container.v1beta1.PrivateClusterMasterGlobalAccessConfig.getDefaultInstance()
+        : masterGlobalAccessConfig_;
   }
 
   public static final int PRIVATE_ENDPOINT_SUBNETWORK_FIELD_NUMBER = 10;
-  private volatile java.lang.Object privateEndpointSubnetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object privateEndpointSubnetwork_ = "";
   /**
    *
    *
@@ -687,26 +699,19 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enablePrivateNodes_ = false;
-
       enablePrivateEndpoint_ = false;
-
       masterIpv4CidrBlock_ = "";
-
       privateEndpoint_ = "";
-
       publicEndpoint_ = "";
-
       peeringName_ = "";
-
-      if (masterGlobalAccessConfigBuilder_ == null) {
-        masterGlobalAccessConfig_ = null;
-      } else {
-        masterGlobalAccessConfig_ = null;
+      masterGlobalAccessConfig_ = null;
+      if (masterGlobalAccessConfigBuilder_ != null) {
+        masterGlobalAccessConfigBuilder_.dispose();
         masterGlobalAccessConfigBuilder_ = null;
       }
       privateEndpointSubnetwork_ = "";
-
       return this;
     }
 
@@ -734,20 +739,42 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     public com.google.container.v1beta1.PrivateClusterConfig buildPartial() {
       com.google.container.v1beta1.PrivateClusterConfig result =
           new com.google.container.v1beta1.PrivateClusterConfig(this);
-      result.enablePrivateNodes_ = enablePrivateNodes_;
-      result.enablePrivateEndpoint_ = enablePrivateEndpoint_;
-      result.masterIpv4CidrBlock_ = masterIpv4CidrBlock_;
-      result.privateEndpoint_ = privateEndpoint_;
-      result.publicEndpoint_ = publicEndpoint_;
-      result.peeringName_ = peeringName_;
-      if (masterGlobalAccessConfigBuilder_ == null) {
-        result.masterGlobalAccessConfig_ = masterGlobalAccessConfig_;
-      } else {
-        result.masterGlobalAccessConfig_ = masterGlobalAccessConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.privateEndpointSubnetwork_ = privateEndpointSubnetwork_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.PrivateClusterConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enablePrivateNodes_ = enablePrivateNodes_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.enablePrivateEndpoint_ = enablePrivateEndpoint_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.masterIpv4CidrBlock_ = masterIpv4CidrBlock_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.privateEndpoint_ = privateEndpoint_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.publicEndpoint_ = publicEndpoint_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.peeringName_ = peeringName_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.masterGlobalAccessConfig_ =
+            masterGlobalAccessConfigBuilder_ == null
+                ? masterGlobalAccessConfig_
+                : masterGlobalAccessConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.privateEndpointSubnetwork_ = privateEndpointSubnetwork_;
+      }
     }
 
     @java.lang.Override
@@ -804,18 +831,22 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       }
       if (!other.getMasterIpv4CidrBlock().isEmpty()) {
         masterIpv4CidrBlock_ = other.masterIpv4CidrBlock_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getPrivateEndpoint().isEmpty()) {
         privateEndpoint_ = other.privateEndpoint_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getPublicEndpoint().isEmpty()) {
         publicEndpoint_ = other.publicEndpoint_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getPeeringName().isEmpty()) {
         peeringName_ = other.peeringName_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasMasterGlobalAccessConfig()) {
@@ -823,6 +854,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       }
       if (!other.getPrivateEndpointSubnetwork().isEmpty()) {
         privateEndpointSubnetwork_ = other.privateEndpointSubnetwork_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -854,50 +886,50 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 enablePrivateNodes_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 enablePrivateEndpoint_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 masterIpv4CidrBlock_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 privateEndpoint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 publicEndpoint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 58:
               {
                 peeringName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(
                     getMasterGlobalAccessConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 82:
               {
                 privateEndpointSubnetwork_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 82
             default:
@@ -916,6 +948,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enablePrivateNodes_;
     /**
@@ -952,6 +986,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     public Builder setEnablePrivateNodes(boolean value) {
 
       enablePrivateNodes_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -969,7 +1004,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearEnablePrivateNodes() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enablePrivateNodes_ = false;
       onChanged();
       return this;
@@ -1006,6 +1041,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     public Builder setEnablePrivateEndpoint(boolean value) {
 
       enablePrivateEndpoint_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1021,7 +1057,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearEnablePrivateEndpoint() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       enablePrivateEndpoint_ = false;
       onChanged();
       return this;
@@ -1097,8 +1133,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       masterIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1117,8 +1153,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMasterIpv4CidrBlock() {
-
       masterIpv4CidrBlock_ = getDefaultInstance().getMasterIpv4CidrBlock();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1142,8 +1178,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       masterIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1209,8 +1245,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       privateEndpoint_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1226,8 +1262,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPrivateEndpoint() {
-
       privateEndpoint_ = getDefaultInstance().getPrivateEndpoint();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1248,8 +1284,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       privateEndpoint_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1315,8 +1351,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       publicEndpoint_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1332,8 +1368,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPublicEndpoint() {
-
       publicEndpoint_ = getDefaultInstance().getPublicEndpoint();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1354,8 +1390,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       publicEndpoint_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1421,8 +1457,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       peeringName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1438,8 +1474,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPeeringName() {
-
       peeringName_ = getDefaultInstance().getPeeringName();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1460,8 +1496,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       peeringName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1487,7 +1523,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the masterGlobalAccessConfig field is set.
      */
     public boolean hasMasterGlobalAccessConfig() {
-      return masterGlobalAccessConfigBuilder_ != null || masterGlobalAccessConfig_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1531,11 +1567,11 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         masterGlobalAccessConfig_ = value;
-        onChanged();
       } else {
         masterGlobalAccessConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1554,11 +1590,11 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
             builderForValue) {
       if (masterGlobalAccessConfigBuilder_ == null) {
         masterGlobalAccessConfig_ = builderForValue.build();
-        onChanged();
       } else {
         masterGlobalAccessConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1575,20 +1611,20 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     public Builder mergeMasterGlobalAccessConfig(
         com.google.container.v1beta1.PrivateClusterMasterGlobalAccessConfig value) {
       if (masterGlobalAccessConfigBuilder_ == null) {
-        if (masterGlobalAccessConfig_ != null) {
-          masterGlobalAccessConfig_ =
-              com.google.container.v1beta1.PrivateClusterMasterGlobalAccessConfig.newBuilder(
-                      masterGlobalAccessConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && masterGlobalAccessConfig_ != null
+            && masterGlobalAccessConfig_
+                != com.google.container.v1beta1.PrivateClusterMasterGlobalAccessConfig
+                    .getDefaultInstance()) {
+          getMasterGlobalAccessConfigBuilder().mergeFrom(value);
         } else {
           masterGlobalAccessConfig_ = value;
         }
-        onChanged();
       } else {
         masterGlobalAccessConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1603,14 +1639,13 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearMasterGlobalAccessConfig() {
-      if (masterGlobalAccessConfigBuilder_ == null) {
-        masterGlobalAccessConfig_ = null;
-        onChanged();
-      } else {
-        masterGlobalAccessConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      masterGlobalAccessConfig_ = null;
+      if (masterGlobalAccessConfigBuilder_ != null) {
+        masterGlobalAccessConfigBuilder_.dispose();
         masterGlobalAccessConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1626,7 +1661,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      */
     public com.google.container.v1beta1.PrivateClusterMasterGlobalAccessConfig.Builder
         getMasterGlobalAccessConfigBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getMasterGlobalAccessConfigFieldBuilder().getBuilder();
     }
@@ -1744,8 +1779,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       privateEndpointSubnetwork_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1762,8 +1797,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPrivateEndpointSubnetwork() {
-
       privateEndpointSubnetwork_ = getDefaultInstance().getPrivateEndpointSubnetwork();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -1785,8 +1820,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       privateEndpointSubnetwork_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

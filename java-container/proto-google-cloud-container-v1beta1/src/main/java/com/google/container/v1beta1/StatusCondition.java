@@ -325,7 +325,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CODE_FIELD_NUMBER = 1;
-  private int code_;
+  private int code_ = 0;
   /**
    *
    *
@@ -337,7 +337,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
    * <code>.google.container.v1beta1.StatusCondition.Code code = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.StatusCondition.code is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4485
+   *     google/container/v1beta1/cluster_service.proto;l=4297
    * @return The enum numeric value on the wire for code.
    */
   @java.lang.Override
@@ -356,20 +356,21 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
    * <code>.google.container.v1beta1.StatusCondition.Code code = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.StatusCondition.code is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4485
+   *     google/container/v1beta1/cluster_service.proto;l=4297
    * @return The code.
    */
   @java.lang.Override
   @java.lang.Deprecated
   public com.google.container.v1beta1.StatusCondition.Code getCode() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.StatusCondition.Code result =
-        com.google.container.v1beta1.StatusCondition.Code.valueOf(code_);
+        com.google.container.v1beta1.StatusCondition.Code.forNumber(code_);
     return result == null ? com.google.container.v1beta1.StatusCondition.Code.UNRECOGNIZED : result;
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -418,7 +419,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CANONICAL_CODE_FIELD_NUMBER = 3;
-  private int canonicalCode_;
+  private int canonicalCode_ = 0;
   /**
    *
    *
@@ -447,8 +448,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.rpc.Code getCanonicalCode() {
-    @SuppressWarnings("deprecation")
-    com.google.rpc.Code result = com.google.rpc.Code.valueOf(canonicalCode_);
+    com.google.rpc.Code result = com.google.rpc.Code.forNumber(canonicalCode_);
     return result == null ? com.google.rpc.Code.UNRECOGNIZED : result;
   }
 
@@ -668,12 +668,10 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       code_ = 0;
-
       message_ = "";
-
       canonicalCode_ = 0;
-
       return this;
     }
 
@@ -701,11 +699,24 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
     public com.google.container.v1beta1.StatusCondition buildPartial() {
       com.google.container.v1beta1.StatusCondition result =
           new com.google.container.v1beta1.StatusCondition(this);
-      result.code_ = code_;
-      result.message_ = message_;
-      result.canonicalCode_ = canonicalCode_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.StatusCondition result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.code_ = code_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.message_ = message_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.canonicalCode_ = canonicalCode_;
+      }
     }
 
     @java.lang.Override
@@ -758,6 +769,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.canonicalCode_ != 0) {
@@ -792,19 +804,19 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 code_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 message_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 canonicalCode_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -824,6 +836,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     private int code_ = 0;
     /**
      *
@@ -836,7 +850,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * <code>.google.container.v1beta1.StatusCondition.Code code = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.StatusCondition.code is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4485
+     *     google/container/v1beta1/cluster_service.proto;l=4297
      * @return The enum numeric value on the wire for code.
      */
     @java.lang.Override
@@ -855,14 +869,14 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * <code>.google.container.v1beta1.StatusCondition.Code code = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.StatusCondition.code is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4485
+     *     google/container/v1beta1/cluster_service.proto;l=4297
      * @param value The enum numeric value on the wire for code to set.
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setCodeValue(int value) {
-
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -877,15 +891,14 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * <code>.google.container.v1beta1.StatusCondition.Code code = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.StatusCondition.code is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4485
+     *     google/container/v1beta1/cluster_service.proto;l=4297
      * @return The code.
      */
     @java.lang.Override
     @java.lang.Deprecated
     public com.google.container.v1beta1.StatusCondition.Code getCode() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.StatusCondition.Code result =
-          com.google.container.v1beta1.StatusCondition.Code.valueOf(code_);
+          com.google.container.v1beta1.StatusCondition.Code.forNumber(code_);
       return result == null
           ? com.google.container.v1beta1.StatusCondition.Code.UNRECOGNIZED
           : result;
@@ -901,7 +914,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * <code>.google.container.v1beta1.StatusCondition.Code code = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.StatusCondition.code is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4485
+     *     google/container/v1beta1/cluster_service.proto;l=4297
      * @param value The code to set.
      * @return This builder for chaining.
      */
@@ -910,7 +923,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       code_ = value.getNumber();
       onChanged();
       return this;
@@ -926,12 +939,12 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * <code>.google.container.v1beta1.StatusCondition.Code code = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.StatusCondition.code is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4485
+     *     google/container/v1beta1/cluster_service.proto;l=4297
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       code_ = 0;
       onChanged();
       return this;
@@ -998,8 +1011,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       message_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1015,8 +1028,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1037,8 +1050,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       message_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1072,8 +1085,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setCanonicalCodeValue(int value) {
-
       canonicalCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1090,8 +1103,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.rpc.Code getCanonicalCode() {
-      @SuppressWarnings("deprecation")
-      com.google.rpc.Code result = com.google.rpc.Code.valueOf(canonicalCode_);
+      com.google.rpc.Code result = com.google.rpc.Code.forNumber(canonicalCode_);
       return result == null ? com.google.rpc.Code.UNRECOGNIZED : result;
     }
     /**
@@ -1110,7 +1122,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       canonicalCode_ = value.getNumber();
       onChanged();
       return this;
@@ -1127,7 +1139,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearCanonicalCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       canonicalCode_ = 0;
       onChanged();
       return this;

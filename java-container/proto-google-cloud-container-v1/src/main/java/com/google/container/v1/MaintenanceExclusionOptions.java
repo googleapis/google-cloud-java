@@ -237,7 +237,7 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
   }
 
   public static final int SCOPE_FIELD_NUMBER = 1;
-  private int scope_;
+  private int scope_ = 0;
   /**
    *
    *
@@ -268,9 +268,8 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.container.v1.MaintenanceExclusionOptions.Scope getScope() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1.MaintenanceExclusionOptions.Scope result =
-        com.google.container.v1.MaintenanceExclusionOptions.Scope.valueOf(scope_);
+        com.google.container.v1.MaintenanceExclusionOptions.Scope.forNumber(scope_);
     return result == null
         ? com.google.container.v1.MaintenanceExclusionOptions.Scope.UNRECOGNIZED
         : result;
@@ -475,8 +474,8 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       scope_ = 0;
-
       return this;
     }
 
@@ -504,9 +503,18 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
     public com.google.container.v1.MaintenanceExclusionOptions buildPartial() {
       com.google.container.v1.MaintenanceExclusionOptions result =
           new com.google.container.v1.MaintenanceExclusionOptions(this);
-      result.scope_ = scope_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.MaintenanceExclusionOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.scope_ = scope_;
+      }
     }
 
     @java.lang.Override
@@ -587,7 +595,7 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
             case 8:
               {
                 scope_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -606,6 +614,8 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int scope_ = 0;
     /**
@@ -638,8 +648,8 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder setScopeValue(int value) {
-
       scope_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -657,9 +667,8 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
      */
     @java.lang.Override
     public com.google.container.v1.MaintenanceExclusionOptions.Scope getScope() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1.MaintenanceExclusionOptions.Scope result =
-          com.google.container.v1.MaintenanceExclusionOptions.Scope.valueOf(scope_);
+          com.google.container.v1.MaintenanceExclusionOptions.Scope.forNumber(scope_);
       return result == null
           ? com.google.container.v1.MaintenanceExclusionOptions.Scope.UNRECOGNIZED
           : result;
@@ -681,7 +690,7 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       scope_ = value.getNumber();
       onChanged();
       return this;
@@ -699,7 +708,7 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearScope() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       scope_ = 0;
       onChanged();
       return this;

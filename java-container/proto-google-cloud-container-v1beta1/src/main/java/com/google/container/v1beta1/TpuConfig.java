@@ -68,7 +68,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLED_FIELD_NUMBER = 1;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -86,7 +86,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USE_SERVICE_NETWORKING_FIELD_NUMBER = 2;
-  private boolean useServiceNetworking_;
+  private boolean useServiceNetworking_ = false;
   /**
    *
    *
@@ -104,7 +104,9 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IPV4_CIDR_BLOCK_FIELD_NUMBER = 3;
-  private volatile java.lang.Object ipv4CidrBlock_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipv4CidrBlock_ = "";
   /**
    *
    *
@@ -366,12 +368,10 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enabled_ = false;
-
       useServiceNetworking_ = false;
-
       ipv4CidrBlock_ = "";
-
       return this;
     }
 
@@ -399,11 +399,24 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1beta1.TpuConfig buildPartial() {
       com.google.container.v1beta1.TpuConfig result =
           new com.google.container.v1beta1.TpuConfig(this);
-      result.enabled_ = enabled_;
-      result.useServiceNetworking_ = useServiceNetworking_;
-      result.ipv4CidrBlock_ = ipv4CidrBlock_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.TpuConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enabled_ = enabled_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.useServiceNetworking_ = useServiceNetworking_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ipv4CidrBlock_ = ipv4CidrBlock_;
+      }
     }
 
     @java.lang.Override
@@ -459,6 +472,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getIpv4CidrBlock().isEmpty()) {
         ipv4CidrBlock_ = other.ipv4CidrBlock_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -490,19 +504,19 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 enabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 useServiceNetworking_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 ipv4CidrBlock_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -521,6 +535,8 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enabled_;
     /**
@@ -553,6 +569,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -568,7 +585,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enabled_ = false;
       onChanged();
       return this;
@@ -605,6 +622,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setUseServiceNetworking(boolean value) {
 
       useServiceNetworking_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -620,7 +638,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUseServiceNetworking() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       useServiceNetworking_ = false;
       onChanged();
       return this;
@@ -687,8 +705,8 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       ipv4CidrBlock_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -704,8 +722,8 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIpv4CidrBlock() {
-
       ipv4CidrBlock_ = getDefaultInstance().getIpv4CidrBlock();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -726,8 +744,8 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ipv4CidrBlock_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

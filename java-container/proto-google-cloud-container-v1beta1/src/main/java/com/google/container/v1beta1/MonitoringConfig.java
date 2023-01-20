@@ -111,7 +111,9 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.container.v1beta1.MonitoringComponentConfigOrBuilder
       getComponentConfigOrBuilder() {
-    return getComponentConfig();
+    return componentConfig_ == null
+        ? com.google.container.v1beta1.MonitoringComponentConfig.getDefaultInstance()
+        : componentConfig_;
   }
 
   public static final int MANAGED_PROMETHEUS_CONFIG_FIELD_NUMBER = 2;
@@ -163,7 +165,9 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.container.v1beta1.ManagedPrometheusConfigOrBuilder
       getManagedPrometheusConfigOrBuilder() {
-    return getManagedPrometheusConfig();
+    return managedPrometheusConfig_ == null
+        ? com.google.container.v1beta1.ManagedPrometheusConfig.getDefaultInstance()
+        : managedPrometheusConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -383,16 +387,15 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (componentConfigBuilder_ == null) {
-        componentConfig_ = null;
-      } else {
-        componentConfig_ = null;
+      bitField0_ = 0;
+      componentConfig_ = null;
+      if (componentConfigBuilder_ != null) {
+        componentConfigBuilder_.dispose();
         componentConfigBuilder_ = null;
       }
-      if (managedPrometheusConfigBuilder_ == null) {
-        managedPrometheusConfig_ = null;
-      } else {
-        managedPrometheusConfig_ = null;
+      managedPrometheusConfig_ = null;
+      if (managedPrometheusConfigBuilder_ != null) {
+        managedPrometheusConfigBuilder_.dispose();
         managedPrometheusConfigBuilder_ = null;
       }
       return this;
@@ -422,18 +425,25 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     public com.google.container.v1beta1.MonitoringConfig buildPartial() {
       com.google.container.v1beta1.MonitoringConfig result =
           new com.google.container.v1beta1.MonitoringConfig(this);
-      if (componentConfigBuilder_ == null) {
-        result.componentConfig_ = componentConfig_;
-      } else {
-        result.componentConfig_ = componentConfigBuilder_.build();
-      }
-      if (managedPrometheusConfigBuilder_ == null) {
-        result.managedPrometheusConfig_ = managedPrometheusConfig_;
-      } else {
-        result.managedPrometheusConfig_ = managedPrometheusConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.MonitoringConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.componentConfig_ =
+            componentConfigBuilder_ == null ? componentConfig_ : componentConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.managedPrometheusConfig_ =
+            managedPrometheusConfigBuilder_ == null
+                ? managedPrometheusConfig_
+                : managedPrometheusConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -516,14 +526,14 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 input.readMessage(getComponentConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getManagedPrometheusConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -543,6 +553,8 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.container.v1beta1.MonitoringComponentConfig componentConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1beta1.MonitoringComponentConfig,
@@ -561,7 +573,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the componentConfig field is set.
      */
     public boolean hasComponentConfig() {
-      return componentConfigBuilder_ != null || componentConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -599,11 +611,11 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         componentConfig_ = value;
-        onChanged();
       } else {
         componentConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -619,11 +631,11 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
         com.google.container.v1beta1.MonitoringComponentConfig.Builder builderForValue) {
       if (componentConfigBuilder_ == null) {
         componentConfig_ = builderForValue.build();
-        onChanged();
       } else {
         componentConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -638,19 +650,19 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeComponentConfig(
         com.google.container.v1beta1.MonitoringComponentConfig value) {
       if (componentConfigBuilder_ == null) {
-        if (componentConfig_ != null) {
-          componentConfig_ =
-              com.google.container.v1beta1.MonitoringComponentConfig.newBuilder(componentConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && componentConfig_ != null
+            && componentConfig_
+                != com.google.container.v1beta1.MonitoringComponentConfig.getDefaultInstance()) {
+          getComponentConfigBuilder().mergeFrom(value);
         } else {
           componentConfig_ = value;
         }
-        onChanged();
       } else {
         componentConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -663,14 +675,13 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1beta1.MonitoringComponentConfig component_config = 1;</code>
      */
     public Builder clearComponentConfig() {
-      if (componentConfigBuilder_ == null) {
-        componentConfig_ = null;
-        onChanged();
-      } else {
-        componentConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      componentConfig_ = null;
+      if (componentConfigBuilder_ != null) {
+        componentConfigBuilder_.dispose();
         componentConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -684,7 +695,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.container.v1beta1.MonitoringComponentConfig.Builder
         getComponentConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getComponentConfigFieldBuilder().getBuilder();
     }
@@ -752,7 +763,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the managedPrometheusConfig field is set.
      */
     public boolean hasManagedPrometheusConfig() {
-      return managedPrometheusConfigBuilder_ != null || managedPrometheusConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -792,11 +803,11 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         managedPrometheusConfig_ = value;
-        onChanged();
       } else {
         managedPrometheusConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -813,11 +824,11 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
         com.google.container.v1beta1.ManagedPrometheusConfig.Builder builderForValue) {
       if (managedPrometheusConfigBuilder_ == null) {
         managedPrometheusConfig_ = builderForValue.build();
-        onChanged();
       } else {
         managedPrometheusConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -833,20 +844,19 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeManagedPrometheusConfig(
         com.google.container.v1beta1.ManagedPrometheusConfig value) {
       if (managedPrometheusConfigBuilder_ == null) {
-        if (managedPrometheusConfig_ != null) {
-          managedPrometheusConfig_ =
-              com.google.container.v1beta1.ManagedPrometheusConfig.newBuilder(
-                      managedPrometheusConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && managedPrometheusConfig_ != null
+            && managedPrometheusConfig_
+                != com.google.container.v1beta1.ManagedPrometheusConfig.getDefaultInstance()) {
+          getManagedPrometheusConfigBuilder().mergeFrom(value);
         } else {
           managedPrometheusConfig_ = value;
         }
-        onChanged();
       } else {
         managedPrometheusConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -860,14 +870,13 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1beta1.ManagedPrometheusConfig managed_prometheus_config = 2;</code>
      */
     public Builder clearManagedPrometheusConfig() {
-      if (managedPrometheusConfigBuilder_ == null) {
-        managedPrometheusConfig_ = null;
-        onChanged();
-      } else {
-        managedPrometheusConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      managedPrometheusConfig_ = null;
+      if (managedPrometheusConfigBuilder_ != null) {
+        managedPrometheusConfigBuilder_.dispose();
         managedPrometheusConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -882,7 +891,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.container.v1beta1.ManagedPrometheusConfig.Builder
         getManagedPrometheusConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getManagedPrometheusConfigFieldBuilder().getBuilder();
     }

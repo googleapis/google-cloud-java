@@ -283,7 +283,7 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WORKLOAD_VULNERABILITY_MODE_FIELD_NUMBER = 2;
-  private int workloadVulnerabilityMode_;
+  private int workloadVulnerabilityMode_ = 0;
   /**
    *
    *
@@ -334,9 +334,8 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode
       getWorkloadVulnerabilityMode() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode result =
-        com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode.valueOf(
+        com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode.forNumber(
             workloadVulnerabilityMode_);
     return result == null
         ? com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode.UNRECOGNIZED
@@ -569,14 +568,13 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (workloadConfigBuilder_ == null) {
-        workloadConfig_ = null;
-      } else {
-        workloadConfigBuilder_.clear();
+      bitField0_ = 0;
+      workloadConfig_ = null;
+      if (workloadConfigBuilder_ != null) {
+        workloadConfigBuilder_.dispose();
+        workloadConfigBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       workloadVulnerabilityMode_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -604,23 +602,26 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1beta1.ProtectConfig buildPartial() {
       com.google.container.v1beta1.ProtectConfig result =
           new com.google.container.v1beta1.ProtectConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.ProtectConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (workloadConfigBuilder_ == null) {
-          result.workloadConfig_ = workloadConfig_;
-        } else {
-          result.workloadConfig_ = workloadConfigBuilder_.build();
-        }
+        result.workloadConfig_ =
+            workloadConfigBuilder_ == null ? workloadConfig_ : workloadConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.workloadVulnerabilityMode_ = workloadVulnerabilityMode_;
         to_bitField0_ |= 0x00000002;
       }
-      result.workloadVulnerabilityMode_ = workloadVulnerabilityMode_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -789,11 +790,11 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         workloadConfig_ = value;
-        onChanged();
       } else {
         workloadConfigBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -810,11 +811,11 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.container.v1beta1.WorkloadConfig.Builder builderForValue) {
       if (workloadConfigBuilder_ == null) {
         workloadConfig_ = builderForValue.build();
-        onChanged();
       } else {
         workloadConfigBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -833,18 +834,15 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
             && workloadConfig_ != null
             && workloadConfig_
                 != com.google.container.v1beta1.WorkloadConfig.getDefaultInstance()) {
-          workloadConfig_ =
-              com.google.container.v1beta1.WorkloadConfig.newBuilder(workloadConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getWorkloadConfigBuilder().mergeFrom(value);
         } else {
           workloadConfig_ = value;
         }
-        onChanged();
       } else {
         workloadConfigBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -858,13 +856,13 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.container.v1beta1.WorkloadConfig workload_config = 1;</code>
      */
     public Builder clearWorkloadConfig() {
-      if (workloadConfigBuilder_ == null) {
-        workloadConfig_ = null;
-        onChanged();
-      } else {
-        workloadConfigBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      workloadConfig_ = null;
+      if (workloadConfigBuilder_ != null) {
+        workloadConfigBuilder_.dispose();
+        workloadConfigBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -978,8 +976,8 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setWorkloadVulnerabilityModeValue(int value) {
-      bitField0_ |= 0x00000002;
       workloadVulnerabilityMode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -999,9 +997,8 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode
         getWorkloadVulnerabilityMode() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode result =
-          com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode.valueOf(
+          com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode.forNumber(
               workloadVulnerabilityMode_);
       return result == null
           ? com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode.UNRECOGNIZED

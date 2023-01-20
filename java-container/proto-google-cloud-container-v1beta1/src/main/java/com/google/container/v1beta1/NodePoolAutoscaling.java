@@ -229,7 +229,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ENABLED_FIELD_NUMBER = 1;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -247,7 +247,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
   }
 
   public static final int MIN_NODE_COUNT_FIELD_NUMBER = 2;
-  private int minNodeCount_;
+  private int minNodeCount_ = 0;
   /**
    *
    *
@@ -266,7 +266,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
   }
 
   public static final int MAX_NODE_COUNT_FIELD_NUMBER = 3;
-  private int maxNodeCount_;
+  private int maxNodeCount_ = 0;
   /**
    *
    *
@@ -285,7 +285,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
   }
 
   public static final int AUTOPROVISIONED_FIELD_NUMBER = 4;
-  private boolean autoprovisioned_;
+  private boolean autoprovisioned_ = false;
   /**
    *
    *
@@ -303,7 +303,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
   }
 
   public static final int LOCATION_POLICY_FIELD_NUMBER = 5;
-  private int locationPolicy_;
+  private int locationPolicy_ = 0;
   /**
    *
    *
@@ -332,16 +332,15 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy getLocationPolicy() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy result =
-        com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy.valueOf(locationPolicy_);
+        com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy.forNumber(locationPolicy_);
     return result == null
         ? com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy.UNRECOGNIZED
         : result;
   }
 
   public static final int TOTAL_MIN_NODE_COUNT_FIELD_NUMBER = 6;
-  private int totalMinNodeCount_;
+  private int totalMinNodeCount_ = 0;
   /**
    *
    *
@@ -362,7 +361,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TOTAL_MAX_NODE_COUNT_FIELD_NUMBER = 7;
-  private int totalMaxNodeCount_;
+  private int totalMaxNodeCount_ = 0;
   /**
    *
    *
@@ -640,20 +639,14 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enabled_ = false;
-
       minNodeCount_ = 0;
-
       maxNodeCount_ = 0;
-
       autoprovisioned_ = false;
-
       locationPolicy_ = 0;
-
       totalMinNodeCount_ = 0;
-
       totalMaxNodeCount_ = 0;
-
       return this;
     }
 
@@ -681,15 +674,36 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     public com.google.container.v1beta1.NodePoolAutoscaling buildPartial() {
       com.google.container.v1beta1.NodePoolAutoscaling result =
           new com.google.container.v1beta1.NodePoolAutoscaling(this);
-      result.enabled_ = enabled_;
-      result.minNodeCount_ = minNodeCount_;
-      result.maxNodeCount_ = maxNodeCount_;
-      result.autoprovisioned_ = autoprovisioned_;
-      result.locationPolicy_ = locationPolicy_;
-      result.totalMinNodeCount_ = totalMinNodeCount_;
-      result.totalMaxNodeCount_ = totalMaxNodeCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.NodePoolAutoscaling result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enabled_ = enabled_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.minNodeCount_ = minNodeCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.maxNodeCount_ = maxNodeCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.autoprovisioned_ = autoprovisioned_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.locationPolicy_ = locationPolicy_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.totalMinNodeCount_ = totalMinNodeCount_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.totalMaxNodeCount_ = totalMaxNodeCount_;
+      }
     }
 
     @java.lang.Override
@@ -788,43 +802,43 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 enabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 minNodeCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 maxNodeCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 autoprovisioned_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 locationPolicy_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 totalMinNodeCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 56:
               {
                 totalMaxNodeCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             default:
@@ -843,6 +857,8 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enabled_;
     /**
@@ -875,6 +891,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -890,7 +907,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enabled_ = false;
       onChanged();
       return this;
@@ -929,6 +946,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     public Builder setMinNodeCount(int value) {
 
       minNodeCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -945,7 +963,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearMinNodeCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       minNodeCount_ = 0;
       onChanged();
       return this;
@@ -984,6 +1002,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     public Builder setMaxNodeCount(int value) {
 
       maxNodeCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1000,7 +1019,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearMaxNodeCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       maxNodeCount_ = 0;
       onChanged();
       return this;
@@ -1037,6 +1056,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     public Builder setAutoprovisioned(boolean value) {
 
       autoprovisioned_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1052,7 +1072,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAutoprovisioned() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       autoprovisioned_ = false;
       onChanged();
       return this;
@@ -1089,8 +1109,8 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setLocationPolicyValue(int value) {
-
       locationPolicy_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1108,9 +1128,9 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy getLocationPolicy() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy result =
-          com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy.valueOf(locationPolicy_);
+          com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy.forNumber(
+              locationPolicy_);
       return result == null
           ? com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy.UNRECOGNIZED
           : result;
@@ -1133,7 +1153,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       locationPolicy_ = value.getNumber();
       onChanged();
       return this;
@@ -1151,7 +1171,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearLocationPolicy() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       locationPolicy_ = 0;
       onChanged();
       return this;
@@ -1194,6 +1214,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     public Builder setTotalMinNodeCount(int value) {
 
       totalMinNodeCount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1212,7 +1233,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearTotalMinNodeCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       totalMinNodeCount_ = 0;
       onChanged();
       return this;
@@ -1255,6 +1276,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     public Builder setTotalMaxNodeCount(int value) {
 
       totalMaxNodeCount_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1273,7 +1295,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearTotalMaxNodeCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       totalMaxNodeCount_ = 0;
       onChanged();
       return this;

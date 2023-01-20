@@ -265,7 +265,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CHANNEL_FIELD_NUMBER = 1;
-  private int channel_;
+  private int channel_ = 0;
   /**
    *
    *
@@ -294,9 +294,8 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1beta1.ReleaseChannel.Channel getChannel() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.ReleaseChannel.Channel result =
-        com.google.container.v1beta1.ReleaseChannel.Channel.valueOf(channel_);
+        com.google.container.v1beta1.ReleaseChannel.Channel.forNumber(channel_);
     return result == null
         ? com.google.container.v1beta1.ReleaseChannel.Channel.UNRECOGNIZED
         : result;
@@ -503,8 +502,8 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       channel_ = 0;
-
       return this;
     }
 
@@ -532,9 +531,18 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1beta1.ReleaseChannel buildPartial() {
       com.google.container.v1beta1.ReleaseChannel result =
           new com.google.container.v1beta1.ReleaseChannel(this);
-      result.channel_ = channel_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.ReleaseChannel result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.channel_ = channel_;
+      }
     }
 
     @java.lang.Override
@@ -614,7 +622,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 channel_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -633,6 +641,8 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int channel_ = 0;
     /**
@@ -663,8 +673,8 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setChannelValue(int value) {
-
       channel_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -681,9 +691,8 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.container.v1beta1.ReleaseChannel.Channel getChannel() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.ReleaseChannel.Channel result =
-          com.google.container.v1beta1.ReleaseChannel.Channel.valueOf(channel_);
+          com.google.container.v1beta1.ReleaseChannel.Channel.forNumber(channel_);
       return result == null
           ? com.google.container.v1beta1.ReleaseChannel.Channel.UNRECOGNIZED
           : result;
@@ -704,7 +713,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       channel_ = value.getNumber();
       onChanged();
       return this;
@@ -721,7 +730,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearChannel() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       channel_ = 0;
       onChanged();
       return this;

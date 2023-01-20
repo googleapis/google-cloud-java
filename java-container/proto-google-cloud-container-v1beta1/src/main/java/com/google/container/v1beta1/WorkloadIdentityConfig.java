@@ -71,7 +71,9 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int IDENTITY_NAMESPACE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object identityNamespace_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object identityNamespace_ = "";
   /**
    *
    *
@@ -82,7 +84,7 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
    * <code>string identity_namespace = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=4741
+   *     See google/container/v1beta1/cluster_service.proto;l=4553
    * @return The identityNamespace.
    */
   @java.lang.Override
@@ -108,7 +110,7 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
    * <code>string identity_namespace = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=4741
+   *     See google/container/v1beta1/cluster_service.proto;l=4553
    * @return The bytes for identityNamespace.
    */
   @java.lang.Override
@@ -126,7 +128,9 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int WORKLOAD_POOL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object workloadPool_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workloadPool_ = "";
   /**
    *
    *
@@ -175,7 +179,9 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int IDENTITY_PROVIDER_FIELD_NUMBER = 3;
-  private volatile java.lang.Object identityProvider_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object identityProvider_ = "";
   /**
    *
    *
@@ -439,12 +445,10 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       identityNamespace_ = "";
-
       workloadPool_ = "";
-
       identityProvider_ = "";
-
       return this;
     }
 
@@ -472,11 +476,24 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
     public com.google.container.v1beta1.WorkloadIdentityConfig buildPartial() {
       com.google.container.v1beta1.WorkloadIdentityConfig result =
           new com.google.container.v1beta1.WorkloadIdentityConfig(this);
-      result.identityNamespace_ = identityNamespace_;
-      result.workloadPool_ = workloadPool_;
-      result.identityProvider_ = identityProvider_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.WorkloadIdentityConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.identityNamespace_ = identityNamespace_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.workloadPool_ = workloadPool_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.identityProvider_ = identityProvider_;
+      }
     }
 
     @java.lang.Override
@@ -527,14 +544,17 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getIdentityNamespace().isEmpty()) {
         identityNamespace_ = other.identityNamespace_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getWorkloadPool().isEmpty()) {
         workloadPool_ = other.workloadPool_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getIdentityProvider().isEmpty()) {
         identityProvider_ = other.identityProvider_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -566,19 +586,19 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
             case 10:
               {
                 identityNamespace_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 workloadPool_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 identityProvider_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -598,6 +618,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object identityNamespace_ = "";
     /**
      *
@@ -609,7 +631,7 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
      * <code>string identity_namespace = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4741
+     *     See google/container/v1beta1/cluster_service.proto;l=4553
      * @return The identityNamespace.
      */
     @java.lang.Deprecated
@@ -634,7 +656,7 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
      * <code>string identity_namespace = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4741
+     *     See google/container/v1beta1/cluster_service.proto;l=4553
      * @return The bytes for identityNamespace.
      */
     @java.lang.Deprecated
@@ -659,7 +681,7 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
      * <code>string identity_namespace = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4741
+     *     See google/container/v1beta1/cluster_service.proto;l=4553
      * @param value The identityNamespace to set.
      * @return This builder for chaining.
      */
@@ -668,8 +690,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       identityNamespace_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -683,13 +705,13 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
      * <code>string identity_namespace = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4741
+     *     See google/container/v1beta1/cluster_service.proto;l=4553
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearIdentityNamespace() {
-
       identityNamespace_ = getDefaultInstance().getIdentityNamespace();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -703,7 +725,7 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
      * <code>string identity_namespace = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4741
+     *     See google/container/v1beta1/cluster_service.proto;l=4553
      * @param value The bytes for identityNamespace to set.
      * @return This builder for chaining.
      */
@@ -713,8 +735,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       identityNamespace_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -780,8 +802,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       workloadPool_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -797,8 +819,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearWorkloadPool() {
-
       workloadPool_ = getDefaultInstance().getWorkloadPool();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -819,8 +841,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workloadPool_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -886,8 +908,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       identityProvider_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -903,8 +925,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearIdentityProvider() {
-
       identityProvider_ = getDefaultInstance().getIdentityProvider();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -925,8 +947,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       identityProvider_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

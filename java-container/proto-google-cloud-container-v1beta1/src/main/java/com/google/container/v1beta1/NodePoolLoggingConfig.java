@@ -110,7 +110,9 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.container.v1beta1.LoggingVariantConfigOrBuilder getVariantConfigOrBuilder() {
-    return getVariantConfig();
+    return variantConfig_ == null
+        ? com.google.container.v1beta1.LoggingVariantConfig.getDefaultInstance()
+        : variantConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -315,10 +317,10 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (variantConfigBuilder_ == null) {
-        variantConfig_ = null;
-      } else {
-        variantConfig_ = null;
+      bitField0_ = 0;
+      variantConfig_ = null;
+      if (variantConfigBuilder_ != null) {
+        variantConfigBuilder_.dispose();
         variantConfigBuilder_ = null;
       }
       return this;
@@ -348,13 +350,19 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
     public com.google.container.v1beta1.NodePoolLoggingConfig buildPartial() {
       com.google.container.v1beta1.NodePoolLoggingConfig result =
           new com.google.container.v1beta1.NodePoolLoggingConfig(this);
-      if (variantConfigBuilder_ == null) {
-        result.variantConfig_ = variantConfig_;
-      } else {
-        result.variantConfig_ = variantConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.NodePoolLoggingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.variantConfig_ =
+            variantConfigBuilder_ == null ? variantConfig_ : variantConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -435,7 +443,7 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getVariantConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -455,6 +463,8 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.container.v1beta1.LoggingVariantConfig variantConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1beta1.LoggingVariantConfig,
@@ -473,7 +483,7 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
      * @return Whether the variantConfig field is set.
      */
     public boolean hasVariantConfig() {
-      return variantConfigBuilder_ != null || variantConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -510,11 +520,11 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         variantConfig_ = value;
-        onChanged();
       } else {
         variantConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -530,11 +540,11 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
         com.google.container.v1beta1.LoggingVariantConfig.Builder builderForValue) {
       if (variantConfigBuilder_ == null) {
         variantConfig_ = builderForValue.build();
-        onChanged();
       } else {
         variantConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -548,19 +558,19 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeVariantConfig(com.google.container.v1beta1.LoggingVariantConfig value) {
       if (variantConfigBuilder_ == null) {
-        if (variantConfig_ != null) {
-          variantConfig_ =
-              com.google.container.v1beta1.LoggingVariantConfig.newBuilder(variantConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && variantConfig_ != null
+            && variantConfig_
+                != com.google.container.v1beta1.LoggingVariantConfig.getDefaultInstance()) {
+          getVariantConfigBuilder().mergeFrom(value);
         } else {
           variantConfig_ = value;
         }
-        onChanged();
       } else {
         variantConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -573,14 +583,13 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.LoggingVariantConfig variant_config = 1;</code>
      */
     public Builder clearVariantConfig() {
-      if (variantConfigBuilder_ == null) {
-        variantConfig_ = null;
-        onChanged();
-      } else {
-        variantConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      variantConfig_ = null;
+      if (variantConfigBuilder_ != null) {
+        variantConfigBuilder_.dispose();
         variantConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -593,7 +602,7 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.LoggingVariantConfig variant_config = 1;</code>
      */
     public com.google.container.v1beta1.LoggingVariantConfig.Builder getVariantConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getVariantConfigFieldBuilder().getBuilder();
     }

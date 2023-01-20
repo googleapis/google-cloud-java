@@ -69,7 +69,9 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
   }
 
   public static final int START_TIME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object startTime_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object startTime_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
   }
 
   public static final int DURATION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object duration_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object duration_ = "";
   /**
    *
    *
@@ -382,10 +386,9 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       startTime_ = "";
-
       duration_ = "";
-
       return this;
     }
 
@@ -413,10 +416,21 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
     public com.google.container.v1.DailyMaintenanceWindow buildPartial() {
       com.google.container.v1.DailyMaintenanceWindow result =
           new com.google.container.v1.DailyMaintenanceWindow(this);
-      result.startTime_ = startTime_;
-      result.duration_ = duration_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.DailyMaintenanceWindow result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.startTime_ = startTime_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.duration_ = duration_;
+      }
     }
 
     @java.lang.Override
@@ -466,10 +480,12 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
       if (other == com.google.container.v1.DailyMaintenanceWindow.getDefaultInstance()) return this;
       if (!other.getStartTime().isEmpty()) {
         startTime_ = other.startTime_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDuration().isEmpty()) {
         duration_ = other.duration_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -501,13 +517,13 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
             case 18:
               {
                 startTime_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 26:
               {
                 duration_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -526,6 +542,8 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object startTime_ = "";
     /**
@@ -594,8 +612,8 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       startTime_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -613,8 +631,8 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearStartTime() {
-
       startTime_ = getDefaultInstance().getStartTime();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -637,8 +655,8 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       startTime_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -713,8 +731,8 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       duration_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -733,8 +751,8 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearDuration() {
-
       duration_ = getDefaultInstance().getDuration();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -758,8 +776,8 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       duration_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

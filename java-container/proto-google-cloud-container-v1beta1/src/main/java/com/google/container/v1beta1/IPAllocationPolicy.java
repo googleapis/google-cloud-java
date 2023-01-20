@@ -395,7 +395,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int USE_IP_ALIASES_FIELD_NUMBER = 1;
-  private boolean useIpAliases_;
+  private boolean useIpAliases_ = false;
   /**
    *
    *
@@ -416,7 +416,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int CREATE_SUBNETWORK_FIELD_NUMBER = 2;
-  private boolean createSubnetwork_;
+  private boolean createSubnetwork_ = false;
   /**
    *
    *
@@ -435,7 +435,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SUBNETWORK_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object subnetworkName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetworkName_ = "";
   /**
    *
    *
@@ -488,7 +490,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int CLUSTER_IPV4_CIDR_FIELD_NUMBER = 4;
-  private volatile java.lang.Object clusterIpv4Cidr_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterIpv4Cidr_ = "";
   /**
    *
    *
@@ -499,7 +503,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1392
+   *     google/container/v1beta1/cluster_service.proto;l=1410
    * @return The clusterIpv4Cidr.
    */
   @java.lang.Override
@@ -525,7 +529,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1392
+   *     google/container/v1beta1/cluster_service.proto;l=1410
    * @return The bytes for clusterIpv4Cidr.
    */
   @java.lang.Override
@@ -543,7 +547,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NODE_IPV4_CIDR_FIELD_NUMBER = 5;
-  private volatile java.lang.Object nodeIpv4Cidr_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nodeIpv4Cidr_ = "";
   /**
    *
    *
@@ -554,7 +560,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1395
+   *     google/container/v1beta1/cluster_service.proto;l=1413
    * @return The nodeIpv4Cidr.
    */
   @java.lang.Override
@@ -580,7 +586,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1395
+   *     google/container/v1beta1/cluster_service.proto;l=1413
    * @return The bytes for nodeIpv4Cidr.
    */
   @java.lang.Override
@@ -598,7 +604,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SERVICES_IPV4_CIDR_FIELD_NUMBER = 6;
-  private volatile java.lang.Object servicesIpv4Cidr_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object servicesIpv4Cidr_ = "";
   /**
    *
    *
@@ -609,7 +617,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1398
+   *     google/container/v1beta1/cluster_service.proto;l=1416
    * @return The servicesIpv4Cidr.
    */
   @java.lang.Override
@@ -635,7 +643,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1398
+   *     google/container/v1beta1/cluster_service.proto;l=1416
    * @return The bytes for servicesIpv4Cidr.
    */
   @java.lang.Override
@@ -653,7 +661,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int CLUSTER_SECONDARY_RANGE_NAME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object clusterSecondaryRangeName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterSecondaryRangeName_ = "";
   /**
    *
    *
@@ -712,7 +722,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SERVICES_SECONDARY_RANGE_NAME_FIELD_NUMBER = 8;
-  private volatile java.lang.Object servicesSecondaryRangeName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object servicesSecondaryRangeName_ = "";
   /**
    *
    *
@@ -771,7 +783,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int CLUSTER_IPV4_CIDR_BLOCK_FIELD_NUMBER = 9;
-  private volatile java.lang.Object clusterIpv4CidrBlock_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterIpv4CidrBlock_ = "";
   /**
    *
    *
@@ -840,7 +854,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NODE_IPV4_CIDR_BLOCK_FIELD_NUMBER = 10;
-  private volatile java.lang.Object nodeIpv4CidrBlock_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nodeIpv4CidrBlock_ = "";
   /**
    *
    *
@@ -907,7 +923,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SERVICES_IPV4_CIDR_BLOCK_FIELD_NUMBER = 11;
-  private volatile java.lang.Object servicesIpv4CidrBlock_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object servicesIpv4CidrBlock_ = "";
   /**
    *
    *
@@ -976,7 +994,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ALLOW_ROUTE_OVERLAP_FIELD_NUMBER = 12;
-  private boolean allowRouteOverlap_;
+  private boolean allowRouteOverlap_ = false;
   /**
    *
    *
@@ -1004,7 +1022,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TPU_IPV4_CIDR_BLOCK_FIELD_NUMBER = 13;
-  private volatile java.lang.Object tpuIpv4CidrBlock_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tpuIpv4CidrBlock_ = "";
   /**
    *
    *
@@ -1075,7 +1095,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int USE_ROUTES_FIELD_NUMBER = 15;
-  private boolean useRoutes_;
+  private boolean useRoutes_ = false;
   /**
    *
    *
@@ -1096,7 +1116,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int STACK_TYPE_FIELD_NUMBER = 16;
-  private int stackType_;
+  private int stackType_ = 0;
   /**
    *
    *
@@ -1125,16 +1145,15 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.container.v1beta1.IPAllocationPolicy.StackType getStackType() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.IPAllocationPolicy.StackType result =
-        com.google.container.v1beta1.IPAllocationPolicy.StackType.valueOf(stackType_);
+        com.google.container.v1beta1.IPAllocationPolicy.StackType.forNumber(stackType_);
     return result == null
         ? com.google.container.v1beta1.IPAllocationPolicy.StackType.UNRECOGNIZED
         : result;
   }
 
   public static final int IPV6_ACCESS_TYPE_FIELD_NUMBER = 17;
-  private int ipv6AccessType_;
+  private int ipv6AccessType_ = 0;
   /**
    *
    *
@@ -1163,21 +1182,23 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.container.v1beta1.IPAllocationPolicy.IPv6AccessType getIpv6AccessType() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.IPAllocationPolicy.IPv6AccessType result =
-        com.google.container.v1beta1.IPAllocationPolicy.IPv6AccessType.valueOf(ipv6AccessType_);
+        com.google.container.v1beta1.IPAllocationPolicy.IPv6AccessType.forNumber(ipv6AccessType_);
     return result == null
         ? com.google.container.v1beta1.IPAllocationPolicy.IPv6AccessType.UNRECOGNIZED
         : result;
   }
 
   public static final int SUBNET_IPV6_CIDR_BLOCK_FIELD_NUMBER = 22;
-  private volatile java.lang.Object subnetIpv6CidrBlock_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetIpv6CidrBlock_ = "";
   /**
    *
    *
    * <pre>
-   * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and pods.
+   * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and
+   * pods.
    * </pre>
    *
    * <code>string subnet_ipv6_cidr_block = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1200,7 +1221,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and pods.
+   * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and
+   * pods.
    * </pre>
    *
    * <code>string subnet_ipv6_cidr_block = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1221,7 +1243,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SERVICES_IPV6_CIDR_BLOCK_FIELD_NUMBER = 23;
-  private volatile java.lang.Object servicesIpv6CidrBlock_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object servicesIpv6CidrBlock_ = "";
   /**
    *
    *
@@ -1632,42 +1656,25 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       useIpAliases_ = false;
-
       createSubnetwork_ = false;
-
       subnetworkName_ = "";
-
       clusterIpv4Cidr_ = "";
-
       nodeIpv4Cidr_ = "";
-
       servicesIpv4Cidr_ = "";
-
       clusterSecondaryRangeName_ = "";
-
       servicesSecondaryRangeName_ = "";
-
       clusterIpv4CidrBlock_ = "";
-
       nodeIpv4CidrBlock_ = "";
-
       servicesIpv4CidrBlock_ = "";
-
       allowRouteOverlap_ = false;
-
       tpuIpv4CidrBlock_ = "";
-
       useRoutes_ = false;
-
       stackType_ = 0;
-
       ipv6AccessType_ = 0;
-
       subnetIpv6CidrBlock_ = "";
-
       servicesIpv6CidrBlock_ = "";
-
       return this;
     }
 
@@ -1695,26 +1702,69 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     public com.google.container.v1beta1.IPAllocationPolicy buildPartial() {
       com.google.container.v1beta1.IPAllocationPolicy result =
           new com.google.container.v1beta1.IPAllocationPolicy(this);
-      result.useIpAliases_ = useIpAliases_;
-      result.createSubnetwork_ = createSubnetwork_;
-      result.subnetworkName_ = subnetworkName_;
-      result.clusterIpv4Cidr_ = clusterIpv4Cidr_;
-      result.nodeIpv4Cidr_ = nodeIpv4Cidr_;
-      result.servicesIpv4Cidr_ = servicesIpv4Cidr_;
-      result.clusterSecondaryRangeName_ = clusterSecondaryRangeName_;
-      result.servicesSecondaryRangeName_ = servicesSecondaryRangeName_;
-      result.clusterIpv4CidrBlock_ = clusterIpv4CidrBlock_;
-      result.nodeIpv4CidrBlock_ = nodeIpv4CidrBlock_;
-      result.servicesIpv4CidrBlock_ = servicesIpv4CidrBlock_;
-      result.allowRouteOverlap_ = allowRouteOverlap_;
-      result.tpuIpv4CidrBlock_ = tpuIpv4CidrBlock_;
-      result.useRoutes_ = useRoutes_;
-      result.stackType_ = stackType_;
-      result.ipv6AccessType_ = ipv6AccessType_;
-      result.subnetIpv6CidrBlock_ = subnetIpv6CidrBlock_;
-      result.servicesIpv6CidrBlock_ = servicesIpv6CidrBlock_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.IPAllocationPolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.useIpAliases_ = useIpAliases_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createSubnetwork_ = createSubnetwork_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.subnetworkName_ = subnetworkName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.clusterIpv4Cidr_ = clusterIpv4Cidr_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.nodeIpv4Cidr_ = nodeIpv4Cidr_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.servicesIpv4Cidr_ = servicesIpv4Cidr_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.clusterSecondaryRangeName_ = clusterSecondaryRangeName_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.servicesSecondaryRangeName_ = servicesSecondaryRangeName_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.clusterIpv4CidrBlock_ = clusterIpv4CidrBlock_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.nodeIpv4CidrBlock_ = nodeIpv4CidrBlock_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.servicesIpv4CidrBlock_ = servicesIpv4CidrBlock_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.allowRouteOverlap_ = allowRouteOverlap_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.tpuIpv4CidrBlock_ = tpuIpv4CidrBlock_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.useRoutes_ = useRoutes_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.stackType_ = stackType_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.ipv6AccessType_ = ipv6AccessType_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.subnetIpv6CidrBlock_ = subnetIpv6CidrBlock_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.servicesIpv6CidrBlock_ = servicesIpv6CidrBlock_;
+      }
     }
 
     @java.lang.Override
@@ -1771,38 +1821,47 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getSubnetworkName().isEmpty()) {
         subnetworkName_ = other.subnetworkName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getClusterIpv4Cidr().isEmpty()) {
         clusterIpv4Cidr_ = other.clusterIpv4Cidr_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getNodeIpv4Cidr().isEmpty()) {
         nodeIpv4Cidr_ = other.nodeIpv4Cidr_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getServicesIpv4Cidr().isEmpty()) {
         servicesIpv4Cidr_ = other.servicesIpv4Cidr_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getClusterSecondaryRangeName().isEmpty()) {
         clusterSecondaryRangeName_ = other.clusterSecondaryRangeName_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getServicesSecondaryRangeName().isEmpty()) {
         servicesSecondaryRangeName_ = other.servicesSecondaryRangeName_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getClusterIpv4CidrBlock().isEmpty()) {
         clusterIpv4CidrBlock_ = other.clusterIpv4CidrBlock_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getNodeIpv4CidrBlock().isEmpty()) {
         nodeIpv4CidrBlock_ = other.nodeIpv4CidrBlock_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.getServicesIpv4CidrBlock().isEmpty()) {
         servicesIpv4CidrBlock_ = other.servicesIpv4CidrBlock_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.getAllowRouteOverlap() != false) {
@@ -1810,6 +1869,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getTpuIpv4CidrBlock().isEmpty()) {
         tpuIpv4CidrBlock_ = other.tpuIpv4CidrBlock_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.getUseRoutes() != false) {
@@ -1823,10 +1883,12 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getSubnetIpv6CidrBlock().isEmpty()) {
         subnetIpv6CidrBlock_ = other.subnetIpv6CidrBlock_;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (!other.getServicesIpv6CidrBlock().isEmpty()) {
         servicesIpv6CidrBlock_ = other.servicesIpv6CidrBlock_;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1858,109 +1920,109 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
             case 8:
               {
                 useIpAliases_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 createSubnetwork_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 subnetworkName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 clusterIpv4Cidr_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 nodeIpv4Cidr_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 servicesIpv4Cidr_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 clusterSecondaryRangeName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 servicesSecondaryRangeName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 clusterIpv4CidrBlock_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 nodeIpv4CidrBlock_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
               {
                 servicesIpv4CidrBlock_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 96:
               {
                 allowRouteOverlap_ = input.readBool();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 96
             case 106:
               {
                 tpuIpv4CidrBlock_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 120:
               {
                 useRoutes_ = input.readBool();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 120
             case 128:
               {
                 stackType_ = input.readEnum();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 128
             case 136:
               {
                 ipv6AccessType_ = input.readEnum();
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 136
             case 178:
               {
                 subnetIpv6CidrBlock_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 178
             case 186:
               {
                 servicesIpv6CidrBlock_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00020000;
                 break;
               } // case 186
             default:
@@ -1979,6 +2041,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean useIpAliases_;
     /**
@@ -2017,6 +2081,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     public Builder setUseIpAliases(boolean value) {
 
       useIpAliases_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2035,7 +2100,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearUseIpAliases() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       useIpAliases_ = false;
       onChanged();
       return this;
@@ -2074,6 +2139,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     public Builder setCreateSubnetwork(boolean value) {
 
       createSubnetwork_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2090,7 +2156,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearCreateSubnetwork() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       createSubnetwork_ = false;
       onChanged();
       return this;
@@ -2163,8 +2229,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       subnetworkName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2182,8 +2248,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearSubnetworkName() {
-
       subnetworkName_ = getDefaultInstance().getSubnetworkName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2206,8 +2272,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subnetworkName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2223,7 +2289,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1392
+     *     google/container/v1beta1/cluster_service.proto;l=1410
      * @return The clusterIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2248,7 +2314,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1392
+     *     google/container/v1beta1/cluster_service.proto;l=1410
      * @return The bytes for clusterIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2273,7 +2339,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1392
+     *     google/container/v1beta1/cluster_service.proto;l=1410
      * @param value The clusterIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2282,8 +2348,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterIpv4Cidr_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2297,13 +2363,13 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1392
+     *     google/container/v1beta1/cluster_service.proto;l=1410
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearClusterIpv4Cidr() {
-
       clusterIpv4Cidr_ = getDefaultInstance().getClusterIpv4Cidr();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2317,7 +2383,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1392
+     *     google/container/v1beta1/cluster_service.proto;l=1410
      * @param value The bytes for clusterIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2327,8 +2393,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterIpv4Cidr_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2344,7 +2410,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1395
+     *     google/container/v1beta1/cluster_service.proto;l=1413
      * @return The nodeIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2369,7 +2435,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1395
+     *     google/container/v1beta1/cluster_service.proto;l=1413
      * @return The bytes for nodeIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2394,7 +2460,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1395
+     *     google/container/v1beta1/cluster_service.proto;l=1413
      * @param value The nodeIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2403,8 +2469,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       nodeIpv4Cidr_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2418,13 +2484,13 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1395
+     *     google/container/v1beta1/cluster_service.proto;l=1413
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearNodeIpv4Cidr() {
-
       nodeIpv4Cidr_ = getDefaultInstance().getNodeIpv4Cidr();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2438,7 +2504,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1395
+     *     google/container/v1beta1/cluster_service.proto;l=1413
      * @param value The bytes for nodeIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2448,8 +2514,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nodeIpv4Cidr_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2465,7 +2531,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1398
+     *     google/container/v1beta1/cluster_service.proto;l=1416
      * @return The servicesIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2490,7 +2556,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1398
+     *     google/container/v1beta1/cluster_service.proto;l=1416
      * @return The bytes for servicesIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2515,7 +2581,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1398
+     *     google/container/v1beta1/cluster_service.proto;l=1416
      * @param value The servicesIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2524,8 +2590,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       servicesIpv4Cidr_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2539,13 +2605,13 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1398
+     *     google/container/v1beta1/cluster_service.proto;l=1416
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearServicesIpv4Cidr() {
-
       servicesIpv4Cidr_ = getDefaultInstance().getServicesIpv4Cidr();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2559,7 +2625,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1398
+     *     google/container/v1beta1/cluster_service.proto;l=1416
      * @param value The bytes for servicesIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2569,8 +2635,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       servicesIpv4Cidr_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2651,8 +2717,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterSecondaryRangeName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2673,8 +2739,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearClusterSecondaryRangeName() {
-
       clusterSecondaryRangeName_ = getDefaultInstance().getClusterSecondaryRangeName();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2700,8 +2766,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterSecondaryRangeName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2782,8 +2848,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       servicesSecondaryRangeName_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2804,8 +2870,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearServicesSecondaryRangeName() {
-
       servicesSecondaryRangeName_ = getDefaultInstance().getServicesSecondaryRangeName();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2831,8 +2897,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       servicesSecondaryRangeName_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2928,8 +2994,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2955,8 +3021,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearClusterIpv4CidrBlock() {
-
       clusterIpv4CidrBlock_ = getDefaultInstance().getClusterIpv4CidrBlock();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2987,8 +3053,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3081,8 +3147,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       nodeIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3107,8 +3173,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearNodeIpv4CidrBlock() {
-
       nodeIpv4CidrBlock_ = getDefaultInstance().getNodeIpv4CidrBlock();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3138,8 +3204,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nodeIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3235,8 +3301,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       servicesIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3262,8 +3328,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearServicesIpv4CidrBlock() {
-
       servicesIpv4CidrBlock_ = getDefaultInstance().getServicesIpv4CidrBlock();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3294,8 +3360,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       servicesIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3351,6 +3417,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     public Builder setAllowRouteOverlap(boolean value) {
 
       allowRouteOverlap_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3376,7 +3443,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAllowRouteOverlap() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       allowRouteOverlap_ = false;
       onChanged();
       return this;
@@ -3476,8 +3543,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       tpuIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3504,8 +3571,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTpuIpv4CidrBlock() {
-
       tpuIpv4CidrBlock_ = getDefaultInstance().getTpuIpv4CidrBlock();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3537,8 +3604,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tpuIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3580,6 +3647,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     public Builder setUseRoutes(boolean value) {
 
       useRoutes_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3598,7 +3666,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearUseRoutes() {
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       useRoutes_ = false;
       onChanged();
       return this;
@@ -3633,8 +3701,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setStackTypeValue(int value) {
-
       stackType_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3651,9 +3719,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.container.v1beta1.IPAllocationPolicy.StackType getStackType() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.IPAllocationPolicy.StackType result =
-          com.google.container.v1beta1.IPAllocationPolicy.StackType.valueOf(stackType_);
+          com.google.container.v1beta1.IPAllocationPolicy.StackType.forNumber(stackType_);
       return result == null
           ? com.google.container.v1beta1.IPAllocationPolicy.StackType.UNRECOGNIZED
           : result;
@@ -3674,7 +3741,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00004000;
       stackType_ = value.getNumber();
       onChanged();
       return this;
@@ -3691,7 +3758,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearStackType() {
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       stackType_ = 0;
       onChanged();
       return this;
@@ -3728,8 +3795,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setIpv6AccessTypeValue(int value) {
-
       ipv6AccessType_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3747,9 +3814,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.container.v1beta1.IPAllocationPolicy.IPv6AccessType getIpv6AccessType() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.IPAllocationPolicy.IPv6AccessType result =
-          com.google.container.v1beta1.IPAllocationPolicy.IPv6AccessType.valueOf(ipv6AccessType_);
+          com.google.container.v1beta1.IPAllocationPolicy.IPv6AccessType.forNumber(ipv6AccessType_);
       return result == null
           ? com.google.container.v1beta1.IPAllocationPolicy.IPv6AccessType.UNRECOGNIZED
           : result;
@@ -3772,7 +3838,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00008000;
       ipv6AccessType_ = value.getNumber();
       onChanged();
       return this;
@@ -3790,7 +3856,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearIpv6AccessType() {
-
+      bitField0_ = (bitField0_ & ~0x00008000);
       ipv6AccessType_ = 0;
       onChanged();
       return this;
@@ -3801,7 +3867,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and pods.
+     * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and
+     * pods.
      * </pre>
      *
      * <code>string subnet_ipv6_cidr_block = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3823,7 +3890,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and pods.
+     * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and
+     * pods.
      * </pre>
      *
      * <code>string subnet_ipv6_cidr_block = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3845,7 +3913,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and pods.
+     * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and
+     * pods.
      * </pre>
      *
      * <code>string subnet_ipv6_cidr_block = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3857,8 +3926,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       subnetIpv6CidrBlock_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -3866,7 +3935,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and pods.
+     * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and
+     * pods.
      * </pre>
      *
      * <code>string subnet_ipv6_cidr_block = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3874,8 +3944,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearSubnetIpv6CidrBlock() {
-
       subnetIpv6CidrBlock_ = getDefaultInstance().getSubnetIpv6CidrBlock();
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -3883,7 +3953,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and pods.
+     * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and
+     * pods.
      * </pre>
      *
      * <code>string subnet_ipv6_cidr_block = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3896,8 +3967,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subnetIpv6CidrBlock_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -3966,8 +4037,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       servicesIpv6CidrBlock_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -3984,8 +4055,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearServicesIpv6CidrBlock() {
-
       servicesIpv6CidrBlock_ = getDefaultInstance().getServicesIpv6CidrBlock();
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -4007,8 +4078,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       servicesIpv6CidrBlock_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }

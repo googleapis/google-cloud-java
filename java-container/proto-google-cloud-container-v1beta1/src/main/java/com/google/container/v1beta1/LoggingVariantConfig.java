@@ -227,7 +227,7 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int VARIANT_FIELD_NUMBER = 1;
-  private int variant_;
+  private int variant_ = 0;
   /**
    *
    *
@@ -256,9 +256,8 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.container.v1beta1.LoggingVariantConfig.Variant getVariant() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.LoggingVariantConfig.Variant result =
-        com.google.container.v1beta1.LoggingVariantConfig.Variant.valueOf(variant_);
+        com.google.container.v1beta1.LoggingVariantConfig.Variant.forNumber(variant_);
     return result == null
         ? com.google.container.v1beta1.LoggingVariantConfig.Variant.UNRECOGNIZED
         : result;
@@ -465,8 +464,8 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       variant_ = 0;
-
       return this;
     }
 
@@ -494,9 +493,18 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
     public com.google.container.v1beta1.LoggingVariantConfig buildPartial() {
       com.google.container.v1beta1.LoggingVariantConfig result =
           new com.google.container.v1beta1.LoggingVariantConfig(this);
-      result.variant_ = variant_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.LoggingVariantConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.variant_ = variant_;
+      }
     }
 
     @java.lang.Override
@@ -577,7 +585,7 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 variant_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -596,6 +604,8 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int variant_ = 0;
     /**
@@ -626,8 +636,8 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setVariantValue(int value) {
-
       variant_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -644,9 +654,8 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.container.v1beta1.LoggingVariantConfig.Variant getVariant() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.LoggingVariantConfig.Variant result =
-          com.google.container.v1beta1.LoggingVariantConfig.Variant.valueOf(variant_);
+          com.google.container.v1beta1.LoggingVariantConfig.Variant.forNumber(variant_);
       return result == null
           ? com.google.container.v1beta1.LoggingVariantConfig.Variant.UNRECOGNIZED
           : result;
@@ -667,7 +676,7 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       variant_ = value.getNumber();
       onChanged();
       return this;
@@ -684,7 +693,7 @@ public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearVariant() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       variant_ = 0;
       onChanged();
       return this;

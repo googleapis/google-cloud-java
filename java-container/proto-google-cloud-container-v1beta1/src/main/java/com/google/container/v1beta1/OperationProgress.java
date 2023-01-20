@@ -289,7 +289,9 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -733,8 +735,8 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         valueCase_ = 0;
         value_ = null;
         return this;
@@ -764,19 +766,25 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       public com.google.container.v1beta1.OperationProgress.Metric buildPartial() {
         com.google.container.v1beta1.OperationProgress.Metric result =
             new com.google.container.v1beta1.OperationProgress.Metric(this);
-        result.name_ = name_;
-        if (valueCase_ == 2) {
-          result.value_ = value_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (valueCase_ == 3) {
-          result.value_ = value_;
-        }
-        if (valueCase_ == 4) {
-          result.value_ = value_;
-        }
-        result.valueCase_ = valueCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.container.v1beta1.OperationProgress.Metric result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.container.v1beta1.OperationProgress.Metric result) {
+        result.valueCase_ = valueCase_;
+        result.value_ = this.value_;
       }
 
       @java.lang.Override
@@ -829,6 +837,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         switch (other.getValueCase()) {
@@ -883,7 +892,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
@@ -935,6 +944,8 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -997,8 +1008,8 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1014,8 +1025,8 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1036,8 +1047,8 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1086,6 +1097,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder setIntValue(long value) {
+
         valueCase_ = 2;
         value_ = value;
         onChanged();
@@ -1155,6 +1167,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder setDoubleValue(double value) {
+
         valueCase_ = 3;
         value_ = value;
         onChanged();
@@ -1379,7 +1392,9 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1430,7 +1445,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int STATUS_FIELD_NUMBER = 2;
-  private int status_;
+  private int status_ = 0;
   /**
    *
    *
@@ -1461,13 +1476,14 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.container.v1beta1.Operation.Status getStatus() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.Operation.Status result =
-        com.google.container.v1beta1.Operation.Status.valueOf(status_);
+        com.google.container.v1beta1.Operation.Status.forNumber(status_);
     return result == null ? com.google.container.v1beta1.Operation.Status.UNRECOGNIZED : result;
   }
 
   public static final int METRICS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1beta1.OperationProgress.Metric> metrics_;
   /**
    *
@@ -1563,6 +1579,8 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int STAGES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1beta1.OperationProgress> stages_;
   /**
    *
@@ -1859,24 +1877,23 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       status_ = 0;
-
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
       } else {
         metrics_ = null;
         metricsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (stagesBuilder_ == null) {
         stages_ = java.util.Collections.emptyList();
       } else {
         stages_ = null;
         stagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -1904,29 +1921,43 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     public com.google.container.v1beta1.OperationProgress buildPartial() {
       com.google.container.v1beta1.OperationProgress result =
           new com.google.container.v1beta1.OperationProgress(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.status_ = status_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.container.v1beta1.OperationProgress result) {
       if (metricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           metrics_ = java.util.Collections.unmodifiableList(metrics_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.metrics_ = metrics_;
       } else {
         result.metrics_ = metricsBuilder_.build();
       }
       if (stagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           stages_ = java.util.Collections.unmodifiableList(stages_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.stages_ = stages_;
       } else {
         result.stages_ = stagesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.OperationProgress result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.status_ = status_;
+      }
     }
 
     @java.lang.Override
@@ -1976,6 +2007,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       if (other == com.google.container.v1beta1.OperationProgress.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.status_ != 0) {
@@ -1985,7 +2017,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         if (!other.metrics_.isEmpty()) {
           if (metrics_.isEmpty()) {
             metrics_ = other.metrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureMetricsIsMutable();
             metrics_.addAll(other.metrics_);
@@ -1998,7 +2030,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
             metricsBuilder_.dispose();
             metricsBuilder_ = null;
             metrics_ = other.metrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             metricsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMetricsFieldBuilder()
@@ -2012,7 +2044,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         if (!other.stages_.isEmpty()) {
           if (stages_.isEmpty()) {
             stages_ = other.stages_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureStagesIsMutable();
             stages_.addAll(other.stages_);
@@ -2025,7 +2057,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
             stagesBuilder_.dispose();
             stagesBuilder_ = null;
             stages_ = other.stages_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
             stagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStagesFieldBuilder()
@@ -2064,13 +2096,13 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 status_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -2183,8 +2215,8 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2201,8 +2233,8 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2224,8 +2256,8 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2261,8 +2293,8 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
-
       status_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2280,9 +2312,8 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.container.v1beta1.Operation.Status getStatus() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.Operation.Status result =
-          com.google.container.v1beta1.Operation.Status.valueOf(status_);
+          com.google.container.v1beta1.Operation.Status.forNumber(status_);
       return result == null ? com.google.container.v1beta1.Operation.Status.UNRECOGNIZED : result;
     }
     /**
@@ -2302,7 +2333,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -2320,7 +2351,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       status_ = 0;
       onChanged();
       return this;
@@ -2330,11 +2361,11 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         metrics_ =
             new java.util.ArrayList<com.google.container.v1beta1.OperationProgress.Metric>(
                 metrics_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2608,7 +2639,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     public Builder clearMetrics() {
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         metricsBuilder_.clear();
@@ -2769,7 +2800,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
                 com.google.container.v1beta1.OperationProgress.Metric,
                 com.google.container.v1beta1.OperationProgress.Metric.Builder,
                 com.google.container.v1beta1.OperationProgress.MetricOrBuilder>(
-                metrics_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                metrics_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         metrics_ = null;
       }
       return metricsBuilder_;
@@ -2779,9 +2810,9 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureStagesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         stages_ = new java.util.ArrayList<com.google.container.v1beta1.OperationProgress>(stages_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2997,7 +3028,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     public Builder clearStages() {
       if (stagesBuilder_ == null) {
         stages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         stagesBuilder_.clear();
@@ -3119,7 +3150,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
                 com.google.container.v1beta1.OperationProgress,
                 com.google.container.v1beta1.OperationProgress.Builder,
                 com.google.container.v1beta1.OperationProgressOrBuilder>(
-                stages_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                stages_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         stages_ = null;
       }
       return stagesBuilder_;

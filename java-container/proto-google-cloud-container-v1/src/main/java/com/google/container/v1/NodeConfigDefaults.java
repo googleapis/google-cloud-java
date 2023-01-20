@@ -110,7 +110,9 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.container.v1.GcfsConfigOrBuilder getGcfsConfigOrBuilder() {
-    return getGcfsConfig();
+    return gcfsConfig_ == null
+        ? com.google.container.v1.GcfsConfig.getDefaultInstance()
+        : gcfsConfig_;
   }
 
   public static final int LOGGING_CONFIG_FIELD_NUMBER = 3;
@@ -158,7 +160,9 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.container.v1.NodePoolLoggingConfigOrBuilder getLoggingConfigOrBuilder() {
-    return getLoggingConfig();
+    return loggingConfig_ == null
+        ? com.google.container.v1.NodePoolLoggingConfig.getDefaultInstance()
+        : loggingConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -377,16 +381,15 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (gcfsConfigBuilder_ == null) {
-        gcfsConfig_ = null;
-      } else {
-        gcfsConfig_ = null;
+      bitField0_ = 0;
+      gcfsConfig_ = null;
+      if (gcfsConfigBuilder_ != null) {
+        gcfsConfigBuilder_.dispose();
         gcfsConfigBuilder_ = null;
       }
-      if (loggingConfigBuilder_ == null) {
-        loggingConfig_ = null;
-      } else {
-        loggingConfig_ = null;
+      loggingConfig_ = null;
+      if (loggingConfigBuilder_ != null) {
+        loggingConfigBuilder_.dispose();
         loggingConfigBuilder_ = null;
       }
       return this;
@@ -416,18 +419,22 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     public com.google.container.v1.NodeConfigDefaults buildPartial() {
       com.google.container.v1.NodeConfigDefaults result =
           new com.google.container.v1.NodeConfigDefaults(this);
-      if (gcfsConfigBuilder_ == null) {
-        result.gcfsConfig_ = gcfsConfig_;
-      } else {
-        result.gcfsConfig_ = gcfsConfigBuilder_.build();
-      }
-      if (loggingConfigBuilder_ == null) {
-        result.loggingConfig_ = loggingConfig_;
-      } else {
-        result.loggingConfig_ = loggingConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.NodeConfigDefaults result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.gcfsConfig_ = gcfsConfigBuilder_ == null ? gcfsConfig_ : gcfsConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.loggingConfig_ =
+            loggingConfigBuilder_ == null ? loggingConfig_ : loggingConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -510,13 +517,13 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getGcfsConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(getLoggingConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -536,6 +543,8 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.container.v1.GcfsConfig gcfsConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.GcfsConfig,
@@ -554,7 +563,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      * @return Whether the gcfsConfig field is set.
      */
     public boolean hasGcfsConfig() {
-      return gcfsConfigBuilder_ != null || gcfsConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -591,11 +600,11 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         gcfsConfig_ = value;
-        onChanged();
       } else {
         gcfsConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -610,11 +619,11 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     public Builder setGcfsConfig(com.google.container.v1.GcfsConfig.Builder builderForValue) {
       if (gcfsConfigBuilder_ == null) {
         gcfsConfig_ = builderForValue.build();
-        onChanged();
       } else {
         gcfsConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -628,19 +637,18 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeGcfsConfig(com.google.container.v1.GcfsConfig value) {
       if (gcfsConfigBuilder_ == null) {
-        if (gcfsConfig_ != null) {
-          gcfsConfig_ =
-              com.google.container.v1.GcfsConfig.newBuilder(gcfsConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && gcfsConfig_ != null
+            && gcfsConfig_ != com.google.container.v1.GcfsConfig.getDefaultInstance()) {
+          getGcfsConfigBuilder().mergeFrom(value);
         } else {
           gcfsConfig_ = value;
         }
-        onChanged();
       } else {
         gcfsConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -653,14 +661,13 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
      */
     public Builder clearGcfsConfig() {
-      if (gcfsConfigBuilder_ == null) {
-        gcfsConfig_ = null;
-        onChanged();
-      } else {
-        gcfsConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      gcfsConfig_ = null;
+      if (gcfsConfigBuilder_ != null) {
+        gcfsConfigBuilder_.dispose();
         gcfsConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -673,7 +680,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
      */
     public com.google.container.v1.GcfsConfig.Builder getGcfsConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getGcfsConfigFieldBuilder().getBuilder();
     }
@@ -739,7 +746,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      * @return Whether the loggingConfig field is set.
      */
     public boolean hasLoggingConfig() {
-      return loggingConfigBuilder_ != null || loggingConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -776,11 +783,11 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         loggingConfig_ = value;
-        onChanged();
       } else {
         loggingConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -796,11 +803,11 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         com.google.container.v1.NodePoolLoggingConfig.Builder builderForValue) {
       if (loggingConfigBuilder_ == null) {
         loggingConfig_ = builderForValue.build();
-        onChanged();
       } else {
         loggingConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -814,19 +821,19 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeLoggingConfig(com.google.container.v1.NodePoolLoggingConfig value) {
       if (loggingConfigBuilder_ == null) {
-        if (loggingConfig_ != null) {
-          loggingConfig_ =
-              com.google.container.v1.NodePoolLoggingConfig.newBuilder(loggingConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && loggingConfig_ != null
+            && loggingConfig_
+                != com.google.container.v1.NodePoolLoggingConfig.getDefaultInstance()) {
+          getLoggingConfigBuilder().mergeFrom(value);
         } else {
           loggingConfig_ = value;
         }
-        onChanged();
       } else {
         loggingConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -839,14 +846,13 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 3;</code>
      */
     public Builder clearLoggingConfig() {
-      if (loggingConfigBuilder_ == null) {
-        loggingConfig_ = null;
-        onChanged();
-      } else {
-        loggingConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      loggingConfig_ = null;
+      if (loggingConfigBuilder_ != null) {
+        loggingConfigBuilder_.dispose();
         loggingConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -859,7 +865,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 3;</code>
      */
     public com.google.container.v1.NodePoolLoggingConfig.Builder getLoggingConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getLoggingConfigFieldBuilder().getBuilder();
     }

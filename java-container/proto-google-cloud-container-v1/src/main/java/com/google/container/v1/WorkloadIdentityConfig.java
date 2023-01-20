@@ -69,7 +69,9 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int WORKLOAD_POOL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object workloadPool_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workloadPool_ = "";
   /**
    *
    *
@@ -315,8 +317,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       workloadPool_ = "";
-
       return this;
     }
 
@@ -344,9 +346,18 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
     public com.google.container.v1.WorkloadIdentityConfig buildPartial() {
       com.google.container.v1.WorkloadIdentityConfig result =
           new com.google.container.v1.WorkloadIdentityConfig(this);
-      result.workloadPool_ = workloadPool_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.WorkloadIdentityConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.workloadPool_ = workloadPool_;
+      }
     }
 
     @java.lang.Override
@@ -396,6 +407,7 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
       if (other == com.google.container.v1.WorkloadIdentityConfig.getDefaultInstance()) return this;
       if (!other.getWorkloadPool().isEmpty()) {
         workloadPool_ = other.workloadPool_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -427,7 +439,7 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
             case 18:
               {
                 workloadPool_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             default:
@@ -446,6 +458,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object workloadPool_ = "";
     /**
@@ -508,8 +522,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       workloadPool_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -525,8 +539,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearWorkloadPool() {
-
       workloadPool_ = getDefaultInstance().getWorkloadPool();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -547,8 +561,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workloadPool_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

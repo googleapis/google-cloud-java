@@ -67,7 +67,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AUTO_UPGRADE_FIELD_NUMBER = 1;
-  private boolean autoUpgrade_;
+  private boolean autoUpgrade_ = false;
   /**
    *
    *
@@ -85,7 +85,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AUTO_REPAIR_FIELD_NUMBER = 2;
-  private boolean autoRepair_;
+  private boolean autoRepair_ = false;
   /**
    *
    *
@@ -147,7 +147,9 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1beta1.AutoUpgradeOptionsOrBuilder getUpgradeOptionsOrBuilder() {
-    return getUpgradeOptions();
+    return upgradeOptions_ == null
+        ? com.google.container.v1beta1.AutoUpgradeOptions.getDefaultInstance()
+        : upgradeOptions_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -371,14 +373,12 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       autoUpgrade_ = false;
-
       autoRepair_ = false;
-
-      if (upgradeOptionsBuilder_ == null) {
-        upgradeOptions_ = null;
-      } else {
-        upgradeOptions_ = null;
+      upgradeOptions_ = null;
+      if (upgradeOptionsBuilder_ != null) {
+        upgradeOptionsBuilder_.dispose();
         upgradeOptionsBuilder_ = null;
       }
       return this;
@@ -408,15 +408,25 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1beta1.NodeManagement buildPartial() {
       com.google.container.v1beta1.NodeManagement result =
           new com.google.container.v1beta1.NodeManagement(this);
-      result.autoUpgrade_ = autoUpgrade_;
-      result.autoRepair_ = autoRepair_;
-      if (upgradeOptionsBuilder_ == null) {
-        result.upgradeOptions_ = upgradeOptions_;
-      } else {
-        result.upgradeOptions_ = upgradeOptionsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.NodeManagement result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.autoUpgrade_ = autoUpgrade_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.autoRepair_ = autoRepair_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.upgradeOptions_ =
+            upgradeOptionsBuilder_ == null ? upgradeOptions_ : upgradeOptionsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -502,19 +512,19 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 autoUpgrade_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 autoRepair_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 82:
               {
                 input.readMessage(getUpgradeOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 82
             default:
@@ -533,6 +543,8 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean autoUpgrade_;
     /**
@@ -565,6 +577,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
     public Builder setAutoUpgrade(boolean value) {
 
       autoUpgrade_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -580,7 +593,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAutoUpgrade() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       autoUpgrade_ = false;
       onChanged();
       return this;
@@ -617,6 +630,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
     public Builder setAutoRepair(boolean value) {
 
       autoRepair_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -632,7 +646,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAutoRepair() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       autoRepair_ = false;
       onChanged();
       return this;
@@ -656,7 +670,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the upgradeOptions field is set.
      */
     public boolean hasUpgradeOptions() {
-      return upgradeOptionsBuilder_ != null || upgradeOptions_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -693,11 +707,11 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         upgradeOptions_ = value;
-        onChanged();
       } else {
         upgradeOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -713,11 +727,11 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
         com.google.container.v1beta1.AutoUpgradeOptions.Builder builderForValue) {
       if (upgradeOptionsBuilder_ == null) {
         upgradeOptions_ = builderForValue.build();
-        onChanged();
       } else {
         upgradeOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -731,19 +745,19 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpgradeOptions(com.google.container.v1beta1.AutoUpgradeOptions value) {
       if (upgradeOptionsBuilder_ == null) {
-        if (upgradeOptions_ != null) {
-          upgradeOptions_ =
-              com.google.container.v1beta1.AutoUpgradeOptions.newBuilder(upgradeOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && upgradeOptions_ != null
+            && upgradeOptions_
+                != com.google.container.v1beta1.AutoUpgradeOptions.getDefaultInstance()) {
+          getUpgradeOptionsBuilder().mergeFrom(value);
         } else {
           upgradeOptions_ = value;
         }
-        onChanged();
       } else {
         upgradeOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -756,14 +770,13 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.AutoUpgradeOptions upgrade_options = 10;</code>
      */
     public Builder clearUpgradeOptions() {
-      if (upgradeOptionsBuilder_ == null) {
-        upgradeOptions_ = null;
-        onChanged();
-      } else {
-        upgradeOptions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      upgradeOptions_ = null;
+      if (upgradeOptionsBuilder_ != null) {
+        upgradeOptionsBuilder_.dispose();
         upgradeOptionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -776,7 +789,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.AutoUpgradeOptions upgrade_options = 10;</code>
      */
     public com.google.container.v1beta1.AutoUpgradeOptions.Builder getUpgradeOptionsBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpgradeOptionsFieldBuilder().getBuilder();
     }

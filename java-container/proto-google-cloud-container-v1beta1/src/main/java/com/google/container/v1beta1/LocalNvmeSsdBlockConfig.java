@@ -67,7 +67,7 @@ public final class LocalNvmeSsdBlockConfig extends com.google.protobuf.Generated
   }
 
   public static final int LOCAL_SSD_COUNT_FIELD_NUMBER = 1;
-  private int localSsdCount_;
+  private int localSsdCount_ = 0;
   /**
    *
    *
@@ -288,8 +288,8 @@ public final class LocalNvmeSsdBlockConfig extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       localSsdCount_ = 0;
-
       return this;
     }
 
@@ -317,9 +317,18 @@ public final class LocalNvmeSsdBlockConfig extends com.google.protobuf.Generated
     public com.google.container.v1beta1.LocalNvmeSsdBlockConfig buildPartial() {
       com.google.container.v1beta1.LocalNvmeSsdBlockConfig result =
           new com.google.container.v1beta1.LocalNvmeSsdBlockConfig(this);
-      result.localSsdCount_ = localSsdCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.LocalNvmeSsdBlockConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.localSsdCount_ = localSsdCount_;
+      }
     }
 
     @java.lang.Override
@@ -400,7 +409,7 @@ public final class LocalNvmeSsdBlockConfig extends com.google.protobuf.Generated
             case 8:
               {
                 localSsdCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -419,6 +428,8 @@ public final class LocalNvmeSsdBlockConfig extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int localSsdCount_;
     /**
@@ -463,6 +474,7 @@ public final class LocalNvmeSsdBlockConfig extends com.google.protobuf.Generated
     public Builder setLocalSsdCount(int value) {
 
       localSsdCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -484,7 +496,7 @@ public final class LocalNvmeSsdBlockConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearLocalSsdCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       localSsdCount_ = 0;
       onChanged();
       return this;

@@ -384,7 +384,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLUSTER_DNS_FIELD_NUMBER = 1;
-  private int clusterDns_;
+  private int clusterDns_ = 0;
   /**
    *
    *
@@ -413,14 +413,13 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1beta1.DNSConfig.Provider getClusterDns() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.DNSConfig.Provider result =
-        com.google.container.v1beta1.DNSConfig.Provider.valueOf(clusterDns_);
+        com.google.container.v1beta1.DNSConfig.Provider.forNumber(clusterDns_);
     return result == null ? com.google.container.v1beta1.DNSConfig.Provider.UNRECOGNIZED : result;
   }
 
   public static final int CLUSTER_DNS_SCOPE_FIELD_NUMBER = 2;
-  private int clusterDnsScope_;
+  private int clusterDnsScope_ = 0;
   /**
    *
    *
@@ -449,14 +448,15 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1beta1.DNSConfig.DNSScope getClusterDnsScope() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.DNSConfig.DNSScope result =
-        com.google.container.v1beta1.DNSConfig.DNSScope.valueOf(clusterDnsScope_);
+        com.google.container.v1beta1.DNSConfig.DNSScope.forNumber(clusterDnsScope_);
     return result == null ? com.google.container.v1beta1.DNSConfig.DNSScope.UNRECOGNIZED : result;
   }
 
   public static final int CLUSTER_DNS_DOMAIN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object clusterDnsDomain_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterDnsDomain_ = "";
   /**
    *
    *
@@ -722,12 +722,10 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       clusterDns_ = 0;
-
       clusterDnsScope_ = 0;
-
       clusterDnsDomain_ = "";
-
       return this;
     }
 
@@ -755,11 +753,24 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1beta1.DNSConfig buildPartial() {
       com.google.container.v1beta1.DNSConfig result =
           new com.google.container.v1beta1.DNSConfig(this);
-      result.clusterDns_ = clusterDns_;
-      result.clusterDnsScope_ = clusterDnsScope_;
-      result.clusterDnsDomain_ = clusterDnsDomain_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.DNSConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.clusterDns_ = clusterDns_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clusterDnsScope_ = clusterDnsScope_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clusterDnsDomain_ = clusterDnsDomain_;
+      }
     }
 
     @java.lang.Override
@@ -815,6 +826,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getClusterDnsDomain().isEmpty()) {
         clusterDnsDomain_ = other.clusterDnsDomain_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -846,19 +858,19 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 clusterDns_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 clusterDnsScope_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 clusterDnsDomain_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -877,6 +889,8 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int clusterDns_ = 0;
     /**
@@ -907,8 +921,8 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setClusterDnsValue(int value) {
-
       clusterDns_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -925,9 +939,8 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.container.v1beta1.DNSConfig.Provider getClusterDns() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.DNSConfig.Provider result =
-          com.google.container.v1beta1.DNSConfig.Provider.valueOf(clusterDns_);
+          com.google.container.v1beta1.DNSConfig.Provider.forNumber(clusterDns_);
       return result == null ? com.google.container.v1beta1.DNSConfig.Provider.UNRECOGNIZED : result;
     }
     /**
@@ -946,7 +959,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       clusterDns_ = value.getNumber();
       onChanged();
       return this;
@@ -963,7 +976,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClusterDns() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       clusterDns_ = 0;
       onChanged();
       return this;
@@ -998,8 +1011,8 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setClusterDnsScopeValue(int value) {
-
       clusterDnsScope_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1016,9 +1029,8 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.container.v1beta1.DNSConfig.DNSScope getClusterDnsScope() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.DNSConfig.DNSScope result =
-          com.google.container.v1beta1.DNSConfig.DNSScope.valueOf(clusterDnsScope_);
+          com.google.container.v1beta1.DNSConfig.DNSScope.forNumber(clusterDnsScope_);
       return result == null ? com.google.container.v1beta1.DNSConfig.DNSScope.UNRECOGNIZED : result;
     }
     /**
@@ -1037,7 +1049,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       clusterDnsScope_ = value.getNumber();
       onChanged();
       return this;
@@ -1054,7 +1066,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClusterDnsScope() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       clusterDnsScope_ = 0;
       onChanged();
       return this;
@@ -1121,8 +1133,8 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterDnsDomain_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1138,8 +1150,8 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClusterDnsDomain() {
-
       clusterDnsDomain_ = getDefaultInstance().getClusterDnsDomain();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1160,8 +1172,8 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterDnsDomain_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -128,7 +128,9 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getEnableCertificatesOrBuilder() {
-    return getEnableCertificates();
+    return enableCertificates_ == null
+        ? com.google.protobuf.BoolValue.getDefaultInstance()
+        : enableCertificates_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -332,10 +334,10 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (enableCertificatesBuilder_ == null) {
-        enableCertificates_ = null;
-      } else {
-        enableCertificates_ = null;
+      bitField0_ = 0;
+      enableCertificates_ = null;
+      if (enableCertificatesBuilder_ != null) {
+        enableCertificatesBuilder_.dispose();
         enableCertificatesBuilder_ = null;
       }
       return this;
@@ -365,13 +367,21 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
     public com.google.container.v1.MeshCertificates buildPartial() {
       com.google.container.v1.MeshCertificates result =
           new com.google.container.v1.MeshCertificates(this);
-      if (enableCertificatesBuilder_ == null) {
-        result.enableCertificates_ = enableCertificates_;
-      } else {
-        result.enableCertificates_ = enableCertificatesBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.MeshCertificates result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableCertificates_ =
+            enableCertificatesBuilder_ == null
+                ? enableCertificates_
+                : enableCertificatesBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -452,7 +462,7 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     getEnableCertificatesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -471,6 +481,8 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.BoolValue enableCertificates_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -496,7 +508,7 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
      * @return Whether the enableCertificates field is set.
      */
     public boolean hasEnableCertificates() {
-      return enableCertificatesBuilder_ != null || enableCertificates_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -545,11 +557,11 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         enableCertificates_ = value;
-        onChanged();
       } else {
         enableCertificatesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -570,11 +582,11 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
     public Builder setEnableCertificates(com.google.protobuf.BoolValue.Builder builderForValue) {
       if (enableCertificatesBuilder_ == null) {
         enableCertificates_ = builderForValue.build();
-        onChanged();
       } else {
         enableCertificatesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -594,19 +606,18 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeEnableCertificates(com.google.protobuf.BoolValue value) {
       if (enableCertificatesBuilder_ == null) {
-        if (enableCertificates_ != null) {
-          enableCertificates_ =
-              com.google.protobuf.BoolValue.newBuilder(enableCertificates_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && enableCertificates_ != null
+            && enableCertificates_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getEnableCertificatesBuilder().mergeFrom(value);
         } else {
           enableCertificates_ = value;
         }
-        onChanged();
       } else {
         enableCertificatesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -625,14 +636,13 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.BoolValue enable_certificates = 1;</code>
      */
     public Builder clearEnableCertificates() {
-      if (enableCertificatesBuilder_ == null) {
-        enableCertificates_ = null;
-        onChanged();
-      } else {
-        enableCertificates_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      enableCertificates_ = null;
+      if (enableCertificatesBuilder_ != null) {
+        enableCertificatesBuilder_.dispose();
         enableCertificatesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -651,7 +661,7 @@ public final class MeshCertificates extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.BoolValue enable_certificates = 1;</code>
      */
     public com.google.protobuf.BoolValue.Builder getEnableCertificatesBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getEnableCertificatesFieldBuilder().getBuilder();
     }

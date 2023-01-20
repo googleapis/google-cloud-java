@@ -229,7 +229,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ENABLED_FIELD_NUMBER = 1;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -242,7 +242,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
    * <code>bool enabled = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.BinaryAuthorization.enabled is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1311
+   *     google/container/v1/cluster_service.proto;l=1327
    * @return The enabled.
    */
   @java.lang.Override
@@ -252,7 +252,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
   }
 
   public static final int EVALUATION_MODE_FIELD_NUMBER = 2;
-  private int evaluationMode_;
+  private int evaluationMode_ = 0;
   /**
    *
    *
@@ -283,9 +283,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.container.v1.BinaryAuthorization.EvaluationMode getEvaluationMode() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1.BinaryAuthorization.EvaluationMode result =
-        com.google.container.v1.BinaryAuthorization.EvaluationMode.valueOf(evaluationMode_);
+        com.google.container.v1.BinaryAuthorization.EvaluationMode.forNumber(evaluationMode_);
     return result == null
         ? com.google.container.v1.BinaryAuthorization.EvaluationMode.UNRECOGNIZED
         : result;
@@ -501,10 +500,9 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enabled_ = false;
-
       evaluationMode_ = 0;
-
       return this;
     }
 
@@ -532,10 +530,21 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     public com.google.container.v1.BinaryAuthorization buildPartial() {
       com.google.container.v1.BinaryAuthorization result =
           new com.google.container.v1.BinaryAuthorization(this);
-      result.enabled_ = enabled_;
-      result.evaluationMode_ = evaluationMode_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.BinaryAuthorization result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enabled_ = enabled_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.evaluationMode_ = evaluationMode_;
+      }
     }
 
     @java.lang.Override
@@ -618,13 +627,13 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 enabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 evaluationMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -644,6 +653,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private int bitField0_;
+
     private boolean enabled_;
     /**
      *
@@ -657,7 +668,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1311
+     *     google/container/v1/cluster_service.proto;l=1327
      * @return The enabled.
      */
     @java.lang.Override
@@ -677,7 +688,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1311
+     *     google/container/v1/cluster_service.proto;l=1327
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
@@ -685,6 +696,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -700,12 +712,12 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1311
+     *     google/container/v1/cluster_service.proto;l=1327
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enabled_ = false;
       onChanged();
       return this;
@@ -742,8 +754,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setEvaluationModeValue(int value) {
-
       evaluationMode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -761,9 +773,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.container.v1.BinaryAuthorization.EvaluationMode getEvaluationMode() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1.BinaryAuthorization.EvaluationMode result =
-          com.google.container.v1.BinaryAuthorization.EvaluationMode.valueOf(evaluationMode_);
+          com.google.container.v1.BinaryAuthorization.EvaluationMode.forNumber(evaluationMode_);
       return result == null
           ? com.google.container.v1.BinaryAuthorization.EvaluationMode.UNRECOGNIZED
           : result;
@@ -786,7 +797,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       evaluationMode_ = value.getNumber();
       onChanged();
       return this;
@@ -804,7 +815,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearEvaluationMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       evaluationMode_ = 0;
       onChanged();
       return this;

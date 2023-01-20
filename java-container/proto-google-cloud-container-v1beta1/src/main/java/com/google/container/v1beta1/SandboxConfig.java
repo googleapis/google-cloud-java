@@ -204,7 +204,9 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SANDBOX_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object sandboxType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sandboxType_ = "";
   /**
    *
    *
@@ -215,7 +217,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>string sandbox_type = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SandboxConfig.sandbox_type is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=906
+   *     google/container/v1beta1/cluster_service.proto;l=924
    * @return The sandboxType.
    */
   @java.lang.Override
@@ -241,7 +243,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>string sandbox_type = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SandboxConfig.sandbox_type is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=906
+   *     google/container/v1beta1/cluster_service.proto;l=924
    * @return The bytes for sandboxType.
    */
   @java.lang.Override
@@ -259,7 +261,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -288,9 +290,8 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1beta1.SandboxConfig.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.SandboxConfig.Type result =
-        com.google.container.v1beta1.SandboxConfig.Type.valueOf(type_);
+        com.google.container.v1beta1.SandboxConfig.Type.forNumber(type_);
     return result == null ? com.google.container.v1beta1.SandboxConfig.Type.UNRECOGNIZED : result;
   }
 
@@ -500,10 +501,9 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sandboxType_ = "";
-
       type_ = 0;
-
       return this;
     }
 
@@ -531,10 +531,21 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1beta1.SandboxConfig buildPartial() {
       com.google.container.v1beta1.SandboxConfig result =
           new com.google.container.v1beta1.SandboxConfig(this);
-      result.sandboxType_ = sandboxType_;
-      result.type_ = type_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.SandboxConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sandboxType_ = sandboxType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
     }
 
     @java.lang.Override
@@ -584,6 +595,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.container.v1beta1.SandboxConfig.getDefaultInstance()) return this;
       if (!other.getSandboxType().isEmpty()) {
         sandboxType_ = other.sandboxType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -618,13 +630,13 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 sandboxType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -644,6 +656,8 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object sandboxType_ = "";
     /**
      *
@@ -655,7 +669,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string sandbox_type = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SandboxConfig.sandbox_type is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=906
+     *     google/container/v1beta1/cluster_service.proto;l=924
      * @return The sandboxType.
      */
     @java.lang.Deprecated
@@ -680,7 +694,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string sandbox_type = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SandboxConfig.sandbox_type is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=906
+     *     google/container/v1beta1/cluster_service.proto;l=924
      * @return The bytes for sandboxType.
      */
     @java.lang.Deprecated
@@ -705,7 +719,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string sandbox_type = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SandboxConfig.sandbox_type is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=906
+     *     google/container/v1beta1/cluster_service.proto;l=924
      * @param value The sandboxType to set.
      * @return This builder for chaining.
      */
@@ -714,8 +728,8 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sandboxType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -729,13 +743,13 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string sandbox_type = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SandboxConfig.sandbox_type is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=906
+     *     google/container/v1beta1/cluster_service.proto;l=924
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearSandboxType() {
-
       sandboxType_ = getDefaultInstance().getSandboxType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -749,7 +763,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string sandbox_type = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SandboxConfig.sandbox_type is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=906
+     *     google/container/v1beta1/cluster_service.proto;l=924
      * @param value The bytes for sandboxType to set.
      * @return This builder for chaining.
      */
@@ -759,8 +773,8 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sandboxType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -794,8 +808,8 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -812,9 +826,8 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.container.v1beta1.SandboxConfig.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.SandboxConfig.Type result =
-          com.google.container.v1beta1.SandboxConfig.Type.valueOf(type_);
+          com.google.container.v1beta1.SandboxConfig.Type.forNumber(type_);
       return result == null ? com.google.container.v1beta1.SandboxConfig.Type.UNRECOGNIZED : result;
     }
     /**
@@ -833,7 +846,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -850,7 +863,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
       onChanged();
       return this;

@@ -68,7 +68,7 @@ public final class AuthenticatorGroupsConfig extends com.google.protobuf.Generat
   }
 
   public static final int ENABLED_FIELD_NUMBER = 1;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -87,7 +87,9 @@ public final class AuthenticatorGroupsConfig extends com.google.protobuf.Generat
   }
 
   public static final int SECURITY_GROUP_FIELD_NUMBER = 2;
-  private volatile java.lang.Object securityGroup_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object securityGroup_ = "";
   /**
    *
    *
@@ -344,10 +346,9 @@ public final class AuthenticatorGroupsConfig extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enabled_ = false;
-
       securityGroup_ = "";
-
       return this;
     }
 
@@ -375,10 +376,21 @@ public final class AuthenticatorGroupsConfig extends com.google.protobuf.Generat
     public com.google.container.v1beta1.AuthenticatorGroupsConfig buildPartial() {
       com.google.container.v1beta1.AuthenticatorGroupsConfig result =
           new com.google.container.v1beta1.AuthenticatorGroupsConfig(this);
-      result.enabled_ = enabled_;
-      result.securityGroup_ = securityGroup_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.AuthenticatorGroupsConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enabled_ = enabled_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.securityGroup_ = securityGroup_;
+      }
     }
 
     @java.lang.Override
@@ -432,6 +444,7 @@ public final class AuthenticatorGroupsConfig extends com.google.protobuf.Generat
       }
       if (!other.getSecurityGroup().isEmpty()) {
         securityGroup_ = other.securityGroup_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -463,13 +476,13 @@ public final class AuthenticatorGroupsConfig extends com.google.protobuf.Generat
             case 8:
               {
                 enabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 securityGroup_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -488,6 +501,8 @@ public final class AuthenticatorGroupsConfig extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enabled_;
     /**
@@ -522,6 +537,7 @@ public final class AuthenticatorGroupsConfig extends com.google.protobuf.Generat
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -538,7 +554,7 @@ public final class AuthenticatorGroupsConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enabled_ = false;
       onChanged();
       return this;
@@ -608,8 +624,8 @@ public final class AuthenticatorGroupsConfig extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       securityGroup_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -626,8 +642,8 @@ public final class AuthenticatorGroupsConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearSecurityGroup() {
-
       securityGroup_ = getDefaultInstance().getSecurityGroup();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -649,8 +665,8 @@ public final class AuthenticatorGroupsConfig extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       securityGroup_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

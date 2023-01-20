@@ -70,7 +70,9 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int AUTO_UPGRADE_START_TIME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object autoUpgradeStartTime_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object autoUpgradeStartTime_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -380,10 +384,9 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       autoUpgradeStartTime_ = "";
-
       description_ = "";
-
       return this;
     }
 
@@ -411,10 +414,21 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
     public com.google.container.v1beta1.AutoUpgradeOptions buildPartial() {
       com.google.container.v1beta1.AutoUpgradeOptions result =
           new com.google.container.v1beta1.AutoUpgradeOptions(this);
-      result.autoUpgradeStartTime_ = autoUpgradeStartTime_;
-      result.description_ = description_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.AutoUpgradeOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.autoUpgradeStartTime_ = autoUpgradeStartTime_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
     }
 
     @java.lang.Override
@@ -465,10 +479,12 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getAutoUpgradeStartTime().isEmpty()) {
         autoUpgradeStartTime_ = other.autoUpgradeStartTime_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -500,13 +516,13 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 autoUpgradeStartTime_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -525,6 +541,8 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object autoUpgradeStartTime_ = "";
     /**
@@ -593,8 +611,8 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       autoUpgradeStartTime_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -612,8 +630,8 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAutoUpgradeStartTime() {
-
       autoUpgradeStartTime_ = getDefaultInstance().getAutoUpgradeStartTime();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -636,8 +654,8 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       autoUpgradeStartTime_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -706,8 +724,8 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -724,8 +742,8 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -747,8 +765,8 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

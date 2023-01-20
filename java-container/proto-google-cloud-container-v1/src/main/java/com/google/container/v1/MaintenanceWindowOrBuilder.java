@@ -145,7 +145,6 @@ public interface MaintenanceWindowOrBuilder
    *
    * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
    */
-
   /* nullable */
   com.google.container.v1.TimeWindow getMaintenanceExclusionsOrDefault(
       java.lang.String key,

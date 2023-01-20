@@ -72,7 +72,9 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -85,7 +87,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetNodePoolSizeRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3344
+   *     google/container/v1/cluster_service.proto;l=3367
    * @return The projectId.
    */
   @java.lang.Override
@@ -113,7 +115,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetNodePoolSizeRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3344
+   *     google/container/v1/cluster_service.proto;l=3367
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -131,7 +133,9 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int ZONE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -145,7 +149,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetNodePoolSizeRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3350
+   *     google/container/v1/cluster_service.proto;l=3373
    * @return The zone.
    */
   @java.lang.Override
@@ -174,7 +178,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetNodePoolSizeRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3350
+   *     google/container/v1/cluster_service.proto;l=3373
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -192,7 +196,9 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int CLUSTER_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object clusterId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterId_ = "";
   /**
    *
    *
@@ -204,7 +210,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetNodePoolSizeRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3354
+   *     google/container/v1/cluster_service.proto;l=3377
    * @return The clusterId.
    */
   @java.lang.Override
@@ -231,7 +237,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetNodePoolSizeRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3354
+   *     google/container/v1/cluster_service.proto;l=3377
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -249,7 +255,9 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int NODE_POOL_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object nodePoolId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nodePoolId_ = "";
   /**
    *
    *
@@ -261,7 +269,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetNodePoolSizeRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3358
+   *     google/container/v1/cluster_service.proto;l=3381
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -288,7 +296,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetNodePoolSizeRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3358
+   *     google/container/v1/cluster_service.proto;l=3381
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -306,7 +314,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int NODE_COUNT_FIELD_NUMBER = 5;
-  private int nodeCount_;
+  private int nodeCount_ = 0;
   /**
    *
    *
@@ -324,7 +332,9 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int NAME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -618,18 +628,13 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       zone_ = "";
-
       clusterId_ = "";
-
       nodePoolId_ = "";
-
       nodeCount_ = 0;
-
       name_ = "";
-
       return this;
     }
 
@@ -657,14 +662,33 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
     public com.google.container.v1.SetNodePoolSizeRequest buildPartial() {
       com.google.container.v1.SetNodePoolSizeRequest result =
           new com.google.container.v1.SetNodePoolSizeRequest(this);
-      result.projectId_ = projectId_;
-      result.zone_ = zone_;
-      result.clusterId_ = clusterId_;
-      result.nodePoolId_ = nodePoolId_;
-      result.nodeCount_ = nodeCount_;
-      result.name_ = name_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.SetNodePoolSizeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.zone_ = zone_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clusterId_ = clusterId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.nodePoolId_ = nodePoolId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.nodeCount_ = nodeCount_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -714,18 +738,22 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       if (other == com.google.container.v1.SetNodePoolSizeRequest.getDefaultInstance()) return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getClusterId().isEmpty()) {
         clusterId_ = other.clusterId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getNodePoolId().isEmpty()) {
         nodePoolId_ = other.nodePoolId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getNodeCount() != 0) {
@@ -733,6 +761,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -764,37 +793,37 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 clusterId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 nodePoolId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 nodeCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 58:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             default:
@@ -814,6 +843,8 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object projectId_ = "";
     /**
      *
@@ -827,7 +858,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3344
+     *     google/container/v1/cluster_service.proto;l=3367
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -854,7 +885,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3344
+     *     google/container/v1/cluster_service.proto;l=3367
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -881,7 +912,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3344
+     *     google/container/v1/cluster_service.proto;l=3367
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -890,8 +921,8 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -907,13 +938,13 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3344
+     *     google/container/v1/cluster_service.proto;l=3367
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -929,7 +960,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3344
+     *     google/container/v1/cluster_service.proto;l=3367
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -939,8 +970,8 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -959,7 +990,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3350
+     *     google/container/v1/cluster_service.proto;l=3373
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -987,7 +1018,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3350
+     *     google/container/v1/cluster_service.proto;l=3373
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -1015,7 +1046,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3350
+     *     google/container/v1/cluster_service.proto;l=3373
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1024,8 +1055,8 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1042,13 +1073,13 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3350
+     *     google/container/v1/cluster_service.proto;l=3373
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1065,7 +1096,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3350
+     *     google/container/v1/cluster_service.proto;l=3373
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1075,8 +1106,8 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1093,7 +1124,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3354
+     *     google/container/v1/cluster_service.proto;l=3377
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1119,7 +1150,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3354
+     *     google/container/v1/cluster_service.proto;l=3377
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1145,7 +1176,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3354
+     *     google/container/v1/cluster_service.proto;l=3377
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1154,8 +1185,8 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1170,13 +1201,13 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3354
+     *     google/container/v1/cluster_service.proto;l=3377
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearClusterId() {
-
       clusterId_ = getDefaultInstance().getClusterId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1191,7 +1222,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3354
+     *     google/container/v1/cluster_service.proto;l=3377
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -1201,8 +1232,8 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1219,7 +1250,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3358
+     *     google/container/v1/cluster_service.proto;l=3381
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -1245,7 +1276,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3358
+     *     google/container/v1/cluster_service.proto;l=3381
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -1271,7 +1302,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3358
+     *     google/container/v1/cluster_service.proto;l=3381
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -1280,8 +1311,8 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       nodePoolId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1296,13 +1327,13 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3358
+     *     google/container/v1/cluster_service.proto;l=3381
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearNodePoolId() {
-
       nodePoolId_ = getDefaultInstance().getNodePoolId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1317,7 +1348,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetNodePoolSizeRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3358
+     *     google/container/v1/cluster_service.proto;l=3381
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -1327,8 +1358,8 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nodePoolId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1364,6 +1395,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
     public Builder setNodeCount(int value) {
 
       nodeCount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1379,7 +1411,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearNodeCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       nodeCount_ = 0;
       onChanged();
       return this;
@@ -1452,8 +1484,8 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1471,8 +1503,8 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1495,8 +1527,8 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

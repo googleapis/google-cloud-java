@@ -67,7 +67,7 @@ public final class ILBSubsettingConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ENABLED_FIELD_NUMBER = 1;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -282,8 +282,8 @@ public final class ILBSubsettingConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enabled_ = false;
-
       return this;
     }
 
@@ -311,9 +311,18 @@ public final class ILBSubsettingConfig extends com.google.protobuf.GeneratedMess
     public com.google.container.v1.ILBSubsettingConfig buildPartial() {
       com.google.container.v1.ILBSubsettingConfig result =
           new com.google.container.v1.ILBSubsettingConfig(this);
-      result.enabled_ = enabled_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.ILBSubsettingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enabled_ = enabled_;
+      }
     }
 
     @java.lang.Override
@@ -393,7 +402,7 @@ public final class ILBSubsettingConfig extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 enabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -412,6 +421,8 @@ public final class ILBSubsettingConfig extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enabled_;
     /**
@@ -444,6 +455,7 @@ public final class ILBSubsettingConfig extends com.google.protobuf.GeneratedMess
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -459,7 +471,7 @@ public final class ILBSubsettingConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enabled_ = false;
       onChanged();
       return this;

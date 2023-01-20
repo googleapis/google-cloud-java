@@ -293,7 +293,10 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int ENABLE_COMPONENTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> enableComponents_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.container.v1beta1.LoggingComponentConfig.Component>
       enableComponents_converter_ =
@@ -301,9 +304,8 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
               java.lang.Integer, com.google.container.v1beta1.LoggingComponentConfig.Component>() {
             public com.google.container.v1beta1.LoggingComponentConfig.Component convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.container.v1beta1.LoggingComponentConfig.Component result =
-                  com.google.container.v1beta1.LoggingComponentConfig.Component.valueOf(from);
+                  com.google.container.v1beta1.LoggingComponentConfig.Component.forNumber(from);
               return result == null
                   ? com.google.container.v1beta1.LoggingComponentConfig.Component.UNRECOGNIZED
                   : result;
@@ -617,6 +619,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableComponents_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -646,14 +649,25 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
     public com.google.container.v1beta1.LoggingComponentConfig buildPartial() {
       com.google.container.v1beta1.LoggingComponentConfig result =
           new com.google.container.v1beta1.LoggingComponentConfig(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.container.v1beta1.LoggingComponentConfig result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         enableComponents_ = java.util.Collections.unmodifiableList(enableComponents_);
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.enableComponents_ = enableComponents_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.LoggingComponentConfig result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

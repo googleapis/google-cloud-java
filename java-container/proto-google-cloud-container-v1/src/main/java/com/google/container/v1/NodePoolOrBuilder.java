@@ -370,7 +370,7 @@ public interface NodePoolOrBuilder
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3118
+   *     google/container/v1/cluster_service.proto;l=3141
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -387,7 +387,7 @@ public interface NodePoolOrBuilder
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3118
+   *     google/container/v1/cluster_service.proto;l=3141
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -643,8 +643,8 @@ public interface NodePoolOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Update info contains relevant information during a node
-   * pool update.
+   * Output only. [Output only] Update info contains relevant information during
+   * a node pool update.
    * </pre>
    *
    * <code>
@@ -658,8 +658,8 @@ public interface NodePoolOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Update info contains relevant information during a node
-   * pool update.
+   * Output only. [Output only] Update info contains relevant information during
+   * a node pool update.
    * </pre>
    *
    * <code>
@@ -673,8 +673,8 @@ public interface NodePoolOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Update info contains relevant information during a node
-   * pool update.
+   * Output only. [Output only] Update info contains relevant information during
+   * a node pool update.
    * </pre>
    *
    * <code>
