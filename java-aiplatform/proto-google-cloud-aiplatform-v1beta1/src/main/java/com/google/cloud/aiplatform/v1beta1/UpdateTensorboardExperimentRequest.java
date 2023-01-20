@@ -128,7 +128,7 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int TENSORBOARD_EXPERIMENT_FIELD_NUMBER = 2;
@@ -189,7 +189,9 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.TensorboardExperimentOrBuilder
       getTensorboardExperimentOrBuilder() {
-    return getTensorboardExperiment();
+    return tensorboardExperiment_ == null
+        ? com.google.cloud.aiplatform.v1beta1.TensorboardExperiment.getDefaultInstance()
+        : tensorboardExperiment_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -413,16 +415,15 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      bitField0_ = 0;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-      if (tensorboardExperimentBuilder_ == null) {
-        tensorboardExperiment_ = null;
-      } else {
-        tensorboardExperiment_ = null;
+      tensorboardExperiment_ = null;
+      if (tensorboardExperimentBuilder_ != null) {
+        tensorboardExperimentBuilder_.dispose();
         tensorboardExperimentBuilder_ = null;
       }
       return this;
@@ -455,18 +456,25 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
     public com.google.cloud.aiplatform.v1beta1.UpdateTensorboardExperimentRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.UpdateTensorboardExperimentRequest result =
           new com.google.cloud.aiplatform.v1beta1.UpdateTensorboardExperimentRequest(this);
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      if (tensorboardExperimentBuilder_ == null) {
-        result.tensorboardExperiment_ = tensorboardExperiment_;
-      } else {
-        result.tensorboardExperiment_ = tensorboardExperimentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.UpdateTensorboardExperimentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tensorboardExperiment_ =
+            tensorboardExperimentBuilder_ == null
+                ? tensorboardExperiment_
+                : tensorboardExperimentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -553,14 +561,14 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
             case 10:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getTensorboardExperimentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -579,6 +587,8 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -604,7 +614,7 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -653,11 +663,11 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -678,11 +688,11 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -702,17 +712,18 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -731,14 +742,13 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -757,7 +767,7 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -839,7 +849,7 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
      * @return Whether the tensorboardExperiment field is set.
      */
     public boolean hasTensorboardExperiment() {
-      return tensorboardExperimentBuilder_ != null || tensorboardExperiment_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -885,11 +895,11 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
           throw new NullPointerException();
         }
         tensorboardExperiment_ = value;
-        onChanged();
       } else {
         tensorboardExperimentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -909,11 +919,11 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
         com.google.cloud.aiplatform.v1beta1.TensorboardExperiment.Builder builderForValue) {
       if (tensorboardExperimentBuilder_ == null) {
         tensorboardExperiment_ = builderForValue.build();
-        onChanged();
       } else {
         tensorboardExperimentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -932,20 +942,19 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
     public Builder mergeTensorboardExperiment(
         com.google.cloud.aiplatform.v1beta1.TensorboardExperiment value) {
       if (tensorboardExperimentBuilder_ == null) {
-        if (tensorboardExperiment_ != null) {
-          tensorboardExperiment_ =
-              com.google.cloud.aiplatform.v1beta1.TensorboardExperiment.newBuilder(
-                      tensorboardExperiment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && tensorboardExperiment_ != null
+            && tensorboardExperiment_
+                != com.google.cloud.aiplatform.v1beta1.TensorboardExperiment.getDefaultInstance()) {
+          getTensorboardExperimentBuilder().mergeFrom(value);
         } else {
           tensorboardExperiment_ = value;
         }
-        onChanged();
       } else {
         tensorboardExperimentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -962,14 +971,13 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
      * </code>
      */
     public Builder clearTensorboardExperiment() {
-      if (tensorboardExperimentBuilder_ == null) {
-        tensorboardExperiment_ = null;
-        onChanged();
-      } else {
-        tensorboardExperiment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      tensorboardExperiment_ = null;
+      if (tensorboardExperimentBuilder_ != null) {
+        tensorboardExperimentBuilder_.dispose();
         tensorboardExperimentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -987,7 +995,7 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
      */
     public com.google.cloud.aiplatform.v1beta1.TensorboardExperiment.Builder
         getTensorboardExperimentBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTensorboardExperimentFieldBuilder().getBuilder();
     }

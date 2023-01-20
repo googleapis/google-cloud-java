@@ -70,7 +70,9 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
   }
 
   public static final int METRIC_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object metricName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metricName_ = "";
   /**
    *
    *
@@ -127,7 +129,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
   }
 
   public static final int TARGET_FIELD_NUMBER = 2;
-  private int target_;
+  private int target_ = 0;
   /**
    *
    *
@@ -355,10 +357,9 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       metricName_ = "";
-
       target_ = 0;
-
       return this;
     }
 
@@ -386,10 +387,21 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
     public com.google.cloud.aiplatform.v1.AutoscalingMetricSpec buildPartial() {
       com.google.cloud.aiplatform.v1.AutoscalingMetricSpec result =
           new com.google.cloud.aiplatform.v1.AutoscalingMetricSpec(this);
-      result.metricName_ = metricName_;
-      result.target_ = target_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.AutoscalingMetricSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.metricName_ = metricName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.target_ = target_;
+      }
     }
 
     @java.lang.Override
@@ -440,6 +452,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getMetricName().isEmpty()) {
         metricName_ = other.metricName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getTarget() != 0) {
@@ -474,13 +487,13 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 metricName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 target_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -499,6 +512,8 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object metricName_ = "";
     /**
@@ -573,8 +588,8 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       metricName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -594,8 +609,8 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearMetricName() {
-
       metricName_ = getDefaultInstance().getMetricName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -620,8 +635,8 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       metricName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -663,6 +678,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
     public Builder setTarget(int value) {
 
       target_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -681,7 +697,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearTarget() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       target_ = 0;
       onChanged();
       return this;

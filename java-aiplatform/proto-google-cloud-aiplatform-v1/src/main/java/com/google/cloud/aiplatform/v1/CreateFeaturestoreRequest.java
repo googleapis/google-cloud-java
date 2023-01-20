@@ -70,7 +70,9 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -177,11 +179,15 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.FeaturestoreOrBuilder getFeaturestoreOrBuilder() {
-    return getFeaturestore();
+    return featurestore_ == null
+        ? com.google.cloud.aiplatform.v1.Featurestore.getDefaultInstance()
+        : featurestore_;
   }
 
   public static final int FEATURESTORE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object featurestoreId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object featurestoreId_ = "";
   /**
    *
    *
@@ -459,16 +465,14 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (featurestoreBuilder_ == null) {
-        featurestore_ = null;
-      } else {
-        featurestore_ = null;
+      featurestore_ = null;
+      if (featurestoreBuilder_ != null) {
+        featurestoreBuilder_.dispose();
         featurestoreBuilder_ = null;
       }
       featurestoreId_ = "";
-
       return this;
     }
 
@@ -496,15 +500,25 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
     public com.google.cloud.aiplatform.v1.CreateFeaturestoreRequest buildPartial() {
       com.google.cloud.aiplatform.v1.CreateFeaturestoreRequest result =
           new com.google.cloud.aiplatform.v1.CreateFeaturestoreRequest(this);
-      result.parent_ = parent_;
-      if (featurestoreBuilder_ == null) {
-        result.featurestore_ = featurestore_;
-      } else {
-        result.featurestore_ = featurestoreBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.featurestoreId_ = featurestoreId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.CreateFeaturestoreRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.featurestore_ =
+            featurestoreBuilder_ == null ? featurestore_ : featurestoreBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.featurestoreId_ = featurestoreId_;
+      }
     }
 
     @java.lang.Override
@@ -555,6 +569,7 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasFeaturestore()) {
@@ -562,6 +577,7 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
       }
       if (!other.getFeaturestoreId().isEmpty()) {
         featurestoreId_ = other.featurestoreId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -593,19 +609,19 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getFeaturestoreFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 featurestoreId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -624,6 +640,8 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -698,8 +716,8 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -719,8 +737,8 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -745,8 +763,8 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -771,7 +789,7 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
      * @return Whether the featurestore field is set.
      */
     public boolean hasFeaturestore() {
-      return featurestoreBuilder_ != null || featurestore_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -812,11 +830,11 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         featurestore_ = value;
-        onChanged();
       } else {
         featurestoreBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -834,11 +852,11 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
         com.google.cloud.aiplatform.v1.Featurestore.Builder builderForValue) {
       if (featurestoreBuilder_ == null) {
         featurestore_ = builderForValue.build();
-        onChanged();
       } else {
         featurestoreBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -854,19 +872,18 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
      */
     public Builder mergeFeaturestore(com.google.cloud.aiplatform.v1.Featurestore value) {
       if (featurestoreBuilder_ == null) {
-        if (featurestore_ != null) {
-          featurestore_ =
-              com.google.cloud.aiplatform.v1.Featurestore.newBuilder(featurestore_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && featurestore_ != null
+            && featurestore_ != com.google.cloud.aiplatform.v1.Featurestore.getDefaultInstance()) {
+          getFeaturestoreBuilder().mergeFrom(value);
         } else {
           featurestore_ = value;
         }
-        onChanged();
       } else {
         featurestoreBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -881,14 +898,13 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearFeaturestore() {
-      if (featurestoreBuilder_ == null) {
-        featurestore_ = null;
-        onChanged();
-      } else {
-        featurestore_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      featurestore_ = null;
+      if (featurestoreBuilder_ != null) {
+        featurestoreBuilder_.dispose();
         featurestoreBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -903,7 +919,7 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.cloud.aiplatform.v1.Featurestore.Builder getFeaturestoreBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFeaturestoreFieldBuilder().getBuilder();
     }
@@ -1028,8 +1044,8 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       featurestoreId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1049,8 +1065,8 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearFeaturestoreId() {
-
       featurestoreId_ = getDefaultInstance().getFeaturestoreId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1075,8 +1091,8 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       featurestoreId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -61,7 +61,9 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
   }
 
   public static final int FEATURE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object featureId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object featureId_ = "";
   /**
    *
    *
@@ -110,7 +112,9 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
   }
 
   public static final int DESTINATION_FIELD_FIELD_NUMBER = 2;
-  private volatile java.lang.Object destinationField_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object destinationField_ = "";
   /**
    *
    *
@@ -359,10 +363,9 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       featureId_ = "";
-
       destinationField_ = "";
-
       return this;
     }
 
@@ -390,10 +393,21 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
     public com.google.cloud.aiplatform.v1.DestinationFeatureSetting buildPartial() {
       com.google.cloud.aiplatform.v1.DestinationFeatureSetting result =
           new com.google.cloud.aiplatform.v1.DestinationFeatureSetting(this);
-      result.featureId_ = featureId_;
-      result.destinationField_ = destinationField_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.DestinationFeatureSetting result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.featureId_ = featureId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.destinationField_ = destinationField_;
+      }
     }
 
     @java.lang.Override
@@ -444,10 +458,12 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
         return this;
       if (!other.getFeatureId().isEmpty()) {
         featureId_ = other.featureId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDestinationField().isEmpty()) {
         destinationField_ = other.destinationField_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -479,13 +495,13 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
             case 10:
               {
                 featureId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 destinationField_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -504,6 +520,8 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object featureId_ = "";
     /**
@@ -566,8 +584,8 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       featureId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -583,8 +601,8 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearFeatureId() {
-
       featureId_ = getDefaultInstance().getFeatureId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -605,8 +623,8 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       featureId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -675,8 +693,8 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       destinationField_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -693,8 +711,8 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearDestinationField() {
-
       destinationField_ = getDefaultInstance().getDestinationField();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -716,8 +734,8 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       destinationField_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

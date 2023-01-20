@@ -148,7 +148,6 @@ public interface ImportDataConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
    */
-
   /* nullable */
   java.lang.String getDataItemLabelsOrDefault(
       java.lang.String key,
@@ -259,7 +258,6 @@ public interface ImportDataConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
    */
-
   /* nullable */
   java.lang.String getAnnotationLabelsOrDefault(
       java.lang.String key,

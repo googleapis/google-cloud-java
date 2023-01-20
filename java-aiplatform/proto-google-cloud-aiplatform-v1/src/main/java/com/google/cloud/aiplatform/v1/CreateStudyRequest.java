@@ -69,7 +69,9 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -169,7 +171,7 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.StudyOrBuilder getStudyOrBuilder() {
-    return getStudy();
+    return study_ == null ? com.google.cloud.aiplatform.v1.Study.getDefaultInstance() : study_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -384,12 +386,11 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (studyBuilder_ == null) {
-        study_ = null;
-      } else {
-        study_ = null;
+      study_ = null;
+      if (studyBuilder_ != null) {
+        studyBuilder_.dispose();
         studyBuilder_ = null;
       }
       return this;
@@ -419,14 +420,21 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1.CreateStudyRequest buildPartial() {
       com.google.cloud.aiplatform.v1.CreateStudyRequest result =
           new com.google.cloud.aiplatform.v1.CreateStudyRequest(this);
-      result.parent_ = parent_;
-      if (studyBuilder_ == null) {
-        result.study_ = study_;
-      } else {
-        result.study_ = studyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.CreateStudyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.study_ = studyBuilder_ == null ? study_ : studyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -477,6 +485,7 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasStudy()) {
@@ -511,13 +520,13 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getStudyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -536,6 +545,8 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -607,8 +618,8 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -627,8 +638,8 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -652,8 +663,8 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -677,7 +688,7 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the study field is set.
      */
     public boolean hasStudy() {
-      return studyBuilder_ != null || study_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -714,11 +725,11 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         study_ = value;
-        onChanged();
       } else {
         studyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -734,11 +745,11 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
     public Builder setStudy(com.google.cloud.aiplatform.v1.Study.Builder builderForValue) {
       if (studyBuilder_ == null) {
         study_ = builderForValue.build();
-        onChanged();
       } else {
         studyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -753,19 +764,18 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeStudy(com.google.cloud.aiplatform.v1.Study value) {
       if (studyBuilder_ == null) {
-        if (study_ != null) {
-          study_ =
-              com.google.cloud.aiplatform.v1.Study.newBuilder(study_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && study_ != null
+            && study_ != com.google.cloud.aiplatform.v1.Study.getDefaultInstance()) {
+          getStudyBuilder().mergeFrom(value);
         } else {
           study_ = value;
         }
-        onChanged();
       } else {
         studyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -779,14 +789,13 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearStudy() {
-      if (studyBuilder_ == null) {
-        study_ = null;
-        onChanged();
-      } else {
-        study_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      study_ = null;
+      if (studyBuilder_ != null) {
+        studyBuilder_.dispose();
         studyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -800,7 +809,7 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.aiplatform.v1.Study.Builder getStudyBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getStudyFieldBuilder().getBuilder();
     }

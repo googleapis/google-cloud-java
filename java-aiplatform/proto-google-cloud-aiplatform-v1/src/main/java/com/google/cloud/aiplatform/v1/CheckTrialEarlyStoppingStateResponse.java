@@ -69,7 +69,7 @@ public final class CheckTrialEarlyStoppingStateResponse
   }
 
   public static final int SHOULD_STOP_FIELD_NUMBER = 1;
-  private boolean shouldStop_;
+  private boolean shouldStop_ = false;
   /**
    *
    *
@@ -287,8 +287,8 @@ public final class CheckTrialEarlyStoppingStateResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       shouldStop_ = false;
-
       return this;
     }
 
@@ -318,9 +318,19 @@ public final class CheckTrialEarlyStoppingStateResponse
     public com.google.cloud.aiplatform.v1.CheckTrialEarlyStoppingStateResponse buildPartial() {
       com.google.cloud.aiplatform.v1.CheckTrialEarlyStoppingStateResponse result =
           new com.google.cloud.aiplatform.v1.CheckTrialEarlyStoppingStateResponse(this);
-      result.shouldStop_ = shouldStop_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.CheckTrialEarlyStoppingStateResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.shouldStop_ = shouldStop_;
+      }
     }
 
     @java.lang.Override
@@ -404,7 +414,7 @@ public final class CheckTrialEarlyStoppingStateResponse
             case 8:
               {
                 shouldStop_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -423,6 +433,8 @@ public final class CheckTrialEarlyStoppingStateResponse
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean shouldStop_;
     /**
@@ -455,6 +467,7 @@ public final class CheckTrialEarlyStoppingStateResponse
     public Builder setShouldStop(boolean value) {
 
       shouldStop_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -470,7 +483,7 @@ public final class CheckTrialEarlyStoppingStateResponse
      * @return This builder for chaining.
      */
     public Builder clearShouldStop() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       shouldStop_ = false;
       onChanged();
       return this;

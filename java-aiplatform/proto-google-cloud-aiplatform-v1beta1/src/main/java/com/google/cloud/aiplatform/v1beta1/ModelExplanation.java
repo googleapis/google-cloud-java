@@ -68,6 +68,8 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int MEAN_ATTRIBUTIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Attribution> meanAttributions_;
   /**
    *
@@ -436,6 +438,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (meanAttributionsBuilder_ == null) {
         meanAttributions_ = java.util.Collections.emptyList();
       } else {
@@ -470,7 +473,16 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.aiplatform.v1beta1.ModelExplanation buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ModelExplanation result =
           new com.google.cloud.aiplatform.v1beta1.ModelExplanation(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.ModelExplanation result) {
       if (meanAttributionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           meanAttributions_ = java.util.Collections.unmodifiableList(meanAttributions_);
@@ -480,8 +492,10 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
       } else {
         result.meanAttributions_ = meanAttributionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ModelExplanation result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

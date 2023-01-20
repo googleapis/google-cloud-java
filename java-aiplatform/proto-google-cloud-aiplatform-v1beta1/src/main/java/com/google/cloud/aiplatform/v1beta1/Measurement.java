@@ -164,7 +164,9 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int METRIC_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object metricId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object metricId_ = "";
     /**
      *
      *
@@ -215,7 +217,7 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALUE_FIELD_NUMBER = 2;
-    private double value_;
+    private double value_ = 0D;
     /**
      *
      *
@@ -445,10 +447,9 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         metricId_ = "";
-
         value_ = 0D;
-
         return this;
       }
 
@@ -476,10 +477,21 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.Measurement.Metric buildPartial() {
         com.google.cloud.aiplatform.v1beta1.Measurement.Metric result =
             new com.google.cloud.aiplatform.v1beta1.Measurement.Metric(this);
-        result.metricId_ = metricId_;
-        result.value_ = value_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Measurement.Metric result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.metricId_ = metricId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.value_ = value_;
+        }
       }
 
       @java.lang.Override
@@ -532,6 +544,7 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getMetricId().isEmpty()) {
           metricId_ = other.metricId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getValue() != 0D) {
@@ -566,13 +579,13 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   metricId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 17:
                 {
                   value_ = input.readDouble();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 17
               default:
@@ -591,6 +604,8 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object metricId_ = "";
       /**
@@ -656,8 +671,8 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         metricId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -674,8 +689,8 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMetricId() {
-
         metricId_ = getDefaultInstance().getMetricId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -697,8 +712,8 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         metricId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -734,6 +749,7 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       public Builder setValue(double value) {
 
         value_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -749,7 +765,7 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         value_ = 0D;
         onChanged();
         return this;
@@ -873,11 +889,13 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getElapsedDurationOrBuilder() {
-    return getElapsedDuration();
+    return elapsedDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : elapsedDuration_;
   }
 
   public static final int STEP_COUNT_FIELD_NUMBER = 2;
-  private long stepCount_;
+  private long stepCount_ = 0L;
   /**
    *
    *
@@ -896,6 +914,8 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int METRICS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Measurement.Metric> metrics_;
   /**
    *
@@ -1204,21 +1224,20 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (elapsedDurationBuilder_ == null) {
-        elapsedDuration_ = null;
-      } else {
-        elapsedDuration_ = null;
+      bitField0_ = 0;
+      elapsedDuration_ = null;
+      if (elapsedDurationBuilder_ != null) {
+        elapsedDurationBuilder_.dispose();
         elapsedDurationBuilder_ = null;
       }
       stepCount_ = 0L;
-
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
       } else {
         metrics_ = null;
         metricsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -1246,24 +1265,36 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.Measurement buildPartial() {
       com.google.cloud.aiplatform.v1beta1.Measurement result =
           new com.google.cloud.aiplatform.v1beta1.Measurement(this);
-      int from_bitField0_ = bitField0_;
-      if (elapsedDurationBuilder_ == null) {
-        result.elapsedDuration_ = elapsedDuration_;
-      } else {
-        result.elapsedDuration_ = elapsedDurationBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.stepCount_ = stepCount_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.Measurement result) {
       if (metricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           metrics_ = java.util.Collections.unmodifiableList(metrics_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.metrics_ = metrics_;
       } else {
         result.metrics_ = metricsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Measurement result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.elapsedDuration_ =
+            elapsedDurationBuilder_ == null ? elapsedDuration_ : elapsedDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.stepCount_ = stepCount_;
+      }
     }
 
     @java.lang.Override
@@ -1322,7 +1353,7 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
         if (!other.metrics_.isEmpty()) {
           if (metrics_.isEmpty()) {
             metrics_ = other.metrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureMetricsIsMutable();
             metrics_.addAll(other.metrics_);
@@ -1335,7 +1366,7 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
             metricsBuilder_.dispose();
             metricsBuilder_ = null;
             metrics_ = other.metrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             metricsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMetricsFieldBuilder()
@@ -1374,13 +1405,13 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getElapsedDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 stepCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -1437,7 +1468,7 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the elapsedDuration field is set.
      */
     public boolean hasElapsedDuration() {
-      return elapsedDurationBuilder_ != null || elapsedDuration_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1480,11 +1511,11 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         elapsedDuration_ = value;
-        onChanged();
       } else {
         elapsedDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1502,11 +1533,11 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     public Builder setElapsedDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (elapsedDurationBuilder_ == null) {
         elapsedDuration_ = builderForValue.build();
-        onChanged();
       } else {
         elapsedDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1523,19 +1554,18 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeElapsedDuration(com.google.protobuf.Duration value) {
       if (elapsedDurationBuilder_ == null) {
-        if (elapsedDuration_ != null) {
-          elapsedDuration_ =
-              com.google.protobuf.Duration.newBuilder(elapsedDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && elapsedDuration_ != null
+            && elapsedDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getElapsedDurationBuilder().mergeFrom(value);
         } else {
           elapsedDuration_ = value;
         }
-        onChanged();
       } else {
         elapsedDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1551,14 +1581,13 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearElapsedDuration() {
-      if (elapsedDurationBuilder_ == null) {
-        elapsedDuration_ = null;
-        onChanged();
-      } else {
-        elapsedDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      elapsedDuration_ = null;
+      if (elapsedDurationBuilder_ != null) {
+        elapsedDurationBuilder_.dispose();
         elapsedDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1574,7 +1603,7 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Duration.Builder getElapsedDurationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getElapsedDurationFieldBuilder().getBuilder();
     }
@@ -1661,6 +1690,7 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     public Builder setStepCount(long value) {
 
       stepCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1677,7 +1707,7 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStepCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       stepCount_ = 0L;
       onChanged();
       return this;
@@ -1687,11 +1717,11 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         metrics_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.Measurement.Metric>(
                 metrics_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1943,7 +1973,7 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMetrics() {
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         metricsBuilder_.clear();
@@ -2090,7 +2120,7 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1beta1.Measurement.Metric,
                 com.google.cloud.aiplatform.v1beta1.Measurement.Metric.Builder,
                 com.google.cloud.aiplatform.v1beta1.Measurement.MetricOrBuilder>(
-                metrics_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                metrics_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         metrics_ = null;
       }
       return metricsBuilder_;

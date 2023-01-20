@@ -69,7 +69,9 @@ public final class CreateTrialRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -172,7 +174,7 @@ public final class CreateTrialRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.TrialOrBuilder getTrialOrBuilder() {
-    return getTrial();
+    return trial_ == null ? com.google.cloud.aiplatform.v1beta1.Trial.getDefaultInstance() : trial_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -388,12 +390,11 @@ public final class CreateTrialRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (trialBuilder_ == null) {
-        trial_ = null;
-      } else {
-        trial_ = null;
+      trial_ = null;
+      if (trialBuilder_ != null) {
+        trialBuilder_.dispose();
         trialBuilder_ = null;
       }
       return this;
@@ -423,14 +424,21 @@ public final class CreateTrialRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1beta1.CreateTrialRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.CreateTrialRequest result =
           new com.google.cloud.aiplatform.v1beta1.CreateTrialRequest(this);
-      result.parent_ = parent_;
-      if (trialBuilder_ == null) {
-        result.trial_ = trial_;
-      } else {
-        result.trial_ = trialBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.CreateTrialRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.trial_ = trialBuilder_ == null ? trial_ : trialBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -481,6 +489,7 @@ public final class CreateTrialRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTrial()) {
@@ -515,13 +524,13 @@ public final class CreateTrialRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTrialFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -540,6 +549,8 @@ public final class CreateTrialRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -611,8 +622,8 @@ public final class CreateTrialRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -631,8 +642,8 @@ public final class CreateTrialRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -656,8 +667,8 @@ public final class CreateTrialRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -682,7 +693,7 @@ public final class CreateTrialRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the trial field is set.
      */
     public boolean hasTrial() {
-      return trialBuilder_ != null || trial_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -723,11 +734,11 @@ public final class CreateTrialRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         trial_ = value;
-        onChanged();
       } else {
         trialBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -744,11 +755,11 @@ public final class CreateTrialRequest extends com.google.protobuf.GeneratedMessa
     public Builder setTrial(com.google.cloud.aiplatform.v1beta1.Trial.Builder builderForValue) {
       if (trialBuilder_ == null) {
         trial_ = builderForValue.build();
-        onChanged();
       } else {
         trialBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -764,19 +775,18 @@ public final class CreateTrialRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeTrial(com.google.cloud.aiplatform.v1beta1.Trial value) {
       if (trialBuilder_ == null) {
-        if (trial_ != null) {
-          trial_ =
-              com.google.cloud.aiplatform.v1beta1.Trial.newBuilder(trial_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && trial_ != null
+            && trial_ != com.google.cloud.aiplatform.v1beta1.Trial.getDefaultInstance()) {
+          getTrialBuilder().mergeFrom(value);
         } else {
           trial_ = value;
         }
-        onChanged();
       } else {
         trialBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -791,14 +801,13 @@ public final class CreateTrialRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearTrial() {
-      if (trialBuilder_ == null) {
-        trial_ = null;
-        onChanged();
-      } else {
-        trial_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      trial_ = null;
+      if (trialBuilder_ != null) {
+        trialBuilder_.dispose();
         trialBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -813,7 +822,7 @@ public final class CreateTrialRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Trial.Builder getTrialBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTrialFieldBuilder().getBuilder();
     }

@@ -108,11 +108,11 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
-    return getTimeout();
+    return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
 
   public static final int RESTART_JOB_ON_WORKER_RESTART_FIELD_NUMBER = 3;
-  private boolean restartJobOnWorkerRestart_;
+  private boolean restartJobOnWorkerRestart_ = false;
   /**
    *
    *
@@ -342,14 +342,13 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-      } else {
-        timeout_ = null;
+      bitField0_ = 0;
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
       restartJobOnWorkerRestart_ = false;
-
       return this;
     }
 
@@ -377,14 +376,21 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.Scheduling buildPartial() {
       com.google.cloud.aiplatform.v1beta1.Scheduling result =
           new com.google.cloud.aiplatform.v1beta1.Scheduling(this);
-      if (timeoutBuilder_ == null) {
-        result.timeout_ = timeout_;
-      } else {
-        result.timeout_ = timeoutBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.restartJobOnWorkerRestart_ = restartJobOnWorkerRestart_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Scheduling result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.restartJobOnWorkerRestart_ = restartJobOnWorkerRestart_;
+      }
     }
 
     @java.lang.Override
@@ -467,13 +473,13 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 24:
               {
                 restartJobOnWorkerRestart_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             default:
@@ -493,6 +499,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.Duration timeout_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -511,7 +519,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return timeoutBuilder_ != null || timeout_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -546,11 +554,11 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         timeout_ = value;
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -565,11 +573,11 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeoutBuilder_ == null) {
         timeout_ = builderForValue.build();
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -583,17 +591,18 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTimeout(com.google.protobuf.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (timeout_ != null) {
-          timeout_ =
-              com.google.protobuf.Duration.newBuilder(timeout_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && timeout_ != null
+            && timeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeoutBuilder().mergeFrom(value);
         } else {
           timeout_ = value;
         }
-        onChanged();
       } else {
         timeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -606,14 +615,13 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 1;</code>
      */
     public Builder clearTimeout() {
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-        onChanged();
-      } else {
-        timeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -626,7 +634,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
@@ -707,6 +715,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public Builder setRestartJobOnWorkerRestart(boolean value) {
 
       restartJobOnWorkerRestart_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -724,7 +733,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRestartJobOnWorkerRestart() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       restartJobOnWorkerRestart_ = false;
       onChanged();
       return this;

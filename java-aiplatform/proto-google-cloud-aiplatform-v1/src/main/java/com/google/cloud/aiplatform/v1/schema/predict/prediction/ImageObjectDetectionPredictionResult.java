@@ -78,6 +78,8 @@ public final class ImageObjectDetectionPredictionResult
   }
 
   public static final int IDS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList ids_;
   /**
    *
@@ -130,6 +132,8 @@ public final class ImageObjectDetectionPredictionResult
   private int idsMemoizedSerializedSize = -1;
 
   public static final int DISPLAY_NAMES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList displayNames_;
   /**
    *
@@ -195,6 +199,8 @@ public final class ImageObjectDetectionPredictionResult
   }
 
   public static final int CONFIDENCES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.FloatList confidences_;
   /**
    *
@@ -247,6 +253,8 @@ public final class ImageObjectDetectionPredictionResult
   private int confidencesMemoizedSerializedSize = -1;
 
   public static final int BBOXES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.ListValue> bboxes_;
   /**
    *
@@ -634,12 +642,11 @@ public final class ImageObjectDetectionPredictionResult
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ids_ = emptyLongList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       displayNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       confidences_ = emptyFloatList();
-      bitField0_ = (bitField0_ & ~0x00000004);
       if (bboxesBuilder_ == null) {
         bboxes_ = java.util.Collections.emptyList();
       } else {
@@ -685,7 +692,18 @@ public final class ImageObjectDetectionPredictionResult
           result =
               new com.google.cloud.aiplatform.v1.schema.predict.prediction
                   .ImageObjectDetectionPredictionResult(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.schema.predict.prediction
+                .ImageObjectDetectionPredictionResult
+            result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         ids_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -710,8 +728,13 @@ public final class ImageObjectDetectionPredictionResult
       } else {
         result.bboxes_ = bboxesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.schema.predict.prediction
+                .ImageObjectDetectionPredictionResult
+            result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -996,6 +1019,7 @@ public final class ImageObjectDetectionPredictionResult
      * @return This builder for chaining.
      */
     public Builder setIds(int index, long value) {
+
       ensureIdsIsMutable();
       ids_.setLong(index, value);
       onChanged();
@@ -1015,6 +1039,7 @@ public final class ImageObjectDetectionPredictionResult
      * @return This builder for chaining.
      */
     public Builder addIds(long value) {
+
       ensureIdsIsMutable();
       ids_.addLong(value);
       onChanged();
@@ -1306,6 +1331,7 @@ public final class ImageObjectDetectionPredictionResult
      * @return This builder for chaining.
      */
     public Builder setConfidences(int index, float value) {
+
       ensureConfidencesIsMutable();
       confidences_.setFloat(index, value);
       onChanged();
@@ -1325,6 +1351,7 @@ public final class ImageObjectDetectionPredictionResult
      * @return This builder for chaining.
      */
     public Builder addConfidences(float value) {
+
       ensureConfidencesIsMutable();
       confidences_.addFloat(value);
       onChanged();

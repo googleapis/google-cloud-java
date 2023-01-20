@@ -76,6 +76,8 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
   }
 
   public static final int IDS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList ids_;
   /**
    *
@@ -125,6 +127,8 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
   private int idsMemoizedSerializedSize = -1;
 
   public static final int DISPLAY_NAMES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList displayNames_;
   /**
    *
@@ -190,6 +194,8 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
   }
 
   public static final int CONFIDENCES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.FloatList confidences_;
   /**
    *
@@ -525,12 +531,11 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ids_ = emptyLongList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       displayNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       confidences_ = emptyFloatList();
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -569,7 +574,17 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
           result =
               new com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
                   .ClassificationPredictionResult(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.ClassificationPredictionResult
+            result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         ids_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -585,8 +600,12 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.confidences_ = confidences_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.ClassificationPredictionResult
+            result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -827,6 +846,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder setIds(int index, long value) {
+
       ensureIdsIsMutable();
       ids_.setLong(index, value);
       onChanged();
@@ -845,6 +865,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder addIds(long value) {
+
       ensureIdsIsMutable();
       ids_.addLong(value);
       onChanged();
@@ -1134,6 +1155,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder setConfidences(int index, float value) {
+
       ensureConfidencesIsMutable();
       confidences_.setFloat(index, value);
       onChanged();
@@ -1153,6 +1175,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder addConfidences(float value) {
+
       ensureConfidencesIsMutable();
       confidences_.addFloat(value);
       onChanged();

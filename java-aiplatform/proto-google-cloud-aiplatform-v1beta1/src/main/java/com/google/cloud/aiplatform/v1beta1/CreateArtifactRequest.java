@@ -70,7 +70,9 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -179,11 +181,15 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.ArtifactOrBuilder getArtifactOrBuilder() {
-    return getArtifact();
+    return artifact_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Artifact.getDefaultInstance()
+        : artifact_;
   }
 
   public static final int ARTIFACT_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object artifactId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object artifactId_ = "";
   /**
    *
    *
@@ -465,16 +471,14 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (artifactBuilder_ == null) {
-        artifact_ = null;
-      } else {
-        artifact_ = null;
+      artifact_ = null;
+      if (artifactBuilder_ != null) {
+        artifactBuilder_.dispose();
         artifactBuilder_ = null;
       }
       artifactId_ = "";
-
       return this;
     }
 
@@ -502,15 +506,24 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.aiplatform.v1beta1.CreateArtifactRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.CreateArtifactRequest result =
           new com.google.cloud.aiplatform.v1beta1.CreateArtifactRequest(this);
-      result.parent_ = parent_;
-      if (artifactBuilder_ == null) {
-        result.artifact_ = artifact_;
-      } else {
-        result.artifact_ = artifactBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.artifactId_ = artifactId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.CreateArtifactRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.artifact_ = artifactBuilder_ == null ? artifact_ : artifactBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.artifactId_ = artifactId_;
+      }
     }
 
     @java.lang.Override
@@ -561,6 +574,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasArtifact()) {
@@ -568,6 +582,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getArtifactId().isEmpty()) {
         artifactId_ = other.artifactId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -599,19 +614,19 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getArtifactFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 artifactId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -630,6 +645,8 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -707,8 +724,8 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -729,8 +746,8 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -756,8 +773,8 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -782,7 +799,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the artifact field is set.
      */
     public boolean hasArtifact() {
-      return artifactBuilder_ != null || artifact_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -823,11 +840,11 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         artifact_ = value;
-        onChanged();
       } else {
         artifactBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -845,11 +862,11 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.aiplatform.v1beta1.Artifact.Builder builderForValue) {
       if (artifactBuilder_ == null) {
         artifact_ = builderForValue.build();
-        onChanged();
       } else {
         artifactBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -865,19 +882,18 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeArtifact(com.google.cloud.aiplatform.v1beta1.Artifact value) {
       if (artifactBuilder_ == null) {
-        if (artifact_ != null) {
-          artifact_ =
-              com.google.cloud.aiplatform.v1beta1.Artifact.newBuilder(artifact_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && artifact_ != null
+            && artifact_ != com.google.cloud.aiplatform.v1beta1.Artifact.getDefaultInstance()) {
+          getArtifactBuilder().mergeFrom(value);
         } else {
           artifact_ = value;
         }
-        onChanged();
       } else {
         artifactBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -892,14 +908,13 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearArtifact() {
-      if (artifactBuilder_ == null) {
-        artifact_ = null;
-        onChanged();
-      } else {
-        artifact_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      artifact_ = null;
+      if (artifactBuilder_ != null) {
+        artifactBuilder_.dispose();
         artifactBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -914,7 +929,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Artifact.Builder getArtifactBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getArtifactFieldBuilder().getBuilder();
     }
@@ -1045,8 +1060,8 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       artifactId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1068,8 +1083,8 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearArtifactId() {
-
       artifactId_ = getDefaultInstance().getArtifactId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1096,8 +1111,8 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       artifactId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

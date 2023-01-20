@@ -67,7 +67,7 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
   }
 
   public static final int IMPORTED_ENTITY_COUNT_FIELD_NUMBER = 1;
-  private long importedEntityCount_;
+  private long importedEntityCount_ = 0L;
   /**
    *
    *
@@ -85,7 +85,7 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
   }
 
   public static final int IMPORTED_FEATURE_VALUE_COUNT_FIELD_NUMBER = 2;
-  private long importedFeatureValueCount_;
+  private long importedFeatureValueCount_ = 0L;
   /**
    *
    *
@@ -103,7 +103,7 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
   }
 
   public static final int INVALID_ROW_COUNT_FIELD_NUMBER = 6;
-  private long invalidRowCount_;
+  private long invalidRowCount_ = 0L;
   /**
    *
    *
@@ -125,7 +125,7 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
   }
 
   public static final int TIMESTAMP_OUTSIDE_RETENTION_ROWS_COUNT_FIELD_NUMBER = 4;
-  private long timestampOutsideRetentionRowsCount_;
+  private long timestampOutsideRetentionRowsCount_ = 0L;
   /**
    *
    *
@@ -374,14 +374,11 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       importedEntityCount_ = 0L;
-
       importedFeatureValueCount_ = 0L;
-
       invalidRowCount_ = 0L;
-
       timestampOutsideRetentionRowsCount_ = 0L;
-
       return this;
     }
 
@@ -410,12 +407,28 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
     public com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesResponse buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesResponse result =
           new com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesResponse(this);
-      result.importedEntityCount_ = importedEntityCount_;
-      result.importedFeatureValueCount_ = importedFeatureValueCount_;
-      result.invalidRowCount_ = invalidRowCount_;
-      result.timestampOutsideRetentionRowsCount_ = timestampOutsideRetentionRowsCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.importedEntityCount_ = importedEntityCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.importedFeatureValueCount_ = importedFeatureValueCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.invalidRowCount_ = invalidRowCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.timestampOutsideRetentionRowsCount_ = timestampOutsideRetentionRowsCount_;
+      }
     }
 
     @java.lang.Override
@@ -507,25 +520,25 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
             case 8:
               {
                 importedEntityCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 importedFeatureValueCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 32:
               {
                 timestampOutsideRetentionRowsCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 48:
               {
                 invalidRowCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 48
             default:
@@ -544,6 +557,8 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long importedEntityCount_;
     /**
@@ -576,6 +591,7 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
     public Builder setImportedEntityCount(long value) {
 
       importedEntityCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -591,7 +607,7 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearImportedEntityCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       importedEntityCount_ = 0L;
       onChanged();
       return this;
@@ -628,6 +644,7 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
     public Builder setImportedFeatureValueCount(long value) {
 
       importedFeatureValueCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -643,7 +660,7 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearImportedFeatureValueCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       importedFeatureValueCount_ = 0L;
       onChanged();
       return this;
@@ -688,6 +705,7 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
     public Builder setInvalidRowCount(long value) {
 
       invalidRowCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -707,7 +725,7 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearInvalidRowCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       invalidRowCount_ = 0L;
       onChanged();
       return this;
@@ -746,6 +764,7 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
     public Builder setTimestampOutsideRetentionRowsCount(long value) {
 
       timestampOutsideRetentionRowsCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -762,7 +781,7 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearTimestampOutsideRetentionRowsCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       timestampOutsideRetentionRowsCount_ = 0L;
       onChanged();
       return this;

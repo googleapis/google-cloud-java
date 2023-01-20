@@ -171,7 +171,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private int type_ = 0;
     /**
      * <code>.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveType type = 1;
      * </code>
@@ -190,16 +190,16 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveType result =
-          com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveType.valueOf(type_);
+          com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveType.forNumber(
+              type_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveType.UNRECOGNIZED
           : result;
     }
 
     public static final int TOP_FEATURE_COUNT_FIELD_NUMBER = 4;
-    private int topFeatureCount_;
+    private int topFeatureCount_ = 0;
     /**
      *
      *
@@ -471,10 +471,9 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         type_ = 0;
-
         topFeatureCount_ = 0;
-
         return this;
       }
 
@@ -516,10 +515,24 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
                 new com.google.cloud.aiplatform.v1beta1
                     .SearchModelDeploymentMonitoringStatsAnomaliesRequest.StatsAnomaliesObjective(
                     this);
-        result.type_ = type_;
-        result.topFeatureCount_ = topFeatureCount_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesRequest
+                  .StatsAnomaliesObjective
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.topFeatureCount_ = topFeatureCount_;
+        }
       }
 
       @java.lang.Override
@@ -616,13 +629,13 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
               case 8:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 32:
                 {
                   topFeatureCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 32
               default:
@@ -641,6 +654,8 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int type_ = 0;
       /**
@@ -661,8 +676,8 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -674,9 +689,8 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
        */
       @java.lang.Override
       public com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveType getType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveType result =
-            com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveType.valueOf(
+            com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveType.forNumber(
                 type_);
         return result == null
             ? com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveType
@@ -695,7 +709,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -707,7 +721,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         type_ = 0;
         onChanged();
         return this;
@@ -756,6 +770,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
       public Builder setTopFeatureCount(int value) {
 
         topFeatureCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -777,7 +792,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
        * @return This builder for chaining.
        */
       public Builder clearTopFeatureCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         topFeatureCount_ = 0;
         onChanged();
         return this;
@@ -856,7 +871,9 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
   }
 
   public static final int MODEL_DEPLOYMENT_MONITORING_JOB_FIELD_NUMBER = 1;
-  private volatile java.lang.Object modelDeploymentMonitoringJob_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object modelDeploymentMonitoringJob_ = "";
   /**
    *
    *
@@ -913,7 +930,9 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
   }
 
   public static final int DEPLOYED_MODEL_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object deployedModelId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deployedModelId_ = "";
   /**
    *
    *
@@ -964,7 +983,9 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
   }
 
   public static final int FEATURE_DISPLAY_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object featureDisplayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object featureDisplayName_ = "";
   /**
    *
    *
@@ -1019,6 +1040,8 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
   }
 
   public static final int OBJECTIVES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesRequest
               .StatsAnomaliesObjective>
@@ -1112,7 +1135,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 5;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -1130,7 +1153,9 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 6;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -1228,7 +1253,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 8;
@@ -1277,7 +1302,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1584,33 +1609,27 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       modelDeploymentMonitoringJob_ = "";
-
       deployedModelId_ = "";
-
       featureDisplayName_ = "";
-
       if (objectivesBuilder_ == null) {
         objectives_ = java.util.Collections.emptyList();
       } else {
         objectives_ = null;
         objectivesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       pageSize_ = 0;
-
       pageToken_ = "";
-
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       return this;
@@ -1647,33 +1666,53 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
           result =
               new com.google.cloud.aiplatform.v1beta1
                   .SearchModelDeploymentMonitoringStatsAnomaliesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.modelDeploymentMonitoringJob_ = modelDeploymentMonitoringJob_;
-      result.deployedModelId_ = deployedModelId_;
-      result.featureDisplayName_ = featureDisplayName_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesRequest
+            result) {
       if (objectivesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           objectives_ = java.util.Collections.unmodifiableList(objectives_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.objectives_ = objectives_;
       } else {
         result.objectives_ = objectivesBuilder_.build();
       }
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesRequest
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.modelDeploymentMonitoringJob_ = modelDeploymentMonitoringJob_;
       }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deployedModelId_ = deployedModelId_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.featureDisplayName_ = featureDisplayName_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1734,21 +1773,24 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
         return this;
       if (!other.getModelDeploymentMonitoringJob().isEmpty()) {
         modelDeploymentMonitoringJob_ = other.modelDeploymentMonitoringJob_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDeployedModelId().isEmpty()) {
         deployedModelId_ = other.deployedModelId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getFeatureDisplayName().isEmpty()) {
         featureDisplayName_ = other.featureDisplayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (objectivesBuilder_ == null) {
         if (!other.objectives_.isEmpty()) {
           if (objectives_.isEmpty()) {
             objectives_ = other.objectives_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureObjectivesIsMutable();
             objectives_.addAll(other.objectives_);
@@ -1761,7 +1803,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
             objectivesBuilder_.dispose();
             objectivesBuilder_ = null;
             objectives_ = other.objectives_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             objectivesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getObjectivesFieldBuilder()
@@ -1776,6 +1818,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasStartTime()) {
@@ -1813,19 +1856,19 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
             case 10:
               {
                 modelDeploymentMonitoringJob_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 deployedModelId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 featureDisplayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1850,25 +1893,25 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
             case 40:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             default:
@@ -1963,8 +2006,8 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       modelDeploymentMonitoringJob_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1984,8 +2027,8 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      * @return This builder for chaining.
      */
     public Builder clearModelDeploymentMonitoringJob() {
-
       modelDeploymentMonitoringJob_ = getDefaultInstance().getModelDeploymentMonitoringJob();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2010,8 +2053,8 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       modelDeploymentMonitoringJob_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2080,8 +2123,8 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       deployedModelId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2098,8 +2141,8 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      * @return This builder for chaining.
      */
     public Builder clearDeployedModelId() {
-
       deployedModelId_ = getDefaultInstance().getDeployedModelId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2121,8 +2164,8 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deployedModelId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2197,8 +2240,8 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       featureDisplayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2217,8 +2260,8 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      * @return This builder for chaining.
      */
     public Builder clearFeatureDisplayName() {
-
       featureDisplayName_ = getDefaultInstance().getFeatureDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2242,8 +2285,8 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       featureDisplayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2254,13 +2297,13 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
         objectives_ = java.util.Collections.emptyList();
 
     private void ensureObjectivesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         objectives_ =
             new java.util.ArrayList<
                 com.google.cloud.aiplatform.v1beta1
                     .SearchModelDeploymentMonitoringStatsAnomaliesRequest.StatsAnomaliesObjective>(
                 objectives_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2530,7 +2573,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
     public Builder clearObjectives() {
       if (objectivesBuilder_ == null) {
         objectives_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         objectivesBuilder_.clear();
@@ -2695,7 +2738,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
                 com.google.cloud.aiplatform.v1beta1
                     .SearchModelDeploymentMonitoringStatsAnomaliesRequest
                     .StatsAnomaliesObjectiveOrBuilder>(
-                objectives_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                objectives_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         objectives_ = null;
       }
       return objectivesBuilder_;
@@ -2732,6 +2775,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2747,7 +2791,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -2820,8 +2864,8 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2839,8 +2883,8 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2863,8 +2907,8 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2888,7 +2932,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2925,11 +2969,11 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2945,11 +2989,11 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2964,17 +3008,18 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2988,14 +3033,13 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      * <code>.google.protobuf.Timestamp start_time = 7;</code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3009,7 +3053,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      * <code>.google.protobuf.Timestamp start_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -3076,7 +3120,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3113,11 +3157,11 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3133,11 +3177,11 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3152,17 +3196,18 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3176,14 +3221,13 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3197,7 +3241,7 @@ public final class SearchModelDeploymentMonitoringStatsAnomaliesRequest
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }

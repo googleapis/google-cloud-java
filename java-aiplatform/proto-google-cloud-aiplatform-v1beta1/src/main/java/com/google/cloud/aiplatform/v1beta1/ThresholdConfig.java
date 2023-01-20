@@ -374,6 +374,7 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       thresholdCase_ = 0;
       threshold_ = null;
       return this;
@@ -403,12 +404,21 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.aiplatform.v1beta1.ThresholdConfig buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ThresholdConfig result =
           new com.google.cloud.aiplatform.v1beta1.ThresholdConfig(this);
-      if (thresholdCase_ == 1) {
-        result.threshold_ = threshold_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.thresholdCase_ = thresholdCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ThresholdConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.aiplatform.v1beta1.ThresholdConfig result) {
+      result.thresholdCase_ = thresholdCase_;
+      result.threshold_ = this.threshold_;
     }
 
     @java.lang.Override
@@ -531,6 +541,8 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
@@ -596,6 +608,7 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setValue(double value) {
+
       thresholdCase_ = 1;
       threshold_ = value;
       onChanged();

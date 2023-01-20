@@ -70,7 +70,9 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -125,7 +127,7 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SUGGESTION_COUNT_FIELD_NUMBER = 2;
-  private int suggestionCount_;
+  private int suggestionCount_ = 0;
   /**
    *
    *
@@ -143,7 +145,9 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CLIENT_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object clientId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientId_ = "";
   /**
    *
    *
@@ -413,12 +417,10 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       suggestionCount_ = 0;
-
       clientId_ = "";
-
       return this;
     }
 
@@ -446,11 +448,24 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1.SuggestTrialsRequest buildPartial() {
       com.google.cloud.aiplatform.v1.SuggestTrialsRequest result =
           new com.google.cloud.aiplatform.v1.SuggestTrialsRequest(this);
-      result.parent_ = parent_;
-      result.suggestionCount_ = suggestionCount_;
-      result.clientId_ = clientId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.SuggestTrialsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.suggestionCount_ = suggestionCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clientId_ = clientId_;
+      }
     }
 
     @java.lang.Override
@@ -501,6 +516,7 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getSuggestionCount() != 0) {
@@ -508,6 +524,7 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getClientId().isEmpty()) {
         clientId_ = other.clientId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -539,19 +556,19 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 suggestionCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 clientId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -570,6 +587,8 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -641,8 +660,8 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -661,8 +680,8 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -686,8 +705,8 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -723,6 +742,7 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
     public Builder setSuggestionCount(int value) {
 
       suggestionCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -738,7 +758,7 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSuggestionCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       suggestionCount_ = 0;
       onChanged();
       return this;
@@ -814,8 +834,8 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       clientId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -834,8 +854,8 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearClientId() {
-
       clientId_ = getDefaultInstance().getClientId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -859,8 +879,8 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clientId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

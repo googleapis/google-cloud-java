@@ -79,7 +79,6 @@ public interface ReadTensorboardUsageResponseOrBuilder
    * map&lt;string, .google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerMonthUsageData&gt; monthly_usage_data = 1;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerMonthUsageData
       getMonthlyUsageDataOrDefault(

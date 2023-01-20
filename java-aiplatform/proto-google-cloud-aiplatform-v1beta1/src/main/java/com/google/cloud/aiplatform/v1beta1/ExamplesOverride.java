@@ -228,7 +228,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NEIGHBOR_COUNT_FIELD_NUMBER = 1;
-  private int neighborCount_;
+  private int neighborCount_ = 0;
   /**
    *
    *
@@ -246,7 +246,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CROWDING_COUNT_FIELD_NUMBER = 2;
-  private int crowdingCount_;
+  private int crowdingCount_ = 0;
   /**
    *
    *
@@ -264,6 +264,8 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int RESTRICTIONS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.ExamplesRestrictionsNamespace>
       restrictions_;
   /**
@@ -343,7 +345,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int RETURN_EMBEDDINGS_FIELD_NUMBER = 4;
-  private boolean returnEmbeddings_;
+  private boolean returnEmbeddings_ = false;
   /**
    *
    *
@@ -361,7 +363,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DATA_FORMAT_FIELD_NUMBER = 5;
-  private int dataFormat_;
+  private int dataFormat_ = 0;
   /**
    *
    *
@@ -390,9 +392,8 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.ExamplesOverride.DataFormat getDataFormat() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1beta1.ExamplesOverride.DataFormat result =
-        com.google.cloud.aiplatform.v1beta1.ExamplesOverride.DataFormat.valueOf(dataFormat_);
+        com.google.cloud.aiplatform.v1beta1.ExamplesOverride.DataFormat.forNumber(dataFormat_);
     return result == null
         ? com.google.cloud.aiplatform.v1beta1.ExamplesOverride.DataFormat.UNRECOGNIZED
         : result;
@@ -637,21 +638,18 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       neighborCount_ = 0;
-
       crowdingCount_ = 0;
-
       if (restrictionsBuilder_ == null) {
         restrictions_ = java.util.Collections.emptyList();
       } else {
         restrictions_ = null;
         restrictionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       returnEmbeddings_ = false;
-
       dataFormat_ = 0;
-
       return this;
     }
 
@@ -679,22 +677,41 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.aiplatform.v1beta1.ExamplesOverride buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ExamplesOverride result =
           new com.google.cloud.aiplatform.v1beta1.ExamplesOverride(this);
-      int from_bitField0_ = bitField0_;
-      result.neighborCount_ = neighborCount_;
-      result.crowdingCount_ = crowdingCount_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.ExamplesOverride result) {
       if (restrictionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           restrictions_ = java.util.Collections.unmodifiableList(restrictions_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.restrictions_ = restrictions_;
       } else {
         result.restrictions_ = restrictionsBuilder_.build();
       }
-      result.returnEmbeddings_ = returnEmbeddings_;
-      result.dataFormat_ = dataFormat_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ExamplesOverride result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.neighborCount_ = neighborCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.crowdingCount_ = crowdingCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.returnEmbeddings_ = returnEmbeddings_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.dataFormat_ = dataFormat_;
+      }
     }
 
     @java.lang.Override
@@ -753,7 +770,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
         if (!other.restrictions_.isEmpty()) {
           if (restrictions_.isEmpty()) {
             restrictions_ = other.restrictions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureRestrictionsIsMutable();
             restrictions_.addAll(other.restrictions_);
@@ -766,7 +783,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
             restrictionsBuilder_.dispose();
             restrictionsBuilder_ = null;
             restrictions_ = other.restrictions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             restrictionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRestrictionsFieldBuilder()
@@ -811,13 +828,13 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 neighborCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 crowdingCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -837,13 +854,13 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
             case 32:
               {
                 returnEmbeddings_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 dataFormat_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -896,6 +913,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
     public Builder setNeighborCount(int value) {
 
       neighborCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -911,7 +929,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearNeighborCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       neighborCount_ = 0;
       onChanged();
       return this;
@@ -948,6 +966,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
     public Builder setCrowdingCount(int value) {
 
       crowdingCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -963,7 +982,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearCrowdingCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       crowdingCount_ = 0;
       onChanged();
       return this;
@@ -973,11 +992,11 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
         restrictions_ = java.util.Collections.emptyList();
 
     private void ensureRestrictionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         restrictions_ =
             new java.util.ArrayList<
                 com.google.cloud.aiplatform.v1beta1.ExamplesRestrictionsNamespace>(restrictions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1224,7 +1243,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
     public Builder clearRestrictions() {
       if (restrictionsBuilder_ == null) {
         restrictions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         restrictionsBuilder_.clear();
@@ -1370,7 +1389,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.aiplatform.v1beta1.ExamplesRestrictionsNamespace,
                 com.google.cloud.aiplatform.v1beta1.ExamplesRestrictionsNamespace.Builder,
                 com.google.cloud.aiplatform.v1beta1.ExamplesRestrictionsNamespaceOrBuilder>(
-                restrictions_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                restrictions_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         restrictions_ = null;
       }
       return restrictionsBuilder_;
@@ -1407,6 +1426,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
     public Builder setReturnEmbeddings(boolean value) {
 
       returnEmbeddings_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1422,7 +1442,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearReturnEmbeddings() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       returnEmbeddings_ = false;
       onChanged();
       return this;
@@ -1457,8 +1477,8 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setDataFormatValue(int value) {
-
       dataFormat_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1475,9 +1495,8 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.ExamplesOverride.DataFormat getDataFormat() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.ExamplesOverride.DataFormat result =
-          com.google.cloud.aiplatform.v1beta1.ExamplesOverride.DataFormat.valueOf(dataFormat_);
+          com.google.cloud.aiplatform.v1beta1.ExamplesOverride.DataFormat.forNumber(dataFormat_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.ExamplesOverride.DataFormat.UNRECOGNIZED
           : result;
@@ -1499,7 +1518,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       dataFormat_ = value.getNumber();
       onChanged();
       return this;
@@ -1516,7 +1535,7 @@ public final class ExamplesOverride extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDataFormat() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       dataFormat_ = 0;
       onChanged();
       return this;

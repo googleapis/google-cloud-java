@@ -401,7 +401,6 @@ public interface CustomJobOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -549,7 +548,6 @@ public interface CustomJobOrBuilder
    * map&lt;string, string&gt; web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-
   /* nullable */
   java.lang.String getWebAccessUrisOrDefault(
       java.lang.String key,

@@ -69,7 +69,9 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ENDPOINT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object endpoint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object endpoint_ = "";
   /**
    *
    *
@@ -204,7 +206,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.api.HttpBodyOrBuilder getHttpBodyOrBuilder() {
-    return getHttpBody();
+    return httpBody_ == null ? com.google.api.HttpBody.getDefaultInstance() : httpBody_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -420,12 +422,11 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       endpoint_ = "";
-
-      if (httpBodyBuilder_ == null) {
-        httpBody_ = null;
-      } else {
-        httpBody_ = null;
+      httpBody_ = null;
+      if (httpBodyBuilder_ != null) {
+        httpBodyBuilder_.dispose();
         httpBodyBuilder_ = null;
       }
       return this;
@@ -455,14 +456,21 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.aiplatform.v1beta1.RawPredictRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.RawPredictRequest result =
           new com.google.cloud.aiplatform.v1beta1.RawPredictRequest(this);
-      result.endpoint_ = endpoint_;
-      if (httpBodyBuilder_ == null) {
-        result.httpBody_ = httpBody_;
-      } else {
-        result.httpBody_ = httpBodyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.RawPredictRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.endpoint_ = endpoint_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.httpBody_ = httpBodyBuilder_ == null ? httpBody_ : httpBodyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -513,6 +521,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getEndpoint().isEmpty()) {
         endpoint_ = other.endpoint_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasHttpBody()) {
@@ -547,13 +556,13 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 endpoint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getHttpBodyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -572,6 +581,8 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object endpoint_ = "";
     /**
@@ -646,8 +657,8 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       endpoint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -667,8 +678,8 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEndpoint() {
-
       endpoint_ = getDefaultInstance().getEndpoint();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -693,8 +704,8 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       endpoint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -729,7 +740,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the httpBody field is set.
      */
     public boolean hasHttpBody() {
-      return httpBodyBuilder_ != null || httpBody_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -788,11 +799,11 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         httpBody_ = value;
-        onChanged();
       } else {
         httpBodyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -819,11 +830,11 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
     public Builder setHttpBody(com.google.api.HttpBody.Builder builderForValue) {
       if (httpBodyBuilder_ == null) {
         httpBody_ = builderForValue.build();
-        onChanged();
       } else {
         httpBodyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -849,16 +860,18 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeHttpBody(com.google.api.HttpBody value) {
       if (httpBodyBuilder_ == null) {
-        if (httpBody_ != null) {
-          httpBody_ = com.google.api.HttpBody.newBuilder(httpBody_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && httpBody_ != null
+            && httpBody_ != com.google.api.HttpBody.getDefaultInstance()) {
+          getHttpBodyBuilder().mergeFrom(value);
         } else {
           httpBody_ = value;
         }
-        onChanged();
       } else {
         httpBodyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -883,14 +896,13 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.api.HttpBody http_body = 2;</code>
      */
     public Builder clearHttpBody() {
-      if (httpBodyBuilder_ == null) {
-        httpBody_ = null;
-        onChanged();
-      } else {
-        httpBody_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      httpBody_ = null;
+      if (httpBodyBuilder_ != null) {
+        httpBodyBuilder_.dispose();
         httpBodyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -915,7 +927,7 @@ public final class RawPredictRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.api.HttpBody http_body = 2;</code>
      */
     public com.google.api.HttpBody.Builder getHttpBodyBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getHttpBodyFieldBuilder().getBuilder();
     }

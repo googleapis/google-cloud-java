@@ -71,7 +71,9 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
   }
 
   public static final int TIME_SERIES_FIELD_NUMBER = 1;
-  private volatile java.lang.Object timeSeries_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object timeSeries_ = "";
   /**
    *
    *
@@ -128,6 +130,8 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
   }
 
   public static final int BLOB_IDS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList blobIds_;
   /**
    *
@@ -403,10 +407,10 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       timeSeries_ = "";
-
       blobIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -435,15 +439,29 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
     public com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataRequest buildPartial() {
       com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataRequest result =
           new com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.timeSeries_ = timeSeries_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        blobIds_ = blobIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.blobIds_ = blobIds_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        blobIds_ = blobIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.blobIds_ = blobIds_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.timeSeries_ = timeSeries_;
+      }
     }
 
     @java.lang.Override
@@ -495,12 +513,13 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getTimeSeries().isEmpty()) {
         timeSeries_ = other.timeSeries_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.blobIds_.isEmpty()) {
         if (blobIds_.isEmpty()) {
           blobIds_ = other.blobIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureBlobIdsIsMutable();
           blobIds_.addAll(other.blobIds_);
@@ -536,7 +555,7 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
             case 10:
               {
                 timeSeries_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -638,8 +657,8 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       timeSeries_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -659,8 +678,8 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearTimeSeries() {
-
       timeSeries_ = getDefaultInstance().getTimeSeries();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -685,8 +704,8 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       timeSeries_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -695,9 +714,9 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureBlobIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         blobIds_ = new com.google.protobuf.LazyStringArrayList(blobIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -832,7 +851,7 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
      */
     public Builder clearBlobIds() {
       blobIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

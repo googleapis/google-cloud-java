@@ -385,7 +385,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
     }
 
     public static final int MAX_STEP_FIELD_NUMBER = 1;
-    private long maxStep_;
+    private long maxStep_ = 0L;
     /**
      *
      *
@@ -457,11 +457,13 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getMaxWallTimeOrBuilder() {
-      return getMaxWallTime();
+      return maxWallTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : maxWallTime_;
     }
 
     public static final int MAX_BLOB_SEQUENCE_LENGTH_FIELD_NUMBER = 3;
-    private long maxBlobSequenceLength_;
+    private long maxBlobSequenceLength_ = 0L;
     /**
      *
      *
@@ -704,16 +706,14 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         maxStep_ = 0L;
-
-        if (maxWallTimeBuilder_ == null) {
-          maxWallTime_ = null;
-        } else {
-          maxWallTime_ = null;
+        maxWallTime_ = null;
+        if (maxWallTimeBuilder_ != null) {
+          maxWallTimeBuilder_.dispose();
           maxWallTimeBuilder_ = null;
         }
         maxBlobSequenceLength_ = 0L;
-
         return this;
       }
 
@@ -743,15 +743,26 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
       public com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.Metadata buildPartial() {
         com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.Metadata result =
             new com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.Metadata(this);
-        result.maxStep_ = maxStep_;
-        if (maxWallTimeBuilder_ == null) {
-          result.maxWallTime_ = maxWallTime_;
-        } else {
-          result.maxWallTime_ = maxWallTimeBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.maxBlobSequenceLength_ = maxBlobSequenceLength_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.Metadata result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.maxStep_ = maxStep_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxWallTime_ =
+              maxWallTimeBuilder_ == null ? maxWallTime_ : maxWallTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.maxBlobSequenceLength_ = maxBlobSequenceLength_;
+        }
       }
 
       @java.lang.Override
@@ -843,19 +854,19 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
               case 8:
                 {
                   maxStep_ = input.readInt64();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   input.readMessage(getMaxWallTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   maxBlobSequenceLength_ = input.readInt64();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -874,6 +885,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private long maxStep_;
       /**
@@ -908,6 +921,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
       public Builder setMaxStep(long value) {
 
         maxStep_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -924,7 +938,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearMaxStep() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         maxStep_ = 0L;
         onChanged();
         return this;
@@ -951,7 +965,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
        * @return Whether the maxWallTime field is set.
        */
       public boolean hasMaxWallTime() {
-        return maxWallTimeBuilder_ != null || maxWallTime_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -994,11 +1008,11 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
             throw new NullPointerException();
           }
           maxWallTime_ = value;
-          onChanged();
         } else {
           maxWallTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1016,11 +1030,11 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
       public Builder setMaxWallTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (maxWallTimeBuilder_ == null) {
           maxWallTime_ = builderForValue.build();
-          onChanged();
         } else {
           maxWallTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1037,19 +1051,18 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
        */
       public Builder mergeMaxWallTime(com.google.protobuf.Timestamp value) {
         if (maxWallTimeBuilder_ == null) {
-          if (maxWallTime_ != null) {
-            maxWallTime_ =
-                com.google.protobuf.Timestamp.newBuilder(maxWallTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && maxWallTime_ != null
+              && maxWallTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getMaxWallTimeBuilder().mergeFrom(value);
           } else {
             maxWallTime_ = value;
           }
-          onChanged();
         } else {
           maxWallTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1065,14 +1078,13 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
        * </code>
        */
       public Builder clearMaxWallTime() {
-        if (maxWallTimeBuilder_ == null) {
-          maxWallTime_ = null;
-          onChanged();
-        } else {
-          maxWallTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maxWallTime_ = null;
+        if (maxWallTimeBuilder_ != null) {
+          maxWallTimeBuilder_.dispose();
           maxWallTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1088,7 +1100,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
        * </code>
        */
       public com.google.protobuf.Timestamp.Builder getMaxWallTimeBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getMaxWallTimeFieldBuilder().getBuilder();
       }
@@ -1177,6 +1189,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
       public Builder setMaxBlobSequenceLength(long value) {
 
         maxBlobSequenceLength_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1194,7 +1207,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearMaxBlobSequenceLength() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         maxBlobSequenceLength_ = 0L;
         onChanged();
         return this;
@@ -1268,7 +1281,9 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1317,7 +1332,9 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -1370,7 +1387,9 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -1419,7 +1438,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
   }
 
   public static final int VALUE_TYPE_FIELD_NUMBER = 4;
-  private int valueType_;
+  private int valueType_ = 0;
   /**
    *
    *
@@ -1452,9 +1471,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.ValueType getValueType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.ValueType result =
-        com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.ValueType.valueOf(valueType_);
+        com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.ValueType.forNumber(valueType_);
     return result == null
         ? com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.ValueType.UNRECOGNIZED
         : result;
@@ -1506,7 +1524,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 6;
@@ -1555,11 +1573,13 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int ETAG_FIELD_NUMBER = 7;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -1610,7 +1630,9 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PLUGIN_NAME_FIELD_NUMBER = 8;
-  private volatile java.lang.Object pluginName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pluginName_ = "";
   /**
    *
    *
@@ -1661,7 +1683,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PLUGIN_DATA_FIELD_NUMBER = 9;
-  private com.google.protobuf.ByteString pluginData_;
+  private com.google.protobuf.ByteString pluginData_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -1733,7 +1755,9 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.MetadataOrBuilder
       getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.Metadata.getDefaultInstance()
+        : metadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2036,36 +2060,27 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
       valueType_ = 0;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       etag_ = "";
-
       pluginName_ = "";
-
       pluginData_ = com.google.protobuf.ByteString.EMPTY;
-
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
       return this;
@@ -2095,30 +2110,45 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
     public com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries buildPartial() {
       com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries result =
           new com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries(this);
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      result.valueType_ = valueType_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.etag_ = etag_;
-      result.pluginName_ = pluginName_;
-      result.pluginData_ = pluginData_;
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.valueType_ = valueType_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.pluginName_ = pluginName_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.pluginData_ = pluginData_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2169,14 +2199,17 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.valueType_ != 0) {
@@ -2190,10 +2223,12 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getPluginName().isEmpty()) {
         pluginName_ = other.pluginName_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.getPluginData() != com.google.protobuf.ByteString.EMPTY) {
@@ -2231,61 +2266,61 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 valueType_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 pluginName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 pluginData_ = input.readBytes();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             default:
@@ -2304,6 +2339,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -2366,8 +2403,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2383,8 +2420,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2405,8 +2442,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2478,8 +2515,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2497,8 +2534,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2521,8 +2558,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2588,8 +2625,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2605,8 +2642,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2627,8 +2664,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2666,8 +2703,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setValueTypeValue(int value) {
-
       valueType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2686,9 +2723,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.ValueType getValueType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.ValueType result =
-          com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.ValueType.valueOf(valueType_);
+          com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.ValueType.forNumber(valueType_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.ValueType.UNRECOGNIZED
           : result;
@@ -2712,7 +2748,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       valueType_ = value.getNumber();
       onChanged();
       return this;
@@ -2731,7 +2767,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearValueType() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       valueType_ = 0;
       onChanged();
       return this;
@@ -2757,7 +2793,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2798,11 +2834,11 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2819,11 +2855,11 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2839,17 +2875,18 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2864,14 +2901,13 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2886,7 +2922,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2958,7 +2994,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2999,11 +3035,11 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3020,11 +3056,11 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3040,17 +3076,18 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3065,14 +3102,13 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3087,7 +3123,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3203,8 +3239,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3221,8 +3257,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3244,8 +3280,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3314,8 +3350,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       pluginName_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3332,8 +3368,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPluginName() {
-
       pluginName_ = getDefaultInstance().getPluginName();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3355,8 +3391,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pluginName_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3393,8 +3429,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       pluginData_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3410,7 +3446,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPluginData() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       pluginData_ = getDefaultInstance().getPluginData();
       onChanged();
       return this;
@@ -3437,7 +3473,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3482,11 +3518,11 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3506,11 +3542,11 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
             builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3528,20 +3564,20 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
     public Builder mergeMetadata(
         com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.Metadata value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.Metadata.newBuilder(
-                      metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && metadata_ != null
+            && metadata_
+                != com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.Metadata
+                    .getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3557,14 +3593,13 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3581,7 +3616,7 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      */
     public com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.Metadata.Builder
         getMetadataBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }

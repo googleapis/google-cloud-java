@@ -282,7 +282,7 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
   }
 
   public static final int MODEL_TYPE_FIELD_NUMBER = 1;
-  private int modelType_;
+  private int modelType_ = 0;
   /**
    * <code>
    * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs.ModelType model_type = 1;
@@ -305,12 +305,11 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
   public com.google.cloud.aiplatform.v1.schema.trainingjob.definition
           .AutoMlVideoActionRecognitionInputs.ModelType
       getModelType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs
             .ModelType
         result =
             com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                .AutoMlVideoActionRecognitionInputs.ModelType.valueOf(modelType_);
+                .AutoMlVideoActionRecognitionInputs.ModelType.forNumber(modelType_);
     return result == null
         ? com.google.cloud.aiplatform.v1.schema.trainingjob.definition
             .AutoMlVideoActionRecognitionInputs.ModelType.UNRECOGNIZED
@@ -548,8 +547,8 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       modelType_ = 0;
-
       return this;
     }
 
@@ -590,9 +589,21 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
           result =
               new com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                   .AutoMlVideoActionRecognitionInputs(this);
-      result.modelType_ = modelType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.schema.trainingjob.definition
+                .AutoMlVideoActionRecognitionInputs
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.modelType_ = modelType_;
+      }
     }
 
     @java.lang.Override
@@ -683,7 +694,7 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
             case 8:
               {
                 modelType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -702,6 +713,8 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int modelType_ = 0;
     /**
@@ -724,8 +737,8 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setModelTypeValue(int value) {
-
       modelType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -740,12 +753,11 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
     public com.google.cloud.aiplatform.v1.schema.trainingjob.definition
             .AutoMlVideoActionRecognitionInputs.ModelType
         getModelType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1.schema.trainingjob.definition
               .AutoMlVideoActionRecognitionInputs.ModelType
           result =
               com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                  .AutoMlVideoActionRecognitionInputs.ModelType.valueOf(modelType_);
+                  .AutoMlVideoActionRecognitionInputs.ModelType.forNumber(modelType_);
       return result == null
           ? com.google.cloud.aiplatform.v1.schema.trainingjob.definition
               .AutoMlVideoActionRecognitionInputs.ModelType.UNRECOGNIZED
@@ -766,7 +778,7 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       modelType_ = value.getNumber();
       onChanged();
       return this;
@@ -779,7 +791,7 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearModelType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       modelType_ = 0;
       onChanged();
       return this;

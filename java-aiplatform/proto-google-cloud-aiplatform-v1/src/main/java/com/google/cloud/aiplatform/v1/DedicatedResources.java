@@ -122,11 +122,13 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.MachineSpecOrBuilder getMachineSpecOrBuilder() {
-    return getMachineSpec();
+    return machineSpec_ == null
+        ? com.google.cloud.aiplatform.v1.MachineSpec.getDefaultInstance()
+        : machineSpec_;
   }
 
   public static final int MIN_REPLICA_COUNT_FIELD_NUMBER = 2;
-  private int minReplicaCount_;
+  private int minReplicaCount_ = 0;
   /**
    *
    *
@@ -151,7 +153,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MAX_REPLICA_COUNT_FIELD_NUMBER = 3;
-  private int maxReplicaCount_;
+  private int maxReplicaCount_ = 0;
   /**
    *
    *
@@ -181,6 +183,8 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int AUTOSCALING_METRIC_SPECS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.AutoscalingMetricSpec>
       autoscalingMetricSpecs_;
   /**
@@ -592,23 +596,21 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (machineSpecBuilder_ == null) {
-        machineSpec_ = null;
-      } else {
-        machineSpec_ = null;
+      bitField0_ = 0;
+      machineSpec_ = null;
+      if (machineSpecBuilder_ != null) {
+        machineSpecBuilder_.dispose();
         machineSpecBuilder_ = null;
       }
       minReplicaCount_ = 0;
-
       maxReplicaCount_ = 0;
-
       if (autoscalingMetricSpecsBuilder_ == null) {
         autoscalingMetricSpecs_ = java.util.Collections.emptyList();
       } else {
         autoscalingMetricSpecs_ = null;
         autoscalingMetricSpecsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -636,25 +638,39 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1.DedicatedResources buildPartial() {
       com.google.cloud.aiplatform.v1.DedicatedResources result =
           new com.google.cloud.aiplatform.v1.DedicatedResources(this);
-      int from_bitField0_ = bitField0_;
-      if (machineSpecBuilder_ == null) {
-        result.machineSpec_ = machineSpec_;
-      } else {
-        result.machineSpec_ = machineSpecBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.minReplicaCount_ = minReplicaCount_;
-      result.maxReplicaCount_ = maxReplicaCount_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.DedicatedResources result) {
       if (autoscalingMetricSpecsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           autoscalingMetricSpecs_ = java.util.Collections.unmodifiableList(autoscalingMetricSpecs_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.autoscalingMetricSpecs_ = autoscalingMetricSpecs_;
       } else {
         result.autoscalingMetricSpecs_ = autoscalingMetricSpecsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.DedicatedResources result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.machineSpec_ =
+            machineSpecBuilder_ == null ? machineSpec_ : machineSpecBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.minReplicaCount_ = minReplicaCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.maxReplicaCount_ = maxReplicaCount_;
+      }
     }
 
     @java.lang.Override
@@ -716,7 +732,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
         if (!other.autoscalingMetricSpecs_.isEmpty()) {
           if (autoscalingMetricSpecs_.isEmpty()) {
             autoscalingMetricSpecs_ = other.autoscalingMetricSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureAutoscalingMetricSpecsIsMutable();
             autoscalingMetricSpecs_.addAll(other.autoscalingMetricSpecs_);
@@ -729,7 +745,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
             autoscalingMetricSpecsBuilder_.dispose();
             autoscalingMetricSpecsBuilder_ = null;
             autoscalingMetricSpecs_ = other.autoscalingMetricSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             autoscalingMetricSpecsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAutoscalingMetricSpecsFieldBuilder()
@@ -768,19 +784,19 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getMachineSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 minReplicaCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 maxReplicaCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -837,7 +853,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      * @return Whether the machineSpec field is set.
      */
     public boolean hasMachineSpec() {
-      return machineSpecBuilder_ != null || machineSpec_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -880,11 +896,11 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         machineSpec_ = value;
-        onChanged();
       } else {
         machineSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -903,11 +919,11 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
         com.google.cloud.aiplatform.v1.MachineSpec.Builder builderForValue) {
       if (machineSpecBuilder_ == null) {
         machineSpec_ = builderForValue.build();
-        onChanged();
       } else {
         machineSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -924,19 +940,18 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeMachineSpec(com.google.cloud.aiplatform.v1.MachineSpec value) {
       if (machineSpecBuilder_ == null) {
-        if (machineSpec_ != null) {
-          machineSpec_ =
-              com.google.cloud.aiplatform.v1.MachineSpec.newBuilder(machineSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && machineSpec_ != null
+            && machineSpec_ != com.google.cloud.aiplatform.v1.MachineSpec.getDefaultInstance()) {
+          getMachineSpecBuilder().mergeFrom(value);
         } else {
           machineSpec_ = value;
         }
-        onChanged();
       } else {
         machineSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -952,14 +967,13 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearMachineSpec() {
-      if (machineSpecBuilder_ == null) {
-        machineSpec_ = null;
-        onChanged();
-      } else {
-        machineSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      machineSpec_ = null;
+      if (machineSpecBuilder_ != null) {
+        machineSpecBuilder_.dispose();
         machineSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -975,7 +989,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.aiplatform.v1.MachineSpec.Builder getMachineSpecBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getMachineSpecFieldBuilder().getBuilder();
     }
@@ -1074,6 +1088,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     public Builder setMinReplicaCount(int value) {
 
       minReplicaCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1096,7 +1111,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMinReplicaCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       minReplicaCount_ = 0;
       onChanged();
       return this;
@@ -1157,6 +1172,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     public Builder setMaxReplicaCount(int value) {
 
       maxReplicaCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1184,7 +1200,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMaxReplicaCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       maxReplicaCount_ = 0;
       onChanged();
       return this;
@@ -1194,11 +1210,11 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
         autoscalingMetricSpecs_ = java.util.Collections.emptyList();
 
     private void ensureAutoscalingMetricSpecsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         autoscalingMetricSpecs_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1.AutoscalingMetricSpec>(
                 autoscalingMetricSpecs_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1650,7 +1666,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     public Builder clearAutoscalingMetricSpecs() {
       if (autoscalingMetricSpecsBuilder_ == null) {
         autoscalingMetricSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         autoscalingMetricSpecsBuilder_.clear();
@@ -1925,7 +1941,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.aiplatform.v1.AutoscalingMetricSpec.Builder,
                 com.google.cloud.aiplatform.v1.AutoscalingMetricSpecOrBuilder>(
                 autoscalingMetricSpecs_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         autoscalingMetricSpecs_ = null;

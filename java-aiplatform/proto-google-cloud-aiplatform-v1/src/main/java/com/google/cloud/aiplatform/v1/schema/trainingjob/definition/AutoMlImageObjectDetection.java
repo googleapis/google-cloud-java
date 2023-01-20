@@ -129,7 +129,10 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
   public com.google.cloud.aiplatform.v1.schema.trainingjob.definition
           .AutoMlImageObjectDetectionInputsOrBuilder
       getInputsOrBuilder() {
-    return getInputs();
+    return inputs_ == null
+        ? com.google.cloud.aiplatform.v1.schema.trainingjob.definition
+            .AutoMlImageObjectDetectionInputs.getDefaultInstance()
+        : inputs_;
   }
 
   public static final int METADATA_FIELD_NUMBER = 2;
@@ -190,7 +193,10 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
   public com.google.cloud.aiplatform.v1.schema.trainingjob.definition
           .AutoMlImageObjectDetectionMetadataOrBuilder
       getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.cloud.aiplatform.v1.schema.trainingjob.definition
+            .AutoMlImageObjectDetectionMetadata.getDefaultInstance()
+        : metadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -439,16 +445,15 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (inputsBuilder_ == null) {
-        inputs_ = null;
-      } else {
-        inputs_ = null;
+      bitField0_ = 0;
+      inputs_ = null;
+      if (inputsBuilder_ != null) {
+        inputsBuilder_.dispose();
         inputsBuilder_ = null;
       }
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
       return this;
@@ -486,18 +491,23 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
           result =
               new com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                   .AutoMlImageObjectDetection(this);
-      if (inputsBuilder_ == null) {
-        result.inputs_ = inputs_;
-      } else {
-        result.inputs_ = inputsBuilder_.build();
-      }
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageObjectDetection
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.inputs_ = inputsBuilder_ == null ? inputs_ : inputsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -589,13 +599,13 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
             case 10:
               {
                 input.readMessage(getInputsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -614,6 +624,8 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1.schema.trainingjob.definition
             .AutoMlImageObjectDetectionInputs
@@ -640,7 +652,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
      * @return Whether the inputs field is set.
      */
     public boolean hasInputs() {
-      return inputsBuilder_ != null || inputs_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -687,11 +699,11 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         inputs_ = value;
-        onChanged();
       } else {
         inputsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -711,11 +723,11 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
             builderForValue) {
       if (inputsBuilder_ == null) {
         inputs_ = builderForValue.build();
-        onChanged();
       } else {
         inputsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -734,20 +746,20 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
                 .AutoMlImageObjectDetectionInputs
             value) {
       if (inputsBuilder_ == null) {
-        if (inputs_ != null) {
-          inputs_ =
-              com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                  .AutoMlImageObjectDetectionInputs.newBuilder(inputs_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && inputs_ != null
+            && inputs_
+                != com.google.cloud.aiplatform.v1.schema.trainingjob.definition
+                    .AutoMlImageObjectDetectionInputs.getDefaultInstance()) {
+          getInputsBuilder().mergeFrom(value);
         } else {
           inputs_ = value;
         }
-        onChanged();
       } else {
         inputsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -762,14 +774,13 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearInputs() {
-      if (inputsBuilder_ == null) {
-        inputs_ = null;
-        onChanged();
-      } else {
-        inputs_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      inputs_ = null;
+      if (inputsBuilder_ != null) {
+        inputsBuilder_.dispose();
         inputsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -786,7 +797,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
     public com.google.cloud.aiplatform.v1.schema.trainingjob.definition
             .AutoMlImageObjectDetectionInputs.Builder
         getInputsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getInputsFieldBuilder().getBuilder();
     }
@@ -872,7 +883,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -919,11 +930,11 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -943,11 +954,11 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
             builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -966,20 +977,20 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
                 .AutoMlImageObjectDetectionMetadata
             value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                  .AutoMlImageObjectDetectionMetadata.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && metadata_ != null
+            && metadata_
+                != com.google.cloud.aiplatform.v1.schema.trainingjob.definition
+                    .AutoMlImageObjectDetectionMetadata.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -994,14 +1005,13 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1018,7 +1028,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
     public com.google.cloud.aiplatform.v1.schema.trainingjob.definition
             .AutoMlImageObjectDetectionMetadata.Builder
         getMetadataBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }

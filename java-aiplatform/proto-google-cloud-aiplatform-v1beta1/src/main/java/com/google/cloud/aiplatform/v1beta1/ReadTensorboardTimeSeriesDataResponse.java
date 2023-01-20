@@ -114,7 +114,9 @@ public final class ReadTensorboardTimeSeriesDataResponse
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.TimeSeriesDataOrBuilder getTimeSeriesDataOrBuilder() {
-    return getTimeSeriesData();
+    return timeSeriesData_ == null
+        ? com.google.cloud.aiplatform.v1beta1.TimeSeriesData.getDefaultInstance()
+        : timeSeriesData_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -325,10 +327,10 @@ public final class ReadTensorboardTimeSeriesDataResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (timeSeriesDataBuilder_ == null) {
-        timeSeriesData_ = null;
-      } else {
-        timeSeriesData_ = null;
+      bitField0_ = 0;
+      timeSeriesData_ = null;
+      if (timeSeriesDataBuilder_ != null) {
+        timeSeriesDataBuilder_.dispose();
         timeSeriesDataBuilder_ = null;
       }
       return this;
@@ -362,13 +364,20 @@ public final class ReadTensorboardTimeSeriesDataResponse
         buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataResponse result =
           new com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataResponse(this);
-      if (timeSeriesDataBuilder_ == null) {
-        result.timeSeriesData_ = timeSeriesData_;
-      } else {
-        result.timeSeriesData_ = timeSeriesDataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.timeSeriesData_ =
+            timeSeriesDataBuilder_ == null ? timeSeriesData_ : timeSeriesDataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -453,7 +462,7 @@ public final class ReadTensorboardTimeSeriesDataResponse
             case 10:
               {
                 input.readMessage(getTimeSeriesDataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -473,6 +482,8 @@ public final class ReadTensorboardTimeSeriesDataResponse
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.aiplatform.v1beta1.TimeSeriesData timeSeriesData_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.TimeSeriesData,
@@ -491,7 +502,7 @@ public final class ReadTensorboardTimeSeriesDataResponse
      * @return Whether the timeSeriesData field is set.
      */
     public boolean hasTimeSeriesData() {
-      return timeSeriesDataBuilder_ != null || timeSeriesData_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -528,11 +539,11 @@ public final class ReadTensorboardTimeSeriesDataResponse
           throw new NullPointerException();
         }
         timeSeriesData_ = value;
-        onChanged();
       } else {
         timeSeriesDataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -548,11 +559,11 @@ public final class ReadTensorboardTimeSeriesDataResponse
         com.google.cloud.aiplatform.v1beta1.TimeSeriesData.Builder builderForValue) {
       if (timeSeriesDataBuilder_ == null) {
         timeSeriesData_ = builderForValue.build();
-        onChanged();
       } else {
         timeSeriesDataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -566,19 +577,19 @@ public final class ReadTensorboardTimeSeriesDataResponse
      */
     public Builder mergeTimeSeriesData(com.google.cloud.aiplatform.v1beta1.TimeSeriesData value) {
       if (timeSeriesDataBuilder_ == null) {
-        if (timeSeriesData_ != null) {
-          timeSeriesData_ =
-              com.google.cloud.aiplatform.v1beta1.TimeSeriesData.newBuilder(timeSeriesData_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && timeSeriesData_ != null
+            && timeSeriesData_
+                != com.google.cloud.aiplatform.v1beta1.TimeSeriesData.getDefaultInstance()) {
+          getTimeSeriesDataBuilder().mergeFrom(value);
         } else {
           timeSeriesData_ = value;
         }
-        onChanged();
       } else {
         timeSeriesDataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -591,14 +602,13 @@ public final class ReadTensorboardTimeSeriesDataResponse
      * <code>.google.cloud.aiplatform.v1beta1.TimeSeriesData time_series_data = 1;</code>
      */
     public Builder clearTimeSeriesData() {
-      if (timeSeriesDataBuilder_ == null) {
-        timeSeriesData_ = null;
-        onChanged();
-      } else {
-        timeSeriesData_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      timeSeriesData_ = null;
+      if (timeSeriesDataBuilder_ != null) {
+        timeSeriesDataBuilder_.dispose();
         timeSeriesDataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -611,7 +621,7 @@ public final class ReadTensorboardTimeSeriesDataResponse
      * <code>.google.cloud.aiplatform.v1beta1.TimeSeriesData time_series_data = 1;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.TimeSeriesData.Builder getTimeSeriesDataBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTimeSeriesDataFieldBuilder().getBuilder();
     }

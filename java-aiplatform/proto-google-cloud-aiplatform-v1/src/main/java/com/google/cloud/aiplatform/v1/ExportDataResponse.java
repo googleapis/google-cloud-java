@@ -69,6 +69,8 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int EXPORTED_FILES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList exportedFiles_;
   /**
    *
@@ -334,6 +336,7 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       exportedFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -363,14 +366,25 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1.ExportDataResponse buildPartial() {
       com.google.cloud.aiplatform.v1.ExportDataResponse result =
           new com.google.cloud.aiplatform.v1.ExportDataResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.ExportDataResponse result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         exportedFiles_ = exportedFiles_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.exportedFiles_ = exportedFiles_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.ExportDataResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -69,6 +69,8 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
   }
 
   public static final int MIGRATE_RESOURCE_RESPONSES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.MigrateResourceResponse>
       migrateResourceResponses_;
   /**
@@ -355,6 +357,7 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (migrateResourceResponsesBuilder_ == null) {
         migrateResourceResponses_ = java.util.Collections.emptyList();
       } else {
@@ -390,7 +393,16 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
     public com.google.cloud.aiplatform.v1.BatchMigrateResourcesResponse buildPartial() {
       com.google.cloud.aiplatform.v1.BatchMigrateResourcesResponse result =
           new com.google.cloud.aiplatform.v1.BatchMigrateResourcesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.BatchMigrateResourcesResponse result) {
       if (migrateResourceResponsesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           migrateResourceResponses_ =
@@ -401,8 +413,11 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
       } else {
         result.migrateResourceResponses_ = migrateResourceResponsesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.BatchMigrateResourcesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

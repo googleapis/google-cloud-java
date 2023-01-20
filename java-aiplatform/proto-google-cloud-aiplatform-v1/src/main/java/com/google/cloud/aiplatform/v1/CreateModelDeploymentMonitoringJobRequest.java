@@ -71,7 +71,9 @@ public final class CreateModelDeploymentMonitoringJobRequest
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -178,7 +180,9 @@ public final class CreateModelDeploymentMonitoringJobRequest
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJobOrBuilder
       getModelDeploymentMonitoringJobOrBuilder() {
-    return getModelDeploymentMonitoringJob();
+    return modelDeploymentMonitoringJob_ == null
+        ? com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.getDefaultInstance()
+        : modelDeploymentMonitoringJob_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -401,12 +405,11 @@ public final class CreateModelDeploymentMonitoringJobRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (modelDeploymentMonitoringJobBuilder_ == null) {
-        modelDeploymentMonitoringJob_ = null;
-      } else {
-        modelDeploymentMonitoringJob_ = null;
+      modelDeploymentMonitoringJob_ = null;
+      if (modelDeploymentMonitoringJobBuilder_ != null) {
+        modelDeploymentMonitoringJobBuilder_.dispose();
         modelDeploymentMonitoringJobBuilder_ = null;
       }
       return this;
@@ -439,14 +442,25 @@ public final class CreateModelDeploymentMonitoringJobRequest
     public com.google.cloud.aiplatform.v1.CreateModelDeploymentMonitoringJobRequest buildPartial() {
       com.google.cloud.aiplatform.v1.CreateModelDeploymentMonitoringJobRequest result =
           new com.google.cloud.aiplatform.v1.CreateModelDeploymentMonitoringJobRequest(this);
-      result.parent_ = parent_;
-      if (modelDeploymentMonitoringJobBuilder_ == null) {
-        result.modelDeploymentMonitoringJob_ = modelDeploymentMonitoringJob_;
-      } else {
-        result.modelDeploymentMonitoringJob_ = modelDeploymentMonitoringJobBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.CreateModelDeploymentMonitoringJobRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.modelDeploymentMonitoringJob_ =
+            modelDeploymentMonitoringJobBuilder_ == null
+                ? modelDeploymentMonitoringJob_
+                : modelDeploymentMonitoringJobBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -501,6 +515,7 @@ public final class CreateModelDeploymentMonitoringJobRequest
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasModelDeploymentMonitoringJob()) {
@@ -535,14 +550,14 @@ public final class CreateModelDeploymentMonitoringJobRequest
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getModelDeploymentMonitoringJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -561,6 +576,8 @@ public final class CreateModelDeploymentMonitoringJobRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -632,8 +649,8 @@ public final class CreateModelDeploymentMonitoringJobRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -652,8 +669,8 @@ public final class CreateModelDeploymentMonitoringJobRequest
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -677,8 +694,8 @@ public final class CreateModelDeploymentMonitoringJobRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -704,7 +721,7 @@ public final class CreateModelDeploymentMonitoringJobRequest
      * @return Whether the modelDeploymentMonitoringJob field is set.
      */
     public boolean hasModelDeploymentMonitoringJob() {
-      return modelDeploymentMonitoringJobBuilder_ != null || modelDeploymentMonitoringJob_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -747,11 +764,11 @@ public final class CreateModelDeploymentMonitoringJobRequest
           throw new NullPointerException();
         }
         modelDeploymentMonitoringJob_ = value;
-        onChanged();
       } else {
         modelDeploymentMonitoringJobBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -769,11 +786,11 @@ public final class CreateModelDeploymentMonitoringJobRequest
         com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.Builder builderForValue) {
       if (modelDeploymentMonitoringJobBuilder_ == null) {
         modelDeploymentMonitoringJob_ = builderForValue.build();
-        onChanged();
       } else {
         modelDeploymentMonitoringJobBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -790,20 +807,20 @@ public final class CreateModelDeploymentMonitoringJobRequest
     public Builder mergeModelDeploymentMonitoringJob(
         com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob value) {
       if (modelDeploymentMonitoringJobBuilder_ == null) {
-        if (modelDeploymentMonitoringJob_ != null) {
-          modelDeploymentMonitoringJob_ =
-              com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.newBuilder(
-                      modelDeploymentMonitoringJob_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && modelDeploymentMonitoringJob_ != null
+            && modelDeploymentMonitoringJob_
+                != com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                    .getDefaultInstance()) {
+          getModelDeploymentMonitoringJobBuilder().mergeFrom(value);
         } else {
           modelDeploymentMonitoringJob_ = value;
         }
-        onChanged();
       } else {
         modelDeploymentMonitoringJobBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -818,14 +835,13 @@ public final class CreateModelDeploymentMonitoringJobRequest
      * </code>
      */
     public Builder clearModelDeploymentMonitoringJob() {
-      if (modelDeploymentMonitoringJobBuilder_ == null) {
-        modelDeploymentMonitoringJob_ = null;
-        onChanged();
-      } else {
-        modelDeploymentMonitoringJob_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      modelDeploymentMonitoringJob_ = null;
+      if (modelDeploymentMonitoringJobBuilder_ != null) {
+        modelDeploymentMonitoringJobBuilder_.dispose();
         modelDeploymentMonitoringJobBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -841,7 +857,7 @@ public final class CreateModelDeploymentMonitoringJobRequest
      */
     public com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.Builder
         getModelDeploymentMonitoringJobBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getModelDeploymentMonitoringJobFieldBuilder().getBuilder();
     }

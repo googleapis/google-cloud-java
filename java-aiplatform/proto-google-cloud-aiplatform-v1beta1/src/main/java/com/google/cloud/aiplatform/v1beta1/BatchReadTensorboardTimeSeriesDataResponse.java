@@ -72,6 +72,8 @@ public final class BatchReadTensorboardTimeSeriesDataResponse
   }
 
   public static final int TIME_SERIES_DATA_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.TimeSeriesData> timeSeriesData_;
   /**
    *
@@ -354,6 +356,7 @@ public final class BatchReadTensorboardTimeSeriesDataResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (timeSeriesDataBuilder_ == null) {
         timeSeriesData_ = java.util.Collections.emptyList();
       } else {
@@ -392,7 +395,16 @@ public final class BatchReadTensorboardTimeSeriesDataResponse
         buildPartial() {
       com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataResponse result =
           new com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataResponse result) {
       if (timeSeriesDataBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           timeSeriesData_ = java.util.Collections.unmodifiableList(timeSeriesData_);
@@ -402,8 +414,11 @@ public final class BatchReadTensorboardTimeSeriesDataResponse
       } else {
         result.timeSeriesData_ = timeSeriesDataBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

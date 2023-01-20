@@ -68,6 +68,8 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IDS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList ids_;
   /**
    *
@@ -347,6 +349,7 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -376,14 +379,24 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.IdMatcher buildPartial() {
       com.google.cloud.aiplatform.v1.IdMatcher result =
           new com.google.cloud.aiplatform.v1.IdMatcher(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1.IdMatcher result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         ids_ = ids_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.ids_ = ids_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.IdMatcher result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

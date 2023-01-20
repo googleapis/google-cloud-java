@@ -68,7 +68,7 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VALUE_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString value_;
+  private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -87,7 +87,7 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VERSION_NUMBER_FIELD_NUMBER = 2;
-  private int versionNumber_;
+  private int versionNumber_ = 0;
   /**
    *
    *
@@ -311,10 +311,9 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       value_ = com.google.protobuf.ByteString.EMPTY;
-
       versionNumber_ = 0;
-
       return this;
     }
 
@@ -342,10 +341,21 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.aiplatform.v1.TensorboardTensor buildPartial() {
       com.google.cloud.aiplatform.v1.TensorboardTensor result =
           new com.google.cloud.aiplatform.v1.TensorboardTensor(this);
-      result.value_ = value_;
-      result.versionNumber_ = versionNumber_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.TensorboardTensor result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.value_ = value_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.versionNumber_ = versionNumber_;
+      }
     }
 
     @java.lang.Override
@@ -429,13 +439,13 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 value_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 versionNumber_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -454,6 +464,8 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
     /**
@@ -489,8 +501,8 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       value_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -507,7 +519,7 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       value_ = getDefaultInstance().getValue();
       onChanged();
       return this;
@@ -546,6 +558,7 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
     public Builder setVersionNumber(int value) {
 
       versionNumber_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -562,7 +575,7 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearVersionNumber() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       versionNumber_ = 0;
       onChanged();
       return this;

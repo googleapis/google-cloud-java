@@ -189,6 +189,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> dataItemLabels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -284,8 +285,10 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
    * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getDataItemLabelsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getDataItemLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -338,6 +341,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotationLabels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -424,8 +428,10 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
    * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getAnnotationLabelsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAnnotationLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -463,7 +469,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int IMPORT_SCHEMA_URI_FIELD_NUMBER = 4;
-  private volatile java.lang.Object importSchemaUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object importSchemaUri_ = "";
   /**
    *
    *
@@ -797,13 +805,13 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsSourceBuilder_ != null) {
         gcsSourceBuilder_.clear();
       }
       internalGetMutableDataItemLabels().clear();
       internalGetMutableAnnotationLabels().clear();
       importSchemaUri_ = "";
-
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -833,22 +841,35 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.aiplatform.v1.ImportDataConfig buildPartial() {
       com.google.cloud.aiplatform.v1.ImportDataConfig result =
           new com.google.cloud.aiplatform.v1.ImportDataConfig(this);
-      int from_bitField0_ = bitField0_;
-      if (sourceCase_ == 1) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.dataItemLabels_ = internalGetDataItemLabels();
-      result.dataItemLabels_.makeImmutable();
-      result.annotationLabels_ = internalGetAnnotationLabels();
-      result.annotationLabels_.makeImmutable();
-      result.importSchemaUri_ = importSchemaUri_;
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.ImportDataConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataItemLabels_ = internalGetDataItemLabels();
+        result.dataItemLabels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.annotationLabels_ = internalGetAnnotationLabels();
+        result.annotationLabels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.importSchemaUri_ = importSchemaUri_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.aiplatform.v1.ImportDataConfig result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 1 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -898,9 +919,12 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.aiplatform.v1.ImportDataConfig.getDefaultInstance())
         return this;
       internalGetMutableDataItemLabels().mergeFrom(other.internalGetDataItemLabels());
+      bitField0_ |= 0x00000002;
       internalGetMutableAnnotationLabels().mergeFrom(other.internalGetAnnotationLabels());
+      bitField0_ |= 0x00000004;
       if (!other.getImportSchemaUri().isEmpty()) {
         importSchemaUri_ = other.importSchemaUri_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       switch (other.getSourceCase()) {
@@ -955,6 +979,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
                 internalGetMutableDataItemLabels()
                     .getMutableMap()
                     .put(dataItemLabels__.getKey(), dataItemLabels__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -967,12 +992,13 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
                 internalGetMutableAnnotationLabels()
                     .getMutableMap()
                     .put(annotationLabels__.getKey(), annotationLabels__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 importSchemaUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -1213,7 +1239,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       }
       sourceCase_ = 1;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 
@@ -1230,8 +1255,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableDataItemLabels() {
-      onChanged();
-      ;
       if (dataItemLabels_ == null) {
         dataItemLabels_ =
             com.google.protobuf.MapField.newMapField(DataItemLabelsDefaultEntryHolder.defaultEntry);
@@ -1239,6 +1262,8 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       if (!dataItemLabels_.isMutable()) {
         dataItemLabels_ = dataItemLabels_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return dataItemLabels_;
     }
 
@@ -1326,8 +1351,10 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getDataItemLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getDataItemLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1368,6 +1395,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearDataItemLabels() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableDataItemLabels().getMutableMap().clear();
       return this;
     }
@@ -1402,6 +1430,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDataItemLabels() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableDataItemLabels().getMutableMap();
     }
     /**
@@ -1432,8 +1461,8 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableDataItemLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1459,6 +1488,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllDataItemLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDataItemLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -1475,8 +1505,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAnnotationLabels() {
-      onChanged();
-      ;
       if (annotationLabels_ == null) {
         annotationLabels_ =
             com.google.protobuf.MapField.newMapField(
@@ -1485,6 +1513,8 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       if (!annotationLabels_.isMutable()) {
         annotationLabels_ = annotationLabels_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return annotationLabels_;
     }
 
@@ -1563,8 +1593,10 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getAnnotationLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAnnotationLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1604,6 +1636,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearAnnotationLabels() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableAnnotationLabels().getMutableMap().clear();
       return this;
     }
@@ -1635,6 +1668,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotationLabels() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableAnnotationLabels().getMutableMap();
     }
     /**
@@ -1662,8 +1696,8 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAnnotationLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1687,6 +1721,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     public Builder putAllAnnotationLabels(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotationLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1760,8 +1795,8 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       importSchemaUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1780,8 +1815,8 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearImportSchemaUri() {
-
       importSchemaUri_ = getDefaultInstance().getImportSchemaUri();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1805,8 +1840,8 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       importSchemaUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -69,7 +69,9 @@ public final class CreateSpecialistPoolRequest extends com.google.protobuf.Gener
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -174,7 +176,9 @@ public final class CreateSpecialistPoolRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.SpecialistPoolOrBuilder getSpecialistPoolOrBuilder() {
-    return getSpecialistPool();
+    return specialistPool_ == null
+        ? com.google.cloud.aiplatform.v1beta1.SpecialistPool.getDefaultInstance()
+        : specialistPool_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -390,12 +394,11 @@ public final class CreateSpecialistPoolRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (specialistPoolBuilder_ == null) {
-        specialistPool_ = null;
-      } else {
-        specialistPool_ = null;
+      specialistPool_ = null;
+      if (specialistPoolBuilder_ != null) {
+        specialistPoolBuilder_.dispose();
         specialistPoolBuilder_ = null;
       }
       return this;
@@ -426,14 +429,23 @@ public final class CreateSpecialistPoolRequest extends com.google.protobuf.Gener
     public com.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest result =
           new com.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest(this);
-      result.parent_ = parent_;
-      if (specialistPoolBuilder_ == null) {
-        result.specialistPool_ = specialistPool_;
-      } else {
-        result.specialistPool_ = specialistPoolBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.specialistPool_ =
+            specialistPoolBuilder_ == null ? specialistPool_ : specialistPoolBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -486,6 +498,7 @@ public final class CreateSpecialistPoolRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSpecialistPool()) {
@@ -520,13 +533,13 @@ public final class CreateSpecialistPoolRequest extends com.google.protobuf.Gener
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSpecialistPoolFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -545,6 +558,8 @@ public final class CreateSpecialistPoolRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -616,8 +631,8 @@ public final class CreateSpecialistPoolRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -636,8 +651,8 @@ public final class CreateSpecialistPoolRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -661,8 +676,8 @@ public final class CreateSpecialistPoolRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -687,7 +702,7 @@ public final class CreateSpecialistPoolRequest extends com.google.protobuf.Gener
      * @return Whether the specialistPool field is set.
      */
     public boolean hasSpecialistPool() {
-      return specialistPoolBuilder_ != null || specialistPool_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -728,11 +743,11 @@ public final class CreateSpecialistPoolRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         specialistPool_ = value;
-        onChanged();
       } else {
         specialistPoolBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -750,11 +765,11 @@ public final class CreateSpecialistPoolRequest extends com.google.protobuf.Gener
         com.google.cloud.aiplatform.v1beta1.SpecialistPool.Builder builderForValue) {
       if (specialistPoolBuilder_ == null) {
         specialistPool_ = builderForValue.build();
-        onChanged();
       } else {
         specialistPoolBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -770,19 +785,19 @@ public final class CreateSpecialistPoolRequest extends com.google.protobuf.Gener
      */
     public Builder mergeSpecialistPool(com.google.cloud.aiplatform.v1beta1.SpecialistPool value) {
       if (specialistPoolBuilder_ == null) {
-        if (specialistPool_ != null) {
-          specialistPool_ =
-              com.google.cloud.aiplatform.v1beta1.SpecialistPool.newBuilder(specialistPool_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && specialistPool_ != null
+            && specialistPool_
+                != com.google.cloud.aiplatform.v1beta1.SpecialistPool.getDefaultInstance()) {
+          getSpecialistPoolBuilder().mergeFrom(value);
         } else {
           specialistPool_ = value;
         }
-        onChanged();
       } else {
         specialistPoolBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -797,14 +812,13 @@ public final class CreateSpecialistPoolRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearSpecialistPool() {
-      if (specialistPoolBuilder_ == null) {
-        specialistPool_ = null;
-        onChanged();
-      } else {
-        specialistPool_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      specialistPool_ = null;
+      if (specialistPoolBuilder_ != null) {
+        specialistPoolBuilder_.dispose();
         specialistPoolBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -819,7 +833,7 @@ public final class CreateSpecialistPoolRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.SpecialistPool.Builder getSpecialistPoolBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSpecialistPoolFieldBuilder().getBuilder();
     }

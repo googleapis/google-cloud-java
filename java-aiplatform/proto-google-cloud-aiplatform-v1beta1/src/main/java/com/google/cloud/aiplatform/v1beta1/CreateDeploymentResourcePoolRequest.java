@@ -71,7 +71,9 @@ public final class CreateDeploymentResourcePoolRequest
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -177,11 +179,15 @@ public final class CreateDeploymentResourcePoolRequest
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.DeploymentResourcePoolOrBuilder
       getDeploymentResourcePoolOrBuilder() {
-    return getDeploymentResourcePool();
+    return deploymentResourcePool_ == null
+        ? com.google.cloud.aiplatform.v1beta1.DeploymentResourcePool.getDefaultInstance()
+        : deploymentResourcePool_;
   }
 
   public static final int DEPLOYMENT_RESOURCE_POOL_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object deploymentResourcePoolId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deploymentResourcePoolId_ = "";
   /**
    *
    *
@@ -463,16 +469,14 @@ public final class CreateDeploymentResourcePoolRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (deploymentResourcePoolBuilder_ == null) {
-        deploymentResourcePool_ = null;
-      } else {
-        deploymentResourcePool_ = null;
+      deploymentResourcePool_ = null;
+      if (deploymentResourcePoolBuilder_ != null) {
+        deploymentResourcePoolBuilder_.dispose();
         deploymentResourcePoolBuilder_ = null;
       }
       deploymentResourcePoolId_ = "";
-
       return this;
     }
 
@@ -503,15 +507,28 @@ public final class CreateDeploymentResourcePoolRequest
     public com.google.cloud.aiplatform.v1beta1.CreateDeploymentResourcePoolRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.CreateDeploymentResourcePoolRequest result =
           new com.google.cloud.aiplatform.v1beta1.CreateDeploymentResourcePoolRequest(this);
-      result.parent_ = parent_;
-      if (deploymentResourcePoolBuilder_ == null) {
-        result.deploymentResourcePool_ = deploymentResourcePool_;
-      } else {
-        result.deploymentResourcePool_ = deploymentResourcePoolBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.deploymentResourcePoolId_ = deploymentResourcePoolId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.CreateDeploymentResourcePoolRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deploymentResourcePool_ =
+            deploymentResourcePoolBuilder_ == null
+                ? deploymentResourcePool_
+                : deploymentResourcePoolBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.deploymentResourcePoolId_ = deploymentResourcePoolId_;
+      }
     }
 
     @java.lang.Override
@@ -566,6 +583,7 @@ public final class CreateDeploymentResourcePoolRequest
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDeploymentResourcePool()) {
@@ -573,6 +591,7 @@ public final class CreateDeploymentResourcePoolRequest
       }
       if (!other.getDeploymentResourcePoolId().isEmpty()) {
         deploymentResourcePoolId_ = other.deploymentResourcePoolId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -604,20 +623,20 @@ public final class CreateDeploymentResourcePoolRequest
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getDeploymentResourcePoolFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 deploymentResourcePoolId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -636,6 +655,8 @@ public final class CreateDeploymentResourcePoolRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -707,8 +728,8 @@ public final class CreateDeploymentResourcePoolRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -727,8 +748,8 @@ public final class CreateDeploymentResourcePoolRequest
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -752,8 +773,8 @@ public final class CreateDeploymentResourcePoolRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -778,7 +799,7 @@ public final class CreateDeploymentResourcePoolRequest
      * @return Whether the deploymentResourcePool field is set.
      */
     public boolean hasDeploymentResourcePool() {
-      return deploymentResourcePoolBuilder_ != null || deploymentResourcePool_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -820,11 +841,11 @@ public final class CreateDeploymentResourcePoolRequest
           throw new NullPointerException();
         }
         deploymentResourcePool_ = value;
-        onChanged();
       } else {
         deploymentResourcePoolBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -842,11 +863,11 @@ public final class CreateDeploymentResourcePoolRequest
         com.google.cloud.aiplatform.v1beta1.DeploymentResourcePool.Builder builderForValue) {
       if (deploymentResourcePoolBuilder_ == null) {
         deploymentResourcePool_ = builderForValue.build();
-        onChanged();
       } else {
         deploymentResourcePoolBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -863,20 +884,20 @@ public final class CreateDeploymentResourcePoolRequest
     public Builder mergeDeploymentResourcePool(
         com.google.cloud.aiplatform.v1beta1.DeploymentResourcePool value) {
       if (deploymentResourcePoolBuilder_ == null) {
-        if (deploymentResourcePool_ != null) {
-          deploymentResourcePool_ =
-              com.google.cloud.aiplatform.v1beta1.DeploymentResourcePool.newBuilder(
-                      deploymentResourcePool_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && deploymentResourcePool_ != null
+            && deploymentResourcePool_
+                != com.google.cloud.aiplatform.v1beta1.DeploymentResourcePool
+                    .getDefaultInstance()) {
+          getDeploymentResourcePoolBuilder().mergeFrom(value);
         } else {
           deploymentResourcePool_ = value;
         }
-        onChanged();
       } else {
         deploymentResourcePoolBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -891,14 +912,13 @@ public final class CreateDeploymentResourcePoolRequest
      * </code>
      */
     public Builder clearDeploymentResourcePool() {
-      if (deploymentResourcePoolBuilder_ == null) {
-        deploymentResourcePool_ = null;
-        onChanged();
-      } else {
-        deploymentResourcePool_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      deploymentResourcePool_ = null;
+      if (deploymentResourcePoolBuilder_ != null) {
+        deploymentResourcePoolBuilder_.dispose();
         deploymentResourcePoolBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -914,7 +934,7 @@ public final class CreateDeploymentResourcePoolRequest
      */
     public com.google.cloud.aiplatform.v1beta1.DeploymentResourcePool.Builder
         getDeploymentResourcePoolBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDeploymentResourcePoolFieldBuilder().getBuilder();
     }
@@ -1043,8 +1063,8 @@ public final class CreateDeploymentResourcePoolRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       deploymentResourcePoolId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1065,8 +1085,8 @@ public final class CreateDeploymentResourcePoolRequest
      * @return This builder for chaining.
      */
     public Builder clearDeploymentResourcePoolId() {
-
       deploymentResourcePoolId_ = getDefaultInstance().getDeploymentResourcePoolId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1092,8 +1112,8 @@ public final class CreateDeploymentResourcePoolRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deploymentResourcePoolId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

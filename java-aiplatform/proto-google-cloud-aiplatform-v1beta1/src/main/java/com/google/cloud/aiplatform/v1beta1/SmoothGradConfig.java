@@ -245,7 +245,7 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NOISY_SAMPLE_COUNT_FIELD_NUMBER = 3;
-  private int noisySampleCount_;
+  private int noisySampleCount_ = 0;
   /**
    *
    *
@@ -507,11 +507,11 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (featureNoiseSigmaBuilder_ != null) {
         featureNoiseSigmaBuilder_.clear();
       }
       noisySampleCount_ = 0;
-
       gradientNoiseSigmaCase_ = 0;
       gradientNoiseSigma_ = null;
       return this;
@@ -541,20 +541,27 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.aiplatform.v1beta1.SmoothGradConfig buildPartial() {
       com.google.cloud.aiplatform.v1beta1.SmoothGradConfig result =
           new com.google.cloud.aiplatform.v1beta1.SmoothGradConfig(this);
-      if (gradientNoiseSigmaCase_ == 1) {
-        result.gradientNoiseSigma_ = gradientNoiseSigma_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (gradientNoiseSigmaCase_ == 2) {
-        if (featureNoiseSigmaBuilder_ == null) {
-          result.gradientNoiseSigma_ = gradientNoiseSigma_;
-        } else {
-          result.gradientNoiseSigma_ = featureNoiseSigmaBuilder_.build();
-        }
-      }
-      result.noisySampleCount_ = noisySampleCount_;
-      result.gradientNoiseSigmaCase_ = gradientNoiseSigmaCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.SmoothGradConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.noisySampleCount_ = noisySampleCount_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.aiplatform.v1beta1.SmoothGradConfig result) {
+      result.gradientNoiseSigmaCase_ = gradientNoiseSigmaCase_;
+      result.gradientNoiseSigma_ = this.gradientNoiseSigma_;
+      if (gradientNoiseSigmaCase_ == 2 && featureNoiseSigmaBuilder_ != null) {
+        result.gradientNoiseSigma_ = featureNoiseSigmaBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -664,7 +671,7 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
             case 24:
               {
                 noisySampleCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -697,6 +704,8 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -772,6 +781,7 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setNoiseSigma(float value) {
+
       gradientNoiseSigmaCase_ = 1;
       gradientNoiseSigma_ = value;
       onChanged();
@@ -1082,7 +1092,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
       }
       gradientNoiseSigmaCase_ = 2;
       onChanged();
-      ;
       return featureNoiseSigmaBuilder_;
     }
 
@@ -1123,6 +1132,7 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
     public Builder setNoisySampleCount(int value) {
 
       noisySampleCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1141,7 +1151,7 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearNoisySampleCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       noisySampleCount_ = 0;
       onChanged();
       return this;

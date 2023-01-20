@@ -66,7 +66,7 @@ public final class ResourcesConsumed extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int REPLICA_HOURS_FIELD_NUMBER = 1;
-  private double replicaHours_;
+  private double replicaHours_ = 0D;
   /**
    *
    *
@@ -286,8 +286,8 @@ public final class ResourcesConsumed extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       replicaHours_ = 0D;
-
       return this;
     }
 
@@ -315,9 +315,18 @@ public final class ResourcesConsumed extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.aiplatform.v1.ResourcesConsumed buildPartial() {
       com.google.cloud.aiplatform.v1.ResourcesConsumed result =
           new com.google.cloud.aiplatform.v1.ResourcesConsumed(this);
-      result.replicaHours_ = replicaHours_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.ResourcesConsumed result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.replicaHours_ = replicaHours_;
+      }
     }
 
     @java.lang.Override
@@ -398,7 +407,7 @@ public final class ResourcesConsumed extends com.google.protobuf.GeneratedMessag
             case 9:
               {
                 replicaHours_ = input.readDouble();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 9
             default:
@@ -417,6 +426,8 @@ public final class ResourcesConsumed extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private double replicaHours_;
     /**
@@ -453,6 +464,7 @@ public final class ResourcesConsumed extends com.google.protobuf.GeneratedMessag
     public Builder setReplicaHours(double value) {
 
       replicaHours_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -470,7 +482,7 @@ public final class ResourcesConsumed extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearReplicaHours() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       replicaHours_ = 0D;
       onChanged();
       return this;

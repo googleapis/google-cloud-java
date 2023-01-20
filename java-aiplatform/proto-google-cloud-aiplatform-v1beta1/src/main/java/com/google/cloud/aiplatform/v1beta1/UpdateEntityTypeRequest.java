@@ -123,7 +123,9 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.EntityTypeOrBuilder getEntityTypeOrBuilder() {
-    return getEntityType();
+    return entityType_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EntityType.getDefaultInstance()
+        : entityType_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -220,7 +222,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -441,16 +443,15 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (entityTypeBuilder_ == null) {
-        entityType_ = null;
-      } else {
-        entityType_ = null;
+      bitField0_ = 0;
+      entityType_ = null;
+      if (entityTypeBuilder_ != null) {
+        entityTypeBuilder_.dispose();
         entityTypeBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -480,18 +481,21 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
     public com.google.cloud.aiplatform.v1beta1.UpdateEntityTypeRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.UpdateEntityTypeRequest result =
           new com.google.cloud.aiplatform.v1beta1.UpdateEntityTypeRequest(this);
-      if (entityTypeBuilder_ == null) {
-        result.entityType_ = entityType_;
-      } else {
-        result.entityType_ = entityTypeBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.UpdateEntityTypeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.entityType_ = entityTypeBuilder_ == null ? entityType_ : entityTypeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -575,13 +579,13 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getEntityTypeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -600,6 +604,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1beta1.EntityType entityType_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -623,7 +629,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * @return Whether the entityType field is set.
      */
     public boolean hasEntityType() {
-      return entityTypeBuilder_ != null || entityType_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -668,11 +674,11 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         entityType_ = value;
-        onChanged();
       } else {
         entityTypeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -692,11 +698,11 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
         com.google.cloud.aiplatform.v1beta1.EntityType.Builder builderForValue) {
       if (entityTypeBuilder_ == null) {
         entityType_ = builderForValue.build();
-        onChanged();
       } else {
         entityTypeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -714,19 +720,18 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      */
     public Builder mergeEntityType(com.google.cloud.aiplatform.v1beta1.EntityType value) {
       if (entityTypeBuilder_ == null) {
-        if (entityType_ != null) {
-          entityType_ =
-              com.google.cloud.aiplatform.v1beta1.EntityType.newBuilder(entityType_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && entityType_ != null
+            && entityType_ != com.google.cloud.aiplatform.v1beta1.EntityType.getDefaultInstance()) {
+          getEntityTypeBuilder().mergeFrom(value);
         } else {
           entityType_ = value;
         }
-        onChanged();
       } else {
         entityTypeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -743,14 +748,13 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearEntityType() {
-      if (entityTypeBuilder_ == null) {
-        entityType_ = null;
-        onChanged();
-      } else {
-        entityType_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      entityType_ = null;
+      if (entityTypeBuilder_ != null) {
+        entityTypeBuilder_.dispose();
         entityTypeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -767,7 +771,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.EntityType.Builder getEntityTypeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getEntityTypeFieldBuilder().getBuilder();
     }
@@ -858,7 +862,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -929,11 +933,11 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -965,11 +969,11 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1000,17 +1004,18 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1040,14 +1045,13 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1077,7 +1081,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

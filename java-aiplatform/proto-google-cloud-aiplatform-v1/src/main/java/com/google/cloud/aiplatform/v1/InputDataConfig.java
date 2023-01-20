@@ -629,7 +629,9 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DATASET_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object datasetId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object datasetId_ = "";
   /**
    *
    *
@@ -690,7 +692,9 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ANNOTATIONS_FILTER_FIELD_NUMBER = 6;
-  private volatile java.lang.Object annotationsFilter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object annotationsFilter_ = "";
   /**
    *
    *
@@ -755,7 +759,9 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ANNOTATION_SCHEMA_URI_FIELD_NUMBER = 9;
-  private volatile java.lang.Object annotationSchemaUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object annotationSchemaUri_ = "";
   /**
    *
    *
@@ -842,7 +848,9 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SAVED_QUERY_ID_FIELD_NUMBER = 7;
-  private volatile java.lang.Object savedQueryId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object savedQueryId_ = "";
   /**
    *
    *
@@ -921,7 +929,7 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PERSIST_ML_USE_ASSIGNMENT_FIELD_NUMBER = 11;
-  private boolean persistMlUseAssignment_;
+  private boolean persistMlUseAssignment_ = false;
   /**
    *
    *
@@ -1295,6 +1303,7 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (fractionSplitBuilder_ != null) {
         fractionSplitBuilder_.clear();
       }
@@ -1317,15 +1326,10 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
         bigqueryDestinationBuilder_.clear();
       }
       datasetId_ = "";
-
       annotationsFilter_ = "";
-
       annotationSchemaUri_ = "";
-
       savedQueryId_ = "";
-
       persistMlUseAssignment_ = false;
-
       splitCase_ = 0;
       split_ = null;
       destinationCase_ = 0;
@@ -1357,64 +1361,59 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.aiplatform.v1.InputDataConfig buildPartial() {
       com.google.cloud.aiplatform.v1.InputDataConfig result =
           new com.google.cloud.aiplatform.v1.InputDataConfig(this);
-      if (splitCase_ == 2) {
-        if (fractionSplitBuilder_ == null) {
-          result.split_ = split_;
-        } else {
-          result.split_ = fractionSplitBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (splitCase_ == 3) {
-        if (filterSplitBuilder_ == null) {
-          result.split_ = split_;
-        } else {
-          result.split_ = filterSplitBuilder_.build();
-        }
-      }
-      if (splitCase_ == 4) {
-        if (predefinedSplitBuilder_ == null) {
-          result.split_ = split_;
-        } else {
-          result.split_ = predefinedSplitBuilder_.build();
-        }
-      }
-      if (splitCase_ == 5) {
-        if (timestampSplitBuilder_ == null) {
-          result.split_ = split_;
-        } else {
-          result.split_ = timestampSplitBuilder_.build();
-        }
-      }
-      if (splitCase_ == 12) {
-        if (stratifiedSplitBuilder_ == null) {
-          result.split_ = split_;
-        } else {
-          result.split_ = stratifiedSplitBuilder_.build();
-        }
-      }
-      if (destinationCase_ == 8) {
-        if (gcsDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = gcsDestinationBuilder_.build();
-        }
-      }
-      if (destinationCase_ == 10) {
-        if (bigqueryDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = bigqueryDestinationBuilder_.build();
-        }
-      }
-      result.datasetId_ = datasetId_;
-      result.annotationsFilter_ = annotationsFilter_;
-      result.annotationSchemaUri_ = annotationSchemaUri_;
-      result.savedQueryId_ = savedQueryId_;
-      result.persistMlUseAssignment_ = persistMlUseAssignment_;
-      result.splitCase_ = splitCase_;
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.InputDataConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.datasetId_ = datasetId_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.annotationsFilter_ = annotationsFilter_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.annotationSchemaUri_ = annotationSchemaUri_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.savedQueryId_ = savedQueryId_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.persistMlUseAssignment_ = persistMlUseAssignment_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.aiplatform.v1.InputDataConfig result) {
+      result.splitCase_ = splitCase_;
+      result.split_ = this.split_;
+      if (splitCase_ == 2 && fractionSplitBuilder_ != null) {
+        result.split_ = fractionSplitBuilder_.build();
+      }
+      if (splitCase_ == 3 && filterSplitBuilder_ != null) {
+        result.split_ = filterSplitBuilder_.build();
+      }
+      if (splitCase_ == 4 && predefinedSplitBuilder_ != null) {
+        result.split_ = predefinedSplitBuilder_.build();
+      }
+      if (splitCase_ == 5 && timestampSplitBuilder_ != null) {
+        result.split_ = timestampSplitBuilder_.build();
+      }
+      if (splitCase_ == 12 && stratifiedSplitBuilder_ != null) {
+        result.split_ = stratifiedSplitBuilder_.build();
+      }
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
+      if (destinationCase_ == 8 && gcsDestinationBuilder_ != null) {
+        result.destination_ = gcsDestinationBuilder_.build();
+      }
+      if (destinationCase_ == 10 && bigqueryDestinationBuilder_ != null) {
+        result.destination_ = bigqueryDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1464,18 +1463,22 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.aiplatform.v1.InputDataConfig.getDefaultInstance()) return this;
       if (!other.getDatasetId().isEmpty()) {
         datasetId_ = other.datasetId_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getAnnotationsFilter().isEmpty()) {
         annotationsFilter_ = other.annotationsFilter_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getAnnotationSchemaUri().isEmpty()) {
         annotationSchemaUri_ = other.annotationSchemaUri_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.getSavedQueryId().isEmpty()) {
         savedQueryId_ = other.savedQueryId_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.getPersistMlUseAssignment() != false) {
@@ -1557,7 +1560,7 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 datasetId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 10
             case 18:
@@ -1587,13 +1590,13 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
             case 50:
               {
                 annotationsFilter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 50
             case 58:
               {
                 savedQueryId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 58
             case 66:
@@ -1605,7 +1608,7 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
             case 74:
               {
                 annotationSchemaUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 82:
@@ -1618,7 +1621,7 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
             case 88:
               {
                 persistMlUseAssignment_ = input.readBool();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 88
             case 98:
@@ -1671,6 +1674,8 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.FractionSplit,
@@ -1878,7 +1883,6 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       }
       splitCase_ = 2;
       onChanged();
-      ;
       return fractionSplitBuilder_;
     }
 
@@ -2088,7 +2092,6 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       }
       splitCase_ = 3;
       onChanged();
-      ;
       return filterSplitBuilder_;
     }
 
@@ -2307,7 +2310,6 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       }
       splitCase_ = 4;
       onChanged();
-      ;
       return predefinedSplitBuilder_;
     }
 
@@ -2526,7 +2528,6 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       }
       splitCase_ = 5;
       onChanged();
-      ;
       return timestampSplitBuilder_;
     }
 
@@ -2745,7 +2746,6 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       }
       splitCase_ = 12;
       onChanged();
-      ;
       return stratifiedSplitBuilder_;
     }
 
@@ -3090,7 +3090,6 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       }
       destinationCase_ = 8;
       onChanged();
-      ;
       return gcsDestinationBuilder_;
     }
 
@@ -3431,7 +3430,6 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       }
       destinationCase_ = 10;
       onChanged();
-      ;
       return bigqueryDestinationBuilder_;
     }
 
@@ -3514,8 +3512,8 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       datasetId_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3537,8 +3535,8 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDatasetId() {
-
       datasetId_ = getDefaultInstance().getDatasetId();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3565,8 +3563,8 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       datasetId_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3656,8 +3654,8 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       annotationsFilter_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3681,8 +3679,8 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearAnnotationsFilter() {
-
       annotationsFilter_ = getDefaultInstance().getAnnotationsFilter();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3711,8 +3709,8 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       annotationsFilter_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3835,8 +3833,8 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       annotationSchemaUri_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3871,8 +3869,8 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearAnnotationSchemaUri() {
-
       annotationSchemaUri_ = getDefaultInstance().getAnnotationSchemaUri();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3912,8 +3910,8 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       annotationSchemaUri_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4024,8 +4022,8 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       savedQueryId_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4056,8 +4054,8 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSavedQueryId() {
-
       savedQueryId_ = getDefaultInstance().getSavedQueryId();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4093,8 +4091,8 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       savedQueryId_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4130,6 +4128,7 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
     public Builder setPersistMlUseAssignment(boolean value) {
 
       persistMlUseAssignment_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4145,7 +4144,7 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPersistMlUseAssignment() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       persistMlUseAssignment_ = false;
       onChanged();
       return this;

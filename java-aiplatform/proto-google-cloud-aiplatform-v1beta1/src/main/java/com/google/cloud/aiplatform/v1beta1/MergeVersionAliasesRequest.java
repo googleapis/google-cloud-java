@@ -70,7 +70,9 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -127,6 +129,8 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
   }
 
   public static final int VERSION_ALIASES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList versionAliases_;
   /**
    *
@@ -442,10 +446,10 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       versionAliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -474,15 +478,29 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
     public com.google.cloud.aiplatform.v1beta1.MergeVersionAliasesRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.MergeVersionAliasesRequest result =
           new com.google.cloud.aiplatform.v1beta1.MergeVersionAliasesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        versionAliases_ = versionAliases_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.versionAliases_ = versionAliases_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.MergeVersionAliasesRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        versionAliases_ = versionAliases_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.versionAliases_ = versionAliases_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.MergeVersionAliasesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -534,12 +552,13 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.versionAliases_.isEmpty()) {
         if (versionAliases_.isEmpty()) {
           versionAliases_ = other.versionAliases_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureVersionAliasesIsMutable();
           versionAliases_.addAll(other.versionAliases_);
@@ -575,7 +594,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -677,8 +696,8 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -698,8 +717,8 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -724,8 +743,8 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -734,9 +753,9 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureVersionAliasesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         versionAliases_ = new com.google.protobuf.LazyStringArrayList(versionAliases_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -951,7 +970,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
      */
     public Builder clearVersionAliases() {
       versionAliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

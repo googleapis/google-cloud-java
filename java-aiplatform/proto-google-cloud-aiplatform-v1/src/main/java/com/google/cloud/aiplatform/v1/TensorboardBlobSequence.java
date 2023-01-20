@@ -69,6 +69,8 @@ public final class TensorboardBlobSequence extends com.google.protobuf.Generated
   }
 
   public static final int VALUES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.TensorboardBlob> values_;
   /**
    *
@@ -338,6 +340,7 @@ public final class TensorboardBlobSequence extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (valuesBuilder_ == null) {
         values_ = java.util.Collections.emptyList();
       } else {
@@ -372,7 +375,16 @@ public final class TensorboardBlobSequence extends com.google.protobuf.Generated
     public com.google.cloud.aiplatform.v1.TensorboardBlobSequence buildPartial() {
       com.google.cloud.aiplatform.v1.TensorboardBlobSequence result =
           new com.google.cloud.aiplatform.v1.TensorboardBlobSequence(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.TensorboardBlobSequence result) {
       if (valuesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           values_ = java.util.Collections.unmodifiableList(values_);
@@ -382,8 +394,10 @@ public final class TensorboardBlobSequence extends com.google.protobuf.Generated
       } else {
         result.values_ = valuesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.TensorboardBlobSequence result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

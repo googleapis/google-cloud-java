@@ -72,6 +72,8 @@ public final class ListHyperparameterTuningJobsResponse
   }
 
   public static final int HYPERPARAMETER_TUNING_JOBS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.HyperparameterTuningJob>
       hyperparameterTuningJobs_;
   /**
@@ -165,7 +167,9 @@ public final class ListHyperparameterTuningJobsResponse
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -434,6 +438,7 @@ public final class ListHyperparameterTuningJobsResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (hyperparameterTuningJobsBuilder_ == null) {
         hyperparameterTuningJobs_ = java.util.Collections.emptyList();
       } else {
@@ -442,7 +447,6 @@ public final class ListHyperparameterTuningJobsResponse
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -472,7 +476,16 @@ public final class ListHyperparameterTuningJobsResponse
     public com.google.cloud.aiplatform.v1.ListHyperparameterTuningJobsResponse buildPartial() {
       com.google.cloud.aiplatform.v1.ListHyperparameterTuningJobsResponse result =
           new com.google.cloud.aiplatform.v1.ListHyperparameterTuningJobsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.ListHyperparameterTuningJobsResponse result) {
       if (hyperparameterTuningJobsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           hyperparameterTuningJobs_ =
@@ -483,9 +496,14 @@ public final class ListHyperparameterTuningJobsResponse
       } else {
         result.hyperparameterTuningJobs_ = hyperparameterTuningJobsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.ListHyperparameterTuningJobsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -566,6 +584,7 @@ public final class ListHyperparameterTuningJobsResponse
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -611,7 +630,7 @@ public final class ListHyperparameterTuningJobsResponse
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1141,8 +1160,8 @@ public final class ListHyperparameterTuningJobsResponse
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1161,8 +1180,8 @@ public final class ListHyperparameterTuningJobsResponse
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1186,8 +1205,8 @@ public final class ListHyperparameterTuningJobsResponse
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

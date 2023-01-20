@@ -112,10 +112,14 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.DataItemOrBuilder getDataItemOrBuilder() {
-    return getDataItem();
+    return dataItem_ == null
+        ? com.google.cloud.aiplatform.v1beta1.DataItem.getDefaultInstance()
+        : dataItem_;
   }
 
   public static final int ANNOTATIONS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Annotation> annotations_;
   /**
    *
@@ -196,7 +200,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HAS_TRUNCATED_ANNOTATIONS_FIELD_NUMBER = 3;
-  private boolean hasTruncatedAnnotations_;
+  private boolean hasTruncatedAnnotations_ = false;
   /**
    *
    *
@@ -440,10 +444,10 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (dataItemBuilder_ == null) {
-        dataItem_ = null;
-      } else {
-        dataItem_ = null;
+      bitField0_ = 0;
+      dataItem_ = null;
+      if (dataItemBuilder_ != null) {
+        dataItemBuilder_.dispose();
         dataItemBuilder_ = null;
       }
       if (annotationsBuilder_ == null) {
@@ -452,9 +456,8 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
         annotations_ = null;
         annotationsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       hasTruncatedAnnotations_ = false;
-
       return this;
     }
 
@@ -482,24 +485,35 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.DataItemView buildPartial() {
       com.google.cloud.aiplatform.v1beta1.DataItemView result =
           new com.google.cloud.aiplatform.v1beta1.DataItemView(this);
-      int from_bitField0_ = bitField0_;
-      if (dataItemBuilder_ == null) {
-        result.dataItem_ = dataItem_;
-      } else {
-        result.dataItem_ = dataItemBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.DataItemView result) {
       if (annotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           annotations_ = java.util.Collections.unmodifiableList(annotations_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.annotations_ = annotations_;
       } else {
         result.annotations_ = annotationsBuilder_.build();
       }
-      result.hasTruncatedAnnotations_ = hasTruncatedAnnotations_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.DataItemView result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dataItem_ = dataItemBuilder_ == null ? dataItem_ : dataItemBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.hasTruncatedAnnotations_ = hasTruncatedAnnotations_;
+      }
     }
 
     @java.lang.Override
@@ -555,7 +569,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
         if (!other.annotations_.isEmpty()) {
           if (annotations_.isEmpty()) {
             annotations_ = other.annotations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAnnotationsIsMutable();
             annotations_.addAll(other.annotations_);
@@ -568,7 +582,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
             annotationsBuilder_.dispose();
             annotationsBuilder_ = null;
             annotations_ = other.annotations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             annotationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAnnotationsFieldBuilder()
@@ -610,7 +624,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getDataItemFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -629,7 +643,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 hasTruncatedAnnotations_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -669,7 +683,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the dataItem field is set.
      */
     public boolean hasDataItem() {
-      return dataItemBuilder_ != null || dataItem_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -706,11 +720,11 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         dataItem_ = value;
-        onChanged();
       } else {
         dataItemBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -726,11 +740,11 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.aiplatform.v1beta1.DataItem.Builder builderForValue) {
       if (dataItemBuilder_ == null) {
         dataItem_ = builderForValue.build();
-        onChanged();
       } else {
         dataItemBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -744,19 +758,18 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDataItem(com.google.cloud.aiplatform.v1beta1.DataItem value) {
       if (dataItemBuilder_ == null) {
-        if (dataItem_ != null) {
-          dataItem_ =
-              com.google.cloud.aiplatform.v1beta1.DataItem.newBuilder(dataItem_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && dataItem_ != null
+            && dataItem_ != com.google.cloud.aiplatform.v1beta1.DataItem.getDefaultInstance()) {
+          getDataItemBuilder().mergeFrom(value);
         } else {
           dataItem_ = value;
         }
-        onChanged();
       } else {
         dataItemBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -769,14 +782,13 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.DataItem data_item = 1;</code>
      */
     public Builder clearDataItem() {
-      if (dataItemBuilder_ == null) {
-        dataItem_ = null;
-        onChanged();
-      } else {
-        dataItem_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      dataItem_ = null;
+      if (dataItemBuilder_ != null) {
+        dataItemBuilder_.dispose();
         dataItemBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -789,7 +801,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.DataItem data_item = 1;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.DataItem.Builder getDataItemBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDataItemFieldBuilder().getBuilder();
     }
@@ -841,10 +853,10 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         annotations_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.Annotation>(annotations_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1082,7 +1094,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAnnotations() {
       if (annotationsBuilder_ == null) {
         annotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         annotationsBuilder_.clear();
@@ -1219,7 +1231,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1beta1.Annotation,
                 com.google.cloud.aiplatform.v1beta1.Annotation.Builder,
                 com.google.cloud.aiplatform.v1beta1.AnnotationOrBuilder>(
-                annotations_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                annotations_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         annotations_ = null;
       }
       return annotationsBuilder_;
@@ -1266,6 +1278,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
     public Builder setHasTruncatedAnnotations(boolean value) {
 
       hasTruncatedAnnotations_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1286,7 +1299,7 @@ public final class DataItemView extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHasTruncatedAnnotations() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       hasTruncatedAnnotations_ = false;
       onChanged();
       return this;

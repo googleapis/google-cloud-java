@@ -70,6 +70,8 @@ public final class BatchCreateTensorboardRunsResponse extends com.google.protobu
   }
 
   public static final int TENSORBOARD_RUNS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.TensorboardRun> tensorboardRuns_;
   /**
    *
@@ -343,6 +345,7 @@ public final class BatchCreateTensorboardRunsResponse extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (tensorboardRunsBuilder_ == null) {
         tensorboardRuns_ = java.util.Collections.emptyList();
       } else {
@@ -380,7 +383,16 @@ public final class BatchCreateTensorboardRunsResponse extends com.google.protobu
     public com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse buildPartial() {
       com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse result =
           new com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse result) {
       if (tensorboardRunsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           tensorboardRuns_ = java.util.Collections.unmodifiableList(tensorboardRuns_);
@@ -390,8 +402,11 @@ public final class BatchCreateTensorboardRunsResponse extends com.google.protobu
       } else {
         result.tensorboardRuns_ = tensorboardRunsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

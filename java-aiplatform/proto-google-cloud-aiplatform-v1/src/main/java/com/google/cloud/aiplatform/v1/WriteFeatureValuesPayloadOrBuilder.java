@@ -111,7 +111,6 @@ public interface WriteFeatureValuesPayloadOrBuilder
    * map&lt;string, .google.cloud.aiplatform.v1.FeatureValue&gt; feature_values = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-
   /* nullable */
   com.google.cloud.aiplatform.v1.FeatureValue getFeatureValuesOrDefault(
       java.lang.String key,

@@ -68,6 +68,8 @@ public final class BoolArray extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.BooleanList values_;
   /**
    *
@@ -326,8 +328,8 @@ public final class BoolArray extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       values_ = emptyBooleanList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -355,14 +357,24 @@ public final class BoolArray extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.BoolArray buildPartial() {
       com.google.cloud.aiplatform.v1.BoolArray result =
           new com.google.cloud.aiplatform.v1.BoolArray(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1.BoolArray result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         values_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.values_ = values_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.BoolArray result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -550,6 +562,7 @@ public final class BoolArray extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setValues(int index, boolean value) {
+
       ensureValuesIsMutable();
       values_.setBoolean(index, value);
       onChanged();
@@ -568,6 +581,7 @@ public final class BoolArray extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder addValues(boolean value) {
+
       ensureValuesIsMutable();
       values_.addBoolean(value);
       onChanged();

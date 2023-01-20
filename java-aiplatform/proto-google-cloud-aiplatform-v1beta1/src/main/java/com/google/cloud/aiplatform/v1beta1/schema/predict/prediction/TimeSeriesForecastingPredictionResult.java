@@ -73,7 +73,7 @@ public final class TimeSeriesForecastingPredictionResult
   }
 
   public static final int VALUE_FIELD_NUMBER = 1;
-  private float value_;
+  private float value_ = 0F;
   /**
    *
    *
@@ -323,8 +323,8 @@ public final class TimeSeriesForecastingPredictionResult
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       value_ = 0F;
-
       return this;
     }
 
@@ -365,9 +365,21 @@ public final class TimeSeriesForecastingPredictionResult
           result =
               new com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
                   .TimeSeriesForecastingPredictionResult(this);
-      result.value_ = value_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
+                .TimeSeriesForecastingPredictionResult
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.value_ = value_;
+      }
     }
 
     @java.lang.Override
@@ -458,7 +470,7 @@ public final class TimeSeriesForecastingPredictionResult
             case 13:
               {
                 value_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             default:
@@ -477,6 +489,8 @@ public final class TimeSeriesForecastingPredictionResult
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private float value_;
     /**
@@ -509,6 +523,7 @@ public final class TimeSeriesForecastingPredictionResult
     public Builder setValue(float value) {
 
       value_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -524,7 +539,7 @@ public final class TimeSeriesForecastingPredictionResult
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       value_ = 0F;
       onChanged();
       return this;

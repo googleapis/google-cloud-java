@@ -121,7 +121,9 @@ public final class ModelDeploymentMonitoringScheduleConfig
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getMonitorIntervalOrBuilder() {
-    return getMonitorInterval();
+    return monitorInterval_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : monitorInterval_;
   }
 
   public static final int MONITOR_WINDOW_FIELD_NUMBER = 2;
@@ -190,7 +192,9 @@ public final class ModelDeploymentMonitoringScheduleConfig
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getMonitorWindowOrBuilder() {
-    return getMonitorWindow();
+    return monitorWindow_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : monitorWindow_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -412,16 +416,15 @@ public final class ModelDeploymentMonitoringScheduleConfig
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (monitorIntervalBuilder_ == null) {
-        monitorInterval_ = null;
-      } else {
-        monitorInterval_ = null;
+      bitField0_ = 0;
+      monitorInterval_ = null;
+      if (monitorIntervalBuilder_ != null) {
+        monitorIntervalBuilder_.dispose();
         monitorIntervalBuilder_ = null;
       }
-      if (monitorWindowBuilder_ == null) {
-        monitorWindow_ = null;
-      } else {
-        monitorWindow_ = null;
+      monitorWindow_ = null;
+      if (monitorWindowBuilder_ != null) {
+        monitorWindowBuilder_.dispose();
         monitorWindowBuilder_ = null;
       }
       return this;
@@ -454,18 +457,24 @@ public final class ModelDeploymentMonitoringScheduleConfig
     public com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringScheduleConfig buildPartial() {
       com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringScheduleConfig result =
           new com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringScheduleConfig(this);
-      if (monitorIntervalBuilder_ == null) {
-        result.monitorInterval_ = monitorInterval_;
-      } else {
-        result.monitorInterval_ = monitorIntervalBuilder_.build();
-      }
-      if (monitorWindowBuilder_ == null) {
-        result.monitorWindow_ = monitorWindow_;
-      } else {
-        result.monitorWindow_ = monitorWindowBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringScheduleConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.monitorInterval_ =
+            monitorIntervalBuilder_ == null ? monitorInterval_ : monitorIntervalBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.monitorWindow_ =
+            monitorWindowBuilder_ == null ? monitorWindow_ : monitorWindowBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -552,13 +561,13 @@ public final class ModelDeploymentMonitoringScheduleConfig
             case 10:
               {
                 input.readMessage(getMonitorIntervalFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getMonitorWindowFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -577,6 +586,8 @@ public final class ModelDeploymentMonitoringScheduleConfig
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Duration monitorInterval_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -600,7 +611,7 @@ public final class ModelDeploymentMonitoringScheduleConfig
      * @return Whether the monitorInterval field is set.
      */
     public boolean hasMonitorInterval() {
-      return monitorIntervalBuilder_ != null || monitorInterval_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -645,11 +656,11 @@ public final class ModelDeploymentMonitoringScheduleConfig
           throw new NullPointerException();
         }
         monitorInterval_ = value;
-        onChanged();
       } else {
         monitorIntervalBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -668,11 +679,11 @@ public final class ModelDeploymentMonitoringScheduleConfig
     public Builder setMonitorInterval(com.google.protobuf.Duration.Builder builderForValue) {
       if (monitorIntervalBuilder_ == null) {
         monitorInterval_ = builderForValue.build();
-        onChanged();
       } else {
         monitorIntervalBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -690,19 +701,18 @@ public final class ModelDeploymentMonitoringScheduleConfig
      */
     public Builder mergeMonitorInterval(com.google.protobuf.Duration value) {
       if (monitorIntervalBuilder_ == null) {
-        if (monitorInterval_ != null) {
-          monitorInterval_ =
-              com.google.protobuf.Duration.newBuilder(monitorInterval_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && monitorInterval_ != null
+            && monitorInterval_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getMonitorIntervalBuilder().mergeFrom(value);
         } else {
           monitorInterval_ = value;
         }
-        onChanged();
       } else {
         monitorIntervalBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -719,14 +729,13 @@ public final class ModelDeploymentMonitoringScheduleConfig
      * </code>
      */
     public Builder clearMonitorInterval() {
-      if (monitorIntervalBuilder_ == null) {
-        monitorInterval_ = null;
-        onChanged();
-      } else {
-        monitorInterval_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      monitorInterval_ = null;
+      if (monitorIntervalBuilder_ != null) {
+        monitorIntervalBuilder_.dispose();
         monitorIntervalBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -743,7 +752,7 @@ public final class ModelDeploymentMonitoringScheduleConfig
      * </code>
      */
     public com.google.protobuf.Duration.Builder getMonitorIntervalBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getMonitorIntervalFieldBuilder().getBuilder();
     }
@@ -824,7 +833,7 @@ public final class ModelDeploymentMonitoringScheduleConfig
      * @return Whether the monitorWindow field is set.
      */
     public boolean hasMonitorWindow() {
-      return monitorWindowBuilder_ != null || monitorWindow_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -875,11 +884,11 @@ public final class ModelDeploymentMonitoringScheduleConfig
           throw new NullPointerException();
         }
         monitorWindow_ = value;
-        onChanged();
       } else {
         monitorWindowBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -901,11 +910,11 @@ public final class ModelDeploymentMonitoringScheduleConfig
     public Builder setMonitorWindow(com.google.protobuf.Duration.Builder builderForValue) {
       if (monitorWindowBuilder_ == null) {
         monitorWindow_ = builderForValue.build();
-        onChanged();
       } else {
         monitorWindowBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -926,19 +935,18 @@ public final class ModelDeploymentMonitoringScheduleConfig
      */
     public Builder mergeMonitorWindow(com.google.protobuf.Duration value) {
       if (monitorWindowBuilder_ == null) {
-        if (monitorWindow_ != null) {
-          monitorWindow_ =
-              com.google.protobuf.Duration.newBuilder(monitorWindow_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && monitorWindow_ != null
+            && monitorWindow_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getMonitorWindowBuilder().mergeFrom(value);
         } else {
           monitorWindow_ = value;
         }
-        onChanged();
       } else {
         monitorWindowBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -958,14 +966,13 @@ public final class ModelDeploymentMonitoringScheduleConfig
      * <code>.google.protobuf.Duration monitor_window = 2;</code>
      */
     public Builder clearMonitorWindow() {
-      if (monitorWindowBuilder_ == null) {
-        monitorWindow_ = null;
-        onChanged();
-      } else {
-        monitorWindow_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      monitorWindow_ = null;
+      if (monitorWindowBuilder_ != null) {
+        monitorWindowBuilder_.dispose();
         monitorWindowBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -985,7 +992,7 @@ public final class ModelDeploymentMonitoringScheduleConfig
      * <code>.google.protobuf.Duration monitor_window = 2;</code>
      */
     public com.google.protobuf.Duration.Builder getMonitorWindowBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMonitorWindowFieldBuilder().getBuilder();
     }

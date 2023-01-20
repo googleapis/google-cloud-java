@@ -70,7 +70,9 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
   }
 
   public static final int CONTEXT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object context_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object context_ = "";
   /**
    *
    *
@@ -127,6 +129,8 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
   }
 
   public static final int CHILD_CONTEXTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList childContexts_;
   /**
    *
@@ -402,10 +406,10 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       context_ = "";
-
       childContexts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -433,15 +437,28 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
     public com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest buildPartial() {
       com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest result =
           new com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.context_ = context_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        childContexts_ = childContexts_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.childContexts_ = childContexts_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        childContexts_ = childContexts_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.childContexts_ = childContexts_;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.context_ = context_;
+      }
     }
 
     @java.lang.Override
@@ -492,12 +509,13 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getContext().isEmpty()) {
         context_ = other.context_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.childContexts_.isEmpty()) {
         if (childContexts_.isEmpty()) {
           childContexts_ = other.childContexts_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureChildContextsIsMutable();
           childContexts_.addAll(other.childContexts_);
@@ -533,7 +551,7 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
             case 10:
               {
                 context_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -635,8 +653,8 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       context_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -656,8 +674,8 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearContext() {
-
       context_ = getDefaultInstance().getContext();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -682,8 +700,8 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       context_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -692,9 +710,9 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureChildContextsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         childContexts_ = new com.google.protobuf.LazyStringArrayList(childContexts_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -829,7 +847,7 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
      */
     public Builder clearChildContexts() {
       childContexts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

@@ -69,7 +69,9 @@ public final class AddTrialMeasurementRequest extends com.google.protobuf.Genera
   }
 
   public static final int TRIAL_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object trialName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object trialName_ = "";
   /**
    *
    *
@@ -176,7 +178,9 @@ public final class AddTrialMeasurementRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.MeasurementOrBuilder getMeasurementOrBuilder() {
-    return getMeasurement();
+    return measurement_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Measurement.getDefaultInstance()
+        : measurement_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -392,12 +396,11 @@ public final class AddTrialMeasurementRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       trialName_ = "";
-
-      if (measurementBuilder_ == null) {
-        measurement_ = null;
-      } else {
-        measurement_ = null;
+      measurement_ = null;
+      if (measurementBuilder_ != null) {
+        measurementBuilder_.dispose();
         measurementBuilder_ = null;
       }
       return this;
@@ -428,14 +431,23 @@ public final class AddTrialMeasurementRequest extends com.google.protobuf.Genera
     public com.google.cloud.aiplatform.v1beta1.AddTrialMeasurementRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.AddTrialMeasurementRequest result =
           new com.google.cloud.aiplatform.v1beta1.AddTrialMeasurementRequest(this);
-      result.trialName_ = trialName_;
-      if (measurementBuilder_ == null) {
-        result.measurement_ = measurement_;
-      } else {
-        result.measurement_ = measurementBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.AddTrialMeasurementRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.trialName_ = trialName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.measurement_ =
+            measurementBuilder_ == null ? measurement_ : measurementBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -487,6 +499,7 @@ public final class AddTrialMeasurementRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getTrialName().isEmpty()) {
         trialName_ = other.trialName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMeasurement()) {
@@ -521,13 +534,13 @@ public final class AddTrialMeasurementRequest extends com.google.protobuf.Genera
             case 10:
               {
                 trialName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(getMeasurementFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -546,6 +559,8 @@ public final class AddTrialMeasurementRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object trialName_ = "";
     /**
@@ -620,8 +635,8 @@ public final class AddTrialMeasurementRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       trialName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -641,8 +656,8 @@ public final class AddTrialMeasurementRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearTrialName() {
-
       trialName_ = getDefaultInstance().getTrialName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -667,8 +682,8 @@ public final class AddTrialMeasurementRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       trialName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -693,7 +708,7 @@ public final class AddTrialMeasurementRequest extends com.google.protobuf.Genera
      * @return Whether the measurement field is set.
      */
     public boolean hasMeasurement() {
-      return measurementBuilder_ != null || measurement_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -734,11 +749,11 @@ public final class AddTrialMeasurementRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         measurement_ = value;
-        onChanged();
       } else {
         measurementBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -756,11 +771,11 @@ public final class AddTrialMeasurementRequest extends com.google.protobuf.Genera
         com.google.cloud.aiplatform.v1beta1.Measurement.Builder builderForValue) {
       if (measurementBuilder_ == null) {
         measurement_ = builderForValue.build();
-        onChanged();
       } else {
         measurementBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -776,19 +791,19 @@ public final class AddTrialMeasurementRequest extends com.google.protobuf.Genera
      */
     public Builder mergeMeasurement(com.google.cloud.aiplatform.v1beta1.Measurement value) {
       if (measurementBuilder_ == null) {
-        if (measurement_ != null) {
-          measurement_ =
-              com.google.cloud.aiplatform.v1beta1.Measurement.newBuilder(measurement_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && measurement_ != null
+            && measurement_
+                != com.google.cloud.aiplatform.v1beta1.Measurement.getDefaultInstance()) {
+          getMeasurementBuilder().mergeFrom(value);
         } else {
           measurement_ = value;
         }
-        onChanged();
       } else {
         measurementBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -803,14 +818,13 @@ public final class AddTrialMeasurementRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearMeasurement() {
-      if (measurementBuilder_ == null) {
-        measurement_ = null;
-        onChanged();
-      } else {
-        measurement_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      measurement_ = null;
+      if (measurementBuilder_ != null) {
+        measurementBuilder_.dispose();
         measurementBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -825,7 +839,7 @@ public final class AddTrialMeasurementRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Measurement.Builder getMeasurementBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMeasurementFieldBuilder().getBuilder();
     }

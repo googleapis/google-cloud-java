@@ -68,6 +68,8 @@ public final class DoubleArray extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.DoubleList values_;
   /**
    *
@@ -327,8 +329,8 @@ public final class DoubleArray extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       values_ = emptyDoubleList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -356,14 +358,24 @@ public final class DoubleArray extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.DoubleArray buildPartial() {
       com.google.cloud.aiplatform.v1.DoubleArray result =
           new com.google.cloud.aiplatform.v1.DoubleArray(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1.DoubleArray result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         values_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.values_ = values_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.DoubleArray result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -551,6 +563,7 @@ public final class DoubleArray extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setValues(int index, double value) {
+
       ensureValuesIsMutable();
       values_.setDouble(index, value);
       onChanged();
@@ -569,6 +582,7 @@ public final class DoubleArray extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder addValues(double value) {
+
       ensureValuesIsMutable();
       values_.addDouble(value);
       onChanged();

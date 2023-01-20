@@ -75,7 +75,9 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRAINING_FILTER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object trainingFilter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object trainingFilter_ = "";
   /**
    *
    *
@@ -136,7 +138,9 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALIDATION_FILTER_FIELD_NUMBER = 2;
-  private volatile java.lang.Object validationFilter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object validationFilter_ = "";
   /**
    *
    *
@@ -197,7 +201,9 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEST_FILTER_FIELD_NUMBER = 3;
-  private volatile java.lang.Object testFilter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object testFilter_ = "";
   /**
    *
    *
@@ -477,12 +483,10 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       trainingFilter_ = "";
-
       validationFilter_ = "";
-
       testFilter_ = "";
-
       return this;
     }
 
@@ -510,11 +514,24 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.FilterSplit buildPartial() {
       com.google.cloud.aiplatform.v1.FilterSplit result =
           new com.google.cloud.aiplatform.v1.FilterSplit(this);
-      result.trainingFilter_ = trainingFilter_;
-      result.validationFilter_ = validationFilter_;
-      result.testFilter_ = testFilter_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.FilterSplit result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.trainingFilter_ = trainingFilter_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.validationFilter_ = validationFilter_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.testFilter_ = testFilter_;
+      }
     }
 
     @java.lang.Override
@@ -564,14 +581,17 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.aiplatform.v1.FilterSplit.getDefaultInstance()) return this;
       if (!other.getTrainingFilter().isEmpty()) {
         trainingFilter_ = other.trainingFilter_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getValidationFilter().isEmpty()) {
         validationFilter_ = other.validationFilter_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getTestFilter().isEmpty()) {
         testFilter_ = other.testFilter_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -603,19 +623,19 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 trainingFilter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 validationFilter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 testFilter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -634,6 +654,8 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object trainingFilter_ = "";
     /**
@@ -714,8 +736,8 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       trainingFilter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -737,8 +759,8 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTrainingFilter() {
-
       trainingFilter_ = getDefaultInstance().getTrainingFilter();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -765,8 +787,8 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       trainingFilter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -850,8 +872,8 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       validationFilter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -873,8 +895,8 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearValidationFilter() {
-
       validationFilter_ = getDefaultInstance().getValidationFilter();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -901,8 +923,8 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       validationFilter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -986,8 +1008,8 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       testFilter_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1009,8 +1031,8 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTestFilter() {
-
       testFilter_ = getDefaultInstance().getTestFilter();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1037,8 +1059,8 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       testFilter_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

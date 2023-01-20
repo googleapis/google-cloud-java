@@ -77,7 +77,9 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -181,7 +185,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPECIALIST_MANAGERS_COUNT_FIELD_NUMBER = 3;
-  private int specialistManagersCount_;
+  private int specialistManagersCount_ = 0;
   /**
    *
    *
@@ -199,6 +203,8 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPECIALIST_MANAGER_EMAILS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList specialistManagerEmails_;
   /**
    *
@@ -260,6 +266,8 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PENDING_DATA_LABELING_JOBS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList pendingDataLabelingJobs_;
   /**
    *
@@ -329,6 +337,8 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPECIALIST_WORKER_EMAILS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList specialistWorkerEmails_;
   /**
    *
@@ -663,18 +673,16 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       specialistManagersCount_ = 0;
-
       specialistManagerEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       pendingDataLabelingJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       specialistWorkerEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -702,27 +710,43 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.SpecialistPool buildPartial() {
       com.google.cloud.aiplatform.v1.SpecialistPool result =
           new com.google.cloud.aiplatform.v1.SpecialistPool(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.specialistManagersCount_ = specialistManagersCount_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        specialistManagerEmails_ = specialistManagerEmails_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.specialistManagerEmails_ = specialistManagerEmails_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        pendingDataLabelingJobs_ = pendingDataLabelingJobs_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.pendingDataLabelingJobs_ = pendingDataLabelingJobs_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        specialistWorkerEmails_ = specialistWorkerEmails_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.specialistWorkerEmails_ = specialistWorkerEmails_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1.SpecialistPool result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        specialistManagerEmails_ = specialistManagerEmails_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.specialistManagerEmails_ = specialistManagerEmails_;
+      if (((bitField0_ & 0x00000010) != 0)) {
+        pendingDataLabelingJobs_ = pendingDataLabelingJobs_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.pendingDataLabelingJobs_ = pendingDataLabelingJobs_;
+      if (((bitField0_ & 0x00000020) != 0)) {
+        specialistWorkerEmails_ = specialistWorkerEmails_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.specialistWorkerEmails_ = specialistWorkerEmails_;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.SpecialistPool result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.specialistManagersCount_ = specialistManagersCount_;
+      }
     }
 
     @java.lang.Override
@@ -772,10 +796,12 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.aiplatform.v1.SpecialistPool.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getSpecialistManagersCount() != 0) {
@@ -784,7 +810,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
       if (!other.specialistManagerEmails_.isEmpty()) {
         if (specialistManagerEmails_.isEmpty()) {
           specialistManagerEmails_ = other.specialistManagerEmails_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureSpecialistManagerEmailsIsMutable();
           specialistManagerEmails_.addAll(other.specialistManagerEmails_);
@@ -794,7 +820,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
       if (!other.pendingDataLabelingJobs_.isEmpty()) {
         if (pendingDataLabelingJobs_.isEmpty()) {
           pendingDataLabelingJobs_ = other.pendingDataLabelingJobs_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensurePendingDataLabelingJobsIsMutable();
           pendingDataLabelingJobs_.addAll(other.pendingDataLabelingJobs_);
@@ -804,7 +830,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
       if (!other.specialistWorkerEmails_.isEmpty()) {
         if (specialistWorkerEmails_.isEmpty()) {
           specialistWorkerEmails_ = other.specialistWorkerEmails_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureSpecialistWorkerEmailsIsMutable();
           specialistWorkerEmails_.addAll(other.specialistWorkerEmails_);
@@ -840,19 +866,19 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 specialistManagersCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -956,8 +982,8 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -973,8 +999,8 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -995,8 +1021,8 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1071,8 +1097,8 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1091,8 +1117,8 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1116,8 +1142,8 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1155,6 +1181,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
     public Builder setSpecialistManagersCount(int value) {
 
       specialistManagersCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1171,7 +1198,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSpecialistManagersCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       specialistManagersCount_ = 0;
       onChanged();
       return this;
@@ -1181,10 +1208,10 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSpecialistManagerEmailsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         specialistManagerEmails_ =
             new com.google.protobuf.LazyStringArrayList(specialistManagerEmails_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1319,7 +1346,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSpecialistManagerEmails() {
       specialistManagerEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1350,10 +1377,10 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePendingDataLabelingJobsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         pendingDataLabelingJobs_ =
             new com.google.protobuf.LazyStringArrayList(pendingDataLabelingJobs_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1504,7 +1531,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPendingDataLabelingJobs() {
       pendingDataLabelingJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1537,10 +1564,10 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSpecialistWorkerEmailsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         specialistWorkerEmails_ =
             new com.google.protobuf.LazyStringArrayList(specialistWorkerEmails_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -1675,7 +1702,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSpecialistWorkerEmails() {
       specialistWorkerEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }

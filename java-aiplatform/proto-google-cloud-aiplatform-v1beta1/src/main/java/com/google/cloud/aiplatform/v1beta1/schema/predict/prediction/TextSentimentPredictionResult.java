@@ -71,7 +71,7 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
   }
 
   public static final int SENTIMENT_FIELD_NUMBER = 1;
-  private int sentiment_;
+  private int sentiment_ = 0;
   /**
    *
    *
@@ -322,8 +322,8 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sentiment_ = 0;
-
       return this;
     }
 
@@ -362,9 +362,20 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
           result =
               new com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
                   .TextSentimentPredictionResult(this);
-      result.sentiment_ = sentiment_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sentiment_ = sentiment_;
+      }
     }
 
     @java.lang.Override
@@ -454,7 +465,7 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
             case 8:
               {
                 sentiment_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -473,6 +484,8 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int sentiment_;
     /**
@@ -513,6 +526,7 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
     public Builder setSentiment(int value) {
 
       sentiment_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -532,7 +546,7 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearSentiment() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       sentiment_ = 0;
       onChanged();
       return this;

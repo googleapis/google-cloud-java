@@ -70,7 +70,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BASELINE_OUTPUT_VALUE_FIELD_NUMBER = 1;
-  private double baselineOutputValue_;
+  private double baselineOutputValue_ = 0D;
   /**
    *
    *
@@ -96,7 +96,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INSTANCE_OUTPUT_VALUE_FIELD_NUMBER = 2;
-  private double instanceOutputValue_;
+  private double instanceOutputValue_ = 0D;
   /**
    *
    *
@@ -248,10 +248,14 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.ValueOrBuilder getFeatureAttributionsOrBuilder() {
-    return getFeatureAttributions();
+    return featureAttributions_ == null
+        ? com.google.protobuf.Value.getDefaultInstance()
+        : featureAttributions_;
   }
 
   public static final int OUTPUT_INDEX_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList outputIndex_;
   /**
    *
@@ -316,7 +320,9 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
   private int outputIndexMemoizedSerializedSize = -1;
 
   public static final int OUTPUT_DISPLAY_NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object outputDisplayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputDisplayName_ = "";
   /**
    *
    *
@@ -377,7 +383,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int APPROXIMATION_ERROR_FIELD_NUMBER = 6;
-  private double approximationError_;
+  private double approximationError_ = 0D;
   /**
    *
    *
@@ -415,7 +421,9 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OUTPUT_NAME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object outputName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputName_ = "";
   /**
    *
    *
@@ -750,24 +758,18 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       baselineOutputValue_ = 0D;
-
       instanceOutputValue_ = 0D;
-
-      if (featureAttributionsBuilder_ == null) {
-        featureAttributions_ = null;
-      } else {
-        featureAttributions_ = null;
+      featureAttributions_ = null;
+      if (featureAttributionsBuilder_ != null) {
+        featureAttributionsBuilder_.dispose();
         featureAttributionsBuilder_ = null;
       }
       outputIndex_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       outputDisplayName_ = "";
-
       approximationError_ = 0D;
-
       outputName_ = "";
-
       return this;
     }
 
@@ -795,24 +797,46 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.Attribution buildPartial() {
       com.google.cloud.aiplatform.v1beta1.Attribution result =
           new com.google.cloud.aiplatform.v1beta1.Attribution(this);
-      int from_bitField0_ = bitField0_;
-      result.baselineOutputValue_ = baselineOutputValue_;
-      result.instanceOutputValue_ = instanceOutputValue_;
-      if (featureAttributionsBuilder_ == null) {
-        result.featureAttributions_ = featureAttributions_;
-      } else {
-        result.featureAttributions_ = featureAttributionsBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        outputIndex_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.outputIndex_ = outputIndex_;
-      result.outputDisplayName_ = outputDisplayName_;
-      result.approximationError_ = approximationError_;
-      result.outputName_ = outputName_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.Attribution result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        outputIndex_.makeImmutable();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.outputIndex_ = outputIndex_;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Attribution result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.baselineOutputValue_ = baselineOutputValue_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instanceOutputValue_ = instanceOutputValue_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.featureAttributions_ =
+            featureAttributionsBuilder_ == null
+                ? featureAttributions_
+                : featureAttributionsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.outputDisplayName_ = outputDisplayName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.approximationError_ = approximationError_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.outputName_ = outputName_;
+      }
     }
 
     @java.lang.Override
@@ -873,7 +897,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
       if (!other.outputIndex_.isEmpty()) {
         if (outputIndex_.isEmpty()) {
           outputIndex_ = other.outputIndex_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureOutputIndexIsMutable();
           outputIndex_.addAll(other.outputIndex_);
@@ -882,6 +906,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getOutputDisplayName().isEmpty()) {
         outputDisplayName_ = other.outputDisplayName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getApproximationError() != 0D) {
@@ -889,6 +914,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getOutputName().isEmpty()) {
         outputName_ = other.outputName_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -920,20 +946,20 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
             case 9:
               {
                 baselineOutputValue_ = input.readDouble();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 9
             case 17:
               {
                 instanceOutputValue_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             case 26:
               {
                 input.readMessage(
                     getFeatureAttributionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
@@ -957,19 +983,19 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 outputDisplayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 49:
               {
                 approximationError_ = input.readDouble();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 49
             case 58:
               {
                 outputName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -1038,6 +1064,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
     public Builder setBaselineOutputValue(double value) {
 
       baselineOutputValue_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1061,7 +1088,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBaselineOutputValue() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       baselineOutputValue_ = 0D;
       onChanged();
       return this;
@@ -1110,6 +1137,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
     public Builder setInstanceOutputValue(double value) {
 
       instanceOutputValue_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1131,7 +1159,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstanceOutputValue() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       instanceOutputValue_ = 0D;
       onChanged();
       return this;
@@ -1183,7 +1211,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the featureAttributions field is set.
      */
     public boolean hasFeatureAttributions() {
-      return featureAttributionsBuilder_ != null || featureAttributions_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1276,11 +1304,11 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         featureAttributions_ = value;
-        onChanged();
       } else {
         featureAttributionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1323,11 +1351,11 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
     public Builder setFeatureAttributions(com.google.protobuf.Value.Builder builderForValue) {
       if (featureAttributionsBuilder_ == null) {
         featureAttributions_ = builderForValue.build();
-        onChanged();
       } else {
         featureAttributionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1369,19 +1397,18 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeFeatureAttributions(com.google.protobuf.Value value) {
       if (featureAttributionsBuilder_ == null) {
-        if (featureAttributions_ != null) {
-          featureAttributions_ =
-              com.google.protobuf.Value.newBuilder(featureAttributions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && featureAttributions_ != null
+            && featureAttributions_ != com.google.protobuf.Value.getDefaultInstance()) {
+          getFeatureAttributionsBuilder().mergeFrom(value);
         } else {
           featureAttributions_ = value;
         }
-        onChanged();
       } else {
         featureAttributionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1422,14 +1449,13 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearFeatureAttributions() {
-      if (featureAttributionsBuilder_ == null) {
-        featureAttributions_ = null;
-        onChanged();
-      } else {
-        featureAttributions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      featureAttributions_ = null;
+      if (featureAttributionsBuilder_ != null) {
+        featureAttributionsBuilder_.dispose();
         featureAttributionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1470,7 +1496,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Value.Builder getFeatureAttributionsBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getFeatureAttributionsFieldBuilder().getBuilder();
     }
@@ -1577,9 +1603,9 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.Internal.IntList outputIndex_ = emptyIntList();
 
     private void ensureOutputIndexIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         outputIndex_ = mutableCopy(outputIndex_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1599,7 +1625,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the outputIndex.
      */
     public java.util.List<java.lang.Integer> getOutputIndexList() {
-      return ((bitField0_ & 0x00000001) != 0)
+      return ((bitField0_ & 0x00000008) != 0)
           ? java.util.Collections.unmodifiableList(outputIndex_)
           : outputIndex_;
     }
@@ -1661,6 +1687,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setOutputIndex(int index, int value) {
+
       ensureOutputIndexIsMutable();
       outputIndex_.setInt(index, value);
       onChanged();
@@ -1684,6 +1711,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder addOutputIndex(int value) {
+
       ensureOutputIndexIsMutable();
       outputIndex_.addInt(value);
       onChanged();
@@ -1730,7 +1758,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearOutputIndex() {
       outputIndex_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1814,8 +1842,8 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputDisplayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1837,8 +1865,8 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOutputDisplayName() {
-
       outputDisplayName_ = getDefaultInstance().getOutputDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1865,8 +1893,8 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       outputDisplayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1942,6 +1970,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
     public Builder setApproximationError(double value) {
 
       approximationError_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1977,7 +2006,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearApproximationError() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       approximationError_ = 0D;
       onChanged();
       return this;
@@ -2047,8 +2076,8 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2065,8 +2094,8 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOutputName() {
-
       outputName_ = getDefaultInstance().getOutputName();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2088,8 +2117,8 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       outputName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

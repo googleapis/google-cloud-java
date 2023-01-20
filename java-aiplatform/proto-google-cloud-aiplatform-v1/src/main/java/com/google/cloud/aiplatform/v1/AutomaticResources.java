@@ -68,7 +68,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MIN_REPLICA_COUNT_FIELD_NUMBER = 1;
-  private int minReplicaCount_;
+  private int minReplicaCount_ = 0;
   /**
    *
    *
@@ -91,7 +91,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MAX_REPLICA_COUNT_FIELD_NUMBER = 2;
-  private int maxReplicaCount_;
+  private int maxReplicaCount_ = 0;
   /**
    *
    *
@@ -324,10 +324,9 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       minReplicaCount_ = 0;
-
       maxReplicaCount_ = 0;
-
       return this;
     }
 
@@ -355,10 +354,21 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1.AutomaticResources buildPartial() {
       com.google.cloud.aiplatform.v1.AutomaticResources result =
           new com.google.cloud.aiplatform.v1.AutomaticResources(this);
-      result.minReplicaCount_ = minReplicaCount_;
-      result.maxReplicaCount_ = maxReplicaCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.AutomaticResources result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.minReplicaCount_ = minReplicaCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxReplicaCount_ = maxReplicaCount_;
+      }
     }
 
     @java.lang.Override
@@ -442,13 +452,13 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
             case 8:
               {
                 minReplicaCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 maxReplicaCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -467,6 +477,8 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int minReplicaCount_;
     /**
@@ -509,6 +521,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
     public Builder setMinReplicaCount(int value) {
 
       minReplicaCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -529,7 +542,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMinReplicaCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       minReplicaCount_ = 0;
       onChanged();
       return this;
@@ -582,6 +595,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
     public Builder setMaxReplicaCount(int value) {
 
       maxReplicaCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -605,7 +619,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMaxReplicaCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxReplicaCount_ = 0;
       onChanged();
       return this;

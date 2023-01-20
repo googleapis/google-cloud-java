@@ -85,7 +85,9 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -138,7 +140,9 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -187,7 +191,9 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -286,11 +292,15 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
-    return getEncryptionSpec();
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
   }
 
   public static final int BLOB_STORAGE_PATH_PREFIX_FIELD_NUMBER = 10;
-  private volatile java.lang.Object blobStoragePathPrefix_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object blobStoragePathPrefix_ = "";
   /**
    *
    *
@@ -341,7 +351,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RUN_COUNT_FIELD_NUMBER = 5;
-  private int runCount_;
+  private int runCount_ = 0;
   /**
    *
    *
@@ -404,7 +414,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 7;
@@ -453,7 +463,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 8;
@@ -469,6 +479,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -550,7 +561,10 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -587,7 +601,9 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ETAG_FIELD_NUMBER = 9;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -960,37 +976,29 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
-      if (encryptionSpecBuilder_ == null) {
-        encryptionSpec_ = null;
-      } else {
-        encryptionSpec_ = null;
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
         encryptionSpecBuilder_ = null;
       }
       blobStoragePathPrefix_ = "";
-
       runCount_ = 0;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       etag_ = "";
-
       return this;
     }
 
@@ -1018,32 +1026,47 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.Tensorboard buildPartial() {
       com.google.cloud.aiplatform.v1.Tensorboard result =
           new com.google.cloud.aiplatform.v1.Tensorboard(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      if (encryptionSpecBuilder_ == null) {
-        result.encryptionSpec_ = encryptionSpec_;
-      } else {
-        result.encryptionSpec_ = encryptionSpecBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.blobStoragePathPrefix_ = blobStoragePathPrefix_;
-      result.runCount_ = runCount_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.etag_ = etag_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.Tensorboard result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.encryptionSpec_ =
+            encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.blobStoragePathPrefix_ = blobStoragePathPrefix_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.runCount_ = runCount_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -1093,14 +1116,17 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.aiplatform.v1.Tensorboard.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasEncryptionSpec()) {
@@ -1108,6 +1134,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getBlobStoragePathPrefix().isEmpty()) {
         blobStoragePathPrefix_ = other.blobStoragePathPrefix_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getRunCount() != 0) {
@@ -1120,8 +1147,10 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000100;
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1153,37 +1182,37 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 40:
               {
                 runCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
@@ -1195,24 +1224,25 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 82:
               {
                 blobStoragePathPrefix_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 90
             default:
@@ -1301,8 +1331,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1320,8 +1350,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1344,8 +1374,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1411,8 +1441,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1428,8 +1458,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1450,8 +1480,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1517,8 +1547,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1534,8 +1564,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1556,8 +1586,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1582,7 +1612,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encryptionSpec field is set.
      */
     public boolean hasEncryptionSpec() {
-      return encryptionSpecBuilder_ != null || encryptionSpec_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1623,11 +1653,11 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         encryptionSpec_ = value;
-        onChanged();
       } else {
         encryptionSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1645,11 +1675,11 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.aiplatform.v1.EncryptionSpec.Builder builderForValue) {
       if (encryptionSpecBuilder_ == null) {
         encryptionSpec_ = builderForValue.build();
-        onChanged();
       } else {
         encryptionSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1665,19 +1695,19 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
       if (encryptionSpecBuilder_ == null) {
-        if (encryptionSpec_ != null) {
-          encryptionSpec_ =
-              com.google.cloud.aiplatform.v1.EncryptionSpec.newBuilder(encryptionSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && encryptionSpec_ != null
+            && encryptionSpec_
+                != com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()) {
+          getEncryptionSpecBuilder().mergeFrom(value);
         } else {
           encryptionSpec_ = value;
         }
-        onChanged();
       } else {
         encryptionSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1692,14 +1722,13 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 11;</code>
      */
     public Builder clearEncryptionSpec() {
-      if (encryptionSpecBuilder_ == null) {
-        encryptionSpec_ = null;
-        onChanged();
-      } else {
-        encryptionSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
         encryptionSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1714,7 +1743,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 11;</code>
      */
     public com.google.cloud.aiplatform.v1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }
@@ -1833,8 +1862,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       blobStoragePathPrefix_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1852,8 +1881,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBlobStoragePathPrefix() {
-
       blobStoragePathPrefix_ = getDefaultInstance().getBlobStoragePathPrefix();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1876,8 +1905,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       blobStoragePathPrefix_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1913,6 +1942,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
     public Builder setRunCount(int value) {
 
       runCount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1928,7 +1958,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRunCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       runCount_ = 0;
       onChanged();
       return this;
@@ -1954,7 +1984,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1995,11 +2025,11 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2016,11 +2046,11 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2036,17 +2066,18 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2061,14 +2092,13 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2083,7 +2113,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2155,7 +2185,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2196,11 +2226,11 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2217,11 +2247,11 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2237,17 +2267,18 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2262,14 +2293,13 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2284,7 +2314,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2347,14 +2377,14 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000100;
+      onChanged();
       return labels_;
     }
 
@@ -2430,8 +2460,10 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 8;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2468,6 +2500,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2498,6 +2531,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000100;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2524,8 +2558,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -2547,6 +2581,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -2614,8 +2649,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2632,8 +2667,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2655,8 +2690,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

@@ -71,7 +71,9 @@ public final class ModelDeploymentMonitoringObjectiveConfig
   }
 
   public static final int DEPLOYED_MODEL_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object deployedModelId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deployedModelId_ = "";
   /**
    *
    *
@@ -165,7 +167,9 @@ public final class ModelDeploymentMonitoringObjectiveConfig
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfigOrBuilder
       getObjectiveConfigOrBuilder() {
-    return getObjectiveConfig();
+    return objectiveConfig_ == null
+        ? com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.getDefaultInstance()
+        : objectiveConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -384,12 +388,11 @@ public final class ModelDeploymentMonitoringObjectiveConfig
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       deployedModelId_ = "";
-
-      if (objectiveConfigBuilder_ == null) {
-        objectiveConfig_ = null;
-      } else {
-        objectiveConfig_ = null;
+      objectiveConfig_ = null;
+      if (objectiveConfigBuilder_ != null) {
+        objectiveConfigBuilder_.dispose();
         objectiveConfigBuilder_ = null;
       }
       return this;
@@ -422,14 +425,23 @@ public final class ModelDeploymentMonitoringObjectiveConfig
     public com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringObjectiveConfig buildPartial() {
       com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringObjectiveConfig result =
           new com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringObjectiveConfig(this);
-      result.deployedModelId_ = deployedModelId_;
-      if (objectiveConfigBuilder_ == null) {
-        result.objectiveConfig_ = objectiveConfig_;
-      } else {
-        result.objectiveConfig_ = objectiveConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringObjectiveConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.deployedModelId_ = deployedModelId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.objectiveConfig_ =
+            objectiveConfigBuilder_ == null ? objectiveConfig_ : objectiveConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -484,6 +496,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
               .getDefaultInstance()) return this;
       if (!other.getDeployedModelId().isEmpty()) {
         deployedModelId_ = other.deployedModelId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasObjectiveConfig()) {
@@ -518,13 +531,13 @@ public final class ModelDeploymentMonitoringObjectiveConfig
             case 10:
               {
                 deployedModelId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getObjectiveConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -543,6 +556,8 @@ public final class ModelDeploymentMonitoringObjectiveConfig
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object deployedModelId_ = "";
     /**
@@ -605,8 +620,8 @@ public final class ModelDeploymentMonitoringObjectiveConfig
       if (value == null) {
         throw new NullPointerException();
       }
-
       deployedModelId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -622,8 +637,8 @@ public final class ModelDeploymentMonitoringObjectiveConfig
      * @return This builder for chaining.
      */
     public Builder clearDeployedModelId() {
-
       deployedModelId_ = getDefaultInstance().getDeployedModelId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -644,8 +659,8 @@ public final class ModelDeploymentMonitoringObjectiveConfig
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deployedModelId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -668,7 +683,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
      * @return Whether the objectiveConfig field is set.
      */
     public boolean hasObjectiveConfig() {
-      return objectiveConfigBuilder_ != null || objectiveConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -706,11 +721,11 @@ public final class ModelDeploymentMonitoringObjectiveConfig
           throw new NullPointerException();
         }
         objectiveConfig_ = value;
-        onChanged();
       } else {
         objectiveConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -726,11 +741,11 @@ public final class ModelDeploymentMonitoringObjectiveConfig
         com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.Builder builderForValue) {
       if (objectiveConfigBuilder_ == null) {
         objectiveConfig_ = builderForValue.build();
-        onChanged();
       } else {
         objectiveConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -745,20 +760,20 @@ public final class ModelDeploymentMonitoringObjectiveConfig
     public Builder mergeObjectiveConfig(
         com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig value) {
       if (objectiveConfigBuilder_ == null) {
-        if (objectiveConfig_ != null) {
-          objectiveConfig_ =
-              com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.newBuilder(
-                      objectiveConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && objectiveConfig_ != null
+            && objectiveConfig_
+                != com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig
+                    .getDefaultInstance()) {
+          getObjectiveConfigBuilder().mergeFrom(value);
         } else {
           objectiveConfig_ = value;
         }
-        onChanged();
       } else {
         objectiveConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -771,14 +786,13 @@ public final class ModelDeploymentMonitoringObjectiveConfig
      * <code>.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig objective_config = 2;</code>
      */
     public Builder clearObjectiveConfig() {
-      if (objectiveConfigBuilder_ == null) {
-        objectiveConfig_ = null;
-        onChanged();
-      } else {
-        objectiveConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      objectiveConfig_ = null;
+      if (objectiveConfigBuilder_ != null) {
+        objectiveConfigBuilder_.dispose();
         objectiveConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -792,7 +806,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
      */
     public com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.Builder
         getObjectiveConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getObjectiveConfigFieldBuilder().getBuilder();
     }

@@ -73,7 +73,9 @@ public final class IndexPrivateEndpoints extends com.google.protobuf.GeneratedMe
   }
 
   public static final int MATCH_GRPC_ADDRESS_FIELD_NUMBER = 1;
-  private volatile java.lang.Object matchGrpcAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object matchGrpcAddress_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class IndexPrivateEndpoints extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SERVICE_ATTACHMENT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object serviceAttachment_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAttachment_ = "";
   /**
    *
    *
@@ -383,10 +387,9 @@ public final class IndexPrivateEndpoints extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       matchGrpcAddress_ = "";
-
       serviceAttachment_ = "";
-
       return this;
     }
 
@@ -414,10 +417,21 @@ public final class IndexPrivateEndpoints extends com.google.protobuf.GeneratedMe
     public com.google.cloud.aiplatform.v1beta1.IndexPrivateEndpoints buildPartial() {
       com.google.cloud.aiplatform.v1beta1.IndexPrivateEndpoints result =
           new com.google.cloud.aiplatform.v1beta1.IndexPrivateEndpoints(this);
-      result.matchGrpcAddress_ = matchGrpcAddress_;
-      result.serviceAttachment_ = serviceAttachment_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.IndexPrivateEndpoints result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.matchGrpcAddress_ = matchGrpcAddress_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.serviceAttachment_ = serviceAttachment_;
+      }
     }
 
     @java.lang.Override
@@ -468,10 +482,12 @@ public final class IndexPrivateEndpoints extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getMatchGrpcAddress().isEmpty()) {
         matchGrpcAddress_ = other.matchGrpcAddress_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getServiceAttachment().isEmpty()) {
         serviceAttachment_ = other.serviceAttachment_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -503,13 +519,13 @@ public final class IndexPrivateEndpoints extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 matchGrpcAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 serviceAttachment_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -528,6 +544,8 @@ public final class IndexPrivateEndpoints extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object matchGrpcAddress_ = "";
     /**
@@ -590,8 +608,8 @@ public final class IndexPrivateEndpoints extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       matchGrpcAddress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -607,8 +625,8 @@ public final class IndexPrivateEndpoints extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearMatchGrpcAddress() {
-
       matchGrpcAddress_ = getDefaultInstance().getMatchGrpcAddress();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -629,8 +647,8 @@ public final class IndexPrivateEndpoints extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       matchGrpcAddress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -699,8 +717,8 @@ public final class IndexPrivateEndpoints extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAttachment_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -717,8 +735,8 @@ public final class IndexPrivateEndpoints extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearServiceAttachment() {
-
       serviceAttachment_ = getDefaultInstance().getServiceAttachment();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -740,8 +758,8 @@ public final class IndexPrivateEndpoints extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAttachment_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

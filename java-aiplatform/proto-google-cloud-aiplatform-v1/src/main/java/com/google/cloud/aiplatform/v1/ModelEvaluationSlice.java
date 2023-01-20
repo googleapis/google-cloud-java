@@ -187,7 +187,9 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
     }
 
     public static final int DIMENSION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object dimension_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object dimension_ = "";
     /**
      *
      *
@@ -248,7 +250,9 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
     }
 
     public static final int VALUE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object value_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object value_ = "";
     /**
      *
      *
@@ -505,10 +509,9 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dimension_ = "";
-
         value_ = "";
-
         return this;
       }
 
@@ -536,10 +539,21 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
       public com.google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice buildPartial() {
         com.google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice result =
             new com.google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice(this);
-        result.dimension_ = dimension_;
-        result.value_ = value_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dimension_ = dimension_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.value_ = value_;
+        }
       }
 
       @java.lang.Override
@@ -592,10 +606,12 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
           return this;
         if (!other.getDimension().isEmpty()) {
           dimension_ = other.dimension_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getValue().isEmpty()) {
           value_ = other.value_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -627,13 +643,13 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
               case 10:
                 {
                   dimension_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   value_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -652,6 +668,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object dimension_ = "";
       /**
@@ -732,8 +750,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
         dimension_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -755,8 +773,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearDimension() {
-
         dimension_ = getDefaultInstance().getDimension();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -783,8 +801,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         dimension_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -850,8 +868,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
         value_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -867,8 +885,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-
         value_ = getDefaultInstance().getValue();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -889,8 +907,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         value_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -960,7 +978,9 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1059,11 +1079,15 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ModelEvaluationSlice.SliceOrBuilder getSliceOrBuilder() {
-    return getSlice();
+    return slice_ == null
+        ? com.google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.getDefaultInstance()
+        : slice_;
   }
 
   public static final int METRICS_SCHEMA_URI_FIELD_NUMBER = 3;
-  private volatile java.lang.Object metricsSchemaUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metricsSchemaUri_ = "";
   /**
    *
    *
@@ -1168,7 +1192,7 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.ValueOrBuilder getMetricsOrBuilder() {
-    return getMetrics();
+    return metrics_ == null ? com.google.protobuf.Value.getDefaultInstance() : metrics_;
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
@@ -1217,7 +1241,7 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1469,26 +1493,22 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (sliceBuilder_ == null) {
-        slice_ = null;
-      } else {
-        slice_ = null;
+      slice_ = null;
+      if (sliceBuilder_ != null) {
+        sliceBuilder_.dispose();
         sliceBuilder_ = null;
       }
       metricsSchemaUri_ = "";
-
-      if (metricsBuilder_ == null) {
-        metrics_ = null;
-      } else {
-        metrics_ = null;
+      metrics_ = null;
+      if (metricsBuilder_ != null) {
+        metricsBuilder_.dispose();
         metricsBuilder_ = null;
       }
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       return this;
@@ -1518,25 +1538,30 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1.ModelEvaluationSlice buildPartial() {
       com.google.cloud.aiplatform.v1.ModelEvaluationSlice result =
           new com.google.cloud.aiplatform.v1.ModelEvaluationSlice(this);
-      result.name_ = name_;
-      if (sliceBuilder_ == null) {
-        result.slice_ = slice_;
-      } else {
-        result.slice_ = sliceBuilder_.build();
-      }
-      result.metricsSchemaUri_ = metricsSchemaUri_;
-      if (metricsBuilder_ == null) {
-        result.metrics_ = metrics_;
-      } else {
-        result.metrics_ = metricsBuilder_.build();
-      }
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.ModelEvaluationSlice result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.slice_ = sliceBuilder_ == null ? slice_ : sliceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.metricsSchemaUri_ = metricsSchemaUri_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.metrics_ = metricsBuilder_ == null ? metrics_ : metricsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1587,6 +1612,7 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSlice()) {
@@ -1594,6 +1620,7 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
       }
       if (!other.getMetricsSchemaUri().isEmpty()) {
         metricsSchemaUri_ = other.metricsSchemaUri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasMetrics()) {
@@ -1631,31 +1658,31 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSliceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 metricsSchemaUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getMetricsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -1674,6 +1701,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1736,8 +1765,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1753,8 +1782,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1775,8 +1804,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1801,7 +1830,7 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      * @return Whether the slice field is set.
      */
     public boolean hasSlice() {
-      return sliceBuilder_ != null || slice_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1842,11 +1871,11 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         slice_ = value;
-        onChanged();
       } else {
         sliceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1864,11 +1893,11 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
         com.google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.Builder builderForValue) {
       if (sliceBuilder_ == null) {
         slice_ = builderForValue.build();
-        onChanged();
       } else {
         sliceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1884,19 +1913,19 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeSlice(com.google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice value) {
       if (sliceBuilder_ == null) {
-        if (slice_ != null) {
-          slice_ =
-              com.google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.newBuilder(slice_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && slice_ != null
+            && slice_
+                != com.google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.getDefaultInstance()) {
+          getSliceBuilder().mergeFrom(value);
         } else {
           slice_ = value;
         }
-        onChanged();
       } else {
         sliceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1911,14 +1940,13 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearSlice() {
-      if (sliceBuilder_ == null) {
-        slice_ = null;
-        onChanged();
-      } else {
-        slice_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      slice_ = null;
+      if (sliceBuilder_ != null) {
+        sliceBuilder_.dispose();
         sliceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1933,7 +1961,7 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.Builder getSliceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSliceFieldBuilder().getBuilder();
     }
@@ -2058,8 +2086,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       metricsSchemaUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2079,8 +2107,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMetricsSchemaUri() {
-
       metricsSchemaUri_ = getDefaultInstance().getMetricsSchemaUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2105,8 +2133,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       metricsSchemaUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2131,7 +2159,7 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      * @return Whether the metrics field is set.
      */
     public boolean hasMetrics() {
-      return metricsBuilder_ != null || metrics_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2170,11 +2198,11 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         metrics_ = value;
-        onChanged();
       } else {
         metricsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2191,11 +2219,11 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
     public Builder setMetrics(com.google.protobuf.Value.Builder builderForValue) {
       if (metricsBuilder_ == null) {
         metrics_ = builderForValue.build();
-        onChanged();
       } else {
         metricsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2211,16 +2239,18 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeMetrics(com.google.protobuf.Value value) {
       if (metricsBuilder_ == null) {
-        if (metrics_ != null) {
-          metrics_ = com.google.protobuf.Value.newBuilder(metrics_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && metrics_ != null
+            && metrics_ != com.google.protobuf.Value.getDefaultInstance()) {
+          getMetricsBuilder().mergeFrom(value);
         } else {
           metrics_ = value;
         }
-        onChanged();
       } else {
         metricsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2235,14 +2265,13 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Value metrics = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearMetrics() {
-      if (metricsBuilder_ == null) {
-        metrics_ = null;
-        onChanged();
-      } else {
-        metrics_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      metrics_ = null;
+      if (metricsBuilder_ != null) {
+        metricsBuilder_.dispose();
         metricsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2257,7 +2286,7 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Value metrics = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Value.Builder getMetricsBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getMetricsFieldBuilder().getBuilder();
     }
@@ -2327,7 +2356,7 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2368,11 +2397,11 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2389,11 +2418,11 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2409,17 +2438,18 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2434,14 +2464,13 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2456,7 +2485,7 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }

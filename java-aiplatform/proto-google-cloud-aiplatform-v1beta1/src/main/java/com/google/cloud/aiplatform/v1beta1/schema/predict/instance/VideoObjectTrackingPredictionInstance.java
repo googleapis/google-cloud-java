@@ -78,7 +78,9 @@ public final class VideoObjectTrackingPredictionInstance
   }
 
   public static final int CONTENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object content_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object content_ = "";
   /**
    *
    *
@@ -129,7 +131,9 @@ public final class VideoObjectTrackingPredictionInstance
   }
 
   public static final int MIME_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object mimeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mimeType_ = "";
   /**
    *
    *
@@ -180,7 +184,9 @@ public final class VideoObjectTrackingPredictionInstance
   }
 
   public static final int TIME_SEGMENT_START_FIELD_NUMBER = 3;
-  private volatile java.lang.Object timeSegmentStart_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object timeSegmentStart_ = "";
   /**
    *
    *
@@ -235,7 +241,9 @@ public final class VideoObjectTrackingPredictionInstance
   }
 
   public static final int TIME_SEGMENT_END_FIELD_NUMBER = 4;
-  private volatile java.lang.Object timeSegmentEnd_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object timeSegmentEnd_ = "";
   /**
    *
    *
@@ -550,14 +558,11 @@ public final class VideoObjectTrackingPredictionInstance
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       content_ = "";
-
       mimeType_ = "";
-
       timeSegmentStart_ = "";
-
       timeSegmentEnd_ = "";
-
       return this;
     }
 
@@ -598,12 +603,30 @@ public final class VideoObjectTrackingPredictionInstance
           result =
               new com.google.cloud.aiplatform.v1beta1.schema.predict.instance
                   .VideoObjectTrackingPredictionInstance(this);
-      result.content_ = content_;
-      result.mimeType_ = mimeType_;
-      result.timeSegmentStart_ = timeSegmentStart_;
-      result.timeSegmentEnd_ = timeSegmentEnd_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.schema.predict.instance
+                .VideoObjectTrackingPredictionInstance
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.content_ = content_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.mimeType_ = mimeType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.timeSegmentStart_ = timeSegmentStart_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.timeSegmentEnd_ = timeSegmentEnd_;
+      }
     }
 
     @java.lang.Override
@@ -664,18 +687,22 @@ public final class VideoObjectTrackingPredictionInstance
               .VideoObjectTrackingPredictionInstance.getDefaultInstance()) return this;
       if (!other.getContent().isEmpty()) {
         content_ = other.content_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getMimeType().isEmpty()) {
         mimeType_ = other.mimeType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getTimeSegmentStart().isEmpty()) {
         timeSegmentStart_ = other.timeSegmentStart_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getTimeSegmentEnd().isEmpty()) {
         timeSegmentEnd_ = other.timeSegmentEnd_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -707,25 +734,25 @@ public final class VideoObjectTrackingPredictionInstance
             case 10:
               {
                 content_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 mimeType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 timeSegmentStart_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 timeSegmentEnd_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -744,6 +771,8 @@ public final class VideoObjectTrackingPredictionInstance
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object content_ = "";
     /**
@@ -809,8 +838,8 @@ public final class VideoObjectTrackingPredictionInstance
       if (value == null) {
         throw new NullPointerException();
       }
-
       content_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -827,8 +856,8 @@ public final class VideoObjectTrackingPredictionInstance
      * @return This builder for chaining.
      */
     public Builder clearContent() {
-
       content_ = getDefaultInstance().getContent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -850,8 +879,8 @@ public final class VideoObjectTrackingPredictionInstance
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       content_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -920,8 +949,8 @@ public final class VideoObjectTrackingPredictionInstance
       if (value == null) {
         throw new NullPointerException();
       }
-
       mimeType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -938,8 +967,8 @@ public final class VideoObjectTrackingPredictionInstance
      * @return This builder for chaining.
      */
     public Builder clearMimeType() {
-
       mimeType_ = getDefaultInstance().getMimeType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -961,8 +990,8 @@ public final class VideoObjectTrackingPredictionInstance
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mimeType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1037,8 +1066,8 @@ public final class VideoObjectTrackingPredictionInstance
       if (value == null) {
         throw new NullPointerException();
       }
-
       timeSegmentStart_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1057,8 +1086,8 @@ public final class VideoObjectTrackingPredictionInstance
      * @return This builder for chaining.
      */
     public Builder clearTimeSegmentStart() {
-
       timeSegmentStart_ = getDefaultInstance().getTimeSegmentStart();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1082,8 +1111,8 @@ public final class VideoObjectTrackingPredictionInstance
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       timeSegmentStart_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1161,8 +1190,8 @@ public final class VideoObjectTrackingPredictionInstance
       if (value == null) {
         throw new NullPointerException();
       }
-
       timeSegmentEnd_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1182,8 +1211,8 @@ public final class VideoObjectTrackingPredictionInstance
      * @return This builder for chaining.
      */
     public Builder clearTimeSegmentEnd() {
-
       timeSegmentEnd_ = getDefaultInstance().getTimeSegmentEnd();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1208,8 +1237,8 @@ public final class VideoObjectTrackingPredictionInstance
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       timeSegmentEnd_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

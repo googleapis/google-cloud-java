@@ -69,6 +69,8 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
   }
 
   public static final int FEATURES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.Feature> features_;
   /**
    *
@@ -338,6 +340,7 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (featuresBuilder_ == null) {
         features_ = java.util.Collections.emptyList();
       } else {
@@ -372,7 +375,16 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
     public com.google.cloud.aiplatform.v1.BatchCreateFeaturesResponse buildPartial() {
       com.google.cloud.aiplatform.v1.BatchCreateFeaturesResponse result =
           new com.google.cloud.aiplatform.v1.BatchCreateFeaturesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.BatchCreateFeaturesResponse result) {
       if (featuresBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           features_ = java.util.Collections.unmodifiableList(features_);
@@ -382,8 +394,10 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
       } else {
         result.features_ = featuresBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.BatchCreateFeaturesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

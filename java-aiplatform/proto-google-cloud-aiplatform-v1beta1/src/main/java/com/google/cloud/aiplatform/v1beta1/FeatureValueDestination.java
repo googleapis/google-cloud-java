@@ -554,6 +554,7 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (bigqueryDestinationBuilder_ != null) {
         bigqueryDestinationBuilder_.clear();
       }
@@ -592,30 +593,31 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
     public com.google.cloud.aiplatform.v1beta1.FeatureValueDestination buildPartial() {
       com.google.cloud.aiplatform.v1beta1.FeatureValueDestination result =
           new com.google.cloud.aiplatform.v1beta1.FeatureValueDestination(this);
-      if (destinationCase_ == 1) {
-        if (bigqueryDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = bigqueryDestinationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (destinationCase_ == 2) {
-        if (tfrecordDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = tfrecordDestinationBuilder_.build();
-        }
-      }
-      if (destinationCase_ == 3) {
-        if (csvDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = csvDestinationBuilder_.build();
-        }
-      }
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.FeatureValueDestination result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.aiplatform.v1beta1.FeatureValueDestination result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
+      if (destinationCase_ == 1 && bigqueryDestinationBuilder_ != null) {
+        result.destination_ = bigqueryDestinationBuilder_.build();
+      }
+      if (destinationCase_ == 2 && tfrecordDestinationBuilder_ != null) {
+        result.destination_ = tfrecordDestinationBuilder_.build();
+      }
+      if (destinationCase_ == 3 && csvDestinationBuilder_ != null) {
+        result.destination_ = csvDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -761,6 +763,8 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.BigQueryDestination,
@@ -1010,7 +1014,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       }
       destinationCase_ = 1;
       onChanged();
-      ;
       return bigqueryDestinationBuilder_;
     }
 
@@ -1298,7 +1301,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       }
       destinationCase_ = 2;
       onChanged();
-      ;
       return tfrecordDestinationBuilder_;
     }
 
@@ -1519,7 +1521,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       }
       destinationCase_ = 3;
       onChanged();
-      ;
       return csvDestinationBuilder_;
     }
 

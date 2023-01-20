@@ -71,7 +71,9 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
   }
 
   public static final int MODEL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object model_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
   }
 
   public static final int MODEL_VERSION_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object modelVersionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object modelVersionId_ = "";
   /**
    *
    *
@@ -378,10 +382,9 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       model_ = "";
-
       modelVersionId_ = "";
-
       return this;
     }
 
@@ -409,10 +412,21 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.aiplatform.v1.UploadModelResponse buildPartial() {
       com.google.cloud.aiplatform.v1.UploadModelResponse result =
           new com.google.cloud.aiplatform.v1.UploadModelResponse(this);
-      result.model_ = model_;
-      result.modelVersionId_ = modelVersionId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.UploadModelResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.model_ = model_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.modelVersionId_ = modelVersionId_;
+      }
     }
 
     @java.lang.Override
@@ -463,10 +477,12 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getModelVersionId().isEmpty()) {
         modelVersionId_ = other.modelVersionId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -498,13 +514,13 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 model_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 modelVersionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -523,6 +539,8 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object model_ = "";
     /**
@@ -588,8 +606,8 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       model_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -606,8 +624,8 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearModel() {
-
       model_ = getDefaultInstance().getModel();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -629,8 +647,8 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       model_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -696,8 +714,8 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       modelVersionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -713,8 +731,8 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearModelVersionId() {
-
       modelVersionId_ = getDefaultInstance().getModelVersionId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -735,8 +753,8 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       modelVersionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

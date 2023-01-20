@@ -256,7 +256,9 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getSnapshotTimeOrBuilder() {
-      return getSnapshotTime();
+      return snapshotTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : snapshotTime_;
     }
 
     public static final int START_TIME_FIELD_NUMBER = 2;
@@ -308,7 +310,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-      return getStartTime();
+      return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -542,16 +544,15 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (snapshotTimeBuilder_ == null) {
-          snapshotTime_ = null;
-        } else {
-          snapshotTime_ = null;
+        bitField0_ = 0;
+        snapshotTime_ = null;
+        if (snapshotTimeBuilder_ != null) {
+          snapshotTimeBuilder_.dispose();
           snapshotTimeBuilder_ = null;
         }
-        if (startTimeBuilder_ == null) {
-          startTime_ = null;
-        } else {
-          startTime_ = null;
+        startTime_ = null;
+        if (startTimeBuilder_ != null) {
+          startTimeBuilder_.dispose();
           startTimeBuilder_ = null;
         }
         return this;
@@ -585,18 +586,23 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
           buildPartial() {
         com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.SnapshotExport result =
             new com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.SnapshotExport(this);
-        if (snapshotTimeBuilder_ == null) {
-          result.snapshotTime_ = snapshotTime_;
-        } else {
-          result.snapshotTime_ = snapshotTimeBuilder_.build();
-        }
-        if (startTimeBuilder_ == null) {
-          result.startTime_ = startTime_;
-        } else {
-          result.startTime_ = startTimeBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.SnapshotExport result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.snapshotTime_ =
+              snapshotTimeBuilder_ == null ? snapshotTime_ : snapshotTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -688,13 +694,13 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
               case 10:
                 {
                   input.readMessage(getSnapshotTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -713,6 +719,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.Timestamp snapshotTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -734,7 +742,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
        * @return Whether the snapshotTime field is set.
        */
       public boolean hasSnapshotTime() {
-        return snapshotTimeBuilder_ != null || snapshotTime_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -775,11 +783,11 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
             throw new NullPointerException();
           }
           snapshotTime_ = value;
-          onChanged();
         } else {
           snapshotTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -796,11 +804,11 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       public Builder setSnapshotTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (snapshotTimeBuilder_ == null) {
           snapshotTime_ = builderForValue.build();
-          onChanged();
         } else {
           snapshotTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -816,19 +824,18 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
        */
       public Builder mergeSnapshotTime(com.google.protobuf.Timestamp value) {
         if (snapshotTimeBuilder_ == null) {
-          if (snapshotTime_ != null) {
-            snapshotTime_ =
-                com.google.protobuf.Timestamp.newBuilder(snapshotTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && snapshotTime_ != null
+              && snapshotTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getSnapshotTimeBuilder().mergeFrom(value);
           } else {
             snapshotTime_ = value;
           }
-          onChanged();
         } else {
           snapshotTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -843,14 +850,13 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
        * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
        */
       public Builder clearSnapshotTime() {
-        if (snapshotTimeBuilder_ == null) {
-          snapshotTime_ = null;
-          onChanged();
-        } else {
-          snapshotTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        snapshotTime_ = null;
+        if (snapshotTimeBuilder_ != null) {
+          snapshotTimeBuilder_.dispose();
           snapshotTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -865,7 +871,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
        * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
        */
       public com.google.protobuf.Timestamp.Builder getSnapshotTimeBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getSnapshotTimeFieldBuilder().getBuilder();
       }
@@ -937,7 +943,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
        * @return Whether the startTime field is set.
        */
       public boolean hasStartTime() {
-        return startTimeBuilder_ != null || startTime_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -978,11 +984,11 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
             throw new NullPointerException();
           }
           startTime_ = value;
-          onChanged();
         } else {
           startTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -999,11 +1005,11 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (startTimeBuilder_ == null) {
           startTime_ = builderForValue.build();
-          onChanged();
         } else {
           startTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1019,19 +1025,18 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
        */
       public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
         if (startTimeBuilder_ == null) {
-          if (startTime_ != null) {
-            startTime_ =
-                com.google.protobuf.Timestamp.newBuilder(startTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && startTime_ != null
+              && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getStartTimeBuilder().mergeFrom(value);
           } else {
             startTime_ = value;
           }
-          onChanged();
         } else {
           startTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1046,14 +1051,13 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
        * <code>.google.protobuf.Timestamp start_time = 2;</code>
        */
       public Builder clearStartTime() {
-        if (startTimeBuilder_ == null) {
-          startTime_ = null;
-          onChanged();
-        } else {
-          startTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        startTime_ = null;
+        if (startTimeBuilder_ != null) {
+          startTimeBuilder_.dispose();
           startTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1068,7 +1072,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
        * <code>.google.protobuf.Timestamp start_time = 2;</code>
        */
       public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getStartTimeFieldBuilder().getBuilder();
       }
@@ -1374,7 +1378,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-      return getStartTime();
+      return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
     }
 
     public static final int END_TIME_FIELD_NUMBER = 1;
@@ -1426,7 +1430,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-      return getEndTime();
+      return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1658,16 +1662,15 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (startTimeBuilder_ == null) {
-          startTime_ = null;
-        } else {
-          startTime_ = null;
+        bitField0_ = 0;
+        startTime_ = null;
+        if (startTimeBuilder_ != null) {
+          startTimeBuilder_.dispose();
           startTimeBuilder_ = null;
         }
-        if (endTimeBuilder_ == null) {
-          endTime_ = null;
-        } else {
-          endTime_ = null;
+        endTime_ = null;
+        if (endTimeBuilder_ != null) {
+          endTimeBuilder_.dispose();
           endTimeBuilder_ = null;
         }
         return this;
@@ -1701,18 +1704,22 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
           buildPartial() {
         com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport result =
             new com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport(this);
-        if (startTimeBuilder_ == null) {
-          result.startTime_ = startTime_;
-        } else {
-          result.startTime_ = startTimeBuilder_.build();
-        }
-        if (endTimeBuilder_ == null) {
-          result.endTime_ = endTime_;
-        } else {
-          result.endTime_ = endTimeBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1802,13 +1809,13 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
               case 10:
                 {
                   input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 18
               default:
@@ -1827,6 +1834,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.Timestamp startTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1848,7 +1857,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
        * @return Whether the startTime field is set.
        */
       public boolean hasStartTime() {
-        return startTimeBuilder_ != null || startTime_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1889,11 +1898,11 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
             throw new NullPointerException();
           }
           startTime_ = value;
-          onChanged();
         } else {
           startTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1910,11 +1919,11 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (startTimeBuilder_ == null) {
           startTime_ = builderForValue.build();
-          onChanged();
         } else {
           startTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1930,19 +1939,18 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
        */
       public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
         if (startTimeBuilder_ == null) {
-          if (startTime_ != null) {
-            startTime_ =
-                com.google.protobuf.Timestamp.newBuilder(startTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && startTime_ != null
+              && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getStartTimeBuilder().mergeFrom(value);
           } else {
             startTime_ = value;
           }
-          onChanged();
         } else {
           startTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1957,14 +1965,13 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
        * <code>.google.protobuf.Timestamp start_time = 2;</code>
        */
       public Builder clearStartTime() {
-        if (startTimeBuilder_ == null) {
-          startTime_ = null;
-          onChanged();
-        } else {
-          startTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        startTime_ = null;
+        if (startTimeBuilder_ != null) {
+          startTimeBuilder_.dispose();
           startTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1979,7 +1986,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
        * <code>.google.protobuf.Timestamp start_time = 2;</code>
        */
       public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getStartTimeFieldBuilder().getBuilder();
       }
@@ -2051,7 +2058,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
        * @return Whether the endTime field is set.
        */
       public boolean hasEndTime() {
-        return endTimeBuilder_ != null || endTime_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -2090,11 +2097,11 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
             throw new NullPointerException();
           }
           endTime_ = value;
-          onChanged();
         } else {
           endTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2111,11 +2118,11 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (endTimeBuilder_ == null) {
           endTime_ = builderForValue.build();
-          onChanged();
         } else {
           endTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2131,17 +2138,18 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
        */
       public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
         if (endTimeBuilder_ == null) {
-          if (endTime_ != null) {
-            endTime_ =
-                com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && endTime_ != null
+              && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getEndTimeBuilder().mergeFrom(value);
           } else {
             endTime_ = value;
           }
-          onChanged();
         } else {
           endTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2156,14 +2164,13 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
        * <code>.google.protobuf.Timestamp end_time = 1;</code>
        */
       public Builder clearEndTime() {
-        if (endTimeBuilder_ == null) {
-          endTime_ = null;
-          onChanged();
-        } else {
-          endTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        endTime_ = null;
+        if (endTimeBuilder_ != null) {
+          endTimeBuilder_.dispose();
           endTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2178,7 +2185,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
        * <code>.google.protobuf.Timestamp end_time = 1;</code>
        */
       public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getEndTimeFieldBuilder().getBuilder();
       }
@@ -2468,7 +2475,9 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
   }
 
   public static final int ENTITY_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object entityType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entityType_ = "";
   /**
    *
    *
@@ -2576,7 +2585,9 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.FeatureValueDestinationOrBuilder
       getDestinationOrBuilder() {
-    return getDestination();
+    return destination_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureValueDestination.getDefaultInstance()
+        : destination_;
   }
 
   public static final int FEATURE_SELECTOR_FIELD_NUMBER = 5;
@@ -2631,10 +2642,14 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.FeatureSelectorOrBuilder
       getFeatureSelectorOrBuilder() {
-    return getFeatureSelector();
+    return featureSelector_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureSelector.getDefaultInstance()
+        : featureSelector_;
   }
 
   public static final int SETTINGS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.DestinationFeatureSetting> settings_;
   /**
    *
@@ -2987,6 +3002,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (snapshotExportBuilder_ != null) {
         snapshotExportBuilder_.clear();
       }
@@ -2994,17 +3010,14 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
         fullExportBuilder_.clear();
       }
       entityType_ = "";
-
-      if (destinationBuilder_ == null) {
-        destination_ = null;
-      } else {
-        destination_ = null;
+      destination_ = null;
+      if (destinationBuilder_ != null) {
+        destinationBuilder_.dispose();
         destinationBuilder_ = null;
       }
-      if (featureSelectorBuilder_ == null) {
-        featureSelector_ = null;
-      } else {
-        featureSelector_ = null;
+      featureSelector_ = null;
+      if (featureSelectorBuilder_ != null) {
+        featureSelectorBuilder_.dispose();
         featureSelectorBuilder_ = null;
       }
       if (settingsBuilder_ == null) {
@@ -3013,7 +3026,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
         settings_ = null;
         settingsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       modeCase_ = 0;
       mode_ = null;
       return this;
@@ -3044,44 +3057,54 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
     public com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest result =
           new com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest(this);
-      int from_bitField0_ = bitField0_;
-      if (modeCase_ == 3) {
-        if (snapshotExportBuilder_ == null) {
-          result.mode_ = mode_;
-        } else {
-          result.mode_ = snapshotExportBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (modeCase_ == 7) {
-        if (fullExportBuilder_ == null) {
-          result.mode_ = mode_;
-        } else {
-          result.mode_ = fullExportBuilder_.build();
-        }
-      }
-      result.entityType_ = entityType_;
-      if (destinationBuilder_ == null) {
-        result.destination_ = destination_;
-      } else {
-        result.destination_ = destinationBuilder_.build();
-      }
-      if (featureSelectorBuilder_ == null) {
-        result.featureSelector_ = featureSelector_;
-      } else {
-        result.featureSelector_ = featureSelectorBuilder_.build();
-      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest result) {
       if (settingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           settings_ = java.util.Collections.unmodifiableList(settings_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.settings_ = settings_;
       } else {
         result.settings_ = settingsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.entityType_ = entityType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.destination_ =
+            destinationBuilder_ == null ? destination_ : destinationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.featureSelector_ =
+            featureSelectorBuilder_ == null ? featureSelector_ : featureSelectorBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest result) {
       result.modeCase_ = modeCase_;
-      onBuilt();
-      return result;
+      result.mode_ = this.mode_;
+      if (modeCase_ == 3 && snapshotExportBuilder_ != null) {
+        result.mode_ = snapshotExportBuilder_.build();
+      }
+      if (modeCase_ == 7 && fullExportBuilder_ != null) {
+        result.mode_ = fullExportBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3133,6 +3156,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getEntityType().isEmpty()) {
         entityType_ = other.entityType_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasDestination()) {
@@ -3145,7 +3169,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
         if (!other.settings_.isEmpty()) {
           if (settings_.isEmpty()) {
             settings_ = other.settings_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureSettingsIsMutable();
             settings_.addAll(other.settings_);
@@ -3158,7 +3182,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
             settingsBuilder_.dispose();
             settingsBuilder_ = null;
             settings_ = other.settings_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
             settingsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSettingsFieldBuilder()
@@ -3213,7 +3237,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
             case 10:
               {
                 entityType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 26:
@@ -3225,13 +3249,13 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
             case 34:
               {
                 input.readMessage(getDestinationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getFeatureSelectorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -3541,7 +3565,6 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       }
       modeCase_ = 3;
       onChanged();
-      ;
       return snapshotExportBuilder_;
     }
 
@@ -3783,7 +3806,6 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       }
       modeCase_ = 7;
       onChanged();
-      ;
       return fullExportBuilder_;
     }
 
@@ -3860,8 +3882,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       entityType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3881,8 +3903,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearEntityType() {
-
       entityType_ = getDefaultInstance().getEntityType();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3907,8 +3929,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       entityType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3933,7 +3955,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      * @return Whether the destination field is set.
      */
     public boolean hasDestination() {
-      return destinationBuilder_ != null || destination_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -3975,11 +3997,11 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         destination_ = value;
-        onChanged();
       } else {
         destinationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3997,11 +4019,11 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
         com.google.cloud.aiplatform.v1beta1.FeatureValueDestination.Builder builderForValue) {
       if (destinationBuilder_ == null) {
         destination_ = builderForValue.build();
-        onChanged();
       } else {
         destinationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -4018,19 +4040,20 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
     public Builder mergeDestination(
         com.google.cloud.aiplatform.v1beta1.FeatureValueDestination value) {
       if (destinationBuilder_ == null) {
-        if (destination_ != null) {
-          destination_ =
-              com.google.cloud.aiplatform.v1beta1.FeatureValueDestination.newBuilder(destination_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && destination_ != null
+            && destination_
+                != com.google.cloud.aiplatform.v1beta1.FeatureValueDestination
+                    .getDefaultInstance()) {
+          getDestinationBuilder().mergeFrom(value);
         } else {
           destination_ = value;
         }
-        onChanged();
       } else {
         destinationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -4045,14 +4068,13 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearDestination() {
-      if (destinationBuilder_ == null) {
-        destination_ = null;
-        onChanged();
-      } else {
-        destination_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      destination_ = null;
+      if (destinationBuilder_ != null) {
+        destinationBuilder_.dispose();
         destinationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4068,7 +4090,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      */
     public com.google.cloud.aiplatform.v1beta1.FeatureValueDestination.Builder
         getDestinationBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDestinationFieldBuilder().getBuilder();
     }
@@ -4141,7 +4163,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      * @return Whether the featureSelector field is set.
      */
     public boolean hasFeatureSelector() {
-      return featureSelectorBuilder_ != null || featureSelector_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -4182,11 +4204,11 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         featureSelector_ = value;
-        onChanged();
       } else {
         featureSelectorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -4204,11 +4226,11 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
         com.google.cloud.aiplatform.v1beta1.FeatureSelector.Builder builderForValue) {
       if (featureSelectorBuilder_ == null) {
         featureSelector_ = builderForValue.build();
-        onChanged();
       } else {
         featureSelectorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -4224,19 +4246,19 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      */
     public Builder mergeFeatureSelector(com.google.cloud.aiplatform.v1beta1.FeatureSelector value) {
       if (featureSelectorBuilder_ == null) {
-        if (featureSelector_ != null) {
-          featureSelector_ =
-              com.google.cloud.aiplatform.v1beta1.FeatureSelector.newBuilder(featureSelector_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && featureSelector_ != null
+            && featureSelector_
+                != com.google.cloud.aiplatform.v1beta1.FeatureSelector.getDefaultInstance()) {
+          getFeatureSelectorBuilder().mergeFrom(value);
         } else {
           featureSelector_ = value;
         }
-        onChanged();
       } else {
         featureSelectorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -4251,14 +4273,13 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearFeatureSelector() {
-      if (featureSelectorBuilder_ == null) {
-        featureSelector_ = null;
-        onChanged();
-      } else {
-        featureSelector_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      featureSelector_ = null;
+      if (featureSelectorBuilder_ != null) {
+        featureSelectorBuilder_.dispose();
         featureSelectorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4273,7 +4294,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.FeatureSelector.Builder getFeatureSelectorBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getFeatureSelectorFieldBuilder().getBuilder();
     }
@@ -4330,11 +4351,11 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
         settings_ = java.util.Collections.emptyList();
 
     private void ensureSettingsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         settings_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.DestinationFeatureSetting>(
                 settings_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -4568,7 +4589,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
     public Builder clearSettings() {
       if (settingsBuilder_ == null) {
         settings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         settingsBuilder_.clear();
@@ -4705,7 +4726,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
                 com.google.cloud.aiplatform.v1beta1.DestinationFeatureSetting,
                 com.google.cloud.aiplatform.v1beta1.DestinationFeatureSetting.Builder,
                 com.google.cloud.aiplatform.v1beta1.DestinationFeatureSettingOrBuilder>(
-                settings_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                settings_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         settings_ = null;
       }
       return settingsBuilder_;

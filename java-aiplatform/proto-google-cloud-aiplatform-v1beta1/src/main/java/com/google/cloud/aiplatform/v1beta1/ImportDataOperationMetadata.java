@@ -112,7 +112,9 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.GenericOperationMetadataOrBuilder
       getGenericMetadataOrBuilder() {
-    return getGenericMetadata();
+    return genericMetadata_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.getDefaultInstance()
+        : genericMetadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -319,10 +321,10 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (genericMetadataBuilder_ == null) {
-        genericMetadata_ = null;
-      } else {
-        genericMetadata_ = null;
+      bitField0_ = 0;
+      genericMetadata_ = null;
+      if (genericMetadataBuilder_ != null) {
+        genericMetadataBuilder_.dispose();
         genericMetadataBuilder_ = null;
       }
       return this;
@@ -353,13 +355,20 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
     public com.google.cloud.aiplatform.v1beta1.ImportDataOperationMetadata buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ImportDataOperationMetadata result =
           new com.google.cloud.aiplatform.v1beta1.ImportDataOperationMetadata(this);
-      if (genericMetadataBuilder_ == null) {
-        result.genericMetadata_ = genericMetadata_;
-      } else {
-        result.genericMetadata_ = genericMetadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.ImportDataOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.genericMetadata_ =
+            genericMetadataBuilder_ == null ? genericMetadata_ : genericMetadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -442,7 +451,7 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
             case 10:
               {
                 input.readMessage(getGenericMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -462,6 +471,8 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata genericMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata,
@@ -480,7 +491,7 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
      * @return Whether the genericMetadata field is set.
      */
     public boolean hasGenericMetadata() {
-      return genericMetadataBuilder_ != null || genericMetadata_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -518,11 +529,11 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         genericMetadata_ = value;
-        onChanged();
       } else {
         genericMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -538,11 +549,11 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
         com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.Builder builderForValue) {
       if (genericMetadataBuilder_ == null) {
         genericMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         genericMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -557,20 +568,20 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
     public Builder mergeGenericMetadata(
         com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata value) {
       if (genericMetadataBuilder_ == null) {
-        if (genericMetadata_ != null) {
-          genericMetadata_ =
-              com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.newBuilder(
-                      genericMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && genericMetadata_ != null
+            && genericMetadata_
+                != com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata
+                    .getDefaultInstance()) {
+          getGenericMetadataBuilder().mergeFrom(value);
         } else {
           genericMetadata_ = value;
         }
-        onChanged();
       } else {
         genericMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -583,14 +594,13 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
      */
     public Builder clearGenericMetadata() {
-      if (genericMetadataBuilder_ == null) {
-        genericMetadata_ = null;
-        onChanged();
-      } else {
-        genericMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      genericMetadata_ = null;
+      if (genericMetadataBuilder_ != null) {
+        genericMetadataBuilder_.dispose();
         genericMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -604,7 +614,7 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
      */
     public com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.Builder
         getGenericMetadataBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }

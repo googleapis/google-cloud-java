@@ -70,7 +70,9 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -177,11 +179,15 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.TensorboardRunOrBuilder getTensorboardRunOrBuilder() {
-    return getTensorboardRun();
+    return tensorboardRun_ == null
+        ? com.google.cloud.aiplatform.v1.TensorboardRun.getDefaultInstance()
+        : tensorboardRun_;
   }
 
   public static final int TENSORBOARD_RUN_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object tensorboardRunId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tensorboardRunId_ = "";
   /**
    *
    *
@@ -457,16 +463,14 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (tensorboardRunBuilder_ == null) {
-        tensorboardRun_ = null;
-      } else {
-        tensorboardRun_ = null;
+      tensorboardRun_ = null;
+      if (tensorboardRunBuilder_ != null) {
+        tensorboardRunBuilder_.dispose();
         tensorboardRunBuilder_ = null;
       }
       tensorboardRunId_ = "";
-
       return this;
     }
 
@@ -494,15 +498,25 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
     public com.google.cloud.aiplatform.v1.CreateTensorboardRunRequest buildPartial() {
       com.google.cloud.aiplatform.v1.CreateTensorboardRunRequest result =
           new com.google.cloud.aiplatform.v1.CreateTensorboardRunRequest(this);
-      result.parent_ = parent_;
-      if (tensorboardRunBuilder_ == null) {
-        result.tensorboardRun_ = tensorboardRun_;
-      } else {
-        result.tensorboardRun_ = tensorboardRunBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.tensorboardRunId_ = tensorboardRunId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.CreateTensorboardRunRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tensorboardRun_ =
+            tensorboardRunBuilder_ == null ? tensorboardRun_ : tensorboardRunBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.tensorboardRunId_ = tensorboardRunId_;
+      }
     }
 
     @java.lang.Override
@@ -553,6 +567,7 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTensorboardRun()) {
@@ -560,6 +575,7 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
       }
       if (!other.getTensorboardRunId().isEmpty()) {
         tensorboardRunId_ = other.tensorboardRunId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -591,19 +607,19 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTensorboardRunFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 tensorboardRunId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -622,6 +638,8 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -696,8 +714,8 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -717,8 +735,8 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -743,8 +761,8 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -769,7 +787,7 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      * @return Whether the tensorboardRun field is set.
      */
     public boolean hasTensorboardRun() {
-      return tensorboardRunBuilder_ != null || tensorboardRun_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -810,11 +828,11 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         tensorboardRun_ = value;
-        onChanged();
       } else {
         tensorboardRunBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -832,11 +850,11 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
         com.google.cloud.aiplatform.v1.TensorboardRun.Builder builderForValue) {
       if (tensorboardRunBuilder_ == null) {
         tensorboardRun_ = builderForValue.build();
-        onChanged();
       } else {
         tensorboardRunBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -852,19 +870,19 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      */
     public Builder mergeTensorboardRun(com.google.cloud.aiplatform.v1.TensorboardRun value) {
       if (tensorboardRunBuilder_ == null) {
-        if (tensorboardRun_ != null) {
-          tensorboardRun_ =
-              com.google.cloud.aiplatform.v1.TensorboardRun.newBuilder(tensorboardRun_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && tensorboardRun_ != null
+            && tensorboardRun_
+                != com.google.cloud.aiplatform.v1.TensorboardRun.getDefaultInstance()) {
+          getTensorboardRunBuilder().mergeFrom(value);
         } else {
           tensorboardRun_ = value;
         }
-        onChanged();
       } else {
         tensorboardRunBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -879,14 +897,13 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearTensorboardRun() {
-      if (tensorboardRunBuilder_ == null) {
-        tensorboardRun_ = null;
-        onChanged();
-      } else {
-        tensorboardRun_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      tensorboardRun_ = null;
+      if (tensorboardRunBuilder_ != null) {
+        tensorboardRunBuilder_.dispose();
         tensorboardRunBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -901,7 +918,7 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.cloud.aiplatform.v1.TensorboardRun.Builder getTensorboardRunBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTensorboardRunFieldBuilder().getBuilder();
     }
@@ -1023,8 +1040,8 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       tensorboardRunId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1043,8 +1060,8 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearTensorboardRunId() {
-
       tensorboardRunId_ = getDefaultInstance().getTensorboardRunId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1068,8 +1085,8 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tensorboardRunId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

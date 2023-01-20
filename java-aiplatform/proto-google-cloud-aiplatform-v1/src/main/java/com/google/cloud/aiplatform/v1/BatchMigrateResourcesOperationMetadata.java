@@ -566,7 +566,9 @@ public final class BatchMigrateResourcesOperationMetadata
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1.MigrateResourceRequestOrBuilder getRequestOrBuilder() {
-      return getRequest();
+      return request_ == null
+          ? com.google.cloud.aiplatform.v1.MigrateResourceRequest.getDefaultInstance()
+          : request_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -851,13 +853,13 @@ public final class BatchMigrateResourcesOperationMetadata
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (errorBuilder_ != null) {
           errorBuilder_.clear();
         }
-        if (requestBuilder_ == null) {
-          request_ = null;
-        } else {
-          request_ = null;
+        request_ = null;
+        if (requestBuilder_ != null) {
+          requestBuilder_.dispose();
           requestBuilder_ = null;
         }
         resultCase_ = 0;
@@ -895,27 +897,31 @@ public final class BatchMigrateResourcesOperationMetadata
         com.google.cloud.aiplatform.v1.BatchMigrateResourcesOperationMetadata.PartialResult result =
             new com.google.cloud.aiplatform.v1.BatchMigrateResourcesOperationMetadata.PartialResult(
                 this);
-        if (resultCase_ == 2) {
-          if (errorBuilder_ == null) {
-            result.result_ = result_;
-          } else {
-            result.result_ = errorBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (resultCase_ == 3) {
-          result.result_ = result_;
-        }
-        if (resultCase_ == 4) {
-          result.result_ = result_;
-        }
-        if (requestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = requestBuilder_.build();
-        }
-        result.resultCase_ = resultCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.BatchMigrateResourcesOperationMetadata.PartialResult
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.request_ = requestBuilder_ == null ? request_ : requestBuilder_.build();
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.aiplatform.v1.BatchMigrateResourcesOperationMetadata.PartialResult
+              result) {
+        result.resultCase_ = resultCase_;
+        result.result_ = this.result_;
+        if (resultCase_ == 2 && errorBuilder_ != null) {
+          result.result_ = errorBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1030,7 +1036,7 @@ public final class BatchMigrateResourcesOperationMetadata
               case 10:
                 {
                   input.readMessage(getRequestFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 10
               case 18:
@@ -1083,6 +1089,8 @@ public final class BatchMigrateResourcesOperationMetadata
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
@@ -1281,7 +1289,6 @@ public final class BatchMigrateResourcesOperationMetadata
         }
         resultCase_ = 2;
         onChanged();
-        ;
         return errorBuilder_;
       }
 
@@ -1572,7 +1579,7 @@ public final class BatchMigrateResourcesOperationMetadata
        * @return Whether the request field is set.
        */
       public boolean hasRequest() {
-        return requestBuilder_ != null || request_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -1611,11 +1618,11 @@ public final class BatchMigrateResourcesOperationMetadata
             throw new NullPointerException();
           }
           request_ = value;
-          onChanged();
         } else {
           requestBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1632,11 +1639,11 @@ public final class BatchMigrateResourcesOperationMetadata
           com.google.cloud.aiplatform.v1.MigrateResourceRequest.Builder builderForValue) {
         if (requestBuilder_ == null) {
           request_ = builderForValue.build();
-          onChanged();
         } else {
           requestBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1651,19 +1658,19 @@ public final class BatchMigrateResourcesOperationMetadata
        */
       public Builder mergeRequest(com.google.cloud.aiplatform.v1.MigrateResourceRequest value) {
         if (requestBuilder_ == null) {
-          if (request_ != null) {
-            request_ =
-                com.google.cloud.aiplatform.v1.MigrateResourceRequest.newBuilder(request_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && request_ != null
+              && request_
+                  != com.google.cloud.aiplatform.v1.MigrateResourceRequest.getDefaultInstance()) {
+            getRequestBuilder().mergeFrom(value);
           } else {
             request_ = value;
           }
-          onChanged();
         } else {
           requestBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1677,14 +1684,13 @@ public final class BatchMigrateResourcesOperationMetadata
        * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest request = 1;</code>
        */
       public Builder clearRequest() {
-        if (requestBuilder_ == null) {
-          request_ = null;
-          onChanged();
-        } else {
-          request_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        request_ = null;
+        if (requestBuilder_ != null) {
+          requestBuilder_.dispose();
           requestBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1698,7 +1704,7 @@ public final class BatchMigrateResourcesOperationMetadata
        * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest request = 1;</code>
        */
       public com.google.cloud.aiplatform.v1.MigrateResourceRequest.Builder getRequestBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getRequestFieldBuilder().getBuilder();
       }
@@ -1864,10 +1870,14 @@ public final class BatchMigrateResourcesOperationMetadata
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.GenericOperationMetadataOrBuilder
       getGenericMetadataOrBuilder() {
-    return getGenericMetadata();
+    return genericMetadata_ == null
+        ? com.google.cloud.aiplatform.v1.GenericOperationMetadata.getDefaultInstance()
+        : genericMetadata_;
   }
 
   public static final int PARTIAL_RESULTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.aiplatform.v1.BatchMigrateResourcesOperationMetadata.PartialResult>
       partialResults_;
@@ -2173,10 +2183,10 @@ public final class BatchMigrateResourcesOperationMetadata
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (genericMetadataBuilder_ == null) {
-        genericMetadata_ = null;
-      } else {
-        genericMetadata_ = null;
+      bitField0_ = 0;
+      genericMetadata_ = null;
+      if (genericMetadataBuilder_ != null) {
+        genericMetadataBuilder_.dispose();
         genericMetadataBuilder_ = null;
       }
       if (partialResultsBuilder_ == null) {
@@ -2185,7 +2195,7 @@ public final class BatchMigrateResourcesOperationMetadata
         partialResults_ = null;
         partialResultsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -2215,23 +2225,34 @@ public final class BatchMigrateResourcesOperationMetadata
     public com.google.cloud.aiplatform.v1.BatchMigrateResourcesOperationMetadata buildPartial() {
       com.google.cloud.aiplatform.v1.BatchMigrateResourcesOperationMetadata result =
           new com.google.cloud.aiplatform.v1.BatchMigrateResourcesOperationMetadata(this);
-      int from_bitField0_ = bitField0_;
-      if (genericMetadataBuilder_ == null) {
-        result.genericMetadata_ = genericMetadata_;
-      } else {
-        result.genericMetadata_ = genericMetadataBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.BatchMigrateResourcesOperationMetadata result) {
       if (partialResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           partialResults_ = java.util.Collections.unmodifiableList(partialResults_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.partialResults_ = partialResults_;
       } else {
         result.partialResults_ = partialResultsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.BatchMigrateResourcesOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.genericMetadata_ =
+            genericMetadataBuilder_ == null ? genericMetadata_ : genericMetadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2290,7 +2311,7 @@ public final class BatchMigrateResourcesOperationMetadata
         if (!other.partialResults_.isEmpty()) {
           if (partialResults_.isEmpty()) {
             partialResults_ = other.partialResults_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePartialResultsIsMutable();
             partialResults_.addAll(other.partialResults_);
@@ -2303,7 +2324,7 @@ public final class BatchMigrateResourcesOperationMetadata
             partialResultsBuilder_.dispose();
             partialResultsBuilder_ = null;
             partialResults_ = other.partialResults_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             partialResultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPartialResultsFieldBuilder()
@@ -2342,7 +2363,7 @@ public final class BatchMigrateResourcesOperationMetadata
             case 10:
               {
                 input.readMessage(getGenericMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -2398,7 +2419,7 @@ public final class BatchMigrateResourcesOperationMetadata
      * @return Whether the genericMetadata field is set.
      */
     public boolean hasGenericMetadata() {
-      return genericMetadataBuilder_ != null || genericMetadata_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -2436,11 +2457,11 @@ public final class BatchMigrateResourcesOperationMetadata
           throw new NullPointerException();
         }
         genericMetadata_ = value;
-        onChanged();
       } else {
         genericMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2456,11 +2477,11 @@ public final class BatchMigrateResourcesOperationMetadata
         com.google.cloud.aiplatform.v1.GenericOperationMetadata.Builder builderForValue) {
       if (genericMetadataBuilder_ == null) {
         genericMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         genericMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2475,19 +2496,19 @@ public final class BatchMigrateResourcesOperationMetadata
     public Builder mergeGenericMetadata(
         com.google.cloud.aiplatform.v1.GenericOperationMetadata value) {
       if (genericMetadataBuilder_ == null) {
-        if (genericMetadata_ != null) {
-          genericMetadata_ =
-              com.google.cloud.aiplatform.v1.GenericOperationMetadata.newBuilder(genericMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && genericMetadata_ != null
+            && genericMetadata_
+                != com.google.cloud.aiplatform.v1.GenericOperationMetadata.getDefaultInstance()) {
+          getGenericMetadataBuilder().mergeFrom(value);
         } else {
           genericMetadata_ = value;
         }
-        onChanged();
       } else {
         genericMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2500,14 +2521,13 @@ public final class BatchMigrateResourcesOperationMetadata
      * <code>.google.cloud.aiplatform.v1.GenericOperationMetadata generic_metadata = 1;</code>
      */
     public Builder clearGenericMetadata() {
-      if (genericMetadataBuilder_ == null) {
-        genericMetadata_ = null;
-        onChanged();
-      } else {
-        genericMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      genericMetadata_ = null;
+      if (genericMetadataBuilder_ != null) {
+        genericMetadataBuilder_.dispose();
         genericMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2521,7 +2541,7 @@ public final class BatchMigrateResourcesOperationMetadata
      */
     public com.google.cloud.aiplatform.v1.GenericOperationMetadata.Builder
         getGenericMetadataBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
@@ -2575,12 +2595,12 @@ public final class BatchMigrateResourcesOperationMetadata
         partialResults_ = java.util.Collections.emptyList();
 
     private void ensurePartialResultsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         partialResults_ =
             new java.util.ArrayList<
                 com.google.cloud.aiplatform.v1.BatchMigrateResourcesOperationMetadata
                     .PartialResult>(partialResults_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2837,7 +2857,7 @@ public final class BatchMigrateResourcesOperationMetadata
     public Builder clearPartialResults() {
       if (partialResultsBuilder_ == null) {
         partialResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         partialResultsBuilder_.clear();
@@ -2996,7 +3016,7 @@ public final class BatchMigrateResourcesOperationMetadata
                 com.google.cloud.aiplatform.v1.BatchMigrateResourcesOperationMetadata
                     .PartialResultOrBuilder>(
                 partialResults_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         partialResults_ = null;

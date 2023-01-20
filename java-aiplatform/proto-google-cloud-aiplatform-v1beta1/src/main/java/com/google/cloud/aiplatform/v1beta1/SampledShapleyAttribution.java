@@ -68,7 +68,7 @@ public final class SampledShapleyAttribution extends com.google.protobuf.Generat
   }
 
   public static final int PATH_COUNT_FIELD_NUMBER = 1;
-  private int pathCount_;
+  private int pathCount_ = 0;
   /**
    *
    *
@@ -287,8 +287,8 @@ public final class SampledShapleyAttribution extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       pathCount_ = 0;
-
       return this;
     }
 
@@ -317,9 +317,19 @@ public final class SampledShapleyAttribution extends com.google.protobuf.Generat
     public com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution buildPartial() {
       com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution result =
           new com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution(this);
-      result.pathCount_ = pathCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.pathCount_ = pathCount_;
+      }
     }
 
     @java.lang.Override
@@ -401,7 +411,7 @@ public final class SampledShapleyAttribution extends com.google.protobuf.Generat
             case 8:
               {
                 pathCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -420,6 +430,8 @@ public final class SampledShapleyAttribution extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int pathCount_;
     /**
@@ -456,6 +468,7 @@ public final class SampledShapleyAttribution extends com.google.protobuf.Generat
     public Builder setPathCount(int value) {
 
       pathCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -473,7 +486,7 @@ public final class SampledShapleyAttribution extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearPathCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       pathCount_ = 0;
       onChanged();
       return this;

@@ -230,7 +230,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
     }
 
     public static final int DISABLED_FIELD_NUMBER = 1;
-    private boolean disabled_;
+    private boolean disabled_ = false;
     /**
      *
      *
@@ -314,11 +314,13 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
     @java.lang.Override
     @java.lang.Deprecated
     public com.google.protobuf.DurationOrBuilder getMonitoringIntervalOrBuilder() {
-      return getMonitoringInterval();
+      return monitoringInterval_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : monitoringInterval_;
     }
 
     public static final int MONITORING_INTERVAL_DAYS_FIELD_NUMBER = 3;
-    private int monitoringIntervalDays_;
+    private int monitoringIntervalDays_ = 0;
     /**
      *
      *
@@ -344,7 +346,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
     }
 
     public static final int STALENESS_DAYS_FIELD_NUMBER = 4;
-    private int stalenessDays_;
+    private int stalenessDays_ = 0;
     /**
      *
      *
@@ -612,18 +614,15 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         disabled_ = false;
-
-        if (monitoringIntervalBuilder_ == null) {
-          monitoringInterval_ = null;
-        } else {
-          monitoringInterval_ = null;
+        monitoringInterval_ = null;
+        if (monitoringIntervalBuilder_ != null) {
+          monitoringIntervalBuilder_.dispose();
           monitoringIntervalBuilder_ = null;
         }
         monitoringIntervalDays_ = 0;
-
         stalenessDays_ = 0;
-
         return this;
       }
 
@@ -657,16 +656,32 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
         com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis result =
             new com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis(
                 this);
-        result.disabled_ = disabled_;
-        if (monitoringIntervalBuilder_ == null) {
-          result.monitoringInterval_ = monitoringInterval_;
-        } else {
-          result.monitoringInterval_ = monitoringIntervalBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.monitoringIntervalDays_ = monitoringIntervalDays_;
-        result.stalenessDays_ = stalenessDays_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.disabled_ = disabled_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.monitoringInterval_ =
+              monitoringIntervalBuilder_ == null
+                  ? monitoringInterval_
+                  : monitoringIntervalBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.monitoringIntervalDays_ = monitoringIntervalDays_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.stalenessDays_ = stalenessDays_;
+        }
       }
 
       @java.lang.Override
@@ -764,26 +779,26 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
               case 8:
                 {
                   disabled_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   input.readMessage(
                       getMonitoringIntervalFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   monitoringIntervalDays_ = input.readInt32();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 32:
                 {
                   stalenessDays_ = input.readInt32();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               default:
@@ -802,6 +817,8 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean disabled_;
       /**
@@ -854,6 +871,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
       public Builder setDisabled(boolean value) {
 
         disabled_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -879,7 +897,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * @return This builder for chaining.
        */
       public Builder clearDisabled() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         disabled_ = false;
         onChanged();
         return this;
@@ -908,7 +926,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        */
       @java.lang.Deprecated
       public boolean hasMonitoringInterval() {
-        return monitoringIntervalBuilder_ != null || monitoringInterval_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -952,11 +970,11 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
             throw new NullPointerException();
           }
           monitoringInterval_ = value;
-          onChanged();
         } else {
           monitoringIntervalBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -973,11 +991,11 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
       public Builder setMonitoringInterval(com.google.protobuf.Duration.Builder builderForValue) {
         if (monitoringIntervalBuilder_ == null) {
           monitoringInterval_ = builderForValue.build();
-          onChanged();
         } else {
           monitoringIntervalBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -993,19 +1011,18 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
       @java.lang.Deprecated
       public Builder mergeMonitoringInterval(com.google.protobuf.Duration value) {
         if (monitoringIntervalBuilder_ == null) {
-          if (monitoringInterval_ != null) {
-            monitoringInterval_ =
-                com.google.protobuf.Duration.newBuilder(monitoringInterval_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && monitoringInterval_ != null
+              && monitoringInterval_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getMonitoringIntervalBuilder().mergeFrom(value);
           } else {
             monitoringInterval_ = value;
           }
-          onChanged();
         } else {
           monitoringIntervalBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1020,14 +1037,13 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        */
       @java.lang.Deprecated
       public Builder clearMonitoringInterval() {
-        if (monitoringIntervalBuilder_ == null) {
-          monitoringInterval_ = null;
-          onChanged();
-        } else {
-          monitoringInterval_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        monitoringInterval_ = null;
+        if (monitoringIntervalBuilder_ != null) {
+          monitoringIntervalBuilder_.dispose();
           monitoringIntervalBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1042,7 +1058,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        */
       @java.lang.Deprecated
       public com.google.protobuf.Duration.Builder getMonitoringIntervalBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getMonitoringIntervalFieldBuilder().getBuilder();
       }
@@ -1140,6 +1156,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
       public Builder setMonitoringIntervalDays(int value) {
 
         monitoringIntervalDays_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1163,7 +1180,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * @return This builder for chaining.
        */
       public Builder clearMonitoringIntervalDays() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         monitoringIntervalDays_ = 0;
         onChanged();
         return this;
@@ -1204,6 +1221,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
       public Builder setStalenessDays(int value) {
 
         stalenessDays_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1221,7 +1239,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * @return This builder for chaining.
        */
       public Builder clearStalenessDays() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         stalenessDays_ = 0;
         onChanged();
         return this;
@@ -1814,7 +1832,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
     }
 
     public static final int STATE_FIELD_NUMBER = 1;
-    private int state_;
+    private int state_ = 0;
     /**
      *
      *
@@ -1851,11 +1869,10 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
     public com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis
             .State
         getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis.State
           result =
               com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig
-                  .ImportFeaturesAnalysis.State.valueOf(state_);
+                  .ImportFeaturesAnalysis.State.forNumber(state_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis
               .State.UNRECOGNIZED
@@ -1863,7 +1880,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
     }
 
     public static final int ANOMALY_DETECTION_BASELINE_FIELD_NUMBER = 2;
-    private int anomalyDetectionBaseline_;
+    private int anomalyDetectionBaseline_ = 0;
     /**
      *
      *
@@ -1900,12 +1917,11 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
     public com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis
             .Baseline
         getAnomalyDetectionBaseline() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis
               .Baseline
           result =
               com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig
-                  .ImportFeaturesAnalysis.Baseline.valueOf(anomalyDetectionBaseline_);
+                  .ImportFeaturesAnalysis.Baseline.forNumber(anomalyDetectionBaseline_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis
               .Baseline.UNRECOGNIZED
@@ -2165,10 +2181,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         state_ = 0;
-
         anomalyDetectionBaseline_ = 0;
-
         return this;
       }
 
@@ -2203,10 +2218,23 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
             result =
                 new com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig
                     .ImportFeaturesAnalysis(this);
-        result.state_ = state_;
-        result.anomalyDetectionBaseline_ = anomalyDetectionBaseline_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.state_ = state_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.anomalyDetectionBaseline_ = anomalyDetectionBaseline_;
+        }
       }
 
       @java.lang.Override
@@ -2301,13 +2329,13 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
               case 8:
                 {
                   state_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   anomalyDetectionBaseline_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -2326,6 +2354,8 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int state_ = 0;
       /**
@@ -2362,8 +2392,8 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
-
         state_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2385,12 +2415,11 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
       public com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis
               .State
           getState() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis
                 .State
             result =
                 com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig
-                    .ImportFeaturesAnalysis.State.valueOf(state_);
+                    .ImportFeaturesAnalysis.State.forNumber(state_);
         return result == null
             ? com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig
                 .ImportFeaturesAnalysis.State.UNRECOGNIZED
@@ -2418,7 +2447,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         state_ = value.getNumber();
         onChanged();
         return this;
@@ -2438,7 +2467,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * @return This builder for chaining.
        */
       public Builder clearState() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         state_ = 0;
         onChanged();
         return this;
@@ -2479,8 +2508,8 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * @return This builder for chaining.
        */
       public Builder setAnomalyDetectionBaselineValue(int value) {
-
         anomalyDetectionBaseline_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2502,12 +2531,11 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
       public com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis
               .Baseline
           getAnomalyDetectionBaseline() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis
                 .Baseline
             result =
                 com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig
-                    .ImportFeaturesAnalysis.Baseline.valueOf(anomalyDetectionBaseline_);
+                    .ImportFeaturesAnalysis.Baseline.forNumber(anomalyDetectionBaseline_);
         return result == null
             ? com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig
                 .ImportFeaturesAnalysis.Baseline.UNRECOGNIZED
@@ -2535,7 +2563,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         anomalyDetectionBaseline_ = value.getNumber();
         onChanged();
         return this;
@@ -2555,7 +2583,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * @return This builder for chaining.
        */
       public Builder clearAnomalyDetectionBaseline() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         anomalyDetectionBaseline_ = 0;
         onChanged();
         return this;
@@ -3051,6 +3079,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         thresholdCase_ = 0;
         threshold_ = null;
         return this;
@@ -3086,12 +3115,23 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
         com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ThresholdConfig result =
             new com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ThresholdConfig(
                 this);
-        if (thresholdCase_ == 1) {
-          result.threshold_ = threshold_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.thresholdCase_ = thresholdCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ThresholdConfig result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ThresholdConfig result) {
+        result.thresholdCase_ = thresholdCase_;
+        result.threshold_ = this.threshold_;
       }
 
       @java.lang.Override
@@ -3222,6 +3262,8 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
         return this;
       }
 
+      private int bitField0_;
+
       /**
        *
        *
@@ -3284,6 +3326,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * @return This builder for chaining.
        */
       public Builder setValue(double value) {
+
         thresholdCase_ = 1;
         threshold_ = value;
         onChanged();
@@ -3439,7 +3482,10 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysisOrBuilder
       getSnapshotAnalysisOrBuilder() {
-    return getSnapshotAnalysis();
+    return snapshotAnalysis_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis
+            .getDefaultInstance()
+        : snapshotAnalysis_;
   }
 
   public static final int IMPORT_FEATURES_ANALYSIS_FIELD_NUMBER = 2;
@@ -3498,7 +3544,10 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
   public com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig
           .ImportFeaturesAnalysisOrBuilder
       getImportFeaturesAnalysisOrBuilder() {
-    return getImportFeaturesAnalysis();
+    return importFeaturesAnalysis_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis
+            .getDefaultInstance()
+        : importFeaturesAnalysis_;
   }
 
   public static final int NUMERICAL_THRESHOLD_CONFIG_FIELD_NUMBER = 3;
@@ -3568,7 +3617,10 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ThresholdConfigOrBuilder
       getNumericalThresholdConfigOrBuilder() {
-    return getNumericalThresholdConfig();
+    return numericalThresholdConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ThresholdConfig
+            .getDefaultInstance()
+        : numericalThresholdConfig_;
   }
 
   public static final int CATEGORICAL_THRESHOLD_CONFIG_FIELD_NUMBER = 4;
@@ -3638,7 +3690,10 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ThresholdConfigOrBuilder
       getCategoricalThresholdConfigOrBuilder() {
-    return getCategoricalThresholdConfig();
+    return categoricalThresholdConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ThresholdConfig
+            .getDefaultInstance()
+        : categoricalThresholdConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3892,28 +3947,25 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (snapshotAnalysisBuilder_ == null) {
-        snapshotAnalysis_ = null;
-      } else {
-        snapshotAnalysis_ = null;
+      bitField0_ = 0;
+      snapshotAnalysis_ = null;
+      if (snapshotAnalysisBuilder_ != null) {
+        snapshotAnalysisBuilder_.dispose();
         snapshotAnalysisBuilder_ = null;
       }
-      if (importFeaturesAnalysisBuilder_ == null) {
-        importFeaturesAnalysis_ = null;
-      } else {
-        importFeaturesAnalysis_ = null;
+      importFeaturesAnalysis_ = null;
+      if (importFeaturesAnalysisBuilder_ != null) {
+        importFeaturesAnalysisBuilder_.dispose();
         importFeaturesAnalysisBuilder_ = null;
       }
-      if (numericalThresholdConfigBuilder_ == null) {
-        numericalThresholdConfig_ = null;
-      } else {
-        numericalThresholdConfig_ = null;
+      numericalThresholdConfig_ = null;
+      if (numericalThresholdConfigBuilder_ != null) {
+        numericalThresholdConfigBuilder_.dispose();
         numericalThresholdConfigBuilder_ = null;
       }
-      if (categoricalThresholdConfigBuilder_ == null) {
-        categoricalThresholdConfig_ = null;
-      } else {
-        categoricalThresholdConfig_ = null;
+      categoricalThresholdConfig_ = null;
+      if (categoricalThresholdConfigBuilder_ != null) {
+        categoricalThresholdConfigBuilder_.dispose();
         categoricalThresholdConfigBuilder_ = null;
       }
       return this;
@@ -3944,28 +3996,38 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
     public com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig buildPartial() {
       com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig result =
           new com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig(this);
-      if (snapshotAnalysisBuilder_ == null) {
-        result.snapshotAnalysis_ = snapshotAnalysis_;
-      } else {
-        result.snapshotAnalysis_ = snapshotAnalysisBuilder_.build();
-      }
-      if (importFeaturesAnalysisBuilder_ == null) {
-        result.importFeaturesAnalysis_ = importFeaturesAnalysis_;
-      } else {
-        result.importFeaturesAnalysis_ = importFeaturesAnalysisBuilder_.build();
-      }
-      if (numericalThresholdConfigBuilder_ == null) {
-        result.numericalThresholdConfig_ = numericalThresholdConfig_;
-      } else {
-        result.numericalThresholdConfig_ = numericalThresholdConfigBuilder_.build();
-      }
-      if (categoricalThresholdConfigBuilder_ == null) {
-        result.categoricalThresholdConfig_ = categoricalThresholdConfig_;
-      } else {
-        result.categoricalThresholdConfig_ = categoricalThresholdConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.snapshotAnalysis_ =
+            snapshotAnalysisBuilder_ == null ? snapshotAnalysis_ : snapshotAnalysisBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.importFeaturesAnalysis_ =
+            importFeaturesAnalysisBuilder_ == null
+                ? importFeaturesAnalysis_
+                : importFeaturesAnalysisBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.numericalThresholdConfig_ =
+            numericalThresholdConfigBuilder_ == null
+                ? numericalThresholdConfig_
+                : numericalThresholdConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.categoricalThresholdConfig_ =
+            categoricalThresholdConfigBuilder_ == null
+                ? categoricalThresholdConfig_
+                : categoricalThresholdConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -4058,28 +4120,28 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
               {
                 input.readMessage(
                     getSnapshotAnalysisFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getImportFeaturesAnalysisFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getNumericalThresholdConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getCategoricalThresholdConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -4098,6 +4160,8 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis
         snapshotAnalysis_;
@@ -4122,7 +4186,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * @return Whether the snapshotAnalysis field is set.
      */
     public boolean hasSnapshotAnalysis() {
-      return snapshotAnalysisBuilder_ != null || snapshotAnalysis_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -4166,11 +4230,11 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         snapshotAnalysis_ = value;
-        onChanged();
       } else {
         snapshotAnalysisBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -4189,11 +4253,11 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
             builderForValue) {
       if (snapshotAnalysisBuilder_ == null) {
         snapshotAnalysis_ = builderForValue.build();
-        onChanged();
       } else {
         snapshotAnalysisBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -4210,20 +4274,20 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
     public Builder mergeSnapshotAnalysis(
         com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis value) {
       if (snapshotAnalysisBuilder_ == null) {
-        if (snapshotAnalysis_ != null) {
-          snapshotAnalysis_ =
-              com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis
-                  .newBuilder(snapshotAnalysis_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && snapshotAnalysis_ != null
+            && snapshotAnalysis_
+                != com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis
+                    .getDefaultInstance()) {
+          getSnapshotAnalysisBuilder().mergeFrom(value);
         } else {
           snapshotAnalysis_ = value;
         }
-        onChanged();
       } else {
         snapshotAnalysisBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -4238,14 +4302,13 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearSnapshotAnalysis() {
-      if (snapshotAnalysisBuilder_ == null) {
-        snapshotAnalysis_ = null;
-        onChanged();
-      } else {
-        snapshotAnalysis_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      snapshotAnalysis_ = null;
+      if (snapshotAnalysisBuilder_ != null) {
+        snapshotAnalysisBuilder_.dispose();
         snapshotAnalysisBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4261,7 +4324,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      */
     public com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.Builder
         getSnapshotAnalysisBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSnapshotAnalysisFieldBuilder().getBuilder();
     }
@@ -4343,7 +4406,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * @return Whether the importFeaturesAnalysis field is set.
      */
     public boolean hasImportFeaturesAnalysis() {
-      return importFeaturesAnalysisBuilder_ != null || importFeaturesAnalysis_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -4388,11 +4451,11 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         importFeaturesAnalysis_ = value;
-        onChanged();
       } else {
         importFeaturesAnalysisBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -4412,11 +4475,11 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
             builderForValue) {
       if (importFeaturesAnalysisBuilder_ == null) {
         importFeaturesAnalysis_ = builderForValue.build();
-        onChanged();
       } else {
         importFeaturesAnalysisBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -4434,20 +4497,20 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
         com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis
             value) {
       if (importFeaturesAnalysisBuilder_ == null) {
-        if (importFeaturesAnalysis_ != null) {
-          importFeaturesAnalysis_ =
-              com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig
-                  .ImportFeaturesAnalysis.newBuilder(importFeaturesAnalysis_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && importFeaturesAnalysis_ != null
+            && importFeaturesAnalysis_
+                != com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig
+                    .ImportFeaturesAnalysis.getDefaultInstance()) {
+          getImportFeaturesAnalysisBuilder().mergeFrom(value);
         } else {
           importFeaturesAnalysis_ = value;
         }
-        onChanged();
       } else {
         importFeaturesAnalysisBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -4462,14 +4525,13 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearImportFeaturesAnalysis() {
-      if (importFeaturesAnalysisBuilder_ == null) {
-        importFeaturesAnalysis_ = null;
-        onChanged();
-      } else {
-        importFeaturesAnalysis_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      importFeaturesAnalysis_ = null;
+      if (importFeaturesAnalysisBuilder_ != null) {
+        importFeaturesAnalysisBuilder_.dispose();
         importFeaturesAnalysisBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4486,7 +4548,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
     public com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis
             .Builder
         getImportFeaturesAnalysisBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getImportFeaturesAnalysisFieldBuilder().getBuilder();
     }
@@ -4573,7 +4635,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * @return Whether the numericalThresholdConfig field is set.
      */
     public boolean hasNumericalThresholdConfig() {
-      return numericalThresholdConfigBuilder_ != null || numericalThresholdConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -4625,11 +4687,11 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         numericalThresholdConfig_ = value;
-        onChanged();
       } else {
         numericalThresholdConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -4652,11 +4714,11 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
             builderForValue) {
       if (numericalThresholdConfigBuilder_ == null) {
         numericalThresholdConfig_ = builderForValue.build();
-        onChanged();
       } else {
         numericalThresholdConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -4677,20 +4739,20 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
     public Builder mergeNumericalThresholdConfig(
         com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ThresholdConfig value) {
       if (numericalThresholdConfigBuilder_ == null) {
-        if (numericalThresholdConfig_ != null) {
-          numericalThresholdConfig_ =
-              com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ThresholdConfig
-                  .newBuilder(numericalThresholdConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && numericalThresholdConfig_ != null
+            && numericalThresholdConfig_
+                != com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ThresholdConfig
+                    .getDefaultInstance()) {
+          getNumericalThresholdConfigBuilder().mergeFrom(value);
         } else {
           numericalThresholdConfig_ = value;
         }
-        onChanged();
       } else {
         numericalThresholdConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -4709,14 +4771,13 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearNumericalThresholdConfig() {
-      if (numericalThresholdConfigBuilder_ == null) {
-        numericalThresholdConfig_ = null;
-        onChanged();
-      } else {
-        numericalThresholdConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      numericalThresholdConfig_ = null;
+      if (numericalThresholdConfigBuilder_ != null) {
+        numericalThresholdConfigBuilder_.dispose();
         numericalThresholdConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4736,7 +4797,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      */
     public com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ThresholdConfig.Builder
         getNumericalThresholdConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getNumericalThresholdConfigFieldBuilder().getBuilder();
     }
@@ -4829,7 +4890,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * @return Whether the categoricalThresholdConfig field is set.
      */
     public boolean hasCategoricalThresholdConfig() {
-      return categoricalThresholdConfigBuilder_ != null || categoricalThresholdConfig_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -4881,11 +4942,11 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         categoricalThresholdConfig_ = value;
-        onChanged();
       } else {
         categoricalThresholdConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -4908,11 +4969,11 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
             builderForValue) {
       if (categoricalThresholdConfigBuilder_ == null) {
         categoricalThresholdConfig_ = builderForValue.build();
-        onChanged();
       } else {
         categoricalThresholdConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -4933,20 +4994,20 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
     public Builder mergeCategoricalThresholdConfig(
         com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ThresholdConfig value) {
       if (categoricalThresholdConfigBuilder_ == null) {
-        if (categoricalThresholdConfig_ != null) {
-          categoricalThresholdConfig_ =
-              com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ThresholdConfig
-                  .newBuilder(categoricalThresholdConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && categoricalThresholdConfig_ != null
+            && categoricalThresholdConfig_
+                != com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ThresholdConfig
+                    .getDefaultInstance()) {
+          getCategoricalThresholdConfigBuilder().mergeFrom(value);
         } else {
           categoricalThresholdConfig_ = value;
         }
-        onChanged();
       } else {
         categoricalThresholdConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -4965,14 +5026,13 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearCategoricalThresholdConfig() {
-      if (categoricalThresholdConfigBuilder_ == null) {
-        categoricalThresholdConfig_ = null;
-        onChanged();
-      } else {
-        categoricalThresholdConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      categoricalThresholdConfig_ = null;
+      if (categoricalThresholdConfigBuilder_ != null) {
+        categoricalThresholdConfigBuilder_.dispose();
         categoricalThresholdConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4992,7 +5052,7 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      */
     public com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ThresholdConfig.Builder
         getCategoricalThresholdConfigBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCategoricalThresholdConfigFieldBuilder().getBuilder();
     }

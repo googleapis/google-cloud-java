@@ -274,7 +274,9 @@ public final class UserActionReference extends com.google.protobuf.GeneratedMess
   }
 
   public static final int METHOD_FIELD_NUMBER = 3;
-  private volatile java.lang.Object method_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object method_ = "";
   /**
    *
    *
@@ -557,8 +559,8 @@ public final class UserActionReference extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       method_ = "";
-
       referenceCase_ = 0;
       reference_ = null;
       return this;
@@ -588,16 +590,24 @@ public final class UserActionReference extends com.google.protobuf.GeneratedMess
     public com.google.cloud.aiplatform.v1.UserActionReference buildPartial() {
       com.google.cloud.aiplatform.v1.UserActionReference result =
           new com.google.cloud.aiplatform.v1.UserActionReference(this);
-      if (referenceCase_ == 1) {
-        result.reference_ = reference_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (referenceCase_ == 2) {
-        result.reference_ = reference_;
-      }
-      result.method_ = method_;
-      result.referenceCase_ = referenceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.UserActionReference result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.method_ = method_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.aiplatform.v1.UserActionReference result) {
+      result.referenceCase_ = referenceCase_;
+      result.reference_ = this.reference_;
     }
 
     @java.lang.Override
@@ -648,6 +658,7 @@ public final class UserActionReference extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getMethod().isEmpty()) {
         method_ = other.method_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       switch (other.getReferenceCase()) {
@@ -713,7 +724,7 @@ public final class UserActionReference extends com.google.protobuf.GeneratedMess
             case 26:
               {
                 method_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -746,6 +757,8 @@ public final class UserActionReference extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -1115,8 +1128,8 @@ public final class UserActionReference extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       method_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1133,8 +1146,8 @@ public final class UserActionReference extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearMethod() {
-
       method_ = getDefaultInstance().getMethod();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1156,8 +1169,8 @@ public final class UserActionReference extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       method_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

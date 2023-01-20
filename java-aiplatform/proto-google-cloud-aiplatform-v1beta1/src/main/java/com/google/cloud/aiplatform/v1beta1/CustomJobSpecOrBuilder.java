@@ -420,4 +420,25 @@ public interface CustomJobSpecOrBuilder
    * @return The enableWebAccess.
    */
   boolean getEnableWebAccess();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether you want Vertex AI to enable access to the customized
+   * dashboard in training chief container.
+   * If set to `true`, you can access the dashboard at the URIs given
+   * by
+   * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
+   * or
+   * [Trial.web_access_uris][google.cloud.aiplatform.v1beta1.Trial.web_access_uris]
+   * (within
+   * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials]).
+   * </pre>
+   *
+   * <code>bool enable_dashboard_access = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableDashboardAccess.
+   */
+  boolean getEnableDashboardAccess();
 }

@@ -69,7 +69,9 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int INDEX_ENDPOINT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object indexEndpoint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object indexEndpoint_ = "";
   /**
    *
    *
@@ -176,7 +178,9 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.DeployedIndexOrBuilder getDeployedIndexOrBuilder() {
-    return getDeployedIndex();
+    return deployedIndex_ == null
+        ? com.google.cloud.aiplatform.v1beta1.DeployedIndex.getDefaultInstance()
+        : deployedIndex_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -392,12 +396,11 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       indexEndpoint_ = "";
-
-      if (deployedIndexBuilder_ == null) {
-        deployedIndex_ = null;
-      } else {
-        deployedIndex_ = null;
+      deployedIndex_ = null;
+      if (deployedIndexBuilder_ != null) {
+        deployedIndexBuilder_.dispose();
         deployedIndexBuilder_ = null;
       }
       return this;
@@ -427,14 +430,22 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1beta1.DeployIndexRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.DeployIndexRequest result =
           new com.google.cloud.aiplatform.v1beta1.DeployIndexRequest(this);
-      result.indexEndpoint_ = indexEndpoint_;
-      if (deployedIndexBuilder_ == null) {
-        result.deployedIndex_ = deployedIndex_;
-      } else {
-        result.deployedIndex_ = deployedIndexBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.DeployIndexRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.indexEndpoint_ = indexEndpoint_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deployedIndex_ =
+            deployedIndexBuilder_ == null ? deployedIndex_ : deployedIndexBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -485,6 +496,7 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getIndexEndpoint().isEmpty()) {
         indexEndpoint_ = other.indexEndpoint_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDeployedIndex()) {
@@ -519,13 +531,13 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 indexEndpoint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDeployedIndexFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -544,6 +556,8 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object indexEndpoint_ = "";
     /**
@@ -618,8 +632,8 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       indexEndpoint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -639,8 +653,8 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearIndexEndpoint() {
-
       indexEndpoint_ = getDefaultInstance().getIndexEndpoint();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -665,8 +679,8 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       indexEndpoint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -691,7 +705,7 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the deployedIndex field is set.
      */
     public boolean hasDeployedIndex() {
-      return deployedIndexBuilder_ != null || deployedIndex_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -732,11 +746,11 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         deployedIndex_ = value;
-        onChanged();
       } else {
         deployedIndexBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -754,11 +768,11 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
         com.google.cloud.aiplatform.v1beta1.DeployedIndex.Builder builderForValue) {
       if (deployedIndexBuilder_ == null) {
         deployedIndex_ = builderForValue.build();
-        onChanged();
       } else {
         deployedIndexBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -774,19 +788,19 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeDeployedIndex(com.google.cloud.aiplatform.v1beta1.DeployedIndex value) {
       if (deployedIndexBuilder_ == null) {
-        if (deployedIndex_ != null) {
-          deployedIndex_ =
-              com.google.cloud.aiplatform.v1beta1.DeployedIndex.newBuilder(deployedIndex_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && deployedIndex_ != null
+            && deployedIndex_
+                != com.google.cloud.aiplatform.v1beta1.DeployedIndex.getDefaultInstance()) {
+          getDeployedIndexBuilder().mergeFrom(value);
         } else {
           deployedIndex_ = value;
         }
-        onChanged();
       } else {
         deployedIndexBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -801,14 +815,13 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearDeployedIndex() {
-      if (deployedIndexBuilder_ == null) {
-        deployedIndex_ = null;
-        onChanged();
-      } else {
-        deployedIndex_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      deployedIndex_ = null;
+      if (deployedIndexBuilder_ != null) {
+        deployedIndexBuilder_.dispose();
         deployedIndexBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -823,7 +836,7 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.DeployedIndex.Builder getDeployedIndexBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDeployedIndexFieldBuilder().getBuilder();
     }

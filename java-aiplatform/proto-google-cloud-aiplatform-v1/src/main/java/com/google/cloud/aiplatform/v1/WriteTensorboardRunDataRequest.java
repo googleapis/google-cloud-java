@@ -71,7 +71,9 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
   }
 
   public static final int TENSORBOARD_RUN_FIELD_NUMBER = 1;
-  private volatile java.lang.Object tensorboardRun_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tensorboardRun_ = "";
   /**
    *
    *
@@ -128,6 +130,8 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
   }
 
   public static final int TIME_SERIES_DATA_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.TimeSeriesData> timeSeriesData_;
   /**
    *
@@ -437,15 +441,15 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       tensorboardRun_ = "";
-
       if (timeSeriesDataBuilder_ == null) {
         timeSeriesData_ = java.util.Collections.emptyList();
       } else {
         timeSeriesData_ = null;
         timeSeriesDataBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -474,19 +478,33 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
     public com.google.cloud.aiplatform.v1.WriteTensorboardRunDataRequest buildPartial() {
       com.google.cloud.aiplatform.v1.WriteTensorboardRunDataRequest result =
           new com.google.cloud.aiplatform.v1.WriteTensorboardRunDataRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.tensorboardRun_ = tensorboardRun_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.WriteTensorboardRunDataRequest result) {
       if (timeSeriesDataBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           timeSeriesData_ = java.util.Collections.unmodifiableList(timeSeriesData_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.timeSeriesData_ = timeSeriesData_;
       } else {
         result.timeSeriesData_ = timeSeriesDataBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.WriteTensorboardRunDataRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tensorboardRun_ = tensorboardRun_;
+      }
     }
 
     @java.lang.Override
@@ -538,13 +556,14 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getTensorboardRun().isEmpty()) {
         tensorboardRun_ = other.tensorboardRun_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (timeSeriesDataBuilder_ == null) {
         if (!other.timeSeriesData_.isEmpty()) {
           if (timeSeriesData_.isEmpty()) {
             timeSeriesData_ = other.timeSeriesData_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureTimeSeriesDataIsMutable();
             timeSeriesData_.addAll(other.timeSeriesData_);
@@ -557,7 +576,7 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
             timeSeriesDataBuilder_.dispose();
             timeSeriesDataBuilder_ = null;
             timeSeriesData_ = other.timeSeriesData_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             timeSeriesDataBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTimeSeriesDataFieldBuilder()
@@ -596,7 +615,7 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
             case 10:
               {
                 tensorboardRun_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -704,8 +723,8 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       tensorboardRun_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -725,8 +744,8 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearTensorboardRun() {
-
       tensorboardRun_ = getDefaultInstance().getTensorboardRun();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -751,8 +770,8 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tensorboardRun_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -761,10 +780,10 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
         java.util.Collections.emptyList();
 
     private void ensureTimeSeriesDataIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         timeSeriesData_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1.TimeSeriesData>(timeSeriesData_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1048,7 +1067,7 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
     public Builder clearTimeSeriesData() {
       if (timeSeriesDataBuilder_ == null) {
         timeSeriesData_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         timeSeriesDataBuilder_.clear();
@@ -1216,7 +1235,7 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
                 com.google.cloud.aiplatform.v1.TimeSeriesData.Builder,
                 com.google.cloud.aiplatform.v1.TimeSeriesDataOrBuilder>(
                 timeSeriesData_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         timeSeriesData_ = null;

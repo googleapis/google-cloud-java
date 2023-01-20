@@ -76,6 +76,8 @@ public final class TabularClassificationPredictionResult
   }
 
   public static final int CLASSES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList classes_;
   /**
    *
@@ -141,6 +143,8 @@ public final class TabularClassificationPredictionResult
   }
 
   public static final int SCORES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.FloatList scores_;
   /**
    *
@@ -457,10 +461,10 @@ public final class TabularClassificationPredictionResult
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       classes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       scores_ = emptyFloatList();
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -501,7 +505,18 @@ public final class TabularClassificationPredictionResult
           result =
               new com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
                   .TabularClassificationPredictionResult(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
+                .TabularClassificationPredictionResult
+            result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         classes_ = classes_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -512,8 +527,13 @@ public final class TabularClassificationPredictionResult
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.scores_ = scores_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
+                .TabularClassificationPredictionResult
+            result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -914,6 +934,7 @@ public final class TabularClassificationPredictionResult
      * @return This builder for chaining.
      */
     public Builder setScores(int index, float value) {
+
       ensureScoresIsMutable();
       scores_.setFloat(index, value);
       onChanged();
@@ -934,6 +955,7 @@ public final class TabularClassificationPredictionResult
      * @return This builder for chaining.
      */
     public Builder addScores(float value) {
+
       ensureScoresIsMutable();
       scores_.addFloat(value);
       onChanged();

@@ -69,7 +69,9 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -175,7 +177,9 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.DataLabelingJobOrBuilder
       getDataLabelingJobOrBuilder() {
-    return getDataLabelingJob();
+    return dataLabelingJob_ == null
+        ? com.google.cloud.aiplatform.v1beta1.DataLabelingJob.getDefaultInstance()
+        : dataLabelingJob_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -391,12 +395,11 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (dataLabelingJobBuilder_ == null) {
-        dataLabelingJob_ = null;
-      } else {
-        dataLabelingJob_ = null;
+      dataLabelingJob_ = null;
+      if (dataLabelingJobBuilder_ != null) {
+        dataLabelingJobBuilder_.dispose();
         dataLabelingJobBuilder_ = null;
       }
       return this;
@@ -427,14 +430,23 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
     public com.google.cloud.aiplatform.v1beta1.CreateDataLabelingJobRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.CreateDataLabelingJobRequest result =
           new com.google.cloud.aiplatform.v1beta1.CreateDataLabelingJobRequest(this);
-      result.parent_ = parent_;
-      if (dataLabelingJobBuilder_ == null) {
-        result.dataLabelingJob_ = dataLabelingJob_;
-      } else {
-        result.dataLabelingJob_ = dataLabelingJobBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.CreateDataLabelingJobRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataLabelingJob_ =
+            dataLabelingJobBuilder_ == null ? dataLabelingJob_ : dataLabelingJobBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -487,6 +499,7 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDataLabelingJob()) {
@@ -521,13 +534,13 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDataLabelingJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -546,6 +559,8 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -617,8 +632,8 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -637,8 +652,8 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -662,8 +677,8 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -688,7 +703,7 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
      * @return Whether the dataLabelingJob field is set.
      */
     public boolean hasDataLabelingJob() {
-      return dataLabelingJobBuilder_ != null || dataLabelingJob_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -729,11 +744,11 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         dataLabelingJob_ = value;
-        onChanged();
       } else {
         dataLabelingJobBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -751,11 +766,11 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
         com.google.cloud.aiplatform.v1beta1.DataLabelingJob.Builder builderForValue) {
       if (dataLabelingJobBuilder_ == null) {
         dataLabelingJob_ = builderForValue.build();
-        onChanged();
       } else {
         dataLabelingJobBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -771,19 +786,19 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
      */
     public Builder mergeDataLabelingJob(com.google.cloud.aiplatform.v1beta1.DataLabelingJob value) {
       if (dataLabelingJobBuilder_ == null) {
-        if (dataLabelingJob_ != null) {
-          dataLabelingJob_ =
-              com.google.cloud.aiplatform.v1beta1.DataLabelingJob.newBuilder(dataLabelingJob_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && dataLabelingJob_ != null
+            && dataLabelingJob_
+                != com.google.cloud.aiplatform.v1beta1.DataLabelingJob.getDefaultInstance()) {
+          getDataLabelingJobBuilder().mergeFrom(value);
         } else {
           dataLabelingJob_ = value;
         }
-        onChanged();
       } else {
         dataLabelingJobBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -798,14 +813,13 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearDataLabelingJob() {
-      if (dataLabelingJobBuilder_ == null) {
-        dataLabelingJob_ = null;
-        onChanged();
-      } else {
-        dataLabelingJob_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      dataLabelingJob_ = null;
+      if (dataLabelingJobBuilder_ != null) {
+        dataLabelingJobBuilder_.dispose();
         dataLabelingJobBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -820,7 +834,7 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.DataLabelingJob.Builder getDataLabelingJobBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDataLabelingJobFieldBuilder().getBuilder();
     }

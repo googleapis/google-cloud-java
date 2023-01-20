@@ -75,7 +75,9 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
   }
 
   public static final int DESTINATION_BIGQUERY_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object destinationBigqueryUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object destinationBigqueryUri_ = "";
   /**
    *
    *
@@ -132,7 +134,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
   }
 
   public static final int OVERRIDE_EXISTING_TABLE_FIELD_NUMBER = 2;
-  private boolean overrideExistingTable_;
+  private boolean overrideExistingTable_ = false;
   /**
    *
    *
@@ -390,10 +392,9 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       destinationBigqueryUri_ = "";
-
       overrideExistingTable_ = false;
-
       return this;
     }
 
@@ -432,10 +433,23 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
           result =
               new com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                   .ExportEvaluatedDataItemsConfig(this);
-      result.destinationBigqueryUri_ = destinationBigqueryUri_;
-      result.overrideExistingTable_ = overrideExistingTable_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.schema.trainingjob.definition.ExportEvaluatedDataItemsConfig
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.destinationBigqueryUri_ = destinationBigqueryUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.overrideExistingTable_ = overrideExistingTable_;
+      }
     }
 
     @java.lang.Override
@@ -495,6 +509,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
               .ExportEvaluatedDataItemsConfig.getDefaultInstance()) return this;
       if (!other.getDestinationBigqueryUri().isEmpty()) {
         destinationBigqueryUri_ = other.destinationBigqueryUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getOverrideExistingTable() != false) {
@@ -529,13 +544,13 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
             case 10:
               {
                 destinationBigqueryUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 overrideExistingTable_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -554,6 +569,8 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object destinationBigqueryUri_ = "";
     /**
@@ -628,8 +645,8 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       destinationBigqueryUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -649,8 +666,8 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearDestinationBigqueryUri() {
-
       destinationBigqueryUri_ = getDefaultInstance().getDestinationBigqueryUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -675,8 +692,8 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       destinationBigqueryUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -716,6 +733,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
     public Builder setOverrideExistingTable(boolean value) {
 
       overrideExistingTable_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -733,7 +751,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearOverrideExistingTable() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       overrideExistingTable_ = false;
       onChanged();
       return this;

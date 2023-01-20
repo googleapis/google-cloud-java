@@ -67,7 +67,7 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SUCCESSFUL_COUNT_FIELD_NUMBER = 1;
-  private long successfulCount_;
+  private long successfulCount_ = 0L;
   /**
    *
    *
@@ -85,7 +85,7 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int FAILED_COUNT_FIELD_NUMBER = 2;
-  private long failedCount_;
+  private long failedCount_ = 0L;
   /**
    *
    *
@@ -103,7 +103,7 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int INCOMPLETE_COUNT_FIELD_NUMBER = 3;
-  private long incompleteCount_;
+  private long incompleteCount_ = 0L;
   /**
    *
    *
@@ -125,7 +125,7 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SUCCESSFUL_FORECAST_POINT_COUNT_FIELD_NUMBER = 5;
-  private long successfulForecastPointCount_;
+  private long successfulForecastPointCount_ = 0L;
   /**
    *
    *
@@ -371,14 +371,11 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       successfulCount_ = 0L;
-
       failedCount_ = 0L;
-
       incompleteCount_ = 0L;
-
       successfulForecastPointCount_ = 0L;
-
       return this;
     }
 
@@ -406,12 +403,27 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.aiplatform.v1beta1.CompletionStats buildPartial() {
       com.google.cloud.aiplatform.v1beta1.CompletionStats result =
           new com.google.cloud.aiplatform.v1beta1.CompletionStats(this);
-      result.successfulCount_ = successfulCount_;
-      result.failedCount_ = failedCount_;
-      result.incompleteCount_ = incompleteCount_;
-      result.successfulForecastPointCount_ = successfulForecastPointCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.CompletionStats result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.successfulCount_ = successfulCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.failedCount_ = failedCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.incompleteCount_ = incompleteCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.successfulForecastPointCount_ = successfulForecastPointCount_;
+      }
     }
 
     @java.lang.Override
@@ -501,25 +513,25 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 successfulCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 failedCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 incompleteCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 40:
               {
                 successfulForecastPointCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             default:
@@ -538,6 +550,8 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long successfulCount_;
     /**
@@ -570,6 +584,7 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
     public Builder setSuccessfulCount(long value) {
 
       successfulCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -585,7 +600,7 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSuccessfulCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       successfulCount_ = 0L;
       onChanged();
       return this;
@@ -622,6 +637,7 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
     public Builder setFailedCount(long value) {
 
       failedCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -637,7 +653,7 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearFailedCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       failedCount_ = 0L;
       onChanged();
       return this;
@@ -682,6 +698,7 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
     public Builder setIncompleteCount(long value) {
 
       incompleteCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -701,7 +718,7 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearIncompleteCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       incompleteCount_ = 0L;
       onChanged();
       return this;
@@ -744,6 +761,7 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
     public Builder setSuccessfulForecastPointCount(long value) {
 
       successfulForecastPointCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -762,7 +780,7 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSuccessfulForecastPointCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       successfulForecastPointCount_ = 0L;
       onChanged();
       return this;

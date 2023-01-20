@@ -70,7 +70,9 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
   }
 
   public static final int INDEX_FIELD_NUMBER = 1;
-  private volatile java.lang.Object index_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object index_ = "";
   /**
    *
    *
@@ -127,6 +129,8 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
   }
 
   public static final int DATAPOINTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.IndexDatapoint> datapoints_;
   /**
    *
@@ -405,15 +409,15 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       index_ = "";
-
       if (datapointsBuilder_ == null) {
         datapoints_ = java.util.Collections.emptyList();
       } else {
         datapoints_ = null;
         datapointsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -441,19 +445,32 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
     public com.google.cloud.aiplatform.v1.UpsertDatapointsRequest buildPartial() {
       com.google.cloud.aiplatform.v1.UpsertDatapointsRequest result =
           new com.google.cloud.aiplatform.v1.UpsertDatapointsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.index_ = index_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.UpsertDatapointsRequest result) {
       if (datapointsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           datapoints_ = java.util.Collections.unmodifiableList(datapoints_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.datapoints_ = datapoints_;
       } else {
         result.datapoints_ = datapointsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.UpsertDatapointsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.index_ = index_;
+      }
     }
 
     @java.lang.Override
@@ -504,13 +521,14 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getIndex().isEmpty()) {
         index_ = other.index_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (datapointsBuilder_ == null) {
         if (!other.datapoints_.isEmpty()) {
           if (datapoints_.isEmpty()) {
             datapoints_ = other.datapoints_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureDatapointsIsMutable();
             datapoints_.addAll(other.datapoints_);
@@ -523,7 +541,7 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
             datapointsBuilder_.dispose();
             datapointsBuilder_ = null;
             datapoints_ = other.datapoints_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             datapointsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDatapointsFieldBuilder()
@@ -562,7 +580,7 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
             case 10:
               {
                 index_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -670,8 +688,8 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       index_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -691,8 +709,8 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearIndex() {
-
       index_ = getDefaultInstance().getIndex();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -717,8 +735,8 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       index_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -727,10 +745,10 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
         java.util.Collections.emptyList();
 
     private void ensureDatapointsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         datapoints_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1.IndexDatapoint>(datapoints_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -946,7 +964,7 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
     public Builder clearDatapoints() {
       if (datapointsBuilder_ == null) {
         datapoints_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         datapointsBuilder_.clear();
@@ -1069,7 +1087,7 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
                 com.google.cloud.aiplatform.v1.IndexDatapoint,
                 com.google.cloud.aiplatform.v1.IndexDatapoint.Builder,
                 com.google.cloud.aiplatform.v1.IndexDatapointOrBuilder>(
-                datapoints_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                datapoints_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         datapoints_ = null;
       }
       return datapointsBuilder_;

@@ -76,7 +76,9 @@ public final class TextClassificationPredictionInstance
   }
 
   public static final int CONTENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object content_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object content_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class TextClassificationPredictionInstance
   }
 
   public static final int MIME_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object mimeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mimeType_ = "";
   /**
    *
    *
@@ -417,10 +421,9 @@ public final class TextClassificationPredictionInstance
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       content_ = "";
-
       mimeType_ = "";
-
       return this;
     }
 
@@ -461,10 +464,24 @@ public final class TextClassificationPredictionInstance
           result =
               new com.google.cloud.aiplatform.v1beta1.schema.predict.instance
                   .TextClassificationPredictionInstance(this);
-      result.content_ = content_;
-      result.mimeType_ = mimeType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.schema.predict.instance
+                .TextClassificationPredictionInstance
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.content_ = content_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.mimeType_ = mimeType_;
+      }
     }
 
     @java.lang.Override
@@ -525,10 +542,12 @@ public final class TextClassificationPredictionInstance
               .TextClassificationPredictionInstance.getDefaultInstance()) return this;
       if (!other.getContent().isEmpty()) {
         content_ = other.content_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getMimeType().isEmpty()) {
         mimeType_ = other.mimeType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -560,13 +579,13 @@ public final class TextClassificationPredictionInstance
             case 10:
               {
                 content_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 mimeType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -585,6 +604,8 @@ public final class TextClassificationPredictionInstance
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object content_ = "";
     /**
@@ -647,8 +668,8 @@ public final class TextClassificationPredictionInstance
       if (value == null) {
         throw new NullPointerException();
       }
-
       content_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -664,8 +685,8 @@ public final class TextClassificationPredictionInstance
      * @return This builder for chaining.
      */
     public Builder clearContent() {
-
       content_ = getDefaultInstance().getContent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -686,8 +707,8 @@ public final class TextClassificationPredictionInstance
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       content_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -759,8 +780,8 @@ public final class TextClassificationPredictionInstance
       if (value == null) {
         throw new NullPointerException();
       }
-
       mimeType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -778,8 +799,8 @@ public final class TextClassificationPredictionInstance
      * @return This builder for chaining.
      */
     public Builder clearMimeType() {
-
       mimeType_ = getDefaultInstance().getMimeType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -802,8 +823,8 @@ public final class TextClassificationPredictionInstance
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mimeType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

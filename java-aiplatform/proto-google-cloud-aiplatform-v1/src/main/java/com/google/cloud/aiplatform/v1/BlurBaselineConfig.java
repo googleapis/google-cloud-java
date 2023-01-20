@@ -70,7 +70,7 @@ public final class BlurBaselineConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MAX_BLUR_SIGMA_FIELD_NUMBER = 1;
-  private float maxBlurSigma_;
+  private float maxBlurSigma_ = 0F;
   /**
    *
    *
@@ -292,8 +292,8 @@ public final class BlurBaselineConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       maxBlurSigma_ = 0F;
-
       return this;
     }
 
@@ -321,9 +321,18 @@ public final class BlurBaselineConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1.BlurBaselineConfig buildPartial() {
       com.google.cloud.aiplatform.v1.BlurBaselineConfig result =
           new com.google.cloud.aiplatform.v1.BlurBaselineConfig(this);
-      result.maxBlurSigma_ = maxBlurSigma_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.BlurBaselineConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.maxBlurSigma_ = maxBlurSigma_;
+      }
     }
 
     @java.lang.Override
@@ -404,7 +413,7 @@ public final class BlurBaselineConfig extends com.google.protobuf.GeneratedMessa
             case 13:
               {
                 maxBlurSigma_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             default:
@@ -423,6 +432,8 @@ public final class BlurBaselineConfig extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private float maxBlurSigma_;
     /**
@@ -461,6 +472,7 @@ public final class BlurBaselineConfig extends com.google.protobuf.GeneratedMessa
     public Builder setMaxBlurSigma(float value) {
 
       maxBlurSigma_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -479,7 +491,7 @@ public final class BlurBaselineConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMaxBlurSigma() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       maxBlurSigma_ = 0F;
       onChanged();
       return this;

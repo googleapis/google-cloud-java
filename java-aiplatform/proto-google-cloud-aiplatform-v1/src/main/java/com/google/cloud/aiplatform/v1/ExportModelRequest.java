@@ -257,7 +257,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int EXPORT_FORMAT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object exportFormatId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object exportFormatId_ = "";
     /**
      *
      *
@@ -380,7 +382,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public com.google.cloud.aiplatform.v1.GcsDestinationOrBuilder
         getArtifactDestinationOrBuilder() {
-      return getArtifactDestination();
+      return artifactDestination_ == null
+          ? com.google.cloud.aiplatform.v1.GcsDestination.getDefaultInstance()
+          : artifactDestination_;
     }
 
     public static final int IMAGE_DESTINATION_FIELD_NUMBER = 4;
@@ -438,7 +442,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public com.google.cloud.aiplatform.v1.ContainerRegistryDestinationOrBuilder
         getImageDestinationOrBuilder() {
-      return getImageDestination();
+      return imageDestination_ == null
+          ? com.google.cloud.aiplatform.v1.ContainerRegistryDestination.getDefaultInstance()
+          : imageDestination_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -670,18 +676,16 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         exportFormatId_ = "";
-
-        if (artifactDestinationBuilder_ == null) {
-          artifactDestination_ = null;
-        } else {
-          artifactDestination_ = null;
+        artifactDestination_ = null;
+        if (artifactDestinationBuilder_ != null) {
+          artifactDestinationBuilder_.dispose();
           artifactDestinationBuilder_ = null;
         }
-        if (imageDestinationBuilder_ == null) {
-          imageDestination_ = null;
-        } else {
-          imageDestination_ = null;
+        imageDestination_ = null;
+        if (imageDestinationBuilder_ != null) {
+          imageDestinationBuilder_.dispose();
           imageDestinationBuilder_ = null;
         }
         return this;
@@ -712,19 +716,31 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.aiplatform.v1.ExportModelRequest.OutputConfig buildPartial() {
         com.google.cloud.aiplatform.v1.ExportModelRequest.OutputConfig result =
             new com.google.cloud.aiplatform.v1.ExportModelRequest.OutputConfig(this);
-        result.exportFormatId_ = exportFormatId_;
-        if (artifactDestinationBuilder_ == null) {
-          result.artifactDestination_ = artifactDestination_;
-        } else {
-          result.artifactDestination_ = artifactDestinationBuilder_.build();
-        }
-        if (imageDestinationBuilder_ == null) {
-          result.imageDestination_ = imageDestination_;
-        } else {
-          result.imageDestination_ = imageDestinationBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.ExportModelRequest.OutputConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.exportFormatId_ = exportFormatId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.artifactDestination_ =
+              artifactDestinationBuilder_ == null
+                  ? artifactDestination_
+                  : artifactDestinationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.imageDestination_ =
+              imageDestinationBuilder_ == null
+                  ? imageDestination_
+                  : imageDestinationBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -779,6 +795,7 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
           return this;
         if (!other.getExportFormatId().isEmpty()) {
           exportFormatId_ = other.exportFormatId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasArtifactDestination()) {
@@ -816,21 +833,21 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
               case 10:
                 {
                   exportFormatId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 26:
                 {
                   input.readMessage(
                       getArtifactDestinationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 26
               case 34:
                 {
                   input.readMessage(
                       getImageDestinationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 34
               default:
@@ -849,6 +866,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object exportFormatId_ = "";
       /**
@@ -923,8 +942,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         exportFormatId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -944,8 +963,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearExportFormatId() {
-
         exportFormatId_ = getDefaultInstance().getExportFormatId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -970,8 +989,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         exportFormatId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1001,7 +1020,7 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
        * @return Whether the artifactDestination field is set.
        */
       public boolean hasArtifactDestination() {
-        return artifactDestinationBuilder_ != null || artifactDestination_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1052,11 +1071,11 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           artifactDestination_ = value;
-          onChanged();
         } else {
           artifactDestinationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1079,11 +1098,11 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
           com.google.cloud.aiplatform.v1.GcsDestination.Builder builderForValue) {
         if (artifactDestinationBuilder_ == null) {
           artifactDestination_ = builderForValue.build();
-          onChanged();
         } else {
           artifactDestinationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1104,19 +1123,19 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
        */
       public Builder mergeArtifactDestination(com.google.cloud.aiplatform.v1.GcsDestination value) {
         if (artifactDestinationBuilder_ == null) {
-          if (artifactDestination_ != null) {
-            artifactDestination_ =
-                com.google.cloud.aiplatform.v1.GcsDestination.newBuilder(artifactDestination_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && artifactDestination_ != null
+              && artifactDestination_
+                  != com.google.cloud.aiplatform.v1.GcsDestination.getDefaultInstance()) {
+            getArtifactDestinationBuilder().mergeFrom(value);
           } else {
             artifactDestination_ = value;
           }
-          onChanged();
         } else {
           artifactDestinationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1136,14 +1155,13 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
        * <code>.google.cloud.aiplatform.v1.GcsDestination artifact_destination = 3;</code>
        */
       public Builder clearArtifactDestination() {
-        if (artifactDestinationBuilder_ == null) {
-          artifactDestination_ = null;
-          onChanged();
-        } else {
-          artifactDestination_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        artifactDestination_ = null;
+        if (artifactDestinationBuilder_ != null) {
+          artifactDestinationBuilder_.dispose();
           artifactDestinationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1163,7 +1181,7 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
        * <code>.google.cloud.aiplatform.v1.GcsDestination artifact_destination = 3;</code>
        */
       public com.google.cloud.aiplatform.v1.GcsDestination.Builder getArtifactDestinationBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getArtifactDestinationFieldBuilder().getBuilder();
       }
@@ -1248,7 +1266,7 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
        * @return Whether the imageDestination field is set.
        */
       public boolean hasImageDestination() {
-        return imageDestinationBuilder_ != null || imageDestination_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1294,11 +1312,11 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           imageDestination_ = value;
-          onChanged();
         } else {
           imageDestinationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1318,11 +1336,11 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
           com.google.cloud.aiplatform.v1.ContainerRegistryDestination.Builder builderForValue) {
         if (imageDestinationBuilder_ == null) {
           imageDestination_ = builderForValue.build();
-          onChanged();
         } else {
           imageDestinationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1341,20 +1359,20 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
       public Builder mergeImageDestination(
           com.google.cloud.aiplatform.v1.ContainerRegistryDestination value) {
         if (imageDestinationBuilder_ == null) {
-          if (imageDestination_ != null) {
-            imageDestination_ =
-                com.google.cloud.aiplatform.v1.ContainerRegistryDestination.newBuilder(
-                        imageDestination_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && imageDestination_ != null
+              && imageDestination_
+                  != com.google.cloud.aiplatform.v1.ContainerRegistryDestination
+                      .getDefaultInstance()) {
+            getImageDestinationBuilder().mergeFrom(value);
           } else {
             imageDestination_ = value;
           }
-          onChanged();
         } else {
           imageDestinationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1371,14 +1389,13 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
        * </code>
        */
       public Builder clearImageDestination() {
-        if (imageDestinationBuilder_ == null) {
-          imageDestination_ = null;
-          onChanged();
-        } else {
-          imageDestination_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        imageDestination_ = null;
+        if (imageDestinationBuilder_ != null) {
+          imageDestinationBuilder_.dispose();
           imageDestinationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1396,7 +1413,7 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
        */
       public com.google.cloud.aiplatform.v1.ContainerRegistryDestination.Builder
           getImageDestinationBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getImageDestinationFieldBuilder().getBuilder();
       }
@@ -1521,7 +1538,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1629,7 +1648,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ExportModelRequest.OutputConfigOrBuilder
       getOutputConfigOrBuilder() {
-    return getOutputConfig();
+    return outputConfig_ == null
+        ? com.google.cloud.aiplatform.v1.ExportModelRequest.OutputConfig.getDefaultInstance()
+        : outputConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1844,12 +1865,11 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-      } else {
-        outputConfig_ = null;
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
       return this;
@@ -1879,14 +1899,22 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1.ExportModelRequest buildPartial() {
       com.google.cloud.aiplatform.v1.ExportModelRequest result =
           new com.google.cloud.aiplatform.v1.ExportModelRequest(this);
-      result.name_ = name_;
-      if (outputConfigBuilder_ == null) {
-        result.outputConfig_ = outputConfig_;
-      } else {
-        result.outputConfig_ = outputConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.ExportModelRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.outputConfig_ =
+            outputConfigBuilder_ == null ? outputConfig_ : outputConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1937,6 +1965,7 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasOutputConfig()) {
@@ -1971,13 +2000,13 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1996,6 +2025,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -2070,8 +2101,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2091,8 +2122,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2117,8 +2148,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2143,7 +2174,7 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
-      return outputConfigBuilder_ != null || outputConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2185,11 +2216,11 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         outputConfig_ = value;
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2207,11 +2238,11 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
         com.google.cloud.aiplatform.v1.ExportModelRequest.OutputConfig.Builder builderForValue) {
       if (outputConfigBuilder_ == null) {
         outputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2228,20 +2259,20 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
     public Builder mergeOutputConfig(
         com.google.cloud.aiplatform.v1.ExportModelRequest.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
-        if (outputConfig_ != null) {
-          outputConfig_ =
-              com.google.cloud.aiplatform.v1.ExportModelRequest.OutputConfig.newBuilder(
-                      outputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && outputConfig_ != null
+            && outputConfig_
+                != com.google.cloud.aiplatform.v1.ExportModelRequest.OutputConfig
+                    .getDefaultInstance()) {
+          getOutputConfigBuilder().mergeFrom(value);
         } else {
           outputConfig_ = value;
         }
-        onChanged();
       } else {
         outputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2256,14 +2287,13 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearOutputConfig() {
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-        onChanged();
-      } else {
-        outputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2279,7 +2309,7 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.aiplatform.v1.ExportModelRequest.OutputConfig.Builder
         getOutputConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }

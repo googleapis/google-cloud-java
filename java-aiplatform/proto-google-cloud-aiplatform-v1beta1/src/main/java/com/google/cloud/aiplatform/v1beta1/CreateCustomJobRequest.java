@@ -69,7 +69,9 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -174,7 +176,9 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.CustomJobOrBuilder getCustomJobOrBuilder() {
-    return getCustomJob();
+    return customJob_ == null
+        ? com.google.cloud.aiplatform.v1beta1.CustomJob.getDefaultInstance()
+        : customJob_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -390,12 +394,11 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (customJobBuilder_ == null) {
-        customJob_ = null;
-      } else {
-        customJob_ = null;
+      customJob_ = null;
+      if (customJobBuilder_ != null) {
+        customJobBuilder_.dispose();
         customJobBuilder_ = null;
       }
       return this;
@@ -425,14 +428,21 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.aiplatform.v1beta1.CreateCustomJobRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.CreateCustomJobRequest result =
           new com.google.cloud.aiplatform.v1beta1.CreateCustomJobRequest(this);
-      result.parent_ = parent_;
-      if (customJobBuilder_ == null) {
-        result.customJob_ = customJob_;
-      } else {
-        result.customJob_ = customJobBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.CreateCustomJobRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.customJob_ = customJobBuilder_ == null ? customJob_ : customJobBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -483,6 +493,7 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCustomJob()) {
@@ -517,13 +528,13 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCustomJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -542,6 +553,8 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -613,8 +626,8 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -633,8 +646,8 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -658,8 +671,8 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,7 +697,7 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
      * @return Whether the customJob field is set.
      */
     public boolean hasCustomJob() {
-      return customJobBuilder_ != null || customJob_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -725,11 +738,11 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         customJob_ = value;
-        onChanged();
       } else {
         customJobBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -747,11 +760,11 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
         com.google.cloud.aiplatform.v1beta1.CustomJob.Builder builderForValue) {
       if (customJobBuilder_ == null) {
         customJob_ = builderForValue.build();
-        onChanged();
       } else {
         customJobBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -767,19 +780,18 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeCustomJob(com.google.cloud.aiplatform.v1beta1.CustomJob value) {
       if (customJobBuilder_ == null) {
-        if (customJob_ != null) {
-          customJob_ =
-              com.google.cloud.aiplatform.v1beta1.CustomJob.newBuilder(customJob_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && customJob_ != null
+            && customJob_ != com.google.cloud.aiplatform.v1beta1.CustomJob.getDefaultInstance()) {
+          getCustomJobBuilder().mergeFrom(value);
         } else {
           customJob_ = value;
         }
-        onChanged();
       } else {
         customJobBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -794,14 +806,13 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearCustomJob() {
-      if (customJobBuilder_ == null) {
-        customJob_ = null;
-        onChanged();
-      } else {
-        customJob_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      customJob_ = null;
+      if (customJobBuilder_ != null) {
+        customJobBuilder_.dispose();
         customJobBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -816,7 +827,7 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.CustomJob.Builder getCustomJobBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCustomJobFieldBuilder().getBuilder();
     }

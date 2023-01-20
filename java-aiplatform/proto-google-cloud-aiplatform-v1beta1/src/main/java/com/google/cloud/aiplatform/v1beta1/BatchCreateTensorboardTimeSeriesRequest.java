@@ -73,7 +73,9 @@ public final class BatchCreateTensorboardTimeSeriesRequest
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -138,6 +140,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
   }
 
   public static final int REQUESTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.CreateTensorboardTimeSeriesRequest>
       requests_;
   /**
@@ -445,15 +449,15 @@ public final class BatchCreateTensorboardTimeSeriesRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (requestsBuilder_ == null) {
         requests_ = java.util.Collections.emptyList();
       } else {
         requests_ = null;
         requestsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -485,19 +489,33 @@ public final class BatchCreateTensorboardTimeSeriesRequest
         buildPartial() {
       com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest result =
           new com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest result) {
       if (requestsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           requests_ = java.util.Collections.unmodifiableList(requests_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.requests_ = requests_;
       } else {
         result.requests_ = requestsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -552,13 +570,14 @@ public final class BatchCreateTensorboardTimeSeriesRequest
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (requestsBuilder_ == null) {
         if (!other.requests_.isEmpty()) {
           if (requests_.isEmpty()) {
             requests_ = other.requests_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureRequestsIsMutable();
             requests_.addAll(other.requests_);
@@ -571,7 +590,7 @@ public final class BatchCreateTensorboardTimeSeriesRequest
             requestsBuilder_.dispose();
             requestsBuilder_ = null;
             requests_ = other.requests_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             requestsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRequestsFieldBuilder()
@@ -610,7 +629,7 @@ public final class BatchCreateTensorboardTimeSeriesRequest
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -732,8 +751,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -757,8 +776,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -787,8 +806,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -797,11 +816,11 @@ public final class BatchCreateTensorboardTimeSeriesRequest
         requests_ = java.util.Collections.emptyList();
 
     private void ensureRequestsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         requests_ =
             new java.util.ArrayList<
                 com.google.cloud.aiplatform.v1beta1.CreateTensorboardTimeSeriesRequest>(requests_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1062,7 +1081,7 @@ public final class BatchCreateTensorboardTimeSeriesRequest
     public Builder clearRequests() {
       if (requestsBuilder_ == null) {
         requests_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         requestsBuilder_.clear();
@@ -1217,7 +1236,7 @@ public final class BatchCreateTensorboardTimeSeriesRequest
                 com.google.cloud.aiplatform.v1beta1.CreateTensorboardTimeSeriesRequest,
                 com.google.cloud.aiplatform.v1beta1.CreateTensorboardTimeSeriesRequest.Builder,
                 com.google.cloud.aiplatform.v1beta1.CreateTensorboardTimeSeriesRequestOrBuilder>(
-                requests_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                requests_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         requests_ = null;
       }
       return requestsBuilder_;

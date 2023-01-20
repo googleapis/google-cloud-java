@@ -301,7 +301,9 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.MigratableResourceOrBuilder
       getMigratableResourceOrBuilder() {
-    return getMigratableResource();
+    return migratableResource_ == null
+        ? com.google.cloud.aiplatform.v1beta1.MigratableResource.getDefaultInstance()
+        : migratableResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -542,10 +544,10 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (migratableResourceBuilder_ == null) {
-        migratableResource_ = null;
-      } else {
-        migratableResource_ = null;
+      bitField0_ = 0;
+      migratableResource_ = null;
+      if (migratableResourceBuilder_ != null) {
+        migratableResourceBuilder_.dispose();
         migratableResourceBuilder_ = null;
       }
       migratedResourceCase_ = 0;
@@ -577,20 +579,28 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
     public com.google.cloud.aiplatform.v1beta1.MigrateResourceResponse buildPartial() {
       com.google.cloud.aiplatform.v1beta1.MigrateResourceResponse result =
           new com.google.cloud.aiplatform.v1beta1.MigrateResourceResponse(this);
-      if (migratedResourceCase_ == 1) {
-        result.migratedResource_ = migratedResource_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (migratedResourceCase_ == 2) {
-        result.migratedResource_ = migratedResource_;
-      }
-      if (migratableResourceBuilder_ == null) {
-        result.migratableResource_ = migratableResource_;
-      } else {
-        result.migratableResource_ = migratableResourceBuilder_.build();
-      }
-      result.migratedResourceCase_ = migratedResourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.MigrateResourceResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.migratableResource_ =
+            migratableResourceBuilder_ == null
+                ? migratableResource_
+                : migratableResourceBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.aiplatform.v1beta1.MigrateResourceResponse result) {
+      result.migratedResourceCase_ = migratedResourceCase_;
+      result.migratedResource_ = this.migratedResource_;
     }
 
     @java.lang.Override
@@ -706,7 +716,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
               {
                 input.readMessage(
                     getMigratableResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -739,6 +749,8 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -1027,7 +1039,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
      * @return Whether the migratableResource field is set.
      */
     public boolean hasMigratableResource() {
-      return migratableResourceBuilder_ != null || migratableResource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1067,11 +1079,11 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         migratableResource_ = value;
-        onChanged();
       } else {
         migratableResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1088,11 +1100,11 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
         com.google.cloud.aiplatform.v1beta1.MigratableResource.Builder builderForValue) {
       if (migratableResourceBuilder_ == null) {
         migratableResource_ = builderForValue.build();
-        onChanged();
       } else {
         migratableResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1108,19 +1120,19 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
     public Builder mergeMigratableResource(
         com.google.cloud.aiplatform.v1beta1.MigratableResource value) {
       if (migratableResourceBuilder_ == null) {
-        if (migratableResource_ != null) {
-          migratableResource_ =
-              com.google.cloud.aiplatform.v1beta1.MigratableResource.newBuilder(migratableResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && migratableResource_ != null
+            && migratableResource_
+                != com.google.cloud.aiplatform.v1beta1.MigratableResource.getDefaultInstance()) {
+          getMigratableResourceBuilder().mergeFrom(value);
         } else {
           migratableResource_ = value;
         }
-        onChanged();
       } else {
         migratableResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1134,14 +1146,13 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
      * <code>.google.cloud.aiplatform.v1beta1.MigratableResource migratable_resource = 3;</code>
      */
     public Builder clearMigratableResource() {
-      if (migratableResourceBuilder_ == null) {
-        migratableResource_ = null;
-        onChanged();
-      } else {
-        migratableResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      migratableResource_ = null;
+      if (migratableResourceBuilder_ != null) {
+        migratableResourceBuilder_.dispose();
         migratableResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1156,7 +1167,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
      */
     public com.google.cloud.aiplatform.v1beta1.MigratableResource.Builder
         getMigratableResourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getMigratableResourceFieldBuilder().getBuilder();
     }

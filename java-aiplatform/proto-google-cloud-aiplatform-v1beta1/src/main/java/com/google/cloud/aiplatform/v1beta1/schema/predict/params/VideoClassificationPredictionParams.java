@@ -73,7 +73,7 @@ public final class VideoClassificationPredictionParams
   }
 
   public static final int CONFIDENCE_THRESHOLD_FIELD_NUMBER = 1;
-  private float confidenceThreshold_;
+  private float confidenceThreshold_ = 0F;
   /**
    *
    *
@@ -92,7 +92,7 @@ public final class VideoClassificationPredictionParams
   }
 
   public static final int MAX_PREDICTIONS_FIELD_NUMBER = 2;
-  private int maxPredictions_;
+  private int maxPredictions_ = 0;
   /**
    *
    *
@@ -112,7 +112,7 @@ public final class VideoClassificationPredictionParams
   }
 
   public static final int SEGMENT_CLASSIFICATION_FIELD_NUMBER = 3;
-  private boolean segmentClassification_;
+  private boolean segmentClassification_ = false;
   /**
    *
    *
@@ -133,7 +133,7 @@ public final class VideoClassificationPredictionParams
   }
 
   public static final int SHOT_CLASSIFICATION_FIELD_NUMBER = 4;
-  private boolean shotClassification_;
+  private boolean shotClassification_ = false;
   /**
    *
    *
@@ -159,7 +159,7 @@ public final class VideoClassificationPredictionParams
   }
 
   public static final int ONE_SEC_INTERVAL_CLASSIFICATION_FIELD_NUMBER = 5;
-  private boolean oneSecIntervalClassification_;
+  private boolean oneSecIntervalClassification_ = false;
   /**
    *
    *
@@ -450,16 +450,12 @@ public final class VideoClassificationPredictionParams
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       confidenceThreshold_ = 0F;
-
       maxPredictions_ = 0;
-
       segmentClassification_ = false;
-
       shotClassification_ = false;
-
       oneSecIntervalClassification_ = false;
-
       return this;
     }
 
@@ -498,13 +494,33 @@ public final class VideoClassificationPredictionParams
           result =
               new com.google.cloud.aiplatform.v1beta1.schema.predict.params
                   .VideoClassificationPredictionParams(this);
-      result.confidenceThreshold_ = confidenceThreshold_;
-      result.maxPredictions_ = maxPredictions_;
-      result.segmentClassification_ = segmentClassification_;
-      result.shotClassification_ = shotClassification_;
-      result.oneSecIntervalClassification_ = oneSecIntervalClassification_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.schema.predict.params
+                .VideoClassificationPredictionParams
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.confidenceThreshold_ = confidenceThreshold_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxPredictions_ = maxPredictions_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.segmentClassification_ = segmentClassification_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.shotClassification_ = shotClassification_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.oneSecIntervalClassification_ = oneSecIntervalClassification_;
+      }
     }
 
     @java.lang.Override
@@ -607,31 +623,31 @@ public final class VideoClassificationPredictionParams
             case 13:
               {
                 confidenceThreshold_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             case 16:
               {
                 maxPredictions_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 segmentClassification_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 shotClassification_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 oneSecIntervalClassification_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -650,6 +666,8 @@ public final class VideoClassificationPredictionParams
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private float confidenceThreshold_;
     /**
@@ -684,6 +702,7 @@ public final class VideoClassificationPredictionParams
     public Builder setConfidenceThreshold(float value) {
 
       confidenceThreshold_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -700,7 +719,7 @@ public final class VideoClassificationPredictionParams
      * @return This builder for chaining.
      */
     public Builder clearConfidenceThreshold() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       confidenceThreshold_ = 0F;
       onChanged();
       return this;
@@ -741,6 +760,7 @@ public final class VideoClassificationPredictionParams
     public Builder setMaxPredictions(int value) {
 
       maxPredictions_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -758,7 +778,7 @@ public final class VideoClassificationPredictionParams
      * @return This builder for chaining.
      */
     public Builder clearMaxPredictions() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxPredictions_ = 0;
       onChanged();
       return this;
@@ -801,6 +821,7 @@ public final class VideoClassificationPredictionParams
     public Builder setSegmentClassification(boolean value) {
 
       segmentClassification_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -819,7 +840,7 @@ public final class VideoClassificationPredictionParams
      * @return This builder for chaining.
      */
     public Builder clearSegmentClassification() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       segmentClassification_ = false;
       onChanged();
       return this;
@@ -872,6 +893,7 @@ public final class VideoClassificationPredictionParams
     public Builder setShotClassification(boolean value) {
 
       shotClassification_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -895,7 +917,7 @@ public final class VideoClassificationPredictionParams
      * @return This builder for chaining.
      */
     public Builder clearShotClassification() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       shotClassification_ = false;
       onChanged();
       return this;
@@ -942,6 +964,7 @@ public final class VideoClassificationPredictionParams
     public Builder setOneSecIntervalClassification(boolean value) {
 
       oneSecIntervalClassification_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -962,7 +985,7 @@ public final class VideoClassificationPredictionParams
      * @return This builder for chaining.
      */
     public Builder clearOneSecIntervalClassification() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       oneSecIntervalClassification_ = false;
       onChanged();
       return this;

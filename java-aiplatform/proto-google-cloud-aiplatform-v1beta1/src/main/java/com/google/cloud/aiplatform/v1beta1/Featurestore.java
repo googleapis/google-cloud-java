@@ -460,7 +460,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int MIN_NODE_COUNT_FIELD_NUMBER = 1;
-      private int minNodeCount_;
+      private int minNodeCount_ = 0;
       /**
        *
        *
@@ -479,7 +479,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int MAX_NODE_COUNT_FIELD_NUMBER = 2;
-      private int maxNodeCount_;
+      private int maxNodeCount_ = 0;
       /**
        *
        *
@@ -722,10 +722,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           minNodeCount_ = 0;
-
           maxNodeCount_ = 0;
-
           return this;
         }
 
@@ -759,10 +758,22 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig.Scaling result =
               new com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig.Scaling(
                   this);
-          result.minNodeCount_ = minNodeCount_;
-          result.maxNodeCount_ = maxNodeCount_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig.Scaling result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.minNodeCount_ = minNodeCount_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.maxNodeCount_ = maxNodeCount_;
+          }
         }
 
         @java.lang.Override
@@ -854,13 +865,13 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
                 case 8:
                   {
                     minNodeCount_ = input.readInt32();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 16:
                   {
                     maxNodeCount_ = input.readInt32();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 default:
@@ -879,6 +890,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private int minNodeCount_;
         /**
@@ -913,6 +926,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         public Builder setMinNodeCount(int value) {
 
           minNodeCount_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -929,7 +943,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearMinNodeCount() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           minNodeCount_ = 0;
           onChanged();
           return this;
@@ -968,6 +982,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         public Builder setMaxNodeCount(int value) {
 
           maxNodeCount_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -984,7 +999,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearMaxNodeCount() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           maxNodeCount_ = 0;
           onChanged();
           return this;
@@ -1060,7 +1075,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int FIXED_NODE_COUNT_FIELD_NUMBER = 2;
-    private int fixedNodeCount_;
+    private int fixedNodeCount_ = 0;
     /**
      *
      *
@@ -1137,7 +1152,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig.ScalingOrBuilder
         getScalingOrBuilder() {
-      return getScaling();
+      return scaling_ == null
+          ? com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig.Scaling
+              .getDefaultInstance()
+          : scaling_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1357,12 +1375,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         fixedNodeCount_ = 0;
-
-        if (scalingBuilder_ == null) {
-          scaling_ = null;
-        } else {
-          scaling_ = null;
+        scaling_ = null;
+        if (scalingBuilder_ != null) {
+          scalingBuilder_.dispose();
           scalingBuilder_ = null;
         }
         return this;
@@ -1395,14 +1412,22 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig buildPartial() {
         com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig result =
             new com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig(this);
-        result.fixedNodeCount_ = fixedNodeCount_;
-        if (scalingBuilder_ == null) {
-          result.scaling_ = scaling_;
-        } else {
-          result.scaling_ = scalingBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.fixedNodeCount_ = fixedNodeCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.scaling_ = scalingBuilder_ == null ? scaling_ : scalingBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1491,13 +1516,13 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
               case 16:
                 {
                   fixedNodeCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 16
               case 34:
                 {
                   input.readMessage(getScalingFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 34
               default:
@@ -1516,6 +1541,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int fixedNodeCount_;
       /**
@@ -1554,6 +1581,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       public Builder setFixedNodeCount(int value) {
 
         fixedNodeCount_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1572,7 +1600,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearFixedNodeCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         fixedNodeCount_ = 0;
         onChanged();
         return this;
@@ -1600,7 +1628,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the scaling field is set.
        */
       public boolean hasScaling() {
-        return scalingBuilder_ != null || scaling_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1648,11 +1676,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           scaling_ = value;
-          onChanged();
         } else {
           scalingBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1673,11 +1701,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
               builderForValue) {
         if (scalingBuilder_ == null) {
           scaling_ = builderForValue.build();
-          onChanged();
         } else {
           scalingBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1696,20 +1724,20 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeScaling(
           com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig.Scaling value) {
         if (scalingBuilder_ == null) {
-          if (scaling_ != null) {
-            scaling_ =
-                com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig.Scaling
-                    .newBuilder(scaling_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && scaling_ != null
+              && scaling_
+                  != com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig.Scaling
+                      .getDefaultInstance()) {
+            getScalingBuilder().mergeFrom(value);
           } else {
             scaling_ = value;
           }
-          onChanged();
         } else {
           scalingBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1726,14 +1754,13 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearScaling() {
-        if (scalingBuilder_ == null) {
-          scaling_ = null;
-          onChanged();
-        } else {
-          scaling_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        scaling_ = null;
+        if (scalingBuilder_ != null) {
+          scalingBuilder_.dispose();
           scalingBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1751,7 +1778,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig.Scaling.Builder
           getScalingBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getScalingFieldBuilder().getBuilder();
       }
@@ -1878,7 +1905,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1974,7 +2003,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
@@ -2023,11 +2052,13 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int ETAG_FIELD_NUMBER = 5;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -2090,6 +2121,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -2174,7 +2206,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -2273,11 +2308,13 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfigOrBuilder
       getOnlineServingConfigOrBuilder() {
-    return getOnlineServingConfig();
+    return onlineServingConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig.getDefaultInstance()
+        : onlineServingConfig_;
   }
 
   public static final int STATE_FIELD_NUMBER = 8;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -2310,16 +2347,15 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.Featurestore.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1beta1.Featurestore.State result =
-        com.google.cloud.aiplatform.v1beta1.Featurestore.State.valueOf(state_);
+        com.google.cloud.aiplatform.v1beta1.Featurestore.State.forNumber(state_);
     return result == null
         ? com.google.cloud.aiplatform.v1beta1.Featurestore.State.UNRECOGNIZED
         : result;
   }
 
   public static final int ONLINE_STORAGE_TTL_DAYS_FIELD_NUMBER = 13;
-  private int onlineStorageTtlDays_;
+  private int onlineStorageTtlDays_ = 0;
   /**
    *
    *
@@ -2395,7 +2431,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
-    return getEncryptionSpec();
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2719,37 +2757,30 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       etag_ = "";
-
       internalGetMutableLabels().clear();
-      if (onlineServingConfigBuilder_ == null) {
-        onlineServingConfig_ = null;
-      } else {
-        onlineServingConfig_ = null;
+      onlineServingConfig_ = null;
+      if (onlineServingConfigBuilder_ != null) {
+        onlineServingConfigBuilder_.dispose();
         onlineServingConfigBuilder_ = null;
       }
       state_ = 0;
-
       onlineStorageTtlDays_ = 0;
-
-      if (encryptionSpecBuilder_ == null) {
-        encryptionSpec_ = null;
-      } else {
-        encryptionSpec_ = null;
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
         encryptionSpecBuilder_ = null;
       }
       return this;
@@ -2779,35 +2810,47 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.Featurestore buildPartial() {
       com.google.cloud.aiplatform.v1beta1.Featurestore result =
           new com.google.cloud.aiplatform.v1beta1.Featurestore(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.etag_ = etag_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (onlineServingConfigBuilder_ == null) {
-        result.onlineServingConfig_ = onlineServingConfig_;
-      } else {
-        result.onlineServingConfig_ = onlineServingConfigBuilder_.build();
-      }
-      result.state_ = state_;
-      result.onlineStorageTtlDays_ = onlineStorageTtlDays_;
-      if (encryptionSpecBuilder_ == null) {
-        result.encryptionSpec_ = encryptionSpec_;
-      } else {
-        result.encryptionSpec_ = encryptionSpecBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Featurestore result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.onlineServingConfig_ =
+            onlineServingConfigBuilder_ == null
+                ? onlineServingConfig_
+                : onlineServingConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.onlineStorageTtlDays_ = onlineStorageTtlDays_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.encryptionSpec_ =
+            encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2858,6 +2901,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -2868,9 +2912,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000010;
       if (other.hasOnlineServingConfig()) {
         mergeOnlineServingConfig(other.getOnlineServingConfig());
       }
@@ -2912,25 +2958,25 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
@@ -2942,31 +2988,32 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     getOnlineServingConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 64:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 64
             case 82:
               {
                 input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             case 104:
               {
                 onlineStorageTtlDays_ = input.readInt32();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 104
             default:
@@ -3052,8 +3099,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3070,8 +3117,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -3093,8 +3140,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3119,7 +3166,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -3160,11 +3207,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3181,11 +3228,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3201,17 +3248,18 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3226,14 +3274,13 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3248,7 +3295,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3320,7 +3367,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -3361,11 +3408,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3382,11 +3429,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3402,17 +3449,18 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3427,14 +3475,13 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3449,7 +3496,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3565,8 +3612,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3583,8 +3630,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3606,8 +3653,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3623,14 +3670,14 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return labels_;
     }
 
@@ -3709,8 +3756,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3748,6 +3797,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3779,6 +3829,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -3806,8 +3857,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -3830,6 +3881,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -3857,7 +3909,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the onlineServingConfig field is set.
      */
     public boolean hasOnlineServingConfig() {
-      return onlineServingConfigBuilder_ != null || onlineServingConfig_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3907,11 +3959,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         onlineServingConfig_ = value;
-        onChanged();
       } else {
         onlineServingConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3933,11 +3985,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (onlineServingConfigBuilder_ == null) {
         onlineServingConfig_ = builderForValue.build();
-        onChanged();
       } else {
         onlineServingConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3957,20 +4009,20 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeOnlineServingConfig(
         com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig value) {
       if (onlineServingConfigBuilder_ == null) {
-        if (onlineServingConfig_ != null) {
-          onlineServingConfig_ =
-              com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig.newBuilder(
-                      onlineServingConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && onlineServingConfig_ != null
+            && onlineServingConfig_
+                != com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig
+                    .getDefaultInstance()) {
+          getOnlineServingConfigBuilder().mergeFrom(value);
         } else {
           onlineServingConfig_ = value;
         }
-        onChanged();
       } else {
         onlineServingConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3988,14 +4040,13 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearOnlineServingConfig() {
-      if (onlineServingConfigBuilder_ == null) {
-        onlineServingConfig_ = null;
-        onChanged();
-      } else {
-        onlineServingConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onlineServingConfig_ = null;
+      if (onlineServingConfigBuilder_ != null) {
+        onlineServingConfigBuilder_.dispose();
         onlineServingConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4014,7 +4065,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig.Builder
         getOnlineServingConfigBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getOnlineServingConfigFieldBuilder().getBuilder();
     }
@@ -4107,8 +4158,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4127,9 +4178,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.Featurestore.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.Featurestore.State result =
-          com.google.cloud.aiplatform.v1beta1.Featurestore.State.valueOf(state_);
+          com.google.cloud.aiplatform.v1beta1.Featurestore.State.forNumber(state_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.Featurestore.State.UNRECOGNIZED
           : result;
@@ -4152,7 +4202,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -4171,7 +4221,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       state_ = 0;
       onChanged();
       return this;
@@ -4218,6 +4268,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     public Builder setOnlineStorageTtlDays(int value) {
 
       onlineStorageTtlDays_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4238,7 +4289,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOnlineStorageTtlDays() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       onlineStorageTtlDays_ = 0;
       onChanged();
       return this;
@@ -4265,7 +4316,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encryptionSpec field is set.
      */
     public boolean hasEncryptionSpec() {
-      return encryptionSpecBuilder_ != null || encryptionSpec_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -4308,11 +4359,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         encryptionSpec_ = value;
-        onChanged();
       } else {
         encryptionSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -4331,11 +4382,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder builderForValue) {
       if (encryptionSpecBuilder_ == null) {
         encryptionSpec_ = builderForValue.build();
-        onChanged();
       } else {
         encryptionSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -4352,19 +4403,19 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
       if (encryptionSpecBuilder_ == null) {
-        if (encryptionSpec_ != null) {
-          encryptionSpec_ =
-              com.google.cloud.aiplatform.v1beta1.EncryptionSpec.newBuilder(encryptionSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && encryptionSpec_ != null
+            && encryptionSpec_
+                != com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()) {
+          getEncryptionSpecBuilder().mergeFrom(value);
         } else {
           encryptionSpec_ = value;
         }
-        onChanged();
       } else {
         encryptionSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -4380,14 +4431,13 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEncryptionSpec() {
-      if (encryptionSpecBuilder_ == null) {
-        encryptionSpec_ = null;
-        onChanged();
-      } else {
-        encryptionSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
         encryptionSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4403,7 +4453,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }

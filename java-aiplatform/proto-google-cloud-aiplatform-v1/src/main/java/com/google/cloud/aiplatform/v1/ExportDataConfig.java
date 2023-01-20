@@ -188,7 +188,9 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ANNOTATIONS_FILTER_FIELD_NUMBER = 2;
-  private volatile java.lang.Object annotationsFilter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object annotationsFilter_ = "";
   /**
    *
    *
@@ -464,11 +466,11 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsDestinationBuilder_ != null) {
         gcsDestinationBuilder_.clear();
       }
       annotationsFilter_ = "";
-
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -498,17 +500,27 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.aiplatform.v1.ExportDataConfig buildPartial() {
       com.google.cloud.aiplatform.v1.ExportDataConfig result =
           new com.google.cloud.aiplatform.v1.ExportDataConfig(this);
-      if (destinationCase_ == 1) {
-        if (gcsDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = gcsDestinationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.annotationsFilter_ = annotationsFilter_;
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.ExportDataConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.annotationsFilter_ = annotationsFilter_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.aiplatform.v1.ExportDataConfig result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
+      if (destinationCase_ == 1 && gcsDestinationBuilder_ != null) {
+        result.destination_ = gcsDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -559,6 +571,7 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getAnnotationsFilter().isEmpty()) {
         annotationsFilter_ = other.annotationsFilter_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       switch (other.getDestinationCase()) {
@@ -607,7 +620,7 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
             case 18:
               {
                 annotationsFilter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -640,6 +653,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.GcsDestination,
@@ -919,7 +934,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       }
       destinationCase_ = 1;
       onChanged();
-      ;
       return gcsDestinationBuilder_;
     }
 
@@ -993,8 +1007,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       annotationsFilter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1013,8 +1027,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAnnotationsFilter() {
-
       annotationsFilter_ = getDefaultInstance().getAnnotationsFilter();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1038,8 +1052,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       annotationsFilter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

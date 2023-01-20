@@ -72,7 +72,9 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_MODEL_FIELD_NUMBER = 4;
-  private volatile java.lang.Object parentModel_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parentModel_ = "";
   /**
    *
    *
@@ -178,7 +182,9 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MODEL_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object modelId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object modelId_ = "";
   /**
    *
    *
@@ -278,11 +284,13 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ModelOrBuilder getModelOrBuilder() {
-    return getModel();
+    return model_ == null ? com.google.cloud.aiplatform.v1.Model.getDefaultInstance() : model_;
   }
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 6;
-  private volatile java.lang.Object serviceAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
   /**
    *
    *
@@ -581,20 +589,16 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       parentModel_ = "";
-
       modelId_ = "";
-
-      if (modelBuilder_ == null) {
-        model_ = null;
-      } else {
-        model_ = null;
+      model_ = null;
+      if (modelBuilder_ != null) {
+        modelBuilder_.dispose();
         modelBuilder_ = null;
       }
       serviceAccount_ = "";
-
       return this;
     }
 
@@ -622,17 +626,30 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1.UploadModelRequest buildPartial() {
       com.google.cloud.aiplatform.v1.UploadModelRequest result =
           new com.google.cloud.aiplatform.v1.UploadModelRequest(this);
-      result.parent_ = parent_;
-      result.parentModel_ = parentModel_;
-      result.modelId_ = modelId_;
-      if (modelBuilder_ == null) {
-        result.model_ = model_;
-      } else {
-        result.model_ = modelBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.serviceAccount_ = serviceAccount_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.UploadModelRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parentModel_ = parentModel_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.modelId_ = modelId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.model_ = modelBuilder_ == null ? model_ : modelBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
+      }
     }
 
     @java.lang.Override
@@ -683,14 +700,17 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getParentModel().isEmpty()) {
         parentModel_ = other.parentModel_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getModelId().isEmpty()) {
         modelId_ = other.modelId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasModel()) {
@@ -698,6 +718,7 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -729,31 +750,31 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getModelFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 34:
               {
                 parentModel_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             case 42:
               {
                 modelId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             case 50:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             default:
@@ -772,6 +793,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -843,8 +866,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -863,8 +886,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -888,8 +911,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -958,8 +981,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parentModel_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -976,8 +999,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParentModel() {
-
       parentModel_ = getDefaultInstance().getParentModel();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -999,8 +1022,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parentModel_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1075,8 +1098,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       modelId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1095,8 +1118,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearModelId() {
-
       modelId_ = getDefaultInstance().getModelId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1120,8 +1143,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       modelId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1145,7 +1168,7 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the model field is set.
      */
     public boolean hasModel() {
-      return modelBuilder_ != null || model_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1182,11 +1205,11 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         model_ = value;
-        onChanged();
       } else {
         modelBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1202,11 +1225,11 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
     public Builder setModel(com.google.cloud.aiplatform.v1.Model.Builder builderForValue) {
       if (modelBuilder_ == null) {
         model_ = builderForValue.build();
-        onChanged();
       } else {
         modelBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1221,19 +1244,18 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeModel(com.google.cloud.aiplatform.v1.Model value) {
       if (modelBuilder_ == null) {
-        if (model_ != null) {
-          model_ =
-              com.google.cloud.aiplatform.v1.Model.newBuilder(model_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && model_ != null
+            && model_ != com.google.cloud.aiplatform.v1.Model.getDefaultInstance()) {
+          getModelBuilder().mergeFrom(value);
         } else {
           model_ = value;
         }
-        onChanged();
       } else {
         modelBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1247,14 +1269,13 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearModel() {
-      if (modelBuilder_ == null) {
-        model_ = null;
-        onChanged();
-      } else {
-        model_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      model_ = null;
+      if (modelBuilder_ != null) {
+        modelBuilder_.dispose();
         modelBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1268,7 +1289,7 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.aiplatform.v1.Model.Builder getModelBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getModelFieldBuilder().getBuilder();
     }
@@ -1395,8 +1416,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1418,8 +1439,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearServiceAccount() {
-
       serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1446,8 +1467,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -531,7 +531,7 @@ public final class NearestNeighborSearchOperationMetadata
     }
 
     public static final int ERROR_TYPE_FIELD_NUMBER = 1;
-    private int errorType_;
+    private int errorType_ = 0;
     /**
      *
      *
@@ -566,12 +566,11 @@ public final class NearestNeighborSearchOperationMetadata
     public com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError
             .RecordErrorType
         getErrorType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError
               .RecordErrorType
           result =
               com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError
-                  .RecordErrorType.valueOf(errorType_);
+                  .RecordErrorType.forNumber(errorType_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError
               .RecordErrorType.UNRECOGNIZED
@@ -579,7 +578,9 @@ public final class NearestNeighborSearchOperationMetadata
     }
 
     public static final int ERROR_MESSAGE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object errorMessage_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object errorMessage_ = "";
     /**
      *
      *
@@ -632,7 +633,9 @@ public final class NearestNeighborSearchOperationMetadata
     }
 
     public static final int SOURCE_GCS_URI_FIELD_NUMBER = 3;
-    private volatile java.lang.Object sourceGcsUri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sourceGcsUri_ = "";
     /**
      *
      *
@@ -681,7 +684,9 @@ public final class NearestNeighborSearchOperationMetadata
     }
 
     public static final int EMBEDDING_ID_FIELD_NUMBER = 4;
-    private volatile java.lang.Object embeddingId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object embeddingId_ = "";
     /**
      *
      *
@@ -730,7 +735,9 @@ public final class NearestNeighborSearchOperationMetadata
     }
 
     public static final int RAW_RECORD_FIELD_NUMBER = 5;
-    private volatile java.lang.Object rawRecord_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object rawRecord_ = "";
     /**
      *
      *
@@ -1041,16 +1048,12 @@ public final class NearestNeighborSearchOperationMetadata
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         errorType_ = 0;
-
         errorMessage_ = "";
-
         sourceGcsUri_ = "";
-
         embeddingId_ = "";
-
         rawRecord_ = "";
-
         return this;
       }
 
@@ -1085,13 +1088,32 @@ public final class NearestNeighborSearchOperationMetadata
             result =
                 new com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
                     .RecordError(this);
-        result.errorType_ = errorType_;
-        result.errorMessage_ = errorMessage_;
-        result.sourceGcsUri_ = sourceGcsUri_;
-        result.embeddingId_ = embeddingId_;
-        result.rawRecord_ = rawRecord_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.errorType_ = errorType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.errorMessage_ = errorMessage_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.sourceGcsUri_ = sourceGcsUri_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.embeddingId_ = embeddingId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.rawRecord_ = rawRecord_;
+        }
       }
 
       @java.lang.Override
@@ -1156,18 +1178,22 @@ public final class NearestNeighborSearchOperationMetadata
         }
         if (!other.getErrorMessage().isEmpty()) {
           errorMessage_ = other.errorMessage_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getSourceGcsUri().isEmpty()) {
           sourceGcsUri_ = other.sourceGcsUri_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getEmbeddingId().isEmpty()) {
           embeddingId_ = other.embeddingId_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (!other.getRawRecord().isEmpty()) {
           rawRecord_ = other.rawRecord_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1199,31 +1225,31 @@ public final class NearestNeighborSearchOperationMetadata
               case 8:
                 {
                   errorType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   errorMessage_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   sourceGcsUri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   embeddingId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 42:
                 {
                   rawRecord_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               default:
@@ -1242,6 +1268,8 @@ public final class NearestNeighborSearchOperationMetadata
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int errorType_ = 0;
       /**
@@ -1276,8 +1304,8 @@ public final class NearestNeighborSearchOperationMetadata
        * @return This builder for chaining.
        */
       public Builder setErrorTypeValue(int value) {
-
         errorType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1298,12 +1326,11 @@ public final class NearestNeighborSearchOperationMetadata
       public com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError
               .RecordErrorType
           getErrorType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError
                 .RecordErrorType
             result =
                 com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
-                    .RecordError.RecordErrorType.valueOf(errorType_);
+                    .RecordError.RecordErrorType.forNumber(errorType_);
         return result == null
             ? com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError
                 .RecordErrorType.UNRECOGNIZED
@@ -1330,7 +1357,7 @@ public final class NearestNeighborSearchOperationMetadata
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         errorType_ = value.getNumber();
         onChanged();
         return this;
@@ -1349,7 +1376,7 @@ public final class NearestNeighborSearchOperationMetadata
        * @return This builder for chaining.
        */
       public Builder clearErrorType() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         errorType_ = 0;
         onChanged();
         return this;
@@ -1422,8 +1449,8 @@ public final class NearestNeighborSearchOperationMetadata
         if (value == null) {
           throw new NullPointerException();
         }
-
         errorMessage_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1441,8 +1468,8 @@ public final class NearestNeighborSearchOperationMetadata
        * @return This builder for chaining.
        */
       public Builder clearErrorMessage() {
-
         errorMessage_ = getDefaultInstance().getErrorMessage();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1465,8 +1492,8 @@ public final class NearestNeighborSearchOperationMetadata
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         errorMessage_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1532,8 +1559,8 @@ public final class NearestNeighborSearchOperationMetadata
         if (value == null) {
           throw new NullPointerException();
         }
-
         sourceGcsUri_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1549,8 +1576,8 @@ public final class NearestNeighborSearchOperationMetadata
        * @return This builder for chaining.
        */
       public Builder clearSourceGcsUri() {
-
         sourceGcsUri_ = getDefaultInstance().getSourceGcsUri();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1571,8 +1598,8 @@ public final class NearestNeighborSearchOperationMetadata
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         sourceGcsUri_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1638,8 +1665,8 @@ public final class NearestNeighborSearchOperationMetadata
         if (value == null) {
           throw new NullPointerException();
         }
-
         embeddingId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1655,8 +1682,8 @@ public final class NearestNeighborSearchOperationMetadata
        * @return This builder for chaining.
        */
       public Builder clearEmbeddingId() {
-
         embeddingId_ = getDefaultInstance().getEmbeddingId();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1677,8 +1704,8 @@ public final class NearestNeighborSearchOperationMetadata
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         embeddingId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1744,8 +1771,8 @@ public final class NearestNeighborSearchOperationMetadata
         if (value == null) {
           throw new NullPointerException();
         }
-
         rawRecord_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1761,8 +1788,8 @@ public final class NearestNeighborSearchOperationMetadata
        * @return This builder for chaining.
        */
       public Builder clearRawRecord() {
-
         rawRecord_ = getDefaultInstance().getRawRecord();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1783,8 +1810,8 @@ public final class NearestNeighborSearchOperationMetadata
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         rawRecord_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2043,7 +2070,9 @@ public final class NearestNeighborSearchOperationMetadata
     }
 
     public static final int SOURCE_GCS_URI_FIELD_NUMBER = 1;
-    private volatile java.lang.Object sourceGcsUri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sourceGcsUri_ = "";
     /**
      *
      *
@@ -2092,7 +2121,7 @@ public final class NearestNeighborSearchOperationMetadata
     }
 
     public static final int VALID_RECORD_COUNT_FIELD_NUMBER = 2;
-    private long validRecordCount_;
+    private long validRecordCount_ = 0L;
     /**
      *
      *
@@ -2110,7 +2139,7 @@ public final class NearestNeighborSearchOperationMetadata
     }
 
     public static final int INVALID_RECORD_COUNT_FIELD_NUMBER = 3;
-    private long invalidRecordCount_;
+    private long invalidRecordCount_ = 0L;
     /**
      *
      *
@@ -2128,6 +2157,8 @@ public final class NearestNeighborSearchOperationMetadata
     }
 
     public static final int PARTIAL_ERRORS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError>
         partialErrors_;
@@ -2481,19 +2512,17 @@ public final class NearestNeighborSearchOperationMetadata
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sourceGcsUri_ = "";
-
         validRecordCount_ = 0L;
-
         invalidRecordCount_ = 0L;
-
         if (partialErrorsBuilder_ == null) {
           partialErrors_ = java.util.Collections.emptyList();
         } else {
           partialErrors_ = null;
           partialErrorsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -2533,21 +2562,43 @@ public final class NearestNeighborSearchOperationMetadata
             result =
                 new com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
                     .ContentValidationStats(this);
-        int from_bitField0_ = bitField0_;
-        result.sourceGcsUri_ = sourceGcsUri_;
-        result.validRecordCount_ = validRecordCount_;
-        result.invalidRecordCount_ = invalidRecordCount_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
+                  .ContentValidationStats
+              result) {
         if (partialErrorsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             partialErrors_ = java.util.Collections.unmodifiableList(partialErrors_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.partialErrors_ = partialErrors_;
         } else {
           result.partialErrors_ = partialErrorsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
+                  .ContentValidationStats
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sourceGcsUri_ = sourceGcsUri_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.validRecordCount_ = validRecordCount_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.invalidRecordCount_ = invalidRecordCount_;
+        }
       }
 
       @java.lang.Override
@@ -2610,6 +2661,7 @@ public final class NearestNeighborSearchOperationMetadata
                 .ContentValidationStats.getDefaultInstance()) return this;
         if (!other.getSourceGcsUri().isEmpty()) {
           sourceGcsUri_ = other.sourceGcsUri_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getValidRecordCount() != 0L) {
@@ -2622,7 +2674,7 @@ public final class NearestNeighborSearchOperationMetadata
           if (!other.partialErrors_.isEmpty()) {
             if (partialErrors_.isEmpty()) {
               partialErrors_ = other.partialErrors_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensurePartialErrorsIsMutable();
               partialErrors_.addAll(other.partialErrors_);
@@ -2635,7 +2687,7 @@ public final class NearestNeighborSearchOperationMetadata
               partialErrorsBuilder_.dispose();
               partialErrorsBuilder_ = null;
               partialErrors_ = other.partialErrors_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
               partialErrorsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getPartialErrorsFieldBuilder()
@@ -2674,19 +2726,19 @@ public final class NearestNeighborSearchOperationMetadata
               case 10:
                 {
                   sourceGcsUri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   validRecordCount_ = input.readInt64();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   invalidRecordCount_ = input.readInt64();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 34:
@@ -2786,8 +2838,8 @@ public final class NearestNeighborSearchOperationMetadata
         if (value == null) {
           throw new NullPointerException();
         }
-
         sourceGcsUri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2803,8 +2855,8 @@ public final class NearestNeighborSearchOperationMetadata
        * @return This builder for chaining.
        */
       public Builder clearSourceGcsUri() {
-
         sourceGcsUri_ = getDefaultInstance().getSourceGcsUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2825,8 +2877,8 @@ public final class NearestNeighborSearchOperationMetadata
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         sourceGcsUri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2862,6 +2914,7 @@ public final class NearestNeighborSearchOperationMetadata
       public Builder setValidRecordCount(long value) {
 
         validRecordCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2877,7 +2930,7 @@ public final class NearestNeighborSearchOperationMetadata
        * @return This builder for chaining.
        */
       public Builder clearValidRecordCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         validRecordCount_ = 0L;
         onChanged();
         return this;
@@ -2914,6 +2967,7 @@ public final class NearestNeighborSearchOperationMetadata
       public Builder setInvalidRecordCount(long value) {
 
         invalidRecordCount_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2929,7 +2983,7 @@ public final class NearestNeighborSearchOperationMetadata
        * @return This builder for chaining.
        */
       public Builder clearInvalidRecordCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         invalidRecordCount_ = 0L;
         onChanged();
         return this;
@@ -2941,12 +2995,12 @@ public final class NearestNeighborSearchOperationMetadata
           partialErrors_ = java.util.Collections.emptyList();
 
       private void ensurePartialErrorsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           partialErrors_ =
               new java.util.ArrayList<
                   com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
                       .RecordError>(partialErrors_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
         }
       }
 
@@ -3233,7 +3287,7 @@ public final class NearestNeighborSearchOperationMetadata
       public Builder clearPartialErrors() {
         if (partialErrorsBuilder_ == null) {
           partialErrors_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           partialErrorsBuilder_.clear();
@@ -3408,7 +3462,7 @@ public final class NearestNeighborSearchOperationMetadata
                   com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
                       .RecordErrorOrBuilder>(
                   partialErrors_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           partialErrors_ = null;
@@ -3489,6 +3543,8 @@ public final class NearestNeighborSearchOperationMetadata
   }
 
   public static final int CONTENT_VALIDATION_STATS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
               .ContentValidationStats>
@@ -3606,7 +3662,7 @@ public final class NearestNeighborSearchOperationMetadata
   }
 
   public static final int DATA_BYTES_COUNT_FIELD_NUMBER = 2;
-  private long dataBytesCount_;
+  private long dataBytesCount_ = 0L;
   /**
    *
    *
@@ -3844,6 +3900,7 @@ public final class NearestNeighborSearchOperationMetadata
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (contentValidationStatsBuilder_ == null) {
         contentValidationStats_ = java.util.Collections.emptyList();
       } else {
@@ -3852,7 +3909,6 @@ public final class NearestNeighborSearchOperationMetadata
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       dataBytesCount_ = 0L;
-
       return this;
     }
 
@@ -3884,7 +3940,16 @@ public final class NearestNeighborSearchOperationMetadata
         buildPartial() {
       com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata result =
           new com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata result) {
       if (contentValidationStatsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           contentValidationStats_ = java.util.Collections.unmodifiableList(contentValidationStats_);
@@ -3894,9 +3959,14 @@ public final class NearestNeighborSearchOperationMetadata
       } else {
         result.contentValidationStats_ = contentValidationStatsBuilder_.build();
       }
-      result.dataBytesCount_ = dataBytesCount_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataBytesCount_ = dataBytesCount_;
+      }
     }
 
     @java.lang.Override
@@ -4026,7 +4096,7 @@ public final class NearestNeighborSearchOperationMetadata
             case 16:
               {
                 dataBytesCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -4618,6 +4688,7 @@ public final class NearestNeighborSearchOperationMetadata
     public Builder setDataBytesCount(long value) {
 
       dataBytesCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -4633,7 +4704,7 @@ public final class NearestNeighborSearchOperationMetadata
      * @return This builder for chaining.
      */
     public Builder clearDataBytesCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       dataBytesCount_ = 0L;
       onChanged();
       return this;

@@ -269,11 +269,13 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
-    return getGcsSource();
+    return gcsSource_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GcsSource.getDefaultInstance()
+        : gcsSource_;
   }
 
   public static final int NEIGHBOR_COUNT_FIELD_NUMBER = 3;
-  private int neighborCount_;
+  private int neighborCount_ = 0;
   /**
    *
    *
@@ -542,20 +544,19 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (nearestNeighborSearchConfigBuilder_ != null) {
         nearestNeighborSearchConfigBuilder_.clear();
       }
       if (presetsBuilder_ != null) {
         presetsBuilder_.clear();
       }
-      if (gcsSourceBuilder_ == null) {
-        gcsSource_ = null;
-      } else {
-        gcsSource_ = null;
+      gcsSource_ = null;
+      if (gcsSourceBuilder_ != null) {
+        gcsSourceBuilder_.dispose();
         gcsSourceBuilder_ = null;
       }
       neighborCount_ = 0;
-
       configCase_ = 0;
       config_ = null;
       return this;
@@ -585,29 +586,33 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.Examples buildPartial() {
       com.google.cloud.aiplatform.v1beta1.Examples result =
           new com.google.cloud.aiplatform.v1beta1.Examples(this);
-      if (configCase_ == 2) {
-        if (nearestNeighborSearchConfigBuilder_ == null) {
-          result.config_ = config_;
-        } else {
-          result.config_ = nearestNeighborSearchConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (configCase_ == 4) {
-        if (presetsBuilder_ == null) {
-          result.config_ = config_;
-        } else {
-          result.config_ = presetsBuilder_.build();
-        }
-      }
-      if (gcsSourceBuilder_ == null) {
-        result.gcsSource_ = gcsSource_;
-      } else {
-        result.gcsSource_ = gcsSourceBuilder_.build();
-      }
-      result.neighborCount_ = neighborCount_;
-      result.configCase_ = configCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Examples result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.gcsSource_ = gcsSourceBuilder_ == null ? gcsSource_ : gcsSourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.neighborCount_ = neighborCount_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.aiplatform.v1beta1.Examples result) {
+      result.configCase_ = configCase_;
+      result.config_ = this.config_;
+      if (configCase_ == 2 && nearestNeighborSearchConfigBuilder_ != null) {
+        result.config_ = nearestNeighborSearchConfigBuilder_.build();
+      }
+      if (configCase_ == 4 && presetsBuilder_ != null) {
+        result.config_ = presetsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -706,7 +711,7 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getGcsSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
@@ -719,7 +724,7 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 neighborCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 34:
@@ -758,6 +763,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Value,
@@ -979,7 +986,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       }
       configCase_ = 2;
       onChanged();
-      ;
       return nearestNeighborSearchConfigBuilder_;
     }
 
@@ -1197,7 +1203,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       }
       configCase_ = 4;
       onChanged();
-      ;
       return presetsBuilder_;
     }
 
@@ -1219,7 +1224,7 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gcsSource field is set.
      */
     public boolean hasGcsSource() {
-      return gcsSourceBuilder_ != null || gcsSource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1256,11 +1261,11 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         gcsSource_ = value;
-        onChanged();
       } else {
         gcsSourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1276,11 +1281,11 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.aiplatform.v1beta1.GcsSource.Builder builderForValue) {
       if (gcsSourceBuilder_ == null) {
         gcsSource_ = builderForValue.build();
-        onChanged();
       } else {
         gcsSourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1294,19 +1299,18 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeGcsSource(com.google.cloud.aiplatform.v1beta1.GcsSource value) {
       if (gcsSourceBuilder_ == null) {
-        if (gcsSource_ != null) {
-          gcsSource_ =
-              com.google.cloud.aiplatform.v1beta1.GcsSource.newBuilder(gcsSource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && gcsSource_ != null
+            && gcsSource_ != com.google.cloud.aiplatform.v1beta1.GcsSource.getDefaultInstance()) {
+          getGcsSourceBuilder().mergeFrom(value);
         } else {
           gcsSource_ = value;
         }
-        onChanged();
       } else {
         gcsSourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1319,14 +1323,13 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
      */
     public Builder clearGcsSource() {
-      if (gcsSourceBuilder_ == null) {
-        gcsSource_ = null;
-        onChanged();
-      } else {
-        gcsSource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      gcsSource_ = null;
+      if (gcsSourceBuilder_ != null) {
+        gcsSourceBuilder_.dispose();
         gcsSourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1339,7 +1342,7 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.GcsSource.Builder getGcsSourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getGcsSourceFieldBuilder().getBuilder();
     }
@@ -1418,6 +1421,7 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     public Builder setNeighborCount(int value) {
 
       neighborCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1433,7 +1437,7 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNeighborCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       neighborCount_ = 0;
       onChanged();
       return this;

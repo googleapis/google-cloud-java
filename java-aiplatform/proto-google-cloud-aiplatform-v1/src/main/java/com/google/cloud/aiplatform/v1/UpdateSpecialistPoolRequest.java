@@ -117,7 +117,9 @@ public final class UpdateSpecialistPoolRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.SpecialistPoolOrBuilder getSpecialistPoolOrBuilder() {
-    return getSpecialistPool();
+    return specialistPool_ == null
+        ? com.google.cloud.aiplatform.v1.SpecialistPool.getDefaultInstance()
+        : specialistPool_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -166,7 +168,7 @@ public final class UpdateSpecialistPoolRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -387,16 +389,15 @@ public final class UpdateSpecialistPoolRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (specialistPoolBuilder_ == null) {
-        specialistPool_ = null;
-      } else {
-        specialistPool_ = null;
+      bitField0_ = 0;
+      specialistPool_ = null;
+      if (specialistPoolBuilder_ != null) {
+        specialistPoolBuilder_.dispose();
         specialistPoolBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -426,18 +427,22 @@ public final class UpdateSpecialistPoolRequest extends com.google.protobuf.Gener
     public com.google.cloud.aiplatform.v1.UpdateSpecialistPoolRequest buildPartial() {
       com.google.cloud.aiplatform.v1.UpdateSpecialistPoolRequest result =
           new com.google.cloud.aiplatform.v1.UpdateSpecialistPoolRequest(this);
-      if (specialistPoolBuilder_ == null) {
-        result.specialistPool_ = specialistPool_;
-      } else {
-        result.specialistPool_ = specialistPoolBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.UpdateSpecialistPoolRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.specialistPool_ =
+            specialistPoolBuilder_ == null ? specialistPool_ : specialistPoolBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -521,13 +526,13 @@ public final class UpdateSpecialistPoolRequest extends com.google.protobuf.Gener
             case 10:
               {
                 input.readMessage(getSpecialistPoolFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -546,6 +551,8 @@ public final class UpdateSpecialistPoolRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1.SpecialistPool specialistPool_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -567,7 +574,7 @@ public final class UpdateSpecialistPoolRequest extends com.google.protobuf.Gener
      * @return Whether the specialistPool field is set.
      */
     public boolean hasSpecialistPool() {
-      return specialistPoolBuilder_ != null || specialistPool_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -608,11 +615,11 @@ public final class UpdateSpecialistPoolRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         specialistPool_ = value;
-        onChanged();
       } else {
         specialistPoolBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -630,11 +637,11 @@ public final class UpdateSpecialistPoolRequest extends com.google.protobuf.Gener
         com.google.cloud.aiplatform.v1.SpecialistPool.Builder builderForValue) {
       if (specialistPoolBuilder_ == null) {
         specialistPool_ = builderForValue.build();
-        onChanged();
       } else {
         specialistPoolBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -650,19 +657,19 @@ public final class UpdateSpecialistPoolRequest extends com.google.protobuf.Gener
      */
     public Builder mergeSpecialistPool(com.google.cloud.aiplatform.v1.SpecialistPool value) {
       if (specialistPoolBuilder_ == null) {
-        if (specialistPool_ != null) {
-          specialistPool_ =
-              com.google.cloud.aiplatform.v1.SpecialistPool.newBuilder(specialistPool_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && specialistPool_ != null
+            && specialistPool_
+                != com.google.cloud.aiplatform.v1.SpecialistPool.getDefaultInstance()) {
+          getSpecialistPoolBuilder().mergeFrom(value);
         } else {
           specialistPool_ = value;
         }
-        onChanged();
       } else {
         specialistPoolBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -677,14 +684,13 @@ public final class UpdateSpecialistPoolRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearSpecialistPool() {
-      if (specialistPoolBuilder_ == null) {
-        specialistPool_ = null;
-        onChanged();
-      } else {
-        specialistPool_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      specialistPool_ = null;
+      if (specialistPoolBuilder_ != null) {
+        specialistPoolBuilder_.dispose();
         specialistPoolBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -699,7 +705,7 @@ public final class UpdateSpecialistPoolRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.cloud.aiplatform.v1.SpecialistPool.Builder getSpecialistPoolBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSpecialistPoolFieldBuilder().getBuilder();
     }
@@ -770,7 +776,7 @@ public final class UpdateSpecialistPoolRequest extends com.google.protobuf.Gener
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -809,11 +815,11 @@ public final class UpdateSpecialistPoolRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -829,11 +835,11 @@ public final class UpdateSpecialistPoolRequest extends com.google.protobuf.Gener
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -848,17 +854,18 @@ public final class UpdateSpecialistPoolRequest extends com.google.protobuf.Gener
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -872,14 +879,13 @@ public final class UpdateSpecialistPoolRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -893,7 +899,7 @@ public final class UpdateSpecialistPoolRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

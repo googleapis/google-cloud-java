@@ -66,7 +66,7 @@ public final class Scalar extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUE_FIELD_NUMBER = 1;
-  private double value_;
+  private double value_ = 0D;
   /**
    *
    *
@@ -281,8 +281,8 @@ public final class Scalar extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       value_ = 0D;
-
       return this;
     }
 
@@ -310,9 +310,18 @@ public final class Scalar extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.Scalar buildPartial() {
       com.google.cloud.aiplatform.v1.Scalar result =
           new com.google.cloud.aiplatform.v1.Scalar(this);
-      result.value_ = value_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.Scalar result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.value_ = value_;
+      }
     }
 
     @java.lang.Override
@@ -392,7 +401,7 @@ public final class Scalar extends com.google.protobuf.GeneratedMessageV3
             case 9:
               {
                 value_ = input.readDouble();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 9
             default:
@@ -411,6 +420,8 @@ public final class Scalar extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private double value_;
     /**
@@ -443,6 +454,7 @@ public final class Scalar extends com.google.protobuf.GeneratedMessageV3
     public Builder setValue(double value) {
 
       value_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -458,7 +470,7 @@ public final class Scalar extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       value_ = 0D;
       onChanged();
       return this;

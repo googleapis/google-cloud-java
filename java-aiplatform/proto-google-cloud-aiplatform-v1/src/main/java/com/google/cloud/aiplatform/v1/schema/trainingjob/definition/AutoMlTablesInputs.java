@@ -408,7 +408,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       }
 
       public static final int COLUMN_NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object columnName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object columnName_ = "";
       /**
        * <code>string column_name = 1;</code>
        *
@@ -679,8 +681,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           columnName_ = "";
-
           return this;
         }
 
@@ -720,9 +722,21 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
               result =
                   new com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                       .AutoMlTablesInputs.Transformation.AutoTransformation(this);
-          result.columnName_ = columnName_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
+                    .Transformation.AutoTransformation
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.columnName_ = columnName_;
+          }
         }
 
         @java.lang.Override
@@ -785,6 +799,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                   .Transformation.AutoTransformation.getDefaultInstance()) return this;
           if (!other.getColumnName().isEmpty()) {
             columnName_ = other.columnName_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -816,7 +831,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                 case 10:
                   {
                     columnName_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 default:
@@ -835,6 +850,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object columnName_ = "";
         /**
@@ -879,8 +896,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           if (value == null) {
             throw new NullPointerException();
           }
-
           columnName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -890,8 +907,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
          * @return This builder for chaining.
          */
         public Builder clearColumnName() {
-
           columnName_ = getDefaultInstance().getColumnName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -906,8 +923,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           columnName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1080,7 +1097,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       }
 
       public static final int COLUMN_NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object columnName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object columnName_ = "";
       /**
        * <code>string column_name = 1;</code>
        *
@@ -1117,7 +1136,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       }
 
       public static final int INVALID_VALUES_ALLOWED_FIELD_NUMBER = 2;
-      private boolean invalidValuesAllowed_;
+      private boolean invalidValuesAllowed_ = false;
       /**
        *
        *
@@ -1389,10 +1408,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           columnName_ = "";
-
           invalidValuesAllowed_ = false;
-
           return this;
         }
 
@@ -1432,10 +1450,24 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
               result =
                   new com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                       .AutoMlTablesInputs.Transformation.NumericTransformation(this);
-          result.columnName_ = columnName_;
-          result.invalidValuesAllowed_ = invalidValuesAllowed_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
+                    .Transformation.NumericTransformation
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.columnName_ = columnName_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.invalidValuesAllowed_ = invalidValuesAllowed_;
+          }
         }
 
         @java.lang.Override
@@ -1498,6 +1530,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                   .Transformation.NumericTransformation.getDefaultInstance()) return this;
           if (!other.getColumnName().isEmpty()) {
             columnName_ = other.columnName_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (other.getInvalidValuesAllowed() != false) {
@@ -1532,13 +1565,13 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                 case 10:
                   {
                     columnName_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 16:
                   {
                     invalidValuesAllowed_ = input.readBool();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 default:
@@ -1557,6 +1590,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object columnName_ = "";
         /**
@@ -1601,8 +1636,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           if (value == null) {
             throw new NullPointerException();
           }
-
           columnName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1612,8 +1647,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
          * @return This builder for chaining.
          */
         public Builder clearColumnName() {
-
           columnName_ = getDefaultInstance().getColumnName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -1628,8 +1663,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           columnName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1671,6 +1706,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         public Builder setInvalidValuesAllowed(boolean value) {
 
           invalidValuesAllowed_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1689,7 +1725,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
          * @return This builder for chaining.
          */
         public Builder clearInvalidValuesAllowed() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           invalidValuesAllowed_ = false;
           onChanged();
           return this;
@@ -1847,7 +1883,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       }
 
       public static final int COLUMN_NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object columnName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object columnName_ = "";
       /**
        * <code>string column_name = 1;</code>
        *
@@ -2125,8 +2163,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           columnName_ = "";
-
           return this;
         }
 
@@ -2166,9 +2204,21 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
               result =
                   new com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                       .AutoMlTablesInputs.Transformation.CategoricalTransformation(this);
-          result.columnName_ = columnName_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
+                    .Transformation.CategoricalTransformation
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.columnName_ = columnName_;
+          }
         }
 
         @java.lang.Override
@@ -2231,6 +2281,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                   .Transformation.CategoricalTransformation.getDefaultInstance()) return this;
           if (!other.getColumnName().isEmpty()) {
             columnName_ = other.columnName_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -2262,7 +2313,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                 case 10:
                   {
                     columnName_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 default:
@@ -2281,6 +2332,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object columnName_ = "";
         /**
@@ -2325,8 +2378,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           if (value == null) {
             throw new NullPointerException();
           }
-
           columnName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2336,8 +2389,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
          * @return This builder for chaining.
          */
         public Builder clearColumnName() {
-
           columnName_ = getDefaultInstance().getColumnName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -2352,8 +2405,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           columnName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2569,7 +2622,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       }
 
       public static final int COLUMN_NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object columnName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object columnName_ = "";
       /**
        * <code>string column_name = 1;</code>
        *
@@ -2606,7 +2661,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       }
 
       public static final int TIME_FORMAT_FIELD_NUMBER = 2;
-      private volatile java.lang.Object timeFormat_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object timeFormat_ = "";
       /**
        *
        *
@@ -2675,7 +2732,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       }
 
       public static final int INVALID_VALUES_ALLOWED_FIELD_NUMBER = 3;
-      private boolean invalidValuesAllowed_;
+      private boolean invalidValuesAllowed_ = false;
       /**
        *
        *
@@ -2953,12 +3010,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           columnName_ = "";
-
           timeFormat_ = "";
-
           invalidValuesAllowed_ = false;
-
           return this;
         }
 
@@ -2998,11 +3053,27 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
               result =
                   new com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                       .AutoMlTablesInputs.Transformation.TimestampTransformation(this);
-          result.columnName_ = columnName_;
-          result.timeFormat_ = timeFormat_;
-          result.invalidValuesAllowed_ = invalidValuesAllowed_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
+                    .Transformation.TimestampTransformation
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.columnName_ = columnName_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.timeFormat_ = timeFormat_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.invalidValuesAllowed_ = invalidValuesAllowed_;
+          }
         }
 
         @java.lang.Override
@@ -3065,10 +3136,12 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                   .Transformation.TimestampTransformation.getDefaultInstance()) return this;
           if (!other.getColumnName().isEmpty()) {
             columnName_ = other.columnName_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getTimeFormat().isEmpty()) {
             timeFormat_ = other.timeFormat_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           if (other.getInvalidValuesAllowed() != false) {
@@ -3103,19 +3176,19 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                 case 10:
                   {
                     columnName_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     timeFormat_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 case 24:
                   {
                     invalidValuesAllowed_ = input.readBool();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 24
                 default:
@@ -3134,6 +3207,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object columnName_ = "";
         /**
@@ -3178,8 +3253,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           if (value == null) {
             throw new NullPointerException();
           }
-
           columnName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -3189,8 +3264,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
          * @return This builder for chaining.
          */
         public Builder clearColumnName() {
-
           columnName_ = getDefaultInstance().getColumnName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -3205,8 +3280,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           columnName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -3302,8 +3377,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           if (value == null) {
             throw new NullPointerException();
           }
-
           timeFormat_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -3329,8 +3404,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
          * @return This builder for chaining.
          */
         public Builder clearTimeFormat() {
-
           timeFormat_ = getDefaultInstance().getTimeFormat();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -3361,8 +3436,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           timeFormat_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -3404,6 +3479,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         public Builder setInvalidValuesAllowed(boolean value) {
 
           invalidValuesAllowed_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -3422,7 +3498,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
          * @return This builder for chaining.
          */
         public Builder clearInvalidValuesAllowed() {
-
+          bitField0_ = (bitField0_ & ~0x00000004);
           invalidValuesAllowed_ = false;
           onChanged();
           return this;
@@ -3581,7 +3657,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       }
 
       public static final int COLUMN_NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object columnName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object columnName_ = "";
       /**
        * <code>string column_name = 1;</code>
        *
@@ -3861,8 +3939,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           columnName_ = "";
-
           return this;
         }
 
@@ -3902,9 +3980,21 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
               result =
                   new com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                       .AutoMlTablesInputs.Transformation.TextTransformation(this);
-          result.columnName_ = columnName_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
+                    .Transformation.TextTransformation
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.columnName_ = columnName_;
+          }
         }
 
         @java.lang.Override
@@ -3967,6 +4057,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                   .Transformation.TextTransformation.getDefaultInstance()) return this;
           if (!other.getColumnName().isEmpty()) {
             columnName_ = other.columnName_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -3998,7 +4089,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                 case 10:
                   {
                     columnName_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 default:
@@ -4017,6 +4108,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object columnName_ = "";
         /**
@@ -4061,8 +4154,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           if (value == null) {
             throw new NullPointerException();
           }
-
           columnName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -4072,8 +4165,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
          * @return This builder for chaining.
          */
         public Builder clearColumnName() {
-
           columnName_ = getDefaultInstance().getColumnName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -4088,8 +4181,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           columnName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -4259,7 +4352,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       }
 
       public static final int COLUMN_NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object columnName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object columnName_ = "";
       /**
        * <code>string column_name = 1;</code>
        *
@@ -4296,7 +4391,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       }
 
       public static final int INVALID_VALUES_ALLOWED_FIELD_NUMBER = 2;
-      private boolean invalidValuesAllowed_;
+      private boolean invalidValuesAllowed_ = false;
       /**
        *
        *
@@ -4563,10 +4658,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           columnName_ = "";
-
           invalidValuesAllowed_ = false;
-
           return this;
         }
 
@@ -4606,10 +4700,24 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
               result =
                   new com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                       .AutoMlTablesInputs.Transformation.NumericArrayTransformation(this);
-          result.columnName_ = columnName_;
-          result.invalidValuesAllowed_ = invalidValuesAllowed_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
+                    .Transformation.NumericArrayTransformation
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.columnName_ = columnName_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.invalidValuesAllowed_ = invalidValuesAllowed_;
+          }
         }
 
         @java.lang.Override
@@ -4672,6 +4780,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                   .Transformation.NumericArrayTransformation.getDefaultInstance()) return this;
           if (!other.getColumnName().isEmpty()) {
             columnName_ = other.columnName_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (other.getInvalidValuesAllowed() != false) {
@@ -4706,13 +4815,13 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                 case 10:
                   {
                     columnName_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 16:
                   {
                     invalidValuesAllowed_ = input.readBool();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 default:
@@ -4731,6 +4840,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object columnName_ = "";
         /**
@@ -4775,8 +4886,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           if (value == null) {
             throw new NullPointerException();
           }
-
           columnName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -4786,8 +4897,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
          * @return This builder for chaining.
          */
         public Builder clearColumnName() {
-
           columnName_ = getDefaultInstance().getColumnName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -4802,8 +4913,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           columnName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -4845,6 +4956,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         public Builder setInvalidValuesAllowed(boolean value) {
 
           invalidValuesAllowed_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -4863,7 +4975,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
          * @return This builder for chaining.
          */
         public Builder clearInvalidValuesAllowed() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           invalidValuesAllowed_ = false;
           onChanged();
           return this;
@@ -5021,7 +5133,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       }
 
       public static final int COLUMN_NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object columnName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object columnName_ = "";
       /**
        * <code>string column_name = 1;</code>
        *
@@ -5298,8 +5412,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           columnName_ = "";
-
           return this;
         }
 
@@ -5339,9 +5453,21 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
               result =
                   new com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                       .AutoMlTablesInputs.Transformation.CategoricalArrayTransformation(this);
-          result.columnName_ = columnName_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
+                    .Transformation.CategoricalArrayTransformation
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.columnName_ = columnName_;
+          }
         }
 
         @java.lang.Override
@@ -5404,6 +5530,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                   .Transformation.CategoricalArrayTransformation.getDefaultInstance()) return this;
           if (!other.getColumnName().isEmpty()) {
             columnName_ = other.columnName_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -5435,7 +5562,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                 case 10:
                   {
                     columnName_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 default:
@@ -5454,6 +5581,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object columnName_ = "";
         /**
@@ -5498,8 +5627,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           if (value == null) {
             throw new NullPointerException();
           }
-
           columnName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -5509,8 +5638,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
          * @return This builder for chaining.
          */
         public Builder clearColumnName() {
-
           columnName_ = getDefaultInstance().getColumnName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -5525,8 +5654,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           columnName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -5680,7 +5809,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       }
 
       public static final int COLUMN_NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object columnName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object columnName_ = "";
       /**
        * <code>string column_name = 1;</code>
        *
@@ -5956,8 +6087,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           columnName_ = "";
-
           return this;
         }
 
@@ -5997,9 +6128,21 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
               result =
                   new com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                       .AutoMlTablesInputs.Transformation.TextArrayTransformation(this);
-          result.columnName_ = columnName_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
+                    .Transformation.TextArrayTransformation
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.columnName_ = columnName_;
+          }
         }
 
         @java.lang.Override
@@ -6062,6 +6205,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                   .Transformation.TextArrayTransformation.getDefaultInstance()) return this;
           if (!other.getColumnName().isEmpty()) {
             columnName_ = other.columnName_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -6093,7 +6237,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                 case 10:
                   {
                     columnName_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 default:
@@ -6112,6 +6256,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object columnName_ = "";
         /**
@@ -6156,8 +6302,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           if (value == null) {
             throw new NullPointerException();
           }
-
           columnName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -6167,8 +6313,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
          * @return This builder for chaining.
          */
         public Builder clearColumnName() {
-
           columnName_ = getDefaultInstance().getColumnName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -6183,8 +6329,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           columnName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -7119,6 +7265,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (autoBuilder_ != null) {
           autoBuilder_.clear();
         }
@@ -7184,65 +7331,51 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             result =
                 new com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
                     .Transformation(this);
-        if (transformationDetailCase_ == 1) {
-          if (autoBuilder_ == null) {
-            result.transformationDetail_ = transformationDetail_;
-          } else {
-            result.transformationDetail_ = autoBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (transformationDetailCase_ == 2) {
-          if (numericBuilder_ == null) {
-            result.transformationDetail_ = transformationDetail_;
-          } else {
-            result.transformationDetail_ = numericBuilder_.build();
-          }
-        }
-        if (transformationDetailCase_ == 3) {
-          if (categoricalBuilder_ == null) {
-            result.transformationDetail_ = transformationDetail_;
-          } else {
-            result.transformationDetail_ = categoricalBuilder_.build();
-          }
-        }
-        if (transformationDetailCase_ == 4) {
-          if (timestampBuilder_ == null) {
-            result.transformationDetail_ = transformationDetail_;
-          } else {
-            result.transformationDetail_ = timestampBuilder_.build();
-          }
-        }
-        if (transformationDetailCase_ == 5) {
-          if (textBuilder_ == null) {
-            result.transformationDetail_ = transformationDetail_;
-          } else {
-            result.transformationDetail_ = textBuilder_.build();
-          }
-        }
-        if (transformationDetailCase_ == 6) {
-          if (repeatedNumericBuilder_ == null) {
-            result.transformationDetail_ = transformationDetail_;
-          } else {
-            result.transformationDetail_ = repeatedNumericBuilder_.build();
-          }
-        }
-        if (transformationDetailCase_ == 7) {
-          if (repeatedCategoricalBuilder_ == null) {
-            result.transformationDetail_ = transformationDetail_;
-          } else {
-            result.transformationDetail_ = repeatedCategoricalBuilder_.build();
-          }
-        }
-        if (transformationDetailCase_ == 8) {
-          if (repeatedTextBuilder_ == null) {
-            result.transformationDetail_ = transformationDetail_;
-          } else {
-            result.transformationDetail_ = repeatedTextBuilder_.build();
-          }
-        }
-        result.transformationDetailCase_ = transformationDetailCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
+                  .Transformation
+              result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
+                  .Transformation
+              result) {
+        result.transformationDetailCase_ = transformationDetailCase_;
+        result.transformationDetail_ = this.transformationDetail_;
+        if (transformationDetailCase_ == 1 && autoBuilder_ != null) {
+          result.transformationDetail_ = autoBuilder_.build();
+        }
+        if (transformationDetailCase_ == 2 && numericBuilder_ != null) {
+          result.transformationDetail_ = numericBuilder_.build();
+        }
+        if (transformationDetailCase_ == 3 && categoricalBuilder_ != null) {
+          result.transformationDetail_ = categoricalBuilder_.build();
+        }
+        if (transformationDetailCase_ == 4 && timestampBuilder_ != null) {
+          result.transformationDetail_ = timestampBuilder_.build();
+        }
+        if (transformationDetailCase_ == 5 && textBuilder_ != null) {
+          result.transformationDetail_ = textBuilder_.build();
+        }
+        if (transformationDetailCase_ == 6 && repeatedNumericBuilder_ != null) {
+          result.transformationDetail_ = repeatedNumericBuilder_.build();
+        }
+        if (transformationDetailCase_ == 7 && repeatedCategoricalBuilder_ != null) {
+          result.transformationDetail_ = repeatedCategoricalBuilder_.build();
+        }
+        if (transformationDetailCase_ == 8 && repeatedTextBuilder_ != null) {
+          result.transformationDetail_ = repeatedTextBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -7456,6 +7589,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
                   .Transformation.AutoTransformation,
@@ -7665,7 +7800,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         }
         transformationDetailCase_ = 1;
         onChanged();
-        ;
         return autoBuilder_;
       }
 
@@ -7878,7 +8012,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         }
         transformationDetailCase_ = 2;
         onChanged();
-        ;
         return numericBuilder_;
       }
 
@@ -8091,7 +8224,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         }
         transformationDetailCase_ = 3;
         onChanged();
-        ;
         return categoricalBuilder_;
       }
 
@@ -8304,7 +8436,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         }
         transformationDetailCase_ = 4;
         onChanged();
-        ;
         return timestampBuilder_;
       }
 
@@ -8517,7 +8648,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         }
         transformationDetailCase_ = 5;
         onChanged();
-        ;
         return textBuilder_;
       }
 
@@ -8730,7 +8860,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         }
         transformationDetailCase_ = 6;
         onChanged();
-        ;
         return repeatedNumericBuilder_;
       }
 
@@ -8943,7 +9072,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         }
         transformationDetailCase_ = 7;
         onChanged();
-        ;
         return repeatedCategoricalBuilder_;
       }
 
@@ -9156,7 +9284,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         }
         transformationDetailCase_ = 8;
         onChanged();
-        ;
         return repeatedTextBuilder_;
       }
 
@@ -9355,7 +9482,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PREDICTION_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object predictionType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object predictionType_ = "";
   /**
    *
    *
@@ -9416,7 +9545,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TARGET_COLUMN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object targetColumn_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetColumn_ = "";
   /**
    *
    *
@@ -9465,6 +9596,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TRANSFORMATIONS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
               .Transformation>
@@ -9572,7 +9705,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int OPTIMIZATION_OBJECTIVE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object optimizationObjective_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object optimizationObjective_ = "";
   /**
    *
    *
@@ -9659,7 +9794,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TRAIN_BUDGET_MILLI_NODE_HOURS_FIELD_NUMBER = 7;
-  private long trainBudgetMilliNodeHours_;
+  private long trainBudgetMilliNodeHours_ = 0L;
   /**
    *
    *
@@ -9687,7 +9822,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DISABLE_EARLY_STOPPING_FIELD_NUMBER = 8;
-  private boolean disableEarlyStopping_;
+  private boolean disableEarlyStopping_ = false;
   /**
    *
    *
@@ -9707,7 +9842,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int WEIGHT_COLUMN_NAME_FIELD_NUMBER = 9;
-  private volatile java.lang.Object weightColumnName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object weightColumnName_ = "";
   /**
    *
    *
@@ -9825,10 +9962,15 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.aiplatform.v1.schema.trainingjob.definition
           .ExportEvaluatedDataItemsConfigOrBuilder
       getExportEvaluatedDataItemsConfigOrBuilder() {
-    return getExportEvaluatedDataItemsConfig();
+    return exportEvaluatedDataItemsConfig_ == null
+        ? com.google.cloud.aiplatform.v1.schema.trainingjob.definition
+            .ExportEvaluatedDataItemsConfig.getDefaultInstance()
+        : exportEvaluatedDataItemsConfig_;
   }
 
   public static final int ADDITIONAL_EXPERIMENTS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList additionalExperiments_;
   /**
    *
@@ -10228,33 +10370,27 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       predictionType_ = "";
-
       targetColumn_ = "";
-
       if (transformationsBuilder_ == null) {
         transformations_ = java.util.Collections.emptyList();
       } else {
         transformations_ = null;
         transformationsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       optimizationObjective_ = "";
-
       trainBudgetMilliNodeHours_ = 0L;
-
       disableEarlyStopping_ = false;
-
       weightColumnName_ = "";
-
-      if (exportEvaluatedDataItemsConfigBuilder_ == null) {
-        exportEvaluatedDataItemsConfig_ = null;
-      } else {
-        exportEvaluatedDataItemsConfig_ = null;
+      exportEvaluatedDataItemsConfig_ = null;
+      if (exportEvaluatedDataItemsConfigBuilder_ != null) {
+        exportEvaluatedDataItemsConfigBuilder_.dispose();
         exportEvaluatedDataItemsConfigBuilder_ = null;
       }
       additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000400);
       additionalOptimizationObjectiveConfigCase_ = 0;
       additionalOptimizationObjectiveConfig_ = null;
       return this;
@@ -10288,42 +10424,67 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         buildPartial() {
       com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs result =
           new com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs(this);
-      int from_bitField0_ = bitField0_;
-      if (additionalOptimizationObjectiveConfigCase_ == 5) {
-        result.additionalOptimizationObjectiveConfig_ = additionalOptimizationObjectiveConfig_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (additionalOptimizationObjectiveConfigCase_ == 6) {
-        result.additionalOptimizationObjectiveConfig_ = additionalOptimizationObjectiveConfig_;
-      }
-      result.predictionType_ = predictionType_;
-      result.targetColumn_ = targetColumn_;
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs result) {
       if (transformationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           transformations_ = java.util.Collections.unmodifiableList(transformations_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.transformations_ = transformations_;
       } else {
         result.transformations_ = transformationsBuilder_.build();
       }
-      result.optimizationObjective_ = optimizationObjective_;
-      result.trainBudgetMilliNodeHours_ = trainBudgetMilliNodeHours_;
-      result.disableEarlyStopping_ = disableEarlyStopping_;
-      result.weightColumnName_ = weightColumnName_;
-      if (exportEvaluatedDataItemsConfigBuilder_ == null) {
-        result.exportEvaluatedDataItemsConfig_ = exportEvaluatedDataItemsConfig_;
-      } else {
-        result.exportEvaluatedDataItemsConfig_ = exportEvaluatedDataItemsConfigBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         additionalExperiments_ = additionalExperiments_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000400);
       }
       result.additionalExperiments_ = additionalExperiments_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.predictionType_ = predictionType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.targetColumn_ = targetColumn_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.optimizationObjective_ = optimizationObjective_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.trainBudgetMilliNodeHours_ = trainBudgetMilliNodeHours_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.disableEarlyStopping_ = disableEarlyStopping_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.weightColumnName_ = weightColumnName_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.exportEvaluatedDataItemsConfig_ =
+            exportEvaluatedDataItemsConfigBuilder_ == null
+                ? exportEvaluatedDataItemsConfig_
+                : exportEvaluatedDataItemsConfigBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs result) {
       result.additionalOptimizationObjectiveConfigCase_ =
           additionalOptimizationObjectiveConfigCase_;
-      onBuilt();
-      return result;
+      result.additionalOptimizationObjectiveConfig_ = this.additionalOptimizationObjectiveConfig_;
     }
 
     @java.lang.Override
@@ -10380,17 +10541,19 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
               .getDefaultInstance()) return this;
       if (!other.getPredictionType().isEmpty()) {
         predictionType_ = other.predictionType_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getTargetColumn().isEmpty()) {
         targetColumn_ = other.targetColumn_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (transformationsBuilder_ == null) {
         if (!other.transformations_.isEmpty()) {
           if (transformations_.isEmpty()) {
             transformations_ = other.transformations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureTransformationsIsMutable();
             transformations_.addAll(other.transformations_);
@@ -10403,7 +10566,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             transformationsBuilder_.dispose();
             transformationsBuilder_ = null;
             transformations_ = other.transformations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             transformationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTransformationsFieldBuilder()
@@ -10415,6 +10578,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getOptimizationObjective().isEmpty()) {
         optimizationObjective_ = other.optimizationObjective_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.getTrainBudgetMilliNodeHours() != 0L) {
@@ -10425,6 +10589,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getWeightColumnName().isEmpty()) {
         weightColumnName_ = other.weightColumnName_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasExportEvaluatedDataItemsConfig()) {
@@ -10433,7 +10598,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       if (!other.additionalExperiments_.isEmpty()) {
         if (additionalExperiments_.isEmpty()) {
           additionalExperiments_ = other.additionalExperiments_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureAdditionalExperimentsIsMutable();
           additionalExperiments_.addAll(other.additionalExperiments_);
@@ -10485,13 +10650,13 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 predictionType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 targetColumn_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
@@ -10514,7 +10679,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             case 34:
               {
                 optimizationObjective_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 45:
@@ -10532,19 +10697,19 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             case 56:
               {
                 trainBudgetMilliNodeHours_ = input.readInt64();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 64:
               {
                 disableEarlyStopping_ = input.readBool();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             case 74:
               {
                 weightColumnName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
@@ -10552,7 +10717,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                 input.readMessage(
                     getExportEvaluatedDataItemsConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
@@ -10644,6 +10809,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setOptimizationObjectiveRecallValue(float value) {
+
       additionalOptimizationObjectiveConfigCase_ = 5;
       additionalOptimizationObjectiveConfig_ = value;
       onChanged();
@@ -10717,6 +10883,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setOptimizationObjectivePrecisionValue(float value) {
+
       additionalOptimizationObjectiveConfigCase_ = 6;
       additionalOptimizationObjectiveConfig_ = value;
       onChanged();
@@ -10822,8 +10989,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       predictionType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -10845,8 +11012,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPredictionType() {
-
       predictionType_ = getDefaultInstance().getPredictionType();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -10873,8 +11040,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       predictionType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -10940,8 +11107,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetColumn_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -10957,8 +11124,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTargetColumn() {
-
       targetColumn_ = getDefaultInstance().getTargetColumn();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -10979,8 +11146,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetColumn_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -10991,12 +11158,12 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         transformations_ = java.util.Collections.emptyList();
 
     private void ensureTransformationsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         transformations_ =
             new java.util.ArrayList<
                 com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
                     .Transformation>(transformations_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -11298,7 +11465,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
     public Builder clearTransformations() {
       if (transformationsBuilder_ == null) {
         transformations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         transformationsBuilder_.clear();
@@ -11480,7 +11647,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
                     .TransformationOrBuilder>(
                 transformations_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         transformations_ = null;
@@ -11606,8 +11773,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       optimizationObjective_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -11642,8 +11809,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearOptimizationObjective() {
-
       optimizationObjective_ = getDefaultInstance().getOptimizationObjective();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -11683,8 +11850,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       optimizationObjective_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -11740,6 +11907,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
     public Builder setTrainBudgetMilliNodeHours(long value) {
 
       trainBudgetMilliNodeHours_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -11765,7 +11933,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTrainBudgetMilliNodeHours() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       trainBudgetMilliNodeHours_ = 0L;
       onChanged();
       return this;
@@ -11806,6 +11974,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
     public Builder setDisableEarlyStopping(boolean value) {
 
       disableEarlyStopping_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -11823,7 +11992,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDisableEarlyStopping() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       disableEarlyStopping_ = false;
       onChanged();
       return this;
@@ -11905,8 +12074,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       weightColumnName_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -11927,8 +12096,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearWeightColumnName() {
-
       weightColumnName_ = getDefaultInstance().getWeightColumnName();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -11954,8 +12123,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       weightColumnName_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -11986,8 +12155,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * @return Whether the exportEvaluatedDataItemsConfig field is set.
      */
     public boolean hasExportEvaluatedDataItemsConfig() {
-      return exportEvaluatedDataItemsConfigBuilder_ != null
-          || exportEvaluatedDataItemsConfig_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -12035,11 +12203,11 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         exportEvaluatedDataItemsConfig_ = value;
-        onChanged();
       } else {
         exportEvaluatedDataItemsConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -12060,11 +12228,11 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             builderForValue) {
       if (exportEvaluatedDataItemsConfigBuilder_ == null) {
         exportEvaluatedDataItemsConfig_ = builderForValue.build();
-        onChanged();
       } else {
         exportEvaluatedDataItemsConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -12083,20 +12251,20 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         com.google.cloud.aiplatform.v1.schema.trainingjob.definition.ExportEvaluatedDataItemsConfig
             value) {
       if (exportEvaluatedDataItemsConfigBuilder_ == null) {
-        if (exportEvaluatedDataItemsConfig_ != null) {
-          exportEvaluatedDataItemsConfig_ =
-              com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                  .ExportEvaluatedDataItemsConfig.newBuilder(exportEvaluatedDataItemsConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && exportEvaluatedDataItemsConfig_ != null
+            && exportEvaluatedDataItemsConfig_
+                != com.google.cloud.aiplatform.v1.schema.trainingjob.definition
+                    .ExportEvaluatedDataItemsConfig.getDefaultInstance()) {
+          getExportEvaluatedDataItemsConfigBuilder().mergeFrom(value);
         } else {
           exportEvaluatedDataItemsConfig_ = value;
         }
-        onChanged();
       } else {
         exportEvaluatedDataItemsConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -12112,14 +12280,13 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearExportEvaluatedDataItemsConfig() {
-      if (exportEvaluatedDataItemsConfigBuilder_ == null) {
-        exportEvaluatedDataItemsConfig_ = null;
-        onChanged();
-      } else {
-        exportEvaluatedDataItemsConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      exportEvaluatedDataItemsConfig_ = null;
+      if (exportEvaluatedDataItemsConfigBuilder_ != null) {
+        exportEvaluatedDataItemsConfigBuilder_.dispose();
         exportEvaluatedDataItemsConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -12137,7 +12304,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1.schema.trainingjob.definition
             .ExportEvaluatedDataItemsConfig.Builder
         getExportEvaluatedDataItemsConfigBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getExportEvaluatedDataItemsConfigFieldBuilder().getBuilder();
     }
@@ -12204,10 +12371,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAdditionalExperimentsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         additionalExperiments_ =
             new com.google.protobuf.LazyStringArrayList(additionalExperiments_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000400;
       }
     }
     /**
@@ -12342,7 +12509,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearAdditionalExperiments() {
       additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }

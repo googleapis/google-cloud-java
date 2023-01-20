@@ -111,7 +111,9 @@ public final class DeployModelResponse extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.DeployedModelOrBuilder getDeployedModelOrBuilder() {
-    return getDeployedModel();
+    return deployedModel_ == null
+        ? com.google.cloud.aiplatform.v1.DeployedModel.getDefaultInstance()
+        : deployedModel_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -317,10 +319,10 @@ public final class DeployModelResponse extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (deployedModelBuilder_ == null) {
-        deployedModel_ = null;
-      } else {
-        deployedModel_ = null;
+      bitField0_ = 0;
+      deployedModel_ = null;
+      if (deployedModelBuilder_ != null) {
+        deployedModelBuilder_.dispose();
         deployedModelBuilder_ = null;
       }
       return this;
@@ -350,13 +352,19 @@ public final class DeployModelResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.aiplatform.v1.DeployModelResponse buildPartial() {
       com.google.cloud.aiplatform.v1.DeployModelResponse result =
           new com.google.cloud.aiplatform.v1.DeployModelResponse(this);
-      if (deployedModelBuilder_ == null) {
-        result.deployedModel_ = deployedModel_;
-      } else {
-        result.deployedModel_ = deployedModelBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.DeployModelResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.deployedModel_ =
+            deployedModelBuilder_ == null ? deployedModel_ : deployedModelBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -437,7 +445,7 @@ public final class DeployModelResponse extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getDeployedModelFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -457,6 +465,8 @@ public final class DeployModelResponse extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.aiplatform.v1.DeployedModel deployedModel_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.DeployedModel,
@@ -475,7 +485,7 @@ public final class DeployModelResponse extends com.google.protobuf.GeneratedMess
      * @return Whether the deployedModel field is set.
      */
     public boolean hasDeployedModel() {
-      return deployedModelBuilder_ != null || deployedModel_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -512,11 +522,11 @@ public final class DeployModelResponse extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         deployedModel_ = value;
-        onChanged();
       } else {
         deployedModelBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -532,11 +542,11 @@ public final class DeployModelResponse extends com.google.protobuf.GeneratedMess
         com.google.cloud.aiplatform.v1.DeployedModel.Builder builderForValue) {
       if (deployedModelBuilder_ == null) {
         deployedModel_ = builderForValue.build();
-        onChanged();
       } else {
         deployedModelBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -550,19 +560,19 @@ public final class DeployModelResponse extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeDeployedModel(com.google.cloud.aiplatform.v1.DeployedModel value) {
       if (deployedModelBuilder_ == null) {
-        if (deployedModel_ != null) {
-          deployedModel_ =
-              com.google.cloud.aiplatform.v1.DeployedModel.newBuilder(deployedModel_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && deployedModel_ != null
+            && deployedModel_
+                != com.google.cloud.aiplatform.v1.DeployedModel.getDefaultInstance()) {
+          getDeployedModelBuilder().mergeFrom(value);
         } else {
           deployedModel_ = value;
         }
-        onChanged();
       } else {
         deployedModelBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -575,14 +585,13 @@ public final class DeployModelResponse extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.aiplatform.v1.DeployedModel deployed_model = 1;</code>
      */
     public Builder clearDeployedModel() {
-      if (deployedModelBuilder_ == null) {
-        deployedModel_ = null;
-        onChanged();
-      } else {
-        deployedModel_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      deployedModel_ = null;
+      if (deployedModelBuilder_ != null) {
+        deployedModelBuilder_.dispose();
         deployedModelBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -595,7 +604,7 @@ public final class DeployModelResponse extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.aiplatform.v1.DeployedModel deployed_model = 1;</code>
      */
     public com.google.cloud.aiplatform.v1.DeployedModel.Builder getDeployedModelBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDeployedModelFieldBuilder().getBuilder();
     }

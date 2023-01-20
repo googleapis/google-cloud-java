@@ -70,7 +70,9 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -177,11 +179,15 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.MetadataStoreOrBuilder getMetadataStoreOrBuilder() {
-    return getMetadataStore();
+    return metadataStore_ == null
+        ? com.google.cloud.aiplatform.v1.MetadataStore.getDefaultInstance()
+        : metadataStore_;
   }
 
   public static final int METADATA_STORE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object metadataStoreId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metadataStoreId_ = "";
   /**
    *
    *
@@ -465,16 +471,14 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (metadataStoreBuilder_ == null) {
-        metadataStore_ = null;
-      } else {
-        metadataStore_ = null;
+      metadataStore_ = null;
+      if (metadataStoreBuilder_ != null) {
+        metadataStoreBuilder_.dispose();
         metadataStoreBuilder_ = null;
       }
       metadataStoreId_ = "";
-
       return this;
     }
 
@@ -502,15 +506,25 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
     public com.google.cloud.aiplatform.v1.CreateMetadataStoreRequest buildPartial() {
       com.google.cloud.aiplatform.v1.CreateMetadataStoreRequest result =
           new com.google.cloud.aiplatform.v1.CreateMetadataStoreRequest(this);
-      result.parent_ = parent_;
-      if (metadataStoreBuilder_ == null) {
-        result.metadataStore_ = metadataStore_;
-      } else {
-        result.metadataStore_ = metadataStoreBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.metadataStoreId_ = metadataStoreId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.CreateMetadataStoreRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metadataStore_ =
+            metadataStoreBuilder_ == null ? metadataStore_ : metadataStoreBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.metadataStoreId_ = metadataStoreId_;
+      }
     }
 
     @java.lang.Override
@@ -561,6 +575,7 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMetadataStore()) {
@@ -568,6 +583,7 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
       }
       if (!other.getMetadataStoreId().isEmpty()) {
         metadataStoreId_ = other.metadataStoreId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -599,19 +615,19 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getMetadataStoreFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 metadataStoreId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -630,6 +646,8 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -704,8 +722,8 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -725,8 +743,8 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -751,8 +769,8 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -777,7 +795,7 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
      * @return Whether the metadataStore field is set.
      */
     public boolean hasMetadataStore() {
-      return metadataStoreBuilder_ != null || metadataStore_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -818,11 +836,11 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         metadataStore_ = value;
-        onChanged();
       } else {
         metadataStoreBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -840,11 +858,11 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
         com.google.cloud.aiplatform.v1.MetadataStore.Builder builderForValue) {
       if (metadataStoreBuilder_ == null) {
         metadataStore_ = builderForValue.build();
-        onChanged();
       } else {
         metadataStoreBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -860,19 +878,19 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
      */
     public Builder mergeMetadataStore(com.google.cloud.aiplatform.v1.MetadataStore value) {
       if (metadataStoreBuilder_ == null) {
-        if (metadataStore_ != null) {
-          metadataStore_ =
-              com.google.cloud.aiplatform.v1.MetadataStore.newBuilder(metadataStore_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && metadataStore_ != null
+            && metadataStore_
+                != com.google.cloud.aiplatform.v1.MetadataStore.getDefaultInstance()) {
+          getMetadataStoreBuilder().mergeFrom(value);
         } else {
           metadataStore_ = value;
         }
-        onChanged();
       } else {
         metadataStoreBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -887,14 +905,13 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearMetadataStore() {
-      if (metadataStoreBuilder_ == null) {
-        metadataStore_ = null;
-        onChanged();
-      } else {
-        metadataStore_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      metadataStore_ = null;
+      if (metadataStoreBuilder_ != null) {
+        metadataStoreBuilder_.dispose();
         metadataStoreBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -909,7 +926,7 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.aiplatform.v1.MetadataStore.Builder getMetadataStoreBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMetadataStoreFieldBuilder().getBuilder();
     }
@@ -1043,8 +1060,8 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       metadataStoreId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1067,8 +1084,8 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearMetadataStoreId() {
-
       metadataStoreId_ = getDefaultInstance().getMetadataStoreId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1096,8 +1113,8 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       metadataStoreId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

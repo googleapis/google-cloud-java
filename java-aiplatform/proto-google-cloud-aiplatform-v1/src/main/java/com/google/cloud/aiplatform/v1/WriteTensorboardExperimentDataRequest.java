@@ -72,7 +72,9 @@ public final class WriteTensorboardExperimentDataRequest
   }
 
   public static final int TENSORBOARD_EXPERIMENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object tensorboardExperiment_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tensorboardExperiment_ = "";
   /**
    *
    *
@@ -129,6 +131,8 @@ public final class WriteTensorboardExperimentDataRequest
   }
 
   public static final int WRITE_RUN_DATA_REQUESTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.WriteTensorboardRunDataRequest>
       writeRunDataRequests_;
   /**
@@ -425,15 +429,15 @@ public final class WriteTensorboardExperimentDataRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       tensorboardExperiment_ = "";
-
       if (writeRunDataRequestsBuilder_ == null) {
         writeRunDataRequests_ = java.util.Collections.emptyList();
       } else {
         writeRunDataRequests_ = null;
         writeRunDataRequestsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -463,19 +467,33 @@ public final class WriteTensorboardExperimentDataRequest
     public com.google.cloud.aiplatform.v1.WriteTensorboardExperimentDataRequest buildPartial() {
       com.google.cloud.aiplatform.v1.WriteTensorboardExperimentDataRequest result =
           new com.google.cloud.aiplatform.v1.WriteTensorboardExperimentDataRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.tensorboardExperiment_ = tensorboardExperiment_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.WriteTensorboardExperimentDataRequest result) {
       if (writeRunDataRequestsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           writeRunDataRequests_ = java.util.Collections.unmodifiableList(writeRunDataRequests_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.writeRunDataRequests_ = writeRunDataRequests_;
       } else {
         result.writeRunDataRequests_ = writeRunDataRequestsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.WriteTensorboardExperimentDataRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tensorboardExperiment_ = tensorboardExperiment_;
+      }
     }
 
     @java.lang.Override
@@ -529,13 +547,14 @@ public final class WriteTensorboardExperimentDataRequest
               .getDefaultInstance()) return this;
       if (!other.getTensorboardExperiment().isEmpty()) {
         tensorboardExperiment_ = other.tensorboardExperiment_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (writeRunDataRequestsBuilder_ == null) {
         if (!other.writeRunDataRequests_.isEmpty()) {
           if (writeRunDataRequests_.isEmpty()) {
             writeRunDataRequests_ = other.writeRunDataRequests_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureWriteRunDataRequestsIsMutable();
             writeRunDataRequests_.addAll(other.writeRunDataRequests_);
@@ -548,7 +567,7 @@ public final class WriteTensorboardExperimentDataRequest
             writeRunDataRequestsBuilder_.dispose();
             writeRunDataRequestsBuilder_ = null;
             writeRunDataRequests_ = other.writeRunDataRequests_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             writeRunDataRequestsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWriteRunDataRequestsFieldBuilder()
@@ -587,7 +606,7 @@ public final class WriteTensorboardExperimentDataRequest
             case 10:
               {
                 tensorboardExperiment_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -696,8 +715,8 @@ public final class WriteTensorboardExperimentDataRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       tensorboardExperiment_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -717,8 +736,8 @@ public final class WriteTensorboardExperimentDataRequest
      * @return This builder for chaining.
      */
     public Builder clearTensorboardExperiment() {
-
       tensorboardExperiment_ = getDefaultInstance().getTensorboardExperiment();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -743,8 +762,8 @@ public final class WriteTensorboardExperimentDataRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tensorboardExperiment_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -753,11 +772,11 @@ public final class WriteTensorboardExperimentDataRequest
         writeRunDataRequests_ = java.util.Collections.emptyList();
 
     private void ensureWriteRunDataRequestsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         writeRunDataRequests_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1.WriteTensorboardRunDataRequest>(
                 writeRunDataRequests_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1003,7 +1022,7 @@ public final class WriteTensorboardExperimentDataRequest
     public Builder clearWriteRunDataRequests() {
       if (writeRunDataRequestsBuilder_ == null) {
         writeRunDataRequests_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         writeRunDataRequestsBuilder_.clear();
@@ -1148,7 +1167,7 @@ public final class WriteTensorboardExperimentDataRequest
                 com.google.cloud.aiplatform.v1.WriteTensorboardRunDataRequest.Builder,
                 com.google.cloud.aiplatform.v1.WriteTensorboardRunDataRequestOrBuilder>(
                 writeRunDataRequests_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         writeRunDataRequests_ = null;

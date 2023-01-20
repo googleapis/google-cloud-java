@@ -82,7 +82,9 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -131,7 +133,9 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PAYLOAD_SCHEMA_URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object payloadSchemaUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object payloadSchemaUri_ = "";
   /**
    *
    *
@@ -239,7 +243,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.ValueOrBuilder getPayloadOrBuilder() {
-    return getPayload();
+    return payload_ == null ? com.google.protobuf.Value.getDefaultInstance() : payload_;
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
@@ -288,7 +292,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 7;
@@ -337,11 +341,13 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int ETAG_FIELD_NUMBER = 8;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -443,7 +449,9 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.UserActionReferenceOrBuilder
       getAnnotationSourceOrBuilder() {
-    return getAnnotationSource();
+    return annotationSource_ == null
+        ? com.google.cloud.aiplatform.v1beta1.UserActionReference.getDefaultInstance()
+        : annotationSource_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 6;
@@ -459,6 +467,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -564,7 +573,10 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -917,34 +929,28 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       payloadSchemaUri_ = "";
-
-      if (payloadBuilder_ == null) {
-        payload_ = null;
-      } else {
-        payload_ = null;
+      payload_ = null;
+      if (payloadBuilder_ != null) {
+        payloadBuilder_.dispose();
         payloadBuilder_ = null;
       }
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       etag_ = "";
-
-      if (annotationSourceBuilder_ == null) {
-        annotationSource_ = null;
-      } else {
-        annotationSource_ = null;
+      annotationSource_ = null;
+      if (annotationSourceBuilder_ != null) {
+        annotationSourceBuilder_.dispose();
         annotationSourceBuilder_ = null;
       }
       internalGetMutableLabels().clear();
@@ -975,34 +981,41 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.Annotation buildPartial() {
       com.google.cloud.aiplatform.v1beta1.Annotation result =
           new com.google.cloud.aiplatform.v1beta1.Annotation(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.payloadSchemaUri_ = payloadSchemaUri_;
-      if (payloadBuilder_ == null) {
-        result.payload_ = payload_;
-      } else {
-        result.payload_ = payloadBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.etag_ = etag_;
-      if (annotationSourceBuilder_ == null) {
-        result.annotationSource_ = annotationSource_;
-      } else {
-        result.annotationSource_ = annotationSourceBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Annotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.payloadSchemaUri_ = payloadSchemaUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.payload_ = payloadBuilder_ == null ? payload_ : payloadBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.annotationSource_ =
+            annotationSourceBuilder_ == null ? annotationSource_ : annotationSourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -1052,10 +1065,12 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.aiplatform.v1beta1.Annotation.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPayloadSchemaUri().isEmpty()) {
         payloadSchemaUri_ = other.payloadSchemaUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPayload()) {
@@ -1069,12 +1084,14 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasAnnotationSource()) {
         mergeAnnotationSource(other.getAnnotationSource());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000080;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1104,32 +1121,32 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 payloadSchemaUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getPayloadFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getAnnotationSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
@@ -1141,18 +1158,19 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             case 66:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 66
             default:
@@ -1235,8 +1253,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1252,8 +1270,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1274,8 +1292,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1362,8 +1380,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       payloadSchemaUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1386,8 +1404,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPayloadSchemaUri() {
-
       payloadSchemaUri_ = getDefaultInstance().getPayloadSchemaUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1415,8 +1433,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       payloadSchemaUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1440,7 +1458,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the payload field is set.
      */
     public boolean hasPayload() {
-      return payloadBuilder_ != null || payload_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1477,11 +1495,11 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         payload_ = value;
-        onChanged();
       } else {
         payloadBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1497,11 +1515,11 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public Builder setPayload(com.google.protobuf.Value.Builder builderForValue) {
       if (payloadBuilder_ == null) {
         payload_ = builderForValue.build();
-        onChanged();
       } else {
         payloadBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1516,16 +1534,18 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePayload(com.google.protobuf.Value value) {
       if (payloadBuilder_ == null) {
-        if (payload_ != null) {
-          payload_ = com.google.protobuf.Value.newBuilder(payload_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && payload_ != null
+            && payload_ != com.google.protobuf.Value.getDefaultInstance()) {
+          getPayloadBuilder().mergeFrom(value);
         } else {
           payload_ = value;
         }
-        onChanged();
       } else {
         payloadBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1539,14 +1559,13 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Value payload = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearPayload() {
-      if (payloadBuilder_ == null) {
-        payload_ = null;
-        onChanged();
-      } else {
-        payload_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      payload_ = null;
+      if (payloadBuilder_ != null) {
+        payloadBuilder_.dispose();
         payloadBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1560,7 +1579,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Value payload = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.Value.Builder getPayloadBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPayloadFieldBuilder().getBuilder();
     }
@@ -1628,7 +1647,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1669,11 +1688,11 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1690,11 +1709,11 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1710,17 +1729,18 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1735,14 +1755,13 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1757,7 +1776,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1829,7 +1848,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1870,11 +1889,11 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1891,11 +1910,11 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1911,17 +1930,18 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1936,14 +1956,13 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1958,7 +1977,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2074,8 +2093,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2092,8 +2111,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2115,8 +2134,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2141,7 +2160,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the annotationSource field is set.
      */
     public boolean hasAnnotationSource() {
-      return annotationSourceBuilder_ != null || annotationSource_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2183,11 +2202,11 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         annotationSource_ = value;
-        onChanged();
       } else {
         annotationSourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2205,11 +2224,11 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.aiplatform.v1beta1.UserActionReference.Builder builderForValue) {
       if (annotationSourceBuilder_ == null) {
         annotationSource_ = builderForValue.build();
-        onChanged();
       } else {
         annotationSourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2226,19 +2245,19 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAnnotationSource(
         com.google.cloud.aiplatform.v1beta1.UserActionReference value) {
       if (annotationSourceBuilder_ == null) {
-        if (annotationSource_ != null) {
-          annotationSource_ =
-              com.google.cloud.aiplatform.v1beta1.UserActionReference.newBuilder(annotationSource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && annotationSource_ != null
+            && annotationSource_
+                != com.google.cloud.aiplatform.v1beta1.UserActionReference.getDefaultInstance()) {
+          getAnnotationSourceBuilder().mergeFrom(value);
         } else {
           annotationSource_ = value;
         }
-        onChanged();
       } else {
         annotationSourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2253,14 +2272,13 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAnnotationSource() {
-      if (annotationSourceBuilder_ == null) {
-        annotationSource_ = null;
-        onChanged();
-      } else {
-        annotationSource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      annotationSource_ = null;
+      if (annotationSourceBuilder_ != null) {
+        annotationSourceBuilder_.dispose();
         annotationSourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2276,7 +2294,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.UserActionReference.Builder
         getAnnotationSourceBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getAnnotationSourceFieldBuilder().getBuilder();
     }
@@ -2340,14 +2358,14 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000080;
+      onChanged();
       return labels_;
     }
 
@@ -2447,8 +2465,10 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2493,6 +2513,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2531,6 +2552,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2565,8 +2587,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2596,6 +2618,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000080;
       return this;
     }
 

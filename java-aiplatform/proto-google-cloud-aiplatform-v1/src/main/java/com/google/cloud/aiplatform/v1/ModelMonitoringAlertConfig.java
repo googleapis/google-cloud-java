@@ -164,6 +164,8 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     }
 
     public static final int USER_EMAILS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList userEmails_;
     /**
      *
@@ -440,6 +442,7 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         userEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -473,14 +476,26 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
           buildPartial() {
         com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.EmailAlertConfig result =
             new com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.EmailAlertConfig(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.EmailAlertConfig result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           userEmails_ = userEmails_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.userEmails_ = userEmails_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.EmailAlertConfig result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -939,7 +954,7 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
   }
 
   public static final int ENABLE_LOGGING_FIELD_NUMBER = 2;
-  private boolean enableLogging_;
+  private boolean enableLogging_ = false;
   /**
    *
    *
@@ -1176,11 +1191,11 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (emailAlertConfigBuilder_ != null) {
         emailAlertConfigBuilder_.clear();
       }
       enableLogging_ = false;
-
       alertCase_ = 0;
       alert_ = null;
       return this;
@@ -1210,17 +1225,28 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     public com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig buildPartial() {
       com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig result =
           new com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig(this);
-      if (alertCase_ == 1) {
-        if (emailAlertConfigBuilder_ == null) {
-          result.alert_ = alert_;
-        } else {
-          result.alert_ = emailAlertConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.enableLogging_ = enableLogging_;
-      result.alertCase_ = alertCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.enableLogging_ = enableLogging_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig result) {
+      result.alertCase_ = alertCase_;
+      result.alert_ = this.alert_;
+      if (alertCase_ == 1 && emailAlertConfigBuilder_ != null) {
+        result.alert_ = emailAlertConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1319,7 +1345,7 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
             case 16:
               {
                 enableLogging_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -1352,6 +1378,8 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.EmailAlertConfig,
@@ -1594,7 +1622,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       }
       alertCase_ = 1;
       onChanged();
-      ;
       return emailAlertConfigBuilder_;
     }
 
@@ -1637,6 +1664,7 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     public Builder setEnableLogging(boolean value) {
 
       enableLogging_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1656,7 +1684,7 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearEnableLogging() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       enableLogging_ = false;
       onChanged();
       return this;

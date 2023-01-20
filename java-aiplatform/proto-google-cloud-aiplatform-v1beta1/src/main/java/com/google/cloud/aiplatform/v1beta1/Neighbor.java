@@ -68,7 +68,9 @@ public final class Neighbor extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NEIGHBOR_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object neighborId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object neighborId_ = "";
   /**
    *
    *
@@ -117,7 +119,7 @@ public final class Neighbor extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NEIGHBOR_DISTANCE_FIELD_NUMBER = 2;
-  private double neighborDistance_;
+  private double neighborDistance_ = 0D;
   /**
    *
    *
@@ -344,10 +346,9 @@ public final class Neighbor extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       neighborId_ = "";
-
       neighborDistance_ = 0D;
-
       return this;
     }
 
@@ -375,10 +376,21 @@ public final class Neighbor extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.Neighbor buildPartial() {
       com.google.cloud.aiplatform.v1beta1.Neighbor result =
           new com.google.cloud.aiplatform.v1beta1.Neighbor(this);
-      result.neighborId_ = neighborId_;
-      result.neighborDistance_ = neighborDistance_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Neighbor result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.neighborId_ = neighborId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.neighborDistance_ = neighborDistance_;
+      }
     }
 
     @java.lang.Override
@@ -428,6 +440,7 @@ public final class Neighbor extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.aiplatform.v1beta1.Neighbor.getDefaultInstance()) return this;
       if (!other.getNeighborId().isEmpty()) {
         neighborId_ = other.neighborId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getNeighborDistance() != 0D) {
@@ -462,13 +475,13 @@ public final class Neighbor extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 neighborId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 17:
               {
                 neighborDistance_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             default:
@@ -487,6 +500,8 @@ public final class Neighbor extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object neighborId_ = "";
     /**
@@ -549,8 +564,8 @@ public final class Neighbor extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       neighborId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -566,8 +581,8 @@ public final class Neighbor extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNeighborId() {
-
       neighborId_ = getDefaultInstance().getNeighborId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -588,8 +603,8 @@ public final class Neighbor extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       neighborId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -625,6 +640,7 @@ public final class Neighbor extends com.google.protobuf.GeneratedMessageV3
     public Builder setNeighborDistance(double value) {
 
       neighborDistance_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -640,7 +656,7 @@ public final class Neighbor extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNeighborDistance() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       neighborDistance_ = 0D;
       onChanged();
       return this;

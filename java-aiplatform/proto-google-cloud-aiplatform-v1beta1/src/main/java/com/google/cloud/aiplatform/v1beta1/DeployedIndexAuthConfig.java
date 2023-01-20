@@ -246,6 +246,8 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     }
 
     public static final int AUDIENCES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList audiences_;
     /**
      *
@@ -319,6 +321,8 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     }
 
     public static final int ALLOWED_ISSUERS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList allowedIssuers_;
     /**
      *
@@ -621,6 +625,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         audiences_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         allowedIssuers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -656,7 +661,16 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
           buildPartial() {
         com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider result =
             new com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           audiences_ = audiences_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -667,8 +681,11 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.allowedIssuers_ = allowedIssuers_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -1302,7 +1319,10 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProviderOrBuilder
       getAuthProviderOrBuilder() {
-    return getAuthProvider();
+    return authProvider_ == null
+        ? com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider
+            .getDefaultInstance()
+        : authProvider_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1508,10 +1528,10 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (authProviderBuilder_ == null) {
-        authProvider_ = null;
-      } else {
-        authProvider_ = null;
+      bitField0_ = 0;
+      authProvider_ = null;
+      if (authProviderBuilder_ != null) {
+        authProviderBuilder_.dispose();
         authProviderBuilder_ = null;
       }
       return this;
@@ -1541,13 +1561,19 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     public com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig buildPartial() {
       com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig result =
           new com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig(this);
-      if (authProviderBuilder_ == null) {
-        result.authProvider_ = authProvider_;
-      } else {
-        result.authProvider_ = authProviderBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.authProvider_ =
+            authProviderBuilder_ == null ? authProvider_ : authProviderBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1628,7 +1654,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getAuthProviderFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -1647,6 +1673,8 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider authProvider_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1668,7 +1696,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
      * @return Whether the authProvider field is set.
      */
     public boolean hasAuthProvider() {
-      return authProviderBuilder_ != null || authProvider_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1712,11 +1740,11 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         authProvider_ = value;
-        onChanged();
       } else {
         authProviderBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1735,11 +1763,11 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
             builderForValue) {
       if (authProviderBuilder_ == null) {
         authProvider_ = builderForValue.build();
-        onChanged();
       } else {
         authProviderBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1756,20 +1784,20 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     public Builder mergeAuthProvider(
         com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider value) {
       if (authProviderBuilder_ == null) {
-        if (authProvider_ != null) {
-          authProvider_ =
-              com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider.newBuilder(
-                      authProvider_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && authProvider_ != null
+            && authProvider_
+                != com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider
+                    .getDefaultInstance()) {
+          getAuthProviderBuilder().mergeFrom(value);
         } else {
           authProvider_ = value;
         }
-        onChanged();
       } else {
         authProviderBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1784,14 +1812,13 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearAuthProvider() {
-      if (authProviderBuilder_ == null) {
-        authProvider_ = null;
-        onChanged();
-      } else {
-        authProvider_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      authProvider_ = null;
+      if (authProviderBuilder_ != null) {
+        authProviderBuilder_.dispose();
         authProviderBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1807,7 +1834,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
      */
     public com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider.Builder
         getAuthProviderBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAuthProviderFieldBuilder().getBuilder();
     }

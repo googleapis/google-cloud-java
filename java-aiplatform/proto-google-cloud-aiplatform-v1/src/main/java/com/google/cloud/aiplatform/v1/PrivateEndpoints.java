@@ -75,7 +75,9 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PREDICT_HTTP_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object predictHttpUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object predictHttpUri_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int EXPLAIN_HTTP_URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object explainHttpUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object explainHttpUri_ = "";
   /**
    *
    *
@@ -173,7 +177,9 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int HEALTH_HTTP_URI_FIELD_NUMBER = 3;
-  private volatile java.lang.Object healthHttpUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object healthHttpUri_ = "";
   /**
    *
    *
@@ -222,7 +228,9 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SERVICE_ATTACHMENT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object serviceAttachment_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAttachment_ = "";
   /**
    *
    *
@@ -500,14 +508,11 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       predictHttpUri_ = "";
-
       explainHttpUri_ = "";
-
       healthHttpUri_ = "";
-
       serviceAttachment_ = "";
-
       return this;
     }
 
@@ -535,12 +540,27 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.aiplatform.v1.PrivateEndpoints buildPartial() {
       com.google.cloud.aiplatform.v1.PrivateEndpoints result =
           new com.google.cloud.aiplatform.v1.PrivateEndpoints(this);
-      result.predictHttpUri_ = predictHttpUri_;
-      result.explainHttpUri_ = explainHttpUri_;
-      result.healthHttpUri_ = healthHttpUri_;
-      result.serviceAttachment_ = serviceAttachment_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.PrivateEndpoints result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.predictHttpUri_ = predictHttpUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.explainHttpUri_ = explainHttpUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.healthHttpUri_ = healthHttpUri_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.serviceAttachment_ = serviceAttachment_;
+      }
     }
 
     @java.lang.Override
@@ -591,18 +611,22 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getPredictHttpUri().isEmpty()) {
         predictHttpUri_ = other.predictHttpUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getExplainHttpUri().isEmpty()) {
         explainHttpUri_ = other.explainHttpUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getHealthHttpUri().isEmpty()) {
         healthHttpUri_ = other.healthHttpUri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getServiceAttachment().isEmpty()) {
         serviceAttachment_ = other.serviceAttachment_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -634,25 +658,25 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 predictHttpUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 explainHttpUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 healthHttpUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 serviceAttachment_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -671,6 +695,8 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object predictHttpUri_ = "";
     /**
@@ -733,8 +759,8 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       predictHttpUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -750,8 +776,8 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPredictHttpUri() {
-
       predictHttpUri_ = getDefaultInstance().getPredictHttpUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -772,8 +798,8 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       predictHttpUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -839,8 +865,8 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       explainHttpUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -856,8 +882,8 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearExplainHttpUri() {
-
       explainHttpUri_ = getDefaultInstance().getExplainHttpUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -878,8 +904,8 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       explainHttpUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -945,8 +971,8 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       healthHttpUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -962,8 +988,8 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearHealthHttpUri() {
-
       healthHttpUri_ = getDefaultInstance().getHealthHttpUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -984,8 +1010,8 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       healthHttpUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1054,8 +1080,8 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAttachment_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1072,8 +1098,8 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearServiceAttachment() {
-
       serviceAttachment_ = getDefaultInstance().getServiceAttachment();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1095,8 +1121,8 @@ public final class PrivateEndpoints extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAttachment_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

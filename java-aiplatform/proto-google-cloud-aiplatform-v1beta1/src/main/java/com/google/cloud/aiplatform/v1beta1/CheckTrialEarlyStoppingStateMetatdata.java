@@ -119,11 +119,15 @@ public final class CheckTrialEarlyStoppingStateMetatdata
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.GenericOperationMetadataOrBuilder
       getGenericMetadataOrBuilder() {
-    return getGenericMetadata();
+    return genericMetadata_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.getDefaultInstance()
+        : genericMetadata_;
   }
 
   public static final int STUDY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object study_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object study_ = "";
   /**
    *
    *
@@ -172,7 +176,9 @@ public final class CheckTrialEarlyStoppingStateMetatdata
   }
 
   public static final int TRIAL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object trial_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object trial_ = "";
   /**
    *
    *
@@ -447,16 +453,14 @@ public final class CheckTrialEarlyStoppingStateMetatdata
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (genericMetadataBuilder_ == null) {
-        genericMetadata_ = null;
-      } else {
-        genericMetadata_ = null;
+      bitField0_ = 0;
+      genericMetadata_ = null;
+      if (genericMetadataBuilder_ != null) {
+        genericMetadataBuilder_.dispose();
         genericMetadataBuilder_ = null;
       }
       study_ = "";
-
       trial_ = "";
-
       return this;
     }
 
@@ -488,15 +492,26 @@ public final class CheckTrialEarlyStoppingStateMetatdata
         buildPartial() {
       com.google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateMetatdata result =
           new com.google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateMetatdata(this);
-      if (genericMetadataBuilder_ == null) {
-        result.genericMetadata_ = genericMetadata_;
-      } else {
-        result.genericMetadata_ = genericMetadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.study_ = study_;
-      result.trial_ = trial_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateMetatdata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.genericMetadata_ =
+            genericMetadataBuilder_ == null ? genericMetadata_ : genericMetadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.study_ = study_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.trial_ = trial_;
+      }
     }
 
     @java.lang.Override
@@ -554,10 +569,12 @@ public final class CheckTrialEarlyStoppingStateMetatdata
       }
       if (!other.getStudy().isEmpty()) {
         study_ = other.study_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getTrial().isEmpty()) {
         trial_ = other.trial_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -589,19 +606,19 @@ public final class CheckTrialEarlyStoppingStateMetatdata
             case 10:
               {
                 input.readMessage(getGenericMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 study_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 trial_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -621,6 +638,8 @@ public final class CheckTrialEarlyStoppingStateMetatdata
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata genericMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata,
@@ -639,7 +658,7 @@ public final class CheckTrialEarlyStoppingStateMetatdata
      * @return Whether the genericMetadata field is set.
      */
     public boolean hasGenericMetadata() {
-      return genericMetadataBuilder_ != null || genericMetadata_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -677,11 +696,11 @@ public final class CheckTrialEarlyStoppingStateMetatdata
           throw new NullPointerException();
         }
         genericMetadata_ = value;
-        onChanged();
       } else {
         genericMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -697,11 +716,11 @@ public final class CheckTrialEarlyStoppingStateMetatdata
         com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.Builder builderForValue) {
       if (genericMetadataBuilder_ == null) {
         genericMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         genericMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -716,20 +735,20 @@ public final class CheckTrialEarlyStoppingStateMetatdata
     public Builder mergeGenericMetadata(
         com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata value) {
       if (genericMetadataBuilder_ == null) {
-        if (genericMetadata_ != null) {
-          genericMetadata_ =
-              com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.newBuilder(
-                      genericMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && genericMetadata_ != null
+            && genericMetadata_
+                != com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata
+                    .getDefaultInstance()) {
+          getGenericMetadataBuilder().mergeFrom(value);
         } else {
           genericMetadata_ = value;
         }
-        onChanged();
       } else {
         genericMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -742,14 +761,13 @@ public final class CheckTrialEarlyStoppingStateMetatdata
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
      */
     public Builder clearGenericMetadata() {
-      if (genericMetadataBuilder_ == null) {
-        genericMetadata_ = null;
-        onChanged();
-      } else {
-        genericMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      genericMetadata_ = null;
+      if (genericMetadataBuilder_ != null) {
+        genericMetadataBuilder_.dispose();
         genericMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -763,7 +781,7 @@ public final class CheckTrialEarlyStoppingStateMetatdata
      */
     public com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.Builder
         getGenericMetadataBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
@@ -873,8 +891,8 @@ public final class CheckTrialEarlyStoppingStateMetatdata
       if (value == null) {
         throw new NullPointerException();
       }
-
       study_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -890,8 +908,8 @@ public final class CheckTrialEarlyStoppingStateMetatdata
      * @return This builder for chaining.
      */
     public Builder clearStudy() {
-
       study_ = getDefaultInstance().getStudy();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -912,8 +930,8 @@ public final class CheckTrialEarlyStoppingStateMetatdata
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       study_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -979,8 +997,8 @@ public final class CheckTrialEarlyStoppingStateMetatdata
       if (value == null) {
         throw new NullPointerException();
       }
-
       trial_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -996,8 +1014,8 @@ public final class CheckTrialEarlyStoppingStateMetatdata
      * @return This builder for chaining.
      */
     public Builder clearTrial() {
-
       trial_ = getDefaultInstance().getTrial();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1018,8 +1036,8 @@ public final class CheckTrialEarlyStoppingStateMetatdata
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       trial_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

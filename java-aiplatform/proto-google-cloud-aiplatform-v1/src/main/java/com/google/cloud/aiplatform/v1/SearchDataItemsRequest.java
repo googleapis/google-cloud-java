@@ -188,7 +188,9 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
     }
 
     public static final int SAVED_QUERY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object savedQuery_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object savedQuery_ = "";
     /**
      *
      *
@@ -239,7 +241,9 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
     }
 
     public static final int ORDER_BY_FIELD_NUMBER = 2;
-    private volatile java.lang.Object orderBy_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object orderBy_ = "";
     /**
      *
      *
@@ -504,10 +508,9 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         savedQuery_ = "";
-
         orderBy_ = "";
-
         return this;
       }
 
@@ -539,10 +542,22 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
           buildPartial() {
         com.google.cloud.aiplatform.v1.SearchDataItemsRequest.OrderByAnnotation result =
             new com.google.cloud.aiplatform.v1.SearchDataItemsRequest.OrderByAnnotation(this);
-        result.savedQuery_ = savedQuery_;
-        result.orderBy_ = orderBy_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.SearchDataItemsRequest.OrderByAnnotation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.savedQuery_ = savedQuery_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.orderBy_ = orderBy_;
+        }
       }
 
       @java.lang.Override
@@ -599,10 +614,12 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
                 .getDefaultInstance()) return this;
         if (!other.getSavedQuery().isEmpty()) {
           savedQuery_ = other.savedQuery_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getOrderBy().isEmpty()) {
           orderBy_ = other.orderBy_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -634,13 +651,13 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
               case 10:
                 {
                   savedQuery_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   orderBy_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -659,6 +676,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object savedQuery_ = "";
       /**
@@ -724,8 +743,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
         if (value == null) {
           throw new NullPointerException();
         }
-
         savedQuery_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -742,8 +761,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearSavedQuery() {
-
         savedQuery_ = getDefaultInstance().getSavedQuery();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -765,8 +784,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         savedQuery_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -838,8 +857,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
         if (value == null) {
           throw new NullPointerException();
         }
-
         orderBy_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -857,8 +876,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearOrderBy() {
-
         orderBy_ = getDefaultInstance().getOrderBy();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -881,8 +900,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         orderBy_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1137,7 +1156,9 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int DATASET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object dataset_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataset_ = "";
   /**
    *
    *
@@ -1194,7 +1215,9 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int SAVED_QUERY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object savedQuery_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object savedQuery_ = "";
   /**
    *
    *
@@ -1257,7 +1280,9 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int DATA_LABELING_JOB_FIELD_NUMBER = 3;
-  private volatile java.lang.Object dataLabelingJob_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataLabelingJob_ = "";
   /**
    *
    *
@@ -1314,7 +1339,9 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int DATA_ITEM_FILTER_FIELD_NUMBER = 4;
-  private volatile java.lang.Object dataItemFilter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataItemFilter_ = "";
   /**
    *
    *
@@ -1379,7 +1406,9 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int ANNOTATIONS_FILTER_FIELD_NUMBER = 5;
-  private volatile java.lang.Object annotationsFilter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object annotationsFilter_ = "";
   /**
    *
    *
@@ -1438,6 +1467,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int ANNOTATION_FILTERS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList annotationFilters_;
   /**
    *
@@ -1560,11 +1591,11 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder() {
-    return getFieldMask();
+    return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
   }
 
   public static final int ANNOTATIONS_LIMIT_FIELD_NUMBER = 7;
-  private int annotationsLimit_;
+  private int annotationsLimit_ = 0;
   /**
    *
    *
@@ -1584,7 +1615,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 8;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -1603,7 +1634,9 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int ORDER_BY_FIELD_NUMBER = 9;
-  private volatile java.lang.Object orderBy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderBy_ = "";
   /**
    *
    *
@@ -1660,7 +1693,9 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 10;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -2057,35 +2092,26 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (orderByAnnotationBuilder_ != null) {
         orderByAnnotationBuilder_.clear();
       }
       dataset_ = "";
-
       savedQuery_ = "";
-
       dataLabelingJob_ = "";
-
       dataItemFilter_ = "";
-
       annotationsFilter_ = "";
-
       annotationFilters_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (fieldMaskBuilder_ == null) {
-        fieldMask_ = null;
-      } else {
-        fieldMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      fieldMask_ = null;
+      if (fieldMaskBuilder_ != null) {
+        fieldMaskBuilder_.dispose();
         fieldMaskBuilder_ = null;
       }
       annotationsLimit_ = 0;
-
       pageSize_ = 0;
-
       orderBy_ = "";
-
       pageToken_ = "";
-
       orderCase_ = 0;
       order_ = null;
       return this;
@@ -2115,39 +2141,64 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.aiplatform.v1.SearchDataItemsRequest buildPartial() {
       com.google.cloud.aiplatform.v1.SearchDataItemsRequest result =
           new com.google.cloud.aiplatform.v1.SearchDataItemsRequest(this);
-      int from_bitField0_ = bitField0_;
-      if (orderCase_ == 12) {
-        result.order_ = order_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (orderCase_ == 13) {
-        if (orderByAnnotationBuilder_ == null) {
-          result.order_ = order_;
-        } else {
-          result.order_ = orderByAnnotationBuilder_.build();
-        }
-      }
-      result.dataset_ = dataset_;
-      result.savedQuery_ = savedQuery_;
-      result.dataLabelingJob_ = dataLabelingJob_;
-      result.dataItemFilter_ = dataItemFilter_;
-      result.annotationsFilter_ = annotationsFilter_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        annotationFilters_ = annotationFilters_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.annotationFilters_ = annotationFilters_;
-      if (fieldMaskBuilder_ == null) {
-        result.fieldMask_ = fieldMask_;
-      } else {
-        result.fieldMask_ = fieldMaskBuilder_.build();
-      }
-      result.annotationsLimit_ = annotationsLimit_;
-      result.pageSize_ = pageSize_;
-      result.orderBy_ = orderBy_;
-      result.pageToken_ = pageToken_;
-      result.orderCase_ = orderCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.SearchDataItemsRequest result) {
+      if (((bitField0_ & 0x00000080) != 0)) {
+        annotationFilters_ = annotationFilters_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      }
+      result.annotationFilters_ = annotationFilters_;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.SearchDataItemsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dataset_ = dataset_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.savedQuery_ = savedQuery_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.dataLabelingJob_ = dataLabelingJob_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.dataItemFilter_ = dataItemFilter_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.annotationsFilter_ = annotationsFilter_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.fieldMask_ = fieldMaskBuilder_ == null ? fieldMask_ : fieldMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.annotationsLimit_ = annotationsLimit_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.orderBy_ = orderBy_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.aiplatform.v1.SearchDataItemsRequest result) {
+      result.orderCase_ = orderCase_;
+      result.order_ = this.order_;
+      if (orderCase_ == 13 && orderByAnnotationBuilder_ != null) {
+        result.order_ = orderByAnnotationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2198,28 +2249,33 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getDataset().isEmpty()) {
         dataset_ = other.dataset_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getSavedQuery().isEmpty()) {
         savedQuery_ = other.savedQuery_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDataLabelingJob().isEmpty()) {
         dataLabelingJob_ = other.dataLabelingJob_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDataItemFilter().isEmpty()) {
         dataItemFilter_ = other.dataItemFilter_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getAnnotationsFilter().isEmpty()) {
         annotationsFilter_ = other.annotationsFilter_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.annotationFilters_.isEmpty()) {
         if (annotationFilters_.isEmpty()) {
           annotationFilters_ = other.annotationFilters_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureAnnotationFiltersIsMutable();
           annotationFilters_.addAll(other.annotationFilters_);
@@ -2237,10 +2293,12 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
       }
       if (!other.getOrderBy().isEmpty()) {
         orderBy_ = other.orderBy_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       switch (other.getOrderCase()) {
@@ -2290,61 +2348,61 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 dataset_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 savedQuery_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
               {
                 dataLabelingJob_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
               {
                 dataItemFilter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
               {
                 annotationsFilter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getFieldMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 50
             case 56:
               {
                 annotationsLimit_ = input.readInt32();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 56
             case 64:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 64
             case 74:
               {
                 orderBy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 74
             case 82:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 82
             case 90:
@@ -2779,7 +2837,6 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
       }
       orderCase_ = 13;
       onChanged();
-      ;
       return orderByAnnotationBuilder_;
     }
 
@@ -2856,8 +2913,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataset_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2877,8 +2934,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearDataset() {
-
       dataset_ = getDefaultInstance().getDataset();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2903,8 +2960,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataset_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2991,8 +3048,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       savedQuery_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3015,8 +3072,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      */
     @java.lang.Deprecated
     public Builder clearSavedQuery() {
-
       savedQuery_ = getDefaultInstance().getSavedQuery();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3044,8 +3101,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       savedQuery_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3123,8 +3180,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataLabelingJob_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3144,8 +3201,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearDataLabelingJob() {
-
       dataLabelingJob_ = getDefaultInstance().getDataLabelingJob();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3170,8 +3227,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataLabelingJob_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3261,8 +3318,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataItemFilter_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3286,8 +3343,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearDataItemFilter() {
-
       dataItemFilter_ = getDefaultInstance().getDataItemFilter();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3316,8 +3373,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataItemFilter_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3398,8 +3455,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       annotationsFilter_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3420,8 +3477,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      */
     @java.lang.Deprecated
     public Builder clearAnnotationsFilter() {
-
       annotationsFilter_ = getDefaultInstance().getAnnotationsFilter();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3447,8 +3504,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       annotationsFilter_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3457,9 +3514,9 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAnnotationFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         annotationFilters_ = new com.google.protobuf.LazyStringArrayList(annotationFilters_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -3626,7 +3683,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      */
     public Builder clearAnnotationFilters() {
       annotationFilters_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3676,7 +3733,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * @return Whether the fieldMask field is set.
      */
     public boolean hasFieldMask() {
-      return fieldMaskBuilder_ != null || fieldMask_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3713,11 +3770,11 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         fieldMask_ = value;
-        onChanged();
       } else {
         fieldMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3733,11 +3790,11 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
     public Builder setFieldMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (fieldMaskBuilder_ == null) {
         fieldMask_ = builderForValue.build();
-        onChanged();
       } else {
         fieldMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3752,17 +3809,18 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeFieldMask(com.google.protobuf.FieldMask value) {
       if (fieldMaskBuilder_ == null) {
-        if (fieldMask_ != null) {
-          fieldMask_ =
-              com.google.protobuf.FieldMask.newBuilder(fieldMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && fieldMask_ != null
+            && fieldMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getFieldMaskBuilder().mergeFrom(value);
         } else {
           fieldMask_ = value;
         }
-        onChanged();
       } else {
         fieldMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3776,14 +3834,13 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
      */
     public Builder clearFieldMask() {
-      if (fieldMaskBuilder_ == null) {
-        fieldMask_ = null;
-        onChanged();
-      } else {
-        fieldMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      fieldMask_ = null;
+      if (fieldMaskBuilder_ != null) {
+        fieldMaskBuilder_.dispose();
         fieldMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3797,7 +3854,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
      */
     public com.google.protobuf.FieldMask.Builder getFieldMaskBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getFieldMaskFieldBuilder().getBuilder();
     }
@@ -3880,6 +3937,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
     public Builder setAnnotationsLimit(int value) {
 
       annotationsLimit_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3897,7 +3955,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearAnnotationsLimit() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       annotationsLimit_ = 0;
       onChanged();
       return this;
@@ -3936,6 +3994,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3952,7 +4011,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -4031,8 +4090,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       orderBy_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4052,8 +4111,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      */
     @java.lang.Deprecated
     public Builder clearOrderBy() {
-
       orderBy_ = getDefaultInstance().getOrderBy();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4078,8 +4137,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       orderBy_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4160,8 +4219,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4182,8 +4241,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4209,8 +4268,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
