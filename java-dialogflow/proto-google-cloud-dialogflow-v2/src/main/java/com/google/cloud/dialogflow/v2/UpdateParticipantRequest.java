@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for [Participants.UpdateParticipant][google.cloud.dialogflow.v2.Participants.UpdateParticipant].
+ * The request message for
+ * [Participants.UpdateParticipant][google.cloud.dialogflow.v2.Participants.UpdateParticipant].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.UpdateParticipantRequest}
@@ -116,7 +117,9 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.ParticipantOrBuilder getParticipantOrBuilder() {
-    return getParticipant();
+    return participant_ == null
+        ? com.google.cloud.dialogflow.v2.Participant.getDefaultInstance()
+        : participant_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -165,7 +168,7 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -351,7 +354,8 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The request message for [Participants.UpdateParticipant][google.cloud.dialogflow.v2.Participants.UpdateParticipant].
+   * The request message for
+   * [Participants.UpdateParticipant][google.cloud.dialogflow.v2.Participants.UpdateParticipant].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.UpdateParticipantRequest}
@@ -385,16 +389,15 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (participantBuilder_ == null) {
-        participant_ = null;
-      } else {
-        participant_ = null;
+      bitField0_ = 0;
+      participant_ = null;
+      if (participantBuilder_ != null) {
+        participantBuilder_.dispose();
         participantBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -424,18 +427,22 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
     public com.google.cloud.dialogflow.v2.UpdateParticipantRequest buildPartial() {
       com.google.cloud.dialogflow.v2.UpdateParticipantRequest result =
           new com.google.cloud.dialogflow.v2.UpdateParticipantRequest(this);
-      if (participantBuilder_ == null) {
-        result.participant_ = participant_;
-      } else {
-        result.participant_ = participantBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.UpdateParticipantRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.participant_ =
+            participantBuilder_ == null ? participant_ : participantBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -519,13 +526,13 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
             case 10:
               {
                 input.readMessage(getParticipantFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -544,6 +551,8 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.v2.Participant participant_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -565,7 +574,7 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
      * @return Whether the participant field is set.
      */
     public boolean hasParticipant() {
-      return participantBuilder_ != null || participant_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -606,11 +615,11 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         participant_ = value;
-        onChanged();
       } else {
         participantBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -628,11 +637,11 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
         com.google.cloud.dialogflow.v2.Participant.Builder builderForValue) {
       if (participantBuilder_ == null) {
         participant_ = builderForValue.build();
-        onChanged();
       } else {
         participantBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -648,19 +657,18 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
      */
     public Builder mergeParticipant(com.google.cloud.dialogflow.v2.Participant value) {
       if (participantBuilder_ == null) {
-        if (participant_ != null) {
-          participant_ =
-              com.google.cloud.dialogflow.v2.Participant.newBuilder(participant_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && participant_ != null
+            && participant_ != com.google.cloud.dialogflow.v2.Participant.getDefaultInstance()) {
+          getParticipantBuilder().mergeFrom(value);
         } else {
           participant_ = value;
         }
-        onChanged();
       } else {
         participantBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -675,14 +683,13 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearParticipant() {
-      if (participantBuilder_ == null) {
-        participant_ = null;
-        onChanged();
-      } else {
-        participant_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      participant_ = null;
+      if (participantBuilder_ != null) {
+        participantBuilder_.dispose();
         participantBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -697,7 +704,7 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.dialogflow.v2.Participant.Builder getParticipantBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getParticipantFieldBuilder().getBuilder();
     }
@@ -768,7 +775,7 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -807,11 +814,11 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -827,11 +834,11 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -846,17 +853,18 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -870,14 +878,13 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -891,7 +898,7 @@ public final class UpdateParticipantRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

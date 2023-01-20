@@ -68,7 +68,9 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -193,7 +195,9 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.ContextOrBuilder getContextOrBuilder() {
-    return getContext();
+    return context_ == null
+        ? com.google.cloud.dialogflow.v2beta1.Context.getDefaultInstance()
+        : context_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -408,12 +412,11 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (contextBuilder_ == null) {
-        context_ = null;
-      } else {
-        context_ = null;
+      context_ = null;
+      if (contextBuilder_ != null) {
+        contextBuilder_.dispose();
         contextBuilder_ = null;
       }
       return this;
@@ -443,14 +446,21 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.v2beta1.CreateContextRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.CreateContextRequest result =
           new com.google.cloud.dialogflow.v2beta1.CreateContextRequest(this);
-      result.parent_ = parent_;
-      if (contextBuilder_ == null) {
-        result.context_ = context_;
-      } else {
-        result.context_ = contextBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.CreateContextRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.context_ = contextBuilder_ == null ? context_ : contextBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -501,6 +511,7 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasContext()) {
@@ -535,13 +546,13 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getContextFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -560,6 +571,8 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -661,8 +674,8 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -691,8 +704,8 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -726,8 +739,8 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -752,7 +765,7 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the context field is set.
      */
     public boolean hasContext() {
-      return contextBuilder_ != null || context_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -793,11 +806,11 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         context_ = value;
-        onChanged();
       } else {
         contextBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -814,11 +827,11 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
     public Builder setContext(com.google.cloud.dialogflow.v2beta1.Context.Builder builderForValue) {
       if (contextBuilder_ == null) {
         context_ = builderForValue.build();
-        onChanged();
       } else {
         contextBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -834,19 +847,18 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeContext(com.google.cloud.dialogflow.v2beta1.Context value) {
       if (contextBuilder_ == null) {
-        if (context_ != null) {
-          context_ =
-              com.google.cloud.dialogflow.v2beta1.Context.newBuilder(context_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && context_ != null
+            && context_ != com.google.cloud.dialogflow.v2beta1.Context.getDefaultInstance()) {
+          getContextBuilder().mergeFrom(value);
         } else {
           context_ = value;
         }
-        onChanged();
       } else {
         contextBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -861,14 +873,13 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearContext() {
-      if (contextBuilder_ == null) {
-        context_ = null;
-        onChanged();
-      } else {
-        context_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      context_ = null;
+      if (contextBuilder_ != null) {
+        contextBuilder_.dispose();
         contextBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -883,7 +894,7 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Context.Builder getContextBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }

@@ -54,6 +54,8 @@ import com.google.cloud.dialogflow.v2.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2.ListMessagesRequest;
 import com.google.cloud.dialogflow.v2.ListMessagesResponse;
 import com.google.cloud.dialogflow.v2.Message;
+import com.google.cloud.dialogflow.v2.SuggestConversationSummaryRequest;
+import com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -124,6 +126,9 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
   private final PagedCallSettings<
           ListMessagesRequest, ListMessagesResponse, ListMessagesPagedResponse>
       listMessagesSettings;
+  private final UnaryCallSettings<
+          SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
+      suggestConversationSummarySettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -325,6 +330,12 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     return listMessagesSettings;
   }
 
+  /** Returns the object with the settings used for calls to suggestConversationSummary. */
+  public UnaryCallSettings<SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
+      suggestConversationSummarySettings() {
+    return suggestConversationSummarySettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -447,6 +458,8 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     getConversationSettings = settingsBuilder.getConversationSettings().build();
     completeConversationSettings = settingsBuilder.completeConversationSettings().build();
     listMessagesSettings = settingsBuilder.listMessagesSettings().build();
+    suggestConversationSummarySettings =
+        settingsBuilder.suggestConversationSummarySettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -466,6 +479,9 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     private final PagedCallSettings.Builder<
             ListMessagesRequest, ListMessagesResponse, ListMessagesPagedResponse>
         listMessagesSettings;
+    private final UnaryCallSettings.Builder<
+            SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
+        suggestConversationSummarySettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -513,6 +529,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       getConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       completeConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listMessagesSettings = PagedCallSettings.newBuilder(LIST_MESSAGES_PAGE_STR_FACT);
+      suggestConversationSummarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -523,6 +540,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
               getConversationSettings,
               completeConversationSettings,
               listMessagesSettings,
+              suggestConversationSummarySettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -536,6 +554,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       getConversationSettings = settings.getConversationSettings.toBuilder();
       completeConversationSettings = settings.completeConversationSettings.toBuilder();
       listMessagesSettings = settings.listMessagesSettings.toBuilder();
+      suggestConversationSummarySettings = settings.suggestConversationSummarySettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -546,6 +565,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
               getConversationSettings,
               completeConversationSettings,
               listMessagesSettings,
+              suggestConversationSummarySettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -599,6 +619,11 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
 
       builder
           .listMessagesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .suggestConversationSummarySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -660,6 +685,13 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
             ListMessagesRequest, ListMessagesResponse, ListMessagesPagedResponse>
         listMessagesSettings() {
       return listMessagesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to suggestConversationSummary. */
+    public UnaryCallSettings.Builder<
+            SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
+        suggestConversationSummarySettings() {
+      return suggestConversationSummarySettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

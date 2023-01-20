@@ -22,8 +22,9 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * Response used for [ConversationDatasets.ImportConversationData][google.cloud.dialogflow.v2.ConversationDatasets.ImportConversationData] long
- * running operation.
+ * Response used for
+ * [ConversationDatasets.ImportConversationData][google.cloud.dialogflow.v2.ConversationDatasets.ImportConversationData]
+ * long running operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.ImportConversationDataOperationResponse}
@@ -71,7 +72,9 @@ public final class ImportConversationDataOperationResponse
   }
 
   public static final int CONVERSATION_DATASET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object conversationDataset_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object conversationDataset_ = "";
   /**
    *
    *
@@ -124,7 +127,7 @@ public final class ImportConversationDataOperationResponse
   }
 
   public static final int IMPORT_COUNT_FIELD_NUMBER = 3;
-  private int importCount_;
+  private int importCount_ = 0;
   /**
    *
    *
@@ -315,8 +318,9 @@ public final class ImportConversationDataOperationResponse
    *
    *
    * <pre>
-   * Response used for [ConversationDatasets.ImportConversationData][google.cloud.dialogflow.v2.ConversationDatasets.ImportConversationData] long
-   * running operation.
+   * Response used for
+   * [ConversationDatasets.ImportConversationData][google.cloud.dialogflow.v2.ConversationDatasets.ImportConversationData]
+   * long running operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.ImportConversationDataOperationResponse}
@@ -351,10 +355,9 @@ public final class ImportConversationDataOperationResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       conversationDataset_ = "";
-
       importCount_ = 0;
-
       return this;
     }
 
@@ -385,10 +388,22 @@ public final class ImportConversationDataOperationResponse
     public com.google.cloud.dialogflow.v2.ImportConversationDataOperationResponse buildPartial() {
       com.google.cloud.dialogflow.v2.ImportConversationDataOperationResponse result =
           new com.google.cloud.dialogflow.v2.ImportConversationDataOperationResponse(this);
-      result.conversationDataset_ = conversationDataset_;
-      result.importCount_ = importCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2.ImportConversationDataOperationResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.conversationDataset_ = conversationDataset_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.importCount_ = importCount_;
+      }
     }
 
     @java.lang.Override
@@ -442,6 +457,7 @@ public final class ImportConversationDataOperationResponse
               .getDefaultInstance()) return this;
       if (!other.getConversationDataset().isEmpty()) {
         conversationDataset_ = other.conversationDataset_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getImportCount() != 0) {
@@ -476,13 +492,13 @@ public final class ImportConversationDataOperationResponse
             case 10:
               {
                 conversationDataset_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 24:
               {
                 importCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             default:
@@ -501,6 +517,8 @@ public final class ImportConversationDataOperationResponse
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object conversationDataset_ = "";
     /**
@@ -569,8 +587,8 @@ public final class ImportConversationDataOperationResponse
       if (value == null) {
         throw new NullPointerException();
       }
-
       conversationDataset_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -588,8 +606,8 @@ public final class ImportConversationDataOperationResponse
      * @return This builder for chaining.
      */
     public Builder clearConversationDataset() {
-
       conversationDataset_ = getDefaultInstance().getConversationDataset();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -612,8 +630,8 @@ public final class ImportConversationDataOperationResponse
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       conversationDataset_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -649,6 +667,7 @@ public final class ImportConversationDataOperationResponse
     public Builder setImportCount(int value) {
 
       importCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -664,7 +683,7 @@ public final class ImportConversationDataOperationResponse
      * @return This builder for chaining.
      */
     public Builder clearImportCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       importCount_ = 0;
       onChanged();
       return this;

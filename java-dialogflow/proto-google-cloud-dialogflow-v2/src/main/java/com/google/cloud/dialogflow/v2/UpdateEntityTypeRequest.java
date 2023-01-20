@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2.EntityTypes.UpdateEntityType].
+ * The request message for
+ * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2.EntityTypes.UpdateEntityType].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.UpdateEntityTypeRequest}
@@ -118,11 +119,15 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.EntityTypeOrBuilder getEntityTypeOrBuilder() {
-    return getEntityType();
+    return entityType_ == null
+        ? com.google.cloud.dialogflow.v2.EntityType.getDefaultInstance()
+        : entityType_;
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -224,7 +229,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -419,7 +424,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request message for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2.EntityTypes.UpdateEntityType].
+   * The request message for
+   * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2.EntityTypes.UpdateEntityType].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.UpdateEntityTypeRequest}
@@ -453,18 +459,16 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (entityTypeBuilder_ == null) {
-        entityType_ = null;
-      } else {
-        entityType_ = null;
+      bitField0_ = 0;
+      entityType_ = null;
+      if (entityTypeBuilder_ != null) {
+        entityTypeBuilder_.dispose();
         entityTypeBuilder_ = null;
       }
       languageCode_ = "";
-
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -494,19 +498,24 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
     public com.google.cloud.dialogflow.v2.UpdateEntityTypeRequest buildPartial() {
       com.google.cloud.dialogflow.v2.UpdateEntityTypeRequest result =
           new com.google.cloud.dialogflow.v2.UpdateEntityTypeRequest(this);
-      if (entityTypeBuilder_ == null) {
-        result.entityType_ = entityType_;
-      } else {
-        result.entityType_ = entityTypeBuilder_.build();
-      }
-      result.languageCode_ = languageCode_;
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.UpdateEntityTypeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.entityType_ = entityTypeBuilder_ == null ? entityType_ : entityTypeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -560,6 +569,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasUpdateMask()) {
@@ -594,19 +604,19 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getEntityTypeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -625,6 +635,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.v2.EntityType entityType_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -646,7 +658,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * @return Whether the entityType field is set.
      */
     public boolean hasEntityType() {
-      return entityTypeBuilder_ != null || entityType_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -687,11 +699,11 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         entityType_ = value;
-        onChanged();
       } else {
         entityTypeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -709,11 +721,11 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
         com.google.cloud.dialogflow.v2.EntityType.Builder builderForValue) {
       if (entityTypeBuilder_ == null) {
         entityType_ = builderForValue.build();
-        onChanged();
       } else {
         entityTypeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -729,19 +741,18 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      */
     public Builder mergeEntityType(com.google.cloud.dialogflow.v2.EntityType value) {
       if (entityTypeBuilder_ == null) {
-        if (entityType_ != null) {
-          entityType_ =
-              com.google.cloud.dialogflow.v2.EntityType.newBuilder(entityType_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && entityType_ != null
+            && entityType_ != com.google.cloud.dialogflow.v2.EntityType.getDefaultInstance()) {
+          getEntityTypeBuilder().mergeFrom(value);
         } else {
           entityType_ = value;
         }
-        onChanged();
       } else {
         entityTypeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -756,14 +767,13 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearEntityType() {
-      if (entityTypeBuilder_ == null) {
-        entityType_ = null;
-        onChanged();
-      } else {
-        entityType_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      entityType_ = null;
+      if (entityTypeBuilder_ != null) {
+        entityTypeBuilder_.dispose();
         entityTypeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -778,7 +788,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.dialogflow.v2.EntityType.Builder getEntityTypeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getEntityTypeFieldBuilder().getBuilder();
     }
@@ -903,8 +913,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -924,8 +934,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -950,8 +960,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -975,7 +985,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1014,11 +1024,11 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1034,11 +1044,11 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1053,17 +1063,18 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1077,14 +1088,13 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1098,7 +1108,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

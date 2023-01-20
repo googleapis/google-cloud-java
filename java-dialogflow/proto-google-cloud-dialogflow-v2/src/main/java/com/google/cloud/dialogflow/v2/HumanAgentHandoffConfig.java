@@ -151,7 +151,9 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
     }
 
     public static final int ACCOUNT_NUMBER_FIELD_NUMBER = 1;
-    private volatile java.lang.Object accountNumber_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object accountNumber_ = "";
     /**
      *
      *
@@ -405,8 +407,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         accountNumber_ = "";
-
         return this;
       }
 
@@ -438,9 +440,19 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
           buildPartial() {
         com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.LivePersonConfig result =
             new com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.LivePersonConfig(this);
-        result.accountNumber_ = accountNumber_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.LivePersonConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.accountNumber_ = accountNumber_;
+        }
       }
 
       @java.lang.Override
@@ -497,6 +509,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
                 .getDefaultInstance()) return this;
         if (!other.getAccountNumber().isEmpty()) {
           accountNumber_ = other.accountNumber_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -528,7 +541,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
               case 10:
                 {
                   accountNumber_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -547,6 +560,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object accountNumber_ = "";
       /**
@@ -612,8 +627,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         if (value == null) {
           throw new NullPointerException();
         }
-
         accountNumber_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -630,8 +645,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearAccountNumber() {
-
         accountNumber_ = getDefaultInstance().getAccountNumber();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -653,8 +668,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         accountNumber_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -894,7 +909,9 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
     }
 
     public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object organizationId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object organizationId_ = "";
     /**
      *
      *
@@ -943,7 +960,9 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
     }
 
     public static final int DEPLOYMENT_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object deploymentId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object deploymentId_ = "";
     /**
      *
      *
@@ -992,7 +1011,9 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
     }
 
     public static final int BUTTON_ID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object buttonId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object buttonId_ = "";
     /**
      *
      *
@@ -1041,7 +1062,9 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
     }
 
     public static final int ENDPOINT_DOMAIN_FIELD_NUMBER = 4;
-    private volatile java.lang.Object endpointDomain_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object endpointDomain_ = "";
     /**
      *
      *
@@ -1335,14 +1358,11 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         organizationId_ = "";
-
         deploymentId_ = "";
-
         buttonId_ = "";
-
         endpointDomain_ = "";
-
         return this;
       }
 
@@ -1376,12 +1396,28 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.SalesforceLiveAgentConfig result =
             new com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.SalesforceLiveAgentConfig(
                 this);
-        result.organizationId_ = organizationId_;
-        result.deploymentId_ = deploymentId_;
-        result.buttonId_ = buttonId_;
-        result.endpointDomain_ = endpointDomain_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.SalesforceLiveAgentConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.organizationId_ = organizationId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.deploymentId_ = deploymentId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.buttonId_ = buttonId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.endpointDomain_ = endpointDomain_;
+        }
       }
 
       @java.lang.Override
@@ -1440,18 +1476,22 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
                 .getDefaultInstance()) return this;
         if (!other.getOrganizationId().isEmpty()) {
           organizationId_ = other.organizationId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDeploymentId().isEmpty()) {
           deploymentId_ = other.deploymentId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getButtonId().isEmpty()) {
           buttonId_ = other.buttonId_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getEndpointDomain().isEmpty()) {
           endpointDomain_ = other.endpointDomain_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1483,25 +1523,25 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
               case 10:
                 {
                   organizationId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   deploymentId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   buttonId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   endpointDomain_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               default:
@@ -1520,6 +1560,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object organizationId_ = "";
       /**
@@ -1582,8 +1624,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         if (value == null) {
           throw new NullPointerException();
         }
-
         organizationId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1599,8 +1641,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearOrganizationId() {
-
         organizationId_ = getDefaultInstance().getOrganizationId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1621,8 +1663,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         organizationId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1688,8 +1730,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         if (value == null) {
           throw new NullPointerException();
         }
-
         deploymentId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1705,8 +1747,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearDeploymentId() {
-
         deploymentId_ = getDefaultInstance().getDeploymentId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1727,8 +1769,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         deploymentId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1794,8 +1836,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         if (value == null) {
           throw new NullPointerException();
         }
-
         buttonId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1811,8 +1853,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearButtonId() {
-
         buttonId_ = getDefaultInstance().getButtonId();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1833,8 +1875,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         buttonId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1909,8 +1951,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         if (value == null) {
           throw new NullPointerException();
         }
-
         endpointDomain_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1929,8 +1971,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearEndpointDomain() {
-
         endpointDomain_ = getDefaultInstance().getEndpointDomain();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1954,8 +1996,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         endpointDomain_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2443,6 +2485,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (livePersonConfigBuilder_ != null) {
         livePersonConfigBuilder_.clear();
       }
@@ -2478,23 +2521,27 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
     public com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig buildPartial() {
       com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig result =
           new com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig(this);
-      if (agentServiceCase_ == 1) {
-        if (livePersonConfigBuilder_ == null) {
-          result.agentService_ = agentService_;
-        } else {
-          result.agentService_ = livePersonConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (agentServiceCase_ == 2) {
-        if (salesforceLiveAgentConfigBuilder_ == null) {
-          result.agentService_ = agentService_;
-        } else {
-          result.agentService_ = salesforceLiveAgentConfigBuilder_.build();
-        }
-      }
-      result.agentServiceCase_ = agentServiceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig result) {
+      result.agentServiceCase_ = agentServiceCase_;
+      result.agentService_ = this.agentService_;
+      if (agentServiceCase_ == 1 && livePersonConfigBuilder_ != null) {
+        result.agentService_ = livePersonConfigBuilder_.build();
+      }
+      if (agentServiceCase_ == 2 && salesforceLiveAgentConfigBuilder_ != null) {
+        result.agentService_ = salesforceLiveAgentConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2629,6 +2676,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.LivePersonConfig,
@@ -2871,7 +2920,6 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       }
       agentServiceCase_ = 1;
       onChanged();
-      ;
       return livePersonConfigBuilder_;
     }
 
@@ -3124,7 +3172,6 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       }
       agentServiceCase_ = 2;
       onChanged();
-      ;
       return salesforceLiveAgentConfigBuilder_;
     }
 

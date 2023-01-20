@@ -228,15 +228,18 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TOPIC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object topic_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object topic_ = "";
   /**
    *
    *
    * <pre>
    * Name of the Pub/Sub topic to publish conversation
    * events like
-   * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED] as
-   * serialized [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
+   * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED]
+   * as serialized
+   * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
    * For telephony integration to receive notification, make sure either this
    * topic is in the same project as the conversation or you grant
    * `service-&lt;Conversation Project
@@ -269,8 +272,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Name of the Pub/Sub topic to publish conversation
    * events like
-   * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED] as
-   * serialized [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
+   * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED]
+   * as serialized
+   * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
    * For telephony integration to receive notification, make sure either this
    * topic is in the same project as the conversation or you grant
    * `service-&lt;Conversation Project
@@ -299,7 +303,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MESSAGE_FORMAT_FIELD_NUMBER = 2;
-  private int messageFormat_;
+  private int messageFormat_ = 0;
   /**
    *
    *
@@ -328,9 +332,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.NotificationConfig.MessageFormat getMessageFormat() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.NotificationConfig.MessageFormat result =
-        com.google.cloud.dialogflow.v2.NotificationConfig.MessageFormat.valueOf(messageFormat_);
+        com.google.cloud.dialogflow.v2.NotificationConfig.MessageFormat.forNumber(messageFormat_);
     return result == null
         ? com.google.cloud.dialogflow.v2.NotificationConfig.MessageFormat.UNRECOGNIZED
         : result;
@@ -548,10 +551,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       topic_ = "";
-
       messageFormat_ = 0;
-
       return this;
     }
 
@@ -579,10 +581,21 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dialogflow.v2.NotificationConfig buildPartial() {
       com.google.cloud.dialogflow.v2.NotificationConfig result =
           new com.google.cloud.dialogflow.v2.NotificationConfig(this);
-      result.topic_ = topic_;
-      result.messageFormat_ = messageFormat_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.NotificationConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.topic_ = topic_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.messageFormat_ = messageFormat_;
+      }
     }
 
     @java.lang.Override
@@ -633,6 +646,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getTopic().isEmpty()) {
         topic_ = other.topic_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.messageFormat_ != 0) {
@@ -667,13 +681,13 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 topic_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 messageFormat_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -693,6 +707,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object topic_ = "";
     /**
      *
@@ -700,8 +716,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Name of the Pub/Sub topic to publish conversation
      * events like
-     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED] as
-     * serialized [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
+     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED]
+     * as serialized
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
      * For telephony integration to receive notification, make sure either this
      * topic is in the same project as the conversation or you grant
      * `service-&lt;Conversation Project
@@ -733,8 +750,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Name of the Pub/Sub topic to publish conversation
      * events like
-     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED] as
-     * serialized [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
+     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED]
+     * as serialized
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
      * For telephony integration to receive notification, make sure either this
      * topic is in the same project as the conversation or you grant
      * `service-&lt;Conversation Project
@@ -766,8 +784,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Name of the Pub/Sub topic to publish conversation
      * events like
-     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED] as
-     * serialized [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
+     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED]
+     * as serialized
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
      * For telephony integration to receive notification, make sure either this
      * topic is in the same project as the conversation or you grant
      * `service-&lt;Conversation Project
@@ -787,8 +806,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       topic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -798,8 +817,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Name of the Pub/Sub topic to publish conversation
      * events like
-     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED] as
-     * serialized [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
+     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED]
+     * as serialized
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
      * For telephony integration to receive notification, make sure either this
      * topic is in the same project as the conversation or you grant
      * `service-&lt;Conversation Project
@@ -815,8 +835,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTopic() {
-
       topic_ = getDefaultInstance().getTopic();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -826,8 +846,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Name of the Pub/Sub topic to publish conversation
      * events like
-     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED] as
-     * serialized [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
+     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED]
+     * as serialized
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
      * For telephony integration to receive notification, make sure either this
      * topic is in the same project as the conversation or you grant
      * `service-&lt;Conversation Project
@@ -848,8 +869,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       topic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -883,8 +904,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setMessageFormatValue(int value) {
-
       messageFormat_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -901,9 +922,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2.NotificationConfig.MessageFormat getMessageFormat() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.NotificationConfig.MessageFormat result =
-          com.google.cloud.dialogflow.v2.NotificationConfig.MessageFormat.valueOf(messageFormat_);
+          com.google.cloud.dialogflow.v2.NotificationConfig.MessageFormat.forNumber(messageFormat_);
       return result == null
           ? com.google.cloud.dialogflow.v2.NotificationConfig.MessageFormat.UNRECOGNIZED
           : result;
@@ -925,7 +945,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       messageFormat_ = value.getNumber();
       onChanged();
       return this;
@@ -942,7 +962,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMessageFormat() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       messageFormat_ = 0;
       onChanged();
       return this;

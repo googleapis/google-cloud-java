@@ -68,7 +68,9 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -175,7 +177,9 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.ParticipantOrBuilder getParticipantOrBuilder() {
-    return getParticipant();
+    return participant_ == null
+        ? com.google.cloud.dialogflow.v2beta1.Participant.getDefaultInstance()
+        : participant_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -390,12 +394,11 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (participantBuilder_ == null) {
-        participant_ = null;
-      } else {
-        participant_ = null;
+      participant_ = null;
+      if (participantBuilder_ != null) {
+        participantBuilder_.dispose();
         participantBuilder_ = null;
       }
       return this;
@@ -426,14 +429,23 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
     public com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest result =
           new com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest(this);
-      result.parent_ = parent_;
-      if (participantBuilder_ == null) {
-        result.participant_ = participant_;
-      } else {
-        result.participant_ = participantBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.participant_ =
+            participantBuilder_ == null ? participant_ : participantBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -485,6 +497,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasParticipant()) {
@@ -519,13 +532,13 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getParticipantFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -544,6 +557,8 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -618,8 +633,8 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -639,8 +654,8 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -665,8 +680,8 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -691,7 +706,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
      * @return Whether the participant field is set.
      */
     public boolean hasParticipant() {
-      return participantBuilder_ != null || participant_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -732,11 +747,11 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         participant_ = value;
-        onChanged();
       } else {
         participantBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -754,11 +769,11 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
         com.google.cloud.dialogflow.v2beta1.Participant.Builder builderForValue) {
       if (participantBuilder_ == null) {
         participant_ = builderForValue.build();
-        onChanged();
       } else {
         participantBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -774,19 +789,19 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
      */
     public Builder mergeParticipant(com.google.cloud.dialogflow.v2beta1.Participant value) {
       if (participantBuilder_ == null) {
-        if (participant_ != null) {
-          participant_ =
-              com.google.cloud.dialogflow.v2beta1.Participant.newBuilder(participant_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && participant_ != null
+            && participant_
+                != com.google.cloud.dialogflow.v2beta1.Participant.getDefaultInstance()) {
+          getParticipantBuilder().mergeFrom(value);
         } else {
           participant_ = value;
         }
-        onChanged();
       } else {
         participantBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -801,14 +816,13 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearParticipant() {
-      if (participantBuilder_ == null) {
-        participant_ = null;
-        onChanged();
-      } else {
-        participant_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      participant_ = null;
+      if (participantBuilder_ != null) {
+        participantBuilder_.dispose();
         participantBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -823,7 +837,7 @@ public final class CreateParticipantRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Participant.Builder getParticipantBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getParticipantFieldBuilder().getBuilder();
     }

@@ -571,7 +571,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALUE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object value_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object value_ = "";
     /**
      *
      *
@@ -634,6 +636,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SYNONYMS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList synonyms_;
     /**
      *
@@ -926,10 +930,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         value_ = "";
-
         synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -957,15 +961,28 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.v2beta1.EntityType.Entity buildPartial() {
         com.google.cloud.dialogflow.v2beta1.EntityType.Entity result =
             new com.google.cloud.dialogflow.v2beta1.EntityType.Entity(this);
-        int from_bitField0_ = bitField0_;
-        result.value_ = value_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          synonyms_ = synonyms_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.synonyms_ = synonyms_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.v2beta1.EntityType.Entity result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          synonyms_ = synonyms_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.synonyms_ = synonyms_;
+      }
+
+      private void buildPartial0(com.google.cloud.dialogflow.v2beta1.EntityType.Entity result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.value_ = value_;
+        }
       }
 
       @java.lang.Override
@@ -1018,12 +1035,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getValue().isEmpty()) {
           value_ = other.value_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.synonyms_.isEmpty()) {
           if (synonyms_.isEmpty()) {
             synonyms_ = other.synonyms_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSynonymsIsMutable();
             synonyms_.addAll(other.synonyms_);
@@ -1059,7 +1077,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   value_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -1170,8 +1188,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         value_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1194,8 +1212,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-
         value_ = getDefaultInstance().getValue();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1223,8 +1241,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         value_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1233,9 +1251,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureSynonymsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           synonyms_ = new com.google.protobuf.LazyStringArrayList(synonyms_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -1402,7 +1420,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearSynonyms() {
         synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1498,7 +1516,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1559,7 +1579,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -1608,7 +1630,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 3;
-  private int kind_;
+  private int kind_ = 0;
   /**
    *
    *
@@ -1641,16 +1663,15 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EntityType.Kind getKind() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.EntityType.Kind result =
-        com.google.cloud.dialogflow.v2beta1.EntityType.Kind.valueOf(kind_);
+        com.google.cloud.dialogflow.v2beta1.EntityType.Kind.forNumber(kind_);
     return result == null
         ? com.google.cloud.dialogflow.v2beta1.EntityType.Kind.UNRECOGNIZED
         : result;
   }
 
   public static final int AUTO_EXPANSION_MODE_FIELD_NUMBER = 4;
-  private int autoExpansionMode_;
+  private int autoExpansionMode_ = 0;
   /**
    *
    *
@@ -1685,9 +1706,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode getAutoExpansionMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode result =
-        com.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode.valueOf(
+        com.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode.forNumber(
             autoExpansionMode_);
     return result == null
         ? com.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode.UNRECOGNIZED
@@ -1695,6 +1715,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENTITIES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity> entities_;
   /**
    *
@@ -1775,7 +1797,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_FUZZY_EXTRACTION_FIELD_NUMBER = 7;
-  private boolean enableFuzzyExtraction_;
+  private boolean enableFuzzyExtraction_ = false;
   /**
    *
    *
@@ -2051,23 +2073,19 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       kind_ = 0;
-
       autoExpansionMode_ = 0;
-
       if (entitiesBuilder_ == null) {
         entities_ = java.util.Collections.emptyList();
       } else {
         entities_ = null;
         entitiesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       enableFuzzyExtraction_ = false;
-
       return this;
     }
 
@@ -2095,23 +2113,43 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2beta1.EntityType buildPartial() {
       com.google.cloud.dialogflow.v2beta1.EntityType result =
           new com.google.cloud.dialogflow.v2beta1.EntityType(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.kind_ = kind_;
-      result.autoExpansionMode_ = autoExpansionMode_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dialogflow.v2beta1.EntityType result) {
       if (entitiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           entities_ = java.util.Collections.unmodifiableList(entities_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.entities_ = entities_;
       } else {
         result.entities_ = entitiesBuilder_.build();
       }
-      result.enableFuzzyExtraction_ = enableFuzzyExtraction_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.EntityType result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.kind_ = kind_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.autoExpansionMode_ = autoExpansionMode_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.enableFuzzyExtraction_ = enableFuzzyExtraction_;
+      }
     }
 
     @java.lang.Override
@@ -2161,10 +2199,12 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.v2beta1.EntityType.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.kind_ != 0) {
@@ -2177,7 +2217,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         if (!other.entities_.isEmpty()) {
           if (entities_.isEmpty()) {
             entities_ = other.entities_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureEntitiesIsMutable();
             entities_.addAll(other.entities_);
@@ -2190,7 +2230,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
             entitiesBuilder_.dispose();
             entitiesBuilder_ = null;
             entities_ = other.entities_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             entitiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEntitiesFieldBuilder()
@@ -2232,25 +2272,25 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 kind_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 autoExpansionMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 50:
@@ -2270,7 +2310,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
             case 56:
               {
                 enableFuzzyExtraction_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             default:
@@ -2371,8 +2411,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2394,8 +2434,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2422,8 +2462,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2489,8 +2529,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2506,8 +2546,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2528,8 +2568,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2567,8 +2607,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
-
       kind_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2587,9 +2627,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.EntityType.Kind getKind() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.EntityType.Kind result =
-          com.google.cloud.dialogflow.v2beta1.EntityType.Kind.valueOf(kind_);
+          com.google.cloud.dialogflow.v2beta1.EntityType.Kind.forNumber(kind_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.EntityType.Kind.UNRECOGNIZED
           : result;
@@ -2612,7 +2651,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       kind_ = value.getNumber();
       onChanged();
       return this;
@@ -2631,7 +2670,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       kind_ = 0;
       onChanged();
       return this;
@@ -2672,8 +2711,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAutoExpansionModeValue(int value) {
-
       autoExpansionMode_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2693,9 +2732,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode getAutoExpansionMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode result =
-          com.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode.valueOf(
+          com.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode.forNumber(
               autoExpansionMode_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode.UNRECOGNIZED
@@ -2721,7 +2759,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       autoExpansionMode_ = value.getNumber();
       onChanged();
       return this;
@@ -2741,7 +2779,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAutoExpansionMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       autoExpansionMode_ = 0;
       onChanged();
       return this;
@@ -2751,11 +2789,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureEntitiesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         entities_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.EntityType.Entity>(
                 entities_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2996,7 +3034,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEntities() {
       if (entitiesBuilder_ == null) {
         entities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         entitiesBuilder_.clear();
@@ -3136,7 +3174,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.EntityType.Entity,
                 com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder,
                 com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>(
-                entities_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                entities_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         entities_ = null;
       }
       return entitiesBuilder_;
@@ -3173,6 +3211,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableFuzzyExtraction(boolean value) {
 
       enableFuzzyExtraction_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3188,7 +3227,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableFuzzyExtraction() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       enableFuzzyExtraction_ = false;
       onChanged();
       return this;

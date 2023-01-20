@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchUpdateEntityTypes].
+ * The request message for
+ * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchUpdateEntityTypes].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest}
@@ -116,7 +117,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -302,7 +305,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -404,7 +409,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -631,7 +636,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The request message for [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchUpdateEntityTypes].
+   * The request message for
+   * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchUpdateEntityTypes].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest}
@@ -665,17 +671,15 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (entityTypeBatchInlineBuilder_ != null) {
         entityTypeBatchInlineBuilder_.clear();
       }
       languageCode_ = "";
-
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       entityTypeBatchCase_ = 0;
@@ -708,26 +712,35 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
     public com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest buildPartial() {
       com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest result =
           new com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest(this);
-      result.parent_ = parent_;
-      if (entityTypeBatchCase_ == 2) {
-        result.entityTypeBatch_ = entityTypeBatch_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (entityTypeBatchCase_ == 3) {
-        if (entityTypeBatchInlineBuilder_ == null) {
-          result.entityTypeBatch_ = entityTypeBatch_;
-        } else {
-          result.entityTypeBatch_ = entityTypeBatchInlineBuilder_.build();
-        }
-      }
-      result.languageCode_ = languageCode_;
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.entityTypeBatchCase_ = entityTypeBatchCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest result) {
+      result.entityTypeBatchCase_ = entityTypeBatchCase_;
+      result.entityTypeBatch_ = this.entityTypeBatch_;
+      if (entityTypeBatchCase_ == 3 && entityTypeBatchInlineBuilder_ != null) {
+        result.entityTypeBatch_ = entityTypeBatchInlineBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -779,10 +792,12 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasUpdateMask()) {
@@ -835,7 +850,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -855,13 +870,13 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
             case 34:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -894,6 +909,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -965,8 +982,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -985,8 +1002,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1010,8 +1027,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1378,7 +1395,6 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       }
       entityTypeBatchCase_ = 3;
       onChanged();
-      ;
       return entityTypeBatchInlineBuilder_;
     }
 
@@ -1455,8 +1471,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1476,8 +1492,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1502,8 +1518,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1527,7 +1543,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1566,11 +1582,11 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1586,11 +1602,11 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1605,17 +1621,18 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1629,14 +1646,13 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1650,7 +1666,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

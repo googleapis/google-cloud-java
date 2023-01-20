@@ -72,7 +72,9 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -219,7 +223,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 12;
@@ -268,7 +272,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int AUTOMATED_AGENT_CONFIG_FIELD_NUMBER = 3;
@@ -317,7 +321,9 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.AutomatedAgentConfigOrBuilder
       getAutomatedAgentConfigOrBuilder() {
-    return getAutomatedAgentConfig();
+    return automatedAgentConfig_ == null
+        ? com.google.cloud.dialogflow.v2.AutomatedAgentConfig.getDefaultInstance()
+        : automatedAgentConfig_;
   }
 
   public static final int HUMAN_AGENT_ASSISTANT_CONFIG_FIELD_NUMBER = 4;
@@ -369,7 +375,9 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.HumanAgentAssistantConfigOrBuilder
       getHumanAgentAssistantConfigOrBuilder() {
-    return getHumanAgentAssistantConfig();
+    return humanAgentAssistantConfig_ == null
+        ? com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.getDefaultInstance()
+        : humanAgentAssistantConfig_;
   }
 
   public static final int HUMAN_AGENT_HANDOFF_CONFIG_FIELD_NUMBER = 5;
@@ -427,7 +435,9 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.HumanAgentHandoffConfigOrBuilder
       getHumanAgentHandoffConfigOrBuilder() {
-    return getHumanAgentHandoffConfig();
+    return humanAgentHandoffConfig_ == null
+        ? com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.getDefaultInstance()
+        : humanAgentHandoffConfig_;
   }
 
   public static final int NOTIFICATION_CONFIG_FIELD_NUMBER = 6;
@@ -476,7 +486,9 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.NotificationConfigOrBuilder
       getNotificationConfigOrBuilder() {
-    return getNotificationConfig();
+    return notificationConfig_ == null
+        ? com.google.cloud.dialogflow.v2.NotificationConfig.getDefaultInstance()
+        : notificationConfig_;
   }
 
   public static final int LOGGING_CONFIG_FIELD_NUMBER = 7;
@@ -524,7 +536,9 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.LoggingConfigOrBuilder getLoggingConfigOrBuilder() {
-    return getLoggingConfig();
+    return loggingConfig_ == null
+        ? com.google.cloud.dialogflow.v2.LoggingConfig.getDefaultInstance()
+        : loggingConfig_;
   }
 
   public static final int NEW_MESSAGE_EVENT_NOTIFICATION_CONFIG_FIELD_NUMBER = 8;
@@ -579,7 +593,9 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.NotificationConfigOrBuilder
       getNewMessageEventNotificationConfigOrBuilder() {
-    return getNewMessageEventNotificationConfig();
+    return newMessageEventNotificationConfig_ == null
+        ? com.google.cloud.dialogflow.v2.NotificationConfig.getDefaultInstance()
+        : newMessageEventNotificationConfig_;
   }
 
   public static final int STT_CONFIG_FIELD_NUMBER = 9;
@@ -627,11 +643,15 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.SpeechToTextConfigOrBuilder getSttConfigOrBuilder() {
-    return getSttConfig();
+    return sttConfig_ == null
+        ? com.google.cloud.dialogflow.v2.SpeechToTextConfig.getDefaultInstance()
+        : sttConfig_;
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 10;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -688,7 +708,9 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TIME_ZONE_FIELD_NUMBER = 14;
-  private volatile java.lang.Object timeZone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object timeZone_ = "";
   /**
    *
    *
@@ -741,7 +763,9 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SECURITY_SETTINGS_FIELD_NUMBER = 13;
-  private volatile java.lang.Object securitySettings_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object securitySettings_ = "";
   /**
    *
    *
@@ -1161,70 +1185,57 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      if (automatedAgentConfigBuilder_ == null) {
-        automatedAgentConfig_ = null;
-      } else {
-        automatedAgentConfig_ = null;
+      automatedAgentConfig_ = null;
+      if (automatedAgentConfigBuilder_ != null) {
+        automatedAgentConfigBuilder_.dispose();
         automatedAgentConfigBuilder_ = null;
       }
-      if (humanAgentAssistantConfigBuilder_ == null) {
-        humanAgentAssistantConfig_ = null;
-      } else {
-        humanAgentAssistantConfig_ = null;
+      humanAgentAssistantConfig_ = null;
+      if (humanAgentAssistantConfigBuilder_ != null) {
+        humanAgentAssistantConfigBuilder_.dispose();
         humanAgentAssistantConfigBuilder_ = null;
       }
-      if (humanAgentHandoffConfigBuilder_ == null) {
-        humanAgentHandoffConfig_ = null;
-      } else {
-        humanAgentHandoffConfig_ = null;
+      humanAgentHandoffConfig_ = null;
+      if (humanAgentHandoffConfigBuilder_ != null) {
+        humanAgentHandoffConfigBuilder_.dispose();
         humanAgentHandoffConfigBuilder_ = null;
       }
-      if (notificationConfigBuilder_ == null) {
-        notificationConfig_ = null;
-      } else {
-        notificationConfig_ = null;
+      notificationConfig_ = null;
+      if (notificationConfigBuilder_ != null) {
+        notificationConfigBuilder_.dispose();
         notificationConfigBuilder_ = null;
       }
-      if (loggingConfigBuilder_ == null) {
-        loggingConfig_ = null;
-      } else {
-        loggingConfig_ = null;
+      loggingConfig_ = null;
+      if (loggingConfigBuilder_ != null) {
+        loggingConfigBuilder_.dispose();
         loggingConfigBuilder_ = null;
       }
-      if (newMessageEventNotificationConfigBuilder_ == null) {
-        newMessageEventNotificationConfig_ = null;
-      } else {
-        newMessageEventNotificationConfig_ = null;
+      newMessageEventNotificationConfig_ = null;
+      if (newMessageEventNotificationConfigBuilder_ != null) {
+        newMessageEventNotificationConfigBuilder_.dispose();
         newMessageEventNotificationConfigBuilder_ = null;
       }
-      if (sttConfigBuilder_ == null) {
-        sttConfig_ = null;
-      } else {
-        sttConfig_ = null;
+      sttConfig_ = null;
+      if (sttConfigBuilder_ != null) {
+        sttConfigBuilder_.dispose();
         sttConfigBuilder_ = null;
       }
       languageCode_ = "";
-
       timeZone_ = "";
-
       securitySettings_ = "";
-
       return this;
     }
 
@@ -1252,59 +1263,73 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     public com.google.cloud.dialogflow.v2.ConversationProfile buildPartial() {
       com.google.cloud.dialogflow.v2.ConversationProfile result =
           new com.google.cloud.dialogflow.v2.ConversationProfile(this);
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (automatedAgentConfigBuilder_ == null) {
-        result.automatedAgentConfig_ = automatedAgentConfig_;
-      } else {
-        result.automatedAgentConfig_ = automatedAgentConfigBuilder_.build();
-      }
-      if (humanAgentAssistantConfigBuilder_ == null) {
-        result.humanAgentAssistantConfig_ = humanAgentAssistantConfig_;
-      } else {
-        result.humanAgentAssistantConfig_ = humanAgentAssistantConfigBuilder_.build();
-      }
-      if (humanAgentHandoffConfigBuilder_ == null) {
-        result.humanAgentHandoffConfig_ = humanAgentHandoffConfig_;
-      } else {
-        result.humanAgentHandoffConfig_ = humanAgentHandoffConfigBuilder_.build();
-      }
-      if (notificationConfigBuilder_ == null) {
-        result.notificationConfig_ = notificationConfig_;
-      } else {
-        result.notificationConfig_ = notificationConfigBuilder_.build();
-      }
-      if (loggingConfigBuilder_ == null) {
-        result.loggingConfig_ = loggingConfig_;
-      } else {
-        result.loggingConfig_ = loggingConfigBuilder_.build();
-      }
-      if (newMessageEventNotificationConfigBuilder_ == null) {
-        result.newMessageEventNotificationConfig_ = newMessageEventNotificationConfig_;
-      } else {
-        result.newMessageEventNotificationConfig_ =
-            newMessageEventNotificationConfigBuilder_.build();
-      }
-      if (sttConfigBuilder_ == null) {
-        result.sttConfig_ = sttConfig_;
-      } else {
-        result.sttConfig_ = sttConfigBuilder_.build();
-      }
-      result.languageCode_ = languageCode_;
-      result.timeZone_ = timeZone_;
-      result.securitySettings_ = securitySettings_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.ConversationProfile result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.automatedAgentConfig_ =
+            automatedAgentConfigBuilder_ == null
+                ? automatedAgentConfig_
+                : automatedAgentConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.humanAgentAssistantConfig_ =
+            humanAgentAssistantConfigBuilder_ == null
+                ? humanAgentAssistantConfig_
+                : humanAgentAssistantConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.humanAgentHandoffConfig_ =
+            humanAgentHandoffConfigBuilder_ == null
+                ? humanAgentHandoffConfig_
+                : humanAgentHandoffConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.notificationConfig_ =
+            notificationConfigBuilder_ == null
+                ? notificationConfig_
+                : notificationConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.loggingConfig_ =
+            loggingConfigBuilder_ == null ? loggingConfig_ : loggingConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.newMessageEventNotificationConfig_ =
+            newMessageEventNotificationConfigBuilder_ == null
+                ? newMessageEventNotificationConfig_
+                : newMessageEventNotificationConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.sttConfig_ = sttConfigBuilder_ == null ? sttConfig_ : sttConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.timeZone_ = timeZone_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.securitySettings_ = securitySettings_;
+      }
     }
 
     @java.lang.Override
@@ -1355,10 +1380,12 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1390,14 +1417,17 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.getTimeZone().isEmpty()) {
         timeZone_ = other.timeZone_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.getSecuritySettings().isEmpty()) {
         securitySettings_ = other.securitySettings_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1429,47 +1459,47 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getAutomatedAgentConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getHumanAgentAssistantConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getHumanAgentHandoffConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getNotificationConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getLoggingConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 66:
@@ -1477,43 +1507,43 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
                 input.readMessage(
                     getNewMessageEventNotificationConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getSttConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 74
             case 82:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 98
             case 106:
               {
                 securitySettings_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
             case 114:
               {
                 timeZone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 114
             default:
@@ -1532,6 +1562,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1600,8 +1632,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1619,8 +1651,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1643,8 +1675,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1710,8 +1742,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1727,8 +1759,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1749,8 +1781,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1775,7 +1807,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1816,11 +1848,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1837,11 +1869,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1857,17 +1889,18 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1882,14 +1915,13 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1904,7 +1936,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1976,7 +2008,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2017,11 +2049,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2038,11 +2070,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2058,17 +2090,18 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2083,14 +2116,13 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2105,7 +2137,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2175,7 +2207,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * @return Whether the automatedAgentConfig field is set.
      */
     public boolean hasAutomatedAgentConfig() {
-      return automatedAgentConfigBuilder_ != null || automatedAgentConfig_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2213,11 +2245,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         automatedAgentConfig_ = value;
-        onChanged();
       } else {
         automatedAgentConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2233,11 +2265,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         com.google.cloud.dialogflow.v2.AutomatedAgentConfig.Builder builderForValue) {
       if (automatedAgentConfigBuilder_ == null) {
         automatedAgentConfig_ = builderForValue.build();
-        onChanged();
       } else {
         automatedAgentConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2252,19 +2284,19 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     public Builder mergeAutomatedAgentConfig(
         com.google.cloud.dialogflow.v2.AutomatedAgentConfig value) {
       if (automatedAgentConfigBuilder_ == null) {
-        if (automatedAgentConfig_ != null) {
-          automatedAgentConfig_ =
-              com.google.cloud.dialogflow.v2.AutomatedAgentConfig.newBuilder(automatedAgentConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && automatedAgentConfig_ != null
+            && automatedAgentConfig_
+                != com.google.cloud.dialogflow.v2.AutomatedAgentConfig.getDefaultInstance()) {
+          getAutomatedAgentConfigBuilder().mergeFrom(value);
         } else {
           automatedAgentConfig_ = value;
         }
-        onChanged();
       } else {
         automatedAgentConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2277,14 +2309,13 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dialogflow.v2.AutomatedAgentConfig automated_agent_config = 3;</code>
      */
     public Builder clearAutomatedAgentConfig() {
-      if (automatedAgentConfigBuilder_ == null) {
-        automatedAgentConfig_ = null;
-        onChanged();
-      } else {
-        automatedAgentConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      automatedAgentConfig_ = null;
+      if (automatedAgentConfigBuilder_ != null) {
+        automatedAgentConfigBuilder_.dispose();
         automatedAgentConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2298,7 +2329,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.dialogflow.v2.AutomatedAgentConfig.Builder
         getAutomatedAgentConfigBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getAutomatedAgentConfigFieldBuilder().getBuilder();
     }
@@ -2366,7 +2397,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * @return Whether the humanAgentAssistantConfig field is set.
      */
     public boolean hasHumanAgentAssistantConfig() {
-      return humanAgentAssistantConfigBuilder_ != null || humanAgentAssistantConfig_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2406,11 +2437,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         humanAgentAssistantConfig_ = value;
-        onChanged();
       } else {
         humanAgentAssistantConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2427,11 +2458,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.Builder builderForValue) {
       if (humanAgentAssistantConfigBuilder_ == null) {
         humanAgentAssistantConfig_ = builderForValue.build();
-        onChanged();
       } else {
         humanAgentAssistantConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2447,20 +2478,19 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     public Builder mergeHumanAgentAssistantConfig(
         com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig value) {
       if (humanAgentAssistantConfigBuilder_ == null) {
-        if (humanAgentAssistantConfig_ != null) {
-          humanAgentAssistantConfig_ =
-              com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.newBuilder(
-                      humanAgentAssistantConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && humanAgentAssistantConfig_ != null
+            && humanAgentAssistantConfig_
+                != com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.getDefaultInstance()) {
+          getHumanAgentAssistantConfigBuilder().mergeFrom(value);
         } else {
           humanAgentAssistantConfig_ = value;
         }
-        onChanged();
       } else {
         humanAgentAssistantConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2474,14 +2504,13 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearHumanAgentAssistantConfig() {
-      if (humanAgentAssistantConfigBuilder_ == null) {
-        humanAgentAssistantConfig_ = null;
-        onChanged();
-      } else {
-        humanAgentAssistantConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      humanAgentAssistantConfig_ = null;
+      if (humanAgentAssistantConfigBuilder_ != null) {
+        humanAgentAssistantConfigBuilder_.dispose();
         humanAgentAssistantConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2496,7 +2525,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.Builder
         getHumanAgentAssistantConfigBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getHumanAgentAssistantConfigFieldBuilder().getBuilder();
     }
@@ -2568,7 +2597,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * @return Whether the humanAgentHandoffConfig field is set.
      */
     public boolean hasHumanAgentHandoffConfig() {
-      return humanAgentHandoffConfigBuilder_ != null || humanAgentHandoffConfig_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2612,11 +2641,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         humanAgentHandoffConfig_ = value;
-        onChanged();
       } else {
         humanAgentHandoffConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2635,11 +2664,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.Builder builderForValue) {
       if (humanAgentHandoffConfigBuilder_ == null) {
         humanAgentHandoffConfig_ = builderForValue.build();
-        onChanged();
       } else {
         humanAgentHandoffConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2657,20 +2686,19 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     public Builder mergeHumanAgentHandoffConfig(
         com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig value) {
       if (humanAgentHandoffConfigBuilder_ == null) {
-        if (humanAgentHandoffConfig_ != null) {
-          humanAgentHandoffConfig_ =
-              com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.newBuilder(
-                      humanAgentHandoffConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && humanAgentHandoffConfig_ != null
+            && humanAgentHandoffConfig_
+                != com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.getDefaultInstance()) {
+          getHumanAgentHandoffConfigBuilder().mergeFrom(value);
         } else {
           humanAgentHandoffConfig_ = value;
         }
-        onChanged();
       } else {
         humanAgentHandoffConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2686,14 +2714,13 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearHumanAgentHandoffConfig() {
-      if (humanAgentHandoffConfigBuilder_ == null) {
-        humanAgentHandoffConfig_ = null;
-        onChanged();
-      } else {
-        humanAgentHandoffConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      humanAgentHandoffConfig_ = null;
+      if (humanAgentHandoffConfigBuilder_ != null) {
+        humanAgentHandoffConfigBuilder_.dispose();
         humanAgentHandoffConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2710,7 +2737,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.Builder
         getHumanAgentHandoffConfigBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getHumanAgentHandoffConfigFieldBuilder().getBuilder();
     }
@@ -2783,7 +2810,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * @return Whether the notificationConfig field is set.
      */
     public boolean hasNotificationConfig() {
-      return notificationConfigBuilder_ != null || notificationConfig_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2820,11 +2847,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         notificationConfig_ = value;
-        onChanged();
       } else {
         notificationConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2840,11 +2867,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         com.google.cloud.dialogflow.v2.NotificationConfig.Builder builderForValue) {
       if (notificationConfigBuilder_ == null) {
         notificationConfig_ = builderForValue.build();
-        onChanged();
       } else {
         notificationConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2859,19 +2886,19 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     public Builder mergeNotificationConfig(
         com.google.cloud.dialogflow.v2.NotificationConfig value) {
       if (notificationConfigBuilder_ == null) {
-        if (notificationConfig_ != null) {
-          notificationConfig_ =
-              com.google.cloud.dialogflow.v2.NotificationConfig.newBuilder(notificationConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && notificationConfig_ != null
+            && notificationConfig_
+                != com.google.cloud.dialogflow.v2.NotificationConfig.getDefaultInstance()) {
+          getNotificationConfigBuilder().mergeFrom(value);
         } else {
           notificationConfig_ = value;
         }
-        onChanged();
       } else {
         notificationConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2884,14 +2911,13 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dialogflow.v2.NotificationConfig notification_config = 6;</code>
      */
     public Builder clearNotificationConfig() {
-      if (notificationConfigBuilder_ == null) {
-        notificationConfig_ = null;
-        onChanged();
-      } else {
-        notificationConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      notificationConfig_ = null;
+      if (notificationConfigBuilder_ != null) {
+        notificationConfigBuilder_.dispose();
         notificationConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2905,7 +2931,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.dialogflow.v2.NotificationConfig.Builder
         getNotificationConfigBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getNotificationConfigFieldBuilder().getBuilder();
     }
@@ -2972,7 +2998,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * @return Whether the loggingConfig field is set.
      */
     public boolean hasLoggingConfig() {
-      return loggingConfigBuilder_ != null || loggingConfig_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3009,11 +3035,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         loggingConfig_ = value;
-        onChanged();
       } else {
         loggingConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3029,11 +3055,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         com.google.cloud.dialogflow.v2.LoggingConfig.Builder builderForValue) {
       if (loggingConfigBuilder_ == null) {
         loggingConfig_ = builderForValue.build();
-        onChanged();
       } else {
         loggingConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3047,19 +3073,19 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeLoggingConfig(com.google.cloud.dialogflow.v2.LoggingConfig value) {
       if (loggingConfigBuilder_ == null) {
-        if (loggingConfig_ != null) {
-          loggingConfig_ =
-              com.google.cloud.dialogflow.v2.LoggingConfig.newBuilder(loggingConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && loggingConfig_ != null
+            && loggingConfig_
+                != com.google.cloud.dialogflow.v2.LoggingConfig.getDefaultInstance()) {
+          getLoggingConfigBuilder().mergeFrom(value);
         } else {
           loggingConfig_ = value;
         }
-        onChanged();
       } else {
         loggingConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3072,14 +3098,13 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dialogflow.v2.LoggingConfig logging_config = 7;</code>
      */
     public Builder clearLoggingConfig() {
-      if (loggingConfigBuilder_ == null) {
-        loggingConfig_ = null;
-        onChanged();
-      } else {
-        loggingConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      loggingConfig_ = null;
+      if (loggingConfigBuilder_ != null) {
+        loggingConfigBuilder_.dispose();
         loggingConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3092,7 +3117,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dialogflow.v2.LoggingConfig logging_config = 7;</code>
      */
     public com.google.cloud.dialogflow.v2.LoggingConfig.Builder getLoggingConfigBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getLoggingConfigFieldBuilder().getBuilder();
     }
@@ -3161,8 +3186,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * @return Whether the newMessageEventNotificationConfig field is set.
      */
     public boolean hasNewMessageEventNotificationConfig() {
-      return newMessageEventNotificationConfigBuilder_ != null
-          || newMessageEventNotificationConfig_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3207,11 +3231,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         newMessageEventNotificationConfig_ = value;
-        onChanged();
       } else {
         newMessageEventNotificationConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3230,11 +3254,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         com.google.cloud.dialogflow.v2.NotificationConfig.Builder builderForValue) {
       if (newMessageEventNotificationConfigBuilder_ == null) {
         newMessageEventNotificationConfig_ = builderForValue.build();
-        onChanged();
       } else {
         newMessageEventNotificationConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3252,20 +3276,19 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     public Builder mergeNewMessageEventNotificationConfig(
         com.google.cloud.dialogflow.v2.NotificationConfig value) {
       if (newMessageEventNotificationConfigBuilder_ == null) {
-        if (newMessageEventNotificationConfig_ != null) {
-          newMessageEventNotificationConfig_ =
-              com.google.cloud.dialogflow.v2.NotificationConfig.newBuilder(
-                      newMessageEventNotificationConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && newMessageEventNotificationConfig_ != null
+            && newMessageEventNotificationConfig_
+                != com.google.cloud.dialogflow.v2.NotificationConfig.getDefaultInstance()) {
+          getNewMessageEventNotificationConfigBuilder().mergeFrom(value);
         } else {
           newMessageEventNotificationConfig_ = value;
         }
-        onChanged();
       } else {
         newMessageEventNotificationConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3281,14 +3304,13 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearNewMessageEventNotificationConfig() {
-      if (newMessageEventNotificationConfigBuilder_ == null) {
-        newMessageEventNotificationConfig_ = null;
-        onChanged();
-      } else {
-        newMessageEventNotificationConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      newMessageEventNotificationConfig_ = null;
+      if (newMessageEventNotificationConfigBuilder_ != null) {
+        newMessageEventNotificationConfigBuilder_.dispose();
         newMessageEventNotificationConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3305,7 +3327,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.dialogflow.v2.NotificationConfig.Builder
         getNewMessageEventNotificationConfigBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getNewMessageEventNotificationConfigFieldBuilder().getBuilder();
     }
@@ -3378,7 +3400,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * @return Whether the sttConfig field is set.
      */
     public boolean hasSttConfig() {
-      return sttConfigBuilder_ != null || sttConfig_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3415,11 +3437,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         sttConfig_ = value;
-        onChanged();
       } else {
         sttConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3435,11 +3457,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         com.google.cloud.dialogflow.v2.SpeechToTextConfig.Builder builderForValue) {
       if (sttConfigBuilder_ == null) {
         sttConfig_ = builderForValue.build();
-        onChanged();
       } else {
         sttConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3453,19 +3475,19 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeSttConfig(com.google.cloud.dialogflow.v2.SpeechToTextConfig value) {
       if (sttConfigBuilder_ == null) {
-        if (sttConfig_ != null) {
-          sttConfig_ =
-              com.google.cloud.dialogflow.v2.SpeechToTextConfig.newBuilder(sttConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && sttConfig_ != null
+            && sttConfig_
+                != com.google.cloud.dialogflow.v2.SpeechToTextConfig.getDefaultInstance()) {
+          getSttConfigBuilder().mergeFrom(value);
         } else {
           sttConfig_ = value;
         }
-        onChanged();
       } else {
         sttConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3478,14 +3500,13 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dialogflow.v2.SpeechToTextConfig stt_config = 9;</code>
      */
     public Builder clearSttConfig() {
-      if (sttConfigBuilder_ == null) {
-        sttConfig_ = null;
-        onChanged();
-      } else {
-        sttConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      sttConfig_ = null;
+      if (sttConfigBuilder_ != null) {
+        sttConfigBuilder_.dispose();
         sttConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3498,7 +3519,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dialogflow.v2.SpeechToTextConfig stt_config = 9;</code>
      */
     public com.google.cloud.dialogflow.v2.SpeechToTextConfig.Builder getSttConfigBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getSttConfigFieldBuilder().getBuilder();
     }
@@ -3619,8 +3640,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3640,8 +3661,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3666,8 +3687,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3739,8 +3760,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       timeZone_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3758,8 +3779,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearTimeZone() {
-
       timeZone_ = getDefaultInstance().getTimeZone();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3782,8 +3803,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       timeZone_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3855,8 +3876,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       securitySettings_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3874,8 +3895,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSecuritySettings() {
-
       securitySettings_ = getDefaultInstance().getSecuritySettings();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3898,8 +3919,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       securitySettings_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

@@ -273,7 +273,7 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -302,9 +302,8 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type result =
-        com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.valueOf(type_);
+        com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.forNumber(type_);
     return result == null
         ? com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.UNRECOGNIZED
         : result;
@@ -514,8 +513,8 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       return this;
     }
 
@@ -543,9 +542,18 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dialogflow.v2beta1.SuggestionFeature buildPartial() {
       com.google.cloud.dialogflow.v2beta1.SuggestionFeature result =
           new com.google.cloud.dialogflow.v2beta1.SuggestionFeature(this);
-      result.type_ = type_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.SuggestionFeature result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
     }
 
     @java.lang.Override
@@ -626,7 +634,7 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -645,6 +653,8 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int type_ = 0;
     /**
@@ -675,8 +685,8 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -693,9 +703,8 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type result =
-          com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.valueOf(type_);
+          com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.forNumber(type_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.UNRECOGNIZED
           : result;
@@ -716,7 +725,7 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -733,7 +742,7 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;

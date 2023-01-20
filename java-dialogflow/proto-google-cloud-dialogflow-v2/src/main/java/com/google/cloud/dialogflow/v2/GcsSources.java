@@ -68,6 +68,8 @@ public final class GcsSources extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URIS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList uris_;
   /**
    *
@@ -340,6 +342,7 @@ public final class GcsSources extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -369,14 +372,24 @@ public final class GcsSources extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2.GcsSources buildPartial() {
       com.google.cloud.dialogflow.v2.GcsSources result =
           new com.google.cloud.dialogflow.v2.GcsSources(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dialogflow.v2.GcsSources result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         uris_ = uris_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.uris_ = uris_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.GcsSources result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

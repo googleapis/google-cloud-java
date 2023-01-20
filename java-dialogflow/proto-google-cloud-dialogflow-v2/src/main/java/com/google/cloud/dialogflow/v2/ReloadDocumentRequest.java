@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * Request message for [Documents.ReloadDocument][google.cloud.dialogflow.v2.Documents.ReloadDocument].
+ * Request message for
+ * [Documents.ReloadDocument][google.cloud.dialogflow.v2.Documents.ReloadDocument].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.ReloadDocumentRequest}
@@ -112,7 +113,9 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -173,8 +176,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The path of gcs source file for reloading document content. For now,
-   * only gcs uri is supported.
+   * Optional. The path of gcs source file for reloading document content. For
+   * now, only gcs uri is supported.
    * For documents stored in Google Cloud Storage, these URIs must have
    * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * </pre>
@@ -190,8 +193,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The path of gcs source file for reloading document content. For now,
-   * only gcs uri is supported.
+   * Optional. The path of gcs source file for reloading document content. For
+   * now, only gcs uri is supported.
    * For documents stored in Google Cloud Storage, these URIs must have
    * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * </pre>
@@ -220,8 +223,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The path of gcs source file for reloading document content. For now,
-   * only gcs uri is supported.
+   * Optional. The path of gcs source file for reloading document content. For
+   * now, only gcs uri is supported.
    * For documents stored in Google Cloud Storage, these URIs must have
    * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * </pre>
@@ -248,7 +251,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int IMPORT_GCS_CUSTOM_METADATA_FIELD_NUMBER = 4;
-  private boolean importGcsCustomMetadata_;
+  private boolean importGcsCustomMetadata_ = false;
   /**
    *
    *
@@ -267,13 +270,13 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SMART_MESSAGING_PARTIAL_UPDATE_FIELD_NUMBER = 5;
-  private boolean smartMessagingPartialUpdate_;
+  private boolean smartMessagingPartialUpdate_ = false;
   /**
    *
    *
    * <pre>
-   * Optional. When enabled, the reload request is to apply partial update to the smart
-   * messaging allowlist.
+   * Optional. When enabled, the reload request is to apply partial update to
+   * the smart messaging allowlist.
    * </pre>
    *
    * <code>bool smart_messaging_partial_update = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -489,7 +492,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [Documents.ReloadDocument][google.cloud.dialogflow.v2.Documents.ReloadDocument].
+   * Request message for
+   * [Documents.ReloadDocument][google.cloud.dialogflow.v2.Documents.ReloadDocument].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.ReloadDocumentRequest}
@@ -523,12 +527,10 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       importGcsCustomMetadata_ = false;
-
       smartMessagingPartialUpdate_ = false;
-
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -558,15 +560,30 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.dialogflow.v2.ReloadDocumentRequest buildPartial() {
       com.google.cloud.dialogflow.v2.ReloadDocumentRequest result =
           new com.google.cloud.dialogflow.v2.ReloadDocumentRequest(this);
-      result.name_ = name_;
-      if (sourceCase_ == 3) {
-        result.source_ = source_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.importGcsCustomMetadata_ = importGcsCustomMetadata_;
-      result.smartMessagingPartialUpdate_ = smartMessagingPartialUpdate_;
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.ReloadDocumentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.importGcsCustomMetadata_ = importGcsCustomMetadata_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.smartMessagingPartialUpdate_ = smartMessagingPartialUpdate_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.v2.ReloadDocumentRequest result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
     }
 
     @java.lang.Override
@@ -617,6 +634,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getImportGcsCustomMetadata() != false) {
@@ -667,7 +685,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
@@ -680,13 +698,13 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
             case 32:
               {
                 importGcsCustomMetadata_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             case 40:
               {
                 smartMessagingPartialUpdate_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             default:
@@ -719,6 +737,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -793,8 +813,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -814,8 +834,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -840,8 +860,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -850,8 +870,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The path of gcs source file for reloading document content. For now,
-     * only gcs uri is supported.
+     * Optional. The path of gcs source file for reloading document content. For
+     * now, only gcs uri is supported.
      * For documents stored in Google Cloud Storage, these URIs must have
      * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * </pre>
@@ -868,8 +888,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The path of gcs source file for reloading document content. For now,
-     * only gcs uri is supported.
+     * Optional. The path of gcs source file for reloading document content. For
+     * now, only gcs uri is supported.
      * For documents stored in Google Cloud Storage, these URIs must have
      * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * </pre>
@@ -899,8 +919,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The path of gcs source file for reloading document content. For now,
-     * only gcs uri is supported.
+     * Optional. The path of gcs source file for reloading document content. For
+     * now, only gcs uri is supported.
      * For documents stored in Google Cloud Storage, these URIs must have
      * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * </pre>
@@ -930,8 +950,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The path of gcs source file for reloading document content. For now,
-     * only gcs uri is supported.
+     * Optional. The path of gcs source file for reloading document content. For
+     * now, only gcs uri is supported.
      * For documents stored in Google Cloud Storage, these URIs must have
      * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * </pre>
@@ -954,8 +974,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The path of gcs source file for reloading document content. For now,
-     * only gcs uri is supported.
+     * Optional. The path of gcs source file for reloading document content. For
+     * now, only gcs uri is supported.
      * For documents stored in Google Cloud Storage, these URIs must have
      * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * </pre>
@@ -976,8 +996,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The path of gcs source file for reloading document content. For now,
-     * only gcs uri is supported.
+     * Optional. The path of gcs source file for reloading document content. For
+     * now, only gcs uri is supported.
      * For documents stored in Google Cloud Storage, these URIs must have
      * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * </pre>
@@ -1031,6 +1051,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     public Builder setImportGcsCustomMetadata(boolean value) {
 
       importGcsCustomMetadata_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1047,7 +1068,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearImportGcsCustomMetadata() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       importGcsCustomMetadata_ = false;
       onChanged();
       return this;
@@ -1058,8 +1079,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. When enabled, the reload request is to apply partial update to the smart
-     * messaging allowlist.
+     * Optional. When enabled, the reload request is to apply partial update to
+     * the smart messaging allowlist.
      * </pre>
      *
      * <code>bool smart_messaging_partial_update = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -1075,8 +1096,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. When enabled, the reload request is to apply partial update to the smart
-     * messaging allowlist.
+     * Optional. When enabled, the reload request is to apply partial update to
+     * the smart messaging allowlist.
      * </pre>
      *
      * <code>bool smart_messaging_partial_update = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -1088,6 +1109,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     public Builder setSmartMessagingPartialUpdate(boolean value) {
 
       smartMessagingPartialUpdate_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1095,8 +1117,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. When enabled, the reload request is to apply partial update to the smart
-     * messaging allowlist.
+     * Optional. When enabled, the reload request is to apply partial update to
+     * the smart messaging allowlist.
      * </pre>
      *
      * <code>bool smart_messaging_partial_update = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -1105,7 +1127,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearSmartMessagingPartialUpdate() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       smartMessagingPartialUpdate_ = false;
       onChanged();
       return this;

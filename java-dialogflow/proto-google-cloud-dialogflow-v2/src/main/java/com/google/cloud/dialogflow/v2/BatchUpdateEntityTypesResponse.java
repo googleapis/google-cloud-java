@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The response message for [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchUpdateEntityTypes].
+ * The response message for
+ * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchUpdateEntityTypes].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.BatchUpdateEntityTypesResponse}
@@ -69,6 +70,8 @@ public final class BatchUpdateEntityTypesResponse extends com.google.protobuf.Ge
   }
 
   public static final int ENTITY_TYPES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.EntityType> entityTypes_;
   /**
    *
@@ -303,7 +306,8 @@ public final class BatchUpdateEntityTypesResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The response message for [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchUpdateEntityTypes].
+   * The response message for
+   * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchUpdateEntityTypes].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.BatchUpdateEntityTypesResponse}
@@ -337,6 +341,7 @@ public final class BatchUpdateEntityTypesResponse extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (entityTypesBuilder_ == null) {
         entityTypes_ = java.util.Collections.emptyList();
       } else {
@@ -372,7 +377,16 @@ public final class BatchUpdateEntityTypesResponse extends com.google.protobuf.Ge
     public com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesResponse buildPartial() {
       com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesResponse result =
           new com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesResponse result) {
       if (entityTypesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           entityTypes_ = java.util.Collections.unmodifiableList(entityTypes_);
@@ -382,8 +396,11 @@ public final class BatchUpdateEntityTypesResponse extends com.google.protobuf.Ge
       } else {
         result.entityTypes_ = entityTypesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

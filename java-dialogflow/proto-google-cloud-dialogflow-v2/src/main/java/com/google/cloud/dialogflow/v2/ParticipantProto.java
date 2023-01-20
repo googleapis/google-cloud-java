@@ -429,11 +429,11 @@ public final class ParticipantProto {
           + "plies:\001*\332A\006parent\032x\312A\031dialogflow.googlea"
           + "pis.com\322AYhttps://www.googleapis.com/aut"
           + "h/cloud-platform,https://www.googleapis."
-          + "com/auth/dialogflowB\237\001\n\036com.google.cloud"
-          + ".dialogflow.v2B\020ParticipantProtoP\001ZDgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "dialogflow/v2;dialogflow\370\001\001\242\002\002DF\252\002\032Googl"
-          + "e.Cloud.Dialogflow.V2b\006proto3"
+          + "com/auth/dialogflowB\231\001\n\036com.google.cloud"
+          + ".dialogflow.v2B\020ParticipantProtoP\001Z>clou"
+          + "d.google.com/go/dialogflow/apiv2/dialogf"
+          + "lowpb;dialogflowpb\370\001\001\242\002\002DF\252\002\032Google.Clou"
+          + "d.Dialogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

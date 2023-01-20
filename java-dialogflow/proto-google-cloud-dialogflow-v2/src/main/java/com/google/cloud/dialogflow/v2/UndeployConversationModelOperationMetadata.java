@@ -22,7 +22,9 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * Metadata for a [ConversationModels.UndeployConversationModel][google.cloud.dialogflow.v2.ConversationModels.UndeployConversationModel] operation.
+ * Metadata for a
+ * [ConversationModels.UndeployConversationModel][google.cloud.dialogflow.v2.ConversationModels.UndeployConversationModel]
+ * operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.UndeployConversationModelOperationMetadata}
@@ -71,7 +73,9 @@ public final class UndeployConversationModelOperationMetadata
   }
 
   public static final int CONVERSATION_MODEL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object conversationModel_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object conversationModel_ = "";
   /**
    *
    *
@@ -167,7 +171,7 @@ public final class UndeployConversationModelOperationMetadata
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -350,7 +354,9 @@ public final class UndeployConversationModelOperationMetadata
    *
    *
    * <pre>
-   * Metadata for a [ConversationModels.UndeployConversationModel][google.cloud.dialogflow.v2.ConversationModels.UndeployConversationModel] operation.
+   * Metadata for a
+   * [ConversationModels.UndeployConversationModel][google.cloud.dialogflow.v2.ConversationModels.UndeployConversationModel]
+   * operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.UndeployConversationModelOperationMetadata}
@@ -386,12 +392,11 @@ public final class UndeployConversationModelOperationMetadata
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       conversationModel_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       return this;
@@ -425,14 +430,22 @@ public final class UndeployConversationModelOperationMetadata
         buildPartial() {
       com.google.cloud.dialogflow.v2.UndeployConversationModelOperationMetadata result =
           new com.google.cloud.dialogflow.v2.UndeployConversationModelOperationMetadata(this);
-      result.conversationModel_ = conversationModel_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2.UndeployConversationModelOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.conversationModel_ = conversationModel_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -487,6 +500,7 @@ public final class UndeployConversationModelOperationMetadata
               .getDefaultInstance()) return this;
       if (!other.getConversationModel().isEmpty()) {
         conversationModel_ = other.conversationModel_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -521,13 +535,13 @@ public final class UndeployConversationModelOperationMetadata
             case 10:
               {
                 conversationModel_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -546,6 +560,8 @@ public final class UndeployConversationModelOperationMetadata
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object conversationModel_ = "";
     /**
@@ -611,8 +627,8 @@ public final class UndeployConversationModelOperationMetadata
       if (value == null) {
         throw new NullPointerException();
       }
-
       conversationModel_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -629,8 +645,8 @@ public final class UndeployConversationModelOperationMetadata
      * @return This builder for chaining.
      */
     public Builder clearConversationModel() {
-
       conversationModel_ = getDefaultInstance().getConversationModel();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -652,8 +668,8 @@ public final class UndeployConversationModelOperationMetadata
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       conversationModel_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -677,7 +693,7 @@ public final class UndeployConversationModelOperationMetadata
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -716,11 +732,11 @@ public final class UndeployConversationModelOperationMetadata
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -736,11 +752,11 @@ public final class UndeployConversationModelOperationMetadata
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -755,17 +771,18 @@ public final class UndeployConversationModelOperationMetadata
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -779,14 +796,13 @@ public final class UndeployConversationModelOperationMetadata
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -800,7 +816,7 @@ public final class UndeployConversationModelOperationMetadata
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }

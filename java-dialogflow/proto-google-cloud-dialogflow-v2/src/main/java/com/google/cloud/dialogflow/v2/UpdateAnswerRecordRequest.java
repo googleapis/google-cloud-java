@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * Request message for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord].
+ * Request message for
+ * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.UpdateAnswerRecordRequest}
@@ -116,7 +117,9 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.AnswerRecordOrBuilder getAnswerRecordOrBuilder() {
-    return getAnswerRecord();
+    return answerRecord_ == null
+        ? com.google.cloud.dialogflow.v2.AnswerRecord.getDefaultInstance()
+        : answerRecord_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -165,7 +168,7 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -351,7 +354,8 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request message for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord].
+   * Request message for
+   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.UpdateAnswerRecordRequest}
@@ -385,16 +389,15 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (answerRecordBuilder_ == null) {
-        answerRecord_ = null;
-      } else {
-        answerRecord_ = null;
+      bitField0_ = 0;
+      answerRecord_ = null;
+      if (answerRecordBuilder_ != null) {
+        answerRecordBuilder_.dispose();
         answerRecordBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -424,18 +427,22 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
     public com.google.cloud.dialogflow.v2.UpdateAnswerRecordRequest buildPartial() {
       com.google.cloud.dialogflow.v2.UpdateAnswerRecordRequest result =
           new com.google.cloud.dialogflow.v2.UpdateAnswerRecordRequest(this);
-      if (answerRecordBuilder_ == null) {
-        result.answerRecord_ = answerRecord_;
-      } else {
-        result.answerRecord_ = answerRecordBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.UpdateAnswerRecordRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.answerRecord_ =
+            answerRecordBuilder_ == null ? answerRecord_ : answerRecordBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -519,13 +526,13 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
             case 10:
               {
                 input.readMessage(getAnswerRecordFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -544,6 +551,8 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.v2.AnswerRecord answerRecord_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -565,7 +574,7 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
      * @return Whether the answerRecord field is set.
      */
     public boolean hasAnswerRecord() {
-      return answerRecordBuilder_ != null || answerRecord_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -606,11 +615,11 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         answerRecord_ = value;
-        onChanged();
       } else {
         answerRecordBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -628,11 +637,11 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
         com.google.cloud.dialogflow.v2.AnswerRecord.Builder builderForValue) {
       if (answerRecordBuilder_ == null) {
         answerRecord_ = builderForValue.build();
-        onChanged();
       } else {
         answerRecordBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -648,19 +657,18 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
      */
     public Builder mergeAnswerRecord(com.google.cloud.dialogflow.v2.AnswerRecord value) {
       if (answerRecordBuilder_ == null) {
-        if (answerRecord_ != null) {
-          answerRecord_ =
-              com.google.cloud.dialogflow.v2.AnswerRecord.newBuilder(answerRecord_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && answerRecord_ != null
+            && answerRecord_ != com.google.cloud.dialogflow.v2.AnswerRecord.getDefaultInstance()) {
+          getAnswerRecordBuilder().mergeFrom(value);
         } else {
           answerRecord_ = value;
         }
-        onChanged();
       } else {
         answerRecordBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -675,14 +683,13 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearAnswerRecord() {
-      if (answerRecordBuilder_ == null) {
-        answerRecord_ = null;
-        onChanged();
-      } else {
-        answerRecord_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      answerRecord_ = null;
+      if (answerRecordBuilder_ != null) {
+        answerRecordBuilder_.dispose();
         answerRecordBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -697,7 +704,7 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.cloud.dialogflow.v2.AnswerRecord.Builder getAnswerRecordBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAnswerRecordFieldBuilder().getBuilder();
     }
@@ -768,7 +775,7 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -807,11 +814,11 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -827,11 +834,11 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -846,17 +853,18 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -870,14 +878,13 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -891,7 +898,7 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

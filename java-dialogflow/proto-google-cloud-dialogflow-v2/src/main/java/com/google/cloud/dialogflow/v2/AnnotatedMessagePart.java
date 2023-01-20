@@ -71,7 +71,9 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TEXT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object text_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object text_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ENTITY_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object entityType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entityType_ = "";
   /**
    *
    *
@@ -246,7 +250,9 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.ValueOrBuilder getFormattedValueOrBuilder() {
-    return getFormattedValue();
+    return formattedValue_ == null
+        ? com.google.protobuf.Value.getDefaultInstance()
+        : formattedValue_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -471,14 +477,12 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       text_ = "";
-
       entityType_ = "";
-
-      if (formattedValueBuilder_ == null) {
-        formattedValue_ = null;
-      } else {
-        formattedValue_ = null;
+      formattedValue_ = null;
+      if (formattedValueBuilder_ != null) {
+        formattedValueBuilder_.dispose();
         formattedValueBuilder_ = null;
       }
       return this;
@@ -508,15 +512,25 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.v2.AnnotatedMessagePart buildPartial() {
       com.google.cloud.dialogflow.v2.AnnotatedMessagePart result =
           new com.google.cloud.dialogflow.v2.AnnotatedMessagePart(this);
-      result.text_ = text_;
-      result.entityType_ = entityType_;
-      if (formattedValueBuilder_ == null) {
-        result.formattedValue_ = formattedValue_;
-      } else {
-        result.formattedValue_ = formattedValueBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.AnnotatedMessagePart result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.text_ = text_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.entityType_ = entityType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.formattedValue_ =
+            formattedValueBuilder_ == null ? formattedValue_ : formattedValueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -567,10 +581,12 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getText().isEmpty()) {
         text_ = other.text_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getEntityType().isEmpty()) {
         entityType_ = other.entityType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasFormattedValue()) {
@@ -605,19 +621,19 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 text_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 entityType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getFormattedValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -636,6 +652,8 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object text_ = "";
     /**
@@ -698,8 +716,8 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       text_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -715,8 +733,8 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearText() {
-
       text_ = getDefaultInstance().getText();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -737,8 +755,8 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       text_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -813,8 +831,8 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       entityType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -833,8 +851,8 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearEntityType() {
-
       entityType_ = getDefaultInstance().getEntityType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -858,8 +876,8 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       entityType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -891,7 +909,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
      * @return Whether the formattedValue field is set.
      */
     public boolean hasFormattedValue() {
-      return formattedValueBuilder_ != null || formattedValue_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -946,11 +964,11 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         formattedValue_ = value;
-        onChanged();
       } else {
         formattedValueBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -974,11 +992,11 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
     public Builder setFormattedValue(com.google.protobuf.Value.Builder builderForValue) {
       if (formattedValueBuilder_ == null) {
         formattedValue_ = builderForValue.build();
-        onChanged();
       } else {
         formattedValueBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1001,17 +1019,18 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeFormattedValue(com.google.protobuf.Value value) {
       if (formattedValueBuilder_ == null) {
-        if (formattedValue_ != null) {
-          formattedValue_ =
-              com.google.protobuf.Value.newBuilder(formattedValue_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && formattedValue_ != null
+            && formattedValue_ != com.google.protobuf.Value.getDefaultInstance()) {
+          getFormattedValueBuilder().mergeFrom(value);
         } else {
           formattedValue_ = value;
         }
-        onChanged();
       } else {
         formattedValueBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1033,14 +1052,13 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Value formatted_value = 3;</code>
      */
     public Builder clearFormattedValue() {
-      if (formattedValueBuilder_ == null) {
-        formattedValue_ = null;
-        onChanged();
-      } else {
-        formattedValue_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      formattedValue_ = null;
+      if (formattedValueBuilder_ != null) {
+        formattedValueBuilder_.dispose();
         formattedValueBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1062,7 +1080,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Value formatted_value = 3;</code>
      */
     public com.google.protobuf.Value.Builder getFormattedValueBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getFormattedValueFieldBuilder().getBuilder();
     }

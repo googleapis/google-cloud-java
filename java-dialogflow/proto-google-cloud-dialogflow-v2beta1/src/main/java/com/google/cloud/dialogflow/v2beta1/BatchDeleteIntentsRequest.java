@@ -69,7 +69,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -128,6 +130,8 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
   }
 
   public static final int INTENTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent> intents_;
   /**
    *
@@ -420,15 +424,15 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (intentsBuilder_ == null) {
         intents_ = java.util.Collections.emptyList();
       } else {
         intents_ = null;
         intentsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -457,19 +461,33 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
     public com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest result =
           new com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest result) {
       if (intentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           intents_ = java.util.Collections.unmodifiableList(intents_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.intents_ = intents_;
       } else {
         result.intents_ = intentsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -521,13 +539,14 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (intentsBuilder_ == null) {
         if (!other.intents_.isEmpty()) {
           if (intents_.isEmpty()) {
             intents_ = other.intents_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureIntentsIsMutable();
             intents_.addAll(other.intents_);
@@ -540,7 +559,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
             intentsBuilder_.dispose();
             intentsBuilder_ = null;
             intents_ = other.intents_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             intentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getIntentsFieldBuilder()
@@ -579,7 +598,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -690,8 +709,8 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -712,8 +731,8 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -739,8 +758,8 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -749,9 +768,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
         java.util.Collections.emptyList();
 
     private void ensureIntentsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         intents_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent>(intents_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -999,7 +1018,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
     public Builder clearIntents() {
       if (intentsBuilder_ == null) {
         intents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         intentsBuilder_.clear();
@@ -1142,7 +1161,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
                 com.google.cloud.dialogflow.v2beta1.Intent,
                 com.google.cloud.dialogflow.v2beta1.Intent.Builder,
                 com.google.cloud.dialogflow.v2beta1.IntentOrBuilder>(
-                intents_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                intents_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         intents_ = null;
       }
       return intentsBuilder_;

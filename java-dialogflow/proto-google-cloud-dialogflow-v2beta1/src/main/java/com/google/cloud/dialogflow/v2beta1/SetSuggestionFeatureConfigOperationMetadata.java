@@ -74,7 +74,9 @@ public final class SetSuggestionFeatureConfigOperationMetadata
   }
 
   public static final int CONVERSATION_PROFILE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object conversationProfile_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object conversationProfile_ = "";
   /**
    *
    *
@@ -127,7 +129,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
   }
 
   public static final int PARTICIPANT_ROLE_FIELD_NUMBER = 2;
-  private int participantRole_;
+  private int participantRole_ = 0;
   /**
    *
    *
@@ -162,16 +164,15 @@ public final class SetSuggestionFeatureConfigOperationMetadata
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Participant.Role getParticipantRole() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.Participant.Role result =
-        com.google.cloud.dialogflow.v2beta1.Participant.Role.valueOf(participantRole_);
+        com.google.cloud.dialogflow.v2beta1.Participant.Role.forNumber(participantRole_);
     return result == null
         ? com.google.cloud.dialogflow.v2beta1.Participant.Role.UNRECOGNIZED
         : result;
   }
 
   public static final int SUGGESTION_FEATURE_TYPE_FIELD_NUMBER = 3;
-  private int suggestionFeatureType_;
+  private int suggestionFeatureType_ = 0;
   /**
    *
    *
@@ -204,9 +205,9 @@ public final class SetSuggestionFeatureConfigOperationMetadata
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type getSuggestionFeatureType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type result =
-        com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.valueOf(suggestionFeatureType_);
+        com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.forNumber(
+            suggestionFeatureType_);
     return result == null
         ? com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.UNRECOGNIZED
         : result;
@@ -255,7 +256,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -506,16 +507,13 @@ public final class SetSuggestionFeatureConfigOperationMetadata
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       conversationProfile_ = "";
-
       participantRole_ = 0;
-
       suggestionFeatureType_ = 0;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       return this;
@@ -549,16 +547,28 @@ public final class SetSuggestionFeatureConfigOperationMetadata
         buildPartial() {
       com.google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigOperationMetadata result =
           new com.google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigOperationMetadata(this);
-      result.conversationProfile_ = conversationProfile_;
-      result.participantRole_ = participantRole_;
-      result.suggestionFeatureType_ = suggestionFeatureType_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.conversationProfile_ = conversationProfile_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.participantRole_ = participantRole_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.suggestionFeatureType_ = suggestionFeatureType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -615,6 +625,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
               .getDefaultInstance()) return this;
       if (!other.getConversationProfile().isEmpty()) {
         conversationProfile_ = other.conversationProfile_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.participantRole_ != 0) {
@@ -655,25 +666,25 @@ public final class SetSuggestionFeatureConfigOperationMetadata
             case 10:
               {
                 conversationProfile_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 participantRole_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 suggestionFeatureType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -692,6 +703,8 @@ public final class SetSuggestionFeatureConfigOperationMetadata
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object conversationProfile_ = "";
     /**
@@ -760,8 +773,8 @@ public final class SetSuggestionFeatureConfigOperationMetadata
       if (value == null) {
         throw new NullPointerException();
       }
-
       conversationProfile_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -779,8 +792,8 @@ public final class SetSuggestionFeatureConfigOperationMetadata
      * @return This builder for chaining.
      */
     public Builder clearConversationProfile() {
-
       conversationProfile_ = getDefaultInstance().getConversationProfile();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -803,8 +816,8 @@ public final class SetSuggestionFeatureConfigOperationMetadata
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       conversationProfile_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -844,8 +857,8 @@ public final class SetSuggestionFeatureConfigOperationMetadata
      * @return This builder for chaining.
      */
     public Builder setParticipantRoleValue(int value) {
-
       participantRole_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -865,9 +878,8 @@ public final class SetSuggestionFeatureConfigOperationMetadata
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.Participant.Role getParticipantRole() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.Participant.Role result =
-          com.google.cloud.dialogflow.v2beta1.Participant.Role.valueOf(participantRole_);
+          com.google.cloud.dialogflow.v2beta1.Participant.Role.forNumber(participantRole_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.Participant.Role.UNRECOGNIZED
           : result;
@@ -891,7 +903,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       participantRole_ = value.getNumber();
       onChanged();
       return this;
@@ -911,7 +923,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
      * @return This builder for chaining.
      */
     public Builder clearParticipantRole() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       participantRole_ = 0;
       onChanged();
       return this;
@@ -950,8 +962,8 @@ public final class SetSuggestionFeatureConfigOperationMetadata
      * @return This builder for chaining.
      */
     public Builder setSuggestionFeatureTypeValue(int value) {
-
       suggestionFeatureType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -970,9 +982,8 @@ public final class SetSuggestionFeatureConfigOperationMetadata
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type getSuggestionFeatureType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type result =
-          com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.valueOf(
+          com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.forNumber(
               suggestionFeatureType_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.UNRECOGNIZED
@@ -997,7 +1008,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       suggestionFeatureType_ = value.getNumber();
       onChanged();
       return this;
@@ -1016,7 +1027,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
      * @return This builder for chaining.
      */
     public Builder clearSuggestionFeatureType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       suggestionFeatureType_ = 0;
       onChanged();
       return this;
@@ -1040,7 +1051,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1077,11 +1088,11 @@ public final class SetSuggestionFeatureConfigOperationMetadata
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1096,11 +1107,11 @@ public final class SetSuggestionFeatureConfigOperationMetadata
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1114,17 +1125,18 @@ public final class SetSuggestionFeatureConfigOperationMetadata
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1137,14 +1149,13 @@ public final class SetSuggestionFeatureConfigOperationMetadata
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1157,7 +1168,7 @@ public final class SetSuggestionFeatureConfigOperationMetadata
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }

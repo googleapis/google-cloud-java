@@ -28,7 +28,9 @@ public interface IntentOrBuilder
    *
    * <pre>
    * Optional. The unique identifier of this intent.
-   * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
+   * Required for
+   * [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and
+   * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
    * methods.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
@@ -43,7 +45,9 @@ public interface IntentOrBuilder
    *
    * <pre>
    * Optional. The unique identifier of this intent.
-   * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
+   * Required for
+   * [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and
+   * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
    * methods.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
@@ -749,9 +753,10 @@ public interface IntentOrBuilder
    * <pre>
    * Read-only after creation. The unique identifier of the parent intent in the
    * chain of followup intents. You can set this field when creating an intent,
-   * for example with [CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent] or
-   * [BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents], in order to make this
-   * intent a followup intent.
+   * for example with
+   * [CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent] or
+   * [BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents],
+   * in order to make this intent a followup intent.
    * It identifies the parent followup intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
@@ -767,9 +772,10 @@ public interface IntentOrBuilder
    * <pre>
    * Read-only after creation. The unique identifier of the parent intent in the
    * chain of followup intents. You can set this field when creating an intent,
-   * for example with [CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent] or
-   * [BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents], in order to make this
-   * intent a followup intent.
+   * for example with
+   * [CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent] or
+   * [BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents],
+   * in order to make this intent a followup intent.
    * It identifies the parent followup intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
@@ -784,8 +790,9 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Output only. Read-only. Information about all followup intents that have this intent as
-   * a direct or indirect parent. We populate this field only in the output.
+   * Output only. Read-only. Information about all followup intents that have
+   * this intent as a direct or indirect parent. We populate this field only in
+   * the output.
    * </pre>
    *
    * <code>
@@ -798,8 +805,9 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Output only. Read-only. Information about all followup intents that have this intent as
-   * a direct or indirect parent. We populate this field only in the output.
+   * Output only. Read-only. Information about all followup intents that have
+   * this intent as a direct or indirect parent. We populate this field only in
+   * the output.
    * </pre>
    *
    * <code>
@@ -811,8 +819,9 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Output only. Read-only. Information about all followup intents that have this intent as
-   * a direct or indirect parent. We populate this field only in the output.
+   * Output only. Read-only. Information about all followup intents that have
+   * this intent as a direct or indirect parent. We populate this field only in
+   * the output.
    * </pre>
    *
    * <code>
@@ -824,8 +833,9 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Output only. Read-only. Information about all followup intents that have this intent as
-   * a direct or indirect parent. We populate this field only in the output.
+   * Output only. Read-only. Information about all followup intents that have
+   * this intent as a direct or indirect parent. We populate this field only in
+   * the output.
    * </pre>
    *
    * <code>
@@ -838,8 +848,9 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Output only. Read-only. Information about all followup intents that have this intent as
-   * a direct or indirect parent. We populate this field only in the output.
+   * Output only. Read-only. Information about all followup intents that have
+   * this intent as a direct or indirect parent. We populate this field only in
+   * the output.
    * </pre>
    *
    * <code>

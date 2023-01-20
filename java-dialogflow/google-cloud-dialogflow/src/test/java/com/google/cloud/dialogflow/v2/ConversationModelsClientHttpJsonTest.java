@@ -406,6 +406,7 @@ public class ConversationModelsClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEvaluationConfig(EvaluationConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setRawHumanEvalTemplateCsv("rawHumanEvalTemplateCsv-247435189")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -511,6 +512,7 @@ public class ConversationModelsClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEvaluationConfig(EvaluationConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setRawHumanEvalTemplateCsv("rawHumanEvalTemplateCsv-247435189")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -575,6 +577,7 @@ public class ConversationModelsClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEvaluationConfig(EvaluationConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setRawHumanEvalTemplateCsv("rawHumanEvalTemplateCsv-247435189")
             .build();
     Operation resultOperation =
         Operation.newBuilder()

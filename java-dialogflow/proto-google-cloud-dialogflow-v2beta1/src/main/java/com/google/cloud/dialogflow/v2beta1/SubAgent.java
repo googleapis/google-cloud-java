@@ -69,7 +69,9 @@ public final class SubAgent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROJECT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class SubAgent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object environment_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object environment_ = "";
   /**
    *
    *
@@ -380,10 +384,9 @@ public final class SubAgent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       environment_ = "";
-
       return this;
     }
 
@@ -411,10 +414,21 @@ public final class SubAgent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2beta1.SubAgent buildPartial() {
       com.google.cloud.dialogflow.v2beta1.SubAgent result =
           new com.google.cloud.dialogflow.v2beta1.SubAgent(this);
-      result.project_ = project_;
-      result.environment_ = environment_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.SubAgent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.environment_ = environment_;
+      }
     }
 
     @java.lang.Override
@@ -464,10 +478,12 @@ public final class SubAgent extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.v2beta1.SubAgent.getDefaultInstance()) return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getEnvironment().isEmpty()) {
         environment_ = other.environment_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -499,13 +515,13 @@ public final class SubAgent extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 environment_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -524,6 +540,8 @@ public final class SubAgent extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -592,8 +610,8 @@ public final class SubAgent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -611,8 +629,8 @@ public final class SubAgent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -635,8 +653,8 @@ public final class SubAgent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -708,8 +726,8 @@ public final class SubAgent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       environment_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -727,8 +745,8 @@ public final class SubAgent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnvironment() {
-
       environment_ = getDefaultInstance().getEnvironment();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -751,8 +769,8 @@ public final class SubAgent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       environment_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

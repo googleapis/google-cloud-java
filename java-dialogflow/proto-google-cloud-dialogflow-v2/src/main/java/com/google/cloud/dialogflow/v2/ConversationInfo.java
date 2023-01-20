@@ -68,14 +68,16 @@ public final class ConversationInfo extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
    * <pre>
-   * Optional. The language code of the conversation data within this dataset. See
-   * https://cloud.google.com/apis/design/standard_fields for more information.
-   * Supports all UTF-8 languages.
+   * Optional. The language code of the conversation data within this dataset.
+   * See https://cloud.google.com/apis/design/standard_fields for more
+   * information. Supports all UTF-8 languages.
    * </pre>
    *
    * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -98,9 +100,9 @@ public final class ConversationInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The language code of the conversation data within this dataset. See
-   * https://cloud.google.com/apis/design/standard_fields for more information.
-   * Supports all UTF-8 languages.
+   * Optional. The language code of the conversation data within this dataset.
+   * See https://cloud.google.com/apis/design/standard_fields for more
+   * information. Supports all UTF-8 languages.
    * </pre>
    *
    * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -317,8 +319,8 @@ public final class ConversationInfo extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       languageCode_ = "";
-
       return this;
     }
 
@@ -346,9 +348,18 @@ public final class ConversationInfo extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dialogflow.v2.ConversationInfo buildPartial() {
       com.google.cloud.dialogflow.v2.ConversationInfo result =
           new com.google.cloud.dialogflow.v2.ConversationInfo(this);
-      result.languageCode_ = languageCode_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.ConversationInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
     }
 
     @java.lang.Override
@@ -399,6 +410,7 @@ public final class ConversationInfo extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -430,7 +442,7 @@ public final class ConversationInfo extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -450,14 +462,16 @@ public final class ConversationInfo extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object languageCode_ = "";
     /**
      *
      *
      * <pre>
-     * Optional. The language code of the conversation data within this dataset. See
-     * https://cloud.google.com/apis/design/standard_fields for more information.
-     * Supports all UTF-8 languages.
+     * Optional. The language code of the conversation data within this dataset.
+     * See https://cloud.google.com/apis/design/standard_fields for more
+     * information. Supports all UTF-8 languages.
      * </pre>
      *
      * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -479,9 +493,9 @@ public final class ConversationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The language code of the conversation data within this dataset. See
-     * https://cloud.google.com/apis/design/standard_fields for more information.
-     * Supports all UTF-8 languages.
+     * Optional. The language code of the conversation data within this dataset.
+     * See https://cloud.google.com/apis/design/standard_fields for more
+     * information. Supports all UTF-8 languages.
      * </pre>
      *
      * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -503,9 +517,9 @@ public final class ConversationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The language code of the conversation data within this dataset. See
-     * https://cloud.google.com/apis/design/standard_fields for more information.
-     * Supports all UTF-8 languages.
+     * Optional. The language code of the conversation data within this dataset.
+     * See https://cloud.google.com/apis/design/standard_fields for more
+     * information. Supports all UTF-8 languages.
      * </pre>
      *
      * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -517,8 +531,8 @@ public final class ConversationInfo extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -526,9 +540,9 @@ public final class ConversationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The language code of the conversation data within this dataset. See
-     * https://cloud.google.com/apis/design/standard_fields for more information.
-     * Supports all UTF-8 languages.
+     * Optional. The language code of the conversation data within this dataset.
+     * See https://cloud.google.com/apis/design/standard_fields for more
+     * information. Supports all UTF-8 languages.
      * </pre>
      *
      * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -536,8 +550,8 @@ public final class ConversationInfo extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -545,9 +559,9 @@ public final class ConversationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The language code of the conversation data within this dataset. See
-     * https://cloud.google.com/apis/design/standard_fields for more information.
-     * Supports all UTF-8 languages.
+     * Optional. The language code of the conversation data within this dataset.
+     * See https://cloud.google.com/apis/design/standard_fields for more
+     * information. Supports all UTF-8 languages.
      * </pre>
      *
      * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -560,8 +574,8 @@ public final class ConversationInfo extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -69,7 +69,7 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCORE_FIELD_NUMBER = 1;
-  private float score_;
+  private float score_ = 0F;
   /**
    *
    *
@@ -88,7 +88,7 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAGNITUDE_FIELD_NUMBER = 2;
-  private float magnitude_;
+  private float magnitude_ = 0F;
   /**
    *
    *
@@ -317,10 +317,9 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       score_ = 0F;
-
       magnitude_ = 0F;
-
       return this;
     }
 
@@ -348,10 +347,21 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2beta1.Sentiment buildPartial() {
       com.google.cloud.dialogflow.v2beta1.Sentiment result =
           new com.google.cloud.dialogflow.v2beta1.Sentiment(this);
-      result.score_ = score_;
-      result.magnitude_ = magnitude_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.Sentiment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.score_ = score_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.magnitude_ = magnitude_;
+      }
     }
 
     @java.lang.Override
@@ -434,13 +444,13 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
             case 13:
               {
                 score_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             case 21:
               {
                 magnitude_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             default:
@@ -459,6 +469,8 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private float score_;
     /**
@@ -493,6 +505,7 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
     public Builder setScore(float value) {
 
       score_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -509,7 +522,7 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       score_ = 0F;
       onChanged();
       return this;
@@ -548,6 +561,7 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
     public Builder setMagnitude(float value) {
 
       magnitude_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -564,7 +578,7 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMagnitude() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       magnitude_ = 0F;
       onChanged();
       return this;

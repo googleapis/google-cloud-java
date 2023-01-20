@@ -62,8 +62,8 @@ public interface ListEnvironmentsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of items to return in a single page. By default 100 and
-   * at most 1000.
+   * Optional. The maximum number of items to return in a single page. By
+   * default 100 and at most 1000.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

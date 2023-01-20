@@ -71,7 +71,9 @@ public final class CreateConversationModelEvaluationRequest
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -180,7 +182,9 @@ public final class CreateConversationModelEvaluationRequest
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.ConversationModelEvaluationOrBuilder
       getConversationModelEvaluationOrBuilder() {
-    return getConversationModelEvaluation();
+    return conversationModelEvaluation_ == null
+        ? com.google.cloud.dialogflow.v2.ConversationModelEvaluation.getDefaultInstance()
+        : conversationModelEvaluation_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -402,12 +406,11 @@ public final class CreateConversationModelEvaluationRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (conversationModelEvaluationBuilder_ == null) {
-        conversationModelEvaluation_ = null;
-      } else {
-        conversationModelEvaluation_ = null;
+      conversationModelEvaluation_ = null;
+      if (conversationModelEvaluationBuilder_ != null) {
+        conversationModelEvaluationBuilder_.dispose();
         conversationModelEvaluationBuilder_ = null;
       }
       return this;
@@ -440,14 +443,25 @@ public final class CreateConversationModelEvaluationRequest
     public com.google.cloud.dialogflow.v2.CreateConversationModelEvaluationRequest buildPartial() {
       com.google.cloud.dialogflow.v2.CreateConversationModelEvaluationRequest result =
           new com.google.cloud.dialogflow.v2.CreateConversationModelEvaluationRequest(this);
-      result.parent_ = parent_;
-      if (conversationModelEvaluationBuilder_ == null) {
-        result.conversationModelEvaluation_ = conversationModelEvaluation_;
-      } else {
-        result.conversationModelEvaluation_ = conversationModelEvaluationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2.CreateConversationModelEvaluationRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.conversationModelEvaluation_ =
+            conversationModelEvaluationBuilder_ == null
+                ? conversationModelEvaluation_
+                : conversationModelEvaluationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -502,6 +516,7 @@ public final class CreateConversationModelEvaluationRequest
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasConversationModelEvaluation()) {
@@ -536,14 +551,14 @@ public final class CreateConversationModelEvaluationRequest
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getConversationModelEvaluationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -562,6 +577,8 @@ public final class CreateConversationModelEvaluationRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -636,8 +653,8 @@ public final class CreateConversationModelEvaluationRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -657,8 +674,8 @@ public final class CreateConversationModelEvaluationRequest
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -683,8 +700,8 @@ public final class CreateConversationModelEvaluationRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -709,7 +726,7 @@ public final class CreateConversationModelEvaluationRequest
      * @return Whether the conversationModelEvaluation field is set.
      */
     public boolean hasConversationModelEvaluation() {
-      return conversationModelEvaluationBuilder_ != null || conversationModelEvaluation_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -752,11 +769,11 @@ public final class CreateConversationModelEvaluationRequest
           throw new NullPointerException();
         }
         conversationModelEvaluation_ = value;
-        onChanged();
       } else {
         conversationModelEvaluationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -774,11 +791,11 @@ public final class CreateConversationModelEvaluationRequest
         com.google.cloud.dialogflow.v2.ConversationModelEvaluation.Builder builderForValue) {
       if (conversationModelEvaluationBuilder_ == null) {
         conversationModelEvaluation_ = builderForValue.build();
-        onChanged();
       } else {
         conversationModelEvaluationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -795,20 +812,20 @@ public final class CreateConversationModelEvaluationRequest
     public Builder mergeConversationModelEvaluation(
         com.google.cloud.dialogflow.v2.ConversationModelEvaluation value) {
       if (conversationModelEvaluationBuilder_ == null) {
-        if (conversationModelEvaluation_ != null) {
-          conversationModelEvaluation_ =
-              com.google.cloud.dialogflow.v2.ConversationModelEvaluation.newBuilder(
-                      conversationModelEvaluation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && conversationModelEvaluation_ != null
+            && conversationModelEvaluation_
+                != com.google.cloud.dialogflow.v2.ConversationModelEvaluation
+                    .getDefaultInstance()) {
+          getConversationModelEvaluationBuilder().mergeFrom(value);
         } else {
           conversationModelEvaluation_ = value;
         }
-        onChanged();
       } else {
         conversationModelEvaluationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -823,14 +840,13 @@ public final class CreateConversationModelEvaluationRequest
      * </code>
      */
     public Builder clearConversationModelEvaluation() {
-      if (conversationModelEvaluationBuilder_ == null) {
-        conversationModelEvaluation_ = null;
-        onChanged();
-      } else {
-        conversationModelEvaluation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      conversationModelEvaluation_ = null;
+      if (conversationModelEvaluationBuilder_ != null) {
+        conversationModelEvaluationBuilder_.dispose();
         conversationModelEvaluationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -846,7 +862,7 @@ public final class CreateConversationModelEvaluationRequest
      */
     public com.google.cloud.dialogflow.v2.ConversationModelEvaluation.Builder
         getConversationModelEvaluationBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getConversationModelEvaluationFieldBuilder().getBuilder();
     }

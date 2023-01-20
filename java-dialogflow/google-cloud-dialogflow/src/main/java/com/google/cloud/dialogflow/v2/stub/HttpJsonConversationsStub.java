@@ -40,6 +40,8 @@ import com.google.cloud.dialogflow.v2.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2.ListMessagesRequest;
 import com.google.cloud.dialogflow.v2.ListMessagesResponse;
+import com.google.cloud.dialogflow.v2.SuggestConversationSummaryRequest;
+import com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -255,6 +257,50 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
+      suggestConversationSummaryMethodDescriptor =
+          ApiMethodDescriptor
+              .<SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.dialogflow.v2.Conversations/SuggestConversationSummary")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SuggestConversationSummaryRequest>newBuilder()
+                      .setPath(
+                          "/v2/{conversation=projects/*/conversations/*}/suggestions:suggestConversationSummary",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SuggestConversationSummaryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "conversation", request.getConversation());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{conversation=projects/*/locations/*/conversations/*}/suggestions:suggestConversationSummary")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SuggestConversationSummaryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearConversation().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SuggestConversationSummaryResponse>newBuilder()
+                      .setDefaultInstance(SuggestConversationSummaryResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -334,6 +380,8 @@ public class HttpJsonConversationsStub extends ConversationsStub {
   private final UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse>
       listMessagesPagedCallable;
+  private final UnaryCallable<SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
+      suggestConversationSummaryCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -409,6 +457,13 @@ public class HttpJsonConversationsStub extends ConversationsStub {
             .setMethodDescriptor(listMessagesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
+        suggestConversationSummaryTransportSettings =
+            HttpJsonCallSettings
+                .<SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>newBuilder()
+                .setMethodDescriptor(suggestConversationSummaryMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -450,6 +505,11 @@ public class HttpJsonConversationsStub extends ConversationsStub {
     this.listMessagesPagedCallable =
         callableFactory.createPagedCallable(
             listMessagesTransportSettings, settings.listMessagesSettings(), clientContext);
+    this.suggestConversationSummaryCallable =
+        callableFactory.createUnaryCallable(
+            suggestConversationSummaryTransportSettings,
+            settings.suggestConversationSummarySettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -472,6 +532,7 @@ public class HttpJsonConversationsStub extends ConversationsStub {
     methodDescriptors.add(getConversationMethodDescriptor);
     methodDescriptors.add(completeConversationMethodDescriptor);
     methodDescriptors.add(listMessagesMethodDescriptor);
+    methodDescriptors.add(suggestConversationSummaryMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -512,6 +573,12 @@ public class HttpJsonConversationsStub extends ConversationsStub {
   @Override
   public UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse> listMessagesPagedCallable() {
     return listMessagesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
+      suggestConversationSummaryCallable() {
+    return suggestConversationSummaryCallable;
   }
 
   @Override

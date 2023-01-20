@@ -606,7 +606,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -663,7 +665,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -712,7 +716,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEFAULT_LANGUAGE_CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object defaultLanguageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object defaultLanguageCode_ = "";
   /**
    *
    *
@@ -769,6 +775,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUPPORTED_LANGUAGE_CODES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList supportedLanguageCodes_;
   /**
    *
@@ -834,7 +842,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIME_ZONE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object timeZone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object timeZone_ = "";
   /**
    *
    *
@@ -887,7 +897,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 6;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -938,7 +950,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AVATAR_URI_FIELD_NUMBER = 7;
-  private volatile java.lang.Object avatarUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object avatarUri_ = "";
   /**
    *
    *
@@ -995,7 +1009,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_LOGGING_FIELD_NUMBER = 8;
-  private boolean enableLogging_;
+  private boolean enableLogging_ = false;
   /**
    *
    *
@@ -1013,7 +1027,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MATCH_MODE_FIELD_NUMBER = 9;
-  private int matchMode_;
+  private int matchMode_ = 0;
   /**
    *
    *
@@ -1050,16 +1064,15 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   @java.lang.Deprecated
   public com.google.cloud.dialogflow.v2beta1.Agent.MatchMode getMatchMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.Agent.MatchMode result =
-        com.google.cloud.dialogflow.v2beta1.Agent.MatchMode.valueOf(matchMode_);
+        com.google.cloud.dialogflow.v2beta1.Agent.MatchMode.forNumber(matchMode_);
     return result == null
         ? com.google.cloud.dialogflow.v2beta1.Agent.MatchMode.UNRECOGNIZED
         : result;
   }
 
   public static final int CLASSIFICATION_THRESHOLD_FIELD_NUMBER = 10;
-  private float classificationThreshold_;
+  private float classificationThreshold_ = 0F;
   /**
    *
    *
@@ -1083,7 +1096,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int API_VERSION_FIELD_NUMBER = 14;
-  private int apiVersion_;
+  private int apiVersion_ = 0;
   /**
    *
    *
@@ -1118,16 +1131,15 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Agent.ApiVersion getApiVersion() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.Agent.ApiVersion result =
-        com.google.cloud.dialogflow.v2beta1.Agent.ApiVersion.valueOf(apiVersion_);
+        com.google.cloud.dialogflow.v2beta1.Agent.ApiVersion.forNumber(apiVersion_);
     return result == null
         ? com.google.cloud.dialogflow.v2beta1.Agent.ApiVersion.UNRECOGNIZED
         : result;
   }
 
   public static final int TIER_FIELD_NUMBER = 15;
-  private int tier_;
+  private int tier_ = 0;
   /**
    *
    *
@@ -1156,9 +1168,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Agent.Tier getTier() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.Agent.Tier result =
-        com.google.cloud.dialogflow.v2beta1.Agent.Tier.valueOf(tier_);
+        com.google.cloud.dialogflow.v2beta1.Agent.Tier.forNumber(tier_);
     return result == null ? com.google.cloud.dialogflow.v2beta1.Agent.Tier.UNRECOGNIZED : result;
   }
 
@@ -1481,30 +1492,20 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       displayName_ = "";
-
       defaultLanguageCode_ = "";
-
       supportedLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       timeZone_ = "";
-
       description_ = "";
-
       avatarUri_ = "";
-
       enableLogging_ = false;
-
       matchMode_ = 0;
-
       classificationThreshold_ = 0F;
-
       apiVersion_ = 0;
-
       tier_ = 0;
-
       return this;
     }
 
@@ -1532,25 +1533,57 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2beta1.Agent buildPartial() {
       com.google.cloud.dialogflow.v2beta1.Agent result =
           new com.google.cloud.dialogflow.v2beta1.Agent(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      result.displayName_ = displayName_;
-      result.defaultLanguageCode_ = defaultLanguageCode_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        supportedLanguageCodes_ = supportedLanguageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.supportedLanguageCodes_ = supportedLanguageCodes_;
-      result.timeZone_ = timeZone_;
-      result.description_ = description_;
-      result.avatarUri_ = avatarUri_;
-      result.enableLogging_ = enableLogging_;
-      result.matchMode_ = matchMode_;
-      result.classificationThreshold_ = classificationThreshold_;
-      result.apiVersion_ = apiVersion_;
-      result.tier_ = tier_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dialogflow.v2beta1.Agent result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        supportedLanguageCodes_ = supportedLanguageCodes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.supportedLanguageCodes_ = supportedLanguageCodes_;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.Agent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.defaultLanguageCode_ = defaultLanguageCode_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.timeZone_ = timeZone_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.avatarUri_ = avatarUri_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.enableLogging_ = enableLogging_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.matchMode_ = matchMode_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.classificationThreshold_ = classificationThreshold_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.apiVersion_ = apiVersion_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.tier_ = tier_;
+      }
     }
 
     @java.lang.Override
@@ -1600,20 +1633,23 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.v2beta1.Agent.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDefaultLanguageCode().isEmpty()) {
         defaultLanguageCode_ = other.defaultLanguageCode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.supportedLanguageCodes_.isEmpty()) {
         if (supportedLanguageCodes_.isEmpty()) {
           supportedLanguageCodes_ = other.supportedLanguageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureSupportedLanguageCodesIsMutable();
           supportedLanguageCodes_.addAll(other.supportedLanguageCodes_);
@@ -1622,14 +1658,17 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getTimeZone().isEmpty()) {
         timeZone_ = other.timeZone_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getAvatarUri().isEmpty()) {
         avatarUri_ = other.avatarUri_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.getEnableLogging() != false) {
@@ -1676,19 +1715,19 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 defaultLanguageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1701,49 +1740,49 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 timeZone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 avatarUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 64:
               {
                 enableLogging_ = input.readBool();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             case 72:
               {
                 matchMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             case 85:
               {
                 classificationThreshold_ = input.readFloat();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 85
             case 112:
               {
                 apiVersion_ = input.readEnum();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 112
             case 120:
               {
                 tier_ = input.readEnum();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 120
             default:
@@ -1838,8 +1877,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1859,8 +1898,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1885,8 +1924,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1952,8 +1991,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1969,8 +2008,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1991,8 +2030,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2070,8 +2109,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       defaultLanguageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2091,8 +2130,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDefaultLanguageCode() {
-
       defaultLanguageCode_ = getDefaultInstance().getDefaultLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2117,8 +2156,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       defaultLanguageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2127,10 +2166,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSupportedLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         supportedLanguageCodes_ =
             new com.google.protobuf.LazyStringArrayList(supportedLanguageCodes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -2273,7 +2312,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSupportedLanguageCodes() {
       supportedLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2368,8 +2407,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       timeZone_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2387,8 +2426,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTimeZone() {
-
       timeZone_ = getDefaultInstance().getTimeZone();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2411,8 +2450,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       timeZone_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2481,8 +2520,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2499,8 +2538,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2522,8 +2561,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2601,8 +2640,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       avatarUri_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2622,8 +2661,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAvatarUri() {
-
       avatarUri_ = getDefaultInstance().getAvatarUri();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2648,8 +2687,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       avatarUri_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2685,6 +2724,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableLogging(boolean value) {
 
       enableLogging_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2700,7 +2740,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableLogging() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       enableLogging_ = false;
       onChanged();
       return this;
@@ -2743,8 +2783,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder setMatchModeValue(int value) {
-
       matchMode_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2765,9 +2805,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     @java.lang.Deprecated
     public com.google.cloud.dialogflow.v2beta1.Agent.MatchMode getMatchMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.Agent.MatchMode result =
-          com.google.cloud.dialogflow.v2beta1.Agent.MatchMode.valueOf(matchMode_);
+          com.google.cloud.dialogflow.v2beta1.Agent.MatchMode.forNumber(matchMode_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.Agent.MatchMode.UNRECOGNIZED
           : result;
@@ -2792,7 +2831,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       matchMode_ = value.getNumber();
       onChanged();
       return this;
@@ -2813,7 +2852,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder clearMatchMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       matchMode_ = 0;
       onChanged();
       return this;
@@ -2862,6 +2901,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder setClassificationThreshold(float value) {
 
       classificationThreshold_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2883,7 +2923,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClassificationThreshold() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       classificationThreshold_ = 0F;
       onChanged();
       return this;
@@ -2924,8 +2964,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setApiVersionValue(int value) {
-
       apiVersion_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2945,9 +2985,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.Agent.ApiVersion getApiVersion() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.Agent.ApiVersion result =
-          com.google.cloud.dialogflow.v2beta1.Agent.ApiVersion.valueOf(apiVersion_);
+          com.google.cloud.dialogflow.v2beta1.Agent.ApiVersion.forNumber(apiVersion_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.Agent.ApiVersion.UNRECOGNIZED
           : result;
@@ -2971,7 +3010,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000400;
       apiVersion_ = value.getNumber();
       onChanged();
       return this;
@@ -2991,7 +3030,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearApiVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       apiVersion_ = 0;
       onChanged();
       return this;
@@ -3026,8 +3065,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTierValue(int value) {
-
       tier_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3044,9 +3083,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.Agent.Tier getTier() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.Agent.Tier result =
-          com.google.cloud.dialogflow.v2beta1.Agent.Tier.valueOf(tier_);
+          com.google.cloud.dialogflow.v2beta1.Agent.Tier.forNumber(tier_);
       return result == null ? com.google.cloud.dialogflow.v2beta1.Agent.Tier.UNRECOGNIZED : result;
     }
     /**
@@ -3065,7 +3103,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000800;
       tier_ = value.getNumber();
       onChanged();
       return this;
@@ -3082,7 +3120,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTier() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       tier_ = 0;
       onChanged();
       return this;

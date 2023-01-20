@@ -27,9 +27,9 @@ public interface ConversationInfoOrBuilder
    *
    *
    * <pre>
-   * Optional. The language code of the conversation data within this dataset. See
-   * https://cloud.google.com/apis/design/standard_fields for more information.
-   * Supports all UTF-8 languages.
+   * Optional. The language code of the conversation data within this dataset.
+   * See https://cloud.google.com/apis/design/standard_fields for more
+   * information. Supports all UTF-8 languages.
    * </pre>
    *
    * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -41,9 +41,9 @@ public interface ConversationInfoOrBuilder
    *
    *
    * <pre>
-   * Optional. The language code of the conversation data within this dataset. See
-   * https://cloud.google.com/apis/design/standard_fields for more information.
-   * Supports all UTF-8 languages.
+   * Optional. The language code of the conversation data within this dataset.
+   * See https://cloud.google.com/apis/design/standard_fields for more
+   * information. Supports all UTF-8 languages.
    * </pre>
    *
    * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

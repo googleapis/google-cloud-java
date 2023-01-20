@@ -70,7 +70,9 @@ public final class CreateConversationDatasetRequest extends com.google.protobuf.
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -172,7 +174,9 @@ public final class CreateConversationDatasetRequest extends com.google.protobuf.
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.ConversationDatasetOrBuilder
       getConversationDatasetOrBuilder() {
-    return getConversationDataset();
+    return conversationDataset_ == null
+        ? com.google.cloud.dialogflow.v2.ConversationDataset.getDefaultInstance()
+        : conversationDataset_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -388,12 +392,11 @@ public final class CreateConversationDatasetRequest extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (conversationDatasetBuilder_ == null) {
-        conversationDataset_ = null;
-      } else {
-        conversationDataset_ = null;
+      conversationDataset_ = null;
+      if (conversationDatasetBuilder_ != null) {
+        conversationDatasetBuilder_.dispose();
         conversationDatasetBuilder_ = null;
       }
       return this;
@@ -424,14 +427,25 @@ public final class CreateConversationDatasetRequest extends com.google.protobuf.
     public com.google.cloud.dialogflow.v2.CreateConversationDatasetRequest buildPartial() {
       com.google.cloud.dialogflow.v2.CreateConversationDatasetRequest result =
           new com.google.cloud.dialogflow.v2.CreateConversationDatasetRequest(this);
-      result.parent_ = parent_;
-      if (conversationDatasetBuilder_ == null) {
-        result.conversationDataset_ = conversationDataset_;
-      } else {
-        result.conversationDataset_ = conversationDatasetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2.CreateConversationDatasetRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.conversationDataset_ =
+            conversationDatasetBuilder_ == null
+                ? conversationDataset_
+                : conversationDatasetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -484,6 +498,7 @@ public final class CreateConversationDatasetRequest extends com.google.protobuf.
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasConversationDataset()) {
@@ -518,14 +533,14 @@ public final class CreateConversationDatasetRequest extends com.google.protobuf.
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getConversationDatasetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -544,6 +559,8 @@ public final class CreateConversationDatasetRequest extends com.google.protobuf.
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -609,8 +626,8 @@ public final class CreateConversationDatasetRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -627,8 +644,8 @@ public final class CreateConversationDatasetRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -650,8 +667,8 @@ public final class CreateConversationDatasetRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -676,7 +693,7 @@ public final class CreateConversationDatasetRequest extends com.google.protobuf.
      * @return Whether the conversationDataset field is set.
      */
     public boolean hasConversationDataset() {
-      return conversationDatasetBuilder_ != null || conversationDataset_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -718,11 +735,11 @@ public final class CreateConversationDatasetRequest extends com.google.protobuf.
           throw new NullPointerException();
         }
         conversationDataset_ = value;
-        onChanged();
       } else {
         conversationDatasetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -740,11 +757,11 @@ public final class CreateConversationDatasetRequest extends com.google.protobuf.
         com.google.cloud.dialogflow.v2.ConversationDataset.Builder builderForValue) {
       if (conversationDatasetBuilder_ == null) {
         conversationDataset_ = builderForValue.build();
-        onChanged();
       } else {
         conversationDatasetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -761,19 +778,19 @@ public final class CreateConversationDatasetRequest extends com.google.protobuf.
     public Builder mergeConversationDataset(
         com.google.cloud.dialogflow.v2.ConversationDataset value) {
       if (conversationDatasetBuilder_ == null) {
-        if (conversationDataset_ != null) {
-          conversationDataset_ =
-              com.google.cloud.dialogflow.v2.ConversationDataset.newBuilder(conversationDataset_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && conversationDataset_ != null
+            && conversationDataset_
+                != com.google.cloud.dialogflow.v2.ConversationDataset.getDefaultInstance()) {
+          getConversationDatasetBuilder().mergeFrom(value);
         } else {
           conversationDataset_ = value;
         }
-        onChanged();
       } else {
         conversationDatasetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -788,14 +805,13 @@ public final class CreateConversationDatasetRequest extends com.google.protobuf.
      * </code>
      */
     public Builder clearConversationDataset() {
-      if (conversationDatasetBuilder_ == null) {
-        conversationDataset_ = null;
-        onChanged();
-      } else {
-        conversationDataset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      conversationDataset_ = null;
+      if (conversationDatasetBuilder_ != null) {
+        conversationDatasetBuilder_.dispose();
         conversationDatasetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -811,7 +827,7 @@ public final class CreateConversationDatasetRequest extends com.google.protobuf.
      */
     public com.google.cloud.dialogflow.v2.ConversationDataset.Builder
         getConversationDatasetBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getConversationDatasetFieldBuilder().getBuilder();
     }

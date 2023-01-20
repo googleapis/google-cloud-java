@@ -34,6 +34,8 @@ import com.google.cloud.dialogflow.v2.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2.ListMessagesRequest;
 import com.google.cloud.dialogflow.v2.ListMessagesResponse;
+import com.google.cloud.dialogflow.v2.SuggestConversationSummaryRequest;
+import com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -105,6 +107,20 @@ public class GrpcConversationsStub extends ConversationsStub {
                   ProtoUtils.marshaller(ListMessagesResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
+      suggestConversationSummaryMethodDescriptor =
+          MethodDescriptor
+              .<SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.v2.Conversations/SuggestConversationSummary")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SuggestConversationSummaryRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SuggestConversationSummaryResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -135,6 +151,8 @@ public class GrpcConversationsStub extends ConversationsStub {
   private final UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse>
       listMessagesPagedCallable;
+  private final UnaryCallable<SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
+      suggestConversationSummaryCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -234,6 +252,18 @@ public class GrpcConversationsStub extends ConversationsStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
+        suggestConversationSummaryTransportSettings =
+            GrpcCallSettings
+                .<SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>newBuilder()
+                .setMethodDescriptor(suggestConversationSummaryMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("conversation", String.valueOf(request.getConversation()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -284,6 +314,11 @@ public class GrpcConversationsStub extends ConversationsStub {
     this.listMessagesPagedCallable =
         callableFactory.createPagedCallable(
             listMessagesTransportSettings, settings.listMessagesSettings(), clientContext);
+    this.suggestConversationSummaryCallable =
+        callableFactory.createUnaryCallable(
+            suggestConversationSummaryTransportSettings,
+            settings.suggestConversationSummarySettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -337,6 +372,12 @@ public class GrpcConversationsStub extends ConversationsStub {
   @Override
   public UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse> listMessagesPagedCallable() {
     return listMessagesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
+      suggestConversationSummaryCallable() {
+    return suggestConversationSummaryCallable;
   }
 
   @Override

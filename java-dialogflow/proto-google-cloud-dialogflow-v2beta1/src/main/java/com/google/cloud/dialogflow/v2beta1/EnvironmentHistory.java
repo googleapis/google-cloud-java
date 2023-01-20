@@ -210,7 +210,9 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int AGENT_VERSION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object agentVersion_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object agentVersion_ = "";
     /**
      *
      *
@@ -259,7 +261,9 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int DESCRIPTION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object description_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
     /**
      *
      *
@@ -350,7 +354,7 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-      return getCreateTime();
+      return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -576,14 +580,12 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         agentVersion_ = "";
-
         description_ = "";
-
-        if (createTimeBuilder_ == null) {
-          createTime_ = null;
-        } else {
-          createTime_ = null;
+        createTime_ = null;
+        if (createTimeBuilder_ != null) {
+          createTimeBuilder_.dispose();
           createTimeBuilder_ = null;
         }
         return this;
@@ -614,15 +616,26 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.dialogflow.v2beta1.EnvironmentHistory.Entry buildPartial() {
         com.google.cloud.dialogflow.v2beta1.EnvironmentHistory.Entry result =
             new com.google.cloud.dialogflow.v2beta1.EnvironmentHistory.Entry(this);
-        result.agentVersion_ = agentVersion_;
-        result.description_ = description_;
-        if (createTimeBuilder_ == null) {
-          result.createTime_ = createTime_;
-        } else {
-          result.createTime_ = createTimeBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2beta1.EnvironmentHistory.Entry result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.agentVersion_ = agentVersion_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.description_ = description_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.createTime_ =
+              createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -676,10 +689,12 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
           return this;
         if (!other.getAgentVersion().isEmpty()) {
           agentVersion_ = other.agentVersion_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasCreateTime()) {
@@ -714,19 +729,19 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
               case 10:
                 {
                   agentVersion_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   description_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -745,6 +760,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object agentVersion_ = "";
       /**
@@ -807,8 +824,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         agentVersion_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -824,8 +841,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearAgentVersion() {
-
         agentVersion_ = getDefaultInstance().getAgentVersion();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -846,8 +863,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         agentVersion_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -913,8 +930,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         description_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -930,8 +947,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
-
         description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -952,8 +969,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         description_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -976,7 +993,7 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
        * @return Whether the createTime field is set.
        */
       public boolean hasCreateTime() {
-        return createTimeBuilder_ != null || createTime_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1013,11 +1030,11 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           createTime_ = value;
-          onChanged();
         } else {
           createTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1032,11 +1049,11 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
       public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (createTimeBuilder_ == null) {
           createTime_ = builderForValue.build();
-          onChanged();
         } else {
           createTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1050,19 +1067,18 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
        */
       public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
         if (createTimeBuilder_ == null) {
-          if (createTime_ != null) {
-            createTime_ =
-                com.google.protobuf.Timestamp.newBuilder(createTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && createTime_ != null
+              && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCreateTimeBuilder().mergeFrom(value);
           } else {
             createTime_ = value;
           }
-          onChanged();
         } else {
           createTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1075,14 +1091,13 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
        * <code>.google.protobuf.Timestamp create_time = 3;</code>
        */
       public Builder clearCreateTime() {
-        if (createTimeBuilder_ == null) {
-          createTime_ = null;
-          onChanged();
-        } else {
-          createTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        createTime_ = null;
+        if (createTimeBuilder_ != null) {
+          createTimeBuilder_.dispose();
           createTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1095,7 +1110,7 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
        * <code>.google.protobuf.Timestamp create_time = 3;</code>
        */
       public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getCreateTimeFieldBuilder().getBuilder();
       }
@@ -1211,7 +1226,9 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -1268,6 +1285,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ENTRIES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.EnvironmentHistory.Entry> entries_;
   /**
    *
@@ -1355,7 +1374,9 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -1623,17 +1644,16 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (entriesBuilder_ == null) {
         entries_ = java.util.Collections.emptyList();
       } else {
         entries_ = null;
         entriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -1661,20 +1681,35 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dialogflow.v2beta1.EnvironmentHistory buildPartial() {
       com.google.cloud.dialogflow.v2beta1.EnvironmentHistory result =
           new com.google.cloud.dialogflow.v2beta1.EnvironmentHistory(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2beta1.EnvironmentHistory result) {
       if (entriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.entries_ = entries_;
       } else {
         result.entries_ = entriesBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.EnvironmentHistory result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -1725,13 +1760,14 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (entriesBuilder_ == null) {
         if (!other.entries_.isEmpty()) {
           if (entries_.isEmpty()) {
             entries_ = other.entries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureEntriesIsMutable();
             entries_.addAll(other.entries_);
@@ -1744,7 +1780,7 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
             entriesBuilder_.dispose();
             entriesBuilder_ = null;
             entries_ = other.entries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             entriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEntriesFieldBuilder()
@@ -1756,6 +1792,7 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1787,7 +1824,7 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1807,7 +1844,7 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
             case 26:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -1902,8 +1939,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1923,8 +1960,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1949,8 +1986,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1959,11 +1996,11 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         entries_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.EnvironmentHistory.Entry>(
                 entries_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2218,7 +2255,7 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
     public Builder clearEntries() {
       if (entriesBuilder_ == null) {
         entries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         entriesBuilder_.clear();
@@ -2369,7 +2406,7 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.dialogflow.v2beta1.EnvironmentHistory.Entry,
                 com.google.cloud.dialogflow.v2beta1.EnvironmentHistory.Entry.Builder,
                 com.google.cloud.dialogflow.v2beta1.EnvironmentHistory.EntryOrBuilder>(
-                entries_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                entries_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         entries_ = null;
       }
       return entriesBuilder_;
@@ -2439,8 +2476,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2457,8 +2494,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2480,8 +2517,8 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

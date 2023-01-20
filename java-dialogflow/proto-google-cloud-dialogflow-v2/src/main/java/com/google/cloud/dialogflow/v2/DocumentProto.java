@@ -265,11 +265,11 @@ public final class DocumentProto {
           + "perationMetadata\032x\312A\031dialogflow.googleap"
           + "is.com\322AYhttps://www.googleapis.com/auth"
           + "/cloud-platform,https://www.googleapis.c"
-          + "om/auth/dialogflowB\234\001\n\036com.google.cloud."
-          + "dialogflow.v2B\rDocumentProtoP\001ZDgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/dial"
-          + "ogflow/v2;dialogflow\370\001\001\242\002\002DF\252\002\032Google.Cl"
-          + "oud.Dialogflow.V2b\006proto3"
+          + "om/auth/dialogflowB\226\001\n\036com.google.cloud."
+          + "dialogflow.v2B\rDocumentProtoP\001Z>cloud.go"
+          + "ogle.com/go/dialogflow/apiv2/dialogflowp"
+          + "b;dialogflowpb\370\001\001\242\002\002DF\252\002\032Google.Cloud.Di"
+          + "alogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

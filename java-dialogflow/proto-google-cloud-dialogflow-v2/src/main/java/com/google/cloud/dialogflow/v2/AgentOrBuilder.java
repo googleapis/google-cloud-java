@@ -285,7 +285,7 @@ public interface AgentOrBuilder
    * </code>
    *
    * @deprecated google.cloud.dialogflow.v2.Agent.match_mode is deprecated. See
-   *     google/cloud/dialogflow/v2/agent.proto;l=349
+   *     google/cloud/dialogflow/v2/agent.proto;l=353
    * @return The enum numeric value on the wire for matchMode.
    */
   @java.lang.Deprecated
@@ -302,7 +302,7 @@ public interface AgentOrBuilder
    * </code>
    *
    * @deprecated google.cloud.dialogflow.v2.Agent.match_mode is deprecated. See
-   *     google/cloud/dialogflow/v2/agent.proto;l=349
+   *     google/cloud/dialogflow/v2/agent.proto;l=353
    * @return The matchMode.
    */
   @java.lang.Deprecated

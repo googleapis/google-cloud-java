@@ -23,8 +23,12 @@ package com.google.cloud.dialogflow.v2;
  *
  * <pre>
  * One response of different type of suggestion response which is used in
- * the response of [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent] and
- * [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent], as well as [HumanAgentAssistantEvent][google.cloud.dialogflow.v2.HumanAgentAssistantEvent].
+ * the response of
+ * [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent]
+ * and
+ * [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent],
+ * as well as
+ * [HumanAgentAssistantEvent][google.cloud.dialogflow.v2.HumanAgentAssistantEvent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.SuggestionResult}
@@ -566,8 +570,12 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * One response of different type of suggestion response which is used in
-   * the response of [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent] and
-   * [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent], as well as [HumanAgentAssistantEvent][google.cloud.dialogflow.v2.HumanAgentAssistantEvent].
+   * the response of
+   * [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent]
+   * and
+   * [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent],
+   * as well as
+   * [HumanAgentAssistantEvent][google.cloud.dialogflow.v2.HumanAgentAssistantEvent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.SuggestionResult}
@@ -601,6 +609,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (errorBuilder_ != null) {
         errorBuilder_.clear();
       }
@@ -642,37 +651,33 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dialogflow.v2.SuggestionResult buildPartial() {
       com.google.cloud.dialogflow.v2.SuggestionResult result =
           new com.google.cloud.dialogflow.v2.SuggestionResult(this);
-      if (suggestionResponseCase_ == 1) {
-        if (errorBuilder_ == null) {
-          result.suggestionResponse_ = suggestionResponse_;
-        } else {
-          result.suggestionResponse_ = errorBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (suggestionResponseCase_ == 2) {
-        if (suggestArticlesResponseBuilder_ == null) {
-          result.suggestionResponse_ = suggestionResponse_;
-        } else {
-          result.suggestionResponse_ = suggestArticlesResponseBuilder_.build();
-        }
-      }
-      if (suggestionResponseCase_ == 3) {
-        if (suggestFaqAnswersResponseBuilder_ == null) {
-          result.suggestionResponse_ = suggestionResponse_;
-        } else {
-          result.suggestionResponse_ = suggestFaqAnswersResponseBuilder_.build();
-        }
-      }
-      if (suggestionResponseCase_ == 4) {
-        if (suggestSmartRepliesResponseBuilder_ == null) {
-          result.suggestionResponse_ = suggestionResponse_;
-        } else {
-          result.suggestionResponse_ = suggestSmartRepliesResponseBuilder_.build();
-        }
-      }
-      result.suggestionResponseCase_ = suggestionResponseCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.SuggestionResult result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.v2.SuggestionResult result) {
+      result.suggestionResponseCase_ = suggestionResponseCase_;
+      result.suggestionResponse_ = this.suggestionResponse_;
+      if (suggestionResponseCase_ == 1 && errorBuilder_ != null) {
+        result.suggestionResponse_ = errorBuilder_.build();
+      }
+      if (suggestionResponseCase_ == 2 && suggestArticlesResponseBuilder_ != null) {
+        result.suggestionResponse_ = suggestArticlesResponseBuilder_.build();
+      }
+      if (suggestionResponseCase_ == 3 && suggestFaqAnswersResponseBuilder_ != null) {
+        result.suggestionResponse_ = suggestFaqAnswersResponseBuilder_.build();
+      }
+      if (suggestionResponseCase_ == 4 && suggestSmartRepliesResponseBuilder_ != null) {
+        result.suggestionResponse_ = suggestSmartRepliesResponseBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -830,6 +835,8 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
@@ -1029,7 +1036,6 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       }
       suggestionResponseCase_ = 1;
       onChanged();
-      ;
       return errorBuilder_;
     }
 
@@ -1254,7 +1260,6 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       }
       suggestionResponseCase_ = 2;
       onChanged();
-      ;
       return suggestArticlesResponseBuilder_;
     }
 
@@ -1480,7 +1485,6 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       }
       suggestionResponseCase_ = 3;
       onChanged();
-      ;
       return suggestFaqAnswersResponseBuilder_;
     }
 
@@ -1717,7 +1721,6 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       }
       suggestionResponseCase_ = 4;
       onChanged();
-      ;
       return suggestSmartRepliesResponseBuilder_;
     }
 

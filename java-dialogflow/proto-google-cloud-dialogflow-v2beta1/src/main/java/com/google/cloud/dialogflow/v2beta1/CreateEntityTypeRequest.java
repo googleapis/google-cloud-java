@@ -69,7 +69,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -178,11 +180,15 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EntityTypeOrBuilder getEntityTypeOrBuilder() {
-    return getEntityType();
+    return entityType_ == null
+        ? com.google.cloud.dialogflow.v2beta1.EntityType.getDefaultInstance()
+        : entityType_;
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -459,16 +465,14 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (entityTypeBuilder_ == null) {
-        entityType_ = null;
-      } else {
-        entityType_ = null;
+      entityType_ = null;
+      if (entityTypeBuilder_ != null) {
+        entityTypeBuilder_.dispose();
         entityTypeBuilder_ = null;
       }
       languageCode_ = "";
-
       return this;
     }
 
@@ -496,15 +500,24 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
     public com.google.cloud.dialogflow.v2beta1.CreateEntityTypeRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.CreateEntityTypeRequest result =
           new com.google.cloud.dialogflow.v2beta1.CreateEntityTypeRequest(this);
-      result.parent_ = parent_;
-      if (entityTypeBuilder_ == null) {
-        result.entityType_ = entityType_;
-      } else {
-        result.entityType_ = entityTypeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.languageCode_ = languageCode_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.CreateEntityTypeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.entityType_ = entityTypeBuilder_ == null ? entityType_ : entityTypeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
     }
 
     @java.lang.Override
@@ -555,6 +568,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasEntityType()) {
@@ -562,6 +576,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -593,19 +608,19 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEntityTypeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -624,6 +639,8 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -701,8 +718,8 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -723,8 +740,8 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -750,8 +767,8 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -776,7 +793,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * @return Whether the entityType field is set.
      */
     public boolean hasEntityType() {
-      return entityTypeBuilder_ != null || entityType_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -817,11 +834,11 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         entityType_ = value;
-        onChanged();
       } else {
         entityTypeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -839,11 +856,11 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
         com.google.cloud.dialogflow.v2beta1.EntityType.Builder builderForValue) {
       if (entityTypeBuilder_ == null) {
         entityType_ = builderForValue.build();
-        onChanged();
       } else {
         entityTypeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -859,19 +876,18 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      */
     public Builder mergeEntityType(com.google.cloud.dialogflow.v2beta1.EntityType value) {
       if (entityTypeBuilder_ == null) {
-        if (entityType_ != null) {
-          entityType_ =
-              com.google.cloud.dialogflow.v2beta1.EntityType.newBuilder(entityType_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && entityType_ != null
+            && entityType_ != com.google.cloud.dialogflow.v2beta1.EntityType.getDefaultInstance()) {
+          getEntityTypeBuilder().mergeFrom(value);
         } else {
           entityType_ = value;
         }
-        onChanged();
       } else {
         entityTypeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -886,14 +902,13 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearEntityType() {
-      if (entityTypeBuilder_ == null) {
-        entityType_ = null;
-        onChanged();
-      } else {
-        entityType_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      entityType_ = null;
+      if (entityTypeBuilder_ != null) {
+        entityTypeBuilder_.dispose();
         entityTypeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -908,7 +923,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.EntityType.Builder getEntityTypeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEntityTypeFieldBuilder().getBuilder();
     }
@@ -1033,8 +1048,8 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1054,8 +1069,8 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1080,8 +1095,8 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

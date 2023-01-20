@@ -27,8 +27,8 @@ public interface TextToSpeechSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates whether text to speech is enabled. Even when this field is false,
-   * other settings in this proto are still retained.
+   * Optional. Indicates whether text to speech is enabled. Even when this field
+   * is false, other settings in this proto are still retained.
    * </pre>
    *
    * <code>bool enable_text_to_speech = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -70,11 +70,11 @@ public interface TextToSpeechSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. The synthesis sample rate (in hertz) for this audio. If not provided, then
-   * the synthesizer will use the default sample rate based on the audio
-   * encoding. If this is different from the voice's natural sample rate, then
-   * the synthesizer will honor this request by converting to the desired sample
-   * rate (which might result in worse audio quality).
+   * Optional. The synthesis sample rate (in hertz) for this audio. If not
+   * provided, then the synthesizer will use the default sample rate based on
+   * the audio encoding. If this is different from the voice's natural sample
+   * rate, then the synthesizer will honor this request by converting to the
+   * desired sample rate (which might result in worse audio quality).
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87,8 +87,8 @@ public interface TextToSpeechSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. Configuration of how speech should be synthesized, mapping from language
-   * (https://cloud.google.com/dialogflow/docs/reference/language) to
+   * Optional. Configuration of how speech should be synthesized, mapping from
+   * language (https://cloud.google.com/dialogflow/docs/reference/language) to
    * SynthesizeSpeechConfig.
    * </pre>
    *
@@ -101,8 +101,8 @@ public interface TextToSpeechSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. Configuration of how speech should be synthesized, mapping from language
-   * (https://cloud.google.com/dialogflow/docs/reference/language) to
+   * Optional. Configuration of how speech should be synthesized, mapping from
+   * language (https://cloud.google.com/dialogflow/docs/reference/language) to
    * SynthesizeSpeechConfig.
    * </pre>
    *
@@ -119,8 +119,8 @@ public interface TextToSpeechSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. Configuration of how speech should be synthesized, mapping from language
-   * (https://cloud.google.com/dialogflow/docs/reference/language) to
+   * Optional. Configuration of how speech should be synthesized, mapping from
+   * language (https://cloud.google.com/dialogflow/docs/reference/language) to
    * SynthesizeSpeechConfig.
    * </pre>
    *
@@ -134,8 +134,8 @@ public interface TextToSpeechSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. Configuration of how speech should be synthesized, mapping from language
-   * (https://cloud.google.com/dialogflow/docs/reference/language) to
+   * Optional. Configuration of how speech should be synthesized, mapping from
+   * language (https://cloud.google.com/dialogflow/docs/reference/language) to
    * SynthesizeSpeechConfig.
    * </pre>
    *
@@ -143,7 +143,6 @@ public interface TextToSpeechSettingsOrBuilder
    * map&lt;string, .google.cloud.dialogflow.v2.SynthesizeSpeechConfig&gt; synthesize_speech_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-
   /* nullable */
   com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig getSynthesizeSpeechConfigsOrDefault(
       java.lang.String key,
@@ -153,8 +152,8 @@ public interface TextToSpeechSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. Configuration of how speech should be synthesized, mapping from language
-   * (https://cloud.google.com/dialogflow/docs/reference/language) to
+   * Optional. Configuration of how speech should be synthesized, mapping from
+   * language (https://cloud.google.com/dialogflow/docs/reference/language) to
    * SynthesizeSpeechConfig.
    * </pre>
    *

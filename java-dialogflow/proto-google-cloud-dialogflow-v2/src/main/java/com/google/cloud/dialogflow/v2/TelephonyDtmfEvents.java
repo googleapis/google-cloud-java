@@ -68,16 +68,18 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DTMF_EVENTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> dtmfEvents_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.dialogflow.v2.TelephonyDtmf>
       dtmfEvents_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.cloud.dialogflow.v2.TelephonyDtmf>() {
             public com.google.cloud.dialogflow.v2.TelephonyDtmf convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.dialogflow.v2.TelephonyDtmf result =
-                  com.google.cloud.dialogflow.v2.TelephonyDtmf.valueOf(from);
+                  com.google.cloud.dialogflow.v2.TelephonyDtmf.forNumber(from);
               return result == null
                   ? com.google.cloud.dialogflow.v2.TelephonyDtmf.UNRECOGNIZED
                   : result;
@@ -378,6 +380,7 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       dtmfEvents_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -407,14 +410,25 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
     public com.google.cloud.dialogflow.v2.TelephonyDtmfEvents buildPartial() {
       com.google.cloud.dialogflow.v2.TelephonyDtmfEvents result =
           new com.google.cloud.dialogflow.v2.TelephonyDtmfEvents(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2.TelephonyDtmfEvents result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         dtmfEvents_ = java.util.Collections.unmodifiableList(dtmfEvents_);
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.dtmfEvents_ = dtmfEvents_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.TelephonyDtmfEvents result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

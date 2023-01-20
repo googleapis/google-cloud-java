@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The response message for [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents].
+ * The response message for
+ * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.BatchUpdateIntentsResponse}
@@ -68,6 +69,8 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
   }
 
   public static final int INTENTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.Intent> intents_;
   /**
    *
@@ -302,7 +305,8 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The response message for [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents].
+   * The response message for
+   * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.BatchUpdateIntentsResponse}
@@ -336,6 +340,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (intentsBuilder_ == null) {
         intents_ = java.util.Collections.emptyList();
       } else {
@@ -370,7 +375,16 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
     public com.google.cloud.dialogflow.v2.BatchUpdateIntentsResponse buildPartial() {
       com.google.cloud.dialogflow.v2.BatchUpdateIntentsResponse result =
           new com.google.cloud.dialogflow.v2.BatchUpdateIntentsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2.BatchUpdateIntentsResponse result) {
       if (intentsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           intents_ = java.util.Collections.unmodifiableList(intents_);
@@ -380,8 +394,10 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
       } else {
         result.intents_ = intentsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.BatchUpdateIntentsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

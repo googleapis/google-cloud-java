@@ -69,7 +69,9 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -174,11 +176,15 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.ConversationOrBuilder getConversationOrBuilder() {
-    return getConversation();
+    return conversation_ == null
+        ? com.google.cloud.dialogflow.v2beta1.Conversation.getDefaultInstance()
+        : conversation_;
   }
 
   public static final int CONVERSATION_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object conversationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object conversationId_ = "";
   /**
    *
    *
@@ -463,16 +469,14 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (conversationBuilder_ == null) {
-        conversation_ = null;
-      } else {
-        conversation_ = null;
+      conversation_ = null;
+      if (conversationBuilder_ != null) {
+        conversationBuilder_.dispose();
         conversationBuilder_ = null;
       }
       conversationId_ = "";
-
       return this;
     }
 
@@ -501,15 +505,26 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
     public com.google.cloud.dialogflow.v2beta1.CreateConversationRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.CreateConversationRequest result =
           new com.google.cloud.dialogflow.v2beta1.CreateConversationRequest(this);
-      result.parent_ = parent_;
-      if (conversationBuilder_ == null) {
-        result.conversation_ = conversation_;
-      } else {
-        result.conversation_ = conversationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.conversationId_ = conversationId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2beta1.CreateConversationRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.conversation_ =
+            conversationBuilder_ == null ? conversation_ : conversationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.conversationId_ = conversationId_;
+      }
     }
 
     @java.lang.Override
@@ -561,6 +576,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasConversation()) {
@@ -568,6 +584,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
       }
       if (!other.getConversationId().isEmpty()) {
         conversationId_ = other.conversationId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -599,19 +616,19 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getConversationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 conversationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -630,6 +647,8 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -701,8 +720,8 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -721,8 +740,8 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -746,8 +765,8 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -772,7 +791,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      * @return Whether the conversation field is set.
      */
     public boolean hasConversation() {
-      return conversationBuilder_ != null || conversation_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -813,11 +832,11 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         conversation_ = value;
-        onChanged();
       } else {
         conversationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -835,11 +854,11 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
         com.google.cloud.dialogflow.v2beta1.Conversation.Builder builderForValue) {
       if (conversationBuilder_ == null) {
         conversation_ = builderForValue.build();
-        onChanged();
       } else {
         conversationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -855,19 +874,19 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      */
     public Builder mergeConversation(com.google.cloud.dialogflow.v2beta1.Conversation value) {
       if (conversationBuilder_ == null) {
-        if (conversation_ != null) {
-          conversation_ =
-              com.google.cloud.dialogflow.v2beta1.Conversation.newBuilder(conversation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && conversation_ != null
+            && conversation_
+                != com.google.cloud.dialogflow.v2beta1.Conversation.getDefaultInstance()) {
+          getConversationBuilder().mergeFrom(value);
         } else {
           conversation_ = value;
         }
-        onChanged();
       } else {
         conversationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -882,14 +901,13 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearConversation() {
-      if (conversationBuilder_ == null) {
-        conversation_ = null;
-        onChanged();
-      } else {
-        conversation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      conversation_ = null;
+      if (conversationBuilder_ != null) {
+        conversationBuilder_.dispose();
         conversationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -904,7 +922,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Conversation.Builder getConversationBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getConversationFieldBuilder().getBuilder();
     }
@@ -1041,8 +1059,8 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       conversationId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1066,8 +1084,8 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearConversationId() {
-
       conversationId_ = getDefaultInstance().getConversationId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1096,8 +1114,8 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       conversationId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

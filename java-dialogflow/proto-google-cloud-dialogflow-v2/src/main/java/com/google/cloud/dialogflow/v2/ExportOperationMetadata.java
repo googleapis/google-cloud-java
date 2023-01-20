@@ -111,7 +111,9 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.GcsDestinationOrBuilder
       getExportedGcsDestinationOrBuilder() {
-    return getExportedGcsDestination();
+    return exportedGcsDestination_ == null
+        ? com.google.cloud.dialogflow.v2.GcsDestination.getDefaultInstance()
+        : exportedGcsDestination_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -318,10 +320,10 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (exportedGcsDestinationBuilder_ == null) {
-        exportedGcsDestination_ = null;
-      } else {
-        exportedGcsDestination_ = null;
+      bitField0_ = 0;
+      exportedGcsDestination_ = null;
+      if (exportedGcsDestinationBuilder_ != null) {
+        exportedGcsDestinationBuilder_.dispose();
         exportedGcsDestinationBuilder_ = null;
       }
       return this;
@@ -351,13 +353,21 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
     public com.google.cloud.dialogflow.v2.ExportOperationMetadata buildPartial() {
       com.google.cloud.dialogflow.v2.ExportOperationMetadata result =
           new com.google.cloud.dialogflow.v2.ExportOperationMetadata(this);
-      if (exportedGcsDestinationBuilder_ == null) {
-        result.exportedGcsDestination_ = exportedGcsDestination_;
-      } else {
-        result.exportedGcsDestination_ = exportedGcsDestinationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.ExportOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.exportedGcsDestination_ =
+            exportedGcsDestinationBuilder_ == null
+                ? exportedGcsDestination_
+                : exportedGcsDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -439,7 +449,7 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
               {
                 input.readMessage(
                     getExportedGcsDestinationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -459,6 +469,8 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.dialogflow.v2.GcsDestination exportedGcsDestination_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.GcsDestination,
@@ -477,7 +489,7 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
      * @return Whether the exportedGcsDestination field is set.
      */
     public boolean hasExportedGcsDestination() {
-      return exportedGcsDestinationBuilder_ != null || exportedGcsDestination_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -514,11 +526,11 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         exportedGcsDestination_ = value;
-        onChanged();
       } else {
         exportedGcsDestinationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -534,11 +546,11 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
         com.google.cloud.dialogflow.v2.GcsDestination.Builder builderForValue) {
       if (exportedGcsDestinationBuilder_ == null) {
         exportedGcsDestination_ = builderForValue.build();
-        onChanged();
       } else {
         exportedGcsDestinationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -553,19 +565,19 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
     public Builder mergeExportedGcsDestination(
         com.google.cloud.dialogflow.v2.GcsDestination value) {
       if (exportedGcsDestinationBuilder_ == null) {
-        if (exportedGcsDestination_ != null) {
-          exportedGcsDestination_ =
-              com.google.cloud.dialogflow.v2.GcsDestination.newBuilder(exportedGcsDestination_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && exportedGcsDestination_ != null
+            && exportedGcsDestination_
+                != com.google.cloud.dialogflow.v2.GcsDestination.getDefaultInstance()) {
+          getExportedGcsDestinationBuilder().mergeFrom(value);
         } else {
           exportedGcsDestination_ = value;
         }
-        onChanged();
       } else {
         exportedGcsDestinationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -578,14 +590,13 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
      * <code>.google.cloud.dialogflow.v2.GcsDestination exported_gcs_destination = 1;</code>
      */
     public Builder clearExportedGcsDestination() {
-      if (exportedGcsDestinationBuilder_ == null) {
-        exportedGcsDestination_ = null;
-        onChanged();
-      } else {
-        exportedGcsDestination_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      exportedGcsDestination_ = null;
+      if (exportedGcsDestinationBuilder_ != null) {
+        exportedGcsDestinationBuilder_.dispose();
         exportedGcsDestinationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -599,7 +610,7 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
      */
     public com.google.cloud.dialogflow.v2.GcsDestination.Builder
         getExportedGcsDestinationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getExportedGcsDestinationFieldBuilder().getBuilder();
     }

@@ -69,7 +69,9 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -179,7 +181,9 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.MessageOrBuilder getMessageOrBuilder() {
-    return getMessage();
+    return message_ == null
+        ? com.google.cloud.dialogflow.v2beta1.Message.getDefaultInstance()
+        : message_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -395,12 +399,11 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (messageBuilder_ == null) {
-        message_ = null;
-      } else {
-        message_ = null;
+      message_ = null;
+      if (messageBuilder_ != null) {
+        messageBuilder_.dispose();
         messageBuilder_ = null;
       }
       return this;
@@ -430,14 +433,21 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.v2beta1.CreateMessageRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.CreateMessageRequest result =
           new com.google.cloud.dialogflow.v2beta1.CreateMessageRequest(this);
-      result.parent_ = parent_;
-      if (messageBuilder_ == null) {
-        result.message_ = message_;
-      } else {
-        result.message_ = messageBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.CreateMessageRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.message_ = messageBuilder_ == null ? message_ : messageBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -488,6 +498,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMessage()) {
@@ -522,13 +533,13 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getMessageFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -547,6 +558,8 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -621,8 +634,8 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -642,8 +655,8 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -668,8 +681,8 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -695,7 +708,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the message field is set.
      */
     public boolean hasMessage() {
-      return messageBuilder_ != null || message_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -738,11 +751,11 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         message_ = value;
-        onChanged();
       } else {
         messageBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -760,11 +773,11 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
     public Builder setMessage(com.google.cloud.dialogflow.v2beta1.Message.Builder builderForValue) {
       if (messageBuilder_ == null) {
         message_ = builderForValue.build();
-        onChanged();
       } else {
         messageBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -781,19 +794,18 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeMessage(com.google.cloud.dialogflow.v2beta1.Message value) {
       if (messageBuilder_ == null) {
-        if (message_ != null) {
-          message_ =
-              com.google.cloud.dialogflow.v2beta1.Message.newBuilder(message_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && message_ != null
+            && message_ != com.google.cloud.dialogflow.v2beta1.Message.getDefaultInstance()) {
+          getMessageBuilder().mergeFrom(value);
         } else {
           message_ = value;
         }
-        onChanged();
       } else {
         messageBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -809,14 +821,13 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearMessage() {
-      if (messageBuilder_ == null) {
-        message_ = null;
-        onChanged();
-      } else {
-        message_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      message_ = null;
+      if (messageBuilder_ != null) {
+        messageBuilder_.dispose();
         messageBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -832,7 +843,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Message.Builder getMessageBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMessageFieldBuilder().getBuilder();
     }

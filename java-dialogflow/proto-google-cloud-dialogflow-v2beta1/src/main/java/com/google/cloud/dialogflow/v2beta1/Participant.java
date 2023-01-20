@@ -262,7 +262,9 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -315,7 +317,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROLE_FIELD_NUMBER = 2;
-  private int role_;
+  private int role_ = 0;
   /**
    *
    *
@@ -350,16 +352,17 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Participant.Role getRole() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.Participant.Role result =
-        com.google.cloud.dialogflow.v2beta1.Participant.Role.valueOf(role_);
+        com.google.cloud.dialogflow.v2beta1.Participant.Role.forNumber(role_);
     return result == null
         ? com.google.cloud.dialogflow.v2beta1.Participant.Role.UNRECOGNIZED
         : result;
   }
 
   public static final int OBFUSCATED_EXTERNAL_USER_ID_FIELD_NUMBER = 7;
-  private volatile java.lang.Object obfuscatedExternalUserId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object obfuscatedExternalUserId_ = "";
   /**
    *
    *
@@ -462,6 +465,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
       documentsMetadataFilters_;
 
@@ -573,8 +577,10 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getDocumentsMetadataFiltersOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getDocumentsMetadataFiltersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -881,12 +887,10 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       role_ = 0;
-
       obfuscatedExternalUserId_ = "";
-
       internalGetMutableDocumentsMetadataFilters().clear();
       return this;
     }
@@ -915,14 +919,28 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2beta1.Participant buildPartial() {
       com.google.cloud.dialogflow.v2beta1.Participant result =
           new com.google.cloud.dialogflow.v2beta1.Participant(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.role_ = role_;
-      result.obfuscatedExternalUserId_ = obfuscatedExternalUserId_;
-      result.documentsMetadataFilters_ = internalGetDocumentsMetadataFilters();
-      result.documentsMetadataFilters_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.Participant result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.role_ = role_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.obfuscatedExternalUserId_ = obfuscatedExternalUserId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.documentsMetadataFilters_ = internalGetDocumentsMetadataFilters();
+        result.documentsMetadataFilters_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -973,6 +991,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.role_ != 0) {
@@ -980,10 +999,12 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getObfuscatedExternalUserId().isEmpty()) {
         obfuscatedExternalUserId_ = other.obfuscatedExternalUserId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       internalGetMutableDocumentsMetadataFilters()
           .mergeFrom(other.internalGetDocumentsMetadataFilters());
+      bitField0_ |= 0x00000008;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1013,19 +1034,19 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 role_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 58:
               {
                 obfuscatedExternalUserId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 58
             case 66:
@@ -1040,6 +1061,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
                     .getMutableMap()
                     .put(
                         documentsMetadataFilters__.getKey(), documentsMetadataFilters__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 66
             default:
@@ -1128,8 +1150,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1147,8 +1169,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1171,8 +1193,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1212,8 +1234,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRoleValue(int value) {
-
       role_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1233,9 +1255,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.Participant.Role getRole() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.Participant.Role result =
-          com.google.cloud.dialogflow.v2beta1.Participant.Role.valueOf(role_);
+          com.google.cloud.dialogflow.v2beta1.Participant.Role.forNumber(role_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.Participant.Role.UNRECOGNIZED
           : result;
@@ -1259,7 +1280,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       role_ = value.getNumber();
       onChanged();
       return this;
@@ -1279,7 +1300,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRole() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       role_ = 0;
       onChanged();
       return this;
@@ -1412,8 +1433,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       obfuscatedExternalUserId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1451,8 +1472,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearObfuscatedExternalUserId() {
-
       obfuscatedExternalUserId_ = getDefaultInstance().getObfuscatedExternalUserId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1495,8 +1516,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       obfuscatedExternalUserId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1515,8 +1536,6 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableDocumentsMetadataFilters() {
-      onChanged();
-      ;
       if (documentsMetadataFilters_ == null) {
         documentsMetadataFilters_ =
             com.google.protobuf.MapField.newMapField(
@@ -1525,6 +1544,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       if (!documentsMetadataFilters_.isMutable()) {
         documentsMetadataFilters_ = documentsMetadataFilters_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return documentsMetadataFilters_;
     }
 
@@ -1627,8 +1648,10 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getDocumentsMetadataFiltersOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getDocumentsMetadataFiltersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1676,6 +1699,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearDocumentsMetadataFilters() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableDocumentsMetadataFilters().getMutableMap().clear();
       return this;
     }
@@ -1715,6 +1739,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDocumentsMetadataFilters() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableDocumentsMetadataFilters().getMutableMap();
     }
     /**
@@ -1750,8 +1775,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableDocumentsMetadataFilters().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1783,6 +1808,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllDocumentsMetadataFilters(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDocumentsMetadataFilters().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 

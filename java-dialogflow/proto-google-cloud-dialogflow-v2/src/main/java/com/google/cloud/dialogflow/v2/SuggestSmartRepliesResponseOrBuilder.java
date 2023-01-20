@@ -131,10 +131,11 @@ public interface SuggestSmartRepliesResponseOrBuilder
    *
    * <pre>
    * Number of messages prior to and including
-   * [latest_message][google.cloud.dialogflow.v2.SuggestSmartRepliesResponse.latest_message] to compile the
-   * suggestion. It may be smaller than the
-   * [SuggestSmartRepliesRequest.context_size][google.cloud.dialogflow.v2.SuggestSmartRepliesRequest.context_size] field in the request if there
-   * aren't that many messages in the conversation.
+   * [latest_message][google.cloud.dialogflow.v2.SuggestSmartRepliesResponse.latest_message]
+   * to compile the suggestion. It may be smaller than the
+   * [SuggestSmartRepliesRequest.context_size][google.cloud.dialogflow.v2.SuggestSmartRepliesRequest.context_size]
+   * field in the request if there aren't that many messages in the
+   * conversation.
    * </pre>
    *
    * <code>int32 context_size = 3;</code>

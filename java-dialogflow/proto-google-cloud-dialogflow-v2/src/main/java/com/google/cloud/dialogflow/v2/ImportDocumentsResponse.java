@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * Response message for [Documents.ImportDocuments][google.cloud.dialogflow.v2.Documents.ImportDocuments].
+ * Response message for
+ * [Documents.ImportDocuments][google.cloud.dialogflow.v2.Documents.ImportDocuments].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.ImportDocumentsResponse}
@@ -68,6 +69,8 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
   }
 
   public static final int WARNINGS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> warnings_;
   /**
    *
@@ -301,7 +304,8 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Response message for [Documents.ImportDocuments][google.cloud.dialogflow.v2.Documents.ImportDocuments].
+   * Response message for
+   * [Documents.ImportDocuments][google.cloud.dialogflow.v2.Documents.ImportDocuments].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.ImportDocumentsResponse}
@@ -335,6 +339,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (warningsBuilder_ == null) {
         warnings_ = java.util.Collections.emptyList();
       } else {
@@ -369,7 +374,16 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
     public com.google.cloud.dialogflow.v2.ImportDocumentsResponse buildPartial() {
       com.google.cloud.dialogflow.v2.ImportDocumentsResponse result =
           new com.google.cloud.dialogflow.v2.ImportDocumentsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2.ImportDocumentsResponse result) {
       if (warningsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           warnings_ = java.util.Collections.unmodifiableList(warnings_);
@@ -379,8 +393,10 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       } else {
         result.warnings_ = warningsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.ImportDocumentsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

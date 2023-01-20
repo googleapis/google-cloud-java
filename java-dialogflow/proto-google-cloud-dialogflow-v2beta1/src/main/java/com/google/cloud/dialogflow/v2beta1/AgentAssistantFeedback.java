@@ -752,7 +752,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getStartTimestampOrBuilder() {
-      return getStartTimestamp();
+      return startTimestamp_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : startTimestamp_;
     }
 
     public static final int SUBMIT_TIMESTAMP_FIELD_NUMBER = 2;
@@ -800,11 +802,15 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getSubmitTimestampOrBuilder() {
-      return getSubmitTimestamp();
+      return submitTimestamp_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : submitTimestamp_;
     }
 
     public static final int SUMMARY_TEXT_FIELD_NUMBER = 3;
-    private volatile java.lang.Object summaryText_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object summaryText_ = "";
     /**
      *
      *
@@ -1093,20 +1099,18 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (startTimestampBuilder_ == null) {
-          startTimestamp_ = null;
-        } else {
-          startTimestamp_ = null;
+        bitField0_ = 0;
+        startTimestamp_ = null;
+        if (startTimestampBuilder_ != null) {
+          startTimestampBuilder_.dispose();
           startTimestampBuilder_ = null;
         }
-        if (submitTimestampBuilder_ == null) {
-          submitTimestamp_ = null;
-        } else {
-          submitTimestamp_ = null;
+        submitTimestamp_ = null;
+        if (submitTimestampBuilder_ != null) {
+          submitTimestampBuilder_.dispose();
           submitTimestampBuilder_ = null;
         }
         summaryText_ = "";
-
         return this;
       }
 
@@ -1140,19 +1144,27 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.SummarizationFeedback result =
             new com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.SummarizationFeedback(
                 this);
-        if (startTimestampBuilder_ == null) {
-          result.startTimestamp_ = startTimestamp_;
-        } else {
-          result.startTimestamp_ = startTimestampBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (submitTimestampBuilder_ == null) {
-          result.submitTimestamp_ = submitTimestamp_;
-        } else {
-          result.submitTimestamp_ = submitTimestampBuilder_.build();
-        }
-        result.summaryText_ = summaryText_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.SummarizationFeedback result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.startTimestamp_ =
+              startTimestampBuilder_ == null ? startTimestamp_ : startTimestampBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.submitTimestamp_ =
+              submitTimestampBuilder_ == null ? submitTimestamp_ : submitTimestampBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.summaryText_ = summaryText_;
+        }
       }
 
       @java.lang.Override
@@ -1217,6 +1229,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         }
         if (!other.getSummaryText().isEmpty()) {
           summaryText_ = other.summaryText_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1249,20 +1262,20 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
                 {
                   input.readMessage(
                       getStartTimestampFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getSubmitTimestampFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   summaryText_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -1282,6 +1295,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.protobuf.Timestamp startTimestamp_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp,
@@ -1300,7 +1315,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
        * @return Whether the startTimestamp field is set.
        */
       public boolean hasStartTimestamp() {
-        return startTimestampBuilder_ != null || startTimestamp_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1337,11 +1352,11 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
             throw new NullPointerException();
           }
           startTimestamp_ = value;
-          onChanged();
         } else {
           startTimestampBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1356,11 +1371,11 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       public Builder setStartTimestamp(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (startTimestampBuilder_ == null) {
           startTimestamp_ = builderForValue.build();
-          onChanged();
         } else {
           startTimestampBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1374,19 +1389,18 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
        */
       public Builder mergeStartTimestamp(com.google.protobuf.Timestamp value) {
         if (startTimestampBuilder_ == null) {
-          if (startTimestamp_ != null) {
-            startTimestamp_ =
-                com.google.protobuf.Timestamp.newBuilder(startTimestamp_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && startTimestamp_ != null
+              && startTimestamp_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getStartTimestampBuilder().mergeFrom(value);
           } else {
             startTimestamp_ = value;
           }
-          onChanged();
         } else {
           startTimestampBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1399,14 +1413,13 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
        * <code>.google.protobuf.Timestamp start_timestamp = 1;</code>
        */
       public Builder clearStartTimestamp() {
-        if (startTimestampBuilder_ == null) {
-          startTimestamp_ = null;
-          onChanged();
-        } else {
-          startTimestamp_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        startTimestamp_ = null;
+        if (startTimestampBuilder_ != null) {
+          startTimestampBuilder_.dispose();
           startTimestampBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1419,7 +1432,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
        * <code>.google.protobuf.Timestamp start_timestamp = 1;</code>
        */
       public com.google.protobuf.Timestamp.Builder getStartTimestampBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getStartTimestampFieldBuilder().getBuilder();
       }
@@ -1485,7 +1498,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
        * @return Whether the submitTimestamp field is set.
        */
       public boolean hasSubmitTimestamp() {
-        return submitTimestampBuilder_ != null || submitTimestamp_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1522,11 +1535,11 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
             throw new NullPointerException();
           }
           submitTimestamp_ = value;
-          onChanged();
         } else {
           submitTimestampBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1541,11 +1554,11 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       public Builder setSubmitTimestamp(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (submitTimestampBuilder_ == null) {
           submitTimestamp_ = builderForValue.build();
-          onChanged();
         } else {
           submitTimestampBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1559,19 +1572,18 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
        */
       public Builder mergeSubmitTimestamp(com.google.protobuf.Timestamp value) {
         if (submitTimestampBuilder_ == null) {
-          if (submitTimestamp_ != null) {
-            submitTimestamp_ =
-                com.google.protobuf.Timestamp.newBuilder(submitTimestamp_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && submitTimestamp_ != null
+              && submitTimestamp_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getSubmitTimestampBuilder().mergeFrom(value);
           } else {
             submitTimestamp_ = value;
           }
-          onChanged();
         } else {
           submitTimestampBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1584,14 +1596,13 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
        * <code>.google.protobuf.Timestamp submit_timestamp = 2;</code>
        */
       public Builder clearSubmitTimestamp() {
-        if (submitTimestampBuilder_ == null) {
-          submitTimestamp_ = null;
-          onChanged();
-        } else {
-          submitTimestamp_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        submitTimestamp_ = null;
+        if (submitTimestampBuilder_ != null) {
+          submitTimestampBuilder_.dispose();
           submitTimestampBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1604,7 +1615,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
        * <code>.google.protobuf.Timestamp submit_timestamp = 2;</code>
        */
       public com.google.protobuf.Timestamp.Builder getSubmitTimestampBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getSubmitTimestampFieldBuilder().getBuilder();
       }
@@ -1713,8 +1724,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         if (value == null) {
           throw new NullPointerException();
         }
-
         summaryText_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1730,8 +1741,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearSummaryText() {
-
         summaryText_ = getDefaultInstance().getSummaryText();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1752,8 +1763,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         summaryText_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1828,7 +1839,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   }
 
   public static final int ANSWER_RELEVANCE_FIELD_NUMBER = 1;
-  private int answerRelevance_;
+  private int answerRelevance_ = 0;
   /**
    *
    *
@@ -1872,9 +1883,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.AnswerRelevance
       getAnswerRelevance() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.AnswerRelevance result =
-        com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.AnswerRelevance.valueOf(
+        com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.AnswerRelevance.forNumber(
             answerRelevance_);
     return result == null
         ? com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.AnswerRelevance.UNRECOGNIZED
@@ -1882,7 +1892,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   }
 
   public static final int DOCUMENT_CORRECTNESS_FIELD_NUMBER = 2;
-  private int documentCorrectness_;
+  private int documentCorrectness_ = 0;
   /**
    *
    *
@@ -1928,9 +1938,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentCorrectness
       getDocumentCorrectness() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentCorrectness result =
-        com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentCorrectness.valueOf(
+        com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentCorrectness.forNumber(
             documentCorrectness_);
     return result == null
         ? com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentCorrectness
@@ -1939,7 +1948,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   }
 
   public static final int DOCUMENT_EFFICIENCY_FIELD_NUMBER = 3;
-  private int documentEfficiency_;
+  private int documentEfficiency_ = 0;
   /**
    *
    *
@@ -1979,9 +1988,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentEfficiency
       getDocumentEfficiency() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentEfficiency result =
-        com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentEfficiency.valueOf(
+        com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentEfficiency.forNumber(
             documentEfficiency_);
     return result == null
         ? com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentEfficiency.UNRECOGNIZED
@@ -2043,7 +2051,10 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.SummarizationFeedbackOrBuilder
       getSummarizationFeedbackOrBuilder() {
-    return getSummarizationFeedback();
+    return summarizationFeedback_ == null
+        ? com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.SummarizationFeedback
+            .getDefaultInstance()
+        : summarizationFeedback_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2295,16 +2306,13 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       answerRelevance_ = 0;
-
       documentCorrectness_ = 0;
-
       documentEfficiency_ = 0;
-
-      if (summarizationFeedbackBuilder_ == null) {
-        summarizationFeedback_ = null;
-      } else {
-        summarizationFeedback_ = null;
+      summarizationFeedback_ = null;
+      if (summarizationFeedbackBuilder_ != null) {
+        summarizationFeedbackBuilder_.dispose();
         summarizationFeedbackBuilder_ = null;
       }
       return this;
@@ -2334,16 +2342,30 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback buildPartial() {
       com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback result =
           new com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback(this);
-      result.answerRelevance_ = answerRelevance_;
-      result.documentCorrectness_ = documentCorrectness_;
-      result.documentEfficiency_ = documentEfficiency_;
-      if (summarizationFeedbackBuilder_ == null) {
-        result.summarizationFeedback_ = summarizationFeedback_;
-      } else {
-        result.summarizationFeedback_ = summarizationFeedbackBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.answerRelevance_ = answerRelevance_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.documentCorrectness_ = documentCorrectness_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.documentEfficiency_ = documentEfficiency_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.summarizationFeedback_ =
+            summarizationFeedbackBuilder_ == null
+                ? summarizationFeedback_
+                : summarizationFeedbackBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2433,26 +2455,26 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
             case 8:
               {
                 answerRelevance_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 documentCorrectness_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 documentEfficiency_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(
                     getSummarizationFeedbackFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -2471,6 +2493,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int answerRelevance_ = 0;
     /**
@@ -2515,8 +2539,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setAnswerRelevanceValue(int value) {
-
       answerRelevance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2541,9 +2565,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.AnswerRelevance
         getAnswerRelevance() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.AnswerRelevance result =
-          com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.AnswerRelevance.valueOf(
+          com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.AnswerRelevance.forNumber(
               answerRelevance_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.AnswerRelevance.UNRECOGNIZED
@@ -2573,7 +2596,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       answerRelevance_ = value.getNumber();
       onChanged();
       return this;
@@ -2597,7 +2620,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearAnswerRelevance() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       answerRelevance_ = 0;
       onChanged();
       return this;
@@ -2648,8 +2671,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setDocumentCorrectnessValue(int value) {
-
       documentCorrectness_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2675,9 +2698,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentCorrectness
         getDocumentCorrectness() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentCorrectness result =
-          com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentCorrectness.valueOf(
+          com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentCorrectness.forNumber(
               documentCorrectness_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentCorrectness
@@ -2709,7 +2731,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       documentCorrectness_ = value.getNumber();
       onChanged();
       return this;
@@ -2734,7 +2756,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearDocumentCorrectness() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       documentCorrectness_ = 0;
       onChanged();
       return this;
@@ -2779,8 +2801,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setDocumentEfficiencyValue(int value) {
-
       documentEfficiency_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2803,9 +2825,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentEfficiency
         getDocumentEfficiency() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentEfficiency result =
-          com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentEfficiency.valueOf(
+          com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentEfficiency.forNumber(
               documentEfficiency_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentEfficiency
@@ -2834,7 +2855,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       documentEfficiency_ = value.getNumber();
       onChanged();
       return this;
@@ -2856,7 +2877,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearDocumentEfficiency() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       documentEfficiency_ = 0;
       onChanged();
       return this;
@@ -2885,7 +2906,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return Whether the summarizationFeedback field is set.
      */
     public boolean hasSummarizationFeedback() {
-      return summarizationFeedbackBuilder_ != null || summarizationFeedback_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2929,11 +2950,11 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         summarizationFeedback_ = value;
-        onChanged();
       } else {
         summarizationFeedbackBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2952,11 +2973,11 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
             builderForValue) {
       if (summarizationFeedbackBuilder_ == null) {
         summarizationFeedback_ = builderForValue.build();
-        onChanged();
       } else {
         summarizationFeedbackBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2973,20 +2994,20 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public Builder mergeSummarizationFeedback(
         com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.SummarizationFeedback value) {
       if (summarizationFeedbackBuilder_ == null) {
-        if (summarizationFeedback_ != null) {
-          summarizationFeedback_ =
-              com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.SummarizationFeedback
-                  .newBuilder(summarizationFeedback_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && summarizationFeedback_ != null
+            && summarizationFeedback_
+                != com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.SummarizationFeedback
+                    .getDefaultInstance()) {
+          getSummarizationFeedbackBuilder().mergeFrom(value);
         } else {
           summarizationFeedback_ = value;
         }
-        onChanged();
       } else {
         summarizationFeedbackBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3001,14 +3022,13 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearSummarizationFeedback() {
-      if (summarizationFeedbackBuilder_ == null) {
-        summarizationFeedback_ = null;
-        onChanged();
-      } else {
-        summarizationFeedback_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      summarizationFeedback_ = null;
+      if (summarizationFeedbackBuilder_ != null) {
+        summarizationFeedbackBuilder_.dispose();
         summarizationFeedbackBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3024,7 +3044,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.SummarizationFeedback.Builder
         getSummarizationFeedbackBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getSummarizationFeedbackFieldBuilder().getBuilder();
     }

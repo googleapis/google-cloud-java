@@ -213,11 +213,13 @@ public interface DetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Mask for [output_audio_config][google.cloud.dialogflow.v2.DetectIntentRequest.output_audio_config] indicating which settings in this
-   * request-level config should override speech synthesizer settings defined at
-   * agent-level.
-   * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2.DetectIntentRequest.output_audio_config] replaces the agent-level
-   * config in its entirety.
+   * Mask for
+   * [output_audio_config][google.cloud.dialogflow.v2.DetectIntentRequest.output_audio_config]
+   * indicating which settings in this request-level config should override
+   * speech synthesizer settings defined at agent-level.
+   * If unspecified or empty,
+   * [output_audio_config][google.cloud.dialogflow.v2.DetectIntentRequest.output_audio_config]
+   * replaces the agent-level config in its entirety.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
@@ -229,11 +231,13 @@ public interface DetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Mask for [output_audio_config][google.cloud.dialogflow.v2.DetectIntentRequest.output_audio_config] indicating which settings in this
-   * request-level config should override speech synthesizer settings defined at
-   * agent-level.
-   * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2.DetectIntentRequest.output_audio_config] replaces the agent-level
-   * config in its entirety.
+   * Mask for
+   * [output_audio_config][google.cloud.dialogflow.v2.DetectIntentRequest.output_audio_config]
+   * indicating which settings in this request-level config should override
+   * speech synthesizer settings defined at agent-level.
+   * If unspecified or empty,
+   * [output_audio_config][google.cloud.dialogflow.v2.DetectIntentRequest.output_audio_config]
+   * replaces the agent-level config in its entirety.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
@@ -245,11 +249,13 @@ public interface DetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Mask for [output_audio_config][google.cloud.dialogflow.v2.DetectIntentRequest.output_audio_config] indicating which settings in this
-   * request-level config should override speech synthesizer settings defined at
-   * agent-level.
-   * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2.DetectIntentRequest.output_audio_config] replaces the agent-level
-   * config in its entirety.
+   * Mask for
+   * [output_audio_config][google.cloud.dialogflow.v2.DetectIntentRequest.output_audio_config]
+   * indicating which settings in this request-level config should override
+   * speech synthesizer settings defined at agent-level.
+   * If unspecified or empty,
+   * [output_audio_config][google.cloud.dialogflow.v2.DetectIntentRequest.output_audio_config]
+   * replaces the agent-level config in its entirety.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>

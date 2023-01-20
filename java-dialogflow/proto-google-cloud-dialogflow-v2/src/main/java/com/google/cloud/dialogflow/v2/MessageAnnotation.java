@@ -68,6 +68,8 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.AnnotatedMessagePart> parts_;
   /**
    *
@@ -147,7 +149,7 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CONTAIN_ENTITIES_FIELD_NUMBER = 2;
-  private boolean containEntities_;
+  private boolean containEntities_ = false;
   /**
    *
    *
@@ -372,6 +374,7 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (partsBuilder_ == null) {
         parts_ = java.util.Collections.emptyList();
       } else {
@@ -380,7 +383,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       containEntities_ = false;
-
       return this;
     }
 
@@ -408,7 +410,16 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dialogflow.v2.MessageAnnotation buildPartial() {
       com.google.cloud.dialogflow.v2.MessageAnnotation result =
           new com.google.cloud.dialogflow.v2.MessageAnnotation(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2.MessageAnnotation result) {
       if (partsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           parts_ = java.util.Collections.unmodifiableList(parts_);
@@ -418,9 +429,13 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
       } else {
         result.parts_ = partsBuilder_.build();
       }
-      result.containEntities_ = containEntities_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.MessageAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.containEntities_ = containEntities_;
+      }
     }
 
     @java.lang.Override
@@ -542,7 +557,7 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
             case 16:
               {
                 containEntities_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -984,6 +999,7 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
     public Builder setContainEntities(boolean value) {
 
       containEntities_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -999,7 +1015,7 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearContainEntities() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       containEntities_ = false;
       onChanged();
       return this;

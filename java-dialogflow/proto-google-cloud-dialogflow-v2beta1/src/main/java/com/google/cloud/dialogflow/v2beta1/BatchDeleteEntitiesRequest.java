@@ -70,7 +70,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -131,6 +133,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
   }
 
   public static final int ENTITY_VALUES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList entityValues_;
   /**
    *
@@ -200,7 +204,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -479,12 +485,11 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       entityValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       languageCode_ = "";
-
       return this;
     }
 
@@ -513,16 +518,32 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
     public com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest result =
           new com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        entityValues_ = entityValues_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.entityValues_ = entityValues_;
-      result.languageCode_ = languageCode_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        entityValues_ = entityValues_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.entityValues_ = entityValues_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
     }
 
     @java.lang.Override
@@ -574,12 +595,13 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.entityValues_.isEmpty()) {
         if (entityValues_.isEmpty()) {
           entityValues_ = other.entityValues_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureEntityValuesIsMutable();
           entityValues_.addAll(other.entityValues_);
@@ -588,6 +610,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -619,7 +642,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -632,7 +655,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
             case 26:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -733,8 +756,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -756,8 +779,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -784,8 +807,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -794,9 +817,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEntityValuesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         entityValues_ = new com.google.protobuf.LazyStringArrayList(entityValues_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -947,7 +970,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      */
     public Builder clearEntityValues() {
       entityValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1049,8 +1072,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1070,8 +1093,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1096,8 +1119,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

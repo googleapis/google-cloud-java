@@ -262,7 +262,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -319,7 +321,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -368,13 +372,13 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSION_NUMBER_FIELD_NUMBER = 3;
-  private int versionNumber_;
+  private int versionNumber_ = 0;
   /**
    *
    *
    * <pre>
-   * Output only. The sequential number of this version. This field is read-only which means
-   * it cannot be set by create and update methods.
+   * Output only. The sequential number of this version. This field is read-only
+   * which means it cannot be set by create and update methods.
    * </pre>
    *
    * <code>int32 version_number = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -392,8 +396,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The creation time of this version. This field is read-only, i.e., it cannot
-   * be set by create and update methods.
+   * Output only. The creation time of this version. This field is read-only,
+   * i.e., it cannot be set by create and update methods.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -409,8 +413,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The creation time of this version. This field is read-only, i.e., it cannot
-   * be set by create and update methods.
+   * Output only. The creation time of this version. This field is read-only,
+   * i.e., it cannot be set by create and update methods.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -426,8 +430,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The creation time of this version. This field is read-only, i.e., it cannot
-   * be set by create and update methods.
+   * Output only. The creation time of this version. This field is read-only,
+   * i.e., it cannot be set by create and update methods.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -435,17 +439,17 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int STATUS_FIELD_NUMBER = 6;
-  private int status_;
+  private int status_ = 0;
   /**
    *
    *
    * <pre>
-   * Output only. The status of this version. This field is read-only and cannot be set by
-   * create and update methods.
+   * Output only. The status of this version. This field is read-only and cannot
+   * be set by create and update methods.
    * </pre>
    *
    * <code>
@@ -462,8 +466,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The status of this version. This field is read-only and cannot be set by
-   * create and update methods.
+   * Output only. The status of this version. This field is read-only and cannot
+   * be set by create and update methods.
    * </pre>
    *
    * <code>
@@ -474,9 +478,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.Version.VersionStatus getStatus() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.Version.VersionStatus result =
-        com.google.cloud.dialogflow.v2.Version.VersionStatus.valueOf(status_);
+        com.google.cloud.dialogflow.v2.Version.VersionStatus.forNumber(status_);
     return result == null
         ? com.google.cloud.dialogflow.v2.Version.VersionStatus.UNRECOGNIZED
         : result;
@@ -736,20 +739,16 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       description_ = "";
-
       versionNumber_ = 0;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       status_ = 0;
-
       return this;
     }
 
@@ -777,17 +776,30 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2.Version buildPartial() {
       com.google.cloud.dialogflow.v2.Version result =
           new com.google.cloud.dialogflow.v2.Version(this);
-      result.name_ = name_;
-      result.description_ = description_;
-      result.versionNumber_ = versionNumber_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.status_ = status_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.Version result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.versionNumber_ = versionNumber_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.status_ = status_;
+      }
     }
 
     @java.lang.Override
@@ -837,10 +849,12 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.v2.Version.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getVersionNumber() != 0) {
@@ -881,31 +895,31 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 versionNumber_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 48:
               {
                 status_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 48
             default:
@@ -924,6 +938,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -998,8 +1014,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1019,8 +1035,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1045,8 +1061,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1112,8 +1128,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1129,8 +1145,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1151,8 +1167,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1162,8 +1178,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The sequential number of this version. This field is read-only which means
-     * it cannot be set by create and update methods.
+     * Output only. The sequential number of this version. This field is read-only
+     * which means it cannot be set by create and update methods.
      * </pre>
      *
      * <code>int32 version_number = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1178,8 +1194,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The sequential number of this version. This field is read-only which means
-     * it cannot be set by create and update methods.
+     * Output only. The sequential number of this version. This field is read-only
+     * which means it cannot be set by create and update methods.
      * </pre>
      *
      * <code>int32 version_number = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1190,6 +1206,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public Builder setVersionNumber(int value) {
 
       versionNumber_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1197,8 +1214,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The sequential number of this version. This field is read-only which means
-     * it cannot be set by create and update methods.
+     * Output only. The sequential number of this version. This field is read-only
+     * which means it cannot be set by create and update methods.
      * </pre>
      *
      * <code>int32 version_number = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1206,7 +1223,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersionNumber() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       versionNumber_ = 0;
       onChanged();
       return this;
@@ -1222,8 +1239,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation time of this version. This field is read-only, i.e., it cannot
-     * be set by create and update methods.
+     * Output only. The creation time of this version. This field is read-only,
+     * i.e., it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1233,14 +1250,14 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. The creation time of this version. This field is read-only, i.e., it cannot
-     * be set by create and update methods.
+     * Output only. The creation time of this version. This field is read-only,
+     * i.e., it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1262,8 +1279,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation time of this version. This field is read-only, i.e., it cannot
-     * be set by create and update methods.
+     * Output only. The creation time of this version. This field is read-only,
+     * i.e., it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1276,19 +1293,19 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. The creation time of this version. This field is read-only, i.e., it cannot
-     * be set by create and update methods.
+     * Output only. The creation time of this version. This field is read-only,
+     * i.e., it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1298,19 +1315,19 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. The creation time of this version. This field is read-only, i.e., it cannot
-     * be set by create and update methods.
+     * Output only. The creation time of this version. This field is read-only,
+     * i.e., it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1319,25 +1336,26 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. The creation time of this version. This field is read-only, i.e., it cannot
-     * be set by create and update methods.
+     * Output only. The creation time of this version. This field is read-only,
+     * i.e., it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1345,22 +1363,21 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. The creation time of this version. This field is read-only, i.e., it cannot
-     * be set by create and update methods.
+     * Output only. The creation time of this version. This field is read-only,
+     * i.e., it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1368,7 +1385,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1376,8 +1393,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation time of this version. This field is read-only, i.e., it cannot
-     * be set by create and update methods.
+     * Output only. The creation time of this version. This field is read-only,
+     * i.e., it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1397,8 +1414,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation time of this version. This field is read-only, i.e., it cannot
-     * be set by create and update methods.
+     * Output only. The creation time of this version. This field is read-only,
+     * i.e., it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1427,8 +1444,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The status of this version. This field is read-only and cannot be set by
-     * create and update methods.
+     * Output only. The status of this version. This field is read-only and cannot
+     * be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1445,8 +1462,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The status of this version. This field is read-only and cannot be set by
-     * create and update methods.
+     * Output only. The status of this version. This field is read-only and cannot
+     * be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1457,8 +1474,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
-
       status_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1466,8 +1483,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The status of this version. This field is read-only and cannot be set by
-     * create and update methods.
+     * Output only. The status of this version. This field is read-only and cannot
+     * be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1478,9 +1495,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2.Version.VersionStatus getStatus() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.Version.VersionStatus result =
-          com.google.cloud.dialogflow.v2.Version.VersionStatus.valueOf(status_);
+          com.google.cloud.dialogflow.v2.Version.VersionStatus.forNumber(status_);
       return result == null
           ? com.google.cloud.dialogflow.v2.Version.VersionStatus.UNRECOGNIZED
           : result;
@@ -1489,8 +1505,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The status of this version. This field is read-only and cannot be set by
-     * create and update methods.
+     * Output only. The status of this version. This field is read-only and cannot
+     * be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1504,7 +1520,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -1513,8 +1529,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The status of this version. This field is read-only and cannot be set by
-     * create and update methods.
+     * Output only. The status of this version. This field is read-only and cannot
+     * be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1524,7 +1540,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       status_ = 0;
       onChanged();
       return this;

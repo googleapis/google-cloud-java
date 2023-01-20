@@ -69,7 +69,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -126,7 +128,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SSML_GENDER_FIELD_NUMBER = 2;
-  private int ssmlGender_;
+  private int ssmlGender_ = 0;
   /**
    *
    *
@@ -165,9 +167,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SsmlVoiceGender getSsmlGender() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.SsmlVoiceGender result =
-        com.google.cloud.dialogflow.v2beta1.SsmlVoiceGender.valueOf(ssmlGender_);
+        com.google.cloud.dialogflow.v2beta1.SsmlVoiceGender.forNumber(ssmlGender_);
     return result == null
         ? com.google.cloud.dialogflow.v2beta1.SsmlVoiceGender.UNRECOGNIZED
         : result;
@@ -384,10 +385,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       ssmlGender_ = 0;
-
       return this;
     }
 
@@ -415,10 +415,21 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams buildPartial() {
       com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams result =
           new com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams(this);
-      result.name_ = name_;
-      result.ssmlGender_ = ssmlGender_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.ssmlGender_ = ssmlGender_;
+      }
     }
 
     @java.lang.Override
@@ -469,6 +480,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.ssmlGender_ != 0) {
@@ -503,13 +515,13 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 ssmlGender_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -528,6 +540,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -602,8 +616,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -623,8 +637,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -649,8 +663,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -694,8 +708,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setSsmlGenderValue(int value) {
-
       ssmlGender_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -717,9 +731,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.SsmlVoiceGender getSsmlGender() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.SsmlVoiceGender result =
-          com.google.cloud.dialogflow.v2beta1.SsmlVoiceGender.valueOf(ssmlGender_);
+          com.google.cloud.dialogflow.v2beta1.SsmlVoiceGender.forNumber(ssmlGender_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.SsmlVoiceGender.UNRECOGNIZED
           : result;
@@ -745,7 +758,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       ssmlGender_ = value.getNumber();
       onChanged();
       return this;
@@ -767,7 +780,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSsmlGender() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       ssmlGender_ = 0;
       onChanged();
       return this;

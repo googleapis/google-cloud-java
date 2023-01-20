@@ -357,8 +357,10 @@ public final class ConversationDatasetsGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [CreateConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata]
-     * - `response`: [ConversationDataset][google.cloud.dialogflow.v2.ConversationDataset]
+     * - `metadata`:
+     * [CreateConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata]
+     * - `response`:
+     * [ConversationDataset][google.cloud.dialogflow.v2.ConversationDataset]
      * </pre>
      */
     public void createConversationDataset(
@@ -407,7 +409,8 @@ public final class ConversationDatasetsGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [DeleteConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.DeleteConversationDatasetOperationMetadata]
+     * - `metadata`:
+     * [DeleteConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.DeleteConversationDatasetOperationMetadata]
      * - `response`: An [Empty
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * </pre>
@@ -429,8 +432,10 @@ public final class ConversationDatasetsGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [ImportConversationDataOperationMetadata][google.cloud.dialogflow.v2.ImportConversationDataOperationMetadata]
-     * - `response`: [ImportConversationDataOperationResponse][google.cloud.dialogflow.v2.ImportConversationDataOperationResponse]
+     * - `metadata`:
+     * [ImportConversationDataOperationMetadata][google.cloud.dialogflow.v2.ImportConversationDataOperationMetadata]
+     * - `response`:
+     * [ImportConversationDataOperationResponse][google.cloud.dialogflow.v2.ImportConversationDataOperationResponse]
      * </pre>
      */
     public void importConversationData(
@@ -510,8 +515,10 @@ public final class ConversationDatasetsGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [CreateConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata]
-     * - `response`: [ConversationDataset][google.cloud.dialogflow.v2.ConversationDataset]
+     * - `metadata`:
+     * [CreateConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata]
+     * - `response`:
+     * [ConversationDataset][google.cloud.dialogflow.v2.ConversationDataset]
      * </pre>
      */
     public void createConversationDataset(
@@ -566,7 +573,8 @@ public final class ConversationDatasetsGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [DeleteConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.DeleteConversationDatasetOperationMetadata]
+     * - `metadata`:
+     * [DeleteConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.DeleteConversationDatasetOperationMetadata]
      * - `response`: An [Empty
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * </pre>
@@ -590,8 +598,10 @@ public final class ConversationDatasetsGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [ImportConversationDataOperationMetadata][google.cloud.dialogflow.v2.ImportConversationDataOperationMetadata]
-     * - `response`: [ImportConversationDataOperationResponse][google.cloud.dialogflow.v2.ImportConversationDataOperationResponse]
+     * - `metadata`:
+     * [ImportConversationDataOperationMetadata][google.cloud.dialogflow.v2.ImportConversationDataOperationMetadata]
+     * - `response`:
+     * [ImportConversationDataOperationResponse][google.cloud.dialogflow.v2.ImportConversationDataOperationResponse]
      * </pre>
      */
     public void importConversationData(
@@ -634,8 +644,10 @@ public final class ConversationDatasetsGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [CreateConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata]
-     * - `response`: [ConversationDataset][google.cloud.dialogflow.v2.ConversationDataset]
+     * - `metadata`:
+     * [CreateConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata]
+     * - `response`:
+     * [ConversationDataset][google.cloud.dialogflow.v2.ConversationDataset]
      * </pre>
      */
     public com.google.longrunning.Operation createConversationDataset(
@@ -679,7 +691,8 @@ public final class ConversationDatasetsGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [DeleteConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.DeleteConversationDatasetOperationMetadata]
+     * - `metadata`:
+     * [DeleteConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.DeleteConversationDatasetOperationMetadata]
      * - `response`: An [Empty
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * </pre>
@@ -700,8 +713,10 @@ public final class ConversationDatasetsGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [ImportConversationDataOperationMetadata][google.cloud.dialogflow.v2.ImportConversationDataOperationMetadata]
-     * - `response`: [ImportConversationDataOperationResponse][google.cloud.dialogflow.v2.ImportConversationDataOperationResponse]
+     * - `metadata`:
+     * [ImportConversationDataOperationMetadata][google.cloud.dialogflow.v2.ImportConversationDataOperationMetadata]
+     * - `response`:
+     * [ImportConversationDataOperationResponse][google.cloud.dialogflow.v2.ImportConversationDataOperationResponse]
      * </pre>
      */
     public com.google.longrunning.Operation importConversationData(
@@ -741,8 +756,10 @@ public final class ConversationDatasetsGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [CreateConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata]
-     * - `response`: [ConversationDataset][google.cloud.dialogflow.v2.ConversationDataset]
+     * - `metadata`:
+     * [CreateConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata]
+     * - `response`:
+     * [ConversationDataset][google.cloud.dialogflow.v2.ConversationDataset]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -791,7 +808,8 @@ public final class ConversationDatasetsGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [DeleteConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.DeleteConversationDatasetOperationMetadata]
+     * - `metadata`:
+     * [DeleteConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.DeleteConversationDatasetOperationMetadata]
      * - `response`: An [Empty
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * </pre>
@@ -813,8 +831,10 @@ public final class ConversationDatasetsGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [ImportConversationDataOperationMetadata][google.cloud.dialogflow.v2.ImportConversationDataOperationMetadata]
-     * - `response`: [ImportConversationDataOperationResponse][google.cloud.dialogflow.v2.ImportConversationDataOperationResponse]
+     * - `metadata`:
+     * [ImportConversationDataOperationMetadata][google.cloud.dialogflow.v2.ImportConversationDataOperationMetadata]
+     * - `response`:
+     * [ImportConversationDataOperationResponse][google.cloud.dialogflow.v2.ImportConversationDataOperationResponse]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

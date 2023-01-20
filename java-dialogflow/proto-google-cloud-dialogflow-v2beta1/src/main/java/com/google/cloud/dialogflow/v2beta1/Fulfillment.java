@@ -201,7 +201,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; request_headers = 4;</code>
      */
-
     /* nullable */
     java.lang.String getRequestHeadersOrDefault(
         java.lang.String key,
@@ -307,7 +306,9 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int URI_FIELD_NUMBER = 1;
-    private volatile java.lang.Object uri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uri_ = "";
     /**
      *
      *
@@ -358,7 +359,9 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int USERNAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object username_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object username_ = "";
     /**
      *
      *
@@ -407,7 +410,9 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PASSWORD_FIELD_NUMBER = 3;
-    private volatile java.lang.Object password_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object password_ = "";
     /**
      *
      *
@@ -468,6 +473,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
               "");
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> requestHeaders_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -527,8 +533,10 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; request_headers = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getRequestHeadersOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getRequestHeadersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -557,7 +565,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int IS_CLOUD_FUNCTION_FIELD_NUMBER = 5;
-    private boolean isCloudFunction_;
+    private boolean isCloudFunction_ = false;
     /**
      *
      *
@@ -853,15 +861,12 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         uri_ = "";
-
         username_ = "";
-
         password_ = "";
-
         internalGetMutableRequestHeaders().clear();
         isCloudFunction_ = false;
-
         return this;
       }
 
@@ -891,15 +896,32 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.v2beta1.Fulfillment.GenericWebService buildPartial() {
         com.google.cloud.dialogflow.v2beta1.Fulfillment.GenericWebService result =
             new com.google.cloud.dialogflow.v2beta1.Fulfillment.GenericWebService(this);
-        int from_bitField0_ = bitField0_;
-        result.uri_ = uri_;
-        result.username_ = username_;
-        result.password_ = password_;
-        result.requestHeaders_ = internalGetRequestHeaders();
-        result.requestHeaders_.makeImmutable();
-        result.isCloudFunction_ = isCloudFunction_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2beta1.Fulfillment.GenericWebService result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uri_ = uri_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.username_ = username_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.password_ = password_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.requestHeaders_ = internalGetRequestHeaders();
+          result.requestHeaders_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.isCloudFunction_ = isCloudFunction_;
+        }
       }
 
       @java.lang.Override
@@ -955,17 +977,21 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()) return this;
         if (!other.getUri().isEmpty()) {
           uri_ = other.uri_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getUsername().isEmpty()) {
           username_ = other.username_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getPassword().isEmpty()) {
           password_ = other.password_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         internalGetMutableRequestHeaders().mergeFrom(other.internalGetRequestHeaders());
+        bitField0_ |= 0x00000008;
         if (other.getIsCloudFunction() != false) {
           setIsCloudFunction(other.getIsCloudFunction());
         }
@@ -998,19 +1024,19 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   uri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   username_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   password_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
@@ -1023,12 +1049,13 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
                   internalGetMutableRequestHeaders()
                       .getMutableMap()
                       .put(requestHeaders__.getKey(), requestHeaders__.getValue());
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 40:
                 {
                   isCloudFunction_ = input.readBool();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               default:
@@ -1114,8 +1141,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         uri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1132,8 +1159,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearUri() {
-
         uri_ = getDefaultInstance().getUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1155,8 +1182,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         uri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1222,8 +1249,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         username_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1239,8 +1266,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearUsername() {
-
         username_ = getDefaultInstance().getUsername();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1261,8 +1288,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         username_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1328,8 +1355,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         password_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1345,8 +1372,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPassword() {
-
         password_ = getDefaultInstance().getPassword();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1367,8 +1394,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         password_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1386,8 +1413,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
           internalGetMutableRequestHeaders() {
-        onChanged();
-        ;
         if (requestHeaders_ == null) {
           requestHeaders_ =
               com.google.protobuf.MapField.newMapField(
@@ -1396,6 +1421,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         if (!requestHeaders_.isMutable()) {
           requestHeaders_ = requestHeaders_.copy();
         }
+        bitField0_ |= 0x00000008;
+        onChanged();
         return requestHeaders_;
       }
 
@@ -1447,8 +1474,10 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * <code>map&lt;string, string&gt; request_headers = 4;</code>
        */
       @java.lang.Override
-      public java.lang.String getRequestHeadersOrDefault(
-          java.lang.String key, java.lang.String defaultValue) {
+      public /* nullable */ java.lang.String getRequestHeadersOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -1479,6 +1508,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
 
       public Builder clearRequestHeaders() {
+        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutableRequestHeaders().getMutableMap().clear();
         return this;
       }
@@ -1501,6 +1531,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableRequestHeaders() {
+        bitField0_ |= 0x00000008;
         return internalGetMutableRequestHeaders().getMutableMap();
       }
       /**
@@ -1519,8 +1550,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableRequestHeaders().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
@@ -1535,6 +1566,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       public Builder putAllRequestHeaders(
           java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableRequestHeaders().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000008;
         return this;
       }
 
@@ -1585,6 +1617,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       public Builder setIsCloudFunction(boolean value) {
 
         isCloudFunction_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1608,7 +1641,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Deprecated
       public Builder clearIsCloudFunction() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         isCloudFunction_ = false;
         onChanged();
         return this;
@@ -1898,7 +1931,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private int type_ = 0;
     /**
      *
      *
@@ -1927,9 +1960,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature.Type result =
-          com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature.Type.valueOf(type_);
+          com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature.Type.forNumber(type_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature.Type.UNRECOGNIZED
           : result;
@@ -2139,8 +2171,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         type_ = 0;
-
         return this;
       }
 
@@ -2168,9 +2200,18 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature buildPartial() {
         com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature result =
             new com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature(this);
-        result.type_ = type_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
       }
 
       @java.lang.Override
@@ -2253,7 +2294,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               default:
@@ -2272,6 +2313,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int type_ = 0;
       /**
@@ -2302,8 +2345,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2320,9 +2363,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature.Type getType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature.Type result =
-            com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature.Type.valueOf(type_);
+            com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature.Type.forNumber(type_);
         return result == null
             ? com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature.Type.UNRECOGNIZED
             : result;
@@ -2343,7 +2385,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -2360,7 +2402,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         type_ = 0;
         onChanged();
         return this;
@@ -2475,7 +2517,9 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -2532,7 +2576,9 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -2638,7 +2684,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLED_FIELD_NUMBER = 4;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -2656,6 +2702,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FEATURES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature> features_;
   /**
    *
@@ -2984,22 +3032,20 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       if (genericWebServiceBuilder_ != null) {
         genericWebServiceBuilder_.clear();
       }
       enabled_ = false;
-
       if (featuresBuilder_ == null) {
         features_ = java.util.Collections.emptyList();
       } else {
         features_ = null;
         featuresBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       fulfillmentCase_ = 0;
       fulfillment_ = null;
       return this;
@@ -3029,29 +3075,47 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2beta1.Fulfillment buildPartial() {
       com.google.cloud.dialogflow.v2beta1.Fulfillment result =
           new com.google.cloud.dialogflow.v2beta1.Fulfillment(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      if (fulfillmentCase_ == 3) {
-        if (genericWebServiceBuilder_ == null) {
-          result.fulfillment_ = fulfillment_;
-        } else {
-          result.fulfillment_ = genericWebServiceBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.enabled_ = enabled_;
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2beta1.Fulfillment result) {
       if (featuresBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           features_ = java.util.Collections.unmodifiableList(features_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.features_ = features_;
       } else {
         result.features_ = featuresBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.Fulfillment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.enabled_ = enabled_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.v2beta1.Fulfillment result) {
       result.fulfillmentCase_ = fulfillmentCase_;
-      onBuilt();
-      return result;
+      result.fulfillment_ = this.fulfillment_;
+      if (fulfillmentCase_ == 3 && genericWebServiceBuilder_ != null) {
+        result.fulfillment_ = genericWebServiceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3102,10 +3166,12 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getEnabled() != false) {
@@ -3115,7 +3181,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         if (!other.features_.isEmpty()) {
           if (features_.isEmpty()) {
             features_ = other.features_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureFeaturesIsMutable();
             features_.addAll(other.features_);
@@ -3128,7 +3194,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             featuresBuilder_.dispose();
             featuresBuilder_ = null;
             features_ = other.features_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             featuresBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFeaturesFieldBuilder()
@@ -3178,13 +3244,13 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -3197,7 +3263,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 enabled_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
@@ -3320,8 +3386,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3341,8 +3407,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -3367,8 +3433,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3437,8 +3503,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3455,8 +3521,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -3478,8 +3544,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3712,7 +3778,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
       fulfillmentCase_ = 3;
       onChanged();
-      ;
       return genericWebServiceBuilder_;
     }
 
@@ -3747,6 +3812,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3762,7 +3828,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       enabled_ = false;
       onChanged();
       return this;
@@ -3772,11 +3838,11 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureFeaturesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         features_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature>(
                 features_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -3998,7 +4064,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     public Builder clearFeatures() {
       if (featuresBuilder_ == null) {
         features_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         featuresBuilder_.clear();
@@ -4125,7 +4191,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature,
                 com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature.Builder,
                 com.google.cloud.dialogflow.v2beta1.Fulfillment.FeatureOrBuilder>(
-                features_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                features_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         features_ = null;
       }
       return featuresBuilder_;

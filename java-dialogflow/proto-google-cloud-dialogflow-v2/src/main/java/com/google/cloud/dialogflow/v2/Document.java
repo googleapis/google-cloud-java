@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * A knowledge document to be used by a [KnowledgeBase][google.cloud.dialogflow.v2.KnowledgeBase].
+ * A knowledge document to be used by a
+ * [KnowledgeBase][google.cloud.dialogflow.v2.KnowledgeBase].
  * For more information, see the [knowledge base
  * guide](https://cloud.google.com/dialogflow/docs/how/knowledge-bases).
  * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
@@ -701,7 +702,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
-      return getTime();
+      return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
     }
 
     public static final int STATUS_FIELD_NUMBER = 2;
@@ -747,7 +748,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
-      return getStatus();
+      return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -969,16 +970,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (timeBuilder_ == null) {
-          time_ = null;
-        } else {
-          time_ = null;
+        bitField0_ = 0;
+        time_ = null;
+        if (timeBuilder_ != null) {
+          timeBuilder_.dispose();
           timeBuilder_ = null;
         }
-        if (statusBuilder_ == null) {
-          status_ = null;
-        } else {
-          status_ = null;
+        status_ = null;
+        if (statusBuilder_ != null) {
+          statusBuilder_.dispose();
           statusBuilder_ = null;
         }
         return this;
@@ -1008,18 +1008,21 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.v2.Document.ReloadStatus buildPartial() {
         com.google.cloud.dialogflow.v2.Document.ReloadStatus result =
             new com.google.cloud.dialogflow.v2.Document.ReloadStatus(this);
-        if (timeBuilder_ == null) {
-          result.time_ = time_;
-        } else {
-          result.time_ = timeBuilder_.build();
-        }
-        if (statusBuilder_ == null) {
-          result.status_ = status_;
-        } else {
-          result.status_ = statusBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dialogflow.v2.Document.ReloadStatus result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.time_ = timeBuilder_ == null ? time_ : timeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1105,13 +1108,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   input.readMessage(getTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -1130,6 +1133,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.Timestamp time_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1151,7 +1156,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the time field is set.
        */
       public boolean hasTime() {
-        return timeBuilder_ != null || time_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1190,11 +1195,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           time_ = value;
-          onChanged();
         } else {
           timeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1211,11 +1216,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       public Builder setTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (timeBuilder_ == null) {
           time_ = builderForValue.build();
-          onChanged();
         } else {
           timeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1231,16 +1236,18 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeTime(com.google.protobuf.Timestamp value) {
         if (timeBuilder_ == null) {
-          if (time_ != null) {
-            time_ = com.google.protobuf.Timestamp.newBuilder(time_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && time_ != null
+              && time_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getTimeBuilder().mergeFrom(value);
           } else {
             time_ = value;
           }
-          onChanged();
         } else {
           timeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1255,14 +1262,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp time = 1;</code>
        */
       public Builder clearTime() {
-        if (timeBuilder_ == null) {
-          time_ = null;
-          onChanged();
-        } else {
-          time_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        time_ = null;
+        if (timeBuilder_ != null) {
+          timeBuilder_.dispose();
           timeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1277,7 +1283,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp time = 1;</code>
        */
       public com.google.protobuf.Timestamp.Builder getTimeBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getTimeFieldBuilder().getBuilder();
       }
@@ -1343,7 +1349,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the status field is set.
        */
       public boolean hasStatus() {
-        return statusBuilder_ != null || status_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1378,11 +1384,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           status_ = value;
-          onChanged();
         } else {
           statusBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1397,11 +1403,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
         if (statusBuilder_ == null) {
           status_ = builderForValue.build();
-          onChanged();
         } else {
           statusBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1415,16 +1421,18 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeStatus(com.google.rpc.Status value) {
         if (statusBuilder_ == null) {
-          if (status_ != null) {
-            status_ = com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && status_ != null
+              && status_ != com.google.rpc.Status.getDefaultInstance()) {
+            getStatusBuilder().mergeFrom(value);
           } else {
             status_ = value;
           }
-          onChanged();
         } else {
           statusBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1437,14 +1445,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.rpc.Status status = 2;</code>
        */
       public Builder clearStatus() {
-        if (statusBuilder_ == null) {
-          status_ = null;
-          onChanged();
-        } else {
-          status_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        status_ = null;
+        if (statusBuilder_ != null) {
+          statusBuilder_.dispose();
           statusBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1457,7 +1464,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.rpc.Status status = 2;</code>
        */
       public com.google.rpc.Status.Builder getStatusBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
@@ -1612,7 +1619,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1667,7 +1676,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -1718,7 +1729,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MIME_TYPE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object mimeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mimeType_ = "";
   /**
    *
    *
@@ -1767,7 +1780,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KNOWLEDGE_TYPES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> knowledgeTypes_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.dialogflow.v2.Document.KnowledgeType>
       knowledgeTypes_converter_ =
@@ -1775,9 +1791,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               java.lang.Integer, com.google.cloud.dialogflow.v2.Document.KnowledgeType>() {
             public com.google.cloud.dialogflow.v2.Document.KnowledgeType convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.dialogflow.v2.Document.KnowledgeType result =
-                  com.google.cloud.dialogflow.v2.Document.KnowledgeType.valueOf(from);
+                  com.google.cloud.dialogflow.v2.Document.KnowledgeType.forNumber(from);
               return result == null
                   ? com.google.cloud.dialogflow.v2.Document.KnowledgeType.UNRECOGNIZED
                   : result;
@@ -2002,7 +2017,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_AUTO_RELOAD_FIELD_NUMBER = 11;
-  private boolean enableAutoReload_;
+  private boolean enableAutoReload_ = false;
   /**
    *
    *
@@ -2089,7 +2104,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.Document.ReloadStatusOrBuilder
       getLatestReloadStatusOrBuilder() {
-    return getLatestReloadStatus();
+    return latestReloadStatus_ == null
+        ? com.google.cloud.dialogflow.v2.Document.ReloadStatus.getDefaultInstance()
+        : latestReloadStatus_;
   }
 
   public static final int METADATA_FIELD_NUMBER = 7;
@@ -2105,6 +2122,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
@@ -2171,8 +2189,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -2204,7 +2224,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 13;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -2237,9 +2257,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.Document.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.Document.State result =
-        com.google.cloud.dialogflow.v2.Document.State.valueOf(state_);
+        com.google.cloud.dialogflow.v2.Document.State.forNumber(state_);
     return result == null ? com.google.cloud.dialogflow.v2.Document.State.UNRECOGNIZED : result;
   }
 
@@ -2535,7 +2554,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A knowledge document to be used by a [KnowledgeBase][google.cloud.dialogflow.v2.KnowledgeBase].
+   * A knowledge document to be used by a
+   * [KnowledgeBase][google.cloud.dialogflow.v2.KnowledgeBase].
    * For more information, see the [knowledge base
    * guide](https://cloud.google.com/dialogflow/docs/how/knowledge-bases).
    * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
@@ -2593,25 +2613,20 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       mimeType_ = "";
-
       knowledgeTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       enableAutoReload_ = false;
-
-      if (latestReloadStatusBuilder_ == null) {
-        latestReloadStatus_ = null;
-      } else {
-        latestReloadStatus_ = null;
+      latestReloadStatus_ = null;
+      if (latestReloadStatusBuilder_ != null) {
+        latestReloadStatusBuilder_.dispose();
         latestReloadStatusBuilder_ = null;
       }
       internalGetMutableMetadata().clear();
       state_ = 0;
-
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -2641,33 +2656,55 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2.Document buildPartial() {
       com.google.cloud.dialogflow.v2.Document result =
           new com.google.cloud.dialogflow.v2.Document(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.mimeType_ = mimeType_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        knowledgeTypes_ = java.util.Collections.unmodifiableList(knowledgeTypes_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.knowledgeTypes_ = knowledgeTypes_;
-      if (sourceCase_ == 5) {
-        result.source_ = source_;
-      }
-      if (sourceCase_ == 9) {
-        result.source_ = source_;
-      }
-      result.enableAutoReload_ = enableAutoReload_;
-      if (latestReloadStatusBuilder_ == null) {
-        result.latestReloadStatus_ = latestReloadStatus_;
-      } else {
-        result.latestReloadStatus_ = latestReloadStatusBuilder_.build();
-      }
-      result.metadata_ = internalGetMetadata();
-      result.metadata_.makeImmutable();
-      result.state_ = state_;
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dialogflow.v2.Document result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        knowledgeTypes_ = java.util.Collections.unmodifiableList(knowledgeTypes_);
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.knowledgeTypes_ = knowledgeTypes_;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.Document result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.mimeType_ = mimeType_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.enableAutoReload_ = enableAutoReload_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.latestReloadStatus_ =
+            latestReloadStatusBuilder_ == null
+                ? latestReloadStatus_
+                : latestReloadStatusBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.state_ = state_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.v2.Document result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
     }
 
     @java.lang.Override
@@ -2717,20 +2754,23 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.v2.Document.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getMimeType().isEmpty()) {
         mimeType_ = other.mimeType_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.knowledgeTypes_.isEmpty()) {
         if (knowledgeTypes_.isEmpty()) {
           knowledgeTypes_ = other.knowledgeTypes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureKnowledgeTypesIsMutable();
           knowledgeTypes_.addAll(other.knowledgeTypes_);
@@ -2744,6 +2784,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         mergeLatestReloadStatus(other.getLatestReloadStatus());
       }
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00000100;
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
@@ -2794,19 +2835,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 mimeType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
@@ -2844,6 +2885,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 74:
@@ -2855,20 +2897,20 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             case 88:
               {
                 enableAutoReload_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 88
             case 98:
               {
                 input.readMessage(
                     getLatestReloadStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 98
             case 104:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 104
             default:
@@ -2974,8 +3016,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2994,8 +3036,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -3019,8 +3061,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3089,8 +3131,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3107,8 +3149,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -3130,8 +3172,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3197,8 +3239,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       mimeType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3214,8 +3256,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMimeType() {
-
       mimeType_ = getDefaultInstance().getMimeType();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3236,8 +3278,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mimeType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3245,9 +3287,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> knowledgeTypes_ = java.util.Collections.emptyList();
 
     private void ensureKnowledgeTypesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         knowledgeTypes_ = new java.util.ArrayList<java.lang.Integer>(knowledgeTypes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -3389,7 +3431,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKnowledgeTypes() {
       knowledgeTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3791,6 +3833,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableAutoReload(boolean value) {
 
       enableAutoReload_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3818,7 +3861,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableAutoReload() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       enableAutoReload_ = false;
       onChanged();
       return this;
@@ -3846,7 +3889,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the latestReloadStatus field is set.
      */
     public boolean hasLatestReloadStatus() {
-      return latestReloadStatusBuilder_ != null || latestReloadStatus_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3892,11 +3935,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         latestReloadStatus_ = value;
-        onChanged();
       } else {
         latestReloadStatusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3916,11 +3959,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2.Document.ReloadStatus.Builder builderForValue) {
       if (latestReloadStatusBuilder_ == null) {
         latestReloadStatus_ = builderForValue.build();
-        onChanged();
       } else {
         latestReloadStatusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3939,19 +3982,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeLatestReloadStatus(
         com.google.cloud.dialogflow.v2.Document.ReloadStatus value) {
       if (latestReloadStatusBuilder_ == null) {
-        if (latestReloadStatus_ != null) {
-          latestReloadStatus_ =
-              com.google.cloud.dialogflow.v2.Document.ReloadStatus.newBuilder(latestReloadStatus_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && latestReloadStatus_ != null
+            && latestReloadStatus_
+                != com.google.cloud.dialogflow.v2.Document.ReloadStatus.getDefaultInstance()) {
+          getLatestReloadStatusBuilder().mergeFrom(value);
         } else {
           latestReloadStatus_ = value;
         }
-        onChanged();
       } else {
         latestReloadStatusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3968,14 +4011,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLatestReloadStatus() {
-      if (latestReloadStatusBuilder_ == null) {
-        latestReloadStatus_ = null;
-        onChanged();
-      } else {
-        latestReloadStatus_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      latestReloadStatus_ = null;
+      if (latestReloadStatusBuilder_ != null) {
+        latestReloadStatusBuilder_.dispose();
         latestReloadStatusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3993,7 +4035,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.v2.Document.ReloadStatus.Builder
         getLatestReloadStatusBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getLatestReloadStatusFieldBuilder().getBuilder();
     }
@@ -4061,8 +4103,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMetadata() {
-      onChanged();
-      ;
       if (metadata_ == null) {
         metadata_ =
             com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -4070,6 +4110,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
+      bitField0_ |= 0x00000100;
+      onChanged();
       return metadata_;
     }
 
@@ -4133,8 +4175,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -4167,6 +4211,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -4193,6 +4238,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      bitField0_ |= 0x00000100;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -4215,8 +4261,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -4234,6 +4280,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -4270,8 +4317,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4290,9 +4337,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2.Document.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.Document.State result =
-          com.google.cloud.dialogflow.v2.Document.State.valueOf(state_);
+          com.google.cloud.dialogflow.v2.Document.State.forNumber(state_);
       return result == null ? com.google.cloud.dialogflow.v2.Document.State.UNRECOGNIZED : result;
     }
     /**
@@ -4313,7 +4359,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -4332,7 +4378,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       state_ = 0;
       onChanged();
       return this;

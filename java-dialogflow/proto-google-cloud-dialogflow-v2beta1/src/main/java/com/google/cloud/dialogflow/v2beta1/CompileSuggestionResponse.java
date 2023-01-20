@@ -113,11 +113,15 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SuggestionOrBuilder getSuggestionOrBuilder() {
-    return getSuggestion();
+    return suggestion_ == null
+        ? com.google.cloud.dialogflow.v2beta1.Suggestion.getDefaultInstance()
+        : suggestion_;
   }
 
   public static final int LATEST_MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object latestMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object latestMessage_ = "";
   /**
    *
    *
@@ -172,7 +176,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
   }
 
   public static final int CONTEXT_SIZE_FIELD_NUMBER = 3;
-  private int contextSize_;
+  private int contextSize_ = 0;
   /**
    *
    *
@@ -414,16 +418,14 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (suggestionBuilder_ == null) {
-        suggestion_ = null;
-      } else {
-        suggestion_ = null;
+      bitField0_ = 0;
+      suggestion_ = null;
+      if (suggestionBuilder_ != null) {
+        suggestionBuilder_.dispose();
         suggestionBuilder_ = null;
       }
       latestMessage_ = "";
-
       contextSize_ = 0;
-
       return this;
     }
 
@@ -452,15 +454,25 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
     public com.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse buildPartial() {
       com.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse result =
           new com.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse(this);
-      if (suggestionBuilder_ == null) {
-        result.suggestion_ = suggestion_;
-      } else {
-        result.suggestion_ = suggestionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.latestMessage_ = latestMessage_;
-      result.contextSize_ = contextSize_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.suggestion_ = suggestionBuilder_ == null ? suggestion_ : suggestionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.latestMessage_ = latestMessage_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.contextSize_ = contextSize_;
+      }
     }
 
     @java.lang.Override
@@ -515,6 +527,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
       }
       if (!other.getLatestMessage().isEmpty()) {
         latestMessage_ = other.latestMessage_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getContextSize() != 0) {
@@ -549,19 +562,19 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
             case 10:
               {
                 input.readMessage(getSuggestionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 latestMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 contextSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -581,6 +594,8 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.dialogflow.v2beta1.Suggestion suggestion_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.Suggestion,
@@ -599,7 +614,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
      * @return Whether the suggestion field is set.
      */
     public boolean hasSuggestion() {
-      return suggestionBuilder_ != null || suggestion_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -636,11 +651,11 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         suggestion_ = value;
-        onChanged();
       } else {
         suggestionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -656,11 +671,11 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
         com.google.cloud.dialogflow.v2beta1.Suggestion.Builder builderForValue) {
       if (suggestionBuilder_ == null) {
         suggestion_ = builderForValue.build();
-        onChanged();
       } else {
         suggestionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -674,19 +689,18 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
      */
     public Builder mergeSuggestion(com.google.cloud.dialogflow.v2beta1.Suggestion value) {
       if (suggestionBuilder_ == null) {
-        if (suggestion_ != null) {
-          suggestion_ =
-              com.google.cloud.dialogflow.v2beta1.Suggestion.newBuilder(suggestion_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && suggestion_ != null
+            && suggestion_ != com.google.cloud.dialogflow.v2beta1.Suggestion.getDefaultInstance()) {
+          getSuggestionBuilder().mergeFrom(value);
         } else {
           suggestion_ = value;
         }
-        onChanged();
       } else {
         suggestionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -699,14 +713,13 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
      * <code>.google.cloud.dialogflow.v2beta1.Suggestion suggestion = 1;</code>
      */
     public Builder clearSuggestion() {
-      if (suggestionBuilder_ == null) {
-        suggestion_ = null;
-        onChanged();
-      } else {
-        suggestion_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      suggestion_ = null;
+      if (suggestionBuilder_ != null) {
+        suggestionBuilder_.dispose();
         suggestionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -719,7 +732,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
      * <code>.google.cloud.dialogflow.v2beta1.Suggestion suggestion = 1;</code>
      */
     public com.google.cloud.dialogflow.v2beta1.Suggestion.Builder getSuggestionBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSuggestionFieldBuilder().getBuilder();
     }
@@ -837,8 +850,8 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       latestMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -857,8 +870,8 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearLatestMessage() {
-
       latestMessage_ = getDefaultInstance().getLatestMessage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -882,8 +895,8 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       latestMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -927,6 +940,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
     public Builder setContextSize(int value) {
 
       contextSize_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -946,7 +960,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearContextSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       contextSize_ = 0;
       onChanged();
       return this;

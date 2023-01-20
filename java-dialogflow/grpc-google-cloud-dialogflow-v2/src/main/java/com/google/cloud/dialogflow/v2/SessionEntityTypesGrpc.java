@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service for managing [SessionEntityTypes][google.cloud.dialogflow.v2.SessionEntityType].
+ * Service for managing
+ * [SessionEntityTypes][google.cloud.dialogflow.v2.SessionEntityType].
  * </pre>
  */
 @javax.annotation.Generated(
@@ -331,7 +332,8 @@ public final class SessionEntityTypesGrpc {
    *
    *
    * <pre>
-   * Service for managing [SessionEntityTypes][google.cloud.dialogflow.v2.SessionEntityType].
+   * Service for managing
+   * [SessionEntityTypes][google.cloud.dialogflow.v2.SessionEntityType].
    * </pre>
    */
   public abstract static class SessionEntityTypesImplBase implements io.grpc.BindableService {
@@ -472,7 +474,8 @@ public final class SessionEntityTypesGrpc {
    *
    *
    * <pre>
-   * Service for managing [SessionEntityTypes][google.cloud.dialogflow.v2.SessionEntityType].
+   * Service for managing
+   * [SessionEntityTypes][google.cloud.dialogflow.v2.SessionEntityType].
    * </pre>
    */
   public static final class SessionEntityTypesStub
@@ -593,7 +596,8 @@ public final class SessionEntityTypesGrpc {
    *
    *
    * <pre>
-   * Service for managing [SessionEntityTypes][google.cloud.dialogflow.v2.SessionEntityType].
+   * Service for managing
+   * [SessionEntityTypes][google.cloud.dialogflow.v2.SessionEntityType].
    * </pre>
    */
   public static final class SessionEntityTypesBlockingStub
@@ -696,7 +700,8 @@ public final class SessionEntityTypesGrpc {
    *
    *
    * <pre>
-   * Service for managing [SessionEntityTypes][google.cloud.dialogflow.v2.SessionEntityType].
+   * Service for managing
+   * [SessionEntityTypes][google.cloud.dialogflow.v2.SessionEntityType].
    * </pre>
    */
   public static final class SessionEntityTypesFutureStub

@@ -105,10 +105,10 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The model to be evaluated can return multiple results with confidence
-     * score on each query. These results will be sorted by the descending order
-     * of the scores and we only keep the first max_result_count results as the
-     * final results to evaluate.
+     * Required. The model to be evaluated can return multiple results with
+     * confidence score on each query. These results will be sorted by the
+     * descending order of the scores and we only keep the first
+     * max_result_count results as the final results to evaluate.
      * </pre>
      *
      * <code>int32 max_result_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -167,7 +167,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int ALLOWLIST_DOCUMENT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object allowlistDocument_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object allowlistDocument_ = "";
     /**
      *
      *
@@ -220,15 +222,15 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int MAX_RESULT_COUNT_FIELD_NUMBER = 2;
-    private int maxResultCount_;
+    private int maxResultCount_ = 0;
     /**
      *
      *
      * <pre>
-     * Required. The model to be evaluated can return multiple results with confidence
-     * score on each query. These results will be sorted by the descending order
-     * of the scores and we only keep the first max_result_count results as the
-     * final results to evaluate.
+     * Required. The model to be evaluated can return multiple results with
+     * confidence score on each query. These results will be sorted by the
+     * descending order of the scores and we only keep the first
+     * max_result_count results as the final results to evaluate.
      * </pre>
      *
      * <code>int32 max_result_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -451,10 +453,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         allowlistDocument_ = "";
-
         maxResultCount_ = 0;
-
         return this;
       }
 
@@ -484,10 +485,22 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.dialogflow.v2.EvaluationConfig.SmartReplyConfig buildPartial() {
         com.google.cloud.dialogflow.v2.EvaluationConfig.SmartReplyConfig result =
             new com.google.cloud.dialogflow.v2.EvaluationConfig.SmartReplyConfig(this);
-        result.allowlistDocument_ = allowlistDocument_;
-        result.maxResultCount_ = maxResultCount_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2.EvaluationConfig.SmartReplyConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.allowlistDocument_ = allowlistDocument_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxResultCount_ = maxResultCount_;
+        }
       }
 
       @java.lang.Override
@@ -543,6 +556,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
                 .getDefaultInstance()) return this;
         if (!other.getAllowlistDocument().isEmpty()) {
           allowlistDocument_ = other.allowlistDocument_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getMaxResultCount() != 0) {
@@ -577,13 +591,13 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
               case 10:
                 {
                   allowlistDocument_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   maxResultCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -602,6 +616,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object allowlistDocument_ = "";
       /**
@@ -670,8 +686,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         allowlistDocument_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -689,8 +705,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearAllowlistDocument() {
-
         allowlistDocument_ = getDefaultInstance().getAllowlistDocument();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -713,8 +729,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         allowlistDocument_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -724,10 +740,10 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The model to be evaluated can return multiple results with confidence
-       * score on each query. These results will be sorted by the descending order
-       * of the scores and we only keep the first max_result_count results as the
-       * final results to evaluate.
+       * Required. The model to be evaluated can return multiple results with
+       * confidence score on each query. These results will be sorted by the
+       * descending order of the scores and we only keep the first
+       * max_result_count results as the final results to evaluate.
        * </pre>
        *
        * <code>int32 max_result_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -742,10 +758,10 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The model to be evaluated can return multiple results with confidence
-       * score on each query. These results will be sorted by the descending order
-       * of the scores and we only keep the first max_result_count results as the
-       * final results to evaluate.
+       * Required. The model to be evaluated can return multiple results with
+       * confidence score on each query. These results will be sorted by the
+       * descending order of the scores and we only keep the first
+       * max_result_count results as the final results to evaluate.
        * </pre>
        *
        * <code>int32 max_result_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -756,6 +772,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       public Builder setMaxResultCount(int value) {
 
         maxResultCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -763,10 +780,10 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The model to be evaluated can return multiple results with confidence
-       * score on each query. These results will be sorted by the descending order
-       * of the scores and we only keep the first max_result_count results as the
-       * final results to evaluate.
+       * Required. The model to be evaluated can return multiple results with
+       * confidence score on each query. These results will be sorted by the
+       * descending order of the scores and we only keep the first
+       * max_result_count results as the final results to evaluate.
        * </pre>
        *
        * <code>int32 max_result_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -774,7 +791,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearMaxResultCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         maxResultCount_ = 0;
         onChanged();
         return this;
@@ -885,10 +902,10 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The model to be evaluated can return multiple results with confidence
-     * score on each query. These results will be sorted by the descending order
-     * of the scores and we only keep the first max_result_count results as the
-     * final results to evaluate.
+     * Required. The model to be evaluated can return multiple results with
+     * confidence score on each query. These results will be sorted by the
+     * descending order of the scores and we only keep the first
+     * max_result_count results as the final results to evaluate.
      * </pre>
      *
      * <code>int32 max_result_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -947,7 +964,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int ALLOWLIST_DOCUMENT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object allowlistDocument_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object allowlistDocument_ = "";
     /**
      *
      *
@@ -1000,15 +1019,15 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int MAX_RESULT_COUNT_FIELD_NUMBER = 2;
-    private int maxResultCount_;
+    private int maxResultCount_ = 0;
     /**
      *
      *
      * <pre>
-     * Required. The model to be evaluated can return multiple results with confidence
-     * score on each query. These results will be sorted by the descending order
-     * of the scores and we only keep the first max_result_count results as the
-     * final results to evaluate.
+     * Required. The model to be evaluated can return multiple results with
+     * confidence score on each query. These results will be sorted by the
+     * descending order of the scores and we only keep the first
+     * max_result_count results as the final results to evaluate.
      * </pre>
      *
      * <code>int32 max_result_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1231,10 +1250,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         allowlistDocument_ = "";
-
         maxResultCount_ = 0;
-
         return this;
       }
 
@@ -1264,10 +1282,22 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.dialogflow.v2.EvaluationConfig.SmartComposeConfig buildPartial() {
         com.google.cloud.dialogflow.v2.EvaluationConfig.SmartComposeConfig result =
             new com.google.cloud.dialogflow.v2.EvaluationConfig.SmartComposeConfig(this);
-        result.allowlistDocument_ = allowlistDocument_;
-        result.maxResultCount_ = maxResultCount_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2.EvaluationConfig.SmartComposeConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.allowlistDocument_ = allowlistDocument_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxResultCount_ = maxResultCount_;
+        }
       }
 
       @java.lang.Override
@@ -1323,6 +1353,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
                 .getDefaultInstance()) return this;
         if (!other.getAllowlistDocument().isEmpty()) {
           allowlistDocument_ = other.allowlistDocument_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getMaxResultCount() != 0) {
@@ -1357,13 +1388,13 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
               case 10:
                 {
                   allowlistDocument_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   maxResultCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -1382,6 +1413,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object allowlistDocument_ = "";
       /**
@@ -1450,8 +1483,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         allowlistDocument_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1469,8 +1502,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearAllowlistDocument() {
-
         allowlistDocument_ = getDefaultInstance().getAllowlistDocument();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1493,8 +1526,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         allowlistDocument_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1504,10 +1537,10 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The model to be evaluated can return multiple results with confidence
-       * score on each query. These results will be sorted by the descending order
-       * of the scores and we only keep the first max_result_count results as the
-       * final results to evaluate.
+       * Required. The model to be evaluated can return multiple results with
+       * confidence score on each query. These results will be sorted by the
+       * descending order of the scores and we only keep the first
+       * max_result_count results as the final results to evaluate.
        * </pre>
        *
        * <code>int32 max_result_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1522,10 +1555,10 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The model to be evaluated can return multiple results with confidence
-       * score on each query. These results will be sorted by the descending order
-       * of the scores and we only keep the first max_result_count results as the
-       * final results to evaluate.
+       * Required. The model to be evaluated can return multiple results with
+       * confidence score on each query. These results will be sorted by the
+       * descending order of the scores and we only keep the first
+       * max_result_count results as the final results to evaluate.
        * </pre>
        *
        * <code>int32 max_result_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1536,6 +1569,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       public Builder setMaxResultCount(int value) {
 
         maxResultCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1543,10 +1577,10 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The model to be evaluated can return multiple results with confidence
-       * score on each query. These results will be sorted by the descending order
-       * of the scores and we only keep the first max_result_count results as the
-       * final results to evaluate.
+       * Required. The model to be evaluated can return multiple results with
+       * confidence score on each query. These results will be sorted by the
+       * descending order of the scores and we only keep the first
+       * max_result_count results as the final results to evaluate.
        * </pre>
        *
        * <code>int32 max_result_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1554,7 +1588,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearMaxResultCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         maxResultCount_ = 0;
         onChanged();
         return this;
@@ -1675,6 +1709,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DATASETS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.InputDataset> datasets_;
   /**
    *
@@ -2115,6 +2151,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (datasetsBuilder_ == null) {
         datasets_ = java.util.Collections.emptyList();
       } else {
@@ -2157,7 +2194,17 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dialogflow.v2.EvaluationConfig buildPartial() {
       com.google.cloud.dialogflow.v2.EvaluationConfig result =
           new com.google.cloud.dialogflow.v2.EvaluationConfig(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2.EvaluationConfig result) {
       if (datasetsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           datasets_ = java.util.Collections.unmodifiableList(datasets_);
@@ -2167,23 +2214,21 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         result.datasets_ = datasetsBuilder_.build();
       }
-      if (modelSpecificConfigCase_ == 2) {
-        if (smartReplyConfigBuilder_ == null) {
-          result.modelSpecificConfig_ = modelSpecificConfig_;
-        } else {
-          result.modelSpecificConfig_ = smartReplyConfigBuilder_.build();
-        }
-      }
-      if (modelSpecificConfigCase_ == 4) {
-        if (smartComposeConfigBuilder_ == null) {
-          result.modelSpecificConfig_ = modelSpecificConfig_;
-        } else {
-          result.modelSpecificConfig_ = smartComposeConfigBuilder_.build();
-        }
-      }
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.EvaluationConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.v2.EvaluationConfig result) {
       result.modelSpecificConfigCase_ = modelSpecificConfigCase_;
-      onBuilt();
-      return result;
+      result.modelSpecificConfig_ = this.modelSpecificConfig_;
+      if (modelSpecificConfigCase_ == 2 && smartReplyConfigBuilder_ != null) {
+        result.modelSpecificConfig_ = smartReplyConfigBuilder_.build();
+      }
+      if (modelSpecificConfigCase_ == 4 && smartComposeConfigBuilder_ != null) {
+        result.modelSpecificConfig_ = smartComposeConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2976,7 +3021,6 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       }
       modelSpecificConfigCase_ = 2;
       onChanged();
-      ;
       return smartReplyConfigBuilder_;
     }
 
@@ -3221,7 +3265,6 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       }
       modelSpecificConfigCase_ = 4;
       onChanged();
-      ;
       return smartComposeConfigBuilder_;
     }
 

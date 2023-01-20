@@ -56,8 +56,8 @@ public interface ParticipantOrBuilder
    *
    *
    * <pre>
-   * Immutable. The role this participant plays in the conversation. This field must be set
-   * during participant creation and is then immutable.
+   * Immutable. The role this participant plays in the conversation. This field
+   * must be set during participant creation and is then immutable.
    * </pre>
    *
    * <code>
@@ -71,8 +71,8 @@ public interface ParticipantOrBuilder
    *
    *
    * <pre>
-   * Immutable. The role this participant plays in the conversation. This field must be set
-   * during participant creation and is then immutable.
+   * Immutable. The role this participant plays in the conversation. This field
+   * must be set during participant creation and is then immutable.
    * </pre>
    *
    * <code>
@@ -116,18 +116,23 @@ public interface ParticipantOrBuilder
    *
    *
    * <pre>
-   * Optional. Obfuscated user id that should be associated with the created participant.
+   * Optional. Obfuscated user id that should be associated with the created
+   * participant.
    * You can specify a user id as follows:
    * 1. If you set this field in
-   *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant] or
+   *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant]
+   *    or
    *    [UpdateParticipantRequest][google.cloud.dialogflow.v2.UpdateParticipantRequest.participant],
    *    Dialogflow adds the obfuscated user id with the participant.
    * 2. If you set this field in
-   *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id] or
+   *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
+   *    or
    *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
-   *    Dialogflow will update [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
+   *    Dialogflow will update
+   *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
    * Dialogflow returns an error if you try to add a user id for a
-   * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER] participant.
+   * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER]
+   * participant.
    * Dialogflow uses this user id for billing and measurement purposes. For
    * example, Dialogflow determines whether a user in one conversation returned
    * in a later conversation.
@@ -148,18 +153,23 @@ public interface ParticipantOrBuilder
    *
    *
    * <pre>
-   * Optional. Obfuscated user id that should be associated with the created participant.
+   * Optional. Obfuscated user id that should be associated with the created
+   * participant.
    * You can specify a user id as follows:
    * 1. If you set this field in
-   *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant] or
+   *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant]
+   *    or
    *    [UpdateParticipantRequest][google.cloud.dialogflow.v2.UpdateParticipantRequest.participant],
    *    Dialogflow adds the obfuscated user id with the participant.
    * 2. If you set this field in
-   *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id] or
+   *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
+   *    or
    *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
-   *    Dialogflow will update [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
+   *    Dialogflow will update
+   *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
    * Dialogflow returns an error if you try to add a user id for a
-   * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER] participant.
+   * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER]
+   * participant.
    * Dialogflow uses this user id for billing and measurement purposes. For
    * example, Dialogflow determines whether a user in one conversation returned
    * in a later conversation.
@@ -181,9 +191,10 @@ public interface ParticipantOrBuilder
    *
    *
    * <pre>
-   * Optional. Key-value filters on the metadata of documents returned by article
-   * suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * Optional. Key-value filters on the metadata of documents returned by
+   * article suggestion. If specified, article suggestion only returns suggested
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
    * values for a metadata key should be concatenated by comma. For example,
    * filters to match all documents that have 'US' or 'CA' in their market
    * metadata values and 'agent' in their user metadata values will be
@@ -208,9 +219,10 @@ public interface ParticipantOrBuilder
    *
    *
    * <pre>
-   * Optional. Key-value filters on the metadata of documents returned by article
-   * suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * Optional. Key-value filters on the metadata of documents returned by
+   * article suggestion. If specified, article suggestion only returns suggested
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
    * values for a metadata key should be concatenated by comma. For example,
    * filters to match all documents that have 'US' or 'CA' in their market
    * metadata values and 'agent' in their user metadata values will be
@@ -238,9 +250,10 @@ public interface ParticipantOrBuilder
    *
    *
    * <pre>
-   * Optional. Key-value filters on the metadata of documents returned by article
-   * suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * Optional. Key-value filters on the metadata of documents returned by
+   * article suggestion. If specified, article suggestion only returns suggested
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
    * values for a metadata key should be concatenated by comma. For example,
    * filters to match all documents that have 'US' or 'CA' in their market
    * metadata values and 'agent' in their user metadata values will be
@@ -265,9 +278,10 @@ public interface ParticipantOrBuilder
    *
    *
    * <pre>
-   * Optional. Key-value filters on the metadata of documents returned by article
-   * suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * Optional. Key-value filters on the metadata of documents returned by
+   * article suggestion. If specified, article suggestion only returns suggested
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
    * values for a metadata key should be concatenated by comma. For example,
    * filters to match all documents that have 'US' or 'CA' in their market
    * metadata values and 'agent' in their user metadata values will be
@@ -287,7 +301,6 @@ public interface ParticipantOrBuilder
    * map&lt;string, string&gt; documents_metadata_filters = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-
   /* nullable */
   java.lang.String getDocumentsMetadataFiltersOrDefault(
       java.lang.String key,
@@ -297,9 +310,10 @@ public interface ParticipantOrBuilder
    *
    *
    * <pre>
-   * Optional. Key-value filters on the metadata of documents returned by article
-   * suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * Optional. Key-value filters on the metadata of documents returned by
+   * article suggestion. If specified, article suggestion only returns suggested
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
    * values for a metadata key should be concatenated by comma. For example,
    * filters to match all documents that have 'US' or 'CA' in their market
    * metadata values and 'agent' in their user metadata values will be

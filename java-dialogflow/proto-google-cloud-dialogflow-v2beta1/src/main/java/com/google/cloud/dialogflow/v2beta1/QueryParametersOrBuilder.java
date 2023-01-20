@@ -523,7 +523,6 @@ public interface QueryParametersOrBuilder
    *
    * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
    */
-
   /* nullable */
   java.lang.String getWebhookHeadersOrDefault(
       java.lang.String key,

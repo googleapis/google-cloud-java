@@ -826,7 +826,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int TEXT_FIELD_NUMBER = 1;
-      private volatile java.lang.Object text_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object text_ = "";
       /**
        *
        *
@@ -875,7 +877,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int ENTITY_TYPE_FIELD_NUMBER = 2;
-      private volatile java.lang.Object entityType_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object entityType_ = "";
       /**
        *
        *
@@ -926,7 +930,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int ALIAS_FIELD_NUMBER = 3;
-      private volatile java.lang.Object alias_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object alias_ = "";
       /**
        *
        *
@@ -979,7 +985,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int USER_DEFINED_FIELD_NUMBER = 4;
-      private boolean userDefined_;
+      private boolean userDefined_ = false;
       /**
        *
        *
@@ -1229,14 +1235,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           text_ = "";
-
           entityType_ = "";
-
           alias_ = "";
-
           userDefined_ = false;
-
           return this;
         }
 
@@ -1266,12 +1269,28 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part result =
               new com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part(this);
-          result.text_ = text_;
-          result.entityType_ = entityType_;
-          result.alias_ = alias_;
-          result.userDefined_ = userDefined_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.text_ = text_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.entityType_ = entityType_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.alias_ = alias_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.userDefined_ = userDefined_;
+          }
         }
 
         @java.lang.Override
@@ -1327,14 +1346,17 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getText().isEmpty()) {
             text_ = other.text_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getEntityType().isEmpty()) {
             entityType_ = other.entityType_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           if (!other.getAlias().isEmpty()) {
             alias_ = other.alias_;
+            bitField0_ |= 0x00000004;
             onChanged();
           }
           if (other.getUserDefined() != false) {
@@ -1369,25 +1391,25 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     text_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     entityType_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 case 26:
                   {
                     alias_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 26
                 case 32:
                   {
                     userDefined_ = input.readBool();
-
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 32
                 default:
@@ -1406,6 +1428,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object text_ = "";
         /**
@@ -1468,8 +1492,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           text_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1485,8 +1509,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearText() {
-
           text_ = getDefaultInstance().getText();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -1507,8 +1531,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           text_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1577,8 +1601,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           entityType_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1595,8 +1619,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearEntityType() {
-
           entityType_ = getDefaultInstance().getEntityType();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -1618,8 +1642,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           entityType_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1691,8 +1715,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           alias_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -1710,8 +1734,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearAlias() {
-
           alias_ = getDefaultInstance().getAlias();
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
@@ -1734,8 +1758,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           alias_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -1777,6 +1801,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder setUserDefined(boolean value) {
 
           userDefined_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -1795,7 +1820,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearUserDefined() {
-
+          bitField0_ = (bitField0_ & ~0x00000008);
           userDefined_ = false;
           onChanged();
           return this;
@@ -1869,7 +1894,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -1918,7 +1945,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TYPE_FIELD_NUMBER = 2;
-    private int type_;
+    private int type_ = 0;
     /**
      *
      *
@@ -1951,15 +1978,16 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type result =
-          com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type.valueOf(type_);
+          com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type.forNumber(type_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type.UNRECOGNIZED
           : result;
     }
 
     public static final int PARTS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part> parts_;
     /**
      *
@@ -2107,7 +2135,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TIMES_ADDED_COUNT_FIELD_NUMBER = 4;
-    private int timesAddedCount_;
+    private int timesAddedCount_ = 0;
     /**
      *
      *
@@ -2359,19 +2387,17 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         type_ = 0;
-
         if (partsBuilder_ == null) {
           parts_ = java.util.Collections.emptyList();
         } else {
           parts_ = null;
           partsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         timesAddedCount_ = 0;
-
         return this;
       }
 
@@ -2399,21 +2425,38 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase buildPartial() {
         com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase result =
             new com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase(this);
-        int from_bitField0_ = bitField0_;
-        result.name_ = name_;
-        result.type_ = type_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase result) {
         if (partsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             parts_ = java.util.Collections.unmodifiableList(parts_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.parts_ = parts_;
         } else {
           result.parts_ = partsBuilder_.build();
         }
-        result.timesAddedCount_ = timesAddedCount_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.timesAddedCount_ = timesAddedCount_;
+        }
       }
 
       @java.lang.Override
@@ -2466,6 +2509,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.type_ != 0) {
@@ -2475,7 +2519,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (!other.parts_.isEmpty()) {
             if (parts_.isEmpty()) {
               parts_ = other.parts_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensurePartsIsMutable();
               parts_.addAll(other.parts_);
@@ -2488,7 +2532,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               partsBuilder_.dispose();
               partsBuilder_ = null;
               parts_ = other.parts_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               partsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getPartsFieldBuilder()
@@ -2530,13 +2574,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
@@ -2556,7 +2600,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               case 32:
                 {
                   timesAddedCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               default:
@@ -2639,8 +2683,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2656,8 +2700,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2678,8 +2722,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2717,8 +2761,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2737,9 +2781,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type getType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type result =
-            com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type.valueOf(type_);
+            com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type.forNumber(type_);
         return result == null
             ? com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type.UNRECOGNIZED
             : result;
@@ -2762,7 +2805,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -2781,7 +2824,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         type_ = 0;
         onChanged();
         return this;
@@ -2791,11 +2834,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           parts_ = java.util.Collections.emptyList();
 
       private void ensurePartsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           parts_ =
               new java.util.ArrayList<
                   com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part>(parts_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
         }
       }
 
@@ -3184,7 +3227,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       public Builder clearParts() {
         if (partsBuilder_ == null) {
           parts_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           partsBuilder_.clear();
@@ -3421,7 +3464,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part,
                   com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.Builder,
                   com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.PartOrBuilder>(
-                  parts_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  parts_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
           parts_ = null;
         }
         return partsBuilder_;
@@ -3462,6 +3505,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       public Builder setTimesAddedCount(int value) {
 
         timesAddedCount_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3479,7 +3523,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTimesAddedCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         timesAddedCount_ = 0;
         onChanged();
         return this;
@@ -3837,7 +3881,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -3886,7 +3932,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object displayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
     /**
      *
      *
@@ -3935,7 +3983,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALUE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object value_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object value_ = "";
     /**
      *
      *
@@ -3994,7 +4044,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DEFAULT_VALUE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object defaultValue_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object defaultValue_ = "";
     /**
      *
      *
@@ -4049,7 +4101,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ENTITY_TYPE_DISPLAY_NAME_FIELD_NUMBER = 5;
-    private volatile java.lang.Object entityTypeDisplayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object entityTypeDisplayName_ = "";
     /**
      *
      *
@@ -4102,7 +4156,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MANDATORY_FIELD_NUMBER = 6;
-    private boolean mandatory_;
+    private boolean mandatory_ = false;
     /**
      *
      *
@@ -4122,6 +4176,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PROMPTS_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList prompts_;
     /**
      *
@@ -4187,7 +4243,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int IS_LIST_FIELD_NUMBER = 8;
-    private boolean isList_;
+    private boolean isList_ = false;
     /**
      *
      *
@@ -4474,22 +4530,16 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         displayName_ = "";
-
         value_ = "";
-
         defaultValue_ = "";
-
         entityTypeDisplayName_ = "";
-
         mandatory_ = false;
-
         prompts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000040);
         isList_ = false;
-
         return this;
       }
 
@@ -4517,21 +4567,46 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.v2beta1.Intent.Parameter buildPartial() {
         com.google.cloud.dialogflow.v2beta1.Intent.Parameter result =
             new com.google.cloud.dialogflow.v2beta1.Intent.Parameter(this);
-        int from_bitField0_ = bitField0_;
-        result.name_ = name_;
-        result.displayName_ = displayName_;
-        result.value_ = value_;
-        result.defaultValue_ = defaultValue_;
-        result.entityTypeDisplayName_ = entityTypeDisplayName_;
-        result.mandatory_ = mandatory_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          prompts_ = prompts_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.prompts_ = prompts_;
-        result.isList_ = isList_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.v2beta1.Intent.Parameter result) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          prompts_ = prompts_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.prompts_ = prompts_;
+      }
+
+      private void buildPartial0(com.google.cloud.dialogflow.v2beta1.Intent.Parameter result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.displayName_ = displayName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.value_ = value_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.defaultValue_ = defaultValue_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.entityTypeDisplayName_ = entityTypeDisplayName_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.mandatory_ = mandatory_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.isList_ = isList_;
+        }
       }
 
       @java.lang.Override
@@ -4584,22 +4659,27 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getValue().isEmpty()) {
           value_ = other.value_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getDefaultValue().isEmpty()) {
           defaultValue_ = other.defaultValue_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (!other.getEntityTypeDisplayName().isEmpty()) {
           entityTypeDisplayName_ = other.entityTypeDisplayName_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (other.getMandatory() != false) {
@@ -4608,7 +4688,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (!other.prompts_.isEmpty()) {
           if (prompts_.isEmpty()) {
             prompts_ = other.prompts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensurePromptsIsMutable();
             prompts_.addAll(other.prompts_);
@@ -4647,37 +4727,37 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   displayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   value_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   defaultValue_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 42:
                 {
                   entityTypeDisplayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               case 48:
                 {
                   mandatory_ = input.readBool();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 48
               case 58:
@@ -4690,7 +4770,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               case 64:
                 {
                   isList_ = input.readBool();
-
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 64
               default:
@@ -4773,8 +4853,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4790,8 +4870,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -4812,8 +4892,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4879,8 +4959,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         displayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4896,8 +4976,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
-
         displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -4918,8 +4998,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         displayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5000,8 +5080,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         value_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5022,8 +5102,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-
         value_ = getDefaultInstance().getValue();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -5049,8 +5129,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         value_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5125,8 +5205,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         defaultValue_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -5145,8 +5225,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDefaultValue() {
-
         defaultValue_ = getDefaultInstance().getDefaultValue();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -5170,8 +5250,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         defaultValue_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -5243,8 +5323,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         entityTypeDisplayName_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -5262,8 +5342,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEntityTypeDisplayName() {
-
         entityTypeDisplayName_ = getDefaultInstance().getEntityTypeDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -5286,8 +5366,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         entityTypeDisplayName_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -5327,6 +5407,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       public Builder setMandatory(boolean value) {
 
         mandatory_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -5344,7 +5425,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMandatory() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         mandatory_ = false;
         onChanged();
         return this;
@@ -5354,9 +5435,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensurePromptsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           prompts_ = new com.google.protobuf.LazyStringArrayList(prompts_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000040;
         }
       }
       /**
@@ -5499,7 +5580,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearPrompts() {
         prompts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -5558,6 +5639,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       public Builder setIsList(boolean value) {
 
         isList_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -5573,7 +5655,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearIsList() {
-
+        bitField0_ = (bitField0_ & ~0x00000080);
         isList_ = false;
         onChanged();
         return this;
@@ -6941,6 +7023,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int TEXT_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList text_;
       /**
        *
@@ -7208,6 +7292,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           text_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000001);
           return this;
@@ -7237,14 +7322,25 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.Text buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.Text result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.Text(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.Text result) {
           if (((bitField0_ & 0x00000001) != 0)) {
             text_ = text_.getUnmodifiableView();
             bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.text_ = text_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(com.google.cloud.dialogflow.v2beta1.Intent.Message.Text result) {
+          int from_bitField0_ = bitField0_;
         }
 
         @java.lang.Override
@@ -7697,7 +7793,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int IMAGE_URI_FIELD_NUMBER = 1;
-      private volatile java.lang.Object imageUri_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object imageUri_ = "";
       /**
        *
        *
@@ -7746,7 +7844,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int ACCESSIBILITY_TEXT_FIELD_NUMBER = 2;
-      private volatile java.lang.Object accessibilityText_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object accessibilityText_ = "";
       /**
        *
        *
@@ -8005,10 +8105,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           imageUri_ = "";
-
           accessibilityText_ = "";
-
           return this;
         }
 
@@ -8037,10 +8136,22 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.Image buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.Image result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.Image(this);
-          result.imageUri_ = imageUri_;
-          result.accessibilityText_ = accessibilityText_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.Image result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.imageUri_ = imageUri_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.accessibilityText_ = accessibilityText_;
+          }
         }
 
         @java.lang.Override
@@ -8094,10 +8205,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             return this;
           if (!other.getImageUri().isEmpty()) {
             imageUri_ = other.imageUri_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getAccessibilityText().isEmpty()) {
             accessibilityText_ = other.accessibilityText_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -8129,13 +8242,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     imageUri_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     accessibilityText_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 default:
@@ -8154,6 +8267,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object imageUri_ = "";
         /**
@@ -8216,8 +8331,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           imageUri_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -8233,8 +8348,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearImageUri() {
-
           imageUri_ = getDefaultInstance().getImageUri();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -8255,8 +8370,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           imageUri_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -8325,8 +8440,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           accessibilityText_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -8343,8 +8458,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearAccessibilityText() {
-
           accessibilityText_ = getDefaultInstance().getAccessibilityText();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -8366,8 +8481,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           accessibilityText_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -8569,7 +8684,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int TITLE_FIELD_NUMBER = 1;
-      private volatile java.lang.Object title_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object title_ = "";
       /**
        *
        *
@@ -8618,6 +8735,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int QUICK_REPLIES_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList quickReplies_;
       /**
        *
@@ -8897,10 +9016,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           title_ = "";
-
           quickReplies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -8930,15 +9049,29 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.QuickReplies buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.QuickReplies result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.QuickReplies(this);
-          int from_bitField0_ = bitField0_;
-          result.title_ = title_;
-          if (((bitField0_ & 0x00000001) != 0)) {
-            quickReplies_ = quickReplies_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000001);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          result.quickReplies_ = quickReplies_;
           onBuilt();
           return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.QuickReplies result) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            quickReplies_ = quickReplies_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.quickReplies_ = quickReplies_;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.QuickReplies result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.title_ = title_;
+          }
         }
 
         @java.lang.Override
@@ -8994,12 +9127,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getTitle().isEmpty()) {
             title_ = other.title_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.quickReplies_.isEmpty()) {
             if (quickReplies_.isEmpty()) {
               quickReplies_ = other.quickReplies_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureQuickRepliesIsMutable();
               quickReplies_.addAll(other.quickReplies_);
@@ -9035,7 +9169,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     title_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
@@ -9125,8 +9259,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           title_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -9142,8 +9276,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearTitle() {
-
           title_ = getDefaultInstance().getTitle();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -9164,8 +9298,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           title_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -9174,9 +9308,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.LazyStringArrayList.EMPTY;
 
         private void ensureQuickRepliesIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             quickReplies_ = new com.google.protobuf.LazyStringArrayList(quickReplies_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
           }
         }
         /**
@@ -9311,7 +9445,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder clearQuickReplies() {
           quickReplies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -9705,7 +9839,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int TEXT_FIELD_NUMBER = 1;
-        private volatile java.lang.Object text_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object text_ = "";
         /**
          *
          *
@@ -9754,7 +9890,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int POSTBACK_FIELD_NUMBER = 2;
-        private volatile java.lang.Object postback_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object postback_ = "";
         /**
          *
          *
@@ -10018,10 +10156,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             text_ = "";
-
             postback_ = "";
-
             return this;
           }
 
@@ -10051,10 +10188,22 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           public com.google.cloud.dialogflow.v2beta1.Intent.Message.Card.Button buildPartial() {
             com.google.cloud.dialogflow.v2beta1.Intent.Message.Card.Button result =
                 new com.google.cloud.dialogflow.v2beta1.Intent.Message.Card.Button(this);
-            result.text_ = text_;
-            result.postback_ = postback_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.Card.Button result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.text_ = text_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.postback_ = postback_;
+            }
           }
 
           @java.lang.Override
@@ -10110,10 +10259,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     .getDefaultInstance()) return this;
             if (!other.getText().isEmpty()) {
               text_ = other.text_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             if (!other.getPostback().isEmpty()) {
               postback_ = other.postback_;
+              bitField0_ |= 0x00000002;
               onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
@@ -10145,13 +10296,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       text_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 18:
                     {
                       postback_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 18
                   default:
@@ -10170,6 +10321,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object text_ = "";
           /**
@@ -10232,8 +10385,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             text_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -10249,8 +10402,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearText() {
-
             text_ = getDefaultInstance().getText();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -10271,8 +10424,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             text_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -10341,8 +10494,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             postback_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -10359,8 +10512,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearPostback() {
-
             postback_ = getDefaultInstance().getPostback();
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -10382,8 +10535,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             postback_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -10456,7 +10609,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int TITLE_FIELD_NUMBER = 1;
-      private volatile java.lang.Object title_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object title_ = "";
       /**
        *
        *
@@ -10505,7 +10660,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int SUBTITLE_FIELD_NUMBER = 2;
-      private volatile java.lang.Object subtitle_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object subtitle_ = "";
       /**
        *
        *
@@ -10554,7 +10711,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int IMAGE_URI_FIELD_NUMBER = 3;
-      private volatile java.lang.Object imageUri_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object imageUri_ = "";
       /**
        *
        *
@@ -10603,6 +10762,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int BUTTONS_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.Card.Button>
           buttons_;
       /**
@@ -10909,19 +11070,17 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           title_ = "";
-
           subtitle_ = "";
-
           imageUri_ = "";
-
           if (buttonsBuilder_ == null) {
             buttons_ = java.util.Collections.emptyList();
           } else {
             buttons_ = null;
             buttonsBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -10949,21 +11108,38 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.Card buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.Card result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.Card(this);
-          int from_bitField0_ = bitField0_;
-          result.title_ = title_;
-          result.subtitle_ = subtitle_;
-          result.imageUri_ = imageUri_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.Card result) {
           if (buttonsBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0)) {
+            if (((bitField0_ & 0x00000008) != 0)) {
               buttons_ = java.util.Collections.unmodifiableList(buttons_);
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             }
             result.buttons_ = buttons_;
           } else {
             result.buttons_ = buttonsBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(com.google.cloud.dialogflow.v2beta1.Intent.Message.Card result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.title_ = title_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.subtitle_ = subtitle_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.imageUri_ = imageUri_;
+          }
         }
 
         @java.lang.Override
@@ -11016,21 +11192,24 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             return this;
           if (!other.getTitle().isEmpty()) {
             title_ = other.title_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getSubtitle().isEmpty()) {
             subtitle_ = other.subtitle_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           if (!other.getImageUri().isEmpty()) {
             imageUri_ = other.imageUri_;
+            bitField0_ |= 0x00000004;
             onChanged();
           }
           if (buttonsBuilder_ == null) {
             if (!other.buttons_.isEmpty()) {
               if (buttons_.isEmpty()) {
                 buttons_ = other.buttons_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
               } else {
                 ensureButtonsIsMutable();
                 buttons_.addAll(other.buttons_);
@@ -11043,7 +11222,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 buttonsBuilder_.dispose();
                 buttonsBuilder_ = null;
                 buttons_ = other.buttons_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
                 buttonsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getButtonsFieldBuilder()
@@ -11082,19 +11261,19 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     title_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     subtitle_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 case 26:
                   {
                     imageUri_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 26
                 case 34:
@@ -11191,8 +11370,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           title_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -11208,8 +11387,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearTitle() {
-
           title_ = getDefaultInstance().getTitle();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -11230,8 +11409,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           title_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -11297,8 +11476,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           subtitle_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -11314,8 +11493,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearSubtitle() {
-
           subtitle_ = getDefaultInstance().getSubtitle();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -11336,8 +11515,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           subtitle_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -11403,8 +11582,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           imageUri_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -11420,8 +11599,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearImageUri() {
-
           imageUri_ = getDefaultInstance().getImageUri();
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
@@ -11442,8 +11621,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           imageUri_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -11452,11 +11631,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             buttons_ = java.util.Collections.emptyList();
 
         private void ensureButtonsIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000008) != 0)) {
             buttons_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.Card.Button>(buttons_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000008;
           }
         }
 
@@ -11695,7 +11874,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder clearButtons() {
           if (buttonsBuilder_ == null) {
             buttons_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             onChanged();
           } else {
             buttonsBuilder_.clear();
@@ -11835,7 +12014,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.Card.Button,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.Card.Button.Builder,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.Card.ButtonOrBuilder>(
-                    buttons_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                    buttons_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
             buttons_ = null;
           }
           return buttonsBuilder_;
@@ -12043,7 +12222,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int TEXT_TO_SPEECH_FIELD_NUMBER = 1;
-      private volatile java.lang.Object textToSpeech_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object textToSpeech_ = "";
       /**
        *
        *
@@ -12094,7 +12275,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int SSML_FIELD_NUMBER = 2;
-      private volatile java.lang.Object ssml_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object ssml_ = "";
       /**
        *
        *
@@ -12147,7 +12330,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int DISPLAY_TEXT_FIELD_NUMBER = 3;
-      private volatile java.lang.Object displayText_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object displayText_ = "";
       /**
        *
        *
@@ -12416,12 +12601,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           textToSpeech_ = "";
-
           ssml_ = "";
-
           displayText_ = "";
-
           return this;
         }
 
@@ -12451,11 +12634,25 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponse buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponse result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponse(this);
-          result.textToSpeech_ = textToSpeech_;
-          result.ssml_ = ssml_;
-          result.displayText_ = displayText_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponse result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.textToSpeech_ = textToSpeech_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.ssml_ = ssml_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.displayText_ = displayText_;
+          }
         }
 
         @java.lang.Override
@@ -12511,14 +12708,17 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getTextToSpeech().isEmpty()) {
             textToSpeech_ = other.textToSpeech_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getSsml().isEmpty()) {
             ssml_ = other.ssml_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           if (!other.getDisplayText().isEmpty()) {
             displayText_ = other.displayText_;
+            bitField0_ |= 0x00000004;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -12550,19 +12750,19 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     textToSpeech_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     ssml_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 case 26:
                   {
                     displayText_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 26
                 default:
@@ -12581,6 +12781,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object textToSpeech_ = "";
         /**
@@ -12646,8 +12848,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           textToSpeech_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -12664,8 +12866,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearTextToSpeech() {
-
           textToSpeech_ = getDefaultInstance().getTextToSpeech();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -12687,8 +12889,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           textToSpeech_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -12760,8 +12962,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           ssml_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -12779,8 +12981,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearSsml() {
-
           ssml_ = getDefaultInstance().getSsml();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -12803,8 +13005,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           ssml_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -12870,8 +13072,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           displayText_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -12887,8 +13089,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearDisplayText() {
-
           displayText_ = getDefaultInstance().getDisplayText();
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
@@ -12909,8 +13111,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           displayText_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -13106,6 +13308,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int SIMPLE_RESPONSES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponse>
           simpleResponses_;
       /**
@@ -13398,6 +13602,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (simpleResponsesBuilder_ == null) {
             simpleResponses_ = java.util.Collections.emptyList();
           } else {
@@ -13435,7 +13640,16 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponses buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponses result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponses(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponses result) {
           if (simpleResponsesBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               simpleResponses_ = java.util.Collections.unmodifiableList(simpleResponses_);
@@ -13445,8 +13659,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           } else {
             result.simpleResponses_ = simpleResponsesBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponses result) {
+          int from_bitField0_ = bitField0_;
         }
 
         @java.lang.Override
@@ -14509,7 +14726,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
 
           public static final int URI_FIELD_NUMBER = 1;
-          private volatile java.lang.Object uri_;
+
+          @SuppressWarnings("serial")
+          private volatile java.lang.Object uri_ = "";
           /**
            *
            *
@@ -14792,8 +15011,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             @java.lang.Override
             public Builder clear() {
               super.clear();
+              bitField0_ = 0;
               uri_ = "";
-
               return this;
             }
 
@@ -14828,9 +15047,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   result =
                       new com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button
                           .OpenUriAction(this);
-              result.uri_ = uri_;
+              if (bitField0_ != 0) {
+                buildPartial0(result);
+              }
               onBuilt();
               return result;
+            }
+
+            private void buildPartial0(
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button.OpenUriAction
+                    result) {
+              int from_bitField0_ = bitField0_;
+              if (((from_bitField0_ & 0x00000001) != 0)) {
+                result.uri_ = uri_;
+              }
             }
 
             @java.lang.Override
@@ -14892,6 +15122,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                       .OpenUriAction.getDefaultInstance()) return this;
               if (!other.getUri().isEmpty()) {
                 uri_ = other.uri_;
+                bitField0_ |= 0x00000001;
                 onChanged();
               }
               this.mergeUnknownFields(other.getUnknownFields());
@@ -14923,7 +15154,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     case 10:
                       {
                         uri_ = input.readStringRequireUtf8();
-
+                        bitField0_ |= 0x00000001;
                         break;
                       } // case 10
                     default:
@@ -14942,6 +15173,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               } // finally
               return this;
             }
+
+            private int bitField0_;
 
             private java.lang.Object uri_ = "";
             /**
@@ -15004,8 +15237,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               if (value == null) {
                 throw new NullPointerException();
               }
-
               uri_ = value;
+              bitField0_ |= 0x00000001;
               onChanged();
               return this;
             }
@@ -15021,8 +15254,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * @return This builder for chaining.
              */
             public Builder clearUri() {
-
               uri_ = getDefaultInstance().getUri();
+              bitField0_ = (bitField0_ & ~0x00000001);
               onChanged();
               return this;
             }
@@ -15043,8 +15276,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 throw new NullPointerException();
               }
               checkByteStringIsUtf8(value);
-
               uri_ = value;
+              bitField0_ |= 0x00000001;
               onChanged();
               return this;
             }
@@ -15121,7 +15354,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int TITLE_FIELD_NUMBER = 1;
-        private volatile java.lang.Object title_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object title_ = "";
         /**
          *
          *
@@ -15225,7 +15460,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button
                 .OpenUriActionOrBuilder
             getOpenUriActionOrBuilder() {
-          return getOpenUriAction();
+          return openUriAction_ == null
+              ? com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button.OpenUriAction
+                  .getDefaultInstance()
+              : openUriAction_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -15449,12 +15687,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             title_ = "";
-
-            if (openUriActionBuilder_ == null) {
-              openUriAction_ = null;
-            } else {
-              openUriAction_ = null;
+            openUriAction_ = null;
+            if (openUriActionBuilder_ != null) {
+              openUriActionBuilder_.dispose();
               openUriActionBuilder_ = null;
             }
             return this;
@@ -15488,14 +15725,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               buildPartial() {
             com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button result =
                 new com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button(this);
-            result.title_ = title_;
-            if (openUriActionBuilder_ == null) {
-              result.openUriAction_ = openUriAction_;
-            } else {
-              result.openUriAction_ = openUriActionBuilder_.build();
+            if (bitField0_ != 0) {
+              buildPartial0(result);
             }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.title_ = title_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.openUriAction_ =
+                  openUriActionBuilder_ == null ? openUriAction_ : openUriActionBuilder_.build();
+            }
           }
 
           @java.lang.Override
@@ -15552,6 +15798,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     .getDefaultInstance()) return this;
             if (!other.getTitle().isEmpty()) {
               title_ = other.title_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             if (other.hasOpenUriAction()) {
@@ -15586,14 +15833,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       title_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 18:
                     {
                       input.readMessage(
                           getOpenUriActionFieldBuilder().getBuilder(), extensionRegistry);
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 18
                   default:
@@ -15612,6 +15859,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object title_ = "";
           /**
@@ -15674,8 +15923,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             title_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -15691,8 +15940,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearTitle() {
-
             title_ = getDefaultInstance().getTitle();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -15713,8 +15962,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             title_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -15742,7 +15991,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return Whether the openUriAction field is set.
            */
           public boolean hasOpenUriAction() {
-            return openUriActionBuilder_ != null || openUriAction_ != null;
+            return ((bitField0_ & 0x00000002) != 0);
           }
           /**
            *
@@ -15787,11 +16036,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 throw new NullPointerException();
               }
               openUriAction_ = value;
-              onChanged();
             } else {
               openUriActionBuilder_.setMessage(value);
             }
-
+            bitField0_ |= 0x00000002;
+            onChanged();
             return this;
           }
           /**
@@ -15811,11 +16060,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   builderForValue) {
             if (openUriActionBuilder_ == null) {
               openUriAction_ = builderForValue.build();
-              onChanged();
             } else {
               openUriActionBuilder_.setMessage(builderForValue.build());
             }
-
+            bitField0_ |= 0x00000002;
+            onChanged();
             return this;
           }
           /**
@@ -15833,20 +16082,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button.OpenUriAction
                   value) {
             if (openUriActionBuilder_ == null) {
-              if (openUriAction_ != null) {
-                openUriAction_ =
-                    com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button
-                        .OpenUriAction.newBuilder(openUriAction_)
-                        .mergeFrom(value)
-                        .buildPartial();
+              if (((bitField0_ & 0x00000002) != 0)
+                  && openUriAction_ != null
+                  && openUriAction_
+                      != com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button
+                          .OpenUriAction.getDefaultInstance()) {
+                getOpenUriActionBuilder().mergeFrom(value);
               } else {
                 openUriAction_ = value;
               }
-              onChanged();
             } else {
               openUriActionBuilder_.mergeFrom(value);
             }
-
+            bitField0_ |= 0x00000002;
+            onChanged();
             return this;
           }
           /**
@@ -15861,14 +16110,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </code>
            */
           public Builder clearOpenUriAction() {
-            if (openUriActionBuilder_ == null) {
-              openUriAction_ = null;
-              onChanged();
-            } else {
-              openUriAction_ = null;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            openUriAction_ = null;
+            if (openUriActionBuilder_ != null) {
+              openUriActionBuilder_.dispose();
               openUriActionBuilder_ = null;
             }
-
+            onChanged();
             return this;
           }
           /**
@@ -15885,7 +16133,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           public com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button.OpenUriAction
                   .Builder
               getOpenUriActionBuilder() {
-
+            bitField0_ |= 0x00000002;
             onChanged();
             return getOpenUriActionFieldBuilder().getBuilder();
           }
@@ -16014,7 +16262,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int TITLE_FIELD_NUMBER = 1;
-      private volatile java.lang.Object title_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object title_ = "";
       /**
        *
        *
@@ -16063,7 +16313,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int SUBTITLE_FIELD_NUMBER = 2;
-      private volatile java.lang.Object subtitle_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object subtitle_ = "";
       /**
        *
        *
@@ -16112,7 +16364,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int FORMATTED_TEXT_FIELD_NUMBER = 3;
-      private volatile java.lang.Object formattedText_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object formattedText_ = "";
       /**
        *
        *
@@ -16205,10 +16459,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.dialogflow.v2beta1.Intent.Message.ImageOrBuilder getImageOrBuilder() {
-        return getImage();
+        return image_ == null
+            ? com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.getDefaultInstance()
+            : image_;
       }
 
       public static final int BUTTONS_FIELD_NUMBER = 5;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button>
           buttons_;
       /**
@@ -16536,16 +16794,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           title_ = "";
-
           subtitle_ = "";
-
           formattedText_ = "";
-
-          if (imageBuilder_ == null) {
-            image_ = null;
-          } else {
-            image_ = null;
+          image_ = null;
+          if (imageBuilder_ != null) {
+            imageBuilder_.dispose();
             imageBuilder_ = null;
           }
           if (buttonsBuilder_ == null) {
@@ -16554,7 +16809,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             buttons_ = null;
             buttonsBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
           return this;
         }
 
@@ -16583,26 +16838,42 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard(this);
-          int from_bitField0_ = bitField0_;
-          result.title_ = title_;
-          result.subtitle_ = subtitle_;
-          result.formattedText_ = formattedText_;
-          if (imageBuilder_ == null) {
-            result.image_ = image_;
-          } else {
-            result.image_ = imageBuilder_.build();
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard result) {
           if (buttonsBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0)) {
+            if (((bitField0_ & 0x00000010) != 0)) {
               buttons_ = java.util.Collections.unmodifiableList(buttons_);
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000010);
             }
             result.buttons_ = buttons_;
           } else {
             result.buttons_ = buttonsBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.title_ = title_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.subtitle_ = subtitle_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.formattedText_ = formattedText_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.image_ = imageBuilder_ == null ? image_ : imageBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -16657,14 +16928,17 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             return this;
           if (!other.getTitle().isEmpty()) {
             title_ = other.title_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getSubtitle().isEmpty()) {
             subtitle_ = other.subtitle_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           if (!other.getFormattedText().isEmpty()) {
             formattedText_ = other.formattedText_;
+            bitField0_ |= 0x00000004;
             onChanged();
           }
           if (other.hasImage()) {
@@ -16674,7 +16948,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (!other.buttons_.isEmpty()) {
               if (buttons_.isEmpty()) {
                 buttons_ = other.buttons_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000010);
               } else {
                 ensureButtonsIsMutable();
                 buttons_.addAll(other.buttons_);
@@ -16687,7 +16961,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 buttonsBuilder_.dispose();
                 buttonsBuilder_ = null;
                 buttons_ = other.buttons_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000010);
                 buttonsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getButtonsFieldBuilder()
@@ -16726,25 +17000,25 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     title_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     subtitle_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 case 26:
                   {
                     formattedText_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 26
                 case 34:
                   {
                     input.readMessage(getImageFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 34
                 case 42:
@@ -16842,8 +17116,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           title_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -16859,8 +17133,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearTitle() {
-
           title_ = getDefaultInstance().getTitle();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -16881,8 +17155,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           title_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -16948,8 +17222,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           subtitle_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -16965,8 +17239,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearSubtitle() {
-
           subtitle_ = getDefaultInstance().getSubtitle();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -16987,8 +17261,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           subtitle_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -17054,8 +17328,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           formattedText_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -17071,8 +17345,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearFormattedText() {
-
           formattedText_ = getDefaultInstance().getFormattedText();
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
@@ -17093,8 +17367,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           formattedText_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -17117,7 +17391,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the image field is set.
          */
         public boolean hasImage() {
-          return imageBuilder_ != null || image_ != null;
+          return ((bitField0_ & 0x00000008) != 0);
         }
         /**
          *
@@ -17154,11 +17428,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             image_ = value;
-            onChanged();
           } else {
             imageBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -17174,11 +17448,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.Builder builderForValue) {
           if (imageBuilder_ == null) {
             image_ = builderForValue.build();
-            onChanged();
           } else {
             imageBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -17192,19 +17466,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder mergeImage(com.google.cloud.dialogflow.v2beta1.Intent.Message.Image value) {
           if (imageBuilder_ == null) {
-            if (image_ != null) {
-              image_ =
-                  com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.newBuilder(image_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000008) != 0)
+                && image_ != null
+                && image_
+                    != com.google.cloud.dialogflow.v2beta1.Intent.Message.Image
+                        .getDefaultInstance()) {
+              getImageBuilder().mergeFrom(value);
             } else {
               image_ = value;
             }
-            onChanged();
           } else {
             imageBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -17217,14 +17492,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.Image image = 4;</code>
          */
         public Builder clearImage() {
-          if (imageBuilder_ == null) {
-            image_ = null;
-            onChanged();
-          } else {
-            image_ = null;
+          bitField0_ = (bitField0_ & ~0x00000008);
+          image_ = null;
+          if (imageBuilder_ != null) {
+            imageBuilder_.dispose();
             imageBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -17237,7 +17511,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.Image image = 4;</code>
          */
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.Builder getImageBuilder() {
-
+          bitField0_ |= 0x00000008;
           onChanged();
           return getImageFieldBuilder().getBuilder();
         }
@@ -17290,11 +17564,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             buttons_ = java.util.Collections.emptyList();
 
         private void ensureButtonsIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000010) != 0)) {
             buttons_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button>(buttons_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000010;
           }
         }
 
@@ -17544,7 +17818,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder clearButtons() {
           if (buttonsBuilder_ == null) {
             buttons_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             onChanged();
           } else {
             buttonsBuilder_.clear();
@@ -17692,7 +17966,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button.Builder,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.ButtonOrBuilder>(
-                    buttons_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                    buttons_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
             buttons_ = null;
           }
           return buttonsBuilder_;
@@ -17846,7 +18120,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int TITLE_FIELD_NUMBER = 1;
-      private volatile java.lang.Object title_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object title_ = "";
       /**
        *
        *
@@ -18098,8 +18374,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           title_ = "";
-
           return this;
         }
 
@@ -18128,9 +18404,19 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.Suggestion buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.Suggestion result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.Suggestion(this);
-          result.title_ = title_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.Suggestion result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.title_ = title_;
+          }
         }
 
         @java.lang.Override
@@ -18185,6 +18471,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             return this;
           if (!other.getTitle().isEmpty()) {
             title_ = other.title_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -18216,7 +18503,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     title_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 default:
@@ -18235,6 +18522,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object title_ = "";
         /**
@@ -18297,8 +18586,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           title_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -18314,8 +18603,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearTitle() {
-
           title_ = getDefaultInstance().getTitle();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -18336,8 +18625,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           title_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -18524,6 +18813,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int SUGGESTIONS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.Suggestion>
           suggestions_;
       /**
@@ -18807,6 +19098,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (suggestionsBuilder_ == null) {
             suggestions_ = java.util.Collections.emptyList();
           } else {
@@ -18843,7 +19135,16 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.Suggestions buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.Suggestions result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.Suggestions(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.Suggestions result) {
           if (suggestionsBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               suggestions_ = java.util.Collections.unmodifiableList(suggestions_);
@@ -18853,8 +19154,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           } else {
             result.suggestions_ = suggestionsBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.Suggestions result) {
+          int from_bitField0_ = bitField0_;
         }
 
         @java.lang.Override
@@ -19580,7 +19884,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int DESTINATION_NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object destinationName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object destinationName_ = "";
       /**
        *
        *
@@ -19629,7 +19935,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int URI_FIELD_NUMBER = 2;
-      private volatile java.lang.Object uri_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object uri_ = "";
       /**
        *
        *
@@ -19894,10 +20202,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           destinationName_ = "";
-
           uri_ = "";
-
           return this;
         }
 
@@ -19928,10 +20235,22 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.LinkOutSuggestion buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.LinkOutSuggestion result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.LinkOutSuggestion(this);
-          result.destinationName_ = destinationName_;
-          result.uri_ = uri_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.LinkOutSuggestion result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.destinationName_ = destinationName_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.uri_ = uri_;
+          }
         }
 
         @java.lang.Override
@@ -19988,10 +20307,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getDestinationName().isEmpty()) {
             destinationName_ = other.destinationName_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getUri().isEmpty()) {
             uri_ = other.uri_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -20023,13 +20344,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     destinationName_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     uri_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 default:
@@ -20048,6 +20369,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object destinationName_ = "";
         /**
@@ -20110,8 +20433,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           destinationName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -20127,8 +20450,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearDestinationName() {
-
           destinationName_ = getDefaultInstance().getDestinationName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -20149,8 +20472,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           destinationName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -20219,8 +20542,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           uri_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -20237,8 +20560,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearUri() {
-
           uri_ = getDefaultInstance().getUri();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -20260,8 +20583,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           uri_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -20723,11 +21046,16 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfoOrBuilder
             getInfoOrBuilder() {
-          return getInfo();
+          return info_ == null
+              ? com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo
+                  .getDefaultInstance()
+              : info_;
         }
 
         public static final int TITLE_FIELD_NUMBER = 2;
-        private volatile java.lang.Object title_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object title_ = "";
         /**
          *
          *
@@ -20776,7 +21104,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int DESCRIPTION_FIELD_NUMBER = 3;
-        private volatile java.lang.Object description_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object description_ = "";
         /**
          *
          *
@@ -20870,7 +21200,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.ImageOrBuilder
             getImageOrBuilder() {
-          return getImage();
+          return image_ == null
+              ? com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.getDefaultInstance()
+              : image_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -21117,20 +21449,17 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
-            if (infoBuilder_ == null) {
-              info_ = null;
-            } else {
-              info_ = null;
+            bitField0_ = 0;
+            info_ = null;
+            if (infoBuilder_ != null) {
+              infoBuilder_.dispose();
               infoBuilder_ = null;
             }
             title_ = "";
-
             description_ = "";
-
-            if (imageBuilder_ == null) {
-              image_ = null;
-            } else {
-              image_ = null;
+            image_ = null;
+            if (imageBuilder_ != null) {
+              imageBuilder_.dispose();
               imageBuilder_ = null;
             }
             return this;
@@ -21163,20 +21492,28 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           public com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect.Item buildPartial() {
             com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect.Item result =
                 new com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect.Item(this);
-            if (infoBuilder_ == null) {
-              result.info_ = info_;
-            } else {
-              result.info_ = infoBuilder_.build();
-            }
-            result.title_ = title_;
-            result.description_ = description_;
-            if (imageBuilder_ == null) {
-              result.image_ = image_;
-            } else {
-              result.image_ = imageBuilder_.build();
+            if (bitField0_ != 0) {
+              buildPartial0(result);
             }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect.Item result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.info_ = infoBuilder_ == null ? info_ : infoBuilder_.build();
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.title_ = title_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.description_ = description_;
+            }
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              result.image_ = imageBuilder_ == null ? image_ : imageBuilder_.build();
+            }
           }
 
           @java.lang.Override
@@ -21236,10 +21573,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             }
             if (!other.getTitle().isEmpty()) {
               title_ = other.title_;
+              bitField0_ |= 0x00000002;
               onChanged();
             }
             if (!other.getDescription().isEmpty()) {
               description_ = other.description_;
+              bitField0_ |= 0x00000004;
               onChanged();
             }
             if (other.hasImage()) {
@@ -21274,25 +21613,25 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       input.readMessage(getInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 18:
                     {
                       title_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 18
                   case 26:
                     {
                       description_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000004;
                       break;
                     } // case 26
                   case 34:
                     {
                       input.readMessage(getImageFieldBuilder().getBuilder(), extensionRegistry);
-
+                      bitField0_ |= 0x00000008;
                       break;
                     } // case 34
                   default:
@@ -21312,6 +21651,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             return this;
           }
 
+          private int bitField0_;
+
           private com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo info_;
           private com.google.protobuf.SingleFieldBuilderV3<
                   com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo,
@@ -21330,7 +21671,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return Whether the info field is set.
            */
           public boolean hasInfo() {
-            return infoBuilder_ != null || info_ != null;
+            return ((bitField0_ & 0x00000001) != 0);
           }
           /**
            *
@@ -21369,11 +21710,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 throw new NullPointerException();
               }
               info_ = value;
-              onChanged();
             } else {
               infoBuilder_.setMessage(value);
             }
-
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
           /**
@@ -21390,11 +21731,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   builderForValue) {
             if (infoBuilder_ == null) {
               info_ = builderForValue.build();
-              onChanged();
             } else {
               infoBuilder_.setMessage(builderForValue.build());
             }
-
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
           /**
@@ -21409,20 +21750,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           public Builder mergeInfo(
               com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo value) {
             if (infoBuilder_ == null) {
-              if (info_ != null) {
-                info_ =
-                    com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo.newBuilder(
-                            info_)
-                        .mergeFrom(value)
-                        .buildPartial();
+              if (((bitField0_ & 0x00000001) != 0)
+                  && info_ != null
+                  && info_
+                      != com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo
+                          .getDefaultInstance()) {
+                getInfoBuilder().mergeFrom(value);
               } else {
                 info_ = value;
               }
-              onChanged();
             } else {
               infoBuilder_.mergeFrom(value);
             }
-
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
           /**
@@ -21435,14 +21776,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo info = 1;</code>
            */
           public Builder clearInfo() {
-            if (infoBuilder_ == null) {
-              info_ = null;
-              onChanged();
-            } else {
-              info_ = null;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            info_ = null;
+            if (infoBuilder_ != null) {
+              infoBuilder_.dispose();
               infoBuilder_ = null;
             }
-
+            onChanged();
             return this;
           }
           /**
@@ -21456,7 +21796,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            */
           public com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo.Builder
               getInfoBuilder() {
-
+            bitField0_ |= 0x00000001;
             onChanged();
             return getInfoFieldBuilder().getBuilder();
           }
@@ -21567,8 +21907,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             title_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -21584,8 +21924,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearTitle() {
-
             title_ = getDefaultInstance().getTitle();
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -21606,8 +21946,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             title_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -21673,8 +22013,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             description_ = value;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -21690,8 +22030,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearDescription() {
-
             description_ = getDefaultInstance().getDescription();
+            bitField0_ = (bitField0_ & ~0x00000004);
             onChanged();
             return this;
           }
@@ -21712,8 +22052,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             description_ = value;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -21736,7 +22076,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return Whether the image field is set.
            */
           public boolean hasImage() {
-            return imageBuilder_ != null || image_ != null;
+            return ((bitField0_ & 0x00000008) != 0);
           }
           /**
            *
@@ -21773,11 +22113,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 throw new NullPointerException();
               }
               image_ = value;
-              onChanged();
             } else {
               imageBuilder_.setMessage(value);
             }
-
+            bitField0_ |= 0x00000008;
+            onChanged();
             return this;
           }
           /**
@@ -21793,11 +22133,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.Builder builderForValue) {
             if (imageBuilder_ == null) {
               image_ = builderForValue.build();
-              onChanged();
             } else {
               imageBuilder_.setMessage(builderForValue.build());
             }
-
+            bitField0_ |= 0x00000008;
+            onChanged();
             return this;
           }
           /**
@@ -21812,19 +22152,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           public Builder mergeImage(
               com.google.cloud.dialogflow.v2beta1.Intent.Message.Image value) {
             if (imageBuilder_ == null) {
-              if (image_ != null) {
-                image_ =
-                    com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.newBuilder(image_)
-                        .mergeFrom(value)
-                        .buildPartial();
+              if (((bitField0_ & 0x00000008) != 0)
+                  && image_ != null
+                  && image_
+                      != com.google.cloud.dialogflow.v2beta1.Intent.Message.Image
+                          .getDefaultInstance()) {
+                getImageBuilder().mergeFrom(value);
               } else {
                 image_ = value;
               }
-              onChanged();
             } else {
               imageBuilder_.mergeFrom(value);
             }
-
+            bitField0_ |= 0x00000008;
+            onChanged();
             return this;
           }
           /**
@@ -21837,14 +22178,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.Image image = 4;</code>
            */
           public Builder clearImage() {
-            if (imageBuilder_ == null) {
-              image_ = null;
-              onChanged();
-            } else {
-              image_ = null;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            image_ = null;
+            if (imageBuilder_ != null) {
+              imageBuilder_.dispose();
               imageBuilder_ = null;
             }
-
+            onChanged();
             return this;
           }
           /**
@@ -21858,7 +22198,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            */
           public com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.Builder
               getImageBuilder() {
-
+            bitField0_ |= 0x00000008;
             onChanged();
             return getImageFieldBuilder().getBuilder();
           }
@@ -21976,7 +22316,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int TITLE_FIELD_NUMBER = 1;
-      private volatile java.lang.Object title_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object title_ = "";
       /**
        *
        *
@@ -22025,6 +22367,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int ITEMS_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect.Item>
           items_;
       /**
@@ -22104,7 +22448,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int SUBTITLE_FIELD_NUMBER = 3;
-      private volatile java.lang.Object subtitle_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object subtitle_ = "";
       /**
        *
        *
@@ -22375,17 +22721,16 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           title_ = "";
-
           if (itemsBuilder_ == null) {
             items_ = java.util.Collections.emptyList();
           } else {
             items_ = null;
             itemsBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           subtitle_ = "";
-
           return this;
         }
 
@@ -22414,20 +22759,36 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect(this);
-          int from_bitField0_ = bitField0_;
-          result.title_ = title_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect result) {
           if (itemsBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0)) {
+            if (((bitField0_ & 0x00000002) != 0)) {
               items_ = java.util.Collections.unmodifiableList(items_);
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             }
             result.items_ = items_;
           } else {
             result.items_ = itemsBuilder_.build();
           }
-          result.subtitle_ = subtitle_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.title_ = title_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.subtitle_ = subtitle_;
+          }
         }
 
         @java.lang.Override
@@ -22482,13 +22843,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             return this;
           if (!other.getTitle().isEmpty()) {
             title_ = other.title_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (itemsBuilder_ == null) {
             if (!other.items_.isEmpty()) {
               if (items_.isEmpty()) {
                 items_ = other.items_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
               } else {
                 ensureItemsIsMutable();
                 items_.addAll(other.items_);
@@ -22501,7 +22863,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 itemsBuilder_.dispose();
                 itemsBuilder_ = null;
                 items_ = other.items_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
                 itemsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getItemsFieldBuilder()
@@ -22513,6 +22875,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
           if (!other.getSubtitle().isEmpty()) {
             subtitle_ = other.subtitle_;
+            bitField0_ |= 0x00000004;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -22544,7 +22907,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     title_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
@@ -22565,7 +22928,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 26:
                   {
                     subtitle_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 26
                 default:
@@ -22648,8 +23011,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           title_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -22665,8 +23028,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearTitle() {
-
           title_ = getDefaultInstance().getTitle();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -22687,8 +23050,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           title_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -22697,11 +23060,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             items_ = java.util.Collections.emptyList();
 
         private void ensureItemsIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             items_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect.Item>(items_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
           }
         }
 
@@ -22940,7 +23303,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder clearItems() {
           if (itemsBuilder_ == null) {
             items_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
           } else {
             itemsBuilder_.clear();
@@ -23081,7 +23444,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect.Item,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect.Item.Builder,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect.ItemOrBuilder>(
-                    items_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                    items_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
             items_ = null;
           }
           return itemsBuilder_;
@@ -23148,8 +23511,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           subtitle_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -23165,8 +23528,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearSubtitle() {
-
           subtitle_ = getDefaultInstance().getSubtitle();
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
@@ -23187,8 +23550,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           subtitle_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -23604,11 +23967,16 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfoOrBuilder
             getInfoOrBuilder() {
-          return getInfo();
+          return info_ == null
+              ? com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo
+                  .getDefaultInstance()
+              : info_;
         }
 
         public static final int TITLE_FIELD_NUMBER = 2;
-        private volatile java.lang.Object title_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object title_ = "";
         /**
          *
          *
@@ -23657,7 +24025,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int DESCRIPTION_FIELD_NUMBER = 3;
-        private volatile java.lang.Object description_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object description_ = "";
         /**
          *
          *
@@ -23751,7 +24121,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.ImageOrBuilder
             getImageOrBuilder() {
-          return getImage();
+          return image_ == null
+              ? com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.getDefaultInstance()
+              : image_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -24005,20 +24377,17 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
-            if (infoBuilder_ == null) {
-              info_ = null;
-            } else {
-              info_ = null;
+            bitField0_ = 0;
+            info_ = null;
+            if (infoBuilder_ != null) {
+              infoBuilder_.dispose();
               infoBuilder_ = null;
             }
             title_ = "";
-
             description_ = "";
-
-            if (imageBuilder_ == null) {
-              image_ = null;
-            } else {
-              image_ = null;
+            image_ = null;
+            if (imageBuilder_ != null) {
+              imageBuilder_.dispose();
               imageBuilder_ = null;
             }
             return this;
@@ -24052,20 +24421,28 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               buildPartial() {
             com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect.Item result =
                 new com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect.Item(this);
-            if (infoBuilder_ == null) {
-              result.info_ = info_;
-            } else {
-              result.info_ = infoBuilder_.build();
-            }
-            result.title_ = title_;
-            result.description_ = description_;
-            if (imageBuilder_ == null) {
-              result.image_ = image_;
-            } else {
-              result.image_ = imageBuilder_.build();
+            if (bitField0_ != 0) {
+              buildPartial0(result);
             }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect.Item result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.info_ = infoBuilder_ == null ? info_ : infoBuilder_.build();
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.title_ = title_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.description_ = description_;
+            }
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              result.image_ = imageBuilder_ == null ? image_ : imageBuilder_.build();
+            }
           }
 
           @java.lang.Override
@@ -24125,10 +24502,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             }
             if (!other.getTitle().isEmpty()) {
               title_ = other.title_;
+              bitField0_ |= 0x00000002;
               onChanged();
             }
             if (!other.getDescription().isEmpty()) {
               description_ = other.description_;
+              bitField0_ |= 0x00000004;
               onChanged();
             }
             if (other.hasImage()) {
@@ -24163,25 +24542,25 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       input.readMessage(getInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 18:
                     {
                       title_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 18
                   case 26:
                     {
                       description_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000004;
                       break;
                     } // case 26
                   case 34:
                     {
                       input.readMessage(getImageFieldBuilder().getBuilder(), extensionRegistry);
-
+                      bitField0_ |= 0x00000008;
                       break;
                     } // case 34
                   default:
@@ -24201,6 +24580,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             return this;
           }
 
+          private int bitField0_;
+
           private com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo info_;
           private com.google.protobuf.SingleFieldBuilderV3<
                   com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo,
@@ -24219,7 +24600,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return Whether the info field is set.
            */
           public boolean hasInfo() {
-            return infoBuilder_ != null || info_ != null;
+            return ((bitField0_ & 0x00000001) != 0);
           }
           /**
            *
@@ -24258,11 +24639,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 throw new NullPointerException();
               }
               info_ = value;
-              onChanged();
             } else {
               infoBuilder_.setMessage(value);
             }
-
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
           /**
@@ -24279,11 +24660,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   builderForValue) {
             if (infoBuilder_ == null) {
               info_ = builderForValue.build();
-              onChanged();
             } else {
               infoBuilder_.setMessage(builderForValue.build());
             }
-
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
           /**
@@ -24298,20 +24679,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           public Builder mergeInfo(
               com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo value) {
             if (infoBuilder_ == null) {
-              if (info_ != null) {
-                info_ =
-                    com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo.newBuilder(
-                            info_)
-                        .mergeFrom(value)
-                        .buildPartial();
+              if (((bitField0_ & 0x00000001) != 0)
+                  && info_ != null
+                  && info_
+                      != com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo
+                          .getDefaultInstance()) {
+                getInfoBuilder().mergeFrom(value);
               } else {
                 info_ = value;
               }
-              onChanged();
             } else {
               infoBuilder_.mergeFrom(value);
             }
-
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
           /**
@@ -24324,14 +24705,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo info = 1;</code>
            */
           public Builder clearInfo() {
-            if (infoBuilder_ == null) {
-              info_ = null;
-              onChanged();
-            } else {
-              info_ = null;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            info_ = null;
+            if (infoBuilder_ != null) {
+              infoBuilder_.dispose();
               infoBuilder_ = null;
             }
-
+            onChanged();
             return this;
           }
           /**
@@ -24345,7 +24725,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            */
           public com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo.Builder
               getInfoBuilder() {
-
+            bitField0_ |= 0x00000001;
             onChanged();
             return getInfoFieldBuilder().getBuilder();
           }
@@ -24456,8 +24836,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             title_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -24473,8 +24853,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearTitle() {
-
             title_ = getDefaultInstance().getTitle();
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -24495,8 +24875,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             title_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -24562,8 +24942,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             description_ = value;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -24579,8 +24959,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearDescription() {
-
             description_ = getDefaultInstance().getDescription();
+            bitField0_ = (bitField0_ & ~0x00000004);
             onChanged();
             return this;
           }
@@ -24601,8 +24981,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             description_ = value;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -24625,7 +25005,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return Whether the image field is set.
            */
           public boolean hasImage() {
-            return imageBuilder_ != null || image_ != null;
+            return ((bitField0_ & 0x00000008) != 0);
           }
           /**
            *
@@ -24662,11 +25042,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 throw new NullPointerException();
               }
               image_ = value;
-              onChanged();
             } else {
               imageBuilder_.setMessage(value);
             }
-
+            bitField0_ |= 0x00000008;
+            onChanged();
             return this;
           }
           /**
@@ -24682,11 +25062,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.Builder builderForValue) {
             if (imageBuilder_ == null) {
               image_ = builderForValue.build();
-              onChanged();
             } else {
               imageBuilder_.setMessage(builderForValue.build());
             }
-
+            bitField0_ |= 0x00000008;
+            onChanged();
             return this;
           }
           /**
@@ -24701,19 +25081,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           public Builder mergeImage(
               com.google.cloud.dialogflow.v2beta1.Intent.Message.Image value) {
             if (imageBuilder_ == null) {
-              if (image_ != null) {
-                image_ =
-                    com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.newBuilder(image_)
-                        .mergeFrom(value)
-                        .buildPartial();
+              if (((bitField0_ & 0x00000008) != 0)
+                  && image_ != null
+                  && image_
+                      != com.google.cloud.dialogflow.v2beta1.Intent.Message.Image
+                          .getDefaultInstance()) {
+                getImageBuilder().mergeFrom(value);
               } else {
                 image_ = value;
               }
-              onChanged();
             } else {
               imageBuilder_.mergeFrom(value);
             }
-
+            bitField0_ |= 0x00000008;
+            onChanged();
             return this;
           }
           /**
@@ -24726,14 +25107,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.Image image = 4;</code>
            */
           public Builder clearImage() {
-            if (imageBuilder_ == null) {
-              image_ = null;
-              onChanged();
-            } else {
-              image_ = null;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            image_ = null;
+            if (imageBuilder_ != null) {
+              imageBuilder_.dispose();
               imageBuilder_ = null;
             }
-
+            onChanged();
             return this;
           }
           /**
@@ -24747,7 +25127,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            */
           public com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.Builder
               getImageBuilder() {
-
+            bitField0_ |= 0x00000008;
             onChanged();
             return getImageFieldBuilder().getBuilder();
           }
@@ -24865,6 +25245,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int ITEMS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect.Item>
           items_;
       /**
@@ -25154,6 +25536,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (itemsBuilder_ == null) {
             items_ = java.util.Collections.emptyList();
           } else {
@@ -25190,7 +25573,16 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect result) {
           if (itemsBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               items_ = java.util.Collections.unmodifiableList(items_);
@@ -25200,8 +25592,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           } else {
             result.items_ = itemsBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect result) {
+          int from_bitField0_ = bitField0_;
         }
 
         @java.lang.Override
@@ -25966,7 +26361,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int KEY_FIELD_NUMBER = 1;
-      private volatile java.lang.Object key_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object key_ = "";
       /**
        *
        *
@@ -26017,6 +26414,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int SYNONYMS_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList synonyms_;
       /**
        *
@@ -26301,10 +26700,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           key_ = "";
-
           synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -26334,15 +26733,29 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo(this);
-          int from_bitField0_ = bitField0_;
-          result.key_ = key_;
-          if (((bitField0_ & 0x00000001) != 0)) {
-            synonyms_ = synonyms_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000001);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          result.synonyms_ = synonyms_;
           onBuilt();
           return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo result) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            synonyms_ = synonyms_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.synonyms_ = synonyms_;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.key_ = key_;
+          }
         }
 
         @java.lang.Override
@@ -26398,12 +26811,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getKey().isEmpty()) {
             key_ = other.key_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.synonyms_.isEmpty()) {
             if (synonyms_.isEmpty()) {
               synonyms_ = other.synonyms_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureSynonymsIsMutable();
               synonyms_.addAll(other.synonyms_);
@@ -26439,7 +26853,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     key_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
@@ -26532,8 +26946,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           key_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -26550,8 +26964,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearKey() {
-
           key_ = getDefaultInstance().getKey();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -26573,8 +26987,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           key_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -26583,9 +26997,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.LazyStringArrayList.EMPTY;
 
         private void ensureSynonymsIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             synonyms_ = new com.google.protobuf.LazyStringArrayList(synonyms_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
           }
         }
         /**
@@ -26728,7 +27142,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder clearSynonyms() {
           synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -26924,7 +27338,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int AUDIO_URI_FIELD_NUMBER = 1;
-      private volatile java.lang.Object audioUri_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object audioUri_ = "";
       /**
        *
        *
@@ -27197,8 +27613,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           audioUri_ = "";
-
           return this;
         }
 
@@ -27230,9 +27646,19 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio(this);
-          result.audioUri_ = audioUri_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.audioUri_ = audioUri_;
+          }
         }
 
         @java.lang.Override
@@ -27289,6 +27715,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getAudioUri().isEmpty()) {
             audioUri_ = other.audioUri_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -27320,7 +27747,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     audioUri_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 default:
@@ -27339,6 +27766,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object audioUri_ = "";
         /**
@@ -27431,8 +27860,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           audioUri_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -27458,8 +27887,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearAudioUri() {
-
           audioUri_ = getDefaultInstance().getAudioUri();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -27490,8 +27919,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           audioUri_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -28137,6 +28566,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           sourceCase_ = 0;
           source_ = null;
           return this;
@@ -28172,15 +28602,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech(
                   this);
-          if (sourceCase_ == 1) {
-            result.source_ = source_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          if (sourceCase_ == 2) {
-            result.source_ = source_;
-          }
-          result.sourceCase_ = sourceCase_;
+          buildPartialOneofs(result);
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech result) {
+          result.sourceCase_ = sourceCase_;
+          result.source_ = this.source_;
         }
 
         @java.lang.Override
@@ -28327,6 +28765,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
+        private int bitField0_;
 
         /**
          *
@@ -28756,7 +29196,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int PHONE_NUMBER_FIELD_NUMBER = 1;
-      private volatile java.lang.Object phoneNumber_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object phoneNumber_ = "";
       /**
        *
        *
@@ -29019,8 +29461,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           phoneNumber_ = "";
-
           return this;
         }
 
@@ -29052,9 +29494,19 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall(this);
-          result.phoneNumber_ = phoneNumber_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.phoneNumber_ = phoneNumber_;
+          }
         }
 
         @java.lang.Override
@@ -29111,6 +29563,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getPhoneNumber().isEmpty()) {
             phoneNumber_ = other.phoneNumber_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -29142,7 +29595,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     phoneNumber_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 default:
@@ -29161,6 +29614,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object phoneNumber_ = "";
         /**
@@ -29229,8 +29684,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           phoneNumber_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -29248,8 +29703,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearPhoneNumber() {
-
           phoneNumber_ = getDefaultInstance().getPhoneNumber();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -29272,8 +29727,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           phoneNumber_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -29492,7 +29947,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int TEXT_FIELD_NUMBER = 1;
-      private volatile java.lang.Object text_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object text_ = "";
       /**
        *
        *
@@ -29541,6 +29998,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int RBM_SUGGESTION_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>
           rbmSuggestion_;
       /**
@@ -29836,15 +30295,15 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           text_ = "";
-
           if (rbmSuggestionBuilder_ == null) {
             rbmSuggestion_ = java.util.Collections.emptyList();
           } else {
             rbmSuggestion_ = null;
             rbmSuggestionBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -29873,19 +30332,33 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText(this);
-          int from_bitField0_ = bitField0_;
-          result.text_ = text_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText result) {
           if (rbmSuggestionBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0)) {
+            if (((bitField0_ & 0x00000002) != 0)) {
               rbmSuggestion_ = java.util.Collections.unmodifiableList(rbmSuggestion_);
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             }
             result.rbmSuggestion_ = rbmSuggestion_;
           } else {
             result.rbmSuggestion_ = rbmSuggestionBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.text_ = text_;
+          }
         }
 
         @java.lang.Override
@@ -29939,13 +30412,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             return this;
           if (!other.getText().isEmpty()) {
             text_ = other.text_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (rbmSuggestionBuilder_ == null) {
             if (!other.rbmSuggestion_.isEmpty()) {
               if (rbmSuggestion_.isEmpty()) {
                 rbmSuggestion_ = other.rbmSuggestion_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
               } else {
                 ensureRbmSuggestionIsMutable();
                 rbmSuggestion_.addAll(other.rbmSuggestion_);
@@ -29958,7 +30432,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 rbmSuggestionBuilder_.dispose();
                 rbmSuggestionBuilder_ = null;
                 rbmSuggestion_ = other.rbmSuggestion_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
                 rbmSuggestionBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getRbmSuggestionFieldBuilder()
@@ -29997,7 +30471,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     text_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
@@ -30095,8 +30569,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           text_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -30112,8 +30586,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearText() {
-
           text_ = getDefaultInstance().getText();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -30134,8 +30608,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           text_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -30144,12 +30618,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             rbmSuggestion_ = java.util.Collections.emptyList();
 
         private void ensureRbmSuggestionIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             rbmSuggestion_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>(
                     rbmSuggestion_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
           }
         }
 
@@ -30399,7 +30873,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder clearRbmSuggestion() {
           if (rbmSuggestionBuilder_ == null) {
             rbmSuggestion_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
           } else {
             rbmSuggestionBuilder_.clear();
@@ -30547,7 +31021,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder>(
                     rbmSuggestion_,
-                    ((bitField0_ & 0x00000001) != 0),
+                    ((bitField0_ & 0x00000002) != 0),
                     getParentForChildren(),
                     isClean());
             rbmSuggestion_ = null;
@@ -30942,7 +31416,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int CARD_WIDTH_FIELD_NUMBER = 1;
-      private int cardWidth_;
+      private int cardWidth_ = 0;
       /**
        *
        *
@@ -30976,9 +31450,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth
           getCardWidth() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth result =
-            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth.valueOf(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth.forNumber(
                 cardWidth_);
         return result == null
             ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth
@@ -30987,6 +31460,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int CARD_CONTENTS_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent>
           cardContents_;
       /**
@@ -31299,15 +31774,15 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           cardWidth_ = 0;
-
           if (cardContentsBuilder_ == null) {
             cardContents_ = java.util.Collections.emptyList();
           } else {
             cardContents_ = null;
             cardContentsBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -31338,19 +31813,33 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard(this);
-          int from_bitField0_ = bitField0_;
-          result.cardWidth_ = cardWidth_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard result) {
           if (cardContentsBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0)) {
+            if (((bitField0_ & 0x00000002) != 0)) {
               cardContents_ = java.util.Collections.unmodifiableList(cardContents_);
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             }
             result.cardContents_ = cardContents_;
           } else {
             result.cardContents_ = cardContentsBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.cardWidth_ = cardWidth_;
+          }
         }
 
         @java.lang.Override
@@ -31411,7 +31900,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (!other.cardContents_.isEmpty()) {
               if (cardContents_.isEmpty()) {
                 cardContents_ = other.cardContents_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
               } else {
                 ensureCardContentsIsMutable();
                 cardContents_.addAll(other.cardContents_);
@@ -31424,7 +31913,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 cardContentsBuilder_.dispose();
                 cardContentsBuilder_ = null;
                 cardContents_ = other.cardContents_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
                 cardContentsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getCardContentsFieldBuilder()
@@ -31463,7 +31952,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 8:
                   {
                     cardWidth_ = input.readEnum();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 18:
@@ -31533,8 +32022,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setCardWidthValue(int value) {
-
           cardWidth_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -31554,10 +32043,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth
             getCardWidth() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth result =
-              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth.valueOf(
-                  cardWidth_);
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth
+                  .forNumber(cardWidth_);
           return result == null
               ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth
                   .UNRECOGNIZED
@@ -31582,7 +32070,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000001;
           cardWidth_ = value.getNumber();
           onChanged();
           return this;
@@ -31601,7 +32089,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearCardWidth() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           cardWidth_ = 0;
           onChanged();
           return this;
@@ -31611,12 +32099,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             cardContents_ = java.util.Collections.emptyList();
 
         private void ensureCardContentsIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             cardContents_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent>(
                     cardContents_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
           }
         }
 
@@ -31877,7 +32365,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder clearCardContents() {
           if (cardContentsBuilder_ == null) {
             cardContents_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
           } else {
             cardContentsBuilder_.clear();
@@ -32033,7 +32521,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContentOrBuilder>(
                     cardContents_,
-                    ((bitField0_ & 0x00000001) != 0),
+                    ((bitField0_ & 0x00000002) != 0),
                     getParentForChildren(),
                     isClean());
             cardContents_ = null;
@@ -32600,7 +33088,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int CARD_ORIENTATION_FIELD_NUMBER = 1;
-      private int cardOrientation_;
+      private int cardOrientation_ = 0;
       /**
        *
        *
@@ -32634,11 +33122,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation
           getCardOrientation() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation
             result =
                 com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation
-                    .valueOf(cardOrientation_);
+                    .forNumber(cardOrientation_);
         return result == null
             ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation
                 .UNRECOGNIZED
@@ -32646,7 +33133,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int THUMBNAIL_IMAGE_ALIGNMENT_FIELD_NUMBER = 2;
-      private int thumbnailImageAlignment_;
+      private int thumbnailImageAlignment_ = 0;
       /**
        *
        *
@@ -32683,11 +33170,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
               .ThumbnailImageAlignment
           getThumbnailImageAlignment() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.ThumbnailImageAlignment
             result =
                 com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
-                    .ThumbnailImageAlignment.valueOf(thumbnailImageAlignment_);
+                    .ThumbnailImageAlignment.forNumber(thumbnailImageAlignment_);
         return result == null
             ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
                 .ThumbnailImageAlignment.UNRECOGNIZED
@@ -32743,7 +33229,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContentOrBuilder
           getCardContentOrBuilder() {
-        return getCardContent();
+        return cardContent_ == null
+            ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.getDefaultInstance()
+            : cardContent_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -32991,14 +33479,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           cardOrientation_ = 0;
-
           thumbnailImageAlignment_ = 0;
-
-          if (cardContentBuilder_ == null) {
-            cardContent_ = null;
-          } else {
-            cardContent_ = null;
+          cardContent_ = null;
+          if (cardContentBuilder_ != null) {
+            cardContentBuilder_.dispose();
             cardContentBuilder_ = null;
           }
           return this;
@@ -33031,15 +33517,26 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard(this);
-          result.cardOrientation_ = cardOrientation_;
-          result.thumbnailImageAlignment_ = thumbnailImageAlignment_;
-          if (cardContentBuilder_ == null) {
-            result.cardContent_ = cardContent_;
-          } else {
-            result.cardContent_ = cardContentBuilder_.build();
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.cardOrientation_ = cardOrientation_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.thumbnailImageAlignment_ = thumbnailImageAlignment_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.cardContent_ =
+                cardContentBuilder_ == null ? cardContent_ : cardContentBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -33132,19 +33629,19 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 8:
                   {
                     cardOrientation_ = input.readEnum();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 16:
                   {
                     thumbnailImageAlignment_ = input.readEnum();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 case 26:
                   {
                     input.readMessage(getCardContentFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 26
                 default:
@@ -33163,6 +33660,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private int cardOrientation_ = 0;
         /**
@@ -33197,8 +33696,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setCardOrientationValue(int value) {
-
           cardOrientation_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -33218,11 +33717,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation
             getCardOrientation() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation
               result =
                   com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
-                      .CardOrientation.valueOf(cardOrientation_);
+                      .CardOrientation.forNumber(cardOrientation_);
           return result == null
               ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation
                   .UNRECOGNIZED
@@ -33248,7 +33746,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000001;
           cardOrientation_ = value.getNumber();
           onChanged();
           return this;
@@ -33267,7 +33765,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearCardOrientation() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           cardOrientation_ = 0;
           onChanged();
           return this;
@@ -33308,8 +33806,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setThumbnailImageAlignmentValue(int value) {
-
           thumbnailImageAlignment_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -33331,12 +33829,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
                 .ThumbnailImageAlignment
             getThumbnailImageAlignment() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
                   .ThumbnailImageAlignment
               result =
                   com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
-                      .ThumbnailImageAlignment.valueOf(thumbnailImageAlignment_);
+                      .ThumbnailImageAlignment.forNumber(thumbnailImageAlignment_);
           return result == null
               ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
                   .ThumbnailImageAlignment.UNRECOGNIZED
@@ -33364,7 +33861,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000002;
           thumbnailImageAlignment_ = value.getNumber();
           onChanged();
           return this;
@@ -33384,7 +33881,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearThumbnailImageAlignment() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           thumbnailImageAlignment_ = 0;
           onChanged();
           return this;
@@ -33409,7 +33906,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the cardContent field is set.
          */
         public boolean hasCardContent() {
-          return cardContentBuilder_ != null || cardContent_ != null;
+          return ((bitField0_ & 0x00000004) != 0);
         }
         /**
          *
@@ -33450,11 +33947,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             cardContent_ = value;
-            onChanged();
           } else {
             cardContentBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -33472,11 +33969,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 builderForValue) {
           if (cardContentBuilder_ == null) {
             cardContent_ = builderForValue.build();
-            onChanged();
           } else {
             cardContentBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -33492,20 +33989,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder mergeCardContent(
             com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent value) {
           if (cardContentBuilder_ == null) {
-            if (cardContent_ != null) {
-              cardContent_ =
-                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.newBuilder(
-                          cardContent_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000004) != 0)
+                && cardContent_ != null
+                && cardContent_
+                    != com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent
+                        .getDefaultInstance()) {
+              getCardContentBuilder().mergeFrom(value);
             } else {
               cardContent_ = value;
             }
-            onChanged();
           } else {
             cardContentBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -33519,14 +34016,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         public Builder clearCardContent() {
-          if (cardContentBuilder_ == null) {
-            cardContent_ = null;
-            onChanged();
-          } else {
-            cardContent_ = null;
+          bitField0_ = (bitField0_ & ~0x00000004);
+          cardContent_ = null;
+          if (cardContentBuilder_ != null) {
+            cardContentBuilder_.dispose();
             cardContentBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -33541,7 +34037,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          */
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder
             getCardContentBuilder() {
-
+          bitField0_ |= 0x00000004;
           onChanged();
           return getCardContentFieldBuilder().getBuilder();
         }
@@ -34236,7 +34732,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int FILE_URI_FIELD_NUMBER = 1;
-        private volatile java.lang.Object fileUri_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object fileUri_ = "";
         /**
          *
          *
@@ -34291,7 +34789,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int THUMBNAIL_URI_FIELD_NUMBER = 2;
-        private volatile java.lang.Object thumbnailUri_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object thumbnailUri_ = "";
         /**
          *
          *
@@ -34348,7 +34848,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int HEIGHT_FIELD_NUMBER = 3;
-        private int height_;
+        private int height_ = 0;
         /**
          *
          *
@@ -34388,10 +34888,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height
             getHeight() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height result =
               com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height
-                  .valueOf(height_);
+                  .forNumber(height_);
           return result == null
               ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height
                   .UNRECOGNIZED
@@ -34652,12 +35151,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             fileUri_ = "";
-
             thumbnailUri_ = "";
-
             height_ = 0;
-
             return this;
           }
 
@@ -34691,11 +35188,25 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia result =
                 new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia(
                     this);
-            result.fileUri_ = fileUri_;
-            result.thumbnailUri_ = thumbnailUri_;
-            result.height_ = height_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.fileUri_ = fileUri_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.thumbnailUri_ = thumbnailUri_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.height_ = height_;
+            }
           }
 
           @java.lang.Override
@@ -34754,10 +35265,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     .getDefaultInstance()) return this;
             if (!other.getFileUri().isEmpty()) {
               fileUri_ = other.fileUri_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             if (!other.getThumbnailUri().isEmpty()) {
               thumbnailUri_ = other.thumbnailUri_;
+              bitField0_ |= 0x00000002;
               onChanged();
             }
             if (other.height_ != 0) {
@@ -34792,19 +35305,19 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       fileUri_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 18:
                     {
                       thumbnailUri_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 18
                   case 24:
                     {
                       height_ = input.readEnum();
-
+                      bitField0_ |= 0x00000004;
                       break;
                     } // case 24
                   default:
@@ -34823,6 +35336,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object fileUri_ = "";
           /**
@@ -34894,8 +35409,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             fileUri_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -34914,8 +35429,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearFileUri() {
-
             fileUri_ = getDefaultInstance().getFileUri();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -34939,8 +35454,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             fileUri_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -35018,8 +35533,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             thumbnailUri_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -35039,8 +35554,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearThumbnailUri() {
-
             thumbnailUri_ = getDefaultInstance().getThumbnailUri();
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -35065,8 +35580,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             thumbnailUri_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -35110,8 +35625,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder setHeightValue(int value) {
-
             height_ = value;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -35134,11 +35649,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height
               getHeight() {
-            @SuppressWarnings("deprecation")
             com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height
                 result =
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
-                        .Height.valueOf(height_);
+                        .Height.forNumber(height_);
             return result == null
                 ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height
                     .UNRECOGNIZED
@@ -35167,7 +35681,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
+            bitField0_ |= 0x00000004;
             height_ = value.getNumber();
             onChanged();
             return this;
@@ -35189,7 +35703,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearHeight() {
-
+            bitField0_ = (bitField0_ & ~0x00000004);
             height_ = 0;
             onChanged();
             return this;
@@ -35265,7 +35779,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int TITLE_FIELD_NUMBER = 1;
-      private volatile java.lang.Object title_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object title_ = "";
       /**
        *
        *
@@ -35316,7 +35832,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int DESCRIPTION_FIELD_NUMBER = 2;
-      private volatile java.lang.Object description_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object description_ = "";
       /**
        *
        *
@@ -35419,10 +35937,15 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMediaOrBuilder
           getMediaOrBuilder() {
-        return getMedia();
+        return media_ == null
+            ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+                .getDefaultInstance()
+            : media_;
       }
 
       public static final int SUGGESTIONS_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>
           suggestions_;
       /**
@@ -35743,14 +36266,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           title_ = "";
-
           description_ = "";
-
-          if (mediaBuilder_ == null) {
-            media_ = null;
-          } else {
-            media_ = null;
+          media_ = null;
+          if (mediaBuilder_ != null) {
+            mediaBuilder_.dispose();
             mediaBuilder_ = null;
           }
           if (suggestionsBuilder_ == null) {
@@ -35759,7 +36280,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             suggestions_ = null;
             suggestionsBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -35789,25 +36310,39 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent(this);
-          int from_bitField0_ = bitField0_;
-          result.title_ = title_;
-          result.description_ = description_;
-          if (mediaBuilder_ == null) {
-            result.media_ = media_;
-          } else {
-            result.media_ = mediaBuilder_.build();
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent result) {
           if (suggestionsBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0)) {
+            if (((bitField0_ & 0x00000008) != 0)) {
               suggestions_ = java.util.Collections.unmodifiableList(suggestions_);
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             }
             result.suggestions_ = suggestions_;
           } else {
             result.suggestions_ = suggestionsBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.title_ = title_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.description_ = description_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.media_ = mediaBuilder_ == null ? media_ : mediaBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -35863,10 +36398,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getTitle().isEmpty()) {
             title_ = other.title_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getDescription().isEmpty()) {
             description_ = other.description_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           if (other.hasMedia()) {
@@ -35876,7 +36413,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (!other.suggestions_.isEmpty()) {
               if (suggestions_.isEmpty()) {
                 suggestions_ = other.suggestions_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
               } else {
                 ensureSuggestionsIsMutable();
                 suggestions_.addAll(other.suggestions_);
@@ -35889,7 +36426,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 suggestionsBuilder_.dispose();
                 suggestionsBuilder_ = null;
                 suggestions_ = other.suggestions_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
                 suggestionsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getSuggestionsFieldBuilder()
@@ -35928,19 +36465,19 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     title_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     description_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 case 26:
                   {
                     input.readMessage(getMediaFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 26
                 case 34:
@@ -36041,8 +36578,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           title_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -36059,8 +36596,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearTitle() {
-
           title_ = getDefaultInstance().getTitle();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -36082,8 +36619,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           title_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -36152,8 +36689,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           description_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -36170,8 +36707,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearDescription() {
-
           description_ = getDefaultInstance().getDescription();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -36193,8 +36730,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           description_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -36219,7 +36756,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the media field is set.
          */
         public boolean hasMedia() {
-          return mediaBuilder_ != null || media_ != null;
+          return ((bitField0_ & 0x00000004) != 0);
         }
         /**
          *
@@ -36263,11 +36800,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             media_ = value;
-            onChanged();
           } else {
             mediaBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -36286,11 +36823,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 builderForValue) {
           if (mediaBuilder_ == null) {
             media_ = builderForValue.build();
-            onChanged();
           } else {
             mediaBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -36307,20 +36844,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder mergeMedia(
             com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia value) {
           if (mediaBuilder_ == null) {
-            if (media_ != null) {
-              media_ =
-                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
-                      .newBuilder(media_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000004) != 0)
+                && media_ != null
+                && media_
+                    != com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+                        .getDefaultInstance()) {
+              getMediaBuilder().mergeFrom(value);
             } else {
               media_ = value;
             }
-            onChanged();
           } else {
             mediaBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -36335,14 +36872,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         public Builder clearMedia() {
-          if (mediaBuilder_ == null) {
-            media_ = null;
-            onChanged();
-          } else {
-            media_ = null;
+          bitField0_ = (bitField0_ & ~0x00000004);
+          media_ = null;
+          if (mediaBuilder_ != null) {
+            mediaBuilder_.dispose();
             mediaBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -36358,7 +36894,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          */
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Builder
             getMediaBuilder() {
-
+          bitField0_ |= 0x00000004;
           onChanged();
           return getMediaFieldBuilder().getBuilder();
         }
@@ -36417,11 +36953,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             suggestions_ = java.util.Collections.emptyList();
 
         private void ensureSuggestionsIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000008) != 0)) {
             suggestions_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>(suggestions_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000008;
           }
         }
 
@@ -36671,7 +37207,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder clearSuggestions() {
           if (suggestionsBuilder_ == null) {
             suggestions_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             onChanged();
           } else {
             suggestionsBuilder_.clear();
@@ -36819,7 +37355,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder>(
                     suggestions_,
-                    ((bitField0_ & 0x00000001) != 0),
+                    ((bitField0_ & 0x00000008) != 0),
                     getParentForChildren(),
                     isClean());
             suggestions_ = null;
@@ -37423,6 +37959,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (replyBuilder_ != null) {
             replyBuilder_.clear();
           }
@@ -37460,23 +37997,29 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion(this);
-          if (suggestionCase_ == 1) {
-            if (replyBuilder_ == null) {
-              result.suggestion_ = suggestion_;
-            } else {
-              result.suggestion_ = replyBuilder_.build();
-            }
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          if (suggestionCase_ == 2) {
-            if (actionBuilder_ == null) {
-              result.suggestion_ = suggestion_;
-            } else {
-              result.suggestion_ = actionBuilder_.build();
-            }
-          }
-          result.suggestionCase_ = suggestionCase_;
+          buildPartialOneofs(result);
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion result) {
+          result.suggestionCase_ = suggestionCase_;
+          result.suggestion_ = this.suggestion_;
+          if (suggestionCase_ == 1 && replyBuilder_ != null) {
+            result.suggestion_ = replyBuilder_.build();
+          }
+          if (suggestionCase_ == 2 && actionBuilder_ != null) {
+            result.suggestion_ = actionBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -37614,6 +38157,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
+        private int bitField0_;
 
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply,
@@ -37837,7 +38382,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
           suggestionCase_ = 1;
           onChanged();
-          ;
           return replyBuilder_;
         }
 
@@ -38072,7 +38616,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
           suggestionCase_ = 2;
           onChanged();
-          ;
           return actionBuilder_;
         }
 
@@ -38254,7 +38797,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int TEXT_FIELD_NUMBER = 1;
-      private volatile java.lang.Object text_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object text_ = "";
       /**
        *
        *
@@ -38303,7 +38848,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int POSTBACK_DATA_FIELD_NUMBER = 2;
-      private volatile java.lang.Object postbackData_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object postbackData_ = "";
       /**
        *
        *
@@ -38570,10 +39117,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           text_ = "";
-
           postbackData_ = "";
-
           return this;
         }
 
@@ -38604,10 +39150,22 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply(this);
-          result.text_ = text_;
-          result.postbackData_ = postbackData_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.text_ = text_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.postbackData_ = postbackData_;
+          }
         }
 
         @java.lang.Override
@@ -38664,10 +39222,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getText().isEmpty()) {
             text_ = other.text_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getPostbackData().isEmpty()) {
             postbackData_ = other.postbackData_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -38699,13 +39259,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     text_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     postbackData_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 default:
@@ -38724,6 +39284,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object text_ = "";
         /**
@@ -38786,8 +39348,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           text_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -38803,8 +39365,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearText() {
-
           text_ = getDefaultInstance().getText();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -38825,8 +39387,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           text_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -38898,8 +39460,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           postbackData_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -38917,8 +39479,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearPostbackData() {
-
           postbackData_ = getDefaultInstance().getPostbackData();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -38941,8 +39503,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           postbackData_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -39354,7 +39916,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int PHONE_NUMBER_FIELD_NUMBER = 1;
-        private volatile java.lang.Object phoneNumber_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object phoneNumber_ = "";
         /**
          *
          *
@@ -39646,8 +40210,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             phoneNumber_ = "";
-
             return this;
           }
 
@@ -39687,9 +40251,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 result =
                     new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
                         .RbmSuggestedActionDial(this);
-            result.phoneNumber_ = phoneNumber_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionDial
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.phoneNumber_ = phoneNumber_;
+            }
           }
 
           @java.lang.Override
@@ -39752,6 +40328,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     .RbmSuggestedActionDial.getDefaultInstance()) return this;
             if (!other.getPhoneNumber().isEmpty()) {
               phoneNumber_ = other.phoneNumber_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
@@ -39783,7 +40360,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       phoneNumber_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   default:
@@ -39802,6 +40379,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object phoneNumber_ = "";
           /**
@@ -39873,8 +40452,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             phoneNumber_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -39893,8 +40472,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearPhoneNumber() {
-
             phoneNumber_ = getDefaultInstance().getPhoneNumber();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -39918,8 +40497,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             phoneNumber_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -40084,7 +40663,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int URI_FIELD_NUMBER = 1;
-        private volatile java.lang.Object uri_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object uri_ = "";
         /**
          *
          *
@@ -40372,8 +40953,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             uri_ = "";
-
             return this;
           }
 
@@ -40413,9 +40994,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 result =
                     new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
                         .RbmSuggestedActionOpenUri(this);
-            result.uri_ = uri_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionOpenUri
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.uri_ = uri_;
+            }
           }
 
           @java.lang.Override
@@ -40478,6 +41071,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     .RbmSuggestedActionOpenUri.getDefaultInstance()) return this;
             if (!other.getUri().isEmpty()) {
               uri_ = other.uri_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
@@ -40509,7 +41103,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       uri_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   default:
@@ -40528,6 +41122,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object uri_ = "";
           /**
@@ -40590,8 +41186,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             uri_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -40607,8 +41203,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearUri() {
-
             uri_ = getDefaultInstance().getUri();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -40629,8 +41225,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             uri_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -41260,7 +41856,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int TEXT_FIELD_NUMBER = 1;
-      private volatile java.lang.Object text_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object text_ = "";
       /**
        *
        *
@@ -41309,7 +41907,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int POSTBACK_DATA_FIELD_NUMBER = 2;
-      private volatile java.lang.Object postbackData_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object postbackData_ = "";
       /**
        *
        *
@@ -41852,10 +42452,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           text_ = "";
-
           postbackData_ = "";
-
           if (dialBuilder_ != null) {
             dialBuilder_.clear();
           }
@@ -41898,32 +42497,38 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction(this);
-          result.text_ = text_;
-          result.postbackData_ = postbackData_;
-          if (actionCase_ == 3) {
-            if (dialBuilder_ == null) {
-              result.action_ = action_;
-            } else {
-              result.action_ = dialBuilder_.build();
-            }
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          if (actionCase_ == 4) {
-            if (openUrlBuilder_ == null) {
-              result.action_ = action_;
-            } else {
-              result.action_ = openUrlBuilder_.build();
-            }
-          }
-          if (actionCase_ == 5) {
-            if (shareLocationBuilder_ == null) {
-              result.action_ = action_;
-            } else {
-              result.action_ = shareLocationBuilder_.build();
-            }
-          }
-          result.actionCase_ = actionCase_;
+          buildPartialOneofs(result);
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.text_ = text_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.postbackData_ = postbackData_;
+          }
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction result) {
+          result.actionCase_ = actionCase_;
+          result.action_ = this.action_;
+          if (actionCase_ == 3 && dialBuilder_ != null) {
+            result.action_ = dialBuilder_.build();
+          }
+          if (actionCase_ == 4 && openUrlBuilder_ != null) {
+            result.action_ = openUrlBuilder_.build();
+          }
+          if (actionCase_ == 5 && shareLocationBuilder_ != null) {
+            result.action_ = shareLocationBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -41980,10 +42585,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getText().isEmpty()) {
             text_ = other.text_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getPostbackData().isEmpty()) {
             postbackData_ = other.postbackData_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           switch (other.getActionCase()) {
@@ -42036,13 +42643,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     text_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     postbackData_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 case 26:
@@ -42094,6 +42701,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object text_ = "";
         /**
@@ -42156,8 +42765,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           text_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -42173,8 +42782,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearText() {
-
           text_ = getDefaultInstance().getText();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -42195,8 +42804,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           text_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -42268,8 +42877,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           postbackData_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -42287,8 +42896,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearPostbackData() {
-
           postbackData_ = getDefaultInstance().getPostbackData();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -42311,8 +42920,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           postbackData_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -42580,7 +43189,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
           actionCase_ = 3;
           onChanged();
-          ;
           return dialBuilder_;
         }
 
@@ -42847,7 +43455,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
           actionCase_ = 4;
           onChanged();
-          ;
           return openUrlBuilder_;
         }
 
@@ -43114,7 +43721,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
           actionCase_ = 5;
           onChanged();
-          ;
           return shareLocationBuilder_;
         }
 
@@ -43738,7 +44344,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int NAME_FIELD_NUMBER = 1;
-        private volatile java.lang.Object name_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object name_ = "";
         /**
          *
          *
@@ -43787,7 +44395,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int DESCRIPTION_FIELD_NUMBER = 2;
-        private volatile java.lang.Object description_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object description_ = "";
         /**
          *
          *
@@ -43940,7 +44550,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int CONTENT_URL_FIELD_NUMBER = 5;
-        private volatile java.lang.Object contentUrl_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object contentUrl_ = "";
         /**
          *
          *
@@ -44282,10 +44894,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             name_ = "";
-
             description_ = "";
-
             if (largeImageBuilder_ != null) {
               largeImageBuilder_.clear();
             }
@@ -44293,7 +44904,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               iconBuilder_.clear();
             }
             contentUrl_ = "";
-
             imageCase_ = 0;
             image_ = null;
             return this;
@@ -44330,26 +44940,40 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 result =
                     new com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent
                         .ResponseMediaObject(this);
-            result.name_ = name_;
-            result.description_ = description_;
-            if (imageCase_ == 3) {
-              if (largeImageBuilder_ == null) {
-                result.image_ = image_;
-              } else {
-                result.image_ = largeImageBuilder_.build();
-              }
+            if (bitField0_ != 0) {
+              buildPartial0(result);
             }
-            if (imageCase_ == 4) {
-              if (iconBuilder_ == null) {
-                result.image_ = image_;
-              } else {
-                result.image_ = iconBuilder_.build();
-              }
-            }
-            result.contentUrl_ = contentUrl_;
-            result.imageCase_ = imageCase_;
+            buildPartialOneofs(result);
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent.ResponseMediaObject
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.name_ = name_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.description_ = description_;
+            }
+            if (((from_bitField0_ & 0x00000010) != 0)) {
+              result.contentUrl_ = contentUrl_;
+            }
+          }
+
+          private void buildPartialOneofs(
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent.ResponseMediaObject
+                  result) {
+            result.imageCase_ = imageCase_;
+            result.image_ = this.image_;
+            if (imageCase_ == 3 && largeImageBuilder_ != null) {
+              result.image_ = largeImageBuilder_.build();
+            }
+            if (imageCase_ == 4 && iconBuilder_ != null) {
+              result.image_ = iconBuilder_.build();
+            }
           }
 
           @java.lang.Override
@@ -44411,14 +45035,17 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     .ResponseMediaObject.getDefaultInstance()) return this;
             if (!other.getName().isEmpty()) {
               name_ = other.name_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             if (!other.getDescription().isEmpty()) {
               description_ = other.description_;
+              bitField0_ |= 0x00000002;
               onChanged();
             }
             if (!other.getContentUrl().isEmpty()) {
               contentUrl_ = other.contentUrl_;
+              bitField0_ |= 0x00000010;
               onChanged();
             }
             switch (other.getImageCase()) {
@@ -44466,13 +45093,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   case 10:
                     {
                       name_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 18:
                     {
                       description_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 18
                   case 26:
@@ -44491,7 +45118,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   case 42:
                     {
                       contentUrl_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000010;
                       break;
                     } // case 42
                   default:
@@ -44524,6 +45151,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object name_ = "";
           /**
@@ -44586,8 +45215,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             name_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -44603,8 +45232,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearName() {
-
             name_ = getDefaultInstance().getName();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -44625,8 +45254,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             name_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -44692,8 +45321,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             description_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -44709,8 +45338,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearDescription() {
-
             description_ = getDefaultInstance().getDescription();
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -44731,8 +45360,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             description_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -44950,7 +45579,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             }
             imageCase_ = 3;
             onChanged();
-            ;
             return largeImageBuilder_;
           }
 
@@ -45164,7 +45792,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             }
             imageCase_ = 4;
             onChanged();
-            ;
             return iconBuilder_;
           }
 
@@ -45229,8 +45856,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             contentUrl_ = value;
+            bitField0_ |= 0x00000010;
             onChanged();
             return this;
           }
@@ -45246,8 +45873,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearContentUrl() {
-
             contentUrl_ = getDefaultInstance().getContentUrl();
+            bitField0_ = (bitField0_ & ~0x00000010);
             onChanged();
             return this;
           }
@@ -45268,8 +45895,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             contentUrl_ = value;
+            bitField0_ |= 0x00000010;
             onChanged();
             return this;
           }
@@ -45346,7 +45973,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int MEDIA_TYPE_FIELD_NUMBER = 1;
-      private int mediaType_;
+      private int mediaType_ = 0;
       /**
        *
        *
@@ -45380,10 +46007,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent.ResponseMediaType
           getMediaType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent.ResponseMediaType result =
             com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent.ResponseMediaType
-                .valueOf(mediaType_);
+                .forNumber(mediaType_);
         return result == null
             ? com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent.ResponseMediaType
                 .UNRECOGNIZED
@@ -45391,6 +46017,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int MEDIA_OBJECTS_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
       private java.util.List<
               com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent.ResponseMediaObject>
           mediaObjects_;
@@ -45699,15 +46327,15 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           mediaType_ = 0;
-
           if (mediaObjectsBuilder_ == null) {
             mediaObjects_ = java.util.Collections.emptyList();
           } else {
             mediaObjects_ = null;
             mediaObjectsBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -45737,19 +46365,33 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent(this);
-          int from_bitField0_ = bitField0_;
-          result.mediaType_ = mediaType_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent result) {
           if (mediaObjectsBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0)) {
+            if (((bitField0_ & 0x00000002) != 0)) {
               mediaObjects_ = java.util.Collections.unmodifiableList(mediaObjects_);
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             }
             result.mediaObjects_ = mediaObjects_;
           } else {
             result.mediaObjects_ = mediaObjectsBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.mediaType_ = mediaType_;
+          }
         }
 
         @java.lang.Override
@@ -45810,7 +46452,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (!other.mediaObjects_.isEmpty()) {
               if (mediaObjects_.isEmpty()) {
                 mediaObjects_ = other.mediaObjects_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
               } else {
                 ensureMediaObjectsIsMutable();
                 mediaObjects_.addAll(other.mediaObjects_);
@@ -45823,7 +46465,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 mediaObjectsBuilder_.dispose();
                 mediaObjectsBuilder_ = null;
                 mediaObjects_ = other.mediaObjects_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
                 mediaObjectsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getMediaObjectsFieldBuilder()
@@ -45862,7 +46504,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 8:
                   {
                     mediaType_ = input.readEnum();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 18:
@@ -45934,8 +46576,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setMediaTypeValue(int value) {
-
           mediaType_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -45955,10 +46597,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent.ResponseMediaType
             getMediaType() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent.ResponseMediaType result =
               com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent.ResponseMediaType
-                  .valueOf(mediaType_);
+                  .forNumber(mediaType_);
           return result == null
               ? com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent.ResponseMediaType
                   .UNRECOGNIZED
@@ -45984,7 +46625,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000001;
           mediaType_ = value.getNumber();
           onChanged();
           return this;
@@ -46003,7 +46644,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearMediaType() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           mediaType_ = 0;
           onChanged();
           return this;
@@ -46014,12 +46655,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             mediaObjects_ = java.util.Collections.emptyList();
 
         private void ensureMediaObjectsIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             mediaObjects_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent
                         .ResponseMediaObject>(mediaObjects_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
           }
         }
 
@@ -46282,7 +46923,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder clearMediaObjects() {
           if (mediaObjectsBuilder_ == null) {
             mediaObjects_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
           } else {
             mediaObjectsBuilder_.clear();
@@ -46442,7 +47083,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent
                         .ResponseMediaObjectOrBuilder>(
                     mediaObjects_,
-                    ((bitField0_ & 0x00000001) != 0),
+                    ((bitField0_ & 0x00000002) != 0),
                     getParentForChildren(),
                     isClean());
             mediaObjects_ = null;
@@ -47414,7 +48055,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
 
           public static final int URL_FIELD_NUMBER = 1;
-          private volatile java.lang.Object url_;
+
+          @SuppressWarnings("serial")
+          private volatile java.lang.Object url_ = "";
           /**
            *
            *
@@ -47463,7 +48106,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
 
           public static final int URL_TYPE_HINT_FIELD_NUMBER = 3;
-          private int urlTypeHint_;
+          private int urlTypeHint_ = 0;
           /**
            *
            *
@@ -47500,12 +48143,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           public com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
                   .BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint
               getUrlTypeHint() {
-            @SuppressWarnings("deprecation")
             com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
                     .BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint
                 result =
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
-                        .BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint.valueOf(urlTypeHint_);
+                        .BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint.forNumber(urlTypeHint_);
             return result == null
                 ? com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
                     .BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint.UNRECOGNIZED
@@ -47764,10 +48406,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             @java.lang.Override
             public Builder clear() {
               super.clear();
+              bitField0_ = 0;
               url_ = "";
-
               urlTypeHint_ = 0;
-
               return this;
             }
 
@@ -47807,10 +48448,24 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   result =
                       new com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
                           .BrowseCarouselCardItem.OpenUrlAction(this);
-              result.url_ = url_;
-              result.urlTypeHint_ = urlTypeHint_;
+              if (bitField0_ != 0) {
+                buildPartial0(result);
+              }
               onBuilt();
               return result;
+            }
+
+            private void buildPartial0(
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
+                        .BrowseCarouselCardItem.OpenUrlAction
+                    result) {
+              int from_bitField0_ = bitField0_;
+              if (((from_bitField0_ & 0x00000001) != 0)) {
+                result.url_ = url_;
+              }
+              if (((from_bitField0_ & 0x00000002) != 0)) {
+                result.urlTypeHint_ = urlTypeHint_;
+              }
             }
 
             @java.lang.Override
@@ -47873,6 +48528,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                       .BrowseCarouselCardItem.OpenUrlAction.getDefaultInstance()) return this;
               if (!other.getUrl().isEmpty()) {
                 url_ = other.url_;
+                bitField0_ |= 0x00000001;
                 onChanged();
               }
               if (other.urlTypeHint_ != 0) {
@@ -47907,13 +48563,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     case 10:
                       {
                         url_ = input.readStringRequireUtf8();
-
+                        bitField0_ |= 0x00000001;
                         break;
                       } // case 10
                     case 24:
                       {
                         urlTypeHint_ = input.readEnum();
-
+                        bitField0_ |= 0x00000002;
                         break;
                       } // case 24
                     default:
@@ -47932,6 +48588,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               } // finally
               return this;
             }
+
+            private int bitField0_;
 
             private java.lang.Object url_ = "";
             /**
@@ -47994,8 +48652,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               if (value == null) {
                 throw new NullPointerException();
               }
-
               url_ = value;
+              bitField0_ |= 0x00000001;
               onChanged();
               return this;
             }
@@ -48011,8 +48669,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * @return This builder for chaining.
              */
             public Builder clearUrl() {
-
               url_ = getDefaultInstance().getUrl();
+              bitField0_ = (bitField0_ & ~0x00000001);
               onChanged();
               return this;
             }
@@ -48033,8 +48691,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 throw new NullPointerException();
               }
               checkByteStringIsUtf8(value);
-
               url_ = value;
+              bitField0_ |= 0x00000001;
               onChanged();
               return this;
             }
@@ -48074,8 +48732,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * @return This builder for chaining.
              */
             public Builder setUrlTypeHintValue(int value) {
-
               urlTypeHint_ = value;
+              bitField0_ |= 0x00000002;
               onChanged();
               return this;
             }
@@ -48097,12 +48755,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             public com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
                     .BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint
                 getUrlTypeHint() {
-              @SuppressWarnings("deprecation")
               com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
                       .BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint
                   result =
                       com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
-                          .BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint.valueOf(urlTypeHint_);
+                          .BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint.forNumber(urlTypeHint_);
               return result == null
                   ? com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
                       .BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint.UNRECOGNIZED
@@ -48130,7 +48787,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               if (value == null) {
                 throw new NullPointerException();
               }
-
+              bitField0_ |= 0x00000002;
               urlTypeHint_ = value.getNumber();
               onChanged();
               return this;
@@ -48150,7 +48807,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * @return This builder for chaining.
              */
             public Builder clearUrlTypeHint() {
-
+              bitField0_ = (bitField0_ & ~0x00000002);
               urlTypeHint_ = 0;
               onChanged();
               return this;
@@ -48286,11 +48943,16 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
                 .BrowseCarouselCardItem.OpenUrlActionOrBuilder
             getOpenUriActionOrBuilder() {
-          return getOpenUriAction();
+          return openUriAction_ == null
+              ? com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
+                  .BrowseCarouselCardItem.OpenUrlAction.getDefaultInstance()
+              : openUriAction_;
         }
 
         public static final int TITLE_FIELD_NUMBER = 2;
-        private volatile java.lang.Object title_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object title_ = "";
         /**
          *
          *
@@ -48339,7 +49001,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int DESCRIPTION_FIELD_NUMBER = 3;
-        private volatile java.lang.Object description_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object description_ = "";
         /**
          *
          *
@@ -48435,11 +49099,15 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.ImageOrBuilder
             getImageOrBuilder() {
-          return getImage();
+          return image_ == null
+              ? com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.getDefaultInstance()
+              : image_;
         }
 
         public static final int FOOTER_FIELD_NUMBER = 5;
-        private volatile java.lang.Object footer_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object footer_ = "";
         /**
          *
          *
@@ -48772,24 +49440,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
-            if (openUriActionBuilder_ == null) {
-              openUriAction_ = null;
-            } else {
-              openUriAction_ = null;
+            bitField0_ = 0;
+            openUriAction_ = null;
+            if (openUriActionBuilder_ != null) {
+              openUriActionBuilder_.dispose();
               openUriActionBuilder_ = null;
             }
             title_ = "";
-
             description_ = "";
-
-            if (imageBuilder_ == null) {
-              image_ = null;
-            } else {
-              image_ = null;
+            image_ = null;
+            if (imageBuilder_ != null) {
+              imageBuilder_.dispose();
               imageBuilder_ = null;
             }
             footer_ = "";
-
             return this;
           }
 
@@ -48829,21 +49493,34 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 result =
                     new com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
                         .BrowseCarouselCardItem(this);
-            if (openUriActionBuilder_ == null) {
-              result.openUriAction_ = openUriAction_;
-            } else {
-              result.openUriAction_ = openUriActionBuilder_.build();
+            if (bitField0_ != 0) {
+              buildPartial0(result);
             }
-            result.title_ = title_;
-            result.description_ = description_;
-            if (imageBuilder_ == null) {
-              result.image_ = image_;
-            } else {
-              result.image_ = imageBuilder_.build();
-            }
-            result.footer_ = footer_;
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
+                      .BrowseCarouselCardItem
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.openUriAction_ =
+                  openUriActionBuilder_ == null ? openUriAction_ : openUriActionBuilder_.build();
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.title_ = title_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.description_ = description_;
+            }
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              result.image_ = imageBuilder_ == null ? image_ : imageBuilder_.build();
+            }
+            if (((from_bitField0_ & 0x00000010) != 0)) {
+              result.footer_ = footer_;
+            }
           }
 
           @java.lang.Override
@@ -48909,10 +49586,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             }
             if (!other.getTitle().isEmpty()) {
               title_ = other.title_;
+              bitField0_ |= 0x00000002;
               onChanged();
             }
             if (!other.getDescription().isEmpty()) {
               description_ = other.description_;
+              bitField0_ |= 0x00000004;
               onChanged();
             }
             if (other.hasImage()) {
@@ -48920,6 +49599,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             }
             if (!other.getFooter().isEmpty()) {
               footer_ = other.footer_;
+              bitField0_ |= 0x00000010;
               onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
@@ -48952,31 +49632,31 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     {
                       input.readMessage(
                           getOpenUriActionFieldBuilder().getBuilder(), extensionRegistry);
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 10
                   case 18:
                     {
                       title_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 18
                   case 26:
                     {
                       description_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000004;
                       break;
                     } // case 26
                   case 34:
                     {
                       input.readMessage(getImageFieldBuilder().getBuilder(), extensionRegistry);
-
+                      bitField0_ |= 0x00000008;
                       break;
                     } // case 34
                   case 42:
                     {
                       footer_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000010;
                       break;
                     } // case 42
                   default:
@@ -48995,6 +49675,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
                   .BrowseCarouselCardItem.OpenUrlAction
@@ -49021,7 +49703,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return Whether the openUriAction field is set.
            */
           public boolean hasOpenUriAction() {
-            return openUriActionBuilder_ != null || openUriAction_ != null;
+            return ((bitField0_ & 0x00000001) != 0);
           }
           /**
            *
@@ -49068,11 +49750,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 throw new NullPointerException();
               }
               openUriAction_ = value;
-              onChanged();
             } else {
               openUriActionBuilder_.setMessage(value);
             }
-
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
           /**
@@ -49092,11 +49774,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   builderForValue) {
             if (openUriActionBuilder_ == null) {
               openUriAction_ = builderForValue.build();
-              onChanged();
             } else {
               openUriActionBuilder_.setMessage(builderForValue.build());
             }
-
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
           /**
@@ -49115,20 +49797,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                       .BrowseCarouselCardItem.OpenUrlAction
                   value) {
             if (openUriActionBuilder_ == null) {
-              if (openUriAction_ != null) {
-                openUriAction_ =
-                    com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
-                        .BrowseCarouselCardItem.OpenUrlAction.newBuilder(openUriAction_)
-                        .mergeFrom(value)
-                        .buildPartial();
+              if (((bitField0_ & 0x00000001) != 0)
+                  && openUriAction_ != null
+                  && openUriAction_
+                      != com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
+                          .BrowseCarouselCardItem.OpenUrlAction.getDefaultInstance()) {
+                getOpenUriActionBuilder().mergeFrom(value);
               } else {
                 openUriAction_ = value;
               }
-              onChanged();
             } else {
               openUriActionBuilder_.mergeFrom(value);
             }
-
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
           /**
@@ -49143,14 +49825,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </code>
            */
           public Builder clearOpenUriAction() {
-            if (openUriActionBuilder_ == null) {
-              openUriAction_ = null;
-              onChanged();
-            } else {
-              openUriAction_ = null;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            openUriAction_ = null;
+            if (openUriActionBuilder_ != null) {
+              openUriActionBuilder_.dispose();
               openUriActionBuilder_ = null;
             }
-
+            onChanged();
             return this;
           }
           /**
@@ -49167,7 +49848,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           public com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
                   .BrowseCarouselCardItem.OpenUrlAction.Builder
               getOpenUriActionBuilder() {
-
+            bitField0_ |= 0x00000001;
             onChanged();
             return getOpenUriActionFieldBuilder().getBuilder();
           }
@@ -49289,8 +49970,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             title_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -49306,8 +49987,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearTitle() {
-
             title_ = getDefaultInstance().getTitle();
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -49328,8 +50009,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             title_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -49398,8 +50079,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             description_ = value;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -49416,8 +50097,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearDescription() {
-
             description_ = getDefaultInstance().getDescription();
+            bitField0_ = (bitField0_ & ~0x00000004);
             onChanged();
             return this;
           }
@@ -49439,8 +50120,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             description_ = value;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -49463,7 +50144,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return Whether the image field is set.
            */
           public boolean hasImage() {
-            return imageBuilder_ != null || image_ != null;
+            return ((bitField0_ & 0x00000008) != 0);
           }
           /**
            *
@@ -49500,11 +50181,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 throw new NullPointerException();
               }
               image_ = value;
-              onChanged();
             } else {
               imageBuilder_.setMessage(value);
             }
-
+            bitField0_ |= 0x00000008;
+            onChanged();
             return this;
           }
           /**
@@ -49520,11 +50201,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.Builder builderForValue) {
             if (imageBuilder_ == null) {
               image_ = builderForValue.build();
-              onChanged();
             } else {
               imageBuilder_.setMessage(builderForValue.build());
             }
-
+            bitField0_ |= 0x00000008;
+            onChanged();
             return this;
           }
           /**
@@ -49539,19 +50220,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           public Builder mergeImage(
               com.google.cloud.dialogflow.v2beta1.Intent.Message.Image value) {
             if (imageBuilder_ == null) {
-              if (image_ != null) {
-                image_ =
-                    com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.newBuilder(image_)
-                        .mergeFrom(value)
-                        .buildPartial();
+              if (((bitField0_ & 0x00000008) != 0)
+                  && image_ != null
+                  && image_
+                      != com.google.cloud.dialogflow.v2beta1.Intent.Message.Image
+                          .getDefaultInstance()) {
+                getImageBuilder().mergeFrom(value);
               } else {
                 image_ = value;
               }
-              onChanged();
             } else {
               imageBuilder_.mergeFrom(value);
             }
-
+            bitField0_ |= 0x00000008;
+            onChanged();
             return this;
           }
           /**
@@ -49564,14 +50246,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.Image image = 4;</code>
            */
           public Builder clearImage() {
-            if (imageBuilder_ == null) {
-              image_ = null;
-              onChanged();
-            } else {
-              image_ = null;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            image_ = null;
+            if (imageBuilder_ != null) {
+              imageBuilder_.dispose();
               imageBuilder_ = null;
             }
-
+            onChanged();
             return this;
           }
           /**
@@ -49585,7 +50266,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            */
           public com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.Builder
               getImageBuilder() {
-
+            bitField0_ |= 0x00000008;
             onChanged();
             return getImageFieldBuilder().getBuilder();
           }
@@ -49698,8 +50379,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             footer_ = value;
+            bitField0_ |= 0x00000010;
             onChanged();
             return this;
           }
@@ -49716,8 +50397,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearFooter() {
-
             footer_ = getDefaultInstance().getFooter();
+            bitField0_ = (bitField0_ & ~0x00000010);
             onChanged();
             return this;
           }
@@ -49739,8 +50420,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             footer_ = value;
+            bitField0_ |= 0x00000010;
             onChanged();
             return this;
           }
@@ -49818,6 +50499,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int ITEMS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private java.util.List<
               com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
                   .BrowseCarouselCardItem>
@@ -49915,7 +50598,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int IMAGE_DISPLAY_OPTIONS_FIELD_NUMBER = 2;
-      private int imageDisplayOptions_;
+      private int imageDisplayOptions_ = 0;
       /**
        *
        *
@@ -49952,11 +50635,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
               .ImageDisplayOptions
           getImageDisplayOptions() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard.ImageDisplayOptions
             result =
                 com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
-                    .ImageDisplayOptions.valueOf(imageDisplayOptions_);
+                    .ImageDisplayOptions.forNumber(imageDisplayOptions_);
         return result == null
             ? com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
                 .ImageDisplayOptions.UNRECOGNIZED
@@ -50186,6 +50868,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (itemsBuilder_ == null) {
             items_ = java.util.Collections.emptyList();
           } else {
@@ -50194,7 +50877,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
           bitField0_ = (bitField0_ & ~0x00000001);
           imageDisplayOptions_ = 0;
-
           return this;
         }
 
@@ -50226,7 +50908,16 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard result) {
           if (itemsBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               items_ = java.util.Collections.unmodifiableList(items_);
@@ -50236,9 +50927,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           } else {
             result.items_ = itemsBuilder_.build();
           }
-          result.imageDisplayOptions_ = imageDisplayOptions_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.imageDisplayOptions_ = imageDisplayOptions_;
+          }
         }
 
         @java.lang.Override
@@ -50369,7 +51065,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 16:
                   {
                     imageDisplayOptions_ = input.readEnum();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 default:
@@ -50890,8 +51586,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setImageDisplayOptionsValue(int value) {
-
           imageDisplayOptions_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -50913,11 +51609,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
                 .ImageDisplayOptions
             getImageDisplayOptions() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard.ImageDisplayOptions
               result =
                   com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
-                      .ImageDisplayOptions.valueOf(imageDisplayOptions_);
+                      .ImageDisplayOptions.forNumber(imageDisplayOptions_);
           return result == null
               ? com.google.cloud.dialogflow.v2beta1.Intent.Message.BrowseCarouselCard
                   .ImageDisplayOptions.UNRECOGNIZED
@@ -50945,7 +51640,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000002;
           imageDisplayOptions_ = value.getNumber();
           onChanged();
           return this;
@@ -50965,7 +51660,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearImageDisplayOptions() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           imageDisplayOptions_ = 0;
           onChanged();
           return this;
@@ -51375,7 +52070,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int TITLE_FIELD_NUMBER = 1;
-      private volatile java.lang.Object title_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object title_ = "";
       /**
        *
        *
@@ -51424,7 +52121,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int SUBTITLE_FIELD_NUMBER = 2;
-      private volatile java.lang.Object subtitle_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object subtitle_ = "";
       /**
        *
        *
@@ -51517,10 +52216,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.dialogflow.v2beta1.Intent.Message.ImageOrBuilder getImageOrBuilder() {
-        return getImage();
+        return image_ == null
+            ? com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.getDefaultInstance()
+            : image_;
       }
 
       public static final int COLUMN_PROPERTIES_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.ColumnProperties>
           columnProperties_;
       /**
@@ -51606,6 +52309,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int ROWS_FIELD_NUMBER = 5;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCardRow> rows_;
       /**
        *
@@ -51683,6 +52388,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int BUTTONS_FIELD_NUMBER = 6;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button>
           buttons_;
       /**
@@ -52024,14 +52731,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           title_ = "";
-
           subtitle_ = "";
-
-          if (imageBuilder_ == null) {
-            image_ = null;
-          } else {
-            image_ = null;
+          image_ = null;
+          if (imageBuilder_ != null) {
+            imageBuilder_.dispose();
             imageBuilder_ = null;
           }
           if (columnPropertiesBuilder_ == null) {
@@ -52040,21 +52745,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             columnProperties_ = null;
             columnPropertiesBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           if (rowsBuilder_ == null) {
             rows_ = java.util.Collections.emptyList();
           } else {
             rows_ = null;
             rowsBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
           if (buttonsBuilder_ == null) {
             buttons_ = java.util.Collections.emptyList();
           } else {
             buttons_ = null;
             buttonsBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000020);
           return this;
         }
 
@@ -52083,43 +52788,57 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCard buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCard result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCard(this);
-          int from_bitField0_ = bitField0_;
-          result.title_ = title_;
-          result.subtitle_ = subtitle_;
-          if (imageBuilder_ == null) {
-            result.image_ = image_;
-          } else {
-            result.image_ = imageBuilder_.build();
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCard result) {
           if (columnPropertiesBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0)) {
+            if (((bitField0_ & 0x00000008) != 0)) {
               columnProperties_ = java.util.Collections.unmodifiableList(columnProperties_);
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             }
             result.columnProperties_ = columnProperties_;
           } else {
             result.columnProperties_ = columnPropertiesBuilder_.build();
           }
           if (rowsBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) != 0)) {
+            if (((bitField0_ & 0x00000010) != 0)) {
               rows_ = java.util.Collections.unmodifiableList(rows_);
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000010);
             }
             result.rows_ = rows_;
           } else {
             result.rows_ = rowsBuilder_.build();
           }
           if (buttonsBuilder_ == null) {
-            if (((bitField0_ & 0x00000004) != 0)) {
+            if (((bitField0_ & 0x00000020) != 0)) {
               buttons_ = java.util.Collections.unmodifiableList(buttons_);
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000020);
             }
             result.buttons_ = buttons_;
           } else {
             result.buttons_ = buttonsBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCard result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.title_ = title_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.subtitle_ = subtitle_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.image_ = imageBuilder_ == null ? image_ : imageBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -52174,10 +52893,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             return this;
           if (!other.getTitle().isEmpty()) {
             title_ = other.title_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getSubtitle().isEmpty()) {
             subtitle_ = other.subtitle_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           if (other.hasImage()) {
@@ -52187,7 +52908,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (!other.columnProperties_.isEmpty()) {
               if (columnProperties_.isEmpty()) {
                 columnProperties_ = other.columnProperties_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
               } else {
                 ensureColumnPropertiesIsMutable();
                 columnProperties_.addAll(other.columnProperties_);
@@ -52200,7 +52921,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 columnPropertiesBuilder_.dispose();
                 columnPropertiesBuilder_ = null;
                 columnProperties_ = other.columnProperties_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
                 columnPropertiesBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getColumnPropertiesFieldBuilder()
@@ -52214,7 +52935,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (!other.rows_.isEmpty()) {
               if (rows_.isEmpty()) {
                 rows_ = other.rows_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000010);
               } else {
                 ensureRowsIsMutable();
                 rows_.addAll(other.rows_);
@@ -52227,7 +52948,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 rowsBuilder_.dispose();
                 rowsBuilder_ = null;
                 rows_ = other.rows_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000010);
                 rowsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getRowsFieldBuilder()
@@ -52241,7 +52962,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (!other.buttons_.isEmpty()) {
               if (buttons_.isEmpty()) {
                 buttons_ = other.buttons_;
-                bitField0_ = (bitField0_ & ~0x00000004);
+                bitField0_ = (bitField0_ & ~0x00000020);
               } else {
                 ensureButtonsIsMutable();
                 buttons_.addAll(other.buttons_);
@@ -52254,7 +52975,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 buttonsBuilder_.dispose();
                 buttonsBuilder_ = null;
                 buttons_ = other.buttons_;
-                bitField0_ = (bitField0_ & ~0x00000004);
+                bitField0_ = (bitField0_ & ~0x00000020);
                 buttonsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getButtonsFieldBuilder()
@@ -52293,19 +53014,19 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     title_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     subtitle_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 case 26:
                   {
                     input.readMessage(getImageFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 26
                 case 34:
@@ -52433,8 +53154,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           title_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -52450,8 +53171,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearTitle() {
-
           title_ = getDefaultInstance().getTitle();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -52472,8 +53193,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           title_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -52539,8 +53260,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           subtitle_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -52556,8 +53277,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearSubtitle() {
-
           subtitle_ = getDefaultInstance().getSubtitle();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -52578,8 +53299,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           subtitle_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -52602,7 +53323,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the image field is set.
          */
         public boolean hasImage() {
-          return imageBuilder_ != null || image_ != null;
+          return ((bitField0_ & 0x00000004) != 0);
         }
         /**
          *
@@ -52639,11 +53360,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             image_ = value;
-            onChanged();
           } else {
             imageBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -52659,11 +53380,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.Builder builderForValue) {
           if (imageBuilder_ == null) {
             image_ = builderForValue.build();
-            onChanged();
           } else {
             imageBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -52677,19 +53398,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder mergeImage(com.google.cloud.dialogflow.v2beta1.Intent.Message.Image value) {
           if (imageBuilder_ == null) {
-            if (image_ != null) {
-              image_ =
-                  com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.newBuilder(image_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000004) != 0)
+                && image_ != null
+                && image_
+                    != com.google.cloud.dialogflow.v2beta1.Intent.Message.Image
+                        .getDefaultInstance()) {
+              getImageBuilder().mergeFrom(value);
             } else {
               image_ = value;
             }
-            onChanged();
           } else {
             imageBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -52702,14 +53424,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.Image image = 3;</code>
          */
         public Builder clearImage() {
-          if (imageBuilder_ == null) {
-            image_ = null;
-            onChanged();
-          } else {
-            image_ = null;
+          bitField0_ = (bitField0_ & ~0x00000004);
+          image_ = null;
+          if (imageBuilder_ != null) {
+            imageBuilder_.dispose();
             imageBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -52722,7 +53443,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.Image image = 3;</code>
          */
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.Builder getImageBuilder() {
-
+          bitField0_ |= 0x00000004;
           onChanged();
           return getImageFieldBuilder().getBuilder();
         }
@@ -52775,12 +53496,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             columnProperties_ = java.util.Collections.emptyList();
 
         private void ensureColumnPropertiesIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000008) != 0)) {
             columnProperties_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.ColumnProperties>(
                     columnProperties_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000008;
           }
         }
 
@@ -53030,7 +53751,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder clearColumnProperties() {
           if (columnPropertiesBuilder_ == null) {
             columnProperties_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             onChanged();
           } else {
             columnPropertiesBuilder_.clear();
@@ -53179,7 +53900,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.ColumnProperties.Builder,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.ColumnPropertiesOrBuilder>(
                     columnProperties_,
-                    ((bitField0_ & 0x00000001) != 0),
+                    ((bitField0_ & 0x00000008) != 0),
                     getParentForChildren(),
                     isClean());
             columnProperties_ = null;
@@ -53191,11 +53912,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             rows_ = java.util.Collections.emptyList();
 
         private void ensureRowsIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!((bitField0_ & 0x00000010) != 0)) {
             rows_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCardRow>(rows_);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000010;
           }
         }
 
@@ -53433,7 +54154,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder clearRows() {
           if (rowsBuilder_ == null) {
             rows_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
             onChanged();
           } else {
             rowsBuilder_.clear();
@@ -53573,7 +54294,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCardRow,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCardRow.Builder,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCardRowOrBuilder>(
-                    rows_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                    rows_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
             rows_ = null;
           }
           return rowsBuilder_;
@@ -53583,11 +54304,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             buttons_ = java.util.Collections.emptyList();
 
         private void ensureButtonsIsMutable() {
-          if (!((bitField0_ & 0x00000004) != 0)) {
+          if (!((bitField0_ & 0x00000020) != 0)) {
             buttons_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button>(buttons_);
-            bitField0_ |= 0x00000004;
+            bitField0_ |= 0x00000020;
           }
         }
 
@@ -53837,7 +54558,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder clearButtons() {
           if (buttonsBuilder_ == null) {
             buttons_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
             onChanged();
           } else {
             buttonsBuilder_.clear();
@@ -53985,7 +54706,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button.Builder,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.ButtonOrBuilder>(
-                    buttons_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                    buttons_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
             buttons_ = null;
           }
           return buttonsBuilder_;
@@ -54355,7 +55076,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int HEADER_FIELD_NUMBER = 1;
-      private volatile java.lang.Object header_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object header_ = "";
       /**
        *
        *
@@ -54404,7 +55127,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int HORIZONTAL_ALIGNMENT_FIELD_NUMBER = 2;
-      private int horizontalAlignment_;
+      private int horizontalAlignment_ = 0;
       /**
        *
        *
@@ -54438,11 +55161,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.dialogflow.v2beta1.Intent.Message.ColumnProperties.HorizontalAlignment
           getHorizontalAlignment() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dialogflow.v2beta1.Intent.Message.ColumnProperties.HorizontalAlignment
             result =
                 com.google.cloud.dialogflow.v2beta1.Intent.Message.ColumnProperties
-                    .HorizontalAlignment.valueOf(horizontalAlignment_);
+                    .HorizontalAlignment.forNumber(horizontalAlignment_);
         return result == null
             ? com.google.cloud.dialogflow.v2beta1.Intent.Message.ColumnProperties
                 .HorizontalAlignment.UNRECOGNIZED
@@ -54668,10 +55390,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           header_ = "";
-
           horizontalAlignment_ = 0;
-
           return this;
         }
 
@@ -54702,10 +55423,22 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.ColumnProperties buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.ColumnProperties result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.ColumnProperties(this);
-          result.header_ = header_;
-          result.horizontalAlignment_ = horizontalAlignment_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.ColumnProperties result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.header_ = header_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.horizontalAlignment_ = horizontalAlignment_;
+          }
         }
 
         @java.lang.Override
@@ -54762,6 +55495,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getHeader().isEmpty()) {
             header_ = other.header_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (other.horizontalAlignment_ != 0) {
@@ -54796,13 +55530,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     header_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 16:
                   {
                     horizontalAlignment_ = input.readEnum();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 default:
@@ -54821,6 +55555,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object header_ = "";
         /**
@@ -54883,8 +55619,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           header_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -54900,8 +55636,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearHeader() {
-
           header_ = getDefaultInstance().getHeader();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -54922,8 +55658,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           header_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -54961,8 +55697,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setHorizontalAlignmentValue(int value) {
-
           horizontalAlignment_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -54983,11 +55719,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.ColumnProperties
                 .HorizontalAlignment
             getHorizontalAlignment() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.dialogflow.v2beta1.Intent.Message.ColumnProperties.HorizontalAlignment
               result =
                   com.google.cloud.dialogflow.v2beta1.Intent.Message.ColumnProperties
-                      .HorizontalAlignment.valueOf(horizontalAlignment_);
+                      .HorizontalAlignment.forNumber(horizontalAlignment_);
           return result == null
               ? com.google.cloud.dialogflow.v2beta1.Intent.Message.ColumnProperties
                   .HorizontalAlignment.UNRECOGNIZED
@@ -55013,7 +55748,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000002;
           horizontalAlignment_ = value.getNumber();
           onChanged();
           return this;
@@ -55032,7 +55767,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearHorizontalAlignment() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           horizontalAlignment_ = 0;
           onChanged();
           return this;
@@ -55234,6 +55969,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int CELLS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCardCell>
           cells_;
       /**
@@ -55312,7 +56049,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int DIVIDER_AFTER_FIELD_NUMBER = 2;
-      private boolean dividerAfter_;
+      private boolean dividerAfter_ = false;
       /**
        *
        *
@@ -55543,6 +56280,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (cellsBuilder_ == null) {
             cells_ = java.util.Collections.emptyList();
           } else {
@@ -55551,7 +56289,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
           bitField0_ = (bitField0_ & ~0x00000001);
           dividerAfter_ = false;
-
           return this;
         }
 
@@ -55581,7 +56318,16 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCardRow buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCardRow result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCardRow(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCardRow result) {
           if (cellsBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               cells_ = java.util.Collections.unmodifiableList(cells_);
@@ -55591,9 +56337,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           } else {
             result.cells_ = cellsBuilder_.build();
           }
-          result.dividerAfter_ = dividerAfter_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCardRow result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.dividerAfter_ = dividerAfter_;
+          }
         }
 
         @java.lang.Override
@@ -55721,7 +56472,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 16:
                   {
                     dividerAfter_ = input.readBool();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 default:
@@ -56167,6 +56918,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder setDividerAfter(boolean value) {
 
           dividerAfter_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -56182,7 +56934,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearDividerAfter() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           dividerAfter_ = false;
           onChanged();
           return this;
@@ -56335,7 +57087,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int TEXT_FIELD_NUMBER = 1;
-      private volatile java.lang.Object text_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object text_ = "";
       /**
        *
        *
@@ -56586,8 +57340,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           text_ = "";
-
           return this;
         }
 
@@ -56617,9 +57371,19 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCardCell buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCardCell result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCardCell(this);
-          result.text_ = text_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.TableCardCell result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.text_ = text_;
+          }
         }
 
         @java.lang.Override
@@ -56675,6 +57439,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getText().isEmpty()) {
             text_ = other.text_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -56706,7 +57471,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     text_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 default:
@@ -56725,6 +57490,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object text_ = "";
         /**
@@ -56787,8 +57554,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           text_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -56804,8 +57571,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearText() {
-
           text_ = getDefaultInstance().getText();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -56826,8 +57593,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           text_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -58116,7 +58883,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PLATFORM_FIELD_NUMBER = 6;
-    private int platform_;
+    private int platform_ = 0;
     /**
      *
      *
@@ -58149,9 +58916,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.Intent.Message.Platform getPlatform() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.Intent.Message.Platform result =
-          com.google.cloud.dialogflow.v2beta1.Intent.Message.Platform.valueOf(platform_);
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.Platform.forNumber(platform_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.Intent.Message.Platform.UNRECOGNIZED
           : result;
@@ -58697,6 +59463,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (textBuilder_ != null) {
           textBuilder_.clear();
         }
@@ -58758,7 +59525,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           mediaContentBuilder_.clear();
         }
         platform_ = 0;
-
         messageCase_ = 0;
         message_ = null;
         return this;
@@ -58788,150 +59554,84 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.v2beta1.Intent.Message buildPartial() {
         com.google.cloud.dialogflow.v2beta1.Intent.Message result =
             new com.google.cloud.dialogflow.v2beta1.Intent.Message(this);
-        if (messageCase_ == 1) {
-          if (textBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = textBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (messageCase_ == 2) {
-          if (imageBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = imageBuilder_.build();
-          }
-        }
-        if (messageCase_ == 3) {
-          if (quickRepliesBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = quickRepliesBuilder_.build();
-          }
-        }
-        if (messageCase_ == 4) {
-          if (cardBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = cardBuilder_.build();
-          }
-        }
-        if (messageCase_ == 5) {
-          if (payloadBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = payloadBuilder_.build();
-          }
-        }
-        if (messageCase_ == 7) {
-          if (simpleResponsesBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = simpleResponsesBuilder_.build();
-          }
-        }
-        if (messageCase_ == 8) {
-          if (basicCardBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = basicCardBuilder_.build();
-          }
-        }
-        if (messageCase_ == 9) {
-          if (suggestionsBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = suggestionsBuilder_.build();
-          }
-        }
-        if (messageCase_ == 10) {
-          if (linkOutSuggestionBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = linkOutSuggestionBuilder_.build();
-          }
-        }
-        if (messageCase_ == 11) {
-          if (listSelectBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = listSelectBuilder_.build();
-          }
-        }
-        if (messageCase_ == 12) {
-          if (carouselSelectBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = carouselSelectBuilder_.build();
-          }
-        }
-        if (messageCase_ == 13) {
-          if (telephonyPlayAudioBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = telephonyPlayAudioBuilder_.build();
-          }
-        }
-        if (messageCase_ == 14) {
-          if (telephonySynthesizeSpeechBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = telephonySynthesizeSpeechBuilder_.build();
-          }
-        }
-        if (messageCase_ == 15) {
-          if (telephonyTransferCallBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = telephonyTransferCallBuilder_.build();
-          }
-        }
-        if (messageCase_ == 18) {
-          if (rbmTextBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = rbmTextBuilder_.build();
-          }
-        }
-        if (messageCase_ == 19) {
-          if (rbmStandaloneRichCardBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = rbmStandaloneRichCardBuilder_.build();
-          }
-        }
-        if (messageCase_ == 20) {
-          if (rbmCarouselRichCardBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = rbmCarouselRichCardBuilder_.build();
-          }
-        }
-        if (messageCase_ == 22) {
-          if (browseCarouselCardBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = browseCarouselCardBuilder_.build();
-          }
-        }
-        if (messageCase_ == 23) {
-          if (tableCardBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = tableCardBuilder_.build();
-          }
-        }
-        if (messageCase_ == 24) {
-          if (mediaContentBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = mediaContentBuilder_.build();
-          }
-        }
-        result.platform_ = platform_;
-        result.messageCase_ = messageCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dialogflow.v2beta1.Intent.Message result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00100000) != 0)) {
+          result.platform_ = platform_;
+        }
+      }
+
+      private void buildPartialOneofs(com.google.cloud.dialogflow.v2beta1.Intent.Message result) {
+        result.messageCase_ = messageCase_;
+        result.message_ = this.message_;
+        if (messageCase_ == 1 && textBuilder_ != null) {
+          result.message_ = textBuilder_.build();
+        }
+        if (messageCase_ == 2 && imageBuilder_ != null) {
+          result.message_ = imageBuilder_.build();
+        }
+        if (messageCase_ == 3 && quickRepliesBuilder_ != null) {
+          result.message_ = quickRepliesBuilder_.build();
+        }
+        if (messageCase_ == 4 && cardBuilder_ != null) {
+          result.message_ = cardBuilder_.build();
+        }
+        if (messageCase_ == 5 && payloadBuilder_ != null) {
+          result.message_ = payloadBuilder_.build();
+        }
+        if (messageCase_ == 7 && simpleResponsesBuilder_ != null) {
+          result.message_ = simpleResponsesBuilder_.build();
+        }
+        if (messageCase_ == 8 && basicCardBuilder_ != null) {
+          result.message_ = basicCardBuilder_.build();
+        }
+        if (messageCase_ == 9 && suggestionsBuilder_ != null) {
+          result.message_ = suggestionsBuilder_.build();
+        }
+        if (messageCase_ == 10 && linkOutSuggestionBuilder_ != null) {
+          result.message_ = linkOutSuggestionBuilder_.build();
+        }
+        if (messageCase_ == 11 && listSelectBuilder_ != null) {
+          result.message_ = listSelectBuilder_.build();
+        }
+        if (messageCase_ == 12 && carouselSelectBuilder_ != null) {
+          result.message_ = carouselSelectBuilder_.build();
+        }
+        if (messageCase_ == 13 && telephonyPlayAudioBuilder_ != null) {
+          result.message_ = telephonyPlayAudioBuilder_.build();
+        }
+        if (messageCase_ == 14 && telephonySynthesizeSpeechBuilder_ != null) {
+          result.message_ = telephonySynthesizeSpeechBuilder_.build();
+        }
+        if (messageCase_ == 15 && telephonyTransferCallBuilder_ != null) {
+          result.message_ = telephonyTransferCallBuilder_.build();
+        }
+        if (messageCase_ == 18 && rbmTextBuilder_ != null) {
+          result.message_ = rbmTextBuilder_.build();
+        }
+        if (messageCase_ == 19 && rbmStandaloneRichCardBuilder_ != null) {
+          result.message_ = rbmStandaloneRichCardBuilder_.build();
+        }
+        if (messageCase_ == 20 && rbmCarouselRichCardBuilder_ != null) {
+          result.message_ = rbmCarouselRichCardBuilder_.build();
+        }
+        if (messageCase_ == 22 && browseCarouselCardBuilder_ != null) {
+          result.message_ = browseCarouselCardBuilder_.build();
+        }
+        if (messageCase_ == 23 && tableCardBuilder_ != null) {
+          result.message_ = tableCardBuilder_.build();
+        }
+        if (messageCase_ == 24 && mediaContentBuilder_ != null) {
+          result.message_ = mediaContentBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -59150,7 +59850,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               case 48:
                 {
                   platform_ = input.readEnum();
-
+                  bitField0_ |= 0x00100000;
                   break;
                 } // case 48
               case 58:
@@ -59282,6 +59982,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.dialogflow.v2beta1.Intent.Message.Text,
@@ -59490,7 +60192,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 1;
         onChanged();
-        ;
         return textBuilder_;
       }
 
@@ -59703,7 +60404,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 2;
         onChanged();
-        ;
         return imageBuilder_;
       }
 
@@ -59933,7 +60633,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 3;
         onChanged();
-        ;
         return quickRepliesBuilder_;
       }
 
@@ -60144,7 +60843,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 4;
         onChanged();
-        ;
         return cardBuilder_;
       }
 
@@ -60349,7 +61047,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 5;
         onChanged();
-        ;
         return payloadBuilder_;
       }
 
@@ -60582,7 +61279,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 7;
         onChanged();
-        ;
         return simpleResponsesBuilder_;
       }
 
@@ -60799,7 +61495,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 8;
         onChanged();
-        ;
         return basicCardBuilder_;
       }
 
@@ -61019,7 +61714,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 9;
         onChanged();
-        ;
         return suggestionsBuilder_;
       }
 
@@ -61261,7 +61955,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 10;
         onChanged();
-        ;
         return linkOutSuggestionBuilder_;
       }
 
@@ -61478,7 +62171,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 11;
         onChanged();
-        ;
         return listSelectBuilder_;
       }
 
@@ -61710,7 +62402,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 12;
         onChanged();
-        ;
         return carouselSelectBuilder_;
       }
 
@@ -61952,7 +62643,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 13;
         onChanged();
-        ;
         return telephonyPlayAudioBuilder_;
       }
 
@@ -62201,7 +62891,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 14;
         onChanged();
-        ;
         return telephonySynthesizeSpeechBuilder_;
       }
 
@@ -62447,7 +63136,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 15;
         onChanged();
-        ;
         return telephonyTransferCallBuilder_;
       }
 
@@ -62681,7 +63369,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 18;
         onChanged();
-        ;
         return rbmTextBuilder_;
       }
 
@@ -62923,7 +63610,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 19;
         onChanged();
-        ;
         return rbmStandaloneRichCardBuilder_;
       }
 
@@ -63165,7 +63851,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 20;
         onChanged();
-        ;
         return rbmCarouselRichCardBuilder_;
       }
 
@@ -63407,7 +64092,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 22;
         onChanged();
-        ;
         return browseCarouselCardBuilder_;
       }
 
@@ -63624,7 +64308,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 23;
         onChanged();
-        ;
         return tableCardBuilder_;
       }
 
@@ -63854,7 +64537,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         messageCase_ = 24;
         onChanged();
-        ;
         return mediaContentBuilder_;
       }
 
@@ -63891,8 +64573,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setPlatformValue(int value) {
-
         platform_ = value;
+        bitField0_ |= 0x00100000;
         onChanged();
         return this;
       }
@@ -63911,9 +64593,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.dialogflow.v2beta1.Intent.Message.Platform getPlatform() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dialogflow.v2beta1.Intent.Message.Platform result =
-            com.google.cloud.dialogflow.v2beta1.Intent.Message.Platform.valueOf(platform_);
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.Platform.forNumber(platform_);
         return result == null
             ? com.google.cloud.dialogflow.v2beta1.Intent.Message.Platform.UNRECOGNIZED
             : result;
@@ -63937,7 +64618,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00100000;
         platform_ = value.getNumber();
         onChanged();
         return this;
@@ -63956,7 +64637,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPlatform() {
-
+        bitField0_ = (bitField0_ & ~0x00100000);
         platform_ = 0;
         onChanged();
         return this;
@@ -64136,7 +64817,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int FOLLOWUP_INTENT_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object followupIntentName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object followupIntentName_ = "";
     /**
      *
      *
@@ -64187,7 +64870,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PARENT_FOLLOWUP_INTENT_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object parentFollowupIntentName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object parentFollowupIntentName_ = "";
     /**
      *
      *
@@ -64447,10 +65132,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         followupIntentName_ = "";
-
         parentFollowupIntentName_ = "";
-
         return this;
       }
 
@@ -64479,10 +65163,22 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo buildPartial() {
         com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo result =
             new com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo(this);
-        result.followupIntentName_ = followupIntentName_;
-        result.parentFollowupIntentName_ = parentFollowupIntentName_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.followupIntentName_ = followupIntentName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.parentFollowupIntentName_ = parentFollowupIntentName_;
+        }
       }
 
       @java.lang.Override
@@ -64537,10 +65233,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getFollowupIntentName().isEmpty()) {
           followupIntentName_ = other.followupIntentName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getParentFollowupIntentName().isEmpty()) {
           parentFollowupIntentName_ = other.parentFollowupIntentName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -64572,13 +65270,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   followupIntentName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   parentFollowupIntentName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -64597,6 +65295,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object followupIntentName_ = "";
       /**
@@ -64662,8 +65362,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         followupIntentName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -64680,8 +65380,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearFollowupIntentName() {
-
         followupIntentName_ = getDefaultInstance().getFollowupIntentName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -64703,8 +65403,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         followupIntentName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -64773,8 +65473,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         parentFollowupIntentName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -64791,8 +65491,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearParentFollowupIntentName() {
-
         parentFollowupIntentName_ = getDefaultInstance().getParentFollowupIntentName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -64814,8 +65514,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         parentFollowupIntentName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -64888,7 +65588,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -64947,7 +65649,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -64996,7 +65700,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WEBHOOK_STATE_FIELD_NUMBER = 6;
-  private int webhookState_;
+  private int webhookState_ = 0;
   /**
    *
    *
@@ -65029,16 +65733,15 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Intent.WebhookState getWebhookState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.Intent.WebhookState result =
-        com.google.cloud.dialogflow.v2beta1.Intent.WebhookState.valueOf(webhookState_);
+        com.google.cloud.dialogflow.v2beta1.Intent.WebhookState.forNumber(webhookState_);
     return result == null
         ? com.google.cloud.dialogflow.v2beta1.Intent.WebhookState.UNRECOGNIZED
         : result;
   }
 
   public static final int PRIORITY_FIELD_NUMBER = 3;
-  private int priority_;
+  private int priority_ = 0;
   /**
    *
    *
@@ -65062,7 +65765,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IS_FALLBACK_FIELD_NUMBER = 4;
-  private boolean isFallback_;
+  private boolean isFallback_ = false;
   /**
    *
    *
@@ -65080,7 +65783,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ML_ENABLED_FIELD_NUMBER = 5;
-  private boolean mlEnabled_;
+  private boolean mlEnabled_ = false;
   /**
    *
    *
@@ -65111,7 +65814,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ML_DISABLED_FIELD_NUMBER = 19;
-  private boolean mlDisabled_;
+  private boolean mlDisabled_ = false;
   /**
    *
    *
@@ -65132,7 +65835,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LIVE_AGENT_HANDOFF_FIELD_NUMBER = 20;
-  private boolean liveAgentHandoff_;
+  private boolean liveAgentHandoff_ = false;
   /**
    *
    *
@@ -65153,7 +65856,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int END_INTERACTION_FIELD_NUMBER = 21;
-  private boolean endInteraction_;
+  private boolean endInteraction_ = false;
   /**
    *
    *
@@ -65173,6 +65876,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INPUT_CONTEXT_NAMES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList inputContextNames_;
   /**
    *
@@ -65254,6 +65959,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EVENTS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList events_;
   /**
    *
@@ -65327,6 +66034,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRAINING_PHRASES_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase>
       trainingPhrases_;
   /**
@@ -65415,7 +66124,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ACTION_FIELD_NUMBER = 10;
-  private volatile java.lang.Object action_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object action_ = "";
   /**
    *
    *
@@ -65466,6 +66177,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OUTPUT_CONTEXTS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.Context> outputContexts_;
   /**
    *
@@ -65566,7 +66279,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESET_CONTEXTS_FIELD_NUMBER = 12;
-  private boolean resetContexts_;
+  private boolean resetContexts_ = false;
   /**
    *
    *
@@ -65585,6 +66298,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARAMETERS_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Parameter> parameters_;
   /**
    *
@@ -65665,6 +66380,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MESSAGES_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message> messages_;
   /**
    *
@@ -65740,7 +66457,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEFAULT_RESPONSE_PLATFORMS_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> defaultResponsePlatforms_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.dialogflow.v2beta1.Intent.Message.Platform>
       defaultResponsePlatforms_converter_ =
@@ -65748,9 +66468,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               java.lang.Integer, com.google.cloud.dialogflow.v2beta1.Intent.Message.Platform>() {
             public com.google.cloud.dialogflow.v2beta1.Intent.Message.Platform convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.dialogflow.v2beta1.Intent.Message.Platform result =
-                  com.google.cloud.dialogflow.v2beta1.Intent.Message.Platform.valueOf(from);
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.Platform.forNumber(from);
               return result == null
                   ? com.google.cloud.dialogflow.v2beta1.Intent.Message.Platform.UNRECOGNIZED
                   : result;
@@ -65856,7 +66575,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   private int defaultResponsePlatformsMemoizedSerializedSize;
 
   public static final int ROOT_FOLLOWUP_INTENT_NAME_FIELD_NUMBER = 16;
-  private volatile java.lang.Object rootFollowupIntentName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rootFollowupIntentName_ = "";
   /**
    *
    *
@@ -65913,7 +66634,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARENT_FOLLOWUP_INTENT_NAME_FIELD_NUMBER = 17;
-  private volatile java.lang.Object parentFollowupIntentName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parentFollowupIntentName_ = "";
   /**
    *
    *
@@ -65974,6 +66697,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FOLLOWUP_INTENT_INFO_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo>
       followupIntentInfo_;
   /**
@@ -66494,73 +67219,61 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       webhookState_ = 0;
-
       priority_ = 0;
-
       isFallback_ = false;
-
       mlEnabled_ = false;
-
       mlDisabled_ = false;
-
       liveAgentHandoff_ = false;
-
       endInteraction_ = false;
-
       inputContextNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000200);
       events_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000400);
       if (trainingPhrasesBuilder_ == null) {
         trainingPhrases_ = java.util.Collections.emptyList();
       } else {
         trainingPhrases_ = null;
         trainingPhrasesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000800);
       action_ = "";
-
       if (outputContextsBuilder_ == null) {
         outputContexts_ = java.util.Collections.emptyList();
       } else {
         outputContexts_ = null;
         outputContextsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00002000);
       resetContexts_ = false;
-
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
       } else {
         parameters_ = null;
         parametersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00008000);
       if (messagesBuilder_ == null) {
         messages_ = java.util.Collections.emptyList();
       } else {
         messages_ = null;
         messagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00010000);
       defaultResponsePlatforms_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00020000);
       rootFollowupIntentName_ = "";
-
       parentFollowupIntentName_ = "";
-
       if (followupIntentInfoBuilder_ == null) {
         followupIntentInfo_ = java.util.Collections.emptyList();
       } else {
         followupIntentInfo_ = null;
         followupIntentInfoBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00100000);
       return this;
     }
 
@@ -66588,83 +67301,119 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2beta1.Intent buildPartial() {
       com.google.cloud.dialogflow.v2beta1.Intent result =
           new com.google.cloud.dialogflow.v2beta1.Intent(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.webhookState_ = webhookState_;
-      result.priority_ = priority_;
-      result.isFallback_ = isFallback_;
-      result.mlEnabled_ = mlEnabled_;
-      result.mlDisabled_ = mlDisabled_;
-      result.liveAgentHandoff_ = liveAgentHandoff_;
-      result.endInteraction_ = endInteraction_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dialogflow.v2beta1.Intent result) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         inputContextNames_ = inputContextNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000200);
       }
       result.inputContextNames_ = inputContextNames_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         events_ = events_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000400);
       }
       result.events_ = events_;
       if (trainingPhrasesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           trainingPhrases_ = java.util.Collections.unmodifiableList(trainingPhrases_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.trainingPhrases_ = trainingPhrases_;
       } else {
         result.trainingPhrases_ = trainingPhrasesBuilder_.build();
       }
-      result.action_ = action_;
       if (outputContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           outputContexts_ = java.util.Collections.unmodifiableList(outputContexts_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.outputContexts_ = outputContexts_;
       } else {
         result.outputContexts_ = outputContextsBuilder_.build();
       }
-      result.resetContexts_ = resetContexts_;
       if (parametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           parameters_ = java.util.Collections.unmodifiableList(parameters_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.parameters_ = parameters_;
       } else {
         result.parameters_ = parametersBuilder_.build();
       }
       if (messagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00010000) != 0)) {
           messages_ = java.util.Collections.unmodifiableList(messages_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00010000);
         }
         result.messages_ = messages_;
       } else {
         result.messages_ = messagesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00020000) != 0)) {
         defaultResponsePlatforms_ =
             java.util.Collections.unmodifiableList(defaultResponsePlatforms_);
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00020000);
       }
       result.defaultResponsePlatforms_ = defaultResponsePlatforms_;
-      result.rootFollowupIntentName_ = rootFollowupIntentName_;
-      result.parentFollowupIntentName_ = parentFollowupIntentName_;
       if (followupIntentInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00100000) != 0)) {
           followupIntentInfo_ = java.util.Collections.unmodifiableList(followupIntentInfo_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00100000);
         }
         result.followupIntentInfo_ = followupIntentInfo_;
       } else {
         result.followupIntentInfo_ = followupIntentInfoBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.Intent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.webhookState_ = webhookState_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.priority_ = priority_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.isFallback_ = isFallback_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.mlEnabled_ = mlEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.mlDisabled_ = mlDisabled_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.liveAgentHandoff_ = liveAgentHandoff_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.endInteraction_ = endInteraction_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.action_ = action_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.resetContexts_ = resetContexts_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.rootFollowupIntentName_ = rootFollowupIntentName_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.parentFollowupIntentName_ = parentFollowupIntentName_;
+      }
     }
 
     @java.lang.Override
@@ -66714,10 +67463,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.v2beta1.Intent.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.webhookState_ != 0) {
@@ -66744,7 +67495,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (!other.inputContextNames_.isEmpty()) {
         if (inputContextNames_.isEmpty()) {
           inputContextNames_ = other.inputContextNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000200);
         } else {
           ensureInputContextNamesIsMutable();
           inputContextNames_.addAll(other.inputContextNames_);
@@ -66754,7 +67505,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (!other.events_.isEmpty()) {
         if (events_.isEmpty()) {
           events_ = other.events_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureEventsIsMutable();
           events_.addAll(other.events_);
@@ -66765,7 +67516,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (!other.trainingPhrases_.isEmpty()) {
           if (trainingPhrases_.isEmpty()) {
             trainingPhrases_ = other.trainingPhrases_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureTrainingPhrasesIsMutable();
             trainingPhrases_.addAll(other.trainingPhrases_);
@@ -66778,7 +67529,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             trainingPhrasesBuilder_.dispose();
             trainingPhrasesBuilder_ = null;
             trainingPhrases_ = other.trainingPhrases_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000800);
             trainingPhrasesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTrainingPhrasesFieldBuilder()
@@ -66790,13 +67541,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getAction().isEmpty()) {
         action_ = other.action_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (outputContextsBuilder_ == null) {
         if (!other.outputContexts_.isEmpty()) {
           if (outputContexts_.isEmpty()) {
             outputContexts_ = other.outputContexts_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureOutputContextsIsMutable();
             outputContexts_.addAll(other.outputContexts_);
@@ -66809,7 +67561,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             outputContextsBuilder_.dispose();
             outputContextsBuilder_ = null;
             outputContexts_ = other.outputContexts_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00002000);
             outputContextsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getOutputContextsFieldBuilder()
@@ -66826,7 +67578,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (!other.parameters_.isEmpty()) {
           if (parameters_.isEmpty()) {
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensureParametersIsMutable();
             parameters_.addAll(other.parameters_);
@@ -66839,7 +67591,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             parametersBuilder_.dispose();
             parametersBuilder_ = null;
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00008000);
             parametersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getParametersFieldBuilder()
@@ -66853,7 +67605,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (!other.messages_.isEmpty()) {
           if (messages_.isEmpty()) {
             messages_ = other.messages_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00010000);
           } else {
             ensureMessagesIsMutable();
             messages_.addAll(other.messages_);
@@ -66866,7 +67618,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             messagesBuilder_.dispose();
             messagesBuilder_ = null;
             messages_ = other.messages_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00010000);
             messagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMessagesFieldBuilder()
@@ -66879,7 +67631,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (!other.defaultResponsePlatforms_.isEmpty()) {
         if (defaultResponsePlatforms_.isEmpty()) {
           defaultResponsePlatforms_ = other.defaultResponsePlatforms_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00020000);
         } else {
           ensureDefaultResponsePlatformsIsMutable();
           defaultResponsePlatforms_.addAll(other.defaultResponsePlatforms_);
@@ -66888,17 +67640,19 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getRootFollowupIntentName().isEmpty()) {
         rootFollowupIntentName_ = other.rootFollowupIntentName_;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (!other.getParentFollowupIntentName().isEmpty()) {
         parentFollowupIntentName_ = other.parentFollowupIntentName_;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (followupIntentInfoBuilder_ == null) {
         if (!other.followupIntentInfo_.isEmpty()) {
           if (followupIntentInfo_.isEmpty()) {
             followupIntentInfo_ = other.followupIntentInfo_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00100000);
           } else {
             ensureFollowupIntentInfoIsMutable();
             followupIntentInfo_.addAll(other.followupIntentInfo_);
@@ -66911,7 +67665,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             followupIntentInfoBuilder_.dispose();
             followupIntentInfoBuilder_ = null;
             followupIntentInfo_ = other.followupIntentInfo_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00100000);
             followupIntentInfoBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFollowupIntentInfoFieldBuilder()
@@ -66950,37 +67704,37 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 priority_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 32:
               {
                 isFallback_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 40:
               {
                 mlEnabled_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 48:
               {
                 webhookState_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 48
             case 58:
@@ -67014,7 +67768,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 action_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 82
             case 90:
@@ -67033,7 +67787,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             case 96:
               {
                 resetContexts_ = input.readBool();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 96
             case 106:
@@ -67086,13 +67840,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             case 130:
               {
                 rootFollowupIntentName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00040000;
                 break;
               } // case 130
             case 138:
               {
                 parentFollowupIntentName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00080000;
                 break;
               } // case 138
             case 146:
@@ -67112,19 +67866,19 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             case 152:
               {
                 mlDisabled_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 152
             case 160:
               {
                 liveAgentHandoff_ = input.readBool();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 160
             case 168:
               {
                 endInteraction_ = input.readBool();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 168
             default:
@@ -67222,8 +67976,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -67244,8 +67998,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -67271,8 +68025,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -67338,8 +68092,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -67355,8 +68109,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -67377,8 +68131,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -67416,8 +68170,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setWebhookStateValue(int value) {
-
       webhookState_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -67436,9 +68190,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.Intent.WebhookState getWebhookState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.Intent.WebhookState result =
-          com.google.cloud.dialogflow.v2beta1.Intent.WebhookState.valueOf(webhookState_);
+          com.google.cloud.dialogflow.v2beta1.Intent.WebhookState.forNumber(webhookState_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.Intent.WebhookState.UNRECOGNIZED
           : result;
@@ -67461,7 +68214,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       webhookState_ = value.getNumber();
       onChanged();
       return this;
@@ -67480,7 +68233,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWebhookState() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       webhookState_ = 0;
       onChanged();
       return this;
@@ -67529,6 +68282,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder setPriority(int value) {
 
       priority_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -67550,7 +68304,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPriority() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       priority_ = 0;
       onChanged();
       return this;
@@ -67587,6 +68341,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder setIsFallback(boolean value) {
 
       isFallback_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -67602,7 +68357,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIsFallback() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       isFallback_ = false;
       onChanged();
       return this;
@@ -67667,6 +68422,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder setMlEnabled(boolean value) {
 
       mlEnabled_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -67696,7 +68452,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder clearMlEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       mlEnabled_ = false;
       onChanged();
       return this;
@@ -67739,6 +68495,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder setMlDisabled(boolean value) {
 
       mlDisabled_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -67757,7 +68514,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMlDisabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       mlDisabled_ = false;
       onChanged();
       return this;
@@ -67800,6 +68557,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder setLiveAgentHandoff(boolean value) {
 
       liveAgentHandoff_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -67818,7 +68576,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLiveAgentHandoff() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       liveAgentHandoff_ = false;
       onChanged();
       return this;
@@ -67859,6 +68617,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndInteraction(boolean value) {
 
       endInteraction_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -67876,7 +68635,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEndInteraction() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       endInteraction_ = false;
       onChanged();
       return this;
@@ -67886,9 +68645,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInputContextNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         inputContextNames_ = new com.google.protobuf.LazyStringArrayList(inputContextNames_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000200;
       }
     }
     /**
@@ -68071,7 +68830,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearInputContextNames() {
       inputContextNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -68108,9 +68867,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEventsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         events_ = new com.google.protobuf.LazyStringArrayList(events_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000400;
       }
     }
     /**
@@ -68269,7 +69028,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEvents() {
       events_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -68303,11 +69062,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         trainingPhrases_ = java.util.Collections.emptyList();
 
     private void ensureTrainingPhrasesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         trainingPhrases_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase>(
                 trainingPhrases_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -68563,7 +69322,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTrainingPhrases() {
       if (trainingPhrasesBuilder_ == null) {
         trainingPhrases_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         trainingPhrasesBuilder_.clear();
@@ -68715,7 +69474,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Builder,
                 com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhraseOrBuilder>(
                 trainingPhrases_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000800) != 0),
                 getParentForChildren(),
                 isClean());
         trainingPhrases_ = null;
@@ -68787,8 +69546,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       action_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -68805,8 +69564,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAction() {
-
       action_ = getDefaultInstance().getAction();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -68828,8 +69587,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       action_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -68838,10 +69597,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureOutputContextsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         outputContexts_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Context>(outputContexts_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -69123,7 +69882,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder clearOutputContexts() {
       if (outputContextsBuilder_ == null) {
         outputContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         outputContextsBuilder_.clear();
@@ -69289,7 +70048,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Context.Builder,
                 com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>(
                 outputContexts_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         outputContexts_ = null;
@@ -69330,6 +70089,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder setResetContexts(boolean value) {
 
       resetContexts_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -69346,7 +70106,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResetContexts() {
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       resetContexts_ = false;
       onChanged();
       return this;
@@ -69356,11 +70116,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureParametersIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         parameters_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Parameter>(
                 parameters_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00008000;
       }
     }
 
@@ -69601,7 +70361,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder clearParameters() {
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         parametersBuilder_.clear();
@@ -69741,7 +70501,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Intent.Parameter,
                 com.google.cloud.dialogflow.v2beta1.Intent.Parameter.Builder,
                 com.google.cloud.dialogflow.v2beta1.Intent.ParameterOrBuilder>(
-                parameters_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                parameters_, ((bitField0_ & 0x00008000) != 0), getParentForChildren(), isClean());
         parameters_ = null;
       }
       return parametersBuilder_;
@@ -69751,10 +70511,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMessagesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         messages_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Message>(messages_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00010000;
       }
     }
 
@@ -69983,7 +70743,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMessages() {
       if (messagesBuilder_ == null) {
         messages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00010000);
         onChanged();
       } else {
         messagesBuilder_.clear();
@@ -70116,7 +70876,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Intent.Message,
                 com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder,
                 com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder>(
-                messages_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+                messages_, ((bitField0_ & 0x00010000) != 0), getParentForChildren(), isClean());
         messages_ = null;
       }
       return messagesBuilder_;
@@ -70126,10 +70886,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDefaultResponsePlatformsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00020000) != 0)) {
         defaultResponsePlatforms_ =
             new java.util.ArrayList<java.lang.Integer>(defaultResponsePlatforms_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00020000;
       }
     }
     /**
@@ -70280,7 +71040,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDefaultResponsePlatforms() {
       defaultResponsePlatforms_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -70460,8 +71220,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       rootFollowupIntentName_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -70481,8 +71241,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRootFollowupIntentName() {
-
       rootFollowupIntentName_ = getDefaultInstance().getRootFollowupIntentName();
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -70507,8 +71267,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       rootFollowupIntentName_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -70595,8 +71355,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       parentFollowupIntentName_ = value;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -70619,8 +71379,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearParentFollowupIntentName() {
-
       parentFollowupIntentName_ = getDefaultInstance().getParentFollowupIntentName();
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -70648,8 +71408,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parentFollowupIntentName_ = value;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -70658,11 +71418,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         followupIntentInfo_ = java.util.Collections.emptyList();
 
     private void ensureFollowupIntentInfoIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00100000) != 0)) {
         followupIntentInfo_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo>(
                 followupIntentInfo_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00100000;
       }
     }
 
@@ -70919,7 +71679,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder clearFollowupIntentInfo() {
       if (followupIntentInfoBuilder_ == null) {
         followupIntentInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00100000);
         onChanged();
       } else {
         followupIntentInfoBuilder_.clear();
@@ -71071,7 +71831,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo.Builder,
                 com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfoOrBuilder>(
                 followupIntentInfo_,
-                ((bitField0_ & 0x00000080) != 0),
+                ((bitField0_ & 0x00100000) != 0),
                 getParentForChildren(),
                 isClean());
         followupIntentInfo_ = null;

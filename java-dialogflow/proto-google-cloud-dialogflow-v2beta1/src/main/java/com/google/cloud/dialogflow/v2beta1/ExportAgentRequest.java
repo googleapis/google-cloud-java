@@ -69,7 +69,9 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int AGENT_URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object agentUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object agentUri_ = "";
   /**
    *
    *
@@ -399,10 +403,9 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       agentUri_ = "";
-
       return this;
     }
 
@@ -430,10 +433,21 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dialogflow.v2beta1.ExportAgentRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.ExportAgentRequest result =
           new com.google.cloud.dialogflow.v2beta1.ExportAgentRequest(this);
-      result.parent_ = parent_;
-      result.agentUri_ = agentUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.ExportAgentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.agentUri_ = agentUri_;
+      }
     }
 
     @java.lang.Override
@@ -484,10 +498,12 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAgentUri().isEmpty()) {
         agentUri_ = other.agentUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -519,13 +535,13 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 agentUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -544,6 +560,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -618,8 +636,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -639,8 +657,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -665,8 +683,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -759,8 +777,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       agentUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -785,8 +803,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAgentUri() {
-
       agentUri_ = getDefaultInstance().getAgentUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -816,8 +834,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       agentUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

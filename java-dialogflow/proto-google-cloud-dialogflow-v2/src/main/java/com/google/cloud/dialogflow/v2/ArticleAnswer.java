@@ -82,7 +82,9 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TITLE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object title_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object title_ = "";
   /**
    *
    *
@@ -131,7 +133,9 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -180,6 +184,8 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SNIPPETS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList snippets_;
   /**
    *
@@ -241,7 +247,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 4;
-  private float confidence_;
+  private float confidence_ = 0F;
   /**
    *
    *
@@ -274,6 +280,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
@@ -334,8 +341,10 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; metadata = 5;</code>
    */
   @java.lang.Override
-  public java.lang.String getMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -365,7 +374,9 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ANSWER_RECORD_FIELD_NUMBER = 6;
-  private volatile java.lang.Object answerRecord_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object answerRecord_ = "";
   /**
    *
    *
@@ -695,17 +706,14 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       title_ = "";
-
       uri_ = "";
-
       snippets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       confidence_ = 0F;
-
       internalGetMutableMetadata().clear();
       answerRecord_ = "";
-
       return this;
     }
 
@@ -733,20 +741,40 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2.ArticleAnswer buildPartial() {
       com.google.cloud.dialogflow.v2.ArticleAnswer result =
           new com.google.cloud.dialogflow.v2.ArticleAnswer(this);
-      int from_bitField0_ = bitField0_;
-      result.title_ = title_;
-      result.uri_ = uri_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        snippets_ = snippets_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.snippets_ = snippets_;
-      result.confidence_ = confidence_;
-      result.metadata_ = internalGetMetadata();
-      result.metadata_.makeImmutable();
-      result.answerRecord_ = answerRecord_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dialogflow.v2.ArticleAnswer result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        snippets_ = snippets_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.snippets_ = snippets_;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.ArticleAnswer result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.title_ = title_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.confidence_ = confidence_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.answerRecord_ = answerRecord_;
+      }
     }
 
     @java.lang.Override
@@ -796,16 +824,18 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.v2.ArticleAnswer.getDefaultInstance()) return this;
       if (!other.getTitle().isEmpty()) {
         title_ = other.title_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.snippets_.isEmpty()) {
         if (snippets_.isEmpty()) {
           snippets_ = other.snippets_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureSnippetsIsMutable();
           snippets_.addAll(other.snippets_);
@@ -816,8 +846,10 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
         setConfidence(other.getConfidence());
       }
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00000010;
       if (!other.getAnswerRecord().isEmpty()) {
         answerRecord_ = other.answerRecord_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -849,13 +881,13 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 title_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -868,7 +900,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
             case 37:
               {
                 confidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 37
             case 42:
@@ -880,12 +912,13 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 answerRecord_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -968,8 +1001,8 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       title_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -985,8 +1018,8 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
-
       title_ = getDefaultInstance().getTitle();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1007,8 +1040,8 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       title_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1074,8 +1107,8 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1091,8 +1124,8 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1113,8 +1146,8 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1123,9 +1156,9 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSnippetsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         snippets_ = new com.google.protobuf.LazyStringArrayList(snippets_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1260,7 +1293,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSnippets() {
       snippets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1324,6 +1357,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
     public Builder setConfidence(float value) {
 
       confidence_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1342,7 +1376,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       confidence_ = 0F;
       onChanged();
       return this;
@@ -1359,8 +1393,6 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMetadata() {
-      onChanged();
-      ;
       if (metadata_ == null) {
         metadata_ =
             com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -1368,6 +1400,8 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return metadata_;
     }
 
@@ -1422,8 +1456,10 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
     @java.lang.Override
-    public java.lang.String getMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1453,6 +1489,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -1476,6 +1513,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -1495,8 +1533,8 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1511,6 +1549,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -1581,8 +1620,8 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       answerRecord_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1600,8 +1639,8 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAnswerRecord() {
-
       answerRecord_ = getDefaultInstance().getAnswerRecord();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1624,8 +1663,8 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       answerRecord_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

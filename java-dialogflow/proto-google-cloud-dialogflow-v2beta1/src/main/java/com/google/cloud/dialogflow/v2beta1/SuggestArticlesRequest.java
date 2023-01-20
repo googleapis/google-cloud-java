@@ -69,7 +69,9 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int LATEST_MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object latestMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object latestMessage_ = "";
   /**
    *
    *
@@ -185,7 +189,7 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int CONTEXT_SIZE_FIELD_NUMBER = 3;
-  private int contextSize_;
+  private int contextSize_ = 0;
   /**
    *
    *
@@ -256,7 +260,9 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.AssistQueryParametersOrBuilder
       getAssistQueryParamsOrBuilder() {
-    return getAssistQueryParams();
+    return assistQueryParams_ == null
+        ? com.google.cloud.dialogflow.v2beta1.AssistQueryParameters.getDefaultInstance()
+        : assistQueryParams_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -489,16 +495,13 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       latestMessage_ = "";
-
       contextSize_ = 0;
-
-      if (assistQueryParamsBuilder_ == null) {
-        assistQueryParams_ = null;
-      } else {
-        assistQueryParams_ = null;
+      assistQueryParams_ = null;
+      if (assistQueryParamsBuilder_ != null) {
+        assistQueryParamsBuilder_.dispose();
         assistQueryParamsBuilder_ = null;
       }
       return this;
@@ -528,16 +531,30 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest result =
           new com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest(this);
-      result.parent_ = parent_;
-      result.latestMessage_ = latestMessage_;
-      result.contextSize_ = contextSize_;
-      if (assistQueryParamsBuilder_ == null) {
-        result.assistQueryParams_ = assistQueryParams_;
-      } else {
-        result.assistQueryParams_ = assistQueryParamsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.latestMessage_ = latestMessage_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.contextSize_ = contextSize_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.assistQueryParams_ =
+            assistQueryParamsBuilder_ == null
+                ? assistQueryParams_
+                : assistQueryParamsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -588,10 +605,12 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getLatestMessage().isEmpty()) {
         latestMessage_ = other.latestMessage_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getContextSize() != 0) {
@@ -629,26 +648,26 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 latestMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 contextSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(
                     getAssistQueryParamsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -667,6 +686,8 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -741,8 +762,8 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -762,8 +783,8 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -788,8 +809,8 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -870,8 +891,8 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       latestMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -892,8 +913,8 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearLatestMessage() {
-
       latestMessage_ = getDefaultInstance().getLatestMessage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -919,8 +940,8 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       latestMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -960,6 +981,7 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
     public Builder setContextSize(int value) {
 
       contextSize_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -977,7 +999,7 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearContextSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       contextSize_ = 0;
       onChanged();
       return this;
@@ -1003,7 +1025,7 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      * @return Whether the assistQueryParams field is set.
      */
     public boolean hasAssistQueryParams() {
-      return assistQueryParamsBuilder_ != null || assistQueryParams_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1045,11 +1067,11 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         assistQueryParams_ = value;
-        onChanged();
       } else {
         assistQueryParamsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1067,11 +1089,11 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
         com.google.cloud.dialogflow.v2beta1.AssistQueryParameters.Builder builderForValue) {
       if (assistQueryParamsBuilder_ == null) {
         assistQueryParams_ = builderForValue.build();
-        onChanged();
       } else {
         assistQueryParamsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1088,20 +1110,19 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
     public Builder mergeAssistQueryParams(
         com.google.cloud.dialogflow.v2beta1.AssistQueryParameters value) {
       if (assistQueryParamsBuilder_ == null) {
-        if (assistQueryParams_ != null) {
-          assistQueryParams_ =
-              com.google.cloud.dialogflow.v2beta1.AssistQueryParameters.newBuilder(
-                      assistQueryParams_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && assistQueryParams_ != null
+            && assistQueryParams_
+                != com.google.cloud.dialogflow.v2beta1.AssistQueryParameters.getDefaultInstance()) {
+          getAssistQueryParamsBuilder().mergeFrom(value);
         } else {
           assistQueryParams_ = value;
         }
-        onChanged();
       } else {
         assistQueryParamsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1116,14 +1137,13 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearAssistQueryParams() {
-      if (assistQueryParamsBuilder_ == null) {
-        assistQueryParams_ = null;
-        onChanged();
-      } else {
-        assistQueryParams_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      assistQueryParams_ = null;
+      if (assistQueryParamsBuilder_ != null) {
+        assistQueryParamsBuilder_.dispose();
         assistQueryParamsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1139,7 +1159,7 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.dialogflow.v2beta1.AssistQueryParameters.Builder
         getAssistQueryParamsBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getAssistQueryParamsFieldBuilder().getBuilder();
     }

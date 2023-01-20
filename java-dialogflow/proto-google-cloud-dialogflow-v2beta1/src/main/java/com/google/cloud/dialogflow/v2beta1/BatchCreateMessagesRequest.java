@@ -69,7 +69,9 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -126,6 +128,8 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
   }
 
   public static final int REQUESTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.CreateMessageRequest> requests_;
   /**
    *
@@ -425,15 +429,15 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (requestsBuilder_ == null) {
         requests_ = java.util.Collections.emptyList();
       } else {
         requests_ = null;
         requestsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -462,19 +466,33 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
     public com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesRequest result =
           new com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesRequest result) {
       if (requestsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           requests_ = java.util.Collections.unmodifiableList(requests_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.requests_ = requests_;
       } else {
         result.requests_ = requestsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -526,13 +544,14 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (requestsBuilder_ == null) {
         if (!other.requests_.isEmpty()) {
           if (requests_.isEmpty()) {
             requests_ = other.requests_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureRequestsIsMutable();
             requests_.addAll(other.requests_);
@@ -545,7 +564,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
             requestsBuilder_.dispose();
             requestsBuilder_ = null;
             requests_ = other.requests_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             requestsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRequestsFieldBuilder()
@@ -584,7 +603,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -693,8 +712,8 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -714,8 +733,8 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -740,8 +759,8 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -750,11 +769,11 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
         java.util.Collections.emptyList();
 
     private void ensureRequestsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         requests_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.CreateMessageRequest>(
                 requests_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1020,7 +1039,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
     public Builder clearRequests() {
       if (requestsBuilder_ == null) {
         requests_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         requestsBuilder_.clear();
@@ -1176,7 +1195,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
                 com.google.cloud.dialogflow.v2beta1.CreateMessageRequest,
                 com.google.cloud.dialogflow.v2beta1.CreateMessageRequest.Builder,
                 com.google.cloud.dialogflow.v2beta1.CreateMessageRequestOrBuilder>(
-                requests_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                requests_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         requests_ = null;
       }
       return requestsBuilder_;

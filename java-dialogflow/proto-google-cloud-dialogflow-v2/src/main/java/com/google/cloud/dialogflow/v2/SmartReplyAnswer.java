@@ -69,7 +69,9 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int REPLY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object reply_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reply_ = "";
   /**
    *
    *
@@ -118,7 +120,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
-  private float confidence_;
+  private float confidence_ = 0F;
   /**
    *
    *
@@ -139,7 +141,9 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ANSWER_RECORD_FIELD_NUMBER = 3;
-  private volatile java.lang.Object answerRecord_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object answerRecord_ = "";
   /**
    *
    *
@@ -407,12 +411,10 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       reply_ = "";
-
       confidence_ = 0F;
-
       answerRecord_ = "";
-
       return this;
     }
 
@@ -440,11 +442,24 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dialogflow.v2.SmartReplyAnswer buildPartial() {
       com.google.cloud.dialogflow.v2.SmartReplyAnswer result =
           new com.google.cloud.dialogflow.v2.SmartReplyAnswer(this);
-      result.reply_ = reply_;
-      result.confidence_ = confidence_;
-      result.answerRecord_ = answerRecord_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.SmartReplyAnswer result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.reply_ = reply_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.confidence_ = confidence_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.answerRecord_ = answerRecord_;
+      }
     }
 
     @java.lang.Override
@@ -495,6 +510,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getReply().isEmpty()) {
         reply_ = other.reply_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getConfidence() != 0F) {
@@ -502,6 +518,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getAnswerRecord().isEmpty()) {
         answerRecord_ = other.answerRecord_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -533,19 +550,19 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 reply_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 21:
               {
                 confidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             case 26:
               {
                 answerRecord_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -564,6 +581,8 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object reply_ = "";
     /**
@@ -626,8 +645,8 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       reply_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -643,8 +662,8 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearReply() {
-
       reply_ = getDefaultInstance().getReply();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -665,8 +684,8 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       reply_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -708,6 +727,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
     public Builder setConfidence(float value) {
 
       confidence_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -726,7 +746,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       confidence_ = 0F;
       onChanged();
       return this;
@@ -799,8 +819,8 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       answerRecord_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -818,8 +838,8 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAnswerRecord() {
-
       answerRecord_ = getDefaultInstance().getAnswerRecord();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -842,8 +862,8 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       answerRecord_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

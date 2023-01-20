@@ -117,7 +117,9 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -303,7 +305,9 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -402,11 +406,11 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int INTENT_VIEW_FIELD_NUMBER = 6;
-  private int intentView_;
+  private int intentView_ = 0;
   /**
    *
    *
@@ -435,9 +439,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.IntentView getIntentView() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.IntentView result =
-        com.google.cloud.dialogflow.v2beta1.IntentView.valueOf(intentView_);
+        com.google.cloud.dialogflow.v2beta1.IntentView.forNumber(intentView_);
     return result == null ? com.google.cloud.dialogflow.v2beta1.IntentView.UNRECOGNIZED : result;
   }
 
@@ -710,21 +713,18 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (intentBatchInlineBuilder_ != null) {
         intentBatchInlineBuilder_.clear();
       }
       languageCode_ = "";
-
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       intentView_ = 0;
-
       intentBatchCase_ = 0;
       intentBatch_ = null;
       return this;
@@ -755,27 +755,38 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
     public com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest result =
           new com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest(this);
-      result.parent_ = parent_;
-      if (intentBatchCase_ == 2) {
-        result.intentBatch_ = intentBatch_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (intentBatchCase_ == 3) {
-        if (intentBatchInlineBuilder_ == null) {
-          result.intentBatch_ = intentBatch_;
-        } else {
-          result.intentBatch_ = intentBatchInlineBuilder_.build();
-        }
-      }
-      result.languageCode_ = languageCode_;
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.intentView_ = intentView_;
-      result.intentBatchCase_ = intentBatchCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.intentView_ = intentView_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest result) {
+      result.intentBatchCase_ = intentBatchCase_;
+      result.intentBatch_ = this.intentBatch_;
+      if (intentBatchCase_ == 3 && intentBatchInlineBuilder_ != null) {
+        result.intentBatch_ = intentBatchInlineBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -827,10 +838,12 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasUpdateMask()) {
@@ -886,7 +899,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -906,19 +919,19 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
             case 34:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 intentView_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             default:
@@ -951,6 +964,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -1028,8 +1043,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1050,8 +1065,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1077,8 +1092,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1437,7 +1452,6 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
       }
       intentBatchCase_ = 3;
       onChanged();
-      ;
       return intentBatchInlineBuilder_;
     }
 
@@ -1514,8 +1528,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1535,8 +1549,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1561,8 +1575,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1585,7 +1599,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1622,11 +1636,11 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1641,11 +1655,11 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1659,17 +1673,18 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1682,14 +1697,13 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * <code>.google.protobuf.FieldMask update_mask = 5;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1702,7 +1716,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * <code>.google.protobuf.FieldMask update_mask = 5;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1779,8 +1793,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setIntentViewValue(int value) {
-
       intentView_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1797,9 +1811,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.IntentView getIntentView() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.IntentView result =
-          com.google.cloud.dialogflow.v2beta1.IntentView.valueOf(intentView_);
+          com.google.cloud.dialogflow.v2beta1.IntentView.forNumber(intentView_);
       return result == null ? com.google.cloud.dialogflow.v2beta1.IntentView.UNRECOGNIZED : result;
     }
     /**
@@ -1818,7 +1831,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       intentView_ = value.getNumber();
       onChanged();
       return this;
@@ -1835,7 +1848,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearIntentView() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       intentView_ = 0;
       onChanged();
       return this;

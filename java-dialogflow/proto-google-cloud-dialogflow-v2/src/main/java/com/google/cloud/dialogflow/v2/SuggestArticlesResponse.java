@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The response message for [Participants.SuggestArticles][google.cloud.dialogflow.v2.Participants.SuggestArticles].
+ * The response message for
+ * [Participants.SuggestArticles][google.cloud.dialogflow.v2.Participants.SuggestArticles].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.SuggestArticlesResponse}
@@ -69,6 +70,8 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
   }
 
   public static final int ARTICLE_ANSWERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.ArticleAnswer> articleAnswers_;
   /**
    *
@@ -139,7 +142,9 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
   }
 
   public static final int LATEST_MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object latestMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object latestMessage_ = "";
   /**
    *
    *
@@ -194,16 +199,17 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
   }
 
   public static final int CONTEXT_SIZE_FIELD_NUMBER = 3;
-  private int contextSize_;
+  private int contextSize_ = 0;
   /**
    *
    *
    * <pre>
    * Number of messages prior to and including
-   * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesResponse.latest_message] to compile the
-   * suggestion. It may be smaller than the
-   * [SuggestArticlesRequest.context_size][google.cloud.dialogflow.v2.SuggestArticlesRequest.context_size] field in the request if there
-   * aren't that many messages in the conversation.
+   * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesResponse.latest_message]
+   * to compile the suggestion. It may be smaller than the
+   * [SuggestArticlesRequest.context_size][google.cloud.dialogflow.v2.SuggestArticlesRequest.context_size]
+   * field in the request if there aren't that many messages in the
+   * conversation.
    * </pre>
    *
    * <code>int32 context_size = 3;</code>
@@ -399,7 +405,8 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The response message for [Participants.SuggestArticles][google.cloud.dialogflow.v2.Participants.SuggestArticles].
+   * The response message for
+   * [Participants.SuggestArticles][google.cloud.dialogflow.v2.Participants.SuggestArticles].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.SuggestArticlesResponse}
@@ -433,6 +440,7 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (articleAnswersBuilder_ == null) {
         articleAnswers_ = java.util.Collections.emptyList();
       } else {
@@ -441,9 +449,7 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       latestMessage_ = "";
-
       contextSize_ = 0;
-
       return this;
     }
 
@@ -471,7 +477,16 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
     public com.google.cloud.dialogflow.v2.SuggestArticlesResponse buildPartial() {
       com.google.cloud.dialogflow.v2.SuggestArticlesResponse result =
           new com.google.cloud.dialogflow.v2.SuggestArticlesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2.SuggestArticlesResponse result) {
       if (articleAnswersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           articleAnswers_ = java.util.Collections.unmodifiableList(articleAnswers_);
@@ -481,10 +496,16 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       } else {
         result.articleAnswers_ = articleAnswersBuilder_.build();
       }
-      result.latestMessage_ = latestMessage_;
-      result.contextSize_ = contextSize_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.SuggestArticlesResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.latestMessage_ = latestMessage_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.contextSize_ = contextSize_;
+      }
     }
 
     @java.lang.Override
@@ -562,6 +583,7 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       }
       if (!other.getLatestMessage().isEmpty()) {
         latestMessage_ = other.latestMessage_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getContextSize() != 0) {
@@ -609,13 +631,13 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
             case 18:
               {
                 latestMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 contextSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -1066,8 +1088,8 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       latestMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1086,8 +1108,8 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearLatestMessage() {
-
       latestMessage_ = getDefaultInstance().getLatestMessage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1111,8 +1133,8 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       latestMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1123,10 +1145,11 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * Number of messages prior to and including
-     * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesResponse.latest_message] to compile the
-     * suggestion. It may be smaller than the
-     * [SuggestArticlesRequest.context_size][google.cloud.dialogflow.v2.SuggestArticlesRequest.context_size] field in the request if there
-     * aren't that many messages in the conversation.
+     * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesResponse.latest_message]
+     * to compile the suggestion. It may be smaller than the
+     * [SuggestArticlesRequest.context_size][google.cloud.dialogflow.v2.SuggestArticlesRequest.context_size]
+     * field in the request if there aren't that many messages in the
+     * conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>
@@ -1142,10 +1165,11 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * Number of messages prior to and including
-     * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesResponse.latest_message] to compile the
-     * suggestion. It may be smaller than the
-     * [SuggestArticlesRequest.context_size][google.cloud.dialogflow.v2.SuggestArticlesRequest.context_size] field in the request if there
-     * aren't that many messages in the conversation.
+     * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesResponse.latest_message]
+     * to compile the suggestion. It may be smaller than the
+     * [SuggestArticlesRequest.context_size][google.cloud.dialogflow.v2.SuggestArticlesRequest.context_size]
+     * field in the request if there aren't that many messages in the
+     * conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>
@@ -1156,6 +1180,7 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
     public Builder setContextSize(int value) {
 
       contextSize_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1164,10 +1189,11 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * Number of messages prior to and including
-     * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesResponse.latest_message] to compile the
-     * suggestion. It may be smaller than the
-     * [SuggestArticlesRequest.context_size][google.cloud.dialogflow.v2.SuggestArticlesRequest.context_size] field in the request if there
-     * aren't that many messages in the conversation.
+     * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesResponse.latest_message]
+     * to compile the suggestion. It may be smaller than the
+     * [SuggestArticlesRequest.context_size][google.cloud.dialogflow.v2.SuggestArticlesRequest.context_size]
+     * field in the request if there aren't that many messages in the
+     * conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>
@@ -1175,7 +1201,7 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearContextSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       contextSize_ = 0;
       onChanged();
       return this;

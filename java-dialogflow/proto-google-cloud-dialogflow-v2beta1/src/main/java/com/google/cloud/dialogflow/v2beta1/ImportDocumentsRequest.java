@@ -112,7 +112,9 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -283,11 +285,13 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.ImportDocumentTemplateOrBuilder
       getDocumentTemplateOrBuilder() {
-    return getDocumentTemplate();
+    return documentTemplate_ == null
+        ? com.google.cloud.dialogflow.v2beta1.ImportDocumentTemplate.getDefaultInstance()
+        : documentTemplate_;
   }
 
   public static final int IMPORT_GCS_CUSTOM_METADATA_FIELD_NUMBER = 4;
-  private boolean importGcsCustomMetadata_;
+  private boolean importGcsCustomMetadata_ = false;
   /**
    *
    *
@@ -550,19 +554,17 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (gcsSourceBuilder_ != null) {
         gcsSourceBuilder_.clear();
       }
-      if (documentTemplateBuilder_ == null) {
-        documentTemplate_ = null;
-      } else {
-        documentTemplate_ = null;
+      documentTemplate_ = null;
+      if (documentTemplateBuilder_ != null) {
+        documentTemplateBuilder_.dispose();
         documentTemplateBuilder_ = null;
       }
       importGcsCustomMetadata_ = false;
-
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -592,23 +594,35 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest result =
           new com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest(this);
-      result.parent_ = parent_;
-      if (sourceCase_ == 2) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (documentTemplateBuilder_ == null) {
-        result.documentTemplate_ = documentTemplate_;
-      } else {
-        result.documentTemplate_ = documentTemplateBuilder_.build();
-      }
-      result.importGcsCustomMetadata_ = importGcsCustomMetadata_;
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.documentTemplate_ =
+            documentTemplateBuilder_ == null ? documentTemplate_ : documentTemplateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.importGcsCustomMetadata_ = importGcsCustomMetadata_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 2 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -659,6 +673,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDocumentTemplate()) {
@@ -707,7 +722,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -720,13 +735,13 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
               {
                 input.readMessage(
                     getDocumentTemplateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 importGcsCustomMetadata_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -759,6 +774,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -833,8 +850,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -854,8 +871,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -880,8 +897,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1128,7 +1145,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       sourceCase_ = 2;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 
@@ -1152,7 +1168,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return Whether the documentTemplate field is set.
      */
     public boolean hasDocumentTemplate() {
-      return documentTemplateBuilder_ != null || documentTemplate_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1194,11 +1210,11 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         documentTemplate_ = value;
-        onChanged();
       } else {
         documentTemplateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1216,11 +1232,11 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         com.google.cloud.dialogflow.v2beta1.ImportDocumentTemplate.Builder builderForValue) {
       if (documentTemplateBuilder_ == null) {
         documentTemplate_ = builderForValue.build();
-        onChanged();
       } else {
         documentTemplateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1237,20 +1253,20 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public Builder mergeDocumentTemplate(
         com.google.cloud.dialogflow.v2beta1.ImportDocumentTemplate value) {
       if (documentTemplateBuilder_ == null) {
-        if (documentTemplate_ != null) {
-          documentTemplate_ =
-              com.google.cloud.dialogflow.v2beta1.ImportDocumentTemplate.newBuilder(
-                      documentTemplate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && documentTemplate_ != null
+            && documentTemplate_
+                != com.google.cloud.dialogflow.v2beta1.ImportDocumentTemplate
+                    .getDefaultInstance()) {
+          getDocumentTemplateBuilder().mergeFrom(value);
         } else {
           documentTemplate_ = value;
         }
-        onChanged();
       } else {
         documentTemplateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1265,14 +1281,13 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearDocumentTemplate() {
-      if (documentTemplateBuilder_ == null) {
-        documentTemplate_ = null;
-        onChanged();
-      } else {
-        documentTemplate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      documentTemplate_ = null;
+      if (documentTemplateBuilder_ != null) {
+        documentTemplateBuilder_.dispose();
         documentTemplateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1288,7 +1303,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.dialogflow.v2beta1.ImportDocumentTemplate.Builder
         getDocumentTemplateBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDocumentTemplateFieldBuilder().getBuilder();
     }
@@ -1374,6 +1389,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public Builder setImportGcsCustomMetadata(boolean value) {
 
       importGcsCustomMetadata_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1390,7 +1406,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearImportGcsCustomMetadata() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       importGcsCustomMetadata_ = false;
       onChanged();
       return this;

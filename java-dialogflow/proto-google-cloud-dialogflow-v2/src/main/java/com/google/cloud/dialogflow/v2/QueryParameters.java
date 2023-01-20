@@ -81,7 +81,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TIME_ZONE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object timeZone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object timeZone_ = "";
   /**
    *
    *
@@ -178,10 +180,12 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.type.LatLngOrBuilder getGeoLocationOrBuilder() {
-    return getGeoLocation();
+    return geoLocation_ == null ? com.google.type.LatLng.getDefaultInstance() : geoLocation_;
   }
 
   public static final int CONTEXTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.Context> contexts_;
   /**
    *
@@ -256,7 +260,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int RESET_CONTEXTS_FIELD_NUMBER = 4;
-  private boolean resetContexts_;
+  private boolean resetContexts_ = false;
   /**
    *
    *
@@ -275,6 +279,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SESSION_ENTITY_TYPES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.SessionEntityType> sessionEntityTypes_;
   /**
    *
@@ -410,7 +416,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getPayloadOrBuilder() {
-    return getPayload();
+    return payload_ == null ? com.google.protobuf.Struct.getDefaultInstance() : payload_;
   }
 
   public static final int SENTIMENT_ANALYSIS_REQUEST_CONFIG_FIELD_NUMBER = 10;
@@ -470,7 +476,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfigOrBuilder
       getSentimentAnalysisRequestConfigOrBuilder() {
-    return getSentimentAnalysisRequestConfig();
+    return sentimentAnalysisRequestConfig_ == null
+        ? com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig.getDefaultInstance()
+        : sentimentAnalysisRequestConfig_;
   }
 
   public static final int WEBHOOK_HEADERS_FIELD_NUMBER = 14;
@@ -486,6 +494,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> webhookHeaders_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -569,8 +578,10 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
    */
   @java.lang.Override
-  public java.lang.String getWebhookHeadersOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getWebhookHeadersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -918,12 +929,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       timeZone_ = "";
-
-      if (geoLocationBuilder_ == null) {
-        geoLocation_ = null;
-      } else {
-        geoLocation_ = null;
+      geoLocation_ = null;
+      if (geoLocationBuilder_ != null) {
+        geoLocationBuilder_.dispose();
         geoLocationBuilder_ = null;
       }
       if (contextsBuilder_ == null) {
@@ -932,26 +942,23 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         contexts_ = null;
         contextsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       resetContexts_ = false;
-
       if (sessionEntityTypesBuilder_ == null) {
         sessionEntityTypes_ = java.util.Collections.emptyList();
       } else {
         sessionEntityTypes_ = null;
         sessionEntityTypesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (payloadBuilder_ == null) {
-        payload_ = null;
-      } else {
-        payload_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      payload_ = null;
+      if (payloadBuilder_ != null) {
+        payloadBuilder_.dispose();
         payloadBuilder_ = null;
       }
-      if (sentimentAnalysisRequestConfigBuilder_ == null) {
-        sentimentAnalysisRequestConfig_ = null;
-      } else {
-        sentimentAnalysisRequestConfig_ = null;
+      sentimentAnalysisRequestConfig_ = null;
+      if (sentimentAnalysisRequestConfigBuilder_ != null) {
+        sentimentAnalysisRequestConfigBuilder_.dispose();
         sentimentAnalysisRequestConfigBuilder_ = null;
       }
       internalGetMutableWebhookHeaders().clear();
@@ -982,46 +989,60 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.dialogflow.v2.QueryParameters buildPartial() {
       com.google.cloud.dialogflow.v2.QueryParameters result =
           new com.google.cloud.dialogflow.v2.QueryParameters(this);
-      int from_bitField0_ = bitField0_;
-      result.timeZone_ = timeZone_;
-      if (geoLocationBuilder_ == null) {
-        result.geoLocation_ = geoLocation_;
-      } else {
-        result.geoLocation_ = geoLocationBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dialogflow.v2.QueryParameters result) {
       if (contextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           contexts_ = java.util.Collections.unmodifiableList(contexts_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.contexts_ = contexts_;
       } else {
         result.contexts_ = contextsBuilder_.build();
       }
-      result.resetContexts_ = resetContexts_;
       if (sessionEntityTypesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           sessionEntityTypes_ = java.util.Collections.unmodifiableList(sessionEntityTypes_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.sessionEntityTypes_ = sessionEntityTypes_;
       } else {
         result.sessionEntityTypes_ = sessionEntityTypesBuilder_.build();
       }
-      if (payloadBuilder_ == null) {
-        result.payload_ = payload_;
-      } else {
-        result.payload_ = payloadBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.QueryParameters result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.timeZone_ = timeZone_;
       }
-      if (sentimentAnalysisRequestConfigBuilder_ == null) {
-        result.sentimentAnalysisRequestConfig_ = sentimentAnalysisRequestConfig_;
-      } else {
-        result.sentimentAnalysisRequestConfig_ = sentimentAnalysisRequestConfigBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.geoLocation_ =
+            geoLocationBuilder_ == null ? geoLocation_ : geoLocationBuilder_.build();
       }
-      result.webhookHeaders_ = internalGetWebhookHeaders();
-      result.webhookHeaders_.makeImmutable();
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.resetContexts_ = resetContexts_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.payload_ = payloadBuilder_ == null ? payload_ : payloadBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.sentimentAnalysisRequestConfig_ =
+            sentimentAnalysisRequestConfigBuilder_ == null
+                ? sentimentAnalysisRequestConfig_
+                : sentimentAnalysisRequestConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.webhookHeaders_ = internalGetWebhookHeaders();
+        result.webhookHeaders_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -1071,6 +1092,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.dialogflow.v2.QueryParameters.getDefaultInstance()) return this;
       if (!other.getTimeZone().isEmpty()) {
         timeZone_ = other.timeZone_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasGeoLocation()) {
@@ -1080,7 +1102,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         if (!other.contexts_.isEmpty()) {
           if (contexts_.isEmpty()) {
             contexts_ = other.contexts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureContextsIsMutable();
             contexts_.addAll(other.contexts_);
@@ -1093,7 +1115,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             contextsBuilder_.dispose();
             contextsBuilder_ = null;
             contexts_ = other.contexts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             contextsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getContextsFieldBuilder()
@@ -1110,7 +1132,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         if (!other.sessionEntityTypes_.isEmpty()) {
           if (sessionEntityTypes_.isEmpty()) {
             sessionEntityTypes_ = other.sessionEntityTypes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureSessionEntityTypesIsMutable();
             sessionEntityTypes_.addAll(other.sessionEntityTypes_);
@@ -1123,7 +1145,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             sessionEntityTypesBuilder_.dispose();
             sessionEntityTypesBuilder_ = null;
             sessionEntityTypes_ = other.sessionEntityTypes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
             sessionEntityTypesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSessionEntityTypesFieldBuilder()
@@ -1140,6 +1162,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         mergeSentimentAnalysisRequestConfig(other.getSentimentAnalysisRequestConfig());
       }
       internalGetMutableWebhookHeaders().mergeFrom(other.internalGetWebhookHeaders());
+      bitField0_ |= 0x00000080;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1169,13 +1192,13 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 timeZone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getGeoLocationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1194,7 +1217,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             case 32:
               {
                 resetContexts_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
@@ -1214,7 +1237,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             case 50:
               {
                 input.readMessage(getPayloadFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 82:
@@ -1222,7 +1245,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
                 input.readMessage(
                     getSentimentAnalysisRequestConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 82
             case 114:
@@ -1234,6 +1257,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
                 internalGetMutableWebhookHeaders()
                     .getMutableMap()
                     .put(webhookHeaders__.getKey(), webhookHeaders__.getValue());
+                bitField0_ |= 0x00000080;
                 break;
               } // case 114
             default:
@@ -1325,8 +1349,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       timeZone_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1345,8 +1369,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearTimeZone() {
-
       timeZone_ = getDefaultInstance().getTimeZone();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1370,8 +1394,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       timeZone_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1392,7 +1416,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * @return Whether the geoLocation field is set.
      */
     public boolean hasGeoLocation() {
-      return geoLocationBuilder_ != null || geoLocation_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1427,11 +1451,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         geoLocation_ = value;
-        onChanged();
       } else {
         geoLocationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1446,11 +1470,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public Builder setGeoLocation(com.google.type.LatLng.Builder builderForValue) {
       if (geoLocationBuilder_ == null) {
         geoLocation_ = builderForValue.build();
-        onChanged();
       } else {
         geoLocationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1464,17 +1488,18 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeGeoLocation(com.google.type.LatLng value) {
       if (geoLocationBuilder_ == null) {
-        if (geoLocation_ != null) {
-          geoLocation_ =
-              com.google.type.LatLng.newBuilder(geoLocation_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && geoLocation_ != null
+            && geoLocation_ != com.google.type.LatLng.getDefaultInstance()) {
+          getGeoLocationBuilder().mergeFrom(value);
         } else {
           geoLocation_ = value;
         }
-        onChanged();
       } else {
         geoLocationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1487,14 +1512,13 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <code>.google.type.LatLng geo_location = 2;</code>
      */
     public Builder clearGeoLocation() {
-      if (geoLocationBuilder_ == null) {
-        geoLocation_ = null;
-        onChanged();
-      } else {
-        geoLocation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      geoLocation_ = null;
+      if (geoLocationBuilder_ != null) {
+        geoLocationBuilder_.dispose();
         geoLocationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1507,7 +1531,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <code>.google.type.LatLng geo_location = 2;</code>
      */
     public com.google.type.LatLng.Builder getGeoLocationBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getGeoLocationFieldBuilder().getBuilder();
     }
@@ -1555,9 +1579,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureContextsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         contexts_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2.Context>(contexts_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1783,7 +1807,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public Builder clearContexts() {
       if (contextsBuilder_ == null) {
         contexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         contextsBuilder_.clear();
@@ -1911,7 +1935,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.dialogflow.v2.Context,
                 com.google.cloud.dialogflow.v2.Context.Builder,
                 com.google.cloud.dialogflow.v2.ContextOrBuilder>(
-                contexts_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                contexts_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         contexts_ = null;
       }
       return contextsBuilder_;
@@ -1950,6 +1974,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public Builder setResetContexts(boolean value) {
 
       resetContexts_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1966,7 +1991,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearResetContexts() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       resetContexts_ = false;
       onChanged();
       return this;
@@ -1976,11 +2001,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureSessionEntityTypesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         sessionEntityTypes_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2.SessionEntityType>(
                 sessionEntityTypes_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2221,7 +2246,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public Builder clearSessionEntityTypes() {
       if (sessionEntityTypesBuilder_ == null) {
         sessionEntityTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         sessionEntityTypesBuilder_.clear();
@@ -2361,7 +2386,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.dialogflow.v2.SessionEntityType.Builder,
                 com.google.cloud.dialogflow.v2.SessionEntityTypeOrBuilder>(
                 sessionEntityTypes_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         sessionEntityTypes_ = null;
@@ -2391,7 +2416,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * @return Whether the payload field is set.
      */
     public boolean hasPayload() {
-      return payloadBuilder_ != null || payload_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2434,11 +2459,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         payload_ = value;
-        onChanged();
       } else {
         payloadBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2457,11 +2482,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public Builder setPayload(com.google.protobuf.Struct.Builder builderForValue) {
       if (payloadBuilder_ == null) {
         payload_ = builderForValue.build();
-        onChanged();
       } else {
         payloadBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2479,17 +2504,18 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergePayload(com.google.protobuf.Struct value) {
       if (payloadBuilder_ == null) {
-        if (payload_ != null) {
-          payload_ =
-              com.google.protobuf.Struct.newBuilder(payload_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && payload_ != null
+            && payload_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getPayloadBuilder().mergeFrom(value);
         } else {
           payload_ = value;
         }
-        onChanged();
       } else {
         payloadBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2506,14 +2532,13 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Struct payload = 6;</code>
      */
     public Builder clearPayload() {
-      if (payloadBuilder_ == null) {
-        payload_ = null;
-        onChanged();
-      } else {
-        payload_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      payload_ = null;
+      if (payloadBuilder_ != null) {
+        payloadBuilder_.dispose();
         payloadBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2530,7 +2555,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Struct payload = 6;</code>
      */
     public com.google.protobuf.Struct.Builder getPayloadBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getPayloadFieldBuilder().getBuilder();
     }
@@ -2606,8 +2631,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * @return Whether the sentimentAnalysisRequestConfig field is set.
      */
     public boolean hasSentimentAnalysisRequestConfig() {
-      return sentimentAnalysisRequestConfigBuilder_ != null
-          || sentimentAnalysisRequestConfig_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2652,11 +2676,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         sentimentAnalysisRequestConfig_ = value;
-        onChanged();
       } else {
         sentimentAnalysisRequestConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2675,11 +2699,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig.Builder builderForValue) {
       if (sentimentAnalysisRequestConfigBuilder_ == null) {
         sentimentAnalysisRequestConfig_ = builderForValue.build();
-        onChanged();
       } else {
         sentimentAnalysisRequestConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2697,20 +2721,20 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public Builder mergeSentimentAnalysisRequestConfig(
         com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig value) {
       if (sentimentAnalysisRequestConfigBuilder_ == null) {
-        if (sentimentAnalysisRequestConfig_ != null) {
-          sentimentAnalysisRequestConfig_ =
-              com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig.newBuilder(
-                      sentimentAnalysisRequestConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && sentimentAnalysisRequestConfig_ != null
+            && sentimentAnalysisRequestConfig_
+                != com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig
+                    .getDefaultInstance()) {
+          getSentimentAnalysisRequestConfigBuilder().mergeFrom(value);
         } else {
           sentimentAnalysisRequestConfig_ = value;
         }
-        onChanged();
       } else {
         sentimentAnalysisRequestConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2726,14 +2750,13 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearSentimentAnalysisRequestConfig() {
-      if (sentimentAnalysisRequestConfigBuilder_ == null) {
-        sentimentAnalysisRequestConfig_ = null;
-        onChanged();
-      } else {
-        sentimentAnalysisRequestConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      sentimentAnalysisRequestConfig_ = null;
+      if (sentimentAnalysisRequestConfigBuilder_ != null) {
+        sentimentAnalysisRequestConfigBuilder_.dispose();
         sentimentAnalysisRequestConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2750,7 +2773,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig.Builder
         getSentimentAnalysisRequestConfigBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getSentimentAnalysisRequestConfigFieldBuilder().getBuilder();
     }
@@ -2818,8 +2841,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableWebhookHeaders() {
-      onChanged();
-      ;
       if (webhookHeaders_ == null) {
         webhookHeaders_ =
             com.google.protobuf.MapField.newMapField(WebhookHeadersDefaultEntryHolder.defaultEntry);
@@ -2827,6 +2848,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       if (!webhookHeaders_.isMutable()) {
         webhookHeaders_ = webhookHeaders_.copy();
       }
+      bitField0_ |= 0x00000080;
+      onChanged();
       return webhookHeaders_;
     }
 
@@ -2902,8 +2925,10 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
      */
     @java.lang.Override
-    public java.lang.String getWebhookHeadersOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getWebhookHeadersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2940,6 +2965,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     }
 
     public Builder clearWebhookHeaders() {
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableWebhookHeaders().getMutableMap().clear();
       return this;
     }
@@ -2970,6 +2996,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableWebhookHeaders() {
+      bitField0_ |= 0x00000080;
       return internalGetMutableWebhookHeaders().getMutableMap();
     }
     /**
@@ -2996,8 +3023,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableWebhookHeaders().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -3019,6 +3046,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      */
     public Builder putAllWebhookHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableWebhookHeaders().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000080;
       return this;
     }
 

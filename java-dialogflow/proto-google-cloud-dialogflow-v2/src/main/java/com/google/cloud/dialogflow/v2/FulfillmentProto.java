@@ -108,11 +108,11 @@ public final class FulfillmentProto {
           + "date_mask\032x\312A\031dialogflow.googleapis.com\322"
           + "AYhttps://www.googleapis.com/auth/cloud-"
           + "platform,https://www.googleapis.com/auth"
-          + "/dialogflowB\237\001\n\036com.google.cloud.dialogf"
-          + "low.v2B\020FulfillmentProtoP\001ZDgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/dialogfl"
-          + "ow/v2;dialogflow\370\001\001\242\002\002DF\252\002\032Google.Cloud."
-          + "Dialogflow.V2b\006proto3"
+          + "/dialogflowB\231\001\n\036com.google.cloud.dialogf"
+          + "low.v2B\020FulfillmentProtoP\001Z>cloud.google"
+          + ".com/go/dialogflow/apiv2/dialogflowpb;di"
+          + "alogflowpb\370\001\001\242\002\002DF\252\002\032Google.Cloud.Dialog"
+          + "flow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
