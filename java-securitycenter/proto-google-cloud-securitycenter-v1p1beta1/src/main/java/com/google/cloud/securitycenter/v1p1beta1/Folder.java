@@ -70,7 +70,9 @@ public final class Folder extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_FOLDER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object resourceFolder_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceFolder_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class Folder extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_FOLDER_DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object resourceFolderDisplayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceFolderDisplayName_ = "";
   /**
    *
    *
@@ -377,10 +381,9 @@ public final class Folder extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resourceFolder_ = "";
-
       resourceFolderDisplayName_ = "";
-
       return this;
     }
 
@@ -408,10 +411,21 @@ public final class Folder extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1p1beta1.Folder buildPartial() {
       com.google.cloud.securitycenter.v1p1beta1.Folder result =
           new com.google.cloud.securitycenter.v1p1beta1.Folder(this);
-      result.resourceFolder_ = resourceFolder_;
-      result.resourceFolderDisplayName_ = resourceFolderDisplayName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1p1beta1.Folder result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resourceFolder_ = resourceFolder_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resourceFolderDisplayName_ = resourceFolderDisplayName_;
+      }
     }
 
     @java.lang.Override
@@ -462,10 +476,12 @@ public final class Folder extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getResourceFolder().isEmpty()) {
         resourceFolder_ = other.resourceFolder_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getResourceFolderDisplayName().isEmpty()) {
         resourceFolderDisplayName_ = other.resourceFolderDisplayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -497,13 +513,13 @@ public final class Folder extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 resourceFolder_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 resourceFolderDisplayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -522,6 +538,8 @@ public final class Folder extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object resourceFolder_ = "";
     /**
@@ -587,8 +605,8 @@ public final class Folder extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceFolder_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -605,8 +623,8 @@ public final class Folder extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceFolder() {
-
       resourceFolder_ = getDefaultInstance().getResourceFolder();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -628,8 +646,8 @@ public final class Folder extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceFolder_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -695,8 +713,8 @@ public final class Folder extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceFolderDisplayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -712,8 +730,8 @@ public final class Folder extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceFolderDisplayName() {
-
       resourceFolderDisplayName_ = getDefaultInstance().getResourceFolderDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -734,8 +752,8 @@ public final class Folder extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceFolderDisplayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -70,7 +70,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
   }
 
   public static final int CONFIG_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object configId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object configId_ = "";
   /**
    *
    *
@@ -239,7 +243,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
   @java.lang.Override
   public com.google.cloud.securitycenter.v1.NotificationConfigOrBuilder
       getNotificationConfigOrBuilder() {
-    return getNotificationConfig();
+    return notificationConfig_ == null
+        ? com.google.cloud.securitycenter.v1.NotificationConfig.getDefaultInstance()
+        : notificationConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -465,14 +471,12 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       configId_ = "";
-
-      if (notificationConfigBuilder_ == null) {
-        notificationConfig_ = null;
-      } else {
-        notificationConfig_ = null;
+      notificationConfig_ = null;
+      if (notificationConfigBuilder_ != null) {
+        notificationConfigBuilder_.dispose();
         notificationConfigBuilder_ = null;
       }
       return this;
@@ -504,15 +508,28 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
     public com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest buildPartial() {
       com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest result =
           new com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest(this);
-      result.parent_ = parent_;
-      result.configId_ = configId_;
-      if (notificationConfigBuilder_ == null) {
-        result.notificationConfig_ = notificationConfig_;
-      } else {
-        result.notificationConfig_ = notificationConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.configId_ = configId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.notificationConfig_ =
+            notificationConfigBuilder_ == null
+                ? notificationConfig_
+                : notificationConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -566,10 +583,12 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getConfigId().isEmpty()) {
         configId_ = other.configId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasNotificationConfig()) {
@@ -604,20 +623,20 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 configId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getNotificationConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -636,6 +655,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -710,8 +731,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -731,8 +752,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -757,8 +778,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -833,8 +854,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       configId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -853,8 +874,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearConfigId() {
-
       configId_ = getDefaultInstance().getConfigId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -878,8 +899,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       configId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -906,7 +927,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      * @return Whether the notificationConfig field is set.
      */
     public boolean hasNotificationConfig() {
-      return notificationConfigBuilder_ != null || notificationConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -952,11 +973,11 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         notificationConfig_ = value;
-        onChanged();
       } else {
         notificationConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -976,11 +997,11 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
         com.google.cloud.securitycenter.v1.NotificationConfig.Builder builderForValue) {
       if (notificationConfigBuilder_ == null) {
         notificationConfig_ = builderForValue.build();
-        onChanged();
       } else {
         notificationConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -999,19 +1020,19 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
     public Builder mergeNotificationConfig(
         com.google.cloud.securitycenter.v1.NotificationConfig value) {
       if (notificationConfigBuilder_ == null) {
-        if (notificationConfig_ != null) {
-          notificationConfig_ =
-              com.google.cloud.securitycenter.v1.NotificationConfig.newBuilder(notificationConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && notificationConfig_ != null
+            && notificationConfig_
+                != com.google.cloud.securitycenter.v1.NotificationConfig.getDefaultInstance()) {
+          getNotificationConfigBuilder().mergeFrom(value);
         } else {
           notificationConfig_ = value;
         }
-        onChanged();
       } else {
         notificationConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1028,14 +1049,13 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      * </code>
      */
     public Builder clearNotificationConfig() {
-      if (notificationConfigBuilder_ == null) {
-        notificationConfig_ = null;
-        onChanged();
-      } else {
-        notificationConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      notificationConfig_ = null;
+      if (notificationConfigBuilder_ != null) {
+        notificationConfigBuilder_.dispose();
         notificationConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1053,7 +1073,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      */
     public com.google.cloud.securitycenter.v1.NotificationConfig.Builder
         getNotificationConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getNotificationConfigFieldBuilder().getBuilder();
     }

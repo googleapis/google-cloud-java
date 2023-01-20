@@ -472,7 +472,9 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int BINARY_FIELD_NUMBER = 2;
-        private volatile java.lang.Object binary_;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object binary_ = "";
         /**
          *
          *
@@ -523,7 +525,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int PERCENT_PAGES_MATCHED_FIELD_NUMBER = 3;
-        private double percentPagesMatched_;
+        private double percentPagesMatched_ = 0D;
         /**
          *
          *
@@ -792,10 +794,9 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             binary_ = "";
-
             percentPagesMatched_ = 0D;
-
             return this;
           }
 
@@ -835,10 +836,24 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
                 result =
                     new com.google.cloud.securitycenter.v1.Indicator.ProcessSignature
                         .MemoryHashSignature.Detection(this);
-            result.binary_ = binary_;
-            result.percentPagesMatched_ = percentPagesMatched_;
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.MemoryHashSignature
+                      .Detection
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.binary_ = binary_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.percentPagesMatched_ = percentPagesMatched_;
+            }
           }
 
           @java.lang.Override
@@ -901,6 +916,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
                     .Detection.getDefaultInstance()) return this;
             if (!other.getBinary().isEmpty()) {
               binary_ = other.binary_;
+              bitField0_ |= 0x00000001;
               onChanged();
             }
             if (other.getPercentPagesMatched() != 0D) {
@@ -935,13 +951,13 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
                   case 18:
                     {
                       binary_ = input.readStringRequireUtf8();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 18
                   case 25:
                     {
                       percentPagesMatched_ = input.readDouble();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 25
                   default:
@@ -960,6 +976,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             } // finally
             return this;
           }
+
+          private int bitField0_;
 
           private java.lang.Object binary_ = "";
           /**
@@ -1025,8 +1043,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             if (value == null) {
               throw new NullPointerException();
             }
-
             binary_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -1043,8 +1061,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearBinary() {
-
             binary_ = getDefaultInstance().getBinary();
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
           }
@@ -1066,8 +1084,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-
             binary_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -1105,6 +1123,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           public Builder setPercentPagesMatched(double value) {
 
             percentPagesMatched_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -1121,7 +1140,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearPercentPagesMatched() {
-
+            bitField0_ = (bitField0_ & ~0x00000002);
             percentPagesMatched_ = 0D;
             onChanged();
             return this;
@@ -1200,7 +1219,9 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int BINARY_FAMILY_FIELD_NUMBER = 1;
-      private volatile java.lang.Object binaryFamily_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object binaryFamily_ = "";
       /**
        *
        *
@@ -1249,6 +1270,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int DETECTIONS_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
       private java.util.List<
               com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.MemoryHashSignature
                   .Detection>
@@ -1584,15 +1607,15 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           binaryFamily_ = "";
-
           if (detectionsBuilder_ == null) {
             detections_ = java.util.Collections.emptyList();
           } else {
             detections_ = null;
             detectionsBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -1626,19 +1649,35 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.MemoryHashSignature result =
               new com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.MemoryHashSignature(
                   this);
-          int from_bitField0_ = bitField0_;
-          result.binaryFamily_ = binaryFamily_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.MemoryHashSignature
+                result) {
           if (detectionsBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0)) {
+            if (((bitField0_ & 0x00000002) != 0)) {
               detections_ = java.util.Collections.unmodifiableList(detections_);
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             }
             result.detections_ = detections_;
           } else {
             result.detections_ = detectionsBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.MemoryHashSignature
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.binaryFamily_ = binaryFamily_;
+          }
         }
 
         @java.lang.Override
@@ -1698,13 +1737,14 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getBinaryFamily().isEmpty()) {
             binaryFamily_ = other.binaryFamily_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (detectionsBuilder_ == null) {
             if (!other.detections_.isEmpty()) {
               if (detections_.isEmpty()) {
                 detections_ = other.detections_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
               } else {
                 ensureDetectionsIsMutable();
                 detections_.addAll(other.detections_);
@@ -1717,7 +1757,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
                 detectionsBuilder_.dispose();
                 detectionsBuilder_ = null;
                 detections_ = other.detections_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
                 detectionsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getDetectionsFieldBuilder()
@@ -1756,7 +1796,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     binaryFamily_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 34:
@@ -1856,8 +1896,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           binaryFamily_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1873,8 +1913,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearBinaryFamily() {
-
           binaryFamily_ = getDefaultInstance().getBinaryFamily();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -1895,8 +1935,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           binaryFamily_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1907,12 +1947,12 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             detections_ = java.util.Collections.emptyList();
 
         private void ensureDetectionsIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             detections_ =
                 new java.util.ArrayList<
                     com.google.cloud.securitycenter.v1.Indicator.ProcessSignature
                         .MemoryHashSignature.Detection>(detections_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
           }
         }
 
@@ -2192,7 +2232,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         public Builder clearDetections() {
           if (detectionsBuilder_ == null) {
             detections_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
           } else {
             detectionsBuilder_.clear();
@@ -2360,7 +2400,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.securitycenter.v1.Indicator.ProcessSignature
                         .MemoryHashSignature.DetectionOrBuilder>(
                     detections_,
-                    ((bitField0_ & 0x00000001) != 0),
+                    ((bitField0_ & 0x00000002) != 0),
                     getParentForChildren(),
                     isClean());
             detections_ = null;
@@ -2521,7 +2561,9 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int YARA_RULE_FIELD_NUMBER = 5;
-      private volatile java.lang.Object yaraRule_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object yaraRule_ = "";
       /**
        *
        *
@@ -2784,8 +2826,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           yaraRule_ = "";
-
           return this;
         }
 
@@ -2819,9 +2861,20 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.YaraRuleSignature result =
               new com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.YaraRuleSignature(
                   this);
-          result.yaraRule_ = yaraRule_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.YaraRuleSignature
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.yaraRule_ = yaraRule_;
+          }
         }
 
         @java.lang.Override
@@ -2880,6 +2933,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getYaraRule().isEmpty()) {
             yaraRule_ = other.yaraRule_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -2911,7 +2965,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
                 case 42:
                   {
                     yaraRule_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 42
                 default:
@@ -2930,6 +2984,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object yaraRule_ = "";
         /**
@@ -2992,8 +3048,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           yaraRule_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -3009,8 +3065,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearYaraRule() {
-
           yaraRule_ = getDefaultInstance().getYaraRule();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -3031,8 +3087,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           yaraRule_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -3520,6 +3576,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (memoryHashSignatureBuilder_ != null) {
           memoryHashSignatureBuilder_.clear();
         }
@@ -3556,23 +3613,29 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.securitycenter.v1.Indicator.ProcessSignature buildPartial() {
         com.google.cloud.securitycenter.v1.Indicator.ProcessSignature result =
             new com.google.cloud.securitycenter.v1.Indicator.ProcessSignature(this);
-        if (signatureCase_ == 6) {
-          if (memoryHashSignatureBuilder_ == null) {
-            result.signature_ = signature_;
-          } else {
-            result.signature_ = memoryHashSignatureBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (signatureCase_ == 7) {
-          if (yaraRuleSignatureBuilder_ == null) {
-            result.signature_ = signature_;
-          } else {
-            result.signature_ = yaraRuleSignatureBuilder_.build();
-          }
-        }
-        result.signatureCase_ = signatureCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.securitycenter.v1.Indicator.ProcessSignature result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.securitycenter.v1.Indicator.ProcessSignature result) {
+        result.signatureCase_ = signatureCase_;
+        result.signature_ = this.signature_;
+        if (signatureCase_ == 6 && memoryHashSignatureBuilder_ != null) {
+          result.signature_ = memoryHashSignatureBuilder_.build();
+        }
+        if (signatureCase_ == 7 && yaraRuleSignatureBuilder_ != null) {
+          result.signature_ = yaraRuleSignatureBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3711,6 +3774,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.MemoryHashSignature,
@@ -3966,7 +4031,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         }
         signatureCase_ = 6;
         onChanged();
-        ;
         return memoryHashSignatureBuilder_;
       }
 
@@ -4220,7 +4284,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         }
         signatureCase_ = 7;
         onChanged();
-        ;
         return yaraRuleSignatureBuilder_;
       }
 
@@ -4292,6 +4355,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IP_ADDRESSES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList ipAddresses_;
   /**
    *
@@ -4353,6 +4418,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOMAINS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList domains_;
   /**
    *
@@ -4414,6 +4481,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SIGNATURES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.Indicator.ProcessSignature> signatures_;
   /**
    *
@@ -4496,6 +4565,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URIS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList uris_;
   /**
    *
@@ -4806,6 +4877,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ipAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       domains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -4846,7 +4918,15 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.Indicator buildPartial() {
       com.google.cloud.securitycenter.v1.Indicator result =
           new com.google.cloud.securitycenter.v1.Indicator(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.securitycenter.v1.Indicator result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         ipAddresses_ = ipAddresses_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -4871,8 +4951,10 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.uris_ = uris_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.Indicator result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

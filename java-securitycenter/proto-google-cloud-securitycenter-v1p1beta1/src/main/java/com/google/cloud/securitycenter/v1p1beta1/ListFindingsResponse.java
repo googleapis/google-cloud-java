@@ -704,7 +704,9 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
 
       public static final int NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object name_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object name_ = "";
       /**
        *
        *
@@ -755,7 +757,9 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
 
       public static final int PROJECT_NAME_FIELD_NUMBER = 2;
-      private volatile java.lang.Object projectName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object projectName_ = "";
       /**
        *
        *
@@ -804,7 +808,9 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
 
       public static final int PROJECT_DISPLAY_NAME_FIELD_NUMBER = 3;
-      private volatile java.lang.Object projectDisplayName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object projectDisplayName_ = "";
       /**
        *
        *
@@ -853,7 +859,9 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
 
       public static final int PARENT_NAME_FIELD_NUMBER = 4;
-      private volatile java.lang.Object parentName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object parentName_ = "";
       /**
        *
        *
@@ -902,7 +910,9 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
 
       public static final int PARENT_DISPLAY_NAME_FIELD_NUMBER = 5;
-      private volatile java.lang.Object parentDisplayName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object parentDisplayName_ = "";
       /**
        *
        *
@@ -951,6 +961,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
 
       public static final int FOLDERS_FIELD_NUMBER = 10;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.securitycenter.v1p1beta1.Folder> folders_;
       /**
        *
@@ -1310,23 +1322,19 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           name_ = "";
-
           projectName_ = "";
-
           projectDisplayName_ = "";
-
           parentName_ = "";
-
           parentDisplayName_ = "";
-
           if (foldersBuilder_ == null) {
             folders_ = java.util.Collections.emptyList();
           } else {
             folders_ = null;
             foldersBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
           return this;
         }
 
@@ -1364,23 +1372,49 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
               result =
                   new com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse
                       .ListFindingsResult.Resource(this);
-          int from_bitField0_ = bitField0_;
-          result.name_ = name_;
-          result.projectName_ = projectName_;
-          result.projectDisplayName_ = projectDisplayName_;
-          result.parentName_ = parentName_;
-          result.parentDisplayName_ = parentDisplayName_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult
+                    .Resource
+                result) {
           if (foldersBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0)) {
+            if (((bitField0_ & 0x00000020) != 0)) {
               folders_ = java.util.Collections.unmodifiableList(folders_);
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000020);
             }
             result.folders_ = folders_;
           } else {
             result.folders_ = foldersBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult
+                    .Resource
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.name_ = name_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.projectName_ = projectName_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.projectDisplayName_ = projectDisplayName_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.parentName_ = parentName_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.parentDisplayName_ = parentDisplayName_;
+          }
         }
 
         @java.lang.Override
@@ -1443,29 +1477,34 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
                   .Resource.getDefaultInstance()) return this;
           if (!other.getName().isEmpty()) {
             name_ = other.name_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getProjectName().isEmpty()) {
             projectName_ = other.projectName_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           if (!other.getProjectDisplayName().isEmpty()) {
             projectDisplayName_ = other.projectDisplayName_;
+            bitField0_ |= 0x00000004;
             onChanged();
           }
           if (!other.getParentName().isEmpty()) {
             parentName_ = other.parentName_;
+            bitField0_ |= 0x00000008;
             onChanged();
           }
           if (!other.getParentDisplayName().isEmpty()) {
             parentDisplayName_ = other.parentDisplayName_;
+            bitField0_ |= 0x00000010;
             onChanged();
           }
           if (foldersBuilder_ == null) {
             if (!other.folders_.isEmpty()) {
               if (folders_.isEmpty()) {
                 folders_ = other.folders_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000020);
               } else {
                 ensureFoldersIsMutable();
                 folders_.addAll(other.folders_);
@@ -1478,7 +1517,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
                 foldersBuilder_.dispose();
                 foldersBuilder_ = null;
                 folders_ = other.folders_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000020);
                 foldersBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getFoldersFieldBuilder()
@@ -1517,31 +1556,31 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
                 case 10:
                   {
                     name_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     projectName_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 case 26:
                   {
                     projectDisplayName_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 26
                 case 34:
                   {
                     parentName_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 34
                 case 42:
                   {
                     parentDisplayName_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000010;
                     break;
                   } // case 42
                 case 82:
@@ -1641,8 +1680,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           if (value == null) {
             throw new NullPointerException();
           }
-
           name_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1659,8 +1698,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
          * @return This builder for chaining.
          */
         public Builder clearName() {
-
           name_ = getDefaultInstance().getName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -1682,8 +1721,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           name_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1749,8 +1788,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           if (value == null) {
             throw new NullPointerException();
           }
-
           projectName_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1766,8 +1805,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
          * @return This builder for chaining.
          */
         public Builder clearProjectName() {
-
           projectName_ = getDefaultInstance().getProjectName();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -1788,8 +1827,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           projectName_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1855,8 +1894,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           if (value == null) {
             throw new NullPointerException();
           }
-
           projectDisplayName_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -1872,8 +1911,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
          * @return This builder for chaining.
          */
         public Builder clearProjectDisplayName() {
-
           projectDisplayName_ = getDefaultInstance().getProjectDisplayName();
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
@@ -1894,8 +1933,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           projectDisplayName_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -1961,8 +2000,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           if (value == null) {
             throw new NullPointerException();
           }
-
           parentName_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -1978,8 +2017,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
          * @return This builder for chaining.
          */
         public Builder clearParentName() {
-
           parentName_ = getDefaultInstance().getParentName();
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
           return this;
         }
@@ -2000,8 +2039,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           parentName_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -2067,8 +2106,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           if (value == null) {
             throw new NullPointerException();
           }
-
           parentDisplayName_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -2084,8 +2123,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
          * @return This builder for chaining.
          */
         public Builder clearParentDisplayName() {
-
           parentDisplayName_ = getDefaultInstance().getParentDisplayName();
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
           return this;
         }
@@ -2106,8 +2145,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           parentDisplayName_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -2116,10 +2155,10 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             java.util.Collections.emptyList();
 
         private void ensureFoldersIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000020) != 0)) {
             folders_ =
                 new java.util.ArrayList<com.google.cloud.securitycenter.v1p1beta1.Folder>(folders_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000020;
           }
         }
 
@@ -2359,7 +2398,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         public Builder clearFolders() {
           if (foldersBuilder_ == null) {
             folders_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
             onChanged();
           } else {
             foldersBuilder_.clear();
@@ -2499,7 +2538,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
                     com.google.cloud.securitycenter.v1p1beta1.Folder,
                     com.google.cloud.securitycenter.v1p1beta1.Folder.Builder,
                     com.google.cloud.securitycenter.v1p1beta1.FolderOrBuilder>(
-                    folders_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                    folders_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
             folders_ = null;
           }
           return foldersBuilder_;
@@ -2622,11 +2661,13 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.securitycenter.v1p1beta1.FindingOrBuilder getFindingOrBuilder() {
-      return getFinding();
+      return finding_ == null
+          ? com.google.cloud.securitycenter.v1p1beta1.Finding.getDefaultInstance()
+          : finding_;
     }
 
     public static final int STATE_CHANGE_FIELD_NUMBER = 2;
-    private int stateChange_;
+    private int stateChange_ = 0;
     /**
      *
      *
@@ -2661,11 +2702,10 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult
             .StateChange
         getStateChange() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.StateChange
           result =
               com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult
-                  .StateChange.valueOf(stateChange_);
+                  .StateChange.forNumber(stateChange_);
       return result == null
           ? com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult
               .StateChange.UNRECOGNIZED
@@ -2730,7 +2770,10 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult
             .ResourceOrBuilder
         getResourceOrBuilder() {
-      return getResource();
+      return resource_ == null
+          ? com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult
+              .Resource.getDefaultInstance()
+          : resource_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2980,18 +3023,16 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (findingBuilder_ == null) {
-          finding_ = null;
-        } else {
-          finding_ = null;
+        bitField0_ = 0;
+        finding_ = null;
+        if (findingBuilder_ != null) {
+          findingBuilder_.dispose();
           findingBuilder_ = null;
         }
         stateChange_ = 0;
-
-        if (resourceBuilder_ == null) {
-          resource_ = null;
-        } else {
-          resource_ = null;
+        resource_ = null;
+        if (resourceBuilder_ != null) {
+          resourceBuilder_.dispose();
           resourceBuilder_ = null;
         }
         return this;
@@ -3027,19 +3068,26 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult result =
             new com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult(
                 this);
-        if (findingBuilder_ == null) {
-          result.finding_ = finding_;
-        } else {
-          result.finding_ = findingBuilder_.build();
-        }
-        result.stateChange_ = stateChange_;
-        if (resourceBuilder_ == null) {
-          result.resource_ = resource_;
-        } else {
-          result.resource_ = resourceBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.finding_ = findingBuilder_ == null ? finding_ : findingBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.stateChange_ = stateChange_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.resource_ = resourceBuilder_ == null ? resource_ : resourceBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3134,19 +3182,19 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
               case 10:
                 {
                   input.readMessage(getFindingFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   stateChange_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
                 {
                   input.readMessage(getResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -3166,6 +3214,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.cloud.securitycenter.v1p1beta1.Finding finding_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.securitycenter.v1p1beta1.Finding,
@@ -3184,7 +3234,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return Whether the finding field is set.
        */
       public boolean hasFinding() {
-        return findingBuilder_ != null || finding_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -3221,11 +3271,11 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             throw new NullPointerException();
           }
           finding_ = value;
-          onChanged();
         } else {
           findingBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -3241,11 +3291,11 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           com.google.cloud.securitycenter.v1p1beta1.Finding.Builder builderForValue) {
         if (findingBuilder_ == null) {
           finding_ = builderForValue.build();
-          onChanged();
         } else {
           findingBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -3259,19 +3309,19 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        */
       public Builder mergeFinding(com.google.cloud.securitycenter.v1p1beta1.Finding value) {
         if (findingBuilder_ == null) {
-          if (finding_ != null) {
-            finding_ =
-                com.google.cloud.securitycenter.v1p1beta1.Finding.newBuilder(finding_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && finding_ != null
+              && finding_
+                  != com.google.cloud.securitycenter.v1p1beta1.Finding.getDefaultInstance()) {
+            getFindingBuilder().mergeFrom(value);
           } else {
             finding_ = value;
           }
-          onChanged();
         } else {
           findingBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -3284,14 +3334,13 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * <code>.google.cloud.securitycenter.v1p1beta1.Finding finding = 1;</code>
        */
       public Builder clearFinding() {
-        if (findingBuilder_ == null) {
-          finding_ = null;
-          onChanged();
-        } else {
-          finding_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        finding_ = null;
+        if (findingBuilder_ != null) {
+          findingBuilder_.dispose();
           findingBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3304,7 +3353,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * <code>.google.cloud.securitycenter.v1p1beta1.Finding finding = 1;</code>
        */
       public com.google.cloud.securitycenter.v1p1beta1.Finding.Builder getFindingBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getFindingFieldBuilder().getBuilder();
       }
@@ -3385,8 +3434,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder setStateChangeValue(int value) {
-
         stateChange_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3407,12 +3456,11 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       public com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult
               .StateChange
           getStateChange() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult
                 .StateChange
             result =
                 com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult
-                    .StateChange.valueOf(stateChange_);
+                    .StateChange.forNumber(stateChange_);
         return result == null
             ? com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult
                 .StateChange.UNRECOGNIZED
@@ -3439,7 +3487,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         stateChange_ = value.getNumber();
         onChanged();
         return this;
@@ -3458,7 +3506,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearStateChange() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         stateChange_ = 0;
         onChanged();
         return this;
@@ -3489,7 +3537,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return Whether the resource field is set.
        */
       public boolean hasResource() {
-        return resourceBuilder_ != null || resource_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -3535,11 +3583,11 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             throw new NullPointerException();
           }
           resource_ = value;
-          onChanged();
         } else {
           resourceBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -3559,11 +3607,11 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
               builderForValue) {
         if (resourceBuilder_ == null) {
           resource_ = builderForValue.build();
-          onChanged();
         } else {
           resourceBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -3581,20 +3629,20 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource
               value) {
         if (resourceBuilder_ == null) {
-          if (resource_ != null) {
-            resource_ =
-                com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult
-                    .Resource.newBuilder(resource_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && resource_ != null
+              && resource_
+                  != com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse
+                      .ListFindingsResult.Resource.getDefaultInstance()) {
+            getResourceBuilder().mergeFrom(value);
           } else {
             resource_ = value;
           }
-          onChanged();
         } else {
           resourceBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -3609,14 +3657,13 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * </code>
        */
       public Builder clearResource() {
-        if (resourceBuilder_ == null) {
-          resource_ = null;
-          onChanged();
-        } else {
-          resource_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        resource_ = null;
+        if (resourceBuilder_ != null) {
+          resourceBuilder_.dispose();
           resourceBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3633,7 +3680,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       public com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult
               .Resource.Builder
           getResourceBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getResourceFieldBuilder().getBuilder();
       }
@@ -3763,6 +3810,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int LIST_FINDINGS_RESULTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult>
       listFindingsResults_;
@@ -3893,11 +3942,13 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
-    return getReadTime();
+    return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -3948,7 +3999,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 4;
-  private int totalSize_;
+  private int totalSize_ = 0;
   /**
    *
    *
@@ -4198,6 +4249,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (listFindingsResultsBuilder_ == null) {
         listFindingsResults_ = java.util.Collections.emptyList();
       } else {
@@ -4205,16 +4257,13 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         listFindingsResultsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (readTimeBuilder_ == null) {
-        readTime_ = null;
-      } else {
-        readTime_ = null;
+      readTime_ = null;
+      if (readTimeBuilder_ != null) {
+        readTimeBuilder_.dispose();
         readTimeBuilder_ = null;
       }
       nextPageToken_ = "";
-
       totalSize_ = 0;
-
       return this;
     }
 
@@ -4243,7 +4292,16 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse buildPartial() {
       com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse result =
           new com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse result) {
       if (listFindingsResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           listFindingsResults_ = java.util.Collections.unmodifiableList(listFindingsResults_);
@@ -4253,15 +4311,20 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       } else {
         result.listFindingsResults_ = listFindingsResultsBuilder_.build();
       }
-      if (readTimeBuilder_ == null) {
-        result.readTime_ = readTime_;
-      } else {
-        result.readTime_ = readTimeBuilder_.build();
+    }
+
+    private void buildPartial0(
+        com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.readTime_ = readTimeBuilder_ == null ? readTime_ : readTimeBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      result.totalSize_ = totalSize_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.totalSize_ = totalSize_;
+      }
     }
 
     @java.lang.Override
@@ -4343,6 +4406,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getTotalSize() != 0) {
@@ -4393,19 +4457,19 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             case 18:
               {
                 input.readMessage(getReadTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 totalSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -4876,7 +4940,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * @return Whether the readTime field is set.
      */
     public boolean hasReadTime() {
-      return readTimeBuilder_ != null || readTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -4911,11 +4975,11 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         readTime_ = value;
-        onChanged();
       } else {
         readTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -4930,11 +4994,11 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     public Builder setReadTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (readTimeBuilder_ == null) {
         readTime_ = builderForValue.build();
-        onChanged();
       } else {
         readTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -4948,17 +5012,18 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeReadTime(com.google.protobuf.Timestamp value) {
       if (readTimeBuilder_ == null) {
-        if (readTime_ != null) {
-          readTime_ =
-              com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && readTime_ != null
+            && readTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getReadTimeBuilder().mergeFrom(value);
         } else {
           readTime_ = value;
         }
-        onChanged();
       } else {
         readTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -4971,14 +5036,13 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
      */
     public Builder clearReadTime() {
-      if (readTimeBuilder_ == null) {
-        readTime_ = null;
-        onChanged();
-      } else {
-        readTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      readTime_ = null;
+      if (readTimeBuilder_ != null) {
+        readTimeBuilder_.dispose();
         readTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4991,7 +5055,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
@@ -5101,8 +5165,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -5119,8 +5183,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -5142,8 +5206,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -5179,6 +5243,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     public Builder setTotalSize(int value) {
 
       totalSize_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5194,7 +5259,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTotalSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       totalSize_ = 0;
       onChanged();
       return this;

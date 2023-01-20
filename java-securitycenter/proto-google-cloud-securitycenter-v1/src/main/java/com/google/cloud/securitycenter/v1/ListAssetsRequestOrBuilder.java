@@ -27,9 +27,11 @@ public interface ListAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the parent that the listed assets belong to. Its
-   * format is "organizations/[organization_id], folders/[folder_id], or
-   * projects/[project_id]".
+   * Required. The name of the parent resource that contains the assets. The
+   * value that you can specify on parent depends on the method in which you
+   * specify parent. You can specify one of the following values:
+   * "organizations/[organization_id]", "folders/[folder_id]", or
+   * "projects/[project_id]".
    * </pre>
    *
    * <code>
@@ -43,9 +45,11 @@ public interface ListAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the parent that the listed assets belong to. Its
-   * format is "organizations/[organization_id], folders/[folder_id], or
-   * projects/[project_id]".
+   * Required. The name of the parent resource that contains the assets. The
+   * value that you can specify on parent depends on the method in which you
+   * specify parent. You can specify one of the following values:
+   * "organizations/[organization_id]", "folders/[folder_id]", or
+   * "projects/[project_id]".
    * </pre>
    *
    * <code>

@@ -71,14 +71,18 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The name of the parent that the listed assets belong to. Its
-   * format is "organizations/[organization_id], folders/[folder_id], or
-   * projects/[project_id]".
+   * Required. The name of the parent resource that contains the assets. The
+   * value that you can specify on parent depends on the method in which you
+   * specify parent. You can specify one of the following values:
+   * "organizations/[organization_id]", "folders/[folder_id]", or
+   * "projects/[project_id]".
    * </pre>
    *
    * <code>
@@ -103,9 +107,11 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The name of the parent that the listed assets belong to. Its
-   * format is "organizations/[organization_id], folders/[folder_id], or
-   * projects/[project_id]".
+   * Required. The name of the parent resource that contains the assets. The
+   * value that you can specify on parent depends on the method in which you
+   * specify parent. You can specify one of the following values:
+   * "organizations/[organization_id]", "folders/[folder_id]", or
+   * "projects/[project_id]".
    * </pre>
    *
    * <code>
@@ -128,7 +134,9 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FILTER_FIELD_NUMBER = 2;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -269,7 +277,9 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ORDER_BY_FIELD_NUMBER = 3;
-  private volatile java.lang.Object orderBy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderBy_ = "";
   /**
    *
    *
@@ -407,7 +417,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
-    return getReadTime();
+    return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
 
   public static final int COMPARE_DURATION_FIELD_NUMBER = 5;
@@ -512,7 +522,9 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getCompareDurationOrBuilder() {
-    return getCompareDuration();
+    return compareDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : compareDuration_;
   }
 
   public static final int FIELD_MASK_FIELD_NUMBER = 7;
@@ -564,11 +576,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder() {
-    return getFieldMask();
+    return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 8;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -621,7 +635,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 9;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -914,34 +928,27 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       filter_ = "";
-
       orderBy_ = "";
-
-      if (readTimeBuilder_ == null) {
-        readTime_ = null;
-      } else {
-        readTime_ = null;
+      readTime_ = null;
+      if (readTimeBuilder_ != null) {
+        readTimeBuilder_.dispose();
         readTimeBuilder_ = null;
       }
-      if (compareDurationBuilder_ == null) {
-        compareDuration_ = null;
-      } else {
-        compareDuration_ = null;
+      compareDuration_ = null;
+      if (compareDurationBuilder_ != null) {
+        compareDurationBuilder_.dispose();
         compareDurationBuilder_ = null;
       }
-      if (fieldMaskBuilder_ == null) {
-        fieldMask_ = null;
-      } else {
-        fieldMask_ = null;
+      fieldMask_ = null;
+      if (fieldMaskBuilder_ != null) {
+        fieldMaskBuilder_.dispose();
         fieldMaskBuilder_ = null;
       }
       pageToken_ = "";
-
       pageSize_ = 0;
-
       return this;
     }
 
@@ -969,28 +976,40 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.securitycenter.v1.ListAssetsRequest buildPartial() {
       com.google.cloud.securitycenter.v1.ListAssetsRequest result =
           new com.google.cloud.securitycenter.v1.ListAssetsRequest(this);
-      result.parent_ = parent_;
-      result.filter_ = filter_;
-      result.orderBy_ = orderBy_;
-      if (readTimeBuilder_ == null) {
-        result.readTime_ = readTime_;
-      } else {
-        result.readTime_ = readTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (compareDurationBuilder_ == null) {
-        result.compareDuration_ = compareDuration_;
-      } else {
-        result.compareDuration_ = compareDurationBuilder_.build();
-      }
-      if (fieldMaskBuilder_ == null) {
-        result.fieldMask_ = fieldMask_;
-      } else {
-        result.fieldMask_ = fieldMaskBuilder_.build();
-      }
-      result.pageToken_ = pageToken_;
-      result.pageSize_ = pageSize_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.ListAssetsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.orderBy_ = orderBy_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.readTime_ = readTimeBuilder_ == null ? readTime_ : readTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.compareDuration_ =
+            compareDurationBuilder_ == null ? compareDuration_ : compareDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.fieldMask_ = fieldMaskBuilder_ == null ? fieldMask_ : fieldMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
     }
 
     @java.lang.Override
@@ -1041,14 +1060,17 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getOrderBy().isEmpty()) {
         orderBy_ = other.orderBy_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasReadTime()) {
@@ -1062,6 +1084,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -1096,49 +1119,49 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 orderBy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getReadTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getCompareDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 58:
               {
                 input.readMessage(getFieldMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 66:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 72:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 72
             default:
@@ -1158,14 +1181,18 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object parent_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The name of the parent that the listed assets belong to. Its
-     * format is "organizations/[organization_id], folders/[folder_id], or
-     * projects/[project_id]".
+     * Required. The name of the parent resource that contains the assets. The
+     * value that you can specify on parent depends on the method in which you
+     * specify parent. You can specify one of the following values:
+     * "organizations/[organization_id]", "folders/[folder_id]", or
+     * "projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -1189,9 +1216,11 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The name of the parent that the listed assets belong to. Its
-     * format is "organizations/[organization_id], folders/[folder_id], or
-     * projects/[project_id]".
+     * Required. The name of the parent resource that contains the assets. The
+     * value that you can specify on parent depends on the method in which you
+     * specify parent. You can specify one of the following values:
+     * "organizations/[organization_id]", "folders/[folder_id]", or
+     * "projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -1215,9 +1244,11 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The name of the parent that the listed assets belong to. Its
-     * format is "organizations/[organization_id], folders/[folder_id], or
-     * projects/[project_id]".
+     * Required. The name of the parent resource that contains the assets. The
+     * value that you can specify on parent depends on the method in which you
+     * specify parent. You can specify one of the following values:
+     * "organizations/[organization_id]", "folders/[folder_id]", or
+     * "projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -1231,8 +1262,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1240,9 +1271,11 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The name of the parent that the listed assets belong to. Its
-     * format is "organizations/[organization_id], folders/[folder_id], or
-     * projects/[project_id]".
+     * Required. The name of the parent resource that contains the assets. The
+     * value that you can specify on parent depends on the method in which you
+     * specify parent. You can specify one of the following values:
+     * "organizations/[organization_id]", "folders/[folder_id]", or
+     * "projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -1252,8 +1285,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1261,9 +1294,11 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The name of the parent that the listed assets belong to. Its
-     * format is "organizations/[organization_id], folders/[folder_id], or
-     * projects/[project_id]".
+     * Required. The name of the parent resource that contains the assets. The
+     * value that you can specify on parent depends on the method in which you
+     * specify parent. You can specify one of the following values:
+     * "organizations/[organization_id]", "folders/[folder_id]", or
+     * "projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -1278,8 +1313,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1483,8 +1518,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1546,8 +1581,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1614,8 +1649,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1738,8 +1773,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       orderBy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1774,8 +1809,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
-
       orderBy_ = getDefaultInstance().getOrderBy();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1815,8 +1850,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       orderBy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1842,7 +1877,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the readTime field is set.
      */
     public boolean hasReadTime() {
-      return readTimeBuilder_ != null || readTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1883,11 +1918,11 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         readTime_ = value;
-        onChanged();
       } else {
         readTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1905,11 +1940,11 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
     public Builder setReadTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (readTimeBuilder_ == null) {
         readTime_ = builderForValue.build();
-        onChanged();
       } else {
         readTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1926,17 +1961,18 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeReadTime(com.google.protobuf.Timestamp value) {
       if (readTimeBuilder_ == null) {
-        if (readTime_ != null) {
-          readTime_ =
-              com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && readTime_ != null
+            && readTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getReadTimeBuilder().mergeFrom(value);
         } else {
           readTime_ = value;
         }
-        onChanged();
       } else {
         readTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1952,14 +1988,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Timestamp read_time = 4;</code>
      */
     public Builder clearReadTime() {
-      if (readTimeBuilder_ == null) {
-        readTime_ = null;
-        onChanged();
-      } else {
-        readTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      readTime_ = null;
+      if (readTimeBuilder_ != null) {
+        readTimeBuilder_.dispose();
         readTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1975,7 +2010,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Timestamp read_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
@@ -2064,7 +2099,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the compareDuration field is set.
      */
     public boolean hasCompareDuration() {
-      return compareDurationBuilder_ != null || compareDuration_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2139,11 +2174,11 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         compareDuration_ = value;
-        onChanged();
       } else {
         compareDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2177,11 +2212,11 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
     public Builder setCompareDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (compareDurationBuilder_ == null) {
         compareDuration_ = builderForValue.build();
-        onChanged();
       } else {
         compareDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2214,19 +2249,18 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeCompareDuration(com.google.protobuf.Duration value) {
       if (compareDurationBuilder_ == null) {
-        if (compareDuration_ != null) {
-          compareDuration_ =
-              com.google.protobuf.Duration.newBuilder(compareDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && compareDuration_ != null
+            && compareDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getCompareDurationBuilder().mergeFrom(value);
         } else {
           compareDuration_ = value;
         }
-        onChanged();
       } else {
         compareDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2258,14 +2292,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration compare_duration = 5;</code>
      */
     public Builder clearCompareDuration() {
-      if (compareDurationBuilder_ == null) {
-        compareDuration_ = null;
-        onChanged();
-      } else {
-        compareDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      compareDuration_ = null;
+      if (compareDurationBuilder_ != null) {
+        compareDurationBuilder_.dispose();
         compareDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2297,7 +2330,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration compare_duration = 5;</code>
      */
     public com.google.protobuf.Duration.Builder getCompareDurationBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCompareDurationFieldBuilder().getBuilder();
     }
@@ -2403,7 +2436,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the fieldMask field is set.
      */
     public boolean hasFieldMask() {
-      return fieldMaskBuilder_ != null || fieldMask_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2442,11 +2475,11 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         fieldMask_ = value;
-        onChanged();
       } else {
         fieldMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2463,11 +2496,11 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
     public Builder setFieldMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (fieldMaskBuilder_ == null) {
         fieldMask_ = builderForValue.build();
-        onChanged();
       } else {
         fieldMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2483,17 +2516,18 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeFieldMask(com.google.protobuf.FieldMask value) {
       if (fieldMaskBuilder_ == null) {
-        if (fieldMask_ != null) {
-          fieldMask_ =
-              com.google.protobuf.FieldMask.newBuilder(fieldMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && fieldMask_ != null
+            && fieldMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getFieldMaskBuilder().mergeFrom(value);
         } else {
           fieldMask_ = value;
         }
-        onChanged();
       } else {
         fieldMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2508,14 +2542,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.FieldMask field_mask = 7;</code>
      */
     public Builder clearFieldMask() {
-      if (fieldMaskBuilder_ == null) {
-        fieldMask_ = null;
-        onChanged();
-      } else {
-        fieldMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      fieldMask_ = null;
+      if (fieldMaskBuilder_ != null) {
+        fieldMaskBuilder_.dispose();
         fieldMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2530,7 +2563,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.FieldMask field_mask = 7;</code>
      */
     public com.google.protobuf.FieldMask.Builder getFieldMaskBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getFieldMaskFieldBuilder().getBuilder();
     }
@@ -2647,8 +2680,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2666,8 +2699,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2690,8 +2723,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2729,6 +2762,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2745,7 +2779,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       pageSize_ = 0;
       onChanged();
       return this;

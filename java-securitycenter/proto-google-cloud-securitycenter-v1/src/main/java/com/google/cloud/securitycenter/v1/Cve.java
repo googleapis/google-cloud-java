@@ -70,7 +70,9 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -119,6 +121,8 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REFERENCES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.Reference> references_;
   /**
    *
@@ -240,11 +244,13 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.securitycenter.v1.Cvssv3OrBuilder getCvssv3OrBuilder() {
-    return getCvssv3();
+    return cvssv3_ == null
+        ? com.google.cloud.securitycenter.v1.Cvssv3.getDefaultInstance()
+        : cvssv3_;
   }
 
   public static final int UPSTREAM_FIX_AVAILABLE_FIELD_NUMBER = 4;
-  private boolean upstreamFixAvailable_;
+  private boolean upstreamFixAvailable_ = false;
   /**
    *
    *
@@ -492,23 +498,21 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       if (referencesBuilder_ == null) {
         references_ = java.util.Collections.emptyList();
       } else {
         references_ = null;
         referencesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (cvssv3Builder_ == null) {
-        cvssv3_ = null;
-      } else {
-        cvssv3_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      cvssv3_ = null;
+      if (cvssv3Builder_ != null) {
+        cvssv3Builder_.dispose();
         cvssv3Builder_ = null;
       }
       upstreamFixAvailable_ = false;
-
       return this;
     }
 
@@ -536,25 +540,37 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.Cve buildPartial() {
       com.google.cloud.securitycenter.v1.Cve result =
           new com.google.cloud.securitycenter.v1.Cve(this);
-      int from_bitField0_ = bitField0_;
-      result.id_ = id_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.securitycenter.v1.Cve result) {
       if (referencesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           references_ = java.util.Collections.unmodifiableList(references_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.references_ = references_;
       } else {
         result.references_ = referencesBuilder_.build();
       }
-      if (cvssv3Builder_ == null) {
-        result.cvssv3_ = cvssv3_;
-      } else {
-        result.cvssv3_ = cvssv3Builder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.Cve result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
       }
-      result.upstreamFixAvailable_ = upstreamFixAvailable_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.cvssv3_ = cvssv3Builder_ == null ? cvssv3_ : cvssv3Builder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.upstreamFixAvailable_ = upstreamFixAvailable_;
+      }
     }
 
     @java.lang.Override
@@ -604,13 +620,14 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.securitycenter.v1.Cve.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (referencesBuilder_ == null) {
         if (!other.references_.isEmpty()) {
           if (references_.isEmpty()) {
             references_ = other.references_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureReferencesIsMutable();
             references_.addAll(other.references_);
@@ -623,7 +640,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
             referencesBuilder_.dispose();
             referencesBuilder_ = null;
             references_ = other.references_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             referencesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getReferencesFieldBuilder()
@@ -668,7 +685,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -687,13 +704,13 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 input.readMessage(getCvssv3FieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 upstreamFixAvailable_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -776,8 +793,8 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -793,8 +810,8 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -815,8 +832,8 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -825,10 +842,10 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureReferencesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         references_ =
             new java.util.ArrayList<com.google.cloud.securitycenter.v1.Reference>(references_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1055,7 +1072,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     public Builder clearReferences() {
       if (referencesBuilder_ == null) {
         references_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         referencesBuilder_.clear();
@@ -1184,7 +1201,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v1.Reference,
                 com.google.cloud.securitycenter.v1.Reference.Builder,
                 com.google.cloud.securitycenter.v1.ReferenceOrBuilder>(
-                references_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                references_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         references_ = null;
       }
       return referencesBuilder_;
@@ -1209,7 +1226,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the cvssv3 field is set.
      */
     public boolean hasCvssv3() {
-      return cvssv3Builder_ != null || cvssv3_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1248,11 +1265,11 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         cvssv3_ = value;
-        onChanged();
       } else {
         cvssv3Builder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1268,11 +1285,11 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     public Builder setCvssv3(com.google.cloud.securitycenter.v1.Cvssv3.Builder builderForValue) {
       if (cvssv3Builder_ == null) {
         cvssv3_ = builderForValue.build();
-        onChanged();
       } else {
         cvssv3Builder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1287,19 +1304,18 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCvssv3(com.google.cloud.securitycenter.v1.Cvssv3 value) {
       if (cvssv3Builder_ == null) {
-        if (cvssv3_ != null) {
-          cvssv3_ =
-              com.google.cloud.securitycenter.v1.Cvssv3.newBuilder(cvssv3_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && cvssv3_ != null
+            && cvssv3_ != com.google.cloud.securitycenter.v1.Cvssv3.getDefaultInstance()) {
+          getCvssv3Builder().mergeFrom(value);
         } else {
           cvssv3_ = value;
         }
-        onChanged();
       } else {
         cvssv3Builder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1313,14 +1329,13 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.securitycenter.v1.Cvssv3 cvssv3 = 3;</code>
      */
     public Builder clearCvssv3() {
-      if (cvssv3Builder_ == null) {
-        cvssv3_ = null;
-        onChanged();
-      } else {
-        cvssv3_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      cvssv3_ = null;
+      if (cvssv3Builder_ != null) {
+        cvssv3Builder_.dispose();
         cvssv3Builder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1334,7 +1349,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.securitycenter.v1.Cvssv3 cvssv3 = 3;</code>
      */
     public com.google.cloud.securitycenter.v1.Cvssv3.Builder getCvssv3Builder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCvssv3FieldBuilder().getBuilder();
     }
@@ -1415,6 +1430,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpstreamFixAvailable(boolean value) {
 
       upstreamFixAvailable_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1430,7 +1446,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUpstreamFixAvailable() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       upstreamFixAvailable_ = false;
       onChanged();
       return this;

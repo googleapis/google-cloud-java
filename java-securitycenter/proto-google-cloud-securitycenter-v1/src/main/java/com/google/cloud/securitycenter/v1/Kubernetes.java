@@ -289,7 +289,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NS_FIELD_NUMBER = 1;
-    private volatile java.lang.Object ns_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object ns_ = "";
     /**
      *
      *
@@ -338,7 +340,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -387,6 +391,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int LABELS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.securitycenter.v1.Label> labels_;
     /**
      *
@@ -461,6 +467,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CONTAINERS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.securitycenter.v1.Container> containers_;
     /**
      *
@@ -759,24 +767,23 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         ns_ = "";
-
         name_ = "";
-
         if (labelsBuilder_ == null) {
           labels_ = java.util.Collections.emptyList();
         } else {
           labels_ = null;
           labelsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (containersBuilder_ == null) {
           containers_ = java.util.Collections.emptyList();
         } else {
           containers_ = null;
           containersBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -804,29 +811,44 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.securitycenter.v1.Kubernetes.Pod buildPartial() {
         com.google.cloud.securitycenter.v1.Kubernetes.Pod result =
             new com.google.cloud.securitycenter.v1.Kubernetes.Pod(this);
-        int from_bitField0_ = bitField0_;
-        result.ns_ = ns_;
-        result.name_ = name_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.securitycenter.v1.Kubernetes.Pod result) {
         if (labelsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             labels_ = java.util.Collections.unmodifiableList(labels_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.labels_ = labels_;
         } else {
           result.labels_ = labelsBuilder_.build();
         }
         if (containersBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             containers_ = java.util.Collections.unmodifiableList(containers_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.containers_ = containers_;
         } else {
           result.containers_ = containersBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.securitycenter.v1.Kubernetes.Pod result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.ns_ = ns_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -879,17 +901,19 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getNs().isEmpty()) {
           ns_ = other.ns_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (labelsBuilder_ == null) {
           if (!other.labels_.isEmpty()) {
             if (labels_.isEmpty()) {
               labels_ = other.labels_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureLabelsIsMutable();
               labels_.addAll(other.labels_);
@@ -902,7 +926,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
               labelsBuilder_.dispose();
               labelsBuilder_ = null;
               labels_ = other.labels_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               labelsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getLabelsFieldBuilder()
@@ -916,7 +940,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           if (!other.containers_.isEmpty()) {
             if (containers_.isEmpty()) {
               containers_ = other.containers_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureContainersIsMutable();
               containers_.addAll(other.containers_);
@@ -929,7 +953,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
               containersBuilder_.dispose();
               containersBuilder_ = null;
               containers_ = other.containers_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
               containersBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getContainersFieldBuilder()
@@ -968,13 +992,13 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   ns_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
@@ -1083,8 +1107,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         ns_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1100,8 +1124,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearNs() {
-
         ns_ = getDefaultInstance().getNs();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1122,8 +1146,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         ns_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1189,8 +1213,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1206,8 +1230,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1228,8 +1252,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1238,9 +1262,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           java.util.Collections.emptyList();
 
       private void ensureLabelsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           labels_ = new java.util.ArrayList<com.google.cloud.securitycenter.v1.Label>(labels_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
         }
       }
 
@@ -1466,7 +1490,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       public Builder clearLabels() {
         if (labelsBuilder_ == null) {
           labels_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           labelsBuilder_.clear();
@@ -1595,7 +1619,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.securitycenter.v1.Label,
                   com.google.cloud.securitycenter.v1.Label.Builder,
                   com.google.cloud.securitycenter.v1.LabelOrBuilder>(
-                  labels_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  labels_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
           labels_ = null;
         }
         return labelsBuilder_;
@@ -1605,10 +1629,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           java.util.Collections.emptyList();
 
       private void ensureContainersIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           containers_ =
               new java.util.ArrayList<com.google.cloud.securitycenter.v1.Container>(containers_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
         }
       }
 
@@ -1824,7 +1848,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       public Builder clearContainers() {
         if (containersBuilder_ == null) {
           containers_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           containersBuilder_.clear();
@@ -1947,7 +1971,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.securitycenter.v1.Container,
                   com.google.cloud.securitycenter.v1.Container.Builder,
                   com.google.cloud.securitycenter.v1.ContainerOrBuilder>(
-                  containers_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                  containers_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
           containers_ = null;
         }
         return containersBuilder_;
@@ -2099,7 +2123,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -2348,8 +2374,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         return this;
       }
 
@@ -2377,9 +2403,18 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.securitycenter.v1.Kubernetes.Node buildPartial() {
         com.google.cloud.securitycenter.v1.Kubernetes.Node result =
             new com.google.cloud.securitycenter.v1.Kubernetes.Node(this);
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.securitycenter.v1.Kubernetes.Node result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -2432,6 +2467,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2463,7 +2499,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -2482,6 +2518,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -2547,8 +2585,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2565,8 +2603,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2588,8 +2626,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2791,7 +2829,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -2840,6 +2880,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NODES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.Node> nodes_;
     /**
      *
@@ -3120,15 +3162,15 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         if (nodesBuilder_ == null) {
           nodes_ = java.util.Collections.emptyList();
         } else {
           nodes_ = null;
           nodesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -3156,19 +3198,32 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.securitycenter.v1.Kubernetes.NodePool buildPartial() {
         com.google.cloud.securitycenter.v1.Kubernetes.NodePool result =
             new com.google.cloud.securitycenter.v1.Kubernetes.NodePool(this);
-        int from_bitField0_ = bitField0_;
-        result.name_ = name_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.securitycenter.v1.Kubernetes.NodePool result) {
         if (nodesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             nodes_ = java.util.Collections.unmodifiableList(nodes_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.nodes_ = nodes_;
         } else {
           result.nodes_ = nodesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.securitycenter.v1.Kubernetes.NodePool result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -3221,13 +3276,14 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (nodesBuilder_ == null) {
           if (!other.nodes_.isEmpty()) {
             if (nodes_.isEmpty()) {
               nodes_ = other.nodes_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureNodesIsMutable();
               nodes_.addAll(other.nodes_);
@@ -3240,7 +3296,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
               nodesBuilder_.dispose();
               nodesBuilder_ = null;
               nodes_ = other.nodes_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               nodesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getNodesFieldBuilder()
@@ -3279,7 +3335,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -3376,8 +3432,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3393,8 +3449,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -3415,8 +3471,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3425,10 +3481,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           java.util.Collections.emptyList();
 
       private void ensureNodesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           nodes_ =
               new java.util.ArrayList<com.google.cloud.securitycenter.v1.Kubernetes.Node>(nodes_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -3644,7 +3700,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       public Builder clearNodes() {
         if (nodesBuilder_ == null) {
           nodes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           nodesBuilder_.clear();
@@ -3768,7 +3824,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.securitycenter.v1.Kubernetes.Node,
                   com.google.cloud.securitycenter.v1.Kubernetes.Node.Builder,
                   com.google.cloud.securitycenter.v1.Kubernetes.NodeOrBuilder>(
-                  nodes_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  nodes_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
           nodes_ = null;
         }
         return nodesBuilder_;
@@ -4129,7 +4185,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int KIND_FIELD_NUMBER = 1;
-    private int kind_;
+    private int kind_ = 0;
     /**
      *
      *
@@ -4158,16 +4214,17 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.securitycenter.v1.Kubernetes.Role.Kind getKind() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.v1.Kubernetes.Role.Kind result =
-          com.google.cloud.securitycenter.v1.Kubernetes.Role.Kind.valueOf(kind_);
+          com.google.cloud.securitycenter.v1.Kubernetes.Role.Kind.forNumber(kind_);
       return result == null
           ? com.google.cloud.securitycenter.v1.Kubernetes.Role.Kind.UNRECOGNIZED
           : result;
     }
 
     public static final int NS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object ns_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object ns_ = "";
     /**
      *
      *
@@ -4216,7 +4273,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -4483,12 +4542,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         kind_ = 0;
-
         ns_ = "";
-
         name_ = "";
-
         return this;
       }
 
@@ -4516,11 +4573,24 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.securitycenter.v1.Kubernetes.Role buildPartial() {
         com.google.cloud.securitycenter.v1.Kubernetes.Role result =
             new com.google.cloud.securitycenter.v1.Kubernetes.Role(this);
-        result.kind_ = kind_;
-        result.ns_ = ns_;
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.securitycenter.v1.Kubernetes.Role result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.kind_ = kind_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.ns_ = ns_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -4576,10 +4646,12 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getNs().isEmpty()) {
           ns_ = other.ns_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -4611,19 +4683,19 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   kind_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   ns_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -4642,6 +4714,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int kind_ = 0;
       /**
@@ -4672,8 +4746,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setKindValue(int value) {
-
         kind_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4690,9 +4764,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.securitycenter.v1.Kubernetes.Role.Kind getKind() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.securitycenter.v1.Kubernetes.Role.Kind result =
-            com.google.cloud.securitycenter.v1.Kubernetes.Role.Kind.valueOf(kind_);
+            com.google.cloud.securitycenter.v1.Kubernetes.Role.Kind.forNumber(kind_);
         return result == null
             ? com.google.cloud.securitycenter.v1.Kubernetes.Role.Kind.UNRECOGNIZED
             : result;
@@ -4713,7 +4786,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         kind_ = value.getNumber();
         onChanged();
         return this;
@@ -4730,7 +4803,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearKind() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         kind_ = 0;
         onChanged();
         return this;
@@ -4797,8 +4870,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         ns_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4814,8 +4887,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearNs() {
-
         ns_ = getDefaultInstance().getNs();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -4836,8 +4909,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         ns_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4903,8 +4976,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4920,8 +4993,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -4942,8 +5015,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5211,7 +5284,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NS_FIELD_NUMBER = 1;
-    private volatile java.lang.Object ns_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object ns_ = "";
     /**
      *
      *
@@ -5260,7 +5335,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -5353,10 +5430,14 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.securitycenter.v1.Kubernetes.RoleOrBuilder getRoleOrBuilder() {
-      return getRole();
+      return role_ == null
+          ? com.google.cloud.securitycenter.v1.Kubernetes.Role.getDefaultInstance()
+          : role_;
     }
 
     public static final int SUBJECTS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.Subject> subjects_;
     /**
      *
@@ -5665,14 +5746,12 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         ns_ = "";
-
         name_ = "";
-
-        if (roleBuilder_ == null) {
-          role_ = null;
-        } else {
-          role_ = null;
+        role_ = null;
+        if (roleBuilder_ != null) {
+          roleBuilder_.dispose();
           roleBuilder_ = null;
         }
         if (subjectsBuilder_ == null) {
@@ -5681,7 +5760,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           subjects_ = null;
           subjectsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -5709,25 +5788,38 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.securitycenter.v1.Kubernetes.Binding buildPartial() {
         com.google.cloud.securitycenter.v1.Kubernetes.Binding result =
             new com.google.cloud.securitycenter.v1.Kubernetes.Binding(this);
-        int from_bitField0_ = bitField0_;
-        result.ns_ = ns_;
-        result.name_ = name_;
-        if (roleBuilder_ == null) {
-          result.role_ = role_;
-        } else {
-          result.role_ = roleBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.securitycenter.v1.Kubernetes.Binding result) {
         if (subjectsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             subjects_ = java.util.Collections.unmodifiableList(subjects_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.subjects_ = subjects_;
         } else {
           result.subjects_ = subjectsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.securitycenter.v1.Kubernetes.Binding result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.ns_ = ns_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.role_ = roleBuilder_ == null ? role_ : roleBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -5780,10 +5872,12 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getNs().isEmpty()) {
           ns_ = other.ns_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasRole()) {
@@ -5793,7 +5887,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           if (!other.subjects_.isEmpty()) {
             if (subjects_.isEmpty()) {
               subjects_ = other.subjects_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureSubjectsIsMutable();
               subjects_.addAll(other.subjects_);
@@ -5806,7 +5900,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
               subjectsBuilder_.dispose();
               subjectsBuilder_ = null;
               subjects_ = other.subjects_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
               subjectsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getSubjectsFieldBuilder()
@@ -5845,19 +5939,19 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   ns_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getRoleFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
@@ -5954,8 +6048,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         ns_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5971,8 +6065,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearNs() {
-
         ns_ = getDefaultInstance().getNs();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -5993,8 +6087,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         ns_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6060,8 +6154,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6077,8 +6171,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -6099,8 +6193,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6123,7 +6217,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the role field is set.
        */
       public boolean hasRole() {
-        return roleBuilder_ != null || role_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -6160,11 +6254,11 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           role_ = value;
-          onChanged();
         } else {
           roleBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -6180,11 +6274,11 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.securitycenter.v1.Kubernetes.Role.Builder builderForValue) {
         if (roleBuilder_ == null) {
           role_ = builderForValue.build();
-          onChanged();
         } else {
           roleBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -6198,19 +6292,18 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeRole(com.google.cloud.securitycenter.v1.Kubernetes.Role value) {
         if (roleBuilder_ == null) {
-          if (role_ != null) {
-            role_ =
-                com.google.cloud.securitycenter.v1.Kubernetes.Role.newBuilder(role_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && role_ != null
+              && role_ != com.google.cloud.securitycenter.v1.Kubernetes.Role.getDefaultInstance()) {
+            getRoleBuilder().mergeFrom(value);
           } else {
             role_ = value;
           }
-          onChanged();
         } else {
           roleBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -6223,14 +6316,13 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.securitycenter.v1.Kubernetes.Role role = 3;</code>
        */
       public Builder clearRole() {
-        if (roleBuilder_ == null) {
-          role_ = null;
-          onChanged();
-        } else {
-          role_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        role_ = null;
+        if (roleBuilder_ != null) {
+          roleBuilder_.dispose();
           roleBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -6243,7 +6335,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.securitycenter.v1.Kubernetes.Role role = 3;</code>
        */
       public com.google.cloud.securitycenter.v1.Kubernetes.Role.Builder getRoleBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getRoleFieldBuilder().getBuilder();
       }
@@ -6295,11 +6387,11 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           java.util.Collections.emptyList();
 
       private void ensureSubjectsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           subjects_ =
               new java.util.ArrayList<com.google.cloud.securitycenter.v1.Kubernetes.Subject>(
                   subjects_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
         }
       }
 
@@ -6532,7 +6624,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       public Builder clearSubjects() {
         if (subjectsBuilder_ == null) {
           subjects_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           subjectsBuilder_.clear();
@@ -6666,7 +6758,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.securitycenter.v1.Kubernetes.Subject,
                   com.google.cloud.securitycenter.v1.Kubernetes.Subject.Builder,
                   com.google.cloud.securitycenter.v1.Kubernetes.SubjectOrBuilder>(
-                  subjects_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  subjects_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
           subjects_ = null;
         }
         return subjectsBuilder_;
@@ -7049,7 +7141,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int KIND_FIELD_NUMBER = 1;
-    private int kind_;
+    private int kind_ = 0;
     /**
      *
      *
@@ -7078,16 +7170,17 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType getKind() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType result =
-          com.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType.valueOf(kind_);
+          com.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType.forNumber(kind_);
       return result == null
           ? com.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType.UNRECOGNIZED
           : result;
     }
 
     public static final int NS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object ns_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object ns_ = "";
     /**
      *
      *
@@ -7136,7 +7229,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -7406,12 +7501,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         kind_ = 0;
-
         ns_ = "";
-
         name_ = "";
-
         return this;
       }
 
@@ -7439,11 +7532,24 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.securitycenter.v1.Kubernetes.Subject buildPartial() {
         com.google.cloud.securitycenter.v1.Kubernetes.Subject result =
             new com.google.cloud.securitycenter.v1.Kubernetes.Subject(this);
-        result.kind_ = kind_;
-        result.ns_ = ns_;
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.securitycenter.v1.Kubernetes.Subject result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.kind_ = kind_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.ns_ = ns_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -7499,10 +7605,12 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getNs().isEmpty()) {
           ns_ = other.ns_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -7534,19 +7642,19 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   kind_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   ns_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -7565,6 +7673,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int kind_ = 0;
       /**
@@ -7595,8 +7705,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setKindValue(int value) {
-
         kind_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -7613,9 +7723,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType getKind() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType result =
-            com.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType.valueOf(kind_);
+            com.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType.forNumber(kind_);
         return result == null
             ? com.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType.UNRECOGNIZED
             : result;
@@ -7636,7 +7745,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         kind_ = value.getNumber();
         onChanged();
         return this;
@@ -7653,7 +7762,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearKind() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         kind_ = 0;
         onChanged();
         return this;
@@ -7720,8 +7829,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         ns_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -7737,8 +7846,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearNs() {
-
         ns_ = getDefaultInstance().getNs();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -7759,8 +7868,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         ns_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -7826,8 +7935,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -7843,8 +7952,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -7865,8 +7974,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -8178,7 +8287,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GROUP_FIELD_NUMBER = 1;
-    private volatile java.lang.Object group_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object group_ = "";
     /**
      *
      *
@@ -8227,7 +8338,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object ns_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object ns_ = "";
     /**
      *
      *
@@ -8280,7 +8393,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -8329,7 +8444,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RESOURCE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object resource_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object resource_ = "";
     /**
      *
      *
@@ -8378,7 +8495,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SUBRESOURCE_FIELD_NUMBER = 5;
-    private volatile java.lang.Object subresource_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object subresource_ = "";
     /**
      *
      *
@@ -8427,7 +8546,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VERB_FIELD_NUMBER = 6;
-    private volatile java.lang.Object verb_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object verb_ = "";
     /**
      *
      *
@@ -8478,7 +8599,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VERSION_FIELD_NUMBER = 7;
-    private volatile java.lang.Object version_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object version_ = "";
     /**
      *
      *
@@ -8781,20 +8904,14 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         group_ = "";
-
         ns_ = "";
-
         name_ = "";
-
         resource_ = "";
-
         subresource_ = "";
-
         verb_ = "";
-
         version_ = "";
-
         return this;
       }
 
@@ -8823,15 +8940,37 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.securitycenter.v1.Kubernetes.AccessReview buildPartial() {
         com.google.cloud.securitycenter.v1.Kubernetes.AccessReview result =
             new com.google.cloud.securitycenter.v1.Kubernetes.AccessReview(this);
-        result.group_ = group_;
-        result.ns_ = ns_;
-        result.name_ = name_;
-        result.resource_ = resource_;
-        result.subresource_ = subresource_;
-        result.verb_ = verb_;
-        result.version_ = version_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.securitycenter.v1.Kubernetes.AccessReview result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.group_ = group_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.ns_ = ns_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.resource_ = resource_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.subresource_ = subresource_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.verb_ = verb_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.version_ = version_;
+        }
       }
 
       @java.lang.Override
@@ -8885,30 +9024,37 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getGroup().isEmpty()) {
           group_ = other.group_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getNs().isEmpty()) {
           ns_ = other.ns_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getResource().isEmpty()) {
           resource_ = other.resource_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (!other.getSubresource().isEmpty()) {
           subresource_ = other.subresource_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (!other.getVerb().isEmpty()) {
           verb_ = other.verb_;
+          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -8940,43 +9086,43 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   group_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   ns_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   resource_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 42:
                 {
                   subresource_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               case 50:
                 {
                   verb_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 50
               case 58:
                 {
                   version_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 58
               default:
@@ -8995,6 +9141,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object group_ = "";
       /**
@@ -9057,8 +9205,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         group_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -9074,8 +9222,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearGroup() {
-
         group_ = getDefaultInstance().getGroup();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -9096,8 +9244,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         group_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -9169,8 +9317,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         ns_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -9188,8 +9336,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearNs() {
-
         ns_ = getDefaultInstance().getNs();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -9212,8 +9360,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         ns_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -9279,8 +9427,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -9296,8 +9444,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -9318,8 +9466,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -9385,8 +9533,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         resource_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -9402,8 +9550,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearResource() {
-
         resource_ = getDefaultInstance().getResource();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -9424,8 +9572,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         resource_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -9491,8 +9639,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         subresource_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -9508,8 +9656,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSubresource() {
-
         subresource_ = getDefaultInstance().getSubresource();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -9530,8 +9678,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         subresource_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -9600,8 +9748,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         verb_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -9618,8 +9766,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearVerb() {
-
         verb_ = getDefaultInstance().getVerb();
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -9641,8 +9789,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         verb_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -9708,8 +9856,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         version_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -9725,8 +9873,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
-
         version_ = getDefaultInstance().getVersion();
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -9747,8 +9895,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         version_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -9819,6 +9967,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PODS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.Pod> pods_;
   /**
    *
@@ -9893,6 +10043,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NODES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.Node> nodes_;
   /**
    *
@@ -9962,6 +10114,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NODE_POOLS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.NodePool> nodePools_;
   /**
    *
@@ -10037,6 +10191,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROLES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.Role> roles_;
   /**
    *
@@ -10111,6 +10267,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BINDINGS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.Binding> bindings_;
   /**
    *
@@ -10186,6 +10344,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ACCESS_REVIEWS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.AccessReview> accessReviews_;
   /**
    *
@@ -10521,6 +10681,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (podsBuilder_ == null) {
         pods_ = java.util.Collections.emptyList();
       } else {
@@ -10590,7 +10751,15 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.Kubernetes buildPartial() {
       com.google.cloud.securitycenter.v1.Kubernetes result =
           new com.google.cloud.securitycenter.v1.Kubernetes(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.securitycenter.v1.Kubernetes result) {
       if (podsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           pods_ = java.util.Collections.unmodifiableList(pods_);
@@ -10645,8 +10814,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.accessReviews_ = accessReviewsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.Kubernetes result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

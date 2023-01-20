@@ -72,6 +72,8 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.ExfilResource> sources_;
   /**
    *
@@ -151,6 +153,8 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TARGETS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.ExfilResource> targets_;
   /**
    *
@@ -437,6 +441,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (sourcesBuilder_ == null) {
         sources_ = java.util.Collections.emptyList();
       } else {
@@ -478,7 +483,16 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.Exfiltration buildPartial() {
       com.google.cloud.securitycenter.v1.Exfiltration result =
           new com.google.cloud.securitycenter.v1.Exfiltration(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.securitycenter.v1.Exfiltration result) {
       if (sourcesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           sources_ = java.util.Collections.unmodifiableList(sources_);
@@ -497,8 +511,10 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.targets_ = targetsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.Exfiltration result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

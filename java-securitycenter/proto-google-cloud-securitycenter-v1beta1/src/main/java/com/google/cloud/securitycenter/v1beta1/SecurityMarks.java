@@ -82,7 +82,9 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -151,6 +153,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> marks_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMarks() {
@@ -226,7 +229,10 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; marks = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getMarksOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMarksOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -498,8 +504,8 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       internalGetMutableMarks().clear();
       return this;
     }
@@ -528,12 +534,22 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1beta1.SecurityMarks buildPartial() {
       com.google.cloud.securitycenter.v1beta1.SecurityMarks result =
           new com.google.cloud.securitycenter.v1beta1.SecurityMarks(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.marks_ = internalGetMarks();
-      result.marks_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1beta1.SecurityMarks result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.marks_ = internalGetMarks();
+        result.marks_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -584,9 +600,11 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableMarks().mergeFrom(other.internalGetMarks());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -616,7 +634,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -625,6 +643,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
                     input.readMessage(
                         MarksDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableMarks().getMutableMap().put(marks__.getKey(), marks__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -719,8 +738,8 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -740,8 +759,8 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -766,8 +785,8 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -783,14 +802,14 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMarks() {
-      onChanged();
-      ;
       if (marks_ == null) {
         marks_ = com.google.protobuf.MapField.newMapField(MarksDefaultEntryHolder.defaultEntry);
       }
       if (!marks_.isMutable()) {
         marks_ = marks_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return marks_;
     }
 
@@ -860,7 +879,10 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; marks = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getMarksOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMarksOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -895,6 +917,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearMarks() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableMarks().getMutableMap().clear();
       return this;
     }
@@ -923,6 +946,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMarks() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableMarks().getMutableMap();
     }
     /**
@@ -947,8 +971,8 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMarks().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -968,6 +992,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllMarks(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMarks().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

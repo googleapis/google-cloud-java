@@ -116,7 +116,9 @@ public final class UpdateMuteConfigRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.securitycenter.v1.MuteConfigOrBuilder getMuteConfigOrBuilder() {
-    return getMuteConfig();
+    return muteConfig_ == null
+        ? com.google.cloud.securitycenter.v1.MuteConfig.getDefaultInstance()
+        : muteConfig_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -165,7 +167,7 @@ public final class UpdateMuteConfigRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,16 +387,15 @@ public final class UpdateMuteConfigRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (muteConfigBuilder_ == null) {
-        muteConfig_ = null;
-      } else {
-        muteConfig_ = null;
+      bitField0_ = 0;
+      muteConfig_ = null;
+      if (muteConfigBuilder_ != null) {
+        muteConfigBuilder_.dispose();
         muteConfigBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -424,18 +425,21 @@ public final class UpdateMuteConfigRequest extends com.google.protobuf.Generated
     public com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest buildPartial() {
       com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest result =
           new com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest(this);
-      if (muteConfigBuilder_ == null) {
-        result.muteConfig_ = muteConfig_;
-      } else {
-        result.muteConfig_ = muteConfigBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.muteConfig_ = muteConfigBuilder_ == null ? muteConfig_ : muteConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -519,13 +523,13 @@ public final class UpdateMuteConfigRequest extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getMuteConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -544,6 +548,8 @@ public final class UpdateMuteConfigRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.securitycenter.v1.MuteConfig muteConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -565,7 +571,7 @@ public final class UpdateMuteConfigRequest extends com.google.protobuf.Generated
      * @return Whether the muteConfig field is set.
      */
     public boolean hasMuteConfig() {
-      return muteConfigBuilder_ != null || muteConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -606,11 +612,11 @@ public final class UpdateMuteConfigRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         muteConfig_ = value;
-        onChanged();
       } else {
         muteConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -628,11 +634,11 @@ public final class UpdateMuteConfigRequest extends com.google.protobuf.Generated
         com.google.cloud.securitycenter.v1.MuteConfig.Builder builderForValue) {
       if (muteConfigBuilder_ == null) {
         muteConfig_ = builderForValue.build();
-        onChanged();
       } else {
         muteConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -648,19 +654,18 @@ public final class UpdateMuteConfigRequest extends com.google.protobuf.Generated
      */
     public Builder mergeMuteConfig(com.google.cloud.securitycenter.v1.MuteConfig value) {
       if (muteConfigBuilder_ == null) {
-        if (muteConfig_ != null) {
-          muteConfig_ =
-              com.google.cloud.securitycenter.v1.MuteConfig.newBuilder(muteConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && muteConfig_ != null
+            && muteConfig_ != com.google.cloud.securitycenter.v1.MuteConfig.getDefaultInstance()) {
+          getMuteConfigBuilder().mergeFrom(value);
         } else {
           muteConfig_ = value;
         }
-        onChanged();
       } else {
         muteConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -675,14 +680,13 @@ public final class UpdateMuteConfigRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearMuteConfig() {
-      if (muteConfigBuilder_ == null) {
-        muteConfig_ = null;
-        onChanged();
-      } else {
-        muteConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      muteConfig_ = null;
+      if (muteConfigBuilder_ != null) {
+        muteConfigBuilder_.dispose();
         muteConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -697,7 +701,7 @@ public final class UpdateMuteConfigRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.securitycenter.v1.MuteConfig.Builder getMuteConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getMuteConfigFieldBuilder().getBuilder();
     }
@@ -768,7 +772,7 @@ public final class UpdateMuteConfigRequest extends com.google.protobuf.Generated
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -807,11 +811,11 @@ public final class UpdateMuteConfigRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -827,11 +831,11 @@ public final class UpdateMuteConfigRequest extends com.google.protobuf.Generated
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -846,17 +850,18 @@ public final class UpdateMuteConfigRequest extends com.google.protobuf.Generated
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -870,14 +875,13 @@ public final class UpdateMuteConfigRequest extends com.google.protobuf.Generated
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -891,7 +895,7 @@ public final class UpdateMuteConfigRequest extends com.google.protobuf.Generated
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

@@ -3412,7 +3412,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent of sources to list. Its format should be
-   *     "organizations/[organization_id], folders/[folder_id], or projects/[project_id]".
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSourcesPagedResponse listSources(FolderName parent) {
@@ -3444,7 +3444,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent of sources to list. Its format should be
-   *     "organizations/[organization_id], folders/[folder_id], or projects/[project_id]".
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSourcesPagedResponse listSources(OrganizationName parent) {
@@ -3476,7 +3476,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent of sources to list. Its format should be
-   *     "organizations/[organization_id], folders/[folder_id], or projects/[project_id]".
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSourcesPagedResponse listSources(ProjectName parent) {
@@ -3508,7 +3508,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent of sources to list. Its format should be
-   *     "organizations/[organization_id], folders/[folder_id], or projects/[project_id]".
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSourcesPagedResponse listSources(String parent) {

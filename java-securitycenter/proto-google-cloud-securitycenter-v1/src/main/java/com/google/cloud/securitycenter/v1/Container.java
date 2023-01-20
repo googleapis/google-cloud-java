@@ -71,7 +71,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -171,7 +175,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object imageId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageId_ = "";
   /**
    *
    *
@@ -224,6 +230,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LABELS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.Label> labels_;
   /**
    *
@@ -518,19 +526,17 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       uri_ = "";
-
       imageId_ = "";
-
       if (labelsBuilder_ == null) {
         labels_ = java.util.Collections.emptyList();
       } else {
         labels_ = null;
         labelsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -558,21 +564,37 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.Container buildPartial() {
       com.google.cloud.securitycenter.v1.Container result =
           new com.google.cloud.securitycenter.v1.Container(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.uri_ = uri_;
-      result.imageId_ = imageId_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.securitycenter.v1.Container result) {
       if (labelsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           labels_ = java.util.Collections.unmodifiableList(labels_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.labels_ = labels_;
       } else {
         result.labels_ = labelsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.Container result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.imageId_ = imageId_;
+      }
     }
 
     @java.lang.Override
@@ -622,21 +644,24 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.securitycenter.v1.Container.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getImageId().isEmpty()) {
         imageId_ = other.imageId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (labelsBuilder_ == null) {
         if (!other.labels_.isEmpty()) {
           if (labels_.isEmpty()) {
             labels_ = other.labels_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureLabelsIsMutable();
             labels_.addAll(other.labels_);
@@ -649,7 +674,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
             labelsBuilder_.dispose();
             labelsBuilder_ = null;
             labels_ = other.labels_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             labelsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLabelsFieldBuilder()
@@ -688,19 +713,19 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 imageId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -796,8 +821,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -813,8 +838,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -835,8 +860,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -905,8 +930,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -923,8 +948,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -946,8 +971,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1019,8 +1044,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       imageId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1038,8 +1063,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImageId() {
-
       imageId_ = getDefaultInstance().getImageId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1062,8 +1087,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       imageId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1072,9 +1097,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureLabelsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         labels_ = new java.util.ArrayList<com.google.cloud.securitycenter.v1.Label>(labels_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1289,7 +1314,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLabels() {
       if (labelsBuilder_ == null) {
         labels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         labelsBuilder_.clear();
@@ -1410,7 +1435,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v1.Label,
                 com.google.cloud.securitycenter.v1.Label.Builder,
                 com.google.cloud.securitycenter.v1.LabelOrBuilder>(
-                labels_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                labels_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         labels_ = null;
       }
       return labelsBuilder_;

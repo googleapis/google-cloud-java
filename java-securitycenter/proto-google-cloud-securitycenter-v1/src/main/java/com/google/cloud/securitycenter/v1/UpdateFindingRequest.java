@@ -128,7 +128,9 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.securitycenter.v1.FindingOrBuilder getFindingOrBuilder() {
-    return getFinding();
+    return finding_ == null
+        ? com.google.cloud.securitycenter.v1.Finding.getDefaultInstance()
+        : finding_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -189,7 +191,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -409,16 +411,15 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (findingBuilder_ == null) {
-        finding_ = null;
-      } else {
-        finding_ = null;
+      bitField0_ = 0;
+      finding_ = null;
+      if (findingBuilder_ != null) {
+        findingBuilder_.dispose();
         findingBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -448,18 +449,21 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.securitycenter.v1.UpdateFindingRequest buildPartial() {
       com.google.cloud.securitycenter.v1.UpdateFindingRequest result =
           new com.google.cloud.securitycenter.v1.UpdateFindingRequest(this);
-      if (findingBuilder_ == null) {
-        result.finding_ = finding_;
-      } else {
-        result.finding_ = findingBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.UpdateFindingRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.finding_ = findingBuilder_ == null ? finding_ : findingBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -543,13 +547,13 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getFindingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -568,6 +572,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.securitycenter.v1.Finding finding_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -593,7 +599,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the finding field is set.
      */
     public boolean hasFinding() {
-      return findingBuilder_ != null || finding_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -642,11 +648,11 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         finding_ = value;
-        onChanged();
       } else {
         findingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -667,11 +673,11 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
     public Builder setFinding(com.google.cloud.securitycenter.v1.Finding.Builder builderForValue) {
       if (findingBuilder_ == null) {
         finding_ = builderForValue.build();
-        onChanged();
       } else {
         findingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -691,19 +697,18 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeFinding(com.google.cloud.securitycenter.v1.Finding value) {
       if (findingBuilder_ == null) {
-        if (finding_ != null) {
-          finding_ =
-              com.google.cloud.securitycenter.v1.Finding.newBuilder(finding_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && finding_ != null
+            && finding_ != com.google.cloud.securitycenter.v1.Finding.getDefaultInstance()) {
+          getFindingBuilder().mergeFrom(value);
         } else {
           finding_ = value;
         }
-        onChanged();
       } else {
         findingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -722,14 +727,13 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearFinding() {
-      if (findingBuilder_ == null) {
-        finding_ = null;
-        onChanged();
-      } else {
-        finding_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      finding_ = null;
+      if (findingBuilder_ != null) {
+        findingBuilder_.dispose();
         findingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -748,7 +752,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.securitycenter.v1.Finding.Builder getFindingBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getFindingFieldBuilder().getBuilder();
     }
@@ -831,7 +835,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -878,11 +882,11 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -902,11 +906,11 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -925,17 +929,18 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -953,14 +958,13 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -978,7 +982,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

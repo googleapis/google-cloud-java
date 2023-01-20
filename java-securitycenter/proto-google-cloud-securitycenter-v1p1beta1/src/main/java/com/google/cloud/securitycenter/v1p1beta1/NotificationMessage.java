@@ -112,7 +112,9 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NOTIFICATION_CONFIG_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object notificationConfigName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object notificationConfigName_ = "";
   /**
    *
    *
@@ -259,7 +261,9 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.securitycenter.v1p1beta1.ResourceOrBuilder getResourceOrBuilder() {
-    return getResource();
+    return resource_ == null
+        ? com.google.cloud.securitycenter.v1p1beta1.Resource.getDefaultInstance()
+        : resource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -498,15 +502,14 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       notificationConfigName_ = "";
-
       if (findingBuilder_ != null) {
         findingBuilder_.clear();
       }
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-      } else {
-        resource_ = null;
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
       eventCase_ = 0;
@@ -539,22 +542,32 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
     public com.google.cloud.securitycenter.v1p1beta1.NotificationMessage buildPartial() {
       com.google.cloud.securitycenter.v1p1beta1.NotificationMessage result =
           new com.google.cloud.securitycenter.v1p1beta1.NotificationMessage(this);
-      result.notificationConfigName_ = notificationConfigName_;
-      if (eventCase_ == 2) {
-        if (findingBuilder_ == null) {
-          result.event_ = event_;
-        } else {
-          result.event_ = findingBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (resourceBuilder_ == null) {
-        result.resource_ = resource_;
-      } else {
-        result.resource_ = resourceBuilder_.build();
-      }
-      result.eventCase_ = eventCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.securitycenter.v1p1beta1.NotificationMessage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.notificationConfigName_ = notificationConfigName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.resource_ = resourceBuilder_ == null ? resource_ : resourceBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.securitycenter.v1p1beta1.NotificationMessage result) {
+      result.eventCase_ = eventCase_;
+      result.event_ = this.event_;
+      if (eventCase_ == 2 && findingBuilder_ != null) {
+        result.event_ = findingBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -606,6 +619,7 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getNotificationConfigName().isEmpty()) {
         notificationConfigName_ = other.notificationConfigName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasResource()) {
@@ -651,7 +665,7 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 notificationConfigName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -663,7 +677,7 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
             case 26:
               {
                 input.readMessage(getResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -696,6 +710,8 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object notificationConfigName_ = "";
     /**
@@ -758,8 +774,8 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       notificationConfigName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -775,8 +791,8 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearNotificationConfigName() {
-
       notificationConfigName_ = getDefaultInstance().getNotificationConfigName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -797,8 +813,8 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       notificationConfigName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1018,7 +1034,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       }
       eventCase_ = 2;
       onChanged();
-      ;
       return findingBuilder_;
     }
 
@@ -1040,7 +1055,7 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
      * @return Whether the resource field is set.
      */
     public boolean hasResource() {
-      return resourceBuilder_ != null || resource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1077,11 +1092,11 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         resource_ = value;
-        onChanged();
       } else {
         resourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1097,11 +1112,11 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
         com.google.cloud.securitycenter.v1p1beta1.Resource.Builder builderForValue) {
       if (resourceBuilder_ == null) {
         resource_ = builderForValue.build();
-        onChanged();
       } else {
         resourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1115,19 +1130,19 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeResource(com.google.cloud.securitycenter.v1p1beta1.Resource value) {
       if (resourceBuilder_ == null) {
-        if (resource_ != null) {
-          resource_ =
-              com.google.cloud.securitycenter.v1p1beta1.Resource.newBuilder(resource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && resource_ != null
+            && resource_
+                != com.google.cloud.securitycenter.v1p1beta1.Resource.getDefaultInstance()) {
+          getResourceBuilder().mergeFrom(value);
         } else {
           resource_ = value;
         }
-        onChanged();
       } else {
         resourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1140,14 +1155,13 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.securitycenter.v1p1beta1.Resource resource = 3;</code>
      */
     public Builder clearResource() {
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-        onChanged();
-      } else {
-        resource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1160,7 +1174,7 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.securitycenter.v1p1beta1.Resource resource = 3;</code>
      */
     public com.google.cloud.securitycenter.v1p1beta1.Resource.Builder getResourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }

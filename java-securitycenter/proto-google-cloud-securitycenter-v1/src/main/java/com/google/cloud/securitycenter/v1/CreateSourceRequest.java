@@ -68,7 +68,9 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -176,7 +178,9 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.securitycenter.v1.SourceOrBuilder getSourceOrBuilder() {
-    return getSource();
+    return source_ == null
+        ? com.google.cloud.securitycenter.v1.Source.getDefaultInstance()
+        : source_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -391,12 +395,11 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (sourceBuilder_ == null) {
-        source_ = null;
-      } else {
-        source_ = null;
+      source_ = null;
+      if (sourceBuilder_ != null) {
+        sourceBuilder_.dispose();
         sourceBuilder_ = null;
       }
       return this;
@@ -426,14 +429,21 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.securitycenter.v1.CreateSourceRequest buildPartial() {
       com.google.cloud.securitycenter.v1.CreateSourceRequest result =
           new com.google.cloud.securitycenter.v1.CreateSourceRequest(this);
-      result.parent_ = parent_;
-      if (sourceBuilder_ == null) {
-        result.source_ = source_;
-      } else {
-        result.source_ = sourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.CreateSourceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.source_ = sourceBuilder_ == null ? source_ : sourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -484,6 +494,7 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSource()) {
@@ -518,13 +529,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -543,6 +554,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -614,8 +627,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -634,8 +647,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -659,8 +672,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -686,7 +699,7 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the source field is set.
      */
     public boolean hasSource() {
-      return sourceBuilder_ != null || source_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -729,11 +742,11 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         source_ = value;
-        onChanged();
       } else {
         sourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -751,11 +764,11 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
     public Builder setSource(com.google.cloud.securitycenter.v1.Source.Builder builderForValue) {
       if (sourceBuilder_ == null) {
         source_ = builderForValue.build();
-        onChanged();
       } else {
         sourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -772,19 +785,18 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeSource(com.google.cloud.securitycenter.v1.Source value) {
       if (sourceBuilder_ == null) {
-        if (source_ != null) {
-          source_ =
-              com.google.cloud.securitycenter.v1.Source.newBuilder(source_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && source_ != null
+            && source_ != com.google.cloud.securitycenter.v1.Source.getDefaultInstance()) {
+          getSourceBuilder().mergeFrom(value);
         } else {
           source_ = value;
         }
-        onChanged();
       } else {
         sourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -800,14 +812,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearSource() {
-      if (sourceBuilder_ == null) {
-        source_ = null;
-        onChanged();
-      } else {
-        source_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      source_ = null;
+      if (sourceBuilder_ != null) {
+        sourceBuilder_.dispose();
         sourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -823,7 +834,7 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.securitycenter.v1.Source.Builder getSourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSourceFieldBuilder().getBuilder();
     }

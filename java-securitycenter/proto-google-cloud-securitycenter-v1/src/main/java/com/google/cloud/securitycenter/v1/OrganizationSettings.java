@@ -438,6 +438,8 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
     }
 
     public static final int PROJECT_IDS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList projectIds_;
     /**
      *
@@ -499,7 +501,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
     }
 
     public static final int INCLUSION_MODE_FIELD_NUMBER = 2;
-    private int inclusionMode_;
+    private int inclusionMode_ = 0;
     /**
      *
      *
@@ -534,11 +536,10 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
     public com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig
             .InclusionMode
         getInclusionMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode
           result =
               com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig
-                  .InclusionMode.valueOf(inclusionMode_);
+                  .InclusionMode.forNumber(inclusionMode_);
       return result == null
           ? com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig
               .InclusionMode.UNRECOGNIZED
@@ -546,6 +547,8 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
     }
 
     public static final int FOLDER_IDS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList folderIds_;
     /**
      *
@@ -859,12 +862,12 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         projectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         inclusionMode_ = 0;
-
         folderIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -896,20 +899,34 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
           buildPartial() {
         com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig result =
             new com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           projectIds_ = projectIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.projectIds_ = projectIds_;
-        result.inclusionMode_ = inclusionMode_;
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           folderIds_ = folderIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.folderIds_ = folderIds_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.inclusionMode_ = inclusionMode_;
+        }
       }
 
       @java.lang.Override
@@ -981,7 +998,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
         if (!other.folderIds_.isEmpty()) {
           if (folderIds_.isEmpty()) {
             folderIds_ = other.folderIds_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureFolderIdsIsMutable();
             folderIds_.addAll(other.folderIds_);
@@ -1024,7 +1041,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
               case 16:
                 {
                   inclusionMode_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
@@ -1254,8 +1271,8 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder setInclusionModeValue(int value) {
-
         inclusionMode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1276,11 +1293,10 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
       public com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig
               .InclusionMode
           getInclusionMode() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode
             result =
                 com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig
-                    .InclusionMode.valueOf(inclusionMode_);
+                    .InclusionMode.forNumber(inclusionMode_);
         return result == null
             ? com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig
                 .InclusionMode.UNRECOGNIZED
@@ -1306,7 +1322,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         inclusionMode_ = value.getNumber();
         onChanged();
         return this;
@@ -1325,7 +1341,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearInclusionMode() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         inclusionMode_ = 0;
         onChanged();
         return this;
@@ -1335,9 +1351,9 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureFolderIdsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           folderIds_ = new com.google.protobuf.LazyStringArrayList(folderIds_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
         }
       }
       /**
@@ -1480,7 +1496,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
        */
       public Builder clearFolderIds() {
         folderIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1578,7 +1594,9 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1633,7 +1651,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ENABLE_ASSET_DISCOVERY_FIELD_NUMBER = 2;
-  private boolean enableAssetDiscovery_;
+  private boolean enableAssetDiscovery_ = false;
   /**
    *
    *
@@ -1708,7 +1726,10 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfigOrBuilder
       getAssetDiscoveryConfigOrBuilder() {
-    return getAssetDiscoveryConfig();
+    return assetDiscoveryConfig_ == null
+        ? com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig
+            .getDefaultInstance()
+        : assetDiscoveryConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1934,14 +1955,12 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       enableAssetDiscovery_ = false;
-
-      if (assetDiscoveryConfigBuilder_ == null) {
-        assetDiscoveryConfig_ = null;
-      } else {
-        assetDiscoveryConfig_ = null;
+      assetDiscoveryConfig_ = null;
+      if (assetDiscoveryConfigBuilder_ != null) {
+        assetDiscoveryConfigBuilder_.dispose();
         assetDiscoveryConfigBuilder_ = null;
       }
       return this;
@@ -1971,15 +1990,27 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
     public com.google.cloud.securitycenter.v1.OrganizationSettings buildPartial() {
       com.google.cloud.securitycenter.v1.OrganizationSettings result =
           new com.google.cloud.securitycenter.v1.OrganizationSettings(this);
-      result.name_ = name_;
-      result.enableAssetDiscovery_ = enableAssetDiscovery_;
-      if (assetDiscoveryConfigBuilder_ == null) {
-        result.assetDiscoveryConfig_ = assetDiscoveryConfig_;
-      } else {
-        result.assetDiscoveryConfig_ = assetDiscoveryConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.OrganizationSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.enableAssetDiscovery_ = enableAssetDiscovery_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.assetDiscoveryConfig_ =
+            assetDiscoveryConfigBuilder_ == null
+                ? assetDiscoveryConfig_
+                : assetDiscoveryConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2030,6 +2061,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getEnableAssetDiscovery() != false) {
@@ -2067,20 +2099,20 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 enableAssetDiscovery_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(
                     getAssetDiscoveryConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -2099,6 +2131,8 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -2170,8 +2204,8 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2190,8 +2224,8 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2215,8 +2249,8 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2258,6 +2292,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
     public Builder setEnableAssetDiscovery(boolean value) {
 
       enableAssetDiscovery_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2276,7 +2311,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearEnableAssetDiscovery() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       enableAssetDiscovery_ = false;
       onChanged();
       return this;
@@ -2303,7 +2338,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
      * @return Whether the assetDiscoveryConfig field is set.
      */
     public boolean hasAssetDiscoveryConfig() {
-      return assetDiscoveryConfigBuilder_ != null || assetDiscoveryConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2347,11 +2382,11 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         assetDiscoveryConfig_ = value;
-        onChanged();
       } else {
         assetDiscoveryConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2370,11 +2405,11 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
             builderForValue) {
       if (assetDiscoveryConfigBuilder_ == null) {
         assetDiscoveryConfig_ = builderForValue.build();
-        onChanged();
       } else {
         assetDiscoveryConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2391,20 +2426,20 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
     public Builder mergeAssetDiscoveryConfig(
         com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig value) {
       if (assetDiscoveryConfigBuilder_ == null) {
-        if (assetDiscoveryConfig_ != null) {
-          assetDiscoveryConfig_ =
-              com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig
-                  .newBuilder(assetDiscoveryConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && assetDiscoveryConfig_ != null
+            && assetDiscoveryConfig_
+                != com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig
+                    .getDefaultInstance()) {
+          getAssetDiscoveryConfigBuilder().mergeFrom(value);
         } else {
           assetDiscoveryConfig_ = value;
         }
-        onChanged();
       } else {
         assetDiscoveryConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2419,14 +2454,13 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearAssetDiscoveryConfig() {
-      if (assetDiscoveryConfigBuilder_ == null) {
-        assetDiscoveryConfig_ = null;
-        onChanged();
-      } else {
-        assetDiscoveryConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      assetDiscoveryConfig_ = null;
+      if (assetDiscoveryConfigBuilder_ != null) {
+        assetDiscoveryConfigBuilder_.dispose();
         assetDiscoveryConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2442,7 +2476,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.Builder
         getAssetDiscoveryConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAssetDiscoveryConfigFieldBuilder().getBuilder();
     }

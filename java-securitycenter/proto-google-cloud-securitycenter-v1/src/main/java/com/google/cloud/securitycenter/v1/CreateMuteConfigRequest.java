@@ -69,7 +69,9 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -176,11 +178,15 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.securitycenter.v1.MuteConfigOrBuilder getMuteConfigOrBuilder() {
-    return getMuteConfig();
+    return muteConfig_ == null
+        ? com.google.cloud.securitycenter.v1.MuteConfig.getDefaultInstance()
+        : muteConfig_;
   }
 
   public static final int MUTE_CONFIG_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object muteConfigId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object muteConfigId_ = "";
   /**
    *
    *
@@ -455,16 +461,14 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (muteConfigBuilder_ == null) {
-        muteConfig_ = null;
-      } else {
-        muteConfig_ = null;
+      muteConfig_ = null;
+      if (muteConfigBuilder_ != null) {
+        muteConfigBuilder_.dispose();
         muteConfigBuilder_ = null;
       }
       muteConfigId_ = "";
-
       return this;
     }
 
@@ -492,15 +496,24 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
     public com.google.cloud.securitycenter.v1.CreateMuteConfigRequest buildPartial() {
       com.google.cloud.securitycenter.v1.CreateMuteConfigRequest result =
           new com.google.cloud.securitycenter.v1.CreateMuteConfigRequest(this);
-      result.parent_ = parent_;
-      if (muteConfigBuilder_ == null) {
-        result.muteConfig_ = muteConfig_;
-      } else {
-        result.muteConfig_ = muteConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.muteConfigId_ = muteConfigId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.CreateMuteConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.muteConfig_ = muteConfigBuilder_ == null ? muteConfig_ : muteConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.muteConfigId_ = muteConfigId_;
+      }
     }
 
     @java.lang.Override
@@ -551,6 +564,7 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMuteConfig()) {
@@ -558,6 +572,7 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
       }
       if (!other.getMuteConfigId().isEmpty()) {
         muteConfigId_ = other.muteConfigId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -589,19 +604,19 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getMuteConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 muteConfigId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -620,6 +635,8 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -694,8 +711,8 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -715,8 +732,8 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -741,8 +758,8 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -767,7 +784,7 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
      * @return Whether the muteConfig field is set.
      */
     public boolean hasMuteConfig() {
-      return muteConfigBuilder_ != null || muteConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -808,11 +825,11 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         muteConfig_ = value;
-        onChanged();
       } else {
         muteConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -830,11 +847,11 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
         com.google.cloud.securitycenter.v1.MuteConfig.Builder builderForValue) {
       if (muteConfigBuilder_ == null) {
         muteConfig_ = builderForValue.build();
-        onChanged();
       } else {
         muteConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -850,19 +867,18 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
      */
     public Builder mergeMuteConfig(com.google.cloud.securitycenter.v1.MuteConfig value) {
       if (muteConfigBuilder_ == null) {
-        if (muteConfig_ != null) {
-          muteConfig_ =
-              com.google.cloud.securitycenter.v1.MuteConfig.newBuilder(muteConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && muteConfig_ != null
+            && muteConfig_ != com.google.cloud.securitycenter.v1.MuteConfig.getDefaultInstance()) {
+          getMuteConfigBuilder().mergeFrom(value);
         } else {
           muteConfig_ = value;
         }
-        onChanged();
       } else {
         muteConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -877,14 +893,13 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearMuteConfig() {
-      if (muteConfigBuilder_ == null) {
-        muteConfig_ = null;
-        onChanged();
-      } else {
-        muteConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      muteConfig_ = null;
+      if (muteConfigBuilder_ != null) {
+        muteConfigBuilder_.dispose();
         muteConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -899,7 +914,7 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.securitycenter.v1.MuteConfig.Builder getMuteConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMuteConfigFieldBuilder().getBuilder();
     }
@@ -1021,8 +1036,8 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       muteConfigId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1041,8 +1056,8 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearMuteConfigId() {
-
       muteConfigId_ = getDefaultInstance().getMuteConfigId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1066,8 +1081,8 @@ public final class CreateMuteConfigRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       muteConfigId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -293,7 +293,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESTINATION_IP_FIELD_NUMBER = 1;
-  private volatile java.lang.Object destinationIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object destinationIp_ = "";
   /**
    *
    *
@@ -344,7 +346,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESTINATION_PORT_FIELD_NUMBER = 2;
-  private int destinationPort_;
+  private int destinationPort_ = 0;
   /**
    *
    *
@@ -363,7 +365,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_IP_FIELD_NUMBER = 3;
-  private volatile java.lang.Object sourceIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceIp_ = "";
   /**
    *
    *
@@ -412,7 +416,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_PORT_FIELD_NUMBER = 4;
-  private int sourcePort_;
+  private int sourcePort_ = 0;
   /**
    *
    *
@@ -430,7 +434,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROTOCOL_FIELD_NUMBER = 5;
-  private int protocol_;
+  private int protocol_ = 0;
   /**
    *
    *
@@ -459,9 +463,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.securitycenter.v1.Connection.Protocol getProtocol() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.securitycenter.v1.Connection.Protocol result =
-        com.google.cloud.securitycenter.v1.Connection.Protocol.valueOf(protocol_);
+        com.google.cloud.securitycenter.v1.Connection.Protocol.forNumber(protocol_);
     return result == null
         ? com.google.cloud.securitycenter.v1.Connection.Protocol.UNRECOGNIZED
         : result;
@@ -704,16 +707,12 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       destinationIp_ = "";
-
       destinationPort_ = 0;
-
       sourceIp_ = "";
-
       sourcePort_ = 0;
-
       protocol_ = 0;
-
       return this;
     }
 
@@ -741,13 +740,30 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.Connection buildPartial() {
       com.google.cloud.securitycenter.v1.Connection result =
           new com.google.cloud.securitycenter.v1.Connection(this);
-      result.destinationIp_ = destinationIp_;
-      result.destinationPort_ = destinationPort_;
-      result.sourceIp_ = sourceIp_;
-      result.sourcePort_ = sourcePort_;
-      result.protocol_ = protocol_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.securitycenter.v1.Connection result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.destinationIp_ = destinationIp_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.destinationPort_ = destinationPort_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sourceIp_ = sourceIp_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.sourcePort_ = sourcePort_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.protocol_ = protocol_;
+      }
     }
 
     @java.lang.Override
@@ -797,6 +813,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.securitycenter.v1.Connection.getDefaultInstance()) return this;
       if (!other.getDestinationIp().isEmpty()) {
         destinationIp_ = other.destinationIp_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getDestinationPort() != 0) {
@@ -804,6 +821,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getSourceIp().isEmpty()) {
         sourceIp_ = other.sourceIp_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getSourcePort() != 0) {
@@ -841,31 +859,31 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 destinationIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 destinationPort_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 sourceIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 sourcePort_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 protocol_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -884,6 +902,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object destinationIp_ = "";
     /**
@@ -949,8 +969,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       destinationIp_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -967,8 +987,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDestinationIp() {
-
       destinationIp_ = getDefaultInstance().getDestinationIp();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -990,8 +1010,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       destinationIp_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1029,6 +1049,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public Builder setDestinationPort(int value) {
 
       destinationPort_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1045,7 +1066,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDestinationPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       destinationPort_ = 0;
       onChanged();
       return this;
@@ -1112,8 +1133,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceIp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1129,8 +1150,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceIp() {
-
       sourceIp_ = getDefaultInstance().getSourceIp();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1151,8 +1172,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceIp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1188,6 +1209,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public Builder setSourcePort(int value) {
 
       sourcePort_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1203,7 +1225,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourcePort() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       sourcePort_ = 0;
       onChanged();
       return this;
@@ -1238,8 +1260,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setProtocolValue(int value) {
-
       protocol_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1256,9 +1278,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.securitycenter.v1.Connection.Protocol getProtocol() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.v1.Connection.Protocol result =
-          com.google.cloud.securitycenter.v1.Connection.Protocol.valueOf(protocol_);
+          com.google.cloud.securitycenter.v1.Connection.Protocol.forNumber(protocol_);
       return result == null
           ? com.google.cloud.securitycenter.v1.Connection.Protocol.UNRECOGNIZED
           : result;
@@ -1279,7 +1300,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       protocol_ = value.getNumber();
       onChanged();
       return this;
@@ -1296,7 +1317,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProtocol() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       protocol_ = 0;
       onChanged();
       return this;
