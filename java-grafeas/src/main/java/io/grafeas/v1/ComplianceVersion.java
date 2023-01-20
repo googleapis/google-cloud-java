@@ -69,7 +69,9 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CPE_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object cpeUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cpeUri_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int BENCHMARK_DOCUMENT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object benchmarkDocument_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object benchmarkDocument_ = "";
   /**
    *
    *
@@ -171,7 +175,9 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -433,12 +439,10 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       cpeUri_ = "";
-
       benchmarkDocument_ = "";
-
       version_ = "";
-
       return this;
     }
 
@@ -464,11 +468,24 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public io.grafeas.v1.ComplianceVersion buildPartial() {
       io.grafeas.v1.ComplianceVersion result = new io.grafeas.v1.ComplianceVersion(this);
-      result.cpeUri_ = cpeUri_;
-      result.benchmarkDocument_ = benchmarkDocument_;
-      result.version_ = version_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.ComplianceVersion result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cpeUri_ = cpeUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.benchmarkDocument_ = benchmarkDocument_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.version_ = version_;
+      }
     }
 
     @java.lang.Override
@@ -518,14 +535,17 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
       if (other == io.grafeas.v1.ComplianceVersion.getDefaultInstance()) return this;
       if (!other.getCpeUri().isEmpty()) {
         cpeUri_ = other.cpeUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getBenchmarkDocument().isEmpty()) {
         benchmarkDocument_ = other.benchmarkDocument_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -557,19 +577,19 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 cpeUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 benchmarkDocument_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -588,6 +608,8 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object cpeUri_ = "";
     /**
@@ -653,8 +675,8 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       cpeUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -671,8 +693,8 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearCpeUri() {
-
       cpeUri_ = getDefaultInstance().getCpeUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -694,8 +716,8 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cpeUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -764,8 +786,8 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       benchmarkDocument_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -782,8 +804,8 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearBenchmarkDocument() {
-
       benchmarkDocument_ = getDefaultInstance().getBenchmarkDocument();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -805,8 +827,8 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       benchmarkDocument_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -875,8 +897,8 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -893,8 +915,8 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -916,8 +938,8 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

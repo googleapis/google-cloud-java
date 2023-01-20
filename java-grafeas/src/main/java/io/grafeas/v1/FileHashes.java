@@ -67,6 +67,8 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILE_HASH_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Hash> fileHash_;
   /**
    *
@@ -329,6 +331,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (fileHashBuilder_ == null) {
         fileHash_ = java.util.Collections.emptyList();
       } else {
@@ -361,7 +364,15 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.FileHashes buildPartial() {
       io.grafeas.v1.FileHashes result = new io.grafeas.v1.FileHashes(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.FileHashes result) {
       if (fileHashBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           fileHash_ = java.util.Collections.unmodifiableList(fileHash_);
@@ -371,8 +382,10 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.fileHash_ = fileHashBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.FileHashes result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -122,7 +122,9 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -171,6 +173,8 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SUBJECT_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Subject> subject_;
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   @java.lang.Override
@@ -199,7 +203,9 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PREDICATE_TYPE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object predicateType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object predicateType_ = "";
   /**
    *
    *
@@ -611,17 +617,16 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = "";
-
       if (subjectBuilder_ == null) {
         subject_ = java.util.Collections.emptyList();
       } else {
         subject_ = null;
         subjectBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       predicateType_ = "";
-
       if (provenanceBuilder_ != null) {
         provenanceBuilder_.clear();
       }
@@ -659,42 +664,49 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public io.grafeas.v1.InTotoStatement buildPartial() {
       io.grafeas.v1.InTotoStatement result = new io.grafeas.v1.InTotoStatement(this);
-      int from_bitField0_ = bitField0_;
-      result.type_ = type_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.InTotoStatement result) {
       if (subjectBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           subject_ = java.util.Collections.unmodifiableList(subject_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.subject_ = subject_;
       } else {
         result.subject_ = subjectBuilder_.build();
       }
-      result.predicateType_ = predicateType_;
-      if (predicateCase_ == 4) {
-        if (provenanceBuilder_ == null) {
-          result.predicate_ = predicate_;
-        } else {
-          result.predicate_ = provenanceBuilder_.build();
-        }
+    }
+
+    private void buildPartial0(io.grafeas.v1.InTotoStatement result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
       }
-      if (predicateCase_ == 5) {
-        if (slsaProvenanceBuilder_ == null) {
-          result.predicate_ = predicate_;
-        } else {
-          result.predicate_ = slsaProvenanceBuilder_.build();
-        }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.predicateType_ = predicateType_;
       }
-      if (predicateCase_ == 6) {
-        if (slsaProvenanceZeroTwoBuilder_ == null) {
-          result.predicate_ = predicate_;
-        } else {
-          result.predicate_ = slsaProvenanceZeroTwoBuilder_.build();
-        }
-      }
+    }
+
+    private void buildPartialOneofs(io.grafeas.v1.InTotoStatement result) {
       result.predicateCase_ = predicateCase_;
-      onBuilt();
-      return result;
+      result.predicate_ = this.predicate_;
+      if (predicateCase_ == 4 && provenanceBuilder_ != null) {
+        result.predicate_ = provenanceBuilder_.build();
+      }
+      if (predicateCase_ == 5 && slsaProvenanceBuilder_ != null) {
+        result.predicate_ = slsaProvenanceBuilder_.build();
+      }
+      if (predicateCase_ == 6 && slsaProvenanceZeroTwoBuilder_ != null) {
+        result.predicate_ = slsaProvenanceZeroTwoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -744,13 +756,14 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       if (other == io.grafeas.v1.InTotoStatement.getDefaultInstance()) return this;
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (subjectBuilder_ == null) {
         if (!other.subject_.isEmpty()) {
           if (subject_.isEmpty()) {
             subject_ = other.subject_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSubjectIsMutable();
             subject_.addAll(other.subject_);
@@ -763,7 +776,7 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
             subjectBuilder_.dispose();
             subjectBuilder_ = null;
             subject_ = other.subject_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             subjectBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSubjectFieldBuilder()
@@ -775,6 +788,7 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getPredicateType().isEmpty()) {
         predicateType_ = other.predicateType_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       switch (other.getPredicateCase()) {
@@ -827,7 +841,7 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -845,7 +859,7 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
             case 26:
               {
                 predicateType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -961,8 +975,8 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -978,8 +992,8 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1000,8 +1014,8 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1009,9 +1023,9 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     private java.util.List<io.grafeas.v1.Subject> subject_ = java.util.Collections.emptyList();
 
     private void ensureSubjectIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         subject_ = new java.util.ArrayList<io.grafeas.v1.Subject>(subject_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1133,7 +1147,7 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     public Builder clearSubject() {
       if (subjectBuilder_ == null) {
         subject_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         subjectBuilder_.clear();
@@ -1193,7 +1207,7 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
                 io.grafeas.v1.Subject,
                 io.grafeas.v1.Subject.Builder,
                 io.grafeas.v1.SubjectOrBuilder>(
-                subject_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                subject_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         subject_ = null;
       }
       return subjectBuilder_;
@@ -1260,8 +1274,8 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       predicateType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1277,8 +1291,8 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPredicateType() {
-
       predicateType_ = getDefaultInstance().getPredicateType();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1299,8 +1313,8 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       predicateType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1439,7 +1453,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       }
       predicateCase_ = 4;
       onChanged();
-      ;
       return provenanceBuilder_;
     }
 
@@ -1577,7 +1590,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       }
       predicateCase_ = 5;
       onChanged();
-      ;
       return slsaProvenanceBuilder_;
     }
 
@@ -1719,7 +1731,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       }
       predicateCase_ = 6;
       onChanged();
-      ;
       return slsaProvenanceZeroTwoBuilder_;
     }
 

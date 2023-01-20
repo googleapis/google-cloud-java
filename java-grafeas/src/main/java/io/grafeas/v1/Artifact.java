@@ -68,7 +68,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CHECKSUM_FIELD_NUMBER = 1;
-  private volatile java.lang.Object checksum_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object checksum_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -170,6 +174,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAMES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList names_;
   /**
    *
@@ -463,12 +469,11 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       checksum_ = "";
-
       id_ = "";
-
       names_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -494,16 +499,30 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.Artifact buildPartial() {
       io.grafeas.v1.Artifact result = new io.grafeas.v1.Artifact(this);
-      int from_bitField0_ = bitField0_;
-      result.checksum_ = checksum_;
-      result.id_ = id_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        names_ = names_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.names_ = names_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.Artifact result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        names_ = names_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.names_ = names_;
+    }
+
+    private void buildPartial0(io.grafeas.v1.Artifact result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.checksum_ = checksum_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.id_ = id_;
+      }
     }
 
     @java.lang.Override
@@ -553,16 +572,18 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
       if (other == io.grafeas.v1.Artifact.getDefaultInstance()) return this;
       if (!other.getChecksum().isEmpty()) {
         checksum_ = other.checksum_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.names_.isEmpty()) {
         if (names_.isEmpty()) {
           names_ = other.names_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureNamesIsMutable();
           names_.addAll(other.names_);
@@ -598,13 +619,13 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 checksum_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -697,8 +718,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       checksum_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -715,8 +736,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearChecksum() {
-
       checksum_ = getDefaultInstance().getChecksum();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -738,8 +759,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       checksum_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -808,8 +829,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -826,8 +847,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -849,8 +870,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -859,9 +880,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         names_ = new com.google.protobuf.LazyStringArrayList(names_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1028,7 +1049,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNames() {
       names_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

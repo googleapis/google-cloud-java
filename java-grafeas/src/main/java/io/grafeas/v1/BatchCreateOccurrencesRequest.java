@@ -70,7 +70,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -125,6 +127,8 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
   }
 
   public static final int OCCURRENCES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Occurrence> occurrences_;
   /**
    *
@@ -410,15 +414,15 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (occurrencesBuilder_ == null) {
         occurrences_ = java.util.Collections.emptyList();
       } else {
         occurrences_ = null;
         occurrencesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -446,19 +450,31 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
     public io.grafeas.v1.BatchCreateOccurrencesRequest buildPartial() {
       io.grafeas.v1.BatchCreateOccurrencesRequest result =
           new io.grafeas.v1.BatchCreateOccurrencesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.BatchCreateOccurrencesRequest result) {
       if (occurrencesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           occurrences_ = java.util.Collections.unmodifiableList(occurrences_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.occurrences_ = occurrences_;
       } else {
         result.occurrences_ = occurrencesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.BatchCreateOccurrencesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -508,13 +524,14 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
       if (other == io.grafeas.v1.BatchCreateOccurrencesRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (occurrencesBuilder_ == null) {
         if (!other.occurrences_.isEmpty()) {
           if (occurrences_.isEmpty()) {
             occurrences_ = other.occurrences_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureOccurrencesIsMutable();
             occurrences_.addAll(other.occurrences_);
@@ -527,7 +544,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
             occurrencesBuilder_.dispose();
             occurrencesBuilder_ = null;
             occurrences_ = other.occurrences_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             occurrencesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getOccurrencesFieldBuilder()
@@ -566,7 +583,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -670,8 +687,8 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -690,8 +707,8 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -715,8 +732,8 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -725,9 +742,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
         java.util.Collections.emptyList();
 
     private void ensureOccurrencesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         occurrences_ = new java.util.ArrayList<io.grafeas.v1.Occurrence>(occurrences_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -962,7 +979,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
     public Builder clearOccurrences() {
       if (occurrencesBuilder_ == null) {
         occurrences_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         occurrencesBuilder_.clear();
@@ -1096,7 +1113,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
                 io.grafeas.v1.Occurrence,
                 io.grafeas.v1.Occurrence.Builder,
                 io.grafeas.v1.OccurrenceOrBuilder>(
-                occurrences_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                occurrences_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         occurrences_ = null;
       }
       return occurrencesBuilder_;

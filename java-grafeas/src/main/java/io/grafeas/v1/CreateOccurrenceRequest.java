@@ -69,7 +69,9 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -166,7 +168,7 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public io.grafeas.v1.OccurrenceOrBuilder getOccurrenceOrBuilder() {
-    return getOccurrence();
+    return occurrence_ == null ? io.grafeas.v1.Occurrence.getDefaultInstance() : occurrence_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -378,12 +380,11 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (occurrenceBuilder_ == null) {
-        occurrence_ = null;
-      } else {
-        occurrence_ = null;
+      occurrence_ = null;
+      if (occurrenceBuilder_ != null) {
+        occurrenceBuilder_.dispose();
         occurrenceBuilder_ = null;
       }
       return this;
@@ -413,14 +414,21 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
     public io.grafeas.v1.CreateOccurrenceRequest buildPartial() {
       io.grafeas.v1.CreateOccurrenceRequest result =
           new io.grafeas.v1.CreateOccurrenceRequest(this);
-      result.parent_ = parent_;
-      if (occurrenceBuilder_ == null) {
-        result.occurrence_ = occurrence_;
-      } else {
-        result.occurrence_ = occurrenceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.CreateOccurrenceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.occurrence_ = occurrenceBuilder_ == null ? occurrence_ : occurrenceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -470,6 +478,7 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
       if (other == io.grafeas.v1.CreateOccurrenceRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasOccurrence()) {
@@ -504,13 +513,13 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getOccurrenceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -529,6 +538,8 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -600,8 +611,8 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -620,8 +631,8 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -645,8 +656,8 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -669,7 +680,7 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
      * @return Whether the occurrence field is set.
      */
     public boolean hasOccurrence() {
-      return occurrenceBuilder_ != null || occurrence_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -704,11 +715,11 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         occurrence_ = value;
-        onChanged();
       } else {
         occurrenceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -723,11 +734,11 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
     public Builder setOccurrence(io.grafeas.v1.Occurrence.Builder builderForValue) {
       if (occurrenceBuilder_ == null) {
         occurrence_ = builderForValue.build();
-        onChanged();
       } else {
         occurrenceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -741,17 +752,18 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
      */
     public Builder mergeOccurrence(io.grafeas.v1.Occurrence value) {
       if (occurrenceBuilder_ == null) {
-        if (occurrence_ != null) {
-          occurrence_ =
-              io.grafeas.v1.Occurrence.newBuilder(occurrence_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && occurrence_ != null
+            && occurrence_ != io.grafeas.v1.Occurrence.getDefaultInstance()) {
+          getOccurrenceBuilder().mergeFrom(value);
         } else {
           occurrence_ = value;
         }
-        onChanged();
       } else {
         occurrenceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -764,14 +776,13 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
      * <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearOccurrence() {
-      if (occurrenceBuilder_ == null) {
-        occurrence_ = null;
-        onChanged();
-      } else {
-        occurrence_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      occurrence_ = null;
+      if (occurrenceBuilder_ != null) {
+        occurrenceBuilder_.dispose();
         occurrenceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -784,7 +795,7 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
      * <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public io.grafeas.v1.Occurrence.Builder getOccurrenceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getOccurrenceFieldBuilder().getBuilder();
     }

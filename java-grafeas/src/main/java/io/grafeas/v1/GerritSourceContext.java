@@ -116,7 +116,9 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
   }
 
   public static final int HOST_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object hostUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object hostUri_ = "";
   /**
    *
    *
@@ -165,7 +167,9 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
   }
 
   public static final int GERRIT_PROJECT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object gerritProject_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gerritProject_ = "";
   /**
    *
    *
@@ -578,10 +582,9 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       hostUri_ = "";
-
       gerritProject_ = "";
-
       if (aliasContextBuilder_ != null) {
         aliasContextBuilder_.clear();
       }
@@ -612,21 +615,30 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public io.grafeas.v1.GerritSourceContext buildPartial() {
       io.grafeas.v1.GerritSourceContext result = new io.grafeas.v1.GerritSourceContext(this);
-      result.hostUri_ = hostUri_;
-      result.gerritProject_ = gerritProject_;
-      if (revisionCase_ == 3) {
-        result.revision_ = revision_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (revisionCase_ == 4) {
-        if (aliasContextBuilder_ == null) {
-          result.revision_ = revision_;
-        } else {
-          result.revision_ = aliasContextBuilder_.build();
-        }
-      }
-      result.revisionCase_ = revisionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.GerritSourceContext result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.hostUri_ = hostUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.gerritProject_ = gerritProject_;
+      }
+    }
+
+    private void buildPartialOneofs(io.grafeas.v1.GerritSourceContext result) {
+      result.revisionCase_ = revisionCase_;
+      result.revision_ = this.revision_;
+      if (revisionCase_ == 4 && aliasContextBuilder_ != null) {
+        result.revision_ = aliasContextBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -676,10 +688,12 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       if (other == io.grafeas.v1.GerritSourceContext.getDefaultInstance()) return this;
       if (!other.getHostUri().isEmpty()) {
         hostUri_ = other.hostUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getGerritProject().isEmpty()) {
         gerritProject_ = other.gerritProject_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       switch (other.getRevisionCase()) {
@@ -729,13 +743,13 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 hostUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 gerritProject_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -781,6 +795,8 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object hostUri_ = "";
     /**
@@ -843,8 +859,8 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       hostUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -860,8 +876,8 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearHostUri() {
-
       hostUri_ = getDefaultInstance().getHostUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -882,8 +898,8 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       hostUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -955,8 +971,8 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       gerritProject_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -974,8 +990,8 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearGerritProject() {
-
       gerritProject_ = getDefaultInstance().getGerritProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -998,8 +1014,8 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       gerritProject_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1339,7 +1355,6 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       }
       revisionCase_ = 4;
       onChanged();
-      ;
       return aliasContextBuilder_;
     }
 

@@ -66,6 +66,8 @@ public final class DeploymentNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_URI_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList resourceUri_;
   /**
    *
@@ -325,6 +327,7 @@ public final class DeploymentNote extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resourceUri_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -352,14 +355,24 @@ public final class DeploymentNote extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.DeploymentNote buildPartial() {
       io.grafeas.v1.DeploymentNote result = new io.grafeas.v1.DeploymentNote(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.DeploymentNote result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         resourceUri_ = resourceUri_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.resourceUri_ = resourceUri_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.DeploymentNote result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

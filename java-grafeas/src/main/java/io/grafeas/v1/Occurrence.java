@@ -141,7 +141,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -192,7 +194,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object resourceUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceUri_ = "";
   /**
    *
    *
@@ -245,7 +249,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NOTE_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object noteName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object noteName_ = "";
   /**
    *
    *
@@ -298,7 +304,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 4;
-  private int kind_;
+  private int kind_ = 0;
   /**
    *
    *
@@ -329,13 +335,14 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public io.grafeas.v1.NoteKind getKind() {
-    @SuppressWarnings("deprecation")
-    io.grafeas.v1.NoteKind result = io.grafeas.v1.NoteKind.valueOf(kind_);
+    io.grafeas.v1.NoteKind result = io.grafeas.v1.NoteKind.forNumber(kind_);
     return result == null ? io.grafeas.v1.NoteKind.UNRECOGNIZED : result;
   }
 
   public static final int REMEDIATION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object remediation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object remediation_ = "";
   /**
    *
    *
@@ -426,7 +433,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 7;
@@ -472,7 +479,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int VULNERABILITY_FIELD_NUMBER = 8;
@@ -1031,7 +1038,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public io.grafeas.v1.EnvelopeOrBuilder getEnvelopeOrBuilder() {
-    return getEnvelope();
+    return envelope_ == null ? io.grafeas.v1.Envelope.getDefaultInstance() : envelope_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1464,26 +1471,20 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       resourceUri_ = "";
-
       noteName_ = "";
-
       kind_ = 0;
-
       remediation_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       if (vulnerabilityBuilder_ != null) {
@@ -1516,10 +1517,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       if (dsseAttestationBuilder_ != null) {
         dsseAttestationBuilder_.clear();
       }
-      if (envelopeBuilder_ == null) {
-        envelope_ = null;
-      } else {
-        envelope_ = null;
+      envelope_ = null;
+      if (envelopeBuilder_ != null) {
+        envelopeBuilder_.dispose();
         envelopeBuilder_ = null;
       }
       detailsCase_ = 0;
@@ -1549,99 +1549,75 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.Occurrence buildPartial() {
       io.grafeas.v1.Occurrence result = new io.grafeas.v1.Occurrence(this);
-      result.name_ = name_;
-      result.resourceUri_ = resourceUri_;
-      result.noteName_ = noteName_;
-      result.kind_ = kind_;
-      result.remediation_ = remediation_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (detailsCase_ == 8) {
-        if (vulnerabilityBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = vulnerabilityBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 9) {
-        if (buildBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = buildBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 10) {
-        if (imageBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = imageBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 11) {
-        if (packageBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = packageBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 12) {
-        if (deploymentBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = deploymentBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 13) {
-        if (discoveryBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = discoveryBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 14) {
-        if (attestationBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = attestationBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 15) {
-        if (upgradeBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = upgradeBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 16) {
-        if (complianceBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = complianceBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 17) {
-        if (dsseAttestationBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = dsseAttestationBuilder_.build();
-        }
-      }
-      if (envelopeBuilder_ == null) {
-        result.envelope_ = envelope_;
-      } else {
-        result.envelope_ = envelopeBuilder_.build();
-      }
-      result.detailsCase_ = detailsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.Occurrence result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resourceUri_ = resourceUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.noteName_ = noteName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.kind_ = kind_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.remediation_ = remediation_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.envelope_ = envelopeBuilder_ == null ? envelope_ : envelopeBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(io.grafeas.v1.Occurrence result) {
+      result.detailsCase_ = detailsCase_;
+      result.details_ = this.details_;
+      if (detailsCase_ == 8 && vulnerabilityBuilder_ != null) {
+        result.details_ = vulnerabilityBuilder_.build();
+      }
+      if (detailsCase_ == 9 && buildBuilder_ != null) {
+        result.details_ = buildBuilder_.build();
+      }
+      if (detailsCase_ == 10 && imageBuilder_ != null) {
+        result.details_ = imageBuilder_.build();
+      }
+      if (detailsCase_ == 11 && packageBuilder_ != null) {
+        result.details_ = packageBuilder_.build();
+      }
+      if (detailsCase_ == 12 && deploymentBuilder_ != null) {
+        result.details_ = deploymentBuilder_.build();
+      }
+      if (detailsCase_ == 13 && discoveryBuilder_ != null) {
+        result.details_ = discoveryBuilder_.build();
+      }
+      if (detailsCase_ == 14 && attestationBuilder_ != null) {
+        result.details_ = attestationBuilder_.build();
+      }
+      if (detailsCase_ == 15 && upgradeBuilder_ != null) {
+        result.details_ = upgradeBuilder_.build();
+      }
+      if (detailsCase_ == 16 && complianceBuilder_ != null) {
+        result.details_ = complianceBuilder_.build();
+      }
+      if (detailsCase_ == 17 && dsseAttestationBuilder_ != null) {
+        result.details_ = dsseAttestationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1691,14 +1667,17 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       if (other == io.grafeas.v1.Occurrence.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getResourceUri().isEmpty()) {
         resourceUri_ = other.resourceUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getNoteName().isEmpty()) {
         noteName_ = other.noteName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.kind_ != 0) {
@@ -1706,6 +1685,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getRemediation().isEmpty()) {
         remediation_ = other.remediation_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1802,43 +1782,43 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 resourceUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 noteName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 kind_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 remediation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
@@ -1904,7 +1884,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             case 146:
               {
                 input.readMessage(getEnvelopeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00020000;
                 break;
               } // case 146
             default:
@@ -1937,6 +1917,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -2002,8 +1984,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2020,8 +2002,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2043,8 +2025,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2116,8 +2098,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2135,8 +2117,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceUri() {
-
       resourceUri_ = getDefaultInstance().getResourceUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2159,8 +2141,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2232,8 +2214,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       noteName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2251,8 +2233,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNoteName() {
-
       noteName_ = getDefaultInstance().getNoteName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2275,8 +2257,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       noteName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2312,8 +2294,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
-
       kind_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2331,8 +2313,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public io.grafeas.v1.NoteKind getKind() {
-      @SuppressWarnings("deprecation")
-      io.grafeas.v1.NoteKind result = io.grafeas.v1.NoteKind.valueOf(kind_);
+      io.grafeas.v1.NoteKind result = io.grafeas.v1.NoteKind.forNumber(kind_);
       return result == null ? io.grafeas.v1.NoteKind.UNRECOGNIZED : result;
     }
     /**
@@ -2352,7 +2333,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       kind_ = value.getNumber();
       onChanged();
       return this;
@@ -2370,7 +2351,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       kind_ = 0;
       onChanged();
       return this;
@@ -2437,8 +2418,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       remediation_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2454,8 +2435,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRemediation() {
-
       remediation_ = getDefaultInstance().getRemediation();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2476,8 +2457,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       remediation_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2500,7 +2481,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2537,11 +2518,11 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2556,11 +2537,11 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2574,17 +2555,18 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2597,14 +2579,13 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2617,7 +2598,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2683,7 +2664,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2720,11 +2701,11 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2739,11 +2720,11 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2757,17 +2738,18 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2780,14 +2762,13 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2800,7 +2781,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3053,7 +3034,6 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 8;
       onChanged();
-      ;
       return vulnerabilityBuilder_;
     }
 
@@ -3258,7 +3238,6 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 9;
       onChanged();
-      ;
       return buildBuilder_;
     }
 
@@ -3472,7 +3451,6 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 10;
       onChanged();
-      ;
       return imageBuilder_;
     }
 
@@ -3678,7 +3656,6 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 11;
       onChanged();
-      ;
       return packageBuilder_;
     }
 
@@ -3885,7 +3862,6 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 12;
       onChanged();
-      ;
       return deploymentBuilder_;
     }
 
@@ -4092,7 +4068,6 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 13;
       onChanged();
-      ;
       return discoveryBuilder_;
     }
 
@@ -4299,7 +4274,6 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 14;
       onChanged();
-      ;
       return attestationBuilder_;
     }
 
@@ -4505,7 +4479,6 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 15;
       onChanged();
-      ;
       return upgradeBuilder_;
     }
 
@@ -4712,7 +4685,6 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 16;
       onChanged();
-      ;
       return complianceBuilder_;
     }
 
@@ -4922,7 +4894,6 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 17;
       onChanged();
-      ;
       return dsseAttestationBuilder_;
     }
 
@@ -4942,7 +4913,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the envelope field is set.
      */
     public boolean hasEnvelope() {
-      return envelopeBuilder_ != null || envelope_ != null;
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -4977,11 +4948,11 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         envelope_ = value;
-        onChanged();
       } else {
         envelopeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
     /**
@@ -4996,11 +4967,11 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnvelope(io.grafeas.v1.Envelope.Builder builderForValue) {
       if (envelopeBuilder_ == null) {
         envelope_ = builderForValue.build();
-        onChanged();
       } else {
         envelopeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
     /**
@@ -5014,16 +4985,18 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEnvelope(io.grafeas.v1.Envelope value) {
       if (envelopeBuilder_ == null) {
-        if (envelope_ != null) {
-          envelope_ = io.grafeas.v1.Envelope.newBuilder(envelope_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00020000) != 0)
+            && envelope_ != null
+            && envelope_ != io.grafeas.v1.Envelope.getDefaultInstance()) {
+          getEnvelopeBuilder().mergeFrom(value);
         } else {
           envelope_ = value;
         }
-        onChanged();
       } else {
         envelopeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
     /**
@@ -5036,14 +5009,13 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.Envelope envelope = 18;</code>
      */
     public Builder clearEnvelope() {
-      if (envelopeBuilder_ == null) {
-        envelope_ = null;
-        onChanged();
-      } else {
-        envelope_ = null;
+      bitField0_ = (bitField0_ & ~0x00020000);
+      envelope_ = null;
+      if (envelopeBuilder_ != null) {
+        envelopeBuilder_.dispose();
         envelopeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5056,7 +5028,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.Envelope envelope = 18;</code>
      */
     public io.grafeas.v1.Envelope.Builder getEnvelopeBuilder() {
-
+      bitField0_ |= 0x00020000;
       onChanged();
       return getEnvelopeFieldBuilder().getBuilder();
     }

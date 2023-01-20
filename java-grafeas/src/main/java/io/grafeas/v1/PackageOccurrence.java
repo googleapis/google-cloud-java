@@ -70,7 +70,9 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -123,6 +125,8 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int LOCATION_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Location> location_;
   /**
    *
@@ -196,7 +200,9 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PACKAGE_TYPE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object packageType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object packageType_ = "";
   /**
    *
    *
@@ -247,7 +253,9 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CPE_URI_FIELD_NUMBER = 4;
-  private volatile java.lang.Object cpeUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cpeUri_ = "";
   /**
    *
    *
@@ -300,7 +308,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ARCHITECTURE_FIELD_NUMBER = 5;
-  private int architecture_;
+  private int architecture_ = 0;
   /**
    *
    *
@@ -333,8 +341,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public io.grafeas.v1.Architecture getArchitecture() {
-    @SuppressWarnings("deprecation")
-    io.grafeas.v1.Architecture result = io.grafeas.v1.Architecture.valueOf(architecture_);
+    io.grafeas.v1.Architecture result = io.grafeas.v1.Architecture.forNumber(architecture_);
     return result == null ? io.grafeas.v1.Architecture.UNRECOGNIZED : result;
   }
 
@@ -381,7 +388,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public io.grafeas.v1.LicenseOrBuilder getLicenseOrBuilder() {
-    return getLicense();
+    return license_ == null ? io.grafeas.v1.License.getDefaultInstance() : license_;
   }
 
   public static final int VERSION_FIELD_NUMBER = 7;
@@ -427,7 +434,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public io.grafeas.v1.VersionOrBuilder getVersionOrBuilder() {
-    return getVersion();
+    return version_ == null ? io.grafeas.v1.Version.getDefaultInstance() : version_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -688,31 +695,26 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (locationBuilder_ == null) {
         location_ = java.util.Collections.emptyList();
       } else {
         location_ = null;
         locationBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       packageType_ = "";
-
       cpeUri_ = "";
-
       architecture_ = 0;
-
-      if (licenseBuilder_ == null) {
-        license_ = null;
-      } else {
-        license_ = null;
+      license_ = null;
+      if (licenseBuilder_ != null) {
+        licenseBuilder_.dispose();
         licenseBuilder_ = null;
       }
-      if (versionBuilder_ == null) {
-        version_ = null;
-      } else {
-        version_ = null;
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
       return this;
@@ -740,32 +742,46 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public io.grafeas.v1.PackageOccurrence buildPartial() {
       io.grafeas.v1.PackageOccurrence result = new io.grafeas.v1.PackageOccurrence(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.PackageOccurrence result) {
       if (locationBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           location_ = java.util.Collections.unmodifiableList(location_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.location_ = location_;
       } else {
         result.location_ = locationBuilder_.build();
       }
-      result.packageType_ = packageType_;
-      result.cpeUri_ = cpeUri_;
-      result.architecture_ = architecture_;
-      if (licenseBuilder_ == null) {
-        result.license_ = license_;
-      } else {
-        result.license_ = licenseBuilder_.build();
+    }
+
+    private void buildPartial0(io.grafeas.v1.PackageOccurrence result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      if (versionBuilder_ == null) {
-        result.version_ = version_;
-      } else {
-        result.version_ = versionBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.packageType_ = packageType_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.cpeUri_ = cpeUri_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.architecture_ = architecture_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.license_ = licenseBuilder_ == null ? license_ : licenseBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -815,13 +831,14 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       if (other == io.grafeas.v1.PackageOccurrence.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (locationBuilder_ == null) {
         if (!other.location_.isEmpty()) {
           if (location_.isEmpty()) {
             location_ = other.location_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureLocationIsMutable();
             location_.addAll(other.location_);
@@ -834,7 +851,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
             locationBuilder_.dispose();
             locationBuilder_ = null;
             location_ = other.location_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             locationBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLocationFieldBuilder()
@@ -846,10 +863,12 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getPackageType().isEmpty()) {
         packageType_ = other.packageType_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getCpeUri().isEmpty()) {
         cpeUri_ = other.cpeUri_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.architecture_ != 0) {
@@ -890,7 +909,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -908,31 +927,31 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
             case 26:
               {
                 packageType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 cpeUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 architecture_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getLicenseFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getVersionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -1021,8 +1040,8 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1040,8 +1059,8 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1064,8 +1083,8 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1073,9 +1092,9 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     private java.util.List<io.grafeas.v1.Location> location_ = java.util.Collections.emptyList();
 
     private void ensureLocationIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         location_ = new java.util.ArrayList<io.grafeas.v1.Location>(location_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1296,7 +1315,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     public Builder clearLocation() {
       if (locationBuilder_ == null) {
         location_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         locationBuilder_.clear();
@@ -1420,7 +1439,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
                 io.grafeas.v1.Location,
                 io.grafeas.v1.Location.Builder,
                 io.grafeas.v1.LocationOrBuilder>(
-                location_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                location_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         location_ = null;
       }
       return locationBuilder_;
@@ -1490,8 +1509,8 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       packageType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1508,8 +1527,8 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPackageType() {
-
       packageType_ = getDefaultInstance().getPackageType();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1531,8 +1550,8 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       packageType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1604,8 +1623,8 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       cpeUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1623,8 +1642,8 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearCpeUri() {
-
       cpeUri_ = getDefaultInstance().getCpeUri();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1647,8 +1666,8 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cpeUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1686,8 +1705,8 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setArchitectureValue(int value) {
-
       architecture_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1706,8 +1725,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public io.grafeas.v1.Architecture getArchitecture() {
-      @SuppressWarnings("deprecation")
-      io.grafeas.v1.Architecture result = io.grafeas.v1.Architecture.valueOf(architecture_);
+      io.grafeas.v1.Architecture result = io.grafeas.v1.Architecture.forNumber(architecture_);
       return result == null ? io.grafeas.v1.Architecture.UNRECOGNIZED : result;
     }
     /**
@@ -1728,7 +1746,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       architecture_ = value.getNumber();
       onChanged();
       return this;
@@ -1747,7 +1765,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearArchitecture() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       architecture_ = 0;
       onChanged();
       return this;
@@ -1769,7 +1787,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
      * @return Whether the license field is set.
      */
     public boolean hasLicense() {
-      return licenseBuilder_ != null || license_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1804,11 +1822,11 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         license_ = value;
-        onChanged();
       } else {
         licenseBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1823,11 +1841,11 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     public Builder setLicense(io.grafeas.v1.License.Builder builderForValue) {
       if (licenseBuilder_ == null) {
         license_ = builderForValue.build();
-        onChanged();
       } else {
         licenseBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1841,16 +1859,18 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeLicense(io.grafeas.v1.License value) {
       if (licenseBuilder_ == null) {
-        if (license_ != null) {
-          license_ = io.grafeas.v1.License.newBuilder(license_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && license_ != null
+            && license_ != io.grafeas.v1.License.getDefaultInstance()) {
+          getLicenseBuilder().mergeFrom(value);
         } else {
           license_ = value;
         }
-        onChanged();
       } else {
         licenseBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1863,14 +1883,13 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
      * <code>.grafeas.v1.License license = 6;</code>
      */
     public Builder clearLicense() {
-      if (licenseBuilder_ == null) {
-        license_ = null;
-        onChanged();
-      } else {
-        license_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      license_ = null;
+      if (licenseBuilder_ != null) {
+        licenseBuilder_.dispose();
         licenseBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1883,7 +1902,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
      * <code>.grafeas.v1.License license = 6;</code>
      */
     public io.grafeas.v1.License.Builder getLicenseBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getLicenseFieldBuilder().getBuilder();
     }
@@ -1942,7 +1961,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
-      return versionBuilder_ != null || version_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1977,11 +1996,11 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         version_ = value;
-        onChanged();
       } else {
         versionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1996,11 +2015,11 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     public Builder setVersion(io.grafeas.v1.Version.Builder builderForValue) {
       if (versionBuilder_ == null) {
         version_ = builderForValue.build();
-        onChanged();
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2014,16 +2033,18 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeVersion(io.grafeas.v1.Version value) {
       if (versionBuilder_ == null) {
-        if (version_ != null) {
-          version_ = io.grafeas.v1.Version.newBuilder(version_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && version_ != null
+            && version_ != io.grafeas.v1.Version.getDefaultInstance()) {
+          getVersionBuilder().mergeFrom(value);
         } else {
           version_ = value;
         }
-        onChanged();
       } else {
         versionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2036,14 +2057,13 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
      * <code>.grafeas.v1.Version version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearVersion() {
-      if (versionBuilder_ == null) {
-        version_ = null;
-        onChanged();
-      } else {
-        version_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2056,7 +2076,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
      * <code>.grafeas.v1.Version version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public io.grafeas.v1.Version.Builder getVersionBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }

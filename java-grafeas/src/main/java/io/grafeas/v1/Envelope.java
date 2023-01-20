@@ -70,7 +70,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PAYLOAD_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString payload_;
+  private com.google.protobuf.ByteString payload_ = com.google.protobuf.ByteString.EMPTY;
   /**
    * <code>bytes payload = 1;</code>
    *
@@ -82,7 +82,9 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PAYLOAD_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object payloadType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object payloadType_ = "";
   /**
    * <code>string payload_type = 2;</code>
    *
@@ -119,6 +121,8 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SIGNATURES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.EnvelopeSignature> signatures_;
   /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
   @java.lang.Override
@@ -361,17 +365,16 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       payload_ = com.google.protobuf.ByteString.EMPTY;
-
       payloadType_ = "";
-
       if (signaturesBuilder_ == null) {
         signatures_ = java.util.Collections.emptyList();
       } else {
         signatures_ = null;
         signaturesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -397,20 +400,34 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.Envelope buildPartial() {
       io.grafeas.v1.Envelope result = new io.grafeas.v1.Envelope(this);
-      int from_bitField0_ = bitField0_;
-      result.payload_ = payload_;
-      result.payloadType_ = payloadType_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.Envelope result) {
       if (signaturesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           signatures_ = java.util.Collections.unmodifiableList(signatures_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.signatures_ = signatures_;
       } else {
         result.signatures_ = signaturesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.Envelope result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.payload_ = payload_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.payloadType_ = payloadType_;
+      }
     }
 
     @java.lang.Override
@@ -463,13 +480,14 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getPayloadType().isEmpty()) {
         payloadType_ = other.payloadType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (signaturesBuilder_ == null) {
         if (!other.signatures_.isEmpty()) {
           if (signatures_.isEmpty()) {
             signatures_ = other.signatures_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureSignaturesIsMutable();
             signatures_.addAll(other.signatures_);
@@ -482,7 +500,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
             signaturesBuilder_.dispose();
             signaturesBuilder_ = null;
             signatures_ = other.signatures_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             signaturesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSignaturesFieldBuilder()
@@ -521,13 +539,13 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 payload_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 payloadType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -581,8 +599,8 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       payload_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -592,7 +610,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPayload() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       payload_ = getDefaultInstance().getPayload();
       onChanged();
       return this;
@@ -641,8 +659,8 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       payloadType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -652,8 +670,8 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPayloadType() {
-
       payloadType_ = getDefaultInstance().getPayloadType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -668,8 +686,8 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       payloadType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -678,9 +696,9 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSignaturesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         signatures_ = new java.util.ArrayList<io.grafeas.v1.EnvelopeSignature>(signatures_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -807,7 +825,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSignatures() {
       if (signaturesBuilder_ == null) {
         signatures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         signaturesBuilder_.clear();
@@ -872,7 +890,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
                 io.grafeas.v1.EnvelopeSignature,
                 io.grafeas.v1.EnvelopeSignature.Builder,
                 io.grafeas.v1.EnvelopeSignatureOrBuilder>(
-                signatures_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                signatures_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         signatures_ = null;
       }
       return signaturesBuilder_;

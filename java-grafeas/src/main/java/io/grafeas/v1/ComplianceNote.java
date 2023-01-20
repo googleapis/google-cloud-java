@@ -137,7 +137,7 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PROFILE_LEVEL_FIELD_NUMBER = 1;
-    private int profileLevel_;
+    private int profileLevel_ = 0;
     /**
      * <code>int32 profile_level = 1;</code>
      *
@@ -149,7 +149,7 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SEVERITY_FIELD_NUMBER = 2;
-    private int severity_;
+    private int severity_ = 0;
     /**
      * <code>.grafeas.v1.Severity severity = 2;</code>
      *
@@ -166,8 +166,7 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public io.grafeas.v1.Severity getSeverity() {
-      @SuppressWarnings("deprecation")
-      io.grafeas.v1.Severity result = io.grafeas.v1.Severity.valueOf(severity_);
+      io.grafeas.v1.Severity result = io.grafeas.v1.Severity.forNumber(severity_);
       return result == null ? io.grafeas.v1.Severity.UNRECOGNIZED : result;
     }
 
@@ -379,10 +378,9 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         profileLevel_ = 0;
-
         severity_ = 0;
-
         return this;
       }
 
@@ -410,10 +408,21 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       public io.grafeas.v1.ComplianceNote.CisBenchmark buildPartial() {
         io.grafeas.v1.ComplianceNote.CisBenchmark result =
             new io.grafeas.v1.ComplianceNote.CisBenchmark(this);
-        result.profileLevel_ = profileLevel_;
-        result.severity_ = severity_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(io.grafeas.v1.ComplianceNote.CisBenchmark result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.profileLevel_ = profileLevel_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.severity_ = severity_;
+        }
       }
 
       @java.lang.Override
@@ -498,13 +507,13 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   profileLevel_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   severity_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -523,6 +532,8 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int profileLevel_;
       /**
@@ -543,6 +554,7 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       public Builder setProfileLevel(int value) {
 
         profileLevel_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -552,7 +564,7 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearProfileLevel() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         profileLevel_ = 0;
         onChanged();
         return this;
@@ -575,8 +587,8 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setSeverityValue(int value) {
-
         severity_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -587,8 +599,7 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public io.grafeas.v1.Severity getSeverity() {
-        @SuppressWarnings("deprecation")
-        io.grafeas.v1.Severity result = io.grafeas.v1.Severity.valueOf(severity_);
+        io.grafeas.v1.Severity result = io.grafeas.v1.Severity.forNumber(severity_);
         return result == null ? io.grafeas.v1.Severity.UNRECOGNIZED : result;
       }
       /**
@@ -601,7 +612,7 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         severity_ = value.getNumber();
         onChanged();
         return this;
@@ -612,7 +623,7 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSeverity() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         severity_ = 0;
         onChanged();
         return this;
@@ -727,7 +738,9 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TITLE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object title_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object title_ = "";
   /**
    *
    *
@@ -776,7 +789,9 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -825,6 +840,8 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSION_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.ComplianceVersion> version_;
   /**
    *
@@ -894,7 +911,9 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RATIONALE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object rationale_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rationale_ = "";
   /**
    *
    *
@@ -943,7 +962,9 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REMEDIATION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object remediation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object remediation_ = "";
   /**
    *
    *
@@ -1023,7 +1044,7 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCAN_INSTRUCTIONS_FIELD_NUMBER = 7;
-  private com.google.protobuf.ByteString scanInstructions_;
+  private com.google.protobuf.ByteString scanInstructions_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -1295,26 +1316,22 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       title_ = "";
-
       description_ = "";
-
       if (versionBuilder_ == null) {
         version_ = java.util.Collections.emptyList();
       } else {
         version_ = null;
         versionBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       rationale_ = "";
-
       remediation_ = "";
-
       if (cisBenchmarkBuilder_ != null) {
         cisBenchmarkBuilder_.clear();
       }
       scanInstructions_ = com.google.protobuf.ByteString.EMPTY;
-
       complianceTypeCase_ = 0;
       complianceType_ = null;
       return this;
@@ -1342,31 +1359,52 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.ComplianceNote buildPartial() {
       io.grafeas.v1.ComplianceNote result = new io.grafeas.v1.ComplianceNote(this);
-      int from_bitField0_ = bitField0_;
-      result.title_ = title_;
-      result.description_ = description_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.ComplianceNote result) {
       if (versionBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           version_ = java.util.Collections.unmodifiableList(version_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.version_ = version_;
       } else {
         result.version_ = versionBuilder_.build();
       }
-      result.rationale_ = rationale_;
-      result.remediation_ = remediation_;
-      if (complianceTypeCase_ == 6) {
-        if (cisBenchmarkBuilder_ == null) {
-          result.complianceType_ = complianceType_;
-        } else {
-          result.complianceType_ = cisBenchmarkBuilder_.build();
-        }
+    }
+
+    private void buildPartial0(io.grafeas.v1.ComplianceNote result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.title_ = title_;
       }
-      result.scanInstructions_ = scanInstructions_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.rationale_ = rationale_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.remediation_ = remediation_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.scanInstructions_ = scanInstructions_;
+      }
+    }
+
+    private void buildPartialOneofs(io.grafeas.v1.ComplianceNote result) {
       result.complianceTypeCase_ = complianceTypeCase_;
-      onBuilt();
-      return result;
+      result.complianceType_ = this.complianceType_;
+      if (complianceTypeCase_ == 6 && cisBenchmarkBuilder_ != null) {
+        result.complianceType_ = cisBenchmarkBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1416,17 +1454,19 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       if (other == io.grafeas.v1.ComplianceNote.getDefaultInstance()) return this;
       if (!other.getTitle().isEmpty()) {
         title_ = other.title_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (versionBuilder_ == null) {
         if (!other.version_.isEmpty()) {
           if (version_.isEmpty()) {
             version_ = other.version_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureVersionIsMutable();
             version_.addAll(other.version_);
@@ -1439,7 +1479,7 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
             versionBuilder_.dispose();
             versionBuilder_ = null;
             version_ = other.version_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             versionBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVersionFieldBuilder()
@@ -1451,10 +1491,12 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getRationale().isEmpty()) {
         rationale_ = other.rationale_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getRemediation().isEmpty()) {
         remediation_ = other.remediation_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getScanInstructions() != com.google.protobuf.ByteString.EMPTY) {
@@ -1500,13 +1542,13 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 title_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1524,13 +1566,13 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 rationale_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 remediation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -1542,7 +1584,7 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 scanInstructions_ = input.readBytes();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -1639,8 +1681,8 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       title_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1656,8 +1698,8 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
-
       title_ = getDefaultInstance().getTitle();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1678,8 +1720,8 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       title_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1745,8 +1787,8 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1762,8 +1804,8 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1784,8 +1826,8 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1794,9 +1836,9 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureVersionIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         version_ = new java.util.ArrayList<io.grafeas.v1.ComplianceVersion>(version_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2009,7 +2051,7 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     public Builder clearVersion() {
       if (versionBuilder_ == null) {
         version_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         versionBuilder_.clear();
@@ -2130,7 +2172,7 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
                 io.grafeas.v1.ComplianceVersion,
                 io.grafeas.v1.ComplianceVersion.Builder,
                 io.grafeas.v1.ComplianceVersionOrBuilder>(
-                version_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                version_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         version_ = null;
       }
       return versionBuilder_;
@@ -2197,8 +2239,8 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       rationale_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2214,8 +2256,8 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRationale() {
-
       rationale_ = getDefaultInstance().getRationale();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2236,8 +2278,8 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       rationale_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2303,8 +2345,8 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       remediation_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2320,8 +2362,8 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRemediation() {
-
       remediation_ = getDefaultInstance().getRemediation();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2342,8 +2384,8 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       remediation_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2486,7 +2528,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       }
       complianceTypeCase_ = 6;
       onChanged();
-      ;
       return cisBenchmarkBuilder_;
     }
 
@@ -2522,8 +2563,8 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       scanInstructions_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2539,7 +2580,7 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearScanInstructions() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       scanInstructions_ = getDefaultInstance().getScanInstructions();
       onChanged();
       return this;

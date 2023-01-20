@@ -66,7 +66,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARGUMENTS_FIELD_NUMBER = 1;
-  private boolean arguments_;
+  private boolean arguments_ = false;
   /**
    *
    *
@@ -85,7 +85,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 2;
-  private boolean environment_;
+  private boolean environment_ = false;
   /**
    *
    *
@@ -104,7 +104,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MATERIALS_FIELD_NUMBER = 3;
-  private boolean materials_;
+  private boolean materials_ = false;
   /**
    *
    *
@@ -334,12 +334,10 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       arguments_ = false;
-
       environment_ = false;
-
       materials_ = false;
-
       return this;
     }
 
@@ -365,11 +363,24 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.Completeness buildPartial() {
       io.grafeas.v1.Completeness result = new io.grafeas.v1.Completeness(this);
-      result.arguments_ = arguments_;
-      result.environment_ = environment_;
-      result.materials_ = materials_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.Completeness result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.arguments_ = arguments_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.environment_ = environment_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.materials_ = materials_;
+      }
     }
 
     @java.lang.Override
@@ -455,19 +466,19 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 arguments_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 environment_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 materials_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -486,6 +497,8 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean arguments_;
     /**
@@ -520,6 +533,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
     public Builder setArguments(boolean value) {
 
       arguments_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -536,7 +550,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearArguments() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       arguments_ = false;
       onChanged();
       return this;
@@ -575,6 +589,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnvironment(boolean value) {
 
       environment_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -591,7 +606,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnvironment() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       environment_ = false;
       onChanged();
       return this;
@@ -630,6 +645,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaterials(boolean value) {
 
       materials_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -646,7 +662,7 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaterials() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       materials_ = false;
       onChanged();
       return this;

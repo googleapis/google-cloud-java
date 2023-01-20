@@ -101,7 +101,6 @@ public interface BatchCreateNotesRequestOrBuilder
    * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-
   /* nullable */
   io.grafeas.v1.Note getNotesOrDefault(
       java.lang.String key,

@@ -70,6 +70,8 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
   }
 
   public static final int OCCURRENCES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Occurrence> occurrences_;
   /**
    *
@@ -336,6 +338,7 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (occurrencesBuilder_ == null) {
         occurrences_ = java.util.Collections.emptyList();
       } else {
@@ -370,7 +373,15 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
     public io.grafeas.v1.BatchCreateOccurrencesResponse buildPartial() {
       io.grafeas.v1.BatchCreateOccurrencesResponse result =
           new io.grafeas.v1.BatchCreateOccurrencesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.BatchCreateOccurrencesResponse result) {
       if (occurrencesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           occurrences_ = java.util.Collections.unmodifiableList(occurrences_);
@@ -380,8 +391,10 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
       } else {
         result.occurrences_ = occurrencesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.BatchCreateOccurrencesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

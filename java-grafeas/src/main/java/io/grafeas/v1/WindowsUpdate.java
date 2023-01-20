@@ -164,7 +164,9 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int UPDATE_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object updateId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object updateId_ = "";
     /**
      *
      *
@@ -213,7 +215,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int REVISION_FIELD_NUMBER = 2;
-    private int revision_;
+    private int revision_ = 0;
     /**
      *
      *
@@ -436,10 +438,9 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         updateId_ = "";
-
         revision_ = 0;
-
         return this;
       }
 
@@ -466,10 +467,21 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       public io.grafeas.v1.WindowsUpdate.Identity buildPartial() {
         io.grafeas.v1.WindowsUpdate.Identity result =
             new io.grafeas.v1.WindowsUpdate.Identity(this);
-        result.updateId_ = updateId_;
-        result.revision_ = revision_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(io.grafeas.v1.WindowsUpdate.Identity result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.updateId_ = updateId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.revision_ = revision_;
+        }
       }
 
       @java.lang.Override
@@ -521,6 +533,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         if (other == io.grafeas.v1.WindowsUpdate.Identity.getDefaultInstance()) return this;
         if (!other.getUpdateId().isEmpty()) {
           updateId_ = other.updateId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getRevision() != 0) {
@@ -555,13 +568,13 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   updateId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   revision_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -580,6 +593,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object updateId_ = "";
       /**
@@ -642,8 +657,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         updateId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -659,8 +674,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearUpdateId() {
-
         updateId_ = getDefaultInstance().getUpdateId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -681,8 +696,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         updateId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -718,6 +733,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       public Builder setRevision(int value) {
 
         revision_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -733,7 +749,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearRevision() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         revision_ = 0;
         onChanged();
         return this;
@@ -908,7 +924,9 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CATEGORY_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object categoryId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object categoryId_ = "";
     /**
      *
      *
@@ -957,7 +975,9 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -1211,10 +1231,9 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         categoryId_ = "";
-
         name_ = "";
-
         return this;
       }
 
@@ -1241,10 +1260,21 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       public io.grafeas.v1.WindowsUpdate.Category buildPartial() {
         io.grafeas.v1.WindowsUpdate.Category result =
             new io.grafeas.v1.WindowsUpdate.Category(this);
-        result.categoryId_ = categoryId_;
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(io.grafeas.v1.WindowsUpdate.Category result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.categoryId_ = categoryId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -1296,10 +1326,12 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         if (other == io.grafeas.v1.WindowsUpdate.Category.getDefaultInstance()) return this;
         if (!other.getCategoryId().isEmpty()) {
           categoryId_ = other.categoryId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1331,13 +1363,13 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   categoryId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -1356,6 +1388,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object categoryId_ = "";
       /**
@@ -1418,8 +1452,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         categoryId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1435,8 +1469,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearCategoryId() {
-
         categoryId_ = getDefaultInstance().getCategoryId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1457,8 +1491,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         categoryId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1524,8 +1558,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1541,8 +1575,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1563,8 +1597,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1678,11 +1712,15 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public io.grafeas.v1.WindowsUpdate.IdentityOrBuilder getIdentityOrBuilder() {
-    return getIdentity();
+    return identity_ == null
+        ? io.grafeas.v1.WindowsUpdate.Identity.getDefaultInstance()
+        : identity_;
   }
 
   public static final int TITLE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object title_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object title_ = "";
   /**
    *
    *
@@ -1731,7 +1769,9 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -1780,6 +1820,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CATEGORIES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.WindowsUpdate.Category> categories_;
   /**
    *
@@ -1849,6 +1891,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KB_ARTICLE_IDS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList kbArticleIds_;
   /**
    *
@@ -1914,7 +1958,9 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUPPORT_URL_FIELD_NUMBER = 6;
-  private volatile java.lang.Object supportUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object supportUrl_ = "";
   /**
    *
    *
@@ -2007,7 +2053,9 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastPublishedTimestampOrBuilder() {
-    return getLastPublishedTimestamp();
+    return lastPublishedTimestamp_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastPublishedTimestamp_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2279,31 +2327,27 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (identityBuilder_ == null) {
-        identity_ = null;
-      } else {
-        identity_ = null;
+      bitField0_ = 0;
+      identity_ = null;
+      if (identityBuilder_ != null) {
+        identityBuilder_.dispose();
         identityBuilder_ = null;
       }
       title_ = "";
-
       description_ = "";
-
       if (categoriesBuilder_ == null) {
         categories_ = java.util.Collections.emptyList();
       } else {
         categories_ = null;
         categoriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       kbArticleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       supportUrl_ = "";
-
-      if (lastPublishedTimestampBuilder_ == null) {
-        lastPublishedTimestamp_ = null;
-      } else {
-        lastPublishedTimestamp_ = null;
+      lastPublishedTimestamp_ = null;
+      if (lastPublishedTimestampBuilder_ != null) {
+        lastPublishedTimestampBuilder_.dispose();
         lastPublishedTimestampBuilder_ = null;
       }
       return this;
@@ -2331,36 +2375,51 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.WindowsUpdate buildPartial() {
       io.grafeas.v1.WindowsUpdate result = new io.grafeas.v1.WindowsUpdate(this);
-      int from_bitField0_ = bitField0_;
-      if (identityBuilder_ == null) {
-        result.identity_ = identity_;
-      } else {
-        result.identity_ = identityBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.title_ = title_;
-      result.description_ = description_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.WindowsUpdate result) {
       if (categoriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           categories_ = java.util.Collections.unmodifiableList(categories_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.categories_ = categories_;
       } else {
         result.categories_ = categoriesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         kbArticleIds_ = kbArticleIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.kbArticleIds_ = kbArticleIds_;
-      result.supportUrl_ = supportUrl_;
-      if (lastPublishedTimestampBuilder_ == null) {
-        result.lastPublishedTimestamp_ = lastPublishedTimestamp_;
-      } else {
-        result.lastPublishedTimestamp_ = lastPublishedTimestampBuilder_.build();
+    }
+
+    private void buildPartial0(io.grafeas.v1.WindowsUpdate result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.identity_ = identityBuilder_ == null ? identity_ : identityBuilder_.build();
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.title_ = title_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.supportUrl_ = supportUrl_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.lastPublishedTimestamp_ =
+            lastPublishedTimestampBuilder_ == null
+                ? lastPublishedTimestamp_
+                : lastPublishedTimestampBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2413,17 +2472,19 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getTitle().isEmpty()) {
         title_ = other.title_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (categoriesBuilder_ == null) {
         if (!other.categories_.isEmpty()) {
           if (categories_.isEmpty()) {
             categories_ = other.categories_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureCategoriesIsMutable();
             categories_.addAll(other.categories_);
@@ -2436,7 +2497,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
             categoriesBuilder_.dispose();
             categoriesBuilder_ = null;
             categories_ = other.categories_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             categoriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCategoriesFieldBuilder()
@@ -2449,7 +2510,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       if (!other.kbArticleIds_.isEmpty()) {
         if (kbArticleIds_.isEmpty()) {
           kbArticleIds_ = other.kbArticleIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureKbArticleIdsIsMutable();
           kbArticleIds_.addAll(other.kbArticleIds_);
@@ -2458,6 +2519,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getSupportUrl().isEmpty()) {
         supportUrl_ = other.supportUrl_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasLastPublishedTimestamp()) {
@@ -2492,19 +2554,19 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getIdentityFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 title_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -2530,14 +2592,14 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
             case 50:
               {
                 supportUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     getLastPublishedTimestampFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -2577,7 +2639,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the identity field is set.
      */
     public boolean hasIdentity() {
-      return identityBuilder_ != null || identity_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -2614,11 +2676,11 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         identity_ = value;
-        onChanged();
       } else {
         identityBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2633,11 +2695,11 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     public Builder setIdentity(io.grafeas.v1.WindowsUpdate.Identity.Builder builderForValue) {
       if (identityBuilder_ == null) {
         identity_ = builderForValue.build();
-        onChanged();
       } else {
         identityBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2651,19 +2713,18 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeIdentity(io.grafeas.v1.WindowsUpdate.Identity value) {
       if (identityBuilder_ == null) {
-        if (identity_ != null) {
-          identity_ =
-              io.grafeas.v1.WindowsUpdate.Identity.newBuilder(identity_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && identity_ != null
+            && identity_ != io.grafeas.v1.WindowsUpdate.Identity.getDefaultInstance()) {
+          getIdentityBuilder().mergeFrom(value);
         } else {
           identity_ = value;
         }
-        onChanged();
       } else {
         identityBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2676,14 +2737,13 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.WindowsUpdate.Identity identity = 1;</code>
      */
     public Builder clearIdentity() {
-      if (identityBuilder_ == null) {
-        identity_ = null;
-        onChanged();
-      } else {
-        identity_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      identity_ = null;
+      if (identityBuilder_ != null) {
+        identityBuilder_.dispose();
         identityBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2696,7 +2756,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.WindowsUpdate.Identity identity = 1;</code>
      */
     public io.grafeas.v1.WindowsUpdate.Identity.Builder getIdentityBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getIdentityFieldBuilder().getBuilder();
     }
@@ -2805,8 +2865,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       title_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2822,8 +2882,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
-
       title_ = getDefaultInstance().getTitle();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2844,8 +2904,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       title_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2911,8 +2971,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2928,8 +2988,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2950,8 +3010,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2960,9 +3020,9 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         categories_ = new java.util.ArrayList<io.grafeas.v1.WindowsUpdate.Category>(categories_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -3177,7 +3237,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCategories() {
       if (categoriesBuilder_ == null) {
         categories_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         categoriesBuilder_.clear();
@@ -3298,7 +3358,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
                 io.grafeas.v1.WindowsUpdate.Category,
                 io.grafeas.v1.WindowsUpdate.Category.Builder,
                 io.grafeas.v1.WindowsUpdate.CategoryOrBuilder>(
-                categories_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                categories_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         categories_ = null;
       }
       return categoriesBuilder_;
@@ -3308,9 +3368,9 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureKbArticleIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         kbArticleIds_ = new com.google.protobuf.LazyStringArrayList(kbArticleIds_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -3453,7 +3513,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKbArticleIds() {
       kbArticleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3542,8 +3602,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       supportUrl_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3559,8 +3619,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSupportUrl() {
-
       supportUrl_ = getDefaultInstance().getSupportUrl();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3581,8 +3641,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       supportUrl_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3605,7 +3665,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastPublishedTimestamp field is set.
      */
     public boolean hasLastPublishedTimestamp() {
-      return lastPublishedTimestampBuilder_ != null || lastPublishedTimestamp_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3642,11 +3702,11 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastPublishedTimestamp_ = value;
-        onChanged();
       } else {
         lastPublishedTimestampBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3662,11 +3722,11 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastPublishedTimestampBuilder_ == null) {
         lastPublishedTimestamp_ = builderForValue.build();
-        onChanged();
       } else {
         lastPublishedTimestampBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3680,19 +3740,18 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastPublishedTimestamp(com.google.protobuf.Timestamp value) {
       if (lastPublishedTimestampBuilder_ == null) {
-        if (lastPublishedTimestamp_ != null) {
-          lastPublishedTimestamp_ =
-              com.google.protobuf.Timestamp.newBuilder(lastPublishedTimestamp_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && lastPublishedTimestamp_ != null
+            && lastPublishedTimestamp_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastPublishedTimestampBuilder().mergeFrom(value);
         } else {
           lastPublishedTimestamp_ = value;
         }
-        onChanged();
       } else {
         lastPublishedTimestampBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3705,14 +3764,13 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_published_timestamp = 7;</code>
      */
     public Builder clearLastPublishedTimestamp() {
-      if (lastPublishedTimestampBuilder_ == null) {
-        lastPublishedTimestamp_ = null;
-        onChanged();
-      } else {
-        lastPublishedTimestamp_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      lastPublishedTimestamp_ = null;
+      if (lastPublishedTimestampBuilder_ != null) {
+        lastPublishedTimestampBuilder_.dispose();
         lastPublishedTimestampBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3725,7 +3783,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_published_timestamp = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastPublishedTimestampBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getLastPublishedTimestampFieldBuilder().getBuilder();
     }

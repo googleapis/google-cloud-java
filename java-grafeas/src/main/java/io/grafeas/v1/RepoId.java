@@ -451,6 +451,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (projectRepoIdBuilder_ != null) {
         projectRepoIdBuilder_.clear();
       }
@@ -481,19 +482,24 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.RepoId buildPartial() {
       io.grafeas.v1.RepoId result = new io.grafeas.v1.RepoId(this);
-      if (idCase_ == 1) {
-        if (projectRepoIdBuilder_ == null) {
-          result.id_ = id_;
-        } else {
-          result.id_ = projectRepoIdBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (idCase_ == 2) {
-        result.id_ = id_;
-      }
-      result.idCase_ = idCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.RepoId result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(io.grafeas.v1.RepoId result) {
+      result.idCase_ = idCase_;
+      result.id_ = this.id_;
+      if (idCase_ == 1 && projectRepoIdBuilder_ != null) {
+        result.id_ = projectRepoIdBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -628,6 +634,8 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.ProjectRepoId,
@@ -830,7 +838,6 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       }
       idCase_ = 1;
       onChanged();
-      ;
       return projectRepoIdBuilder_;
     }
 

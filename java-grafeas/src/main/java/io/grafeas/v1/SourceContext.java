@@ -291,6 +291,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -348,7 +349,10 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -651,6 +655,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (cloudRepoBuilder_ != null) {
         cloudRepoBuilder_.clear();
       }
@@ -688,33 +693,34 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.SourceContext buildPartial() {
       io.grafeas.v1.SourceContext result = new io.grafeas.v1.SourceContext(this);
-      int from_bitField0_ = bitField0_;
-      if (contextCase_ == 1) {
-        if (cloudRepoBuilder_ == null) {
-          result.context_ = context_;
-        } else {
-          result.context_ = cloudRepoBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (contextCase_ == 2) {
-        if (gerritBuilder_ == null) {
-          result.context_ = context_;
-        } else {
-          result.context_ = gerritBuilder_.build();
-        }
-      }
-      if (contextCase_ == 3) {
-        if (gitBuilder_ == null) {
-          result.context_ = context_;
-        } else {
-          result.context_ = gitBuilder_.build();
-        }
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.contextCase_ = contextCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.SourceContext result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+    }
+
+    private void buildPartialOneofs(io.grafeas.v1.SourceContext result) {
+      result.contextCase_ = contextCase_;
+      result.context_ = this.context_;
+      if (contextCase_ == 1 && cloudRepoBuilder_ != null) {
+        result.context_ = cloudRepoBuilder_.build();
+      }
+      if (contextCase_ == 2 && gerritBuilder_ != null) {
+        result.context_ = gerritBuilder_.build();
+      }
+      if (contextCase_ == 3 && gitBuilder_ != null) {
+        result.context_ = gitBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -763,6 +769,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(io.grafeas.v1.SourceContext other) {
       if (other == io.grafeas.v1.SourceContext.getDefaultInstance()) return this;
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000008;
       switch (other.getContextCase()) {
         case CLOUD_REPO:
           {
@@ -837,6 +844,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -1075,7 +1083,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       }
       contextCase_ = 1;
       onChanged();
-      ;
       return cloudRepoBuilder_;
     }
 
@@ -1282,7 +1289,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       }
       contextCase_ = 2;
       onChanged();
-      ;
       return gerritBuilder_;
     }
 
@@ -1487,7 +1493,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       }
       contextCase_ = 3;
       onChanged();
-      ;
       return gitBuilder_;
     }
 
@@ -1502,14 +1507,14 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return labels_;
     }
 
@@ -1561,8 +1566,10 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1591,6 +1598,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -1613,6 +1621,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -1631,8 +1640,8 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1646,6 +1655,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 

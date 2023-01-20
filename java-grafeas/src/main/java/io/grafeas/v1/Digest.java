@@ -67,7 +67,9 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALGO_FIELD_NUMBER = 1;
-  private volatile java.lang.Object algo_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object algo_ = "";
   /**
    *
    *
@@ -116,7 +118,7 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIGEST_BYTES_FIELD_NUMBER = 2;
-  private com.google.protobuf.ByteString digestBytes_;
+  private com.google.protobuf.ByteString digestBytes_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -334,10 +336,9 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       algo_ = "";
-
       digestBytes_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -363,10 +364,21 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.Digest buildPartial() {
       io.grafeas.v1.Digest result = new io.grafeas.v1.Digest(this);
-      result.algo_ = algo_;
-      result.digestBytes_ = digestBytes_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.Digest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.algo_ = algo_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.digestBytes_ = digestBytes_;
+      }
     }
 
     @java.lang.Override
@@ -416,6 +428,7 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
       if (other == io.grafeas.v1.Digest.getDefaultInstance()) return this;
       if (!other.getAlgo().isEmpty()) {
         algo_ = other.algo_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getDigestBytes() != com.google.protobuf.ByteString.EMPTY) {
@@ -450,13 +463,13 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 algo_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 digestBytes_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -475,6 +488,8 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object algo_ = "";
     /**
@@ -537,8 +552,8 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       algo_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -554,8 +569,8 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAlgo() {
-
       algo_ = getDefaultInstance().getAlgo();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -576,8 +591,8 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       algo_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -614,8 +629,8 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       digestBytes_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -631,7 +646,7 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDigestBytes() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       digestBytes_ = getDefaultInstance().getDigestBytes();
       onChanged();
       return this;

@@ -70,7 +70,9 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_URL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object resourceUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceUrl_ = "";
   /**
    *
    *
@@ -163,7 +165,7 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public io.grafeas.v1.FingerprintOrBuilder getFingerprintOrBuilder() {
-    return getFingerprint();
+    return fingerprint_ == null ? io.grafeas.v1.Fingerprint.getDefaultInstance() : fingerprint_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -376,12 +378,11 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resourceUrl_ = "";
-
-      if (fingerprintBuilder_ == null) {
-        fingerprint_ = null;
-      } else {
-        fingerprint_ = null;
+      fingerprint_ = null;
+      if (fingerprintBuilder_ != null) {
+        fingerprintBuilder_.dispose();
         fingerprintBuilder_ = null;
       }
       return this;
@@ -409,14 +410,22 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.ImageNote buildPartial() {
       io.grafeas.v1.ImageNote result = new io.grafeas.v1.ImageNote(this);
-      result.resourceUrl_ = resourceUrl_;
-      if (fingerprintBuilder_ == null) {
-        result.fingerprint_ = fingerprint_;
-      } else {
-        result.fingerprint_ = fingerprintBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.ImageNote result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resourceUrl_ = resourceUrl_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fingerprint_ =
+            fingerprintBuilder_ == null ? fingerprint_ : fingerprintBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -466,6 +475,7 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
       if (other == io.grafeas.v1.ImageNote.getDefaultInstance()) return this;
       if (!other.getResourceUrl().isEmpty()) {
         resourceUrl_ = other.resourceUrl_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasFingerprint()) {
@@ -500,13 +510,13 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 resourceUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getFingerprintFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -525,6 +535,8 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object resourceUrl_ = "";
     /**
@@ -590,8 +602,8 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -608,8 +620,8 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceUrl() {
-
       resourceUrl_ = getDefaultInstance().getResourceUrl();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -631,8 +643,8 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -655,7 +667,7 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
-      return fingerprintBuilder_ != null || fingerprint_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -690,11 +702,11 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         fingerprint_ = value;
-        onChanged();
       } else {
         fingerprintBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -709,11 +721,11 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
     public Builder setFingerprint(io.grafeas.v1.Fingerprint.Builder builderForValue) {
       if (fingerprintBuilder_ == null) {
         fingerprint_ = builderForValue.build();
-        onChanged();
       } else {
         fingerprintBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -727,17 +739,18 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeFingerprint(io.grafeas.v1.Fingerprint value) {
       if (fingerprintBuilder_ == null) {
-        if (fingerprint_ != null) {
-          fingerprint_ =
-              io.grafeas.v1.Fingerprint.newBuilder(fingerprint_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && fingerprint_ != null
+            && fingerprint_ != io.grafeas.v1.Fingerprint.getDefaultInstance()) {
+          getFingerprintBuilder().mergeFrom(value);
         } else {
           fingerprint_ = value;
         }
-        onChanged();
       } else {
         fingerprintBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -750,14 +763,13 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.Fingerprint fingerprint = 2;</code>
      */
     public Builder clearFingerprint() {
-      if (fingerprintBuilder_ == null) {
-        fingerprint_ = null;
-        onChanged();
-      } else {
-        fingerprint_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      fingerprint_ = null;
+      if (fingerprintBuilder_ != null) {
+        fingerprintBuilder_.dispose();
         fingerprintBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -770,7 +782,7 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.Fingerprint fingerprint = 2;</code>
      */
     public io.grafeas.v1.Fingerprint.Builder getFingerprintBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFingerprintFieldBuilder().getBuilder();
     }

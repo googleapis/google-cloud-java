@@ -68,7 +68,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ANALYSIS_KIND_FIELD_NUMBER = 1;
-  private int analysisKind_;
+  private int analysisKind_ = 0;
   /**
    *
    *
@@ -99,8 +99,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public io.grafeas.v1.NoteKind getAnalysisKind() {
-    @SuppressWarnings("deprecation")
-    io.grafeas.v1.NoteKind result = io.grafeas.v1.NoteKind.valueOf(analysisKind_);
+    io.grafeas.v1.NoteKind result = io.grafeas.v1.NoteKind.forNumber(analysisKind_);
     return result == null ? io.grafeas.v1.NoteKind.UNRECOGNIZED : result;
   }
 
@@ -298,8 +297,8 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       analysisKind_ = 0;
-
       return this;
     }
 
@@ -325,9 +324,18 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.DiscoveryNote buildPartial() {
       io.grafeas.v1.DiscoveryNote result = new io.grafeas.v1.DiscoveryNote(this);
-      result.analysisKind_ = analysisKind_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.DiscoveryNote result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.analysisKind_ = analysisKind_;
+      }
     }
 
     @java.lang.Override
@@ -407,7 +415,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 analysisKind_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -426,6 +434,8 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int analysisKind_ = 0;
     /**
@@ -458,8 +468,8 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAnalysisKindValue(int value) {
-
       analysisKind_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -477,8 +487,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public io.grafeas.v1.NoteKind getAnalysisKind() {
-      @SuppressWarnings("deprecation")
-      io.grafeas.v1.NoteKind result = io.grafeas.v1.NoteKind.valueOf(analysisKind_);
+      io.grafeas.v1.NoteKind result = io.grafeas.v1.NoteKind.forNumber(analysisKind_);
       return result == null ? io.grafeas.v1.NoteKind.UNRECOGNIZED : result;
     }
     /**
@@ -498,7 +507,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       analysisKind_ = value.getNumber();
       onChanged();
       return this;
@@ -516,7 +525,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAnalysisKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       analysisKind_ = 0;
       onChanged();
       return this;

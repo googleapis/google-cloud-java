@@ -71,7 +71,9 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -122,7 +124,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEFINED_IN_MATERIAL_FIELD_NUMBER = 2;
-  private long definedInMaterial_;
+  private long definedInMaterial_ = 0L;
   /**
    *
    *
@@ -144,7 +146,9 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENTRY_POINT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object entryPoint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entryPoint_ = "";
   /**
    *
    *
@@ -201,6 +205,8 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARGUMENTS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Any> arguments_;
   /**
    *
@@ -294,6 +300,8 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Any> environment_;
   /**
    *
@@ -611,26 +619,24 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = "";
-
       definedInMaterial_ = 0L;
-
       entryPoint_ = "";
-
       if (argumentsBuilder_ == null) {
         arguments_ = java.util.Collections.emptyList();
       } else {
         arguments_ = null;
         argumentsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (environmentBuilder_ == null) {
         environment_ = java.util.Collections.emptyList();
       } else {
         environment_ = null;
         environmentBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -656,30 +662,46 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.Recipe buildPartial() {
       io.grafeas.v1.Recipe result = new io.grafeas.v1.Recipe(this);
-      int from_bitField0_ = bitField0_;
-      result.type_ = type_;
-      result.definedInMaterial_ = definedInMaterial_;
-      result.entryPoint_ = entryPoint_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.Recipe result) {
       if (argumentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           arguments_ = java.util.Collections.unmodifiableList(arguments_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.arguments_ = arguments_;
       } else {
         result.arguments_ = argumentsBuilder_.build();
       }
       if (environmentBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           environment_ = java.util.Collections.unmodifiableList(environment_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.environment_ = environment_;
       } else {
         result.environment_ = environmentBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.Recipe result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.definedInMaterial_ = definedInMaterial_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.entryPoint_ = entryPoint_;
+      }
     }
 
     @java.lang.Override
@@ -729,6 +751,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       if (other == io.grafeas.v1.Recipe.getDefaultInstance()) return this;
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getDefinedInMaterial() != 0L) {
@@ -736,13 +759,14 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEntryPoint().isEmpty()) {
         entryPoint_ = other.entryPoint_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (argumentsBuilder_ == null) {
         if (!other.arguments_.isEmpty()) {
           if (arguments_.isEmpty()) {
             arguments_ = other.arguments_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureArgumentsIsMutable();
             arguments_.addAll(other.arguments_);
@@ -755,7 +779,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
             argumentsBuilder_.dispose();
             argumentsBuilder_ = null;
             arguments_ = other.arguments_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             argumentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getArgumentsFieldBuilder()
@@ -769,7 +793,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
         if (!other.environment_.isEmpty()) {
           if (environment_.isEmpty()) {
             environment_ = other.environment_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureEnvironmentIsMutable();
             environment_.addAll(other.environment_);
@@ -782,7 +806,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
             environmentBuilder_.dispose();
             environmentBuilder_ = null;
             environment_ = other.environment_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
             environmentBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEnvironmentFieldBuilder()
@@ -821,19 +845,19 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 definedInMaterial_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 entryPoint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -943,8 +967,8 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -961,8 +985,8 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -984,8 +1008,8 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1029,6 +1053,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
     public Builder setDefinedInMaterial(long value) {
 
       definedInMaterial_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1048,7 +1073,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDefinedInMaterial() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       definedInMaterial_ = 0L;
       onChanged();
       return this;
@@ -1127,8 +1152,8 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       entryPoint_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1148,8 +1173,8 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEntryPoint() {
-
       entryPoint_ = getDefaultInstance().getEntryPoint();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1174,8 +1199,8 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       entryPoint_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1183,9 +1208,9 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<com.google.protobuf.Any> arguments_ = java.util.Collections.emptyList();
 
     private void ensureArgumentsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         arguments_ = new java.util.ArrayList<com.google.protobuf.Any>(arguments_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1452,7 +1477,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
     public Builder clearArguments() {
       if (argumentsBuilder_ == null) {
         arguments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         argumentsBuilder_.clear();
@@ -1606,7 +1631,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.Any,
                 com.google.protobuf.Any.Builder,
                 com.google.protobuf.AnyOrBuilder>(
-                arguments_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                arguments_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         arguments_ = null;
       }
       return argumentsBuilder_;
@@ -1616,9 +1641,9 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureEnvironmentIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         environment_ = new java.util.ArrayList<com.google.protobuf.Any>(environment_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1863,7 +1888,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEnvironment() {
       if (environmentBuilder_ == null) {
         environment_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         environmentBuilder_.clear();
@@ -2004,7 +2029,7 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.Any,
                 com.google.protobuf.Any.Builder,
                 com.google.protobuf.AnyOrBuilder>(
-                environment_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                environment_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         environment_ = null;
       }
       return environmentBuilder_;
