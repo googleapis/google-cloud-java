@@ -294,7 +294,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CORRECTNESS_LEVEL_FIELD_NUMBER = 1;
-  private int correctnessLevel_;
+  private int correctnessLevel_ = 0;
   /**
    *
    *
@@ -323,9 +323,8 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.AnswerFeedback.CorrectnessLevel getCorrectnessLevel() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.AnswerFeedback.CorrectnessLevel result =
-        com.google.cloud.dialogflow.v2.AnswerFeedback.CorrectnessLevel.valueOf(correctnessLevel_);
+        com.google.cloud.dialogflow.v2.AnswerFeedback.CorrectnessLevel.forNumber(correctnessLevel_);
     return result == null
         ? com.google.cloud.dialogflow.v2.AnswerFeedback.CorrectnessLevel.UNRECOGNIZED
         : result;
@@ -387,7 +386,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLICKED_FIELD_NUMBER = 3;
-  private boolean clicked_;
+  private boolean clicked_ = false;
   /**
    *
    *
@@ -448,11 +447,11 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getClickTimeOrBuilder() {
-    return getClickTime();
+    return clickTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : clickTime_;
   }
 
   public static final int DISPLAYED_FIELD_NUMBER = 4;
-  private boolean displayed_;
+  private boolean displayed_ = false;
   /**
    *
    *
@@ -513,7 +512,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDisplayTimeOrBuilder() {
-    return getDisplayTime();
+    return displayTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : displayTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -792,25 +791,21 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       correctnessLevel_ = 0;
-
       if (agentAssistantDetailFeedbackBuilder_ != null) {
         agentAssistantDetailFeedbackBuilder_.clear();
       }
       clicked_ = false;
-
-      if (clickTimeBuilder_ == null) {
-        clickTime_ = null;
-      } else {
-        clickTime_ = null;
+      clickTime_ = null;
+      if (clickTimeBuilder_ != null) {
+        clickTimeBuilder_.dispose();
         clickTimeBuilder_ = null;
       }
       displayed_ = false;
-
-      if (displayTimeBuilder_ == null) {
-        displayTime_ = null;
-      } else {
-        displayTime_ = null;
+      displayTime_ = null;
+      if (displayTimeBuilder_ != null) {
+        displayTimeBuilder_.dispose();
         displayTimeBuilder_ = null;
       }
       detailFeedbackCase_ = 0;
@@ -842,29 +837,40 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2.AnswerFeedback buildPartial() {
       com.google.cloud.dialogflow.v2.AnswerFeedback result =
           new com.google.cloud.dialogflow.v2.AnswerFeedback(this);
-      result.correctnessLevel_ = correctnessLevel_;
-      if (detailFeedbackCase_ == 2) {
-        if (agentAssistantDetailFeedbackBuilder_ == null) {
-          result.detailFeedback_ = detailFeedback_;
-        } else {
-          result.detailFeedback_ = agentAssistantDetailFeedbackBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.clicked_ = clicked_;
-      if (clickTimeBuilder_ == null) {
-        result.clickTime_ = clickTime_;
-      } else {
-        result.clickTime_ = clickTimeBuilder_.build();
-      }
-      result.displayed_ = displayed_;
-      if (displayTimeBuilder_ == null) {
-        result.displayTime_ = displayTime_;
-      } else {
-        result.displayTime_ = displayTimeBuilder_.build();
-      }
-      result.detailFeedbackCase_ = detailFeedbackCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.AnswerFeedback result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.correctnessLevel_ = correctnessLevel_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clicked_ = clicked_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.clickTime_ = clickTimeBuilder_ == null ? clickTime_ : clickTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.displayed_ = displayed_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.displayTime_ =
+            displayTimeBuilder_ == null ? displayTime_ : displayTimeBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.v2.AnswerFeedback result) {
+      result.detailFeedbackCase_ = detailFeedbackCase_;
+      result.detailFeedback_ = this.detailFeedback_;
+      if (detailFeedbackCase_ == 2 && agentAssistantDetailFeedbackBuilder_ != null) {
+        result.detailFeedback_ = agentAssistantDetailFeedbackBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -967,7 +973,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 correctnessLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -980,25 +986,25 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 clicked_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 displayed_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getClickTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getDisplayTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -1032,6 +1038,8 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int correctnessLevel_ = 0;
     /**
      *
@@ -1063,8 +1071,8 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCorrectnessLevelValue(int value) {
-
       correctnessLevel_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1082,9 +1090,9 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2.AnswerFeedback.CorrectnessLevel getCorrectnessLevel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.AnswerFeedback.CorrectnessLevel result =
-          com.google.cloud.dialogflow.v2.AnswerFeedback.CorrectnessLevel.valueOf(correctnessLevel_);
+          com.google.cloud.dialogflow.v2.AnswerFeedback.CorrectnessLevel.forNumber(
+              correctnessLevel_);
       return result == null
           ? com.google.cloud.dialogflow.v2.AnswerFeedback.CorrectnessLevel.UNRECOGNIZED
           : result;
@@ -1107,7 +1115,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       correctnessLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -1125,7 +1133,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCorrectnessLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       correctnessLevel_ = 0;
       onChanged();
       return this;
@@ -1352,7 +1360,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       }
       detailFeedbackCase_ = 2;
       onChanged();
-      ;
       return agentAssistantDetailFeedbackBuilder_;
     }
 
@@ -1389,6 +1396,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public Builder setClicked(boolean value) {
 
       clicked_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1405,7 +1413,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClicked() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       clicked_ = false;
       onChanged();
       return this;
@@ -1429,7 +1437,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the clickTime field is set.
      */
     public boolean hasClickTime() {
-      return clickTimeBuilder_ != null || clickTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1464,11 +1472,11 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         clickTime_ = value;
-        onChanged();
       } else {
         clickTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1483,11 +1491,11 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public Builder setClickTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (clickTimeBuilder_ == null) {
         clickTime_ = builderForValue.build();
-        onChanged();
       } else {
         clickTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1501,17 +1509,18 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeClickTime(com.google.protobuf.Timestamp value) {
       if (clickTimeBuilder_ == null) {
-        if (clickTime_ != null) {
-          clickTime_ =
-              com.google.protobuf.Timestamp.newBuilder(clickTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && clickTime_ != null
+            && clickTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getClickTimeBuilder().mergeFrom(value);
         } else {
           clickTime_ = value;
         }
-        onChanged();
       } else {
         clickTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1524,14 +1533,13 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp click_time = 5;</code>
      */
     public Builder clearClickTime() {
-      if (clickTimeBuilder_ == null) {
-        clickTime_ = null;
-        onChanged();
-      } else {
-        clickTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      clickTime_ = null;
+      if (clickTimeBuilder_ != null) {
+        clickTimeBuilder_.dispose();
         clickTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1544,7 +1552,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp click_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getClickTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getClickTimeFieldBuilder().getBuilder();
     }
@@ -1623,6 +1631,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisplayed(boolean value) {
 
       displayed_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1639,7 +1648,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayed() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       displayed_ = false;
       onChanged();
       return this;
@@ -1663,7 +1672,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the displayTime field is set.
      */
     public boolean hasDisplayTime() {
-      return displayTimeBuilder_ != null || displayTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1700,11 +1709,11 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         displayTime_ = value;
-        onChanged();
       } else {
         displayTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1719,11 +1728,11 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisplayTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (displayTimeBuilder_ == null) {
         displayTime_ = builderForValue.build();
-        onChanged();
       } else {
         displayTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1737,19 +1746,18 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDisplayTime(com.google.protobuf.Timestamp value) {
       if (displayTimeBuilder_ == null) {
-        if (displayTime_ != null) {
-          displayTime_ =
-              com.google.protobuf.Timestamp.newBuilder(displayTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && displayTime_ != null
+            && displayTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDisplayTimeBuilder().mergeFrom(value);
         } else {
           displayTime_ = value;
         }
-        onChanged();
       } else {
         displayTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1762,14 +1770,13 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp display_time = 6;</code>
      */
     public Builder clearDisplayTime() {
-      if (displayTimeBuilder_ == null) {
-        displayTime_ = null;
-        onChanged();
-      } else {
-        displayTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      displayTime_ = null;
+      if (displayTimeBuilder_ != null) {
+        displayTimeBuilder_.dispose();
         displayTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1782,7 +1789,7 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp display_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getDisplayTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getDisplayTimeFieldBuilder().getBuilder();
     }

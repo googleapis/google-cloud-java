@@ -71,7 +71,9 @@ public final class CreateConversationDatasetOperationMetadata
   }
 
   public static final int CONVERSATION_DATASET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object conversationDataset_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object conversationDataset_ = "";
   /**
    *
    *
@@ -325,8 +327,8 @@ public final class CreateConversationDatasetOperationMetadata
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       conversationDataset_ = "";
-
       return this;
     }
 
@@ -358,9 +360,19 @@ public final class CreateConversationDatasetOperationMetadata
         buildPartial() {
       com.google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata result =
           new com.google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata(this);
-      result.conversationDataset_ = conversationDataset_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.conversationDataset_ = conversationDataset_;
+      }
     }
 
     @java.lang.Override
@@ -415,6 +427,7 @@ public final class CreateConversationDatasetOperationMetadata
               .getDefaultInstance()) return this;
       if (!other.getConversationDataset().isEmpty()) {
         conversationDataset_ = other.conversationDataset_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -446,7 +459,7 @@ public final class CreateConversationDatasetOperationMetadata
             case 10:
               {
                 conversationDataset_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -465,6 +478,8 @@ public final class CreateConversationDatasetOperationMetadata
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object conversationDataset_ = "";
     /**
@@ -533,8 +548,8 @@ public final class CreateConversationDatasetOperationMetadata
       if (value == null) {
         throw new NullPointerException();
       }
-
       conversationDataset_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -552,8 +567,8 @@ public final class CreateConversationDatasetOperationMetadata
      * @return This builder for chaining.
      */
     public Builder clearConversationDataset() {
-
       conversationDataset_ = getDefaultInstance().getConversationDataset();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -576,8 +591,8 @@ public final class CreateConversationDatasetOperationMetadata
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       conversationDataset_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

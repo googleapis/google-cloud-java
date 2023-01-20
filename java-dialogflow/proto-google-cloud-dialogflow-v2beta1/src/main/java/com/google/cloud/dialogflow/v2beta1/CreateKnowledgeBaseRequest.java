@@ -68,7 +68,9 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -173,7 +175,9 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.KnowledgeBaseOrBuilder getKnowledgeBaseOrBuilder() {
-    return getKnowledgeBase();
+    return knowledgeBase_ == null
+        ? com.google.cloud.dialogflow.v2beta1.KnowledgeBase.getDefaultInstance()
+        : knowledgeBase_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -388,12 +392,11 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (knowledgeBaseBuilder_ == null) {
-        knowledgeBase_ = null;
-      } else {
-        knowledgeBase_ = null;
+      knowledgeBase_ = null;
+      if (knowledgeBaseBuilder_ != null) {
+        knowledgeBaseBuilder_.dispose();
         knowledgeBaseBuilder_ = null;
       }
       return this;
@@ -424,14 +427,23 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
     public com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest result =
           new com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest(this);
-      result.parent_ = parent_;
-      if (knowledgeBaseBuilder_ == null) {
-        result.knowledgeBase_ = knowledgeBase_;
-      } else {
-        result.knowledgeBase_ = knowledgeBaseBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.knowledgeBase_ =
+            knowledgeBaseBuilder_ == null ? knowledgeBase_ : knowledgeBaseBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -483,6 +495,7 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasKnowledgeBase()) {
@@ -517,13 +530,13 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getKnowledgeBaseFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -542,6 +555,8 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -613,8 +628,8 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -633,8 +648,8 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -658,8 +673,8 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,7 +699,7 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * @return Whether the knowledgeBase field is set.
      */
     public boolean hasKnowledgeBase() {
-      return knowledgeBaseBuilder_ != null || knowledgeBase_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -725,11 +740,11 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         knowledgeBase_ = value;
-        onChanged();
       } else {
         knowledgeBaseBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -747,11 +762,11 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
         com.google.cloud.dialogflow.v2beta1.KnowledgeBase.Builder builderForValue) {
       if (knowledgeBaseBuilder_ == null) {
         knowledgeBase_ = builderForValue.build();
-        onChanged();
       } else {
         knowledgeBaseBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -767,19 +782,19 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      */
     public Builder mergeKnowledgeBase(com.google.cloud.dialogflow.v2beta1.KnowledgeBase value) {
       if (knowledgeBaseBuilder_ == null) {
-        if (knowledgeBase_ != null) {
-          knowledgeBase_ =
-              com.google.cloud.dialogflow.v2beta1.KnowledgeBase.newBuilder(knowledgeBase_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && knowledgeBase_ != null
+            && knowledgeBase_
+                != com.google.cloud.dialogflow.v2beta1.KnowledgeBase.getDefaultInstance()) {
+          getKnowledgeBaseBuilder().mergeFrom(value);
         } else {
           knowledgeBase_ = value;
         }
-        onChanged();
       } else {
         knowledgeBaseBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -794,14 +809,13 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearKnowledgeBase() {
-      if (knowledgeBaseBuilder_ == null) {
-        knowledgeBase_ = null;
-        onChanged();
-      } else {
-        knowledgeBase_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      knowledgeBase_ = null;
+      if (knowledgeBaseBuilder_ != null) {
+        knowledgeBaseBuilder_.dispose();
         knowledgeBaseBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -816,7 +830,7 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.KnowledgeBase.Builder getKnowledgeBaseBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getKnowledgeBaseFieldBuilder().getBuilder();
     }

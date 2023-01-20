@@ -69,12 +69,13 @@ public final class ArticleSuggestionModelMetadata extends com.google.protobuf.Ge
   }
 
   public static final int TRAINING_MODEL_TYPE_FIELD_NUMBER = 3;
-  private int trainingModelType_;
+  private int trainingModelType_ = 0;
   /**
    *
    *
    * <pre>
-   * Optional. Type of the article suggestion model. If not provided, model_type is used.
+   * Optional. Type of the article suggestion model. If not provided, model_type
+   * is used.
    * </pre>
    *
    * <code>
@@ -91,7 +92,8 @@ public final class ArticleSuggestionModelMetadata extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. Type of the article suggestion model. If not provided, model_type is used.
+   * Optional. Type of the article suggestion model. If not provided, model_type
+   * is used.
    * </pre>
    *
    * <code>
@@ -102,9 +104,8 @@ public final class ArticleSuggestionModelMetadata extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.ConversationModel.ModelType getTrainingModelType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.ConversationModel.ModelType result =
-        com.google.cloud.dialogflow.v2.ConversationModel.ModelType.valueOf(trainingModelType_);
+        com.google.cloud.dialogflow.v2.ConversationModel.ModelType.forNumber(trainingModelType_);
     return result == null
         ? com.google.cloud.dialogflow.v2.ConversationModel.ModelType.UNRECOGNIZED
         : result;
@@ -312,8 +313,8 @@ public final class ArticleSuggestionModelMetadata extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       trainingModelType_ = 0;
-
       return this;
     }
 
@@ -342,9 +343,19 @@ public final class ArticleSuggestionModelMetadata extends com.google.protobuf.Ge
     public com.google.cloud.dialogflow.v2.ArticleSuggestionModelMetadata buildPartial() {
       com.google.cloud.dialogflow.v2.ArticleSuggestionModelMetadata result =
           new com.google.cloud.dialogflow.v2.ArticleSuggestionModelMetadata(this);
-      result.trainingModelType_ = trainingModelType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2.ArticleSuggestionModelMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.trainingModelType_ = trainingModelType_;
+      }
     }
 
     @java.lang.Override
@@ -426,7 +437,7 @@ public final class ArticleSuggestionModelMetadata extends com.google.protobuf.Ge
             case 24:
               {
                 trainingModelType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 24
             default:
@@ -446,12 +457,15 @@ public final class ArticleSuggestionModelMetadata extends com.google.protobuf.Ge
       return this;
     }
 
+    private int bitField0_;
+
     private int trainingModelType_ = 0;
     /**
      *
      *
      * <pre>
-     * Optional. Type of the article suggestion model. If not provided, model_type is used.
+     * Optional. Type of the article suggestion model. If not provided, model_type
+     * is used.
      * </pre>
      *
      * <code>
@@ -468,7 +482,8 @@ public final class ArticleSuggestionModelMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Type of the article suggestion model. If not provided, model_type is used.
+     * Optional. Type of the article suggestion model. If not provided, model_type
+     * is used.
      * </pre>
      *
      * <code>
@@ -479,8 +494,8 @@ public final class ArticleSuggestionModelMetadata extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder setTrainingModelTypeValue(int value) {
-
       trainingModelType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -488,7 +503,8 @@ public final class ArticleSuggestionModelMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Type of the article suggestion model. If not provided, model_type is used.
+     * Optional. Type of the article suggestion model. If not provided, model_type
+     * is used.
      * </pre>
      *
      * <code>
@@ -499,9 +515,8 @@ public final class ArticleSuggestionModelMetadata extends com.google.protobuf.Ge
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2.ConversationModel.ModelType getTrainingModelType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.ConversationModel.ModelType result =
-          com.google.cloud.dialogflow.v2.ConversationModel.ModelType.valueOf(trainingModelType_);
+          com.google.cloud.dialogflow.v2.ConversationModel.ModelType.forNumber(trainingModelType_);
       return result == null
           ? com.google.cloud.dialogflow.v2.ConversationModel.ModelType.UNRECOGNIZED
           : result;
@@ -510,7 +525,8 @@ public final class ArticleSuggestionModelMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Type of the article suggestion model. If not provided, model_type is used.
+     * Optional. Type of the article suggestion model. If not provided, model_type
+     * is used.
      * </pre>
      *
      * <code>
@@ -525,7 +541,7 @@ public final class ArticleSuggestionModelMetadata extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       trainingModelType_ = value.getNumber();
       onChanged();
       return this;
@@ -534,7 +550,8 @@ public final class ArticleSuggestionModelMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Type of the article suggestion model. If not provided, model_type is used.
+     * Optional. Type of the article suggestion model. If not provided, model_type
+     * is used.
      * </pre>
      *
      * <code>
@@ -544,7 +561,7 @@ public final class ArticleSuggestionModelMetadata extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearTrainingModelType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       trainingModelType_ = 0;
       onChanged();
       return this;

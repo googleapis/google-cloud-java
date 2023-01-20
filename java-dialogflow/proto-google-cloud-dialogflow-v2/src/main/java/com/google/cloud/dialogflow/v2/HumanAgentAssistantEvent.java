@@ -71,7 +71,9 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
   }
 
   public static final int CONVERSATION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object conversation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object conversation_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
   }
 
   public static final int PARTICIPANT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object participant_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object participant_ = "";
   /**
    *
    *
@@ -175,6 +179,8 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
   }
 
   public static final int SUGGESTION_RESULTS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.SuggestionResult> suggestionResults_;
   /**
    *
@@ -465,17 +471,16 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       conversation_ = "";
-
       participant_ = "";
-
       if (suggestionResultsBuilder_ == null) {
         suggestionResults_ = java.util.Collections.emptyList();
       } else {
         suggestionResults_ = null;
         suggestionResultsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -503,20 +508,35 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
     public com.google.cloud.dialogflow.v2.HumanAgentAssistantEvent buildPartial() {
       com.google.cloud.dialogflow.v2.HumanAgentAssistantEvent result =
           new com.google.cloud.dialogflow.v2.HumanAgentAssistantEvent(this);
-      int from_bitField0_ = bitField0_;
-      result.conversation_ = conversation_;
-      result.participant_ = participant_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2.HumanAgentAssistantEvent result) {
       if (suggestionResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           suggestionResults_ = java.util.Collections.unmodifiableList(suggestionResults_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.suggestionResults_ = suggestionResults_;
       } else {
         result.suggestionResults_ = suggestionResultsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.HumanAgentAssistantEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.conversation_ = conversation_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.participant_ = participant_;
+      }
     }
 
     @java.lang.Override
@@ -567,17 +587,19 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
         return this;
       if (!other.getConversation().isEmpty()) {
         conversation_ = other.conversation_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getParticipant().isEmpty()) {
         participant_ = other.participant_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (suggestionResultsBuilder_ == null) {
         if (!other.suggestionResults_.isEmpty()) {
           if (suggestionResults_.isEmpty()) {
             suggestionResults_ = other.suggestionResults_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureSuggestionResultsIsMutable();
             suggestionResults_.addAll(other.suggestionResults_);
@@ -590,7 +612,7 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
             suggestionResultsBuilder_.dispose();
             suggestionResultsBuilder_ = null;
             suggestionResults_ = other.suggestionResults_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             suggestionResultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSuggestionResultsFieldBuilder()
@@ -629,13 +651,13 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
             case 10:
               {
                 conversation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 participant_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 42:
@@ -735,8 +757,8 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       conversation_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -753,8 +775,8 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearConversation() {
-
       conversation_ = getDefaultInstance().getConversation();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -776,8 +798,8 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       conversation_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -849,8 +871,8 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       participant_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -868,8 +890,8 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearParticipant() {
-
       participant_ = getDefaultInstance().getParticipant();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -892,8 +914,8 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       participant_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -902,11 +924,11 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureSuggestionResultsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         suggestionResults_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2.SuggestionResult>(
                 suggestionResults_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1125,7 +1147,7 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
     public Builder clearSuggestionResults() {
       if (suggestionResultsBuilder_ == null) {
         suggestionResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         suggestionResultsBuilder_.clear();
@@ -1251,7 +1273,7 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
                 com.google.cloud.dialogflow.v2.SuggestionResult.Builder,
                 com.google.cloud.dialogflow.v2.SuggestionResultOrBuilder>(
                 suggestionResults_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         suggestionResults_ = null;

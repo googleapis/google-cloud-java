@@ -69,6 +69,8 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
   }
 
   public static final int FAQ_ANSWERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.FaqAnswer> faqAnswers_;
   /**
    *
@@ -138,7 +140,9 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
   }
 
   public static final int LATEST_MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object latestMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object latestMessage_ = "";
   /**
    *
    *
@@ -193,7 +197,7 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
   }
 
   public static final int CONTEXT_SIZE_FIELD_NUMBER = 3;
-  private int contextSize_;
+  private int contextSize_ = 0;
   /**
    *
    *
@@ -432,6 +436,7 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (faqAnswersBuilder_ == null) {
         faqAnswers_ = java.util.Collections.emptyList();
       } else {
@@ -440,9 +445,7 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       latestMessage_ = "";
-
       contextSize_ = 0;
-
       return this;
     }
 
@@ -471,7 +474,16 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
     public com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse buildPartial() {
       com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse result =
           new com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse result) {
       if (faqAnswersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           faqAnswers_ = java.util.Collections.unmodifiableList(faqAnswers_);
@@ -481,10 +493,17 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
       } else {
         result.faqAnswers_ = faqAnswersBuilder_.build();
       }
-      result.latestMessage_ = latestMessage_;
-      result.contextSize_ = contextSize_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.latestMessage_ = latestMessage_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.contextSize_ = contextSize_;
+      }
     }
 
     @java.lang.Override
@@ -563,6 +582,7 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
       }
       if (!other.getLatestMessage().isEmpty()) {
         latestMessage_ = other.latestMessage_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getContextSize() != 0) {
@@ -610,13 +630,13 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
             case 18:
               {
                 latestMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 contextSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -1060,8 +1080,8 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       latestMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1080,8 +1100,8 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearLatestMessage() {
-
       latestMessage_ = getDefaultInstance().getLatestMessage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1105,8 +1125,8 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       latestMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1150,6 +1170,7 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
     public Builder setContextSize(int value) {
 
       contextSize_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1169,7 +1190,7 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearContextSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       contextSize_ = 0;
       onChanged();
       return this;

@@ -69,7 +69,9 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -176,11 +178,15 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.TextInputOrBuilder getCurrentTextInputOrBuilder() {
-    return getCurrentTextInput();
+    return currentTextInput_ == null
+        ? com.google.cloud.dialogflow.v2beta1.TextInput.getDefaultInstance()
+        : currentTextInput_;
   }
 
   public static final int LATEST_MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object latestMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object latestMessage_ = "";
   /**
    *
    *
@@ -235,7 +241,7 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
   }
 
   public static final int CONTEXT_SIZE_FIELD_NUMBER = 3;
-  private int contextSize_;
+  private int contextSize_ = 0;
   /**
    *
    *
@@ -484,18 +490,15 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (currentTextInputBuilder_ == null) {
-        currentTextInput_ = null;
-      } else {
-        currentTextInput_ = null;
+      currentTextInput_ = null;
+      if (currentTextInputBuilder_ != null) {
+        currentTextInputBuilder_.dispose();
         currentTextInputBuilder_ = null;
       }
       latestMessage_ = "";
-
       contextSize_ = 0;
-
       return this;
     }
 
@@ -524,16 +527,29 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
     public com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest result =
           new com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest(this);
-      result.parent_ = parent_;
-      if (currentTextInputBuilder_ == null) {
-        result.currentTextInput_ = currentTextInput_;
-      } else {
-        result.currentTextInput_ = currentTextInputBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.latestMessage_ = latestMessage_;
-      result.contextSize_ = contextSize_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.currentTextInput_ =
+            currentTextInputBuilder_ == null ? currentTextInput_ : currentTextInputBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.latestMessage_ = latestMessage_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.contextSize_ = contextSize_;
+      }
     }
 
     @java.lang.Override
@@ -585,6 +601,7 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCurrentTextInput()) {
@@ -592,6 +609,7 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
       }
       if (!other.getLatestMessage().isEmpty()) {
         latestMessage_ = other.latestMessage_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getContextSize() != 0) {
@@ -626,26 +644,26 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 latestMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 24:
               {
                 contextSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(
                     getCurrentTextInputFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             default:
@@ -664,6 +682,8 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -738,8 +758,8 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -759,8 +779,8 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -785,8 +805,8 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -811,7 +831,7 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
      * @return Whether the currentTextInput field is set.
      */
     public boolean hasCurrentTextInput() {
-      return currentTextInputBuilder_ != null || currentTextInput_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -852,11 +872,11 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         currentTextInput_ = value;
-        onChanged();
       } else {
         currentTextInputBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -874,11 +894,11 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
         com.google.cloud.dialogflow.v2beta1.TextInput.Builder builderForValue) {
       if (currentTextInputBuilder_ == null) {
         currentTextInput_ = builderForValue.build();
-        onChanged();
       } else {
         currentTextInputBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -894,19 +914,19 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
      */
     public Builder mergeCurrentTextInput(com.google.cloud.dialogflow.v2beta1.TextInput value) {
       if (currentTextInputBuilder_ == null) {
-        if (currentTextInput_ != null) {
-          currentTextInput_ =
-              com.google.cloud.dialogflow.v2beta1.TextInput.newBuilder(currentTextInput_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && currentTextInput_ != null
+            && currentTextInput_
+                != com.google.cloud.dialogflow.v2beta1.TextInput.getDefaultInstance()) {
+          getCurrentTextInputBuilder().mergeFrom(value);
         } else {
           currentTextInput_ = value;
         }
-        onChanged();
       } else {
         currentTextInputBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -921,14 +941,13 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
      * <code>.google.cloud.dialogflow.v2beta1.TextInput current_text_input = 4;</code>
      */
     public Builder clearCurrentTextInput() {
-      if (currentTextInputBuilder_ == null) {
-        currentTextInput_ = null;
-        onChanged();
-      } else {
-        currentTextInput_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      currentTextInput_ = null;
+      if (currentTextInputBuilder_ != null) {
+        currentTextInputBuilder_.dispose();
         currentTextInputBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -943,7 +962,7 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
      * <code>.google.cloud.dialogflow.v2beta1.TextInput current_text_input = 4;</code>
      */
     public com.google.cloud.dialogflow.v2beta1.TextInput.Builder getCurrentTextInputBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCurrentTextInputFieldBuilder().getBuilder();
     }
@@ -1065,8 +1084,8 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       latestMessage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1085,8 +1104,8 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearLatestMessage() {
-
       latestMessage_ = getDefaultInstance().getLatestMessage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1110,8 +1129,8 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       latestMessage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1151,6 +1170,7 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
     public Builder setContextSize(int value) {
 
       contextSize_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1168,7 +1188,7 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearContextSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       contextSize_ = 0;
       onChanged();
       return this;

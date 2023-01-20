@@ -89,6 +89,7 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
       documentsMetadataFilters_;
 
@@ -110,7 +111,8 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
    * <pre>
    * Key-value filters on the metadata of documents returned by article
    * suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
    * values for a metadata key should be concatenated by comma. For example,
    * filters to match all documents that have 'US' or 'CA' in their market
    * metadata values and 'agent' in their user metadata values will be
@@ -147,7 +149,8 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
    * <pre>
    * Key-value filters on the metadata of documents returned by article
    * suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
    * values for a metadata key should be concatenated by comma. For example,
    * filters to match all documents that have 'US' or 'CA' in their market
    * metadata values and 'agent' in their user metadata values will be
@@ -175,7 +178,8 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
    * <pre>
    * Key-value filters on the metadata of documents returned by article
    * suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
    * values for a metadata key should be concatenated by comma. For example,
    * filters to match all documents that have 'US' or 'CA' in their market
    * metadata values and 'agent' in their user metadata values will be
@@ -194,8 +198,10 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
    * <code>map&lt;string, string&gt; documents_metadata_filters = 1;</code>
    */
   @java.lang.Override
-  public java.lang.String getDocumentsMetadataFiltersOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getDocumentsMetadataFiltersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -209,7 +215,8 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
    * <pre>
    * Key-value filters on the metadata of documents returned by article
    * suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
    * values for a metadata key should be concatenated by comma. For example,
    * filters to match all documents that have 'US' or 'CA' in their market
    * metadata values and 'agent' in their user metadata values will be
@@ -470,6 +477,7 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableDocumentsMetadataFilters().clear();
       return this;
     }
@@ -498,11 +506,19 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
     public com.google.cloud.dialogflow.v2.AssistQueryParameters buildPartial() {
       com.google.cloud.dialogflow.v2.AssistQueryParameters result =
           new com.google.cloud.dialogflow.v2.AssistQueryParameters(this);
-      int from_bitField0_ = bitField0_;
-      result.documentsMetadataFilters_ = internalGetDocumentsMetadataFilters();
-      result.documentsMetadataFilters_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.AssistQueryParameters result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.documentsMetadataFilters_ = internalGetDocumentsMetadataFilters();
+        result.documentsMetadataFilters_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -553,6 +569,7 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
         return this;
       internalGetMutableDocumentsMetadataFilters()
           .mergeFrom(other.internalGetDocumentsMetadataFilters());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -591,6 +608,7 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
                     .getMutableMap()
                     .put(
                         documentsMetadataFilters__.getKey(), documentsMetadataFilters__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -626,8 +644,6 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableDocumentsMetadataFilters() {
-      onChanged();
-      ;
       if (documentsMetadataFilters_ == null) {
         documentsMetadataFilters_ =
             com.google.protobuf.MapField.newMapField(
@@ -636,6 +652,8 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
       if (!documentsMetadataFilters_.isMutable()) {
         documentsMetadataFilters_ = documentsMetadataFilters_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return documentsMetadataFilters_;
     }
 
@@ -648,7 +666,8 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
      * <pre>
      * Key-value filters on the metadata of documents returned by article
      * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
@@ -685,7 +704,8 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
      * <pre>
      * Key-value filters on the metadata of documents returned by article
      * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
@@ -713,7 +733,8 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
      * <pre>
      * Key-value filters on the metadata of documents returned by article
      * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
@@ -732,8 +753,10 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
      * <code>map&lt;string, string&gt; documents_metadata_filters = 1;</code>
      */
     @java.lang.Override
-    public java.lang.String getDocumentsMetadataFiltersOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getDocumentsMetadataFiltersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -747,7 +770,8 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
      * <pre>
      * Key-value filters on the metadata of documents returned by article
      * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
@@ -779,6 +803,7 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
     }
 
     public Builder clearDocumentsMetadataFilters() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableDocumentsMetadataFilters().getMutableMap().clear();
       return this;
     }
@@ -788,7 +813,8 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
      * <pre>
      * Key-value filters on the metadata of documents returned by article
      * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
@@ -816,6 +842,7 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDocumentsMetadataFilters() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableDocumentsMetadataFilters().getMutableMap();
     }
     /**
@@ -824,7 +851,8 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
      * <pre>
      * Key-value filters on the metadata of documents returned by article
      * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
@@ -849,8 +877,8 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableDocumentsMetadataFilters().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -859,7 +887,8 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
      * <pre>
      * Key-value filters on the metadata of documents returned by article
      * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
@@ -880,6 +909,7 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
     public Builder putAllDocumentsMetadataFilters(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDocumentsMetadataFilters().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

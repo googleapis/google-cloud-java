@@ -151,7 +151,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int N_FIELD_NUMBER = 1;
-    private int n_;
+    private int n_ = 0;
     /**
      *
      *
@@ -171,7 +171,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int RECALL_FIELD_NUMBER = 2;
-    private float recall_;
+    private float recall_ = 0F;
     /**
      *
      *
@@ -401,10 +401,9 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         n_ = 0;
-
         recall_ = 0F;
-
         return this;
       }
 
@@ -433,10 +432,22 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
       public com.google.cloud.dialogflow.v2.SmartReplyMetrics.TopNMetrics buildPartial() {
         com.google.cloud.dialogflow.v2.SmartReplyMetrics.TopNMetrics result =
             new com.google.cloud.dialogflow.v2.SmartReplyMetrics.TopNMetrics(this);
-        result.n_ = n_;
-        result.recall_ = recall_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2.SmartReplyMetrics.TopNMetrics result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.n_ = n_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.recall_ = recall_;
+        }
       }
 
       @java.lang.Override
@@ -523,13 +534,13 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
               case 8:
                 {
                   n_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 21:
                 {
                   recall_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               default:
@@ -548,6 +559,8 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int n_;
       /**
@@ -584,6 +597,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
       public Builder setN(int value) {
 
         n_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -601,7 +615,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearN() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         n_ = 0;
         onChanged();
         return this;
@@ -644,6 +658,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
       public Builder setRecall(float value) {
 
         recall_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -662,7 +677,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearRecall() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         recall_ = 0F;
         onChanged();
         return this;
@@ -736,7 +751,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ALLOWLIST_COVERAGE_FIELD_NUMBER = 1;
-  private float allowlistCoverage_;
+  private float allowlistCoverage_ = 0F;
   /**
    *
    *
@@ -756,6 +771,8 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TOP_N_METRICS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.SmartReplyMetrics.TopNMetrics> topNMetrics_;
   /**
    *
@@ -833,7 +850,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CONVERSATION_COUNT_FIELD_NUMBER = 3;
-  private long conversationCount_;
+  private long conversationCount_ = 0L;
   /**
    *
    *
@@ -1068,17 +1085,16 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       allowlistCoverage_ = 0F;
-
       if (topNMetricsBuilder_ == null) {
         topNMetrics_ = java.util.Collections.emptyList();
       } else {
         topNMetrics_ = null;
         topNMetricsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       conversationCount_ = 0L;
-
       return this;
     }
 
@@ -1106,20 +1122,35 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dialogflow.v2.SmartReplyMetrics buildPartial() {
       com.google.cloud.dialogflow.v2.SmartReplyMetrics result =
           new com.google.cloud.dialogflow.v2.SmartReplyMetrics(this);
-      int from_bitField0_ = bitField0_;
-      result.allowlistCoverage_ = allowlistCoverage_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2.SmartReplyMetrics result) {
       if (topNMetricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           topNMetrics_ = java.util.Collections.unmodifiableList(topNMetrics_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.topNMetrics_ = topNMetrics_;
       } else {
         result.topNMetrics_ = topNMetricsBuilder_.build();
       }
-      result.conversationCount_ = conversationCount_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.SmartReplyMetrics result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.allowlistCoverage_ = allowlistCoverage_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.conversationCount_ = conversationCount_;
+      }
     }
 
     @java.lang.Override
@@ -1175,7 +1206,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
         if (!other.topNMetrics_.isEmpty()) {
           if (topNMetrics_.isEmpty()) {
             topNMetrics_ = other.topNMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureTopNMetricsIsMutable();
             topNMetrics_.addAll(other.topNMetrics_);
@@ -1188,7 +1219,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
             topNMetricsBuilder_.dispose();
             topNMetricsBuilder_ = null;
             topNMetrics_ = other.topNMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             topNMetricsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTopNMetricsFieldBuilder()
@@ -1230,7 +1261,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
             case 13:
               {
                 allowlistCoverage_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             case 18:
@@ -1250,7 +1281,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
             case 24:
               {
                 conversationCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -1307,6 +1338,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
     public Builder setAllowlistCoverage(float value) {
 
       allowlistCoverage_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1324,7 +1356,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAllowlistCoverage() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       allowlistCoverage_ = 0F;
       onChanged();
       return this;
@@ -1334,11 +1366,11 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
         topNMetrics_ = java.util.Collections.emptyList();
 
     private void ensureTopNMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         topNMetrics_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2.SmartReplyMetrics.TopNMetrics>(
                 topNMetrics_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1572,7 +1604,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
     public Builder clearTopNMetrics() {
       if (topNMetricsBuilder_ == null) {
         topNMetrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         topNMetricsBuilder_.clear();
@@ -1709,7 +1741,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.dialogflow.v2.SmartReplyMetrics.TopNMetrics,
                 com.google.cloud.dialogflow.v2.SmartReplyMetrics.TopNMetrics.Builder,
                 com.google.cloud.dialogflow.v2.SmartReplyMetrics.TopNMetricsOrBuilder>(
-                topNMetrics_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                topNMetrics_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         topNMetrics_ = null;
       }
       return topNMetricsBuilder_;
@@ -1746,6 +1778,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
     public Builder setConversationCount(long value) {
 
       conversationCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1761,7 +1794,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearConversationCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       conversationCount_ = 0L;
       onChanged();
       return this;

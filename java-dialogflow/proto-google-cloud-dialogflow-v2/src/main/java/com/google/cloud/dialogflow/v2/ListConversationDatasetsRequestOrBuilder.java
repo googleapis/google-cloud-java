@@ -27,8 +27,8 @@ public interface ListConversationDatasetsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location name to list all conversation datasets for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`
+   * Required. The project and location name to list all conversation datasets
+   * for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListConversationDatasetsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location name to list all conversation datasets for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`
+   * Required. The project and location name to list all conversation datasets
+   * for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`
    * </pre>
    *
    * <code>

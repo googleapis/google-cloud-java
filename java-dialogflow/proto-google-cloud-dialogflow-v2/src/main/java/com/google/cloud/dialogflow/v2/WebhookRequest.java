@@ -69,7 +69,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SESSION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object session_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object session_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESPONSE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object responseId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object responseId_ = "";
   /**
    *
    *
@@ -224,7 +228,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.QueryResultOrBuilder getQueryResultOrBuilder() {
-    return getQueryResult();
+    return queryResult_ == null
+        ? com.google.cloud.dialogflow.v2.QueryResult.getDefaultInstance()
+        : queryResult_;
   }
 
   public static final int ORIGINAL_DETECT_INTENT_REQUEST_FIELD_NUMBER = 3;
@@ -283,7 +289,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.OriginalDetectIntentRequestOrBuilder
       getOriginalDetectIntentRequestOrBuilder() {
-    return getOriginalDetectIntentRequest();
+    return originalDetectIntentRequest_ == null
+        ? com.google.cloud.dialogflow.v2.OriginalDetectIntentRequest.getDefaultInstance()
+        : originalDetectIntentRequest_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -523,20 +531,17 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       session_ = "";
-
       responseId_ = "";
-
-      if (queryResultBuilder_ == null) {
-        queryResult_ = null;
-      } else {
-        queryResult_ = null;
+      queryResult_ = null;
+      if (queryResultBuilder_ != null) {
+        queryResultBuilder_.dispose();
         queryResultBuilder_ = null;
       }
-      if (originalDetectIntentRequestBuilder_ == null) {
-        originalDetectIntentRequest_ = null;
-      } else {
-        originalDetectIntentRequest_ = null;
+      originalDetectIntentRequest_ = null;
+      if (originalDetectIntentRequestBuilder_ != null) {
+        originalDetectIntentRequestBuilder_.dispose();
         originalDetectIntentRequestBuilder_ = null;
       }
       return this;
@@ -566,20 +571,31 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2.WebhookRequest buildPartial() {
       com.google.cloud.dialogflow.v2.WebhookRequest result =
           new com.google.cloud.dialogflow.v2.WebhookRequest(this);
-      result.session_ = session_;
-      result.responseId_ = responseId_;
-      if (queryResultBuilder_ == null) {
-        result.queryResult_ = queryResult_;
-      } else {
-        result.queryResult_ = queryResultBuilder_.build();
-      }
-      if (originalDetectIntentRequestBuilder_ == null) {
-        result.originalDetectIntentRequest_ = originalDetectIntentRequest_;
-      } else {
-        result.originalDetectIntentRequest_ = originalDetectIntentRequestBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.WebhookRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.session_ = session_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.responseId_ = responseId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.queryResult_ =
+            queryResultBuilder_ == null ? queryResult_ : queryResultBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.originalDetectIntentRequest_ =
+            originalDetectIntentRequestBuilder_ == null
+                ? originalDetectIntentRequest_
+                : originalDetectIntentRequestBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -629,10 +645,12 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.v2.WebhookRequest.getDefaultInstance()) return this;
       if (!other.getSession().isEmpty()) {
         session_ = other.session_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getResponseId().isEmpty()) {
         responseId_ = other.responseId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasQueryResult()) {
@@ -670,26 +688,26 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 responseId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getQueryResultFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getOriginalDetectIntentRequestFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 session_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 34
             default:
@@ -708,6 +726,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object session_ = "";
     /**
@@ -782,8 +802,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       session_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -803,8 +823,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSession() {
-
       session_ = getDefaultInstance().getSession();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -829,8 +849,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       session_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -899,8 +919,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       responseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -917,8 +937,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResponseId() {
-
       responseId_ = getDefaultInstance().getResponseId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -940,8 +960,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       responseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -965,7 +985,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the queryResult field is set.
      */
     public boolean hasQueryResult() {
-      return queryResultBuilder_ != null || queryResult_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1004,11 +1024,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         queryResult_ = value;
-        onChanged();
       } else {
         queryResultBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1025,11 +1045,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2.QueryResult.Builder builderForValue) {
       if (queryResultBuilder_ == null) {
         queryResult_ = builderForValue.build();
-        onChanged();
       } else {
         queryResultBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1044,19 +1064,18 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeQueryResult(com.google.cloud.dialogflow.v2.QueryResult value) {
       if (queryResultBuilder_ == null) {
-        if (queryResult_ != null) {
-          queryResult_ =
-              com.google.cloud.dialogflow.v2.QueryResult.newBuilder(queryResult_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && queryResult_ != null
+            && queryResult_ != com.google.cloud.dialogflow.v2.QueryResult.getDefaultInstance()) {
+          getQueryResultBuilder().mergeFrom(value);
         } else {
           queryResult_ = value;
         }
-        onChanged();
       } else {
         queryResultBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1070,14 +1089,13 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
      */
     public Builder clearQueryResult() {
-      if (queryResultBuilder_ == null) {
-        queryResult_ = null;
-        onChanged();
-      } else {
-        queryResult_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      queryResult_ = null;
+      if (queryResultBuilder_ != null) {
+        queryResultBuilder_.dispose();
         queryResultBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1091,7 +1109,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
      */
     public com.google.cloud.dialogflow.v2.QueryResult.Builder getQueryResultBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getQueryResultFieldBuilder().getBuilder();
     }
@@ -1162,7 +1180,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the originalDetectIntentRequest field is set.
      */
     public boolean hasOriginalDetectIntentRequest() {
-      return originalDetectIntentRequestBuilder_ != null || originalDetectIntentRequest_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1207,11 +1225,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         originalDetectIntentRequest_ = value;
-        onChanged();
       } else {
         originalDetectIntentRequestBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1230,11 +1248,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2.OriginalDetectIntentRequest.Builder builderForValue) {
       if (originalDetectIntentRequestBuilder_ == null) {
         originalDetectIntentRequest_ = builderForValue.build();
-        onChanged();
       } else {
         originalDetectIntentRequestBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1252,20 +1270,20 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeOriginalDetectIntentRequest(
         com.google.cloud.dialogflow.v2.OriginalDetectIntentRequest value) {
       if (originalDetectIntentRequestBuilder_ == null) {
-        if (originalDetectIntentRequest_ != null) {
-          originalDetectIntentRequest_ =
-              com.google.cloud.dialogflow.v2.OriginalDetectIntentRequest.newBuilder(
-                      originalDetectIntentRequest_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && originalDetectIntentRequest_ != null
+            && originalDetectIntentRequest_
+                != com.google.cloud.dialogflow.v2.OriginalDetectIntentRequest
+                    .getDefaultInstance()) {
+          getOriginalDetectIntentRequestBuilder().mergeFrom(value);
         } else {
           originalDetectIntentRequest_ = value;
         }
-        onChanged();
       } else {
         originalDetectIntentRequestBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1281,14 +1299,13 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearOriginalDetectIntentRequest() {
-      if (originalDetectIntentRequestBuilder_ == null) {
-        originalDetectIntentRequest_ = null;
-        onChanged();
-      } else {
-        originalDetectIntentRequest_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      originalDetectIntentRequest_ = null;
+      if (originalDetectIntentRequestBuilder_ != null) {
+        originalDetectIntentRequestBuilder_.dispose();
         originalDetectIntentRequestBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1305,7 +1322,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.v2.OriginalDetectIntentRequest.Builder
         getOriginalDetectIntentRequestBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getOriginalDetectIntentRequestFieldBuilder().getBuilder();
     }

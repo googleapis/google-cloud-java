@@ -115,11 +115,13 @@ public final class OutputAudio extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder getConfigOrBuilder() {
-    return getConfig();
+    return config_ == null
+        ? com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance()
+        : config_;
   }
 
   public static final int AUDIO_FIELD_NUMBER = 2;
-  private com.google.protobuf.ByteString audio_;
+  private com.google.protobuf.ByteString audio_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -347,14 +349,13 @@ public final class OutputAudio extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (configBuilder_ == null) {
-        config_ = null;
-      } else {
-        config_ = null;
+      bitField0_ = 0;
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
       audio_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -382,14 +383,21 @@ public final class OutputAudio extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2beta1.OutputAudio buildPartial() {
       com.google.cloud.dialogflow.v2beta1.OutputAudio result =
           new com.google.cloud.dialogflow.v2beta1.OutputAudio(this);
-      if (configBuilder_ == null) {
-        result.config_ = config_;
-      } else {
-        result.config_ = configBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.audio_ = audio_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.OutputAudio result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.config_ = configBuilder_ == null ? config_ : configBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.audio_ = audio_;
+      }
     }
 
     @java.lang.Override
@@ -473,13 +481,13 @@ public final class OutputAudio extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 audio_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -498,6 +506,8 @@ public final class OutputAudio extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.v2beta1.OutputAudioConfig config_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -518,7 +528,7 @@ public final class OutputAudio extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the config field is set.
      */
     public boolean hasConfig() {
-      return configBuilder_ != null || config_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -557,11 +567,11 @@ public final class OutputAudio extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         config_ = value;
-        onChanged();
       } else {
         configBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -578,11 +588,11 @@ public final class OutputAudio extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
         config_ = builderForValue.build();
-        onChanged();
       } else {
         configBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -597,19 +607,19 @@ public final class OutputAudio extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeConfig(com.google.cloud.dialogflow.v2beta1.OutputAudioConfig value) {
       if (configBuilder_ == null) {
-        if (config_ != null) {
-          config_ =
-              com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.newBuilder(config_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && config_ != null
+            && config_
+                != com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance()) {
+          getConfigBuilder().mergeFrom(value);
         } else {
           config_ = value;
         }
-        onChanged();
       } else {
         configBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -623,14 +633,13 @@ public final class OutputAudio extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig config = 1;</code>
      */
     public Builder clearConfig() {
-      if (configBuilder_ == null) {
-        config_ = null;
-        onChanged();
-      } else {
-        config_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -644,7 +653,7 @@ public final class OutputAudio extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig config = 1;</code>
      */
     public com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder getConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
@@ -726,8 +735,8 @@ public final class OutputAudio extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       audio_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -743,7 +752,7 @@ public final class OutputAudio extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAudio() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       audio_ = getDefaultInstance().getAudio();
       onChanged();
       return this;

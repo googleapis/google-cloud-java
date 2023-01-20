@@ -47,11 +47,11 @@ public final class HumanAgentAssistantEventProto {
           + "Event\022\024\n\014conversation\030\001 \001(\t\022\023\n\013participa"
           + "nt\030\003 \001(\t\022H\n\022suggestion_results\030\005 \003(\0132,.g"
           + "oogle.cloud.dialogflow.v2.SuggestionResu"
-          + "ltB\254\001\n\036com.google.cloud.dialogflow.v2B\035H"
-          + "umanAgentAssistantEventProtoP\001ZDgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/dial"
-          + "ogflow/v2;dialogflow\370\001\001\242\002\002DF\252\002\032Google.Cl"
-          + "oud.Dialogflow.V2b\006proto3"
+          + "ltB\246\001\n\036com.google.cloud.dialogflow.v2B\035H"
+          + "umanAgentAssistantEventProtoP\001Z>cloud.go"
+          + "ogle.com/go/dialogflow/apiv2/dialogflowp"
+          + "b;dialogflowpb\370\001\001\242\002\002DF\252\002\032Google.Cloud.Di"
+          + "alogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

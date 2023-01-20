@@ -260,7 +260,6 @@ public interface ParticipantOrBuilder
    * map&lt;string, string&gt; documents_metadata_filters = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-
   /* nullable */
   java.lang.String getDocumentsMetadataFiltersOrDefault(
       java.lang.String key,

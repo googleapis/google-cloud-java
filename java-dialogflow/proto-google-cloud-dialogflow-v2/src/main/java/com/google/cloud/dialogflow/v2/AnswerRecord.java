@@ -36,9 +36,11 @@ package com.google.cloud.dialogflow.v2;
  * agent assistant suggestion generated.
  * A typical workflow for customers provide feedback to an answer is:
  * 1. For human agent assistant, customers get suggestion via ListSuggestions
- *    API. Together with the answers, [AnswerRecord.name][google.cloud.dialogflow.v2.AnswerRecord.name] are returned to the
- *    customers.
- * 2. The customer uses the [AnswerRecord.name][google.cloud.dialogflow.v2.AnswerRecord.name] to call the
+ *    API. Together with the answers,
+ *    [AnswerRecord.name][google.cloud.dialogflow.v2.AnswerRecord.name] are
+ *    returned to the customers.
+ * 2. The customer uses the
+ * [AnswerRecord.name][google.cloud.dialogflow.v2.AnswerRecord.name] to call the
  *    [UpdateAnswerRecord][] method to send feedback about a specific answer
  *    that they believe is wrong.
  * </pre>
@@ -130,7 +132,9 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -189,8 +193,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The AnswerFeedback for this record. You can set this with
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
-   * this answer.
+   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
+   * in order to give us feedback about this answer.
    * </pre>
    *
    * <code>
@@ -208,8 +212,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The AnswerFeedback for this record. You can set this with
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
-   * this answer.
+   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
+   * in order to give us feedback about this answer.
    * </pre>
    *
    * <code>
@@ -229,8 +233,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The AnswerFeedback for this record. You can set this with
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
-   * this answer.
+   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
+   * in order to give us feedback about this answer.
    * </pre>
    *
    * <code>
@@ -239,7 +243,9 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.AnswerFeedbackOrBuilder getAnswerFeedbackOrBuilder() {
-    return getAnswerFeedback();
+    return answerFeedback_ == null
+        ? com.google.cloud.dialogflow.v2.AnswerFeedback.getDefaultInstance()
+        : answerFeedback_;
   }
 
   public static final int AGENT_ASSISTANT_RECORD_FIELD_NUMBER = 4;
@@ -515,9 +521,11 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
    * agent assistant suggestion generated.
    * A typical workflow for customers provide feedback to an answer is:
    * 1. For human agent assistant, customers get suggestion via ListSuggestions
-   *    API. Together with the answers, [AnswerRecord.name][google.cloud.dialogflow.v2.AnswerRecord.name] are returned to the
-   *    customers.
-   * 2. The customer uses the [AnswerRecord.name][google.cloud.dialogflow.v2.AnswerRecord.name] to call the
+   *    API. Together with the answers,
+   *    [AnswerRecord.name][google.cloud.dialogflow.v2.AnswerRecord.name] are
+   *    returned to the customers.
+   * 2. The customer uses the
+   * [AnswerRecord.name][google.cloud.dialogflow.v2.AnswerRecord.name] to call the
    *    [UpdateAnswerRecord][] method to send feedback about a specific answer
    *    that they believe is wrong.
    * </pre>
@@ -553,12 +561,11 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (answerFeedbackBuilder_ == null) {
-        answerFeedback_ = null;
-      } else {
-        answerFeedback_ = null;
+      answerFeedback_ = null;
+      if (answerFeedbackBuilder_ != null) {
+        answerFeedbackBuilder_.dispose();
         answerFeedbackBuilder_ = null;
       }
       if (agentAssistantRecordBuilder_ != null) {
@@ -593,22 +600,31 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2.AnswerRecord buildPartial() {
       com.google.cloud.dialogflow.v2.AnswerRecord result =
           new com.google.cloud.dialogflow.v2.AnswerRecord(this);
-      result.name_ = name_;
-      if (answerFeedbackBuilder_ == null) {
-        result.answerFeedback_ = answerFeedback_;
-      } else {
-        result.answerFeedback_ = answerFeedbackBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (recordCase_ == 4) {
-        if (agentAssistantRecordBuilder_ == null) {
-          result.record_ = record_;
-        } else {
-          result.record_ = agentAssistantRecordBuilder_.build();
-        }
-      }
-      result.recordCase_ = recordCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.AnswerRecord result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.answerFeedback_ =
+            answerFeedbackBuilder_ == null ? answerFeedback_ : answerFeedbackBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.v2.AnswerRecord result) {
+      result.recordCase_ = recordCase_;
+      result.record_ = this.record_;
+      if (recordCase_ == 4 && agentAssistantRecordBuilder_ != null) {
+        result.record_ = agentAssistantRecordBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -658,6 +674,7 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.v2.AnswerRecord.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAnswerFeedback()) {
@@ -703,13 +720,13 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getAnswerFeedbackFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
@@ -749,6 +766,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -817,8 +836,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -836,8 +855,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -860,8 +879,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -877,8 +896,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
-     * this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
+     * in order to give us feedback about this answer.
      * </pre>
      *
      * <code>
@@ -888,15 +907,15 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the answerFeedback field is set.
      */
     public boolean hasAnswerFeedback() {
-      return answerFeedbackBuilder_ != null || answerFeedback_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
      *
      * <pre>
      * Required. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
-     * this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
+     * in order to give us feedback about this answer.
      * </pre>
      *
      * <code>
@@ -919,8 +938,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
-     * this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
+     * in order to give us feedback about this answer.
      * </pre>
      *
      * <code>
@@ -933,11 +952,11 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         answerFeedback_ = value;
-        onChanged();
       } else {
         answerFeedbackBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -945,8 +964,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
-     * this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
+     * in order to give us feedback about this answer.
      * </pre>
      *
      * <code>
@@ -957,11 +976,11 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2.AnswerFeedback.Builder builderForValue) {
       if (answerFeedbackBuilder_ == null) {
         answerFeedback_ = builderForValue.build();
-        onChanged();
       } else {
         answerFeedbackBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -969,8 +988,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
-     * this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
+     * in order to give us feedback about this answer.
      * </pre>
      *
      * <code>
@@ -979,19 +998,19 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAnswerFeedback(com.google.cloud.dialogflow.v2.AnswerFeedback value) {
       if (answerFeedbackBuilder_ == null) {
-        if (answerFeedback_ != null) {
-          answerFeedback_ =
-              com.google.cloud.dialogflow.v2.AnswerFeedback.newBuilder(answerFeedback_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && answerFeedback_ != null
+            && answerFeedback_
+                != com.google.cloud.dialogflow.v2.AnswerFeedback.getDefaultInstance()) {
+          getAnswerFeedbackBuilder().mergeFrom(value);
         } else {
           answerFeedback_ = value;
         }
-        onChanged();
       } else {
         answerFeedbackBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -999,8 +1018,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
-     * this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
+     * in order to give us feedback about this answer.
      * </pre>
      *
      * <code>
@@ -1008,14 +1027,13 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAnswerFeedback() {
-      if (answerFeedbackBuilder_ == null) {
-        answerFeedback_ = null;
-        onChanged();
-      } else {
-        answerFeedback_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      answerFeedback_ = null;
+      if (answerFeedbackBuilder_ != null) {
+        answerFeedbackBuilder_.dispose();
         answerFeedbackBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1023,8 +1041,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
-     * this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
+     * in order to give us feedback about this answer.
      * </pre>
      *
      * <code>
@@ -1032,7 +1050,7 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.dialogflow.v2.AnswerFeedback.Builder getAnswerFeedbackBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAnswerFeedbackFieldBuilder().getBuilder();
     }
@@ -1041,8 +1059,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
-     * this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
+     * in order to give us feedback about this answer.
      * </pre>
      *
      * <code>
@@ -1063,8 +1081,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
-     * this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
+     * in order to give us feedback about this answer.
      * </pre>
      *
      * <code>
@@ -1317,7 +1335,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
       }
       recordCase_ = 4;
       onChanged();
-      ;
       return agentAssistantRecordBuilder_;
     }
 

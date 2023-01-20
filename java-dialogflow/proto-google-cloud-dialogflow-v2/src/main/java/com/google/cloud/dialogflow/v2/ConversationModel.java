@@ -569,7 +569,9 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -620,7 +622,9 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -714,10 +718,12 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int DATASETS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.InputDataset> datasets_;
   /**
    *
@@ -797,7 +803,7 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int STATE_FIELD_NUMBER = 7;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -832,16 +838,17 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.ConversationModel.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.ConversationModel.State result =
-        com.google.cloud.dialogflow.v2.ConversationModel.State.valueOf(state_);
+        com.google.cloud.dialogflow.v2.ConversationModel.State.forNumber(state_);
     return result == null
         ? com.google.cloud.dialogflow.v2.ConversationModel.State.UNRECOGNIZED
         : result;
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 19;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -1304,14 +1311,12 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       if (datasetsBuilder_ == null) {
@@ -1320,11 +1325,9 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
         datasets_ = null;
         datasetsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       state_ = 0;
-
       languageCode_ = "";
-
       if (articleSuggestionModelMetadataBuilder_ != null) {
         articleSuggestionModelMetadataBuilder_.clear();
       }
@@ -1360,42 +1363,56 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dialogflow.v2.ConversationModel buildPartial() {
       com.google.cloud.dialogflow.v2.ConversationModel result =
           new com.google.cloud.dialogflow.v2.ConversationModel(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2.ConversationModel result) {
       if (datasetsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           datasets_ = java.util.Collections.unmodifiableList(datasets_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.datasets_ = datasets_;
       } else {
         result.datasets_ = datasetsBuilder_.build();
       }
-      result.state_ = state_;
-      result.languageCode_ = languageCode_;
-      if (modelMetadataCase_ == 8) {
-        if (articleSuggestionModelMetadataBuilder_ == null) {
-          result.modelMetadata_ = modelMetadata_;
-        } else {
-          result.modelMetadata_ = articleSuggestionModelMetadataBuilder_.build();
-        }
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.ConversationModel result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      if (modelMetadataCase_ == 9) {
-        if (smartReplyModelMetadataBuilder_ == null) {
-          result.modelMetadata_ = modelMetadata_;
-        } else {
-          result.modelMetadata_ = smartReplyModelMetadataBuilder_.build();
-        }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.v2.ConversationModel result) {
       result.modelMetadataCase_ = modelMetadataCase_;
-      onBuilt();
-      return result;
+      result.modelMetadata_ = this.modelMetadata_;
+      if (modelMetadataCase_ == 8 && articleSuggestionModelMetadataBuilder_ != null) {
+        result.modelMetadata_ = articleSuggestionModelMetadataBuilder_.build();
+      }
+      if (modelMetadataCase_ == 9 && smartReplyModelMetadataBuilder_ != null) {
+        result.modelMetadata_ = smartReplyModelMetadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1446,10 +1463,12 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1459,7 +1478,7 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
         if (!other.datasets_.isEmpty()) {
           if (datasets_.isEmpty()) {
             datasets_ = other.datasets_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureDatasetsIsMutable();
             datasets_.addAll(other.datasets_);
@@ -1472,7 +1491,7 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
             datasetsBuilder_.dispose();
             datasetsBuilder_ = null;
             datasets_ = other.datasets_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             datasetsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDatasetsFieldBuilder()
@@ -1487,6 +1506,7 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       switch (other.getModelMetadataCase()) {
@@ -1534,19 +1554,19 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1565,7 +1585,7 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
             case 56:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 56
             case 66:
@@ -1586,7 +1606,7 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
             case 154:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 154
             default:
@@ -1686,8 +1706,8 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1704,8 +1724,8 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1727,8 +1747,8 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1794,8 +1814,8 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1811,8 +1831,8 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1833,8 +1853,8 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1859,7 +1879,7 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1900,11 +1920,11 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1921,11 +1941,11 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1941,17 +1961,18 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1966,14 +1987,13 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1988,7 +2008,7 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2044,9 +2064,9 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureDatasetsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         datasets_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2.InputDataset>(datasets_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2284,7 +2304,7 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
     public Builder clearDatasets() {
       if (datasetsBuilder_ == null) {
         datasets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         datasetsBuilder_.clear();
@@ -2420,7 +2440,7 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.dialogflow.v2.InputDataset,
                 com.google.cloud.dialogflow.v2.InputDataset.Builder,
                 com.google.cloud.dialogflow.v2.InputDatasetOrBuilder>(
-                datasets_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                datasets_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         datasets_ = null;
       }
       return datasetsBuilder_;
@@ -2461,8 +2481,8 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2482,9 +2502,8 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2.ConversationModel.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.ConversationModel.State result =
-          com.google.cloud.dialogflow.v2.ConversationModel.State.valueOf(state_);
+          com.google.cloud.dialogflow.v2.ConversationModel.State.forNumber(state_);
       return result == null
           ? com.google.cloud.dialogflow.v2.ConversationModel.State.UNRECOGNIZED
           : result;
@@ -2508,7 +2527,7 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2528,7 +2547,7 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       state_ = 0;
       onChanged();
       return this;
@@ -2607,8 +2626,8 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2628,8 +2647,8 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2654,8 +2673,8 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2893,7 +2912,6 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
       }
       modelMetadataCase_ = 8;
       onChanged();
-      ;
       return articleSuggestionModelMetadataBuilder_;
     }
 
@@ -3118,7 +3136,6 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
       }
       modelMetadataCase_ = 9;
       onChanged();
-      ;
       return smartReplyModelMetadataBuilder_;
     }
 

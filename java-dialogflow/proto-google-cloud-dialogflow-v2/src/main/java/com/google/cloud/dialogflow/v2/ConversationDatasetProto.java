@@ -186,11 +186,11 @@ public final class ConversationDatasetProto {
           + "\312A\031dialogflow.googleapis.com\322AYhttps://w"
           + "ww.googleapis.com/auth/cloud-platform,ht"
           + "tps://www.googleapis.com/auth/dialogflow"
-          + "B\247\001\n\036com.google.cloud.dialogflow.v2B\030Con"
-          + "versationDatasetProtoP\001ZDgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/dialogflow/"
-          + "v2;dialogflow\370\001\001\242\002\002DF\252\002\032Google.Cloud.Dia"
-          + "logflow.V2b\006proto3"
+          + "B\241\001\n\036com.google.cloud.dialogflow.v2B\030Con"
+          + "versationDatasetProtoP\001Z>cloud.google.co"
+          + "m/go/dialogflow/apiv2/dialogflowpb;dialo"
+          + "gflowpb\370\001\001\242\002\002DF\252\002\032Google.Cloud.Dialogflo"
+          + "w.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

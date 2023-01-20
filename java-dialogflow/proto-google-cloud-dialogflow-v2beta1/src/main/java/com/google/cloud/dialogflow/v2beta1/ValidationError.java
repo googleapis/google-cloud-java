@@ -273,7 +273,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SEVERITY_FIELD_NUMBER = 1;
-  private int severity_;
+  private int severity_ = 0;
   /**
    *
    *
@@ -302,15 +302,16 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.ValidationError.Severity getSeverity() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.ValidationError.Severity result =
-        com.google.cloud.dialogflow.v2beta1.ValidationError.Severity.valueOf(severity_);
+        com.google.cloud.dialogflow.v2beta1.ValidationError.Severity.forNumber(severity_);
     return result == null
         ? com.google.cloud.dialogflow.v2beta1.ValidationError.Severity.UNRECOGNIZED
         : result;
   }
 
   public static final int ENTRIES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList entries_;
   /**
    *
@@ -420,7 +421,9 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ERROR_MESSAGE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object errorMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object errorMessage_ = "";
   /**
    *
    *
@@ -694,12 +697,11 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       severity_ = 0;
-
       entries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       errorMessage_ = "";
-
       return this;
     }
 
@@ -727,16 +729,31 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.dialogflow.v2beta1.ValidationError buildPartial() {
       com.google.cloud.dialogflow.v2beta1.ValidationError result =
           new com.google.cloud.dialogflow.v2beta1.ValidationError(this);
-      int from_bitField0_ = bitField0_;
-      result.severity_ = severity_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        entries_ = entries_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.entries_ = entries_;
-      result.errorMessage_ = errorMessage_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2beta1.ValidationError result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        entries_ = entries_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.entries_ = entries_;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.ValidationError result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.severity_ = severity_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.errorMessage_ = errorMessage_;
+      }
     }
 
     @java.lang.Override
@@ -791,7 +808,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       if (!other.entries_.isEmpty()) {
         if (entries_.isEmpty()) {
           entries_ = other.entries_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureEntriesIsMutable();
           entries_.addAll(other.entries_);
@@ -800,6 +817,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getErrorMessage().isEmpty()) {
         errorMessage_ = other.errorMessage_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -831,7 +849,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 severity_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 26:
@@ -844,7 +862,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
             case 34:
               {
                 errorMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -895,8 +913,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setSeverityValue(int value) {
-
       severity_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -913,9 +931,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.ValidationError.Severity getSeverity() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.ValidationError.Severity result =
-          com.google.cloud.dialogflow.v2beta1.ValidationError.Severity.valueOf(severity_);
+          com.google.cloud.dialogflow.v2beta1.ValidationError.Severity.forNumber(severity_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.ValidationError.Severity.UNRECOGNIZED
           : result;
@@ -936,7 +953,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       severity_ = value.getNumber();
       onChanged();
       return this;
@@ -953,7 +970,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSeverity() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       severity_ = 0;
       onChanged();
       return this;
@@ -963,9 +980,9 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         entries_ = new com.google.protobuf.LazyStringArrayList(entries_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1196,7 +1213,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearEntries() {
       entries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1296,8 +1313,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       errorMessage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1313,8 +1330,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearErrorMessage() {
-
       errorMessage_ = getDefaultInstance().getErrorMessage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1335,8 +1352,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       errorMessage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

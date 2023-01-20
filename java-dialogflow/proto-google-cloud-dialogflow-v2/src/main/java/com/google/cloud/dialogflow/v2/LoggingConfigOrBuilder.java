@@ -28,8 +28,8 @@ public interface LoggingConfigOrBuilder
    *
    * <pre>
    * Whether to log conversation events like
-   * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED] to
-   * Stackdriver in the conversation project as JSON format
+   * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED]
+   * to Stackdriver in the conversation project as JSON format
    * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
    * </pre>
    *

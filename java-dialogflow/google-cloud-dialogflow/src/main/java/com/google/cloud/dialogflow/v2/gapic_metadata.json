@@ -126,6 +126,9 @@
             },
             "ListMessages": {
               "methods": ["listMessages", "listMessages", "listMessages", "listMessagesPagedCallable", "listMessagesCallable"]
+            },
+            "SuggestConversationSummary": {
+              "methods": ["suggestConversationSummary", "suggestConversationSummary", "suggestConversationSummary", "suggestConversationSummaryCallable"]
             }
           }
         }

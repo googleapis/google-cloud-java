@@ -139,12 +139,11 @@ public final class KnowledgeBaseProto {
           + "A\032knowledge_base,update_mask\032x\312A\031dialogf"
           + "low.googleapis.com\322AYhttps://www.googlea"
           + "pis.com/auth/cloud-platform,https://www."
-          + "googleapis.com/auth/dialogflowB\241\001\n\036com.g"
+          + "googleapis.com/auth/dialogflowB\233\001\n\036com.g"
           + "oogle.cloud.dialogflow.v2B\022KnowledgeBase"
-          + "ProtoP\001ZDgoogle.golang.org/genproto/goog"
-          + "leapis/cloud/dialogflow/v2;dialogflow\370\001\001"
-          + "\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2b\006prot"
-          + "o3"
+          + "ProtoP\001Z>cloud.google.com/go/dialogflow/"
+          + "apiv2/dialogflowpb;dialogflowpb\370\001\001\242\002\002DF\252"
+          + "\002\032Google.Cloud.Dialogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

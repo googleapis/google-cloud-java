@@ -26,11 +26,14 @@ package com.google.cloud.dialogflow.v2;
  * and identifies the prevailing subjective opinion, especially to determine a
  * user's attitude as positive, negative, or neutral.
  * For [Participants.DetectIntent][], it needs to be configured in
- * [DetectIntentRequest.query_params][google.cloud.dialogflow.v2.DetectIntentRequest.query_params]. For
- * [Participants.StreamingDetectIntent][], it needs to be configured in
+ * [DetectIntentRequest.query_params][google.cloud.dialogflow.v2.DetectIntentRequest.query_params].
+ * For [Participants.StreamingDetectIntent][], it needs to be configured in
  * [StreamingDetectIntentRequest.query_params][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.query_params].
- * And for [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent] and
- * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2.Participants.StreamingAnalyzeContent], it needs to be configured in
+ * And for
+ * [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent]
+ * and
+ * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2.Participants.StreamingAnalyzeContent],
+ * it needs to be configured in
  * [ConversationProfile.human_agent_assistant_config][google.cloud.dialogflow.v2.ConversationProfile.human_agent_assistant_config]
  * </pre>
  *
@@ -119,7 +122,9 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.SentimentOrBuilder getQueryTextSentimentOrBuilder() {
-    return getQueryTextSentiment();
+    return queryTextSentiment_ == null
+        ? com.google.cloud.dialogflow.v2.Sentiment.getDefaultInstance()
+        : queryTextSentiment_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -295,11 +300,14 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
    * and identifies the prevailing subjective opinion, especially to determine a
    * user's attitude as positive, negative, or neutral.
    * For [Participants.DetectIntent][], it needs to be configured in
-   * [DetectIntentRequest.query_params][google.cloud.dialogflow.v2.DetectIntentRequest.query_params]. For
-   * [Participants.StreamingDetectIntent][], it needs to be configured in
+   * [DetectIntentRequest.query_params][google.cloud.dialogflow.v2.DetectIntentRequest.query_params].
+   * For [Participants.StreamingDetectIntent][], it needs to be configured in
    * [StreamingDetectIntentRequest.query_params][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.query_params].
-   * And for [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent] and
-   * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2.Participants.StreamingAnalyzeContent], it needs to be configured in
+   * And for
+   * [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent]
+   * and
+   * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2.Participants.StreamingAnalyzeContent],
+   * it needs to be configured in
    * [ConversationProfile.human_agent_assistant_config][google.cloud.dialogflow.v2.ConversationProfile.human_agent_assistant_config]
    * </pre>
    *
@@ -334,10 +342,10 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (queryTextSentimentBuilder_ == null) {
-        queryTextSentiment_ = null;
-      } else {
-        queryTextSentiment_ = null;
+      bitField0_ = 0;
+      queryTextSentiment_ = null;
+      if (queryTextSentimentBuilder_ != null) {
+        queryTextSentimentBuilder_.dispose();
         queryTextSentimentBuilder_ = null;
       }
       return this;
@@ -367,13 +375,21 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     public com.google.cloud.dialogflow.v2.SentimentAnalysisResult buildPartial() {
       com.google.cloud.dialogflow.v2.SentimentAnalysisResult result =
           new com.google.cloud.dialogflow.v2.SentimentAnalysisResult(this);
-      if (queryTextSentimentBuilder_ == null) {
-        result.queryTextSentiment_ = queryTextSentiment_;
-      } else {
-        result.queryTextSentiment_ = queryTextSentimentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.SentimentAnalysisResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.queryTextSentiment_ =
+            queryTextSentimentBuilder_ == null
+                ? queryTextSentiment_
+                : queryTextSentimentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -455,7 +471,7 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
               {
                 input.readMessage(
                     getQueryTextSentimentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -475,6 +491,8 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.dialogflow.v2.Sentiment queryTextSentiment_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.Sentiment,
@@ -493,7 +511,7 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
      * @return Whether the queryTextSentiment field is set.
      */
     public boolean hasQueryTextSentiment() {
-      return queryTextSentimentBuilder_ != null || queryTextSentiment_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -530,11 +548,11 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         queryTextSentiment_ = value;
-        onChanged();
       } else {
         queryTextSentimentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -550,11 +568,11 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
         com.google.cloud.dialogflow.v2.Sentiment.Builder builderForValue) {
       if (queryTextSentimentBuilder_ == null) {
         queryTextSentiment_ = builderForValue.build();
-        onChanged();
       } else {
         queryTextSentimentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -568,19 +586,19 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
      */
     public Builder mergeQueryTextSentiment(com.google.cloud.dialogflow.v2.Sentiment value) {
       if (queryTextSentimentBuilder_ == null) {
-        if (queryTextSentiment_ != null) {
-          queryTextSentiment_ =
-              com.google.cloud.dialogflow.v2.Sentiment.newBuilder(queryTextSentiment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && queryTextSentiment_ != null
+            && queryTextSentiment_
+                != com.google.cloud.dialogflow.v2.Sentiment.getDefaultInstance()) {
+          getQueryTextSentimentBuilder().mergeFrom(value);
         } else {
           queryTextSentiment_ = value;
         }
-        onChanged();
       } else {
         queryTextSentimentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -593,14 +611,13 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
      * <code>.google.cloud.dialogflow.v2.Sentiment query_text_sentiment = 1;</code>
      */
     public Builder clearQueryTextSentiment() {
-      if (queryTextSentimentBuilder_ == null) {
-        queryTextSentiment_ = null;
-        onChanged();
-      } else {
-        queryTextSentiment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      queryTextSentiment_ = null;
+      if (queryTextSentimentBuilder_ != null) {
+        queryTextSentimentBuilder_.dispose();
         queryTextSentimentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -613,7 +630,7 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
      * <code>.google.cloud.dialogflow.v2.Sentiment query_text_sentiment = 1;</code>
      */
     public com.google.cloud.dialogflow.v2.Sentiment.Builder getQueryTextSentimentBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getQueryTextSentimentFieldBuilder().getBuilder();
     }

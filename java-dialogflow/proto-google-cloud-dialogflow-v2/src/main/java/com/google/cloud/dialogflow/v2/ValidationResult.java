@@ -68,6 +68,8 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int VALIDATION_ERRORS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.ValidationError> validationErrors_;
   /**
    *
@@ -336,6 +338,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (validationErrorsBuilder_ == null) {
         validationErrors_ = java.util.Collections.emptyList();
       } else {
@@ -370,7 +373,16 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dialogflow.v2.ValidationResult buildPartial() {
       com.google.cloud.dialogflow.v2.ValidationResult result =
           new com.google.cloud.dialogflow.v2.ValidationResult(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2.ValidationResult result) {
       if (validationErrorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           validationErrors_ = java.util.Collections.unmodifiableList(validationErrors_);
@@ -380,8 +392,10 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       } else {
         result.validationErrors_ = validationErrorsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.ValidationResult result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

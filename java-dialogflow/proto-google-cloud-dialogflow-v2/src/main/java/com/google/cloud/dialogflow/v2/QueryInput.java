@@ -521,6 +521,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (audioConfigBuilder_ != null) {
         audioConfigBuilder_.clear();
       }
@@ -559,30 +560,30 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2.QueryInput buildPartial() {
       com.google.cloud.dialogflow.v2.QueryInput result =
           new com.google.cloud.dialogflow.v2.QueryInput(this);
-      if (inputCase_ == 1) {
-        if (audioConfigBuilder_ == null) {
-          result.input_ = input_;
-        } else {
-          result.input_ = audioConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (inputCase_ == 2) {
-        if (textBuilder_ == null) {
-          result.input_ = input_;
-        } else {
-          result.input_ = textBuilder_.build();
-        }
-      }
-      if (inputCase_ == 3) {
-        if (eventBuilder_ == null) {
-          result.input_ = input_;
-        } else {
-          result.input_ = eventBuilder_.build();
-        }
-      }
-      result.inputCase_ = inputCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.QueryInput result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.v2.QueryInput result) {
+      result.inputCase_ = inputCase_;
+      result.input_ = this.input_;
+      if (inputCase_ == 1 && audioConfigBuilder_ != null) {
+        result.input_ = audioConfigBuilder_.build();
+      }
+      if (inputCase_ == 2 && textBuilder_ != null) {
+        result.input_ = textBuilder_.build();
+      }
+      if (inputCase_ == 3 && eventBuilder_ != null) {
+        result.input_ = eventBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -725,6 +726,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.InputAudioConfig,
@@ -932,7 +935,6 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       }
       inputCase_ = 1;
       onChanged();
-      ;
       return audioConfigBuilder_;
     }
 
@@ -1150,7 +1152,6 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       }
       inputCase_ = 2;
       onChanged();
-      ;
       return textBuilder_;
     }
 
@@ -1359,7 +1360,6 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       }
       inputCase_ = 3;
       onChanged();
-      ;
       return eventBuilder_;
     }
 

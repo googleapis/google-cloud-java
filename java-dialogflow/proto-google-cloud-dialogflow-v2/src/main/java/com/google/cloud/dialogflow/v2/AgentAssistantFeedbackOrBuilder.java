@@ -110,7 +110,9 @@ public interface AgentAssistantFeedbackOrBuilder
    * <pre>
    * Optional. Whether or not the suggested document is efficient. For example,
    * if the document is poorly written, hard to understand, hard to use or
-   * too long to find useful information, [document_efficiency][google.cloud.dialogflow.v2.AgentAssistantFeedback.document_efficiency] is
+   * too long to find useful information,
+   * [document_efficiency][google.cloud.dialogflow.v2.AgentAssistantFeedback.document_efficiency]
+   * is
    * [DocumentEfficiency.INEFFICIENT][google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency.INEFFICIENT].
    * </pre>
    *
@@ -127,7 +129,9 @@ public interface AgentAssistantFeedbackOrBuilder
    * <pre>
    * Optional. Whether or not the suggested document is efficient. For example,
    * if the document is poorly written, hard to understand, hard to use or
-   * too long to find useful information, [document_efficiency][google.cloud.dialogflow.v2.AgentAssistantFeedback.document_efficiency] is
+   * too long to find useful information,
+   * [document_efficiency][google.cloud.dialogflow.v2.AgentAssistantFeedback.document_efficiency]
+   * is
    * [DocumentEfficiency.INEFFICIENT][google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency.INEFFICIENT].
    * </pre>
    *
@@ -138,4 +142,47 @@ public interface AgentAssistantFeedbackOrBuilder
    * @return The documentEfficiency.
    */
   com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency getDocumentEfficiency();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for conversation summarization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback summarization_feedback = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the summarizationFeedback field is set.
+   */
+  boolean hasSummarizationFeedback();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for conversation summarization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback summarization_feedback = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The summarizationFeedback.
+   */
+  com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+      getSummarizationFeedback();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for conversation summarization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback summarization_feedback = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedbackOrBuilder
+      getSummarizationFeedbackOrBuilder();
 }

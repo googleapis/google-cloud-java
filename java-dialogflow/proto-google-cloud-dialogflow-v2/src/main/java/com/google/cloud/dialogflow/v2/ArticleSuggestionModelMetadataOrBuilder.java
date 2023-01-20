@@ -27,7 +27,8 @@ public interface ArticleSuggestionModelMetadataOrBuilder
    *
    *
    * <pre>
-   * Optional. Type of the article suggestion model. If not provided, model_type is used.
+   * Optional. Type of the article suggestion model. If not provided, model_type
+   * is used.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface ArticleSuggestionModelMetadataOrBuilder
    *
    *
    * <pre>
-   * Optional. Type of the article suggestion model. If not provided, model_type is used.
+   * Optional. Type of the article suggestion model. If not provided, model_type
+   * is used.
    * </pre>
    *
    * <code>

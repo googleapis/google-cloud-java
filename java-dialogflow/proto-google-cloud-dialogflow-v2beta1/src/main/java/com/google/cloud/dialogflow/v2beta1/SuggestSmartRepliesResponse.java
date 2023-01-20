@@ -69,6 +69,8 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
   }
 
   public static final int SMART_REPLY_ANSWERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.SmartReplyAnswer> smartReplyAnswers_;
   /**
    *
@@ -155,7 +157,9 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
   }
 
   public static final int LATEST_MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object latestMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object latestMessage_ = "";
   /**
    *
    *
@@ -210,7 +214,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
   }
 
   public static final int CONTEXT_SIZE_FIELD_NUMBER = 3;
-  private int contextSize_;
+  private int contextSize_ = 0;
   /**
    *
    *
@@ -450,6 +454,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (smartReplyAnswersBuilder_ == null) {
         smartReplyAnswers_ = java.util.Collections.emptyList();
       } else {
@@ -458,9 +463,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       latestMessage_ = "";
-
       contextSize_ = 0;
-
       return this;
     }
 
@@ -489,7 +492,16 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
     public com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse buildPartial() {
       com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse result =
           new com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse result) {
       if (smartReplyAnswersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           smartReplyAnswers_ = java.util.Collections.unmodifiableList(smartReplyAnswers_);
@@ -499,10 +511,17 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       } else {
         result.smartReplyAnswers_ = smartReplyAnswersBuilder_.build();
       }
-      result.latestMessage_ = latestMessage_;
-      result.contextSize_ = contextSize_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.latestMessage_ = latestMessage_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.contextSize_ = contextSize_;
+      }
     }
 
     @java.lang.Override
@@ -582,6 +601,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       }
       if (!other.getLatestMessage().isEmpty()) {
         latestMessage_ = other.latestMessage_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getContextSize() != 0) {
@@ -630,13 +650,13 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
             case 18:
               {
                 latestMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 contextSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -1146,8 +1166,8 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       latestMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1166,8 +1186,8 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearLatestMessage() {
-
       latestMessage_ = getDefaultInstance().getLatestMessage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1191,8 +1211,8 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       latestMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1236,6 +1256,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
     public Builder setContextSize(int value) {
 
       contextSize_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1255,7 +1276,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearContextSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       contextSize_ = 0;
       onChanged();
       return this;

@@ -69,7 +69,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -197,7 +199,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder
       getSessionEntityTypeOrBuilder() {
-    return getSessionEntityType();
+    return sessionEntityType_ == null
+        ? com.google.cloud.dialogflow.v2beta1.SessionEntityType.getDefaultInstance()
+        : sessionEntityType_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -414,12 +418,11 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (sessionEntityTypeBuilder_ == null) {
-        sessionEntityType_ = null;
-      } else {
-        sessionEntityType_ = null;
+      sessionEntityType_ = null;
+      if (sessionEntityTypeBuilder_ != null) {
+        sessionEntityTypeBuilder_.dispose();
         sessionEntityTypeBuilder_ = null;
       }
       return this;
@@ -451,14 +454,25 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
     public com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest result =
           new com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest(this);
-      result.parent_ = parent_;
-      if (sessionEntityTypeBuilder_ == null) {
-        result.sessionEntityType_ = sessionEntityType_;
-      } else {
-        result.sessionEntityType_ = sessionEntityTypeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sessionEntityType_ =
+            sessionEntityTypeBuilder_ == null
+                ? sessionEntityType_
+                : sessionEntityTypeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -512,6 +526,7 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSessionEntityType()) {
@@ -546,14 +561,14 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getSessionEntityTypeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -572,6 +587,8 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -676,8 +693,8 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -707,8 +724,8 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -743,8 +760,8 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -769,7 +786,7 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * @return Whether the sessionEntityType field is set.
      */
     public boolean hasSessionEntityType() {
-      return sessionEntityTypeBuilder_ != null || sessionEntityType_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -811,11 +828,11 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         sessionEntityType_ = value;
-        onChanged();
       } else {
         sessionEntityTypeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -833,11 +850,11 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
         com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder builderForValue) {
       if (sessionEntityTypeBuilder_ == null) {
         sessionEntityType_ = builderForValue.build();
-        onChanged();
       } else {
         sessionEntityTypeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -854,19 +871,19 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
     public Builder mergeSessionEntityType(
         com.google.cloud.dialogflow.v2beta1.SessionEntityType value) {
       if (sessionEntityTypeBuilder_ == null) {
-        if (sessionEntityType_ != null) {
-          sessionEntityType_ =
-              com.google.cloud.dialogflow.v2beta1.SessionEntityType.newBuilder(sessionEntityType_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && sessionEntityType_ != null
+            && sessionEntityType_
+                != com.google.cloud.dialogflow.v2beta1.SessionEntityType.getDefaultInstance()) {
+          getSessionEntityTypeBuilder().mergeFrom(value);
         } else {
           sessionEntityType_ = value;
         }
-        onChanged();
       } else {
         sessionEntityTypeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -881,14 +898,13 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearSessionEntityType() {
-      if (sessionEntityTypeBuilder_ == null) {
-        sessionEntityType_ = null;
-        onChanged();
-      } else {
-        sessionEntityType_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      sessionEntityType_ = null;
+      if (sessionEntityTypeBuilder_ != null) {
+        sessionEntityTypeBuilder_.dispose();
         sessionEntityTypeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -904,7 +920,7 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      */
     public com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder
         getSessionEntityTypeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSessionEntityTypeFieldBuilder().getBuilder();
     }

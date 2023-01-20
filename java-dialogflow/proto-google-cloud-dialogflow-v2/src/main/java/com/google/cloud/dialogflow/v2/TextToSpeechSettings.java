@@ -79,13 +79,13 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ENABLE_TEXT_TO_SPEECH_FIELD_NUMBER = 1;
-  private boolean enableTextToSpeech_;
+  private boolean enableTextToSpeech_ = false;
   /**
    *
    *
    * <pre>
-   * Optional. Indicates whether text to speech is enabled. Even when this field is false,
-   * other settings in this proto are still retained.
+   * Optional. Indicates whether text to speech is enabled. Even when this field
+   * is false, other settings in this proto are still retained.
    * </pre>
    *
    * <code>bool enable_text_to_speech = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -98,7 +98,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
   }
 
   public static final int OUTPUT_AUDIO_ENCODING_FIELD_NUMBER = 2;
-  private int outputAudioEncoding_;
+  private int outputAudioEncoding_ = 0;
   /**
    *
    *
@@ -131,25 +131,24 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.OutputAudioEncoding getOutputAudioEncoding() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.OutputAudioEncoding result =
-        com.google.cloud.dialogflow.v2.OutputAudioEncoding.valueOf(outputAudioEncoding_);
+        com.google.cloud.dialogflow.v2.OutputAudioEncoding.forNumber(outputAudioEncoding_);
     return result == null
         ? com.google.cloud.dialogflow.v2.OutputAudioEncoding.UNRECOGNIZED
         : result;
   }
 
   public static final int SAMPLE_RATE_HERTZ_FIELD_NUMBER = 3;
-  private int sampleRateHertz_;
+  private int sampleRateHertz_ = 0;
   /**
    *
    *
    * <pre>
-   * Optional. The synthesis sample rate (in hertz) for this audio. If not provided, then
-   * the synthesizer will use the default sample rate based on the audio
-   * encoding. If this is different from the voice's natural sample rate, then
-   * the synthesizer will honor this request by converting to the desired sample
-   * rate (which might result in worse audio quality).
+   * Optional. The synthesis sample rate (in hertz) for this audio. If not
+   * provided, then the synthesizer will use the default sample rate based on
+   * the audio encoding. If this is different from the voice's natural sample
+   * rate, then the synthesizer will honor this request by converting to the
+   * desired sample rate (which might result in worse audio quality).
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -178,6 +177,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
                         com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig>
       synthesizeSpeechConfigs_;
@@ -199,8 +199,8 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Configuration of how speech should be synthesized, mapping from language
-   * (https://cloud.google.com/dialogflow/docs/reference/language) to
+   * Optional. Configuration of how speech should be synthesized, mapping from
+   * language (https://cloud.google.com/dialogflow/docs/reference/language) to
    * SynthesizeSpeechConfig.
    * </pre>
    *
@@ -226,8 +226,8 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Configuration of how speech should be synthesized, mapping from language
-   * (https://cloud.google.com/dialogflow/docs/reference/language) to
+   * Optional. Configuration of how speech should be synthesized, mapping from
+   * language (https://cloud.google.com/dialogflow/docs/reference/language) to
    * SynthesizeSpeechConfig.
    * </pre>
    *
@@ -244,8 +244,8 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Configuration of how speech should be synthesized, mapping from language
-   * (https://cloud.google.com/dialogflow/docs/reference/language) to
+   * Optional. Configuration of how speech should be synthesized, mapping from
+   * language (https://cloud.google.com/dialogflow/docs/reference/language) to
    * SynthesizeSpeechConfig.
    * </pre>
    *
@@ -254,8 +254,11 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig getSynthesizeSpeechConfigsOrDefault(
-      java.lang.String key, com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig defaultValue) {
+  public /* nullable */ com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig
+      getSynthesizeSpeechConfigsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -267,8 +270,8 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Configuration of how speech should be synthesized, mapping from language
-   * (https://cloud.google.com/dialogflow/docs/reference/language) to
+   * Optional. Configuration of how speech should be synthesized, mapping from
+   * language (https://cloud.google.com/dialogflow/docs/reference/language) to
    * SynthesizeSpeechConfig.
    * </pre>
    *
@@ -554,12 +557,10 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableTextToSpeech_ = false;
-
       outputAudioEncoding_ = 0;
-
       sampleRateHertz_ = 0;
-
       internalGetMutableSynthesizeSpeechConfigs().clear();
       return this;
     }
@@ -588,14 +589,28 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.v2.TextToSpeechSettings buildPartial() {
       com.google.cloud.dialogflow.v2.TextToSpeechSettings result =
           new com.google.cloud.dialogflow.v2.TextToSpeechSettings(this);
-      int from_bitField0_ = bitField0_;
-      result.enableTextToSpeech_ = enableTextToSpeech_;
-      result.outputAudioEncoding_ = outputAudioEncoding_;
-      result.sampleRateHertz_ = sampleRateHertz_;
-      result.synthesizeSpeechConfigs_ = internalGetSynthesizeSpeechConfigs();
-      result.synthesizeSpeechConfigs_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.TextToSpeechSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableTextToSpeech_ = enableTextToSpeech_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.outputAudioEncoding_ = outputAudioEncoding_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sampleRateHertz_ = sampleRateHertz_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.synthesizeSpeechConfigs_ = internalGetSynthesizeSpeechConfigs();
+        result.synthesizeSpeechConfigs_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -655,6 +670,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
       }
       internalGetMutableSynthesizeSpeechConfigs()
           .mergeFrom(other.internalGetSynthesizeSpeechConfigs());
+      bitField0_ |= 0x00000008;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -684,19 +700,19 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 enableTextToSpeech_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 outputAudioEncoding_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 sampleRateHertz_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -711,6 +727,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
                 internalGetMutableSynthesizeSpeechConfigs()
                     .getMutableMap()
                     .put(synthesizeSpeechConfigs__.getKey(), synthesizeSpeechConfigs__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -737,8 +754,8 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Indicates whether text to speech is enabled. Even when this field is false,
-     * other settings in this proto are still retained.
+     * Optional. Indicates whether text to speech is enabled. Even when this field
+     * is false, other settings in this proto are still retained.
      * </pre>
      *
      * <code>bool enable_text_to_speech = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -753,8 +770,8 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Indicates whether text to speech is enabled. Even when this field is false,
-     * other settings in this proto are still retained.
+     * Optional. Indicates whether text to speech is enabled. Even when this field
+     * is false, other settings in this proto are still retained.
      * </pre>
      *
      * <code>bool enable_text_to_speech = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -765,6 +782,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     public Builder setEnableTextToSpeech(boolean value) {
 
       enableTextToSpeech_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -772,8 +790,8 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Indicates whether text to speech is enabled. Even when this field is false,
-     * other settings in this proto are still retained.
+     * Optional. Indicates whether text to speech is enabled. Even when this field
+     * is false, other settings in this proto are still retained.
      * </pre>
      *
      * <code>bool enable_text_to_speech = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -781,7 +799,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearEnableTextToSpeech() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableTextToSpeech_ = false;
       onChanged();
       return this;
@@ -820,8 +838,8 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setOutputAudioEncodingValue(int value) {
-
       outputAudioEncoding_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -840,9 +858,8 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2.OutputAudioEncoding getOutputAudioEncoding() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.OutputAudioEncoding result =
-          com.google.cloud.dialogflow.v2.OutputAudioEncoding.valueOf(outputAudioEncoding_);
+          com.google.cloud.dialogflow.v2.OutputAudioEncoding.forNumber(outputAudioEncoding_);
       return result == null
           ? com.google.cloud.dialogflow.v2.OutputAudioEncoding.UNRECOGNIZED
           : result;
@@ -866,7 +883,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       outputAudioEncoding_ = value.getNumber();
       onChanged();
       return this;
@@ -885,7 +902,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearOutputAudioEncoding() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       outputAudioEncoding_ = 0;
       onChanged();
       return this;
@@ -896,11 +913,11 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The synthesis sample rate (in hertz) for this audio. If not provided, then
-     * the synthesizer will use the default sample rate based on the audio
-     * encoding. If this is different from the voice's natural sample rate, then
-     * the synthesizer will honor this request by converting to the desired sample
-     * rate (which might result in worse audio quality).
+     * Optional. The synthesis sample rate (in hertz) for this audio. If not
+     * provided, then the synthesizer will use the default sample rate based on
+     * the audio encoding. If this is different from the voice's natural sample
+     * rate, then the synthesizer will honor this request by converting to the
+     * desired sample rate (which might result in worse audio quality).
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -915,11 +932,11 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The synthesis sample rate (in hertz) for this audio. If not provided, then
-     * the synthesizer will use the default sample rate based on the audio
-     * encoding. If this is different from the voice's natural sample rate, then
-     * the synthesizer will honor this request by converting to the desired sample
-     * rate (which might result in worse audio quality).
+     * Optional. The synthesis sample rate (in hertz) for this audio. If not
+     * provided, then the synthesizer will use the default sample rate based on
+     * the audio encoding. If this is different from the voice's natural sample
+     * rate, then the synthesizer will honor this request by converting to the
+     * desired sample rate (which might result in worse audio quality).
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -930,6 +947,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     public Builder setSampleRateHertz(int value) {
 
       sampleRateHertz_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -937,11 +955,11 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The synthesis sample rate (in hertz) for this audio. If not provided, then
-     * the synthesizer will use the default sample rate based on the audio
-     * encoding. If this is different from the voice's natural sample rate, then
-     * the synthesizer will honor this request by converting to the desired sample
-     * rate (which might result in worse audio quality).
+     * Optional. The synthesis sample rate (in hertz) for this audio. If not
+     * provided, then the synthesizer will use the default sample rate based on
+     * the audio encoding. If this is different from the voice's natural sample
+     * rate, then the synthesizer will honor this request by converting to the
+     * desired sample rate (which might result in worse audio quality).
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -949,7 +967,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSampleRateHertz() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       sampleRateHertz_ = 0;
       onChanged();
       return this;
@@ -972,8 +990,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig>
         internalGetMutableSynthesizeSpeechConfigs() {
-      onChanged();
-      ;
       if (synthesizeSpeechConfigs_ == null) {
         synthesizeSpeechConfigs_ =
             com.google.protobuf.MapField.newMapField(
@@ -982,6 +998,8 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
       if (!synthesizeSpeechConfigs_.isMutable()) {
         synthesizeSpeechConfigs_ = synthesizeSpeechConfigs_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return synthesizeSpeechConfigs_;
     }
 
@@ -992,8 +1010,8 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Configuration of how speech should be synthesized, mapping from language
-     * (https://cloud.google.com/dialogflow/docs/reference/language) to
+     * Optional. Configuration of how speech should be synthesized, mapping from
+     * language (https://cloud.google.com/dialogflow/docs/reference/language) to
      * SynthesizeSpeechConfig.
      * </pre>
      *
@@ -1019,8 +1037,8 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Configuration of how speech should be synthesized, mapping from language
-     * (https://cloud.google.com/dialogflow/docs/reference/language) to
+     * Optional. Configuration of how speech should be synthesized, mapping from
+     * language (https://cloud.google.com/dialogflow/docs/reference/language) to
      * SynthesizeSpeechConfig.
      * </pre>
      *
@@ -1037,8 +1055,8 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Configuration of how speech should be synthesized, mapping from language
-     * (https://cloud.google.com/dialogflow/docs/reference/language) to
+     * Optional. Configuration of how speech should be synthesized, mapping from
+     * language (https://cloud.google.com/dialogflow/docs/reference/language) to
      * SynthesizeSpeechConfig.
      * </pre>
      *
@@ -1047,9 +1065,10 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig
+    public /* nullable */ com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig
         getSynthesizeSpeechConfigsOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -1062,8 +1081,8 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Configuration of how speech should be synthesized, mapping from language
-     * (https://cloud.google.com/dialogflow/docs/reference/language) to
+     * Optional. Configuration of how speech should be synthesized, mapping from
+     * language (https://cloud.google.com/dialogflow/docs/reference/language) to
      * SynthesizeSpeechConfig.
      * </pre>
      *
@@ -1086,6 +1105,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearSynthesizeSpeechConfigs() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableSynthesizeSpeechConfigs().getMutableMap().clear();
       return this;
     }
@@ -1093,8 +1113,8 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Configuration of how speech should be synthesized, mapping from language
-     * (https://cloud.google.com/dialogflow/docs/reference/language) to
+     * Optional. Configuration of how speech should be synthesized, mapping from
+     * language (https://cloud.google.com/dialogflow/docs/reference/language) to
      * SynthesizeSpeechConfig.
      * </pre>
      *
@@ -1113,14 +1133,15 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig>
         getMutableSynthesizeSpeechConfigs() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableSynthesizeSpeechConfigs().getMutableMap();
     }
     /**
      *
      *
      * <pre>
-     * Optional. Configuration of how speech should be synthesized, mapping from language
-     * (https://cloud.google.com/dialogflow/docs/reference/language) to
+     * Optional. Configuration of how speech should be synthesized, mapping from
+     * language (https://cloud.google.com/dialogflow/docs/reference/language) to
      * SynthesizeSpeechConfig.
      * </pre>
      *
@@ -1136,16 +1157,16 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableSynthesizeSpeechConfigs().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Configuration of how speech should be synthesized, mapping from language
-     * (https://cloud.google.com/dialogflow/docs/reference/language) to
+     * Optional. Configuration of how speech should be synthesized, mapping from
+     * language (https://cloud.google.com/dialogflow/docs/reference/language) to
      * SynthesizeSpeechConfig.
      * </pre>
      *
@@ -1157,6 +1178,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
         java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig>
             values) {
       internalGetMutableSynthesizeSpeechConfigs().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 

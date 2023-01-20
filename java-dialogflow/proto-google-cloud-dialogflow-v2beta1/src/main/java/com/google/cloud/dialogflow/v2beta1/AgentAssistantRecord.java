@@ -455,6 +455,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (articleSuggestionAnswerBuilder_ != null) {
         articleSuggestionAnswerBuilder_.clear();
       }
@@ -490,23 +491,28 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.v2beta1.AgentAssistantRecord buildPartial() {
       com.google.cloud.dialogflow.v2beta1.AgentAssistantRecord result =
           new com.google.cloud.dialogflow.v2beta1.AgentAssistantRecord(this);
-      if (answerCase_ == 5) {
-        if (articleSuggestionAnswerBuilder_ == null) {
-          result.answer_ = answer_;
-        } else {
-          result.answer_ = articleSuggestionAnswerBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (answerCase_ == 6) {
-        if (faqAnswerBuilder_ == null) {
-          result.answer_ = answer_;
-        } else {
-          result.answer_ = faqAnswerBuilder_.build();
-        }
-      }
-      result.answerCase_ = answerCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.AgentAssistantRecord result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.dialogflow.v2beta1.AgentAssistantRecord result) {
+      result.answerCase_ = answerCase_;
+      result.answer_ = this.answer_;
+      if (answerCase_ == 5 && articleSuggestionAnswerBuilder_ != null) {
+        result.answer_ = articleSuggestionAnswerBuilder_.build();
+      }
+      if (answerCase_ == 6 && faqAnswerBuilder_ != null) {
+        result.answer_ = faqAnswerBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -640,6 +646,8 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.ArticleAnswer,
@@ -869,7 +877,6 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       }
       answerCase_ = 5;
       onChanged();
-      ;
       return articleSuggestionAnswerBuilder_;
     }
 
@@ -1097,7 +1104,6 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       }
       answerCase_ = 6;
       onChanged();
-      ;
       return faqAnswerBuilder_;
     }
 

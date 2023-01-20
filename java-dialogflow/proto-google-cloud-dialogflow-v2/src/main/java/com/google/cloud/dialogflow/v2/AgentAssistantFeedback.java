@@ -554,8 +554,1270 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency)
   }
 
+  public interface SummarizationFeedbackOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when composing of the summary starts.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    boolean hasStartTime();
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when composing of the summary starts.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     *
+     * @return The startTime.
+     */
+    com.google.protobuf.Timestamp getStartTime();
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when composing of the summary starts.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when the summary was submitted.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+     *
+     * @return Whether the submitTime field is set.
+     */
+    boolean hasSubmitTime();
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when the summary was submitted.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+     *
+     * @return The submitTime.
+     */
+    com.google.protobuf.Timestamp getSubmitTime();
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when the summary was submitted.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Text of actual submitted summary.
+     * </pre>
+     *
+     * <code>string summary_text = 3;</code>
+     *
+     * @return The summaryText.
+     */
+    java.lang.String getSummaryText();
+    /**
+     *
+     *
+     * <pre>
+     * Text of actual submitted summary.
+     * </pre>
+     *
+     * <code>string summary_text = 3;</code>
+     *
+     * @return The bytes for summaryText.
+     */
+    com.google.protobuf.ByteString getSummaryTextBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Feedback for conversation summarization.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback}
+   */
+  public static final class SummarizationFeedback extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback)
+      SummarizationFeedbackOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SummarizationFeedback.newBuilder() to construct.
+    private SummarizationFeedback(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SummarizationFeedback() {
+      summaryText_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SummarizationFeedback();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2.AnswerRecordsProto
+          .internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_SummarizationFeedback_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.v2.AnswerRecordsProto
+          .internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_SummarizationFeedback_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback.class,
+              com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback.Builder
+                  .class);
+    }
+
+    public static final int START_TIME_FIELD_NUMBER = 1;
+    private com.google.protobuf.Timestamp startTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when composing of the summary starts.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasStartTime() {
+      return startTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when composing of the summary starts.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     *
+     * @return The startTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getStartTime() {
+      return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when composing of the summary starts.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+      return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+    }
+
+    public static final int SUBMIT_TIME_FIELD_NUMBER = 2;
+    private com.google.protobuf.Timestamp submitTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when the summary was submitted.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+     *
+     * @return Whether the submitTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasSubmitTime() {
+      return submitTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when the summary was submitted.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+     *
+     * @return The submitTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getSubmitTime() {
+      return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when the summary was submitted.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder() {
+      return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
+    }
+
+    public static final int SUMMARY_TEXT_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object summaryText_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Text of actual submitted summary.
+     * </pre>
+     *
+     * <code>string summary_text = 3;</code>
+     *
+     * @return The summaryText.
+     */
+    @java.lang.Override
+    public java.lang.String getSummaryText() {
+      java.lang.Object ref = summaryText_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        summaryText_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text of actual submitted summary.
+     * </pre>
+     *
+     * <code>string summary_text = 3;</code>
+     *
+     * @return The bytes for summaryText.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSummaryTextBytes() {
+      java.lang.Object ref = summaryText_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        summaryText_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (startTime_ != null) {
+        output.writeMessage(1, getStartTime());
+      }
+      if (submitTime_ != null) {
+        output.writeMessage(2, getSubmitTime());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(summaryText_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, summaryText_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (startTime_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getStartTime());
+      }
+      if (submitTime_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSubmitTime());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(summaryText_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, summaryText_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback other =
+          (com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback) obj;
+
+      if (hasStartTime() != other.hasStartTime()) return false;
+      if (hasStartTime()) {
+        if (!getStartTime().equals(other.getStartTime())) return false;
+      }
+      if (hasSubmitTime() != other.hasSubmitTime()) return false;
+      if (hasSubmitTime()) {
+        if (!getSubmitTime().equals(other.getSubmitTime())) return false;
+      }
+      if (!getSummaryText().equals(other.getSummaryText())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasStartTime()) {
+        hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getStartTime().hashCode();
+      }
+      if (hasSubmitTime()) {
+        hash = (37 * hash) + SUBMIT_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getSubmitTime().hashCode();
+      }
+      hash = (37 * hash) + SUMMARY_TEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getSummaryText().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Feedback for conversation summarization.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback)
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedbackOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.AnswerRecordsProto
+            .internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_SummarizationFeedback_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2.AnswerRecordsProto
+            .internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_SummarizationFeedback_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback.class,
+                com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        startTime_ = null;
+        if (startTimeBuilder_ != null) {
+          startTimeBuilder_.dispose();
+          startTimeBuilder_ = null;
+        }
+        submitTime_ = null;
+        if (submitTimeBuilder_ != null) {
+          submitTimeBuilder_.dispose();
+          submitTimeBuilder_ = null;
+        }
+        summaryText_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.v2.AnswerRecordsProto
+            .internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_SummarizationFeedback_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback build() {
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+          buildPartial() {
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback result =
+            new com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.submitTime_ =
+              submitTimeBuilder_ == null ? submitTime_ : submitTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.summaryText_ = summaryText_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback other) {
+        if (other
+            == com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+                .getDefaultInstance()) return this;
+        if (other.hasStartTime()) {
+          mergeStartTime(other.getStartTime());
+        }
+        if (other.hasSubmitTime()) {
+          mergeSubmitTime(other.getSubmitTime());
+        }
+        if (!other.getSummaryText().isEmpty()) {
+          summaryText_ = other.summaryText_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getSubmitTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  summaryText_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Timestamp startTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          startTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Timestamp when composing of the summary starts.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       *
+       * @return Whether the startTime field is set.
+       */
+      public boolean hasStartTime() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timestamp when composing of the summary starts.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       *
+       * @return The startTime.
+       */
+      public com.google.protobuf.Timestamp getStartTime() {
+        if (startTimeBuilder_ == null) {
+          return startTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : startTime_;
+        } else {
+          return startTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timestamp when composing of the summary starts.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       */
+      public Builder setStartTime(com.google.protobuf.Timestamp value) {
+        if (startTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          startTime_ = value;
+        } else {
+          startTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timestamp when composing of the summary starts.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       */
+      public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (startTimeBuilder_ == null) {
+          startTime_ = builderForValue.build();
+        } else {
+          startTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timestamp when composing of the summary starts.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       */
+      public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
+        if (startTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && startTime_ != null
+              && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getStartTimeBuilder().mergeFrom(value);
+          } else {
+            startTime_ = value;
+          }
+        } else {
+          startTimeBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timestamp when composing of the summary starts.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       */
+      public Builder clearStartTime() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        startTime_ = null;
+        if (startTimeBuilder_ != null) {
+          startTimeBuilder_.dispose();
+          startTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timestamp when composing of the summary starts.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getStartTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timestamp when composing of the summary starts.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+        if (startTimeBuilder_ != null) {
+          return startTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return startTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : startTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timestamp when composing of the summary starts.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getStartTimeFieldBuilder() {
+        if (startTimeBuilder_ == null) {
+          startTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getStartTime(), getParentForChildren(), isClean());
+          startTime_ = null;
+        }
+        return startTimeBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp submitTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          submitTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Timestamp when the summary was submitted.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+       *
+       * @return Whether the submitTime field is set.
+       */
+      public boolean hasSubmitTime() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timestamp when the summary was submitted.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+       *
+       * @return The submitTime.
+       */
+      public com.google.protobuf.Timestamp getSubmitTime() {
+        if (submitTimeBuilder_ == null) {
+          return submitTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : submitTime_;
+        } else {
+          return submitTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timestamp when the summary was submitted.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+       */
+      public Builder setSubmitTime(com.google.protobuf.Timestamp value) {
+        if (submitTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          submitTime_ = value;
+        } else {
+          submitTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timestamp when the summary was submitted.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+       */
+      public Builder setSubmitTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (submitTimeBuilder_ == null) {
+          submitTime_ = builderForValue.build();
+        } else {
+          submitTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timestamp when the summary was submitted.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+       */
+      public Builder mergeSubmitTime(com.google.protobuf.Timestamp value) {
+        if (submitTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && submitTime_ != null
+              && submitTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getSubmitTimeBuilder().mergeFrom(value);
+          } else {
+            submitTime_ = value;
+          }
+        } else {
+          submitTimeBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timestamp when the summary was submitted.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+       */
+      public Builder clearSubmitTime() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        submitTime_ = null;
+        if (submitTimeBuilder_ != null) {
+          submitTimeBuilder_.dispose();
+          submitTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timestamp when the summary was submitted.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getSubmitTimeBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getSubmitTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timestamp when the summary was submitted.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder() {
+        if (submitTimeBuilder_ != null) {
+          return submitTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return submitTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : submitTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timestamp when the summary was submitted.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getSubmitTimeFieldBuilder() {
+        if (submitTimeBuilder_ == null) {
+          submitTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getSubmitTime(), getParentForChildren(), isClean());
+          submitTime_ = null;
+        }
+        return submitTimeBuilder_;
+      }
+
+      private java.lang.Object summaryText_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Text of actual submitted summary.
+       * </pre>
+       *
+       * <code>string summary_text = 3;</code>
+       *
+       * @return The summaryText.
+       */
+      public java.lang.String getSummaryText() {
+        java.lang.Object ref = summaryText_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          summaryText_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Text of actual submitted summary.
+       * </pre>
+       *
+       * <code>string summary_text = 3;</code>
+       *
+       * @return The bytes for summaryText.
+       */
+      public com.google.protobuf.ByteString getSummaryTextBytes() {
+        java.lang.Object ref = summaryText_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          summaryText_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Text of actual submitted summary.
+       * </pre>
+       *
+       * <code>string summary_text = 3;</code>
+       *
+       * @param value The summaryText to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSummaryText(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        summaryText_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Text of actual submitted summary.
+       * </pre>
+       *
+       * <code>string summary_text = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSummaryText() {
+        summaryText_ = getDefaultInstance().getSummaryText();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Text of actual submitted summary.
+       * </pre>
+       *
+       * <code>string summary_text = 3;</code>
+       *
+       * @param value The bytes for summaryText to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSummaryTextBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        summaryText_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback)
+    private static final com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback();
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SummarizationFeedback> PARSER =
+        new com.google.protobuf.AbstractParser<SummarizationFeedback>() {
+          @java.lang.Override
+          public SummarizationFeedback parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SummarizationFeedback> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SummarizationFeedback> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int ANSWER_RELEVANCE_FIELD_NUMBER = 1;
-  private int answerRelevance_;
+  private int answerRelevance_ = 0;
   /**
    *
    *
@@ -599,9 +1861,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.AnswerRelevance
       getAnswerRelevance() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.AgentAssistantFeedback.AnswerRelevance result =
-        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.AnswerRelevance.valueOf(
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.AnswerRelevance.forNumber(
             answerRelevance_);
     return result == null
         ? com.google.cloud.dialogflow.v2.AgentAssistantFeedback.AnswerRelevance.UNRECOGNIZED
@@ -609,7 +1870,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   }
 
   public static final int DOCUMENT_CORRECTNESS_FIELD_NUMBER = 2;
-  private int documentCorrectness_;
+  private int documentCorrectness_ = 0;
   /**
    *
    *
@@ -655,9 +1916,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentCorrectness
       getDocumentCorrectness() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentCorrectness result =
-        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentCorrectness.valueOf(
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentCorrectness.forNumber(
             documentCorrectness_);
     return result == null
         ? com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentCorrectness.UNRECOGNIZED
@@ -665,14 +1925,16 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   }
 
   public static final int DOCUMENT_EFFICIENCY_FIELD_NUMBER = 3;
-  private int documentEfficiency_;
+  private int documentEfficiency_ = 0;
   /**
    *
    *
    * <pre>
    * Optional. Whether or not the suggested document is efficient. For example,
    * if the document is poorly written, hard to understand, hard to use or
-   * too long to find useful information, [document_efficiency][google.cloud.dialogflow.v2.AgentAssistantFeedback.document_efficiency] is
+   * too long to find useful information,
+   * [document_efficiency][google.cloud.dialogflow.v2.AgentAssistantFeedback.document_efficiency]
+   * is
    * [DocumentEfficiency.INEFFICIENT][google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency.INEFFICIENT].
    * </pre>
    *
@@ -692,7 +1954,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. Whether or not the suggested document is efficient. For example,
    * if the document is poorly written, hard to understand, hard to use or
-   * too long to find useful information, [document_efficiency][google.cloud.dialogflow.v2.AgentAssistantFeedback.document_efficiency] is
+   * too long to find useful information,
+   * [document_efficiency][google.cloud.dialogflow.v2.AgentAssistantFeedback.document_efficiency]
+   * is
    * [DocumentEfficiency.INEFFICIENT][google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency.INEFFICIENT].
    * </pre>
    *
@@ -705,13 +1969,73 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency
       getDocumentEfficiency() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency result =
-        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency.valueOf(
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency.forNumber(
             documentEfficiency_);
     return result == null
         ? com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency.UNRECOGNIZED
         : result;
+  }
+
+  public static final int SUMMARIZATION_FEEDBACK_FIELD_NUMBER = 4;
+  private com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+      summarizationFeedback_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for conversation summarization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback summarization_feedback = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the summarizationFeedback field is set.
+   */
+  @java.lang.Override
+  public boolean hasSummarizationFeedback() {
+    return summarizationFeedback_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for conversation summarization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback summarization_feedback = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The summarizationFeedback.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+      getSummarizationFeedback() {
+    return summarizationFeedback_ == null
+        ? com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+            .getDefaultInstance()
+        : summarizationFeedback_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for conversation summarization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback summarization_feedback = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedbackOrBuilder
+      getSummarizationFeedbackOrBuilder() {
+    return summarizationFeedback_ == null
+        ? com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+            .getDefaultInstance()
+        : summarizationFeedback_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -746,6 +2070,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
             .getNumber()) {
       output.writeEnum(3, documentEfficiency_);
     }
+    if (summarizationFeedback_ != null) {
+      output.writeMessage(4, getSummarizationFeedback());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -773,6 +2100,10 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, documentEfficiency_);
     }
+    if (summarizationFeedback_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, getSummarizationFeedback());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -792,6 +2123,10 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     if (answerRelevance_ != other.answerRelevance_) return false;
     if (documentCorrectness_ != other.documentCorrectness_) return false;
     if (documentEfficiency_ != other.documentEfficiency_) return false;
+    if (hasSummarizationFeedback() != other.hasSummarizationFeedback()) return false;
+    if (hasSummarizationFeedback()) {
+      if (!getSummarizationFeedback().equals(other.getSummarizationFeedback())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -809,6 +2144,10 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + documentCorrectness_;
     hash = (37 * hash) + DOCUMENT_EFFICIENCY_FIELD_NUMBER;
     hash = (53 * hash) + documentEfficiency_;
+    if (hasSummarizationFeedback()) {
+      hash = (37 * hash) + SUMMARIZATION_FEEDBACK_FIELD_NUMBER;
+      hash = (53 * hash) + getSummarizationFeedback().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -948,12 +2287,15 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       answerRelevance_ = 0;
-
       documentCorrectness_ = 0;
-
       documentEfficiency_ = 0;
-
+      summarizationFeedback_ = null;
+      if (summarizationFeedbackBuilder_ != null) {
+        summarizationFeedbackBuilder_.dispose();
+        summarizationFeedbackBuilder_ = null;
+      }
       return this;
     }
 
@@ -981,11 +2323,30 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public com.google.cloud.dialogflow.v2.AgentAssistantFeedback buildPartial() {
       com.google.cloud.dialogflow.v2.AgentAssistantFeedback result =
           new com.google.cloud.dialogflow.v2.AgentAssistantFeedback(this);
-      result.answerRelevance_ = answerRelevance_;
-      result.documentCorrectness_ = documentCorrectness_;
-      result.documentEfficiency_ = documentEfficiency_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.AgentAssistantFeedback result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.answerRelevance_ = answerRelevance_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.documentCorrectness_ = documentCorrectness_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.documentEfficiency_ = documentEfficiency_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.summarizationFeedback_ =
+            summarizationFeedbackBuilder_ == null
+                ? summarizationFeedback_
+                : summarizationFeedbackBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1043,6 +2404,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       if (other.documentEfficiency_ != 0) {
         setDocumentEfficiencyValue(other.getDocumentEfficiencyValue());
       }
+      if (other.hasSummarizationFeedback()) {
+        mergeSummarizationFeedback(other.getSummarizationFeedback());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1072,21 +2436,28 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
             case 8:
               {
                 answerRelevance_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 documentCorrectness_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 documentEfficiency_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 34:
+              {
+                input.readMessage(
+                    getSummarizationFeedbackFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1103,6 +2474,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int answerRelevance_ = 0;
     /**
@@ -1147,8 +2520,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setAnswerRelevanceValue(int value) {
-
       answerRelevance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1173,9 +2546,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.AnswerRelevance
         getAnswerRelevance() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.AgentAssistantFeedback.AnswerRelevance result =
-          com.google.cloud.dialogflow.v2.AgentAssistantFeedback.AnswerRelevance.valueOf(
+          com.google.cloud.dialogflow.v2.AgentAssistantFeedback.AnswerRelevance.forNumber(
               answerRelevance_);
       return result == null
           ? com.google.cloud.dialogflow.v2.AgentAssistantFeedback.AnswerRelevance.UNRECOGNIZED
@@ -1205,7 +2577,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       answerRelevance_ = value.getNumber();
       onChanged();
       return this;
@@ -1229,7 +2601,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearAnswerRelevance() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       answerRelevance_ = 0;
       onChanged();
       return this;
@@ -1280,8 +2652,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setDocumentCorrectnessValue(int value) {
-
       documentCorrectness_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1307,9 +2679,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentCorrectness
         getDocumentCorrectness() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentCorrectness result =
-          com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentCorrectness.valueOf(
+          com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentCorrectness.forNumber(
               documentCorrectness_);
       return result == null
           ? com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentCorrectness.UNRECOGNIZED
@@ -1340,7 +2711,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       documentCorrectness_ = value.getNumber();
       onChanged();
       return this;
@@ -1365,7 +2736,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearDocumentCorrectness() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       documentCorrectness_ = 0;
       onChanged();
       return this;
@@ -1378,7 +2749,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. Whether or not the suggested document is efficient. For example,
      * if the document is poorly written, hard to understand, hard to use or
-     * too long to find useful information, [document_efficiency][google.cloud.dialogflow.v2.AgentAssistantFeedback.document_efficiency] is
+     * too long to find useful information,
+     * [document_efficiency][google.cloud.dialogflow.v2.AgentAssistantFeedback.document_efficiency]
+     * is
      * [DocumentEfficiency.INEFFICIENT][google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency.INEFFICIENT].
      * </pre>
      *
@@ -1398,7 +2771,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. Whether or not the suggested document is efficient. For example,
      * if the document is poorly written, hard to understand, hard to use or
-     * too long to find useful information, [document_efficiency][google.cloud.dialogflow.v2.AgentAssistantFeedback.document_efficiency] is
+     * too long to find useful information,
+     * [document_efficiency][google.cloud.dialogflow.v2.AgentAssistantFeedback.document_efficiency]
+     * is
      * [DocumentEfficiency.INEFFICIENT][google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency.INEFFICIENT].
      * </pre>
      *
@@ -1410,8 +2785,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setDocumentEfficiencyValue(int value) {
-
       documentEfficiency_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1421,7 +2796,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. Whether or not the suggested document is efficient. For example,
      * if the document is poorly written, hard to understand, hard to use or
-     * too long to find useful information, [document_efficiency][google.cloud.dialogflow.v2.AgentAssistantFeedback.document_efficiency] is
+     * too long to find useful information,
+     * [document_efficiency][google.cloud.dialogflow.v2.AgentAssistantFeedback.document_efficiency]
+     * is
      * [DocumentEfficiency.INEFFICIENT][google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency.INEFFICIENT].
      * </pre>
      *
@@ -1434,9 +2811,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency
         getDocumentEfficiency() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency result =
-          com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency.valueOf(
+          com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency.forNumber(
               documentEfficiency_);
       return result == null
           ? com.google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency.UNRECOGNIZED
@@ -1448,7 +2824,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. Whether or not the suggested document is efficient. For example,
      * if the document is poorly written, hard to understand, hard to use or
-     * too long to find useful information, [document_efficiency][google.cloud.dialogflow.v2.AgentAssistantFeedback.document_efficiency] is
+     * too long to find useful information,
+     * [document_efficiency][google.cloud.dialogflow.v2.AgentAssistantFeedback.document_efficiency]
+     * is
      * [DocumentEfficiency.INEFFICIENT][google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency.INEFFICIENT].
      * </pre>
      *
@@ -1464,7 +2842,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       documentEfficiency_ = value.getNumber();
       onChanged();
       return this;
@@ -1475,7 +2853,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. Whether or not the suggested document is efficient. For example,
      * if the document is poorly written, hard to understand, hard to use or
-     * too long to find useful information, [document_efficiency][google.cloud.dialogflow.v2.AgentAssistantFeedback.document_efficiency] is
+     * too long to find useful information,
+     * [document_efficiency][google.cloud.dialogflow.v2.AgentAssistantFeedback.document_efficiency]
+     * is
      * [DocumentEfficiency.INEFFICIENT][google.cloud.dialogflow.v2.AgentAssistantFeedback.DocumentEfficiency.INEFFICIENT].
      * </pre>
      *
@@ -1486,10 +2866,224 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearDocumentEfficiency() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       documentEfficiency_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+        summarizationFeedback_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback,
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback.Builder,
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedbackOrBuilder>
+        summarizationFeedbackBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for conversation summarization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback summarization_feedback = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the summarizationFeedback field is set.
+     */
+    public boolean hasSummarizationFeedback() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for conversation summarization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback summarization_feedback = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The summarizationFeedback.
+     */
+    public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+        getSummarizationFeedback() {
+      if (summarizationFeedbackBuilder_ == null) {
+        return summarizationFeedback_ == null
+            ? com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+                .getDefaultInstance()
+            : summarizationFeedback_;
+      } else {
+        return summarizationFeedbackBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for conversation summarization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback summarization_feedback = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSummarizationFeedback(
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback value) {
+      if (summarizationFeedbackBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        summarizationFeedback_ = value;
+      } else {
+        summarizationFeedbackBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for conversation summarization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback summarization_feedback = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSummarizationFeedback(
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback.Builder
+            builderForValue) {
+      if (summarizationFeedbackBuilder_ == null) {
+        summarizationFeedback_ = builderForValue.build();
+      } else {
+        summarizationFeedbackBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for conversation summarization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback summarization_feedback = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSummarizationFeedback(
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback value) {
+      if (summarizationFeedbackBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && summarizationFeedback_ != null
+            && summarizationFeedback_
+                != com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+                    .getDefaultInstance()) {
+          getSummarizationFeedbackBuilder().mergeFrom(value);
+        } else {
+          summarizationFeedback_ = value;
+        }
+      } else {
+        summarizationFeedbackBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for conversation summarization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback summarization_feedback = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSummarizationFeedback() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      summarizationFeedback_ = null;
+      if (summarizationFeedbackBuilder_ != null) {
+        summarizationFeedbackBuilder_.dispose();
+        summarizationFeedbackBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for conversation summarization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback summarization_feedback = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback.Builder
+        getSummarizationFeedbackBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getSummarizationFeedbackFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for conversation summarization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback summarization_feedback = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedbackOrBuilder
+        getSummarizationFeedbackOrBuilder() {
+      if (summarizationFeedbackBuilder_ != null) {
+        return summarizationFeedbackBuilder_.getMessageOrBuilder();
+      } else {
+        return summarizationFeedback_ == null
+            ? com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback
+                .getDefaultInstance()
+            : summarizationFeedback_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for conversation summarization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback summarization_feedback = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback,
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback.Builder,
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedbackOrBuilder>
+        getSummarizationFeedbackFieldBuilder() {
+      if (summarizationFeedbackBuilder_ == null) {
+        summarizationFeedbackBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback,
+                com.google.cloud.dialogflow.v2.AgentAssistantFeedback.SummarizationFeedback.Builder,
+                com.google.cloud.dialogflow.v2.AgentAssistantFeedback
+                    .SummarizationFeedbackOrBuilder>(
+                getSummarizationFeedback(), getParentForChildren(), isClean());
+        summarizationFeedback_ = null;
+      }
+      return summarizationFeedbackBuilder_;
     }
 
     @java.lang.Override

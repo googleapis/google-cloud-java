@@ -391,15 +391,14 @@ public final class ConversationProfileProto {
           + "gOperationMetadata\032x\312A\031dialogflow.google"
           + "apis.com\322AYhttps://www.googleapis.com/au"
           + "th/cloud-platform,https://www.googleapis"
-          + ".com/auth/dialogflowB\246\002\n\036com.google.clou"
+          + ".com/auth/dialogflowB\240\002\n\036com.google.clou"
           + "d.dialogflow.v2B\030ConversationProfileProt"
-          + "oP\001ZDgoogle.golang.org/genproto/googleap"
-          + "is/cloud/dialogflow/v2;dialogflow\370\001\001\242\002\002D"
-          + "F\252\002\032Google.Cloud.Dialogflow.V2\352A|\n,dialo"
-          + "gflow.googleapis.com/CXSecuritySettings\022"
-          + "Lprojects/{project}/locations/{location}"
-          + "/securitySettings/{security_settings}b\006p"
-          + "roto3"
+          + "oP\001Z>cloud.google.com/go/dialogflow/apiv"
+          + "2/dialogflowpb;dialogflowpb\370\001\001\242\002\002DF\252\002\032Go"
+          + "ogle.Cloud.Dialogflow.V2\352A|\n,dialogflow."
+          + "googleapis.com/CXSecuritySettings\022Lproje"
+          + "cts/{project}/locations/{location}/secur"
+          + "itySettings/{security_settings}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

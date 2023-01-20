@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for [ConversationProfiles.UpdateConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.UpdateConversationProfile].
+ * The request message for
+ * [ConversationProfiles.UpdateConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.UpdateConversationProfile].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.UpdateConversationProfileRequest}
@@ -118,7 +119,9 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.ConversationProfileOrBuilder
       getConversationProfileOrBuilder() {
-    return getConversationProfile();
+    return conversationProfile_ == null
+        ? com.google.cloud.dialogflow.v2.ConversationProfile.getDefaultInstance()
+        : conversationProfile_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -167,7 +170,7 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -353,7 +356,8 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * The request message for [ConversationProfiles.UpdateConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.UpdateConversationProfile].
+   * The request message for
+   * [ConversationProfiles.UpdateConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.UpdateConversationProfile].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.UpdateConversationProfileRequest}
@@ -387,16 +391,15 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (conversationProfileBuilder_ == null) {
-        conversationProfile_ = null;
-      } else {
-        conversationProfile_ = null;
+      bitField0_ = 0;
+      conversationProfile_ = null;
+      if (conversationProfileBuilder_ != null) {
+        conversationProfileBuilder_.dispose();
         conversationProfileBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -427,18 +430,25 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
     public com.google.cloud.dialogflow.v2.UpdateConversationProfileRequest buildPartial() {
       com.google.cloud.dialogflow.v2.UpdateConversationProfileRequest result =
           new com.google.cloud.dialogflow.v2.UpdateConversationProfileRequest(this);
-      if (conversationProfileBuilder_ == null) {
-        result.conversationProfile_ = conversationProfile_;
-      } else {
-        result.conversationProfile_ = conversationProfileBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2.UpdateConversationProfileRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.conversationProfile_ =
+            conversationProfileBuilder_ == null
+                ? conversationProfile_
+                : conversationProfileBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -525,13 +535,13 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
               {
                 input.readMessage(
                     getConversationProfileFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -550,6 +560,8 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.v2.ConversationProfile conversationProfile_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -571,7 +583,7 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
      * @return Whether the conversationProfile field is set.
      */
     public boolean hasConversationProfile() {
-      return conversationProfileBuilder_ != null || conversationProfile_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -613,11 +625,11 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
           throw new NullPointerException();
         }
         conversationProfile_ = value;
-        onChanged();
       } else {
         conversationProfileBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -635,11 +647,11 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
         com.google.cloud.dialogflow.v2.ConversationProfile.Builder builderForValue) {
       if (conversationProfileBuilder_ == null) {
         conversationProfile_ = builderForValue.build();
-        onChanged();
       } else {
         conversationProfileBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -656,19 +668,19 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
     public Builder mergeConversationProfile(
         com.google.cloud.dialogflow.v2.ConversationProfile value) {
       if (conversationProfileBuilder_ == null) {
-        if (conversationProfile_ != null) {
-          conversationProfile_ =
-              com.google.cloud.dialogflow.v2.ConversationProfile.newBuilder(conversationProfile_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && conversationProfile_ != null
+            && conversationProfile_
+                != com.google.cloud.dialogflow.v2.ConversationProfile.getDefaultInstance()) {
+          getConversationProfileBuilder().mergeFrom(value);
         } else {
           conversationProfile_ = value;
         }
-        onChanged();
       } else {
         conversationProfileBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -683,14 +695,13 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
      * </code>
      */
     public Builder clearConversationProfile() {
-      if (conversationProfileBuilder_ == null) {
-        conversationProfile_ = null;
-        onChanged();
-      } else {
-        conversationProfile_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      conversationProfile_ = null;
+      if (conversationProfileBuilder_ != null) {
+        conversationProfileBuilder_.dispose();
         conversationProfileBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -706,7 +717,7 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
      */
     public com.google.cloud.dialogflow.v2.ConversationProfile.Builder
         getConversationProfileBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getConversationProfileFieldBuilder().getBuilder();
     }
@@ -778,7 +789,7 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -817,11 +828,11 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -837,11 +848,11 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -856,17 +867,18 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -880,14 +892,13 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -901,7 +912,7 @@ public final class UpdateConversationProfileRequest extends com.google.protobuf.
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

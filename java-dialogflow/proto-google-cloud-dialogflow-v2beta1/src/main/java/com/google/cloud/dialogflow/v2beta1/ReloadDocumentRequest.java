@@ -112,7 +112,9 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -223,7 +225,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int IMPORT_GCS_CUSTOM_METADATA_FIELD_NUMBER = 4;
-  private boolean importGcsCustomMetadata_;
+  private boolean importGcsCustomMetadata_ = false;
   /**
    *
    *
@@ -472,13 +474,12 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (gcsSourceBuilder_ != null) {
         gcsSourceBuilder_.clear();
       }
       importGcsCustomMetadata_ = false;
-
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -508,18 +509,31 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest result =
           new com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest(this);
-      result.name_ = name_;
-      if (sourceCase_ == 3) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.importGcsCustomMetadata_ = importGcsCustomMetadata_;
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.importGcsCustomMetadata_ = importGcsCustomMetadata_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 3 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -570,6 +584,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getImportGcsCustomMetadata() != false) {
@@ -615,7 +630,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
@@ -627,7 +642,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
             case 32:
               {
                 importGcsCustomMetadata_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             default:
@@ -660,6 +675,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -734,8 +751,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -755,8 +772,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -781,8 +798,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1002,7 +1019,6 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       sourceCase_ = 3;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 
@@ -1039,6 +1055,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     public Builder setImportGcsCustomMetadata(boolean value) {
 
       importGcsCustomMetadata_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1055,7 +1072,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearImportGcsCustomMetadata() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       importGcsCustomMetadata_ = false;
       onChanged();
       return this;

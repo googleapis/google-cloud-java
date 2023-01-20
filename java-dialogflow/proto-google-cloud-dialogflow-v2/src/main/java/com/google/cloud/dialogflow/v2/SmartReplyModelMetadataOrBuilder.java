@@ -27,7 +27,8 @@ public interface SmartReplyModelMetadataOrBuilder
    *
    *
    * <pre>
-   * Optional. Type of the smart reply model. If not provided, model_type is used.
+   * Optional. Type of the smart reply model. If not provided, model_type is
+   * used.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface SmartReplyModelMetadataOrBuilder
    *
    *
    * <pre>
-   * Optional. Type of the smart reply model. If not provided, model_type is used.
+   * Optional. Type of the smart reply model. If not provided, model_type is
+   * used.
    * </pre>
    *
    * <code>

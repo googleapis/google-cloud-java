@@ -496,11 +496,11 @@ public final class IntentProto {
           + "uf.Struct\032x\312A\031dialogflow.googleapis.com\322"
           + "AYhttps://www.googleapis.com/auth/cloud-"
           + "platform,https://www.googleapis.com/auth"
-          + "/dialogflowB\232\001\n\036com.google.cloud.dialogf"
-          + "low.v2B\013IntentProtoP\001ZDgoogle.golang.org"
-          + "/genproto/googleapis/cloud/dialogflow/v2"
-          + ";dialogflow\370\001\001\242\002\002DF\252\002\032Google.Cloud.Dialo"
-          + "gflow.V2b\006proto3"
+          + "/dialogflowB\224\001\n\036com.google.cloud.dialogf"
+          + "low.v2B\013IntentProtoP\001Z>cloud.google.com/"
+          + "go/dialogflow/apiv2/dialogflowpb;dialogf"
+          + "lowpb\370\001\001\242\002\002DF\252\002\032Google.Cloud.Dialogflow."
+          + "V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

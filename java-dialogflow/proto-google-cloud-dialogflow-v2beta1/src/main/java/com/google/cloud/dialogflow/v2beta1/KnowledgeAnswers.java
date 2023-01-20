@@ -455,7 +455,9 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int SOURCE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object source_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object source_ = "";
     /**
      *
      *
@@ -508,7 +510,9 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int FAQ_QUESTION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object faqQuestion_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object faqQuestion_ = "";
     /**
      *
      *
@@ -559,7 +563,9 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int ANSWER_FIELD_NUMBER = 3;
-    private volatile java.lang.Object answer_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object answer_ = "";
     /**
      *
      *
@@ -610,7 +616,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int MATCH_CONFIDENCE_LEVEL_FIELD_NUMBER = 4;
-    private int matchConfidenceLevel_;
+    private int matchConfidenceLevel_ = 0;
     /**
      *
      *
@@ -656,10 +662,9 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
         getMatchConfidenceLevel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel result =
-          com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel.valueOf(
-              matchConfidenceLevel_);
+          com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
+              .forNumber(matchConfidenceLevel_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
               .UNRECOGNIZED
@@ -667,7 +672,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int MATCH_CONFIDENCE_FIELD_NUMBER = 5;
-    private float matchConfidence_;
+    private float matchConfidence_ = 0F;
     /**
      *
      *
@@ -933,16 +938,12 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         source_ = "";
-
         faqQuestion_ = "";
-
         answer_ = "";
-
         matchConfidenceLevel_ = 0;
-
         matchConfidence_ = 0F;
-
         return this;
       }
 
@@ -971,13 +972,31 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer buildPartial() {
         com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer result =
             new com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer(this);
-        result.source_ = source_;
-        result.faqQuestion_ = faqQuestion_;
-        result.answer_ = answer_;
-        result.matchConfidenceLevel_ = matchConfidenceLevel_;
-        result.matchConfidence_ = matchConfidence_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.source_ = source_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.faqQuestion_ = faqQuestion_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.answer_ = answer_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.matchConfidenceLevel_ = matchConfidenceLevel_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.matchConfidence_ = matchConfidence_;
+        }
       }
 
       @java.lang.Override
@@ -1031,14 +1050,17 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
           return this;
         if (!other.getSource().isEmpty()) {
           source_ = other.source_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getFaqQuestion().isEmpty()) {
           faqQuestion_ = other.faqQuestion_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getAnswer().isEmpty()) {
           answer_ = other.answer_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.matchConfidenceLevel_ != 0) {
@@ -1076,31 +1098,31 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
               case 10:
                 {
                   source_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   faqQuestion_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   answer_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 32:
                 {
                   matchConfidenceLevel_ = input.readEnum();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               case 45:
                 {
                   matchConfidence_ = input.readFloat();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 45
               default:
@@ -1119,6 +1141,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object source_ = "";
       /**
@@ -1187,8 +1211,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         source_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1206,8 +1230,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearSource() {
-
         source_ = getDefaultInstance().getSource();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1230,8 +1254,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         source_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1300,8 +1324,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         faqQuestion_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1318,8 +1342,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearFaqQuestion() {
-
         faqQuestion_ = getDefaultInstance().getFaqQuestion();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1341,8 +1365,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         faqQuestion_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1411,8 +1435,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         answer_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1429,8 +1453,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearAnswer() {
-
         answer_ = getDefaultInstance().getAnswer();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1452,8 +1476,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         answer_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1503,8 +1527,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder setMatchConfidenceLevelValue(int value) {
-
         matchConfidenceLevel_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1530,10 +1554,9 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
           getMatchConfidenceLevel() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel result =
             com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
-                .valueOf(matchConfidenceLevel_);
+                .forNumber(matchConfidenceLevel_);
         return result == null
             ? com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
                 .UNRECOGNIZED
@@ -1564,7 +1587,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000008;
         matchConfidenceLevel_ = value.getNumber();
         onChanged();
         return this;
@@ -1589,7 +1612,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearMatchConfidenceLevel() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         matchConfidenceLevel_ = 0;
         onChanged();
         return this;
@@ -1638,6 +1661,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       public Builder setMatchConfidence(float value) {
 
         matchConfidence_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1659,7 +1683,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearMatchConfidence() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         matchConfidence_ = 0F;
         onChanged();
         return this;
@@ -1731,6 +1755,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ANSWERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer> answers_;
   /**
    *
@@ -2001,6 +2027,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (answersBuilder_ == null) {
         answers_ = java.util.Collections.emptyList();
       } else {
@@ -2035,7 +2062,16 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers buildPartial() {
       com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers result =
           new com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers result) {
       if (answersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           answers_ = java.util.Collections.unmodifiableList(answers_);
@@ -2045,8 +2081,10 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       } else {
         result.answers_ = answersBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

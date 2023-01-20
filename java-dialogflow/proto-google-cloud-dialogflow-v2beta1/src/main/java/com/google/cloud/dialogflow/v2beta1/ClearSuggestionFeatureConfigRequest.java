@@ -72,7 +72,9 @@ public final class ClearSuggestionFeatureConfigRequest
   }
 
   public static final int CONVERSATION_PROFILE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object conversationProfile_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object conversationProfile_ = "";
   /**
    *
    *
@@ -125,7 +127,7 @@ public final class ClearSuggestionFeatureConfigRequest
   }
 
   public static final int PARTICIPANT_ROLE_FIELD_NUMBER = 2;
-  private int participantRole_;
+  private int participantRole_ = 0;
   /**
    *
    *
@@ -160,16 +162,15 @@ public final class ClearSuggestionFeatureConfigRequest
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Participant.Role getParticipantRole() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.Participant.Role result =
-        com.google.cloud.dialogflow.v2beta1.Participant.Role.valueOf(participantRole_);
+        com.google.cloud.dialogflow.v2beta1.Participant.Role.forNumber(participantRole_);
     return result == null
         ? com.google.cloud.dialogflow.v2beta1.Participant.Role.UNRECOGNIZED
         : result;
   }
 
   public static final int SUGGESTION_FEATURE_TYPE_FIELD_NUMBER = 3;
-  private int suggestionFeatureType_;
+  private int suggestionFeatureType_ = 0;
   /**
    *
    *
@@ -202,9 +203,9 @@ public final class ClearSuggestionFeatureConfigRequest
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type getSuggestionFeatureType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type result =
-        com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.valueOf(suggestionFeatureType_);
+        com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.forNumber(
+            suggestionFeatureType_);
     return result == null
         ? com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.UNRECOGNIZED
         : result;
@@ -435,12 +436,10 @@ public final class ClearSuggestionFeatureConfigRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       conversationProfile_ = "";
-
       participantRole_ = 0;
-
       suggestionFeatureType_ = 0;
-
       return this;
     }
 
@@ -471,11 +470,25 @@ public final class ClearSuggestionFeatureConfigRequest
     public com.google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigRequest result =
           new com.google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigRequest(this);
-      result.conversationProfile_ = conversationProfile_;
-      result.participantRole_ = participantRole_;
-      result.suggestionFeatureType_ = suggestionFeatureType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.conversationProfile_ = conversationProfile_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.participantRole_ = participantRole_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.suggestionFeatureType_ = suggestionFeatureType_;
+      }
     }
 
     @java.lang.Override
@@ -530,6 +543,7 @@ public final class ClearSuggestionFeatureConfigRequest
               .getDefaultInstance()) return this;
       if (!other.getConversationProfile().isEmpty()) {
         conversationProfile_ = other.conversationProfile_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.participantRole_ != 0) {
@@ -567,19 +581,19 @@ public final class ClearSuggestionFeatureConfigRequest
             case 10:
               {
                 conversationProfile_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 participantRole_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 suggestionFeatureType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -598,6 +612,8 @@ public final class ClearSuggestionFeatureConfigRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object conversationProfile_ = "";
     /**
@@ -666,8 +682,8 @@ public final class ClearSuggestionFeatureConfigRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       conversationProfile_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -685,8 +701,8 @@ public final class ClearSuggestionFeatureConfigRequest
      * @return This builder for chaining.
      */
     public Builder clearConversationProfile() {
-
       conversationProfile_ = getDefaultInstance().getConversationProfile();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -709,8 +725,8 @@ public final class ClearSuggestionFeatureConfigRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       conversationProfile_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -750,8 +766,8 @@ public final class ClearSuggestionFeatureConfigRequest
      * @return This builder for chaining.
      */
     public Builder setParticipantRoleValue(int value) {
-
       participantRole_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -771,9 +787,8 @@ public final class ClearSuggestionFeatureConfigRequest
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.Participant.Role getParticipantRole() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.Participant.Role result =
-          com.google.cloud.dialogflow.v2beta1.Participant.Role.valueOf(participantRole_);
+          com.google.cloud.dialogflow.v2beta1.Participant.Role.forNumber(participantRole_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.Participant.Role.UNRECOGNIZED
           : result;
@@ -797,7 +812,7 @@ public final class ClearSuggestionFeatureConfigRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       participantRole_ = value.getNumber();
       onChanged();
       return this;
@@ -817,7 +832,7 @@ public final class ClearSuggestionFeatureConfigRequest
      * @return This builder for chaining.
      */
     public Builder clearParticipantRole() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       participantRole_ = 0;
       onChanged();
       return this;
@@ -856,8 +871,8 @@ public final class ClearSuggestionFeatureConfigRequest
      * @return This builder for chaining.
      */
     public Builder setSuggestionFeatureTypeValue(int value) {
-
       suggestionFeatureType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -876,9 +891,8 @@ public final class ClearSuggestionFeatureConfigRequest
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type getSuggestionFeatureType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type result =
-          com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.valueOf(
+          com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.forNumber(
               suggestionFeatureType_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.UNRECOGNIZED
@@ -903,7 +917,7 @@ public final class ClearSuggestionFeatureConfigRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       suggestionFeatureType_ = value.getNumber();
       onChanged();
       return this;
@@ -922,7 +936,7 @@ public final class ClearSuggestionFeatureConfigRequest
      * @return This builder for chaining.
      */
     public Builder clearSuggestionFeatureType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       suggestionFeatureType_ = 0;
       onChanged();
       return this;

@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for [Versions.CreateVersion][google.cloud.dialogflow.v2.Versions.CreateVersion].
+ * The request message for
+ * [Versions.CreateVersion][google.cloud.dialogflow.v2.Versions.CreateVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.CreateVersionRequest}
@@ -68,7 +69,9 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -177,7 +180,9 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.VersionOrBuilder getVersionOrBuilder() {
-    return getVersion();
+    return version_ == null
+        ? com.google.cloud.dialogflow.v2.Version.getDefaultInstance()
+        : version_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -357,7 +362,8 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for [Versions.CreateVersion][google.cloud.dialogflow.v2.Versions.CreateVersion].
+   * The request message for
+   * [Versions.CreateVersion][google.cloud.dialogflow.v2.Versions.CreateVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.CreateVersionRequest}
@@ -391,12 +397,11 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (versionBuilder_ == null) {
-        version_ = null;
-      } else {
-        version_ = null;
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
       return this;
@@ -426,14 +431,21 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.v2.CreateVersionRequest buildPartial() {
       com.google.cloud.dialogflow.v2.CreateVersionRequest result =
           new com.google.cloud.dialogflow.v2.CreateVersionRequest(this);
-      result.parent_ = parent_;
-      if (versionBuilder_ == null) {
-        result.version_ = version_;
-      } else {
-        result.version_ = versionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.CreateVersionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -484,6 +496,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasVersion()) {
@@ -518,13 +531,13 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getVersionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -543,6 +556,8 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -620,8 +635,8 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -642,8 +657,8 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -669,8 +684,8 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -695,7 +710,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
-      return versionBuilder_ != null || version_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -736,11 +751,11 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         version_ = value;
-        onChanged();
       } else {
         versionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -757,11 +772,11 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
     public Builder setVersion(com.google.cloud.dialogflow.v2.Version.Builder builderForValue) {
       if (versionBuilder_ == null) {
         version_ = builderForValue.build();
-        onChanged();
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -777,19 +792,18 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeVersion(com.google.cloud.dialogflow.v2.Version value) {
       if (versionBuilder_ == null) {
-        if (version_ != null) {
-          version_ =
-              com.google.cloud.dialogflow.v2.Version.newBuilder(version_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && version_ != null
+            && version_ != com.google.cloud.dialogflow.v2.Version.getDefaultInstance()) {
+          getVersionBuilder().mergeFrom(value);
         } else {
           version_ = value;
         }
-        onChanged();
       } else {
         versionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -804,14 +818,13 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearVersion() {
-      if (versionBuilder_ == null) {
-        version_ = null;
-        onChanged();
-      } else {
-        version_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -826,7 +839,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.dialogflow.v2.Version.Builder getVersionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }

@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * Request message for [Documents.ExportDocument][google.cloud.dialogflow.v2.Documents.ExportDocument].
+ * Request message for
+ * [Documents.ExportDocument][google.cloud.dialogflow.v2.Documents.ExportDocument].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.ExportDocumentRequest}
@@ -112,7 +113,9 @@ public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -220,7 +223,7 @@ public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int EXPORT_FULL_CONTENT_FIELD_NUMBER = 3;
-  private boolean exportFullContent_;
+  private boolean exportFullContent_ = false;
   /**
    *
    *
@@ -239,7 +242,7 @@ public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SMART_MESSAGING_PARTIAL_UPDATE_FIELD_NUMBER = 5;
-  private boolean smartMessagingPartialUpdate_;
+  private boolean smartMessagingPartialUpdate_ = false;
   /**
    *
    *
@@ -463,7 +466,8 @@ public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [Documents.ExportDocument][google.cloud.dialogflow.v2.Documents.ExportDocument].
+   * Request message for
+   * [Documents.ExportDocument][google.cloud.dialogflow.v2.Documents.ExportDocument].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.ExportDocumentRequest}
@@ -497,15 +501,13 @@ public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (gcsDestinationBuilder_ != null) {
         gcsDestinationBuilder_.clear();
       }
       exportFullContent_ = false;
-
       smartMessagingPartialUpdate_ = false;
-
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -535,19 +537,33 @@ public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.dialogflow.v2.ExportDocumentRequest buildPartial() {
       com.google.cloud.dialogflow.v2.ExportDocumentRequest result =
           new com.google.cloud.dialogflow.v2.ExportDocumentRequest(this);
-      result.name_ = name_;
-      if (destinationCase_ == 2) {
-        if (gcsDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = gcsDestinationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.exportFullContent_ = exportFullContent_;
-      result.smartMessagingPartialUpdate_ = smartMessagingPartialUpdate_;
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.ExportDocumentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.exportFullContent_ = exportFullContent_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.smartMessagingPartialUpdate_ = smartMessagingPartialUpdate_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.v2.ExportDocumentRequest result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
+      if (destinationCase_ == 2 && gcsDestinationBuilder_ != null) {
+        result.destination_ = gcsDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -598,6 +614,7 @@ public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getExportFullContent() != false) {
@@ -646,7 +663,7 @@ public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -658,13 +675,13 @@ public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMe
             case 24:
               {
                 exportFullContent_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 40:
               {
                 smartMessagingPartialUpdate_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             default:
@@ -697,6 +714,8 @@ public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -771,8 +790,8 @@ public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -792,8 +811,8 @@ public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -818,8 +837,8 @@ public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1030,7 +1049,6 @@ public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       destinationCase_ = 2;
       onChanged();
-      ;
       return gcsDestinationBuilder_;
     }
 
@@ -1067,6 +1085,7 @@ public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMe
     public Builder setExportFullContent(boolean value) {
 
       exportFullContent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1083,7 +1102,7 @@ public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearExportFullContent() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       exportFullContent_ = false;
       onChanged();
       return this;
@@ -1122,6 +1141,7 @@ public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMe
     public Builder setSmartMessagingPartialUpdate(boolean value) {
 
       smartMessagingPartialUpdate_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1138,7 +1158,7 @@ public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearSmartMessagingPartialUpdate() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       smartMessagingPartialUpdate_ = false;
       onChanged();
       return this;

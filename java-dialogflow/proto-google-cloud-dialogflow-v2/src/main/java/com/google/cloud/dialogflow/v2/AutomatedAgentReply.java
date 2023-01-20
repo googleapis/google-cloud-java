@@ -240,7 +240,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+   * Response of the Dialogflow
+   * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+   * call.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -255,7 +257,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+   * Response of the Dialogflow
+   * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+   * call.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -272,7 +276,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+   * Response of the Dialogflow
+   * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+   * call.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -280,11 +286,13 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.DetectIntentResponseOrBuilder
       getDetectIntentResponseOrBuilder() {
-    return getDetectIntentResponse();
+    return detectIntentResponse_ == null
+        ? com.google.cloud.dialogflow.v2.DetectIntentResponse.getDefaultInstance()
+        : detectIntentResponse_;
   }
 
   public static final int AUTOMATED_AGENT_REPLY_TYPE_FIELD_NUMBER = 7;
-  private int automatedAgentReplyType_;
+  private int automatedAgentReplyType_ = 0;
   /**
    *
    *
@@ -318,9 +326,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType
       getAutomatedAgentReplyType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType result =
-        com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType.valueOf(
+        com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType.forNumber(
             automatedAgentReplyType_);
     return result == null
         ? com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType.UNRECOGNIZED
@@ -328,7 +335,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ALLOW_CANCELLATION_FIELD_NUMBER = 8;
-  private boolean allowCancellation_;
+  private boolean allowCancellation_ = false;
   /**
    *
    *
@@ -348,7 +355,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   }
 
   public static final int CX_CURRENT_PAGE_FIELD_NUMBER = 11;
-  private volatile java.lang.Object cxCurrentPage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cxCurrentPage_ = "";
   /**
    *
    *
@@ -636,18 +645,15 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (detectIntentResponseBuilder_ == null) {
-        detectIntentResponse_ = null;
-      } else {
-        detectIntentResponse_ = null;
+      bitField0_ = 0;
+      detectIntentResponse_ = null;
+      if (detectIntentResponseBuilder_ != null) {
+        detectIntentResponseBuilder_.dispose();
         detectIntentResponseBuilder_ = null;
       }
       automatedAgentReplyType_ = 0;
-
       allowCancellation_ = false;
-
       cxCurrentPage_ = "";
-
       return this;
     }
 
@@ -675,16 +681,30 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     public com.google.cloud.dialogflow.v2.AutomatedAgentReply buildPartial() {
       com.google.cloud.dialogflow.v2.AutomatedAgentReply result =
           new com.google.cloud.dialogflow.v2.AutomatedAgentReply(this);
-      if (detectIntentResponseBuilder_ == null) {
-        result.detectIntentResponse_ = detectIntentResponse_;
-      } else {
-        result.detectIntentResponse_ = detectIntentResponseBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.automatedAgentReplyType_ = automatedAgentReplyType_;
-      result.allowCancellation_ = allowCancellation_;
-      result.cxCurrentPage_ = cxCurrentPage_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.AutomatedAgentReply result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.detectIntentResponse_ =
+            detectIntentResponseBuilder_ == null
+                ? detectIntentResponse_
+                : detectIntentResponseBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.automatedAgentReplyType_ = automatedAgentReplyType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.allowCancellation_ = allowCancellation_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.cxCurrentPage_ = cxCurrentPage_;
+      }
     }
 
     @java.lang.Override
@@ -744,6 +764,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       }
       if (!other.getCxCurrentPage().isEmpty()) {
         cxCurrentPage_ = other.cxCurrentPage_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -776,25 +797,25 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
               {
                 input.readMessage(
                     getDetectIntentResponseFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 56:
               {
                 automatedAgentReplyType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 56
             case 64:
               {
                 allowCancellation_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 64
             case 90:
               {
                 cxCurrentPage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 90
             default:
@@ -814,6 +835,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.dialogflow.v2.DetectIntentResponse detectIntentResponse_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.DetectIntentResponse,
@@ -824,7 +847,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+     * call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -832,13 +857,15 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * @return Whether the detectIntentResponse field is set.
      */
     public boolean hasDetectIntentResponse() {
-      return detectIntentResponseBuilder_ != null || detectIntentResponse_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+     * call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -858,7 +885,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+     * call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -870,18 +899,20 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         detectIntentResponse_ = value;
-        onChanged();
       } else {
         detectIntentResponseBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+     * call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -890,18 +921,20 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
         com.google.cloud.dialogflow.v2.DetectIntentResponse.Builder builderForValue) {
       if (detectIntentResponseBuilder_ == null) {
         detectIntentResponse_ = builderForValue.build();
-        onChanged();
       } else {
         detectIntentResponseBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+     * call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -909,53 +942,56 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     public Builder mergeDetectIntentResponse(
         com.google.cloud.dialogflow.v2.DetectIntentResponse value) {
       if (detectIntentResponseBuilder_ == null) {
-        if (detectIntentResponse_ != null) {
-          detectIntentResponse_ =
-              com.google.cloud.dialogflow.v2.DetectIntentResponse.newBuilder(detectIntentResponse_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && detectIntentResponse_ != null
+            && detectIntentResponse_
+                != com.google.cloud.dialogflow.v2.DetectIntentResponse.getDefaultInstance()) {
+          getDetectIntentResponseBuilder().mergeFrom(value);
         } else {
           detectIntentResponse_ = value;
         }
-        onChanged();
       } else {
         detectIntentResponseBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+     * call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
      */
     public Builder clearDetectIntentResponse() {
-      if (detectIntentResponseBuilder_ == null) {
-        detectIntentResponse_ = null;
-        onChanged();
-      } else {
-        detectIntentResponse_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      detectIntentResponse_ = null;
+      if (detectIntentResponseBuilder_ != null) {
+        detectIntentResponseBuilder_.dispose();
         detectIntentResponseBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+     * call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
      */
     public com.google.cloud.dialogflow.v2.DetectIntentResponse.Builder
         getDetectIntentResponseBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDetectIntentResponseFieldBuilder().getBuilder();
     }
@@ -963,7 +999,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+     * call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -982,7 +1020,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
+     * call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -1037,8 +1077,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setAutomatedAgentReplyTypeValue(int value) {
-
       automatedAgentReplyType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1058,9 +1098,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType
         getAutomatedAgentReplyType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType result =
-          com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType.valueOf(
+          com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType.forNumber(
               automatedAgentReplyType_);
       return result == null
           ? com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType.UNRECOGNIZED
@@ -1085,7 +1124,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       automatedAgentReplyType_ = value.getNumber();
       onChanged();
       return this;
@@ -1104,7 +1143,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAutomatedAgentReplyType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       automatedAgentReplyType_ = 0;
       onChanged();
       return this;
@@ -1145,6 +1184,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     public Builder setAllowCancellation(boolean value) {
 
       allowCancellation_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1162,7 +1202,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAllowCancellation() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       allowCancellation_ = false;
       onChanged();
       return this;
@@ -1235,8 +1275,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       cxCurrentPage_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1254,8 +1294,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearCxCurrentPage() {
-
       cxCurrentPage_ = getDefaultInstance().getCxCurrentPage();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1278,8 +1318,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cxCurrentPage_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

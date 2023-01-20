@@ -70,7 +70,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
   }
 
   public static final int SOURCE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object source_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object source_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
   }
 
   public static final int VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -250,7 +254,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getPayloadOrBuilder() {
-    return getPayload();
+    return payload_ == null ? com.google.protobuf.Struct.getDefaultInstance() : payload_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -475,14 +479,12 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       source_ = "";
-
       version_ = "";
-
-      if (payloadBuilder_ == null) {
-        payload_ = null;
-      } else {
-        payload_ = null;
+      payload_ = null;
+      if (payloadBuilder_ != null) {
+        payloadBuilder_.dispose();
         payloadBuilder_ = null;
       }
       return this;
@@ -513,15 +515,25 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
     public com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest result =
           new com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest(this);
-      result.source_ = source_;
-      result.version_ = version_;
-      if (payloadBuilder_ == null) {
-        result.payload_ = payload_;
-      } else {
-        result.payload_ = payloadBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.source_ = source_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.payload_ = payloadBuilder_ == null ? payload_ : payloadBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -574,10 +586,12 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getSource().isEmpty()) {
         source_ = other.source_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPayload()) {
@@ -612,19 +626,19 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
             case 10:
               {
                 source_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getPayloadFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -643,6 +657,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object source_ = "";
     /**
@@ -708,8 +724,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       source_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -726,8 +742,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearSource() {
-
       source_ = getDefaultInstance().getSource();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -749,8 +765,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       source_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -819,8 +835,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -837,8 +853,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -860,8 +876,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -896,7 +912,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * @return Whether the payload field is set.
      */
     public boolean hasPayload() {
-      return payloadBuilder_ != null || payload_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -955,11 +971,11 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         payload_ = value;
-        onChanged();
       } else {
         payloadBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -986,11 +1002,11 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
     public Builder setPayload(com.google.protobuf.Struct.Builder builderForValue) {
       if (payloadBuilder_ == null) {
         payload_ = builderForValue.build();
-        onChanged();
       } else {
         payloadBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1016,17 +1032,18 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      */
     public Builder mergePayload(com.google.protobuf.Struct value) {
       if (payloadBuilder_ == null) {
-        if (payload_ != null) {
-          payload_ =
-              com.google.protobuf.Struct.newBuilder(payload_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && payload_ != null
+            && payload_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getPayloadBuilder().mergeFrom(value);
         } else {
           payload_ = value;
         }
-        onChanged();
       } else {
         payloadBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1051,14 +1068,13 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * <code>.google.protobuf.Struct payload = 3;</code>
      */
     public Builder clearPayload() {
-      if (payloadBuilder_ == null) {
-        payload_ = null;
-        onChanged();
-      } else {
-        payload_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      payload_ = null;
+      if (payloadBuilder_ != null) {
+        payloadBuilder_.dispose();
         payloadBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1083,7 +1099,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * <code>.google.protobuf.Struct payload = 3;</code>
      */
     public com.google.protobuf.Struct.Builder getPayloadBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPayloadFieldBuilder().getBuilder();
     }

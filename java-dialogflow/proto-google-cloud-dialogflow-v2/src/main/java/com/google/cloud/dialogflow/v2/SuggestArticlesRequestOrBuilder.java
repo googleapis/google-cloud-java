@@ -96,8 +96,9 @@ public interface SuggestArticlesRequestOrBuilder
    *
    * <pre>
    * Optional. Max number of messages prior to and including
-   * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesRequest.latest_message] to use as context
-   * when compiling the suggestion. By default 20 and at most 50.
+   * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesRequest.latest_message]
+   * to use as context when compiling the suggestion. By default 20 and at
+   * most 50.
    * </pre>
    *
    * <code>int32 context_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

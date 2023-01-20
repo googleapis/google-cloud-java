@@ -28,9 +28,12 @@ public interface EntityTypeOrBuilder
    *
    * <pre>
    * The unique identifier of the entity type.
-   * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2.EntityTypes.UpdateEntityType] and
-   * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchUpdateEntityTypes] methods.
-   * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * Required for
+   * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2.EntityTypes.UpdateEntityType]
+   * and
+   * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchUpdateEntityTypes]
+   * methods. Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type
+   * ID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -43,9 +46,12 @@ public interface EntityTypeOrBuilder
    *
    * <pre>
    * The unique identifier of the entity type.
-   * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2.EntityTypes.UpdateEntityType] and
-   * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchUpdateEntityTypes] methods.
-   * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * Required for
+   * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2.EntityTypes.UpdateEntityType]
+   * and
+   * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchUpdateEntityTypes]
+   * methods. Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type
+   * ID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>

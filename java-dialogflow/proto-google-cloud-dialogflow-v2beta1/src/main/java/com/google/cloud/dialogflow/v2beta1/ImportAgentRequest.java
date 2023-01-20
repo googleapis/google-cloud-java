@@ -115,7 +115,9 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -529,8 +531,8 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       agentCase_ = 0;
       agent_ = null;
       return this;
@@ -560,16 +562,24 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dialogflow.v2beta1.ImportAgentRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.ImportAgentRequest result =
           new com.google.cloud.dialogflow.v2beta1.ImportAgentRequest(this);
-      result.parent_ = parent_;
-      if (agentCase_ == 2) {
-        result.agent_ = agent_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (agentCase_ == 3) {
-        result.agent_ = agent_;
-      }
-      result.agentCase_ = agentCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.ImportAgentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.v2beta1.ImportAgentRequest result) {
+      result.agentCase_ = agentCase_;
+      result.agent_ = this.agent_;
     }
 
     @java.lang.Override
@@ -620,6 +630,7 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getAgentCase()) {
@@ -669,7 +680,7 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -715,6 +726,8 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -789,8 +802,8 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -810,8 +823,8 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -836,8 +849,8 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

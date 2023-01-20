@@ -171,6 +171,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int TEXT_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList text_;
     /**
      *
@@ -438,6 +440,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         text_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -467,14 +470,25 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.dialogflow.v2beta1.ResponseMessage.Text buildPartial() {
         com.google.cloud.dialogflow.v2beta1.ResponseMessage.Text result =
             new com.google.cloud.dialogflow.v2beta1.ResponseMessage.Text(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.v2beta1.ResponseMessage.Text result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           text_ = text_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.text_ = text_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dialogflow.v2beta1.ResponseMessage.Text result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -963,7 +977,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
-      return getMetadata();
+      return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1181,10 +1195,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (metadataBuilder_ == null) {
-          metadata_ = null;
-        } else {
-          metadata_ = null;
+        bitField0_ = 0;
+        metadata_ = null;
+        if (metadataBuilder_ != null) {
+          metadataBuilder_.dispose();
           metadataBuilder_ = null;
         }
         return this;
@@ -1217,13 +1231,19 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.dialogflow.v2beta1.ResponseMessage.LiveAgentHandoff buildPartial() {
         com.google.cloud.dialogflow.v2beta1.ResponseMessage.LiveAgentHandoff result =
             new com.google.cloud.dialogflow.v2beta1.ResponseMessage.LiveAgentHandoff(this);
-        if (metadataBuilder_ == null) {
-          result.metadata_ = metadata_;
-        } else {
-          result.metadata_ = metadataBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2beta1.ResponseMessage.LiveAgentHandoff result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1309,7 +1329,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
               case 10:
                 {
                   input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1328,6 +1348,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.Struct metadata_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1348,7 +1370,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        * @return Whether the metadata field is set.
        */
       public boolean hasMetadata() {
-        return metadataBuilder_ != null || metadata_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1385,11 +1407,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
             throw new NullPointerException();
           }
           metadata_ = value;
-          onChanged();
         } else {
           metadataBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1405,11 +1427,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       public Builder setMetadata(com.google.protobuf.Struct.Builder builderForValue) {
         if (metadataBuilder_ == null) {
           metadata_ = builderForValue.build();
-          onChanged();
         } else {
           metadataBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1424,17 +1446,18 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        */
       public Builder mergeMetadata(com.google.protobuf.Struct value) {
         if (metadataBuilder_ == null) {
-          if (metadata_ != null) {
-            metadata_ =
-                com.google.protobuf.Struct.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && metadata_ != null
+              && metadata_ != com.google.protobuf.Struct.getDefaultInstance()) {
+            getMetadataBuilder().mergeFrom(value);
           } else {
             metadata_ = value;
           }
-          onChanged();
         } else {
           metadataBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1448,14 +1471,13 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        * <code>.google.protobuf.Struct metadata = 1;</code>
        */
       public Builder clearMetadata() {
-        if (metadataBuilder_ == null) {
-          metadata_ = null;
-          onChanged();
-        } else {
-          metadata_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        metadata_ = null;
+        if (metadataBuilder_ != null) {
+          metadataBuilder_.dispose();
           metadataBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1469,7 +1491,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        * <code>.google.protobuf.Struct metadata = 1;</code>
        */
       public com.google.protobuf.Struct.Builder getMetadataBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getMetadataFieldBuilder().getBuilder();
       }
@@ -2440,7 +2462,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       }
 
       public static final int ALLOW_PLAYBACK_INTERRUPTION_FIELD_NUMBER = 3;
-      private boolean allowPlaybackInterruption_;
+      private boolean allowPlaybackInterruption_ = false;
       /**
        *
        *
@@ -2709,8 +2731,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           allowPlaybackInterruption_ = false;
-
           contentCase_ = 0;
           content_ = null;
           return this;
@@ -2744,16 +2766,26 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
             buildPartial() {
           com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio.Segment result =
               new com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio.Segment(this);
-          if (contentCase_ == 1) {
-            result.content_ = content_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          if (contentCase_ == 2) {
-            result.content_ = content_;
-          }
-          result.allowPlaybackInterruption_ = allowPlaybackInterruption_;
-          result.contentCase_ = contentCase_;
+          buildPartialOneofs(result);
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio.Segment result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.allowPlaybackInterruption_ = allowPlaybackInterruption_;
+          }
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio.Segment result) {
+          result.contentCase_ = contentCase_;
+          result.content_ = this.content_;
         }
 
         @java.lang.Override
@@ -2871,7 +2903,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
                 case 24:
                   {
                     allowPlaybackInterruption_ = input.readBool();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 24
                 default:
@@ -2904,6 +2936,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           onChanged();
           return this;
         }
+
+        private int bitField0_;
 
         /**
          *
@@ -3156,6 +3190,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         public Builder setAllowPlaybackInterruption(boolean value) {
 
           allowPlaybackInterruption_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -3173,7 +3208,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
          * @return This builder for chaining.
          */
         public Builder clearAllowPlaybackInterruption() {
-
+          bitField0_ = (bitField0_ & ~0x00000004);
           allowPlaybackInterruption_ = false;
           onChanged();
           return this;
@@ -3248,6 +3283,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int SEGMENTS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio.Segment>
         segments_;
     /**
@@ -3536,6 +3573,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (segmentsBuilder_ == null) {
           segments_ = java.util.Collections.emptyList();
         } else {
@@ -3571,7 +3609,16 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio buildPartial() {
         com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio result =
             new com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio result) {
         if (segmentsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             segments_ = java.util.Collections.unmodifiableList(segments_);
@@ -3581,8 +3628,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         } else {
           result.segments_ = segmentsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -4762,6 +4812,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         endpointCase_ = 0;
         endpoint_ = null;
         return this;
@@ -4795,15 +4846,23 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           buildPartial() {
         com.google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCall result =
             new com.google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCall(this);
-        if (endpointCase_ == 1) {
-          result.endpoint_ = endpoint_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (endpointCase_ == 2) {
-          result.endpoint_ = endpoint_;
-        }
-        result.endpointCase_ = endpointCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCall result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCall result) {
+        result.endpointCase_ = endpointCase_;
+        result.endpoint_ = this.endpoint_;
       }
 
       @java.lang.Override
@@ -4948,6 +5007,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       /**
        *
@@ -5979,6 +6040,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (textBuilder_ != null) {
         textBuilder_.clear();
       }
@@ -6026,51 +6088,39 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.dialogflow.v2beta1.ResponseMessage buildPartial() {
       com.google.cloud.dialogflow.v2beta1.ResponseMessage result =
           new com.google.cloud.dialogflow.v2beta1.ResponseMessage(this);
-      if (messageCase_ == 1) {
-        if (textBuilder_ == null) {
-          result.message_ = message_;
-        } else {
-          result.message_ = textBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (messageCase_ == 2) {
-        if (payloadBuilder_ == null) {
-          result.message_ = message_;
-        } else {
-          result.message_ = payloadBuilder_.build();
-        }
-      }
-      if (messageCase_ == 3) {
-        if (liveAgentHandoffBuilder_ == null) {
-          result.message_ = message_;
-        } else {
-          result.message_ = liveAgentHandoffBuilder_.build();
-        }
-      }
-      if (messageCase_ == 4) {
-        if (endInteractionBuilder_ == null) {
-          result.message_ = message_;
-        } else {
-          result.message_ = endInteractionBuilder_.build();
-        }
-      }
-      if (messageCase_ == 5) {
-        if (mixedAudioBuilder_ == null) {
-          result.message_ = message_;
-        } else {
-          result.message_ = mixedAudioBuilder_.build();
-        }
-      }
-      if (messageCase_ == 6) {
-        if (telephonyTransferCallBuilder_ == null) {
-          result.message_ = message_;
-        } else {
-          result.message_ = telephonyTransferCallBuilder_.build();
-        }
-      }
-      result.messageCase_ = messageCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.ResponseMessage result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.v2beta1.ResponseMessage result) {
+      result.messageCase_ = messageCase_;
+      result.message_ = this.message_;
+      if (messageCase_ == 1 && textBuilder_ != null) {
+        result.message_ = textBuilder_.build();
+      }
+      if (messageCase_ == 2 && payloadBuilder_ != null) {
+        result.message_ = payloadBuilder_.build();
+      }
+      if (messageCase_ == 3 && liveAgentHandoffBuilder_ != null) {
+        result.message_ = liveAgentHandoffBuilder_.build();
+      }
+      if (messageCase_ == 4 && endInteractionBuilder_ != null) {
+        result.message_ = endInteractionBuilder_.build();
+      }
+      if (messageCase_ == 5 && mixedAudioBuilder_ != null) {
+        result.message_ = mixedAudioBuilder_.build();
+      }
+      if (messageCase_ == 6 && telephonyTransferCallBuilder_ != null) {
+        result.message_ = telephonyTransferCallBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -6249,6 +6299,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.ResponseMessage.Text,
@@ -6457,7 +6509,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       }
       messageCase_ = 1;
       onChanged();
-      ;
       return textBuilder_;
     }
 
@@ -6662,7 +6713,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       }
       messageCase_ = 2;
       onChanged();
-      ;
       return payloadBuilder_;
     }
 
@@ -6904,7 +6954,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       }
       messageCase_ = 3;
       onChanged();
-      ;
       return liveAgentHandoffBuilder_;
     }
 
@@ -7144,7 +7193,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       }
       messageCase_ = 4;
       onChanged();
-      ;
       return endInteractionBuilder_;
     }
 
@@ -7370,7 +7418,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       }
       messageCase_ = 5;
       onChanged();
-      ;
       return mixedAudioBuilder_;
     }
 
@@ -7624,7 +7671,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       }
       messageCase_ = 6;
       onChanged();
-      ;
       return telephonyTransferCallBuilder_;
     }
 

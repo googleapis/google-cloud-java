@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * Request message for [KnowledgeBases.UpdateKnowledgeBase][google.cloud.dialogflow.v2.KnowledgeBases.UpdateKnowledgeBase].
+ * Request message for
+ * [KnowledgeBases.UpdateKnowledgeBase][google.cloud.dialogflow.v2.KnowledgeBases.UpdateKnowledgeBase].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.UpdateKnowledgeBaseRequest}
@@ -116,7 +117,9 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.KnowledgeBaseOrBuilder getKnowledgeBaseOrBuilder() {
-    return getKnowledgeBase();
+    return knowledgeBase_ == null
+        ? com.google.cloud.dialogflow.v2.KnowledgeBase.getDefaultInstance()
+        : knowledgeBase_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -171,7 +174,7 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -357,7 +360,8 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [KnowledgeBases.UpdateKnowledgeBase][google.cloud.dialogflow.v2.KnowledgeBases.UpdateKnowledgeBase].
+   * Request message for
+   * [KnowledgeBases.UpdateKnowledgeBase][google.cloud.dialogflow.v2.KnowledgeBases.UpdateKnowledgeBase].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.UpdateKnowledgeBaseRequest}
@@ -391,16 +395,15 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (knowledgeBaseBuilder_ == null) {
-        knowledgeBase_ = null;
-      } else {
-        knowledgeBase_ = null;
+      bitField0_ = 0;
+      knowledgeBase_ = null;
+      if (knowledgeBaseBuilder_ != null) {
+        knowledgeBaseBuilder_.dispose();
         knowledgeBaseBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -430,18 +433,22 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
     public com.google.cloud.dialogflow.v2.UpdateKnowledgeBaseRequest buildPartial() {
       com.google.cloud.dialogflow.v2.UpdateKnowledgeBaseRequest result =
           new com.google.cloud.dialogflow.v2.UpdateKnowledgeBaseRequest(this);
-      if (knowledgeBaseBuilder_ == null) {
-        result.knowledgeBase_ = knowledgeBase_;
-      } else {
-        result.knowledgeBase_ = knowledgeBaseBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.UpdateKnowledgeBaseRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.knowledgeBase_ =
+            knowledgeBaseBuilder_ == null ? knowledgeBase_ : knowledgeBaseBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -525,13 +532,13 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
             case 10:
               {
                 input.readMessage(getKnowledgeBaseFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -550,6 +557,8 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.v2.KnowledgeBase knowledgeBase_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -571,7 +580,7 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * @return Whether the knowledgeBase field is set.
      */
     public boolean hasKnowledgeBase() {
-      return knowledgeBaseBuilder_ != null || knowledgeBase_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -612,11 +621,11 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         knowledgeBase_ = value;
-        onChanged();
       } else {
         knowledgeBaseBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -634,11 +643,11 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
         com.google.cloud.dialogflow.v2.KnowledgeBase.Builder builderForValue) {
       if (knowledgeBaseBuilder_ == null) {
         knowledgeBase_ = builderForValue.build();
-        onChanged();
       } else {
         knowledgeBaseBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -654,19 +663,19 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      */
     public Builder mergeKnowledgeBase(com.google.cloud.dialogflow.v2.KnowledgeBase value) {
       if (knowledgeBaseBuilder_ == null) {
-        if (knowledgeBase_ != null) {
-          knowledgeBase_ =
-              com.google.cloud.dialogflow.v2.KnowledgeBase.newBuilder(knowledgeBase_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && knowledgeBase_ != null
+            && knowledgeBase_
+                != com.google.cloud.dialogflow.v2.KnowledgeBase.getDefaultInstance()) {
+          getKnowledgeBaseBuilder().mergeFrom(value);
         } else {
           knowledgeBase_ = value;
         }
-        onChanged();
       } else {
         knowledgeBaseBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -681,14 +690,13 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearKnowledgeBase() {
-      if (knowledgeBaseBuilder_ == null) {
-        knowledgeBase_ = null;
-        onChanged();
-      } else {
-        knowledgeBase_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      knowledgeBase_ = null;
+      if (knowledgeBaseBuilder_ != null) {
+        knowledgeBaseBuilder_.dispose();
         knowledgeBaseBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -703,7 +711,7 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.dialogflow.v2.KnowledgeBase.Builder getKnowledgeBaseBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getKnowledgeBaseFieldBuilder().getBuilder();
     }
@@ -776,7 +784,7 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -819,11 +827,11 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -841,11 +849,11 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -862,17 +870,18 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -888,14 +897,13 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -911,7 +919,7 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

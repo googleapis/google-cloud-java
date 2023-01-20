@@ -67,7 +67,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
   }
 
   public static final int ANALYZE_QUERY_TEXT_SENTIMENT_FIELD_NUMBER = 1;
-  private boolean analyzeQueryTextSentiment_;
+  private boolean analyzeQueryTextSentiment_ = false;
   /**
    *
    *
@@ -284,8 +284,8 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       analyzeQueryTextSentiment_ = false;
-
       return this;
     }
 
@@ -314,9 +314,19 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
     public com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig buildPartial() {
       com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig result =
           new com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig(this);
-      result.analyzeQueryTextSentiment_ = analyzeQueryTextSentiment_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.analyzeQueryTextSentiment_ = analyzeQueryTextSentiment_;
+      }
     }
 
     @java.lang.Override
@@ -398,7 +408,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
             case 8:
               {
                 analyzeQueryTextSentiment_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -417,6 +427,8 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean analyzeQueryTextSentiment_;
     /**
@@ -453,6 +465,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
     public Builder setAnalyzeQueryTextSentiment(boolean value) {
 
       analyzeQueryTextSentiment_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -470,7 +483,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearAnalyzeQueryTextSentiment() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       analyzeQueryTextSentiment_ = false;
       onChanged();
       return this;

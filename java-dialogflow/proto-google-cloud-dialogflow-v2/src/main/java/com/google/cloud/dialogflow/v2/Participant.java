@@ -263,7 +263,9 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -316,13 +318,13 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROLE_FIELD_NUMBER = 2;
-  private int role_;
+  private int role_ = 0;
   /**
    *
    *
    * <pre>
-   * Immutable. The role this participant plays in the conversation. This field must be set
-   * during participant creation and is then immutable.
+   * Immutable. The role this participant plays in the conversation. This field
+   * must be set during participant creation and is then immutable.
    * </pre>
    *
    * <code>
@@ -339,8 +341,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The role this participant plays in the conversation. This field must be set
-   * during participant creation and is then immutable.
+   * Immutable. The role this participant plays in the conversation. This field
+   * must be set during participant creation and is then immutable.
    * </pre>
    *
    * <code>
@@ -351,14 +353,15 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.Participant.Role getRole() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.Participant.Role result =
-        com.google.cloud.dialogflow.v2.Participant.Role.valueOf(role_);
+        com.google.cloud.dialogflow.v2.Participant.Role.forNumber(role_);
     return result == null ? com.google.cloud.dialogflow.v2.Participant.Role.UNRECOGNIZED : result;
   }
 
   public static final int SIP_RECORDING_MEDIA_LABEL_FIELD_NUMBER = 6;
-  private volatile java.lang.Object sipRecordingMediaLabel_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sipRecordingMediaLabel_ = "";
   /**
    *
    *
@@ -411,23 +414,30 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OBFUSCATED_EXTERNAL_USER_ID_FIELD_NUMBER = 7;
-  private volatile java.lang.Object obfuscatedExternalUserId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object obfuscatedExternalUserId_ = "";
   /**
    *
    *
    * <pre>
-   * Optional. Obfuscated user id that should be associated with the created participant.
+   * Optional. Obfuscated user id that should be associated with the created
+   * participant.
    * You can specify a user id as follows:
    * 1. If you set this field in
-   *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant] or
+   *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant]
+   *    or
    *    [UpdateParticipantRequest][google.cloud.dialogflow.v2.UpdateParticipantRequest.participant],
    *    Dialogflow adds the obfuscated user id with the participant.
    * 2. If you set this field in
-   *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id] or
+   *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
+   *    or
    *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
-   *    Dialogflow will update [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
+   *    Dialogflow will update
+   *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
    * Dialogflow returns an error if you try to add a user id for a
-   * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER] participant.
+   * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER]
+   * participant.
    * Dialogflow uses this user id for billing and measurement purposes. For
    * example, Dialogflow determines whether a user in one conversation returned
    * in a later conversation.
@@ -459,18 +469,23 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Obfuscated user id that should be associated with the created participant.
+   * Optional. Obfuscated user id that should be associated with the created
+   * participant.
    * You can specify a user id as follows:
    * 1. If you set this field in
-   *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant] or
+   *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant]
+   *    or
    *    [UpdateParticipantRequest][google.cloud.dialogflow.v2.UpdateParticipantRequest.participant],
    *    Dialogflow adds the obfuscated user id with the participant.
    * 2. If you set this field in
-   *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id] or
+   *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
+   *    or
    *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
-   *    Dialogflow will update [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
+   *    Dialogflow will update
+   *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
    * Dialogflow returns an error if you try to add a user id for a
-   * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER] participant.
+   * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER]
+   * participant.
    * Dialogflow uses this user id for billing and measurement purposes. For
    * example, Dialogflow determines whether a user in one conversation returned
    * in a later conversation.
@@ -512,6 +527,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
       documentsMetadataFilters_;
 
@@ -531,9 +547,10 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Key-value filters on the metadata of documents returned by article
-   * suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * Optional. Key-value filters on the metadata of documents returned by
+   * article suggestion. If specified, article suggestion only returns suggested
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
    * values for a metadata key should be concatenated by comma. For example,
    * filters to match all documents that have 'US' or 'CA' in their market
    * metadata values and 'agent' in their user metadata values will be
@@ -570,9 +587,10 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Key-value filters on the metadata of documents returned by article
-   * suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * Optional. Key-value filters on the metadata of documents returned by
+   * article suggestion. If specified, article suggestion only returns suggested
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
    * values for a metadata key should be concatenated by comma. For example,
    * filters to match all documents that have 'US' or 'CA' in their market
    * metadata values and 'agent' in their user metadata values will be
@@ -600,9 +618,10 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Key-value filters on the metadata of documents returned by article
-   * suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * Optional. Key-value filters on the metadata of documents returned by
+   * article suggestion. If specified, article suggestion only returns suggested
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
    * values for a metadata key should be concatenated by comma. For example,
    * filters to match all documents that have 'US' or 'CA' in their market
    * metadata values and 'agent' in their user metadata values will be
@@ -623,8 +642,10 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getDocumentsMetadataFiltersOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getDocumentsMetadataFiltersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -636,9 +657,10 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Key-value filters on the metadata of documents returned by article
-   * suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * Optional. Key-value filters on the metadata of documents returned by
+   * article suggestion. If specified, article suggestion only returns suggested
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
    * values for a metadata key should be concatenated by comma. For example,
    * filters to match all documents that have 'US' or 'CA' in their market
    * metadata values and 'agent' in their user metadata values will be
@@ -938,14 +960,11 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       role_ = 0;
-
       sipRecordingMediaLabel_ = "";
-
       obfuscatedExternalUserId_ = "";
-
       internalGetMutableDocumentsMetadataFilters().clear();
       return this;
     }
@@ -974,15 +993,31 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2.Participant buildPartial() {
       com.google.cloud.dialogflow.v2.Participant result =
           new com.google.cloud.dialogflow.v2.Participant(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.role_ = role_;
-      result.sipRecordingMediaLabel_ = sipRecordingMediaLabel_;
-      result.obfuscatedExternalUserId_ = obfuscatedExternalUserId_;
-      result.documentsMetadataFilters_ = internalGetDocumentsMetadataFilters();
-      result.documentsMetadataFilters_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.Participant result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.role_ = role_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sipRecordingMediaLabel_ = sipRecordingMediaLabel_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.obfuscatedExternalUserId_ = obfuscatedExternalUserId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.documentsMetadataFilters_ = internalGetDocumentsMetadataFilters();
+        result.documentsMetadataFilters_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -1032,6 +1067,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.v2.Participant.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.role_ != 0) {
@@ -1039,14 +1075,17 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getSipRecordingMediaLabel().isEmpty()) {
         sipRecordingMediaLabel_ = other.sipRecordingMediaLabel_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getObfuscatedExternalUserId().isEmpty()) {
         obfuscatedExternalUserId_ = other.obfuscatedExternalUserId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       internalGetMutableDocumentsMetadataFilters()
           .mergeFrom(other.internalGetDocumentsMetadataFilters());
+      bitField0_ |= 0x00000010;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1076,25 +1115,25 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 role_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 50:
               {
                 sipRecordingMediaLabel_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 50
             case 58:
               {
                 obfuscatedExternalUserId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 58
             case 66:
@@ -1109,6 +1148,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
                     .getMutableMap()
                     .put(
                         documentsMetadataFilters__.getKey(), documentsMetadataFilters__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 66
             default:
@@ -1197,8 +1237,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1216,8 +1256,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1240,8 +1280,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1251,8 +1291,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The role this participant plays in the conversation. This field must be set
-     * during participant creation and is then immutable.
+     * Immutable. The role this participant plays in the conversation. This field
+     * must be set during participant creation and is then immutable.
      * </pre>
      *
      * <code>
@@ -1269,8 +1309,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The role this participant plays in the conversation. This field must be set
-     * during participant creation and is then immutable.
+     * Immutable. The role this participant plays in the conversation. This field
+     * must be set during participant creation and is then immutable.
      * </pre>
      *
      * <code>
@@ -1281,8 +1321,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRoleValue(int value) {
-
       role_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1290,8 +1330,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The role this participant plays in the conversation. This field must be set
-     * during participant creation and is then immutable.
+     * Immutable. The role this participant plays in the conversation. This field
+     * must be set during participant creation and is then immutable.
      * </pre>
      *
      * <code>
@@ -1302,17 +1342,16 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2.Participant.Role getRole() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.Participant.Role result =
-          com.google.cloud.dialogflow.v2.Participant.Role.valueOf(role_);
+          com.google.cloud.dialogflow.v2.Participant.Role.forNumber(role_);
       return result == null ? com.google.cloud.dialogflow.v2.Participant.Role.UNRECOGNIZED : result;
     }
     /**
      *
      *
      * <pre>
-     * Immutable. The role this participant plays in the conversation. This field must be set
-     * during participant creation and is then immutable.
+     * Immutable. The role this participant plays in the conversation. This field
+     * must be set during participant creation and is then immutable.
      * </pre>
      *
      * <code>
@@ -1326,7 +1365,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       role_ = value.getNumber();
       onChanged();
       return this;
@@ -1335,8 +1374,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The role this participant plays in the conversation. This field must be set
-     * during participant creation and is then immutable.
+     * Immutable. The role this participant plays in the conversation. This field
+     * must be set during participant creation and is then immutable.
      * </pre>
      *
      * <code>
@@ -1346,7 +1385,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRole() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       role_ = 0;
       onChanged();
       return this;
@@ -1419,8 +1458,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sipRecordingMediaLabel_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1438,8 +1477,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSipRecordingMediaLabel() {
-
       sipRecordingMediaLabel_ = getDefaultInstance().getSipRecordingMediaLabel();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1462,8 +1501,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sipRecordingMediaLabel_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1473,18 +1512,23 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Obfuscated user id that should be associated with the created participant.
+     * Optional. Obfuscated user id that should be associated with the created
+     * participant.
      * You can specify a user id as follows:
      * 1. If you set this field in
-     *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant] or
+     *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant]
+     *    or
      *    [UpdateParticipantRequest][google.cloud.dialogflow.v2.UpdateParticipantRequest.participant],
      *    Dialogflow adds the obfuscated user id with the participant.
      * 2. If you set this field in
-     *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id] or
+     *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
+     *    or
      *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
-     *    Dialogflow will update [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
+     *    Dialogflow will update
+     *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
      * Dialogflow returns an error if you try to add a user id for a
-     * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER] participant.
+     * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER]
+     * participant.
      * Dialogflow uses this user id for billing and measurement purposes. For
      * example, Dialogflow determines whether a user in one conversation returned
      * in a later conversation.
@@ -1516,18 +1560,23 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Obfuscated user id that should be associated with the created participant.
+     * Optional. Obfuscated user id that should be associated with the created
+     * participant.
      * You can specify a user id as follows:
      * 1. If you set this field in
-     *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant] or
+     *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant]
+     *    or
      *    [UpdateParticipantRequest][google.cloud.dialogflow.v2.UpdateParticipantRequest.participant],
      *    Dialogflow adds the obfuscated user id with the participant.
      * 2. If you set this field in
-     *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id] or
+     *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
+     *    or
      *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
-     *    Dialogflow will update [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
+     *    Dialogflow will update
+     *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
      * Dialogflow returns an error if you try to add a user id for a
-     * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER] participant.
+     * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER]
+     * participant.
      * Dialogflow uses this user id for billing and measurement purposes. For
      * example, Dialogflow determines whether a user in one conversation returned
      * in a later conversation.
@@ -1559,18 +1608,23 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Obfuscated user id that should be associated with the created participant.
+     * Optional. Obfuscated user id that should be associated with the created
+     * participant.
      * You can specify a user id as follows:
      * 1. If you set this field in
-     *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant] or
+     *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant]
+     *    or
      *    [UpdateParticipantRequest][google.cloud.dialogflow.v2.UpdateParticipantRequest.participant],
      *    Dialogflow adds the obfuscated user id with the participant.
      * 2. If you set this field in
-     *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id] or
+     *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
+     *    or
      *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
-     *    Dialogflow will update [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
+     *    Dialogflow will update
+     *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
      * Dialogflow returns an error if you try to add a user id for a
-     * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER] participant.
+     * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER]
+     * participant.
      * Dialogflow uses this user id for billing and measurement purposes. For
      * example, Dialogflow determines whether a user in one conversation returned
      * in a later conversation.
@@ -1592,8 +1646,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       obfuscatedExternalUserId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1601,18 +1655,23 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Obfuscated user id that should be associated with the created participant.
+     * Optional. Obfuscated user id that should be associated with the created
+     * participant.
      * You can specify a user id as follows:
      * 1. If you set this field in
-     *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant] or
+     *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant]
+     *    or
      *    [UpdateParticipantRequest][google.cloud.dialogflow.v2.UpdateParticipantRequest.participant],
      *    Dialogflow adds the obfuscated user id with the participant.
      * 2. If you set this field in
-     *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id] or
+     *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
+     *    or
      *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
-     *    Dialogflow will update [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
+     *    Dialogflow will update
+     *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
      * Dialogflow returns an error if you try to add a user id for a
-     * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER] participant.
+     * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER]
+     * participant.
      * Dialogflow uses this user id for billing and measurement purposes. For
      * example, Dialogflow determines whether a user in one conversation returned
      * in a later conversation.
@@ -1630,8 +1689,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearObfuscatedExternalUserId() {
-
       obfuscatedExternalUserId_ = getDefaultInstance().getObfuscatedExternalUserId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1639,18 +1698,23 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Obfuscated user id that should be associated with the created participant.
+     * Optional. Obfuscated user id that should be associated with the created
+     * participant.
      * You can specify a user id as follows:
      * 1. If you set this field in
-     *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant] or
+     *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant]
+     *    or
      *    [UpdateParticipantRequest][google.cloud.dialogflow.v2.UpdateParticipantRequest.participant],
      *    Dialogflow adds the obfuscated user id with the participant.
      * 2. If you set this field in
-     *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id] or
+     *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
+     *    or
      *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
-     *    Dialogflow will update [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
+     *    Dialogflow will update
+     *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
      * Dialogflow returns an error if you try to add a user id for a
-     * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER] participant.
+     * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER]
+     * participant.
      * Dialogflow uses this user id for billing and measurement purposes. For
      * example, Dialogflow determines whether a user in one conversation returned
      * in a later conversation.
@@ -1673,8 +1737,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       obfuscatedExternalUserId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1693,8 +1757,6 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableDocumentsMetadataFilters() {
-      onChanged();
-      ;
       if (documentsMetadataFilters_ == null) {
         documentsMetadataFilters_ =
             com.google.protobuf.MapField.newMapField(
@@ -1703,6 +1765,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       if (!documentsMetadataFilters_.isMutable()) {
         documentsMetadataFilters_ = documentsMetadataFilters_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return documentsMetadataFilters_;
     }
 
@@ -1713,9 +1777,10 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Key-value filters on the metadata of documents returned by article
-     * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * Optional. Key-value filters on the metadata of documents returned by
+     * article suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
@@ -1752,9 +1817,10 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Key-value filters on the metadata of documents returned by article
-     * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * Optional. Key-value filters on the metadata of documents returned by
+     * article suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
@@ -1782,9 +1848,10 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Key-value filters on the metadata of documents returned by article
-     * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * Optional. Key-value filters on the metadata of documents returned by
+     * article suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
@@ -1805,8 +1872,10 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getDocumentsMetadataFiltersOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getDocumentsMetadataFiltersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1818,9 +1887,10 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Key-value filters on the metadata of documents returned by article
-     * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * Optional. Key-value filters on the metadata of documents returned by
+     * article suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
@@ -1854,6 +1924,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearDocumentsMetadataFilters() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableDocumentsMetadataFilters().getMutableMap().clear();
       return this;
     }
@@ -1861,9 +1932,10 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Key-value filters on the metadata of documents returned by article
-     * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * Optional. Key-value filters on the metadata of documents returned by
+     * article suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
@@ -1893,15 +1965,17 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDocumentsMetadataFilters() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableDocumentsMetadataFilters().getMutableMap();
     }
     /**
      *
      *
      * <pre>
-     * Optional. Key-value filters on the metadata of documents returned by article
-     * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * Optional. Key-value filters on the metadata of documents returned by
+     * article suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
@@ -1928,17 +2002,18 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableDocumentsMetadataFilters().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Key-value filters on the metadata of documents returned by article
-     * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * Optional. Key-value filters on the metadata of documents returned by
+     * article suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
@@ -1961,6 +2036,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllDocumentsMetadataFilters(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDocumentsMetadataFilters().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 

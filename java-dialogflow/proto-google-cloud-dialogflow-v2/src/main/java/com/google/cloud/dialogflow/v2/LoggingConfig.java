@@ -66,14 +66,14 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_STACKDRIVER_LOGGING_FIELD_NUMBER = 3;
-  private boolean enableStackdriverLogging_;
+  private boolean enableStackdriverLogging_ = false;
   /**
    *
    *
    * <pre>
    * Whether to log conversation events like
-   * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED] to
-   * Stackdriver in the conversation project as JSON format
+   * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED]
+   * to Stackdriver in the conversation project as JSON format
    * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
    * </pre>
    *
@@ -283,8 +283,8 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableStackdriverLogging_ = false;
-
       return this;
     }
 
@@ -312,9 +312,18 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2.LoggingConfig buildPartial() {
       com.google.cloud.dialogflow.v2.LoggingConfig result =
           new com.google.cloud.dialogflow.v2.LoggingConfig(this);
-      result.enableStackdriverLogging_ = enableStackdriverLogging_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.LoggingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableStackdriverLogging_ = enableStackdriverLogging_;
+      }
     }
 
     @java.lang.Override
@@ -394,7 +403,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 enableStackdriverLogging_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 24
             default:
@@ -414,14 +423,16 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private boolean enableStackdriverLogging_;
     /**
      *
      *
      * <pre>
      * Whether to log conversation events like
-     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED] to
-     * Stackdriver in the conversation project as JSON format
+     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED]
+     * to Stackdriver in the conversation project as JSON format
      * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
      * </pre>
      *
@@ -438,8 +449,8 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether to log conversation events like
-     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED] to
-     * Stackdriver in the conversation project as JSON format
+     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED]
+     * to Stackdriver in the conversation project as JSON format
      * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
      * </pre>
      *
@@ -451,6 +462,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableStackdriverLogging(boolean value) {
 
       enableStackdriverLogging_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -459,8 +471,8 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether to log conversation events like
-     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED] to
-     * Stackdriver in the conversation project as JSON format
+     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED]
+     * to Stackdriver in the conversation project as JSON format
      * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
      * </pre>
      *
@@ -469,7 +481,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableStackdriverLogging() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableStackdriverLogging_ = false;
       onChanged();
       return this;

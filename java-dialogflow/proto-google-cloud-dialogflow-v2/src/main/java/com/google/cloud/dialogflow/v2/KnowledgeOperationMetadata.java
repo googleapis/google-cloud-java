@@ -294,7 +294,7 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
   }
 
   public static final int STATE_FIELD_NUMBER = 1;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -327,16 +327,17 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata.State result =
-        com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata.State.valueOf(state_);
+        com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata.State.forNumber(state_);
     return result == null
         ? com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata.State.UNRECOGNIZED
         : result;
   }
 
   public static final int KNOWLEDGE_BASE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object knowledgeBase_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object knowledgeBase_ = "";
   /**
    *
    *
@@ -672,10 +673,9 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       state_ = 0;
-
       knowledgeBase_ = "";
-
       if (exportOperationMetadataBuilder_ != null) {
         exportOperationMetadataBuilder_.clear();
       }
@@ -708,18 +708,31 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     public com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata buildPartial() {
       com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata result =
           new com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata(this);
-      result.state_ = state_;
-      result.knowledgeBase_ = knowledgeBase_;
-      if (operationMetadataCase_ == 4) {
-        if (exportOperationMetadataBuilder_ == null) {
-          result.operationMetadata_ = operationMetadata_;
-        } else {
-          result.operationMetadata_ = exportOperationMetadataBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.operationMetadataCase_ = operationMetadataCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.knowledgeBase_ = knowledgeBase_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata result) {
+      result.operationMetadataCase_ = operationMetadataCase_;
+      result.operationMetadata_ = this.operationMetadata_;
+      if (operationMetadataCase_ == 4 && exportOperationMetadataBuilder_ != null) {
+        result.operationMetadata_ = exportOperationMetadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -773,6 +786,7 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       }
       if (!other.getKnowledgeBase().isEmpty()) {
         knowledgeBase_ = other.knowledgeBase_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       switch (other.getOperationMetadataCase()) {
@@ -815,13 +829,13 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
             case 8:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 26:
               {
                 knowledgeBase_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
@@ -862,6 +876,8 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       return this;
     }
 
+    private int bitField0_;
+
     private int state_ = 0;
     /**
      *
@@ -895,8 +911,8 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -915,9 +931,8 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata.State result =
-          com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata.State.valueOf(state_);
+          com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata.State.forNumber(state_);
       return result == null
           ? com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata.State.UNRECOGNIZED
           : result;
@@ -940,7 +955,7 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -959,7 +974,7 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = 0;
       onChanged();
       return this;
@@ -1026,8 +1041,8 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       knowledgeBase_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1043,8 +1058,8 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearKnowledgeBase() {
-
       knowledgeBase_ = getDefaultInstance().getKnowledgeBase();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1065,8 +1080,8 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       knowledgeBase_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1292,7 +1307,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       }
       operationMetadataCase_ = 4;
       onChanged();
-      ;
       return exportOperationMetadataBuilder_;
     }
 

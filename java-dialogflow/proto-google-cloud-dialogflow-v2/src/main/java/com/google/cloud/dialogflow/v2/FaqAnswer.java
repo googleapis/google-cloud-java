@@ -82,7 +82,9 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ANSWER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object answer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object answer_ = "";
   /**
    *
    *
@@ -131,7 +133,7 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
-  private float confidence_;
+  private float confidence_ = 0F;
   /**
    *
    *
@@ -151,7 +153,9 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUESTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object question_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object question_ = "";
   /**
    *
    *
@@ -200,7 +204,9 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object source_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object source_ = "";
   /**
    *
    *
@@ -267,6 +273,7 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
@@ -327,8 +334,10 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; metadata = 5;</code>
    */
   @java.lang.Override
-  public java.lang.String getMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -358,7 +367,9 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ANSWER_RECORD_FIELD_NUMBER = 6;
-  private volatile java.lang.Object answerRecord_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object answerRecord_ = "";
   /**
    *
    *
@@ -680,17 +691,13 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       answer_ = "";
-
       confidence_ = 0F;
-
       question_ = "";
-
       source_ = "";
-
       internalGetMutableMetadata().clear();
       answerRecord_ = "";
-
       return this;
     }
 
@@ -718,16 +725,34 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2.FaqAnswer buildPartial() {
       com.google.cloud.dialogflow.v2.FaqAnswer result =
           new com.google.cloud.dialogflow.v2.FaqAnswer(this);
-      int from_bitField0_ = bitField0_;
-      result.answer_ = answer_;
-      result.confidence_ = confidence_;
-      result.question_ = question_;
-      result.source_ = source_;
-      result.metadata_ = internalGetMetadata();
-      result.metadata_.makeImmutable();
-      result.answerRecord_ = answerRecord_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.FaqAnswer result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.answer_ = answer_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.confidence_ = confidence_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.question_ = question_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.source_ = source_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.answerRecord_ = answerRecord_;
+      }
     }
 
     @java.lang.Override
@@ -777,6 +802,7 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.v2.FaqAnswer.getDefaultInstance()) return this;
       if (!other.getAnswer().isEmpty()) {
         answer_ = other.answer_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getConfidence() != 0F) {
@@ -784,15 +810,19 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getQuestion().isEmpty()) {
         question_ = other.question_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getSource().isEmpty()) {
         source_ = other.source_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00000010;
       if (!other.getAnswerRecord().isEmpty()) {
         answerRecord_ = other.answerRecord_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -824,25 +854,25 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 answer_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 21:
               {
                 confidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             case 26:
               {
                 question_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 source_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -854,12 +884,13 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 answerRecord_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -942,8 +973,8 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       answer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -959,8 +990,8 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAnswer() {
-
       answer_ = getDefaultInstance().getAnswer();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -981,8 +1012,8 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       answer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1022,6 +1053,7 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
     public Builder setConfidence(float value) {
 
       confidence_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1039,7 +1071,7 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       confidence_ = 0F;
       onChanged();
       return this;
@@ -1106,8 +1138,8 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       question_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1123,8 +1155,8 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearQuestion() {
-
       question_ = getDefaultInstance().getQuestion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1145,8 +1177,8 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       question_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1221,8 +1253,8 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       source_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1241,8 +1273,8 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSource() {
-
       source_ = getDefaultInstance().getSource();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1266,8 +1298,8 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       source_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1283,8 +1315,6 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMetadata() {
-      onChanged();
-      ;
       if (metadata_ == null) {
         metadata_ =
             com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -1292,6 +1322,8 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return metadata_;
     }
 
@@ -1346,8 +1378,10 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
     @java.lang.Override
-    public java.lang.String getMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1377,6 +1411,7 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -1400,6 +1435,7 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -1419,8 +1455,8 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1435,6 +1471,7 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -1505,8 +1542,8 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       answerRecord_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1524,8 +1561,8 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAnswerRecord() {
-
       answerRecord_ = getDefaultInstance().getAnswerRecord();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1548,8 +1585,8 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       answerRecord_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

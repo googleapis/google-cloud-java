@@ -226,7 +226,8 @@ public interface ConversationDatasetOrBuilder
    *
    *
    * <pre>
-   * Output only. The number of conversations this conversation dataset contains.
+   * Output only. The number of conversations this conversation dataset
+   * contains.
    * </pre>
    *
    * <code>int64 conversation_count = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

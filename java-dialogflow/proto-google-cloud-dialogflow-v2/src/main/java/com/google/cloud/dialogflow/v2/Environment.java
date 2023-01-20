@@ -267,7 +267,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -326,7 +328,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -377,7 +381,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AGENT_VERSION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object agentVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object agentVersion_ = "";
   /**
    *
    *
@@ -438,13 +444,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 4;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
    * <pre>
-   * Output only. The state of this environment. This field is read-only, i.e., it cannot be
-   * set by create and update methods.
+   * Output only. The state of this environment. This field is read-only, i.e.,
+   * it cannot be set by create and update methods.
    * </pre>
    *
    * <code>
@@ -461,8 +467,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The state of this environment. This field is read-only, i.e., it cannot be
-   * set by create and update methods.
+   * Output only. The state of this environment. This field is read-only, i.e.,
+   * it cannot be set by create and update methods.
    * </pre>
    *
    * <code>
@@ -473,9 +479,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.Environment.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.Environment.State result =
-        com.google.cloud.dialogflow.v2.Environment.State.valueOf(state_);
+        com.google.cloud.dialogflow.v2.Environment.State.forNumber(state_);
     return result == null ? com.google.cloud.dialogflow.v2.Environment.State.UNRECOGNIZED : result;
   }
 
@@ -485,8 +490,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The last update time of this environment. This field is read-only, i.e., it
-   * cannot be set by create and update methods.
+   * Output only. The last update time of this environment. This field is
+   * read-only, i.e., it cannot be set by create and update methods.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -502,8 +507,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The last update time of this environment. This field is read-only, i.e., it
-   * cannot be set by create and update methods.
+   * Output only. The last update time of this environment. This field is
+   * read-only, i.e., it cannot be set by create and update methods.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -519,8 +524,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The last update time of this environment. This field is read-only, i.e., it
-   * cannot be set by create and update methods.
+   * Output only. The last update time of this environment. This field is
+   * read-only, i.e., it cannot be set by create and update methods.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -528,7 +533,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int TEXT_TO_SPEECH_SETTINGS_FIELD_NUMBER = 7;
@@ -583,7 +588,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.TextToSpeechSettingsOrBuilder
       getTextToSpeechSettingsOrBuilder() {
-    return getTextToSpeechSettings();
+    return textToSpeechSettings_ == null
+        ? com.google.cloud.dialogflow.v2.TextToSpeechSettings.getDefaultInstance()
+        : textToSpeechSettings_;
   }
 
   public static final int FULFILLMENT_FIELD_NUMBER = 8;
@@ -637,7 +644,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.FulfillmentOrBuilder getFulfillmentOrBuilder() {
-    return getFulfillment();
+    return fulfillment_ == null
+        ? com.google.cloud.dialogflow.v2.Fulfillment.getDefaultInstance()
+        : fulfillment_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -920,30 +929,24 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       description_ = "";
-
       agentVersion_ = "";
-
       state_ = 0;
-
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      if (textToSpeechSettingsBuilder_ == null) {
-        textToSpeechSettings_ = null;
-      } else {
-        textToSpeechSettings_ = null;
+      textToSpeechSettings_ = null;
+      if (textToSpeechSettingsBuilder_ != null) {
+        textToSpeechSettingsBuilder_.dispose();
         textToSpeechSettingsBuilder_ = null;
       }
-      if (fulfillmentBuilder_ == null) {
-        fulfillment_ = null;
-      } else {
-        fulfillment_ = null;
+      fulfillment_ = null;
+      if (fulfillmentBuilder_ != null) {
+        fulfillmentBuilder_.dispose();
         fulfillmentBuilder_ = null;
       }
       return this;
@@ -973,27 +976,40 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2.Environment buildPartial() {
       com.google.cloud.dialogflow.v2.Environment result =
           new com.google.cloud.dialogflow.v2.Environment(this);
-      result.name_ = name_;
-      result.description_ = description_;
-      result.agentVersion_ = agentVersion_;
-      result.state_ = state_;
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (textToSpeechSettingsBuilder_ == null) {
-        result.textToSpeechSettings_ = textToSpeechSettings_;
-      } else {
-        result.textToSpeechSettings_ = textToSpeechSettingsBuilder_.build();
-      }
-      if (fulfillmentBuilder_ == null) {
-        result.fulfillment_ = fulfillment_;
-      } else {
-        result.fulfillment_ = fulfillmentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.Environment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.agentVersion_ = agentVersion_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.textToSpeechSettings_ =
+            textToSpeechSettingsBuilder_ == null
+                ? textToSpeechSettings_
+                : textToSpeechSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.fulfillment_ =
+            fulfillmentBuilder_ == null ? fulfillment_ : fulfillmentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1043,14 +1059,17 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.v2.Environment.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getAgentVersion().isEmpty()) {
         agentVersion_ = other.agentVersion_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -1094,44 +1113,44 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 agentVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 58:
               {
                 input.readMessage(
                     getTextToSpeechSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getFulfillmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             default:
@@ -1150,6 +1169,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1227,8 +1248,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1249,8 +1270,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1276,8 +1297,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1346,8 +1367,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1364,8 +1385,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1387,8 +1408,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1472,8 +1493,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       agentVersion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1495,8 +1516,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAgentVersion() {
-
       agentVersion_ = getDefaultInstance().getAgentVersion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1523,8 +1544,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       agentVersion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1534,8 +1555,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The state of this environment. This field is read-only, i.e., it cannot be
-     * set by create and update methods.
+     * Output only. The state of this environment. This field is read-only, i.e.,
+     * it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1552,8 +1573,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The state of this environment. This field is read-only, i.e., it cannot be
-     * set by create and update methods.
+     * Output only. The state of this environment. This field is read-only, i.e.,
+     * it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1564,8 +1585,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1573,8 +1594,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The state of this environment. This field is read-only, i.e., it cannot be
-     * set by create and update methods.
+     * Output only. The state of this environment. This field is read-only, i.e.,
+     * it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1585,9 +1606,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2.Environment.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.Environment.State result =
-          com.google.cloud.dialogflow.v2.Environment.State.valueOf(state_);
+          com.google.cloud.dialogflow.v2.Environment.State.forNumber(state_);
       return result == null
           ? com.google.cloud.dialogflow.v2.Environment.State.UNRECOGNIZED
           : result;
@@ -1596,8 +1616,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The state of this environment. This field is read-only, i.e., it cannot be
-     * set by create and update methods.
+     * Output only. The state of this environment. This field is read-only, i.e.,
+     * it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1611,7 +1631,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1620,8 +1640,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The state of this environment. This field is read-only, i.e., it cannot be
-     * set by create and update methods.
+     * Output only. The state of this environment. This field is read-only, i.e.,
+     * it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1631,7 +1651,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       state_ = 0;
       onChanged();
       return this;
@@ -1647,8 +1667,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update time of this environment. This field is read-only, i.e., it
-     * cannot be set by create and update methods.
+     * Output only. The last update time of this environment. This field is
+     * read-only, i.e., it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1658,14 +1678,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. The last update time of this environment. This field is read-only, i.e., it
-     * cannot be set by create and update methods.
+     * Output only. The last update time of this environment. This field is
+     * read-only, i.e., it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1687,8 +1707,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update time of this environment. This field is read-only, i.e., it
-     * cannot be set by create and update methods.
+     * Output only. The last update time of this environment. This field is
+     * read-only, i.e., it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1701,19 +1721,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. The last update time of this environment. This field is read-only, i.e., it
-     * cannot be set by create and update methods.
+     * Output only. The last update time of this environment. This field is
+     * read-only, i.e., it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1723,19 +1743,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. The last update time of this environment. This field is read-only, i.e., it
-     * cannot be set by create and update methods.
+     * Output only. The last update time of this environment. This field is
+     * read-only, i.e., it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1744,25 +1764,26 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. The last update time of this environment. This field is read-only, i.e., it
-     * cannot be set by create and update methods.
+     * Output only. The last update time of this environment. This field is
+     * read-only, i.e., it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1770,22 +1791,21 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. The last update time of this environment. This field is read-only, i.e., it
-     * cannot be set by create and update methods.
+     * Output only. The last update time of this environment. This field is
+     * read-only, i.e., it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1793,7 +1813,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1801,8 +1821,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update time of this environment. This field is read-only, i.e., it
-     * cannot be set by create and update methods.
+     * Output only. The last update time of this environment. This field is
+     * read-only, i.e., it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1822,8 +1842,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update time of this environment. This field is read-only, i.e., it
-     * cannot be set by create and update methods.
+     * Output only. The last update time of this environment. This field is
+     * read-only, i.e., it cannot be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1867,7 +1887,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the textToSpeechSettings field is set.
      */
     public boolean hasTextToSpeechSettings() {
-      return textToSpeechSettingsBuilder_ != null || textToSpeechSettings_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1909,11 +1929,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         textToSpeechSettings_ = value;
-        onChanged();
       } else {
         textToSpeechSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1931,11 +1951,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2.TextToSpeechSettings.Builder builderForValue) {
       if (textToSpeechSettingsBuilder_ == null) {
         textToSpeechSettings_ = builderForValue.build();
-        onChanged();
       } else {
         textToSpeechSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1952,19 +1972,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeTextToSpeechSettings(
         com.google.cloud.dialogflow.v2.TextToSpeechSettings value) {
       if (textToSpeechSettingsBuilder_ == null) {
-        if (textToSpeechSettings_ != null) {
-          textToSpeechSettings_ =
-              com.google.cloud.dialogflow.v2.TextToSpeechSettings.newBuilder(textToSpeechSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && textToSpeechSettings_ != null
+            && textToSpeechSettings_
+                != com.google.cloud.dialogflow.v2.TextToSpeechSettings.getDefaultInstance()) {
+          getTextToSpeechSettingsBuilder().mergeFrom(value);
         } else {
           textToSpeechSettings_ = value;
         }
-        onChanged();
       } else {
         textToSpeechSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1979,14 +1999,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTextToSpeechSettings() {
-      if (textToSpeechSettingsBuilder_ == null) {
-        textToSpeechSettings_ = null;
-        onChanged();
-      } else {
-        textToSpeechSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      textToSpeechSettings_ = null;
+      if (textToSpeechSettingsBuilder_ != null) {
+        textToSpeechSettingsBuilder_.dispose();
         textToSpeechSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2002,7 +2021,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.v2.TextToSpeechSettings.Builder
         getTextToSpeechSettingsBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getTextToSpeechSettingsFieldBuilder().getBuilder();
     }
@@ -2075,7 +2094,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fulfillment field is set.
      */
     public boolean hasFulfillment() {
-      return fulfillmentBuilder_ != null || fulfillment_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2116,11 +2135,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         fulfillment_ = value;
-        onChanged();
       } else {
         fulfillmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2138,11 +2157,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2.Fulfillment.Builder builderForValue) {
       if (fulfillmentBuilder_ == null) {
         fulfillment_ = builderForValue.build();
-        onChanged();
       } else {
         fulfillmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2158,19 +2177,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeFulfillment(com.google.cloud.dialogflow.v2.Fulfillment value) {
       if (fulfillmentBuilder_ == null) {
-        if (fulfillment_ != null) {
-          fulfillment_ =
-              com.google.cloud.dialogflow.v2.Fulfillment.newBuilder(fulfillment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && fulfillment_ != null
+            && fulfillment_ != com.google.cloud.dialogflow.v2.Fulfillment.getDefaultInstance()) {
+          getFulfillmentBuilder().mergeFrom(value);
         } else {
           fulfillment_ = value;
         }
-        onChanged();
       } else {
         fulfillmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2185,14 +2203,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearFulfillment() {
-      if (fulfillmentBuilder_ == null) {
-        fulfillment_ = null;
-        onChanged();
-      } else {
-        fulfillment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      fulfillment_ = null;
+      if (fulfillmentBuilder_ != null) {
+        fulfillmentBuilder_.dispose();
         fulfillmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2207,7 +2224,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.dialogflow.v2.Fulfillment.Builder getFulfillmentBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getFulfillmentFieldBuilder().getBuilder();
     }

@@ -186,7 +186,6 @@ public interface ArticleAnswerOrBuilder
    *
    * <code>map&lt;string, string&gt; metadata = 5;</code>
    */
-
   /* nullable */
   java.lang.String getMetadataOrDefault(
       java.lang.String key,

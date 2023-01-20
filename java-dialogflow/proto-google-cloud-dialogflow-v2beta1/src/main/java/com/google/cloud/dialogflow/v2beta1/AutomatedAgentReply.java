@@ -380,6 +380,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   }
 
   public static final int RESPONSE_MESSAGES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.ResponseMessage> responseMessages_;
   /**
    *
@@ -603,7 +605,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   }
 
   public static final int MATCH_CONFIDENCE_FIELD_NUMBER = 9;
-  private float matchConfidence_;
+  private float matchConfidence_ = 0F;
   /**
    *
    *
@@ -668,7 +670,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getParametersOrBuilder() {
-    return getParameters();
+    return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
   }
 
   public static final int CX_SESSION_PARAMETERS_FIELD_NUMBER = 6;
@@ -729,11 +731,13 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.StructOrBuilder getCxSessionParametersOrBuilder() {
-    return getCxSessionParameters();
+    return cxSessionParameters_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : cxSessionParameters_;
   }
 
   public static final int AUTOMATED_AGENT_REPLY_TYPE_FIELD_NUMBER = 7;
-  private int automatedAgentReplyType_;
+  private int automatedAgentReplyType_ = 0;
   /**
    *
    *
@@ -767,9 +771,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.AutomatedAgentReplyType
       getAutomatedAgentReplyType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.AutomatedAgentReplyType result =
-        com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.AutomatedAgentReplyType.valueOf(
+        com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.AutomatedAgentReplyType.forNumber(
             automatedAgentReplyType_);
     return result == null
         ? com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.AutomatedAgentReplyType
@@ -778,7 +781,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ALLOW_CANCELLATION_FIELD_NUMBER = 8;
-  private boolean allowCancellation_;
+  private boolean allowCancellation_ = false;
   /**
    *
    *
@@ -798,7 +801,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   }
 
   public static final int CX_CURRENT_PAGE_FIELD_NUMBER = 11;
-  private volatile java.lang.Object cxCurrentPage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cxCurrentPage_ = "";
   /**
    *
    *
@@ -1180,6 +1185,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (detectIntentResponseBuilder_ != null) {
         detectIntentResponseBuilder_.clear();
       }
@@ -1189,27 +1195,21 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
         responseMessages_ = null;
         responseMessagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       matchConfidence_ = 0F;
-
-      if (parametersBuilder_ == null) {
-        parameters_ = null;
-      } else {
-        parameters_ = null;
+      parameters_ = null;
+      if (parametersBuilder_ != null) {
+        parametersBuilder_.dispose();
         parametersBuilder_ = null;
       }
-      if (cxSessionParametersBuilder_ == null) {
-        cxSessionParameters_ = null;
-      } else {
-        cxSessionParameters_ = null;
+      cxSessionParameters_ = null;
+      if (cxSessionParametersBuilder_ != null) {
+        cxSessionParametersBuilder_.dispose();
         cxSessionParametersBuilder_ = null;
       }
       automatedAgentReplyType_ = 0;
-
       allowCancellation_ = false;
-
       cxCurrentPage_ = "";
-
       responseCase_ = 0;
       response_ = null;
       matchCase_ = 0;
@@ -1241,47 +1241,62 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     public com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply buildPartial() {
       com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply result =
           new com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply(this);
-      int from_bitField0_ = bitField0_;
-      if (responseCase_ == 1) {
-        if (detectIntentResponseBuilder_ == null) {
-          result.response_ = response_;
-        } else {
-          result.response_ = detectIntentResponseBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply result) {
       if (responseMessagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           responseMessages_ = java.util.Collections.unmodifiableList(responseMessages_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.responseMessages_ = responseMessages_;
       } else {
         result.responseMessages_ = responseMessagesBuilder_.build();
       }
-      if (matchCase_ == 4) {
-        result.match_ = match_;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.matchConfidence_ = matchConfidence_;
       }
-      if (matchCase_ == 5) {
-        result.match_ = match_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.parameters_ = parametersBuilder_ == null ? parameters_ : parametersBuilder_.build();
       }
-      result.matchConfidence_ = matchConfidence_;
-      if (parametersBuilder_ == null) {
-        result.parameters_ = parameters_;
-      } else {
-        result.parameters_ = parametersBuilder_.build();
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.cxSessionParameters_ =
+            cxSessionParametersBuilder_ == null
+                ? cxSessionParameters_
+                : cxSessionParametersBuilder_.build();
       }
-      if (cxSessionParametersBuilder_ == null) {
-        result.cxSessionParameters_ = cxSessionParameters_;
-      } else {
-        result.cxSessionParameters_ = cxSessionParametersBuilder_.build();
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.automatedAgentReplyType_ = automatedAgentReplyType_;
       }
-      result.automatedAgentReplyType_ = automatedAgentReplyType_;
-      result.allowCancellation_ = allowCancellation_;
-      result.cxCurrentPage_ = cxCurrentPage_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.allowCancellation_ = allowCancellation_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.cxCurrentPage_ = cxCurrentPage_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply result) {
       result.responseCase_ = responseCase_;
+      result.response_ = this.response_;
+      if (responseCase_ == 1 && detectIntentResponseBuilder_ != null) {
+        result.response_ = detectIntentResponseBuilder_.build();
+      }
       result.matchCase_ = matchCase_;
-      onBuilt();
-      return result;
+      result.match_ = this.match_;
     }
 
     @java.lang.Override
@@ -1334,7 +1349,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
         if (!other.responseMessages_.isEmpty()) {
           if (responseMessages_.isEmpty()) {
             responseMessages_ = other.responseMessages_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureResponseMessagesIsMutable();
             responseMessages_.addAll(other.responseMessages_);
@@ -1347,7 +1362,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
             responseMessagesBuilder_.dispose();
             responseMessagesBuilder_ = null;
             responseMessages_ = other.responseMessages_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             responseMessagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getResponseMessagesFieldBuilder()
@@ -1374,6 +1389,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       }
       if (!other.getCxCurrentPage().isEmpty()) {
         cxCurrentPage_ = other.cxCurrentPage_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       switch (other.getResponseCase()) {
@@ -1472,37 +1488,37 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
               {
                 input.readMessage(
                     getCxSessionParametersFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 56:
               {
                 automatedAgentReplyType_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 56
             case 64:
               {
                 allowCancellation_ = input.readBool();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 64
             case 77:
               {
                 matchConfidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 77
             case 82:
               {
                 input.readMessage(getParametersFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 82
             case 90:
               {
                 cxCurrentPage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
             default:
@@ -1772,7 +1788,6 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       }
       responseCase_ = 1;
       onChanged();
-      ;
       return detectIntentResponseBuilder_;
     }
 
@@ -1780,11 +1795,11 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureResponseMessagesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         responseMessages_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.ResponseMessage>(
                 responseMessages_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2003,7 +2018,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     public Builder clearResponseMessages() {
       if (responseMessagesBuilder_ == null) {
         responseMessages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         responseMessagesBuilder_.clear();
@@ -2131,7 +2146,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
                 com.google.cloud.dialogflow.v2beta1.ResponseMessage.Builder,
                 com.google.cloud.dialogflow.v2beta1.ResponseMessageOrBuilder>(
                 responseMessages_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         responseMessages_ = null;
@@ -2472,6 +2487,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     public Builder setMatchConfidence(float value) {
 
       matchConfidence_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2492,7 +2508,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearMatchConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       matchConfidence_ = 0F;
       onChanged();
       return this;
@@ -2516,7 +2532,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * @return Whether the parameters field is set.
      */
     public boolean hasParameters() {
-      return parametersBuilder_ != null || parameters_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2551,11 +2567,11 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         parameters_ = value;
-        onChanged();
       } else {
         parametersBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2570,11 +2586,11 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     public Builder setParameters(com.google.protobuf.Struct.Builder builderForValue) {
       if (parametersBuilder_ == null) {
         parameters_ = builderForValue.build();
-        onChanged();
       } else {
         parametersBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2588,17 +2604,18 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeParameters(com.google.protobuf.Struct value) {
       if (parametersBuilder_ == null) {
-        if (parameters_ != null) {
-          parameters_ =
-              com.google.protobuf.Struct.newBuilder(parameters_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && parameters_ != null
+            && parameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getParametersBuilder().mergeFrom(value);
         } else {
           parameters_ = value;
         }
-        onChanged();
       } else {
         parametersBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2611,14 +2628,13 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Struct parameters = 10;</code>
      */
     public Builder clearParameters() {
-      if (parametersBuilder_ == null) {
-        parameters_ = null;
-        onChanged();
-      } else {
-        parameters_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      parameters_ = null;
+      if (parametersBuilder_ != null) {
+        parametersBuilder_.dispose();
         parametersBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2631,7 +2647,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Struct parameters = 10;</code>
      */
     public com.google.protobuf.Struct.Builder getParametersBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getParametersFieldBuilder().getBuilder();
     }
@@ -2700,7 +2716,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Deprecated
     public boolean hasCxSessionParameters() {
-      return cxSessionParametersBuilder_ != null || cxSessionParameters_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2745,11 +2761,11 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         cxSessionParameters_ = value;
-        onChanged();
       } else {
         cxSessionParametersBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2767,11 +2783,11 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     public Builder setCxSessionParameters(com.google.protobuf.Struct.Builder builderForValue) {
       if (cxSessionParametersBuilder_ == null) {
         cxSessionParameters_ = builderForValue.build();
-        onChanged();
       } else {
         cxSessionParametersBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2788,19 +2804,18 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     @java.lang.Deprecated
     public Builder mergeCxSessionParameters(com.google.protobuf.Struct value) {
       if (cxSessionParametersBuilder_ == null) {
-        if (cxSessionParameters_ != null) {
-          cxSessionParameters_ =
-              com.google.protobuf.Struct.newBuilder(cxSessionParameters_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && cxSessionParameters_ != null
+            && cxSessionParameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getCxSessionParametersBuilder().mergeFrom(value);
         } else {
           cxSessionParameters_ = value;
         }
-        onChanged();
       } else {
         cxSessionParametersBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2816,14 +2831,13 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Deprecated
     public Builder clearCxSessionParameters() {
-      if (cxSessionParametersBuilder_ == null) {
-        cxSessionParameters_ = null;
-        onChanged();
-      } else {
-        cxSessionParameters_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      cxSessionParameters_ = null;
+      if (cxSessionParametersBuilder_ != null) {
+        cxSessionParametersBuilder_.dispose();
         cxSessionParametersBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2839,7 +2853,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Deprecated
     public com.google.protobuf.Struct.Builder getCxSessionParametersBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getCxSessionParametersFieldBuilder().getBuilder();
     }
@@ -2925,8 +2939,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setAutomatedAgentReplyTypeValue(int value) {
-
       automatedAgentReplyType_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2946,9 +2960,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.AutomatedAgentReplyType
         getAutomatedAgentReplyType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.AutomatedAgentReplyType result =
-          com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.AutomatedAgentReplyType.valueOf(
+          com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.AutomatedAgentReplyType.forNumber(
               automatedAgentReplyType_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.AutomatedAgentReplyType
@@ -2974,7 +2987,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       automatedAgentReplyType_ = value.getNumber();
       onChanged();
       return this;
@@ -2993,7 +3006,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAutomatedAgentReplyType() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       automatedAgentReplyType_ = 0;
       onChanged();
       return this;
@@ -3034,6 +3047,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     public Builder setAllowCancellation(boolean value) {
 
       allowCancellation_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3051,7 +3065,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAllowCancellation() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       allowCancellation_ = false;
       onChanged();
       return this;
@@ -3124,8 +3138,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       cxCurrentPage_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3143,8 +3157,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearCxCurrentPage() {
-
       cxCurrentPage_ = getDefaultInstance().getCxCurrentPage();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3167,8 +3181,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cxCurrentPage_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

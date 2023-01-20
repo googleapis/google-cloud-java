@@ -73,7 +73,9 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -175,7 +179,9 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -269,7 +275,7 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int INPUT_CONFIG_FIELD_NUMBER = 5;
@@ -323,7 +329,9 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.InputConfigOrBuilder getInputConfigOrBuilder() {
-    return getInputConfig();
+    return inputConfig_ == null
+        ? com.google.cloud.dialogflow.v2.InputConfig.getDefaultInstance()
+        : inputConfig_;
   }
 
   public static final int CONVERSATION_INFO_FIELD_NUMBER = 6;
@@ -377,16 +385,19 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.ConversationInfoOrBuilder getConversationInfoOrBuilder() {
-    return getConversationInfo();
+    return conversationInfo_ == null
+        ? com.google.cloud.dialogflow.v2.ConversationInfo.getDefaultInstance()
+        : conversationInfo_;
   }
 
   public static final int CONVERSATION_COUNT_FIELD_NUMBER = 7;
-  private long conversationCount_;
+  private long conversationCount_ = 0L;
   /**
    *
    *
    * <pre>
-   * Output only. The number of conversations this conversation dataset contains.
+   * Output only. The number of conversations this conversation dataset
+   * contains.
    * </pre>
    *
    * <code>int64 conversation_count = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -667,32 +678,26 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-      } else {
-        inputConfig_ = null;
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-      if (conversationInfoBuilder_ == null) {
-        conversationInfo_ = null;
-      } else {
-        conversationInfo_ = null;
+      conversationInfo_ = null;
+      if (conversationInfoBuilder_ != null) {
+        conversationInfoBuilder_.dispose();
         conversationInfoBuilder_ = null;
       }
       conversationCount_ = 0L;
-
       return this;
     }
 
@@ -720,27 +725,38 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
     public com.google.cloud.dialogflow.v2.ConversationDataset buildPartial() {
       com.google.cloud.dialogflow.v2.ConversationDataset result =
           new com.google.cloud.dialogflow.v2.ConversationDataset(this);
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (inputConfigBuilder_ == null) {
-        result.inputConfig_ = inputConfig_;
-      } else {
-        result.inputConfig_ = inputConfigBuilder_.build();
-      }
-      if (conversationInfoBuilder_ == null) {
-        result.conversationInfo_ = conversationInfo_;
-      } else {
-        result.conversationInfo_ = conversationInfoBuilder_.build();
-      }
-      result.conversationCount_ = conversationCount_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.ConversationDataset result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.inputConfig_ =
+            inputConfigBuilder_ == null ? inputConfig_ : inputConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.conversationInfo_ =
+            conversationInfoBuilder_ == null ? conversationInfo_ : conversationInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.conversationCount_ = conversationCount_;
+      }
     }
 
     @java.lang.Override
@@ -791,14 +807,17 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -842,44 +861,44 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getConversationInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 56:
               {
                 conversationCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             default:
@@ -898,6 +917,8 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -966,8 +987,8 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -985,8 +1006,8 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1009,8 +1030,8 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1076,8 +1097,8 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1093,8 +1114,8 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1115,8 +1136,8 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1182,8 +1203,8 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1199,8 +1220,8 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1221,8 +1242,8 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1247,7 +1268,7 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1288,11 +1309,11 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1309,11 +1330,11 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1329,17 +1350,18 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1354,14 +1376,13 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1376,7 +1397,7 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1448,7 +1469,7 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      * @return Whether the inputConfig field is set.
      */
     public boolean hasInputConfig() {
-      return inputConfigBuilder_ != null || inputConfig_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1489,11 +1510,11 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         inputConfig_ = value;
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1511,11 +1532,11 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
         com.google.cloud.dialogflow.v2.InputConfig.Builder builderForValue) {
       if (inputConfigBuilder_ == null) {
         inputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1531,19 +1552,18 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeInputConfig(com.google.cloud.dialogflow.v2.InputConfig value) {
       if (inputConfigBuilder_ == null) {
-        if (inputConfig_ != null) {
-          inputConfig_ =
-              com.google.cloud.dialogflow.v2.InputConfig.newBuilder(inputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && inputConfig_ != null
+            && inputConfig_ != com.google.cloud.dialogflow.v2.InputConfig.getDefaultInstance()) {
+          getInputConfigBuilder().mergeFrom(value);
         } else {
           inputConfig_ = value;
         }
-        onChanged();
       } else {
         inputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1558,14 +1578,13 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearInputConfig() {
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-        onChanged();
-      } else {
-        inputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1580,7 +1599,7 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.dialogflow.v2.InputConfig.Builder getInputConfigBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
@@ -1652,7 +1671,7 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      * @return Whether the conversationInfo field is set.
      */
     public boolean hasConversationInfo() {
-      return conversationInfoBuilder_ != null || conversationInfo_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1693,11 +1712,11 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         conversationInfo_ = value;
-        onChanged();
       } else {
         conversationInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1715,11 +1734,11 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
         com.google.cloud.dialogflow.v2.ConversationInfo.Builder builderForValue) {
       if (conversationInfoBuilder_ == null) {
         conversationInfo_ = builderForValue.build();
-        onChanged();
       } else {
         conversationInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1735,19 +1754,19 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeConversationInfo(com.google.cloud.dialogflow.v2.ConversationInfo value) {
       if (conversationInfoBuilder_ == null) {
-        if (conversationInfo_ != null) {
-          conversationInfo_ =
-              com.google.cloud.dialogflow.v2.ConversationInfo.newBuilder(conversationInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && conversationInfo_ != null
+            && conversationInfo_
+                != com.google.cloud.dialogflow.v2.ConversationInfo.getDefaultInstance()) {
+          getConversationInfoBuilder().mergeFrom(value);
         } else {
           conversationInfo_ = value;
         }
-        onChanged();
       } else {
         conversationInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1762,14 +1781,13 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearConversationInfo() {
-      if (conversationInfoBuilder_ == null) {
-        conversationInfo_ = null;
-        onChanged();
-      } else {
-        conversationInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      conversationInfo_ = null;
+      if (conversationInfoBuilder_ != null) {
+        conversationInfoBuilder_.dispose();
         conversationInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1784,7 +1802,7 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.dialogflow.v2.ConversationInfo.Builder getConversationInfoBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getConversationInfoFieldBuilder().getBuilder();
     }
@@ -1841,7 +1859,8 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The number of conversations this conversation dataset contains.
+     * Output only. The number of conversations this conversation dataset
+     * contains.
      * </pre>
      *
      * <code>int64 conversation_count = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1856,7 +1875,8 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The number of conversations this conversation dataset contains.
+     * Output only. The number of conversations this conversation dataset
+     * contains.
      * </pre>
      *
      * <code>int64 conversation_count = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1867,6 +1887,7 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
     public Builder setConversationCount(long value) {
 
       conversationCount_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1874,7 +1895,8 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The number of conversations this conversation dataset contains.
+     * Output only. The number of conversations this conversation dataset
+     * contains.
      * </pre>
      *
      * <code>int64 conversation_count = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1882,7 +1904,7 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearConversationCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       conversationCount_ = 0L;
       onChanged();
       return this;

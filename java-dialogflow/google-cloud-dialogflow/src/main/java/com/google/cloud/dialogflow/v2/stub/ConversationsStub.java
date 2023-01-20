@@ -30,6 +30,8 @@ import com.google.cloud.dialogflow.v2.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2.ListMessagesRequest;
 import com.google.cloud.dialogflow.v2.ListMessagesResponse;
+import com.google.cloud.dialogflow.v2.SuggestConversationSummaryRequest;
+import com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -73,6 +75,12 @@ public abstract class ConversationsStub implements BackgroundResource {
 
   public UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable() {
     throw new UnsupportedOperationException("Not implemented: listMessagesCallable()");
+  }
+
+  public UnaryCallable<SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
+      suggestConversationSummaryCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: suggestConversationSummaryCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

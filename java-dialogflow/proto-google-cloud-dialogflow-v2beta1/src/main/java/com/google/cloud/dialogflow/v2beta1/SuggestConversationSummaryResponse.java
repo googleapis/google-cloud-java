@@ -148,7 +148,6 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      *
      * <code>map&lt;string, string&gt; text_sections = 4;</code>
      */
-
     /* nullable */
     java.lang.String getTextSectionsOrDefault(
         java.lang.String key,
@@ -258,7 +257,9 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
     }
 
     public static final int TEXT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object text_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object text_ = "";
     /**
      *
      *
@@ -319,6 +320,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
               "");
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> textSections_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -384,8 +386,10 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      * <code>map&lt;string, string&gt; text_sections = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getTextSectionsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getTextSectionsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -416,7 +420,9 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
     }
 
     public static final int ANSWER_RECORD_FIELD_NUMBER = 3;
-    private volatile java.lang.Object answerRecord_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object answerRecord_ = "";
     /**
      *
      *
@@ -724,11 +730,10 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         text_ = "";
-
         internalGetMutableTextSections().clear();
         answerRecord_ = "";
-
         return this;
       }
 
@@ -762,13 +767,26 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse.Summary result =
             new com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse.Summary(
                 this);
-        int from_bitField0_ = bitField0_;
-        result.text_ = text_;
-        result.textSections_ = internalGetTextSections();
-        result.textSections_.makeImmutable();
-        result.answerRecord_ = answerRecord_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse.Summary result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.text_ = text_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.textSections_ = internalGetTextSections();
+          result.textSections_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.answerRecord_ = answerRecord_;
+        }
       }
 
       @java.lang.Override
@@ -827,11 +845,14 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
                 .getDefaultInstance()) return this;
         if (!other.getText().isEmpty()) {
           text_ = other.text_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         internalGetMutableTextSections().mergeFrom(other.internalGetTextSections());
+        bitField0_ |= 0x00000002;
         if (!other.getAnswerRecord().isEmpty()) {
           answerRecord_ = other.answerRecord_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -863,13 +884,13 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
               case 10:
                 {
                   text_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 26:
                 {
                   answerRecord_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
@@ -881,6 +902,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
                   internalGetMutableTextSections()
                       .getMutableMap()
                       .put(textSections__.getKey(), textSections__.getValue());
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 34
               default:
@@ -963,8 +985,8 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         if (value == null) {
           throw new NullPointerException();
         }
-
         text_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -980,8 +1002,8 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
        * @return This builder for chaining.
        */
       public Builder clearText() {
-
         text_ = getDefaultInstance().getText();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1002,8 +1024,8 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         text_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1021,8 +1043,6 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
 
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
           internalGetMutableTextSections() {
-        onChanged();
-        ;
         if (textSections_ == null) {
           textSections_ =
               com.google.protobuf.MapField.newMapField(TextSectionsDefaultEntryHolder.defaultEntry);
@@ -1030,6 +1050,8 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         if (!textSections_.isMutable()) {
           textSections_ = textSections_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return textSections_;
       }
 
@@ -1087,8 +1109,10 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
        * <code>map&lt;string, string&gt; text_sections = 4;</code>
        */
       @java.lang.Override
-      public java.lang.String getTextSectionsOrDefault(
-          java.lang.String key, java.lang.String defaultValue) {
+      public /* nullable */ java.lang.String getTextSectionsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -1119,6 +1143,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       }
 
       public Builder clearTextSections() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableTextSections().getMutableMap().clear();
         return this;
       }
@@ -1143,6 +1168,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableTextSections() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableTextSections().getMutableMap();
       }
       /**
@@ -1163,8 +1189,8 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableTextSections().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -1180,6 +1206,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
        */
       public Builder putAllTextSections(java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableTextSections().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -1247,8 +1274,8 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         if (value == null) {
           throw new NullPointerException();
         }
-
         answerRecord_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1265,8 +1292,8 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
        * @return This builder for chaining.
        */
       public Builder clearAnswerRecord() {
-
         answerRecord_ = getDefaultInstance().getAnswerRecord();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1288,8 +1315,8 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         answerRecord_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1414,11 +1441,16 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse.SummaryOrBuilder
       getSummaryOrBuilder() {
-    return getSummary();
+    return summary_ == null
+        ? com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse.Summary
+            .getDefaultInstance()
+        : summary_;
   }
 
   public static final int LATEST_MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object latestMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object latestMessage_ = "";
   /**
    *
    *
@@ -1473,7 +1505,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
   }
 
   public static final int CONTEXT_SIZE_FIELD_NUMBER = 3;
-  private int contextSize_;
+  private int contextSize_ = 0;
   /**
    *
    *
@@ -1716,16 +1748,14 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (summaryBuilder_ == null) {
-        summary_ = null;
-      } else {
-        summary_ = null;
+      bitField0_ = 0;
+      summary_ = null;
+      if (summaryBuilder_ != null) {
+        summaryBuilder_.dispose();
         summaryBuilder_ = null;
       }
       latestMessage_ = "";
-
       contextSize_ = 0;
-
       return this;
     }
 
@@ -1756,15 +1786,25 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
     public com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse buildPartial() {
       com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse result =
           new com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse(this);
-      if (summaryBuilder_ == null) {
-        result.summary_ = summary_;
-      } else {
-        result.summary_ = summaryBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.latestMessage_ = latestMessage_;
-      result.contextSize_ = contextSize_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.summary_ = summaryBuilder_ == null ? summary_ : summaryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.latestMessage_ = latestMessage_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.contextSize_ = contextSize_;
+      }
     }
 
     @java.lang.Override
@@ -1821,6 +1861,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       }
       if (!other.getLatestMessage().isEmpty()) {
         latestMessage_ = other.latestMessage_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getContextSize() != 0) {
@@ -1855,19 +1896,19 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
             case 10:
               {
                 input.readMessage(getSummaryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 latestMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 contextSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -1886,6 +1927,8 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse.Summary summary_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1907,7 +1950,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      * @return Whether the summary field is set.
      */
     public boolean hasSummary() {
-      return summaryBuilder_ != null || summary_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1951,11 +1994,11 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
           throw new NullPointerException();
         }
         summary_ = value;
-        onChanged();
       } else {
         summaryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1974,11 +2017,11 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
             builderForValue) {
       if (summaryBuilder_ == null) {
         summary_ = builderForValue.build();
-        onChanged();
       } else {
         summaryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1995,20 +2038,20 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
     public Builder mergeSummary(
         com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse.Summary value) {
       if (summaryBuilder_ == null) {
-        if (summary_ != null) {
-          summary_ =
-              com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse.Summary
-                  .newBuilder(summary_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && summary_ != null
+            && summary_
+                != com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse.Summary
+                    .getDefaultInstance()) {
+          getSummaryBuilder().mergeFrom(value);
         } else {
           summary_ = value;
         }
-        onChanged();
       } else {
         summaryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2023,14 +2066,13 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      * </code>
      */
     public Builder clearSummary() {
-      if (summaryBuilder_ == null) {
-        summary_ = null;
-        onChanged();
-      } else {
-        summary_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      summary_ = null;
+      if (summaryBuilder_ != null) {
+        summaryBuilder_.dispose();
         summaryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2046,7 +2088,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      */
     public com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse.Summary.Builder
         getSummaryBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSummaryFieldBuilder().getBuilder();
     }
@@ -2171,8 +2213,8 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       latestMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2191,8 +2233,8 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearLatestMessage() {
-
       latestMessage_ = getDefaultInstance().getLatestMessage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2216,8 +2258,8 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       latestMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2259,6 +2301,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
     public Builder setContextSize(int value) {
 
       contextSize_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2277,7 +2320,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearContextSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       contextSize_ = 0;
       onChanged();
       return this;

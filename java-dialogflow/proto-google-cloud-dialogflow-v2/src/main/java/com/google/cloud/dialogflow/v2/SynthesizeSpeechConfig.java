@@ -68,7 +68,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int SPEAKING_RATE_FIELD_NUMBER = 1;
-  private double speakingRate_;
+  private double speakingRate_ = 0D;
   /**
    *
    *
@@ -89,7 +89,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int PITCH_FIELD_NUMBER = 2;
-  private double pitch_;
+  private double pitch_ = 0D;
   /**
    *
    *
@@ -109,7 +109,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int VOLUME_GAIN_DB_FIELD_NUMBER = 3;
-  private double volumeGainDb_;
+  private double volumeGainDb_ = 0D;
   /**
    *
    *
@@ -134,6 +134,8 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int EFFECTS_PROFILE_ID_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList effectsProfileId_;
   /**
    *
@@ -247,7 +249,9 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.VoiceSelectionParamsOrBuilder getVoiceOrBuilder() {
-    return getVoice();
+    return voice_ == null
+        ? com.google.cloud.dialogflow.v2.VoiceSelectionParams.getDefaultInstance()
+        : voice_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -507,18 +511,15 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       speakingRate_ = 0D;
-
       pitch_ = 0D;
-
       volumeGainDb_ = 0D;
-
       effectsProfileId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (voiceBuilder_ == null) {
-        voice_ = null;
-      } else {
-        voice_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      voice_ = null;
+      if (voiceBuilder_ != null) {
+        voiceBuilder_.dispose();
         voiceBuilder_ = null;
       }
       return this;
@@ -548,22 +549,37 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     public com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig buildPartial() {
       com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig result =
           new com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.speakingRate_ = speakingRate_;
-      result.pitch_ = pitch_;
-      result.volumeGainDb_ = volumeGainDb_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        effectsProfileId_ = effectsProfileId_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.effectsProfileId_ = effectsProfileId_;
-      if (voiceBuilder_ == null) {
-        result.voice_ = voice_;
-      } else {
-        result.voice_ = voiceBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        effectsProfileId_ = effectsProfileId_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.effectsProfileId_ = effectsProfileId_;
+    }
+
+    private void buildPartial0(com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.speakingRate_ = speakingRate_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pitch_ = pitch_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.volumeGainDb_ = volumeGainDb_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.voice_ = voiceBuilder_ == null ? voice_ : voiceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -624,7 +640,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       if (!other.effectsProfileId_.isEmpty()) {
         if (effectsProfileId_.isEmpty()) {
           effectsProfileId_ = other.effectsProfileId_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureEffectsProfileIdIsMutable();
           effectsProfileId_.addAll(other.effectsProfileId_);
@@ -663,25 +679,25 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
             case 9:
               {
                 speakingRate_ = input.readDouble();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 9
             case 17:
               {
                 pitch_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             case 25:
               {
                 volumeGainDb_ = input.readDouble();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 25
             case 34:
               {
                 input.readMessage(getVoiceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
@@ -747,6 +763,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     public Builder setSpeakingRate(double value) {
 
       speakingRate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -765,7 +782,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearSpeakingRate() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       speakingRate_ = 0D;
       onChanged();
       return this;
@@ -806,6 +823,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     public Builder setPitch(double value) {
 
       pitch_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -823,7 +841,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPitch() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       pitch_ = 0D;
       onChanged();
       return this;
@@ -874,6 +892,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     public Builder setVolumeGainDb(double value) {
 
       volumeGainDb_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -896,7 +915,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearVolumeGainDb() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       volumeGainDb_ = 0D;
       onChanged();
       return this;
@@ -906,9 +925,9 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEffectsProfileIdIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         effectsProfileId_ = new com.google.protobuf.LazyStringArrayList(effectsProfileId_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1059,7 +1078,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      */
     public Builder clearEffectsProfileId() {
       effectsProfileId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1106,7 +1125,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * @return Whether the voice field is set.
      */
     public boolean hasVoice() {
-      return voiceBuilder_ != null || voice_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1143,11 +1162,11 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         voice_ = value;
-        onChanged();
       } else {
         voiceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1163,11 +1182,11 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
         com.google.cloud.dialogflow.v2.VoiceSelectionParams.Builder builderForValue) {
       if (voiceBuilder_ == null) {
         voice_ = builderForValue.build();
-        onChanged();
       } else {
         voiceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1181,19 +1200,18 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      */
     public Builder mergeVoice(com.google.cloud.dialogflow.v2.VoiceSelectionParams value) {
       if (voiceBuilder_ == null) {
-        if (voice_ != null) {
-          voice_ =
-              com.google.cloud.dialogflow.v2.VoiceSelectionParams.newBuilder(voice_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && voice_ != null
+            && voice_ != com.google.cloud.dialogflow.v2.VoiceSelectionParams.getDefaultInstance()) {
+          getVoiceBuilder().mergeFrom(value);
         } else {
           voice_ = value;
         }
-        onChanged();
       } else {
         voiceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1206,14 +1224,13 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.dialogflow.v2.VoiceSelectionParams voice = 4;</code>
      */
     public Builder clearVoice() {
-      if (voiceBuilder_ == null) {
-        voice_ = null;
-        onChanged();
-      } else {
-        voice_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      voice_ = null;
+      if (voiceBuilder_ != null) {
+        voiceBuilder_.dispose();
         voiceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1226,7 +1243,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.dialogflow.v2.VoiceSelectionParams voice = 4;</code>
      */
     public com.google.cloud.dialogflow.v2.VoiceSelectionParams.Builder getVoiceBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getVoiceFieldBuilder().getBuilder();
     }

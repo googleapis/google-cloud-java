@@ -71,7 +71,9 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
   }
 
   public static final int CONVERSATION_PROFILE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object conversationProfile_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object conversationProfile_ = "";
   /**
    *
    *
@@ -124,7 +126,7 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
   }
 
   public static final int PARTICIPANT_ROLE_FIELD_NUMBER = 2;
-  private int participantRole_;
+  private int participantRole_ = 0;
   /**
    *
    *
@@ -159,9 +161,8 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Participant.Role getParticipantRole() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.Participant.Role result =
-        com.google.cloud.dialogflow.v2beta1.Participant.Role.valueOf(participantRole_);
+        com.google.cloud.dialogflow.v2beta1.Participant.Role.forNumber(participantRole_);
     return result == null
         ? com.google.cloud.dialogflow.v2beta1.Participant.Role.UNRECOGNIZED
         : result;
@@ -223,7 +224,10 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
   public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
           .SuggestionFeatureConfigOrBuilder
       getSuggestionFeatureConfigOrBuilder() {
-    return getSuggestionFeatureConfig();
+    return suggestionFeatureConfig_ == null
+        ? com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionFeatureConfig
+            .getDefaultInstance()
+        : suggestionFeatureConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -453,14 +457,12 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       conversationProfile_ = "";
-
       participantRole_ = 0;
-
-      if (suggestionFeatureConfigBuilder_ == null) {
-        suggestionFeatureConfig_ = null;
-      } else {
-        suggestionFeatureConfig_ = null;
+      suggestionFeatureConfig_ = null;
+      if (suggestionFeatureConfigBuilder_ != null) {
+        suggestionFeatureConfigBuilder_.dispose();
         suggestionFeatureConfigBuilder_ = null;
       }
       return this;
@@ -492,15 +494,28 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
     public com.google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigRequest result =
           new com.google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigRequest(this);
-      result.conversationProfile_ = conversationProfile_;
-      result.participantRole_ = participantRole_;
-      if (suggestionFeatureConfigBuilder_ == null) {
-        result.suggestionFeatureConfig_ = suggestionFeatureConfig_;
-      } else {
-        result.suggestionFeatureConfig_ = suggestionFeatureConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.conversationProfile_ = conversationProfile_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.participantRole_ = participantRole_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.suggestionFeatureConfig_ =
+            suggestionFeatureConfigBuilder_ == null
+                ? suggestionFeatureConfig_
+                : suggestionFeatureConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -554,6 +569,7 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
               .getDefaultInstance()) return this;
       if (!other.getConversationProfile().isEmpty()) {
         conversationProfile_ = other.conversationProfile_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.participantRole_ != 0) {
@@ -591,20 +607,20 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
             case 10:
               {
                 conversationProfile_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 participantRole_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(
                     getSuggestionFeatureConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -623,6 +639,8 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object conversationProfile_ = "";
     /**
@@ -691,8 +709,8 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       conversationProfile_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -710,8 +728,8 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearConversationProfile() {
-
       conversationProfile_ = getDefaultInstance().getConversationProfile();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -734,8 +752,8 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       conversationProfile_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -775,8 +793,8 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder setParticipantRoleValue(int value) {
-
       participantRole_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -796,9 +814,8 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.Participant.Role getParticipantRole() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.Participant.Role result =
-          com.google.cloud.dialogflow.v2beta1.Participant.Role.valueOf(participantRole_);
+          com.google.cloud.dialogflow.v2beta1.Participant.Role.forNumber(participantRole_);
       return result == null
           ? com.google.cloud.dialogflow.v2beta1.Participant.Role.UNRECOGNIZED
           : result;
@@ -822,7 +839,7 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       participantRole_ = value.getNumber();
       onChanged();
       return this;
@@ -842,7 +859,7 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearParticipantRole() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       participantRole_ = 0;
       onChanged();
       return this;
@@ -871,7 +888,7 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
      * @return Whether the suggestionFeatureConfig field is set.
      */
     public boolean hasSuggestionFeatureConfig() {
-      return suggestionFeatureConfigBuilder_ != null || suggestionFeatureConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -916,11 +933,11 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
           throw new NullPointerException();
         }
         suggestionFeatureConfig_ = value;
-        onChanged();
       } else {
         suggestionFeatureConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -940,11 +957,11 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
             builderForValue) {
       if (suggestionFeatureConfigBuilder_ == null) {
         suggestionFeatureConfig_ = builderForValue.build();
-        onChanged();
       } else {
         suggestionFeatureConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -962,20 +979,20 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
         com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionFeatureConfig
             value) {
       if (suggestionFeatureConfigBuilder_ == null) {
-        if (suggestionFeatureConfig_ != null) {
-          suggestionFeatureConfig_ =
-              com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionFeatureConfig
-                  .newBuilder(suggestionFeatureConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && suggestionFeatureConfig_ != null
+            && suggestionFeatureConfig_
+                != com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+                    .SuggestionFeatureConfig.getDefaultInstance()) {
+          getSuggestionFeatureConfigBuilder().mergeFrom(value);
         } else {
           suggestionFeatureConfig_ = value;
         }
-        onChanged();
       } else {
         suggestionFeatureConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -990,14 +1007,13 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
      * </code>
      */
     public Builder clearSuggestionFeatureConfig() {
-      if (suggestionFeatureConfigBuilder_ == null) {
-        suggestionFeatureConfig_ = null;
-        onChanged();
-      } else {
-        suggestionFeatureConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      suggestionFeatureConfig_ = null;
+      if (suggestionFeatureConfigBuilder_ != null) {
+        suggestionFeatureConfigBuilder_.dispose();
         suggestionFeatureConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1014,7 +1030,7 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
     public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionFeatureConfig
             .Builder
         getSuggestionFeatureConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSuggestionFeatureConfigFieldBuilder().getBuilder();
     }
