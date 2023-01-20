@@ -111,7 +111,7 @@ public interface PolicyOrBuilder
    * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=217
+   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=204
    * @return Whether the alternate field is set.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface PolicyOrBuilder
    * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=217
+   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=204
    * @return The alternate.
    */
   @java.lang.Deprecated
@@ -142,4 +142,45 @@ public interface PolicyOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.orgpolicy.v2.AlternatePolicySpecOrBuilder getAlternateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * dry-run policy.
+   * Audit-only policy, can be used to monitor how the policy would have
+   * impacted the existing and future resources if it's enforced.
+   * </pre>
+   *
+   * <code>.google.cloud.orgpolicy.v2.PolicySpec dry_run_spec = 4;</code>
+   *
+   * @return Whether the dryRunSpec field is set.
+   */
+  boolean hasDryRunSpec();
+  /**
+   *
+   *
+   * <pre>
+   * dry-run policy.
+   * Audit-only policy, can be used to monitor how the policy would have
+   * impacted the existing and future resources if it's enforced.
+   * </pre>
+   *
+   * <code>.google.cloud.orgpolicy.v2.PolicySpec dry_run_spec = 4;</code>
+   *
+   * @return The dryRunSpec.
+   */
+  com.google.cloud.orgpolicy.v2.PolicySpec getDryRunSpec();
+  /**
+   *
+   *
+   * <pre>
+   * dry-run policy.
+   * Audit-only policy, can be used to monitor how the policy would have
+   * impacted the existing and future resources if it's enforced.
+   * </pre>
+   *
+   * <code>.google.cloud.orgpolicy.v2.PolicySpec dry_run_spec = 4;</code>
+   */
+  com.google.cloud.orgpolicy.v2.PolicySpecOrBuilder getDryRunSpecOrBuilder();
 }

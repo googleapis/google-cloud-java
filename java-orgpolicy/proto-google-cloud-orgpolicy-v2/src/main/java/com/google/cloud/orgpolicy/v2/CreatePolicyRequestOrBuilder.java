@@ -27,8 +27,8 @@ public interface CreatePolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Cloud resource that will parent the new Policy. Must be in one of the
-   * following forms:
+   * Required. The Cloud resource that will parent the new Policy. Must be in
+   * one of the following forms:
    * * `projects/{project_number}`
    * * `projects/{project_id}`
    * * `folders/{folder_id}`
@@ -46,8 +46,8 @@ public interface CreatePolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Cloud resource that will parent the new Policy. Must be in one of the
-   * following forms:
+   * Required. The Cloud resource that will parent the new Policy. Must be in
+   * one of the following forms:
    * * `projects/{project_number}`
    * * `projects/{project_id}`
    * * `folders/{folder_id}`

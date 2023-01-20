@@ -484,6 +484,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int ALLOWED_VALUES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList allowedValues_;
       /**
        *
@@ -545,6 +547,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int DENIED_VALUES_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList deniedValues_;
       /**
        *
@@ -845,6 +849,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000001);
           deniedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -878,7 +883,16 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues buildPartial() {
           com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues result =
               new com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues result) {
           if (((bitField0_ & 0x00000001) != 0)) {
             allowedValues_ = allowedValues_.getUnmodifiableView();
             bitField0_ = (bitField0_ & ~0x00000001);
@@ -889,8 +903,11 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
             bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.deniedValues_ = deniedValues_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues result) {
+          int from_bitField0_ = bitField0_;
         }
 
         @java.lang.Override
@@ -1723,7 +1740,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.type.ExprOrBuilder getConditionOrBuilder() {
-      return getCondition();
+      return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2001,13 +2018,13 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (valuesBuilder_ != null) {
           valuesBuilder_.clear();
         }
-        if (conditionBuilder_ == null) {
-          condition_ = null;
-        } else {
-          condition_ = null;
+        condition_ = null;
+        if (conditionBuilder_ != null) {
+          conditionBuilder_.dispose();
           conditionBuilder_ = null;
         }
         kindCase_ = 0;
@@ -2039,30 +2056,27 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule buildPartial() {
         com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule result =
             new com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule(this);
-        if (kindCase_ == 1) {
-          if (valuesBuilder_ == null) {
-            result.kind_ = kind_;
-          } else {
-            result.kind_ = valuesBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (kindCase_ == 2) {
-          result.kind_ = kind_;
-        }
-        if (kindCase_ == 3) {
-          result.kind_ = kind_;
-        }
-        if (kindCase_ == 4) {
-          result.kind_ = kind_;
-        }
-        if (conditionBuilder_ == null) {
-          result.condition_ = condition_;
-        } else {
-          result.condition_ = conditionBuilder_.build();
-        }
-        result.kindCase_ = kindCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
+        }
+      }
+
+      private void buildPartialOneofs(com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule result) {
+        result.kindCase_ = kindCase_;
+        result.kind_ = this.kind_;
+        if (kindCase_ == 1 && valuesBuilder_ != null) {
+          result.kind_ = valuesBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -2195,7 +2209,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
               case 42:
                 {
                   input.readMessage(getConditionFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               default:
@@ -2228,6 +2242,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues,
@@ -2456,7 +2472,6 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
         }
         kindCase_ = 1;
         onChanged();
-        ;
         return valuesBuilder_;
       }
 
@@ -2507,6 +2522,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setAllowAll(boolean value) {
+
         kindCase_ = 2;
         kind_ = value;
         onChanged();
@@ -2580,6 +2596,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setDenyAll(boolean value) {
+
         kindCase_ = 3;
         kind_ = value;
         onChanged();
@@ -2656,6 +2673,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setEnforce(boolean value) {
+
         kindCase_ = 4;
         kind_ = value;
         onChanged();
@@ -2710,7 +2728,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the condition field is set.
        */
       public boolean hasCondition() {
-        return conditionBuilder_ != null || condition_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -2767,11 +2785,11 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           condition_ = value;
-          onChanged();
         } else {
           conditionBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -2797,11 +2815,11 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
       public Builder setCondition(com.google.type.Expr.Builder builderForValue) {
         if (conditionBuilder_ == null) {
           condition_ = builderForValue.build();
-          onChanged();
         } else {
           conditionBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -2826,17 +2844,18 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeCondition(com.google.type.Expr value) {
         if (conditionBuilder_ == null) {
-          if (condition_ != null) {
-            condition_ =
-                com.google.type.Expr.newBuilder(condition_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000010) != 0)
+              && condition_ != null
+              && condition_ != com.google.type.Expr.getDefaultInstance()) {
+            getConditionBuilder().mergeFrom(value);
           } else {
             condition_ = value;
           }
-          onChanged();
         } else {
           conditionBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -2860,14 +2879,13 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.type.Expr condition = 5;</code>
        */
       public Builder clearCondition() {
-        if (conditionBuilder_ == null) {
-          condition_ = null;
-          onChanged();
-        } else {
-          condition_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        condition_ = null;
+        if (conditionBuilder_ != null) {
+          conditionBuilder_.dispose();
           conditionBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2891,7 +2909,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.type.Expr condition = 5;</code>
        */
       public com.google.type.Expr.Builder getConditionBuilder() {
-
+        bitField0_ |= 0x00000010;
         onChanged();
         return getConditionFieldBuilder().getBuilder();
       }
@@ -3021,7 +3039,9 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ETAG_FIELD_NUMBER = 1;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -3135,10 +3155,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int RULES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule> rules_;
   /**
    *
@@ -3238,7 +3260,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INHERIT_FROM_PARENT_FIELD_NUMBER = 4;
-  private boolean inheritFromParent_;
+  private boolean inheritFromParent_ = false;
   /**
    *
    *
@@ -3261,7 +3283,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESET_FIELD_NUMBER = 5;
-  private boolean reset_;
+  private boolean reset_ = false;
   /**
    *
    *
@@ -3523,12 +3545,11 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       etag_ = "";
-
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       if (rulesBuilder_ == null) {
@@ -3537,11 +3558,9 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
         rules_ = null;
         rulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       inheritFromParent_ = false;
-
       reset_ = false;
-
       return this;
     }
 
@@ -3569,26 +3588,40 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.orgpolicy.v2.PolicySpec buildPartial() {
       com.google.cloud.orgpolicy.v2.PolicySpec result =
           new com.google.cloud.orgpolicy.v2.PolicySpec(this);
-      int from_bitField0_ = bitField0_;
-      result.etag_ = etag_;
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.orgpolicy.v2.PolicySpec result) {
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.rules_ = rules_;
       } else {
         result.rules_ = rulesBuilder_.build();
       }
-      result.inheritFromParent_ = inheritFromParent_;
-      result.reset_ = reset_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.orgpolicy.v2.PolicySpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.inheritFromParent_ = inheritFromParent_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.reset_ = reset_;
+      }
     }
 
     @java.lang.Override
@@ -3638,6 +3671,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.orgpolicy.v2.PolicySpec.getDefaultInstance()) return this;
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasUpdateTime()) {
@@ -3647,7 +3681,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -3660,7 +3694,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRulesFieldBuilder()
@@ -3705,13 +3739,13 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -3731,13 +3765,13 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 inheritFromParent_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 reset_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -3841,8 +3875,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3865,8 +3899,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -3894,8 +3928,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3922,7 +3956,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -3967,11 +4001,11 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3990,11 +4024,11 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -4012,17 +4046,18 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -4039,14 +4074,13 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4063,7 +4097,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -4123,10 +4157,10 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         rules_ =
             new java.util.ArrayList<com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule>(rules_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -4408,7 +4442,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -4574,7 +4608,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule,
                 com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.Builder,
                 com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRuleOrBuilder>(
-                rules_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;
@@ -4621,6 +4655,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
     public Builder setInheritFromParent(boolean value) {
 
       inheritFromParent_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4641,7 +4676,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInheritFromParent() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       inheritFromParent_ = false;
       onChanged();
       return this;
@@ -4688,6 +4723,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
     public Builder setReset(boolean value) {
 
       reset_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4708,7 +4744,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReset() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       reset_ = false;
       onChanged();
       return this;

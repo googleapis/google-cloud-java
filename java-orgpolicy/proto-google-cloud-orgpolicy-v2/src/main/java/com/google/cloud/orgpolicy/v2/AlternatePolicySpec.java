@@ -69,7 +69,9 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
   }
 
   public static final int LAUNCH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object launch_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object launch_ = "";
   /**
    *
    *
@@ -164,7 +166,7 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.orgpolicy.v2.PolicySpecOrBuilder getSpecOrBuilder() {
-    return getSpec();
+    return spec_ == null ? com.google.cloud.orgpolicy.v2.PolicySpec.getDefaultInstance() : spec_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -379,12 +381,11 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       launch_ = "";
-
-      if (specBuilder_ == null) {
-        spec_ = null;
-      } else {
-        spec_ = null;
+      spec_ = null;
+      if (specBuilder_ != null) {
+        specBuilder_.dispose();
         specBuilder_ = null;
       }
       return this;
@@ -414,14 +415,21 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
     public com.google.cloud.orgpolicy.v2.AlternatePolicySpec buildPartial() {
       com.google.cloud.orgpolicy.v2.AlternatePolicySpec result =
           new com.google.cloud.orgpolicy.v2.AlternatePolicySpec(this);
-      result.launch_ = launch_;
-      if (specBuilder_ == null) {
-        result.spec_ = spec_;
-      } else {
-        result.spec_ = specBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.orgpolicy.v2.AlternatePolicySpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.launch_ = launch_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.spec_ = specBuilder_ == null ? spec_ : specBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -472,6 +480,7 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getLaunch().isEmpty()) {
         launch_ = other.launch_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSpec()) {
@@ -506,13 +515,13 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 launch_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -531,6 +540,8 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object launch_ = "";
     /**
@@ -599,8 +610,8 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       launch_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -618,8 +629,8 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearLaunch() {
-
       launch_ = getDefaultInstance().getLaunch();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -642,8 +653,8 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       launch_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -666,7 +677,7 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
      * @return Whether the spec field is set.
      */
     public boolean hasSpec() {
-      return specBuilder_ != null || spec_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -703,11 +714,11 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         spec_ = value;
-        onChanged();
       } else {
         specBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -722,11 +733,11 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
     public Builder setSpec(com.google.cloud.orgpolicy.v2.PolicySpec.Builder builderForValue) {
       if (specBuilder_ == null) {
         spec_ = builderForValue.build();
-        onChanged();
       } else {
         specBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -740,19 +751,18 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeSpec(com.google.cloud.orgpolicy.v2.PolicySpec value) {
       if (specBuilder_ == null) {
-        if (spec_ != null) {
-          spec_ =
-              com.google.cloud.orgpolicy.v2.PolicySpec.newBuilder(spec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && spec_ != null
+            && spec_ != com.google.cloud.orgpolicy.v2.PolicySpec.getDefaultInstance()) {
+          getSpecBuilder().mergeFrom(value);
         } else {
           spec_ = value;
         }
-        onChanged();
       } else {
         specBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -765,14 +775,13 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
      */
     public Builder clearSpec() {
-      if (specBuilder_ == null) {
-        spec_ = null;
-        onChanged();
-      } else {
-        spec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      spec_ = null;
+      if (specBuilder_ != null) {
+        specBuilder_.dispose();
         specBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -785,7 +794,7 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
      */
     public com.google.cloud.orgpolicy.v2.PolicySpec.Builder getSpecBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSpecFieldBuilder().getBuilder();
     }

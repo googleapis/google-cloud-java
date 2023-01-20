@@ -60,4 +60,45 @@ public interface UpdatePolicyRequestOrBuilder
    * </code>
    */
   com.google.cloud.orgpolicy.v2.PolicyOrBuilder getPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Field mask used to specify the fields to be overwritten in the policy
+   * by the set. The fields specified in the update_mask are relative to the
+   * policy, not the full request.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * Field mask used to specify the fields to be overwritten in the policy
+   * by the set. The fields specified in the update_mask are relative to the
+   * policy, not the full request.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * Field mask used to specify the fields to be overwritten in the policy
+   * by the set. The fields specified in the update_mask are relative to the
+   * policy, not the full request.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

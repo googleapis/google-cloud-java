@@ -278,6 +278,7 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdatePolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

@@ -483,6 +483,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -529,6 +530,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -575,6 +577,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -621,6 +624,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -667,6 +671,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -715,6 +720,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -763,6 +769,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -811,6 +818,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -859,6 +867,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -867,6 +876,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
 
     Policy actualResponse = client.updatePolicy(policy);
@@ -900,6 +910,7 @@ public class OrgPolicyClientHttpJsonTest {
               .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
               .setSpec(PolicySpec.newBuilder().build())
               .setAlternate(AlternatePolicySpec.newBuilder().build())
+              .setDryRunSpec(PolicySpec.newBuilder().build())
               .build();
       client.updatePolicy(policy);
       Assert.fail("No exception raised");
