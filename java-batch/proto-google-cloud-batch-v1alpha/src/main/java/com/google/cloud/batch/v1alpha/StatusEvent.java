@@ -69,7 +69,9 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -209,7 +213,7 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEventTimeOrBuilder() {
-    return getEventTime();
+    return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
   }
 
   public static final int TASK_EXECUTION_FIELD_NUMBER = 4;
@@ -257,7 +261,9 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.batch.v1alpha.TaskExecutionOrBuilder getTaskExecutionOrBuilder() {
-    return getTaskExecution();
+    return taskExecution_ == null
+        ? com.google.cloud.batch.v1alpha.TaskExecution.getDefaultInstance()
+        : taskExecution_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -494,20 +500,17 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = "";
-
       description_ = "";
-
-      if (eventTimeBuilder_ == null) {
-        eventTime_ = null;
-      } else {
-        eventTime_ = null;
+      eventTime_ = null;
+      if (eventTimeBuilder_ != null) {
+        eventTimeBuilder_.dispose();
         eventTimeBuilder_ = null;
       }
-      if (taskExecutionBuilder_ == null) {
-        taskExecution_ = null;
-      } else {
-        taskExecution_ = null;
+      taskExecution_ = null;
+      if (taskExecutionBuilder_ != null) {
+        taskExecutionBuilder_.dispose();
         taskExecutionBuilder_ = null;
       }
       return this;
@@ -537,20 +540,28 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.batch.v1alpha.StatusEvent buildPartial() {
       com.google.cloud.batch.v1alpha.StatusEvent result =
           new com.google.cloud.batch.v1alpha.StatusEvent(this);
-      result.type_ = type_;
-      result.description_ = description_;
-      if (eventTimeBuilder_ == null) {
-        result.eventTime_ = eventTime_;
-      } else {
-        result.eventTime_ = eventTimeBuilder_.build();
-      }
-      if (taskExecutionBuilder_ == null) {
-        result.taskExecution_ = taskExecution_;
-      } else {
-        result.taskExecution_ = taskExecutionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.batch.v1alpha.StatusEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.eventTime_ = eventTimeBuilder_ == null ? eventTime_ : eventTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.taskExecution_ =
+            taskExecutionBuilder_ == null ? taskExecution_ : taskExecutionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -600,10 +611,12 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.batch.v1alpha.StatusEvent.getDefaultInstance()) return this;
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasEventTime()) {
@@ -641,25 +654,25 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEventTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getTaskExecutionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -678,6 +691,8 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object type_ = "";
     /**
@@ -740,8 +755,8 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -757,8 +772,8 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -779,8 +794,8 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -846,8 +861,8 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -863,8 +878,8 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -885,8 +900,8 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -909,7 +924,7 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the eventTime field is set.
      */
     public boolean hasEventTime() {
-      return eventTimeBuilder_ != null || eventTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -944,11 +959,11 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         eventTime_ = value;
-        onChanged();
       } else {
         eventTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -963,11 +978,11 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
     public Builder setEventTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (eventTimeBuilder_ == null) {
         eventTime_ = builderForValue.build();
-        onChanged();
       } else {
         eventTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -981,17 +996,18 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEventTime(com.google.protobuf.Timestamp value) {
       if (eventTimeBuilder_ == null) {
-        if (eventTime_ != null) {
-          eventTime_ =
-              com.google.protobuf.Timestamp.newBuilder(eventTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && eventTime_ != null
+            && eventTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEventTimeBuilder().mergeFrom(value);
         } else {
           eventTime_ = value;
         }
-        onChanged();
       } else {
         eventTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1004,14 +1020,13 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp event_time = 2;</code>
      */
     public Builder clearEventTime() {
-      if (eventTimeBuilder_ == null) {
-        eventTime_ = null;
-        onChanged();
-      } else {
-        eventTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      eventTime_ = null;
+      if (eventTimeBuilder_ != null) {
+        eventTimeBuilder_.dispose();
         eventTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1024,7 +1039,7 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp event_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEventTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getEventTimeFieldBuilder().getBuilder();
     }
@@ -1088,7 +1103,7 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the taskExecution field is set.
      */
     public boolean hasTaskExecution() {
-      return taskExecutionBuilder_ != null || taskExecution_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1125,11 +1140,11 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         taskExecution_ = value;
-        onChanged();
       } else {
         taskExecutionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1145,11 +1160,11 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.batch.v1alpha.TaskExecution.Builder builderForValue) {
       if (taskExecutionBuilder_ == null) {
         taskExecution_ = builderForValue.build();
-        onChanged();
       } else {
         taskExecutionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1163,19 +1178,19 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTaskExecution(com.google.cloud.batch.v1alpha.TaskExecution value) {
       if (taskExecutionBuilder_ == null) {
-        if (taskExecution_ != null) {
-          taskExecution_ =
-              com.google.cloud.batch.v1alpha.TaskExecution.newBuilder(taskExecution_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && taskExecution_ != null
+            && taskExecution_
+                != com.google.cloud.batch.v1alpha.TaskExecution.getDefaultInstance()) {
+          getTaskExecutionBuilder().mergeFrom(value);
         } else {
           taskExecution_ = value;
         }
-        onChanged();
       } else {
         taskExecutionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1188,14 +1203,13 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.batch.v1alpha.TaskExecution task_execution = 4;</code>
      */
     public Builder clearTaskExecution() {
-      if (taskExecutionBuilder_ == null) {
-        taskExecution_ = null;
-        onChanged();
-      } else {
-        taskExecution_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      taskExecution_ = null;
+      if (taskExecutionBuilder_ != null) {
+        taskExecutionBuilder_.dispose();
         taskExecutionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1208,7 +1222,7 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.batch.v1alpha.TaskExecution task_execution = 4;</code>
      */
     public com.google.cloud.batch.v1alpha.TaskExecution.Builder getTaskExecutionBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getTaskExecutionFieldBuilder().getBuilder();
     }

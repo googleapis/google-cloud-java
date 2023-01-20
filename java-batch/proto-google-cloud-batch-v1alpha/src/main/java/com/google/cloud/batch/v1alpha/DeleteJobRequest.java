@@ -70,7 +70,9 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int REASON_FIELD_NUMBER = 2;
-  private volatile java.lang.Object reason_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reason_ = "";
   /**
    *
    *
@@ -168,15 +172,17 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
    * <pre>
-   * Optional. An optional request ID to identify requests. Specify a unique request ID
-   * so that if you must retry your request, the server will know to ignore
-   * the request if it has already been completed. The server will guarantee
-   * that for at least 60 minutes after the first request.
+   * Optional. An optional request ID to identify requests. Specify a unique
+   * request ID so that if you must retry your request, the server will know to
+   * ignore the request if it has already been completed. The server will
+   * guarantee that for at least 60 minutes after the first request.
    * For example, consider a situation where you make an initial request and t
    * he request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
@@ -206,10 +212,10 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. An optional request ID to identify requests. Specify a unique request ID
-   * so that if you must retry your request, the server will know to ignore
-   * the request if it has already been completed. The server will guarantee
-   * that for at least 60 minutes after the first request.
+   * Optional. An optional request ID to identify requests. Specify a unique
+   * request ID so that if you must retry your request, the server will know to
+   * ignore the request if it has already been completed. The server will
+   * guarantee that for at least 60 minutes after the first request.
    * For example, consider a situation where you make an initial request and t
    * he request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
@@ -451,12 +457,10 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       reason_ = "";
-
       requestId_ = "";
-
       return this;
     }
 
@@ -484,11 +488,24 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.batch.v1alpha.DeleteJobRequest buildPartial() {
       com.google.cloud.batch.v1alpha.DeleteJobRequest result =
           new com.google.cloud.batch.v1alpha.DeleteJobRequest(this);
-      result.name_ = name_;
-      result.reason_ = reason_;
-      result.requestId_ = requestId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.batch.v1alpha.DeleteJobRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.reason_ = reason_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -539,14 +556,17 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getReason().isEmpty()) {
         reason_ = other.reason_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -578,19 +598,19 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 reason_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -609,6 +629,8 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -671,8 +693,8 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -688,8 +710,8 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -710,8 +732,8 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -777,8 +799,8 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       reason_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -794,8 +816,8 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearReason() {
-
       reason_ = getDefaultInstance().getReason();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -816,8 +838,8 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       reason_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -827,10 +849,10 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. An optional request ID to identify requests. Specify a unique request ID
-     * so that if you must retry your request, the server will know to ignore
-     * the request if it has already been completed. The server will guarantee
-     * that for at least 60 minutes after the first request.
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes after the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -859,10 +881,10 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. An optional request ID to identify requests. Specify a unique request ID
-     * so that if you must retry your request, the server will know to ignore
-     * the request if it has already been completed. The server will guarantee
-     * that for at least 60 minutes after the first request.
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes after the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -891,10 +913,10 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. An optional request ID to identify requests. Specify a unique request ID
-     * so that if you must retry your request, the server will know to ignore
-     * the request if it has already been completed. The server will guarantee
-     * that for at least 60 minutes after the first request.
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes after the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -913,8 +935,8 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -922,10 +944,10 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. An optional request ID to identify requests. Specify a unique request ID
-     * so that if you must retry your request, the server will know to ignore
-     * the request if it has already been completed. The server will guarantee
-     * that for at least 60 minutes after the first request.
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes after the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -940,8 +962,8 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -949,10 +971,10 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. An optional request ID to identify requests. Specify a unique request ID
-     * so that if you must retry your request, the server will know to ignore
-     * the request if it has already been completed. The server will guarantee
-     * that for at least 60 minutes after the first request.
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes after the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -972,8 +994,8 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

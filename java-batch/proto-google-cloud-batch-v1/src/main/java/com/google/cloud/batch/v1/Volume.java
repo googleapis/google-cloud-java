@@ -305,7 +305,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MOUNT_PATH_FIELD_NUMBER = 4;
-  private volatile java.lang.Object mountPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mountPath_ = "";
   /**
    *
    *
@@ -354,6 +356,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MOUNT_OPTIONS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList mountOptions_;
   /**
    *
@@ -709,6 +713,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (nfsBuilder_ != null) {
         nfsBuilder_.clear();
       }
@@ -716,9 +721,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         gcsBuilder_.clear();
       }
       mountPath_ = "";
-
       mountOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -747,33 +751,39 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.batch.v1.Volume buildPartial() {
       com.google.cloud.batch.v1.Volume result = new com.google.cloud.batch.v1.Volume(this);
-      int from_bitField0_ = bitField0_;
-      if (sourceCase_ == 1) {
-        if (nfsBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = nfsBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 3) {
-        if (gcsBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsBuilder_.build();
-        }
-      }
-      if (sourceCase_ == 6) {
-        result.source_ = source_;
-      }
-      result.mountPath_ = mountPath_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        mountOptions_ = mountOptions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.mountOptions_ = mountOptions_;
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.batch.v1.Volume result) {
+      if (((bitField0_ & 0x00000010) != 0)) {
+        mountOptions_ = mountOptions_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.mountOptions_ = mountOptions_;
+    }
+
+    private void buildPartial0(com.google.cloud.batch.v1.Volume result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.mountPath_ = mountPath_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.batch.v1.Volume result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 1 && nfsBuilder_ != null) {
+        result.source_ = nfsBuilder_.build();
+      }
+      if (sourceCase_ == 3 && gcsBuilder_ != null) {
+        result.source_ = gcsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -823,12 +833,13 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.batch.v1.Volume.getDefaultInstance()) return this;
       if (!other.getMountPath().isEmpty()) {
         mountPath_ = other.mountPath_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.mountOptions_.isEmpty()) {
         if (mountOptions_.isEmpty()) {
           mountOptions_ = other.mountOptions_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureMountOptionsIsMutable();
           mountOptions_.addAll(other.mountOptions_);
@@ -899,7 +910,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 mountPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1164,7 +1175,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 1;
       onChanged();
-      ;
       return nfsBuilder_;
     }
 
@@ -1374,7 +1384,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 3;
       onChanged();
-      ;
       return gcsBuilder_;
     }
 
@@ -1597,8 +1606,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       mountPath_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1614,8 +1623,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMountPath() {
-
       mountPath_ = getDefaultInstance().getMountPath();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1636,8 +1645,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mountPath_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1646,9 +1655,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureMountOptionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         mountOptions_ = new com.google.protobuf.LazyStringArrayList(mountOptions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1847,7 +1856,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMountOptions() {
       mountOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }

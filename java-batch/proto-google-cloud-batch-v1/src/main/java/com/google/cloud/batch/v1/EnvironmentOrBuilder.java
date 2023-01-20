@@ -65,7 +65,6 @@ public interface EnvironmentOrBuilder
    *
    * <code>map&lt;string, string&gt; variables = 1;</code>
    */
-
   /* nullable */
   java.lang.String getVariablesOrDefault(
       java.lang.String key,
@@ -132,7 +131,6 @@ public interface EnvironmentOrBuilder
    *
    * <code>map&lt;string, string&gt; secret_variables = 2;</code>
    */
-
   /* nullable */
   java.lang.String getSecretVariablesOrDefault(
       java.lang.String key,

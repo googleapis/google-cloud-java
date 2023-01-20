@@ -177,7 +177,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int KEY_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object keyName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object keyName_ = "";
     /**
      *
      *
@@ -226,7 +228,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CIPHER_TEXT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object cipherText_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object cipherText_ = "";
     /**
      *
      *
@@ -474,10 +478,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         keyName_ = "";
-
         cipherText_ = "";
-
         return this;
       }
 
@@ -505,10 +508,21 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.batch.v1.Environment.KMSEnvMap buildPartial() {
         com.google.cloud.batch.v1.Environment.KMSEnvMap result =
             new com.google.cloud.batch.v1.Environment.KMSEnvMap(this);
-        result.keyName_ = keyName_;
-        result.cipherText_ = cipherText_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.batch.v1.Environment.KMSEnvMap result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.keyName_ = keyName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.cipherText_ = cipherText_;
+        }
       }
 
       @java.lang.Override
@@ -561,10 +575,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getKeyName().isEmpty()) {
           keyName_ = other.keyName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getCipherText().isEmpty()) {
           cipherText_ = other.cipherText_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -596,13 +612,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   keyName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   cipherText_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -621,6 +637,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object keyName_ = "";
       /**
@@ -683,8 +701,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         keyName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -700,8 +718,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearKeyName() {
-
         keyName_ = getDefaultInstance().getKeyName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -722,8 +740,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         keyName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -789,8 +807,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         cipherText_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -806,8 +824,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearCipherText() {
-
         cipherText_ = getDefaultInstance().getCipherText();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -828,8 +846,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         cipherText_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -911,6 +929,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> variables_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetVariables() {
@@ -968,8 +987,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; variables = 1;</code>
    */
   @java.lang.Override
-  public java.lang.String getVariablesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getVariablesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1010,6 +1031,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> secretVariables_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -1075,8 +1097,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; secret_variables = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getSecretVariablesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getSecretVariablesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1154,7 +1178,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.batch.v1.Environment.KMSEnvMapOrBuilder getEncryptedVariablesOrBuilder() {
-    return getEncryptedVariables();
+    return encryptedVariables_ == null
+        ? com.google.cloud.batch.v1.Environment.KMSEnvMap.getDefaultInstance()
+        : encryptedVariables_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1416,12 +1442,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableVariables().clear();
       internalGetMutableSecretVariables().clear();
-      if (encryptedVariablesBuilder_ == null) {
-        encryptedVariables_ = null;
-      } else {
-        encryptedVariables_ = null;
+      encryptedVariables_ = null;
+      if (encryptedVariablesBuilder_ != null) {
+        encryptedVariablesBuilder_.dispose();
         encryptedVariablesBuilder_ = null;
       }
       return this;
@@ -1451,18 +1477,29 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.batch.v1.Environment buildPartial() {
       com.google.cloud.batch.v1.Environment result =
           new com.google.cloud.batch.v1.Environment(this);
-      int from_bitField0_ = bitField0_;
-      result.variables_ = internalGetVariables();
-      result.variables_.makeImmutable();
-      result.secretVariables_ = internalGetSecretVariables();
-      result.secretVariables_.makeImmutable();
-      if (encryptedVariablesBuilder_ == null) {
-        result.encryptedVariables_ = encryptedVariables_;
-      } else {
-        result.encryptedVariables_ = encryptedVariablesBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.batch.v1.Environment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.variables_ = internalGetVariables();
+        result.variables_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.secretVariables_ = internalGetSecretVariables();
+        result.secretVariables_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.encryptedVariables_ =
+            encryptedVariablesBuilder_ == null
+                ? encryptedVariables_
+                : encryptedVariablesBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1511,7 +1548,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.batch.v1.Environment other) {
       if (other == com.google.cloud.batch.v1.Environment.getDefaultInstance()) return this;
       internalGetMutableVariables().mergeFrom(other.internalGetVariables());
+      bitField0_ |= 0x00000001;
       internalGetMutableSecretVariables().mergeFrom(other.internalGetSecretVariables());
+      bitField0_ |= 0x00000002;
       if (other.hasEncryptedVariables()) {
         mergeEncryptedVariables(other.getEncryptedVariables());
       }
@@ -1550,6 +1589,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableVariables()
                     .getMutableMap()
                     .put(variables__.getKey(), variables__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1561,13 +1601,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableSecretVariables()
                     .getMutableMap()
                     .put(secretVariables__.getKey(), secretVariables__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getEncryptedVariablesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -1601,8 +1642,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableVariables() {
-      onChanged();
-      ;
       if (variables_ == null) {
         variables_ =
             com.google.protobuf.MapField.newMapField(VariablesDefaultEntryHolder.defaultEntry);
@@ -1610,6 +1649,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (!variables_.isMutable()) {
         variables_ = variables_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return variables_;
     }
 
@@ -1661,8 +1702,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; variables = 1;</code>
      */
     @java.lang.Override
-    public java.lang.String getVariablesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getVariablesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1691,6 +1734,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearVariables() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableVariables().getMutableMap().clear();
       return this;
     }
@@ -1713,6 +1757,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableVariables() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableVariables().getMutableMap();
     }
     /**
@@ -1731,8 +1776,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableVariables().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1746,6 +1791,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllVariables(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableVariables().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -1762,8 +1808,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableSecretVariables() {
-      onChanged();
-      ;
       if (secretVariables_ == null) {
         secretVariables_ =
             com.google.protobuf.MapField.newMapField(
@@ -1772,6 +1816,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (!secretVariables_.isMutable()) {
         secretVariables_ = secretVariables_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return secretVariables_;
     }
 
@@ -1829,8 +1875,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; secret_variables = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getSecretVariablesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getSecretVariablesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1861,6 +1909,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearSecretVariables() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableSecretVariables().getMutableMap().clear();
       return this;
     }
@@ -1885,6 +1934,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableSecretVariables() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableSecretVariables().getMutableMap();
     }
     /**
@@ -1905,8 +1955,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableSecretVariables().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1922,6 +1972,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllSecretVariables(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableSecretVariables().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -1944,7 +1995,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encryptedVariables field is set.
      */
     public boolean hasEncryptedVariables() {
-      return encryptedVariablesBuilder_ != null || encryptedVariables_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1983,11 +2034,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         encryptedVariables_ = value;
-        onChanged();
       } else {
         encryptedVariablesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2004,11 +2055,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.batch.v1.Environment.KMSEnvMap.Builder builderForValue) {
       if (encryptedVariablesBuilder_ == null) {
         encryptedVariables_ = builderForValue.build();
-        onChanged();
       } else {
         encryptedVariablesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2023,19 +2074,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEncryptedVariables(com.google.cloud.batch.v1.Environment.KMSEnvMap value) {
       if (encryptedVariablesBuilder_ == null) {
-        if (encryptedVariables_ != null) {
-          encryptedVariables_ =
-              com.google.cloud.batch.v1.Environment.KMSEnvMap.newBuilder(encryptedVariables_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && encryptedVariables_ != null
+            && encryptedVariables_
+                != com.google.cloud.batch.v1.Environment.KMSEnvMap.getDefaultInstance()) {
+          getEncryptedVariablesBuilder().mergeFrom(value);
         } else {
           encryptedVariables_ = value;
         }
-        onChanged();
       } else {
         encryptedVariablesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2049,14 +2100,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.batch.v1.Environment.KMSEnvMap encrypted_variables = 3;</code>
      */
     public Builder clearEncryptedVariables() {
-      if (encryptedVariablesBuilder_ == null) {
-        encryptedVariables_ = null;
-        onChanged();
-      } else {
-        encryptedVariables_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      encryptedVariables_ = null;
+      if (encryptedVariablesBuilder_ != null) {
+        encryptedVariablesBuilder_.dispose();
         encryptedVariablesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2070,7 +2120,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.batch.v1.Environment.KMSEnvMap encrypted_variables = 3;</code>
      */
     public com.google.cloud.batch.v1.Environment.KMSEnvMap.Builder getEncryptedVariablesBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getEncryptedVariablesFieldBuilder().getBuilder();
     }

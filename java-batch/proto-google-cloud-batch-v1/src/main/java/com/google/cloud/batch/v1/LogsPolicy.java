@@ -227,7 +227,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESTINATION_FIELD_NUMBER = 1;
-  private int destination_;
+  private int destination_ = 0;
   /**
    *
    *
@@ -256,14 +256,15 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.batch.v1.LogsPolicy.Destination getDestination() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.batch.v1.LogsPolicy.Destination result =
-        com.google.cloud.batch.v1.LogsPolicy.Destination.valueOf(destination_);
+        com.google.cloud.batch.v1.LogsPolicy.Destination.forNumber(destination_);
     return result == null ? com.google.cloud.batch.v1.LogsPolicy.Destination.UNRECOGNIZED : result;
   }
 
   public static final int LOGS_PATH_FIELD_NUMBER = 2;
-  private volatile java.lang.Object logsPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object logsPath_ = "";
   /**
    *
    *
@@ -522,10 +523,9 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       destination_ = 0;
-
       logsPath_ = "";
-
       return this;
     }
 
@@ -552,10 +552,21 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.batch.v1.LogsPolicy buildPartial() {
       com.google.cloud.batch.v1.LogsPolicy result = new com.google.cloud.batch.v1.LogsPolicy(this);
-      result.destination_ = destination_;
-      result.logsPath_ = logsPath_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.batch.v1.LogsPolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.destination_ = destination_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.logsPath_ = logsPath_;
+      }
     }
 
     @java.lang.Override
@@ -608,6 +619,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getLogsPath().isEmpty()) {
         logsPath_ = other.logsPath_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -639,13 +651,13 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 destination_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 logsPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -664,6 +676,8 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int destination_ = 0;
     /**
@@ -694,8 +708,8 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDestinationValue(int value) {
-
       destination_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -712,9 +726,8 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.batch.v1.LogsPolicy.Destination getDestination() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.batch.v1.LogsPolicy.Destination result =
-          com.google.cloud.batch.v1.LogsPolicy.Destination.valueOf(destination_);
+          com.google.cloud.batch.v1.LogsPolicy.Destination.forNumber(destination_);
       return result == null
           ? com.google.cloud.batch.v1.LogsPolicy.Destination.UNRECOGNIZED
           : result;
@@ -735,7 +748,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       destination_ = value.getNumber();
       onChanged();
       return this;
@@ -752,7 +765,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDestination() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       destination_ = 0;
       onChanged();
       return this;
@@ -825,8 +838,8 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       logsPath_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -844,8 +857,8 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLogsPath() {
-
       logsPath_ = getDefaultInstance().getLogsPath();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -868,8 +881,8 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       logsPath_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

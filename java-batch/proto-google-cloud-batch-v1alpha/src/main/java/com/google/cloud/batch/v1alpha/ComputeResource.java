@@ -66,7 +66,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CPU_MILLI_FIELD_NUMBER = 1;
-  private long cpuMilli_;
+  private long cpuMilli_ = 0L;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MEMORY_MIB_FIELD_NUMBER = 2;
-  private long memoryMib_;
+  private long memoryMib_ = 0L;
   /**
    *
    *
@@ -102,7 +102,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int GPU_COUNT_FIELD_NUMBER = 3;
-  private long gpuCount_;
+  private long gpuCount_ = 0L;
   /**
    *
    *
@@ -121,7 +121,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int BOOT_DISK_MIB_FIELD_NUMBER = 4;
-  private long bootDiskMib_;
+  private long bootDiskMib_ = 0L;
   /**
    *
    *
@@ -362,14 +362,11 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       cpuMilli_ = 0L;
-
       memoryMib_ = 0L;
-
       gpuCount_ = 0L;
-
       bootDiskMib_ = 0L;
-
       return this;
     }
 
@@ -397,12 +394,27 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.batch.v1alpha.ComputeResource buildPartial() {
       com.google.cloud.batch.v1alpha.ComputeResource result =
           new com.google.cloud.batch.v1alpha.ComputeResource(this);
-      result.cpuMilli_ = cpuMilli_;
-      result.memoryMib_ = memoryMib_;
-      result.gpuCount_ = gpuCount_;
-      result.bootDiskMib_ = bootDiskMib_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.batch.v1alpha.ComputeResource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cpuMilli_ = cpuMilli_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.memoryMib_ = memoryMib_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.gpuCount_ = gpuCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.bootDiskMib_ = bootDiskMib_;
+      }
     }
 
     @java.lang.Override
@@ -491,25 +503,25 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 cpuMilli_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 memoryMib_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 gpuCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 bootDiskMib_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -528,6 +540,8 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long cpuMilli_;
     /**
@@ -560,6 +574,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
     public Builder setCpuMilli(long value) {
 
       cpuMilli_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -575,7 +590,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearCpuMilli() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       cpuMilli_ = 0L;
       onChanged();
       return this;
@@ -612,6 +627,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
     public Builder setMemoryMib(long value) {
 
       memoryMib_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -627,7 +643,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearMemoryMib() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       memoryMib_ = 0L;
       onChanged();
       return this;
@@ -666,6 +682,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
     public Builder setGpuCount(long value) {
 
       gpuCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -682,7 +699,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearGpuCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       gpuCount_ = 0L;
       onChanged();
       return this;
@@ -719,6 +736,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
     public Builder setBootDiskMib(long value) {
 
       bootDiskMib_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -734,7 +752,7 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearBootDiskMib() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       bootDiskMib_ = 0L;
       onChanged();
       return this;

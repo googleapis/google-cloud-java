@@ -68,7 +68,9 @@ public final class GCS extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REMOTE_PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object remotePath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object remotePath_ = "";
   /**
    *
    *
@@ -313,8 +315,8 @@ public final class GCS extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       remotePath_ = "";
-
       return this;
     }
 
@@ -341,9 +343,18 @@ public final class GCS extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.batch.v1alpha.GCS buildPartial() {
       com.google.cloud.batch.v1alpha.GCS result = new com.google.cloud.batch.v1alpha.GCS(this);
-      result.remotePath_ = remotePath_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.batch.v1alpha.GCS result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.remotePath_ = remotePath_;
+      }
     }
 
     @java.lang.Override
@@ -393,6 +404,7 @@ public final class GCS extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.batch.v1alpha.GCS.getDefaultInstance()) return this;
       if (!other.getRemotePath().isEmpty()) {
         remotePath_ = other.remotePath_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -424,7 +436,7 @@ public final class GCS extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 remotePath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -443,6 +455,8 @@ public final class GCS extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object remotePath_ = "";
     /**
@@ -508,8 +522,8 @@ public final class GCS extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       remotePath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -526,8 +540,8 @@ public final class GCS extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRemotePath() {
-
       remotePath_ = getDefaultInstance().getRemotePath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -549,8 +563,8 @@ public final class GCS extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       remotePath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

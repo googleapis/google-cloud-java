@@ -437,7 +437,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MACHINE_TYPE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object machineType_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object machineType_ = "";
     /**
      *
      *
@@ -486,7 +488,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PROVISIONING_MODEL_FIELD_NUMBER = 2;
-    private int provisioningModel_;
+    private int provisioningModel_ = 0;
     /**
      *
      *
@@ -517,16 +519,16 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel getProvisioningModel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel result =
-          com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel.valueOf(provisioningModel_);
+          com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel.forNumber(
+              provisioningModel_);
       return result == null
           ? com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel.UNRECOGNIZED
           : result;
     }
 
     public static final int TASK_PACK_FIELD_NUMBER = 3;
-    private long taskPack_;
+    private long taskPack_ = 0L;
     /**
      *
      *
@@ -766,12 +768,10 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         machineType_ = "";
-
         provisioningModel_ = 0;
-
         taskPack_ = 0L;
-
         return this;
       }
 
@@ -799,11 +799,24 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.batch.v1.JobStatus.InstanceStatus buildPartial() {
         com.google.cloud.batch.v1.JobStatus.InstanceStatus result =
             new com.google.cloud.batch.v1.JobStatus.InstanceStatus(this);
-        result.machineType_ = machineType_;
-        result.provisioningModel_ = provisioningModel_;
-        result.taskPack_ = taskPack_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.batch.v1.JobStatus.InstanceStatus result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.machineType_ = machineType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.provisioningModel_ = provisioningModel_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.taskPack_ = taskPack_;
+        }
       }
 
       @java.lang.Override
@@ -856,6 +869,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getMachineType().isEmpty()) {
           machineType_ = other.machineType_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.provisioningModel_ != 0) {
@@ -893,19 +907,19 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   machineType_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   provisioningModel_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   taskPack_ = input.readInt64();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -924,6 +938,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object machineType_ = "";
       /**
@@ -986,8 +1002,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         machineType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1003,8 +1019,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMachineType() {
-
         machineType_ = getDefaultInstance().getMachineType();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1025,8 +1041,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         machineType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1062,8 +1078,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setProvisioningModelValue(int value) {
-
         provisioningModel_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1081,9 +1097,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel getProvisioningModel() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel result =
-            com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel.valueOf(
+            com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel.forNumber(
                 provisioningModel_);
         return result == null
             ? com.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel.UNRECOGNIZED
@@ -1107,7 +1122,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         provisioningModel_ = value.getNumber();
         onChanged();
         return this;
@@ -1125,7 +1140,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearProvisioningModel() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         provisioningModel_ = 0;
         onChanged();
         return this;
@@ -1162,6 +1177,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       public Builder setTaskPack(long value) {
 
         taskPack_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1177,7 +1193,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTaskPack() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         taskPack_ = 0L;
         onChanged();
         return this;
@@ -1436,6 +1452,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
               0L);
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<java.lang.String, java.lang.Long> counts_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.Long> internalGetCounts() {
@@ -1526,6 +1543,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int INSTANCES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.batch.v1.JobStatus.InstanceStatus> instances_;
     /**
      *
@@ -1834,6 +1853,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableCounts().clear();
         if (instancesBuilder_ == null) {
           instances_ = java.util.Collections.emptyList();
@@ -1869,9 +1889,16 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.batch.v1.JobStatus.TaskGroupStatus buildPartial() {
         com.google.cloud.batch.v1.JobStatus.TaskGroupStatus result =
             new com.google.cloud.batch.v1.JobStatus.TaskGroupStatus(this);
-        int from_bitField0_ = bitField0_;
-        result.counts_ = internalGetCounts();
-        result.counts_.makeImmutable();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.batch.v1.JobStatus.TaskGroupStatus result) {
         if (instancesBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
             instances_ = java.util.Collections.unmodifiableList(instances_);
@@ -1881,8 +1908,14 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.instances_ = instancesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.batch.v1.JobStatus.TaskGroupStatus result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.counts_ = internalGetCounts();
+          result.counts_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -1934,6 +1967,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         if (other == com.google.cloud.batch.v1.JobStatus.TaskGroupStatus.getDefaultInstance())
           return this;
         internalGetMutableCounts().mergeFrom(other.internalGetCounts());
+        bitField0_ |= 0x00000001;
         if (instancesBuilder_ == null) {
           if (!other.instances_.isEmpty()) {
             if (instances_.isEmpty()) {
@@ -1996,6 +2030,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
                   internalGetMutableCounts()
                       .getMutableMap()
                       .put(counts__.getKey(), counts__.getValue());
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -2042,14 +2077,14 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
 
       private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
           internalGetMutableCounts() {
-        onChanged();
-        ;
         if (counts_ == null) {
           counts_ = com.google.protobuf.MapField.newMapField(CountsDefaultEntryHolder.defaultEntry);
         }
         if (!counts_.isMutable()) {
           counts_ = counts_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return counts_;
       }
 
@@ -2134,6 +2169,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       }
 
       public Builder clearCounts() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableCounts().getMutableMap().clear();
         return this;
       }
@@ -2157,6 +2193,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.Long> getMutableCounts() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableCounts().getMutableMap();
       }
       /**
@@ -2175,6 +2212,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         }
 
         internalGetMutableCounts().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -2189,6 +2227,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder putAllCounts(java.util.Map<java.lang.String, java.lang.Long> values) {
         internalGetMutableCounts().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -2615,7 +2654,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 1;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -2644,13 +2683,14 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.batch.v1.JobStatus.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.batch.v1.JobStatus.State result =
-        com.google.cloud.batch.v1.JobStatus.State.valueOf(state_);
+        com.google.cloud.batch.v1.JobStatus.State.forNumber(state_);
     return result == null ? com.google.cloud.batch.v1.JobStatus.State.UNRECOGNIZED : result;
   }
 
   public static final int STATUS_EVENTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.batch.v1.StatusEvent> statusEvents_;
   /**
    *
@@ -2736,6 +2776,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
                         com.google.cloud.batch.v1.JobStatus.TaskGroupStatus.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.batch.v1.JobStatus.TaskGroupStatus>
       taskGroups_;
@@ -2805,8 +2846,10 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.batch.v1.JobStatus.TaskGroupStatus getTaskGroupsOrDefault(
-      java.lang.String key, com.google.cloud.batch.v1.JobStatus.TaskGroupStatus defaultValue) {
+  public /* nullable */ com.google.cloud.batch.v1.JobStatus.TaskGroupStatus getTaskGroupsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.batch.v1.JobStatus.TaskGroupStatus defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -2882,7 +2925,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getRunDurationOrBuilder() {
-    return getRunDuration();
+    return runDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : runDuration_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3144,20 +3187,19 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       state_ = 0;
-
       if (statusEventsBuilder_ == null) {
         statusEvents_ = java.util.Collections.emptyList();
       } else {
         statusEvents_ = null;
         statusEventsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableTaskGroups().clear();
-      if (runDurationBuilder_ == null) {
-        runDuration_ = null;
-      } else {
-        runDuration_ = null;
+      runDuration_ = null;
+      if (runDurationBuilder_ != null) {
+        runDurationBuilder_.dispose();
         runDurationBuilder_ = null;
       }
       return this;
@@ -3186,26 +3228,39 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.batch.v1.JobStatus buildPartial() {
       com.google.cloud.batch.v1.JobStatus result = new com.google.cloud.batch.v1.JobStatus(this);
-      int from_bitField0_ = bitField0_;
-      result.state_ = state_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.batch.v1.JobStatus result) {
       if (statusEventsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           statusEvents_ = java.util.Collections.unmodifiableList(statusEvents_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.statusEvents_ = statusEvents_;
       } else {
         result.statusEvents_ = statusEventsBuilder_.build();
       }
-      result.taskGroups_ = internalGetTaskGroups();
-      result.taskGroups_.makeImmutable();
-      if (runDurationBuilder_ == null) {
-        result.runDuration_ = runDuration_;
-      } else {
-        result.runDuration_ = runDurationBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.batch.v1.JobStatus result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.state_ = state_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.taskGroups_ = internalGetTaskGroups();
+        result.taskGroups_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.runDuration_ =
+            runDurationBuilder_ == null ? runDuration_ : runDurationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3260,7 +3315,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         if (!other.statusEvents_.isEmpty()) {
           if (statusEvents_.isEmpty()) {
             statusEvents_ = other.statusEvents_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureStatusEventsIsMutable();
             statusEvents_.addAll(other.statusEvents_);
@@ -3273,7 +3328,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
             statusEventsBuilder_.dispose();
             statusEventsBuilder_ = null;
             statusEvents_ = other.statusEvents_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             statusEventsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStatusEventsFieldBuilder()
@@ -3284,6 +3339,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableTaskGroups().mergeFrom(other.internalGetTaskGroups());
+      bitField0_ |= 0x00000004;
       if (other.hasRunDuration()) {
         mergeRunDuration(other.getRunDuration());
       }
@@ -3316,7 +3372,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -3343,12 +3399,13 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableTaskGroups()
                     .getMutableMap()
                     .put(taskGroups__.getKey(), taskGroups__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getRunDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -3399,8 +3456,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3417,9 +3474,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.batch.v1.JobStatus.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.batch.v1.JobStatus.State result =
-          com.google.cloud.batch.v1.JobStatus.State.valueOf(state_);
+          com.google.cloud.batch.v1.JobStatus.State.forNumber(state_);
       return result == null ? com.google.cloud.batch.v1.JobStatus.State.UNRECOGNIZED : result;
     }
     /**
@@ -3438,7 +3494,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3455,7 +3511,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = 0;
       onChanged();
       return this;
@@ -3465,10 +3521,10 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStatusEventsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         statusEvents_ =
             new java.util.ArrayList<com.google.cloud.batch.v1.StatusEvent>(statusEvents_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -3683,7 +3739,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder clearStatusEvents() {
       if (statusEventsBuilder_ == null) {
         statusEvents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         statusEventsBuilder_.clear();
@@ -3805,7 +3861,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.batch.v1.StatusEvent,
                 com.google.cloud.batch.v1.StatusEvent.Builder,
                 com.google.cloud.batch.v1.StatusEventOrBuilder>(
-                statusEvents_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                statusEvents_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         statusEvents_ = null;
       }
       return statusEventsBuilder_;
@@ -3828,8 +3884,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.batch.v1.JobStatus.TaskGroupStatus>
         internalGetMutableTaskGroups() {
-      onChanged();
-      ;
       if (taskGroups_ == null) {
         taskGroups_ =
             com.google.protobuf.MapField.newMapField(TaskGroupsDefaultEntryHolder.defaultEntry);
@@ -3837,6 +3891,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       if (!taskGroups_.isMutable()) {
         taskGroups_ = taskGroups_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return taskGroups_;
     }
 
@@ -3896,8 +3952,11 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.batch.v1.JobStatus.TaskGroupStatus getTaskGroupsOrDefault(
-        java.lang.String key, com.google.cloud.batch.v1.JobStatus.TaskGroupStatus defaultValue) {
+    public /* nullable */ com.google.cloud.batch.v1.JobStatus.TaskGroupStatus
+        getTaskGroupsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.batch.v1.JobStatus.TaskGroupStatus defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3931,6 +3990,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearTaskGroups() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableTaskGroups().getMutableMap().clear();
       return this;
     }
@@ -3956,6 +4016,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.batch.v1.JobStatus.TaskGroupStatus>
         getMutableTaskGroups() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableTaskGroups().getMutableMap();
     }
     /**
@@ -3977,8 +4038,8 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableTaskGroups().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -3996,6 +4057,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.batch.v1.JobStatus.TaskGroupStatus>
             values) {
       internalGetMutableTaskGroups().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -4017,7 +4079,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the runDuration field is set.
      */
     public boolean hasRunDuration() {
-      return runDurationBuilder_ != null || runDuration_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -4054,11 +4116,11 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         runDuration_ = value;
-        onChanged();
       } else {
         runDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -4073,11 +4135,11 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder setRunDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (runDurationBuilder_ == null) {
         runDuration_ = builderForValue.build();
-        onChanged();
       } else {
         runDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -4091,17 +4153,18 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRunDuration(com.google.protobuf.Duration value) {
       if (runDurationBuilder_ == null) {
-        if (runDuration_ != null) {
-          runDuration_ =
-              com.google.protobuf.Duration.newBuilder(runDuration_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && runDuration_ != null
+            && runDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getRunDurationBuilder().mergeFrom(value);
         } else {
           runDuration_ = value;
         }
-        onChanged();
       } else {
         runDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -4114,14 +4177,13 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration run_duration = 5;</code>
      */
     public Builder clearRunDuration() {
-      if (runDurationBuilder_ == null) {
-        runDuration_ = null;
-        onChanged();
-      } else {
-        runDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      runDuration_ = null;
+      if (runDurationBuilder_ != null) {
+        runDurationBuilder_.dispose();
         runDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4134,7 +4196,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration run_duration = 5;</code>
      */
     public com.google.protobuf.Duration.Builder getRunDurationBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRunDurationFieldBuilder().getBuilder();
     }

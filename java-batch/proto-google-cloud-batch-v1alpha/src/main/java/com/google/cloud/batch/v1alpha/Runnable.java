@@ -406,7 +406,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int IMAGE_URI_FIELD_NUMBER = 1;
-    private volatile java.lang.Object imageUri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object imageUri_ = "";
     /**
      *
      *
@@ -455,6 +457,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int COMMANDS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList commands_;
     /**
      *
@@ -524,7 +528,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ENTRYPOINT_FIELD_NUMBER = 3;
-    private volatile java.lang.Object entrypoint_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object entrypoint_ = "";
     /**
      *
      *
@@ -573,6 +579,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VOLUMES_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList volumes_;
     /**
      *
@@ -642,7 +650,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int OPTIONS_FIELD_NUMBER = 8;
-    private volatile java.lang.Object options_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object options_ = "";
     /**
      *
      *
@@ -693,7 +703,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int BLOCK_EXTERNAL_NETWORK_FIELD_NUMBER = 9;
-    private boolean blockExternalNetwork_;
+    private boolean blockExternalNetwork_ = false;
     /**
      *
      *
@@ -713,7 +723,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int USERNAME_FIELD_NUMBER = 10;
-    private volatile java.lang.Object username_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object username_ = "";
     /**
      *
      *
@@ -766,7 +778,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PASSWORD_FIELD_NUMBER = 11;
-    private volatile java.lang.Object password_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object password_ = "";
     /**
      *
      *
@@ -1094,22 +1108,17 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         imageUri_ = "";
-
         commands_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        entrypoint_ = "";
-
-        volumes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
+        entrypoint_ = "";
+        volumes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
         options_ = "";
-
         blockExternalNetwork_ = false;
-
         username_ = "";
-
         password_ = "";
-
         return this;
       }
 
@@ -1137,25 +1146,48 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.batch.v1alpha.Runnable.Container buildPartial() {
         com.google.cloud.batch.v1alpha.Runnable.Container result =
             new com.google.cloud.batch.v1alpha.Runnable.Container(this);
-        int from_bitField0_ = bitField0_;
-        result.imageUri_ = imageUri_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          commands_ = commands_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.commands_ = commands_;
-        result.entrypoint_ = entrypoint_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          volumes_ = volumes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.volumes_ = volumes_;
-        result.options_ = options_;
-        result.blockExternalNetwork_ = blockExternalNetwork_;
-        result.username_ = username_;
-        result.password_ = password_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.batch.v1alpha.Runnable.Container result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          commands_ = commands_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.commands_ = commands_;
+        if (((bitField0_ & 0x00000008) != 0)) {
+          volumes_ = volumes_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.volumes_ = volumes_;
+      }
+
+      private void buildPartial0(com.google.cloud.batch.v1alpha.Runnable.Container result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.imageUri_ = imageUri_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.entrypoint_ = entrypoint_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.options_ = options_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.blockExternalNetwork_ = blockExternalNetwork_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.username_ = username_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.password_ = password_;
+        }
       }
 
       @java.lang.Override
@@ -1208,12 +1240,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getImageUri().isEmpty()) {
           imageUri_ = other.imageUri_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.commands_.isEmpty()) {
           if (commands_.isEmpty()) {
             commands_ = other.commands_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureCommandsIsMutable();
             commands_.addAll(other.commands_);
@@ -1222,12 +1255,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getEntrypoint().isEmpty()) {
           entrypoint_ = other.entrypoint_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.volumes_.isEmpty()) {
           if (volumes_.isEmpty()) {
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureVolumesIsMutable();
             volumes_.addAll(other.volumes_);
@@ -1236,6 +1270,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getOptions().isEmpty()) {
           options_ = other.options_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (other.getBlockExternalNetwork() != false) {
@@ -1243,10 +1278,12 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getUsername().isEmpty()) {
           username_ = other.username_;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (!other.getPassword().isEmpty()) {
           password_ = other.password_;
+          bitField0_ |= 0x00000080;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1278,7 +1315,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   imageUri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -1291,7 +1328,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
               case 26:
                 {
                   entrypoint_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 58:
@@ -1304,25 +1341,25 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
               case 66:
                 {
                   options_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 66
               case 72:
                 {
                   blockExternalNetwork_ = input.readBool();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 72
               case 82:
                 {
                   username_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 82
               case 90:
                 {
                   password_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 90
               default:
@@ -1405,8 +1442,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         imageUri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1422,8 +1459,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearImageUri() {
-
         imageUri_ = getDefaultInstance().getImageUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1444,8 +1481,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         imageUri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1454,9 +1491,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureCommandsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           commands_ = new com.google.protobuf.LazyStringArrayList(commands_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -1607,7 +1644,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearCommands() {
         commands_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1697,8 +1734,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         entrypoint_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1714,8 +1751,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEntrypoint() {
-
         entrypoint_ = getDefaultInstance().getEntrypoint();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1736,8 +1773,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         entrypoint_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1746,9 +1783,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureVolumesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           volumes_ = new com.google.protobuf.LazyStringArrayList(volumes_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
         }
       }
       /**
@@ -1899,7 +1936,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearVolumes() {
         volumes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1992,8 +2029,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         options_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2010,8 +2047,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearOptions() {
-
         options_ = getDefaultInstance().getOptions();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -2033,8 +2070,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         options_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2074,6 +2111,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       public Builder setBlockExternalNetwork(boolean value) {
 
         blockExternalNetwork_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2091,7 +2129,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearBlockExternalNetwork() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         blockExternalNetwork_ = false;
         onChanged();
         return this;
@@ -2164,8 +2202,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         username_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2183,8 +2221,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearUsername() {
-
         username_ = getDefaultInstance().getUsername();
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -2207,8 +2245,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         username_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2280,8 +2318,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         password_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -2299,8 +2337,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPassword() {
-
         password_ = getDefaultInstance().getPassword();
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
@@ -2323,8 +2361,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         password_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -2933,6 +2971,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         commandCase_ = 0;
         command_ = null;
         return this;
@@ -2962,15 +3001,21 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.batch.v1alpha.Runnable.Script buildPartial() {
         com.google.cloud.batch.v1alpha.Runnable.Script result =
             new com.google.cloud.batch.v1alpha.Runnable.Script(this);
-        if (commandCase_ == 1) {
-          result.command_ = command_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (commandCase_ == 2) {
-          result.command_ = command_;
-        }
-        result.commandCase_ = commandCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.batch.v1alpha.Runnable.Script result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(com.google.cloud.batch.v1alpha.Runnable.Script result) {
+        result.commandCase_ = commandCase_;
+        result.command_ = this.command_;
       }
 
       @java.lang.Override
@@ -3111,6 +3156,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       /**
        *
@@ -3526,7 +3573,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -3775,8 +3824,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         return this;
       }
 
@@ -3804,9 +3853,18 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.batch.v1alpha.Runnable.Barrier buildPartial() {
         com.google.cloud.batch.v1alpha.Runnable.Barrier result =
             new com.google.cloud.batch.v1alpha.Runnable.Barrier(this);
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.batch.v1alpha.Runnable.Barrier result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -3859,6 +3917,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -3890,7 +3949,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -3909,6 +3968,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -3974,8 +4035,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3992,8 +4053,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -4015,8 +4076,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4289,7 +4350,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IGNORE_EXIT_STATUS_FIELD_NUMBER = 3;
-  private boolean ignoreExitStatus_;
+  private boolean ignoreExitStatus_ = false;
   /**
    *
    *
@@ -4308,7 +4369,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BACKGROUND_FIELD_NUMBER = 4;
-  private boolean background_;
+  private boolean background_ = false;
   /**
    *
    *
@@ -4328,7 +4389,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALWAYS_RUN_FIELD_NUMBER = 5;
-  private boolean alwaysRun_;
+  private boolean alwaysRun_ = false;
   /**
    *
    *
@@ -4399,7 +4460,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.batch.v1alpha.EnvironmentOrBuilder getEnvironmentOrBuilder() {
-    return getEnvironment();
+    return environment_ == null
+        ? com.google.cloud.batch.v1alpha.Environment.getDefaultInstance()
+        : environment_;
   }
 
   public static final int TIMEOUT_FIELD_NUMBER = 8;
@@ -4445,7 +4508,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
-    return getTimeout();
+    return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 9;
@@ -4461,6 +4524,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -4518,7 +4582,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -4880,6 +4947,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (containerBuilder_ != null) {
         containerBuilder_.clear();
       }
@@ -4890,21 +4958,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         barrierBuilder_.clear();
       }
       ignoreExitStatus_ = false;
-
       background_ = false;
-
       alwaysRun_ = false;
-
-      if (environmentBuilder_ == null) {
-        environment_ = null;
-      } else {
-        environment_ = null;
+      environment_ = null;
+      if (environmentBuilder_ != null) {
+        environmentBuilder_.dispose();
         environmentBuilder_ = null;
       }
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-      } else {
-        timeout_ = null;
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
       internalGetMutableLabels().clear();
@@ -4937,46 +5000,50 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.batch.v1alpha.Runnable buildPartial() {
       com.google.cloud.batch.v1alpha.Runnable result =
           new com.google.cloud.batch.v1alpha.Runnable(this);
-      int from_bitField0_ = bitField0_;
-      if (executableCase_ == 1) {
-        if (containerBuilder_ == null) {
-          result.executable_ = executable_;
-        } else {
-          result.executable_ = containerBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (executableCase_ == 2) {
-        if (scriptBuilder_ == null) {
-          result.executable_ = executable_;
-        } else {
-          result.executable_ = scriptBuilder_.build();
-        }
-      }
-      if (executableCase_ == 6) {
-        if (barrierBuilder_ == null) {
-          result.executable_ = executable_;
-        } else {
-          result.executable_ = barrierBuilder_.build();
-        }
-      }
-      result.ignoreExitStatus_ = ignoreExitStatus_;
-      result.background_ = background_;
-      result.alwaysRun_ = alwaysRun_;
-      if (environmentBuilder_ == null) {
-        result.environment_ = environment_;
-      } else {
-        result.environment_ = environmentBuilder_.build();
-      }
-      if (timeoutBuilder_ == null) {
-        result.timeout_ = timeout_;
-      } else {
-        result.timeout_ = timeoutBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.executableCase_ = executableCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.batch.v1alpha.Runnable result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.ignoreExitStatus_ = ignoreExitStatus_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.background_ = background_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.alwaysRun_ = alwaysRun_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.environment_ =
+            environmentBuilder_ == null ? environment_ : environmentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.batch.v1alpha.Runnable result) {
+      result.executableCase_ = executableCase_;
+      result.executable_ = this.executable_;
+      if (executableCase_ == 1 && containerBuilder_ != null) {
+        result.executable_ = containerBuilder_.build();
+      }
+      if (executableCase_ == 2 && scriptBuilder_ != null) {
+        result.executable_ = scriptBuilder_.build();
+      }
+      if (executableCase_ == 6 && barrierBuilder_ != null) {
+        result.executable_ = barrierBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -5040,6 +5107,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         mergeTimeout(other.getTimeout());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000100;
       switch (other.getExecutableCase()) {
         case CONTAINER:
           {
@@ -5102,19 +5170,19 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 ignoreExitStatus_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 32:
               {
                 background_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 40:
               {
                 alwaysRun_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 50:
@@ -5126,13 +5194,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 input.readMessage(getEnvironmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
@@ -5144,6 +5212,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             default:
@@ -5386,7 +5455,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
       executableCase_ = 1;
       onChanged();
-      ;
       return containerBuilder_;
     }
 
@@ -5596,7 +5664,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
       executableCase_ = 2;
       onChanged();
-      ;
       return scriptBuilder_;
     }
 
@@ -5807,7 +5874,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
       executableCase_ = 6;
       onChanged();
-      ;
       return barrierBuilder_;
     }
 
@@ -5844,6 +5910,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public Builder setIgnoreExitStatus(boolean value) {
 
       ignoreExitStatus_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5860,7 +5927,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIgnoreExitStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       ignoreExitStatus_ = false;
       onChanged();
       return this;
@@ -5901,6 +5968,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public Builder setBackground(boolean value) {
 
       background_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5918,7 +5986,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBackground() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       background_ = false;
       onChanged();
       return this;
@@ -5967,6 +6035,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public Builder setAlwaysRun(boolean value) {
 
       alwaysRun_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5988,7 +6057,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAlwaysRun() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       alwaysRun_ = false;
       onChanged();
       return this;
@@ -6013,7 +6082,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the environment field is set.
      */
     public boolean hasEnvironment() {
-      return environmentBuilder_ != null || environment_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -6052,11 +6121,11 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         environment_ = value;
-        onChanged();
       } else {
         environmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -6073,11 +6142,11 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.batch.v1alpha.Environment.Builder builderForValue) {
       if (environmentBuilder_ == null) {
         environment_ = builderForValue.build();
-        onChanged();
       } else {
         environmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -6092,19 +6161,18 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEnvironment(com.google.cloud.batch.v1alpha.Environment value) {
       if (environmentBuilder_ == null) {
-        if (environment_ != null) {
-          environment_ =
-              com.google.cloud.batch.v1alpha.Environment.newBuilder(environment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && environment_ != null
+            && environment_ != com.google.cloud.batch.v1alpha.Environment.getDefaultInstance()) {
+          getEnvironmentBuilder().mergeFrom(value);
         } else {
           environment_ = value;
         }
-        onChanged();
       } else {
         environmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -6118,14 +6186,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.batch.v1alpha.Environment environment = 7;</code>
      */
     public Builder clearEnvironment() {
-      if (environmentBuilder_ == null) {
-        environment_ = null;
-        onChanged();
-      } else {
-        environment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      environment_ = null;
+      if (environmentBuilder_ != null) {
+        environmentBuilder_.dispose();
         environmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -6139,7 +6206,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.batch.v1alpha.Environment environment = 7;</code>
      */
     public com.google.cloud.batch.v1alpha.Environment.Builder getEnvironmentBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getEnvironmentFieldBuilder().getBuilder();
     }
@@ -6207,7 +6274,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return timeoutBuilder_ != null || timeout_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -6242,11 +6309,11 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         timeout_ = value;
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -6261,11 +6328,11 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeoutBuilder_ == null) {
         timeout_ = builderForValue.build();
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -6279,17 +6346,18 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTimeout(com.google.protobuf.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (timeout_ != null) {
-          timeout_ =
-              com.google.protobuf.Duration.newBuilder(timeout_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && timeout_ != null
+            && timeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeoutBuilder().mergeFrom(value);
         } else {
           timeout_ = value;
         }
-        onChanged();
       } else {
         timeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -6302,14 +6370,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 8;</code>
      */
     public Builder clearTimeout() {
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-        onChanged();
-      } else {
-        timeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -6322,7 +6389,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 8;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
@@ -6379,14 +6446,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000100;
+      onChanged();
       return labels_;
     }
 
@@ -6438,8 +6505,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 9;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -6468,6 +6537,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -6490,6 +6560,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000100;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -6508,8 +6579,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -6523,6 +6594,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000100;
       return this;
     }
 
