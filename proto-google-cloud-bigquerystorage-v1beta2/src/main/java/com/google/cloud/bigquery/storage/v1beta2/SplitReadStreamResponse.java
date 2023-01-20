@@ -108,7 +108,9 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.ReadStreamOrBuilder getPrimaryStreamOrBuilder() {
-    return getPrimaryStream();
+    return primaryStream_ == null
+        ? com.google.cloud.bigquery.storage.v1beta2.ReadStream.getDefaultInstance()
+        : primaryStream_;
   }
 
   public static final int REMAINDER_STREAM_FIELD_NUMBER = 2;
@@ -160,7 +162,9 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.ReadStreamOrBuilder
       getRemainderStreamOrBuilder() {
-    return getRemainderStream();
+    return remainderStream_ == null
+        ? com.google.cloud.bigquery.storage.v1beta2.ReadStream.getDefaultInstance()
+        : remainderStream_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -374,16 +378,15 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (primaryStreamBuilder_ == null) {
-        primaryStream_ = null;
-      } else {
-        primaryStream_ = null;
+      bitField0_ = 0;
+      primaryStream_ = null;
+      if (primaryStreamBuilder_ != null) {
+        primaryStreamBuilder_.dispose();
         primaryStreamBuilder_ = null;
       }
-      if (remainderStreamBuilder_ == null) {
-        remainderStream_ = null;
-      } else {
-        remainderStream_ = null;
+      remainderStream_ = null;
+      if (remainderStreamBuilder_ != null) {
+        remainderStreamBuilder_.dispose();
         remainderStreamBuilder_ = null;
       }
       return this;
@@ -414,18 +417,24 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
     public com.google.cloud.bigquery.storage.v1beta2.SplitReadStreamResponse buildPartial() {
       com.google.cloud.bigquery.storage.v1beta2.SplitReadStreamResponse result =
           new com.google.cloud.bigquery.storage.v1beta2.SplitReadStreamResponse(this);
-      if (primaryStreamBuilder_ == null) {
-        result.primaryStream_ = primaryStream_;
-      } else {
-        result.primaryStream_ = primaryStreamBuilder_.build();
-      }
-      if (remainderStreamBuilder_ == null) {
-        result.remainderStream_ = remainderStream_;
-      } else {
-        result.remainderStream_ = remainderStreamBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.storage.v1beta2.SplitReadStreamResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.primaryStream_ =
+            primaryStreamBuilder_ == null ? primaryStream_ : primaryStreamBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.remainderStream_ =
+            remainderStreamBuilder_ == null ? remainderStream_ : remainderStreamBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -511,13 +520,13 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getPrimaryStreamFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getRemainderStreamFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -536,6 +545,8 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.bigquery.storage.v1beta2.ReadStream primaryStream_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -557,7 +568,7 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
      * @return Whether the primaryStream field is set.
      */
     public boolean hasPrimaryStream() {
-      return primaryStreamBuilder_ != null || primaryStream_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -598,11 +609,11 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         primaryStream_ = value;
-        onChanged();
       } else {
         primaryStreamBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -620,11 +631,11 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
         com.google.cloud.bigquery.storage.v1beta2.ReadStream.Builder builderForValue) {
       if (primaryStreamBuilder_ == null) {
         primaryStream_ = builderForValue.build();
-        onChanged();
       } else {
         primaryStreamBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -640,19 +651,19 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
      */
     public Builder mergePrimaryStream(com.google.cloud.bigquery.storage.v1beta2.ReadStream value) {
       if (primaryStreamBuilder_ == null) {
-        if (primaryStream_ != null) {
-          primaryStream_ =
-              com.google.cloud.bigquery.storage.v1beta2.ReadStream.newBuilder(primaryStream_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && primaryStream_ != null
+            && primaryStream_
+                != com.google.cloud.bigquery.storage.v1beta2.ReadStream.getDefaultInstance()) {
+          getPrimaryStreamBuilder().mergeFrom(value);
         } else {
           primaryStream_ = value;
         }
-        onChanged();
       } else {
         primaryStreamBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -667,14 +678,13 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
      * <code>.google.cloud.bigquery.storage.v1beta2.ReadStream primary_stream = 1;</code>
      */
     public Builder clearPrimaryStream() {
-      if (primaryStreamBuilder_ == null) {
-        primaryStream_ = null;
-        onChanged();
-      } else {
-        primaryStream_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      primaryStream_ = null;
+      if (primaryStreamBuilder_ != null) {
+        primaryStreamBuilder_.dispose();
         primaryStreamBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -689,7 +699,7 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
      * <code>.google.cloud.bigquery.storage.v1beta2.ReadStream primary_stream = 1;</code>
      */
     public com.google.cloud.bigquery.storage.v1beta2.ReadStream.Builder getPrimaryStreamBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPrimaryStreamFieldBuilder().getBuilder();
     }
@@ -761,7 +771,7 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
      * @return Whether the remainderStream field is set.
      */
     public boolean hasRemainderStream() {
-      return remainderStreamBuilder_ != null || remainderStream_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -800,11 +810,11 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         remainderStream_ = value;
-        onChanged();
       } else {
         remainderStreamBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -821,11 +831,11 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
         com.google.cloud.bigquery.storage.v1beta2.ReadStream.Builder builderForValue) {
       if (remainderStreamBuilder_ == null) {
         remainderStream_ = builderForValue.build();
-        onChanged();
       } else {
         remainderStreamBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -841,19 +851,19 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
     public Builder mergeRemainderStream(
         com.google.cloud.bigquery.storage.v1beta2.ReadStream value) {
       if (remainderStreamBuilder_ == null) {
-        if (remainderStream_ != null) {
-          remainderStream_ =
-              com.google.cloud.bigquery.storage.v1beta2.ReadStream.newBuilder(remainderStream_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && remainderStream_ != null
+            && remainderStream_
+                != com.google.cloud.bigquery.storage.v1beta2.ReadStream.getDefaultInstance()) {
+          getRemainderStreamBuilder().mergeFrom(value);
         } else {
           remainderStream_ = value;
         }
-        onChanged();
       } else {
         remainderStreamBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -867,14 +877,13 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
      * <code>.google.cloud.bigquery.storage.v1beta2.ReadStream remainder_stream = 2;</code>
      */
     public Builder clearRemainderStream() {
-      if (remainderStreamBuilder_ == null) {
-        remainderStream_ = null;
-        onChanged();
-      } else {
-        remainderStream_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      remainderStream_ = null;
+      if (remainderStreamBuilder_ != null) {
+        remainderStreamBuilder_.dispose();
         remainderStreamBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -889,7 +898,7 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
      */
     public com.google.cloud.bigquery.storage.v1beta2.ReadStream.Builder
         getRemainderStreamBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRemainderStreamFieldBuilder().getBuilder();
     }

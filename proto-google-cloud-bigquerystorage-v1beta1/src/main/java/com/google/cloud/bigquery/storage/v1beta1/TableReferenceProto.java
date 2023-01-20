@@ -160,7 +160,9 @@ public final class TableReferenceProto {
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object projectId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object projectId_ = "";
     /**
      *
      *
@@ -209,7 +211,9 @@ public final class TableReferenceProto {
     }
 
     public static final int DATASET_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object datasetId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object datasetId_ = "";
     /**
      *
      *
@@ -258,7 +262,9 @@ public final class TableReferenceProto {
     }
 
     public static final int TABLE_ID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object tableId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object tableId_ = "";
     /**
      *
      *
@@ -534,12 +540,10 @@ public final class TableReferenceProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         projectId_ = "";
-
         datasetId_ = "";
-
         tableId_ = "";
-
         return this;
       }
 
@@ -571,11 +575,25 @@ public final class TableReferenceProto {
           buildPartial() {
         com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference result =
             new com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference(this);
-        result.projectId_ = projectId_;
-        result.datasetId_ = datasetId_;
-        result.tableId_ = tableId_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.projectId_ = projectId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.datasetId_ = datasetId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.tableId_ = tableId_;
+        }
       }
 
       @java.lang.Override
@@ -633,14 +651,17 @@ public final class TableReferenceProto {
                 .getDefaultInstance()) return this;
         if (!other.getProjectId().isEmpty()) {
           projectId_ = other.projectId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDatasetId().isEmpty()) {
           datasetId_ = other.datasetId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getTableId().isEmpty()) {
           tableId_ = other.tableId_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -672,19 +693,19 @@ public final class TableReferenceProto {
               case 10:
                 {
                   projectId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   datasetId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   tableId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -703,6 +724,8 @@ public final class TableReferenceProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object projectId_ = "";
       /**
@@ -765,8 +788,8 @@ public final class TableReferenceProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         projectId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -782,8 +805,8 @@ public final class TableReferenceProto {
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
-
         projectId_ = getDefaultInstance().getProjectId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -804,8 +827,8 @@ public final class TableReferenceProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         projectId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -871,8 +894,8 @@ public final class TableReferenceProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         datasetId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -888,8 +911,8 @@ public final class TableReferenceProto {
        * @return This builder for chaining.
        */
       public Builder clearDatasetId() {
-
         datasetId_ = getDefaultInstance().getDatasetId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -910,8 +933,8 @@ public final class TableReferenceProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         datasetId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -977,8 +1000,8 @@ public final class TableReferenceProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         tableId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -994,8 +1017,8 @@ public final class TableReferenceProto {
        * @return This builder for chaining.
        */
       public Builder clearTableId() {
-
         tableId_ = getDefaultInstance().getTableId();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1016,8 +1039,8 @@ public final class TableReferenceProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         tableId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1224,7 +1247,9 @@ public final class TableReferenceProto {
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getSnapshotTimeOrBuilder() {
-      return getSnapshotTime();
+      return snapshotTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : snapshotTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1442,10 +1467,10 @@ public final class TableReferenceProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (snapshotTimeBuilder_ == null) {
-          snapshotTime_ = null;
-        } else {
-          snapshotTime_ = null;
+        bitField0_ = 0;
+        snapshotTime_ = null;
+        if (snapshotTimeBuilder_ != null) {
+          snapshotTimeBuilder_.dispose();
           snapshotTimeBuilder_ = null;
         }
         return this;
@@ -1479,13 +1504,20 @@ public final class TableReferenceProto {
           buildPartial() {
         com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers result =
             new com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers(this);
-        if (snapshotTimeBuilder_ == null) {
-          result.snapshotTime_ = snapshotTime_;
-        } else {
-          result.snapshotTime_ = snapshotTimeBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.snapshotTime_ =
+              snapshotTimeBuilder_ == null ? snapshotTime_ : snapshotTimeBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1573,7 +1605,7 @@ public final class TableReferenceProto {
               case 10:
                 {
                   input.readMessage(getSnapshotTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1593,6 +1625,8 @@ public final class TableReferenceProto {
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.protobuf.Timestamp snapshotTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp,
@@ -1611,7 +1645,7 @@ public final class TableReferenceProto {
        * @return Whether the snapshotTime field is set.
        */
       public boolean hasSnapshotTime() {
-        return snapshotTimeBuilder_ != null || snapshotTime_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1648,11 +1682,11 @@ public final class TableReferenceProto {
             throw new NullPointerException();
           }
           snapshotTime_ = value;
-          onChanged();
         } else {
           snapshotTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1667,11 +1701,11 @@ public final class TableReferenceProto {
       public Builder setSnapshotTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (snapshotTimeBuilder_ == null) {
           snapshotTime_ = builderForValue.build();
-          onChanged();
         } else {
           snapshotTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1685,19 +1719,18 @@ public final class TableReferenceProto {
        */
       public Builder mergeSnapshotTime(com.google.protobuf.Timestamp value) {
         if (snapshotTimeBuilder_ == null) {
-          if (snapshotTime_ != null) {
-            snapshotTime_ =
-                com.google.protobuf.Timestamp.newBuilder(snapshotTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && snapshotTime_ != null
+              && snapshotTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getSnapshotTimeBuilder().mergeFrom(value);
           } else {
             snapshotTime_ = value;
           }
-          onChanged();
         } else {
           snapshotTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1710,14 +1743,13 @@ public final class TableReferenceProto {
        * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
        */
       public Builder clearSnapshotTime() {
-        if (snapshotTimeBuilder_ == null) {
-          snapshotTime_ = null;
-          onChanged();
-        } else {
-          snapshotTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        snapshotTime_ = null;
+        if (snapshotTimeBuilder_ != null) {
+          snapshotTimeBuilder_.dispose();
           snapshotTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1730,7 +1762,7 @@ public final class TableReferenceProto {
        * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
        */
       public com.google.protobuf.Timestamp.Builder getSnapshotTimeBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getSnapshotTimeFieldBuilder().getBuilder();
       }

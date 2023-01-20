@@ -230,7 +230,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
   }
 
   public static final int BUFFER_COMPRESSION_FIELD_NUMBER = 2;
-  private int bufferCompression_;
+  private int bufferCompression_ = 0;
   /**
    *
    *
@@ -266,9 +266,8 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
   @java.lang.Override
   public com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.CompressionCodec
       getBufferCompression() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.CompressionCodec result =
-        com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.CompressionCodec.valueOf(
+        com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.CompressionCodec.forNumber(
             bufferCompression_);
     return result == null
         ? com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.CompressionCodec
@@ -480,8 +479,8 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       bufferCompression_ = 0;
-
       return this;
     }
 
@@ -510,9 +509,19 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
     public com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions buildPartial() {
       com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions result =
           new com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions(this);
-      result.bufferCompression_ = bufferCompression_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.bufferCompression_ = bufferCompression_;
+      }
     }
 
     @java.lang.Override
@@ -594,7 +603,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
             case 16:
               {
                 bufferCompression_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 16
             default:
@@ -613,6 +622,8 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int bufferCompression_ = 0;
     /**
@@ -649,8 +660,8 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setBufferCompressionValue(int value) {
-
       bufferCompression_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -671,9 +682,8 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.CompressionCodec
         getBufferCompression() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.CompressionCodec result =
-          com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.CompressionCodec.valueOf(
+          com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.CompressionCodec.forNumber(
               bufferCompression_);
       return result == null
           ? com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.CompressionCodec
@@ -700,7 +710,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       bufferCompression_ = value.getNumber();
       onChanged();
       return this;
@@ -720,7 +730,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearBufferCompression() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       bufferCompression_ = 0;
       onChanged();
       return this;

@@ -132,7 +132,9 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.protobuf.DescriptorProtos.DescriptorProtoOrBuilder
       getProtoDescriptorOrBuilder() {
-    return getProtoDescriptor();
+    return protoDescriptor_ == null
+        ? com.google.protobuf.DescriptorProtos.DescriptorProto.getDefaultInstance()
+        : protoDescriptor_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -343,10 +345,10 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (protoDescriptorBuilder_ == null) {
-        protoDescriptor_ = null;
-      } else {
-        protoDescriptor_ = null;
+      bitField0_ = 0;
+      protoDescriptor_ = null;
+      if (protoDescriptorBuilder_ != null) {
+        protoDescriptorBuilder_.dispose();
         protoDescriptorBuilder_ = null;
       }
       return this;
@@ -376,13 +378,19 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.storage.v1.ProtoSchema buildPartial() {
       com.google.cloud.bigquery.storage.v1.ProtoSchema result =
           new com.google.cloud.bigquery.storage.v1.ProtoSchema(this);
-      if (protoDescriptorBuilder_ == null) {
-        result.protoDescriptor_ = protoDescriptor_;
-      } else {
-        result.protoDescriptor_ = protoDescriptorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.storage.v1.ProtoSchema result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.protoDescriptor_ =
+            protoDescriptorBuilder_ == null ? protoDescriptor_ : protoDescriptorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -468,7 +476,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getProtoDescriptorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -487,6 +495,8 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.DescriptorProtos.DescriptorProto protoDescriptor_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -513,7 +523,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the protoDescriptor field is set.
      */
     public boolean hasProtoDescriptor() {
-      return protoDescriptorBuilder_ != null || protoDescriptor_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -564,11 +574,11 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         protoDescriptor_ = value;
-        onChanged();
       } else {
         protoDescriptorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -591,11 +601,11 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.DescriptorProtos.DescriptorProto.Builder builderForValue) {
       if (protoDescriptorBuilder_ == null) {
         protoDescriptor_ = builderForValue.build();
-        onChanged();
       } else {
         protoDescriptorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -617,19 +627,19 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeProtoDescriptor(
         com.google.protobuf.DescriptorProtos.DescriptorProto value) {
       if (protoDescriptorBuilder_ == null) {
-        if (protoDescriptor_ != null) {
-          protoDescriptor_ =
-              com.google.protobuf.DescriptorProtos.DescriptorProto.newBuilder(protoDescriptor_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && protoDescriptor_ != null
+            && protoDescriptor_
+                != com.google.protobuf.DescriptorProtos.DescriptorProto.getDefaultInstance()) {
+          getProtoDescriptorBuilder().mergeFrom(value);
         } else {
           protoDescriptor_ = value;
         }
-        onChanged();
       } else {
         protoDescriptorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -649,14 +659,13 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.DescriptorProto proto_descriptor = 1;</code>
      */
     public Builder clearProtoDescriptor() {
-      if (protoDescriptorBuilder_ == null) {
-        protoDescriptor_ = null;
-        onChanged();
-      } else {
-        protoDescriptor_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      protoDescriptor_ = null;
+      if (protoDescriptorBuilder_ != null) {
+        protoDescriptorBuilder_.dispose();
         protoDescriptorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -677,7 +686,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.protobuf.DescriptorProtos.DescriptorProto.Builder
         getProtoDescriptorBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getProtoDescriptorFieldBuilder().getBuilder();
     }

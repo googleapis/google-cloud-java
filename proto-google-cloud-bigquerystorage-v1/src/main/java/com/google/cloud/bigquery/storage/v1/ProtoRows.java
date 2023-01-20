@@ -60,6 +60,8 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERIALIZED_ROWS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.ByteString> serializedRows_;
   /**
    *
@@ -309,8 +311,8 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serializedRows_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -338,14 +340,24 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.storage.v1.ProtoRows buildPartial() {
       com.google.cloud.bigquery.storage.v1.ProtoRows result =
           new com.google.cloud.bigquery.storage.v1.ProtoRows(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.bigquery.storage.v1.ProtoRows result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         serializedRows_ = java.util.Collections.unmodifiableList(serializedRows_);
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.serializedRows_ = serializedRows_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.storage.v1.ProtoRows result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

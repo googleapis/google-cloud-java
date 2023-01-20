@@ -202,7 +202,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getSnapshotTimeOrBuilder() {
-      return getSnapshotTime();
+      return snapshotTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : snapshotTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -412,10 +414,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (snapshotTimeBuilder_ == null) {
-          snapshotTime_ = null;
-        } else {
-          snapshotTime_ = null;
+        bitField0_ = 0;
+        snapshotTime_ = null;
+        if (snapshotTimeBuilder_ != null) {
+          snapshotTimeBuilder_.dispose();
           snapshotTimeBuilder_ = null;
         }
         return this;
@@ -448,13 +450,20 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiers buildPartial() {
         com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiers result =
             new com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiers(this);
-        if (snapshotTimeBuilder_ == null) {
-          result.snapshotTime_ = snapshotTime_;
-        } else {
-          result.snapshotTime_ = snapshotTimeBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiers result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.snapshotTime_ =
+              snapshotTimeBuilder_ == null ? snapshotTime_ : snapshotTimeBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -540,7 +549,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   input.readMessage(getSnapshotTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -560,6 +569,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.protobuf.Timestamp snapshotTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp,
@@ -578,7 +589,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the snapshotTime field is set.
        */
       public boolean hasSnapshotTime() {
-        return snapshotTimeBuilder_ != null || snapshotTime_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -615,11 +626,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           snapshotTime_ = value;
-          onChanged();
         } else {
           snapshotTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -634,11 +645,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       public Builder setSnapshotTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (snapshotTimeBuilder_ == null) {
           snapshotTime_ = builderForValue.build();
-          onChanged();
         } else {
           snapshotTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -652,19 +663,18 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeSnapshotTime(com.google.protobuf.Timestamp value) {
         if (snapshotTimeBuilder_ == null) {
-          if (snapshotTime_ != null) {
-            snapshotTime_ =
-                com.google.protobuf.Timestamp.newBuilder(snapshotTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && snapshotTime_ != null
+              && snapshotTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getSnapshotTimeBuilder().mergeFrom(value);
           } else {
             snapshotTime_ = value;
           }
-          onChanged();
         } else {
           snapshotTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -677,14 +687,13 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
        */
       public Builder clearSnapshotTime() {
-        if (snapshotTimeBuilder_ == null) {
-          snapshotTime_ = null;
-          onChanged();
-        } else {
-          snapshotTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        snapshotTime_ = null;
+        if (snapshotTimeBuilder_ != null) {
+          snapshotTimeBuilder_.dispose();
           snapshotTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -697,7 +706,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
        */
       public com.google.protobuf.Timestamp.Builder getSnapshotTimeBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getSnapshotTimeFieldBuilder().getBuilder();
       }
@@ -1013,6 +1022,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SELECTED_FIELDS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList selectedFields_;
     /**
      *
@@ -1086,7 +1097,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ROW_RESTRICTION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object rowRestriction_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object rowRestriction_ = "";
     /**
      *
      *
@@ -1202,7 +1215,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptionsOrBuilder
         getArrowSerializationOptionsOrBuilder() {
-      return getArrowSerializationOptions();
+      return arrowSerializationOptions_ == null
+          ? com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.getDefaultInstance()
+          : arrowSerializationOptions_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1442,14 +1457,13 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         selectedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         rowRestriction_ = "";
-
-        if (arrowSerializationOptionsBuilder_ == null) {
-          arrowSerializationOptions_ = null;
-        } else {
-          arrowSerializationOptions_ = null;
+        arrowSerializationOptions_ = null;
+        if (arrowSerializationOptionsBuilder_ != null) {
+          arrowSerializationOptionsBuilder_.dispose();
           arrowSerializationOptionsBuilder_ = null;
         }
         return this;
@@ -1482,20 +1496,35 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptions buildPartial() {
         com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptions result =
             new com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptions(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptions result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           selectedFields_ = selectedFields_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.selectedFields_ = selectedFields_;
-        result.rowRestriction_ = rowRestriction_;
-        if (arrowSerializationOptionsBuilder_ == null) {
-          result.arrowSerializationOptions_ = arrowSerializationOptions_;
-        } else {
-          result.arrowSerializationOptions_ = arrowSerializationOptionsBuilder_.build();
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptions result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.rowRestriction_ = rowRestriction_;
         }
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.arrowSerializationOptions_ =
+              arrowSerializationOptionsBuilder_ == null
+                  ? arrowSerializationOptions_
+                  : arrowSerializationOptionsBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1562,6 +1591,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getRowRestriction().isEmpty()) {
           rowRestriction_ = other.rowRestriction_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasArrowSerializationOptions()) {
@@ -1603,14 +1633,14 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
               case 18:
                 {
                   rowRestriction_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(
                       getArrowSerializationOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -1909,8 +1939,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         rowRestriction_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1933,8 +1963,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearRowRestriction() {
-
         rowRestriction_ = getDefaultInstance().getRowRestriction();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1962,8 +1992,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         rowRestriction_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1989,7 +2019,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the arrowSerializationOptions field is set.
        */
       public boolean hasArrowSerializationOptions() {
-        return arrowSerializationOptionsBuilder_ != null || arrowSerializationOptions_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -2033,11 +2063,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           arrowSerializationOptions_ = value;
-          onChanged();
         } else {
           arrowSerializationOptionsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2056,11 +2086,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
               builderForValue) {
         if (arrowSerializationOptionsBuilder_ == null) {
           arrowSerializationOptions_ = builderForValue.build();
-          onChanged();
         } else {
           arrowSerializationOptionsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2077,20 +2107,20 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeArrowSerializationOptions(
           com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions value) {
         if (arrowSerializationOptionsBuilder_ == null) {
-          if (arrowSerializationOptions_ != null) {
-            arrowSerializationOptions_ =
-                com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.newBuilder(
-                        arrowSerializationOptions_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && arrowSerializationOptions_ != null
+              && arrowSerializationOptions_
+                  != com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions
+                      .getDefaultInstance()) {
+            getArrowSerializationOptionsBuilder().mergeFrom(value);
           } else {
             arrowSerializationOptions_ = value;
           }
-          onChanged();
         } else {
           arrowSerializationOptionsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2105,14 +2135,13 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearArrowSerializationOptions() {
-        if (arrowSerializationOptionsBuilder_ == null) {
-          arrowSerializationOptions_ = null;
-          onChanged();
-        } else {
-          arrowSerializationOptions_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        arrowSerializationOptions_ = null;
+        if (arrowSerializationOptionsBuilder_ != null) {
+          arrowSerializationOptionsBuilder_.dispose();
           arrowSerializationOptionsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2128,7 +2157,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.Builder
           getArrowSerializationOptionsBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getArrowSerializationOptionsFieldBuilder().getBuilder();
       }
@@ -2298,7 +2327,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -2400,11 +2431,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
-    return getExpireTime();
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
 
   public static final int DATA_FORMAT_FIELD_NUMBER = 3;
-  private int dataFormat_;
+  private int dataFormat_ = 0;
   /**
    *
    *
@@ -2437,9 +2468,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.DataFormat getDataFormat() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.storage.v1beta2.DataFormat result =
-        com.google.cloud.bigquery.storage.v1beta2.DataFormat.valueOf(dataFormat_);
+        com.google.cloud.bigquery.storage.v1beta2.DataFormat.forNumber(dataFormat_);
     return result == null
         ? com.google.cloud.bigquery.storage.v1beta2.DataFormat.UNRECOGNIZED
         : result;
@@ -2560,7 +2590,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TABLE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object table_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object table_ = "";
   /**
    *
    *
@@ -2666,7 +2698,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiersOrBuilder
       getTableModifiersOrBuilder() {
-    return getTableModifiers();
+    return tableModifiers_ == null
+        ? com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiers.getDefaultInstance()
+        : tableModifiers_;
   }
 
   public static final int READ_OPTIONS_FIELD_NUMBER = 8;
@@ -2722,10 +2756,15 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptionsOrBuilder
       getReadOptionsOrBuilder() {
-    return getReadOptions();
+    return readOptions_ == null
+        ? com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptions
+            .getDefaultInstance()
+        : readOptions_;
   }
 
   public static final int STREAMS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.storage.v1beta2.ReadStream> streams_;
   /**
    *
@@ -3137,16 +3176,14 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-      } else {
-        expireTime_ = null;
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
       dataFormat_ = 0;
-
       if (avroSchemaBuilder_ != null) {
         avroSchemaBuilder_.clear();
       }
@@ -3154,17 +3191,14 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         arrowSchemaBuilder_.clear();
       }
       table_ = "";
-
-      if (tableModifiersBuilder_ == null) {
-        tableModifiers_ = null;
-      } else {
-        tableModifiers_ = null;
+      tableModifiers_ = null;
+      if (tableModifiersBuilder_ != null) {
+        tableModifiersBuilder_.dispose();
         tableModifiersBuilder_ = null;
       }
-      if (readOptionsBuilder_ == null) {
-        readOptions_ = null;
-      } else {
-        readOptions_ = null;
+      readOptions_ = null;
+      if (readOptionsBuilder_ != null) {
+        readOptionsBuilder_.dispose();
         readOptionsBuilder_ = null;
       }
       if (streamsBuilder_ == null) {
@@ -3173,7 +3207,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         streams_ = null;
         streamsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000100);
       schemaCase_ = 0;
       schema_ = null;
       return this;
@@ -3203,51 +3237,61 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.storage.v1beta2.ReadSession buildPartial() {
       com.google.cloud.bigquery.storage.v1beta2.ReadSession result =
           new com.google.cloud.bigquery.storage.v1beta2.ReadSession(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (expireTimeBuilder_ == null) {
-        result.expireTime_ = expireTime_;
-      } else {
-        result.expireTime_ = expireTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.dataFormat_ = dataFormat_;
-      if (schemaCase_ == 4) {
-        if (avroSchemaBuilder_ == null) {
-          result.schema_ = schema_;
-        } else {
-          result.schema_ = avroSchemaBuilder_.build();
-        }
-      }
-      if (schemaCase_ == 5) {
-        if (arrowSchemaBuilder_ == null) {
-          result.schema_ = schema_;
-        } else {
-          result.schema_ = arrowSchemaBuilder_.build();
-        }
-      }
-      result.table_ = table_;
-      if (tableModifiersBuilder_ == null) {
-        result.tableModifiers_ = tableModifiers_;
-      } else {
-        result.tableModifiers_ = tableModifiersBuilder_.build();
-      }
-      if (readOptionsBuilder_ == null) {
-        result.readOptions_ = readOptions_;
-      } else {
-        result.readOptions_ = readOptionsBuilder_.build();
-      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.bigquery.storage.v1beta2.ReadSession result) {
       if (streamsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           streams_ = java.util.Collections.unmodifiableList(streams_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.streams_ = streams_;
       } else {
         result.streams_ = streamsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.storage.v1beta2.ReadSession result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dataFormat_ = dataFormat_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.table_ = table_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.tableModifiers_ =
+            tableModifiersBuilder_ == null ? tableModifiers_ : tableModifiersBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.readOptions_ =
+            readOptionsBuilder_ == null ? readOptions_ : readOptionsBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.bigquery.storage.v1beta2.ReadSession result) {
       result.schemaCase_ = schemaCase_;
-      onBuilt();
-      return result;
+      result.schema_ = this.schema_;
+      if (schemaCase_ == 4 && avroSchemaBuilder_ != null) {
+        result.schema_ = avroSchemaBuilder_.build();
+      }
+      if (schemaCase_ == 5 && arrowSchemaBuilder_ != null) {
+        result.schema_ = arrowSchemaBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3298,6 +3342,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasExpireTime()) {
@@ -3308,6 +3353,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getTable().isEmpty()) {
         table_ = other.table_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasTableModifiers()) {
@@ -3320,7 +3366,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         if (!other.streams_.isEmpty()) {
           if (streams_.isEmpty()) {
             streams_ = other.streams_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureStreamsIsMutable();
             streams_.addAll(other.streams_);
@@ -3333,7 +3379,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             streamsBuilder_.dispose();
             streamsBuilder_ = null;
             streams_ = other.streams_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000100);
             streamsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStreamsFieldBuilder()
@@ -3388,19 +3434,19 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 dataFormat_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -3418,19 +3464,19 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             case 50:
               {
                 table_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getTableModifiersFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getReadOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 82:
@@ -3544,8 +3590,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3562,8 +3608,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -3585,8 +3631,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3613,7 +3659,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
-      return expireTimeBuilder_ != null || expireTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -3658,11 +3704,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         expireTime_ = value;
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3681,11 +3727,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expireTimeBuilder_ == null) {
         expireTime_ = builderForValue.build();
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3703,17 +3749,18 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
-        if (expireTime_ != null) {
-          expireTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expireTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && expireTime_ != null
+            && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireTimeBuilder().mergeFrom(value);
         } else {
           expireTime_ = value;
         }
-        onChanged();
       } else {
         expireTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3730,14 +3777,13 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearExpireTime() {
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-        onChanged();
-      } else {
-        expireTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3754,7 +3800,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
@@ -3843,8 +3889,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDataFormatValue(int value) {
-
       dataFormat_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3863,9 +3909,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta2.DataFormat getDataFormat() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.storage.v1beta2.DataFormat result =
-          com.google.cloud.bigquery.storage.v1beta2.DataFormat.valueOf(dataFormat_);
+          com.google.cloud.bigquery.storage.v1beta2.DataFormat.forNumber(dataFormat_);
       return result == null
           ? com.google.cloud.bigquery.storage.v1beta2.DataFormat.UNRECOGNIZED
           : result;
@@ -3888,7 +3933,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       dataFormat_ = value.getNumber();
       onChanged();
       return this;
@@ -3907,7 +3952,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDataFormat() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       dataFormat_ = 0;
       onChanged();
       return this;
@@ -4138,7 +4183,6 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       schemaCase_ = 4;
       onChanged();
-      ;
       return avroSchemaBuilder_;
     }
 
@@ -4368,7 +4412,6 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       schemaCase_ = 5;
       onChanged();
-      ;
       return arrowSchemaBuilder_;
     }
 
@@ -4442,8 +4485,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       table_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4462,8 +4505,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTable() {
-
       table_ = getDefaultInstance().getTable();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -4487,8 +4530,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       table_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4513,7 +4556,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tableModifiers field is set.
      */
     public boolean hasTableModifiers() {
-      return tableModifiersBuilder_ != null || tableModifiers_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -4557,11 +4600,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         tableModifiers_ = value;
-        onChanged();
       } else {
         tableModifiersBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4580,11 +4623,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (tableModifiersBuilder_ == null) {
         tableModifiers_ = builderForValue.build();
-        onChanged();
       } else {
         tableModifiersBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4601,20 +4644,20 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeTableModifiers(
         com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiers value) {
       if (tableModifiersBuilder_ == null) {
-        if (tableModifiers_ != null) {
-          tableModifiers_ =
-              com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiers.newBuilder(
-                      tableModifiers_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && tableModifiers_ != null
+            && tableModifiers_
+                != com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiers
+                    .getDefaultInstance()) {
+          getTableModifiersBuilder().mergeFrom(value);
         } else {
           tableModifiers_ = value;
         }
-        onChanged();
       } else {
         tableModifiersBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4629,14 +4672,13 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTableModifiers() {
-      if (tableModifiersBuilder_ == null) {
-        tableModifiers_ = null;
-        onChanged();
-      } else {
-        tableModifiers_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      tableModifiers_ = null;
+      if (tableModifiersBuilder_ != null) {
+        tableModifiersBuilder_.dispose();
         tableModifiersBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4652,7 +4694,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiers.Builder
         getTableModifiersBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getTableModifiersFieldBuilder().getBuilder();
     }
@@ -4726,7 +4768,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the readOptions field is set.
      */
     public boolean hasReadOptions() {
-      return readOptionsBuilder_ != null || readOptions_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -4769,11 +4811,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         readOptions_ = value;
-        onChanged();
       } else {
         readOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4792,11 +4834,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (readOptionsBuilder_ == null) {
         readOptions_ = builderForValue.build();
-        onChanged();
       } else {
         readOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4813,20 +4855,20 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeReadOptions(
         com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptions value) {
       if (readOptionsBuilder_ == null) {
-        if (readOptions_ != null) {
-          readOptions_ =
-              com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptions.newBuilder(
-                      readOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && readOptions_ != null
+            && readOptions_
+                != com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptions
+                    .getDefaultInstance()) {
+          getReadOptionsBuilder().mergeFrom(value);
         } else {
           readOptions_ = value;
         }
-        onChanged();
       } else {
         readOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4841,14 +4883,13 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearReadOptions() {
-      if (readOptionsBuilder_ == null) {
-        readOptions_ = null;
-        onChanged();
-      } else {
-        readOptions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      readOptions_ = null;
+      if (readOptionsBuilder_ != null) {
+        readOptionsBuilder_.dispose();
         readOptionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4864,7 +4905,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptions.Builder
         getReadOptionsBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getReadOptionsFieldBuilder().getBuilder();
     }
@@ -4922,10 +4963,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStreamsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         streams_ =
             new java.util.ArrayList<com.google.cloud.bigquery.storage.v1beta2.ReadStream>(streams_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -5209,7 +5250,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public Builder clearStreams() {
       if (streamsBuilder_ == null) {
         streams_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         streamsBuilder_.clear();
@@ -5377,7 +5418,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.bigquery.storage.v1beta2.ReadStream,
                 com.google.cloud.bigquery.storage.v1beta2.ReadStream.Builder,
                 com.google.cloud.bigquery.storage.v1beta2.ReadStreamOrBuilder>(
-                streams_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                streams_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
         streams_ = null;
       }
       return streamsBuilder_;

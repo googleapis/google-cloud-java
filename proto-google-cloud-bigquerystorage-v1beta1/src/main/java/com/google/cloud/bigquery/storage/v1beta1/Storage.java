@@ -430,7 +430,9 @@ public final class Storage {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -680,8 +682,8 @@ public final class Storage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         return this;
       }
 
@@ -709,9 +711,18 @@ public final class Storage {
       public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream buildPartial() {
         com.google.cloud.bigquery.storage.v1beta1.Storage.Stream result =
             new com.google.cloud.bigquery.storage.v1beta1.Storage.Stream(this);
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.bigquery.storage.v1beta1.Storage.Stream result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -764,6 +775,7 @@ public final class Storage {
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -795,7 +807,7 @@ public final class Storage {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -814,6 +826,8 @@ public final class Storage {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -879,8 +893,8 @@ public final class Storage {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -897,8 +911,8 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -920,8 +934,8 @@ public final class Storage {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1135,11 +1149,13 @@ public final class Storage {
      */
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder getStreamOrBuilder() {
-      return getStream();
+      return stream_ == null
+          ? com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.getDefaultInstance()
+          : stream_;
     }
 
     public static final int OFFSET_FIELD_NUMBER = 2;
-    private long offset_;
+    private long offset_ = 0L;
     /**
      *
      *
@@ -1372,14 +1388,13 @@ public final class Storage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (streamBuilder_ == null) {
-          stream_ = null;
-        } else {
-          stream_ = null;
+        bitField0_ = 0;
+        stream_ = null;
+        if (streamBuilder_ != null) {
+          streamBuilder_.dispose();
           streamBuilder_ = null;
         }
         offset_ = 0L;
-
         return this;
       }
 
@@ -1409,14 +1424,22 @@ public final class Storage {
       public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition buildPartial() {
         com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition result =
             new com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition(this);
-        if (streamBuilder_ == null) {
-          result.stream_ = stream_;
-        } else {
-          result.stream_ = streamBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.offset_ = offset_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.stream_ = streamBuilder_ == null ? stream_ : streamBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.offset_ = offset_;
+        }
       }
 
       @java.lang.Override
@@ -1505,13 +1528,13 @@ public final class Storage {
               case 10:
                 {
                   input.readMessage(getStreamFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   offset_ = input.readInt64();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -1531,6 +1554,8 @@ public final class Storage {
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.cloud.bigquery.storage.v1beta1.Storage.Stream stream_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.Storage.Stream,
@@ -1549,7 +1574,7 @@ public final class Storage {
        * @return Whether the stream field is set.
        */
       public boolean hasStream() {
-        return streamBuilder_ != null || stream_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1586,11 +1611,11 @@ public final class Storage {
             throw new NullPointerException();
           }
           stream_ = value;
-          onChanged();
         } else {
           streamBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1606,11 +1631,11 @@ public final class Storage {
           com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder builderForValue) {
         if (streamBuilder_ == null) {
           stream_ = builderForValue.build();
-          onChanged();
         } else {
           streamBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1624,19 +1649,20 @@ public final class Storage {
        */
       public Builder mergeStream(com.google.cloud.bigquery.storage.v1beta1.Storage.Stream value) {
         if (streamBuilder_ == null) {
-          if (stream_ != null) {
-            stream_ =
-                com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.newBuilder(stream_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && stream_ != null
+              && stream_
+                  != com.google.cloud.bigquery.storage.v1beta1.Storage.Stream
+                      .getDefaultInstance()) {
+            getStreamBuilder().mergeFrom(value);
           } else {
             stream_ = value;
           }
-          onChanged();
         } else {
           streamBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1649,14 +1675,13 @@ public final class Storage {
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
        */
       public Builder clearStream() {
-        if (streamBuilder_ == null) {
-          stream_ = null;
-          onChanged();
-        } else {
-          stream_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        stream_ = null;
+        if (streamBuilder_ != null) {
+          streamBuilder_.dispose();
           streamBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1669,7 +1694,7 @@ public final class Storage {
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder getStreamBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getStreamFieldBuilder().getBuilder();
       }
@@ -1749,6 +1774,7 @@ public final class Storage {
       public Builder setOffset(long value) {
 
         offset_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1764,7 +1790,7 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder clearOffset() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         offset_ = 0L;
         onChanged();
         return this;
@@ -2232,7 +2258,9 @@ public final class Storage {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -2328,7 +2356,7 @@ public final class Storage {
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
-      return getExpireTime();
+      return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
     }
 
     public static final int AVRO_SCHEMA_FIELD_NUMBER = 5;
@@ -2436,6 +2464,8 @@ public final class Storage {
     }
 
     public static final int STREAMS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.bigquery.storage.v1beta1.Storage.Stream> streams_;
     /**
      *
@@ -2556,7 +2586,10 @@ public final class Storage {
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReferenceOrBuilder
         getTableReferenceOrBuilder() {
-      return getTableReference();
+      return tableReference_ == null
+          ? com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+              .getDefaultInstance()
+          : tableReference_;
     }
 
     public static final int TABLE_MODIFIERS_FIELD_NUMBER = 8;
@@ -2608,11 +2641,14 @@ public final class Storage {
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiersOrBuilder
         getTableModifiersOrBuilder() {
-      return getTableModifiers();
+      return tableModifiers_ == null
+          ? com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+              .getDefaultInstance()
+          : tableModifiers_;
     }
 
     public static final int SHARDING_STRATEGY_FIELD_NUMBER = 9;
-    private int shardingStrategy_;
+    private int shardingStrategy_ = 0;
     /**
      *
      *
@@ -2642,9 +2678,8 @@ public final class Storage {
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
         getShardingStrategy() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy result =
-          com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.valueOf(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.forNumber(
               shardingStrategy_);
       return result == null
           ? com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.UNRECOGNIZED
@@ -2960,12 +2995,11 @@ public final class Storage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
-        if (expireTimeBuilder_ == null) {
-          expireTime_ = null;
-        } else {
-          expireTime_ = null;
+        expireTime_ = null;
+        if (expireTimeBuilder_ != null) {
+          expireTimeBuilder_.dispose();
           expireTimeBuilder_ = null;
         }
         if (avroSchemaBuilder_ != null) {
@@ -2980,21 +3014,18 @@ public final class Storage {
           streams_ = null;
           streamsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (tableReferenceBuilder_ == null) {
-          tableReference_ = null;
-        } else {
-          tableReference_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        tableReference_ = null;
+        if (tableReferenceBuilder_ != null) {
+          tableReferenceBuilder_.dispose();
           tableReferenceBuilder_ = null;
         }
-        if (tableModifiersBuilder_ == null) {
-          tableModifiers_ = null;
-        } else {
-          tableModifiers_ = null;
+        tableModifiers_ = null;
+        if (tableModifiersBuilder_ != null) {
+          tableModifiersBuilder_.dispose();
           tableModifiersBuilder_ = null;
         }
         shardingStrategy_ = 0;
-
         schemaCase_ = 0;
         schema_ = null;
         return this;
@@ -3025,50 +3056,61 @@ public final class Storage {
       public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession buildPartial() {
         com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession result =
             new com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession(this);
-        int from_bitField0_ = bitField0_;
-        result.name_ = name_;
-        if (expireTimeBuilder_ == null) {
-          result.expireTime_ = expireTime_;
-        } else {
-          result.expireTime_ = expireTimeBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (schemaCase_ == 5) {
-          if (avroSchemaBuilder_ == null) {
-            result.schema_ = schema_;
-          } else {
-            result.schema_ = avroSchemaBuilder_.build();
-          }
-        }
-        if (schemaCase_ == 6) {
-          if (arrowSchemaBuilder_ == null) {
-            result.schema_ = schema_;
-          } else {
-            result.schema_ = arrowSchemaBuilder_.build();
-          }
-        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession result) {
         if (streamsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             streams_ = java.util.Collections.unmodifiableList(streams_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.streams_ = streams_;
         } else {
           result.streams_ = streamsBuilder_.build();
         }
-        if (tableReferenceBuilder_ == null) {
-          result.tableReference_ = tableReference_;
-        } else {
-          result.tableReference_ = tableReferenceBuilder_.build();
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
         }
-        if (tableModifiersBuilder_ == null) {
-          result.tableModifiers_ = tableModifiers_;
-        } else {
-          result.tableModifiers_ = tableModifiersBuilder_.build();
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.expireTime_ =
+              expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
         }
-        result.shardingStrategy_ = shardingStrategy_;
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.tableReference_ =
+              tableReferenceBuilder_ == null ? tableReference_ : tableReferenceBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.tableModifiers_ =
+              tableModifiersBuilder_ == null ? tableModifiers_ : tableModifiersBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.shardingStrategy_ = shardingStrategy_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession result) {
         result.schemaCase_ = schemaCase_;
-        onBuilt();
-        return result;
+        result.schema_ = this.schema_;
+        if (schemaCase_ == 5 && avroSchemaBuilder_ != null) {
+          result.schema_ = avroSchemaBuilder_.build();
+        }
+        if (schemaCase_ == 6 && arrowSchemaBuilder_ != null) {
+          result.schema_ = arrowSchemaBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3123,6 +3165,7 @@ public final class Storage {
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasExpireTime()) {
@@ -3132,7 +3175,7 @@ public final class Storage {
           if (!other.streams_.isEmpty()) {
             if (streams_.isEmpty()) {
               streams_ = other.streams_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureStreamsIsMutable();
               streams_.addAll(other.streams_);
@@ -3145,7 +3188,7 @@ public final class Storage {
               streamsBuilder_.dispose();
               streamsBuilder_ = null;
               streams_ = other.streams_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000010);
               streamsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getStreamsFieldBuilder()
@@ -3209,13 +3252,13 @@ public final class Storage {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 34:
@@ -3248,20 +3291,20 @@ public final class Storage {
                 {
                   input.readMessage(
                       getTableReferenceFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 58
               case 66:
                 {
                   input.readMessage(
                       getTableModifiersFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 66
               case 72:
                 {
                   shardingStrategy_ = input.readEnum();
-
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 72
               default:
@@ -3361,8 +3404,8 @@ public final class Storage {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3379,8 +3422,8 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -3402,8 +3445,8 @@ public final class Storage {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3427,7 +3470,7 @@ public final class Storage {
        * @return Whether the expireTime field is set.
        */
       public boolean hasExpireTime() {
-        return expireTimeBuilder_ != null || expireTime_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -3466,11 +3509,11 @@ public final class Storage {
             throw new NullPointerException();
           }
           expireTime_ = value;
-          onChanged();
         } else {
           expireTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3486,11 +3529,11 @@ public final class Storage {
       public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (expireTimeBuilder_ == null) {
           expireTime_ = builderForValue.build();
-          onChanged();
         } else {
           expireTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3505,19 +3548,18 @@ public final class Storage {
        */
       public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
         if (expireTimeBuilder_ == null) {
-          if (expireTime_ != null) {
-            expireTime_ =
-                com.google.protobuf.Timestamp.newBuilder(expireTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && expireTime_ != null
+              && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getExpireTimeBuilder().mergeFrom(value);
           } else {
             expireTime_ = value;
           }
-          onChanged();
         } else {
           expireTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3531,14 +3573,13 @@ public final class Storage {
        * <code>.google.protobuf.Timestamp expire_time = 2;</code>
        */
       public Builder clearExpireTime() {
-        if (expireTimeBuilder_ == null) {
-          expireTime_ = null;
-          onChanged();
-        } else {
-          expireTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        expireTime_ = null;
+        if (expireTimeBuilder_ != null) {
+          expireTimeBuilder_.dispose();
           expireTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3552,7 +3593,7 @@ public final class Storage {
        * <code>.google.protobuf.Timestamp expire_time = 2;</code>
        */
       public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getExpireTimeFieldBuilder().getBuilder();
       }
@@ -3818,7 +3859,6 @@ public final class Storage {
         }
         schemaCase_ = 5;
         onChanged();
-        ;
         return avroSchemaBuilder_;
       }
 
@@ -4040,7 +4080,6 @@ public final class Storage {
         }
         schemaCase_ = 6;
         onChanged();
-        ;
         return arrowSchemaBuilder_;
       }
 
@@ -4048,11 +4087,11 @@ public final class Storage {
           java.util.Collections.emptyList();
 
       private void ensureStreamsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           streams_ =
               new java.util.ArrayList<com.google.cloud.bigquery.storage.v1beta1.Storage.Stream>(
                   streams_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000010;
         }
       }
 
@@ -4274,7 +4313,7 @@ public final class Storage {
       public Builder clearStreams() {
         if (streamsBuilder_ == null) {
           streams_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           streamsBuilder_.clear();
@@ -4403,7 +4442,7 @@ public final class Storage {
                   com.google.cloud.bigquery.storage.v1beta1.Storage.Stream,
                   com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder,
                   com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder>(
-                  streams_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  streams_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
           streams_ = null;
         }
         return streamsBuilder_;
@@ -4428,7 +4467,7 @@ public final class Storage {
        * @return Whether the tableReference field is set.
        */
       public boolean hasTableReference() {
-        return tableReferenceBuilder_ != null || tableReference_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        *
@@ -4468,11 +4507,11 @@ public final class Storage {
             throw new NullPointerException();
           }
           tableReference_ = value;
-          onChanged();
         } else {
           tableReferenceBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -4489,11 +4528,11 @@ public final class Storage {
               builderForValue) {
         if (tableReferenceBuilder_ == null) {
           tableReference_ = builderForValue.build();
-          onChanged();
         } else {
           tableReferenceBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -4508,20 +4547,20 @@ public final class Storage {
       public Builder mergeTableReference(
           com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference value) {
         if (tableReferenceBuilder_ == null) {
-          if (tableReference_ != null) {
-            tableReference_ =
-                com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
-                    .newBuilder(tableReference_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000020) != 0)
+              && tableReference_ != null
+              && tableReference_
+                  != com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+                      .getDefaultInstance()) {
+            getTableReferenceBuilder().mergeFrom(value);
           } else {
             tableReference_ = value;
           }
-          onChanged();
         } else {
           tableReferenceBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -4534,14 +4573,13 @@ public final class Storage {
        * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 7;</code>
        */
       public Builder clearTableReference() {
-        if (tableReferenceBuilder_ == null) {
-          tableReference_ = null;
-          onChanged();
-        } else {
-          tableReference_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        tableReference_ = null;
+        if (tableReferenceBuilder_ != null) {
+          tableReferenceBuilder_.dispose();
           tableReferenceBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -4555,7 +4593,7 @@ public final class Storage {
        */
       public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference.Builder
           getTableReferenceBuilder() {
-
+        bitField0_ |= 0x00000020;
         onChanged();
         return getTableReferenceFieldBuilder().getBuilder();
       }
@@ -4626,7 +4664,7 @@ public final class Storage {
        * @return Whether the tableModifiers field is set.
        */
       public boolean hasTableModifiers() {
-        return tableModifiersBuilder_ != null || tableModifiers_ != null;
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        *
@@ -4666,11 +4704,11 @@ public final class Storage {
             throw new NullPointerException();
           }
           tableModifiers_ = value;
-          onChanged();
         } else {
           tableModifiersBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -4687,11 +4725,11 @@ public final class Storage {
               builderForValue) {
         if (tableModifiersBuilder_ == null) {
           tableModifiers_ = builderForValue.build();
-          onChanged();
         } else {
           tableModifiersBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -4706,20 +4744,20 @@ public final class Storage {
       public Builder mergeTableModifiers(
           com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers value) {
         if (tableModifiersBuilder_ == null) {
-          if (tableModifiers_ != null) {
-            tableModifiers_ =
-                com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
-                    .newBuilder(tableModifiers_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000040) != 0)
+              && tableModifiers_ != null
+              && tableModifiers_
+                  != com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+                      .getDefaultInstance()) {
+            getTableModifiersBuilder().mergeFrom(value);
           } else {
             tableModifiers_ = value;
           }
-          onChanged();
         } else {
           tableModifiersBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -4732,14 +4770,13 @@ public final class Storage {
        * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 8;</code>
        */
       public Builder clearTableModifiers() {
-        if (tableModifiersBuilder_ == null) {
-          tableModifiers_ = null;
-          onChanged();
-        } else {
-          tableModifiers_ = null;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        tableModifiers_ = null;
+        if (tableModifiersBuilder_ != null) {
+          tableModifiersBuilder_.dispose();
           tableModifiersBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -4753,7 +4790,7 @@ public final class Storage {
        */
       public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers.Builder
           getTableModifiersBuilder() {
-
+        bitField0_ |= 0x00000040;
         onChanged();
         return getTableModifiersFieldBuilder().getBuilder();
       }
@@ -4834,8 +4871,8 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder setShardingStrategyValue(int value) {
-
         shardingStrategy_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -4853,9 +4890,8 @@ public final class Storage {
       @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
           getShardingStrategy() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy result =
-            com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.valueOf(
+            com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.forNumber(
                 shardingStrategy_);
         return result == null
             ? com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.UNRECOGNIZED
@@ -4878,7 +4914,7 @@ public final class Storage {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000080;
         shardingStrategy_ = value.getNumber();
         onChanged();
         return this;
@@ -4895,7 +4931,7 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder clearShardingStrategy() {
-
+        bitField0_ = (bitField0_ & ~0x00000080);
         shardingStrategy_ = 0;
         onChanged();
         return this;
@@ -5300,11 +5336,16 @@ public final class Storage {
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReferenceOrBuilder
         getTableReferenceOrBuilder() {
-      return getTableReference();
+      return tableReference_ == null
+          ? com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+              .getDefaultInstance()
+          : tableReference_;
     }
 
     public static final int PARENT_FIELD_NUMBER = 6;
-    private volatile java.lang.Object parent_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object parent_ = "";
     /**
      *
      *
@@ -5409,11 +5450,14 @@ public final class Storage {
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiersOrBuilder
         getTableModifiersOrBuilder() {
-      return getTableModifiers();
+      return tableModifiers_ == null
+          ? com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+              .getDefaultInstance()
+          : tableModifiers_;
     }
 
     public static final int REQUESTED_STREAMS_FIELD_NUMBER = 3;
-    private int requestedStreams_;
+    private int requestedStreams_ = 0;
     /**
      *
      *
@@ -5482,11 +5526,14 @@ public final class Storage {
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptionsOrBuilder
         getReadOptionsOrBuilder() {
-      return getReadOptions();
+      return readOptions_ == null
+          ? com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions
+              .getDefaultInstance()
+          : readOptions_;
     }
 
     public static final int FORMAT_FIELD_NUMBER = 5;
-    private int format_;
+    private int format_ = 0;
     /**
      *
      *
@@ -5515,16 +5562,15 @@ public final class Storage {
      */
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat getFormat() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat result =
-          com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat.valueOf(format_);
+          com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat.forNumber(format_);
       return result == null
           ? com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat.UNRECOGNIZED
           : result;
     }
 
     public static final int SHARDING_STRATEGY_FIELD_NUMBER = 7;
-    private int shardingStrategy_;
+    private int shardingStrategy_ = 0;
     /**
      *
      *
@@ -5556,9 +5602,8 @@ public final class Storage {
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
         getShardingStrategy() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy result =
-          com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.valueOf(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.forNumber(
               shardingStrategy_);
       return result == null
           ? com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.UNRECOGNIZED
@@ -5854,32 +5899,26 @@ public final class Storage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (tableReferenceBuilder_ == null) {
-          tableReference_ = null;
-        } else {
-          tableReference_ = null;
+        bitField0_ = 0;
+        tableReference_ = null;
+        if (tableReferenceBuilder_ != null) {
+          tableReferenceBuilder_.dispose();
           tableReferenceBuilder_ = null;
         }
         parent_ = "";
-
-        if (tableModifiersBuilder_ == null) {
-          tableModifiers_ = null;
-        } else {
-          tableModifiers_ = null;
+        tableModifiers_ = null;
+        if (tableModifiersBuilder_ != null) {
+          tableModifiersBuilder_.dispose();
           tableModifiersBuilder_ = null;
         }
         requestedStreams_ = 0;
-
-        if (readOptionsBuilder_ == null) {
-          readOptions_ = null;
-        } else {
-          readOptions_ = null;
+        readOptions_ = null;
+        if (readOptionsBuilder_ != null) {
+          readOptionsBuilder_.dispose();
           readOptionsBuilder_ = null;
         }
         format_ = 0;
-
         shardingStrategy_ = 0;
-
         return this;
       }
 
@@ -5911,27 +5950,40 @@ public final class Storage {
           buildPartial() {
         com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest result =
             new com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest(this);
-        if (tableReferenceBuilder_ == null) {
-          result.tableReference_ = tableReference_;
-        } else {
-          result.tableReference_ = tableReferenceBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.parent_ = parent_;
-        if (tableModifiersBuilder_ == null) {
-          result.tableModifiers_ = tableModifiers_;
-        } else {
-          result.tableModifiers_ = tableModifiersBuilder_.build();
-        }
-        result.requestedStreams_ = requestedStreams_;
-        if (readOptionsBuilder_ == null) {
-          result.readOptions_ = readOptions_;
-        } else {
-          result.readOptions_ = readOptionsBuilder_.build();
-        }
-        result.format_ = format_;
-        result.shardingStrategy_ = shardingStrategy_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.tableReference_ =
+              tableReferenceBuilder_ == null ? tableReference_ : tableReferenceBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.parent_ = parent_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.tableModifiers_ =
+              tableModifiersBuilder_ == null ? tableModifiers_ : tableModifiersBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.requestedStreams_ = requestedStreams_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.readOptions_ =
+              readOptionsBuilder_ == null ? readOptions_ : readOptionsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.format_ = format_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.shardingStrategy_ = shardingStrategy_;
+        }
       }
 
       @java.lang.Override
@@ -5991,6 +6043,7 @@ public final class Storage {
         }
         if (!other.getParent().isEmpty()) {
           parent_ = other.parent_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasTableModifiers()) {
@@ -6038,44 +6091,44 @@ public final class Storage {
                 {
                   input.readMessage(
                       getTableReferenceFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getTableModifiersFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 18
               case 24:
                 {
                   requestedStreams_ = input.readInt32();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 24
               case 34:
                 {
                   input.readMessage(getReadOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 34
               case 40:
                 {
                   format_ = input.readEnum();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 40
               case 50:
                 {
                   parent_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 50
               case 56:
                 {
                   shardingStrategy_ = input.readEnum();
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 56
               default:
@@ -6094,6 +6147,8 @@ public final class Storage {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
           tableReference_;
@@ -6116,7 +6171,7 @@ public final class Storage {
        * @return Whether the tableReference field is set.
        */
       public boolean hasTableReference() {
-        return tableReferenceBuilder_ != null || tableReference_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -6160,11 +6215,11 @@ public final class Storage {
             throw new NullPointerException();
           }
           tableReference_ = value;
-          onChanged();
         } else {
           tableReferenceBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -6183,11 +6238,11 @@ public final class Storage {
               builderForValue) {
         if (tableReferenceBuilder_ == null) {
           tableReference_ = builderForValue.build();
-          onChanged();
         } else {
           tableReferenceBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -6204,20 +6259,20 @@ public final class Storage {
       public Builder mergeTableReference(
           com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference value) {
         if (tableReferenceBuilder_ == null) {
-          if (tableReference_ != null) {
-            tableReference_ =
-                com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
-                    .newBuilder(tableReference_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && tableReference_ != null
+              && tableReference_
+                  != com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+                      .getDefaultInstance()) {
+            getTableReferenceBuilder().mergeFrom(value);
           } else {
             tableReference_ = value;
           }
-          onChanged();
         } else {
           tableReferenceBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -6232,14 +6287,13 @@ public final class Storage {
        * </code>
        */
       public Builder clearTableReference() {
-        if (tableReferenceBuilder_ == null) {
-          tableReference_ = null;
-          onChanged();
-        } else {
-          tableReference_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        tableReference_ = null;
+        if (tableReferenceBuilder_ != null) {
+          tableReferenceBuilder_.dispose();
           tableReferenceBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -6255,7 +6309,7 @@ public final class Storage {
        */
       public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference.Builder
           getTableReferenceBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getTableReferenceFieldBuilder().getBuilder();
       }
@@ -6384,8 +6438,8 @@ public final class Storage {
         if (value == null) {
           throw new NullPointerException();
         }
-
         parent_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6405,8 +6459,8 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder clearParent() {
-
         parent_ = getDefaultInstance().getParent();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -6431,8 +6485,8 @@ public final class Storage {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         parent_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6456,7 +6510,7 @@ public final class Storage {
        * @return Whether the tableModifiers field is set.
        */
       public boolean hasTableModifiers() {
-        return tableModifiersBuilder_ != null || tableModifiers_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -6496,11 +6550,11 @@ public final class Storage {
             throw new NullPointerException();
           }
           tableModifiers_ = value;
-          onChanged();
         } else {
           tableModifiersBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -6517,11 +6571,11 @@ public final class Storage {
               builderForValue) {
         if (tableModifiersBuilder_ == null) {
           tableModifiers_ = builderForValue.build();
-          onChanged();
         } else {
           tableModifiersBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -6536,20 +6590,20 @@ public final class Storage {
       public Builder mergeTableModifiers(
           com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers value) {
         if (tableModifiersBuilder_ == null) {
-          if (tableModifiers_ != null) {
-            tableModifiers_ =
-                com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
-                    .newBuilder(tableModifiers_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && tableModifiers_ != null
+              && tableModifiers_
+                  != com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+                      .getDefaultInstance()) {
+            getTableModifiersBuilder().mergeFrom(value);
           } else {
             tableModifiers_ = value;
           }
-          onChanged();
         } else {
           tableModifiersBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -6562,14 +6616,13 @@ public final class Storage {
        * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
        */
       public Builder clearTableModifiers() {
-        if (tableModifiersBuilder_ == null) {
-          tableModifiers_ = null;
-          onChanged();
-        } else {
-          tableModifiers_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        tableModifiers_ = null;
+        if (tableModifiersBuilder_ != null) {
+          tableModifiersBuilder_.dispose();
           tableModifiersBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -6583,7 +6636,7 @@ public final class Storage {
        */
       public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers.Builder
           getTableModifiersBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getTableModifiersFieldBuilder().getBuilder();
       }
@@ -6676,6 +6729,7 @@ public final class Storage {
       public Builder setRequestedStreams(int value) {
 
         requestedStreams_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -6696,7 +6750,7 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder clearRequestedStreams() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         requestedStreams_ = 0;
         onChanged();
         return this;
@@ -6720,7 +6774,7 @@ public final class Storage {
        * @return Whether the readOptions field is set.
        */
       public boolean hasReadOptions() {
-        return readOptionsBuilder_ != null || readOptions_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -6760,11 +6814,11 @@ public final class Storage {
             throw new NullPointerException();
           }
           readOptions_ = value;
-          onChanged();
         } else {
           readOptionsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -6781,11 +6835,11 @@ public final class Storage {
               builderForValue) {
         if (readOptionsBuilder_ == null) {
           readOptions_ = builderForValue.build();
-          onChanged();
         } else {
           readOptionsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -6800,20 +6854,20 @@ public final class Storage {
       public Builder mergeReadOptions(
           com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions value) {
         if (readOptionsBuilder_ == null) {
-          if (readOptions_ != null) {
-            readOptions_ =
-                com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions.newBuilder(
-                        readOptions_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000010) != 0)
+              && readOptions_ != null
+              && readOptions_
+                  != com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions
+                      .getDefaultInstance()) {
+            getReadOptionsBuilder().mergeFrom(value);
           } else {
             readOptions_ = value;
           }
-          onChanged();
         } else {
           readOptionsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -6826,14 +6880,13 @@ public final class Storage {
        * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
        */
       public Builder clearReadOptions() {
-        if (readOptionsBuilder_ == null) {
-          readOptions_ = null;
-          onChanged();
-        } else {
-          readOptions_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        readOptions_ = null;
+        if (readOptionsBuilder_ != null) {
+          readOptionsBuilder_.dispose();
           readOptionsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -6847,7 +6900,7 @@ public final class Storage {
        */
       public com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions.Builder
           getReadOptionsBuilder() {
-
+        bitField0_ |= 0x00000010;
         onChanged();
         return getReadOptionsFieldBuilder().getBuilder();
       }
@@ -6926,8 +6979,8 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder setFormatValue(int value) {
-
         format_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -6944,9 +6997,8 @@ public final class Storage {
        */
       @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat getFormat() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat result =
-            com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat.valueOf(format_);
+            com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat.forNumber(format_);
         return result == null
             ? com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat.UNRECOGNIZED
             : result;
@@ -6967,7 +7019,7 @@ public final class Storage {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000020;
         format_ = value.getNumber();
         onChanged();
         return this;
@@ -6984,7 +7036,7 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder clearFormat() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         format_ = 0;
         onChanged();
         return this;
@@ -7021,8 +7073,8 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder setShardingStrategyValue(int value) {
-
         shardingStrategy_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -7041,9 +7093,8 @@ public final class Storage {
       @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
           getShardingStrategy() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy result =
-            com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.valueOf(
+            com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.forNumber(
                 shardingStrategy_);
         return result == null
             ? com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.UNRECOGNIZED
@@ -7067,7 +7118,7 @@ public final class Storage {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000040;
         shardingStrategy_ = value.getNumber();
         onChanged();
         return this;
@@ -7085,7 +7136,7 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder clearShardingStrategy() {
-
+        bitField0_ = (bitField0_ & ~0x00000040);
         shardingStrategy_ = 0;
         onChanged();
         return this;
@@ -7317,7 +7368,9 @@ public final class Storage {
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPositionOrBuilder
         getReadPositionOrBuilder() {
-      return getReadPosition();
+      return readPosition_ == null
+          ? com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition.getDefaultInstance()
+          : readPosition_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7527,10 +7580,10 @@ public final class Storage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (readPositionBuilder_ == null) {
-          readPosition_ = null;
-        } else {
-          readPosition_ = null;
+        bitField0_ = 0;
+        readPosition_ = null;
+        if (readPositionBuilder_ != null) {
+          readPositionBuilder_.dispose();
           readPositionBuilder_ = null;
         }
         return this;
@@ -7562,13 +7615,20 @@ public final class Storage {
       public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest buildPartial() {
         com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest result =
             new com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest(this);
-        if (readPositionBuilder_ == null) {
-          result.readPosition_ = readPosition_;
-        } else {
-          result.readPosition_ = readPositionBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.readPosition_ =
+              readPositionBuilder_ == null ? readPosition_ : readPositionBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -7654,7 +7714,7 @@ public final class Storage {
               case 10:
                 {
                   input.readMessage(getReadPositionFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -7673,6 +7733,8 @@ public final class Storage {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition readPosition_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -7696,7 +7758,7 @@ public final class Storage {
        * @return Whether the readPosition field is set.
        */
       public boolean hasReadPosition() {
-        return readPositionBuilder_ != null || readPosition_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -7743,11 +7805,11 @@ public final class Storage {
             throw new NullPointerException();
           }
           readPosition_ = value;
-          onChanged();
         } else {
           readPositionBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -7768,11 +7830,11 @@ public final class Storage {
               builderForValue) {
         if (readPositionBuilder_ == null) {
           readPosition_ = builderForValue.build();
-          onChanged();
         } else {
           readPositionBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -7791,20 +7853,20 @@ public final class Storage {
       public Builder mergeReadPosition(
           com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition value) {
         if (readPositionBuilder_ == null) {
-          if (readPosition_ != null) {
-            readPosition_ =
-                com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition.newBuilder(
-                        readPosition_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && readPosition_ != null
+              && readPosition_
+                  != com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition
+                      .getDefaultInstance()) {
+            getReadPositionBuilder().mergeFrom(value);
           } else {
             readPosition_ = value;
           }
-          onChanged();
         } else {
           readPositionBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -7821,14 +7883,13 @@ public final class Storage {
        * </code>
        */
       public Builder clearReadPosition() {
-        if (readPositionBuilder_ == null) {
-          readPosition_ = null;
-          onChanged();
-        } else {
-          readPosition_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        readPosition_ = null;
+        if (readPositionBuilder_ != null) {
+          readPositionBuilder_.dispose();
           readPositionBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -7846,7 +7907,7 @@ public final class Storage {
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition.Builder
           getReadPositionBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getReadPositionFieldBuilder().getBuilder();
       }
@@ -8109,7 +8170,7 @@ public final class Storage {
     }
 
     public static final int ESTIMATED_ROW_COUNT_FIELD_NUMBER = 1;
-    private long estimatedRowCount_;
+    private long estimatedRowCount_ = 0L;
     /**
      *
      *
@@ -8129,7 +8190,7 @@ public final class Storage {
     }
 
     public static final int FRACTION_CONSUMED_FIELD_NUMBER = 2;
-    private float fractionConsumed_;
+    private float fractionConsumed_ = 0F;
     /**
      *
      *
@@ -8197,11 +8258,13 @@ public final class Storage {
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ProgressOrBuilder
         getProgressOrBuilder() {
-      return getProgress();
+      return progress_ == null
+          ? com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.getDefaultInstance()
+          : progress_;
     }
 
     public static final int IS_SPLITTABLE_FIELD_NUMBER = 3;
-    private boolean isSplittable_;
+    private boolean isSplittable_ = false;
     /**
      *
      *
@@ -8455,18 +8518,15 @@ public final class Storage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         estimatedRowCount_ = 0L;
-
         fractionConsumed_ = 0F;
-
-        if (progressBuilder_ == null) {
-          progress_ = null;
-        } else {
-          progress_ = null;
+        progress_ = null;
+        if (progressBuilder_ != null) {
+          progressBuilder_.dispose();
           progressBuilder_ = null;
         }
         isSplittable_ = false;
-
         return this;
       }
 
@@ -8495,16 +8555,28 @@ public final class Storage {
       public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus buildPartial() {
         com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus result =
             new com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus(this);
-        result.estimatedRowCount_ = estimatedRowCount_;
-        result.fractionConsumed_ = fractionConsumed_;
-        if (progressBuilder_ == null) {
-          result.progress_ = progress_;
-        } else {
-          result.progress_ = progressBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.isSplittable_ = isSplittable_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.estimatedRowCount_ = estimatedRowCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.fractionConsumed_ = fractionConsumed_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.progress_ = progressBuilder_ == null ? progress_ : progressBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.isSplittable_ = isSplittable_;
+        }
       }
 
       @java.lang.Override
@@ -8598,25 +8670,25 @@ public final class Storage {
               case 8:
                 {
                   estimatedRowCount_ = input.readInt64();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 21:
                 {
                   fractionConsumed_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               case 24:
                 {
                   isSplittable_ = input.readBool();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 24
               case 34:
                 {
                   input.readMessage(getProgressFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 34
               default:
@@ -8635,6 +8707,8 @@ public final class Storage {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private long estimatedRowCount_;
       /**
@@ -8671,6 +8745,7 @@ public final class Storage {
       public Builder setEstimatedRowCount(long value) {
 
         estimatedRowCount_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -8688,7 +8763,7 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder clearEstimatedRowCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         estimatedRowCount_ = 0L;
         onChanged();
         return this;
@@ -8735,6 +8810,7 @@ public final class Storage {
       public Builder setFractionConsumed(float value) {
 
         fractionConsumed_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -8755,7 +8831,7 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder clearFractionConsumed() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         fractionConsumed_ = 0F;
         onChanged();
         return this;
@@ -8779,7 +8855,7 @@ public final class Storage {
        * @return Whether the progress field is set.
        */
       public boolean hasProgress() {
-        return progressBuilder_ != null || progress_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -8816,11 +8892,11 @@ public final class Storage {
             throw new NullPointerException();
           }
           progress_ = value;
-          onChanged();
         } else {
           progressBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -8836,11 +8912,11 @@ public final class Storage {
           com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.Builder builderForValue) {
         if (progressBuilder_ == null) {
           progress_ = builderForValue.build();
-          onChanged();
         } else {
           progressBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -8855,19 +8931,20 @@ public final class Storage {
       public Builder mergeProgress(
           com.google.cloud.bigquery.storage.v1beta1.Storage.Progress value) {
         if (progressBuilder_ == null) {
-          if (progress_ != null) {
-            progress_ =
-                com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.newBuilder(progress_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && progress_ != null
+              && progress_
+                  != com.google.cloud.bigquery.storage.v1beta1.Storage.Progress
+                      .getDefaultInstance()) {
+            getProgressBuilder().mergeFrom(value);
           } else {
             progress_ = value;
           }
-          onChanged();
         } else {
           progressBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -8880,14 +8957,13 @@ public final class Storage {
        * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
        */
       public Builder clearProgress() {
-        if (progressBuilder_ == null) {
-          progress_ = null;
-          onChanged();
-        } else {
-          progress_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        progress_ = null;
+        if (progressBuilder_ != null) {
+          progressBuilder_.dispose();
           progressBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -8901,7 +8977,7 @@ public final class Storage {
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.Builder
           getProgressBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getProgressFieldBuilder().getBuilder();
       }
@@ -8989,6 +9065,7 @@ public final class Storage {
       public Builder setIsSplittable(boolean value) {
 
         isSplittable_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -9008,7 +9085,7 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder clearIsSplittable() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         isSplittable_ = false;
         onChanged();
         return this;
@@ -9161,7 +9238,7 @@ public final class Storage {
     }
 
     public static final int AT_RESPONSE_START_FIELD_NUMBER = 1;
-    private float atResponseStart_;
+    private float atResponseStart_ = 0F;
     /**
      *
      *
@@ -9187,7 +9264,7 @@ public final class Storage {
     }
 
     public static final int AT_RESPONSE_END_FIELD_NUMBER = 2;
-    private float atResponseEnd_;
+    private float atResponseEnd_ = 0F;
     /**
      *
      *
@@ -9408,10 +9485,9 @@ public final class Storage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         atResponseStart_ = 0F;
-
         atResponseEnd_ = 0F;
-
         return this;
       }
 
@@ -9440,10 +9516,22 @@ public final class Storage {
       public com.google.cloud.bigquery.storage.v1beta1.Storage.Progress buildPartial() {
         com.google.cloud.bigquery.storage.v1beta1.Storage.Progress result =
             new com.google.cloud.bigquery.storage.v1beta1.Storage.Progress(this);
-        result.atResponseStart_ = atResponseStart_;
-        result.atResponseEnd_ = atResponseEnd_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.Progress result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.atResponseStart_ = atResponseStart_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.atResponseEnd_ = atResponseEnd_;
+        }
       }
 
       @java.lang.Override
@@ -9530,13 +9618,13 @@ public final class Storage {
               case 13:
                 {
                   atResponseStart_ = input.readFloat();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 13
               case 21:
                 {
                   atResponseEnd_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               default:
@@ -9555,6 +9643,8 @@ public final class Storage {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private float atResponseStart_;
       /**
@@ -9603,6 +9693,7 @@ public final class Storage {
       public Builder setAtResponseStart(float value) {
 
         atResponseStart_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -9626,7 +9717,7 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder clearAtResponseStart() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         atResponseStart_ = 0F;
         onChanged();
         return this;
@@ -9665,6 +9756,7 @@ public final class Storage {
       public Builder setAtResponseEnd(float value) {
 
         atResponseEnd_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -9681,7 +9773,7 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder clearAtResponseEnd() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         atResponseEnd_ = 0F;
         onChanged();
         return this;
@@ -9819,7 +9911,7 @@ public final class Storage {
     }
 
     public static final int THROTTLE_PERCENT_FIELD_NUMBER = 1;
-    private int throttlePercent_;
+    private int throttlePercent_ = 0;
     /**
      *
      *
@@ -10039,8 +10131,8 @@ public final class Storage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         throttlePercent_ = 0;
-
         return this;
       }
 
@@ -10070,9 +10162,19 @@ public final class Storage {
       public com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus buildPartial() {
         com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus result =
             new com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus(this);
-        result.throttlePercent_ = throttlePercent_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.throttlePercent_ = throttlePercent_;
+        }
       }
 
       @java.lang.Override
@@ -10158,7 +10260,7 @@ public final class Storage {
               case 8:
                 {
                   throttlePercent_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               default:
@@ -10177,6 +10279,8 @@ public final class Storage {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int throttlePercent_;
       /**
@@ -10211,6 +10315,7 @@ public final class Storage {
       public Builder setThrottlePercent(int value) {
 
         throttlePercent_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -10227,7 +10332,7 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder clearThrottlePercent() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         throttlePercent_ = 0;
         onChanged();
         return this;
@@ -10672,7 +10777,7 @@ public final class Storage {
     }
 
     public static final int ROW_COUNT_FIELD_NUMBER = 6;
-    private long rowCount_;
+    private long rowCount_ = 0L;
     /**
      *
      *
@@ -10738,7 +10843,9 @@ public final class Storage {
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatusOrBuilder
         getStatusOrBuilder() {
-      return getStatus();
+      return status_ == null
+          ? com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus.getDefaultInstance()
+          : status_;
     }
 
     public static final int THROTTLE_STATUS_FIELD_NUMBER = 5;
@@ -10790,7 +10897,9 @@ public final class Storage {
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatusOrBuilder
         getThrottleStatusOrBuilder() {
-      return getThrottleStatus();
+      return throttleStatus_ == null
+          ? com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus.getDefaultInstance()
+          : throttleStatus_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -11065,6 +11174,7 @@ public final class Storage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (avroRowsBuilder_ != null) {
           avroRowsBuilder_.clear();
         }
@@ -11072,17 +11182,14 @@ public final class Storage {
           arrowRecordBatchBuilder_.clear();
         }
         rowCount_ = 0L;
-
-        if (statusBuilder_ == null) {
-          status_ = null;
-        } else {
-          status_ = null;
+        status_ = null;
+        if (statusBuilder_ != null) {
+          statusBuilder_.dispose();
           statusBuilder_ = null;
         }
-        if (throttleStatusBuilder_ == null) {
-          throttleStatus_ = null;
-        } else {
-          throttleStatus_ = null;
+        throttleStatus_ = null;
+        if (throttleStatusBuilder_ != null) {
+          throttleStatusBuilder_.dispose();
           throttleStatusBuilder_ = null;
         }
         rowsCase_ = 0;
@@ -11116,34 +11223,39 @@ public final class Storage {
       public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse buildPartial() {
         com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse result =
             new com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse(this);
-        if (rowsCase_ == 3) {
-          if (avroRowsBuilder_ == null) {
-            result.rows_ = rows_;
-          } else {
-            result.rows_ = avroRowsBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (rowsCase_ == 4) {
-          if (arrowRecordBatchBuilder_ == null) {
-            result.rows_ = rows_;
-          } else {
-            result.rows_ = arrowRecordBatchBuilder_.build();
-          }
-        }
-        result.rowCount_ = rowCount_;
-        if (statusBuilder_ == null) {
-          result.status_ = status_;
-        } else {
-          result.status_ = statusBuilder_.build();
-        }
-        if (throttleStatusBuilder_ == null) {
-          result.throttleStatus_ = throttleStatus_;
-        } else {
-          result.throttleStatus_ = throttleStatusBuilder_.build();
-        }
-        result.rowsCase_ = rowsCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.rowCount_ = rowCount_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.throttleStatus_ =
+              throttleStatusBuilder_ == null ? throttleStatus_ : throttleStatusBuilder_.build();
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse result) {
+        result.rowsCase_ = rowsCase_;
+        result.rows_ = this.rows_;
+        if (rowsCase_ == 3 && avroRowsBuilder_ != null) {
+          result.rows_ = avroRowsBuilder_.build();
+        }
+        if (rowsCase_ == 4 && arrowRecordBatchBuilder_ != null) {
+          result.rows_ = arrowRecordBatchBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -11251,7 +11363,7 @@ public final class Storage {
               case 18:
                 {
                   input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 18
               case 26:
@@ -11271,13 +11383,13 @@ public final class Storage {
                 {
                   input.readMessage(
                       getThrottleStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               case 48:
                 {
                   rowCount_ = input.readInt64();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 48
               default:
@@ -11310,6 +11422,8 @@ public final class Storage {
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows,
@@ -11524,7 +11638,6 @@ public final class Storage {
         }
         rowsCase_ = 3;
         onChanged();
-        ;
         return avroRowsBuilder_;
       }
 
@@ -11757,7 +11870,6 @@ public final class Storage {
         }
         rowsCase_ = 4;
         onChanged();
-        ;
         return arrowRecordBatchBuilder_;
       }
 
@@ -11798,6 +11910,7 @@ public final class Storage {
       public Builder setRowCount(long value) {
 
         rowCount_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -11816,7 +11929,7 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder clearRowCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         rowCount_ = 0L;
         onChanged();
         return this;
@@ -11840,7 +11953,7 @@ public final class Storage {
        * @return Whether the status field is set.
        */
       public boolean hasStatus() {
-        return statusBuilder_ != null || status_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -11878,11 +11991,11 @@ public final class Storage {
             throw new NullPointerException();
           }
           status_ = value;
-          onChanged();
         } else {
           statusBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -11898,11 +12011,11 @@ public final class Storage {
           com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus.Builder builderForValue) {
         if (statusBuilder_ == null) {
           status_ = builderForValue.build();
-          onChanged();
         } else {
           statusBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -11917,19 +12030,20 @@ public final class Storage {
       public Builder mergeStatus(
           com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus value) {
         if (statusBuilder_ == null) {
-          if (status_ != null) {
-            status_ =
-                com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus.newBuilder(status_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && status_ != null
+              && status_
+                  != com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus
+                      .getDefaultInstance()) {
+            getStatusBuilder().mergeFrom(value);
           } else {
             status_ = value;
           }
-          onChanged();
         } else {
           statusBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -11942,14 +12056,13 @@ public final class Storage {
        * <code>.google.cloud.bigquery.storage.v1beta1.StreamStatus status = 2;</code>
        */
       public Builder clearStatus() {
-        if (statusBuilder_ == null) {
-          status_ = null;
-          onChanged();
-        } else {
-          status_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        status_ = null;
+        if (statusBuilder_ != null) {
+          statusBuilder_.dispose();
           statusBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -11963,7 +12076,7 @@ public final class Storage {
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus.Builder
           getStatusBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
@@ -12031,7 +12144,7 @@ public final class Storage {
        * @return Whether the throttleStatus field is set.
        */
       public boolean hasThrottleStatus() {
-        return throttleStatusBuilder_ != null || throttleStatus_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -12072,11 +12185,11 @@ public final class Storage {
             throw new NullPointerException();
           }
           throttleStatus_ = value;
-          onChanged();
         } else {
           throttleStatusBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -12094,11 +12207,11 @@ public final class Storage {
               builderForValue) {
         if (throttleStatusBuilder_ == null) {
           throttleStatus_ = builderForValue.build();
-          onChanged();
         } else {
           throttleStatusBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -12114,20 +12227,20 @@ public final class Storage {
       public Builder mergeThrottleStatus(
           com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus value) {
         if (throttleStatusBuilder_ == null) {
-          if (throttleStatus_ != null) {
-            throttleStatus_ =
-                com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus.newBuilder(
-                        throttleStatus_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000010) != 0)
+              && throttleStatus_ != null
+              && throttleStatus_
+                  != com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus
+                      .getDefaultInstance()) {
+            getThrottleStatusBuilder().mergeFrom(value);
           } else {
             throttleStatus_ = value;
           }
-          onChanged();
         } else {
           throttleStatusBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -12141,14 +12254,13 @@ public final class Storage {
        * <code>.google.cloud.bigquery.storage.v1beta1.ThrottleStatus throttle_status = 5;</code>
        */
       public Builder clearThrottleStatus() {
-        if (throttleStatusBuilder_ == null) {
-          throttleStatus_ = null;
-          onChanged();
-        } else {
-          throttleStatus_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        throttleStatus_ = null;
+        if (throttleStatusBuilder_ != null) {
+          throttleStatusBuilder_.dispose();
           throttleStatusBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -12163,7 +12275,7 @@ public final class Storage {
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus.Builder
           getThrottleStatusBuilder() {
-
+        bitField0_ |= 0x00000010;
         onChanged();
         return getThrottleStatusFieldBuilder().getBuilder();
       }
@@ -12454,11 +12566,13 @@ public final class Storage {
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSessionOrBuilder
         getSessionOrBuilder() {
-      return getSession();
+      return session_ == null
+          ? com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession.getDefaultInstance()
+          : session_;
     }
 
     public static final int REQUESTED_STREAMS_FIELD_NUMBER = 2;
-    private int requestedStreams_;
+    private int requestedStreams_ = 0;
     /**
      *
      *
@@ -12719,14 +12833,13 @@ public final class Storage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (sessionBuilder_ == null) {
-          session_ = null;
-        } else {
-          session_ = null;
+        bitField0_ = 0;
+        session_ = null;
+        if (sessionBuilder_ != null) {
+          sessionBuilder_.dispose();
           sessionBuilder_ = null;
         }
         requestedStreams_ = 0;
-
         return this;
       }
 
@@ -12761,14 +12874,23 @@ public final class Storage {
             result =
                 new com.google.cloud.bigquery.storage.v1beta1.Storage
                     .BatchCreateReadSessionStreamsRequest(this);
-        if (sessionBuilder_ == null) {
-          result.session_ = session_;
-        } else {
-          result.session_ = sessionBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.requestedStreams_ = requestedStreams_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.session_ = sessionBuilder_ == null ? session_ : sessionBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.requestedStreams_ = requestedStreams_;
+        }
       }
 
       @java.lang.Override
@@ -12863,13 +12985,13 @@ public final class Storage {
               case 10:
                 {
                   input.readMessage(getSessionFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   requestedStreams_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -12888,6 +13010,8 @@ public final class Storage {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession session_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -12910,7 +13034,7 @@ public final class Storage {
        * @return Whether the session field is set.
        */
       public boolean hasSession() {
-        return sessionBuilder_ != null || session_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -12954,11 +13078,11 @@ public final class Storage {
             throw new NullPointerException();
           }
           session_ = value;
-          onChanged();
         } else {
           sessionBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -12977,11 +13101,11 @@ public final class Storage {
           com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession.Builder builderForValue) {
         if (sessionBuilder_ == null) {
           session_ = builderForValue.build();
-          onChanged();
         } else {
           sessionBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -12999,19 +13123,20 @@ public final class Storage {
       public Builder mergeSession(
           com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession value) {
         if (sessionBuilder_ == null) {
-          if (session_ != null) {
-            session_ =
-                com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession.newBuilder(session_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && session_ != null
+              && session_
+                  != com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession
+                      .getDefaultInstance()) {
+            getSessionBuilder().mergeFrom(value);
           } else {
             session_ = value;
           }
-          onChanged();
         } else {
           sessionBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -13027,14 +13152,13 @@ public final class Storage {
        * </code>
        */
       public Builder clearSession() {
-        if (sessionBuilder_ == null) {
-          session_ = null;
-          onChanged();
-        } else {
-          session_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        session_ = null;
+        if (sessionBuilder_ != null) {
+          sessionBuilder_.dispose();
           sessionBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -13051,7 +13175,7 @@ public final class Storage {
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession.Builder
           getSessionBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getSessionFieldBuilder().getBuilder();
       }
@@ -13141,6 +13265,7 @@ public final class Storage {
       public Builder setRequestedStreams(int value) {
 
         requestedStreams_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -13158,7 +13283,7 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder clearRequestedStreams() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         requestedStreams_ = 0;
         onChanged();
         return this;
@@ -13349,6 +13474,8 @@ public final class Storage {
     }
 
     public static final int STREAMS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.bigquery.storage.v1beta1.Storage.Stream> streams_;
     /**
      *
@@ -13653,6 +13780,7 @@ public final class Storage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (streamsBuilder_ == null) {
           streams_ = java.util.Collections.emptyList();
         } else {
@@ -13694,7 +13822,17 @@ public final class Storage {
             result =
                 new com.google.cloud.bigquery.storage.v1beta1.Storage
                     .BatchCreateReadSessionStreamsResponse(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsResponse
+              result) {
         if (streamsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             streams_ = java.util.Collections.unmodifiableList(streams_);
@@ -13704,8 +13842,12 @@ public final class Storage {
         } else {
           result.streams_ = streamsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsResponse
+              result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -14432,7 +14574,9 @@ public final class Storage {
      */
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder getStreamOrBuilder() {
-      return getStream();
+      return stream_ == null
+          ? com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.getDefaultInstance()
+          : stream_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -14644,10 +14788,10 @@ public final class Storage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (streamBuilder_ == null) {
-          stream_ = null;
-        } else {
-          stream_ = null;
+        bitField0_ = 0;
+        stream_ = null;
+        if (streamBuilder_ != null) {
+          streamBuilder_.dispose();
           streamBuilder_ = null;
         }
         return this;
@@ -14681,13 +14825,19 @@ public final class Storage {
           buildPartial() {
         com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest result =
             new com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest(this);
-        if (streamBuilder_ == null) {
-          result.stream_ = stream_;
-        } else {
-          result.stream_ = streamBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.stream_ = streamBuilder_ == null ? stream_ : streamBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -14774,7 +14924,7 @@ public final class Storage {
               case 18:
                 {
                   input.readMessage(getStreamFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 18
               default:
@@ -14793,6 +14943,8 @@ public final class Storage {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.bigquery.storage.v1beta1.Storage.Stream stream_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -14814,7 +14966,7 @@ public final class Storage {
        * @return Whether the stream field is set.
        */
       public boolean hasStream() {
-        return streamBuilder_ != null || stream_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -14855,11 +15007,11 @@ public final class Storage {
             throw new NullPointerException();
           }
           stream_ = value;
-          onChanged();
         } else {
           streamBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -14877,11 +15029,11 @@ public final class Storage {
           com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder builderForValue) {
         if (streamBuilder_ == null) {
           stream_ = builderForValue.build();
-          onChanged();
         } else {
           streamBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -14897,19 +15049,20 @@ public final class Storage {
        */
       public Builder mergeStream(com.google.cloud.bigquery.storage.v1beta1.Storage.Stream value) {
         if (streamBuilder_ == null) {
-          if (stream_ != null) {
-            stream_ =
-                com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.newBuilder(stream_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && stream_ != null
+              && stream_
+                  != com.google.cloud.bigquery.storage.v1beta1.Storage.Stream
+                      .getDefaultInstance()) {
+            getStreamBuilder().mergeFrom(value);
           } else {
             stream_ = value;
           }
-          onChanged();
         } else {
           streamBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -14924,14 +15077,13 @@ public final class Storage {
        * </code>
        */
       public Builder clearStream() {
-        if (streamBuilder_ == null) {
-          stream_ = null;
-          onChanged();
-        } else {
-          stream_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        stream_ = null;
+        if (streamBuilder_ != null) {
+          streamBuilder_.dispose();
           streamBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -14946,7 +15098,7 @@ public final class Storage {
        * </code>
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder getStreamBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getStreamFieldBuilder().getBuilder();
       }
@@ -15232,11 +15384,13 @@ public final class Storage {
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder
         getOriginalStreamOrBuilder() {
-      return getOriginalStream();
+      return originalStream_ == null
+          ? com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.getDefaultInstance()
+          : originalStream_;
     }
 
     public static final int FRACTION_FIELD_NUMBER = 2;
-    private float fraction_;
+    private float fraction_ = 0F;
     /**
      *
      *
@@ -15483,14 +15637,13 @@ public final class Storage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (originalStreamBuilder_ == null) {
-          originalStream_ = null;
-        } else {
-          originalStream_ = null;
+        bitField0_ = 0;
+        originalStream_ = null;
+        if (originalStreamBuilder_ != null) {
+          originalStreamBuilder_.dispose();
           originalStreamBuilder_ = null;
         }
         fraction_ = 0F;
-
         return this;
       }
 
@@ -15522,14 +15675,23 @@ public final class Storage {
           buildPartial() {
         com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest result =
             new com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest(this);
-        if (originalStreamBuilder_ == null) {
-          result.originalStream_ = originalStream_;
-        } else {
-          result.originalStream_ = originalStreamBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.fraction_ = fraction_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.originalStream_ =
+              originalStreamBuilder_ == null ? originalStream_ : originalStreamBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.fraction_ = fraction_;
+        }
       }
 
       @java.lang.Override
@@ -15620,13 +15782,13 @@ public final class Storage {
                 {
                   input.readMessage(
                       getOriginalStreamFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 21:
                 {
                   fraction_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               default:
@@ -15645,6 +15807,8 @@ public final class Storage {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.bigquery.storage.v1beta1.Storage.Stream originalStream_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -15666,7 +15830,7 @@ public final class Storage {
        * @return Whether the originalStream field is set.
        */
       public boolean hasOriginalStream() {
-        return originalStreamBuilder_ != null || originalStream_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -15708,11 +15872,11 @@ public final class Storage {
             throw new NullPointerException();
           }
           originalStream_ = value;
-          onChanged();
         } else {
           originalStreamBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -15730,11 +15894,11 @@ public final class Storage {
           com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder builderForValue) {
         if (originalStreamBuilder_ == null) {
           originalStream_ = builderForValue.build();
-          onChanged();
         } else {
           originalStreamBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -15751,19 +15915,20 @@ public final class Storage {
       public Builder mergeOriginalStream(
           com.google.cloud.bigquery.storage.v1beta1.Storage.Stream value) {
         if (originalStreamBuilder_ == null) {
-          if (originalStream_ != null) {
-            originalStream_ =
-                com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.newBuilder(originalStream_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && originalStream_ != null
+              && originalStream_
+                  != com.google.cloud.bigquery.storage.v1beta1.Storage.Stream
+                      .getDefaultInstance()) {
+            getOriginalStreamBuilder().mergeFrom(value);
           } else {
             originalStream_ = value;
           }
-          onChanged();
         } else {
           originalStreamBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -15778,14 +15943,13 @@ public final class Storage {
        * </code>
        */
       public Builder clearOriginalStream() {
-        if (originalStreamBuilder_ == null) {
-          originalStream_ = null;
-          onChanged();
-        } else {
-          originalStream_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        originalStream_ = null;
+        if (originalStreamBuilder_ != null) {
+          originalStreamBuilder_.dispose();
           originalStreamBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -15801,7 +15965,7 @@ public final class Storage {
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder
           getOriginalStreamBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getOriginalStreamFieldBuilder().getBuilder();
       }
@@ -15897,6 +16061,7 @@ public final class Storage {
       public Builder setFraction(float value) {
 
         fraction_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -15918,7 +16083,7 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder clearFraction() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         fraction_ = 0F;
         onChanged();
         return this;
@@ -16176,7 +16341,9 @@ public final class Storage {
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder
         getPrimaryStreamOrBuilder() {
-      return getPrimaryStream();
+      return primaryStream_ == null
+          ? com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.getDefaultInstance()
+          : primaryStream_;
     }
 
     public static final int REMAINDER_STREAM_FIELD_NUMBER = 2;
@@ -16228,7 +16395,9 @@ public final class Storage {
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder
         getRemainderStreamOrBuilder() {
-      return getRemainderStream();
+      return remainderStream_ == null
+          ? com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.getDefaultInstance()
+          : remainderStream_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -16459,16 +16628,15 @@ public final class Storage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (primaryStreamBuilder_ == null) {
-          primaryStream_ = null;
-        } else {
-          primaryStream_ = null;
+        bitField0_ = 0;
+        primaryStream_ = null;
+        if (primaryStreamBuilder_ != null) {
+          primaryStreamBuilder_.dispose();
           primaryStreamBuilder_ = null;
         }
-        if (remainderStreamBuilder_ == null) {
-          remainderStream_ = null;
-        } else {
-          remainderStream_ = null;
+        remainderStream_ = null;
+        if (remainderStreamBuilder_ != null) {
+          remainderStreamBuilder_.dispose();
           remainderStreamBuilder_ = null;
         }
         return this;
@@ -16502,18 +16670,24 @@ public final class Storage {
           buildPartial() {
         com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse result =
             new com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse(this);
-        if (primaryStreamBuilder_ == null) {
-          result.primaryStream_ = primaryStream_;
-        } else {
-          result.primaryStream_ = primaryStreamBuilder_.build();
-        }
-        if (remainderStreamBuilder_ == null) {
-          result.remainderStream_ = remainderStream_;
-        } else {
-          result.remainderStream_ = remainderStreamBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.primaryStream_ =
+              primaryStreamBuilder_ == null ? primaryStream_ : primaryStreamBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.remainderStream_ =
+              remainderStreamBuilder_ == null ? remainderStream_ : remainderStreamBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -16603,14 +16777,14 @@ public final class Storage {
               case 10:
                 {
                   input.readMessage(getPrimaryStreamFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getRemainderStreamFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -16629,6 +16803,8 @@ public final class Storage {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.bigquery.storage.v1beta1.Storage.Stream primaryStream_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -16650,7 +16826,7 @@ public final class Storage {
        * @return Whether the primaryStream field is set.
        */
       public boolean hasPrimaryStream() {
-        return primaryStreamBuilder_ != null || primaryStream_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -16692,11 +16868,11 @@ public final class Storage {
             throw new NullPointerException();
           }
           primaryStream_ = value;
-          onChanged();
         } else {
           primaryStreamBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -16714,11 +16890,11 @@ public final class Storage {
           com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder builderForValue) {
         if (primaryStreamBuilder_ == null) {
           primaryStream_ = builderForValue.build();
-          onChanged();
         } else {
           primaryStreamBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -16735,19 +16911,20 @@ public final class Storage {
       public Builder mergePrimaryStream(
           com.google.cloud.bigquery.storage.v1beta1.Storage.Stream value) {
         if (primaryStreamBuilder_ == null) {
-          if (primaryStream_ != null) {
-            primaryStream_ =
-                com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.newBuilder(primaryStream_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && primaryStream_ != null
+              && primaryStream_
+                  != com.google.cloud.bigquery.storage.v1beta1.Storage.Stream
+                      .getDefaultInstance()) {
+            getPrimaryStreamBuilder().mergeFrom(value);
           } else {
             primaryStream_ = value;
           }
-          onChanged();
         } else {
           primaryStreamBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -16762,14 +16939,13 @@ public final class Storage {
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
        */
       public Builder clearPrimaryStream() {
-        if (primaryStreamBuilder_ == null) {
-          primaryStream_ = null;
-          onChanged();
-        } else {
-          primaryStream_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        primaryStream_ = null;
+        if (primaryStreamBuilder_ != null) {
+          primaryStreamBuilder_.dispose();
           primaryStreamBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -16785,7 +16961,7 @@ public final class Storage {
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder
           getPrimaryStreamBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getPrimaryStreamFieldBuilder().getBuilder();
       }
@@ -16857,7 +17033,7 @@ public final class Storage {
        * @return Whether the remainderStream field is set.
        */
       public boolean hasRemainderStream() {
-        return remainderStreamBuilder_ != null || remainderStream_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -16897,11 +17073,11 @@ public final class Storage {
             throw new NullPointerException();
           }
           remainderStream_ = value;
-          onChanged();
         } else {
           remainderStreamBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -16918,11 +17094,11 @@ public final class Storage {
           com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder builderForValue) {
         if (remainderStreamBuilder_ == null) {
           remainderStream_ = builderForValue.build();
-          onChanged();
         } else {
           remainderStreamBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -16938,20 +17114,20 @@ public final class Storage {
       public Builder mergeRemainderStream(
           com.google.cloud.bigquery.storage.v1beta1.Storage.Stream value) {
         if (remainderStreamBuilder_ == null) {
-          if (remainderStream_ != null) {
-            remainderStream_ =
-                com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.newBuilder(
-                        remainderStream_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && remainderStream_ != null
+              && remainderStream_
+                  != com.google.cloud.bigquery.storage.v1beta1.Storage.Stream
+                      .getDefaultInstance()) {
+            getRemainderStreamBuilder().mergeFrom(value);
           } else {
             remainderStream_ = value;
           }
-          onChanged();
         } else {
           remainderStreamBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -16965,14 +17141,13 @@ public final class Storage {
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
        */
       public Builder clearRemainderStream() {
-        if (remainderStreamBuilder_ == null) {
-          remainderStream_ = null;
-          onChanged();
-        } else {
-          remainderStream_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        remainderStream_ = null;
+        if (remainderStreamBuilder_ != null) {
+          remainderStreamBuilder_.dispose();
           remainderStreamBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -16987,7 +17162,7 @@ public final class Storage {
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder
           getRemainderStreamBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getRemainderStreamFieldBuilder().getBuilder();
       }

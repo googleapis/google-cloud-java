@@ -118,10 +118,12 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCommitTimeOrBuilder() {
-    return getCommitTime();
+    return commitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : commitTime_;
   }
 
   public static final int STREAM_ERRORS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.storage.v1beta2.StorageError> streamErrors_;
   /**
    *
@@ -430,10 +432,10 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (commitTimeBuilder_ == null) {
-        commitTime_ = null;
-      } else {
-        commitTime_ = null;
+      bitField0_ = 0;
+      commitTime_ = null;
+      if (commitTimeBuilder_ != null) {
+        commitTimeBuilder_.dispose();
         commitTimeBuilder_ = null;
       }
       if (streamErrorsBuilder_ == null) {
@@ -442,7 +444,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
         streamErrors_ = null;
         streamErrorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -474,23 +476,33 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
         buildPartial() {
       com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsResponse result =
           new com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsResponse(this);
-      int from_bitField0_ = bitField0_;
-      if (commitTimeBuilder_ == null) {
-        result.commitTime_ = commitTime_;
-      } else {
-        result.commitTime_ = commitTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsResponse result) {
       if (streamErrorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           streamErrors_ = java.util.Collections.unmodifiableList(streamErrors_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.streamErrors_ = streamErrors_;
       } else {
         result.streamErrors_ = streamErrorsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.commitTime_ = commitTimeBuilder_ == null ? commitTime_ : commitTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -550,7 +562,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
         if (!other.streamErrors_.isEmpty()) {
           if (streamErrors_.isEmpty()) {
             streamErrors_ = other.streamErrors_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureStreamErrorsIsMutable();
             streamErrors_.addAll(other.streamErrors_);
@@ -563,7 +575,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
             streamErrorsBuilder_.dispose();
             streamErrorsBuilder_ = null;
             streamErrors_ = other.streamErrors_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             streamErrorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStreamErrorsFieldBuilder()
@@ -602,7 +614,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
             case 10:
               {
                 input.readMessage(getCommitTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -658,7 +670,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * @return Whether the commitTime field is set.
      */
     public boolean hasCommitTime() {
-      return commitTimeBuilder_ != null || commitTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -699,11 +711,11 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
           throw new NullPointerException();
         }
         commitTime_ = value;
-        onChanged();
       } else {
         commitTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -720,11 +732,11 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
     public Builder setCommitTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (commitTimeBuilder_ == null) {
         commitTime_ = builderForValue.build();
-        onChanged();
       } else {
         commitTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -740,17 +752,18 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      */
     public Builder mergeCommitTime(com.google.protobuf.Timestamp value) {
       if (commitTimeBuilder_ == null) {
-        if (commitTime_ != null) {
-          commitTime_ =
-              com.google.protobuf.Timestamp.newBuilder(commitTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && commitTime_ != null
+            && commitTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCommitTimeBuilder().mergeFrom(value);
         } else {
           commitTime_ = value;
         }
-        onChanged();
       } else {
         commitTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -765,14 +778,13 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
      */
     public Builder clearCommitTime() {
-      if (commitTimeBuilder_ == null) {
-        commitTime_ = null;
-        onChanged();
-      } else {
-        commitTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      commitTime_ = null;
+      if (commitTimeBuilder_ != null) {
+        commitTimeBuilder_.dispose();
         commitTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -787,7 +799,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCommitTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCommitTimeFieldBuilder().getBuilder();
     }
@@ -843,11 +855,11 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
         java.util.Collections.emptyList();
 
     private void ensureStreamErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         streamErrors_ =
             new java.util.ArrayList<com.google.cloud.bigquery.storage.v1beta2.StorageError>(
                 streamErrors_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1111,7 +1123,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
     public Builder clearStreamErrors() {
       if (streamErrorsBuilder_ == null) {
         streamErrors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         streamErrorsBuilder_.clear();
@@ -1265,7 +1277,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
                 com.google.cloud.bigquery.storage.v1beta2.StorageError,
                 com.google.cloud.bigquery.storage.v1beta2.StorageError.Builder,
                 com.google.cloud.bigquery.storage.v1beta2.StorageErrorOrBuilder>(
-                streamErrors_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                streamErrors_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         streamErrors_ = null;
       }
       return streamErrorsBuilder_;

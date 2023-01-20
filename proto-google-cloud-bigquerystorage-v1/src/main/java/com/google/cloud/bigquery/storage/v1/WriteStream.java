@@ -389,7 +389,9 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -440,7 +442,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -473,9 +475,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.bigquery.storage.v1.WriteStream.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.storage.v1.WriteStream.Type result =
-        com.google.cloud.bigquery.storage.v1.WriteStream.Type.valueOf(type_);
+        com.google.cloud.bigquery.storage.v1.WriteStream.Type.forNumber(type_);
     return result == null
         ? com.google.cloud.bigquery.storage.v1.WriteStream.Type.UNRECOGNIZED
         : result;
@@ -530,7 +531,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int COMMIT_TIME_FIELD_NUMBER = 4;
@@ -588,7 +589,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCommitTimeOrBuilder() {
-    return getCommitTime();
+    return commitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : commitTime_;
   }
 
   public static final int TABLE_SCHEMA_FIELD_NUMBER = 5;
@@ -651,11 +652,13 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.bigquery.storage.v1.TableSchemaOrBuilder getTableSchemaOrBuilder() {
-    return getTableSchema();
+    return tableSchema_ == null
+        ? com.google.cloud.bigquery.storage.v1.TableSchema.getDefaultInstance()
+        : tableSchema_;
   }
 
   public static final int WRITE_MODE_FIELD_NUMBER = 7;
-  private int writeMode_;
+  private int writeMode_ = 0;
   /**
    *
    *
@@ -688,16 +691,17 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode getWriteMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode result =
-        com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode.valueOf(writeMode_);
+        com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode.forNumber(writeMode_);
     return result == null
         ? com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode.UNRECOGNIZED
         : result;
   }
 
   public static final int LOCATION_FIELD_NUMBER = 8;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -1021,32 +1025,26 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       type_ = 0;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (commitTimeBuilder_ == null) {
-        commitTime_ = null;
-      } else {
-        commitTime_ = null;
+      commitTime_ = null;
+      if (commitTimeBuilder_ != null) {
+        commitTimeBuilder_.dispose();
         commitTimeBuilder_ = null;
       }
-      if (tableSchemaBuilder_ == null) {
-        tableSchema_ = null;
-      } else {
-        tableSchema_ = null;
+      tableSchema_ = null;
+      if (tableSchemaBuilder_ != null) {
+        tableSchemaBuilder_.dispose();
         tableSchemaBuilder_ = null;
       }
       writeMode_ = 0;
-
       location_ = "";
-
       return this;
     }
 
@@ -1074,27 +1072,37 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.storage.v1.WriteStream buildPartial() {
       com.google.cloud.bigquery.storage.v1.WriteStream result =
           new com.google.cloud.bigquery.storage.v1.WriteStream(this);
-      result.name_ = name_;
-      result.type_ = type_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (commitTimeBuilder_ == null) {
-        result.commitTime_ = commitTime_;
-      } else {
-        result.commitTime_ = commitTimeBuilder_.build();
-      }
-      if (tableSchemaBuilder_ == null) {
-        result.tableSchema_ = tableSchema_;
-      } else {
-        result.tableSchema_ = tableSchemaBuilder_.build();
-      }
-      result.writeMode_ = writeMode_;
-      result.location_ = location_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.storage.v1.WriteStream result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.commitTime_ = commitTimeBuilder_ == null ? commitTime_ : commitTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.tableSchema_ =
+            tableSchemaBuilder_ == null ? tableSchema_ : tableSchemaBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.writeMode_ = writeMode_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.location_ = location_;
+      }
     }
 
     @java.lang.Override
@@ -1145,6 +1153,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -1164,6 +1173,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1195,43 +1205,43 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getCommitTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getTableSchemaFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 56:
               {
                 writeMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             case 66:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             default:
@@ -1250,6 +1260,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1315,8 +1327,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1333,8 +1345,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1356,8 +1368,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1395,8 +1407,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1415,9 +1427,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1.WriteStream.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.storage.v1.WriteStream.Type result =
-          com.google.cloud.bigquery.storage.v1.WriteStream.Type.valueOf(type_);
+          com.google.cloud.bigquery.storage.v1.WriteStream.Type.forNumber(type_);
       return result == null
           ? com.google.cloud.bigquery.storage.v1.WriteStream.Type.UNRECOGNIZED
           : result;
@@ -1440,7 +1451,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1459,7 +1470,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
       onChanged();
       return this;
@@ -1486,7 +1497,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1529,11 +1540,11 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1551,11 +1562,11 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1572,17 +1583,18 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1598,14 +1610,13 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1621,7 +1632,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1698,7 +1709,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the commitTime field is set.
      */
     public boolean hasCommitTime() {
-      return commitTimeBuilder_ != null || commitTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1745,11 +1756,11 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         commitTime_ = value;
-        onChanged();
       } else {
         commitTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1769,11 +1780,11 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
     public Builder setCommitTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (commitTimeBuilder_ == null) {
         commitTime_ = builderForValue.build();
-        onChanged();
       } else {
         commitTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1792,17 +1803,18 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCommitTime(com.google.protobuf.Timestamp value) {
       if (commitTimeBuilder_ == null) {
-        if (commitTime_ != null) {
-          commitTime_ =
-              com.google.protobuf.Timestamp.newBuilder(commitTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && commitTime_ != null
+            && commitTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCommitTimeBuilder().mergeFrom(value);
         } else {
           commitTime_ = value;
         }
-        onChanged();
       } else {
         commitTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1820,14 +1832,13 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCommitTime() {
-      if (commitTimeBuilder_ == null) {
-        commitTime_ = null;
-        onChanged();
-      } else {
-        commitTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      commitTime_ = null;
+      if (commitTimeBuilder_ != null) {
+        commitTimeBuilder_.dispose();
         commitTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1845,7 +1856,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCommitTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCommitTimeFieldBuilder().getBuilder();
     }
@@ -1926,7 +1937,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tableSchema field is set.
      */
     public boolean hasTableSchema() {
-      return tableSchemaBuilder_ != null || tableSchema_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1973,11 +1984,11 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         tableSchema_ = value;
-        onChanged();
       } else {
         tableSchemaBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1998,11 +2009,11 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.bigquery.storage.v1.TableSchema.Builder builderForValue) {
       if (tableSchemaBuilder_ == null) {
         tableSchema_ = builderForValue.build();
-        onChanged();
       } else {
         tableSchemaBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2021,19 +2032,19 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTableSchema(com.google.cloud.bigquery.storage.v1.TableSchema value) {
       if (tableSchemaBuilder_ == null) {
-        if (tableSchema_ != null) {
-          tableSchema_ =
-              com.google.cloud.bigquery.storage.v1.TableSchema.newBuilder(tableSchema_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && tableSchema_ != null
+            && tableSchema_
+                != com.google.cloud.bigquery.storage.v1.TableSchema.getDefaultInstance()) {
+          getTableSchemaBuilder().mergeFrom(value);
         } else {
           tableSchema_ = value;
         }
-        onChanged();
       } else {
         tableSchemaBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2051,14 +2062,13 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTableSchema() {
-      if (tableSchemaBuilder_ == null) {
-        tableSchema_ = null;
-        onChanged();
-      } else {
-        tableSchema_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      tableSchema_ = null;
+      if (tableSchemaBuilder_ != null) {
+        tableSchemaBuilder_.dispose();
         tableSchemaBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2076,7 +2086,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.bigquery.storage.v1.TableSchema.Builder getTableSchemaBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getTableSchemaFieldBuilder().getBuilder();
     }
@@ -2167,8 +2177,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setWriteModeValue(int value) {
-
       writeMode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2187,9 +2197,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode getWriteMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode result =
-          com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode.valueOf(writeMode_);
+          com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode.forNumber(writeMode_);
       return result == null
           ? com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode.UNRECOGNIZED
           : result;
@@ -2212,7 +2221,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       writeMode_ = value.getNumber();
       onChanged();
       return this;
@@ -2231,7 +2240,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWriteMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       writeMode_ = 0;
       onChanged();
       return this;
@@ -2304,8 +2313,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2323,8 +2332,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2347,8 +2356,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

@@ -66,7 +66,7 @@ public final class FinalizeWriteStreamResponse extends com.google.protobuf.Gener
   }
 
   public static final int ROW_COUNT_FIELD_NUMBER = 1;
-  private long rowCount_;
+  private long rowCount_ = 0L;
   /**
    *
    *
@@ -283,8 +283,8 @@ public final class FinalizeWriteStreamResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       rowCount_ = 0L;
-
       return this;
     }
 
@@ -314,9 +314,19 @@ public final class FinalizeWriteStreamResponse extends com.google.protobuf.Gener
     public com.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamResponse buildPartial() {
       com.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamResponse result =
           new com.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamResponse(this);
-      result.rowCount_ = rowCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.rowCount_ = rowCount_;
+      }
     }
 
     @java.lang.Override
@@ -400,7 +410,7 @@ public final class FinalizeWriteStreamResponse extends com.google.protobuf.Gener
             case 8:
               {
                 rowCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -419,6 +429,8 @@ public final class FinalizeWriteStreamResponse extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long rowCount_;
     /**
@@ -451,6 +463,7 @@ public final class FinalizeWriteStreamResponse extends com.google.protobuf.Gener
     public Builder setRowCount(long value) {
 
       rowCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -466,7 +479,7 @@ public final class FinalizeWriteStreamResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearRowCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       rowCount_ = 0L;
       onChanged();
       return this;

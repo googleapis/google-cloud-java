@@ -227,7 +227,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
   }
 
   public static final int FORMAT_FIELD_NUMBER = 1;
-  private int format_;
+  private int format_ = 0;
   /**
    *
    *
@@ -258,9 +258,9 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.Format getFormat() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.Format result =
-        com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.Format.valueOf(format_);
+        com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.Format.forNumber(
+            format_);
     return result == null
         ? com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.Format.UNRECOGNIZED
         : result;
@@ -472,8 +472,8 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       format_ = 0;
-
       return this;
     }
 
@@ -503,9 +503,19 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
     public com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions buildPartial() {
       com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions result =
           new com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions(this);
-      result.format_ = format_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.format_ = format_;
+      }
     }
 
     @java.lang.Override
@@ -589,7 +599,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
             case 8:
               {
                 format_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -608,6 +618,8 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int format_ = 0;
     /**
@@ -640,8 +652,8 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setFormatValue(int value) {
-
       format_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -659,9 +671,8 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.Format getFormat() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.Format result =
-          com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.Format.valueOf(
+          com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.Format.forNumber(
               format_);
       return result == null
           ? com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.Format.UNRECOGNIZED
@@ -685,7 +696,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       format_ = value.getNumber();
       onChanged();
       return this;
@@ -703,7 +714,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearFormat() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       format_ = 0;
       onChanged();
       return this;

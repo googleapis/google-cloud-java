@@ -202,7 +202,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.protobuf.Int64ValueOrBuilder getOffsetOrBuilder() {
-      return getOffset();
+      return offset_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : offset_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -419,10 +419,10 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (offsetBuilder_ == null) {
-          offset_ = null;
-        } else {
-          offset_ = null;
+        bitField0_ = 0;
+        offset_ = null;
+        if (offsetBuilder_ != null) {
+          offsetBuilder_.dispose();
           offsetBuilder_ = null;
         }
         return this;
@@ -456,13 +456,19 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
           buildPartial() {
         com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult result =
             new com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult(this);
-        if (offsetBuilder_ == null) {
-          result.offset_ = offset_;
-        } else {
-          result.offset_ = offsetBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.offset_ = offsetBuilder_ == null ? offset_ : offsetBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -549,7 +555,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
               case 10:
                 {
                   input.readMessage(getOffsetFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -568,6 +574,8 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.Int64Value offset_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -588,7 +596,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
        * @return Whether the offset field is set.
        */
       public boolean hasOffset() {
-        return offsetBuilder_ != null || offset_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -625,11 +633,11 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           offset_ = value;
-          onChanged();
         } else {
           offsetBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -645,11 +653,11 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       public Builder setOffset(com.google.protobuf.Int64Value.Builder builderForValue) {
         if (offsetBuilder_ == null) {
           offset_ = builderForValue.build();
-          onChanged();
         } else {
           offsetBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -664,17 +672,18 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
        */
       public Builder mergeOffset(com.google.protobuf.Int64Value value) {
         if (offsetBuilder_ == null) {
-          if (offset_ != null) {
-            offset_ =
-                com.google.protobuf.Int64Value.newBuilder(offset_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && offset_ != null
+              && offset_ != com.google.protobuf.Int64Value.getDefaultInstance()) {
+            getOffsetBuilder().mergeFrom(value);
           } else {
             offset_ = value;
           }
-          onChanged();
         } else {
           offsetBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -688,14 +697,13 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
        * <code>.google.protobuf.Int64Value offset = 1;</code>
        */
       public Builder clearOffset() {
-        if (offsetBuilder_ == null) {
-          offset_ = null;
-          onChanged();
-        } else {
-          offset_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        offset_ = null;
+        if (offsetBuilder_ != null) {
+          offsetBuilder_.dispose();
           offsetBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -709,7 +717,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
        * <code>.google.protobuf.Int64Value offset = 1;</code>
        */
       public com.google.protobuf.Int64Value.Builder getOffsetBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getOffsetFieldBuilder().getBuilder();
       }
@@ -1072,7 +1080,9 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.TableSchemaOrBuilder
       getUpdatedSchemaOrBuilder() {
-    return getUpdatedSchema();
+    return updatedSchema_ == null
+        ? com.google.cloud.bigquery.storage.v1beta2.TableSchema.getDefaultInstance()
+        : updatedSchema_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1320,16 +1330,16 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (appendResultBuilder_ != null) {
         appendResultBuilder_.clear();
       }
       if (errorBuilder_ != null) {
         errorBuilder_.clear();
       }
-      if (updatedSchemaBuilder_ == null) {
-        updatedSchema_ = null;
-      } else {
-        updatedSchema_ = null;
+      updatedSchema_ = null;
+      if (updatedSchemaBuilder_ != null) {
+        updatedSchemaBuilder_.dispose();
         updatedSchemaBuilder_ = null;
       }
       responseCase_ = 0;
@@ -1362,28 +1372,33 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse buildPartial() {
       com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse result =
           new com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse(this);
-      if (responseCase_ == 1) {
-        if (appendResultBuilder_ == null) {
-          result.response_ = response_;
-        } else {
-          result.response_ = appendResultBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (responseCase_ == 2) {
-        if (errorBuilder_ == null) {
-          result.response_ = response_;
-        } else {
-          result.response_ = errorBuilder_.build();
-        }
-      }
-      if (updatedSchemaBuilder_ == null) {
-        result.updatedSchema_ = updatedSchema_;
-      } else {
-        result.updatedSchema_ = updatedSchemaBuilder_.build();
-      }
-      result.responseCase_ = responseCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updatedSchema_ =
+            updatedSchemaBuilder_ == null ? updatedSchema_ : updatedSchemaBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse result) {
+      result.responseCase_ = responseCase_;
+      result.response_ = this.response_;
+      if (responseCase_ == 1 && appendResultBuilder_ != null) {
+        result.response_ = appendResultBuilder_.build();
+      }
+      if (responseCase_ == 2 && errorBuilder_ != null) {
+        result.response_ = errorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1493,7 +1508,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
             case 26:
               {
                 input.readMessage(getUpdatedSchemaFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -1526,6 +1541,8 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult,
@@ -1768,7 +1785,6 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       }
       responseCase_ = 1;
       onChanged();
-      ;
       return appendResultBuilder_;
     }
 
@@ -2086,7 +2102,6 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       }
       responseCase_ = 2;
       onChanged();
-      ;
       return errorBuilder_;
     }
 
@@ -2110,7 +2125,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
      * @return Whether the updatedSchema field is set.
      */
     public boolean hasUpdatedSchema() {
-      return updatedSchemaBuilder_ != null || updatedSchema_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2151,11 +2166,11 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         updatedSchema_ = value;
-        onChanged();
       } else {
         updatedSchemaBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2173,11 +2188,11 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
         com.google.cloud.bigquery.storage.v1beta2.TableSchema.Builder builderForValue) {
       if (updatedSchemaBuilder_ == null) {
         updatedSchema_ = builderForValue.build();
-        onChanged();
       } else {
         updatedSchemaBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2193,19 +2208,19 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeUpdatedSchema(com.google.cloud.bigquery.storage.v1beta2.TableSchema value) {
       if (updatedSchemaBuilder_ == null) {
-        if (updatedSchema_ != null) {
-          updatedSchema_ =
-              com.google.cloud.bigquery.storage.v1beta2.TableSchema.newBuilder(updatedSchema_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updatedSchema_ != null
+            && updatedSchema_
+                != com.google.cloud.bigquery.storage.v1beta2.TableSchema.getDefaultInstance()) {
+          getUpdatedSchemaBuilder().mergeFrom(value);
         } else {
           updatedSchema_ = value;
         }
-        onChanged();
       } else {
         updatedSchemaBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2220,14 +2235,13 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.bigquery.storage.v1beta2.TableSchema updated_schema = 3;</code>
      */
     public Builder clearUpdatedSchema() {
-      if (updatedSchemaBuilder_ == null) {
-        updatedSchema_ = null;
-        onChanged();
-      } else {
-        updatedSchema_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updatedSchema_ = null;
+      if (updatedSchemaBuilder_ != null) {
+        updatedSchemaBuilder_.dispose();
         updatedSchemaBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2242,7 +2256,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.bigquery.storage.v1beta2.TableSchema updated_schema = 3;</code>
      */
     public com.google.cloud.bigquery.storage.v1beta2.TableSchema.Builder getUpdatedSchemaBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdatedSchemaFieldBuilder().getBuilder();
     }

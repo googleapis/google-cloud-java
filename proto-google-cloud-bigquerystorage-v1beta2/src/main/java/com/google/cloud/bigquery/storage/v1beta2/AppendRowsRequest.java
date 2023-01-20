@@ -236,7 +236,9 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta2.ProtoSchemaOrBuilder
         getWriterSchemaOrBuilder() {
-      return getWriterSchema();
+      return writerSchema_ == null
+          ? com.google.cloud.bigquery.storage.v1beta2.ProtoSchema.getDefaultInstance()
+          : writerSchema_;
     }
 
     public static final int ROWS_FIELD_NUMBER = 2;
@@ -284,7 +286,9 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta2.ProtoRowsOrBuilder getRowsOrBuilder() {
-      return getRows();
+      return rows_ == null
+          ? com.google.cloud.bigquery.storage.v1beta2.ProtoRows.getDefaultInstance()
+          : rows_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -515,16 +519,15 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (writerSchemaBuilder_ == null) {
-          writerSchema_ = null;
-        } else {
-          writerSchema_ = null;
+        bitField0_ = 0;
+        writerSchema_ = null;
+        if (writerSchemaBuilder_ != null) {
+          writerSchemaBuilder_.dispose();
           writerSchemaBuilder_ = null;
         }
-        if (rowsBuilder_ == null) {
-          rows_ = null;
-        } else {
-          rows_ = null;
+        rows_ = null;
+        if (rowsBuilder_ != null) {
+          rowsBuilder_.dispose();
           rowsBuilder_ = null;
         }
         return this;
@@ -557,18 +560,23 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       public com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest.ProtoData buildPartial() {
         com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest.ProtoData result =
             new com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest.ProtoData(this);
-        if (writerSchemaBuilder_ == null) {
-          result.writerSchema_ = writerSchema_;
-        } else {
-          result.writerSchema_ = writerSchemaBuilder_.build();
-        }
-        if (rowsBuilder_ == null) {
-          result.rows_ = rows_;
-        } else {
-          result.rows_ = rowsBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest.ProtoData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.writerSchema_ =
+              writerSchemaBuilder_ == null ? writerSchema_ : writerSchemaBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.rows_ = rowsBuilder_ == null ? rows_ : rowsBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -663,13 +671,13 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
               case 10:
                 {
                   input.readMessage(getWriterSchemaFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getRowsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -689,6 +697,8 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.cloud.bigquery.storage.v1beta2.ProtoSchema writerSchema_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta2.ProtoSchema,
@@ -707,7 +717,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
        * @return Whether the writerSchema field is set.
        */
       public boolean hasWriterSchema() {
-        return writerSchemaBuilder_ != null || writerSchema_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -744,11 +754,11 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
             throw new NullPointerException();
           }
           writerSchema_ = value;
-          onChanged();
         } else {
           writerSchemaBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -764,11 +774,11 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
           com.google.cloud.bigquery.storage.v1beta2.ProtoSchema.Builder builderForValue) {
         if (writerSchemaBuilder_ == null) {
           writerSchema_ = builderForValue.build();
-          onChanged();
         } else {
           writerSchemaBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -783,19 +793,19 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       public Builder mergeWriterSchema(
           com.google.cloud.bigquery.storage.v1beta2.ProtoSchema value) {
         if (writerSchemaBuilder_ == null) {
-          if (writerSchema_ != null) {
-            writerSchema_ =
-                com.google.cloud.bigquery.storage.v1beta2.ProtoSchema.newBuilder(writerSchema_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && writerSchema_ != null
+              && writerSchema_
+                  != com.google.cloud.bigquery.storage.v1beta2.ProtoSchema.getDefaultInstance()) {
+            getWriterSchemaBuilder().mergeFrom(value);
           } else {
             writerSchema_ = value;
           }
-          onChanged();
         } else {
           writerSchemaBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -808,14 +818,13 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
        * <code>.google.cloud.bigquery.storage.v1beta2.ProtoSchema writer_schema = 1;</code>
        */
       public Builder clearWriterSchema() {
-        if (writerSchemaBuilder_ == null) {
-          writerSchema_ = null;
-          onChanged();
-        } else {
-          writerSchema_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        writerSchema_ = null;
+        if (writerSchemaBuilder_ != null) {
+          writerSchemaBuilder_.dispose();
           writerSchemaBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -829,7 +838,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
        */
       public com.google.cloud.bigquery.storage.v1beta2.ProtoSchema.Builder
           getWriterSchemaBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getWriterSchemaFieldBuilder().getBuilder();
       }
@@ -896,7 +905,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
        * @return Whether the rows field is set.
        */
       public boolean hasRows() {
-        return rowsBuilder_ != null || rows_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -933,11 +942,11 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
             throw new NullPointerException();
           }
           rows_ = value;
-          onChanged();
         } else {
           rowsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -953,11 +962,11 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
           com.google.cloud.bigquery.storage.v1beta2.ProtoRows.Builder builderForValue) {
         if (rowsBuilder_ == null) {
           rows_ = builderForValue.build();
-          onChanged();
         } else {
           rowsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -971,19 +980,19 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
        */
       public Builder mergeRows(com.google.cloud.bigquery.storage.v1beta2.ProtoRows value) {
         if (rowsBuilder_ == null) {
-          if (rows_ != null) {
-            rows_ =
-                com.google.cloud.bigquery.storage.v1beta2.ProtoRows.newBuilder(rows_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && rows_ != null
+              && rows_
+                  != com.google.cloud.bigquery.storage.v1beta2.ProtoRows.getDefaultInstance()) {
+            getRowsBuilder().mergeFrom(value);
           } else {
             rows_ = value;
           }
-          onChanged();
         } else {
           rowsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -996,14 +1005,13 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
        * <code>.google.cloud.bigquery.storage.v1beta2.ProtoRows rows = 2;</code>
        */
       public Builder clearRows() {
-        if (rowsBuilder_ == null) {
-          rows_ = null;
-          onChanged();
-        } else {
-          rows_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rows_ = null;
+        if (rowsBuilder_ != null) {
+          rowsBuilder_.dispose();
           rowsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1016,7 +1024,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
        * <code>.google.cloud.bigquery.storage.v1beta2.ProtoRows rows = 2;</code>
        */
       public com.google.cloud.bigquery.storage.v1beta2.ProtoRows.Builder getRowsBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getRowsFieldBuilder().getBuilder();
       }
@@ -1177,7 +1185,9 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int WRITE_STREAM_FIELD_NUMBER = 1;
-  private volatile java.lang.Object writeStream_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object writeStream_ = "";
   /**
    *
    *
@@ -1289,7 +1299,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.Int64ValueOrBuilder getOffsetOrBuilder() {
-    return getOffset();
+    return offset_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : offset_;
   }
 
   public static final int PROTO_ROWS_FIELD_NUMBER = 4;
@@ -1347,7 +1357,9 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TRACE_ID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object traceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object traceId_ = "";
   /**
    *
    *
@@ -1649,19 +1661,17 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       writeStream_ = "";
-
-      if (offsetBuilder_ == null) {
-        offset_ = null;
-      } else {
-        offset_ = null;
+      offset_ = null;
+      if (offsetBuilder_ != null) {
+        offsetBuilder_.dispose();
         offsetBuilder_ = null;
       }
       if (protoRowsBuilder_ != null) {
         protoRowsBuilder_.clear();
       }
       traceId_ = "";
-
       rowsCase_ = 0;
       rows_ = null;
       return this;
@@ -1691,23 +1701,34 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest buildPartial() {
       com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest result =
           new com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest(this);
-      result.writeStream_ = writeStream_;
-      if (offsetBuilder_ == null) {
-        result.offset_ = offset_;
-      } else {
-        result.offset_ = offsetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (rowsCase_ == 4) {
-        if (protoRowsBuilder_ == null) {
-          result.rows_ = rows_;
-        } else {
-          result.rows_ = protoRowsBuilder_.build();
-        }
-      }
-      result.traceId_ = traceId_;
-      result.rowsCase_ = rowsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.writeStream_ = writeStream_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.offset_ = offsetBuilder_ == null ? offset_ : offsetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.traceId_ = traceId_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest result) {
+      result.rowsCase_ = rowsCase_;
+      result.rows_ = this.rows_;
+      if (rowsCase_ == 4 && protoRowsBuilder_ != null) {
+        result.rows_ = protoRowsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1758,6 +1779,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getWriteStream().isEmpty()) {
         writeStream_ = other.writeStream_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasOffset()) {
@@ -1765,6 +1787,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getTraceId().isEmpty()) {
         traceId_ = other.traceId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       switch (other.getRowsCase()) {
@@ -1812,13 +1835,13 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 writeStream_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getOffsetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
@@ -1830,7 +1853,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
             case 50:
               {
                 traceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             default:
@@ -1863,6 +1886,8 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object writeStream_ = "";
     /**
@@ -1943,8 +1968,8 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       writeStream_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1966,8 +1991,8 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearWriteStream() {
-
       writeStream_ = getDefaultInstance().getWriteStream();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1994,8 +2019,8 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       writeStream_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2021,7 +2046,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the offset field is set.
      */
     public boolean hasOffset() {
-      return offsetBuilder_ != null || offset_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2062,11 +2087,11 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         offset_ = value;
-        onChanged();
       } else {
         offsetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2084,11 +2109,11 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     public Builder setOffset(com.google.protobuf.Int64Value.Builder builderForValue) {
       if (offsetBuilder_ == null) {
         offset_ = builderForValue.build();
-        onChanged();
       } else {
         offsetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2105,17 +2130,18 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeOffset(com.google.protobuf.Int64Value value) {
       if (offsetBuilder_ == null) {
-        if (offset_ != null) {
-          offset_ =
-              com.google.protobuf.Int64Value.newBuilder(offset_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && offset_ != null
+            && offset_ != com.google.protobuf.Int64Value.getDefaultInstance()) {
+          getOffsetBuilder().mergeFrom(value);
         } else {
           offset_ = value;
         }
-        onChanged();
       } else {
         offsetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2131,14 +2157,13 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Int64Value offset = 2;</code>
      */
     public Builder clearOffset() {
-      if (offsetBuilder_ == null) {
-        offset_ = null;
-        onChanged();
-      } else {
-        offset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      offset_ = null;
+      if (offsetBuilder_ != null) {
+        offsetBuilder_.dispose();
         offsetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2154,7 +2179,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Int64Value offset = 2;</code>
      */
     public com.google.protobuf.Int64Value.Builder getOffsetBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getOffsetFieldBuilder().getBuilder();
     }
@@ -2433,7 +2458,6 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       }
       rowsCase_ = 4;
       onChanged();
-      ;
       return protoRowsBuilder_;
     }
 
@@ -2501,8 +2525,8 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       traceId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2519,8 +2543,8 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearTraceId() {
-
       traceId_ = getDefaultInstance().getTraceId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2542,8 +2566,8 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       traceId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

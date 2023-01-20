@@ -328,7 +328,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CODE_FIELD_NUMBER = 1;
-  private int code_;
+  private int code_ = 0;
   /**
    *
    *
@@ -357,16 +357,17 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.StorageError.StorageErrorCode getCode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.storage.v1beta2.StorageError.StorageErrorCode result =
-        com.google.cloud.bigquery.storage.v1beta2.StorageError.StorageErrorCode.valueOf(code_);
+        com.google.cloud.bigquery.storage.v1beta2.StorageError.StorageErrorCode.forNumber(code_);
     return result == null
         ? com.google.cloud.bigquery.storage.v1beta2.StorageError.StorageErrorCode.UNRECOGNIZED
         : result;
   }
 
   public static final int ENTITY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object entity_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entity_ = "";
   /**
    *
    *
@@ -415,7 +416,9 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERROR_MESSAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object errorMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object errorMessage_ = "";
   /**
    *
    *
@@ -688,12 +691,10 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       code_ = 0;
-
       entity_ = "";
-
       errorMessage_ = "";
-
       return this;
     }
 
@@ -721,11 +722,24 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.storage.v1beta2.StorageError buildPartial() {
       com.google.cloud.bigquery.storage.v1beta2.StorageError result =
           new com.google.cloud.bigquery.storage.v1beta2.StorageError(this);
-      result.code_ = code_;
-      result.entity_ = entity_;
-      result.errorMessage_ = errorMessage_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.storage.v1beta2.StorageError result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.code_ = code_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.entity_ = entity_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.errorMessage_ = errorMessage_;
+      }
     }
 
     @java.lang.Override
@@ -779,10 +793,12 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEntity().isEmpty()) {
         entity_ = other.entity_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getErrorMessage().isEmpty()) {
         errorMessage_ = other.errorMessage_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -814,19 +830,19 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 code_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 entity_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 errorMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -845,6 +861,8 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int code_ = 0;
     /**
@@ -875,8 +893,8 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
-
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -893,9 +911,8 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta2.StorageError.StorageErrorCode getCode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.storage.v1beta2.StorageError.StorageErrorCode result =
-          com.google.cloud.bigquery.storage.v1beta2.StorageError.StorageErrorCode.valueOf(code_);
+          com.google.cloud.bigquery.storage.v1beta2.StorageError.StorageErrorCode.forNumber(code_);
       return result == null
           ? com.google.cloud.bigquery.storage.v1beta2.StorageError.StorageErrorCode.UNRECOGNIZED
           : result;
@@ -917,7 +934,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       code_ = value.getNumber();
       onChanged();
       return this;
@@ -934,7 +951,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       code_ = 0;
       onChanged();
       return this;
@@ -1001,8 +1018,8 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       entity_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1018,8 +1035,8 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEntity() {
-
       entity_ = getDefaultInstance().getEntity();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1040,8 +1057,8 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       entity_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1107,8 +1124,8 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       errorMessage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1124,8 +1141,8 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearErrorMessage() {
-
       errorMessage_ = getDefaultInstance().getErrorMessage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1146,8 +1163,8 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       errorMessage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

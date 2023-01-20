@@ -68,7 +68,8 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SERIALIZED_RECORD_BATCH_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString serializedRecordBatch_;
+  private com.google.protobuf.ByteString serializedRecordBatch_ =
+      com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -86,7 +87,7 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ROW_COUNT_FIELD_NUMBER = 2;
-  private long rowCount_;
+  private long rowCount_ = 0L;
   /**
    *
    *
@@ -314,10 +315,9 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serializedRecordBatch_ = com.google.protobuf.ByteString.EMPTY;
-
       rowCount_ = 0L;
-
       return this;
     }
 
@@ -345,10 +345,21 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.bigquery.storage.v1.ArrowRecordBatch buildPartial() {
       com.google.cloud.bigquery.storage.v1.ArrowRecordBatch result =
           new com.google.cloud.bigquery.storage.v1.ArrowRecordBatch(this);
-      result.serializedRecordBatch_ = serializedRecordBatch_;
-      result.rowCount_ = rowCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.storage.v1.ArrowRecordBatch result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serializedRecordBatch_ = serializedRecordBatch_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rowCount_ = rowCount_;
+      }
     }
 
     @java.lang.Override
@@ -432,13 +443,13 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 serializedRecordBatch_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 rowCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -457,6 +468,8 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.ByteString serializedRecordBatch_ =
         com.google.protobuf.ByteString.EMPTY;
@@ -491,8 +504,8 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       serializedRecordBatch_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -508,7 +521,7 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSerializedRecordBatch() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       serializedRecordBatch_ = getDefaultInstance().getSerializedRecordBatch();
       onChanged();
       return this;
@@ -553,6 +566,7 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
     public Builder setRowCount(long value) {
 
       rowCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -572,7 +586,7 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Deprecated
     public Builder clearRowCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       rowCount_ = 0L;
       onChanged();
       return this;

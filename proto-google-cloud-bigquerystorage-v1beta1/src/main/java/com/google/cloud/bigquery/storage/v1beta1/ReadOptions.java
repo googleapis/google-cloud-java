@@ -183,6 +183,8 @@ public final class ReadOptions {
     }
 
     public static final int SELECTED_FIELDS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList selectedFields_;
     /**
      *
@@ -256,7 +258,9 @@ public final class ReadOptions {
     }
 
     public static final int ROW_RESTRICTION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object rowRestriction_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object rowRestriction_ = "";
     /**
      *
      *
@@ -536,10 +540,10 @@ public final class ReadOptions {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         selectedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         rowRestriction_ = "";
-
         return this;
       }
 
@@ -570,15 +574,29 @@ public final class ReadOptions {
       public com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions buildPartial() {
         com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions result =
             new com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           selectedFields_ = selectedFields_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.selectedFields_ = selectedFields_;
-        result.rowRestriction_ = rowRestriction_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.rowRestriction_ = rowRestriction_;
+        }
       }
 
       @java.lang.Override
@@ -645,6 +663,7 @@ public final class ReadOptions {
         }
         if (!other.getRowRestriction().isEmpty()) {
           rowRestriction_ = other.rowRestriction_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -683,7 +702,7 @@ public final class ReadOptions {
               case 18:
                 {
                   rowRestriction_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -979,8 +998,8 @@ public final class ReadOptions {
         if (value == null) {
           throw new NullPointerException();
         }
-
         rowRestriction_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1002,8 +1021,8 @@ public final class ReadOptions {
        * @return This builder for chaining.
        */
       public Builder clearRowRestriction() {
-
         rowRestriction_ = getDefaultInstance().getRowRestriction();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1030,8 +1049,8 @@ public final class ReadOptions {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         rowRestriction_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }

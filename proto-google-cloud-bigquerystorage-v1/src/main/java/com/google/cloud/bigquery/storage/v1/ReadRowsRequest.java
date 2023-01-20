@@ -68,7 +68,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int READ_STREAM_FIELD_NUMBER = 1;
-  private volatile java.lang.Object readStream_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object readStream_ = "";
   /**
    *
    *
@@ -121,7 +123,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int OFFSET_FIELD_NUMBER = 2;
-  private long offset_;
+  private long offset_ = 0L;
   /**
    *
    *
@@ -346,10 +348,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       readStream_ = "";
-
       offset_ = 0L;
-
       return this;
     }
 
@@ -377,10 +378,21 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.bigquery.storage.v1.ReadRowsRequest buildPartial() {
       com.google.cloud.bigquery.storage.v1.ReadRowsRequest result =
           new com.google.cloud.bigquery.storage.v1.ReadRowsRequest(this);
-      result.readStream_ = readStream_;
-      result.offset_ = offset_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.storage.v1.ReadRowsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.readStream_ = readStream_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.offset_ = offset_;
+      }
     }
 
     @java.lang.Override
@@ -431,6 +443,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getReadStream().isEmpty()) {
         readStream_ = other.readStream_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getOffset() != 0L) {
@@ -465,13 +478,13 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 readStream_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 offset_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -490,6 +503,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object readStream_ = "";
     /**
@@ -558,8 +573,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       readStream_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -577,8 +592,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearReadStream() {
-
       readStream_ = getDefaultInstance().getReadStream();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -601,8 +616,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       readStream_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -642,6 +657,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
     public Builder setOffset(long value) {
 
       offset_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -659,7 +675,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearOffset() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       offset_ = 0L;
       onChanged();
       return this;

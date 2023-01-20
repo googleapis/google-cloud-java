@@ -146,7 +146,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int AT_RESPONSE_START_FIELD_NUMBER = 1;
-    private double atResponseStart_;
+    private double atResponseStart_ = 0D;
     /**
      *
      *
@@ -173,7 +173,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int AT_RESPONSE_END_FIELD_NUMBER = 2;
-    private double atResponseEnd_;
+    private double atResponseEnd_ = 0D;
     /**
      *
      *
@@ -400,10 +400,9 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         atResponseStart_ = 0D;
-
         atResponseEnd_ = 0D;
-
         return this;
       }
 
@@ -432,10 +431,22 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.bigquery.storage.v1beta2.StreamStats.Progress buildPartial() {
         com.google.cloud.bigquery.storage.v1beta2.StreamStats.Progress result =
             new com.google.cloud.bigquery.storage.v1beta2.StreamStats.Progress(this);
-        result.atResponseStart_ = atResponseStart_;
-        result.atResponseEnd_ = atResponseEnd_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1beta2.StreamStats.Progress result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.atResponseStart_ = atResponseStart_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.atResponseEnd_ = atResponseEnd_;
+        }
       }
 
       @java.lang.Override
@@ -523,13 +534,13 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
               case 9:
                 {
                   atResponseStart_ = input.readDouble();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 9
               case 17:
                 {
                   atResponseEnd_ = input.readDouble();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 17
               default:
@@ -548,6 +559,8 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private double atResponseStart_;
       /**
@@ -598,6 +611,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
       public Builder setAtResponseStart(double value) {
 
         atResponseStart_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -622,7 +636,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAtResponseStart() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         atResponseStart_ = 0D;
         onChanged();
         return this;
@@ -661,6 +675,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
       public Builder setAtResponseEnd(double value) {
 
         atResponseEnd_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -677,7 +692,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAtResponseEnd() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         atResponseEnd_ = 0D;
         onChanged();
         return this;
@@ -796,7 +811,9 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.StreamStats.ProgressOrBuilder
       getProgressOrBuilder() {
-    return getProgress();
+    return progress_ == null
+        ? com.google.cloud.bigquery.storage.v1beta2.StreamStats.Progress.getDefaultInstance()
+        : progress_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1002,10 +1019,10 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (progressBuilder_ == null) {
-        progress_ = null;
-      } else {
-        progress_ = null;
+      bitField0_ = 0;
+      progress_ = null;
+      if (progressBuilder_ != null) {
+        progressBuilder_.dispose();
         progressBuilder_ = null;
       }
       return this;
@@ -1035,13 +1052,18 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.storage.v1beta2.StreamStats buildPartial() {
       com.google.cloud.bigquery.storage.v1beta2.StreamStats result =
           new com.google.cloud.bigquery.storage.v1beta2.StreamStats(this);
-      if (progressBuilder_ == null) {
-        result.progress_ = progress_;
-      } else {
-        result.progress_ = progressBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.storage.v1beta2.StreamStats result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.progress_ = progressBuilder_ == null ? progress_ : progressBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1122,7 +1144,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 input.readMessage(getProgressFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             default:
@@ -1142,6 +1164,8 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.bigquery.storage.v1beta2.StreamStats.Progress progress_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.storage.v1beta2.StreamStats.Progress,
@@ -1160,7 +1184,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the progress field is set.
      */
     public boolean hasProgress() {
-      return progressBuilder_ != null || progress_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1198,11 +1222,11 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         progress_ = value;
-        onChanged();
       } else {
         progressBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1218,11 +1242,11 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.bigquery.storage.v1beta2.StreamStats.Progress.Builder builderForValue) {
       if (progressBuilder_ == null) {
         progress_ = builderForValue.build();
-        onChanged();
       } else {
         progressBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1237,19 +1261,20 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeProgress(
         com.google.cloud.bigquery.storage.v1beta2.StreamStats.Progress value) {
       if (progressBuilder_ == null) {
-        if (progress_ != null) {
-          progress_ =
-              com.google.cloud.bigquery.storage.v1beta2.StreamStats.Progress.newBuilder(progress_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && progress_ != null
+            && progress_
+                != com.google.cloud.bigquery.storage.v1beta2.StreamStats.Progress
+                    .getDefaultInstance()) {
+          getProgressBuilder().mergeFrom(value);
         } else {
           progress_ = value;
         }
-        onChanged();
       } else {
         progressBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1262,14 +1287,13 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.bigquery.storage.v1beta2.StreamStats.Progress progress = 2;</code>
      */
     public Builder clearProgress() {
-      if (progressBuilder_ == null) {
-        progress_ = null;
-        onChanged();
-      } else {
-        progress_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      progress_ = null;
+      if (progressBuilder_ != null) {
+        progressBuilder_.dispose();
         progressBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1283,7 +1307,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.bigquery.storage.v1beta2.StreamStats.Progress.Builder
         getProgressBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getProgressFieldBuilder().getBuilder();
     }

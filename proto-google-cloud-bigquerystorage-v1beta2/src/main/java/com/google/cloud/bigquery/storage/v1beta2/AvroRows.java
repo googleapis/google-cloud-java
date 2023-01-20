@@ -68,7 +68,8 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERIALIZED_BINARY_ROWS_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString serializedBinaryRows_;
+  private com.google.protobuf.ByteString serializedBinaryRows_ =
+      com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -282,8 +283,8 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serializedBinaryRows_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -311,9 +312,18 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.storage.v1beta2.AvroRows buildPartial() {
       com.google.cloud.bigquery.storage.v1beta2.AvroRows result =
           new com.google.cloud.bigquery.storage.v1beta2.AvroRows(this);
-      result.serializedBinaryRows_ = serializedBinaryRows_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.storage.v1beta2.AvroRows result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serializedBinaryRows_ = serializedBinaryRows_;
+      }
     }
 
     @java.lang.Override
@@ -394,7 +404,7 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 serializedBinaryRows_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -413,6 +423,8 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.ByteString serializedBinaryRows_ =
         com.google.protobuf.ByteString.EMPTY;
@@ -447,8 +459,8 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serializedBinaryRows_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -464,7 +476,7 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSerializedBinaryRows() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       serializedBinaryRows_ = getDefaultInstance().getSerializedBinaryRows();
       onChanged();
       return this;

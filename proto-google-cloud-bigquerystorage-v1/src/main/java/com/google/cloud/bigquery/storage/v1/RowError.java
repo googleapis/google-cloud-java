@@ -204,7 +204,7 @@ public final class RowError extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INDEX_FIELD_NUMBER = 1;
-  private long index_;
+  private long index_ = 0L;
   /**
    *
    *
@@ -222,7 +222,7 @@ public final class RowError extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CODE_FIELD_NUMBER = 2;
-  private int code_;
+  private int code_ = 0;
   /**
    *
    *
@@ -251,16 +251,17 @@ public final class RowError extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.bigquery.storage.v1.RowError.RowErrorCode getCode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.storage.v1.RowError.RowErrorCode result =
-        com.google.cloud.bigquery.storage.v1.RowError.RowErrorCode.valueOf(code_);
+        com.google.cloud.bigquery.storage.v1.RowError.RowErrorCode.forNumber(code_);
     return result == null
         ? com.google.cloud.bigquery.storage.v1.RowError.RowErrorCode.UNRECOGNIZED
         : result;
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -527,12 +528,10 @@ public final class RowError extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       index_ = 0L;
-
       code_ = 0;
-
       message_ = "";
-
       return this;
     }
 
@@ -560,11 +559,24 @@ public final class RowError extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.storage.v1.RowError buildPartial() {
       com.google.cloud.bigquery.storage.v1.RowError result =
           new com.google.cloud.bigquery.storage.v1.RowError(this);
-      result.index_ = index_;
-      result.code_ = code_;
-      result.message_ = message_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.storage.v1.RowError result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.index_ = index_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.code_ = code_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.message_ = message_;
+      }
     }
 
     @java.lang.Override
@@ -620,6 +632,7 @@ public final class RowError extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -651,19 +664,19 @@ public final class RowError extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 index_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 code_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 message_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -682,6 +695,8 @@ public final class RowError extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long index_;
     /**
@@ -714,6 +729,7 @@ public final class RowError extends com.google.protobuf.GeneratedMessageV3
     public Builder setIndex(long value) {
 
       index_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -729,7 +745,7 @@ public final class RowError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIndex() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       index_ = 0L;
       onChanged();
       return this;
@@ -764,8 +780,8 @@ public final class RowError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
-
       code_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -782,9 +798,8 @@ public final class RowError extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1.RowError.RowErrorCode getCode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.storage.v1.RowError.RowErrorCode result =
-          com.google.cloud.bigquery.storage.v1.RowError.RowErrorCode.valueOf(code_);
+          com.google.cloud.bigquery.storage.v1.RowError.RowErrorCode.forNumber(code_);
       return result == null
           ? com.google.cloud.bigquery.storage.v1.RowError.RowErrorCode.UNRECOGNIZED
           : result;
@@ -805,7 +820,7 @@ public final class RowError extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       code_ = value.getNumber();
       onChanged();
       return this;
@@ -822,7 +837,7 @@ public final class RowError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       code_ = 0;
       onChanged();
       return this;
@@ -889,8 +904,8 @@ public final class RowError extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       message_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -906,8 +921,8 @@ public final class RowError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -928,8 +943,8 @@ public final class RowError extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       message_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -66,7 +66,7 @@ public final class FlushRowsResponse extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int OFFSET_FIELD_NUMBER = 1;
-  private long offset_;
+  private long offset_ = 0L;
   /**
    *
    *
@@ -281,8 +281,8 @@ public final class FlushRowsResponse extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       offset_ = 0L;
-
       return this;
     }
 
@@ -310,9 +310,18 @@ public final class FlushRowsResponse extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.bigquery.storage.v1.FlushRowsResponse buildPartial() {
       com.google.cloud.bigquery.storage.v1.FlushRowsResponse result =
           new com.google.cloud.bigquery.storage.v1.FlushRowsResponse(this);
-      result.offset_ = offset_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.storage.v1.FlushRowsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.offset_ = offset_;
+      }
     }
 
     @java.lang.Override
@@ -393,7 +402,7 @@ public final class FlushRowsResponse extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 offset_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -412,6 +421,8 @@ public final class FlushRowsResponse extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long offset_;
     /**
@@ -444,6 +455,7 @@ public final class FlushRowsResponse extends com.google.protobuf.GeneratedMessag
     public Builder setOffset(long value) {
 
       offset_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -459,7 +471,7 @@ public final class FlushRowsResponse extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearOffset() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       offset_ = 0L;
       onChanged();
       return this;
