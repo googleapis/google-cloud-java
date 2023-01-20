@@ -1,0 +1,4 @@
+{
+  "java-secretmanager": "com.google.cloud:google-cloud-secretmanager",
+  "java-dataflow": "com.google.cloud:google-cloud-dataflow"
+}
