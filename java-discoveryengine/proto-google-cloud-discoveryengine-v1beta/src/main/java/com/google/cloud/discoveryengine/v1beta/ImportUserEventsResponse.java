@@ -70,6 +70,8 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
   }
 
   public static final int ERROR_SAMPLES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> errorSamples_;
   /**
    *
@@ -186,11 +188,13 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
   @java.lang.Override
   public com.google.cloud.discoveryengine.v1beta.ImportErrorConfigOrBuilder
       getErrorConfigOrBuilder() {
-    return getErrorConfig();
+    return errorConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.getDefaultInstance()
+        : errorConfig_;
   }
 
   public static final int JOINED_EVENTS_COUNT_FIELD_NUMBER = 3;
-  private long joinedEventsCount_;
+  private long joinedEventsCount_ = 0L;
   /**
    *
    *
@@ -208,7 +212,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
   }
 
   public static final int UNJOINED_EVENTS_COUNT_FIELD_NUMBER = 4;
-  private long unjoinedEventsCount_;
+  private long unjoinedEventsCount_ = 0L;
   /**
    *
    *
@@ -460,6 +464,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (errorSamplesBuilder_ == null) {
         errorSamples_ = java.util.Collections.emptyList();
       } else {
@@ -467,16 +472,13 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
         errorSamplesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (errorConfigBuilder_ == null) {
-        errorConfig_ = null;
-      } else {
-        errorConfig_ = null;
+      errorConfig_ = null;
+      if (errorConfigBuilder_ != null) {
+        errorConfigBuilder_.dispose();
         errorConfigBuilder_ = null;
       }
       joinedEventsCount_ = 0L;
-
       unjoinedEventsCount_ = 0L;
-
       return this;
     }
 
@@ -505,7 +507,16 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     public com.google.cloud.discoveryengine.v1beta.ImportUserEventsResponse buildPartial() {
       com.google.cloud.discoveryengine.v1beta.ImportUserEventsResponse result =
           new com.google.cloud.discoveryengine.v1beta.ImportUserEventsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.discoveryengine.v1beta.ImportUserEventsResponse result) {
       if (errorSamplesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           errorSamples_ = java.util.Collections.unmodifiableList(errorSamples_);
@@ -515,15 +526,21 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       } else {
         result.errorSamples_ = errorSamplesBuilder_.build();
       }
-      if (errorConfigBuilder_ == null) {
-        result.errorConfig_ = errorConfig_;
-      } else {
-        result.errorConfig_ = errorConfigBuilder_.build();
+    }
+
+    private void buildPartial0(
+        com.google.cloud.discoveryengine.v1beta.ImportUserEventsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.errorConfig_ =
+            errorConfigBuilder_ == null ? errorConfig_ : errorConfigBuilder_.build();
       }
-      result.joinedEventsCount_ = joinedEventsCount_;
-      result.unjoinedEventsCount_ = unjoinedEventsCount_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.joinedEventsCount_ = joinedEventsCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.unjoinedEventsCount_ = unjoinedEventsCount_;
+      }
     }
 
     @java.lang.Override
@@ -651,19 +668,19 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
             case 18:
               {
                 input.readMessage(getErrorConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 joinedEventsCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 unjoinedEventsCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -1042,7 +1059,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
      * @return Whether the errorConfig field is set.
      */
     public boolean hasErrorConfig() {
-      return errorConfigBuilder_ != null || errorConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1081,11 +1098,11 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         errorConfig_ = value;
-        onChanged();
       } else {
         errorConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1102,11 +1119,11 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
         com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.Builder builderForValue) {
       if (errorConfigBuilder_ == null) {
         errorConfig_ = builderForValue.build();
-        onChanged();
       } else {
         errorConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1122,19 +1139,19 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     public Builder mergeErrorConfig(
         com.google.cloud.discoveryengine.v1beta.ImportErrorConfig value) {
       if (errorConfigBuilder_ == null) {
-        if (errorConfig_ != null) {
-          errorConfig_ =
-              com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.newBuilder(errorConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && errorConfig_ != null
+            && errorConfig_
+                != com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.getDefaultInstance()) {
+          getErrorConfigBuilder().mergeFrom(value);
         } else {
           errorConfig_ = value;
         }
-        onChanged();
       } else {
         errorConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1148,14 +1165,13 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
      * <code>.google.cloud.discoveryengine.v1beta.ImportErrorConfig error_config = 2;</code>
      */
     public Builder clearErrorConfig() {
-      if (errorConfigBuilder_ == null) {
-        errorConfig_ = null;
-        onChanged();
-      } else {
-        errorConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      errorConfig_ = null;
+      if (errorConfigBuilder_ != null) {
+        errorConfigBuilder_.dispose();
         errorConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1170,7 +1186,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
      */
     public com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.Builder
         getErrorConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getErrorConfigFieldBuilder().getBuilder();
     }
@@ -1252,6 +1268,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     public Builder setJoinedEventsCount(long value) {
 
       joinedEventsCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1267,7 +1284,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearJoinedEventsCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       joinedEventsCount_ = 0L;
       onChanged();
       return this;
@@ -1306,6 +1323,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     public Builder setUnjoinedEventsCount(long value) {
 
       unjoinedEventsCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1322,7 +1340,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearUnjoinedEventsCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       unjoinedEventsCount_ = 0L;
       onChanged();
       return this;

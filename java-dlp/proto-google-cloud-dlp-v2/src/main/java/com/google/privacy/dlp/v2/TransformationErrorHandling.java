@@ -1363,6 +1363,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (throwErrorBuilder_ != null) {
         throwErrorBuilder_.clear();
       }
@@ -1398,23 +1399,27 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
     public com.google.privacy.dlp.v2.TransformationErrorHandling buildPartial() {
       com.google.privacy.dlp.v2.TransformationErrorHandling result =
           new com.google.privacy.dlp.v2.TransformationErrorHandling(this);
-      if (modeCase_ == 1) {
-        if (throwErrorBuilder_ == null) {
-          result.mode_ = mode_;
-        } else {
-          result.mode_ = throwErrorBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (modeCase_ == 2) {
-        if (leaveUntransformedBuilder_ == null) {
-          result.mode_ = mode_;
-        } else {
-          result.mode_ = leaveUntransformedBuilder_.build();
-        }
-      }
-      result.modeCase_ = modeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.TransformationErrorHandling result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.TransformationErrorHandling result) {
+      result.modeCase_ = modeCase_;
+      result.mode_ = this.mode_;
+      if (modeCase_ == 1 && throwErrorBuilder_ != null) {
+        result.mode_ = throwErrorBuilder_.build();
+      }
+      if (modeCase_ == 2 && leaveUntransformedBuilder_ != null) {
+        result.mode_ = leaveUntransformedBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1548,6 +1553,8 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.TransformationErrorHandling.ThrowError,
@@ -1765,7 +1772,6 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       }
       modeCase_ = 1;
       onChanged();
-      ;
       return throwErrorBuilder_;
     }
 
@@ -2007,7 +2013,6 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       }
       modeCase_ = 2;
       onChanged();
-      ;
       return leaveUntransformedBuilder_;
     }
 

@@ -69,7 +69,9 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCHEMA_FIELD_NUMBER = 1;
-  private volatile java.lang.Object schema_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object schema_ = "";
   /**
    *
    *
@@ -118,6 +120,8 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ORACLE_TABLES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.OracleTable> oracleTables_;
   /**
    *
@@ -394,15 +398,15 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       schema_ = "";
-
       if (oracleTablesBuilder_ == null) {
         oracleTables_ = java.util.Collections.emptyList();
       } else {
         oracleTables_ = null;
         oracleTablesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -430,19 +434,31 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1.OracleSchema buildPartial() {
       com.google.cloud.datastream.v1.OracleSchema result =
           new com.google.cloud.datastream.v1.OracleSchema(this);
-      int from_bitField0_ = bitField0_;
-      result.schema_ = schema_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.datastream.v1.OracleSchema result) {
       if (oracleTablesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           oracleTables_ = java.util.Collections.unmodifiableList(oracleTables_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.oracleTables_ = oracleTables_;
       } else {
         result.oracleTables_ = oracleTablesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.OracleSchema result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.schema_ = schema_;
+      }
     }
 
     @java.lang.Override
@@ -492,13 +508,14 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.datastream.v1.OracleSchema.getDefaultInstance()) return this;
       if (!other.getSchema().isEmpty()) {
         schema_ = other.schema_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (oracleTablesBuilder_ == null) {
         if (!other.oracleTables_.isEmpty()) {
           if (oracleTables_.isEmpty()) {
             oracleTables_ = other.oracleTables_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureOracleTablesIsMutable();
             oracleTables_.addAll(other.oracleTables_);
@@ -511,7 +528,7 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
             oracleTablesBuilder_.dispose();
             oracleTablesBuilder_ = null;
             oracleTables_ = other.oracleTables_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             oracleTablesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getOracleTablesFieldBuilder()
@@ -550,7 +567,7 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 schema_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -646,8 +663,8 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       schema_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -663,8 +680,8 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSchema() {
-
       schema_ = getDefaultInstance().getSchema();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -685,8 +702,8 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       schema_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -695,10 +712,10 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureOracleTablesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         oracleTables_ =
             new java.util.ArrayList<com.google.cloud.datastream.v1.OracleTable>(oracleTables_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -914,7 +931,7 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
     public Builder clearOracleTables() {
       if (oracleTablesBuilder_ == null) {
         oracleTables_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         oracleTablesBuilder_.clear();
@@ -1036,7 +1053,7 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datastream.v1.OracleTable,
                 com.google.cloud.datastream.v1.OracleTable.Builder,
                 com.google.cloud.datastream.v1.OracleTableOrBuilder>(
-                oracleTables_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                oracleTables_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         oracleTables_ = null;
       }
       return oracleTablesBuilder_;

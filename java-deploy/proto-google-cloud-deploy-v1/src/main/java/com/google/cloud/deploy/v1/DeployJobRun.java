@@ -255,7 +255,9 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BUILD_FIELD_NUMBER = 1;
-  private volatile java.lang.Object build_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object build_ = "";
   /**
    *
    *
@@ -310,7 +312,7 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FAILURE_CAUSE_FIELD_NUMBER = 2;
-  private int failureCause_;
+  private int failureCause_ = 0;
   /**
    *
    *
@@ -345,16 +347,17 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.DeployJobRun.FailureCause getFailureCause() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.deploy.v1.DeployJobRun.FailureCause result =
-        com.google.cloud.deploy.v1.DeployJobRun.FailureCause.valueOf(failureCause_);
+        com.google.cloud.deploy.v1.DeployJobRun.FailureCause.forNumber(failureCause_);
     return result == null
         ? com.google.cloud.deploy.v1.DeployJobRun.FailureCause.UNRECOGNIZED
         : result;
   }
 
   public static final int FAILURE_MESSAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object failureMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object failureMessage_ = "";
   /**
    *
    *
@@ -453,7 +456,9 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.DeployJobRunMetadataOrBuilder getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.cloud.deploy.v1.DeployJobRunMetadata.getDefaultInstance()
+        : metadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -688,16 +693,13 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       build_ = "";
-
       failureCause_ = 0;
-
       failureMessage_ = "";
-
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
       return this;
@@ -727,16 +729,27 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.DeployJobRun buildPartial() {
       com.google.cloud.deploy.v1.DeployJobRun result =
           new com.google.cloud.deploy.v1.DeployJobRun(this);
-      result.build_ = build_;
-      result.failureCause_ = failureCause_;
-      result.failureMessage_ = failureMessage_;
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.DeployJobRun result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.build_ = build_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.failureCause_ = failureCause_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.failureMessage_ = failureMessage_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -786,6 +799,7 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.deploy.v1.DeployJobRun.getDefaultInstance()) return this;
       if (!other.getBuild().isEmpty()) {
         build_ = other.build_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.failureCause_ != 0) {
@@ -793,6 +807,7 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getFailureMessage().isEmpty()) {
         failureMessage_ = other.failureMessage_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasMetadata()) {
@@ -827,25 +842,25 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 build_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 failureCause_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 failureMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -864,6 +879,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object build_ = "";
     /**
@@ -935,8 +952,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       build_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -955,8 +972,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBuild() {
-
       build_ = getDefaultInstance().getBuild();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -980,8 +997,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       build_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1021,8 +1038,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFailureCauseValue(int value) {
-
       failureCause_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1042,9 +1059,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.DeployJobRun.FailureCause getFailureCause() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.deploy.v1.DeployJobRun.FailureCause result =
-          com.google.cloud.deploy.v1.DeployJobRun.FailureCause.valueOf(failureCause_);
+          com.google.cloud.deploy.v1.DeployJobRun.FailureCause.forNumber(failureCause_);
       return result == null
           ? com.google.cloud.deploy.v1.DeployJobRun.FailureCause.UNRECOGNIZED
           : result;
@@ -1068,7 +1084,7 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       failureCause_ = value.getNumber();
       onChanged();
       return this;
@@ -1088,7 +1104,7 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFailureCause() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       failureCause_ = 0;
       onChanged();
       return this;
@@ -1155,8 +1171,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       failureMessage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1172,8 +1188,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFailureMessage() {
-
       failureMessage_ = getDefaultInstance().getFailureMessage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1194,8 +1210,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       failureMessage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1220,7 +1236,7 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1261,11 +1277,11 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1283,11 +1299,11 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.deploy.v1.DeployJobRunMetadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1303,19 +1319,18 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMetadata(com.google.cloud.deploy.v1.DeployJobRunMetadata value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.cloud.deploy.v1.DeployJobRunMetadata.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && metadata_ != null
+            && metadata_ != com.google.cloud.deploy.v1.DeployJobRunMetadata.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1330,14 +1345,13 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1352,7 +1366,7 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.deploy.v1.DeployJobRunMetadata.Builder getMetadataBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }

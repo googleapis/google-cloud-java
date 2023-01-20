@@ -112,7 +112,9 @@ public final class RetrieveRegisterParametersResponse extends com.google.protobu
   @java.lang.Override
   public com.google.cloud.domains.v1beta1.RegisterParametersOrBuilder
       getRegisterParametersOrBuilder() {
-    return getRegisterParameters();
+    return registerParameters_ == null
+        ? com.google.cloud.domains.v1beta1.RegisterParameters.getDefaultInstance()
+        : registerParameters_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -320,10 +322,10 @@ public final class RetrieveRegisterParametersResponse extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (registerParametersBuilder_ == null) {
-        registerParameters_ = null;
-      } else {
-        registerParameters_ = null;
+      bitField0_ = 0;
+      registerParameters_ = null;
+      if (registerParametersBuilder_ != null) {
+        registerParametersBuilder_.dispose();
         registerParametersBuilder_ = null;
       }
       return this;
@@ -355,13 +357,22 @@ public final class RetrieveRegisterParametersResponse extends com.google.protobu
     public com.google.cloud.domains.v1beta1.RetrieveRegisterParametersResponse buildPartial() {
       com.google.cloud.domains.v1beta1.RetrieveRegisterParametersResponse result =
           new com.google.cloud.domains.v1beta1.RetrieveRegisterParametersResponse(this);
-      if (registerParametersBuilder_ == null) {
-        result.registerParameters_ = registerParameters_;
-      } else {
-        result.registerParameters_ = registerParametersBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.domains.v1beta1.RetrieveRegisterParametersResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.registerParameters_ =
+            registerParametersBuilder_ == null
+                ? registerParameters_
+                : registerParametersBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -446,7 +457,7 @@ public final class RetrieveRegisterParametersResponse extends com.google.protobu
               {
                 input.readMessage(
                     getRegisterParametersFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -466,6 +477,8 @@ public final class RetrieveRegisterParametersResponse extends com.google.protobu
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.domains.v1beta1.RegisterParameters registerParameters_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.domains.v1beta1.RegisterParameters,
@@ -484,7 +497,7 @@ public final class RetrieveRegisterParametersResponse extends com.google.protobu
      * @return Whether the registerParameters field is set.
      */
     public boolean hasRegisterParameters() {
-      return registerParametersBuilder_ != null || registerParameters_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -522,11 +535,11 @@ public final class RetrieveRegisterParametersResponse extends com.google.protobu
           throw new NullPointerException();
         }
         registerParameters_ = value;
-        onChanged();
       } else {
         registerParametersBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -542,11 +555,11 @@ public final class RetrieveRegisterParametersResponse extends com.google.protobu
         com.google.cloud.domains.v1beta1.RegisterParameters.Builder builderForValue) {
       if (registerParametersBuilder_ == null) {
         registerParameters_ = builderForValue.build();
-        onChanged();
       } else {
         registerParametersBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -561,19 +574,19 @@ public final class RetrieveRegisterParametersResponse extends com.google.protobu
     public Builder mergeRegisterParameters(
         com.google.cloud.domains.v1beta1.RegisterParameters value) {
       if (registerParametersBuilder_ == null) {
-        if (registerParameters_ != null) {
-          registerParameters_ =
-              com.google.cloud.domains.v1beta1.RegisterParameters.newBuilder(registerParameters_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && registerParameters_ != null
+            && registerParameters_
+                != com.google.cloud.domains.v1beta1.RegisterParameters.getDefaultInstance()) {
+          getRegisterParametersBuilder().mergeFrom(value);
         } else {
           registerParameters_ = value;
         }
-        onChanged();
       } else {
         registerParametersBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -586,14 +599,13 @@ public final class RetrieveRegisterParametersResponse extends com.google.protobu
      * <code>.google.cloud.domains.v1beta1.RegisterParameters register_parameters = 1;</code>
      */
     public Builder clearRegisterParameters() {
-      if (registerParametersBuilder_ == null) {
-        registerParameters_ = null;
-        onChanged();
-      } else {
-        registerParameters_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      registerParameters_ = null;
+      if (registerParametersBuilder_ != null) {
+        registerParametersBuilder_.dispose();
         registerParametersBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -607,7 +619,7 @@ public final class RetrieveRegisterParametersResponse extends com.google.protobu
      */
     public com.google.cloud.domains.v1beta1.RegisterParameters.Builder
         getRegisterParametersBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRegisterParametersFieldBuilder().getBuilder();
     }

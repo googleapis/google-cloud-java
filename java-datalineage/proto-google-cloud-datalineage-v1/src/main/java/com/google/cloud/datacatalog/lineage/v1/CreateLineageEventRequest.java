@@ -70,7 +70,9 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -173,11 +175,15 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.lineage.v1.LineageEventOrBuilder getLineageEventOrBuilder() {
-    return getLineageEvent();
+    return lineageEvent_ == null
+        ? com.google.cloud.datacatalog.lineage.v1.LineageEvent.getDefaultInstance()
+        : lineageEvent_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -453,16 +459,14 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (lineageEventBuilder_ == null) {
-        lineageEvent_ = null;
-      } else {
-        lineageEvent_ = null;
+      lineageEvent_ = null;
+      if (lineageEventBuilder_ != null) {
+        lineageEventBuilder_.dispose();
         lineageEventBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -491,15 +495,26 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
     public com.google.cloud.datacatalog.lineage.v1.CreateLineageEventRequest buildPartial() {
       com.google.cloud.datacatalog.lineage.v1.CreateLineageEventRequest result =
           new com.google.cloud.datacatalog.lineage.v1.CreateLineageEventRequest(this);
-      result.parent_ = parent_;
-      if (lineageEventBuilder_ == null) {
-        result.lineageEvent_ = lineageEvent_;
-      } else {
-        result.lineageEvent_ = lineageEventBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datacatalog.lineage.v1.CreateLineageEventRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.lineageEvent_ =
+            lineageEventBuilder_ == null ? lineageEvent_ : lineageEventBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -552,6 +567,7 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasLineageEvent()) {
@@ -559,6 +575,7 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -590,19 +607,19 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getLineageEventFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -621,6 +638,8 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -689,8 +708,8 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -708,8 +727,8 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -732,8 +751,8 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -758,7 +777,7 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
      * @return Whether the lineageEvent field is set.
      */
     public boolean hasLineageEvent() {
-      return lineageEventBuilder_ != null || lineageEvent_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -799,11 +818,11 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         lineageEvent_ = value;
-        onChanged();
       } else {
         lineageEventBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -821,11 +840,11 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
         com.google.cloud.datacatalog.lineage.v1.LineageEvent.Builder builderForValue) {
       if (lineageEventBuilder_ == null) {
         lineageEvent_ = builderForValue.build();
-        onChanged();
       } else {
         lineageEventBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -841,19 +860,19 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
      */
     public Builder mergeLineageEvent(com.google.cloud.datacatalog.lineage.v1.LineageEvent value) {
       if (lineageEventBuilder_ == null) {
-        if (lineageEvent_ != null) {
-          lineageEvent_ =
-              com.google.cloud.datacatalog.lineage.v1.LineageEvent.newBuilder(lineageEvent_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && lineageEvent_ != null
+            && lineageEvent_
+                != com.google.cloud.datacatalog.lineage.v1.LineageEvent.getDefaultInstance()) {
+          getLineageEventBuilder().mergeFrom(value);
         } else {
           lineageEvent_ = value;
         }
-        onChanged();
       } else {
         lineageEventBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -868,14 +887,13 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearLineageEvent() {
-      if (lineageEventBuilder_ == null) {
-        lineageEvent_ = null;
-        onChanged();
-      } else {
-        lineageEvent_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      lineageEvent_ = null;
+      if (lineageEventBuilder_ != null) {
+        lineageEventBuilder_.dispose();
         lineageEventBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -890,7 +908,7 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.cloud.datacatalog.lineage.v1.LineageEvent.Builder getLineageEventBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getLineageEventFieldBuilder().getBuilder();
     }
@@ -1010,8 +1028,8 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1029,8 +1047,8 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1053,8 +1071,8 @@ public final class CreateLineageEventRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

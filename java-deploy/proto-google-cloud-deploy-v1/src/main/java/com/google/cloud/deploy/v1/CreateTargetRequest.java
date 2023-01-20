@@ -70,7 +70,9 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TARGET_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object targetId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetId_ = "";
   /**
    *
    *
@@ -221,11 +225,13 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.TargetOrBuilder getTargetOrBuilder() {
-    return getTarget();
+    return target_ == null ? com.google.cloud.deploy.v1.Target.getDefaultInstance() : target_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -294,7 +300,7 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 5;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -550,20 +556,16 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       targetId_ = "";
-
-      if (targetBuilder_ == null) {
-        target_ = null;
-      } else {
-        target_ = null;
+      target_ = null;
+      if (targetBuilder_ != null) {
+        targetBuilder_.dispose();
         targetBuilder_ = null;
       }
       requestId_ = "";
-
       validateOnly_ = false;
-
       return this;
     }
 
@@ -591,17 +593,30 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.deploy.v1.CreateTargetRequest buildPartial() {
       com.google.cloud.deploy.v1.CreateTargetRequest result =
           new com.google.cloud.deploy.v1.CreateTargetRequest(this);
-      result.parent_ = parent_;
-      result.targetId_ = targetId_;
-      if (targetBuilder_ == null) {
-        result.target_ = target_;
-      } else {
-        result.target_ = targetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.CreateTargetRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetId_ = targetId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.target_ = targetBuilder_ == null ? target_ : targetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -651,10 +666,12 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
       if (other == com.google.cloud.deploy.v1.CreateTargetRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTargetId().isEmpty()) {
         targetId_ = other.targetId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasTarget()) {
@@ -662,6 +679,7 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -696,31 +714,31 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 targetId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getTargetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -739,6 +757,8 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -813,8 +833,8 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -834,8 +854,8 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -860,8 +880,8 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -927,8 +947,8 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -944,8 +964,8 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearTargetId() {
-
       targetId_ = getDefaultInstance().getTargetId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -966,8 +986,8 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -991,7 +1011,7 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the target field is set.
      */
     public boolean hasTarget() {
-      return targetBuilder_ != null || target_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1028,11 +1048,11 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         target_ = value;
-        onChanged();
       } else {
         targetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1048,11 +1068,11 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
     public Builder setTarget(com.google.cloud.deploy.v1.Target.Builder builderForValue) {
       if (targetBuilder_ == null) {
         target_ = builderForValue.build();
-        onChanged();
       } else {
         targetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1067,17 +1087,18 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeTarget(com.google.cloud.deploy.v1.Target value) {
       if (targetBuilder_ == null) {
-        if (target_ != null) {
-          target_ =
-              com.google.cloud.deploy.v1.Target.newBuilder(target_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && target_ != null
+            && target_ != com.google.cloud.deploy.v1.Target.getDefaultInstance()) {
+          getTargetBuilder().mergeFrom(value);
         } else {
           target_ = value;
         }
-        onChanged();
       } else {
         targetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1091,14 +1112,13 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearTarget() {
-      if (targetBuilder_ == null) {
-        target_ = null;
-        onChanged();
-      } else {
-        target_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      target_ = null;
+      if (targetBuilder_ != null) {
+        targetBuilder_.dispose();
         targetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1112,7 +1132,7 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.deploy.v1.Target.Builder getTargetBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTargetFieldBuilder().getBuilder();
     }
@@ -1251,8 +1271,8 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1278,8 +1298,8 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1310,8 +1330,8 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1349,6 +1369,7 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1365,7 +1386,7 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       validateOnly_ = false;
       onChanged();
       return this;

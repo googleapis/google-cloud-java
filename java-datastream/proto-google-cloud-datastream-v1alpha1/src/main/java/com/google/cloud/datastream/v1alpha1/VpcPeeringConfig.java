@@ -70,7 +70,9 @@ public final class VpcPeeringConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int VPC_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object vpcName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vpcName_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class VpcPeeringConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SUBNET_FIELD_NUMBER = 2;
-  private volatile java.lang.Object subnet_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnet_ = "";
   /**
    *
    *
@@ -375,10 +379,9 @@ public final class VpcPeeringConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       vpcName_ = "";
-
       subnet_ = "";
-
       return this;
     }
 
@@ -406,10 +409,21 @@ public final class VpcPeeringConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.datastream.v1alpha1.VpcPeeringConfig buildPartial() {
       com.google.cloud.datastream.v1alpha1.VpcPeeringConfig result =
           new com.google.cloud.datastream.v1alpha1.VpcPeeringConfig(this);
-      result.vpcName_ = vpcName_;
-      result.subnet_ = subnet_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1alpha1.VpcPeeringConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.vpcName_ = vpcName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.subnet_ = subnet_;
+      }
     }
 
     @java.lang.Override
@@ -460,10 +474,12 @@ public final class VpcPeeringConfig extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getVpcName().isEmpty()) {
         vpcName_ = other.vpcName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSubnet().isEmpty()) {
         subnet_ = other.subnet_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -495,13 +511,13 @@ public final class VpcPeeringConfig extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 vpcName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 subnet_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -520,6 +536,8 @@ public final class VpcPeeringConfig extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object vpcName_ = "";
     /**
@@ -582,8 +600,8 @@ public final class VpcPeeringConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       vpcName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -599,8 +617,8 @@ public final class VpcPeeringConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearVpcName() {
-
       vpcName_ = getDefaultInstance().getVpcName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -621,8 +639,8 @@ public final class VpcPeeringConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vpcName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -688,8 +706,8 @@ public final class VpcPeeringConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       subnet_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -705,8 +723,8 @@ public final class VpcPeeringConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSubnet() {
-
       subnet_ = getDefaultInstance().getSubnet();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -727,8 +745,8 @@ public final class VpcPeeringConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subnet_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

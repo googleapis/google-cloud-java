@@ -108,7 +108,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.InspectResultOrBuilder getResultOrBuilder() {
-    return getResult();
+    return result_ == null ? com.google.privacy.dlp.v2.InspectResult.getDefaultInstance() : result_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -313,10 +313,10 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (resultBuilder_ == null) {
-        result_ = null;
-      } else {
-        result_ = null;
+      bitField0_ = 0;
+      result_ = null;
+      if (resultBuilder_ != null) {
+        resultBuilder_.dispose();
         resultBuilder_ = null;
       }
       return this;
@@ -346,13 +346,18 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
     public com.google.privacy.dlp.v2.InspectContentResponse buildPartial() {
       com.google.privacy.dlp.v2.InspectContentResponse result =
           new com.google.privacy.dlp.v2.InspectContentResponse(this);
-      if (resultBuilder_ == null) {
-        result.result_ = result_;
-      } else {
-        result.result_ = resultBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.InspectContentResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.result_ = resultBuilder_ == null ? result_ : resultBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -433,7 +438,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getResultFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -453,6 +458,8 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.privacy.dlp.v2.InspectResult result_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.InspectResult,
@@ -471,7 +478,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
      * @return Whether the result field is set.
      */
     public boolean hasResult() {
-      return resultBuilder_ != null || result_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -508,11 +515,11 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         result_ = value;
-        onChanged();
       } else {
         resultBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -527,11 +534,11 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
     public Builder setResult(com.google.privacy.dlp.v2.InspectResult.Builder builderForValue) {
       if (resultBuilder_ == null) {
         result_ = builderForValue.build();
-        onChanged();
       } else {
         resultBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -545,19 +552,18 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
      */
     public Builder mergeResult(com.google.privacy.dlp.v2.InspectResult value) {
       if (resultBuilder_ == null) {
-        if (result_ != null) {
-          result_ =
-              com.google.privacy.dlp.v2.InspectResult.newBuilder(result_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && result_ != null
+            && result_ != com.google.privacy.dlp.v2.InspectResult.getDefaultInstance()) {
+          getResultBuilder().mergeFrom(value);
         } else {
           result_ = value;
         }
-        onChanged();
       } else {
         resultBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -570,14 +576,13 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
      * <code>.google.privacy.dlp.v2.InspectResult result = 1;</code>
      */
     public Builder clearResult() {
-      if (resultBuilder_ == null) {
-        result_ = null;
-        onChanged();
-      } else {
-        result_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      result_ = null;
+      if (resultBuilder_ != null) {
+        resultBuilder_.dispose();
         resultBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -590,7 +595,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
      * <code>.google.privacy.dlp.v2.InspectResult result = 1;</code>
      */
     public com.google.privacy.dlp.v2.InspectResult.Builder getResultBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }

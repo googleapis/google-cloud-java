@@ -69,7 +69,9 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DEBUGGEE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object debuggeeId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object debuggeeId_ = "";
   /**
    *
    *
@@ -171,11 +173,15 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.devtools.clouddebugger.v2.BreakpointOrBuilder getBreakpointOrBuilder() {
-    return getBreakpoint();
+    return breakpoint_ == null
+        ? com.google.devtools.clouddebugger.v2.Breakpoint.getDefaultInstance()
+        : breakpoint_;
   }
 
   public static final int CLIENT_VERSION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object clientVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientVersion_ = "";
   /**
    *
    *
@@ -446,16 +452,14 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       debuggeeId_ = "";
-
-      if (breakpointBuilder_ == null) {
-        breakpoint_ = null;
-      } else {
-        breakpoint_ = null;
+      breakpoint_ = null;
+      if (breakpointBuilder_ != null) {
+        breakpointBuilder_.dispose();
         breakpointBuilder_ = null;
       }
       clientVersion_ = "";
-
       return this;
     }
 
@@ -483,15 +487,24 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
     public com.google.devtools.clouddebugger.v2.SetBreakpointRequest buildPartial() {
       com.google.devtools.clouddebugger.v2.SetBreakpointRequest result =
           new com.google.devtools.clouddebugger.v2.SetBreakpointRequest(this);
-      result.debuggeeId_ = debuggeeId_;
-      if (breakpointBuilder_ == null) {
-        result.breakpoint_ = breakpoint_;
-      } else {
-        result.breakpoint_ = breakpointBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.clientVersion_ = clientVersion_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.clouddebugger.v2.SetBreakpointRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.debuggeeId_ = debuggeeId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.breakpoint_ = breakpointBuilder_ == null ? breakpoint_ : breakpointBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clientVersion_ = clientVersion_;
+      }
     }
 
     @java.lang.Override
@@ -542,6 +555,7 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getDebuggeeId().isEmpty()) {
         debuggeeId_ = other.debuggeeId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasBreakpoint()) {
@@ -549,6 +563,7 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getClientVersion().isEmpty()) {
         clientVersion_ = other.clientVersion_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -580,19 +595,19 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 debuggeeId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getBreakpointFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 clientVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -611,6 +626,8 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object debuggeeId_ = "";
     /**
@@ -673,8 +690,8 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       debuggeeId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -690,8 +707,8 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDebuggeeId() {
-
       debuggeeId_ = getDefaultInstance().getDebuggeeId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -712,8 +729,8 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       debuggeeId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -739,7 +756,7 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the breakpoint field is set.
      */
     public boolean hasBreakpoint() {
-      return breakpointBuilder_ != null || breakpoint_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -782,11 +799,11 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         breakpoint_ = value;
-        onChanged();
       } else {
         breakpointBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -805,11 +822,11 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
         com.google.devtools.clouddebugger.v2.Breakpoint.Builder builderForValue) {
       if (breakpointBuilder_ == null) {
         breakpoint_ = builderForValue.build();
-        onChanged();
       } else {
         breakpointBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -826,19 +843,19 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeBreakpoint(com.google.devtools.clouddebugger.v2.Breakpoint value) {
       if (breakpointBuilder_ == null) {
-        if (breakpoint_ != null) {
-          breakpoint_ =
-              com.google.devtools.clouddebugger.v2.Breakpoint.newBuilder(breakpoint_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && breakpoint_ != null
+            && breakpoint_
+                != com.google.devtools.clouddebugger.v2.Breakpoint.getDefaultInstance()) {
+          getBreakpointBuilder().mergeFrom(value);
         } else {
           breakpoint_ = value;
         }
-        onChanged();
       } else {
         breakpointBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -854,14 +871,13 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearBreakpoint() {
-      if (breakpointBuilder_ == null) {
-        breakpoint_ = null;
-        onChanged();
-      } else {
-        breakpoint_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      breakpoint_ = null;
+      if (breakpointBuilder_ != null) {
+        breakpointBuilder_.dispose();
         breakpointBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -877,7 +893,7 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.devtools.clouddebugger.v2.Breakpoint.Builder getBreakpointBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getBreakpointFieldBuilder().getBuilder();
     }
@@ -995,8 +1011,8 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       clientVersion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1013,8 +1029,8 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearClientVersion() {
-
       clientVersion_ = getDefaultInstance().getClientVersion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1036,8 +1052,8 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clientVersion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

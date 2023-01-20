@@ -362,6 +362,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
 
     public static final int DOCUMENTS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.discoveryengine.v1beta.Document> documents_;
     /**
      *
@@ -662,6 +664,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (documentsBuilder_ == null) {
           documents_ = java.util.Collections.emptyList();
         } else {
@@ -700,7 +703,16 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           buildPartial() {
         com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.InlineSource result =
             new com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.InlineSource(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.InlineSource result) {
         if (documentsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             documents_ = java.util.Collections.unmodifiableList(documents_);
@@ -710,8 +722,11 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         } else {
           result.documents_ = documentsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.InlineSource result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -1565,7 +1580,9 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -1667,11 +1684,13 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.discoveryengine.v1beta.ImportErrorConfigOrBuilder
       getErrorConfigOrBuilder() {
-    return getErrorConfig();
+    return errorConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.getDefaultInstance()
+        : errorConfig_;
   }
 
   public static final int RECONCILIATION_MODE_FIELD_NUMBER = 6;
-  private int reconciliationMode_;
+  private int reconciliationMode_ = 0;
   /**
    *
    *
@@ -1709,9 +1728,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.ReconciliationMode
       getReconciliationMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.ReconciliationMode result =
-        com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.ReconciliationMode.valueOf(
+        com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.ReconciliationMode.forNumber(
             reconciliationMode_);
     return result == null
         ? com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.ReconciliationMode
@@ -2003,6 +2021,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (inlineSourceBuilder_ != null) {
         inlineSourceBuilder_.clear();
       }
@@ -2013,15 +2032,12 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         bigquerySourceBuilder_.clear();
       }
       parent_ = "";
-
-      if (errorConfigBuilder_ == null) {
-        errorConfig_ = null;
-      } else {
-        errorConfig_ = null;
+      errorConfig_ = null;
+      if (errorConfigBuilder_ != null) {
+        errorConfigBuilder_.dispose();
         errorConfigBuilder_ = null;
       }
       reconciliationMode_ = 0;
-
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -2052,37 +2068,42 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest buildPartial() {
       com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest result =
           new com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest(this);
-      if (sourceCase_ == 2) {
-        if (inlineSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = inlineSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 3) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
-      }
-      if (sourceCase_ == 4) {
-        if (bigquerySourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = bigquerySourceBuilder_.build();
-        }
-      }
-      result.parent_ = parent_;
-      if (errorConfigBuilder_ == null) {
-        result.errorConfig_ = errorConfig_;
-      } else {
-        result.errorConfig_ = errorConfigBuilder_.build();
-      }
-      result.reconciliationMode_ = reconciliationMode_;
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.errorConfig_ =
+            errorConfigBuilder_ == null ? errorConfig_ : errorConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.reconciliationMode_ = reconciliationMode_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 2 && inlineSourceBuilder_ != null) {
+        result.source_ = inlineSourceBuilder_.build();
+      }
+      if (sourceCase_ == 3 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
+      if (sourceCase_ == 4 && bigquerySourceBuilder_ != null) {
+        result.source_ = bigquerySourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2134,6 +2155,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasErrorConfig()) {
@@ -2192,7 +2214,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
@@ -2216,13 +2238,13 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             case 42:
               {
                 input.readMessage(getErrorConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 reconciliationMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             default:
@@ -2255,6 +2277,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.InlineSource,
@@ -2499,7 +2523,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       sourceCase_ = 2;
       onChanged();
-      ;
       return inlineSourceBuilder_;
     }
 
@@ -2709,7 +2732,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       sourceCase_ = 3;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 
@@ -2923,7 +2945,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       sourceCase_ = 4;
       onChanged();
-      ;
       return bigquerySourceBuilder_;
     }
 
@@ -3000,8 +3021,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3021,8 +3042,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3047,8 +3068,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3071,7 +3092,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return Whether the errorConfig field is set.
      */
     public boolean hasErrorConfig() {
-      return errorConfigBuilder_ != null || errorConfig_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -3108,11 +3129,11 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         errorConfig_ = value;
-        onChanged();
       } else {
         errorConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3128,11 +3149,11 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.Builder builderForValue) {
       if (errorConfigBuilder_ == null) {
         errorConfig_ = builderForValue.build();
-        onChanged();
       } else {
         errorConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3147,19 +3168,19 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public Builder mergeErrorConfig(
         com.google.cloud.discoveryengine.v1beta.ImportErrorConfig value) {
       if (errorConfigBuilder_ == null) {
-        if (errorConfig_ != null) {
-          errorConfig_ =
-              com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.newBuilder(errorConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && errorConfig_ != null
+            && errorConfig_
+                != com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.getDefaultInstance()) {
+          getErrorConfigBuilder().mergeFrom(value);
         } else {
           errorConfig_ = value;
         }
-        onChanged();
       } else {
         errorConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3172,14 +3193,13 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.discoveryengine.v1beta.ImportErrorConfig error_config = 5;</code>
      */
     public Builder clearErrorConfig() {
-      if (errorConfigBuilder_ == null) {
-        errorConfig_ = null;
-        onChanged();
-      } else {
-        errorConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      errorConfig_ = null;
+      if (errorConfigBuilder_ != null) {
+        errorConfigBuilder_.dispose();
         errorConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3193,7 +3213,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.Builder
         getErrorConfigBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getErrorConfigFieldBuilder().getBuilder();
     }
@@ -3279,8 +3299,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setReconciliationModeValue(int value) {
-
       reconciliationMode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3302,10 +3322,9 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.ReconciliationMode
         getReconciliationMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.ReconciliationMode result =
-          com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.ReconciliationMode.valueOf(
-              reconciliationMode_);
+          com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.ReconciliationMode
+              .forNumber(reconciliationMode_);
       return result == null
           ? com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.ReconciliationMode
               .UNRECOGNIZED
@@ -3332,7 +3351,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       reconciliationMode_ = value.getNumber();
       onChanged();
       return this;
@@ -3353,7 +3372,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearReconciliationMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       reconciliationMode_ = 0;
       onChanged();
       return this;

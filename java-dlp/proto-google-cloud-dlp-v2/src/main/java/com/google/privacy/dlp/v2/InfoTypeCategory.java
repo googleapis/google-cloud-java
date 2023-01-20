@@ -1642,9 +1642,8 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
    */
   public com.google.privacy.dlp.v2.InfoTypeCategory.LocationCategory getLocationCategory() {
     if (categoryCase_ == 1) {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.InfoTypeCategory.LocationCategory result =
-          com.google.privacy.dlp.v2.InfoTypeCategory.LocationCategory.valueOf(
+          com.google.privacy.dlp.v2.InfoTypeCategory.LocationCategory.forNumber(
               (java.lang.Integer) category_);
       return result == null
           ? com.google.privacy.dlp.v2.InfoTypeCategory.LocationCategory.UNRECOGNIZED
@@ -1698,9 +1697,8 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
    */
   public com.google.privacy.dlp.v2.InfoTypeCategory.IndustryCategory getIndustryCategory() {
     if (categoryCase_ == 2) {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.InfoTypeCategory.IndustryCategory result =
-          com.google.privacy.dlp.v2.InfoTypeCategory.IndustryCategory.valueOf(
+          com.google.privacy.dlp.v2.InfoTypeCategory.IndustryCategory.forNumber(
               (java.lang.Integer) category_);
       return result == null
           ? com.google.privacy.dlp.v2.InfoTypeCategory.IndustryCategory.UNRECOGNIZED
@@ -1754,9 +1752,8 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
    */
   public com.google.privacy.dlp.v2.InfoTypeCategory.TypeCategory getTypeCategory() {
     if (categoryCase_ == 3) {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.InfoTypeCategory.TypeCategory result =
-          com.google.privacy.dlp.v2.InfoTypeCategory.TypeCategory.valueOf(
+          com.google.privacy.dlp.v2.InfoTypeCategory.TypeCategory.forNumber(
               (java.lang.Integer) category_);
       return result == null
           ? com.google.privacy.dlp.v2.InfoTypeCategory.TypeCategory.UNRECOGNIZED
@@ -2005,6 +2002,7 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       categoryCase_ = 0;
       category_ = null;
       return this;
@@ -2034,18 +2032,21 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
     public com.google.privacy.dlp.v2.InfoTypeCategory buildPartial() {
       com.google.privacy.dlp.v2.InfoTypeCategory result =
           new com.google.privacy.dlp.v2.InfoTypeCategory(this);
-      if (categoryCase_ == 1) {
-        result.category_ = category_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (categoryCase_ == 2) {
-        result.category_ = category_;
-      }
-      if (categoryCase_ == 3) {
-        result.category_ = category_;
-      }
-      result.categoryCase_ = categoryCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.InfoTypeCategory result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.InfoTypeCategory result) {
+      result.categoryCase_ = categoryCase_;
+      result.category_ = this.category_;
     }
 
     @java.lang.Override
@@ -2192,6 +2193,8 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
@@ -2261,9 +2264,8 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.privacy.dlp.v2.InfoTypeCategory.LocationCategory getLocationCategory() {
       if (categoryCase_ == 1) {
-        @SuppressWarnings("deprecation")
         com.google.privacy.dlp.v2.InfoTypeCategory.LocationCategory result =
-            com.google.privacy.dlp.v2.InfoTypeCategory.LocationCategory.valueOf(
+            com.google.privacy.dlp.v2.InfoTypeCategory.LocationCategory.forNumber(
                 (java.lang.Integer) category_);
         return result == null
             ? com.google.privacy.dlp.v2.InfoTypeCategory.LocationCategory.UNRECOGNIZED
@@ -2380,9 +2382,8 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.privacy.dlp.v2.InfoTypeCategory.IndustryCategory getIndustryCategory() {
       if (categoryCase_ == 2) {
-        @SuppressWarnings("deprecation")
         com.google.privacy.dlp.v2.InfoTypeCategory.IndustryCategory result =
-            com.google.privacy.dlp.v2.InfoTypeCategory.IndustryCategory.valueOf(
+            com.google.privacy.dlp.v2.InfoTypeCategory.IndustryCategory.forNumber(
                 (java.lang.Integer) category_);
         return result == null
             ? com.google.privacy.dlp.v2.InfoTypeCategory.IndustryCategory.UNRECOGNIZED
@@ -2497,9 +2498,8 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.privacy.dlp.v2.InfoTypeCategory.TypeCategory getTypeCategory() {
       if (categoryCase_ == 3) {
-        @SuppressWarnings("deprecation")
         com.google.privacy.dlp.v2.InfoTypeCategory.TypeCategory result =
-            com.google.privacy.dlp.v2.InfoTypeCategory.TypeCategory.valueOf(
+            com.google.privacy.dlp.v2.InfoTypeCategory.TypeCategory.forNumber(
                 (java.lang.Integer) category_);
         return result == null
             ? com.google.privacy.dlp.v2.InfoTypeCategory.TypeCategory.UNRECOGNIZED

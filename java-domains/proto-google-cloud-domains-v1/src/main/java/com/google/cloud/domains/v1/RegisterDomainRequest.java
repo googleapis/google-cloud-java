@@ -70,7 +70,9 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -175,20 +177,24 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.domains.v1.RegistrationOrBuilder getRegistrationOrBuilder() {
-    return getRegistration();
+    return registration_ == null
+        ? com.google.cloud.domains.v1.Registration.getDefaultInstance()
+        : registration_;
   }
 
   public static final int DOMAIN_NOTICES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> domainNotices_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.domains.v1.DomainNotice>
       domainNotices_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.cloud.domains.v1.DomainNotice>() {
             public com.google.cloud.domains.v1.DomainNotice convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.domains.v1.DomainNotice result =
-                  com.google.cloud.domains.v1.DomainNotice.valueOf(from);
+                  com.google.cloud.domains.v1.DomainNotice.forNumber(from);
               return result == null
                   ? com.google.cloud.domains.v1.DomainNotice.UNRECOGNIZED
                   : result;
@@ -282,16 +288,18 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
   private int domainNoticesMemoizedSerializedSize;
 
   public static final int CONTACT_NOTICES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> contactNotices_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.domains.v1.ContactNotice>
       contactNotices_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.cloud.domains.v1.ContactNotice>() {
             public com.google.cloud.domains.v1.ContactNotice convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.domains.v1.ContactNotice result =
-                  com.google.cloud.domains.v1.ContactNotice.valueOf(from);
+                  com.google.cloud.domains.v1.ContactNotice.forNumber(from);
               return result == null
                   ? com.google.cloud.domains.v1.ContactNotice.UNRECOGNIZED
                   : result;
@@ -438,11 +446,11 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.type.MoneyOrBuilder getYearlyPriceOrBuilder() {
-    return getYearlyPrice();
+    return yearlyPrice_ == null ? com.google.type.Money.getDefaultInstance() : yearlyPrice_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 6;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -746,26 +754,23 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (registrationBuilder_ == null) {
-        registration_ = null;
-      } else {
-        registration_ = null;
+      registration_ = null;
+      if (registrationBuilder_ != null) {
+        registrationBuilder_.dispose();
         registrationBuilder_ = null;
       }
       domainNotices_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       contactNotices_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (yearlyPriceBuilder_ == null) {
-        yearlyPrice_ = null;
-      } else {
-        yearlyPrice_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      yearlyPrice_ = null;
+      if (yearlyPriceBuilder_ != null) {
+        yearlyPriceBuilder_.dispose();
         yearlyPriceBuilder_ = null;
       }
       validateOnly_ = false;
-
       return this;
     }
 
@@ -793,31 +798,44 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.domains.v1.RegisterDomainRequest buildPartial() {
       com.google.cloud.domains.v1.RegisterDomainRequest result =
           new com.google.cloud.domains.v1.RegisterDomainRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      if (registrationBuilder_ == null) {
-        result.registration_ = registration_;
-      } else {
-        result.registration_ = registrationBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        domainNotices_ = java.util.Collections.unmodifiableList(domainNotices_);
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.domainNotices_ = domainNotices_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        contactNotices_ = java.util.Collections.unmodifiableList(contactNotices_);
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.contactNotices_ = contactNotices_;
-      if (yearlyPriceBuilder_ == null) {
-        result.yearlyPrice_ = yearlyPrice_;
-      } else {
-        result.yearlyPrice_ = yearlyPriceBuilder_.build();
-      }
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.domains.v1.RegisterDomainRequest result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        domainNotices_ = java.util.Collections.unmodifiableList(domainNotices_);
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.domainNotices_ = domainNotices_;
+      if (((bitField0_ & 0x00000008) != 0)) {
+        contactNotices_ = java.util.Collections.unmodifiableList(contactNotices_);
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.contactNotices_ = contactNotices_;
+    }
+
+    private void buildPartial0(com.google.cloud.domains.v1.RegisterDomainRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.registration_ =
+            registrationBuilder_ == null ? registration_ : registrationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.yearlyPrice_ =
+            yearlyPriceBuilder_ == null ? yearlyPrice_ : yearlyPriceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -868,6 +886,7 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRegistration()) {
@@ -876,7 +895,7 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       if (!other.domainNotices_.isEmpty()) {
         if (domainNotices_.isEmpty()) {
           domainNotices_ = other.domainNotices_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureDomainNoticesIsMutable();
           domainNotices_.addAll(other.domainNotices_);
@@ -886,7 +905,7 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       if (!other.contactNotices_.isEmpty()) {
         if (contactNotices_.isEmpty()) {
           contactNotices_ = other.contactNotices_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureContactNoticesIsMutable();
           contactNotices_.addAll(other.contactNotices_);
@@ -928,13 +947,13 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getRegistrationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
@@ -978,13 +997,13 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
             case 42:
               {
                 input.readMessage(getYearlyPriceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             default:
@@ -1076,8 +1095,8 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1096,8 +1115,8 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1121,8 +1140,8 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1147,7 +1166,7 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the registration field is set.
      */
     public boolean hasRegistration() {
-      return registrationBuilder_ != null || registration_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1188,11 +1207,11 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         registration_ = value;
-        onChanged();
       } else {
         registrationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1210,11 +1229,11 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.domains.v1.Registration.Builder builderForValue) {
       if (registrationBuilder_ == null) {
         registration_ = builderForValue.build();
-        onChanged();
       } else {
         registrationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1230,19 +1249,18 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeRegistration(com.google.cloud.domains.v1.Registration value) {
       if (registrationBuilder_ == null) {
-        if (registration_ != null) {
-          registration_ =
-              com.google.cloud.domains.v1.Registration.newBuilder(registration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && registration_ != null
+            && registration_ != com.google.cloud.domains.v1.Registration.getDefaultInstance()) {
+          getRegistrationBuilder().mergeFrom(value);
         } else {
           registration_ = value;
         }
-        onChanged();
       } else {
         registrationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1257,14 +1275,13 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearRegistration() {
-      if (registrationBuilder_ == null) {
-        registration_ = null;
-        onChanged();
-      } else {
-        registration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      registration_ = null;
+      if (registrationBuilder_ != null) {
+        registrationBuilder_.dispose();
         registrationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1279,7 +1296,7 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.domains.v1.Registration.Builder getRegistrationBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRegistrationFieldBuilder().getBuilder();
     }
@@ -1334,9 +1351,9 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     private java.util.List<java.lang.Integer> domainNotices_ = java.util.Collections.emptyList();
 
     private void ensureDomainNoticesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         domainNotices_ = new java.util.ArrayList<java.lang.Integer>(domainNotices_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1468,7 +1485,7 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearDomainNotices() {
       domainNotices_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1567,9 +1584,9 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     private java.util.List<java.lang.Integer> contactNotices_ = java.util.Collections.emptyList();
 
     private void ensureContactNoticesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         contactNotices_ = new java.util.ArrayList<java.lang.Integer>(contactNotices_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1708,7 +1725,7 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearContactNotices() {
       contactNotices_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1827,7 +1844,7 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the yearlyPrice field is set.
      */
     public boolean hasYearlyPrice() {
-      return yearlyPriceBuilder_ != null || yearlyPrice_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1866,11 +1883,11 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         yearlyPrice_ = value;
-        onChanged();
       } else {
         yearlyPriceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1887,11 +1904,11 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     public Builder setYearlyPrice(com.google.type.Money.Builder builderForValue) {
       if (yearlyPriceBuilder_ == null) {
         yearlyPrice_ = builderForValue.build();
-        onChanged();
       } else {
         yearlyPriceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1907,17 +1924,18 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeYearlyPrice(com.google.type.Money value) {
       if (yearlyPriceBuilder_ == null) {
-        if (yearlyPrice_ != null) {
-          yearlyPrice_ =
-              com.google.type.Money.newBuilder(yearlyPrice_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && yearlyPrice_ != null
+            && yearlyPrice_ != com.google.type.Money.getDefaultInstance()) {
+          getYearlyPriceBuilder().mergeFrom(value);
         } else {
           yearlyPrice_ = value;
         }
-        onChanged();
       } else {
         yearlyPriceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1932,14 +1950,13 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.type.Money yearly_price = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearYearlyPrice() {
-      if (yearlyPriceBuilder_ == null) {
-        yearlyPrice_ = null;
-        onChanged();
-      } else {
-        yearlyPrice_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      yearlyPrice_ = null;
+      if (yearlyPriceBuilder_ != null) {
+        yearlyPriceBuilder_.dispose();
         yearlyPriceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1954,7 +1971,7 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.type.Money yearly_price = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.type.Money.Builder getYearlyPriceBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getYearlyPriceFieldBuilder().getBuilder();
     }
@@ -2037,6 +2054,7 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2054,7 +2072,7 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       validateOnly_ = false;
       onChanged();
       return this;

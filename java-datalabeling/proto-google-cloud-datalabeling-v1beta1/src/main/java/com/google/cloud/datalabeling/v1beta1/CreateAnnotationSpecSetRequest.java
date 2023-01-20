@@ -69,7 +69,9 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -181,7 +183,9 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpecSetOrBuilder
       getAnnotationSpecSetOrBuilder() {
-    return getAnnotationSpecSet();
+    return annotationSpecSet_ == null
+        ? com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet.getDefaultInstance()
+        : annotationSpecSet_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -398,12 +402,11 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (annotationSpecSetBuilder_ == null) {
-        annotationSpecSet_ = null;
-      } else {
-        annotationSpecSet_ = null;
+      annotationSpecSet_ = null;
+      if (annotationSpecSetBuilder_ != null) {
+        annotationSpecSetBuilder_.dispose();
         annotationSpecSetBuilder_ = null;
       }
       return this;
@@ -435,14 +438,25 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
     public com.google.cloud.datalabeling.v1beta1.CreateAnnotationSpecSetRequest buildPartial() {
       com.google.cloud.datalabeling.v1beta1.CreateAnnotationSpecSetRequest result =
           new com.google.cloud.datalabeling.v1beta1.CreateAnnotationSpecSetRequest(this);
-      result.parent_ = parent_;
-      if (annotationSpecSetBuilder_ == null) {
-        result.annotationSpecSet_ = annotationSpecSet_;
-      } else {
-        result.annotationSpecSet_ = annotationSpecSetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datalabeling.v1beta1.CreateAnnotationSpecSetRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.annotationSpecSet_ =
+            annotationSpecSetBuilder_ == null
+                ? annotationSpecSet_
+                : annotationSpecSetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -496,6 +510,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAnnotationSpecSet()) {
@@ -530,14 +545,14 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getAnnotationSpecSetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -556,6 +571,8 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -627,8 +644,8 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -647,8 +664,8 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -672,8 +689,8 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -700,7 +717,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
      * @return Whether the annotationSpecSet field is set.
      */
     public boolean hasAnnotationSpecSet() {
-      return annotationSpecSetBuilder_ != null || annotationSpecSet_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -746,11 +763,11 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         annotationSpecSet_ = value;
-        onChanged();
       } else {
         annotationSpecSetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -770,11 +787,11 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
         com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet.Builder builderForValue) {
       if (annotationSpecSetBuilder_ == null) {
         annotationSpecSet_ = builderForValue.build();
-        onChanged();
       } else {
         annotationSpecSetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -793,19 +810,19 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
     public Builder mergeAnnotationSpecSet(
         com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet value) {
       if (annotationSpecSetBuilder_ == null) {
-        if (annotationSpecSet_ != null) {
-          annotationSpecSet_ =
-              com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet.newBuilder(annotationSpecSet_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && annotationSpecSet_ != null
+            && annotationSpecSet_
+                != com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet.getDefaultInstance()) {
+          getAnnotationSpecSetBuilder().mergeFrom(value);
         } else {
           annotationSpecSet_ = value;
         }
-        onChanged();
       } else {
         annotationSpecSetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -822,14 +839,13 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearAnnotationSpecSet() {
-      if (annotationSpecSetBuilder_ == null) {
-        annotationSpecSet_ = null;
-        onChanged();
-      } else {
-        annotationSpecSet_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      annotationSpecSet_ = null;
+      if (annotationSpecSetBuilder_ != null) {
+        annotationSpecSetBuilder_.dispose();
         annotationSpecSetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -847,7 +863,7 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
      */
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet.Builder
         getAnnotationSpecSetBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAnnotationSpecSetFieldBuilder().getBuilder();
     }

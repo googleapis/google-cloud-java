@@ -389,7 +389,9 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -495,11 +497,13 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder
       getBasicConfigOrBuilder() {
-    return getBasicConfig();
+    return basicConfig_ == null
+        ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
+        : basicConfig_;
   }
 
   public static final int FEATURE_FIELD_NUMBER = 6;
-  private int feature_;
+  private int feature_ = 0;
   /**
    *
    *
@@ -532,9 +536,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature getFeature() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature result =
-        com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature.valueOf(feature_);
+        com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature.forNumber(feature_);
     return result == null
         ? com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature.UNRECOGNIZED
         : result;
@@ -808,6 +811,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (textClassificationConfigBuilder_ != null) {
         textClassificationConfigBuilder_.clear();
       }
@@ -815,15 +819,12 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
         textEntityExtractionConfigBuilder_.clear();
       }
       parent_ = "";
-
-      if (basicConfigBuilder_ == null) {
-        basicConfig_ = null;
-      } else {
-        basicConfig_ = null;
+      basicConfig_ = null;
+      if (basicConfigBuilder_ != null) {
+        basicConfigBuilder_.dispose();
         basicConfigBuilder_ = null;
       }
       feature_ = 0;
-
       requestConfigCase_ = 0;
       requestConfig_ = null;
       return this;
@@ -853,30 +854,37 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.datalabeling.v1beta1.LabelTextRequest buildPartial() {
       com.google.cloud.datalabeling.v1beta1.LabelTextRequest result =
           new com.google.cloud.datalabeling.v1beta1.LabelTextRequest(this);
-      if (requestConfigCase_ == 4) {
-        if (textClassificationConfigBuilder_ == null) {
-          result.requestConfig_ = requestConfig_;
-        } else {
-          result.requestConfig_ = textClassificationConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (requestConfigCase_ == 5) {
-        if (textEntityExtractionConfigBuilder_ == null) {
-          result.requestConfig_ = requestConfig_;
-        } else {
-          result.requestConfig_ = textEntityExtractionConfigBuilder_.build();
-        }
-      }
-      result.parent_ = parent_;
-      if (basicConfigBuilder_ == null) {
-        result.basicConfig_ = basicConfig_;
-      } else {
-        result.basicConfig_ = basicConfigBuilder_.build();
-      }
-      result.feature_ = feature_;
-      result.requestConfigCase_ = requestConfigCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.LabelTextRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.basicConfig_ =
+            basicConfigBuilder_ == null ? basicConfig_ : basicConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.feature_ = feature_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datalabeling.v1beta1.LabelTextRequest result) {
+      result.requestConfigCase_ = requestConfigCase_;
+      result.requestConfig_ = this.requestConfig_;
+      if (requestConfigCase_ == 4 && textClassificationConfigBuilder_ != null) {
+        result.requestConfig_ = textClassificationConfigBuilder_.build();
+      }
+      if (requestConfigCase_ == 5 && textEntityExtractionConfigBuilder_ != null) {
+        result.requestConfig_ = textEntityExtractionConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -927,6 +935,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasBasicConfig()) {
@@ -980,13 +989,13 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getBasicConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 34:
@@ -1006,7 +1015,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
             case 48:
               {
                 feature_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 48
             default:
@@ -1039,6 +1048,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.TextClassificationConfig,
@@ -1291,7 +1302,6 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       }
       requestConfigCase_ = 4;
       onChanged();
-      ;
       return textClassificationConfigBuilder_;
     }
 
@@ -1549,7 +1559,6 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       }
       requestConfigCase_ = 5;
       onChanged();
-      ;
       return textEntityExtractionConfigBuilder_;
     }
 
@@ -1623,8 +1632,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1643,8 +1652,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1668,8 +1677,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1694,7 +1703,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the basicConfig field is set.
      */
     public boolean hasBasicConfig() {
-      return basicConfigBuilder_ != null || basicConfig_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1736,11 +1745,11 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         basicConfig_ = value;
-        onChanged();
       } else {
         basicConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1758,11 +1767,11 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
         com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder builderForValue) {
       if (basicConfigBuilder_ == null) {
         basicConfig_ = builderForValue.build();
-        onChanged();
       } else {
         basicConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1779,19 +1788,20 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
     public Builder mergeBasicConfig(
         com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig value) {
       if (basicConfigBuilder_ == null) {
-        if (basicConfig_ != null) {
-          basicConfig_ =
-              com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.newBuilder(basicConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && basicConfig_ != null
+            && basicConfig_
+                != com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig
+                    .getDefaultInstance()) {
+          getBasicConfigBuilder().mergeFrom(value);
         } else {
           basicConfig_ = value;
         }
-        onChanged();
       } else {
         basicConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1806,14 +1816,13 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearBasicConfig() {
-      if (basicConfigBuilder_ == null) {
-        basicConfig_ = null;
-        onChanged();
-      } else {
-        basicConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      basicConfig_ = null;
+      if (basicConfigBuilder_ != null) {
+        basicConfigBuilder_.dispose();
         basicConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1829,7 +1838,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder
         getBasicConfigBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getBasicConfigFieldBuilder().getBuilder();
     }
@@ -1915,8 +1924,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setFeatureValue(int value) {
-
       feature_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1935,9 +1944,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature getFeature() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature result =
-          com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature.valueOf(feature_);
+          com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature.forNumber(feature_);
       return result == null
           ? com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature.UNRECOGNIZED
           : result;
@@ -1961,7 +1969,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       feature_ = value.getNumber();
       onChanged();
       return this;
@@ -1980,7 +1988,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearFeature() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       feature_ = 0;
       onChanged();
       return this;

@@ -113,7 +113,9 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -162,7 +164,7 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CAPACITY_GB_FIELD_NUMBER = 2;
-  private long capacityGb_;
+  private long capacityGb_ = 0L;
   /**
    *
    *
@@ -257,6 +259,8 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NFS_EXPORT_OPTIONS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.filestore.v1.NfsExportOptions> nfsExportOptions_;
   /**
    *
@@ -570,17 +574,16 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       capacityGb_ = 0L;
-
       if (nfsExportOptionsBuilder_ == null) {
         nfsExportOptions_ = java.util.Collections.emptyList();
       } else {
         nfsExportOptions_ = null;
         nfsExportOptionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -610,24 +613,40 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.filestore.v1.FileShareConfig buildPartial() {
       com.google.cloud.filestore.v1.FileShareConfig result =
           new com.google.cloud.filestore.v1.FileShareConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.capacityGb_ = capacityGb_;
-      if (sourceCase_ == 8) {
-        result.source_ = source_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.filestore.v1.FileShareConfig result) {
       if (nfsExportOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           nfsExportOptions_ = java.util.Collections.unmodifiableList(nfsExportOptions_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.nfsExportOptions_ = nfsExportOptions_;
       } else {
         result.nfsExportOptions_ = nfsExportOptionsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.filestore.v1.FileShareConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.capacityGb_ = capacityGb_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.filestore.v1.FileShareConfig result) {
       result.sourceCase_ = sourceCase_;
-      onBuilt();
-      return result;
+      result.source_ = this.source_;
     }
 
     @java.lang.Override
@@ -677,6 +696,7 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.filestore.v1.FileShareConfig.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getCapacityGb() != 0L) {
@@ -686,7 +706,7 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
         if (!other.nfsExportOptions_.isEmpty()) {
           if (nfsExportOptions_.isEmpty()) {
             nfsExportOptions_ = other.nfsExportOptions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureNfsExportOptionsIsMutable();
             nfsExportOptions_.addAll(other.nfsExportOptions_);
@@ -699,7 +719,7 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
             nfsExportOptionsBuilder_.dispose();
             nfsExportOptionsBuilder_ = null;
             nfsExportOptions_ = other.nfsExportOptions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             nfsExportOptionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNfsExportOptionsFieldBuilder()
@@ -751,13 +771,13 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 capacityGb_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 58:
@@ -874,8 +894,8 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -891,8 +911,8 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -913,8 +933,8 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -952,6 +972,7 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
     public Builder setCapacityGb(long value) {
 
       capacityGb_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -968,7 +989,7 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearCapacityGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       capacityGb_ = 0L;
       onChanged();
       return this;
@@ -1124,11 +1145,11 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureNfsExportOptionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         nfsExportOptions_ =
             new java.util.ArrayList<com.google.cloud.filestore.v1.NfsExportOptions>(
                 nfsExportOptions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1358,7 +1379,7 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
     public Builder clearNfsExportOptions() {
       if (nfsExportOptionsBuilder_ == null) {
         nfsExportOptions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         nfsExportOptionsBuilder_.clear();
@@ -1491,7 +1512,7 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.filestore.v1.NfsExportOptions.Builder,
                 com.google.cloud.filestore.v1.NfsExportOptionsOrBuilder>(
                 nfsExportOptions_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         nfsExportOptions_ = null;

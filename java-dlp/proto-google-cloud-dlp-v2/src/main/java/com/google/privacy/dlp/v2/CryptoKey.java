@@ -518,6 +518,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (transientBuilder_ != null) {
         transientBuilder_.clear();
       }
@@ -555,30 +556,30 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.privacy.dlp.v2.CryptoKey buildPartial() {
       com.google.privacy.dlp.v2.CryptoKey result = new com.google.privacy.dlp.v2.CryptoKey(this);
-      if (sourceCase_ == 1) {
-        if (transientBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = transientBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 2) {
-        if (unwrappedBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = unwrappedBuilder_.build();
-        }
-      }
-      if (sourceCase_ == 3) {
-        if (kmsWrappedBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = kmsWrappedBuilder_.build();
-        }
-      }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.CryptoKey result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.CryptoKey result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 1 && transientBuilder_ != null) {
+        result.source_ = transientBuilder_.build();
+      }
+      if (sourceCase_ == 2 && unwrappedBuilder_ != null) {
+        result.source_ = unwrappedBuilder_.build();
+      }
+      if (sourceCase_ == 3 && kmsWrappedBuilder_ != null) {
+        result.source_ = kmsWrappedBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -721,6 +722,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.TransientCryptoKey,
@@ -928,7 +931,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 1;
       onChanged();
-      ;
       return transientBuilder_;
     }
 
@@ -1138,7 +1140,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 2;
       onChanged();
-      ;
       return unwrappedBuilder_;
     }
 
@@ -1348,7 +1349,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 3;
       onChanged();
-      ;
       return kmsWrappedBuilder_;
     }
 

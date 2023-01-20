@@ -273,7 +273,9 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -326,6 +328,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ANNOTATIONS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datalabeling.v1beta1.Annotation> annotations_;
   /**
    *
@@ -663,6 +667,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (imagePayloadBuilder_ != null) {
         imagePayloadBuilder_.clear();
       }
@@ -673,14 +678,13 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
         videoPayloadBuilder_.clear();
       }
       name_ = "";
-
       if (annotationsBuilder_ == null) {
         annotations_ = java.util.Collections.emptyList();
       } else {
         annotations_ = null;
         annotationsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       payloadCase_ = 0;
       payload_ = null;
       return this;
@@ -710,41 +714,46 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.Example buildPartial() {
       com.google.cloud.datalabeling.v1beta1.Example result =
           new com.google.cloud.datalabeling.v1beta1.Example(this);
-      int from_bitField0_ = bitField0_;
-      if (payloadCase_ == 2) {
-        if (imagePayloadBuilder_ == null) {
-          result.payload_ = payload_;
-        } else {
-          result.payload_ = imagePayloadBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (payloadCase_ == 6) {
-        if (textPayloadBuilder_ == null) {
-          result.payload_ = payload_;
-        } else {
-          result.payload_ = textPayloadBuilder_.build();
-        }
-      }
-      if (payloadCase_ == 7) {
-        if (videoPayloadBuilder_ == null) {
-          result.payload_ = payload_;
-        } else {
-          result.payload_ = videoPayloadBuilder_.build();
-        }
-      }
-      result.name_ = name_;
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.datalabeling.v1beta1.Example result) {
       if (annotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           annotations_ = java.util.Collections.unmodifiableList(annotations_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.annotations_ = annotations_;
       } else {
         result.annotations_ = annotationsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.Example result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.name_ = name_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datalabeling.v1beta1.Example result) {
       result.payloadCase_ = payloadCase_;
-      onBuilt();
-      return result;
+      result.payload_ = this.payload_;
+      if (payloadCase_ == 2 && imagePayloadBuilder_ != null) {
+        result.payload_ = imagePayloadBuilder_.build();
+      }
+      if (payloadCase_ == 6 && textPayloadBuilder_ != null) {
+        result.payload_ = textPayloadBuilder_.build();
+      }
+      if (payloadCase_ == 7 && videoPayloadBuilder_ != null) {
+        result.payload_ = videoPayloadBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -794,13 +803,14 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.datalabeling.v1beta1.Example.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (annotationsBuilder_ == null) {
         if (!other.annotations_.isEmpty()) {
           if (annotations_.isEmpty()) {
             annotations_ = other.annotations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureAnnotationsIsMutable();
             annotations_.addAll(other.annotations_);
@@ -813,7 +823,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
             annotationsBuilder_.dispose();
             annotationsBuilder_ = null;
             annotations_ = other.annotations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             annotationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAnnotationsFieldBuilder()
@@ -873,7 +883,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
@@ -1148,7 +1158,6 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
       }
       payloadCase_ = 2;
       onChanged();
-      ;
       return imagePayloadBuilder_;
     }
 
@@ -1358,7 +1367,6 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
       }
       payloadCase_ = 6;
       onChanged();
-      ;
       return textPayloadBuilder_;
     }
 
@@ -1569,7 +1577,6 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
       }
       payloadCase_ = 7;
       onChanged();
-      ;
       return videoPayloadBuilder_;
     }
 
@@ -1640,8 +1647,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1659,8 +1666,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1683,8 +1690,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1693,10 +1700,10 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         annotations_ =
             new java.util.ArrayList<com.google.cloud.datalabeling.v1beta1.Annotation>(annotations_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1925,7 +1932,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAnnotations() {
       if (annotationsBuilder_ == null) {
         annotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         annotationsBuilder_.clear();
@@ -2057,7 +2064,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datalabeling.v1beta1.Annotation,
                 com.google.cloud.datalabeling.v1beta1.Annotation.Builder,
                 com.google.cloud.datalabeling.v1beta1.AnnotationOrBuilder>(
-                annotations_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                annotations_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         annotations_ = null;
       }
       return annotationsBuilder_;

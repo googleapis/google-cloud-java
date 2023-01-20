@@ -70,7 +70,9 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -175,11 +177,15 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.lineage.v1.ProcessOrBuilder getProcessOrBuilder() {
-    return getProcess();
+    return process_ == null
+        ? com.google.cloud.datacatalog.lineage.v1.Process.getDefaultInstance()
+        : process_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -453,16 +459,14 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (processBuilder_ == null) {
-        process_ = null;
-      } else {
-        process_ = null;
+      process_ = null;
+      if (processBuilder_ != null) {
+        processBuilder_.dispose();
         processBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -491,15 +495,25 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.datacatalog.lineage.v1.CreateProcessRequest buildPartial() {
       com.google.cloud.datacatalog.lineage.v1.CreateProcessRequest result =
           new com.google.cloud.datacatalog.lineage.v1.CreateProcessRequest(this);
-      result.parent_ = parent_;
-      if (processBuilder_ == null) {
-        result.process_ = process_;
-      } else {
-        result.process_ = processBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datacatalog.lineage.v1.CreateProcessRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.process_ = processBuilder_ == null ? process_ : processBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -551,6 +565,7 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasProcess()) {
@@ -558,6 +573,7 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -589,19 +605,19 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getProcessFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -620,6 +636,8 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -691,8 +709,8 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -711,8 +729,8 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -736,8 +754,8 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -762,7 +780,7 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the process field is set.
      */
     public boolean hasProcess() {
-      return processBuilder_ != null || process_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -803,11 +821,11 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         process_ = value;
-        onChanged();
       } else {
         processBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -825,11 +843,11 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.datacatalog.lineage.v1.Process.Builder builderForValue) {
       if (processBuilder_ == null) {
         process_ = builderForValue.build();
-        onChanged();
       } else {
         processBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -845,19 +863,18 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeProcess(com.google.cloud.datacatalog.lineage.v1.Process value) {
       if (processBuilder_ == null) {
-        if (process_ != null) {
-          process_ =
-              com.google.cloud.datacatalog.lineage.v1.Process.newBuilder(process_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && process_ != null
+            && process_ != com.google.cloud.datacatalog.lineage.v1.Process.getDefaultInstance()) {
+          getProcessBuilder().mergeFrom(value);
         } else {
           process_ = value;
         }
-        onChanged();
       } else {
         processBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -872,14 +889,13 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearProcess() {
-      if (processBuilder_ == null) {
-        process_ = null;
-        onChanged();
-      } else {
-        process_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      process_ = null;
+      if (processBuilder_ != null) {
+        processBuilder_.dispose();
         processBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -894,7 +910,7 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.datacatalog.lineage.v1.Process.Builder getProcessBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getProcessFieldBuilder().getBuilder();
     }
@@ -1013,8 +1029,8 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1032,8 +1048,8 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1056,8 +1072,8 @@ public final class CreateProcessRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

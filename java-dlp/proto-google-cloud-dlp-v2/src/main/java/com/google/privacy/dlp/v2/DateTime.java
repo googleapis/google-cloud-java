@@ -135,7 +135,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int OFFSET_MINUTES_FIELD_NUMBER = 1;
-    private int offsetMinutes_;
+    private int offsetMinutes_ = 0;
     /**
      *
      *
@@ -352,8 +352,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         offsetMinutes_ = 0;
-
         return this;
       }
 
@@ -381,9 +381,18 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       public com.google.privacy.dlp.v2.DateTime.TimeZone buildPartial() {
         com.google.privacy.dlp.v2.DateTime.TimeZone result =
             new com.google.privacy.dlp.v2.DateTime.TimeZone(this);
-        result.offsetMinutes_ = offsetMinutes_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.privacy.dlp.v2.DateTime.TimeZone result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.offsetMinutes_ = offsetMinutes_;
+        }
       }
 
       @java.lang.Override
@@ -465,7 +474,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   offsetMinutes_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               default:
@@ -484,6 +493,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int offsetMinutes_;
       /**
@@ -518,6 +529,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       public Builder setOffsetMinutes(int value) {
 
         offsetMinutes_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -534,7 +546,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearOffsetMinutes() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         offsetMinutes_ = 0;
         onChanged();
         return this;
@@ -650,11 +662,11 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.DateOrBuilder getDateOrBuilder() {
-    return getDate();
+    return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
   }
 
   public static final int DAY_OF_WEEK_FIELD_NUMBER = 2;
-  private int dayOfWeek_;
+  private int dayOfWeek_ = 0;
   /**
    *
    *
@@ -683,8 +695,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.DayOfWeek getDayOfWeek() {
-    @SuppressWarnings("deprecation")
-    com.google.type.DayOfWeek result = com.google.type.DayOfWeek.valueOf(dayOfWeek_);
+    com.google.type.DayOfWeek result = com.google.type.DayOfWeek.forNumber(dayOfWeek_);
     return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
   }
 
@@ -731,7 +742,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.TimeOfDayOrBuilder getTimeOrBuilder() {
-    return getTime();
+    return time_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : time_;
   }
 
   public static final int TIME_ZONE_FIELD_NUMBER = 4;
@@ -779,7 +790,9 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder getTimeZoneOrBuilder() {
-    return getTimeZone();
+    return timeZone_ == null
+        ? com.google.privacy.dlp.v2.DateTime.TimeZone.getDefaultInstance()
+        : timeZone_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1020,24 +1033,21 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (dateBuilder_ == null) {
-        date_ = null;
-      } else {
-        date_ = null;
+      bitField0_ = 0;
+      date_ = null;
+      if (dateBuilder_ != null) {
+        dateBuilder_.dispose();
         dateBuilder_ = null;
       }
       dayOfWeek_ = 0;
-
-      if (timeBuilder_ == null) {
-        time_ = null;
-      } else {
-        time_ = null;
+      time_ = null;
+      if (timeBuilder_ != null) {
+        timeBuilder_.dispose();
         timeBuilder_ = null;
       }
-      if (timeZoneBuilder_ == null) {
-        timeZone_ = null;
-      } else {
-        timeZone_ = null;
+      timeZone_ = null;
+      if (timeZoneBuilder_ != null) {
+        timeZoneBuilder_.dispose();
         timeZoneBuilder_ = null;
       }
       return this;
@@ -1066,24 +1076,27 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.privacy.dlp.v2.DateTime buildPartial() {
       com.google.privacy.dlp.v2.DateTime result = new com.google.privacy.dlp.v2.DateTime(this);
-      if (dateBuilder_ == null) {
-        result.date_ = date_;
-      } else {
-        result.date_ = dateBuilder_.build();
-      }
-      result.dayOfWeek_ = dayOfWeek_;
-      if (timeBuilder_ == null) {
-        result.time_ = time_;
-      } else {
-        result.time_ = timeBuilder_.build();
-      }
-      if (timeZoneBuilder_ == null) {
-        result.timeZone_ = timeZone_;
-      } else {
-        result.timeZone_ = timeZoneBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.DateTime result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.date_ = dateBuilder_ == null ? date_ : dateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dayOfWeek_ = dayOfWeek_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.time_ = timeBuilder_ == null ? time_ : timeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.timeZone_ = timeZoneBuilder_ == null ? timeZone_ : timeZoneBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1172,25 +1185,25 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getDateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 dayOfWeek_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getTimeZoneFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -1210,6 +1223,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.type.Date date_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
@@ -1227,7 +1242,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the date field is set.
      */
     public boolean hasDate() {
-      return dateBuilder_ != null || date_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1264,11 +1279,11 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         date_ = value;
-        onChanged();
       } else {
         dateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1284,11 +1299,11 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
     public Builder setDate(com.google.type.Date.Builder builderForValue) {
       if (dateBuilder_ == null) {
         date_ = builderForValue.build();
-        onChanged();
       } else {
         dateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1303,16 +1318,18 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDate(com.google.type.Date value) {
       if (dateBuilder_ == null) {
-        if (date_ != null) {
-          date_ = com.google.type.Date.newBuilder(date_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && date_ != null
+            && date_ != com.google.type.Date.getDefaultInstance()) {
+          getDateBuilder().mergeFrom(value);
         } else {
           date_ = value;
         }
-        onChanged();
       } else {
         dateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1326,14 +1343,13 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Date date = 1;</code>
      */
     public Builder clearDate() {
-      if (dateBuilder_ == null) {
-        date_ = null;
-        onChanged();
-      } else {
-        date_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      date_ = null;
+      if (dateBuilder_ != null) {
+        dateBuilder_.dispose();
         dateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1347,7 +1363,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Date date = 1;</code>
      */
     public com.google.type.Date.Builder getDateBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDateFieldBuilder().getBuilder();
     }
@@ -1420,8 +1436,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDayOfWeekValue(int value) {
-
       dayOfWeek_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1438,8 +1454,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.type.DayOfWeek getDayOfWeek() {
-      @SuppressWarnings("deprecation")
-      com.google.type.DayOfWeek result = com.google.type.DayOfWeek.valueOf(dayOfWeek_);
+      com.google.type.DayOfWeek result = com.google.type.DayOfWeek.forNumber(dayOfWeek_);
       return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
     }
     /**
@@ -1458,7 +1473,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       dayOfWeek_ = value.getNumber();
       onChanged();
       return this;
@@ -1475,7 +1490,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDayOfWeek() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       dayOfWeek_ = 0;
       onChanged();
       return this;
@@ -1499,7 +1514,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the time field is set.
      */
     public boolean hasTime() {
-      return timeBuilder_ != null || time_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1534,11 +1549,11 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         time_ = value;
-        onChanged();
       } else {
         timeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1553,11 +1568,11 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
     public Builder setTime(com.google.type.TimeOfDay.Builder builderForValue) {
       if (timeBuilder_ == null) {
         time_ = builderForValue.build();
-        onChanged();
       } else {
         timeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1571,16 +1586,18 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTime(com.google.type.TimeOfDay value) {
       if (timeBuilder_ == null) {
-        if (time_ != null) {
-          time_ = com.google.type.TimeOfDay.newBuilder(time_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && time_ != null
+            && time_ != com.google.type.TimeOfDay.getDefaultInstance()) {
+          getTimeBuilder().mergeFrom(value);
         } else {
           time_ = value;
         }
-        onChanged();
       } else {
         timeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1593,14 +1610,13 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.TimeOfDay time = 3;</code>
      */
     public Builder clearTime() {
-      if (timeBuilder_ == null) {
-        time_ = null;
-        onChanged();
-      } else {
-        time_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      time_ = null;
+      if (timeBuilder_ != null) {
+        timeBuilder_.dispose();
         timeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1613,7 +1629,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.TimeOfDay time = 3;</code>
      */
     public com.google.type.TimeOfDay.Builder getTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTimeFieldBuilder().getBuilder();
     }
@@ -1676,7 +1692,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeZone field is set.
      */
     public boolean hasTimeZone() {
-      return timeZoneBuilder_ != null || timeZone_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1713,11 +1729,11 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         timeZone_ = value;
-        onChanged();
       } else {
         timeZoneBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1733,11 +1749,11 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
         com.google.privacy.dlp.v2.DateTime.TimeZone.Builder builderForValue) {
       if (timeZoneBuilder_ == null) {
         timeZone_ = builderForValue.build();
-        onChanged();
       } else {
         timeZoneBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1751,19 +1767,18 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTimeZone(com.google.privacy.dlp.v2.DateTime.TimeZone value) {
       if (timeZoneBuilder_ == null) {
-        if (timeZone_ != null) {
-          timeZone_ =
-              com.google.privacy.dlp.v2.DateTime.TimeZone.newBuilder(timeZone_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && timeZone_ != null
+            && timeZone_ != com.google.privacy.dlp.v2.DateTime.TimeZone.getDefaultInstance()) {
+          getTimeZoneBuilder().mergeFrom(value);
         } else {
           timeZone_ = value;
         }
-        onChanged();
       } else {
         timeZoneBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1776,14 +1791,13 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
      */
     public Builder clearTimeZone() {
-      if (timeZoneBuilder_ == null) {
-        timeZone_ = null;
-        onChanged();
-      } else {
-        timeZone_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      timeZone_ = null;
+      if (timeZoneBuilder_ != null) {
+        timeZoneBuilder_.dispose();
         timeZoneBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1796,7 +1810,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
      */
     public com.google.privacy.dlp.v2.DateTime.TimeZone.Builder getTimeZoneBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getTimeZoneFieldBuilder().getBuilder();
     }

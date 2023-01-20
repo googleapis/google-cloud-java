@@ -177,7 +177,6 @@ public interface ErrorOrBuilder
    *
    * <code>map&lt;string, string&gt; details = 5;</code>
    */
-
   /* nullable */
   java.lang.String getDetailsOrDefault(
       java.lang.String key,

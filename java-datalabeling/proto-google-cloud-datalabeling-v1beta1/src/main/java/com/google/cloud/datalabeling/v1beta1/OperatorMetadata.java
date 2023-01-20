@@ -68,7 +68,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SCORE_FIELD_NUMBER = 1;
-  private float score_;
+  private float score_ = 0F;
   /**
    *
    *
@@ -88,7 +88,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int TOTAL_VOTES_FIELD_NUMBER = 2;
-  private int totalVotes_;
+  private int totalVotes_ = 0;
   /**
    *
    *
@@ -106,7 +106,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int LABEL_VOTES_FIELD_NUMBER = 3;
-  private int labelVotes_;
+  private int labelVotes_ = 0;
   /**
    *
    *
@@ -124,6 +124,8 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int COMMENTS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList comments_;
   /**
    *
@@ -417,14 +419,12 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       score_ = 0F;
-
       totalVotes_ = 0;
-
       labelVotes_ = 0;
-
       comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -452,17 +452,34 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.datalabeling.v1beta1.OperatorMetadata buildPartial() {
       com.google.cloud.datalabeling.v1beta1.OperatorMetadata result =
           new com.google.cloud.datalabeling.v1beta1.OperatorMetadata(this);
-      int from_bitField0_ = bitField0_;
-      result.score_ = score_;
-      result.totalVotes_ = totalVotes_;
-      result.labelVotes_ = labelVotes_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        comments_ = comments_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.comments_ = comments_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datalabeling.v1beta1.OperatorMetadata result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        comments_ = comments_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.comments_ = comments_;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.OperatorMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.score_ = score_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.totalVotes_ = totalVotes_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.labelVotes_ = labelVotes_;
+      }
     }
 
     @java.lang.Override
@@ -523,7 +540,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       if (!other.comments_.isEmpty()) {
         if (comments_.isEmpty()) {
           comments_ = other.comments_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureCommentsIsMutable();
           comments_.addAll(other.comments_);
@@ -559,19 +576,19 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
             case 13:
               {
                 score_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             case 16:
               {
                 totalVotes_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 labelVotes_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -635,6 +652,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setScore(float value) {
 
       score_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -652,7 +670,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       score_ = 0F;
       onChanged();
       return this;
@@ -689,6 +707,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setTotalVotes(int value) {
 
       totalVotes_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -704,7 +723,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTotalVotes() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       totalVotes_ = 0;
       onChanged();
       return this;
@@ -741,6 +760,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setLabelVotes(int value) {
 
       labelVotes_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -756,7 +776,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearLabelVotes() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       labelVotes_ = 0;
       onChanged();
       return this;
@@ -766,9 +786,9 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureCommentsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         comments_ = new com.google.protobuf.LazyStringArrayList(comments_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -903,7 +923,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearComments() {
       comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }

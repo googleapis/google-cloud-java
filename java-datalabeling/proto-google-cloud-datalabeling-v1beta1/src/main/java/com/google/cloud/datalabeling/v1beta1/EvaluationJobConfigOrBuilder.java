@@ -444,7 +444,6 @@ public interface EvaluationJobConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
    */
-
   /* nullable */
   java.lang.String getBigqueryImportKeysOrDefault(
       java.lang.String key,

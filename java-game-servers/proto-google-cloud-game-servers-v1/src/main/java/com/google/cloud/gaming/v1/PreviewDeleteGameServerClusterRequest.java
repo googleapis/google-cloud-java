@@ -70,7 +70,9 @@ public final class PreviewDeleteGameServerClusterRequest
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -170,7 +172,7 @@ public final class PreviewDeleteGameServerClusterRequest
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getPreviewTimeOrBuilder() {
-    return getPreviewTime();
+    return previewTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : previewTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,12 +387,11 @@ public final class PreviewDeleteGameServerClusterRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (previewTimeBuilder_ == null) {
-        previewTime_ = null;
-      } else {
-        previewTime_ = null;
+      previewTime_ = null;
+      if (previewTimeBuilder_ != null) {
+        previewTimeBuilder_.dispose();
         previewTimeBuilder_ = null;
       }
       return this;
@@ -421,14 +422,23 @@ public final class PreviewDeleteGameServerClusterRequest
     public com.google.cloud.gaming.v1.PreviewDeleteGameServerClusterRequest buildPartial() {
       com.google.cloud.gaming.v1.PreviewDeleteGameServerClusterRequest result =
           new com.google.cloud.gaming.v1.PreviewDeleteGameServerClusterRequest(this);
-      result.name_ = name_;
-      if (previewTimeBuilder_ == null) {
-        result.previewTime_ = previewTime_;
-      } else {
-        result.previewTime_ = previewTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gaming.v1.PreviewDeleteGameServerClusterRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.previewTime_ =
+            previewTimeBuilder_ == null ? previewTime_ : previewTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -481,6 +491,7 @@ public final class PreviewDeleteGameServerClusterRequest
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPreviewTime()) {
@@ -515,13 +526,13 @@ public final class PreviewDeleteGameServerClusterRequest
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getPreviewTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -540,6 +551,8 @@ public final class PreviewDeleteGameServerClusterRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -611,8 +624,8 @@ public final class PreviewDeleteGameServerClusterRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -631,8 +644,8 @@ public final class PreviewDeleteGameServerClusterRequest
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -656,8 +669,8 @@ public final class PreviewDeleteGameServerClusterRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -681,7 +694,7 @@ public final class PreviewDeleteGameServerClusterRequest
      * @return Whether the previewTime field is set.
      */
     public boolean hasPreviewTime() {
-      return previewTimeBuilder_ != null || previewTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -720,11 +733,11 @@ public final class PreviewDeleteGameServerClusterRequest
           throw new NullPointerException();
         }
         previewTime_ = value;
-        onChanged();
       } else {
         previewTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -740,11 +753,11 @@ public final class PreviewDeleteGameServerClusterRequest
     public Builder setPreviewTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (previewTimeBuilder_ == null) {
         previewTime_ = builderForValue.build();
-        onChanged();
       } else {
         previewTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -759,19 +772,18 @@ public final class PreviewDeleteGameServerClusterRequest
      */
     public Builder mergePreviewTime(com.google.protobuf.Timestamp value) {
       if (previewTimeBuilder_ == null) {
-        if (previewTime_ != null) {
-          previewTime_ =
-              com.google.protobuf.Timestamp.newBuilder(previewTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && previewTime_ != null
+            && previewTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getPreviewTimeBuilder().mergeFrom(value);
         } else {
           previewTime_ = value;
         }
-        onChanged();
       } else {
         previewTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -785,14 +797,13 @@ public final class PreviewDeleteGameServerClusterRequest
      * </code>
      */
     public Builder clearPreviewTime() {
-      if (previewTimeBuilder_ == null) {
-        previewTime_ = null;
-        onChanged();
-      } else {
-        previewTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      previewTime_ = null;
+      if (previewTimeBuilder_ != null) {
+        previewTimeBuilder_.dispose();
         previewTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -806,7 +817,7 @@ public final class PreviewDeleteGameServerClusterRequest
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getPreviewTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPreviewTimeFieldBuilder().getBuilder();
     }

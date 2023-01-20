@@ -69,7 +69,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PASSED_FIELD_NUMBER = 5;
-  private boolean passed_;
+  private boolean passed_ = false;
   /**
    *
    *
@@ -87,6 +87,8 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DIMENSIONS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataplex.v1.DataQualityDimensionResult> dimensions_;
   /**
    *
@@ -158,6 +160,8 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RULES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataplex.v1.DataQualityRuleResult> rules_;
   /**
    *
@@ -227,7 +231,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ROW_COUNT_FIELD_NUMBER = 4;
-  private long rowCount_;
+  private long rowCount_ = 0L;
   /**
    *
    *
@@ -289,7 +293,9 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.ScannedDataOrBuilder getScannedDataOrBuilder() {
-    return getScannedData();
+    return scannedData_ == null
+        ? com.google.cloud.dataplex.v1.ScannedData.getDefaultInstance()
+        : scannedData_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -534,28 +540,26 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       passed_ = false;
-
       if (dimensionsBuilder_ == null) {
         dimensions_ = java.util.Collections.emptyList();
       } else {
         dimensions_ = null;
         dimensionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
       } else {
         rules_ = null;
         rulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       rowCount_ = 0L;
-
-      if (scannedDataBuilder_ == null) {
-        scannedData_ = null;
-      } else {
-        scannedData_ = null;
+      scannedData_ = null;
+      if (scannedDataBuilder_ != null) {
+        scannedDataBuilder_.dispose();
         scannedDataBuilder_ = null;
       }
       return this;
@@ -585,34 +589,47 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dataplex.v1.DataQualityResult buildPartial() {
       com.google.cloud.dataplex.v1.DataQualityResult result =
           new com.google.cloud.dataplex.v1.DataQualityResult(this);
-      int from_bitField0_ = bitField0_;
-      result.passed_ = passed_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataplex.v1.DataQualityResult result) {
       if (dimensionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           dimensions_ = java.util.Collections.unmodifiableList(dimensions_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.dimensions_ = dimensions_;
       } else {
         result.dimensions_ = dimensionsBuilder_.build();
       }
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.rules_ = rules_;
       } else {
         result.rules_ = rulesBuilder_.build();
       }
-      result.rowCount_ = rowCount_;
-      if (scannedDataBuilder_ == null) {
-        result.scannedData_ = scannedData_;
-      } else {
-        result.scannedData_ = scannedDataBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.DataQualityResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.passed_ = passed_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.rowCount_ = rowCount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.scannedData_ =
+            scannedDataBuilder_ == null ? scannedData_ : scannedDataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -667,7 +684,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
         if (!other.dimensions_.isEmpty()) {
           if (dimensions_.isEmpty()) {
             dimensions_ = other.dimensions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureDimensionsIsMutable();
             dimensions_.addAll(other.dimensions_);
@@ -680,7 +697,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
             dimensionsBuilder_.dispose();
             dimensionsBuilder_ = null;
             dimensions_ = other.dimensions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             dimensionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDimensionsFieldBuilder()
@@ -694,7 +711,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -707,7 +724,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRulesFieldBuilder()
@@ -780,19 +797,19 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
             case 32:
               {
                 rowCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 passed_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 40
             case 58:
               {
                 input.readMessage(getScannedDataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             default:
@@ -845,6 +862,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
     public Builder setPassed(boolean value) {
 
       passed_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -860,7 +878,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPassed() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       passed_ = false;
       onChanged();
       return this;
@@ -870,11 +888,11 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureDimensionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         dimensions_ =
             new java.util.ArrayList<com.google.cloud.dataplex.v1.DataQualityDimensionResult>(
                 dimensions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1096,7 +1114,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
     public Builder clearDimensions() {
       if (dimensionsBuilder_ == null) {
         dimensions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         dimensionsBuilder_.clear();
@@ -1223,7 +1241,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.dataplex.v1.DataQualityDimensionResult,
                 com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder,
                 com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder>(
-                dimensions_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                dimensions_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         dimensions_ = null;
       }
       return dimensionsBuilder_;
@@ -1233,10 +1251,10 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         rules_ =
             new java.util.ArrayList<com.google.cloud.dataplex.v1.DataQualityRuleResult>(rules_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1452,7 +1470,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -1576,7 +1594,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.dataplex.v1.DataQualityRuleResult,
                 com.google.cloud.dataplex.v1.DataQualityRuleResult.Builder,
                 com.google.cloud.dataplex.v1.DataQualityRuleResultOrBuilder>(
-                rules_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;
@@ -1613,6 +1631,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
     public Builder setRowCount(long value) {
 
       rowCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1628,7 +1647,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRowCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       rowCount_ = 0L;
       onChanged();
       return this;
@@ -1652,7 +1671,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      * @return Whether the scannedData field is set.
      */
     public boolean hasScannedData() {
-      return scannedDataBuilder_ != null || scannedData_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1689,11 +1708,11 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         scannedData_ = value;
-        onChanged();
       } else {
         scannedDataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1709,11 +1728,11 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
         com.google.cloud.dataplex.v1.ScannedData.Builder builderForValue) {
       if (scannedDataBuilder_ == null) {
         scannedData_ = builderForValue.build();
-        onChanged();
       } else {
         scannedDataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1727,19 +1746,18 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeScannedData(com.google.cloud.dataplex.v1.ScannedData value) {
       if (scannedDataBuilder_ == null) {
-        if (scannedData_ != null) {
-          scannedData_ =
-              com.google.cloud.dataplex.v1.ScannedData.newBuilder(scannedData_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && scannedData_ != null
+            && scannedData_ != com.google.cloud.dataplex.v1.ScannedData.getDefaultInstance()) {
+          getScannedDataBuilder().mergeFrom(value);
         } else {
           scannedData_ = value;
         }
-        onChanged();
       } else {
         scannedDataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1752,14 +1770,13 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
      */
     public Builder clearScannedData() {
-      if (scannedDataBuilder_ == null) {
-        scannedData_ = null;
-        onChanged();
-      } else {
-        scannedData_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      scannedData_ = null;
+      if (scannedDataBuilder_ != null) {
+        scannedDataBuilder_.dispose();
         scannedDataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1772,7 +1789,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
      */
     public com.google.cloud.dataplex.v1.ScannedData.Builder getScannedDataBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getScannedDataFieldBuilder().getBuilder();
     }

@@ -71,7 +71,9 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
 
   private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
   }
 
   public static final int USER_EVENT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object userEvent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userEvent_ = "";
   /**
    *
    *
@@ -177,7 +181,9 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
   }
 
   public static final int URI_FIELD_NUMBER = 3;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -250,7 +256,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
   }
 
   public static final int ETS_FIELD_NUMBER = 4;
-  private long ets_;
+  private long ets_ = 0L;
   /**
    *
    *
@@ -521,14 +527,11 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       userEvent_ = "";
-
       uri_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       ets_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -557,21 +560,32 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
     public com.google.cloud.discoveryengine.v1beta.CollectUserEventRequest buildPartial() {
       com.google.cloud.discoveryengine.v1beta.CollectUserEventRequest result =
           new com.google.cloud.discoveryengine.v1beta.CollectUserEventRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.discoveryengine.v1beta.CollectUserEventRequest result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.parent_ = parent_;
-      result.userEvent_ = userEvent_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.userEvent_ = userEvent_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.uri_ = uri_;
         to_bitField0_ |= 0x00000001;
       }
-      result.uri_ = uri_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.ets_ = ets_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -624,15 +638,17 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUserEvent().isEmpty()) {
         userEvent_ = other.userEvent_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasUri()) {
-        bitField0_ |= 0x00000001;
         uri_ = other.uri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasEts()) {
@@ -667,25 +683,25 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 userEvent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 uri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 ets_ = input.readInt64();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -777,8 +793,8 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -797,8 +813,8 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -822,8 +838,8 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -892,8 +908,8 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       userEvent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -910,8 +926,8 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearUserEvent() {
-
       userEvent_ = getDefaultInstance().getUserEvent();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -933,8 +949,8 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       userEvent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -955,7 +971,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      * @return Whether the uri field is set.
      */
     public boolean hasUri() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1026,8 +1042,8 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       uri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1046,8 +1062,8 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1071,8 +1087,8 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       uri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1093,7 +1109,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public boolean hasEts() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1127,8 +1143,9 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setEts(long value) {
-      bitField0_ |= 0x00000002;
+
       ets_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1146,7 +1163,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearEts() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       ets_ = 0L;
       onChanged();
       return this;

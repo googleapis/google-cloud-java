@@ -82,7 +82,9 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HOSTNAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object hostname_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object hostname_ = "";
   /**
    *
    *
@@ -131,7 +133,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PORT_FIELD_NUMBER = 2;
-  private int port_;
+  private int port_ = 0;
   /**
    *
    *
@@ -149,7 +151,9 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USERNAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object username_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object username_ = "";
   /**
    *
    *
@@ -198,7 +202,9 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PASSWORD_FIELD_NUMBER = 4;
-  private volatile java.lang.Object password_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object password_ = "";
   /**
    *
    *
@@ -247,7 +253,9 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATABASE_SERVICE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object databaseService_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object databaseService_ = "";
   /**
    *
    *
@@ -308,6 +316,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> connectionAttributes_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -367,8 +376,10 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; connection_attributes = 6;</code>
    */
   @java.lang.Override
-  public java.lang.String getConnectionAttributesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getConnectionAttributesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -672,16 +683,12 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       hostname_ = "";
-
       port_ = 0;
-
       username_ = "";
-
       password_ = "";
-
       databaseService_ = "";
-
       internalGetMutableConnectionAttributes().clear();
       return this;
     }
@@ -710,16 +717,34 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1alpha1.OracleProfile buildPartial() {
       com.google.cloud.datastream.v1alpha1.OracleProfile result =
           new com.google.cloud.datastream.v1alpha1.OracleProfile(this);
-      int from_bitField0_ = bitField0_;
-      result.hostname_ = hostname_;
-      result.port_ = port_;
-      result.username_ = username_;
-      result.password_ = password_;
-      result.databaseService_ = databaseService_;
-      result.connectionAttributes_ = internalGetConnectionAttributes();
-      result.connectionAttributes_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1alpha1.OracleProfile result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.hostname_ = hostname_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.port_ = port_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.username_ = username_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.password_ = password_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.databaseService_ = databaseService_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.connectionAttributes_ = internalGetConnectionAttributes();
+        result.connectionAttributes_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -770,6 +795,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getHostname().isEmpty()) {
         hostname_ = other.hostname_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getPort() != 0) {
@@ -777,17 +803,21 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUsername().isEmpty()) {
         username_ = other.username_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getPassword().isEmpty()) {
         password_ = other.password_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDatabaseService().isEmpty()) {
         databaseService_ = other.databaseService_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       internalGetMutableConnectionAttributes().mergeFrom(other.internalGetConnectionAttributes());
+      bitField0_ |= 0x00000020;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -817,31 +847,31 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 hostname_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 port_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 username_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 password_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 databaseService_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -854,6 +884,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableConnectionAttributes()
                     .getMutableMap()
                     .put(connectionAttributes__.getKey(), connectionAttributes__.getValue());
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -936,8 +967,8 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       hostname_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -953,8 +984,8 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHostname() {
-
       hostname_ = getDefaultInstance().getHostname();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -975,8 +1006,8 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       hostname_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1012,6 +1043,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     public Builder setPort(int value) {
 
       port_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1027,7 +1059,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       port_ = 0;
       onChanged();
       return this;
@@ -1094,8 +1126,8 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       username_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1111,8 +1143,8 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUsername() {
-
       username_ = getDefaultInstance().getUsername();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1133,8 +1165,8 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       username_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1200,8 +1232,8 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       password_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1217,8 +1249,8 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPassword() {
-
       password_ = getDefaultInstance().getPassword();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1239,8 +1271,8 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       password_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1306,8 +1338,8 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       databaseService_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1323,8 +1355,8 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDatabaseService() {
-
       databaseService_ = getDefaultInstance().getDatabaseService();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1345,8 +1377,8 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       databaseService_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1364,8 +1396,6 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableConnectionAttributes() {
-      onChanged();
-      ;
       if (connectionAttributes_ == null) {
         connectionAttributes_ =
             com.google.protobuf.MapField.newMapField(
@@ -1374,6 +1404,8 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       if (!connectionAttributes_.isMutable()) {
         connectionAttributes_ = connectionAttributes_.copy();
       }
+      bitField0_ |= 0x00000020;
+      onChanged();
       return connectionAttributes_;
     }
 
@@ -1425,8 +1457,10 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; connection_attributes = 6;</code>
      */
     @java.lang.Override
-    public java.lang.String getConnectionAttributesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getConnectionAttributesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1457,6 +1491,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearConnectionAttributes() {
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableConnectionAttributes().getMutableMap().clear();
       return this;
     }
@@ -1479,6 +1514,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableConnectionAttributes() {
+      bitField0_ |= 0x00000020;
       return internalGetMutableConnectionAttributes().getMutableMap();
     }
     /**
@@ -1497,8 +1533,8 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableConnectionAttributes().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -1513,6 +1549,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllConnectionAttributes(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableConnectionAttributes().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000020;
       return this;
     }
 

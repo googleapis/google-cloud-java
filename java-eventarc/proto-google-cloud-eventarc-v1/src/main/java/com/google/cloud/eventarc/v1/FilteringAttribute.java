@@ -70,7 +70,9 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ATTRIBUTE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object attribute_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object attribute_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -168,7 +172,7 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int REQUIRED_FIELD_NUMBER = 3;
-  private boolean required_;
+  private boolean required_ = false;
   /**
    *
    *
@@ -187,7 +191,7 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PATH_PATTERN_SUPPORTED_FIELD_NUMBER = 4;
-  private boolean pathPatternSupported_;
+  private boolean pathPatternSupported_ = false;
   /**
    *
    *
@@ -430,14 +434,11 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       attribute_ = "";
-
       description_ = "";
-
       required_ = false;
-
       pathPatternSupported_ = false;
-
       return this;
     }
 
@@ -465,12 +466,27 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.eventarc.v1.FilteringAttribute buildPartial() {
       com.google.cloud.eventarc.v1.FilteringAttribute result =
           new com.google.cloud.eventarc.v1.FilteringAttribute(this);
-      result.attribute_ = attribute_;
-      result.description_ = description_;
-      result.required_ = required_;
-      result.pathPatternSupported_ = pathPatternSupported_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.eventarc.v1.FilteringAttribute result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.attribute_ = attribute_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.required_ = required_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pathPatternSupported_ = pathPatternSupported_;
+      }
     }
 
     @java.lang.Override
@@ -521,10 +537,12 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getAttribute().isEmpty()) {
         attribute_ = other.attribute_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getRequired() != false) {
@@ -562,25 +580,25 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 attribute_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 required_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 pathPatternSupported_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -599,6 +617,8 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object attribute_ = "";
     /**
@@ -661,8 +681,8 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       attribute_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -678,8 +698,8 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAttribute() {
-
       attribute_ = getDefaultInstance().getAttribute();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -700,8 +720,8 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       attribute_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -767,8 +787,8 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -784,8 +804,8 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -806,8 +826,8 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -845,6 +865,7 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
     public Builder setRequired(boolean value) {
 
       required_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -861,7 +882,7 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRequired() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       required_ = false;
       onChanged();
       return this;
@@ -900,6 +921,7 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
     public Builder setPathPatternSupported(boolean value) {
 
       pathPatternSupported_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -916,7 +938,7 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPathPatternSupported() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       pathPatternSupported_ = false;
       onChanged();
       return this;

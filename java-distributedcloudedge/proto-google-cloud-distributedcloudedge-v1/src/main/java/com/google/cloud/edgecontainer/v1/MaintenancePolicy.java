@@ -110,7 +110,9 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.edgecontainer.v1.MaintenanceWindowOrBuilder getWindowOrBuilder() {
-    return getWindow();
+    return window_ == null
+        ? com.google.cloud.edgecontainer.v1.MaintenanceWindow.getDefaultInstance()
+        : window_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -315,10 +317,10 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (windowBuilder_ == null) {
-        window_ = null;
-      } else {
-        window_ = null;
+      bitField0_ = 0;
+      window_ = null;
+      if (windowBuilder_ != null) {
+        windowBuilder_.dispose();
         windowBuilder_ = null;
       }
       return this;
@@ -348,13 +350,18 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.edgecontainer.v1.MaintenancePolicy buildPartial() {
       com.google.cloud.edgecontainer.v1.MaintenancePolicy result =
           new com.google.cloud.edgecontainer.v1.MaintenancePolicy(this);
-      if (windowBuilder_ == null) {
-        result.window_ = window_;
-      } else {
-        result.window_ = windowBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.edgecontainer.v1.MaintenancePolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.window_ = windowBuilder_ == null ? window_ : windowBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -435,7 +442,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 input.readMessage(getWindowFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -455,6 +462,8 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.edgecontainer.v1.MaintenanceWindow window_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.edgecontainer.v1.MaintenanceWindow,
@@ -473,7 +482,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
      * @return Whether the window field is set.
      */
     public boolean hasWindow() {
-      return windowBuilder_ != null || window_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -510,11 +519,11 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         window_ = value;
-        onChanged();
       } else {
         windowBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -530,11 +539,11 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         com.google.cloud.edgecontainer.v1.MaintenanceWindow.Builder builderForValue) {
       if (windowBuilder_ == null) {
         window_ = builderForValue.build();
-        onChanged();
       } else {
         windowBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -548,19 +557,19 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeWindow(com.google.cloud.edgecontainer.v1.MaintenanceWindow value) {
       if (windowBuilder_ == null) {
-        if (window_ != null) {
-          window_ =
-              com.google.cloud.edgecontainer.v1.MaintenanceWindow.newBuilder(window_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && window_ != null
+            && window_
+                != com.google.cloud.edgecontainer.v1.MaintenanceWindow.getDefaultInstance()) {
+          getWindowBuilder().mergeFrom(value);
         } else {
           window_ = value;
         }
-        onChanged();
       } else {
         windowBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -573,14 +582,13 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.edgecontainer.v1.MaintenanceWindow window = 1;</code>
      */
     public Builder clearWindow() {
-      if (windowBuilder_ == null) {
-        window_ = null;
-        onChanged();
-      } else {
-        window_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      window_ = null;
+      if (windowBuilder_ != null) {
+        windowBuilder_.dispose();
         windowBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -593,7 +601,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.edgecontainer.v1.MaintenanceWindow window = 1;</code>
      */
     public com.google.cloud.edgecontainer.v1.MaintenanceWindow.Builder getWindowBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getWindowFieldBuilder().getBuilder();
     }

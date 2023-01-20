@@ -67,7 +67,7 @@ public final class RemoveIamPolicyResponse extends com.google.protobuf.Generated
   }
 
   public static final int SUCCESS_FIELD_NUMBER = 1;
-  private boolean success_;
+  private boolean success_ = false;
   /**
    *
    *
@@ -283,8 +283,8 @@ public final class RemoveIamPolicyResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       success_ = false;
-
       return this;
     }
 
@@ -312,9 +312,18 @@ public final class RemoveIamPolicyResponse extends com.google.protobuf.Generated
     public com.google.cloud.metastore.v1beta.RemoveIamPolicyResponse buildPartial() {
       com.google.cloud.metastore.v1beta.RemoveIamPolicyResponse result =
           new com.google.cloud.metastore.v1beta.RemoveIamPolicyResponse(this);
-      result.success_ = success_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1beta.RemoveIamPolicyResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.success_ = success_;
+      }
     }
 
     @java.lang.Override
@@ -395,7 +404,7 @@ public final class RemoveIamPolicyResponse extends com.google.protobuf.Generated
             case 8:
               {
                 success_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -414,6 +423,8 @@ public final class RemoveIamPolicyResponse extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean success_;
     /**
@@ -446,6 +457,7 @@ public final class RemoveIamPolicyResponse extends com.google.protobuf.Generated
     public Builder setSuccess(boolean value) {
 
       success_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -461,7 +473,7 @@ public final class RemoveIamPolicyResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearSuccess() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       success_ = false;
       onChanged();
       return this;

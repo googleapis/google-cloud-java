@@ -68,6 +68,8 @@ public final class ListDebuggeesResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DEBUGGEES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouddebugger.v2.Debuggee> debuggees_;
   /**
    *
@@ -351,6 +353,7 @@ public final class ListDebuggeesResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (debuggeesBuilder_ == null) {
         debuggees_ = java.util.Collections.emptyList();
       } else {
@@ -385,7 +388,16 @@ public final class ListDebuggeesResponse extends com.google.protobuf.GeneratedMe
     public com.google.devtools.clouddebugger.v2.ListDebuggeesResponse buildPartial() {
       com.google.devtools.clouddebugger.v2.ListDebuggeesResponse result =
           new com.google.devtools.clouddebugger.v2.ListDebuggeesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.devtools.clouddebugger.v2.ListDebuggeesResponse result) {
       if (debuggeesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           debuggees_ = java.util.Collections.unmodifiableList(debuggees_);
@@ -395,8 +407,10 @@ public final class ListDebuggeesResponse extends com.google.protobuf.GeneratedMe
       } else {
         result.debuggees_ = debuggeesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.devtools.clouddebugger.v2.ListDebuggeesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

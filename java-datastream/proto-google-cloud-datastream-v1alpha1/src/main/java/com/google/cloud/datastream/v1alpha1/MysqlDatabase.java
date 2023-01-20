@@ -69,7 +69,9 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATABASE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object databaseName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object databaseName_ = "";
   /**
    *
    *
@@ -118,6 +120,8 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MYSQL_TABLES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1alpha1.MysqlTable> mysqlTables_;
   /**
    *
@@ -395,15 +399,15 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       databaseName_ = "";
-
       if (mysqlTablesBuilder_ == null) {
         mysqlTables_ = java.util.Collections.emptyList();
       } else {
         mysqlTables_ = null;
         mysqlTablesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -431,19 +435,32 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1alpha1.MysqlDatabase buildPartial() {
       com.google.cloud.datastream.v1alpha1.MysqlDatabase result =
           new com.google.cloud.datastream.v1alpha1.MysqlDatabase(this);
-      int from_bitField0_ = bitField0_;
-      result.databaseName_ = databaseName_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datastream.v1alpha1.MysqlDatabase result) {
       if (mysqlTablesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           mysqlTables_ = java.util.Collections.unmodifiableList(mysqlTables_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.mysqlTables_ = mysqlTables_;
       } else {
         result.mysqlTables_ = mysqlTablesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1alpha1.MysqlDatabase result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.databaseName_ = databaseName_;
+      }
     }
 
     @java.lang.Override
@@ -494,13 +511,14 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getDatabaseName().isEmpty()) {
         databaseName_ = other.databaseName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (mysqlTablesBuilder_ == null) {
         if (!other.mysqlTables_.isEmpty()) {
           if (mysqlTables_.isEmpty()) {
             mysqlTables_ = other.mysqlTables_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureMysqlTablesIsMutable();
             mysqlTables_.addAll(other.mysqlTables_);
@@ -513,7 +531,7 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessageV3
             mysqlTablesBuilder_.dispose();
             mysqlTablesBuilder_ = null;
             mysqlTables_ = other.mysqlTables_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             mysqlTablesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMysqlTablesFieldBuilder()
@@ -552,7 +570,7 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 databaseName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -649,8 +667,8 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       databaseName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -666,8 +684,8 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDatabaseName() {
-
       databaseName_ = getDefaultInstance().getDatabaseName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -688,8 +706,8 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       databaseName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -698,10 +716,10 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMysqlTablesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         mysqlTables_ =
             new java.util.ArrayList<com.google.cloud.datastream.v1alpha1.MysqlTable>(mysqlTables_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -919,7 +937,7 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMysqlTables() {
       if (mysqlTablesBuilder_ == null) {
         mysqlTables_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         mysqlTablesBuilder_.clear();
@@ -1044,7 +1062,7 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datastream.v1alpha1.MysqlTable,
                 com.google.cloud.datastream.v1alpha1.MysqlTable.Builder,
                 com.google.cloud.datastream.v1alpha1.MysqlTableOrBuilder>(
-                mysqlTables_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                mysqlTables_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         mysqlTables_ = null;
       }
       return mysqlTablesBuilder_;

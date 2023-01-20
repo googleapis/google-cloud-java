@@ -162,7 +162,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int VERSION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object version_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object version_ = "";
     /**
      *
      *
@@ -211,7 +213,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int IS_DEFAULT_FIELD_NUMBER = 2;
-    private boolean isDefault_;
+    private boolean isDefault_ = false;
     /**
      *
      *
@@ -442,10 +444,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         version_ = "";
-
         isDefault_ = false;
-
         return this;
       }
 
@@ -477,10 +478,22 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
           buildPartial() {
         com.google.cloud.metastore.v1beta.LocationMetadata.HiveMetastoreVersion result =
             new com.google.cloud.metastore.v1beta.LocationMetadata.HiveMetastoreVersion(this);
-        result.version_ = version_;
-        result.isDefault_ = isDefault_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.metastore.v1beta.LocationMetadata.HiveMetastoreVersion result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.version_ = version_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isDefault_ = isDefault_;
+        }
       }
 
       @java.lang.Override
@@ -537,6 +550,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
                 .getDefaultInstance()) return this;
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getIsDefault() != false) {
@@ -571,13 +585,13 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
               case 10:
                 {
                   version_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   isDefault_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -596,6 +610,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object version_ = "";
       /**
@@ -658,8 +674,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         version_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -675,8 +691,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
-
         version_ = getDefaultInstance().getVersion();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -697,8 +713,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         version_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -736,6 +752,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       public Builder setIsDefault(boolean value) {
 
         isDefault_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -752,7 +769,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearIsDefault() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         isDefault_ = false;
         onChanged();
         return this;
@@ -827,6 +844,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SUPPORTED_HIVE_METASTORE_VERSIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.metastore.v1beta.LocationMetadata.HiveMetastoreVersion>
       supportedHiveMetastoreVersions_;
   /**
@@ -1123,6 +1142,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (supportedHiveMetastoreVersionsBuilder_ == null) {
         supportedHiveMetastoreVersions_ = java.util.Collections.emptyList();
       } else {
@@ -1157,7 +1177,16 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.metastore.v1beta.LocationMetadata buildPartial() {
       com.google.cloud.metastore.v1beta.LocationMetadata result =
           new com.google.cloud.metastore.v1beta.LocationMetadata(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.metastore.v1beta.LocationMetadata result) {
       if (supportedHiveMetastoreVersionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           supportedHiveMetastoreVersions_ =
@@ -1168,8 +1197,10 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       } else {
         result.supportedHiveMetastoreVersions_ = supportedHiveMetastoreVersionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1beta.LocationMetadata result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

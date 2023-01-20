@@ -108,7 +108,7 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.ValueOrBuilder getNewValueOrBuilder() {
-    return getNewValue();
+    return newValue_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : newValue_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -313,10 +313,10 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (newValueBuilder_ == null) {
-        newValue_ = null;
-      } else {
-        newValue_ = null;
+      bitField0_ = 0;
+      newValue_ = null;
+      if (newValueBuilder_ != null) {
+        newValueBuilder_.dispose();
         newValueBuilder_ = null;
       }
       return this;
@@ -346,13 +346,18 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
     public com.google.privacy.dlp.v2.ReplaceValueConfig buildPartial() {
       com.google.privacy.dlp.v2.ReplaceValueConfig result =
           new com.google.privacy.dlp.v2.ReplaceValueConfig(this);
-      if (newValueBuilder_ == null) {
-        result.newValue_ = newValue_;
-      } else {
-        result.newValue_ = newValueBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.ReplaceValueConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.newValue_ = newValueBuilder_ == null ? newValue_ : newValueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -432,7 +437,7 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getNewValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -452,6 +457,8 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.privacy.dlp.v2.Value newValue_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.Value,
@@ -470,7 +477,7 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
      * @return Whether the newValue field is set.
      */
     public boolean hasNewValue() {
-      return newValueBuilder_ != null || newValue_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -505,11 +512,11 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         newValue_ = value;
-        onChanged();
       } else {
         newValueBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -524,11 +531,11 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
     public Builder setNewValue(com.google.privacy.dlp.v2.Value.Builder builderForValue) {
       if (newValueBuilder_ == null) {
         newValue_ = builderForValue.build();
-        onChanged();
       } else {
         newValueBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -542,17 +549,18 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeNewValue(com.google.privacy.dlp.v2.Value value) {
       if (newValueBuilder_ == null) {
-        if (newValue_ != null) {
-          newValue_ =
-              com.google.privacy.dlp.v2.Value.newBuilder(newValue_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && newValue_ != null
+            && newValue_ != com.google.privacy.dlp.v2.Value.getDefaultInstance()) {
+          getNewValueBuilder().mergeFrom(value);
         } else {
           newValue_ = value;
         }
-        onChanged();
       } else {
         newValueBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -565,14 +573,13 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
      * <code>.google.privacy.dlp.v2.Value new_value = 1;</code>
      */
     public Builder clearNewValue() {
-      if (newValueBuilder_ == null) {
-        newValue_ = null;
-        onChanged();
-      } else {
-        newValue_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      newValue_ = null;
+      if (newValueBuilder_ != null) {
+        newValueBuilder_.dispose();
         newValueBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -585,7 +592,7 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
      * <code>.google.privacy.dlp.v2.Value new_value = 1;</code>
      */
     public com.google.privacy.dlp.v2.Value.Builder getNewValueBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getNewValueFieldBuilder().getBuilder();
     }

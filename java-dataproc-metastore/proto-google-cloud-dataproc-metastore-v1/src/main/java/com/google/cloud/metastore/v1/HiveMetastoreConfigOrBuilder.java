@@ -106,7 +106,6 @@ public interface HiveMetastoreConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; config_overrides = 2;</code>
    */
-
   /* nullable */
   java.lang.String getConfigOverridesOrDefault(
       java.lang.String key,

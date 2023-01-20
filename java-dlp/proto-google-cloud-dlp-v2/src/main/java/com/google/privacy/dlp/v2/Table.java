@@ -175,6 +175,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALUES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.privacy.dlp.v2.Value> values_;
     /**
      *
@@ -442,6 +444,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (valuesBuilder_ == null) {
           values_ = java.util.Collections.emptyList();
         } else {
@@ -475,7 +478,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.privacy.dlp.v2.Table.Row buildPartial() {
         com.google.privacy.dlp.v2.Table.Row result = new com.google.privacy.dlp.v2.Table.Row(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.Table.Row result) {
         if (valuesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             values_ = java.util.Collections.unmodifiableList(values_);
@@ -485,8 +496,10 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.values_ = valuesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.privacy.dlp.v2.Table.Row result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -1032,6 +1045,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HEADERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.FieldId> headers_;
   /**
    *
@@ -1101,6 +1116,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROWS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.Table.Row> rows_;
   /**
    *
@@ -1378,6 +1395,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (headersBuilder_ == null) {
         headers_ = java.util.Collections.emptyList();
       } else {
@@ -1418,7 +1436,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.privacy.dlp.v2.Table buildPartial() {
       com.google.privacy.dlp.v2.Table result = new com.google.privacy.dlp.v2.Table(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.Table result) {
       if (headersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           headers_ = java.util.Collections.unmodifiableList(headers_);
@@ -1437,8 +1463,10 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.rows_ = rowsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.Table result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

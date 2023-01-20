@@ -68,7 +68,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -173,7 +175,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.InstructionOrBuilder getInstructionOrBuilder() {
-    return getInstruction();
+    return instruction_ == null
+        ? com.google.cloud.datalabeling.v1beta1.Instruction.getDefaultInstance()
+        : instruction_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -388,12 +392,11 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (instructionBuilder_ == null) {
-        instruction_ = null;
-      } else {
-        instruction_ = null;
+      instruction_ = null;
+      if (instructionBuilder_ != null) {
+        instructionBuilder_.dispose();
         instructionBuilder_ = null;
       }
       return this;
@@ -424,14 +427,23 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
     public com.google.cloud.datalabeling.v1beta1.CreateInstructionRequest buildPartial() {
       com.google.cloud.datalabeling.v1beta1.CreateInstructionRequest result =
           new com.google.cloud.datalabeling.v1beta1.CreateInstructionRequest(this);
-      result.parent_ = parent_;
-      if (instructionBuilder_ == null) {
-        result.instruction_ = instruction_;
-      } else {
-        result.instruction_ = instructionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datalabeling.v1beta1.CreateInstructionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instruction_ =
+            instructionBuilder_ == null ? instruction_ : instructionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -483,6 +495,7 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasInstruction()) {
@@ -517,13 +530,13 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getInstructionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -542,6 +555,8 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -613,8 +628,8 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -633,8 +648,8 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -658,8 +673,8 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,7 +699,7 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      * @return Whether the instruction field is set.
      */
     public boolean hasInstruction() {
-      return instructionBuilder_ != null || instruction_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -725,11 +740,11 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         instruction_ = value;
-        onChanged();
       } else {
         instructionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -747,11 +762,11 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
         com.google.cloud.datalabeling.v1beta1.Instruction.Builder builderForValue) {
       if (instructionBuilder_ == null) {
         instruction_ = builderForValue.build();
-        onChanged();
       } else {
         instructionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -767,19 +782,19 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      */
     public Builder mergeInstruction(com.google.cloud.datalabeling.v1beta1.Instruction value) {
       if (instructionBuilder_ == null) {
-        if (instruction_ != null) {
-          instruction_ =
-              com.google.cloud.datalabeling.v1beta1.Instruction.newBuilder(instruction_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && instruction_ != null
+            && instruction_
+                != com.google.cloud.datalabeling.v1beta1.Instruction.getDefaultInstance()) {
+          getInstructionBuilder().mergeFrom(value);
         } else {
           instruction_ = value;
         }
-        onChanged();
       } else {
         instructionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -794,14 +809,13 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearInstruction() {
-      if (instructionBuilder_ == null) {
-        instruction_ = null;
-        onChanged();
-      } else {
-        instruction_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      instruction_ = null;
+      if (instructionBuilder_ != null) {
+        instructionBuilder_.dispose();
         instructionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -816,7 +830,7 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.Instruction.Builder getInstructionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getInstructionFieldBuilder().getBuilder();
     }

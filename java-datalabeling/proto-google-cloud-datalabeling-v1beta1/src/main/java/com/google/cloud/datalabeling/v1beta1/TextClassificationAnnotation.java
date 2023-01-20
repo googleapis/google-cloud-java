@@ -111,7 +111,9 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder
       getAnnotationSpecOrBuilder() {
-    return getAnnotationSpec();
+    return annotationSpec_ == null
+        ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
+        : annotationSpec_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -319,10 +321,10 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (annotationSpecBuilder_ == null) {
-        annotationSpec_ = null;
-      } else {
-        annotationSpec_ = null;
+      bitField0_ = 0;
+      annotationSpec_ = null;
+      if (annotationSpecBuilder_ != null) {
+        annotationSpecBuilder_.dispose();
         annotationSpecBuilder_ = null;
       }
       return this;
@@ -354,13 +356,20 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
     public com.google.cloud.datalabeling.v1beta1.TextClassificationAnnotation buildPartial() {
       com.google.cloud.datalabeling.v1beta1.TextClassificationAnnotation result =
           new com.google.cloud.datalabeling.v1beta1.TextClassificationAnnotation(this);
-      if (annotationSpecBuilder_ == null) {
-        result.annotationSpec_ = annotationSpec_;
-      } else {
-        result.annotationSpec_ = annotationSpecBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datalabeling.v1beta1.TextClassificationAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.annotationSpec_ =
+            annotationSpecBuilder_ == null ? annotationSpec_ : annotationSpecBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -444,7 +453,7 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
             case 10:
               {
                 input.readMessage(getAnnotationSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -464,6 +473,8 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.datalabeling.v1beta1.AnnotationSpec annotationSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.AnnotationSpec,
@@ -482,7 +493,7 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
      * @return Whether the annotationSpec field is set.
      */
     public boolean hasAnnotationSpec() {
-      return annotationSpecBuilder_ != null || annotationSpec_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -519,11 +530,11 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         annotationSpec_ = value;
-        onChanged();
       } else {
         annotationSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -539,11 +550,11 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
         com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder builderForValue) {
       if (annotationSpecBuilder_ == null) {
         annotationSpec_ = builderForValue.build();
-        onChanged();
       } else {
         annotationSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -557,19 +568,19 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
      */
     public Builder mergeAnnotationSpec(com.google.cloud.datalabeling.v1beta1.AnnotationSpec value) {
       if (annotationSpecBuilder_ == null) {
-        if (annotationSpec_ != null) {
-          annotationSpec_ =
-              com.google.cloud.datalabeling.v1beta1.AnnotationSpec.newBuilder(annotationSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && annotationSpec_ != null
+            && annotationSpec_
+                != com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()) {
+          getAnnotationSpecBuilder().mergeFrom(value);
         } else {
           annotationSpec_ = value;
         }
-        onChanged();
       } else {
         annotationSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -582,14 +593,13 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
      */
     public Builder clearAnnotationSpec() {
-      if (annotationSpecBuilder_ == null) {
-        annotationSpec_ = null;
-        onChanged();
-      } else {
-        annotationSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      annotationSpec_ = null;
+      if (annotationSpecBuilder_ != null) {
+        annotationSpecBuilder_.dispose();
         annotationSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -602,7 +612,7 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
      */
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder getAnnotationSpecBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAnnotationSpecFieldBuilder().getBuilder();
     }

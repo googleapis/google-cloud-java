@@ -69,7 +69,9 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ANNOTATION_SPEC_SET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object annotationSpecSet_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object annotationSpecSet_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int INSTRUCTION_MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object instructionMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instructionMessage_ = "";
   /**
    *
    *
@@ -373,10 +377,9 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       annotationSpecSet_ = "";
-
       instructionMessage_ = "";
-
       return this;
     }
 
@@ -404,10 +407,21 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig buildPartial() {
       com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig result =
           new com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig(this);
-      result.annotationSpecSet_ = annotationSpecSet_;
-      result.instructionMessage_ = instructionMessage_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.annotationSpecSet_ = annotationSpecSet_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instructionMessage_ = instructionMessage_;
+      }
     }
 
     @java.lang.Override
@@ -458,10 +472,12 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getAnnotationSpecSet().isEmpty()) {
         annotationSpecSet_ = other.annotationSpecSet_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getInstructionMessage().isEmpty()) {
         instructionMessage_ = other.instructionMessage_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -493,13 +509,13 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 annotationSpecSet_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 instructionMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -518,6 +534,8 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object annotationSpecSet_ = "";
     /**
@@ -580,8 +598,8 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       annotationSpecSet_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -597,8 +615,8 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAnnotationSpecSet() {
-
       annotationSpecSet_ = getDefaultInstance().getAnnotationSpecSet();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -619,8 +637,8 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       annotationSpecSet_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -686,8 +704,8 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       instructionMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -703,8 +721,8 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearInstructionMessage() {
-
       instructionMessage_ = getDefaultInstance().getInstructionMessage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -725,8 +743,8 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instructionMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

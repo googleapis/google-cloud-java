@@ -551,7 +551,9 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -602,7 +604,9 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOMAIN_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object domainName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object domainName_ = "";
   /**
    *
    *
@@ -700,7 +704,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 6;
@@ -749,11 +753,11 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
-    return getExpireTime();
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
 
   public static final int STATE_FIELD_NUMBER = 7;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -786,23 +790,24 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.domains.v1.Registration.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.domains.v1.Registration.State result =
-        com.google.cloud.domains.v1.Registration.State.valueOf(state_);
+        com.google.cloud.domains.v1.Registration.State.forNumber(state_);
     return result == null ? com.google.cloud.domains.v1.Registration.State.UNRECOGNIZED : result;
   }
 
   public static final int ISSUES_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> issues_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.domains.v1.Registration.Issue>
       issues_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.cloud.domains.v1.Registration.Issue>() {
             public com.google.cloud.domains.v1.Registration.Issue convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.domains.v1.Registration.Issue result =
-                  com.google.cloud.domains.v1.Registration.Issue.valueOf(from);
+                  com.google.cloud.domains.v1.Registration.Issue.forNumber(from);
               return result == null
                   ? com.google.cloud.domains.v1.Registration.Issue.UNRECOGNIZED
                   : result;
@@ -913,6 +918,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -970,7 +976,10 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1052,7 +1061,9 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.domains.v1.ManagementSettingsOrBuilder getManagementSettingsOrBuilder() {
-    return getManagementSettings();
+    return managementSettings_ == null
+        ? com.google.cloud.domains.v1.ManagementSettings.getDefaultInstance()
+        : managementSettings_;
   }
 
   public static final int DNS_SETTINGS_FIELD_NUMBER = 11;
@@ -1106,7 +1117,9 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.domains.v1.DnsSettingsOrBuilder getDnsSettingsOrBuilder() {
-    return getDnsSettings();
+    return dnsSettings_ == null
+        ? com.google.cloud.domains.v1.DnsSettings.getDefaultInstance()
+        : dnsSettings_;
   }
 
   public static final int CONTACT_SETTINGS_FIELD_NUMBER = 12;
@@ -1166,7 +1179,9 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.domains.v1.ContactSettingsOrBuilder getContactSettingsOrBuilder() {
-    return getContactSettings();
+    return contactSettings_ == null
+        ? com.google.cloud.domains.v1.ContactSettings.getDefaultInstance()
+        : contactSettings_;
   }
 
   public static final int PENDING_CONTACT_SETTINGS_FIELD_NUMBER = 13;
@@ -1238,20 +1253,24 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.domains.v1.ContactSettingsOrBuilder getPendingContactSettingsOrBuilder() {
-    return getPendingContactSettings();
+    return pendingContactSettings_ == null
+        ? com.google.cloud.domains.v1.ContactSettings.getDefaultInstance()
+        : pendingContactSettings_;
   }
 
   public static final int SUPPORTED_PRIVACY_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> supportedPrivacy_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.domains.v1.ContactPrivacy>
       supportedPrivacy_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.cloud.domains.v1.ContactPrivacy>() {
             public com.google.cloud.domains.v1.ContactPrivacy convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.domains.v1.ContactPrivacy result =
-                  com.google.cloud.domains.v1.ContactPrivacy.valueOf(from);
+                  com.google.cloud.domains.v1.ContactPrivacy.forNumber(from);
               return result == null
                   ? com.google.cloud.domains.v1.ContactPrivacy.UNRECOGNIZED
                   : result;
@@ -1752,53 +1771,45 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       domainName_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-      } else {
-        expireTime_ = null;
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
       state_ = 0;
-
       issues_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableLabels().clear();
-      if (managementSettingsBuilder_ == null) {
-        managementSettings_ = null;
-      } else {
-        managementSettings_ = null;
+      managementSettings_ = null;
+      if (managementSettingsBuilder_ != null) {
+        managementSettingsBuilder_.dispose();
         managementSettingsBuilder_ = null;
       }
-      if (dnsSettingsBuilder_ == null) {
-        dnsSettings_ = null;
-      } else {
-        dnsSettings_ = null;
+      dnsSettings_ = null;
+      if (dnsSettingsBuilder_ != null) {
+        dnsSettingsBuilder_.dispose();
         dnsSettingsBuilder_ = null;
       }
-      if (contactSettingsBuilder_ == null) {
-        contactSettings_ = null;
-      } else {
-        contactSettings_ = null;
+      contactSettings_ = null;
+      if (contactSettingsBuilder_ != null) {
+        contactSettingsBuilder_.dispose();
         contactSettingsBuilder_ = null;
       }
-      if (pendingContactSettingsBuilder_ == null) {
-        pendingContactSettings_ = null;
-      } else {
-        pendingContactSettings_ = null;
+      pendingContactSettings_ = null;
+      if (pendingContactSettingsBuilder_ != null) {
+        pendingContactSettingsBuilder_.dispose();
         pendingContactSettingsBuilder_ = null;
       }
       supportedPrivacy_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
 
@@ -1826,54 +1837,68 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.domains.v1.Registration buildPartial() {
       com.google.cloud.domains.v1.Registration result =
           new com.google.cloud.domains.v1.Registration(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.domainName_ = domainName_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (expireTimeBuilder_ == null) {
-        result.expireTime_ = expireTime_;
-      } else {
-        result.expireTime_ = expireTimeBuilder_.build();
-      }
-      result.state_ = state_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        issues_ = java.util.Collections.unmodifiableList(issues_);
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.issues_ = issues_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (managementSettingsBuilder_ == null) {
-        result.managementSettings_ = managementSettings_;
-      } else {
-        result.managementSettings_ = managementSettingsBuilder_.build();
-      }
-      if (dnsSettingsBuilder_ == null) {
-        result.dnsSettings_ = dnsSettings_;
-      } else {
-        result.dnsSettings_ = dnsSettingsBuilder_.build();
-      }
-      if (contactSettingsBuilder_ == null) {
-        result.contactSettings_ = contactSettings_;
-      } else {
-        result.contactSettings_ = contactSettingsBuilder_.build();
-      }
-      if (pendingContactSettingsBuilder_ == null) {
-        result.pendingContactSettings_ = pendingContactSettings_;
-      } else {
-        result.pendingContactSettings_ = pendingContactSettingsBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        supportedPrivacy_ = java.util.Collections.unmodifiableList(supportedPrivacy_);
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.supportedPrivacy_ = supportedPrivacy_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.domains.v1.Registration result) {
+      if (((bitField0_ & 0x00000020) != 0)) {
+        issues_ = java.util.Collections.unmodifiableList(issues_);
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.issues_ = issues_;
+      if (((bitField0_ & 0x00000800) != 0)) {
+        supportedPrivacy_ = java.util.Collections.unmodifiableList(supportedPrivacy_);
+        bitField0_ = (bitField0_ & ~0x00000800);
+      }
+      result.supportedPrivacy_ = supportedPrivacy_;
+    }
+
+    private void buildPartial0(com.google.cloud.domains.v1.Registration result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.domainName_ = domainName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.managementSettings_ =
+            managementSettingsBuilder_ == null
+                ? managementSettings_
+                : managementSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.dnsSettings_ =
+            dnsSettingsBuilder_ == null ? dnsSettings_ : dnsSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.contactSettings_ =
+            contactSettingsBuilder_ == null ? contactSettings_ : contactSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.pendingContactSettings_ =
+            pendingContactSettingsBuilder_ == null
+                ? pendingContactSettings_
+                : pendingContactSettingsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1923,10 +1948,12 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.domains.v1.Registration.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDomainName().isEmpty()) {
         domainName_ = other.domainName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1941,7 +1968,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
       if (!other.issues_.isEmpty()) {
         if (issues_.isEmpty()) {
           issues_ = other.issues_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureIssuesIsMutable();
           issues_.addAll(other.issues_);
@@ -1949,6 +1976,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000040;
       if (other.hasManagementSettings()) {
         mergeManagementSettings(other.getManagementSettings());
       }
@@ -1964,7 +1992,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
       if (!other.supportedPrivacy_.isEmpty()) {
         if (supportedPrivacy_.isEmpty()) {
           supportedPrivacy_ = other.supportedPrivacy_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000800);
         } else {
           ensureSupportedPrivacyIsMutable();
           supportedPrivacy_.addAll(other.supportedPrivacy_);
@@ -2000,31 +2028,31 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 domainName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 50:
               {
                 input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             case 56:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 56
             case 64:
@@ -2055,32 +2083,33 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000040;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(
                     getManagementSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getDnsSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(getContactSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(
                     getPendingContactSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 106
             case 112:
@@ -2185,8 +2214,8 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2203,8 +2232,8 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2226,8 +2255,8 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2299,8 +2328,8 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       domainName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2318,8 +2347,8 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDomainName() {
-
       domainName_ = getDefaultInstance().getDomainName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2342,8 +2371,8 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       domainName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2368,7 +2397,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2409,11 +2438,11 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2430,11 +2459,11 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2450,17 +2479,18 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2475,14 +2505,13 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2497,7 +2526,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2569,7 +2598,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
-      return expireTimeBuilder_ != null || expireTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2610,11 +2639,11 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         expireTime_ = value;
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2631,11 +2660,11 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
     public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expireTimeBuilder_ == null) {
         expireTime_ = builderForValue.build();
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2651,17 +2680,18 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
-        if (expireTime_ != null) {
-          expireTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expireTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && expireTime_ != null
+            && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireTimeBuilder().mergeFrom(value);
         } else {
           expireTime_ = value;
         }
-        onChanged();
       } else {
         expireTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2676,14 +2706,13 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearExpireTime() {
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-        onChanged();
-      } else {
-        expireTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2698,7 +2727,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
@@ -2783,8 +2812,8 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2803,9 +2832,8 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.domains.v1.Registration.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.domains.v1.Registration.State result =
-          com.google.cloud.domains.v1.Registration.State.valueOf(state_);
+          com.google.cloud.domains.v1.Registration.State.forNumber(state_);
       return result == null ? com.google.cloud.domains.v1.Registration.State.UNRECOGNIZED : result;
     }
     /**
@@ -2826,7 +2854,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2845,7 +2873,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       state_ = 0;
       onChanged();
       return this;
@@ -2854,9 +2882,9 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> issues_ = java.util.Collections.emptyList();
 
     private void ensureIssuesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         issues_ = new java.util.ArrayList<java.lang.Integer>(issues_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -2995,7 +3023,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearIssues() {
       issues_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3107,14 +3135,14 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000040;
+      onChanged();
       return labels_;
     }
 
@@ -3166,8 +3194,10 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 9;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3196,6 +3226,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3218,6 +3249,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -3236,8 +3268,8 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -3251,6 +3283,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000040;
       return this;
     }
 
@@ -3275,7 +3308,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the managementSettings field is set.
      */
     public boolean hasManagementSettings() {
-      return managementSettingsBuilder_ != null || managementSettings_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3318,11 +3351,11 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         managementSettings_ = value;
-        onChanged();
       } else {
         managementSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3341,11 +3374,11 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.domains.v1.ManagementSettings.Builder builderForValue) {
       if (managementSettingsBuilder_ == null) {
         managementSettings_ = builderForValue.build();
-        onChanged();
       } else {
         managementSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3362,19 +3395,19 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeManagementSettings(com.google.cloud.domains.v1.ManagementSettings value) {
       if (managementSettingsBuilder_ == null) {
-        if (managementSettings_ != null) {
-          managementSettings_ =
-              com.google.cloud.domains.v1.ManagementSettings.newBuilder(managementSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && managementSettings_ != null
+            && managementSettings_
+                != com.google.cloud.domains.v1.ManagementSettings.getDefaultInstance()) {
+          getManagementSettingsBuilder().mergeFrom(value);
         } else {
           managementSettings_ = value;
         }
-        onChanged();
       } else {
         managementSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3390,14 +3423,13 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.domains.v1.ManagementSettings management_settings = 10;</code>
      */
     public Builder clearManagementSettings() {
-      if (managementSettingsBuilder_ == null) {
-        managementSettings_ = null;
-        onChanged();
-      } else {
-        managementSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      managementSettings_ = null;
+      if (managementSettingsBuilder_ != null) {
+        managementSettingsBuilder_.dispose();
         managementSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3413,7 +3445,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.domains.v1.ManagementSettings management_settings = 10;</code>
      */
     public com.google.cloud.domains.v1.ManagementSettings.Builder getManagementSettingsBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getManagementSettingsFieldBuilder().getBuilder();
     }
@@ -3488,7 +3520,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the dnsSettings field is set.
      */
     public boolean hasDnsSettings() {
-      return dnsSettingsBuilder_ != null || dnsSettings_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3529,11 +3561,11 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         dnsSettings_ = value;
-        onChanged();
       } else {
         dnsSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3550,11 +3582,11 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
     public Builder setDnsSettings(com.google.cloud.domains.v1.DnsSettings.Builder builderForValue) {
       if (dnsSettingsBuilder_ == null) {
         dnsSettings_ = builderForValue.build();
-        onChanged();
       } else {
         dnsSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3570,19 +3602,18 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDnsSettings(com.google.cloud.domains.v1.DnsSettings value) {
       if (dnsSettingsBuilder_ == null) {
-        if (dnsSettings_ != null) {
-          dnsSettings_ =
-              com.google.cloud.domains.v1.DnsSettings.newBuilder(dnsSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && dnsSettings_ != null
+            && dnsSettings_ != com.google.cloud.domains.v1.DnsSettings.getDefaultInstance()) {
+          getDnsSettingsBuilder().mergeFrom(value);
         } else {
           dnsSettings_ = value;
         }
-        onChanged();
       } else {
         dnsSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3597,14 +3628,13 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.domains.v1.DnsSettings dns_settings = 11;</code>
      */
     public Builder clearDnsSettings() {
-      if (dnsSettingsBuilder_ == null) {
-        dnsSettings_ = null;
-        onChanged();
-      } else {
-        dnsSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      dnsSettings_ = null;
+      if (dnsSettingsBuilder_ != null) {
+        dnsSettingsBuilder_.dispose();
         dnsSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3619,7 +3649,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.domains.v1.DnsSettings dns_settings = 11;</code>
      */
     public com.google.cloud.domains.v1.DnsSettings.Builder getDnsSettingsBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getDnsSettingsFieldBuilder().getBuilder();
     }
@@ -3693,7 +3723,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the contactSettings field is set.
      */
     public boolean hasContactSettings() {
-      return contactSettingsBuilder_ != null || contactSettings_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3738,11 +3768,11 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         contactSettings_ = value;
-        onChanged();
       } else {
         contactSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3762,11 +3792,11 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.domains.v1.ContactSettings.Builder builderForValue) {
       if (contactSettingsBuilder_ == null) {
         contactSettings_ = builderForValue.build();
-        onChanged();
       } else {
         contactSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3784,19 +3814,19 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeContactSettings(com.google.cloud.domains.v1.ContactSettings value) {
       if (contactSettingsBuilder_ == null) {
-        if (contactSettings_ != null) {
-          contactSettings_ =
-              com.google.cloud.domains.v1.ContactSettings.newBuilder(contactSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && contactSettings_ != null
+            && contactSettings_
+                != com.google.cloud.domains.v1.ContactSettings.getDefaultInstance()) {
+          getContactSettingsBuilder().mergeFrom(value);
         } else {
           contactSettings_ = value;
         }
-        onChanged();
       } else {
         contactSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3813,14 +3843,13 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearContactSettings() {
-      if (contactSettingsBuilder_ == null) {
-        contactSettings_ = null;
-        onChanged();
-      } else {
-        contactSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      contactSettings_ = null;
+      if (contactSettingsBuilder_ != null) {
+        contactSettingsBuilder_.dispose();
         contactSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3837,7 +3866,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.domains.v1.ContactSettings.Builder getContactSettingsBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getContactSettingsFieldBuilder().getBuilder();
     }
@@ -3919,7 +3948,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the pendingContactSettings field is set.
      */
     public boolean hasPendingContactSettings() {
-      return pendingContactSettingsBuilder_ != null || pendingContactSettings_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3972,11 +4001,11 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         pendingContactSettings_ = value;
-        onChanged();
       } else {
         pendingContactSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -4000,11 +4029,11 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.domains.v1.ContactSettings.Builder builderForValue) {
       if (pendingContactSettingsBuilder_ == null) {
         pendingContactSettings_ = builderForValue.build();
-        onChanged();
       } else {
         pendingContactSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -4026,19 +4055,19 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePendingContactSettings(com.google.cloud.domains.v1.ContactSettings value) {
       if (pendingContactSettingsBuilder_ == null) {
-        if (pendingContactSettings_ != null) {
-          pendingContactSettings_ =
-              com.google.cloud.domains.v1.ContactSettings.newBuilder(pendingContactSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && pendingContactSettings_ != null
+            && pendingContactSettings_
+                != com.google.cloud.domains.v1.ContactSettings.getDefaultInstance()) {
+          getPendingContactSettingsBuilder().mergeFrom(value);
         } else {
           pendingContactSettings_ = value;
         }
-        onChanged();
       } else {
         pendingContactSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -4059,14 +4088,13 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPendingContactSettings() {
-      if (pendingContactSettingsBuilder_ == null) {
-        pendingContactSettings_ = null;
-        onChanged();
-      } else {
-        pendingContactSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      pendingContactSettings_ = null;
+      if (pendingContactSettingsBuilder_ != null) {
+        pendingContactSettingsBuilder_.dispose();
         pendingContactSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4087,7 +4115,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.domains.v1.ContactSettings.Builder getPendingContactSettingsBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getPendingContactSettingsFieldBuilder().getBuilder();
     }
@@ -4155,9 +4183,9 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> supportedPrivacy_ = java.util.Collections.emptyList();
 
     private void ensureSupportedPrivacyIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         supportedPrivacy_ = new java.util.ArrayList<java.lang.Integer>(supportedPrivacy_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000800;
       }
     }
     /**
@@ -4304,7 +4332,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSupportedPrivacy() {
       supportedPrivacy_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }

@@ -899,7 +899,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 1;
-  private int progressPercent_;
+  private int progressPercent_ = 0;
   /**
    *
    *
@@ -917,6 +917,8 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARTIAL_FAILURES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> partialFailures_;
   /**
    *
@@ -1038,7 +1040,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1513,6 +1515,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (imageClassificationDetailsBuilder_ != null) {
         imageClassificationDetailsBuilder_.clear();
       }
@@ -1550,18 +1553,16 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         textEntityExtractionDetailsBuilder_.clear();
       }
       progressPercent_ = 0;
-
       if (partialFailuresBuilder_ == null) {
         partialFailures_ = java.util.Collections.emptyList();
       } else {
         partialFailures_ = null;
         partialFailuresBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00002000);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       detailsCase_ = 0;
@@ -1594,109 +1595,79 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata buildPartial() {
       com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata result =
           new com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata(this);
-      int from_bitField0_ = bitField0_;
-      if (detailsCase_ == 3) {
-        if (imageClassificationDetailsBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = imageClassificationDetailsBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (detailsCase_ == 4) {
-        if (imageBoundingBoxDetailsBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = imageBoundingBoxDetailsBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 11) {
-        if (imageBoundingPolyDetailsBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = imageBoundingPolyDetailsBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 14) {
-        if (imageOrientedBoundingBoxDetailsBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = imageOrientedBoundingBoxDetailsBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 12) {
-        if (imagePolylineDetailsBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = imagePolylineDetailsBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 15) {
-        if (imageSegmentationDetailsBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = imageSegmentationDetailsBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 5) {
-        if (videoClassificationDetailsBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = videoClassificationDetailsBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 6) {
-        if (videoObjectDetectionDetailsBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = videoObjectDetectionDetailsBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 7) {
-        if (videoObjectTrackingDetailsBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = videoObjectTrackingDetailsBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 8) {
-        if (videoEventDetailsBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = videoEventDetailsBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 9) {
-        if (textClassificationDetailsBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = textClassificationDetailsBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 13) {
-        if (textEntityExtractionDetailsBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = textEntityExtractionDetailsBuilder_.build();
-        }
-      }
-      result.progressPercent_ = progressPercent_;
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata result) {
       if (partialFailuresBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           partialFailures_ = java.util.Collections.unmodifiableList(partialFailures_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.partialFailures_ = partialFailures_;
       } else {
         result.partialFailures_ = partialFailuresBuilder_.build();
       }
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.progressPercent_ = progressPercent_;
       }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata result) {
       result.detailsCase_ = detailsCase_;
-      onBuilt();
-      return result;
+      result.details_ = this.details_;
+      if (detailsCase_ == 3 && imageClassificationDetailsBuilder_ != null) {
+        result.details_ = imageClassificationDetailsBuilder_.build();
+      }
+      if (detailsCase_ == 4 && imageBoundingBoxDetailsBuilder_ != null) {
+        result.details_ = imageBoundingBoxDetailsBuilder_.build();
+      }
+      if (detailsCase_ == 11 && imageBoundingPolyDetailsBuilder_ != null) {
+        result.details_ = imageBoundingPolyDetailsBuilder_.build();
+      }
+      if (detailsCase_ == 14 && imageOrientedBoundingBoxDetailsBuilder_ != null) {
+        result.details_ = imageOrientedBoundingBoxDetailsBuilder_.build();
+      }
+      if (detailsCase_ == 12 && imagePolylineDetailsBuilder_ != null) {
+        result.details_ = imagePolylineDetailsBuilder_.build();
+      }
+      if (detailsCase_ == 15 && imageSegmentationDetailsBuilder_ != null) {
+        result.details_ = imageSegmentationDetailsBuilder_.build();
+      }
+      if (detailsCase_ == 5 && videoClassificationDetailsBuilder_ != null) {
+        result.details_ = videoClassificationDetailsBuilder_.build();
+      }
+      if (detailsCase_ == 6 && videoObjectDetectionDetailsBuilder_ != null) {
+        result.details_ = videoObjectDetectionDetailsBuilder_.build();
+      }
+      if (detailsCase_ == 7 && videoObjectTrackingDetailsBuilder_ != null) {
+        result.details_ = videoObjectTrackingDetailsBuilder_.build();
+      }
+      if (detailsCase_ == 8 && videoEventDetailsBuilder_ != null) {
+        result.details_ = videoEventDetailsBuilder_.build();
+      }
+      if (detailsCase_ == 9 && textClassificationDetailsBuilder_ != null) {
+        result.details_ = textClassificationDetailsBuilder_.build();
+      }
+      if (detailsCase_ == 13 && textEntityExtractionDetailsBuilder_ != null) {
+        result.details_ = textEntityExtractionDetailsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1753,7 +1724,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         if (!other.partialFailures_.isEmpty()) {
           if (partialFailures_.isEmpty()) {
             partialFailures_ = other.partialFailures_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensurePartialFailuresIsMutable();
             partialFailures_.addAll(other.partialFailures_);
@@ -1766,7 +1737,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             partialFailuresBuilder_.dispose();
             partialFailuresBuilder_ = null;
             partialFailures_ = other.partialFailures_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00002000);
             partialFailuresBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPartialFailuresFieldBuilder()
@@ -1874,7 +1845,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             case 8:
               {
                 progressPercent_ = input.readInt32();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 8
             case 18:
@@ -1977,7 +1948,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             case 130:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 130
             default:
@@ -2260,7 +2231,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       detailsCase_ = 3;
       onChanged();
-      ;
       return imageClassificationDetailsBuilder_;
     }
 
@@ -2508,7 +2478,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       detailsCase_ = 4;
       onChanged();
-      ;
       return imageBoundingBoxDetailsBuilder_;
     }
 
@@ -2757,7 +2726,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       detailsCase_ = 11;
       onChanged();
-      ;
       return imageBoundingPolyDetailsBuilder_;
     }
 
@@ -3018,7 +2986,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       detailsCase_ = 14;
       onChanged();
-      ;
       return imageOrientedBoundingBoxDetailsBuilder_;
     }
 
@@ -3263,7 +3230,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       detailsCase_ = 12;
       onChanged();
-      ;
       return imagePolylineDetailsBuilder_;
     }
 
@@ -3512,7 +3478,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       detailsCase_ = 15;
       onChanged();
-      ;
       return imageSegmentationDetailsBuilder_;
     }
 
@@ -3763,7 +3728,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       detailsCase_ = 5;
       onChanged();
-      ;
       return videoClassificationDetailsBuilder_;
     }
 
@@ -4016,7 +3980,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       detailsCase_ = 6;
       onChanged();
-      ;
       return videoObjectDetectionDetailsBuilder_;
     }
 
@@ -4267,7 +4230,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       detailsCase_ = 7;
       onChanged();
-      ;
       return videoObjectTrackingDetailsBuilder_;
     }
 
@@ -4509,7 +4471,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       detailsCase_ = 8;
       onChanged();
-      ;
       return videoEventDetailsBuilder_;
     }
 
@@ -4758,7 +4719,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       detailsCase_ = 9;
       onChanged();
-      ;
       return textClassificationDetailsBuilder_;
     }
 
@@ -5011,7 +4971,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       detailsCase_ = 13;
       onChanged();
-      ;
       return textEntityExtractionDetailsBuilder_;
     }
 
@@ -5046,6 +5005,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public Builder setProgressPercent(int value) {
 
       progressPercent_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5061,7 +5021,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearProgressPercent() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       progressPercent_ = 0;
       onChanged();
       return this;
@@ -5071,9 +5031,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensurePartialFailuresIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         partialFailures_ = new java.util.ArrayList<com.google.rpc.Status>(partialFailures_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -5306,7 +5266,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public Builder clearPartialFailures() {
       if (partialFailuresBuilder_ == null) {
         partialFailures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         partialFailuresBuilder_.clear();
@@ -5440,7 +5400,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
                 com.google.rpc.Status.Builder,
                 com.google.rpc.StatusOrBuilder>(
                 partialFailures_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         partialFailures_ = null;
@@ -5466,7 +5426,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -5503,11 +5463,11 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -5522,11 +5482,11 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -5540,17 +5500,18 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00004000) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -5563,14 +5524,13 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp create_time = 16;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00004000);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5583,7 +5543,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp create_time = 16;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00004000;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }

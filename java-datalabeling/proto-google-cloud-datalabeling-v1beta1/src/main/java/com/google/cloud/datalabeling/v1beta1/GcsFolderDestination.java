@@ -68,7 +68,9 @@ public final class GcsFolderDestination extends com.google.protobuf.GeneratedMes
   }
 
   public static final int OUTPUT_FOLDER_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object outputFolderUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputFolderUri_ = "";
   /**
    *
    *
@@ -314,8 +316,8 @@ public final class GcsFolderDestination extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       outputFolderUri_ = "";
-
       return this;
     }
 
@@ -343,9 +345,18 @@ public final class GcsFolderDestination extends com.google.protobuf.GeneratedMes
     public com.google.cloud.datalabeling.v1beta1.GcsFolderDestination buildPartial() {
       com.google.cloud.datalabeling.v1beta1.GcsFolderDestination result =
           new com.google.cloud.datalabeling.v1beta1.GcsFolderDestination(this);
-      result.outputFolderUri_ = outputFolderUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.GcsFolderDestination result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.outputFolderUri_ = outputFolderUri_;
+      }
     }
 
     @java.lang.Override
@@ -396,6 +407,7 @@ public final class GcsFolderDestination extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getOutputFolderUri().isEmpty()) {
         outputFolderUri_ = other.outputFolderUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -427,7 +439,7 @@ public final class GcsFolderDestination extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 outputFolderUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -446,6 +458,8 @@ public final class GcsFolderDestination extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object outputFolderUri_ = "";
     /**
@@ -508,8 +522,8 @@ public final class GcsFolderDestination extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputFolderUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -525,8 +539,8 @@ public final class GcsFolderDestination extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearOutputFolderUri() {
-
       outputFolderUri_ = getDefaultInstance().getOutputFolderUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -547,8 +561,8 @@ public final class GcsFolderDestination extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       outputFolderUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -68,7 +68,9 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLUSTER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object cluster_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cluster_ = "";
   /**
    *
    *
@@ -119,7 +121,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INTERNAL_IP_FIELD_NUMBER = 2;
-  private boolean internalIp_;
+  private boolean internalIp_ = false;
   /**
    *
    *
@@ -346,10 +348,9 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       cluster_ = "";
-
       internalIp_ = false;
-
       return this;
     }
 
@@ -377,10 +378,21 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.GkeCluster buildPartial() {
       com.google.cloud.deploy.v1.GkeCluster result =
           new com.google.cloud.deploy.v1.GkeCluster(this);
-      result.cluster_ = cluster_;
-      result.internalIp_ = internalIp_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.GkeCluster result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cluster_ = cluster_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.internalIp_ = internalIp_;
+      }
     }
 
     @java.lang.Override
@@ -430,6 +442,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.deploy.v1.GkeCluster.getDefaultInstance()) return this;
       if (!other.getCluster().isEmpty()) {
         cluster_ = other.cluster_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getInternalIp() != false) {
@@ -464,13 +477,13 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 cluster_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 internalIp_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -489,6 +502,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object cluster_ = "";
     /**
@@ -554,8 +569,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cluster_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -572,8 +587,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCluster() {
-
       cluster_ = getDefaultInstance().getCluster();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -595,8 +610,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cluster_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -644,6 +659,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setInternalIp(boolean value) {
 
       internalIp_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -665,7 +681,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInternalIp() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalIp_ = false;
       onChanged();
       return this;

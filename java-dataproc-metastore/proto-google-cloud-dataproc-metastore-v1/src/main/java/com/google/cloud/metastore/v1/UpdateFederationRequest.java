@@ -122,7 +122,7 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int FEDERATION_FIELD_NUMBER = 2;
@@ -185,11 +185,15 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.metastore.v1.FederationOrBuilder getFederationOrBuilder() {
-    return getFederation();
+    return federation_ == null
+        ? com.google.cloud.metastore.v1.Federation.getDefaultInstance()
+        : federation_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -481,20 +485,18 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      bitField0_ = 0;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-      if (federationBuilder_ == null) {
-        federation_ = null;
-      } else {
-        federation_ = null;
+      federation_ = null;
+      if (federationBuilder_ != null) {
+        federationBuilder_.dispose();
         federationBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -522,19 +524,24 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
     public com.google.cloud.metastore.v1.UpdateFederationRequest buildPartial() {
       com.google.cloud.metastore.v1.UpdateFederationRequest result =
           new com.google.cloud.metastore.v1.UpdateFederationRequest(this);
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (federationBuilder_ == null) {
-        result.federation_ = federation_;
-      } else {
-        result.federation_ = federationBuilder_.build();
-      }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1.UpdateFederationRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.federation_ = federationBuilder_ == null ? federation_ : federationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -591,6 +598,7 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -622,19 +630,19 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getFederationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -653,6 +661,8 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -676,7 +686,7 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -721,11 +731,11 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -744,11 +754,11 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -766,17 +776,18 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -793,14 +804,13 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -817,7 +827,7 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -896,7 +906,7 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
      * @return Whether the federation field is set.
      */
     public boolean hasFederation() {
-      return federationBuilder_ != null || federation_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -943,11 +953,11 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         federation_ = value;
-        onChanged();
       } else {
         federationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -967,11 +977,11 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
     public Builder setFederation(com.google.cloud.metastore.v1.Federation.Builder builderForValue) {
       if (federationBuilder_ == null) {
         federation_ = builderForValue.build();
-        onChanged();
       } else {
         federationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -990,19 +1000,18 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
      */
     public Builder mergeFederation(com.google.cloud.metastore.v1.Federation value) {
       if (federationBuilder_ == null) {
-        if (federation_ != null) {
-          federation_ =
-              com.google.cloud.metastore.v1.Federation.newBuilder(federation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && federation_ != null
+            && federation_ != com.google.cloud.metastore.v1.Federation.getDefaultInstance()) {
+          getFederationBuilder().mergeFrom(value);
         } else {
           federation_ = value;
         }
-        onChanged();
       } else {
         federationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1020,14 +1029,13 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearFederation() {
-      if (federationBuilder_ == null) {
-        federation_ = null;
-        onChanged();
-      } else {
-        federation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      federation_ = null;
+      if (federationBuilder_ != null) {
+        federationBuilder_.dispose();
         federationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1045,7 +1053,7 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.metastore.v1.Federation.Builder getFederationBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFederationFieldBuilder().getBuilder();
     }
@@ -1191,8 +1199,8 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1217,8 +1225,8 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1248,8 +1256,8 @@ public final class UpdateFederationRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

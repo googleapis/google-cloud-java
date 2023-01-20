@@ -75,7 +75,9 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
   }
 
   public static final int VM_IP_FIELD_NUMBER = 1;
-  private volatile java.lang.Object vmIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vmIp_ = "";
   /**
    *
    *
@@ -126,7 +128,7 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
   }
 
   public static final int VM_PORT_FIELD_NUMBER = 2;
-  private int vmPort_;
+  private int vmPort_ = 0;
   /**
    *
    *
@@ -145,7 +147,9 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
   }
 
   public static final int VM_FIELD_NUMBER = 3;
-  private volatile java.lang.Object vm_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vm_ = "";
   /**
    *
    *
@@ -196,7 +200,9 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
   }
 
   public static final int VPC_FIELD_NUMBER = 4;
-  private volatile java.lang.Object vpc_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vpc_ = "";
   /**
    *
    *
@@ -473,14 +479,11 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       vmIp_ = "";
-
       vmPort_ = 0;
-
       vm_ = "";
-
       vpc_ = "";
-
       return this;
     }
 
@@ -508,12 +511,27 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
     public com.google.cloud.clouddms.v1.ReverseSshConnectivity buildPartial() {
       com.google.cloud.clouddms.v1.ReverseSshConnectivity result =
           new com.google.cloud.clouddms.v1.ReverseSshConnectivity(this);
-      result.vmIp_ = vmIp_;
-      result.vmPort_ = vmPort_;
-      result.vm_ = vm_;
-      result.vpc_ = vpc_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.clouddms.v1.ReverseSshConnectivity result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.vmIp_ = vmIp_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.vmPort_ = vmPort_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.vm_ = vm_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.vpc_ = vpc_;
+      }
     }
 
     @java.lang.Override
@@ -564,6 +582,7 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getVmIp().isEmpty()) {
         vmIp_ = other.vmIp_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getVmPort() != 0) {
@@ -571,10 +590,12 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
       }
       if (!other.getVm().isEmpty()) {
         vm_ = other.vm_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getVpc().isEmpty()) {
         vpc_ = other.vpc_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -606,25 +627,25 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
             case 10:
               {
                 vmIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 vmPort_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 vm_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 vpc_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -643,6 +664,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object vmIp_ = "";
     /**
@@ -708,8 +731,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       vmIp_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -726,8 +749,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearVmIp() {
-
       vmIp_ = getDefaultInstance().getVmIp();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -749,8 +772,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vmIp_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -788,6 +811,7 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
     public Builder setVmPort(int value) {
 
       vmPort_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -804,7 +828,7 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearVmPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       vmPort_ = 0;
       onChanged();
       return this;
@@ -874,8 +898,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       vm_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -892,8 +916,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearVm() {
-
       vm_ = getDefaultInstance().getVm();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -915,8 +939,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vm_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -982,8 +1006,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       vpc_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -999,8 +1023,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearVpc() {
-
       vpc_ = getDefaultInstance().getVpc();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1021,8 +1045,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vpc_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

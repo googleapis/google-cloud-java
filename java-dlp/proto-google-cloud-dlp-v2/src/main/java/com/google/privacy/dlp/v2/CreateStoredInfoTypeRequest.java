@@ -70,7 +70,9 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -203,11 +205,15 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.StoredInfoTypeConfigOrBuilder getConfigOrBuilder() {
-    return getConfig();
+    return config_ == null
+        ? com.google.privacy.dlp.v2.StoredInfoTypeConfig.getDefaultInstance()
+        : config_;
   }
 
   public static final int STORED_INFO_TYPE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object storedInfoTypeId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object storedInfoTypeId_ = "";
   /**
    *
    *
@@ -262,7 +268,9 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
   }
 
   public static final int LOCATION_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object locationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object locationId_ = "";
   /**
    *
    *
@@ -540,18 +548,15 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (configBuilder_ == null) {
-        config_ = null;
-      } else {
-        config_ = null;
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
       storedInfoTypeId_ = "";
-
       locationId_ = "";
-
       return this;
     }
 
@@ -579,16 +584,27 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
     public com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest buildPartial() {
       com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest result =
           new com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest(this);
-      result.parent_ = parent_;
-      if (configBuilder_ == null) {
-        result.config_ = config_;
-      } else {
-        result.config_ = configBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.storedInfoTypeId_ = storedInfoTypeId_;
-      result.locationId_ = locationId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.config_ = configBuilder_ == null ? config_ : configBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.storedInfoTypeId_ = storedInfoTypeId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.locationId_ = locationId_;
+      }
     }
 
     @java.lang.Override
@@ -639,6 +655,7 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasConfig()) {
@@ -646,10 +663,12 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       }
       if (!other.getStoredInfoTypeId().isEmpty()) {
         storedInfoTypeId_ = other.storedInfoTypeId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getLocationId().isEmpty()) {
         locationId_ = other.locationId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -681,25 +700,25 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 storedInfoTypeId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 locationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -718,6 +737,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -831,8 +852,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -865,8 +886,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -904,8 +925,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -930,7 +951,7 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * @return Whether the config field is set.
      */
     public boolean hasConfig() {
-      return configBuilder_ != null || config_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -971,11 +992,11 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         config_ = value;
-        onChanged();
       } else {
         configBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -993,11 +1014,11 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
         com.google.privacy.dlp.v2.StoredInfoTypeConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
         config_ = builderForValue.build();
-        onChanged();
       } else {
         configBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1013,19 +1034,18 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      */
     public Builder mergeConfig(com.google.privacy.dlp.v2.StoredInfoTypeConfig value) {
       if (configBuilder_ == null) {
-        if (config_ != null) {
-          config_ =
-              com.google.privacy.dlp.v2.StoredInfoTypeConfig.newBuilder(config_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && config_ != null
+            && config_ != com.google.privacy.dlp.v2.StoredInfoTypeConfig.getDefaultInstance()) {
+          getConfigBuilder().mergeFrom(value);
         } else {
           config_ = value;
         }
-        onChanged();
       } else {
         configBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1040,14 +1060,13 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearConfig() {
-      if (configBuilder_ == null) {
-        config_ = null;
-        onChanged();
-      } else {
-        config_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1062,7 +1081,7 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.privacy.dlp.v2.StoredInfoTypeConfig.Builder getConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
@@ -1184,8 +1203,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       storedInfoTypeId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1204,8 +1223,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearStoredInfoTypeId() {
-
       storedInfoTypeId_ = getDefaultInstance().getStoredInfoTypeId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1229,8 +1248,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       storedInfoTypeId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1296,8 +1315,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       locationId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1313,8 +1332,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearLocationId() {
-
       locationId_ = getDefaultInstance().getLocationId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1335,8 +1354,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       locationId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

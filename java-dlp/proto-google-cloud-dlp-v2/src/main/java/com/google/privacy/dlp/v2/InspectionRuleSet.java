@@ -70,6 +70,8 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int INFO_TYPES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.InfoType> infoTypes_;
   /**
    *
@@ -139,6 +141,8 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RULES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.InspectionRule> rules_;
   /**
    *
@@ -418,6 +422,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (infoTypesBuilder_ == null) {
         infoTypes_ = java.util.Collections.emptyList();
       } else {
@@ -459,7 +464,15 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
     public com.google.privacy.dlp.v2.InspectionRuleSet buildPartial() {
       com.google.privacy.dlp.v2.InspectionRuleSet result =
           new com.google.privacy.dlp.v2.InspectionRuleSet(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.InspectionRuleSet result) {
       if (infoTypesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           infoTypes_ = java.util.Collections.unmodifiableList(infoTypes_);
@@ -478,8 +491,10 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       } else {
         result.rules_ = rulesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.InspectionRuleSet result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

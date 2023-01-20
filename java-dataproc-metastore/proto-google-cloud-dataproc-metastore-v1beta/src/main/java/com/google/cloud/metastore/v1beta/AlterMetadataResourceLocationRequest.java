@@ -73,7 +73,9 @@ public final class AlterMetadataResourceLocationRequest
   }
 
   public static final int SERVICE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -130,7 +132,9 @@ public final class AlterMetadataResourceLocationRequest
   }
 
   public static final int RESOURCE_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object resourceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceName_ = "";
   /**
    *
    *
@@ -189,7 +193,9 @@ public final class AlterMetadataResourceLocationRequest
   }
 
   public static final int LOCATION_URI_FIELD_NUMBER = 3;
-  private volatile java.lang.Object locationUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object locationUri_ = "";
   /**
    *
    *
@@ -456,12 +462,10 @@ public final class AlterMetadataResourceLocationRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       service_ = "";
-
       resourceName_ = "";
-
       locationUri_ = "";
-
       return this;
     }
 
@@ -492,11 +496,25 @@ public final class AlterMetadataResourceLocationRequest
     public com.google.cloud.metastore.v1beta.AlterMetadataResourceLocationRequest buildPartial() {
       com.google.cloud.metastore.v1beta.AlterMetadataResourceLocationRequest result =
           new com.google.cloud.metastore.v1beta.AlterMetadataResourceLocationRequest(this);
-      result.service_ = service_;
-      result.resourceName_ = resourceName_;
-      result.locationUri_ = locationUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.metastore.v1beta.AlterMetadataResourceLocationRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.service_ = service_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resourceName_ = resourceName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.locationUri_ = locationUri_;
+      }
     }
 
     @java.lang.Override
@@ -550,14 +568,17 @@ public final class AlterMetadataResourceLocationRequest
               .getDefaultInstance()) return this;
       if (!other.getService().isEmpty()) {
         service_ = other.service_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getResourceName().isEmpty()) {
         resourceName_ = other.resourceName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getLocationUri().isEmpty()) {
         locationUri_ = other.locationUri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -589,19 +610,19 @@ public final class AlterMetadataResourceLocationRequest
             case 10:
               {
                 service_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 resourceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 locationUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -620,6 +641,8 @@ public final class AlterMetadataResourceLocationRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object service_ = "";
     /**
@@ -694,8 +717,8 @@ public final class AlterMetadataResourceLocationRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -715,8 +738,8 @@ public final class AlterMetadataResourceLocationRequest
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -741,8 +764,8 @@ public final class AlterMetadataResourceLocationRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -823,8 +846,8 @@ public final class AlterMetadataResourceLocationRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -845,8 +868,8 @@ public final class AlterMetadataResourceLocationRequest
      * @return This builder for chaining.
      */
     public Builder clearResourceName() {
-
       resourceName_ = getDefaultInstance().getResourceName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -872,8 +895,8 @@ public final class AlterMetadataResourceLocationRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -939,8 +962,8 @@ public final class AlterMetadataResourceLocationRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       locationUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -956,8 +979,8 @@ public final class AlterMetadataResourceLocationRequest
      * @return This builder for chaining.
      */
     public Builder clearLocationUri() {
-
       locationUri_ = getDefaultInstance().getLocationUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -978,8 +1001,8 @@ public final class AlterMetadataResourceLocationRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       locationUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

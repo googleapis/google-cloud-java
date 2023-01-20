@@ -71,7 +71,9 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PAGEVIEW_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object pageviewId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageviewId_ = "";
   /**
    *
    *
@@ -134,7 +136,9 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PAGE_CATEGORY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object pageCategory_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageCategory_ = "";
   /**
    *
    *
@@ -199,7 +203,9 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URI_FIELD_NUMBER = 3;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -254,7 +260,9 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REFERRER_URI_FIELD_NUMBER = 4;
-  private volatile java.lang.Object referrerUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object referrerUri_ = "";
   /**
    *
    *
@@ -532,14 +540,11 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       pageviewId_ = "";
-
       pageCategory_ = "";
-
       uri_ = "";
-
       referrerUri_ = "";
-
       return this;
     }
 
@@ -567,12 +572,27 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1beta.PageInfo buildPartial() {
       com.google.cloud.discoveryengine.v1beta.PageInfo result =
           new com.google.cloud.discoveryengine.v1beta.PageInfo(this);
-      result.pageviewId_ = pageviewId_;
-      result.pageCategory_ = pageCategory_;
-      result.uri_ = uri_;
-      result.referrerUri_ = referrerUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.discoveryengine.v1beta.PageInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.pageviewId_ = pageviewId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pageCategory_ = pageCategory_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.referrerUri_ = referrerUri_;
+      }
     }
 
     @java.lang.Override
@@ -623,18 +643,22 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getPageviewId().isEmpty()) {
         pageviewId_ = other.pageviewId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPageCategory().isEmpty()) {
         pageCategory_ = other.pageCategory_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getReferrerUri().isEmpty()) {
         referrerUri_ = other.referrerUri_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -666,25 +690,25 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 pageviewId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 pageCategory_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 referrerUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -703,6 +727,8 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object pageviewId_ = "";
     /**
@@ -786,8 +812,8 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageviewId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -810,8 +836,8 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPageviewId() {
-
       pageviewId_ = getDefaultInstance().getPageviewId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -839,8 +865,8 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageviewId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -930,8 +956,8 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageCategory_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -955,8 +981,8 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPageCategory() {
-
       pageCategory_ = getDefaultInstance().getPageCategory();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -985,8 +1011,8 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageCategory_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1061,8 +1087,8 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1081,8 +1107,8 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1106,8 +1132,8 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1182,8 +1208,8 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       referrerUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1202,8 +1228,8 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReferrerUri() {
-
       referrerUri_ = getDefaultInstance().getReferrerUri();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1227,8 +1253,8 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       referrerUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

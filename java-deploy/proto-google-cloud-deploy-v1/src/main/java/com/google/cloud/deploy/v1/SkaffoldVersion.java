@@ -68,7 +68,9 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -159,7 +161,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.type.DateOrBuilder getSupportEndDateOrBuilder() {
-    return getSupportEndDate();
+    return supportEndDate_ == null ? com.google.type.Date.getDefaultInstance() : supportEndDate_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -373,12 +375,11 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       version_ = "";
-
-      if (supportEndDateBuilder_ == null) {
-        supportEndDate_ = null;
-      } else {
-        supportEndDate_ = null;
+      supportEndDate_ = null;
+      if (supportEndDateBuilder_ != null) {
+        supportEndDateBuilder_.dispose();
         supportEndDateBuilder_ = null;
       }
       return this;
@@ -408,14 +409,22 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.deploy.v1.SkaffoldVersion buildPartial() {
       com.google.cloud.deploy.v1.SkaffoldVersion result =
           new com.google.cloud.deploy.v1.SkaffoldVersion(this);
-      result.version_ = version_;
-      if (supportEndDateBuilder_ == null) {
-        result.supportEndDate_ = supportEndDate_;
-      } else {
-        result.supportEndDate_ = supportEndDateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.SkaffoldVersion result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.supportEndDate_ =
+            supportEndDateBuilder_ == null ? supportEndDate_ : supportEndDateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -465,6 +474,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.deploy.v1.SkaffoldVersion.getDefaultInstance()) return this;
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSupportEndDate()) {
@@ -499,13 +509,13 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSupportEndDateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -524,6 +534,8 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object version_ = "";
     /**
@@ -586,8 +598,8 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -603,8 +615,8 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -625,8 +637,8 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -647,7 +659,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
      * @return Whether the supportEndDate field is set.
      */
     public boolean hasSupportEndDate() {
-      return supportEndDateBuilder_ != null || supportEndDate_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -684,11 +696,11 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         supportEndDate_ = value;
-        onChanged();
       } else {
         supportEndDateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -703,11 +715,11 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
     public Builder setSupportEndDate(com.google.type.Date.Builder builderForValue) {
       if (supportEndDateBuilder_ == null) {
         supportEndDate_ = builderForValue.build();
-        onChanged();
       } else {
         supportEndDateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -721,17 +733,18 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeSupportEndDate(com.google.type.Date value) {
       if (supportEndDateBuilder_ == null) {
-        if (supportEndDate_ != null) {
-          supportEndDate_ =
-              com.google.type.Date.newBuilder(supportEndDate_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && supportEndDate_ != null
+            && supportEndDate_ != com.google.type.Date.getDefaultInstance()) {
+          getSupportEndDateBuilder().mergeFrom(value);
         } else {
           supportEndDate_ = value;
         }
-        onChanged();
       } else {
         supportEndDateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -744,14 +757,13 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
      * <code>.google.type.Date support_end_date = 2;</code>
      */
     public Builder clearSupportEndDate() {
-      if (supportEndDateBuilder_ == null) {
-        supportEndDate_ = null;
-        onChanged();
-      } else {
-        supportEndDate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      supportEndDate_ = null;
+      if (supportEndDateBuilder_ != null) {
+        supportEndDateBuilder_.dispose();
         supportEndDateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -764,7 +776,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
      * <code>.google.type.Date support_end_date = 2;</code>
      */
     public com.google.type.Date.Builder getSupportEndDateBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSupportEndDateFieldBuilder().getBuilder();
     }

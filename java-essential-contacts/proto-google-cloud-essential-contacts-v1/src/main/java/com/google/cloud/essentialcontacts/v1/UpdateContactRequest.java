@@ -119,7 +119,9 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.essentialcontacts.v1.ContactOrBuilder getContactOrBuilder() {
-    return getContact();
+    return contact_ == null
+        ? com.google.cloud.essentialcontacts.v1.Contact.getDefaultInstance()
+        : contact_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
@@ -174,7 +176,7 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -394,16 +396,15 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (contactBuilder_ == null) {
-        contact_ = null;
-      } else {
-        contact_ = null;
+      bitField0_ = 0;
+      contact_ = null;
+      if (contactBuilder_ != null) {
+        contactBuilder_.dispose();
         contactBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -433,18 +434,21 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.essentialcontacts.v1.UpdateContactRequest buildPartial() {
       com.google.cloud.essentialcontacts.v1.UpdateContactRequest result =
           new com.google.cloud.essentialcontacts.v1.UpdateContactRequest(this);
-      if (contactBuilder_ == null) {
-        result.contact_ = contact_;
-      } else {
-        result.contact_ = contactBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.essentialcontacts.v1.UpdateContactRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.contact_ = contactBuilder_ == null ? contact_ : contactBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -528,13 +532,13 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
             case 18:
               {
                 input.readMessage(getContactFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -553,6 +557,8 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.essentialcontacts.v1.Contact contact_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -575,7 +581,7 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the contact field is set.
      */
     public boolean hasContact() {
-      return contactBuilder_ != null || contact_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -618,11 +624,11 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         contact_ = value;
-        onChanged();
       } else {
         contactBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -641,11 +647,11 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.essentialcontacts.v1.Contact.Builder builderForValue) {
       if (contactBuilder_ == null) {
         contact_ = builderForValue.build();
-        onChanged();
       } else {
         contactBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -662,19 +668,18 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeContact(com.google.cloud.essentialcontacts.v1.Contact value) {
       if (contactBuilder_ == null) {
-        if (contact_ != null) {
-          contact_ =
-              com.google.cloud.essentialcontacts.v1.Contact.newBuilder(contact_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && contact_ != null
+            && contact_ != com.google.cloud.essentialcontacts.v1.Contact.getDefaultInstance()) {
+          getContactBuilder().mergeFrom(value);
         } else {
           contact_ = value;
         }
-        onChanged();
       } else {
         contactBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -690,14 +695,13 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearContact() {
-      if (contactBuilder_ == null) {
-        contact_ = null;
-        onChanged();
-      } else {
-        contact_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      contact_ = null;
+      if (contactBuilder_ != null) {
+        contactBuilder_.dispose();
         contactBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -713,7 +717,7 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.essentialcontacts.v1.Contact.Builder getContactBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getContactFieldBuilder().getBuilder();
     }
@@ -788,7 +792,7 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -831,11 +835,11 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -853,11 +857,11 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -874,17 +878,18 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -900,14 +905,13 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -923,7 +927,7 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

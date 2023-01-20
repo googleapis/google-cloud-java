@@ -72,7 +72,9 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PROJECT_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectName_ = "";
   /**
    *
    *
@@ -133,6 +135,8 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int GROUP_ID_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList groupId_;
   /**
    *
@@ -251,7 +255,9 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilterOrBuilder
       getServiceFilterOrBuilder() {
-    return getServiceFilter();
+    return serviceFilter_ == null
+        ? com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter.getDefaultInstance()
+        : serviceFilter_;
   }
 
   public static final int TIME_RANGE_FIELD_NUMBER = 5;
@@ -327,7 +333,9 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRangeOrBuilder
       getTimeRangeOrBuilder() {
-    return getTimeRange();
+    return timeRange_ == null
+        ? com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.getDefaultInstance()
+        : timeRange_;
   }
 
   public static final int TIMED_COUNT_DURATION_FIELD_NUMBER = 6;
@@ -384,11 +392,13 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimedCountDurationOrBuilder() {
-    return getTimedCountDuration();
+    return timedCountDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : timedCountDuration_;
   }
 
   public static final int ALIGNMENT_FIELD_NUMBER = 7;
-  private int alignment_;
+  private int alignment_ = 0;
   /**
    *
    *
@@ -423,9 +433,8 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment getAlignment() {
-    @SuppressWarnings("deprecation")
     com.google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment result =
-        com.google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment.valueOf(alignment_);
+        com.google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment.forNumber(alignment_);
     return result == null
         ? com.google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment.UNRECOGNIZED
         : result;
@@ -482,11 +491,13 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getAlignmentTimeOrBuilder() {
-    return getAlignmentTime();
+    return alignmentTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : alignmentTime_;
   }
 
   public static final int ORDER_FIELD_NUMBER = 9;
-  private int order_;
+  private int order_ = 0;
   /**
    *
    *
@@ -521,16 +532,15 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrder getOrder() {
-    @SuppressWarnings("deprecation")
     com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrder result =
-        com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrder.valueOf(order_);
+        com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrder.forNumber(order_);
     return result == null
         ? com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrder.UNRECOGNIZED
         : result;
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 11;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -549,7 +559,9 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 12;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -919,42 +931,34 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectName_ = "";
-
       groupId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (serviceFilterBuilder_ == null) {
-        serviceFilter_ = null;
-      } else {
-        serviceFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      serviceFilter_ = null;
+      if (serviceFilterBuilder_ != null) {
+        serviceFilterBuilder_.dispose();
         serviceFilterBuilder_ = null;
       }
-      if (timeRangeBuilder_ == null) {
-        timeRange_ = null;
-      } else {
-        timeRange_ = null;
+      timeRange_ = null;
+      if (timeRangeBuilder_ != null) {
+        timeRangeBuilder_.dispose();
         timeRangeBuilder_ = null;
       }
-      if (timedCountDurationBuilder_ == null) {
-        timedCountDuration_ = null;
-      } else {
-        timedCountDuration_ = null;
+      timedCountDuration_ = null;
+      if (timedCountDurationBuilder_ != null) {
+        timedCountDurationBuilder_.dispose();
         timedCountDurationBuilder_ = null;
       }
       alignment_ = 0;
-
-      if (alignmentTimeBuilder_ == null) {
-        alignmentTime_ = null;
-      } else {
-        alignmentTime_ = null;
+      alignmentTime_ = null;
+      if (alignmentTimeBuilder_ != null) {
+        alignmentTimeBuilder_.dispose();
         alignmentTimeBuilder_ = null;
       }
       order_ = 0;
-
       pageSize_ = 0;
-
       pageToken_ = "";
-
       return this;
     }
 
@@ -984,39 +988,58 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
     public com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest buildPartial() {
       com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest result =
           new com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.projectName_ = projectName_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        groupId_ = groupId_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.groupId_ = groupId_;
-      if (serviceFilterBuilder_ == null) {
-        result.serviceFilter_ = serviceFilter_;
-      } else {
-        result.serviceFilter_ = serviceFilterBuilder_.build();
-      }
-      if (timeRangeBuilder_ == null) {
-        result.timeRange_ = timeRange_;
-      } else {
-        result.timeRange_ = timeRangeBuilder_.build();
-      }
-      if (timedCountDurationBuilder_ == null) {
-        result.timedCountDuration_ = timedCountDuration_;
-      } else {
-        result.timedCountDuration_ = timedCountDurationBuilder_.build();
-      }
-      result.alignment_ = alignment_;
-      if (alignmentTimeBuilder_ == null) {
-        result.alignmentTime_ = alignmentTime_;
-      } else {
-        result.alignmentTime_ = alignmentTimeBuilder_.build();
-      }
-      result.order_ = order_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        groupId_ = groupId_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.groupId_ = groupId_;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectName_ = projectName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.serviceFilter_ =
+            serviceFilterBuilder_ == null ? serviceFilter_ : serviceFilterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.timeRange_ = timeRangeBuilder_ == null ? timeRange_ : timeRangeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.timedCountDuration_ =
+            timedCountDurationBuilder_ == null
+                ? timedCountDuration_
+                : timedCountDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.alignment_ = alignment_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.alignmentTime_ =
+            alignmentTimeBuilder_ == null ? alignmentTime_ : alignmentTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.order_ = order_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
     }
 
     @java.lang.Override
@@ -1070,12 +1093,13 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
               .getDefaultInstance()) return this;
       if (!other.getProjectName().isEmpty()) {
         projectName_ = other.projectName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.groupId_.isEmpty()) {
         if (groupId_.isEmpty()) {
           groupId_ = other.groupId_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureGroupIdIsMutable();
           groupId_.addAll(other.groupId_);
@@ -1105,6 +1129,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1136,7 +1161,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 projectName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1149,50 +1174,50 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
             case 26:
               {
                 input.readMessage(getServiceFilterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 42:
               {
                 input.readMessage(getTimeRangeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getTimedCountDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 56:
               {
                 alignment_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             case 66:
               {
                 input.readMessage(getAlignmentTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 72:
               {
                 order_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 72
             case 88:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 88
             case 98:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 98
             default:
@@ -1293,8 +1318,8 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1316,8 +1341,8 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearProjectName() {
-
       projectName_ = getDefaultInstance().getProjectName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1344,8 +1369,8 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1354,9 +1379,9 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureGroupIdIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         groupId_ = new com.google.protobuf.LazyStringArrayList(groupId_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1491,7 +1516,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearGroupId() {
       groupId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1540,7 +1565,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the serviceFilter field is set.
      */
     public boolean hasServiceFilter() {
-      return serviceFilterBuilder_ != null || serviceFilter_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1587,11 +1612,11 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         serviceFilter_ = value;
-        onChanged();
       } else {
         serviceFilterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1612,11 +1637,11 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
             builderForValue) {
       if (serviceFilterBuilder_ == null) {
         serviceFilter_ = builderForValue.build();
-        onChanged();
       } else {
         serviceFilterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1635,20 +1660,20 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
     public Builder mergeServiceFilter(
         com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter value) {
       if (serviceFilterBuilder_ == null) {
-        if (serviceFilter_ != null) {
-          serviceFilter_ =
-              com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter.newBuilder(
-                      serviceFilter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && serviceFilter_ != null
+            && serviceFilter_
+                != com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter
+                    .getDefaultInstance()) {
+          getServiceFilterBuilder().mergeFrom(value);
         } else {
           serviceFilter_ = value;
         }
-        onChanged();
       } else {
         serviceFilterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1665,14 +1690,13 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearServiceFilter() {
-      if (serviceFilterBuilder_ == null) {
-        serviceFilter_ = null;
-        onChanged();
-      } else {
-        serviceFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      serviceFilter_ = null;
+      if (serviceFilterBuilder_ != null) {
+        serviceFilterBuilder_.dispose();
         serviceFilterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1690,7 +1714,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter.Builder
         getServiceFilterBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getServiceFilterFieldBuilder().getBuilder();
     }
@@ -1775,7 +1799,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the timeRange field is set.
      */
     public boolean hasTimeRange() {
-      return timeRangeBuilder_ != null || timeRange_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1831,11 +1855,11 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         timeRange_ = value;
-        onChanged();
       } else {
         timeRangeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1860,11 +1884,11 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
         com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Builder builderForValue) {
       if (timeRangeBuilder_ == null) {
         timeRange_ = builderForValue.build();
-        onChanged();
       } else {
         timeRangeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1888,19 +1912,20 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
     public Builder mergeTimeRange(
         com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange value) {
       if (timeRangeBuilder_ == null) {
-        if (timeRange_ != null) {
-          timeRange_ =
-              com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.newBuilder(timeRange_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && timeRange_ != null
+            && timeRange_
+                != com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange
+                    .getDefaultInstance()) {
+          getTimeRangeBuilder().mergeFrom(value);
         } else {
           timeRange_ = value;
         }
-        onChanged();
       } else {
         timeRangeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1922,14 +1947,13 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearTimeRange() {
-      if (timeRangeBuilder_ == null) {
-        timeRange_ = null;
-        onChanged();
-      } else {
-        timeRange_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      timeRange_ = null;
+      if (timeRangeBuilder_ != null) {
+        timeRangeBuilder_.dispose();
         timeRangeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1952,7 +1976,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      */
     public com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Builder
         getTimeRangeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getTimeRangeFieldBuilder().getBuilder();
     }
@@ -2040,7 +2064,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the timedCountDuration field is set.
      */
     public boolean hasTimedCountDuration() {
-      return timedCountDurationBuilder_ != null || timedCountDuration_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2083,11 +2107,11 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         timedCountDuration_ = value;
-        onChanged();
       } else {
         timedCountDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2105,11 +2129,11 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
     public Builder setTimedCountDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (timedCountDurationBuilder_ == null) {
         timedCountDuration_ = builderForValue.build();
-        onChanged();
       } else {
         timedCountDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2126,19 +2150,18 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeTimedCountDuration(com.google.protobuf.Duration value) {
       if (timedCountDurationBuilder_ == null) {
-        if (timedCountDuration_ != null) {
-          timedCountDuration_ =
-              com.google.protobuf.Duration.newBuilder(timedCountDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && timedCountDuration_ != null
+            && timedCountDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimedCountDurationBuilder().mergeFrom(value);
         } else {
           timedCountDuration_ = value;
         }
-        onChanged();
       } else {
         timedCountDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2154,14 +2177,13 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearTimedCountDuration() {
-      if (timedCountDurationBuilder_ == null) {
-        timedCountDuration_ = null;
-        onChanged();
-      } else {
-        timedCountDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      timedCountDuration_ = null;
+      if (timedCountDurationBuilder_ != null) {
+        timedCountDurationBuilder_.dispose();
         timedCountDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2177,7 +2199,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.protobuf.Duration.Builder getTimedCountDurationBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getTimedCountDurationFieldBuilder().getBuilder();
     }
@@ -2266,8 +2288,8 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setAlignmentValue(int value) {
-
       alignment_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2287,9 +2309,8 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public com.google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment getAlignment() {
-      @SuppressWarnings("deprecation")
       com.google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment result =
-          com.google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment.valueOf(alignment_);
+          com.google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment.forNumber(alignment_);
       return result == null
           ? com.google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment.UNRECOGNIZED
           : result;
@@ -2314,7 +2335,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       alignment_ = value.getNumber();
       onChanged();
       return this;
@@ -2334,7 +2355,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearAlignment() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       alignment_ = 0;
       onChanged();
       return this;
@@ -2361,7 +2382,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the alignmentTime field is set.
      */
     public boolean hasAlignmentTime() {
-      return alignmentTimeBuilder_ != null || alignmentTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2404,11 +2425,11 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         alignmentTime_ = value;
-        onChanged();
       } else {
         alignmentTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2426,11 +2447,11 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
     public Builder setAlignmentTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (alignmentTimeBuilder_ == null) {
         alignmentTime_ = builderForValue.build();
-        onChanged();
       } else {
         alignmentTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2447,19 +2468,18 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeAlignmentTime(com.google.protobuf.Timestamp value) {
       if (alignmentTimeBuilder_ == null) {
-        if (alignmentTime_ != null) {
-          alignmentTime_ =
-              com.google.protobuf.Timestamp.newBuilder(alignmentTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && alignmentTime_ != null
+            && alignmentTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getAlignmentTimeBuilder().mergeFrom(value);
         } else {
           alignmentTime_ = value;
         }
-        onChanged();
       } else {
         alignmentTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2475,14 +2495,13 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearAlignmentTime() {
-      if (alignmentTimeBuilder_ == null) {
-        alignmentTime_ = null;
-        onChanged();
-      } else {
-        alignmentTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      alignmentTime_ = null;
+      if (alignmentTimeBuilder_ != null) {
+        alignmentTimeBuilder_.dispose();
         alignmentTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2498,7 +2517,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getAlignmentTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getAlignmentTimeFieldBuilder().getBuilder();
     }
@@ -2587,8 +2606,8 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setOrderValue(int value) {
-
       order_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2608,9 +2627,8 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrder getOrder() {
-      @SuppressWarnings("deprecation")
       com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrder result =
-          com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrder.valueOf(order_);
+          com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrder.forNumber(order_);
       return result == null
           ? com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrder.UNRECOGNIZED
           : result;
@@ -2634,7 +2652,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       order_ = value.getNumber();
       onChanged();
       return this;
@@ -2654,7 +2672,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearOrder() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       order_ = 0;
       onChanged();
       return this;
@@ -2693,6 +2711,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2709,7 +2728,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -2782,8 +2801,8 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2801,8 +2820,8 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2825,8 +2844,8 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

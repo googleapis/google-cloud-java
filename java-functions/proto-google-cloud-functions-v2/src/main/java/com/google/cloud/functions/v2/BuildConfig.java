@@ -84,7 +84,9 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BUILD_FIELD_NUMBER = 1;
-  private volatile java.lang.Object build_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object build_ = "";
   /**
    *
    *
@@ -139,7 +141,9 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RUNTIME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object runtime_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object runtime_ = "";
   /**
    *
    *
@@ -196,7 +200,9 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENTRY_POINT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object entryPoint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entryPoint_ = "";
   /**
    *
    *
@@ -297,7 +303,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.functions.v2.SourceOrBuilder getSourceOrBuilder() {
-    return getSource();
+    return source_ == null ? com.google.cloud.functions.v2.Source.getDefaultInstance() : source_;
   }
 
   public static final int SOURCE_PROVENANCE_FIELD_NUMBER = 8;
@@ -351,11 +357,15 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.functions.v2.SourceProvenanceOrBuilder getSourceProvenanceOrBuilder() {
-    return getSourceProvenance();
+    return sourceProvenance_ == null
+        ? com.google.cloud.functions.v2.SourceProvenance.getDefaultInstance()
+        : sourceProvenance_;
   }
 
   public static final int WORKER_POOL_FIELD_NUMBER = 5;
-  private volatile java.lang.Object workerPool_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workerPool_ = "";
   /**
    *
    *
@@ -436,6 +446,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> environmentVariables_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -495,8 +506,10 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; environment_variables = 6;</code>
    */
   @java.lang.Override
-  public java.lang.String getEnvironmentVariablesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getEnvironmentVariablesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -527,7 +540,9 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOCKER_REPOSITORY_FIELD_NUMBER = 7;
-  private volatile java.lang.Object dockerRepository_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dockerRepository_ = "";
   /**
    *
    *
@@ -900,29 +915,23 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       build_ = "";
-
       runtime_ = "";
-
       entryPoint_ = "";
-
-      if (sourceBuilder_ == null) {
-        source_ = null;
-      } else {
-        source_ = null;
+      source_ = null;
+      if (sourceBuilder_ != null) {
+        sourceBuilder_.dispose();
         sourceBuilder_ = null;
       }
-      if (sourceProvenanceBuilder_ == null) {
-        sourceProvenance_ = null;
-      } else {
-        sourceProvenance_ = null;
+      sourceProvenance_ = null;
+      if (sourceProvenanceBuilder_ != null) {
+        sourceProvenanceBuilder_.dispose();
         sourceProvenanceBuilder_ = null;
       }
       workerPool_ = "";
-
       internalGetMutableEnvironmentVariables().clear();
       dockerRepository_ = "";
-
       return this;
     }
 
@@ -950,26 +959,41 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.functions.v2.BuildConfig buildPartial() {
       com.google.cloud.functions.v2.BuildConfig result =
           new com.google.cloud.functions.v2.BuildConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.build_ = build_;
-      result.runtime_ = runtime_;
-      result.entryPoint_ = entryPoint_;
-      if (sourceBuilder_ == null) {
-        result.source_ = source_;
-      } else {
-        result.source_ = sourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceProvenanceBuilder_ == null) {
-        result.sourceProvenance_ = sourceProvenance_;
-      } else {
-        result.sourceProvenance_ = sourceProvenanceBuilder_.build();
-      }
-      result.workerPool_ = workerPool_;
-      result.environmentVariables_ = internalGetEnvironmentVariables();
-      result.environmentVariables_.makeImmutable();
-      result.dockerRepository_ = dockerRepository_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v2.BuildConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.build_ = build_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.runtime_ = runtime_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.entryPoint_ = entryPoint_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.source_ = sourceBuilder_ == null ? source_ : sourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.sourceProvenance_ =
+            sourceProvenanceBuilder_ == null ? sourceProvenance_ : sourceProvenanceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.workerPool_ = workerPool_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.environmentVariables_ = internalGetEnvironmentVariables();
+        result.environmentVariables_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.dockerRepository_ = dockerRepository_;
+      }
     }
 
     @java.lang.Override
@@ -1019,14 +1043,17 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.functions.v2.BuildConfig.getDefaultInstance()) return this;
       if (!other.getBuild().isEmpty()) {
         build_ = other.build_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRuntime().isEmpty()) {
         runtime_ = other.runtime_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getEntryPoint().isEmpty()) {
         entryPoint_ = other.entryPoint_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasSource()) {
@@ -1037,11 +1064,14 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getWorkerPool().isEmpty()) {
         workerPool_ = other.workerPool_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       internalGetMutableEnvironmentVariables().mergeFrom(other.internalGetEnvironmentVariables());
+      bitField0_ |= 0x00000040;
       if (!other.getDockerRepository().isEmpty()) {
         dockerRepository_ = other.dockerRepository_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1073,31 +1103,31 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 build_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 runtime_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 entryPoint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 workerPool_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
@@ -1110,19 +1140,20 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableEnvironmentVariables()
                     .getMutableMap()
                     .put(environmentVariables__.getKey(), environmentVariables__.getValue());
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
               {
                 dockerRepository_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(
                     getSourceProvenanceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 66
             default:
@@ -1214,8 +1245,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       build_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1234,8 +1265,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBuild() {
-
       build_ = getDefaultInstance().getBuild();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1259,8 +1290,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       build_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1338,8 +1369,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       runtime_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1359,8 +1390,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRuntime() {
-
       runtime_ = getDefaultInstance().getRuntime();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1385,8 +1416,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       runtime_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1467,8 +1498,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       entryPoint_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1489,8 +1520,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEntryPoint() {
-
       entryPoint_ = getDefaultInstance().getEntryPoint();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1516,8 +1547,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       entryPoint_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1540,7 +1571,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the source field is set.
      */
     public boolean hasSource() {
-      return sourceBuilder_ != null || source_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1577,11 +1608,11 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         source_ = value;
-        onChanged();
       } else {
         sourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1596,11 +1627,11 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setSource(com.google.cloud.functions.v2.Source.Builder builderForValue) {
       if (sourceBuilder_ == null) {
         source_ = builderForValue.build();
-        onChanged();
       } else {
         sourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1614,19 +1645,18 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSource(com.google.cloud.functions.v2.Source value) {
       if (sourceBuilder_ == null) {
-        if (source_ != null) {
-          source_ =
-              com.google.cloud.functions.v2.Source.newBuilder(source_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && source_ != null
+            && source_ != com.google.cloud.functions.v2.Source.getDefaultInstance()) {
+          getSourceBuilder().mergeFrom(value);
         } else {
           source_ = value;
         }
-        onChanged();
       } else {
         sourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1639,14 +1669,13 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.functions.v2.Source source = 4;</code>
      */
     public Builder clearSource() {
-      if (sourceBuilder_ == null) {
-        source_ = null;
-        onChanged();
-      } else {
-        source_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      source_ = null;
+      if (sourceBuilder_ != null) {
+        sourceBuilder_.dispose();
         sourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1659,7 +1688,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.functions.v2.Source source = 4;</code>
      */
     public com.google.cloud.functions.v2.Source.Builder getSourceBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getSourceFieldBuilder().getBuilder();
     }
@@ -1727,7 +1756,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceProvenance field is set.
      */
     public boolean hasSourceProvenance() {
-      return sourceProvenanceBuilder_ != null || sourceProvenance_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1768,11 +1797,11 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sourceProvenance_ = value;
-        onChanged();
       } else {
         sourceProvenanceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1790,11 +1819,11 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.functions.v2.SourceProvenance.Builder builderForValue) {
       if (sourceProvenanceBuilder_ == null) {
         sourceProvenance_ = builderForValue.build();
-        onChanged();
       } else {
         sourceProvenanceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1810,19 +1839,19 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSourceProvenance(com.google.cloud.functions.v2.SourceProvenance value) {
       if (sourceProvenanceBuilder_ == null) {
-        if (sourceProvenance_ != null) {
-          sourceProvenance_ =
-              com.google.cloud.functions.v2.SourceProvenance.newBuilder(sourceProvenance_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && sourceProvenance_ != null
+            && sourceProvenance_
+                != com.google.cloud.functions.v2.SourceProvenance.getDefaultInstance()) {
+          getSourceProvenanceBuilder().mergeFrom(value);
         } else {
           sourceProvenance_ = value;
         }
-        onChanged();
       } else {
         sourceProvenanceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1837,14 +1866,13 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSourceProvenance() {
-      if (sourceProvenanceBuilder_ == null) {
-        sourceProvenance_ = null;
-        onChanged();
-      } else {
-        sourceProvenance_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      sourceProvenance_ = null;
+      if (sourceProvenanceBuilder_ != null) {
+        sourceProvenanceBuilder_.dispose();
         sourceProvenanceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1859,7 +1887,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.functions.v2.SourceProvenance.Builder getSourceProvenanceBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getSourceProvenanceFieldBuilder().getBuilder();
     }
@@ -2002,8 +2030,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       workerPool_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2029,8 +2057,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWorkerPool() {
-
       workerPool_ = getDefaultInstance().getWorkerPool();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2061,8 +2089,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workerPool_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2080,8 +2108,6 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableEnvironmentVariables() {
-      onChanged();
-      ;
       if (environmentVariables_ == null) {
         environmentVariables_ =
             com.google.protobuf.MapField.newMapField(
@@ -2090,6 +2116,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       if (!environmentVariables_.isMutable()) {
         environmentVariables_ = environmentVariables_.copy();
       }
+      bitField0_ |= 0x00000040;
+      onChanged();
       return environmentVariables_;
     }
 
@@ -2141,8 +2169,10 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; environment_variables = 6;</code>
      */
     @java.lang.Override
-    public java.lang.String getEnvironmentVariablesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getEnvironmentVariablesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2173,6 +2203,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearEnvironmentVariables() {
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableEnvironmentVariables().getMutableMap().clear();
       return this;
     }
@@ -2195,6 +2226,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableEnvironmentVariables() {
+      bitField0_ |= 0x00000040;
       return internalGetMutableEnvironmentVariables().getMutableMap();
     }
     /**
@@ -2213,8 +2245,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableEnvironmentVariables().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2229,6 +2261,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllEnvironmentVariables(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableEnvironmentVariables().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000040;
       return this;
     }
 
@@ -2326,8 +2359,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dockerRepository_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2354,8 +2387,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDockerRepository() {
-
       dockerRepository_ = getDefaultInstance().getDockerRepository();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2387,8 +2420,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dockerRepository_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

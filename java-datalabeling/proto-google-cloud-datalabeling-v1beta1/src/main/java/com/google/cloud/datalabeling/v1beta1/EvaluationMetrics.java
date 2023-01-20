@@ -400,6 +400,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (classificationMetricsBuilder_ != null) {
         classificationMetricsBuilder_.clear();
       }
@@ -435,23 +436,28 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datalabeling.v1beta1.EvaluationMetrics buildPartial() {
       com.google.cloud.datalabeling.v1beta1.EvaluationMetrics result =
           new com.google.cloud.datalabeling.v1beta1.EvaluationMetrics(this);
-      if (metricsCase_ == 1) {
-        if (classificationMetricsBuilder_ == null) {
-          result.metrics_ = metrics_;
-        } else {
-          result.metrics_ = classificationMetricsBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (metricsCase_ == 2) {
-        if (objectDetectionMetricsBuilder_ == null) {
-          result.metrics_ = metrics_;
-        } else {
-          result.metrics_ = objectDetectionMetricsBuilder_.build();
-        }
-      }
-      result.metricsCase_ = metricsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.EvaluationMetrics result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.datalabeling.v1beta1.EvaluationMetrics result) {
+      result.metricsCase_ = metricsCase_;
+      result.metrics_ = this.metrics_;
+      if (metricsCase_ == 1 && classificationMetricsBuilder_ != null) {
+        result.metrics_ = classificationMetricsBuilder_.build();
+      }
+      if (metricsCase_ == 2 && objectDetectionMetricsBuilder_ != null) {
+        result.metrics_ = objectDetectionMetricsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -586,6 +592,8 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.ClassificationMetrics,
@@ -755,7 +763,6 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
       }
       metricsCase_ = 1;
       onChanged();
-      ;
       return classificationMetricsBuilder_;
     }
 
@@ -928,7 +935,6 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
       }
       metricsCase_ = 2;
       onChanged();
-      ;
       return objectDetectionMetricsBuilder_;
     }
 

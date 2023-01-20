@@ -93,6 +93,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.metastore.v1alpha.Lake.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.cloud.metastore.v1alpha.Lake>
       lakeResources_;
 
@@ -161,8 +162,10 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.cloud.metastore.v1alpha.Lake&gt; lake_resources = 1;</code>
    */
   @java.lang.Override
-  public com.google.cloud.metastore.v1alpha.Lake getLakeResourcesOrDefault(
-      java.lang.String key, com.google.cloud.metastore.v1alpha.Lake defaultValue) {
+  public /* nullable */ com.google.cloud.metastore.v1alpha.Lake getLakeResourcesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.metastore.v1alpha.Lake defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -421,6 +424,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableLakeResources().clear();
       return this;
     }
@@ -449,11 +453,19 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.metastore.v1alpha.DataplexConfig buildPartial() {
       com.google.cloud.metastore.v1alpha.DataplexConfig result =
           new com.google.cloud.metastore.v1alpha.DataplexConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.lakeResources_ = internalGetLakeResources();
-      result.lakeResources_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1alpha.DataplexConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.lakeResources_ = internalGetLakeResources();
+        result.lakeResources_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -503,6 +515,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.metastore.v1alpha.DataplexConfig.getDefaultInstance())
         return this;
       internalGetMutableLakeResources().mergeFrom(other.internalGetLakeResources());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -540,6 +553,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLakeResources()
                     .getMutableMap()
                     .put(lakeResources__.getKey(), lakeResources__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -575,8 +589,6 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, com.google.cloud.metastore.v1alpha.Lake>
         internalGetMutableLakeResources() {
-      onChanged();
-      ;
       if (lakeResources_ == null) {
         lakeResources_ =
             com.google.protobuf.MapField.newMapField(LakeResourcesDefaultEntryHolder.defaultEntry);
@@ -584,6 +596,8 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
       if (!lakeResources_.isMutable()) {
         lakeResources_ = lakeResources_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return lakeResources_;
     }
 
@@ -643,8 +657,10 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.metastore.v1alpha.Lake&gt; lake_resources = 1;</code>
      */
     @java.lang.Override
-    public com.google.cloud.metastore.v1alpha.Lake getLakeResourcesOrDefault(
-        java.lang.String key, com.google.cloud.metastore.v1alpha.Lake defaultValue) {
+    public /* nullable */ com.google.cloud.metastore.v1alpha.Lake getLakeResourcesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.metastore.v1alpha.Lake defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -677,6 +693,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLakeResources() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableLakeResources().getMutableMap().clear();
       return this;
     }
@@ -702,6 +719,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.Lake>
         getMutableLakeResources() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableLakeResources().getMutableMap();
     }
     /**
@@ -723,8 +741,8 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLakeResources().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -741,6 +759,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllLakeResources(
         java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.Lake> values) {
       internalGetMutableLakeResources().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

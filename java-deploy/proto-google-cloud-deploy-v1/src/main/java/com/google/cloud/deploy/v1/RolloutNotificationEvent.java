@@ -75,7 +75,9 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
   }
 
   public static final int PIPELINE_UID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object pipelineUid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pipelineUid_ = "";
   /**
    *
    *
@@ -173,7 +177,9 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
   }
 
   public static final int RELEASE_UID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object releaseUid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object releaseUid_ = "";
   /**
    *
    *
@@ -222,7 +228,9 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
   }
 
   public static final int ROLLOUT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object rollout_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rollout_ = "";
   /**
    *
    *
@@ -271,7 +279,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
   }
 
   public static final int TYPE_FIELD_NUMBER = 5;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -300,13 +308,14 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.Type getType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.deploy.v1.Type result = com.google.cloud.deploy.v1.Type.valueOf(type_);
+    com.google.cloud.deploy.v1.Type result = com.google.cloud.deploy.v1.Type.forNumber(type_);
     return result == null ? com.google.cloud.deploy.v1.Type.UNRECOGNIZED : result;
   }
 
   public static final int TARGET_ID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object targetId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetId_ = "";
   /**
    *
    *
@@ -598,18 +607,13 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       message_ = "";
-
       pipelineUid_ = "";
-
       releaseUid_ = "";
-
       rollout_ = "";
-
       type_ = 0;
-
       targetId_ = "";
-
       return this;
     }
 
@@ -637,14 +641,33 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
     public com.google.cloud.deploy.v1.RolloutNotificationEvent buildPartial() {
       com.google.cloud.deploy.v1.RolloutNotificationEvent result =
           new com.google.cloud.deploy.v1.RolloutNotificationEvent(this);
-      result.message_ = message_;
-      result.pipelineUid_ = pipelineUid_;
-      result.releaseUid_ = releaseUid_;
-      result.rollout_ = rollout_;
-      result.type_ = type_;
-      result.targetId_ = targetId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.RolloutNotificationEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.message_ = message_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pipelineUid_ = pipelineUid_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.releaseUid_ = releaseUid_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.rollout_ = rollout_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.targetId_ = targetId_;
+      }
     }
 
     @java.lang.Override
@@ -695,18 +718,22 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         return this;
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPipelineUid().isEmpty()) {
         pipelineUid_ = other.pipelineUid_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getReleaseUid().isEmpty()) {
         releaseUid_ = other.releaseUid_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getRollout().isEmpty()) {
         rollout_ = other.rollout_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -714,6 +741,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       }
       if (!other.getTargetId().isEmpty()) {
         targetId_ = other.targetId_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -745,37 +773,37 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
             case 10:
               {
                 message_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 pipelineUid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 releaseUid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 rollout_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 targetId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -794,6 +822,8 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object message_ = "";
     /**
@@ -856,8 +886,8 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -873,8 +903,8 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -895,8 +925,8 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -962,8 +992,8 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       pipelineUid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -979,8 +1009,8 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearPipelineUid() {
-
       pipelineUid_ = getDefaultInstance().getPipelineUid();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1001,8 +1031,8 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pipelineUid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1068,8 +1098,8 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       releaseUid_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1085,8 +1115,8 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearReleaseUid() {
-
       releaseUid_ = getDefaultInstance().getReleaseUid();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1107,8 +1137,8 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       releaseUid_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1174,8 +1204,8 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       rollout_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1191,8 +1221,8 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearRollout() {
-
       rollout_ = getDefaultInstance().getRollout();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1213,8 +1243,8 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       rollout_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1248,8 +1278,8 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1266,8 +1296,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.deploy.v1.Type result = com.google.cloud.deploy.v1.Type.valueOf(type_);
+      com.google.cloud.deploy.v1.Type result = com.google.cloud.deploy.v1.Type.forNumber(type_);
       return result == null ? com.google.cloud.deploy.v1.Type.UNRECOGNIZED : result;
     }
     /**
@@ -1286,7 +1315,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1303,7 +1332,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       type_ = 0;
       onChanged();
       return this;
@@ -1370,8 +1399,8 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1387,8 +1416,8 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearTargetId() {
-
       targetId_ = getDefaultInstance().getTargetId();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1409,8 +1438,8 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

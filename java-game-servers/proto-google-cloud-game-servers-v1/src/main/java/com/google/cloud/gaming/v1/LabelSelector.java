@@ -89,6 +89,7 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -146,7 +147,10 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 1;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -398,6 +402,7 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableLabels().clear();
       return this;
     }
@@ -426,11 +431,19 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gaming.v1.LabelSelector buildPartial() {
       com.google.cloud.gaming.v1.LabelSelector result =
           new com.google.cloud.gaming.v1.LabelSelector(this);
-      int from_bitField0_ = bitField0_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gaming.v1.LabelSelector result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -479,6 +492,7 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.gaming.v1.LabelSelector other) {
       if (other == com.google.cloud.gaming.v1.LabelSelector.getDefaultInstance()) return this;
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -514,6 +528,7 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -546,14 +561,14 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return labels_;
     }
 
@@ -605,8 +620,10 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 1;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -635,6 +652,7 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -657,6 +675,7 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -675,8 +694,8 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -690,6 +709,7 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

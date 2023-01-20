@@ -385,7 +385,9 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
-    return getCryptoKey();
+    return cryptoKey_ == null
+        ? com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance()
+        : cryptoKey_;
   }
 
   public static final int CONTEXT_FIELD_NUMBER = 2;
@@ -470,7 +472,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getContextOrBuilder() {
-    return getContext();
+    return context_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : context_;
   }
 
   public static final int COMMON_ALPHABET_FIELD_NUMBER = 4;
@@ -525,9 +527,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
   public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet
       getCommonAlphabet() {
     if (alphabetCase_ == 4) {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet result =
-          com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.valueOf(
+          com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.forNumber(
               (java.lang.Integer) alphabet_);
       return result == null
           ? com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.UNRECOGNIZED
@@ -777,7 +778,9 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeOrBuilder getSurrogateInfoTypeOrBuilder() {
-    return getSurrogateInfoType();
+    return surrogateInfoType_ == null
+        ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance()
+        : surrogateInfoType_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1072,22 +1075,20 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (cryptoKeyBuilder_ == null) {
-        cryptoKey_ = null;
-      } else {
-        cryptoKey_ = null;
+      bitField0_ = 0;
+      cryptoKey_ = null;
+      if (cryptoKeyBuilder_ != null) {
+        cryptoKeyBuilder_.dispose();
         cryptoKeyBuilder_ = null;
       }
-      if (contextBuilder_ == null) {
-        context_ = null;
-      } else {
-        context_ = null;
+      context_ = null;
+      if (contextBuilder_ != null) {
+        contextBuilder_.dispose();
         contextBuilder_ = null;
       }
-      if (surrogateInfoTypeBuilder_ == null) {
-        surrogateInfoType_ = null;
-      } else {
-        surrogateInfoType_ = null;
+      surrogateInfoType_ = null;
+      if (surrogateInfoTypeBuilder_ != null) {
+        surrogateInfoTypeBuilder_.dispose();
         surrogateInfoTypeBuilder_ = null;
       }
       alphabetCase_ = 0;
@@ -1119,33 +1120,33 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
     public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig buildPartial() {
       com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig result =
           new com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig(this);
-      if (cryptoKeyBuilder_ == null) {
-        result.cryptoKey_ = cryptoKey_;
-      } else {
-        result.cryptoKey_ = cryptoKeyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (contextBuilder_ == null) {
-        result.context_ = context_;
-      } else {
-        result.context_ = contextBuilder_.build();
-      }
-      if (alphabetCase_ == 4) {
-        result.alphabet_ = alphabet_;
-      }
-      if (alphabetCase_ == 5) {
-        result.alphabet_ = alphabet_;
-      }
-      if (alphabetCase_ == 6) {
-        result.alphabet_ = alphabet_;
-      }
-      if (surrogateInfoTypeBuilder_ == null) {
-        result.surrogateInfoType_ = surrogateInfoType_;
-      } else {
-        result.surrogateInfoType_ = surrogateInfoTypeBuilder_.build();
-      }
-      result.alphabetCase_ = alphabetCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cryptoKey_ = cryptoKeyBuilder_ == null ? cryptoKey_ : cryptoKeyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.context_ = contextBuilder_ == null ? context_ : contextBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.surrogateInfoType_ =
+            surrogateInfoTypeBuilder_ == null
+                ? surrogateInfoType_
+                : surrogateInfoTypeBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig result) {
+      result.alphabetCase_ = alphabetCase_;
+      result.alphabet_ = this.alphabet_;
     }
 
     @java.lang.Override
@@ -1255,13 +1256,13 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
             case 10:
               {
                 input.readMessage(getCryptoKeyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getContextFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 32:
@@ -1288,7 +1289,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
               {
                 input.readMessage(
                     getSurrogateInfoTypeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 66
             default:
@@ -1322,6 +1323,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.privacy.dlp.v2.CryptoKey cryptoKey_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.CryptoKey,
@@ -1342,7 +1345,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * @return Whether the cryptoKey field is set.
      */
     public boolean hasCryptoKey() {
-      return cryptoKeyBuilder_ != null || cryptoKey_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1383,11 +1386,11 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         cryptoKey_ = value;
-        onChanged();
       } else {
         cryptoKeyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1404,11 +1407,11 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
     public Builder setCryptoKey(com.google.privacy.dlp.v2.CryptoKey.Builder builderForValue) {
       if (cryptoKeyBuilder_ == null) {
         cryptoKey_ = builderForValue.build();
-        onChanged();
       } else {
         cryptoKeyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1424,19 +1427,18 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      */
     public Builder mergeCryptoKey(com.google.privacy.dlp.v2.CryptoKey value) {
       if (cryptoKeyBuilder_ == null) {
-        if (cryptoKey_ != null) {
-          cryptoKey_ =
-              com.google.privacy.dlp.v2.CryptoKey.newBuilder(cryptoKey_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && cryptoKey_ != null
+            && cryptoKey_ != com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance()) {
+          getCryptoKeyBuilder().mergeFrom(value);
         } else {
           cryptoKey_ = value;
         }
-        onChanged();
       } else {
         cryptoKeyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1451,14 +1453,13 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearCryptoKey() {
-      if (cryptoKeyBuilder_ == null) {
-        cryptoKey_ = null;
-        onChanged();
-      } else {
-        cryptoKey_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      cryptoKey_ = null;
+      if (cryptoKeyBuilder_ != null) {
+        cryptoKeyBuilder_.dispose();
         cryptoKeyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1473,7 +1474,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.privacy.dlp.v2.CryptoKey.Builder getCryptoKeyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCryptoKeyFieldBuilder().getBuilder();
     }
@@ -1556,7 +1557,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * @return Whether the context field is set.
      */
     public boolean hasContext() {
-      return contextBuilder_ != null || context_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1617,11 +1618,11 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         context_ = value;
-        onChanged();
       } else {
         contextBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1649,11 +1650,11 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
     public Builder setContext(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (contextBuilder_ == null) {
         context_ = builderForValue.build();
-        onChanged();
       } else {
         contextBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1680,19 +1681,18 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      */
     public Builder mergeContext(com.google.privacy.dlp.v2.FieldId value) {
       if (contextBuilder_ == null) {
-        if (context_ != null) {
-          context_ =
-              com.google.privacy.dlp.v2.FieldId.newBuilder(context_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && context_ != null
+            && context_ != com.google.privacy.dlp.v2.FieldId.getDefaultInstance()) {
+          getContextBuilder().mergeFrom(value);
         } else {
           context_ = value;
         }
-        onChanged();
       } else {
         contextBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1718,14 +1718,13 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
      */
     public Builder clearContext() {
-      if (contextBuilder_ == null) {
-        context_ = null;
-        onChanged();
-      } else {
-        context_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      context_ = null;
+      if (contextBuilder_ != null) {
+        contextBuilder_.dispose();
         contextBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1751,7 +1750,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder getContextBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }
@@ -1897,9 +1896,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
     public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet
         getCommonAlphabet() {
       if (alphabetCase_ == 4) {
-        @SuppressWarnings("deprecation")
         com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet result =
-            com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.valueOf(
+            com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.forNumber(
                 (java.lang.Integer) alphabet_);
         return result == null
             ? com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet
@@ -2187,6 +2185,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setRadix(int value) {
+
       alphabetCase_ = 6;
       alphabet_ = value;
       onChanged();
@@ -2251,7 +2250,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * @return Whether the surrogateInfoType field is set.
      */
     public boolean hasSurrogateInfoType() {
-      return surrogateInfoTypeBuilder_ != null || surrogateInfoType_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2330,11 +2329,11 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         surrogateInfoType_ = value;
-        onChanged();
       } else {
         surrogateInfoTypeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2371,11 +2370,11 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
         com.google.privacy.dlp.v2.InfoType.Builder builderForValue) {
       if (surrogateInfoTypeBuilder_ == null) {
         surrogateInfoType_ = builderForValue.build();
-        onChanged();
       } else {
         surrogateInfoTypeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2410,19 +2409,18 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      */
     public Builder mergeSurrogateInfoType(com.google.privacy.dlp.v2.InfoType value) {
       if (surrogateInfoTypeBuilder_ == null) {
-        if (surrogateInfoType_ != null) {
-          surrogateInfoType_ =
-              com.google.privacy.dlp.v2.InfoType.newBuilder(surrogateInfoType_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && surrogateInfoType_ != null
+            && surrogateInfoType_ != com.google.privacy.dlp.v2.InfoType.getDefaultInstance()) {
+          getSurrogateInfoTypeBuilder().mergeFrom(value);
         } else {
           surrogateInfoType_ = value;
         }
-        onChanged();
       } else {
         surrogateInfoTypeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2456,14 +2454,13 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
      */
     public Builder clearSurrogateInfoType() {
-      if (surrogateInfoTypeBuilder_ == null) {
-        surrogateInfoType_ = null;
-        onChanged();
-      } else {
-        surrogateInfoType_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      surrogateInfoType_ = null;
+      if (surrogateInfoTypeBuilder_ != null) {
+        surrogateInfoTypeBuilder_.dispose();
         surrogateInfoTypeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2497,7 +2494,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
      */
     public com.google.privacy.dlp.v2.InfoType.Builder getSurrogateInfoTypeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getSurrogateInfoTypeFieldBuilder().getBuilder();
     }

@@ -112,7 +112,9 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DESTINATION_CONNECTION_PROFILE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object destinationConnectionProfileName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object destinationConnectionProfileName_ = "";
   /**
    *
    *
@@ -429,8 +431,8 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       destinationConnectionProfileName_ = "";
-
       if (gcsDestinationConfigBuilder_ != null) {
         gcsDestinationConfigBuilder_.clear();
       }
@@ -463,17 +465,27 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datastream.v1alpha1.DestinationConfig buildPartial() {
       com.google.cloud.datastream.v1alpha1.DestinationConfig result =
           new com.google.cloud.datastream.v1alpha1.DestinationConfig(this);
-      result.destinationConnectionProfileName_ = destinationConnectionProfileName_;
-      if (destinationStreamConfigCase_ == 100) {
-        if (gcsDestinationConfigBuilder_ == null) {
-          result.destinationStreamConfig_ = destinationStreamConfig_;
-        } else {
-          result.destinationStreamConfig_ = gcsDestinationConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.destinationStreamConfigCase_ = destinationStreamConfigCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1alpha1.DestinationConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.destinationConnectionProfileName_ = destinationConnectionProfileName_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datastream.v1alpha1.DestinationConfig result) {
+      result.destinationStreamConfigCase_ = destinationStreamConfigCase_;
+      result.destinationStreamConfig_ = this.destinationStreamConfig_;
+      if (destinationStreamConfigCase_ == 100 && gcsDestinationConfigBuilder_ != null) {
+        result.destinationStreamConfig_ = gcsDestinationConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -524,6 +536,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getDestinationConnectionProfileName().isEmpty()) {
         destinationConnectionProfileName_ = other.destinationConnectionProfileName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getDestinationStreamConfigCase()) {
@@ -566,7 +579,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 destinationConnectionProfileName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 802:
@@ -606,6 +619,8 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object destinationConnectionProfileName_ = "";
     /**
@@ -674,8 +689,8 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       destinationConnectionProfileName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -693,9 +708,9 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDestinationConnectionProfileName() {
-
       destinationConnectionProfileName_ =
           getDefaultInstance().getDestinationConnectionProfileName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -718,8 +733,8 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       destinationConnectionProfileName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -895,7 +910,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       }
       destinationStreamConfigCase_ = 100;
       onChanged();
-      ;
       return gcsDestinationConfigBuilder_;
     }
 

@@ -118,7 +118,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int CONNECTION_PROFILE_FIELD_NUMBER = 2;
@@ -173,11 +173,15 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
   @java.lang.Override
   public com.google.cloud.datastream.v1alpha1.ConnectionProfileOrBuilder
       getConnectionProfileOrBuilder() {
-    return getConnectionProfile();
+    return connectionProfile_ == null
+        ? com.google.cloud.datastream.v1alpha1.ConnectionProfile.getDefaultInstance()
+        : connectionProfile_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -465,20 +469,18 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      bitField0_ = 0;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-      if (connectionProfileBuilder_ == null) {
-        connectionProfile_ = null;
-      } else {
-        connectionProfile_ = null;
+      connectionProfile_ = null;
+      if (connectionProfileBuilder_ != null) {
+        connectionProfileBuilder_.dispose();
         connectionProfileBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -508,19 +510,28 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
     public com.google.cloud.datastream.v1alpha1.UpdateConnectionProfileRequest buildPartial() {
       com.google.cloud.datastream.v1alpha1.UpdateConnectionProfileRequest result =
           new com.google.cloud.datastream.v1alpha1.UpdateConnectionProfileRequest(this);
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (connectionProfileBuilder_ == null) {
-        result.connectionProfile_ = connectionProfile_;
-      } else {
-        result.connectionProfile_ = connectionProfileBuilder_.build();
-      }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datastream.v1alpha1.UpdateConnectionProfileRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.connectionProfile_ =
+            connectionProfileBuilder_ == null
+                ? connectionProfile_
+                : connectionProfileBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -580,6 +591,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -611,20 +623,20 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
             case 10:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getConnectionProfileFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -643,6 +655,8 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -667,7 +681,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -714,11 +728,11 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -738,11 +752,11 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -761,17 +775,18 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -789,14 +804,13 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -814,7 +828,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -892,7 +906,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
      * @return Whether the connectionProfile field is set.
      */
     public boolean hasConnectionProfile() {
-      return connectionProfileBuilder_ != null || connectionProfile_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -934,11 +948,11 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         connectionProfile_ = value;
-        onChanged();
       } else {
         connectionProfileBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -956,11 +970,11 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
         com.google.cloud.datastream.v1alpha1.ConnectionProfile.Builder builderForValue) {
       if (connectionProfileBuilder_ == null) {
         connectionProfile_ = builderForValue.build();
-        onChanged();
       } else {
         connectionProfileBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -977,19 +991,19 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
     public Builder mergeConnectionProfile(
         com.google.cloud.datastream.v1alpha1.ConnectionProfile value) {
       if (connectionProfileBuilder_ == null) {
-        if (connectionProfile_ != null) {
-          connectionProfile_ =
-              com.google.cloud.datastream.v1alpha1.ConnectionProfile.newBuilder(connectionProfile_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && connectionProfile_ != null
+            && connectionProfile_
+                != com.google.cloud.datastream.v1alpha1.ConnectionProfile.getDefaultInstance()) {
+          getConnectionProfileBuilder().mergeFrom(value);
         } else {
           connectionProfile_ = value;
         }
-        onChanged();
       } else {
         connectionProfileBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1004,14 +1018,13 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearConnectionProfile() {
-      if (connectionProfileBuilder_ == null) {
-        connectionProfile_ = null;
-        onChanged();
-      } else {
-        connectionProfile_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      connectionProfile_ = null;
+      if (connectionProfileBuilder_ != null) {
+        connectionProfileBuilder_.dispose();
         connectionProfileBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1027,7 +1040,7 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
      */
     public com.google.cloud.datastream.v1alpha1.ConnectionProfile.Builder
         getConnectionProfileBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getConnectionProfileFieldBuilder().getBuilder();
     }
@@ -1171,8 +1184,8 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1198,8 +1211,8 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1230,8 +1243,8 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

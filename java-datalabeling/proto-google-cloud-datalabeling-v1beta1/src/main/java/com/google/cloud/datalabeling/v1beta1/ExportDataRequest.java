@@ -71,7 +71,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ANNOTATED_DATASET_FIELD_NUMBER = 2;
-  private volatile java.lang.Object annotatedDataset_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object annotatedDataset_ = "";
   /**
    *
    *
@@ -187,7 +191,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FILTER_FIELD_NUMBER = 3;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -286,11 +292,15 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
-    return getOutputConfig();
+    return outputConfig_ == null
+        ? com.google.cloud.datalabeling.v1beta1.OutputConfig.getDefaultInstance()
+        : outputConfig_;
   }
 
   public static final int USER_EMAIL_ADDRESS_FIELD_NUMBER = 5;
-  private volatile java.lang.Object userEmailAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userEmailAddress_ = "";
   /**
    *
    *
@@ -579,20 +589,16 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       annotatedDataset_ = "";
-
       filter_ = "";
-
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-      } else {
-        outputConfig_ = null;
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
       userEmailAddress_ = "";
-
       return this;
     }
 
@@ -620,17 +626,31 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datalabeling.v1beta1.ExportDataRequest buildPartial() {
       com.google.cloud.datalabeling.v1beta1.ExportDataRequest result =
           new com.google.cloud.datalabeling.v1beta1.ExportDataRequest(this);
-      result.name_ = name_;
-      result.annotatedDataset_ = annotatedDataset_;
-      result.filter_ = filter_;
-      if (outputConfigBuilder_ == null) {
-        result.outputConfig_ = outputConfig_;
-      } else {
-        result.outputConfig_ = outputConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.userEmailAddress_ = userEmailAddress_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.ExportDataRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.annotatedDataset_ = annotatedDataset_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.outputConfig_ =
+            outputConfigBuilder_ == null ? outputConfig_ : outputConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.userEmailAddress_ = userEmailAddress_;
+      }
     }
 
     @java.lang.Override
@@ -681,14 +701,17 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAnnotatedDataset().isEmpty()) {
         annotatedDataset_ = other.annotatedDataset_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasOutputConfig()) {
@@ -696,6 +719,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getUserEmailAddress().isEmpty()) {
         userEmailAddress_ = other.userEmailAddress_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -727,31 +751,31 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 annotatedDataset_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 userEmailAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -770,6 +794,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -841,8 +867,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -861,8 +887,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -886,8 +912,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -971,8 +997,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       annotatedDataset_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -994,8 +1020,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAnnotatedDataset() {
-
       annotatedDataset_ = getDefaultInstance().getAnnotatedDataset();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1022,8 +1048,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       annotatedDataset_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1089,8 +1115,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1106,8 +1132,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1128,8 +1154,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1154,7 +1180,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
-      return outputConfigBuilder_ != null || outputConfig_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1195,11 +1221,11 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         outputConfig_ = value;
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1217,11 +1243,11 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
         com.google.cloud.datalabeling.v1beta1.OutputConfig.Builder builderForValue) {
       if (outputConfigBuilder_ == null) {
         outputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1237,19 +1263,19 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeOutputConfig(com.google.cloud.datalabeling.v1beta1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
-        if (outputConfig_ != null) {
-          outputConfig_ =
-              com.google.cloud.datalabeling.v1beta1.OutputConfig.newBuilder(outputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && outputConfig_ != null
+            && outputConfig_
+                != com.google.cloud.datalabeling.v1beta1.OutputConfig.getDefaultInstance()) {
+          getOutputConfigBuilder().mergeFrom(value);
         } else {
           outputConfig_ = value;
         }
-        onChanged();
       } else {
         outputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1264,14 +1290,13 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearOutputConfig() {
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-        onChanged();
-      } else {
-        outputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1286,7 +1311,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.OutputConfig.Builder getOutputConfigBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
@@ -1402,8 +1427,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       userEmailAddress_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1420,8 +1445,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearUserEmailAddress() {
-
       userEmailAddress_ = getDefaultInstance().getUserEmailAddress();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1443,8 +1468,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       userEmailAddress_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

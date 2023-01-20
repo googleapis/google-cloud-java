@@ -357,7 +357,9 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object projectId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object projectId_ = "";
     /**
      *
      *
@@ -408,7 +410,9 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object serviceAccount_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serviceAccount_ = "";
     /**
      *
      *
@@ -675,10 +679,9 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         projectId_ = "";
-
         serviceAccount_ = "";
-
         return this;
       }
 
@@ -707,10 +710,22 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.edgecontainer.v1.VpnConnection.VpcProject buildPartial() {
         com.google.cloud.edgecontainer.v1.VpnConnection.VpcProject result =
             new com.google.cloud.edgecontainer.v1.VpnConnection.VpcProject(this);
-        result.projectId_ = projectId_;
-        result.serviceAccount_ = serviceAccount_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.edgecontainer.v1.VpnConnection.VpcProject result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.projectId_ = projectId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.serviceAccount_ = serviceAccount_;
+        }
       }
 
       @java.lang.Override
@@ -764,10 +779,12 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getProjectId().isEmpty()) {
           projectId_ = other.projectId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getServiceAccount().isEmpty()) {
           serviceAccount_ = other.serviceAccount_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -799,13 +816,13 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   projectId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   serviceAccount_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -824,6 +841,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object projectId_ = "";
       /**
@@ -889,8 +908,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         projectId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -907,8 +926,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
-
         projectId_ = getDefaultInstance().getProjectId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -930,8 +949,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         projectId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1012,8 +1031,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         serviceAccount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1034,8 +1053,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearServiceAccount() {
-
         serviceAccount_ = getDefaultInstance().getServiceAccount();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1061,8 +1080,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         serviceAccount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1598,7 +1617,9 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object name_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object name_ = "";
       /**
        *
        *
@@ -1850,8 +1871,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           name_ = "";
-
           return this;
         }
 
@@ -1882,9 +1903,19 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudRouter buildPartial() {
           com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudRouter result =
               new com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudRouter(this);
-          result.name_ = name_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudRouter result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.name_ = name_;
+          }
         }
 
         @java.lang.Override
@@ -1941,6 +1972,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getName().isEmpty()) {
             name_ = other.name_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -1972,7 +2004,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     name_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 default:
@@ -1991,6 +2023,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object name_ = "";
         /**
@@ -2053,8 +2087,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           name_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2070,8 +2104,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearName() {
-
           name_ = getDefaultInstance().getName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -2092,8 +2126,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           name_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2246,7 +2280,9 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int GATEWAY_FIELD_NUMBER = 1;
-      private volatile java.lang.Object gateway_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object gateway_ = "";
       /**
        *
        *
@@ -2497,8 +2533,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           gateway_ = "";
-
           return this;
         }
 
@@ -2528,9 +2564,19 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudVpn buildPartial() {
           com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudVpn result =
               new com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudVpn(this);
-          result.gateway_ = gateway_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudVpn result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.gateway_ = gateway_;
+          }
         }
 
         @java.lang.Override
@@ -2586,6 +2632,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getGateway().isEmpty()) {
             gateway_ = other.gateway_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -2617,7 +2664,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     gateway_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 default:
@@ -2636,6 +2683,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object gateway_ = "";
         /**
@@ -2698,8 +2747,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           gateway_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2715,8 +2764,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearGateway() {
-
           gateway_ = getDefaultInstance().getGateway();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -2737,8 +2786,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           gateway_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2811,7 +2860,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int STATE_FIELD_NUMBER = 1;
-    private int state_;
+    private int state_ = 0;
     /**
      *
      *
@@ -2840,16 +2889,17 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.edgecontainer.v1.VpnConnection.Details.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.edgecontainer.v1.VpnConnection.Details.State result =
-          com.google.cloud.edgecontainer.v1.VpnConnection.Details.State.valueOf(state_);
+          com.google.cloud.edgecontainer.v1.VpnConnection.Details.State.forNumber(state_);
       return result == null
           ? com.google.cloud.edgecontainer.v1.VpnConnection.Details.State.UNRECOGNIZED
           : result;
     }
 
     public static final int ERROR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object error_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object error_ = "";
     /**
      *
      *
@@ -2946,10 +2996,14 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudRouterOrBuilder
         getCloudRouterOrBuilder() {
-      return getCloudRouter();
+      return cloudRouter_ == null
+          ? com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudRouter.getDefaultInstance()
+          : cloudRouter_;
     }
 
     public static final int CLOUD_VPNS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudVpn>
         cloudVpns_;
     /**
@@ -3266,14 +3320,12 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         state_ = 0;
-
         error_ = "";
-
-        if (cloudRouterBuilder_ == null) {
-          cloudRouter_ = null;
-        } else {
-          cloudRouter_ = null;
+        cloudRouter_ = null;
+        if (cloudRouterBuilder_ != null) {
+          cloudRouterBuilder_.dispose();
           cloudRouterBuilder_ = null;
         }
         if (cloudVpnsBuilder_ == null) {
@@ -3282,7 +3334,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
           cloudVpns_ = null;
           cloudVpnsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -3310,25 +3362,39 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.edgecontainer.v1.VpnConnection.Details buildPartial() {
         com.google.cloud.edgecontainer.v1.VpnConnection.Details result =
             new com.google.cloud.edgecontainer.v1.VpnConnection.Details(this);
-        int from_bitField0_ = bitField0_;
-        result.state_ = state_;
-        result.error_ = error_;
-        if (cloudRouterBuilder_ == null) {
-          result.cloudRouter_ = cloudRouter_;
-        } else {
-          result.cloudRouter_ = cloudRouterBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.edgecontainer.v1.VpnConnection.Details result) {
         if (cloudVpnsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             cloudVpns_ = java.util.Collections.unmodifiableList(cloudVpns_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.cloudVpns_ = cloudVpns_;
         } else {
           result.cloudVpns_ = cloudVpnsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.edgecontainer.v1.VpnConnection.Details result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.state_ = state_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.error_ = error_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.cloudRouter_ =
+              cloudRouterBuilder_ == null ? cloudRouter_ : cloudRouterBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3384,6 +3450,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getError().isEmpty()) {
           error_ = other.error_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasCloudRouter()) {
@@ -3393,7 +3460,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
           if (!other.cloudVpns_.isEmpty()) {
             if (cloudVpns_.isEmpty()) {
               cloudVpns_ = other.cloudVpns_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureCloudVpnsIsMutable();
               cloudVpns_.addAll(other.cloudVpns_);
@@ -3406,7 +3473,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
               cloudVpnsBuilder_.dispose();
               cloudVpnsBuilder_ = null;
               cloudVpns_ = other.cloudVpns_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
               cloudVpnsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getCloudVpnsFieldBuilder()
@@ -3445,19 +3512,19 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   state_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   error_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getCloudRouterFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
@@ -3522,8 +3589,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
-
         state_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3540,9 +3607,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.edgecontainer.v1.VpnConnection.Details.State getState() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.edgecontainer.v1.VpnConnection.Details.State result =
-            com.google.cloud.edgecontainer.v1.VpnConnection.Details.State.valueOf(state_);
+            com.google.cloud.edgecontainer.v1.VpnConnection.Details.State.forNumber(state_);
         return result == null
             ? com.google.cloud.edgecontainer.v1.VpnConnection.Details.State.UNRECOGNIZED
             : result;
@@ -3563,7 +3629,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         state_ = value.getNumber();
         onChanged();
         return this;
@@ -3580,7 +3646,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearState() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         state_ = 0;
         onChanged();
         return this;
@@ -3647,8 +3713,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         error_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3664,8 +3730,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearError() {
-
         error_ = getDefaultInstance().getError();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -3686,8 +3752,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         error_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3711,7 +3777,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the cloudRouter field is set.
        */
       public boolean hasCloudRouter() {
-        return cloudRouterBuilder_ != null || cloudRouter_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -3752,11 +3818,11 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           cloudRouter_ = value;
-          onChanged();
         } else {
           cloudRouterBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -3774,11 +3840,11 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
               builderForValue) {
         if (cloudRouterBuilder_ == null) {
           cloudRouter_ = builderForValue.build();
-          onChanged();
         } else {
           cloudRouterBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -3794,20 +3860,20 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeCloudRouter(
           com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudRouter value) {
         if (cloudRouterBuilder_ == null) {
-          if (cloudRouter_ != null) {
-            cloudRouter_ =
-                com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudRouter.newBuilder(
-                        cloudRouter_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && cloudRouter_ != null
+              && cloudRouter_
+                  != com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudRouter
+                      .getDefaultInstance()) {
+            getCloudRouterBuilder().mergeFrom(value);
           } else {
             cloudRouter_ = value;
           }
-          onChanged();
         } else {
           cloudRouterBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -3821,14 +3887,13 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearCloudRouter() {
-        if (cloudRouterBuilder_ == null) {
-          cloudRouter_ = null;
-          onChanged();
-        } else {
-          cloudRouter_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        cloudRouter_ = null;
+        if (cloudRouterBuilder_ != null) {
+          cloudRouterBuilder_.dispose();
           cloudRouterBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3843,7 +3908,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudRouter.Builder
           getCloudRouterBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getCloudRouterFieldBuilder().getBuilder();
       }
@@ -3899,11 +3964,11 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
           cloudVpns_ = java.util.Collections.emptyList();
 
       private void ensureCloudVpnsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           cloudVpns_ =
               new java.util.ArrayList<
                   com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudVpn>(cloudVpns_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
         }
       }
 
@@ -4153,7 +4218,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       public Builder clearCloudVpns() {
         if (cloudVpnsBuilder_ == null) {
           cloudVpns_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           cloudVpnsBuilder_.clear();
@@ -4300,7 +4365,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudVpn,
                   com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudVpn.Builder,
                   com.google.cloud.edgecontainer.v1.VpnConnection.Details.CloudVpnOrBuilder>(
-                  cloudVpns_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  cloudVpns_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
           cloudVpns_ = null;
         }
         return cloudVpnsBuilder_;
@@ -4371,7 +4436,9 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -4469,7 +4536,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
@@ -4518,7 +4585,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 4;
@@ -4534,6 +4601,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -4591,7 +4659,10 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -4620,7 +4691,9 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAT_GATEWAY_IP_FIELD_NUMBER = 5;
-  private volatile java.lang.Object natGatewayIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object natGatewayIp_ = "";
   /**
    *
    *
@@ -4673,7 +4746,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BGP_ROUTING_MODE_FIELD_NUMBER = 6;
-  private int bgpRoutingMode_;
+  private int bgpRoutingMode_ = 0;
   /**
    *
    *
@@ -4712,16 +4785,17 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   @java.lang.Deprecated
   public com.google.cloud.edgecontainer.v1.VpnConnection.BgpRoutingMode getBgpRoutingMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.edgecontainer.v1.VpnConnection.BgpRoutingMode result =
-        com.google.cloud.edgecontainer.v1.VpnConnection.BgpRoutingMode.valueOf(bgpRoutingMode_);
+        com.google.cloud.edgecontainer.v1.VpnConnection.BgpRoutingMode.forNumber(bgpRoutingMode_);
     return result == null
         ? com.google.cloud.edgecontainer.v1.VpnConnection.BgpRoutingMode.UNRECOGNIZED
         : result;
   }
 
   public static final int CLUSTER_FIELD_NUMBER = 7;
-  private volatile java.lang.Object cluster_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cluster_ = "";
   /**
    *
    *
@@ -4772,7 +4846,9 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VPC_FIELD_NUMBER = 8;
-  private volatile java.lang.Object vpc_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vpc_ = "";
   /**
    *
    *
@@ -4875,11 +4951,13 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.edgecontainer.v1.VpnConnection.VpcProjectOrBuilder
       getVpcProjectOrBuilder() {
-    return getVpcProject();
+    return vpcProject_ == null
+        ? com.google.cloud.edgecontainer.v1.VpnConnection.VpcProject.getDefaultInstance()
+        : vpcProject_;
   }
 
   public static final int ENABLE_HIGH_AVAILABILITY_FIELD_NUMBER = 9;
-  private boolean enableHighAvailability_;
+  private boolean enableHighAvailability_ = false;
   /**
    *
    *
@@ -4948,7 +5026,9 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.edgecontainer.v1.VpnConnection.DetailsOrBuilder getDetailsOrBuilder() {
-    return getDetails();
+    return details_ == null
+        ? com.google.cloud.edgecontainer.v1.VpnConnection.Details.getDefaultInstance()
+        : details_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -5292,41 +5372,32 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       natGatewayIp_ = "";
-
       bgpRoutingMode_ = 0;
-
       cluster_ = "";
-
       vpc_ = "";
-
-      if (vpcProjectBuilder_ == null) {
-        vpcProject_ = null;
-      } else {
-        vpcProject_ = null;
+      vpcProject_ = null;
+      if (vpcProjectBuilder_ != null) {
+        vpcProjectBuilder_.dispose();
         vpcProjectBuilder_ = null;
       }
       enableHighAvailability_ = false;
-
-      if (detailsBuilder_ == null) {
-        details_ = null;
-      } else {
-        details_ = null;
+      details_ = null;
+      if (detailsBuilder_ != null) {
+        detailsBuilder_.dispose();
         detailsBuilder_ = null;
       }
       return this;
@@ -5356,37 +5427,49 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.edgecontainer.v1.VpnConnection buildPartial() {
       com.google.cloud.edgecontainer.v1.VpnConnection result =
           new com.google.cloud.edgecontainer.v1.VpnConnection(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.natGatewayIp_ = natGatewayIp_;
-      result.bgpRoutingMode_ = bgpRoutingMode_;
-      result.cluster_ = cluster_;
-      result.vpc_ = vpc_;
-      if (vpcProjectBuilder_ == null) {
-        result.vpcProject_ = vpcProject_;
-      } else {
-        result.vpcProject_ = vpcProjectBuilder_.build();
-      }
-      result.enableHighAvailability_ = enableHighAvailability_;
-      if (detailsBuilder_ == null) {
-        result.details_ = details_;
-      } else {
-        result.details_ = detailsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.edgecontainer.v1.VpnConnection result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.natGatewayIp_ = natGatewayIp_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.bgpRoutingMode_ = bgpRoutingMode_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.cluster_ = cluster_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.vpc_ = vpc_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.vpcProject_ = vpcProjectBuilder_ == null ? vpcProject_ : vpcProjectBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.enableHighAvailability_ = enableHighAvailability_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.details_ = detailsBuilder_ == null ? details_ : detailsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -5437,6 +5520,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -5446,8 +5530,10 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000008;
       if (!other.getNatGatewayIp().isEmpty()) {
         natGatewayIp_ = other.natGatewayIp_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.bgpRoutingMode_ != 0) {
@@ -5455,10 +5541,12 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCluster().isEmpty()) {
         cluster_ = other.cluster_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getVpc().isEmpty()) {
         vpc_ = other.vpc_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasVpcProject()) {
@@ -5499,19 +5587,19 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -5523,48 +5611,49 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 natGatewayIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 bgpRoutingMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 cluster_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 vpc_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 72:
               {
                 enableHighAvailability_ = input.readBool();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 72
             case 82:
               {
                 input.readMessage(getDetailsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getVpcProjectFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 90
             default:
@@ -5653,8 +5742,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -5672,8 +5761,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -5696,8 +5785,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -5722,7 +5811,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -5763,11 +5852,11 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -5784,11 +5873,11 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -5804,17 +5893,18 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -5829,14 +5919,13 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5851,7 +5940,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -5923,7 +6012,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -5964,11 +6053,11 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -5985,11 +6074,11 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -6005,17 +6094,18 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -6030,14 +6120,13 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -6052,7 +6141,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -6115,14 +6204,14 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return labels_;
     }
 
@@ -6174,8 +6263,10 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -6204,6 +6295,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -6226,6 +6318,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -6244,8 +6337,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -6259,6 +6352,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -6329,8 +6423,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       natGatewayIp_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -6348,8 +6442,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNatGatewayIp() {
-
       natGatewayIp_ = getDefaultInstance().getNatGatewayIp();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -6372,8 +6466,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       natGatewayIp_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -6417,8 +6511,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder setBgpRoutingModeValue(int value) {
-
       bgpRoutingMode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6440,9 +6534,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     @java.lang.Deprecated
     public com.google.cloud.edgecontainer.v1.VpnConnection.BgpRoutingMode getBgpRoutingMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.edgecontainer.v1.VpnConnection.BgpRoutingMode result =
-          com.google.cloud.edgecontainer.v1.VpnConnection.BgpRoutingMode.valueOf(bgpRoutingMode_);
+          com.google.cloud.edgecontainer.v1.VpnConnection.BgpRoutingMode.forNumber(bgpRoutingMode_);
       return result == null
           ? com.google.cloud.edgecontainer.v1.VpnConnection.BgpRoutingMode.UNRECOGNIZED
           : result;
@@ -6469,7 +6562,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       bgpRoutingMode_ = value.getNumber();
       onChanged();
       return this;
@@ -6491,7 +6584,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder clearBgpRoutingMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       bgpRoutingMode_ = 0;
       onChanged();
       return this;
@@ -6561,8 +6654,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cluster_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -6579,8 +6672,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCluster() {
-
       cluster_ = getDefaultInstance().getCluster();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -6602,8 +6695,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cluster_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -6669,8 +6762,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       vpc_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -6686,8 +6779,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVpc() {
-
       vpc_ = getDefaultInstance().getVpc();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -6708,8 +6801,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vpc_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -6735,7 +6828,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the vpcProject field is set.
      */
     public boolean hasVpcProject() {
-      return vpcProjectBuilder_ != null || vpcProject_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -6778,11 +6871,11 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         vpcProject_ = value;
-        onChanged();
       } else {
         vpcProjectBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -6801,11 +6894,11 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.edgecontainer.v1.VpnConnection.VpcProject.Builder builderForValue) {
       if (vpcProjectBuilder_ == null) {
         vpcProject_ = builderForValue.build();
-        onChanged();
       } else {
         vpcProjectBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -6823,19 +6916,20 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeVpcProject(
         com.google.cloud.edgecontainer.v1.VpnConnection.VpcProject value) {
       if (vpcProjectBuilder_ == null) {
-        if (vpcProject_ != null) {
-          vpcProject_ =
-              com.google.cloud.edgecontainer.v1.VpnConnection.VpcProject.newBuilder(vpcProject_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && vpcProject_ != null
+            && vpcProject_
+                != com.google.cloud.edgecontainer.v1.VpnConnection.VpcProject
+                    .getDefaultInstance()) {
+          getVpcProjectBuilder().mergeFrom(value);
         } else {
           vpcProject_ = value;
         }
-        onChanged();
       } else {
         vpcProjectBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -6851,14 +6945,13 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearVpcProject() {
-      if (vpcProjectBuilder_ == null) {
-        vpcProject_ = null;
-        onChanged();
-      } else {
-        vpcProject_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      vpcProject_ = null;
+      if (vpcProjectBuilder_ != null) {
+        vpcProjectBuilder_.dispose();
         vpcProjectBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -6875,7 +6968,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.edgecontainer.v1.VpnConnection.VpcProject.Builder
         getVpcProjectBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getVpcProjectFieldBuilder().getBuilder();
     }
@@ -6963,6 +7056,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableHighAvailability(boolean value) {
 
       enableHighAvailability_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6979,7 +7073,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableHighAvailability() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       enableHighAvailability_ = false;
       onChanged();
       return this;
@@ -7005,7 +7099,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the details field is set.
      */
     public boolean hasDetails() {
-      return detailsBuilder_ != null || details_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -7046,11 +7140,11 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         details_ = value;
-        onChanged();
       } else {
         detailsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -7068,11 +7162,11 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.edgecontainer.v1.VpnConnection.Details.Builder builderForValue) {
       if (detailsBuilder_ == null) {
         details_ = builderForValue.build();
-        onChanged();
       } else {
         detailsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -7088,19 +7182,19 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDetails(com.google.cloud.edgecontainer.v1.VpnConnection.Details value) {
       if (detailsBuilder_ == null) {
-        if (details_ != null) {
-          details_ =
-              com.google.cloud.edgecontainer.v1.VpnConnection.Details.newBuilder(details_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && details_ != null
+            && details_
+                != com.google.cloud.edgecontainer.v1.VpnConnection.Details.getDefaultInstance()) {
+          getDetailsBuilder().mergeFrom(value);
         } else {
           details_ = value;
         }
-        onChanged();
       } else {
         detailsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -7115,14 +7209,13 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDetails() {
-      if (detailsBuilder_ == null) {
-        details_ = null;
-        onChanged();
-      } else {
-        details_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      details_ = null;
+      if (detailsBuilder_ != null) {
+        detailsBuilder_.dispose();
         detailsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7137,7 +7230,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.edgecontainer.v1.VpnConnection.Details.Builder getDetailsBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getDetailsFieldBuilder().getBuilder();
     }

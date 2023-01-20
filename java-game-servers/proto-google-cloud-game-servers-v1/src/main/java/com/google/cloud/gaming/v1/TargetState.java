@@ -68,6 +68,8 @@ public final class TargetState extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DETAILS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gaming.v1.TargetDetails> details_;
   /**
    *
@@ -334,6 +336,7 @@ public final class TargetState extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (detailsBuilder_ == null) {
         details_ = java.util.Collections.emptyList();
       } else {
@@ -368,7 +371,15 @@ public final class TargetState extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gaming.v1.TargetState buildPartial() {
       com.google.cloud.gaming.v1.TargetState result =
           new com.google.cloud.gaming.v1.TargetState(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.gaming.v1.TargetState result) {
       if (detailsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           details_ = java.util.Collections.unmodifiableList(details_);
@@ -378,8 +389,10 @@ public final class TargetState extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.details_ = detailsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gaming.v1.TargetState result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

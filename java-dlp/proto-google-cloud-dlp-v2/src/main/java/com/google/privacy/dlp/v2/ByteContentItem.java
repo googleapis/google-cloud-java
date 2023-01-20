@@ -470,7 +470,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -499,16 +499,15 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.ByteContentItem.BytesType getType() {
-    @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.ByteContentItem.BytesType result =
-        com.google.privacy.dlp.v2.ByteContentItem.BytesType.valueOf(type_);
+        com.google.privacy.dlp.v2.ByteContentItem.BytesType.forNumber(type_);
     return result == null
         ? com.google.privacy.dlp.v2.ByteContentItem.BytesType.UNRECOGNIZED
         : result;
   }
 
   public static final int DATA_FIELD_NUMBER = 2;
-  private com.google.protobuf.ByteString data_;
+  private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -733,10 +732,9 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       data_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -764,10 +762,21 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.ByteContentItem buildPartial() {
       com.google.privacy.dlp.v2.ByteContentItem result =
           new com.google.privacy.dlp.v2.ByteContentItem(this);
-      result.type_ = type_;
-      result.data_ = data_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.ByteContentItem result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.data_ = data_;
+      }
     }
 
     @java.lang.Override
@@ -850,13 +859,13 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 data_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -875,6 +884,8 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int type_ = 0;
     /**
@@ -905,8 +916,8 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -923,9 +934,8 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.ByteContentItem.BytesType getType() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.ByteContentItem.BytesType result =
-          com.google.privacy.dlp.v2.ByteContentItem.BytesType.valueOf(type_);
+          com.google.privacy.dlp.v2.ByteContentItem.BytesType.forNumber(type_);
       return result == null
           ? com.google.privacy.dlp.v2.ByteContentItem.BytesType.UNRECOGNIZED
           : result;
@@ -946,7 +956,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -963,7 +973,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -1001,8 +1011,8 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       data_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1018,7 +1028,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearData() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       data_ = getDefaultInstance().getData();
       onChanged();
       return this;

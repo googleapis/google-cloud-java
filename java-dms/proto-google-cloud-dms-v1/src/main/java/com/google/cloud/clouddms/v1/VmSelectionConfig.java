@@ -68,7 +68,9 @@ public final class VmSelectionConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VM_ZONE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object vmZone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vmZone_ = "";
   /**
    *
    *
@@ -313,8 +315,8 @@ public final class VmSelectionConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       vmZone_ = "";
-
       return this;
     }
 
@@ -342,9 +344,18 @@ public final class VmSelectionConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.clouddms.v1.VmSelectionConfig buildPartial() {
       com.google.cloud.clouddms.v1.VmSelectionConfig result =
           new com.google.cloud.clouddms.v1.VmSelectionConfig(this);
-      result.vmZone_ = vmZone_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.clouddms.v1.VmSelectionConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.vmZone_ = vmZone_;
+      }
     }
 
     @java.lang.Override
@@ -394,6 +405,7 @@ public final class VmSelectionConfig extends com.google.protobuf.GeneratedMessag
       if (other == com.google.cloud.clouddms.v1.VmSelectionConfig.getDefaultInstance()) return this;
       if (!other.getVmZone().isEmpty()) {
         vmZone_ = other.vmZone_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -425,7 +437,7 @@ public final class VmSelectionConfig extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 vmZone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -444,6 +456,8 @@ public final class VmSelectionConfig extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object vmZone_ = "";
     /**
@@ -506,8 +520,8 @@ public final class VmSelectionConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       vmZone_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -523,8 +537,8 @@ public final class VmSelectionConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearVmZone() {
-
       vmZone_ = getDefaultInstance().getVmZone();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -545,8 +559,8 @@ public final class VmSelectionConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vmZone_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -69,7 +69,9 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -173,7 +175,9 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
   @java.lang.Override
   public com.google.cloud.datastream.v1.SourceObjectIdentifierOrBuilder
       getSourceObjectIdentifierOrBuilder() {
-    return getSourceObjectIdentifier();
+    return sourceObjectIdentifier_ == null
+        ? com.google.cloud.datastream.v1.SourceObjectIdentifier.getDefaultInstance()
+        : sourceObjectIdentifier_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -390,12 +394,11 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (sourceObjectIdentifierBuilder_ == null) {
-        sourceObjectIdentifier_ = null;
-      } else {
-        sourceObjectIdentifier_ = null;
+      sourceObjectIdentifier_ = null;
+      if (sourceObjectIdentifierBuilder_ != null) {
+        sourceObjectIdentifierBuilder_.dispose();
         sourceObjectIdentifierBuilder_ = null;
       }
       return this;
@@ -425,14 +428,24 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
     public com.google.cloud.datastream.v1.LookupStreamObjectRequest buildPartial() {
       com.google.cloud.datastream.v1.LookupStreamObjectRequest result =
           new com.google.cloud.datastream.v1.LookupStreamObjectRequest(this);
-      result.parent_ = parent_;
-      if (sourceObjectIdentifierBuilder_ == null) {
-        result.sourceObjectIdentifier_ = sourceObjectIdentifier_;
-      } else {
-        result.sourceObjectIdentifier_ = sourceObjectIdentifierBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.LookupStreamObjectRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sourceObjectIdentifier_ =
+            sourceObjectIdentifierBuilder_ == null
+                ? sourceObjectIdentifier_
+                : sourceObjectIdentifierBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -483,6 +496,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSourceObjectIdentifier()) {
@@ -517,14 +531,14 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getSourceObjectIdentifierFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -543,6 +557,8 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -611,8 +627,8 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -630,8 +646,8 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -654,8 +670,8 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -680,7 +696,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
      * @return Whether the sourceObjectIdentifier field is set.
      */
     public boolean hasSourceObjectIdentifier() {
-      return sourceObjectIdentifierBuilder_ != null || sourceObjectIdentifier_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -722,11 +738,11 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         sourceObjectIdentifier_ = value;
-        onChanged();
       } else {
         sourceObjectIdentifierBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -744,11 +760,11 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
         com.google.cloud.datastream.v1.SourceObjectIdentifier.Builder builderForValue) {
       if (sourceObjectIdentifierBuilder_ == null) {
         sourceObjectIdentifier_ = builderForValue.build();
-        onChanged();
       } else {
         sourceObjectIdentifierBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -765,20 +781,19 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
     public Builder mergeSourceObjectIdentifier(
         com.google.cloud.datastream.v1.SourceObjectIdentifier value) {
       if (sourceObjectIdentifierBuilder_ == null) {
-        if (sourceObjectIdentifier_ != null) {
-          sourceObjectIdentifier_ =
-              com.google.cloud.datastream.v1.SourceObjectIdentifier.newBuilder(
-                      sourceObjectIdentifier_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && sourceObjectIdentifier_ != null
+            && sourceObjectIdentifier_
+                != com.google.cloud.datastream.v1.SourceObjectIdentifier.getDefaultInstance()) {
+          getSourceObjectIdentifierBuilder().mergeFrom(value);
         } else {
           sourceObjectIdentifier_ = value;
         }
-        onChanged();
       } else {
         sourceObjectIdentifierBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -793,14 +808,13 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearSourceObjectIdentifier() {
-      if (sourceObjectIdentifierBuilder_ == null) {
-        sourceObjectIdentifier_ = null;
-        onChanged();
-      } else {
-        sourceObjectIdentifier_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      sourceObjectIdentifier_ = null;
+      if (sourceObjectIdentifierBuilder_ != null) {
+        sourceObjectIdentifierBuilder_.dispose();
         sourceObjectIdentifierBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -816,7 +830,7 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
      */
     public com.google.cloud.datastream.v1.SourceObjectIdentifier.Builder
         getSourceObjectIdentifierBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSourceObjectIdentifierFieldBuilder().getBuilder();
     }

@@ -68,7 +68,9 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
   }
 
   public static final int DATASET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object dataset_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataset_ = "";
   /**
    *
    *
@@ -119,7 +121,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
   }
 
   public static final int TOTAL_COUNT_FIELD_NUMBER = 2;
-  private int totalCount_;
+  private int totalCount_ = 0;
   /**
    *
    *
@@ -137,7 +139,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
   }
 
   public static final int EXPORT_COUNT_FIELD_NUMBER = 3;
-  private int exportCount_;
+  private int exportCount_ = 0;
   /**
    *
    *
@@ -199,7 +201,9 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelStatsOrBuilder getLabelStatsOrBuilder() {
-    return getLabelStats();
+    return labelStats_ == null
+        ? com.google.cloud.datalabeling.v1beta1.LabelStats.getDefaultInstance()
+        : labelStats_;
   }
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 5;
@@ -247,7 +251,9 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
-    return getOutputConfig();
+    return outputConfig_ == null
+        ? com.google.cloud.datalabeling.v1beta1.OutputConfig.getDefaultInstance()
+        : outputConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -496,22 +502,18 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       dataset_ = "";
-
       totalCount_ = 0;
-
       exportCount_ = 0;
-
-      if (labelStatsBuilder_ == null) {
-        labelStats_ = null;
-      } else {
-        labelStats_ = null;
+      labelStats_ = null;
+      if (labelStatsBuilder_ != null) {
+        labelStatsBuilder_.dispose();
         labelStatsBuilder_ = null;
       }
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-      } else {
-        outputConfig_ = null;
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
       return this;
@@ -542,21 +544,32 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
     public com.google.cloud.datalabeling.v1beta1.ExportDataOperationResponse buildPartial() {
       com.google.cloud.datalabeling.v1beta1.ExportDataOperationResponse result =
           new com.google.cloud.datalabeling.v1beta1.ExportDataOperationResponse(this);
-      result.dataset_ = dataset_;
-      result.totalCount_ = totalCount_;
-      result.exportCount_ = exportCount_;
-      if (labelStatsBuilder_ == null) {
-        result.labelStats_ = labelStats_;
-      } else {
-        result.labelStats_ = labelStatsBuilder_.build();
-      }
-      if (outputConfigBuilder_ == null) {
-        result.outputConfig_ = outputConfig_;
-      } else {
-        result.outputConfig_ = outputConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datalabeling.v1beta1.ExportDataOperationResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dataset_ = dataset_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.totalCount_ = totalCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.exportCount_ = exportCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labelStats_ = labelStatsBuilder_ == null ? labelStats_ : labelStatsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.outputConfig_ =
+            outputConfigBuilder_ == null ? outputConfig_ : outputConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -609,6 +622,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
         return this;
       if (!other.getDataset().isEmpty()) {
         dataset_ = other.dataset_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getTotalCount() != 0) {
@@ -652,31 +666,31 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
             case 10:
               {
                 dataset_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 totalCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 exportCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getLabelStatsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -695,6 +709,8 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object dataset_ = "";
     /**
@@ -760,8 +776,8 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataset_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -778,8 +794,8 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearDataset() {
-
       dataset_ = getDefaultInstance().getDataset();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -801,8 +817,8 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataset_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -838,6 +854,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
     public Builder setTotalCount(int value) {
 
       totalCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -853,7 +870,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearTotalCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       totalCount_ = 0;
       onChanged();
       return this;
@@ -890,6 +907,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
     public Builder setExportCount(int value) {
 
       exportCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -905,7 +923,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearExportCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       exportCount_ = 0;
       onChanged();
       return this;
@@ -929,7 +947,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
      * @return Whether the labelStats field is set.
      */
     public boolean hasLabelStats() {
-      return labelStatsBuilder_ != null || labelStats_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -966,11 +984,11 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         labelStats_ = value;
-        onChanged();
       } else {
         labelStatsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -986,11 +1004,11 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
         com.google.cloud.datalabeling.v1beta1.LabelStats.Builder builderForValue) {
       if (labelStatsBuilder_ == null) {
         labelStats_ = builderForValue.build();
-        onChanged();
       } else {
         labelStatsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1004,19 +1022,19 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
      */
     public Builder mergeLabelStats(com.google.cloud.datalabeling.v1beta1.LabelStats value) {
       if (labelStatsBuilder_ == null) {
-        if (labelStats_ != null) {
-          labelStats_ =
-              com.google.cloud.datalabeling.v1beta1.LabelStats.newBuilder(labelStats_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && labelStats_ != null
+            && labelStats_
+                != com.google.cloud.datalabeling.v1beta1.LabelStats.getDefaultInstance()) {
+          getLabelStatsBuilder().mergeFrom(value);
         } else {
           labelStats_ = value;
         }
-        onChanged();
       } else {
         labelStatsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1029,14 +1047,13 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
      * <code>.google.cloud.datalabeling.v1beta1.LabelStats label_stats = 4;</code>
      */
     public Builder clearLabelStats() {
-      if (labelStatsBuilder_ == null) {
-        labelStats_ = null;
-        onChanged();
-      } else {
-        labelStats_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      labelStats_ = null;
+      if (labelStatsBuilder_ != null) {
+        labelStatsBuilder_.dispose();
         labelStatsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1049,7 +1066,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
      * <code>.google.cloud.datalabeling.v1beta1.LabelStats label_stats = 4;</code>
      */
     public com.google.cloud.datalabeling.v1beta1.LabelStats.Builder getLabelStatsBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getLabelStatsFieldBuilder().getBuilder();
     }
@@ -1115,7 +1132,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
      * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
-      return outputConfigBuilder_ != null || outputConfig_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1152,11 +1169,11 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         outputConfig_ = value;
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1172,11 +1189,11 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
         com.google.cloud.datalabeling.v1beta1.OutputConfig.Builder builderForValue) {
       if (outputConfigBuilder_ == null) {
         outputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1190,19 +1207,19 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
      */
     public Builder mergeOutputConfig(com.google.cloud.datalabeling.v1beta1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
-        if (outputConfig_ != null) {
-          outputConfig_ =
-              com.google.cloud.datalabeling.v1beta1.OutputConfig.newBuilder(outputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && outputConfig_ != null
+            && outputConfig_
+                != com.google.cloud.datalabeling.v1beta1.OutputConfig.getDefaultInstance()) {
+          getOutputConfigBuilder().mergeFrom(value);
         } else {
           outputConfig_ = value;
         }
-        onChanged();
       } else {
         outputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1215,14 +1232,13 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
      * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 5;</code>
      */
     public Builder clearOutputConfig() {
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-        onChanged();
-      } else {
-        outputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1235,7 +1251,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
      * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 5;</code>
      */
     public com.google.cloud.datalabeling.v1beta1.OutputConfig.Builder getOutputConfigBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }

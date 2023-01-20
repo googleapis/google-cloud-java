@@ -71,7 +71,9 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int HOSTNAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object hostname_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object hostname_ = "";
   /**
    *
    *
@@ -120,7 +122,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PORT_FIELD_NUMBER = 2;
-  private int port_;
+  private int port_ = 0;
   /**
    *
    *
@@ -138,7 +140,9 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int USERNAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object username_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object username_ = "";
   /**
    *
    *
@@ -187,7 +191,9 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PASSWORD_FIELD_NUMBER = 4;
-  private volatile java.lang.Object password_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object password_ = "";
   /**
    *
    *
@@ -236,7 +242,9 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DATABASE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object database_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object database_ = "";
   /**
    *
    *
@@ -517,16 +525,12 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       hostname_ = "";
-
       port_ = 0;
-
       username_ = "";
-
       password_ = "";
-
       database_ = "";
-
       return this;
     }
 
@@ -554,13 +558,30 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datastream.v1.PostgresqlProfile buildPartial() {
       com.google.cloud.datastream.v1.PostgresqlProfile result =
           new com.google.cloud.datastream.v1.PostgresqlProfile(this);
-      result.hostname_ = hostname_;
-      result.port_ = port_;
-      result.username_ = username_;
-      result.password_ = password_;
-      result.database_ = database_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.PostgresqlProfile result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.hostname_ = hostname_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.port_ = port_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.username_ = username_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.password_ = password_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.database_ = database_;
+      }
     }
 
     @java.lang.Override
@@ -611,6 +632,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getHostname().isEmpty()) {
         hostname_ = other.hostname_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getPort() != 0) {
@@ -618,14 +640,17 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getUsername().isEmpty()) {
         username_ = other.username_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getPassword().isEmpty()) {
         password_ = other.password_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDatabase().isEmpty()) {
         database_ = other.database_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -657,31 +682,31 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 hostname_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 port_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 username_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 password_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 database_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -700,6 +725,8 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object hostname_ = "";
     /**
@@ -762,8 +789,8 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       hostname_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -779,8 +806,8 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearHostname() {
-
       hostname_ = getDefaultInstance().getHostname();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -801,8 +828,8 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       hostname_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -838,6 +865,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
     public Builder setPort(int value) {
 
       port_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -853,7 +881,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       port_ = 0;
       onChanged();
       return this;
@@ -920,8 +948,8 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       username_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -937,8 +965,8 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearUsername() {
-
       username_ = getDefaultInstance().getUsername();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -959,8 +987,8 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       username_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1026,8 +1054,8 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       password_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1043,8 +1071,8 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPassword() {
-
       password_ = getDefaultInstance().getPassword();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1065,8 +1093,8 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       password_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1132,8 +1160,8 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       database_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1149,8 +1177,8 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDatabase() {
-
       database_ = getDefaultInstance().getDatabase();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1171,8 +1199,8 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       database_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

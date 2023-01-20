@@ -139,7 +139,6 @@ public interface RunOrBuilder
    * map&lt;string, .google.protobuf.Value&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-
   /* nullable */
   com.google.protobuf.Value getAttributesOrDefault(
       java.lang.String key,

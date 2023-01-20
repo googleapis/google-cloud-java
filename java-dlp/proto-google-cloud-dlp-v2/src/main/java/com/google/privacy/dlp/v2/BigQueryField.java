@@ -108,7 +108,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder() {
-    return getTable();
+    return table_ == null ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance() : table_;
   }
 
   public static final int FIELD_FIELD_NUMBER = 2;
@@ -154,7 +154,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
-    return getField();
+    return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -372,16 +372,15 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (tableBuilder_ == null) {
-        table_ = null;
-      } else {
-        table_ = null;
+      bitField0_ = 0;
+      table_ = null;
+      if (tableBuilder_ != null) {
+        tableBuilder_.dispose();
         tableBuilder_ = null;
       }
-      if (fieldBuilder_ == null) {
-        field_ = null;
-      } else {
-        field_ = null;
+      field_ = null;
+      if (fieldBuilder_ != null) {
+        fieldBuilder_.dispose();
         fieldBuilder_ = null;
       }
       return this;
@@ -411,18 +410,21 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.BigQueryField buildPartial() {
       com.google.privacy.dlp.v2.BigQueryField result =
           new com.google.privacy.dlp.v2.BigQueryField(this);
-      if (tableBuilder_ == null) {
-        result.table_ = table_;
-      } else {
-        result.table_ = tableBuilder_.build();
-      }
-      if (fieldBuilder_ == null) {
-        result.field_ = field_;
-      } else {
-        result.field_ = fieldBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.BigQueryField result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.table_ = tableBuilder_ == null ? table_ : tableBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.field_ = fieldBuilder_ == null ? field_ : fieldBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -505,13 +507,13 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getTableFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getFieldFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -531,6 +533,8 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.privacy.dlp.v2.BigQueryTable table_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.BigQueryTable,
@@ -549,7 +553,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the table field is set.
      */
     public boolean hasTable() {
-      return tableBuilder_ != null || table_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -586,11 +590,11 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         table_ = value;
-        onChanged();
       } else {
         tableBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -605,11 +609,11 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
     public Builder setTable(com.google.privacy.dlp.v2.BigQueryTable.Builder builderForValue) {
       if (tableBuilder_ == null) {
         table_ = builderForValue.build();
-        onChanged();
       } else {
         tableBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -623,19 +627,18 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTable(com.google.privacy.dlp.v2.BigQueryTable value) {
       if (tableBuilder_ == null) {
-        if (table_ != null) {
-          table_ =
-              com.google.privacy.dlp.v2.BigQueryTable.newBuilder(table_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && table_ != null
+            && table_ != com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()) {
+          getTableBuilder().mergeFrom(value);
         } else {
           table_ = value;
         }
-        onChanged();
       } else {
         tableBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -648,14 +651,13 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.BigQueryTable table = 1;</code>
      */
     public Builder clearTable() {
-      if (tableBuilder_ == null) {
-        table_ = null;
-        onChanged();
-      } else {
-        table_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      table_ = null;
+      if (tableBuilder_ != null) {
+        tableBuilder_.dispose();
         tableBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -668,7 +670,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.BigQueryTable table = 1;</code>
      */
     public com.google.privacy.dlp.v2.BigQueryTable.Builder getTableBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTableFieldBuilder().getBuilder();
     }
@@ -734,7 +736,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the field field is set.
      */
     public boolean hasField() {
-      return fieldBuilder_ != null || field_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -769,11 +771,11 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         field_ = value;
-        onChanged();
       } else {
         fieldBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -788,11 +790,11 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
     public Builder setField(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (fieldBuilder_ == null) {
         field_ = builderForValue.build();
-        onChanged();
       } else {
         fieldBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -806,17 +808,18 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeField(com.google.privacy.dlp.v2.FieldId value) {
       if (fieldBuilder_ == null) {
-        if (field_ != null) {
-          field_ =
-              com.google.privacy.dlp.v2.FieldId.newBuilder(field_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && field_ != null
+            && field_ != com.google.privacy.dlp.v2.FieldId.getDefaultInstance()) {
+          getFieldBuilder().mergeFrom(value);
         } else {
           field_ = value;
         }
-        onChanged();
       } else {
         fieldBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -829,14 +832,13 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.FieldId field = 2;</code>
      */
     public Builder clearField() {
-      if (fieldBuilder_ == null) {
-        field_ = null;
-        onChanged();
-      } else {
-        field_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      field_ = null;
+      if (fieldBuilder_ != null) {
+        fieldBuilder_.dispose();
         fieldBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -849,7 +851,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.FieldId field = 2;</code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder getFieldBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFieldFieldBuilder().getBuilder();
     }

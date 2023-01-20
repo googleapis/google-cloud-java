@@ -200,7 +200,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.OutputStorageConfigOrBuilder getOutputConfigOrBuilder() {
-      return getOutputConfig();
+      return outputConfig_ == null
+          ? com.google.privacy.dlp.v2.OutputStorageConfig.getDefaultInstance()
+          : outputConfig_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -410,10 +412,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (outputConfigBuilder_ == null) {
-          outputConfig_ = null;
-        } else {
-          outputConfig_ = null;
+        bitField0_ = 0;
+        outputConfig_ = null;
+        if (outputConfigBuilder_ != null) {
+          outputConfigBuilder_.dispose();
           outputConfigBuilder_ = null;
         }
         return this;
@@ -443,13 +445,19 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public com.google.privacy.dlp.v2.Action.SaveFindings buildPartial() {
         com.google.privacy.dlp.v2.Action.SaveFindings result =
             new com.google.privacy.dlp.v2.Action.SaveFindings(this);
-        if (outputConfigBuilder_ == null) {
-          result.outputConfig_ = outputConfig_;
-        } else {
-          result.outputConfig_ = outputConfigBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.privacy.dlp.v2.Action.SaveFindings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.outputConfig_ =
+              outputConfigBuilder_ == null ? outputConfig_ : outputConfigBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -532,7 +540,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -552,6 +560,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.privacy.dlp.v2.OutputStorageConfig outputConfig_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.OutputStorageConfig,
@@ -570,7 +580,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the outputConfig field is set.
        */
       public boolean hasOutputConfig() {
-        return outputConfigBuilder_ != null || outputConfig_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -607,11 +617,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           outputConfig_ = value;
-          onChanged();
         } else {
           outputConfigBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -627,11 +637,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           com.google.privacy.dlp.v2.OutputStorageConfig.Builder builderForValue) {
         if (outputConfigBuilder_ == null) {
           outputConfig_ = builderForValue.build();
-          onChanged();
         } else {
           outputConfigBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -645,19 +655,19 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeOutputConfig(com.google.privacy.dlp.v2.OutputStorageConfig value) {
         if (outputConfigBuilder_ == null) {
-          if (outputConfig_ != null) {
-            outputConfig_ =
-                com.google.privacy.dlp.v2.OutputStorageConfig.newBuilder(outputConfig_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && outputConfig_ != null
+              && outputConfig_
+                  != com.google.privacy.dlp.v2.OutputStorageConfig.getDefaultInstance()) {
+            getOutputConfigBuilder().mergeFrom(value);
           } else {
             outputConfig_ = value;
           }
-          onChanged();
         } else {
           outputConfigBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -670,14 +680,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
        */
       public Builder clearOutputConfig() {
-        if (outputConfigBuilder_ == null) {
-          outputConfig_ = null;
-          onChanged();
-        } else {
-          outputConfig_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        outputConfig_ = null;
+        if (outputConfigBuilder_ != null) {
+          outputConfigBuilder_.dispose();
           outputConfigBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -690,7 +699,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
        */
       public com.google.privacy.dlp.v2.OutputStorageConfig.Builder getOutputConfigBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getOutputConfigFieldBuilder().getBuilder();
       }
@@ -892,7 +901,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TOPIC_FIELD_NUMBER = 1;
-    private volatile java.lang.Object topic_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object topic_ = "";
     /**
      *
      *
@@ -1149,8 +1160,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         topic_ = "";
-
         return this;
       }
 
@@ -1178,9 +1189,18 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public com.google.privacy.dlp.v2.Action.PublishToPubSub buildPartial() {
         com.google.privacy.dlp.v2.Action.PublishToPubSub result =
             new com.google.privacy.dlp.v2.Action.PublishToPubSub(this);
-        result.topic_ = topic_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.privacy.dlp.v2.Action.PublishToPubSub result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.topic_ = topic_;
+        }
       }
 
       @java.lang.Override
@@ -1233,6 +1253,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getTopic().isEmpty()) {
           topic_ = other.topic_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1264,7 +1285,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   topic_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1283,6 +1304,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object topic_ = "";
       /**
@@ -1354,8 +1377,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         topic_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1374,8 +1397,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTopic() {
-
         topic_ = getDefaultInstance().getTopic();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1399,8 +1422,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         topic_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2785,7 +2808,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.privacy.dlp.v2.TransformationConfigOrBuilder
         getTransformationConfigOrBuilder() {
-      return getTransformationConfig();
+      return transformationConfig_ == null
+          ? com.google.privacy.dlp.v2.TransformationConfig.getDefaultInstance()
+          : transformationConfig_;
     }
 
     public static final int TRANSFORMATION_DETAILS_STORAGE_CONFIG_FIELD_NUMBER = 3;
@@ -2860,7 +2885,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.privacy.dlp.v2.TransformationDetailsStorageConfigOrBuilder
         getTransformationDetailsStorageConfigOrBuilder() {
-      return getTransformationDetailsStorageConfig();
+      return transformationDetailsStorageConfig_ == null
+          ? com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.getDefaultInstance()
+          : transformationDetailsStorageConfig_;
     }
 
     public static final int CLOUD_STORAGE_OUTPUT_FIELD_NUMBER = 9;
@@ -2946,16 +2973,18 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int FILE_TYPES_TO_TRANSFORM_FIELD_NUMBER = 8;
+
+    @SuppressWarnings("serial")
     private java.util.List<java.lang.Integer> fileTypesToTransform_;
+
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
             java.lang.Integer, com.google.privacy.dlp.v2.FileType>
         fileTypesToTransform_converter_ =
             new com.google.protobuf.Internal.ListAdapter.Converter<
                 java.lang.Integer, com.google.privacy.dlp.v2.FileType>() {
               public com.google.privacy.dlp.v2.FileType convert(java.lang.Integer from) {
-                @SuppressWarnings("deprecation")
                 com.google.privacy.dlp.v2.FileType result =
-                    com.google.privacy.dlp.v2.FileType.valueOf(from);
+                    com.google.privacy.dlp.v2.FileType.forNumber(from);
                 return result == null ? com.google.privacy.dlp.v2.FileType.UNRECOGNIZED : result;
               }
             };
@@ -3353,20 +3382,19 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (transformationConfigBuilder_ == null) {
-          transformationConfig_ = null;
-        } else {
-          transformationConfig_ = null;
+        bitField0_ = 0;
+        transformationConfig_ = null;
+        if (transformationConfigBuilder_ != null) {
+          transformationConfigBuilder_.dispose();
           transformationConfigBuilder_ = null;
         }
-        if (transformationDetailsStorageConfigBuilder_ == null) {
-          transformationDetailsStorageConfig_ = null;
-        } else {
-          transformationDetailsStorageConfig_ = null;
+        transformationDetailsStorageConfig_ = null;
+        if (transformationDetailsStorageConfigBuilder_ != null) {
+          transformationDetailsStorageConfigBuilder_.dispose();
           transformationDetailsStorageConfigBuilder_ = null;
         }
         fileTypesToTransform_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         outputCase_ = 0;
         output_ = null;
         return this;
@@ -3396,29 +3424,42 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public com.google.privacy.dlp.v2.Action.Deidentify buildPartial() {
         com.google.privacy.dlp.v2.Action.Deidentify result =
             new com.google.privacy.dlp.v2.Action.Deidentify(this);
-        int from_bitField0_ = bitField0_;
-        if (transformationConfigBuilder_ == null) {
-          result.transformationConfig_ = transformationConfig_;
-        } else {
-          result.transformationConfig_ = transformationConfigBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (transformationDetailsStorageConfigBuilder_ == null) {
-          result.transformationDetailsStorageConfig_ = transformationDetailsStorageConfig_;
-        } else {
-          result.transformationDetailsStorageConfig_ =
-              transformationDetailsStorageConfigBuilder_.build();
-        }
-        if (outputCase_ == 9) {
-          result.output_ = output_;
-        }
-        if (((bitField0_ & 0x00000001) != 0)) {
-          fileTypesToTransform_ = java.util.Collections.unmodifiableList(fileTypesToTransform_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.fileTypesToTransform_ = fileTypesToTransform_;
-        result.outputCase_ = outputCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.Action.Deidentify result) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          fileTypesToTransform_ = java.util.Collections.unmodifiableList(fileTypesToTransform_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.fileTypesToTransform_ = fileTypesToTransform_;
+      }
+
+      private void buildPartial0(com.google.privacy.dlp.v2.Action.Deidentify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.transformationConfig_ =
+              transformationConfigBuilder_ == null
+                  ? transformationConfig_
+                  : transformationConfigBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.transformationDetailsStorageConfig_ =
+              transformationDetailsStorageConfigBuilder_ == null
+                  ? transformationDetailsStorageConfig_
+                  : transformationDetailsStorageConfigBuilder_.build();
+        }
+      }
+
+      private void buildPartialOneofs(com.google.privacy.dlp.v2.Action.Deidentify result) {
+        result.outputCase_ = outputCase_;
+        result.output_ = this.output_;
       }
 
       @java.lang.Override
@@ -3477,7 +3518,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         if (!other.fileTypesToTransform_.isEmpty()) {
           if (fileTypesToTransform_.isEmpty()) {
             fileTypesToTransform_ = other.fileTypesToTransform_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureFileTypesToTransformIsMutable();
             fileTypesToTransform_.addAll(other.fileTypesToTransform_);
@@ -3528,14 +3569,14 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
                   input.readMessage(
                       getTransformationDetailsStorageConfigFieldBuilder().getBuilder(),
                       extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 26
               case 58:
                 {
                   input.readMessage(
                       getTransformationConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 58
               case 64:
@@ -3616,7 +3657,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the transformationConfig field is set.
        */
       public boolean hasTransformationConfig() {
-        return transformationConfigBuilder_ != null || transformationConfig_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -3655,11 +3696,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           transformationConfig_ = value;
-          onChanged();
         } else {
           transformationConfigBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -3676,11 +3717,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           com.google.privacy.dlp.v2.TransformationConfig.Builder builderForValue) {
         if (transformationConfigBuilder_ == null) {
           transformationConfig_ = builderForValue.build();
-          onChanged();
         } else {
           transformationConfigBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -3696,19 +3737,19 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeTransformationConfig(
           com.google.privacy.dlp.v2.TransformationConfig value) {
         if (transformationConfigBuilder_ == null) {
-          if (transformationConfig_ != null) {
-            transformationConfig_ =
-                com.google.privacy.dlp.v2.TransformationConfig.newBuilder(transformationConfig_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && transformationConfig_ != null
+              && transformationConfig_
+                  != com.google.privacy.dlp.v2.TransformationConfig.getDefaultInstance()) {
+            getTransformationConfigBuilder().mergeFrom(value);
           } else {
             transformationConfig_ = value;
           }
-          onChanged();
         } else {
           transformationConfigBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -3722,14 +3763,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.privacy.dlp.v2.TransformationConfig transformation_config = 7;</code>
        */
       public Builder clearTransformationConfig() {
-        if (transformationConfigBuilder_ == null) {
-          transformationConfig_ = null;
-          onChanged();
-        } else {
-          transformationConfig_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        transformationConfig_ = null;
+        if (transformationConfigBuilder_ != null) {
+          transformationConfigBuilder_.dispose();
           transformationConfigBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3744,7 +3784,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.privacy.dlp.v2.TransformationConfig.Builder
           getTransformationConfigBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getTransformationConfigFieldBuilder().getBuilder();
       }
@@ -3822,8 +3862,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the transformationDetailsStorageConfig field is set.
        */
       public boolean hasTransformationDetailsStorageConfig() {
-        return transformationDetailsStorageConfigBuilder_ != null
-            || transformationDetailsStorageConfig_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -3878,11 +3917,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           transformationDetailsStorageConfig_ = value;
-          onChanged();
         } else {
           transformationDetailsStorageConfigBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3906,11 +3945,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.Builder builderForValue) {
         if (transformationDetailsStorageConfigBuilder_ == null) {
           transformationDetailsStorageConfig_ = builderForValue.build();
-          onChanged();
         } else {
           transformationDetailsStorageConfigBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3933,20 +3972,20 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeTransformationDetailsStorageConfig(
           com.google.privacy.dlp.v2.TransformationDetailsStorageConfig value) {
         if (transformationDetailsStorageConfigBuilder_ == null) {
-          if (transformationDetailsStorageConfig_ != null) {
-            transformationDetailsStorageConfig_ =
-                com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.newBuilder(
-                        transformationDetailsStorageConfig_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && transformationDetailsStorageConfig_ != null
+              && transformationDetailsStorageConfig_
+                  != com.google.privacy.dlp.v2.TransformationDetailsStorageConfig
+                      .getDefaultInstance()) {
+            getTransformationDetailsStorageConfigBuilder().mergeFrom(value);
           } else {
             transformationDetailsStorageConfig_ = value;
           }
-          onChanged();
         } else {
           transformationDetailsStorageConfigBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3967,14 +4006,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearTransformationDetailsStorageConfig() {
-        if (transformationDetailsStorageConfigBuilder_ == null) {
-          transformationDetailsStorageConfig_ = null;
-          onChanged();
-        } else {
-          transformationDetailsStorageConfig_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        transformationDetailsStorageConfig_ = null;
+        if (transformationDetailsStorageConfigBuilder_ != null) {
+          transformationDetailsStorageConfigBuilder_.dispose();
           transformationDetailsStorageConfigBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3996,7 +4034,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.Builder
           getTransformationDetailsStorageConfigBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getTransformationDetailsStorageConfigFieldBuilder().getBuilder();
       }
@@ -4223,9 +4261,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           java.util.Collections.emptyList();
 
       private void ensureFileTypesToTransformIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           fileTypesToTransform_ = new java.util.ArrayList<java.lang.Integer>(fileTypesToTransform_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
         }
       }
       /**
@@ -4392,7 +4430,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearFileTypesToTransform() {
         fileTypesToTransform_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -6182,6 +6220,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (saveFindingsBuilder_ != null) {
         saveFindingsBuilder_.clear();
       }
@@ -6231,58 +6270,42 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.privacy.dlp.v2.Action buildPartial() {
       com.google.privacy.dlp.v2.Action result = new com.google.privacy.dlp.v2.Action(this);
-      if (actionCase_ == 1) {
-        if (saveFindingsBuilder_ == null) {
-          result.action_ = action_;
-        } else {
-          result.action_ = saveFindingsBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (actionCase_ == 2) {
-        if (pubSubBuilder_ == null) {
-          result.action_ = action_;
-        } else {
-          result.action_ = pubSubBuilder_.build();
-        }
-      }
-      if (actionCase_ == 3) {
-        if (publishSummaryToCsccBuilder_ == null) {
-          result.action_ = action_;
-        } else {
-          result.action_ = publishSummaryToCsccBuilder_.build();
-        }
-      }
-      if (actionCase_ == 5) {
-        if (publishFindingsToCloudDataCatalogBuilder_ == null) {
-          result.action_ = action_;
-        } else {
-          result.action_ = publishFindingsToCloudDataCatalogBuilder_.build();
-        }
-      }
-      if (actionCase_ == 7) {
-        if (deidentifyBuilder_ == null) {
-          result.action_ = action_;
-        } else {
-          result.action_ = deidentifyBuilder_.build();
-        }
-      }
-      if (actionCase_ == 8) {
-        if (jobNotificationEmailsBuilder_ == null) {
-          result.action_ = action_;
-        } else {
-          result.action_ = jobNotificationEmailsBuilder_.build();
-        }
-      }
-      if (actionCase_ == 9) {
-        if (publishToStackdriverBuilder_ == null) {
-          result.action_ = action_;
-        } else {
-          result.action_ = publishToStackdriverBuilder_.build();
-        }
-      }
-      result.actionCase_ = actionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.Action result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.Action result) {
+      result.actionCase_ = actionCase_;
+      result.action_ = this.action_;
+      if (actionCase_ == 1 && saveFindingsBuilder_ != null) {
+        result.action_ = saveFindingsBuilder_.build();
+      }
+      if (actionCase_ == 2 && pubSubBuilder_ != null) {
+        result.action_ = pubSubBuilder_.build();
+      }
+      if (actionCase_ == 3 && publishSummaryToCsccBuilder_ != null) {
+        result.action_ = publishSummaryToCsccBuilder_.build();
+      }
+      if (actionCase_ == 5 && publishFindingsToCloudDataCatalogBuilder_ != null) {
+        result.action_ = publishFindingsToCloudDataCatalogBuilder_.build();
+      }
+      if (actionCase_ == 7 && deidentifyBuilder_ != null) {
+        result.action_ = deidentifyBuilder_.build();
+      }
+      if (actionCase_ == 8 && jobNotificationEmailsBuilder_ != null) {
+        result.action_ = jobNotificationEmailsBuilder_.build();
+      }
+      if (actionCase_ == 9 && publishToStackdriverBuilder_ != null) {
+        result.action_ = publishToStackdriverBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -6474,6 +6497,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.Action.SaveFindings,
@@ -6681,7 +6706,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       actionCase_ = 1;
       onChanged();
-      ;
       return saveFindingsBuilder_;
     }
 
@@ -6891,7 +6915,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       actionCase_ = 2;
       onChanged();
-      ;
       return pubSubBuilder_;
     }
 
@@ -7106,7 +7129,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       actionCase_ = 3;
       onChanged();
-      ;
       return publishSummaryToCsccBuilder_;
     }
 
@@ -7347,7 +7369,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       actionCase_ = 5;
       onChanged();
-      ;
       return publishFindingsToCloudDataCatalogBuilder_;
     }
 
@@ -7557,7 +7578,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       actionCase_ = 7;
       onChanged();
-      ;
       return deidentifyBuilder_;
     }
 
@@ -7790,7 +7810,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       actionCase_ = 8;
       onChanged();
-      ;
       return jobNotificationEmailsBuilder_;
     }
 
@@ -8005,7 +8024,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       actionCase_ = 9;
       onChanged();
-      ;
       return publishToStackdriverBuilder_;
     }
 

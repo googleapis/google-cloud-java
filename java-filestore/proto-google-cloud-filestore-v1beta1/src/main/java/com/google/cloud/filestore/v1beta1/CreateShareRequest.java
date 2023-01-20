@@ -69,7 +69,9 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SHARE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object shareId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object shareId_ = "";
   /**
    *
    *
@@ -227,7 +231,7 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.filestore.v1beta1.ShareOrBuilder getShareOrBuilder() {
-    return getShare();
+    return share_ == null ? com.google.cloud.filestore.v1beta1.Share.getDefaultInstance() : share_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -451,14 +455,12 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       shareId_ = "";
-
-      if (shareBuilder_ == null) {
-        share_ = null;
-      } else {
-        share_ = null;
+      share_ = null;
+      if (shareBuilder_ != null) {
+        shareBuilder_.dispose();
         shareBuilder_ = null;
       }
       return this;
@@ -488,15 +490,24 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.filestore.v1beta1.CreateShareRequest buildPartial() {
       com.google.cloud.filestore.v1beta1.CreateShareRequest result =
           new com.google.cloud.filestore.v1beta1.CreateShareRequest(this);
-      result.parent_ = parent_;
-      result.shareId_ = shareId_;
-      if (shareBuilder_ == null) {
-        result.share_ = share_;
-      } else {
-        result.share_ = shareBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.filestore.v1beta1.CreateShareRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.shareId_ = shareId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.share_ = shareBuilder_ == null ? share_ : shareBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -547,10 +558,12 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getShareId().isEmpty()) {
         shareId_ = other.shareId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasShare()) {
@@ -585,19 +598,19 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 shareId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getShareFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -616,6 +629,8 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -687,8 +702,8 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -707,8 +722,8 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -732,8 +747,8 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -808,8 +823,8 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       shareId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -828,8 +843,8 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearShareId() {
-
       shareId_ = getDefaultInstance().getShareId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -853,8 +868,8 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       shareId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -879,7 +894,7 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the share field is set.
      */
     public boolean hasShare() {
-      return shareBuilder_ != null || share_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -920,11 +935,11 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         share_ = value;
-        onChanged();
       } else {
         shareBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -941,11 +956,11 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
     public Builder setShare(com.google.cloud.filestore.v1beta1.Share.Builder builderForValue) {
       if (shareBuilder_ == null) {
         share_ = builderForValue.build();
-        onChanged();
       } else {
         shareBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -961,19 +976,18 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeShare(com.google.cloud.filestore.v1beta1.Share value) {
       if (shareBuilder_ == null) {
-        if (share_ != null) {
-          share_ =
-              com.google.cloud.filestore.v1beta1.Share.newBuilder(share_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && share_ != null
+            && share_ != com.google.cloud.filestore.v1beta1.Share.getDefaultInstance()) {
+          getShareBuilder().mergeFrom(value);
         } else {
           share_ = value;
         }
-        onChanged();
       } else {
         shareBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -988,14 +1002,13 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearShare() {
-      if (shareBuilder_ == null) {
-        share_ = null;
-        onChanged();
-      } else {
-        share_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      share_ = null;
+      if (shareBuilder_ != null) {
+        shareBuilder_.dispose();
         shareBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1010,7 +1023,7 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.filestore.v1beta1.Share.Builder getShareBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getShareFieldBuilder().getBuilder();
     }

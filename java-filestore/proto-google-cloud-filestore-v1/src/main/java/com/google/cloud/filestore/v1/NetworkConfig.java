@@ -206,7 +206,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETWORK_FIELD_NUMBER = 1;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -259,7 +261,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MODES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> modes_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.filestore.v1.NetworkConfig.AddressMode>
       modes_converter_ =
@@ -267,9 +272,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
               java.lang.Integer, com.google.cloud.filestore.v1.NetworkConfig.AddressMode>() {
             public com.google.cloud.filestore.v1.NetworkConfig.AddressMode convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.filestore.v1.NetworkConfig.AddressMode result =
-                  com.google.cloud.filestore.v1.NetworkConfig.AddressMode.valueOf(from);
+                  com.google.cloud.filestore.v1.NetworkConfig.AddressMode.forNumber(from);
               return result == null
                   ? com.google.cloud.filestore.v1.NetworkConfig.AddressMode.UNRECOGNIZED
                   : result;
@@ -363,7 +367,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   private int modesMemoizedSerializedSize;
 
   public static final int RESERVED_IP_RANGE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object reservedIpRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reservedIpRange_ = "";
   /**
    *
    *
@@ -424,6 +430,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IP_ADDRESSES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList ipAddresses_;
   /**
    *
@@ -743,14 +751,13 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       network_ = "";
-
       modes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      reservedIpRange_ = "";
-
-      ipAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      reservedIpRange_ = "";
+      ipAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -778,21 +785,35 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.filestore.v1.NetworkConfig buildPartial() {
       com.google.cloud.filestore.v1.NetworkConfig result =
           new com.google.cloud.filestore.v1.NetworkConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.network_ = network_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        modes_ = java.util.Collections.unmodifiableList(modes_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.modes_ = modes_;
-      result.reservedIpRange_ = reservedIpRange_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        ipAddresses_ = ipAddresses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.ipAddresses_ = ipAddresses_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.filestore.v1.NetworkConfig result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        modes_ = java.util.Collections.unmodifiableList(modes_);
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.modes_ = modes_;
+      if (((bitField0_ & 0x00000008) != 0)) {
+        ipAddresses_ = ipAddresses_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.ipAddresses_ = ipAddresses_;
+    }
+
+    private void buildPartial0(com.google.cloud.filestore.v1.NetworkConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.reservedIpRange_ = reservedIpRange_;
+      }
     }
 
     @java.lang.Override
@@ -842,12 +863,13 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.filestore.v1.NetworkConfig.getDefaultInstance()) return this;
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.modes_.isEmpty()) {
         if (modes_.isEmpty()) {
           modes_ = other.modes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureModesIsMutable();
           modes_.addAll(other.modes_);
@@ -856,12 +878,13 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getReservedIpRange().isEmpty()) {
         reservedIpRange_ = other.reservedIpRange_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.ipAddresses_.isEmpty()) {
         if (ipAddresses_.isEmpty()) {
           ipAddresses_ = other.ipAddresses_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureIpAddressesIsMutable();
           ipAddresses_.addAll(other.ipAddresses_);
@@ -897,7 +920,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 24:
@@ -922,7 +945,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 reservedIpRange_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
@@ -1018,8 +1041,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1037,8 +1060,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1061,8 +1084,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1070,9 +1093,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> modes_ = java.util.Collections.emptyList();
 
     private void ensureModesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         modes_ = new java.util.ArrayList<java.lang.Integer>(modes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1206,7 +1229,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearModes() {
       modes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1381,8 +1404,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       reservedIpRange_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1404,8 +1427,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReservedIpRange() {
-
       reservedIpRange_ = getDefaultInstance().getReservedIpRange();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1432,8 +1455,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       reservedIpRange_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1442,9 +1465,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureIpAddressesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         ipAddresses_ = new com.google.protobuf.LazyStringArrayList(ipAddresses_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1603,7 +1626,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearIpAddresses() {
       ipAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }

@@ -74,7 +74,9 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -176,7 +180,9 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -227,6 +233,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ANNOTATION_SPECS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datalabeling.v1beta1.AnnotationSpec> annotationSpecs_;
   /**
    *
@@ -303,6 +311,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int BLOCKING_RESOURCES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList blockingResources_;
   /**
    *
@@ -612,21 +622,19 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
       if (annotationSpecsBuilder_ == null) {
         annotationSpecs_ = java.util.Collections.emptyList();
       } else {
         annotationSpecs_ = null;
         annotationSpecsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -654,26 +662,43 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet buildPartial() {
       com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet result =
           new com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet result) {
       if (annotationSpecsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           annotationSpecs_ = java.util.Collections.unmodifiableList(annotationSpecs_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.annotationSpecs_ = annotationSpecs_;
       } else {
         result.annotationSpecs_ = annotationSpecsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         blockingResources_ = blockingResources_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.blockingResources_ = blockingResources_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
     }
 
     @java.lang.Override
@@ -724,21 +749,24 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (annotationSpecsBuilder_ == null) {
         if (!other.annotationSpecs_.isEmpty()) {
           if (annotationSpecs_.isEmpty()) {
             annotationSpecs_ = other.annotationSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureAnnotationSpecsIsMutable();
             annotationSpecs_.addAll(other.annotationSpecs_);
@@ -751,7 +779,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
             annotationSpecsBuilder_.dispose();
             annotationSpecsBuilder_ = null;
             annotationSpecs_ = other.annotationSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             annotationSpecsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAnnotationSpecsFieldBuilder()
@@ -764,7 +792,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       if (!other.blockingResources_.isEmpty()) {
         if (blockingResources_.isEmpty()) {
           blockingResources_ = other.blockingResources_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureBlockingResourcesIsMutable();
           blockingResources_.addAll(other.blockingResources_);
@@ -800,19 +828,19 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -919,8 +947,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -937,8 +965,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -960,8 +988,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1030,8 +1058,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1048,8 +1076,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1071,8 +1099,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1141,8 +1169,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1159,8 +1187,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1182,8 +1210,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1192,11 +1220,11 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureAnnotationSpecsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         annotationSpecs_ =
             new java.util.ArrayList<com.google.cloud.datalabeling.v1beta1.AnnotationSpec>(
                 annotationSpecs_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1426,7 +1454,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     public Builder clearAnnotationSpecs() {
       if (annotationSpecsBuilder_ == null) {
         annotationSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         annotationSpecsBuilder_.clear();
@@ -1561,7 +1589,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder,
                 com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder>(
                 annotationSpecs_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         annotationSpecs_ = null;
@@ -1573,9 +1601,9 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureBlockingResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         blockingResources_ = new com.google.protobuf.LazyStringArrayList(blockingResources_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1718,7 +1746,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearBlockingResources() {
       blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }

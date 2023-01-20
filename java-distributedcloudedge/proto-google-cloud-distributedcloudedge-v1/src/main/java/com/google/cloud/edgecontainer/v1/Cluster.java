@@ -81,7 +81,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -179,7 +181,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
@@ -228,7 +230,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 4;
@@ -244,6 +246,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -301,7 +304,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -378,7 +384,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.edgecontainer.v1.FleetOrBuilder getFleetOrBuilder() {
-    return getFleet();
+    return fleet_ == null ? com.google.cloud.edgecontainer.v1.Fleet.getDefaultInstance() : fleet_;
   }
 
   public static final int NETWORKING_FIELD_NUMBER = 7;
@@ -432,7 +438,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.edgecontainer.v1.ClusterNetworkingOrBuilder getNetworkingOrBuilder() {
-    return getNetworking();
+    return networking_ == null
+        ? com.google.cloud.edgecontainer.v1.ClusterNetworking.getDefaultInstance()
+        : networking_;
   }
 
   public static final int AUTHORIZATION_FIELD_NUMBER = 9;
@@ -486,11 +494,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.edgecontainer.v1.AuthorizationOrBuilder getAuthorizationOrBuilder() {
-    return getAuthorization();
+    return authorization_ == null
+        ? com.google.cloud.edgecontainer.v1.Authorization.getDefaultInstance()
+        : authorization_;
   }
 
   public static final int DEFAULT_MAX_PODS_PER_NODE_FIELD_NUMBER = 8;
-  private int defaultMaxPodsPerNode_;
+  private int defaultMaxPodsPerNode_ = 0;
   /**
    *
    *
@@ -510,7 +520,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENDPOINT_FIELD_NUMBER = 6;
-  private volatile java.lang.Object endpoint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object endpoint_ = "";
   /**
    *
    *
@@ -559,7 +571,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLUSTER_CA_CERTIFICATE_FIELD_NUMBER = 10;
-  private volatile java.lang.Object clusterCaCertificate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterCaCertificate_ = "";
   /**
    *
    *
@@ -659,7 +673,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.edgecontainer.v1.MaintenancePolicyOrBuilder
       getMaintenancePolicyOrBuilder() {
-    return getMaintenancePolicy();
+    return maintenancePolicy_ == null
+        ? com.google.cloud.edgecontainer.v1.MaintenancePolicy.getDefaultInstance()
+        : maintenancePolicy_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1007,49 +1023,40 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
-      if (fleetBuilder_ == null) {
-        fleet_ = null;
-      } else {
-        fleet_ = null;
+      fleet_ = null;
+      if (fleetBuilder_ != null) {
+        fleetBuilder_.dispose();
         fleetBuilder_ = null;
       }
-      if (networkingBuilder_ == null) {
-        networking_ = null;
-      } else {
-        networking_ = null;
+      networking_ = null;
+      if (networkingBuilder_ != null) {
+        networkingBuilder_.dispose();
         networkingBuilder_ = null;
       }
-      if (authorizationBuilder_ == null) {
-        authorization_ = null;
-      } else {
-        authorization_ = null;
+      authorization_ = null;
+      if (authorizationBuilder_ != null) {
+        authorizationBuilder_.dispose();
         authorizationBuilder_ = null;
       }
       defaultMaxPodsPerNode_ = 0;
-
       endpoint_ = "";
-
       clusterCaCertificate_ = "";
-
-      if (maintenancePolicyBuilder_ == null) {
-        maintenancePolicy_ = null;
-      } else {
-        maintenancePolicy_ = null;
+      maintenancePolicy_ = null;
+      if (maintenancePolicyBuilder_ != null) {
+        maintenancePolicyBuilder_.dispose();
         maintenancePolicyBuilder_ = null;
       }
       return this;
@@ -1079,45 +1086,53 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.edgecontainer.v1.Cluster buildPartial() {
       com.google.cloud.edgecontainer.v1.Cluster result =
           new com.google.cloud.edgecontainer.v1.Cluster(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (fleetBuilder_ == null) {
-        result.fleet_ = fleet_;
-      } else {
-        result.fleet_ = fleetBuilder_.build();
-      }
-      if (networkingBuilder_ == null) {
-        result.networking_ = networking_;
-      } else {
-        result.networking_ = networkingBuilder_.build();
-      }
-      if (authorizationBuilder_ == null) {
-        result.authorization_ = authorization_;
-      } else {
-        result.authorization_ = authorizationBuilder_.build();
-      }
-      result.defaultMaxPodsPerNode_ = defaultMaxPodsPerNode_;
-      result.endpoint_ = endpoint_;
-      result.clusterCaCertificate_ = clusterCaCertificate_;
-      if (maintenancePolicyBuilder_ == null) {
-        result.maintenancePolicy_ = maintenancePolicy_;
-      } else {
-        result.maintenancePolicy_ = maintenancePolicyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.edgecontainer.v1.Cluster result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.fleet_ = fleetBuilder_ == null ? fleet_ : fleetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.networking_ = networkingBuilder_ == null ? networking_ : networkingBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.authorization_ =
+            authorizationBuilder_ == null ? authorization_ : authorizationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.defaultMaxPodsPerNode_ = defaultMaxPodsPerNode_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.endpoint_ = endpoint_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.clusterCaCertificate_ = clusterCaCertificate_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.maintenancePolicy_ =
+            maintenancePolicyBuilder_ == null
+                ? maintenancePolicy_
+                : maintenancePolicyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1167,6 +1182,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.edgecontainer.v1.Cluster.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1176,6 +1192,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000008;
       if (other.hasFleet()) {
         mergeFleet(other.getFleet());
       }
@@ -1190,10 +1207,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEndpoint().isEmpty()) {
         endpoint_ = other.endpoint_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getClusterCaCertificate().isEmpty()) {
         clusterCaCertificate_ = other.clusterCaCertificate_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasMaintenancePolicy()) {
@@ -1228,19 +1247,19 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1252,49 +1271,50 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 50:
               {
                 endpoint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getNetworkingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 64:
               {
                 defaultMaxPodsPerNode_ = input.readInt32();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             case 74:
               {
                 input.readMessage(getAuthorizationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 74
             case 82:
               {
                 clusterCaCertificate_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getFleetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(
                     getMaintenancePolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 98
             default:
@@ -1383,8 +1403,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1402,8 +1422,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1426,8 +1446,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1452,7 +1472,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1493,11 +1513,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1514,11 +1534,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1534,17 +1554,18 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1559,14 +1580,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1581,7 +1601,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1653,7 +1673,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1694,11 +1714,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1715,11 +1735,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1735,17 +1755,18 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1760,14 +1781,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1782,7 +1802,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1845,14 +1865,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return labels_;
     }
 
@@ -1904,8 +1924,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1934,6 +1956,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -1956,6 +1979,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -1974,8 +1998,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1989,6 +2013,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -2012,7 +2037,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fleet field is set.
      */
     public boolean hasFleet() {
-      return fleetBuilder_ != null || fleet_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2053,11 +2078,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         fleet_ = value;
-        onChanged();
       } else {
         fleetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2074,11 +2099,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setFleet(com.google.cloud.edgecontainer.v1.Fleet.Builder builderForValue) {
       if (fleetBuilder_ == null) {
         fleet_ = builderForValue.build();
-        onChanged();
       } else {
         fleetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2094,19 +2119,18 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeFleet(com.google.cloud.edgecontainer.v1.Fleet value) {
       if (fleetBuilder_ == null) {
-        if (fleet_ != null) {
-          fleet_ =
-              com.google.cloud.edgecontainer.v1.Fleet.newBuilder(fleet_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && fleet_ != null
+            && fleet_ != com.google.cloud.edgecontainer.v1.Fleet.getDefaultInstance()) {
+          getFleetBuilder().mergeFrom(value);
         } else {
           fleet_ = value;
         }
-        onChanged();
       } else {
         fleetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2121,14 +2145,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearFleet() {
-      if (fleetBuilder_ == null) {
-        fleet_ = null;
-        onChanged();
-      } else {
-        fleet_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      fleet_ = null;
+      if (fleetBuilder_ != null) {
+        fleetBuilder_.dispose();
         fleetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2143,7 +2166,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.edgecontainer.v1.Fleet.Builder getFleetBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getFleetFieldBuilder().getBuilder();
     }
@@ -2215,7 +2238,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the networking field is set.
      */
     public boolean hasNetworking() {
-      return networkingBuilder_ != null || networking_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2256,11 +2279,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         networking_ = value;
-        onChanged();
       } else {
         networkingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2278,11 +2301,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.edgecontainer.v1.ClusterNetworking.Builder builderForValue) {
       if (networkingBuilder_ == null) {
         networking_ = builderForValue.build();
-        onChanged();
       } else {
         networkingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2298,19 +2321,19 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeNetworking(com.google.cloud.edgecontainer.v1.ClusterNetworking value) {
       if (networkingBuilder_ == null) {
-        if (networking_ != null) {
-          networking_ =
-              com.google.cloud.edgecontainer.v1.ClusterNetworking.newBuilder(networking_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && networking_ != null
+            && networking_
+                != com.google.cloud.edgecontainer.v1.ClusterNetworking.getDefaultInstance()) {
+          getNetworkingBuilder().mergeFrom(value);
         } else {
           networking_ = value;
         }
-        onChanged();
       } else {
         networkingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2325,14 +2348,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearNetworking() {
-      if (networkingBuilder_ == null) {
-        networking_ = null;
-        onChanged();
-      } else {
-        networking_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      networking_ = null;
+      if (networkingBuilder_ != null) {
+        networkingBuilder_.dispose();
         networkingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2347,7 +2369,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.edgecontainer.v1.ClusterNetworking.Builder getNetworkingBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getNetworkingFieldBuilder().getBuilder();
     }
@@ -2419,7 +2441,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the authorization field is set.
      */
     public boolean hasAuthorization() {
-      return authorizationBuilder_ != null || authorization_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2460,11 +2482,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         authorization_ = value;
-        onChanged();
       } else {
         authorizationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2482,11 +2504,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.edgecontainer.v1.Authorization.Builder builderForValue) {
       if (authorizationBuilder_ == null) {
         authorization_ = builderForValue.build();
-        onChanged();
       } else {
         authorizationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2502,19 +2524,19 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAuthorization(com.google.cloud.edgecontainer.v1.Authorization value) {
       if (authorizationBuilder_ == null) {
-        if (authorization_ != null) {
-          authorization_ =
-              com.google.cloud.edgecontainer.v1.Authorization.newBuilder(authorization_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && authorization_ != null
+            && authorization_
+                != com.google.cloud.edgecontainer.v1.Authorization.getDefaultInstance()) {
+          getAuthorizationBuilder().mergeFrom(value);
         } else {
           authorization_ = value;
         }
-        onChanged();
       } else {
         authorizationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2529,14 +2551,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAuthorization() {
-      if (authorizationBuilder_ == null) {
-        authorization_ = null;
-        onChanged();
-      } else {
-        authorization_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      authorization_ = null;
+      if (authorizationBuilder_ != null) {
+        authorizationBuilder_.dispose();
         authorizationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2551,7 +2572,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.edgecontainer.v1.Authorization.Builder getAuthorizationBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getAuthorizationFieldBuilder().getBuilder();
     }
@@ -2638,6 +2659,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setDefaultMaxPodsPerNode(int value) {
 
       defaultMaxPodsPerNode_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2655,7 +2677,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDefaultMaxPodsPerNode() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       defaultMaxPodsPerNode_ = 0;
       onChanged();
       return this;
@@ -2722,8 +2744,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       endpoint_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2739,8 +2761,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEndpoint() {
-
       endpoint_ = getDefaultInstance().getEndpoint();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2761,8 +2783,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       endpoint_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2828,8 +2850,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterCaCertificate_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2845,8 +2867,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClusterCaCertificate() {
-
       clusterCaCertificate_ = getDefaultInstance().getClusterCaCertificate();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2867,8 +2889,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterCaCertificate_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2893,7 +2915,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maintenancePolicy field is set.
      */
     public boolean hasMaintenancePolicy() {
-      return maintenancePolicyBuilder_ != null || maintenancePolicy_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2934,11 +2956,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         maintenancePolicy_ = value;
-        onChanged();
       } else {
         maintenancePolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -2956,11 +2978,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.edgecontainer.v1.MaintenancePolicy.Builder builderForValue) {
       if (maintenancePolicyBuilder_ == null) {
         maintenancePolicy_ = builderForValue.build();
-        onChanged();
       } else {
         maintenancePolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -2977,19 +2999,19 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeMaintenancePolicy(
         com.google.cloud.edgecontainer.v1.MaintenancePolicy value) {
       if (maintenancePolicyBuilder_ == null) {
-        if (maintenancePolicy_ != null) {
-          maintenancePolicy_ =
-              com.google.cloud.edgecontainer.v1.MaintenancePolicy.newBuilder(maintenancePolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && maintenancePolicy_ != null
+            && maintenancePolicy_
+                != com.google.cloud.edgecontainer.v1.MaintenancePolicy.getDefaultInstance()) {
+          getMaintenancePolicyBuilder().mergeFrom(value);
         } else {
           maintenancePolicy_ = value;
         }
-        onChanged();
       } else {
         maintenancePolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3004,14 +3026,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearMaintenancePolicy() {
-      if (maintenancePolicyBuilder_ == null) {
-        maintenancePolicy_ = null;
-        onChanged();
-      } else {
-        maintenancePolicy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      maintenancePolicy_ = null;
+      if (maintenancePolicyBuilder_ != null) {
+        maintenancePolicyBuilder_.dispose();
         maintenancePolicyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3027,7 +3048,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.edgecontainer.v1.MaintenancePolicy.Builder
         getMaintenancePolicyBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getMaintenancePolicyFieldBuilder().getBuilder();
     }

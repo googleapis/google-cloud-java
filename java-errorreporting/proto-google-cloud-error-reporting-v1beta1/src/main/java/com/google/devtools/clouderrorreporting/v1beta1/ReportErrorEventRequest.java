@@ -68,7 +68,9 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
   }
 
   public static final int PROJECT_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectName_ = "";
   /**
    *
    *
@@ -180,7 +182,9 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEventOrBuilder
       getEventOrBuilder() {
-    return getEvent();
+    return event_ == null
+        ? com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.getDefaultInstance()
+        : event_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -398,12 +402,11 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectName_ = "";
-
-      if (eventBuilder_ == null) {
-        event_ = null;
-      } else {
-        event_ = null;
+      event_ = null;
+      if (eventBuilder_ != null) {
+        eventBuilder_.dispose();
         eventBuilder_ = null;
       }
       return this;
@@ -436,14 +439,22 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
     public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest buildPartial() {
       com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest result =
           new com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest(this);
-      result.projectName_ = projectName_;
-      if (eventBuilder_ == null) {
-        result.event_ = event_;
-      } else {
-        result.event_ = eventBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectName_ = projectName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.event_ = eventBuilder_ == null ? event_ : eventBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -498,6 +509,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
               .getDefaultInstance()) return this;
       if (!other.getProjectName().isEmpty()) {
         projectName_ = other.projectName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasEvent()) {
@@ -532,13 +544,13 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
             case 10:
               {
                 projectName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEventFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -557,6 +569,8 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object projectName_ = "";
     /**
@@ -637,8 +651,8 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -660,8 +674,8 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearProjectName() {
-
       projectName_ = getDefaultInstance().getProjectName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -688,8 +702,8 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -714,7 +728,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      * @return Whether the event field is set.
      */
     public boolean hasEvent() {
-      return eventBuilder_ != null || event_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -757,11 +771,11 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         event_ = value;
-        onChanged();
       } else {
         eventBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -780,11 +794,11 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
             builderForValue) {
       if (eventBuilder_ == null) {
         event_ = builderForValue.build();
-        onChanged();
       } else {
         eventBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -801,19 +815,20 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
     public Builder mergeEvent(
         com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent value) {
       if (eventBuilder_ == null) {
-        if (event_ != null) {
-          event_ =
-              com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.newBuilder(event_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && event_ != null
+            && event_
+                != com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent
+                    .getDefaultInstance()) {
+          getEventBuilder().mergeFrom(value);
         } else {
           event_ = value;
         }
-        onChanged();
       } else {
         eventBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -828,14 +843,13 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearEvent() {
-      if (eventBuilder_ == null) {
-        event_ = null;
-        onChanged();
-      } else {
-        event_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      event_ = null;
+      if (eventBuilder_ != null) {
+        eventBuilder_.dispose();
         eventBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -851,7 +865,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.Builder
         getEventBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEventFieldBuilder().getBuilder();
     }

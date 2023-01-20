@@ -80,7 +80,9 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -137,7 +139,9 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -204,6 +208,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
                     com.google.protobuf.Value.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value> attributes_;
 
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
@@ -271,8 +276,10 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.protobuf.Value getAttributesOrDefault(
-      java.lang.String key, com.google.protobuf.Value defaultValue) {
+  public /* nullable */ com.google.protobuf.Value getAttributesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.Value defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -356,7 +363,9 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.lineage.v1.OriginOrBuilder getOriginOrBuilder() {
-    return getOrigin();
+    return origin_ == null
+        ? com.google.cloud.datacatalog.lineage.v1.Origin.getDefaultInstance()
+        : origin_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -616,15 +625,13 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       internalGetMutableAttributes().clear();
-      if (originBuilder_ == null) {
-        origin_ = null;
-      } else {
-        origin_ = null;
+      origin_ = null;
+      if (originBuilder_ != null) {
+        originBuilder_.dispose();
         originBuilder_ = null;
       }
       return this;
@@ -654,18 +661,28 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.lineage.v1.Process buildPartial() {
       com.google.cloud.datacatalog.lineage.v1.Process result =
           new com.google.cloud.datacatalog.lineage.v1.Process(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.attributes_ = internalGetAttributes();
-      result.attributes_.makeImmutable();
-      if (originBuilder_ == null) {
-        result.origin_ = origin_;
-      } else {
-        result.origin_ = originBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.lineage.v1.Process result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.attributes_ = internalGetAttributes();
+        result.attributes_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.origin_ = originBuilder_ == null ? origin_ : originBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -716,13 +733,16 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       internalGetMutableAttributes().mergeFrom(other.internalGetAttributes());
+      bitField0_ |= 0x00000004;
       if (other.hasOrigin()) {
         mergeOrigin(other.getOrigin());
       }
@@ -755,13 +775,13 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -774,12 +794,13 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAttributes()
                     .getMutableMap()
                     .put(attributes__.getKey(), attributes__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getOriginFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -874,8 +895,8 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -895,8 +916,8 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -921,8 +942,8 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -994,8 +1015,8 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1013,8 +1034,8 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1037,8 +1058,8 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1056,8 +1077,6 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
         internalGetMutableAttributes() {
-      onChanged();
-      ;
       if (attributes_ == null) {
         attributes_ =
             com.google.protobuf.MapField.newMapField(AttributesDefaultEntryHolder.defaultEntry);
@@ -1065,6 +1084,8 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
       if (!attributes_.isMutable()) {
         attributes_ = attributes_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return attributes_;
     }
 
@@ -1125,8 +1146,10 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.protobuf.Value getAttributesOrDefault(
-        java.lang.String key, com.google.protobuf.Value defaultValue) {
+    public /* nullable */ com.google.protobuf.Value getAttributesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.Value defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1160,6 +1183,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAttributes() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableAttributes().getMutableMap().clear();
       return this;
     }
@@ -1185,6 +1209,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableAttributes() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableAttributes().getMutableMap();
     }
     /**
@@ -1206,8 +1231,8 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAttributes().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1225,6 +1250,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllAttributes(
         java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
       internalGetMutableAttributes().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1248,7 +1274,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the origin field is set.
      */
     public boolean hasOrigin() {
-      return originBuilder_ != null || origin_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1289,11 +1315,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         origin_ = value;
-        onChanged();
       } else {
         originBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1311,11 +1337,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.datacatalog.lineage.v1.Origin.Builder builderForValue) {
       if (originBuilder_ == null) {
         origin_ = builderForValue.build();
-        onChanged();
       } else {
         originBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1331,19 +1357,18 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeOrigin(com.google.cloud.datacatalog.lineage.v1.Origin value) {
       if (originBuilder_ == null) {
-        if (origin_ != null) {
-          origin_ =
-              com.google.cloud.datacatalog.lineage.v1.Origin.newBuilder(origin_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && origin_ != null
+            && origin_ != com.google.cloud.datacatalog.lineage.v1.Origin.getDefaultInstance()) {
+          getOriginBuilder().mergeFrom(value);
         } else {
           origin_ = value;
         }
-        onChanged();
       } else {
         originBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1358,14 +1383,13 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearOrigin() {
-      if (originBuilder_ == null) {
-        origin_ = null;
-        onChanged();
-      } else {
-        origin_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      origin_ = null;
+      if (originBuilder_ != null) {
+        originBuilder_.dispose();
         originBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1380,7 +1404,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.datacatalog.lineage.v1.Origin.Builder getOriginBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getOriginFieldBuilder().getBuilder();
     }

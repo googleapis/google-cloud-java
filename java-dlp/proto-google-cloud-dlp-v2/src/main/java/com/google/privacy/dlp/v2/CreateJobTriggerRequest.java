@@ -70,7 +70,9 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -195,11 +197,15 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.JobTriggerOrBuilder getJobTriggerOrBuilder() {
-    return getJobTrigger();
+    return jobTrigger_ == null
+        ? com.google.privacy.dlp.v2.JobTrigger.getDefaultInstance()
+        : jobTrigger_;
   }
 
   public static final int TRIGGER_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object triggerId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object triggerId_ = "";
   /**
    *
    *
@@ -254,7 +260,9 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
   }
 
   public static final int LOCATION_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object locationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object locationId_ = "";
   /**
    *
    *
@@ -531,18 +539,15 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (jobTriggerBuilder_ == null) {
-        jobTrigger_ = null;
-      } else {
-        jobTrigger_ = null;
+      jobTrigger_ = null;
+      if (jobTriggerBuilder_ != null) {
+        jobTriggerBuilder_.dispose();
         jobTriggerBuilder_ = null;
       }
       triggerId_ = "";
-
       locationId_ = "";
-
       return this;
     }
 
@@ -570,16 +575,27 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.CreateJobTriggerRequest buildPartial() {
       com.google.privacy.dlp.v2.CreateJobTriggerRequest result =
           new com.google.privacy.dlp.v2.CreateJobTriggerRequest(this);
-      result.parent_ = parent_;
-      if (jobTriggerBuilder_ == null) {
-        result.jobTrigger_ = jobTrigger_;
-      } else {
-        result.jobTrigger_ = jobTriggerBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.triggerId_ = triggerId_;
-      result.locationId_ = locationId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.CreateJobTriggerRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.jobTrigger_ = jobTriggerBuilder_ == null ? jobTrigger_ : jobTriggerBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.triggerId_ = triggerId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.locationId_ = locationId_;
+      }
     }
 
     @java.lang.Override
@@ -630,6 +646,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasJobTrigger()) {
@@ -637,10 +654,12 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       }
       if (!other.getTriggerId().isEmpty()) {
         triggerId_ = other.triggerId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getLocationId().isEmpty()) {
         locationId_ = other.locationId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -672,25 +691,25 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getJobTriggerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 triggerId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 locationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -709,6 +728,8 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -810,8 +831,8 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -840,8 +861,8 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -875,8 +896,8 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -901,7 +922,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      * @return Whether the jobTrigger field is set.
      */
     public boolean hasJobTrigger() {
-      return jobTriggerBuilder_ != null || jobTrigger_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -942,11 +963,11 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         jobTrigger_ = value;
-        onChanged();
       } else {
         jobTriggerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -963,11 +984,11 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
     public Builder setJobTrigger(com.google.privacy.dlp.v2.JobTrigger.Builder builderForValue) {
       if (jobTriggerBuilder_ == null) {
         jobTrigger_ = builderForValue.build();
-        onChanged();
       } else {
         jobTriggerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -983,19 +1004,18 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      */
     public Builder mergeJobTrigger(com.google.privacy.dlp.v2.JobTrigger value) {
       if (jobTriggerBuilder_ == null) {
-        if (jobTrigger_ != null) {
-          jobTrigger_ =
-              com.google.privacy.dlp.v2.JobTrigger.newBuilder(jobTrigger_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && jobTrigger_ != null
+            && jobTrigger_ != com.google.privacy.dlp.v2.JobTrigger.getDefaultInstance()) {
+          getJobTriggerBuilder().mergeFrom(value);
         } else {
           jobTrigger_ = value;
         }
-        onChanged();
       } else {
         jobTriggerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1010,14 +1030,13 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearJobTrigger() {
-      if (jobTriggerBuilder_ == null) {
-        jobTrigger_ = null;
-        onChanged();
-      } else {
-        jobTrigger_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      jobTrigger_ = null;
+      if (jobTriggerBuilder_ != null) {
+        jobTriggerBuilder_.dispose();
         jobTriggerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1032,7 +1051,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.privacy.dlp.v2.JobTrigger.Builder getJobTriggerBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getJobTriggerFieldBuilder().getBuilder();
     }
@@ -1154,8 +1173,8 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       triggerId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1174,8 +1193,8 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearTriggerId() {
-
       triggerId_ = getDefaultInstance().getTriggerId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1199,8 +1218,8 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       triggerId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1266,8 +1285,8 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       locationId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1283,8 +1302,8 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearLocationId() {
-
       locationId_ = getDefaultInstance().getLocationId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1305,8 +1324,8 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       locationId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

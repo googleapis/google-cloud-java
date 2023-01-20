@@ -68,7 +68,9 @@ public final class SshScript extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCRIPT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object script_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object script_ = "";
   /**
    *
    *
@@ -312,8 +314,8 @@ public final class SshScript extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       script_ = "";
-
       return this;
     }
 
@@ -341,9 +343,18 @@ public final class SshScript extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.clouddms.v1.SshScript buildPartial() {
       com.google.cloud.clouddms.v1.SshScript result =
           new com.google.cloud.clouddms.v1.SshScript(this);
-      result.script_ = script_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.clouddms.v1.SshScript result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.script_ = script_;
+      }
     }
 
     @java.lang.Override
@@ -393,6 +404,7 @@ public final class SshScript extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.clouddms.v1.SshScript.getDefaultInstance()) return this;
       if (!other.getScript().isEmpty()) {
         script_ = other.script_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -424,7 +436,7 @@ public final class SshScript extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 script_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -443,6 +455,8 @@ public final class SshScript extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object script_ = "";
     /**
@@ -505,8 +519,8 @@ public final class SshScript extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       script_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -522,8 +536,8 @@ public final class SshScript extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearScript() {
-
       script_ = getDefaultInstance().getScript();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -544,8 +558,8 @@ public final class SshScript extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       script_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

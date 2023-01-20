@@ -69,7 +69,9 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ASSET_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object assetId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object assetId_ = "";
   /**
    *
    *
@@ -232,11 +236,11 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.AssetOrBuilder getAssetOrBuilder() {
-    return getAsset();
+    return asset_ == null ? com.google.cloud.dataplex.v1.Asset.getDefaultInstance() : asset_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -483,18 +487,15 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       assetId_ = "";
-
-      if (assetBuilder_ == null) {
-        asset_ = null;
-      } else {
-        asset_ = null;
+      asset_ = null;
+      if (assetBuilder_ != null) {
+        assetBuilder_.dispose();
         assetBuilder_ = null;
       }
       validateOnly_ = false;
-
       return this;
     }
 
@@ -522,16 +523,27 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dataplex.v1.CreateAssetRequest buildPartial() {
       com.google.cloud.dataplex.v1.CreateAssetRequest result =
           new com.google.cloud.dataplex.v1.CreateAssetRequest(this);
-      result.parent_ = parent_;
-      result.assetId_ = assetId_;
-      if (assetBuilder_ == null) {
-        result.asset_ = asset_;
-      } else {
-        result.asset_ = assetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.CreateAssetRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.assetId_ = assetId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.asset_ = assetBuilder_ == null ? asset_ : assetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -582,10 +594,12 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAssetId().isEmpty()) {
         assetId_ = other.assetId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasAsset()) {
@@ -623,25 +637,25 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 assetId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getAssetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -660,6 +674,8 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -731,8 +747,8 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -751,8 +767,8 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -776,8 +792,8 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -864,8 +880,8 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       assetId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -888,8 +904,8 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAssetId() {
-
       assetId_ = getDefaultInstance().getAssetId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -917,8 +933,8 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       assetId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -942,7 +958,7 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the asset field is set.
      */
     public boolean hasAsset() {
-      return assetBuilder_ != null || asset_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -979,11 +995,11 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         asset_ = value;
-        onChanged();
       } else {
         assetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -999,11 +1015,11 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
     public Builder setAsset(com.google.cloud.dataplex.v1.Asset.Builder builderForValue) {
       if (assetBuilder_ == null) {
         asset_ = builderForValue.build();
-        onChanged();
       } else {
         assetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1018,17 +1034,18 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeAsset(com.google.cloud.dataplex.v1.Asset value) {
       if (assetBuilder_ == null) {
-        if (asset_ != null) {
-          asset_ =
-              com.google.cloud.dataplex.v1.Asset.newBuilder(asset_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && asset_ != null
+            && asset_ != com.google.cloud.dataplex.v1.Asset.getDefaultInstance()) {
+          getAssetBuilder().mergeFrom(value);
         } else {
           asset_ = value;
         }
-        onChanged();
       } else {
         assetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1042,14 +1059,13 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearAsset() {
-      if (assetBuilder_ == null) {
-        asset_ = null;
-        onChanged();
-      } else {
-        asset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      asset_ = null;
+      if (assetBuilder_ != null) {
+        assetBuilder_.dispose();
         assetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1063,7 +1079,7 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.dataplex.v1.Asset.Builder getAssetBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAssetFieldBuilder().getBuilder();
     }
@@ -1144,6 +1160,7 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1160,7 +1177,7 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

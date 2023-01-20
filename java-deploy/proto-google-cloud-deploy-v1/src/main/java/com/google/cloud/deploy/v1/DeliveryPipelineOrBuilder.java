@@ -146,7 +146,6 @@ public interface DeliveryPipelineOrBuilder
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
-
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
       java.lang.String key,
@@ -242,7 +241,6 @@ public interface DeliveryPipelineOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,

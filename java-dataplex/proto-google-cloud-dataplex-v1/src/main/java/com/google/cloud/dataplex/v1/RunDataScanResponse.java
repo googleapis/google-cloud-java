@@ -108,7 +108,7 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.DataScanJobOrBuilder getJobOrBuilder() {
-    return getJob();
+    return job_ == null ? com.google.cloud.dataplex.v1.DataScanJob.getDefaultInstance() : job_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -313,10 +313,10 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (jobBuilder_ == null) {
-        job_ = null;
-      } else {
-        job_ = null;
+      bitField0_ = 0;
+      job_ = null;
+      if (jobBuilder_ != null) {
+        jobBuilder_.dispose();
         jobBuilder_ = null;
       }
       return this;
@@ -346,13 +346,18 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.dataplex.v1.RunDataScanResponse buildPartial() {
       com.google.cloud.dataplex.v1.RunDataScanResponse result =
           new com.google.cloud.dataplex.v1.RunDataScanResponse(this);
-      if (jobBuilder_ == null) {
-        result.job_ = job_;
-      } else {
-        result.job_ = jobBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.RunDataScanResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.job_ = jobBuilder_ == null ? job_ : jobBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -433,7 +438,7 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -453,6 +458,8 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.dataplex.v1.DataScanJob job_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataplex.v1.DataScanJob,
@@ -471,7 +478,7 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
      * @return Whether the job field is set.
      */
     public boolean hasJob() {
-      return jobBuilder_ != null || job_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -506,11 +513,11 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         job_ = value;
-        onChanged();
       } else {
         jobBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -525,11 +532,11 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
     public Builder setJob(com.google.cloud.dataplex.v1.DataScanJob.Builder builderForValue) {
       if (jobBuilder_ == null) {
         job_ = builderForValue.build();
-        onChanged();
       } else {
         jobBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -543,19 +550,18 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeJob(com.google.cloud.dataplex.v1.DataScanJob value) {
       if (jobBuilder_ == null) {
-        if (job_ != null) {
-          job_ =
-              com.google.cloud.dataplex.v1.DataScanJob.newBuilder(job_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && job_ != null
+            && job_ != com.google.cloud.dataplex.v1.DataScanJob.getDefaultInstance()) {
+          getJobBuilder().mergeFrom(value);
         } else {
           job_ = value;
         }
-        onChanged();
       } else {
         jobBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -568,14 +574,13 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dataplex.v1.DataScanJob job = 1;</code>
      */
     public Builder clearJob() {
-      if (jobBuilder_ == null) {
-        job_ = null;
-        onChanged();
-      } else {
-        job_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      job_ = null;
+      if (jobBuilder_ != null) {
+        jobBuilder_.dispose();
         jobBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -588,7 +593,7 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dataplex.v1.DataScanJob job = 1;</code>
      */
     public com.google.cloud.dataplex.v1.DataScanJob.Builder getJobBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getJobFieldBuilder().getBuilder();
     }

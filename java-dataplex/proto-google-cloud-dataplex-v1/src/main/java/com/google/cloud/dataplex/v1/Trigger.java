@@ -586,7 +586,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CRON_FIELD_NUMBER = 1;
-    private volatile java.lang.Object cron_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object cron_ = "";
     /**
      *
      *
@@ -847,8 +849,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         cron_ = "";
-
         return this;
       }
 
@@ -876,9 +878,18 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataplex.v1.Trigger.Schedule buildPartial() {
         com.google.cloud.dataplex.v1.Trigger.Schedule result =
             new com.google.cloud.dataplex.v1.Trigger.Schedule(this);
-        result.cron_ = cron_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dataplex.v1.Trigger.Schedule result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.cron_ = cron_;
+        }
       }
 
       @java.lang.Override
@@ -931,6 +942,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getCron().isEmpty()) {
           cron_ = other.cron_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -962,7 +974,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   cron_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -981,6 +993,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object cron_ = "";
       /**
@@ -1064,8 +1078,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         cron_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1088,8 +1102,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearCron() {
-
         cron_ = getDefaultInstance().getCron();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1117,8 +1131,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         cron_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1561,6 +1575,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (onDemandBuilder_ != null) {
         onDemandBuilder_.clear();
       }
@@ -1595,23 +1610,27 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.dataplex.v1.Trigger buildPartial() {
       com.google.cloud.dataplex.v1.Trigger result = new com.google.cloud.dataplex.v1.Trigger(this);
-      if (modeCase_ == 100) {
-        if (onDemandBuilder_ == null) {
-          result.mode_ = mode_;
-        } else {
-          result.mode_ = onDemandBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (modeCase_ == 101) {
-        if (scheduleBuilder_ == null) {
-          result.mode_ = mode_;
-        } else {
-          result.mode_ = scheduleBuilder_.build();
-        }
-      }
-      result.modeCase_ = modeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.Trigger result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataplex.v1.Trigger result) {
+      result.modeCase_ = modeCase_;
+      result.mode_ = this.mode_;
+      if (modeCase_ == 100 && onDemandBuilder_ != null) {
+        result.mode_ = onDemandBuilder_.build();
+      }
+      if (modeCase_ == 101 && scheduleBuilder_ != null) {
+        result.mode_ = scheduleBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1743,6 +1762,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataplex.v1.Trigger.OnDemand,
@@ -1950,7 +1971,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       }
       modeCase_ = 100;
       onChanged();
-      ;
       return onDemandBuilder_;
     }
 
@@ -2160,7 +2180,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       }
       modeCase_ = 101;
       onChanged();
-      ;
       return scheduleBuilder_;
     }
 

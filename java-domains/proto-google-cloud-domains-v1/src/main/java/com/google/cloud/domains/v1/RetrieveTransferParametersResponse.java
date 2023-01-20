@@ -111,7 +111,9 @@ public final class RetrieveTransferParametersResponse extends com.google.protobu
    */
   @java.lang.Override
   public com.google.cloud.domains.v1.TransferParametersOrBuilder getTransferParametersOrBuilder() {
-    return getTransferParameters();
+    return transferParameters_ == null
+        ? com.google.cloud.domains.v1.TransferParameters.getDefaultInstance()
+        : transferParameters_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -317,10 +319,10 @@ public final class RetrieveTransferParametersResponse extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (transferParametersBuilder_ == null) {
-        transferParameters_ = null;
-      } else {
-        transferParameters_ = null;
+      bitField0_ = 0;
+      transferParameters_ = null;
+      if (transferParametersBuilder_ != null) {
+        transferParametersBuilder_.dispose();
         transferParametersBuilder_ = null;
       }
       return this;
@@ -351,13 +353,22 @@ public final class RetrieveTransferParametersResponse extends com.google.protobu
     public com.google.cloud.domains.v1.RetrieveTransferParametersResponse buildPartial() {
       com.google.cloud.domains.v1.RetrieveTransferParametersResponse result =
           new com.google.cloud.domains.v1.RetrieveTransferParametersResponse(this);
-      if (transferParametersBuilder_ == null) {
-        result.transferParameters_ = transferParameters_;
-      } else {
-        result.transferParameters_ = transferParametersBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.domains.v1.RetrieveTransferParametersResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.transferParameters_ =
+            transferParametersBuilder_ == null
+                ? transferParameters_
+                : transferParametersBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -440,7 +451,7 @@ public final class RetrieveTransferParametersResponse extends com.google.protobu
               {
                 input.readMessage(
                     getTransferParametersFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -460,6 +471,8 @@ public final class RetrieveTransferParametersResponse extends com.google.protobu
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.domains.v1.TransferParameters transferParameters_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.domains.v1.TransferParameters,
@@ -478,7 +491,7 @@ public final class RetrieveTransferParametersResponse extends com.google.protobu
      * @return Whether the transferParameters field is set.
      */
     public boolean hasTransferParameters() {
-      return transferParametersBuilder_ != null || transferParameters_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -515,11 +528,11 @@ public final class RetrieveTransferParametersResponse extends com.google.protobu
           throw new NullPointerException();
         }
         transferParameters_ = value;
-        onChanged();
       } else {
         transferParametersBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -535,11 +548,11 @@ public final class RetrieveTransferParametersResponse extends com.google.protobu
         com.google.cloud.domains.v1.TransferParameters.Builder builderForValue) {
       if (transferParametersBuilder_ == null) {
         transferParameters_ = builderForValue.build();
-        onChanged();
       } else {
         transferParametersBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -553,19 +566,19 @@ public final class RetrieveTransferParametersResponse extends com.google.protobu
      */
     public Builder mergeTransferParameters(com.google.cloud.domains.v1.TransferParameters value) {
       if (transferParametersBuilder_ == null) {
-        if (transferParameters_ != null) {
-          transferParameters_ =
-              com.google.cloud.domains.v1.TransferParameters.newBuilder(transferParameters_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && transferParameters_ != null
+            && transferParameters_
+                != com.google.cloud.domains.v1.TransferParameters.getDefaultInstance()) {
+          getTransferParametersBuilder().mergeFrom(value);
         } else {
           transferParameters_ = value;
         }
-        onChanged();
       } else {
         transferParametersBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -578,14 +591,13 @@ public final class RetrieveTransferParametersResponse extends com.google.protobu
      * <code>.google.cloud.domains.v1.TransferParameters transfer_parameters = 1;</code>
      */
     public Builder clearTransferParameters() {
-      if (transferParametersBuilder_ == null) {
-        transferParameters_ = null;
-        onChanged();
-      } else {
-        transferParameters_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      transferParameters_ = null;
+      if (transferParametersBuilder_ != null) {
+        transferParametersBuilder_.dispose();
         transferParametersBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -598,7 +610,7 @@ public final class RetrieveTransferParametersResponse extends com.google.protobu
      * <code>.google.cloud.domains.v1.TransferParameters transfer_parameters = 1;</code>
      */
     public com.google.cloud.domains.v1.TransferParameters.Builder getTransferParametersBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTransferParametersFieldBuilder().getBuilder();
     }

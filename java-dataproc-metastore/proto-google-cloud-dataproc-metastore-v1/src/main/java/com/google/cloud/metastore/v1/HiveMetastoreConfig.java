@@ -80,7 +80,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -141,6 +143,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> configOverrides_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -212,8 +215,10 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
    * <code>map&lt;string, string&gt; config_overrides = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getConfigOverridesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getConfigOverridesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -302,7 +307,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.metastore.v1.KerberosConfigOrBuilder getKerberosConfigOrBuilder() {
-    return getKerberosConfig();
+    return kerberosConfig_ == null
+        ? com.google.cloud.metastore.v1.KerberosConfig.getDefaultInstance()
+        : kerberosConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -554,13 +561,12 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       version_ = "";
-
       internalGetMutableConfigOverrides().clear();
-      if (kerberosConfigBuilder_ == null) {
-        kerberosConfig_ = null;
-      } else {
-        kerberosConfig_ = null;
+      kerberosConfig_ = null;
+      if (kerberosConfigBuilder_ != null) {
+        kerberosConfigBuilder_.dispose();
         kerberosConfigBuilder_ = null;
       }
       return this;
@@ -590,17 +596,26 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     public com.google.cloud.metastore.v1.HiveMetastoreConfig buildPartial() {
       com.google.cloud.metastore.v1.HiveMetastoreConfig result =
           new com.google.cloud.metastore.v1.HiveMetastoreConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.version_ = version_;
-      result.configOverrides_ = internalGetConfigOverrides();
-      result.configOverrides_.makeImmutable();
-      if (kerberosConfigBuilder_ == null) {
-        result.kerberosConfig_ = kerberosConfig_;
-      } else {
-        result.kerberosConfig_ = kerberosConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1.HiveMetastoreConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.configOverrides_ = internalGetConfigOverrides();
+        result.configOverrides_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.kerberosConfig_ =
+            kerberosConfigBuilder_ == null ? kerberosConfig_ : kerberosConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -651,9 +666,11 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableConfigOverrides().mergeFrom(other.internalGetConfigOverrides());
+      bitField0_ |= 0x00000002;
       if (other.hasKerberosConfig()) {
         mergeKerberosConfig(other.getKerberosConfig());
       }
@@ -686,7 +703,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -698,12 +715,13 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
                 internalGetMutableConfigOverrides()
                     .getMutableMap()
                     .put(configOverrides__.getKey(), configOverrides__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getKerberosConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -786,8 +804,8 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -803,8 +821,8 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -825,8 +843,8 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -844,8 +862,6 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableConfigOverrides() {
-      onChanged();
-      ;
       if (configOverrides_ == null) {
         configOverrides_ =
             com.google.protobuf.MapField.newMapField(
@@ -854,6 +870,8 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
       if (!configOverrides_.isMutable()) {
         configOverrides_ = configOverrides_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return configOverrides_;
     }
 
@@ -917,8 +935,10 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * <code>map&lt;string, string&gt; config_overrides = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getConfigOverridesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getConfigOverridesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -951,6 +971,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     }
 
     public Builder clearConfigOverrides() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableConfigOverrides().getMutableMap().clear();
       return this;
     }
@@ -977,6 +998,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableConfigOverrides() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableConfigOverrides().getMutableMap();
     }
     /**
@@ -999,8 +1021,8 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableConfigOverrides().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1018,6 +1040,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder putAllConfigOverrides(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableConfigOverrides().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -1043,7 +1066,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the kerberosConfig field is set.
      */
     public boolean hasKerberosConfig() {
-      return kerberosConfigBuilder_ != null || kerberosConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1088,11 +1111,11 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         kerberosConfig_ = value;
-        onChanged();
       } else {
         kerberosConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1112,11 +1135,11 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
         com.google.cloud.metastore.v1.KerberosConfig.Builder builderForValue) {
       if (kerberosConfigBuilder_ == null) {
         kerberosConfig_ = builderForValue.build();
-        onChanged();
       } else {
         kerberosConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1134,19 +1157,19 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeKerberosConfig(com.google.cloud.metastore.v1.KerberosConfig value) {
       if (kerberosConfigBuilder_ == null) {
-        if (kerberosConfig_ != null) {
-          kerberosConfig_ =
-              com.google.cloud.metastore.v1.KerberosConfig.newBuilder(kerberosConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && kerberosConfig_ != null
+            && kerberosConfig_
+                != com.google.cloud.metastore.v1.KerberosConfig.getDefaultInstance()) {
+          getKerberosConfigBuilder().mergeFrom(value);
         } else {
           kerberosConfig_ = value;
         }
-        onChanged();
       } else {
         kerberosConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1163,14 +1186,13 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.metastore.v1.KerberosConfig kerberos_config = 3;</code>
      */
     public Builder clearKerberosConfig() {
-      if (kerberosConfigBuilder_ == null) {
-        kerberosConfig_ = null;
-        onChanged();
-      } else {
-        kerberosConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      kerberosConfig_ = null;
+      if (kerberosConfigBuilder_ != null) {
+        kerberosConfigBuilder_.dispose();
         kerberosConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1187,7 +1209,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.metastore.v1.KerberosConfig kerberos_config = 3;</code>
      */
     public com.google.cloud.metastore.v1.KerberosConfig.Builder getKerberosConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getKerberosConfigFieldBuilder().getBuilder();
     }

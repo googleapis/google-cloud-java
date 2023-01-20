@@ -66,7 +66,7 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int IS_MULTI_LABEL_FIELD_NUMBER = 1;
-  private boolean isMultiLabel_;
+  private boolean isMultiLabel_ = false;
   /**
    *
    *
@@ -281,8 +281,8 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       isMultiLabel_ = false;
-
       return this;
     }
 
@@ -311,9 +311,19 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
     public com.google.cloud.datalabeling.v1beta1.ClassificationMetadata buildPartial() {
       com.google.cloud.datalabeling.v1beta1.ClassificationMetadata result =
           new com.google.cloud.datalabeling.v1beta1.ClassificationMetadata(this);
-      result.isMultiLabel_ = isMultiLabel_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datalabeling.v1beta1.ClassificationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.isMultiLabel_ = isMultiLabel_;
+      }
     }
 
     @java.lang.Override
@@ -395,7 +405,7 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
             case 8:
               {
                 isMultiLabel_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -414,6 +424,8 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean isMultiLabel_;
     /**
@@ -446,6 +458,7 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
     public Builder setIsMultiLabel(boolean value) {
 
       isMultiLabel_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -461,7 +474,7 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearIsMultiLabel() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       isMultiLabel_ = false;
       onChanged();
       return this;

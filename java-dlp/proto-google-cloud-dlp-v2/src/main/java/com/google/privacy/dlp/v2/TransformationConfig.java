@@ -72,7 +72,9 @@ public final class TransformationConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DEIDENTIFY_TEMPLATE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object deidentifyTemplate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deidentifyTemplate_ = "";
   /**
    *
    *
@@ -131,7 +133,9 @@ public final class TransformationConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int STRUCTURED_DEIDENTIFY_TEMPLATE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object structuredDeidentifyTemplate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object structuredDeidentifyTemplate_ = "";
   /**
    *
    *
@@ -192,7 +196,9 @@ public final class TransformationConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int IMAGE_REDACT_TEMPLATE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object imageRedactTemplate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageRedactTemplate_ = "";
   /**
    *
    *
@@ -466,12 +472,10 @@ public final class TransformationConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       deidentifyTemplate_ = "";
-
       structuredDeidentifyTemplate_ = "";
-
       imageRedactTemplate_ = "";
-
       return this;
     }
 
@@ -499,11 +503,24 @@ public final class TransformationConfig extends com.google.protobuf.GeneratedMes
     public com.google.privacy.dlp.v2.TransformationConfig buildPartial() {
       com.google.privacy.dlp.v2.TransformationConfig result =
           new com.google.privacy.dlp.v2.TransformationConfig(this);
-      result.deidentifyTemplate_ = deidentifyTemplate_;
-      result.structuredDeidentifyTemplate_ = structuredDeidentifyTemplate_;
-      result.imageRedactTemplate_ = imageRedactTemplate_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.TransformationConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.deidentifyTemplate_ = deidentifyTemplate_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.structuredDeidentifyTemplate_ = structuredDeidentifyTemplate_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.imageRedactTemplate_ = imageRedactTemplate_;
+      }
     }
 
     @java.lang.Override
@@ -553,14 +570,17 @@ public final class TransformationConfig extends com.google.protobuf.GeneratedMes
       if (other == com.google.privacy.dlp.v2.TransformationConfig.getDefaultInstance()) return this;
       if (!other.getDeidentifyTemplate().isEmpty()) {
         deidentifyTemplate_ = other.deidentifyTemplate_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getStructuredDeidentifyTemplate().isEmpty()) {
         structuredDeidentifyTemplate_ = other.structuredDeidentifyTemplate_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getImageRedactTemplate().isEmpty()) {
         imageRedactTemplate_ = other.imageRedactTemplate_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -592,19 +612,19 @@ public final class TransformationConfig extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 deidentifyTemplate_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 structuredDeidentifyTemplate_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 imageRedactTemplate_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -623,6 +643,8 @@ public final class TransformationConfig extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object deidentifyTemplate_ = "";
     /**
@@ -700,8 +722,8 @@ public final class TransformationConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       deidentifyTemplate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -722,8 +744,8 @@ public final class TransformationConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDeidentifyTemplate() {
-
       deidentifyTemplate_ = getDefaultInstance().getDeidentifyTemplate();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -749,8 +771,8 @@ public final class TransformationConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deidentifyTemplate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -834,8 +856,8 @@ public final class TransformationConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       structuredDeidentifyTemplate_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -857,8 +879,8 @@ public final class TransformationConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearStructuredDeidentifyTemplate() {
-
       structuredDeidentifyTemplate_ = getDefaultInstance().getStructuredDeidentifyTemplate();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -885,8 +907,8 @@ public final class TransformationConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       structuredDeidentifyTemplate_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -961,8 +983,8 @@ public final class TransformationConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       imageRedactTemplate_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -981,8 +1003,8 @@ public final class TransformationConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearImageRedactTemplate() {
-
       imageRedactTemplate_ = getDefaultInstance().getImageRedactTemplate();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1006,8 +1028,8 @@ public final class TransformationConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       imageRedactTemplate_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

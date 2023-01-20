@@ -74,7 +74,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int INSTRUCTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object instruction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instruction_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ANNOTATED_DATASET_DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object annotatedDatasetDisplayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object annotatedDatasetDisplayName_ = "";
   /**
    *
    *
@@ -178,7 +182,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ANNOTATED_DATASET_DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object annotatedDatasetDescription_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object annotatedDatasetDescription_ = "";
   /**
    *
    *
@@ -231,7 +237,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int LABEL_GROUP_FIELD_NUMBER = 4;
-  private volatile java.lang.Object labelGroup_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object labelGroup_ = "";
   /**
    *
    *
@@ -282,7 +290,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -339,7 +349,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int REPLICA_COUNT_FIELD_NUMBER = 6;
-  private int replicaCount_;
+  private int replicaCount_ = 0;
   /**
    *
    *
@@ -413,10 +423,14 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getQuestionDurationOrBuilder() {
-    return getQuestionDuration();
+    return questionDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : questionDuration_;
   }
 
   public static final int CONTRIBUTOR_EMAILS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList contributorEmails_;
   /**
    *
@@ -494,7 +508,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int USER_EMAIL_ADDRESS_FIELD_NUMBER = 10;
-  private volatile java.lang.Object userEmailAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userEmailAddress_ = "";
   /**
    *
    *
@@ -830,28 +846,21 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instruction_ = "";
-
       annotatedDatasetDisplayName_ = "";
-
       annotatedDatasetDescription_ = "";
-
       labelGroup_ = "";
-
       languageCode_ = "";
-
       replicaCount_ = 0;
-
-      if (questionDurationBuilder_ == null) {
-        questionDuration_ = null;
-      } else {
-        questionDuration_ = null;
+      questionDuration_ = null;
+      if (questionDurationBuilder_ != null) {
+        questionDurationBuilder_.dispose();
         questionDurationBuilder_ = null;
       }
       contributorEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000080);
       userEmailAddress_ = "";
-
       return this;
     }
 
@@ -879,26 +888,50 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig buildPartial() {
       com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig result =
           new com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.instruction_ = instruction_;
-      result.annotatedDatasetDisplayName_ = annotatedDatasetDisplayName_;
-      result.annotatedDatasetDescription_ = annotatedDatasetDescription_;
-      result.labelGroup_ = labelGroup_;
-      result.languageCode_ = languageCode_;
-      result.replicaCount_ = replicaCount_;
-      if (questionDurationBuilder_ == null) {
-        result.questionDuration_ = questionDuration_;
-      } else {
-        result.questionDuration_ = questionDurationBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        contributorEmails_ = contributorEmails_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.contributorEmails_ = contributorEmails_;
-      result.userEmailAddress_ = userEmailAddress_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig result) {
+      if (((bitField0_ & 0x00000080) != 0)) {
+        contributorEmails_ = contributorEmails_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      }
+      result.contributorEmails_ = contributorEmails_;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instruction_ = instruction_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.annotatedDatasetDisplayName_ = annotatedDatasetDisplayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.annotatedDatasetDescription_ = annotatedDatasetDescription_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labelGroup_ = labelGroup_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.replicaCount_ = replicaCount_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.questionDuration_ =
+            questionDurationBuilder_ == null ? questionDuration_ : questionDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.userEmailAddress_ = userEmailAddress_;
+      }
     }
 
     @java.lang.Override
@@ -949,22 +982,27 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getInstruction().isEmpty()) {
         instruction_ = other.instruction_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAnnotatedDatasetDisplayName().isEmpty()) {
         annotatedDatasetDisplayName_ = other.annotatedDatasetDisplayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getAnnotatedDatasetDescription().isEmpty()) {
         annotatedDatasetDescription_ = other.annotatedDatasetDescription_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getLabelGroup().isEmpty()) {
         labelGroup_ = other.labelGroup_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getReplicaCount() != 0) {
@@ -976,7 +1014,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       if (!other.contributorEmails_.isEmpty()) {
         if (contributorEmails_.isEmpty()) {
           contributorEmails_ = other.contributorEmails_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureContributorEmailsIsMutable();
           contributorEmails_.addAll(other.contributorEmails_);
@@ -985,6 +1023,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       }
       if (!other.getUserEmailAddress().isEmpty()) {
         userEmailAddress_ = other.userEmailAddress_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1016,44 +1055,44 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 instruction_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 annotatedDatasetDisplayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 annotatedDatasetDescription_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 labelGroup_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 replicaCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 input.readMessage(
                     getQuestionDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 74:
@@ -1066,7 +1105,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
             case 82:
               {
                 userEmailAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             default:
@@ -1149,8 +1188,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       instruction_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1166,8 +1205,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearInstruction() {
-
       instruction_ = getDefaultInstance().getInstruction();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1188,8 +1227,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instruction_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1264,8 +1303,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       annotatedDatasetDisplayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1284,8 +1323,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearAnnotatedDatasetDisplayName() {
-
       annotatedDatasetDisplayName_ = getDefaultInstance().getAnnotatedDatasetDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1309,8 +1348,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       annotatedDatasetDisplayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1382,8 +1421,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       annotatedDatasetDescription_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1401,8 +1440,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearAnnotatedDatasetDescription() {
-
       annotatedDatasetDescription_ = getDefaultInstance().getAnnotatedDatasetDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1425,8 +1464,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       annotatedDatasetDescription_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1495,8 +1534,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       labelGroup_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1513,8 +1552,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearLabelGroup() {
-
       labelGroup_ = getDefaultInstance().getLabelGroup();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1536,8 +1575,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       labelGroup_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1615,8 +1654,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1636,8 +1675,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1662,8 +1701,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1705,6 +1744,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     public Builder setReplicaCount(int value) {
 
       replicaCount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1723,7 +1763,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearReplicaCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       replicaCount_ = 0;
       onChanged();
       return this;
@@ -1750,7 +1790,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * @return Whether the questionDuration field is set.
      */
     public boolean hasQuestionDuration() {
-      return questionDurationBuilder_ != null || questionDuration_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1793,11 +1833,11 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         questionDuration_ = value;
-        onChanged();
       } else {
         questionDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1815,11 +1855,11 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     public Builder setQuestionDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (questionDurationBuilder_ == null) {
         questionDuration_ = builderForValue.build();
-        onChanged();
       } else {
         questionDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1836,19 +1876,18 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeQuestionDuration(com.google.protobuf.Duration value) {
       if (questionDurationBuilder_ == null) {
-        if (questionDuration_ != null) {
-          questionDuration_ =
-              com.google.protobuf.Duration.newBuilder(questionDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && questionDuration_ != null
+            && questionDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getQuestionDurationBuilder().mergeFrom(value);
         } else {
           questionDuration_ = value;
         }
-        onChanged();
       } else {
         questionDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1864,14 +1903,13 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearQuestionDuration() {
-      if (questionDurationBuilder_ == null) {
-        questionDuration_ = null;
-        onChanged();
-      } else {
-        questionDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      questionDuration_ = null;
+      if (questionDurationBuilder_ != null) {
+        questionDurationBuilder_.dispose();
         questionDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1887,7 +1925,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.protobuf.Duration.Builder getQuestionDurationBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getQuestionDurationFieldBuilder().getBuilder();
     }
@@ -1945,9 +1983,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureContributorEmailsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         contributorEmails_ = new com.google.protobuf.LazyStringArrayList(contributorEmails_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -2122,7 +2160,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      */
     public Builder clearContributorEmails() {
       contributorEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2218,8 +2256,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       userEmailAddress_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2236,8 +2274,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearUserEmailAddress() {
-
       userEmailAddress_ = getDefaultInstance().getUserEmailAddress();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2259,8 +2297,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       userEmailAddress_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

@@ -630,6 +630,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (cloudRunBuilder_ != null) {
         cloudRunBuilder_.clear();
       }
@@ -665,29 +666,27 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.eventarc.v1.Destination buildPartial() {
       com.google.cloud.eventarc.v1.Destination result =
           new com.google.cloud.eventarc.v1.Destination(this);
-      if (descriptorCase_ == 1) {
-        if (cloudRunBuilder_ == null) {
-          result.descriptor_ = descriptor_;
-        } else {
-          result.descriptor_ = cloudRunBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (descriptorCase_ == 2) {
-        result.descriptor_ = descriptor_;
-      }
-      if (descriptorCase_ == 3) {
-        if (gkeBuilder_ == null) {
-          result.descriptor_ = descriptor_;
-        } else {
-          result.descriptor_ = gkeBuilder_.build();
-        }
-      }
-      if (descriptorCase_ == 4) {
-        result.descriptor_ = descriptor_;
-      }
-      result.descriptorCase_ = descriptorCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.eventarc.v1.Destination result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.eventarc.v1.Destination result) {
+      result.descriptorCase_ = descriptorCase_;
+      result.descriptor_ = this.descriptor_;
+      if (descriptorCase_ == 1 && cloudRunBuilder_ != null) {
+        result.descriptor_ = cloudRunBuilder_.build();
+      }
+      if (descriptorCase_ == 3 && gkeBuilder_ != null) {
+        result.descriptor_ = gkeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -847,6 +846,8 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.eventarc.v1.CloudRun,
@@ -1062,7 +1063,6 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       }
       descriptorCase_ = 1;
       onChanged();
-      ;
       return cloudRunBuilder_;
     }
 
@@ -1422,7 +1422,6 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       }
       descriptorCase_ = 3;
       onChanged();
-      ;
       return gkeBuilder_;
     }
 

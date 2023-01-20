@@ -246,7 +246,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -303,7 +305,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -356,7 +360,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCHEMA_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object schemaId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object schemaId_ = "";
   /**
    *
    *
@@ -405,7 +411,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARENT_DOCUMENT_ID_FIELD_NUMBER = 7;
-  private volatile java.lang.Object parentDocumentId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parentDocumentId_ = "";
   /**
    *
    *
@@ -721,17 +729,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (structDataBuilder_ != null) {
         structDataBuilder_.clear();
       }
       name_ = "";
-
       id_ = "";
-
       schemaId_ = "";
-
       parentDocumentId_ = "";
-
       dataCase_ = 0;
       data_ = null;
       return this;
@@ -761,23 +766,36 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1beta.Document buildPartial() {
       com.google.cloud.discoveryengine.v1beta.Document result =
           new com.google.cloud.discoveryengine.v1beta.Document(this);
-      if (dataCase_ == 4) {
-        if (structDataBuilder_ == null) {
-          result.data_ = data_;
-        } else {
-          result.data_ = structDataBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (dataCase_ == 5) {
-        result.data_ = data_;
-      }
-      result.name_ = name_;
-      result.id_ = id_;
-      result.schemaId_ = schemaId_;
-      result.parentDocumentId_ = parentDocumentId_;
-      result.dataCase_ = dataCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.discoveryengine.v1beta.Document result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.schemaId_ = schemaId_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.parentDocumentId_ = parentDocumentId_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.discoveryengine.v1beta.Document result) {
+      result.dataCase_ = dataCase_;
+      result.data_ = this.data_;
+      if (dataCase_ == 4 && structDataBuilder_ != null) {
+        result.data_ = structDataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -828,18 +846,22 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getSchemaId().isEmpty()) {
         schemaId_ = other.schemaId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getParentDocumentId().isEmpty()) {
         parentDocumentId_ = other.parentDocumentId_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       switch (other.getDataCase()) {
@@ -889,19 +911,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
               {
                 schemaId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
@@ -920,7 +942,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 parentDocumentId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             default:
@@ -953,6 +975,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Struct,
@@ -1164,7 +1188,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       dataCase_ = 4;
       onChanged();
-      ;
       return structDataBuilder_;
     }
 
@@ -1381,8 +1404,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1402,8 +1425,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1428,8 +1451,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1501,8 +1524,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1520,8 +1543,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1544,8 +1567,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1611,8 +1634,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       schemaId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1628,8 +1651,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSchemaId() {
-
       schemaId_ = getDefaultInstance().getSchemaId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1650,8 +1673,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       schemaId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1726,8 +1749,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       parentDocumentId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1746,8 +1769,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearParentDocumentId() {
-
       parentDocumentId_ = getDefaultInstance().getParentDocumentId();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1771,8 +1794,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parentDocumentId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

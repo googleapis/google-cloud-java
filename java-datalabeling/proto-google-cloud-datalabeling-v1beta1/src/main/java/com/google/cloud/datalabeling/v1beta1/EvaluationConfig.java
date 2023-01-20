@@ -392,6 +392,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (boundingBoxEvaluationOptionsBuilder_ != null) {
         boundingBoxEvaluationOptionsBuilder_.clear();
       }
@@ -424,16 +425,24 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.datalabeling.v1beta1.EvaluationConfig buildPartial() {
       com.google.cloud.datalabeling.v1beta1.EvaluationConfig result =
           new com.google.cloud.datalabeling.v1beta1.EvaluationConfig(this);
-      if (verticalOptionCase_ == 1) {
-        if (boundingBoxEvaluationOptionsBuilder_ == null) {
-          result.verticalOption_ = verticalOption_;
-        } else {
-          result.verticalOption_ = boundingBoxEvaluationOptionsBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.verticalOptionCase_ = verticalOptionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.EvaluationConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datalabeling.v1beta1.EvaluationConfig result) {
+      result.verticalOptionCase_ = verticalOptionCase_;
+      result.verticalOption_ = this.verticalOption_;
+      if (verticalOptionCase_ == 1 && boundingBoxEvaluationOptionsBuilder_ != null) {
+        result.verticalOption_ = boundingBoxEvaluationOptionsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -556,6 +565,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions,
@@ -816,7 +827,6 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       }
       verticalOptionCase_ = 1;
       onChanged();
-      ;
       return boundingBoxEvaluationOptionsBuilder_;
     }
 

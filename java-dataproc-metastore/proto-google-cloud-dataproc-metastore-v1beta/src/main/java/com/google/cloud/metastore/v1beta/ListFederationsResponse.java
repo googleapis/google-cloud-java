@@ -70,6 +70,8 @@ public final class ListFederationsResponse extends com.google.protobuf.Generated
   }
 
   public static final int FEDERATIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.metastore.v1beta.Federation> federations_;
   /**
    *
@@ -139,7 +141,9 @@ public final class ListFederationsResponse extends com.google.protobuf.Generated
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -190,6 +194,8 @@ public final class ListFederationsResponse extends com.google.protobuf.Generated
   }
 
   public static final int UNREACHABLE_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList unreachable_;
   /**
    *
@@ -475,6 +481,7 @@ public final class ListFederationsResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (federationsBuilder_ == null) {
         federations_ = java.util.Collections.emptyList();
       } else {
@@ -483,9 +490,8 @@ public final class ListFederationsResponse extends com.google.protobuf.Generated
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -513,7 +519,16 @@ public final class ListFederationsResponse extends com.google.protobuf.Generated
     public com.google.cloud.metastore.v1beta.ListFederationsResponse buildPartial() {
       com.google.cloud.metastore.v1beta.ListFederationsResponse result =
           new com.google.cloud.metastore.v1beta.ListFederationsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.metastore.v1beta.ListFederationsResponse result) {
       if (federationsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           federations_ = java.util.Collections.unmodifiableList(federations_);
@@ -523,14 +538,18 @@ public final class ListFederationsResponse extends com.google.protobuf.Generated
       } else {
         result.federations_ = federationsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         unreachable_ = unreachable_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.unreachable_ = unreachable_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1beta.ListFederationsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -608,12 +627,13 @@ public final class ListFederationsResponse extends com.google.protobuf.Generated
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.unreachable_.isEmpty()) {
         if (unreachable_.isEmpty()) {
           unreachable_ = other.unreachable_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureUnreachableIsMutable();
           unreachable_.addAll(other.unreachable_);
@@ -662,7 +682,7 @@ public final class ListFederationsResponse extends com.google.protobuf.Generated
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1107,8 +1127,8 @@ public final class ListFederationsResponse extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1125,8 +1145,8 @@ public final class ListFederationsResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1148,8 +1168,8 @@ public final class ListFederationsResponse extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1158,9 +1178,9 @@ public final class ListFederationsResponse extends com.google.protobuf.Generated
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureUnreachableIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         unreachable_ = new com.google.protobuf.LazyStringArrayList(unreachable_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1295,7 +1315,7 @@ public final class ListFederationsResponse extends com.google.protobuf.Generated
      */
     public Builder clearUnreachable() {
       unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

@@ -70,7 +70,9 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FUNCTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object function_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object function_ = "";
   /**
    *
    *
@@ -163,10 +165,14 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.clouddebugger.v2.SourceLocationOrBuilder getLocationOrBuilder() {
-    return getLocation();
+    return location_ == null
+        ? com.google.devtools.clouddebugger.v2.SourceLocation.getDefaultInstance()
+        : location_;
   }
 
   public static final int ARGUMENTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouddebugger.v2.Variable> arguments_;
   /**
    *
@@ -241,6 +247,8 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCALS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouddebugger.v2.Variable> locals_;
   /**
    *
@@ -547,12 +555,11 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       function_ = "";
-
-      if (locationBuilder_ == null) {
-        location_ = null;
-      } else {
-        location_ = null;
+      location_ = null;
+      if (locationBuilder_ != null) {
+        locationBuilder_.dispose();
         locationBuilder_ = null;
       }
       if (argumentsBuilder_ == null) {
@@ -561,14 +568,14 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         arguments_ = null;
         argumentsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (localsBuilder_ == null) {
         locals_ = java.util.Collections.emptyList();
       } else {
         locals_ = null;
         localsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -596,33 +603,44 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.clouddebugger.v2.StackFrame buildPartial() {
       com.google.devtools.clouddebugger.v2.StackFrame result =
           new com.google.devtools.clouddebugger.v2.StackFrame(this);
-      int from_bitField0_ = bitField0_;
-      result.function_ = function_;
-      if (locationBuilder_ == null) {
-        result.location_ = location_;
-      } else {
-        result.location_ = locationBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.devtools.clouddebugger.v2.StackFrame result) {
       if (argumentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           arguments_ = java.util.Collections.unmodifiableList(arguments_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.arguments_ = arguments_;
       } else {
         result.arguments_ = argumentsBuilder_.build();
       }
       if (localsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           locals_ = java.util.Collections.unmodifiableList(locals_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.locals_ = locals_;
       } else {
         result.locals_ = localsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.devtools.clouddebugger.v2.StackFrame result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.function_ = function_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.location_ = locationBuilder_ == null ? location_ : locationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -673,6 +691,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getFunction().isEmpty()) {
         function_ = other.function_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasLocation()) {
@@ -682,7 +701,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         if (!other.arguments_.isEmpty()) {
           if (arguments_.isEmpty()) {
             arguments_ = other.arguments_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureArgumentsIsMutable();
             arguments_.addAll(other.arguments_);
@@ -695,7 +714,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
             argumentsBuilder_.dispose();
             argumentsBuilder_ = null;
             arguments_ = other.arguments_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             argumentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getArgumentsFieldBuilder()
@@ -709,7 +728,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         if (!other.locals_.isEmpty()) {
           if (locals_.isEmpty()) {
             locals_ = other.locals_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureLocalsIsMutable();
             locals_.addAll(other.locals_);
@@ -722,7 +741,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
             localsBuilder_.dispose();
             localsBuilder_ = null;
             locals_ = other.locals_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
             localsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLocalsFieldBuilder()
@@ -761,13 +780,13 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 function_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getLocationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -876,8 +895,8 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       function_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -893,8 +912,8 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFunction() {
-
       function_ = getDefaultInstance().getFunction();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -915,8 +934,8 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       function_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -939,7 +958,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the location field is set.
      */
     public boolean hasLocation() {
-      return locationBuilder_ != null || location_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -976,11 +995,11 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         location_ = value;
-        onChanged();
       } else {
         locationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -996,11 +1015,11 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         com.google.devtools.clouddebugger.v2.SourceLocation.Builder builderForValue) {
       if (locationBuilder_ == null) {
         location_ = builderForValue.build();
-        onChanged();
       } else {
         locationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1014,19 +1033,19 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLocation(com.google.devtools.clouddebugger.v2.SourceLocation value) {
       if (locationBuilder_ == null) {
-        if (location_ != null) {
-          location_ =
-              com.google.devtools.clouddebugger.v2.SourceLocation.newBuilder(location_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && location_ != null
+            && location_
+                != com.google.devtools.clouddebugger.v2.SourceLocation.getDefaultInstance()) {
+          getLocationBuilder().mergeFrom(value);
         } else {
           location_ = value;
         }
-        onChanged();
       } else {
         locationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1039,14 +1058,13 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.clouddebugger.v2.SourceLocation location = 2;</code>
      */
     public Builder clearLocation() {
-      if (locationBuilder_ == null) {
-        location_ = null;
-        onChanged();
-      } else {
-        location_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      location_ = null;
+      if (locationBuilder_ != null) {
+        locationBuilder_.dispose();
         locationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1059,7 +1077,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.clouddebugger.v2.SourceLocation location = 2;</code>
      */
     public com.google.devtools.clouddebugger.v2.SourceLocation.Builder getLocationBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
@@ -1111,10 +1129,10 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureArgumentsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         arguments_ =
             new java.util.ArrayList<com.google.devtools.clouddebugger.v2.Variable>(arguments_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1341,7 +1359,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
     public Builder clearArguments() {
       if (argumentsBuilder_ == null) {
         arguments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         argumentsBuilder_.clear();
@@ -1470,7 +1488,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
                 com.google.devtools.clouddebugger.v2.Variable,
                 com.google.devtools.clouddebugger.v2.Variable.Builder,
                 com.google.devtools.clouddebugger.v2.VariableOrBuilder>(
-                arguments_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                arguments_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         arguments_ = null;
       }
       return argumentsBuilder_;
@@ -1480,9 +1498,9 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureLocalsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         locals_ = new java.util.ArrayList<com.google.devtools.clouddebugger.v2.Variable>(locals_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1709,7 +1727,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLocals() {
       if (localsBuilder_ == null) {
         locals_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         localsBuilder_.clear();
@@ -1838,7 +1856,7 @@ public final class StackFrame extends com.google.protobuf.GeneratedMessageV3
                 com.google.devtools.clouddebugger.v2.Variable,
                 com.google.devtools.clouddebugger.v2.Variable.Builder,
                 com.google.devtools.clouddebugger.v2.VariableOrBuilder>(
-                locals_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                locals_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         locals_ = null;
       }
       return localsBuilder_;

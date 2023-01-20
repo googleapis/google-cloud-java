@@ -113,7 +113,9 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.InspectConfigOrBuilder getInspectConfigOrBuilder() {
-    return getInspectConfig();
+    return inspectConfig_ == null
+        ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()
+        : inspectConfig_;
   }
 
   public static final int DATA_PROFILE_JOB_FIELD_NUMBER = 3;
@@ -161,7 +163,9 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.DataProfileJobConfigOrBuilder getDataProfileJobOrBuilder() {
-    return getDataProfileJob();
+    return dataProfileJob_ == null
+        ? com.google.privacy.dlp.v2.DataProfileJobConfig.getDefaultInstance()
+        : dataProfileJob_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -380,16 +384,15 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (inspectConfigBuilder_ == null) {
-        inspectConfig_ = null;
-      } else {
-        inspectConfig_ = null;
+      bitField0_ = 0;
+      inspectConfig_ = null;
+      if (inspectConfigBuilder_ != null) {
+        inspectConfigBuilder_.dispose();
         inspectConfigBuilder_ = null;
       }
-      if (dataProfileJobBuilder_ == null) {
-        dataProfileJob_ = null;
-      } else {
-        dataProfileJob_ = null;
+      dataProfileJob_ = null;
+      if (dataProfileJobBuilder_ != null) {
+        dataProfileJobBuilder_.dispose();
         dataProfileJobBuilder_ = null;
       }
       return this;
@@ -419,18 +422,23 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
     public com.google.privacy.dlp.v2.DataProfileConfigSnapshot buildPartial() {
       com.google.privacy.dlp.v2.DataProfileConfigSnapshot result =
           new com.google.privacy.dlp.v2.DataProfileConfigSnapshot(this);
-      if (inspectConfigBuilder_ == null) {
-        result.inspectConfig_ = inspectConfig_;
-      } else {
-        result.inspectConfig_ = inspectConfigBuilder_.build();
-      }
-      if (dataProfileJobBuilder_ == null) {
-        result.dataProfileJob_ = dataProfileJob_;
-      } else {
-        result.dataProfileJob_ = dataProfileJobBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.DataProfileConfigSnapshot result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.inspectConfig_ =
+            inspectConfigBuilder_ == null ? inspectConfig_ : inspectConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataProfileJob_ =
+            dataProfileJobBuilder_ == null ? dataProfileJob_ : dataProfileJobBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -514,13 +522,13 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
             case 18:
               {
                 input.readMessage(getInspectConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getDataProfileJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -539,6 +547,8 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.privacy.dlp.v2.InspectConfig inspectConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -559,7 +569,7 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      * @return Whether the inspectConfig field is set.
      */
     public boolean hasInspectConfig() {
-      return inspectConfigBuilder_ != null || inspectConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -598,11 +608,11 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         inspectConfig_ = value;
-        onChanged();
       } else {
         inspectConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -619,11 +629,11 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
         com.google.privacy.dlp.v2.InspectConfig.Builder builderForValue) {
       if (inspectConfigBuilder_ == null) {
         inspectConfig_ = builderForValue.build();
-        onChanged();
       } else {
         inspectConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -638,19 +648,18 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      */
     public Builder mergeInspectConfig(com.google.privacy.dlp.v2.InspectConfig value) {
       if (inspectConfigBuilder_ == null) {
-        if (inspectConfig_ != null) {
-          inspectConfig_ =
-              com.google.privacy.dlp.v2.InspectConfig.newBuilder(inspectConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && inspectConfig_ != null
+            && inspectConfig_ != com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()) {
+          getInspectConfigBuilder().mergeFrom(value);
         } else {
           inspectConfig_ = value;
         }
-        onChanged();
       } else {
         inspectConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -664,14 +673,13 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
      */
     public Builder clearInspectConfig() {
-      if (inspectConfigBuilder_ == null) {
-        inspectConfig_ = null;
-        onChanged();
-      } else {
-        inspectConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      inspectConfig_ = null;
+      if (inspectConfigBuilder_ != null) {
+        inspectConfigBuilder_.dispose();
         inspectConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -685,7 +693,7 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
      */
     public com.google.privacy.dlp.v2.InspectConfig.Builder getInspectConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getInspectConfigFieldBuilder().getBuilder();
     }
@@ -753,7 +761,7 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      * @return Whether the dataProfileJob field is set.
      */
     public boolean hasDataProfileJob() {
-      return dataProfileJobBuilder_ != null || dataProfileJob_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -790,11 +798,11 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         dataProfileJob_ = value;
-        onChanged();
       } else {
         dataProfileJobBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -810,11 +818,11 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
         com.google.privacy.dlp.v2.DataProfileJobConfig.Builder builderForValue) {
       if (dataProfileJobBuilder_ == null) {
         dataProfileJob_ = builderForValue.build();
-        onChanged();
       } else {
         dataProfileJobBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -828,19 +836,19 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      */
     public Builder mergeDataProfileJob(com.google.privacy.dlp.v2.DataProfileJobConfig value) {
       if (dataProfileJobBuilder_ == null) {
-        if (dataProfileJob_ != null) {
-          dataProfileJob_ =
-              com.google.privacy.dlp.v2.DataProfileJobConfig.newBuilder(dataProfileJob_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && dataProfileJob_ != null
+            && dataProfileJob_
+                != com.google.privacy.dlp.v2.DataProfileJobConfig.getDefaultInstance()) {
+          getDataProfileJobBuilder().mergeFrom(value);
         } else {
           dataProfileJob_ = value;
         }
-        onChanged();
       } else {
         dataProfileJobBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -853,14 +861,13 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3;</code>
      */
     public Builder clearDataProfileJob() {
-      if (dataProfileJobBuilder_ == null) {
-        dataProfileJob_ = null;
-        onChanged();
-      } else {
-        dataProfileJob_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      dataProfileJob_ = null;
+      if (dataProfileJobBuilder_ != null) {
+        dataProfileJobBuilder_.dispose();
         dataProfileJobBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -873,7 +880,7 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3;</code>
      */
     public com.google.privacy.dlp.v2.DataProfileJobConfig.Builder getDataProfileJobBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDataProfileJobFieldBuilder().getBuilder();
     }

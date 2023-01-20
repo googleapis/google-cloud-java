@@ -69,7 +69,9 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
 
   private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -400,14 +402,13 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (userEventBuilder_ == null) {
-        userEvent_ = null;
-      } else {
-        userEventBuilder_.clear();
+      userEvent_ = null;
+      if (userEventBuilder_ != null) {
+        userEventBuilder_.dispose();
+        userEventBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -436,20 +437,25 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.discoveryengine.v1beta.WriteUserEventRequest buildPartial() {
       com.google.cloud.discoveryengine.v1beta.WriteUserEventRequest result =
           new com.google.cloud.discoveryengine.v1beta.WriteUserEventRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.parent_ = parent_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (userEventBuilder_ == null) {
-          result.userEvent_ = userEvent_;
-        } else {
-          result.userEvent_ = userEventBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.discoveryengine.v1beta.WriteUserEventRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.userEvent_ = userEventBuilder_ == null ? userEvent_ : userEventBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -501,6 +507,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasUserEvent()) {
@@ -535,13 +542,13 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUserEventFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -633,8 +640,8 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -653,8 +660,8 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -678,8 +685,8 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -704,7 +711,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the userEvent field is set.
      */
     public boolean hasUserEvent() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -745,11 +752,11 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         userEvent_ = value;
-        onChanged();
       } else {
         userEventBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -767,11 +774,11 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.discoveryengine.v1beta.UserEvent.Builder builderForValue) {
       if (userEventBuilder_ == null) {
         userEvent_ = builderForValue.build();
-        onChanged();
       } else {
         userEventBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -787,22 +794,19 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeUserEvent(com.google.cloud.discoveryengine.v1beta.UserEvent value) {
       if (userEventBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && userEvent_ != null
             && userEvent_
                 != com.google.cloud.discoveryengine.v1beta.UserEvent.getDefaultInstance()) {
-          userEvent_ =
-              com.google.cloud.discoveryengine.v1beta.UserEvent.newBuilder(userEvent_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getUserEventBuilder().mergeFrom(value);
         } else {
           userEvent_ = value;
         }
-        onChanged();
       } else {
         userEventBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -817,13 +821,13 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearUserEvent() {
-      if (userEventBuilder_ == null) {
-        userEvent_ = null;
-        onChanged();
-      } else {
-        userEventBuilder_.clear();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      userEvent_ = null;
+      if (userEventBuilder_ != null) {
+        userEventBuilder_.dispose();
+        userEventBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
       return this;
     }
     /**
@@ -838,7 +842,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.discoveryengine.v1beta.UserEvent.Builder getUserEventBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUserEventFieldBuilder().getBuilder();
     }

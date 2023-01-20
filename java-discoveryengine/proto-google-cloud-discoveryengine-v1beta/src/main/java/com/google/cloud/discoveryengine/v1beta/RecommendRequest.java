@@ -82,7 +82,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SERVING_CONFIG_FIELD_NUMBER = 1;
-  private volatile java.lang.Object servingConfig_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object servingConfig_ = "";
   /**
    *
    *
@@ -233,11 +235,13 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.discoveryengine.v1beta.UserEventOrBuilder getUserEventOrBuilder() {
-    return getUserEvent();
+    return userEvent_ == null
+        ? com.google.cloud.discoveryengine.v1beta.UserEvent.getDefaultInstance()
+        : userEvent_;
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -258,7 +262,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int FILTER_FIELD_NUMBER = 4;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -331,7 +337,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 5;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -366,6 +372,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
                     com.google.protobuf.Value.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value> params_;
 
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
@@ -487,8 +494,10 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 6;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.Value getParamsOrDefault(
-      java.lang.String key, com.google.protobuf.Value defaultValue) {
+  public /* nullable */ com.google.protobuf.Value getParamsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.Value defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -550,6 +559,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetUserLabels() {
@@ -649,8 +659,10 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
   @java.lang.Override
-  public java.lang.String getUserLabelsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getUserLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -989,20 +1001,16 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       servingConfig_ = "";
-
-      if (userEventBuilder_ == null) {
-        userEvent_ = null;
-      } else {
-        userEvent_ = null;
+      userEvent_ = null;
+      if (userEventBuilder_ != null) {
+        userEventBuilder_.dispose();
         userEventBuilder_ = null;
       }
       pageSize_ = 0;
-
       filter_ = "";
-
       validateOnly_ = false;
-
       internalGetMutableParams().clear();
       internalGetMutableUserLabels().clear();
       return this;
@@ -1032,22 +1040,38 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.discoveryengine.v1beta.RecommendRequest buildPartial() {
       com.google.cloud.discoveryengine.v1beta.RecommendRequest result =
           new com.google.cloud.discoveryengine.v1beta.RecommendRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.servingConfig_ = servingConfig_;
-      if (userEventBuilder_ == null) {
-        result.userEvent_ = userEvent_;
-      } else {
-        result.userEvent_ = userEventBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.pageSize_ = pageSize_;
-      result.filter_ = filter_;
-      result.validateOnly_ = validateOnly_;
-      result.params_ = internalGetParams();
-      result.params_.makeImmutable();
-      result.userLabels_ = internalGetUserLabels();
-      result.userLabels_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.discoveryengine.v1beta.RecommendRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.servingConfig_ = servingConfig_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.userEvent_ = userEventBuilder_ == null ? userEvent_ : userEventBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.params_ = internalGetParams();
+        result.params_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.userLabels_ = internalGetUserLabels();
+        result.userLabels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -1098,6 +1122,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getServingConfig().isEmpty()) {
         servingConfig_ = other.servingConfig_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasUserEvent()) {
@@ -1108,13 +1133,16 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
         setValidateOnly(other.getValidateOnly());
       }
       internalGetMutableParams().mergeFrom(other.internalGetParams());
+      bitField0_ |= 0x00000020;
       internalGetMutableUserLabels().mergeFrom(other.internalGetUserLabels());
+      bitField0_ |= 0x00000040;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1144,31 +1172,31 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 servingConfig_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUserEventFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
@@ -1180,6 +1208,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
                 internalGetMutableParams()
                     .getMutableMap()
                     .put(params__.getKey(), params__.getValue());
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 66:
@@ -1191,6 +1220,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
                 internalGetMutableUserLabels()
                     .getMutableMap()
                     .put(userLabels__.getKey(), userLabels__.getValue());
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             default:
@@ -1288,8 +1318,8 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       servingConfig_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1310,8 +1340,8 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearServingConfig() {
-
       servingConfig_ = getDefaultInstance().getServingConfig();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1337,8 +1367,8 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       servingConfig_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1377,7 +1407,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the userEvent field is set.
      */
     public boolean hasUserEvent() {
-      return userEventBuilder_ != null || userEvent_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1446,11 +1476,11 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         userEvent_ = value;
-        onChanged();
       } else {
         userEventBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1482,11 +1512,11 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
         com.google.cloud.discoveryengine.v1beta.UserEvent.Builder builderForValue) {
       if (userEventBuilder_ == null) {
         userEvent_ = builderForValue.build();
-        onChanged();
       } else {
         userEventBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1516,19 +1546,19 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUserEvent(com.google.cloud.discoveryengine.v1beta.UserEvent value) {
       if (userEventBuilder_ == null) {
-        if (userEvent_ != null) {
-          userEvent_ =
-              com.google.cloud.discoveryengine.v1beta.UserEvent.newBuilder(userEvent_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && userEvent_ != null
+            && userEvent_
+                != com.google.cloud.discoveryengine.v1beta.UserEvent.getDefaultInstance()) {
+          getUserEventBuilder().mergeFrom(value);
         } else {
           userEvent_ = value;
         }
-        onChanged();
       } else {
         userEventBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1557,14 +1587,13 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUserEvent() {
-      if (userEventBuilder_ == null) {
-        userEvent_ = null;
-        onChanged();
-      } else {
-        userEvent_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      userEvent_ = null;
+      if (userEventBuilder_ != null) {
+        userEventBuilder_.dispose();
         userEventBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1593,7 +1622,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.discoveryengine.v1beta.UserEvent.Builder getUserEventBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUserEventFieldBuilder().getBuilder();
     }
@@ -1710,6 +1739,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1728,7 +1758,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1831,8 +1861,8 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1860,8 +1890,8 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1894,8 +1924,8 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1937,6 +1967,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1955,7 +1986,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       validateOnly_ = false;
       onChanged();
       return this;
@@ -1973,14 +2004,14 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
         internalGetMutableParams() {
-      onChanged();
-      ;
       if (params_ == null) {
         params_ = com.google.protobuf.MapField.newMapField(ParamsDefaultEntryHolder.defaultEntry);
       }
       if (!params_.isMutable()) {
         params_ = params_.copy();
       }
+      bitField0_ |= 0x00000020;
+      onChanged();
       return params_;
     }
 
@@ -2095,8 +2126,10 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 6;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.Value getParamsOrDefault(
-        java.lang.String key, com.google.protobuf.Value defaultValue) {
+    public /* nullable */ com.google.protobuf.Value getParamsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.Value defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2146,6 +2179,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearParams() {
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableParams().getMutableMap().clear();
       return this;
     }
@@ -2189,6 +2223,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableParams() {
+      bitField0_ |= 0x00000020;
       return internalGetMutableParams().getMutableMap();
     }
     /**
@@ -2228,8 +2263,8 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableParams().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -2264,6 +2299,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllParams(java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
       internalGetMutableParams().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -2280,8 +2316,6 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableUserLabels() {
-      onChanged();
-      ;
       if (userLabels_ == null) {
         userLabels_ =
             com.google.protobuf.MapField.newMapField(UserLabelsDefaultEntryHolder.defaultEntry);
@@ -2289,6 +2323,8 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
       if (!userLabels_.isMutable()) {
         userLabels_ = userLabels_.copy();
       }
+      bitField0_ |= 0x00000040;
+      onChanged();
       return userLabels_;
     }
 
@@ -2382,8 +2418,10 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * <code>map&lt;string, string&gt; user_labels = 8;</code>
      */
     @java.lang.Override
-    public java.lang.String getUserLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getUserLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2426,6 +2464,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearUserLabels() {
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableUserLabels().getMutableMap().clear();
       return this;
     }
@@ -2462,6 +2501,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
+      bitField0_ |= 0x00000040;
       return internalGetMutableUserLabels().getMutableMap();
     }
     /**
@@ -2494,8 +2534,8 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableUserLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2523,6 +2563,7 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllUserLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableUserLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000040;
       return this;
     }
 

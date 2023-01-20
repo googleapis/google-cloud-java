@@ -68,7 +68,9 @@ public final class CloudRunLocation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int LOCATION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -319,8 +321,8 @@ public final class CloudRunLocation extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       location_ = "";
-
       return this;
     }
 
@@ -348,9 +350,18 @@ public final class CloudRunLocation extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.deploy.v1.CloudRunLocation buildPartial() {
       com.google.cloud.deploy.v1.CloudRunLocation result =
           new com.google.cloud.deploy.v1.CloudRunLocation(this);
-      result.location_ = location_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.CloudRunLocation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.location_ = location_;
+      }
     }
 
     @java.lang.Override
@@ -400,6 +411,7 @@ public final class CloudRunLocation extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.deploy.v1.CloudRunLocation.getDefaultInstance()) return this;
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -431,7 +443,7 @@ public final class CloudRunLocation extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -450,6 +462,8 @@ public final class CloudRunLocation extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object location_ = "";
     /**
@@ -521,8 +535,8 @@ public final class CloudRunLocation extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -541,8 +555,8 @@ public final class CloudRunLocation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -566,8 +580,8 @@ public final class CloudRunLocation extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

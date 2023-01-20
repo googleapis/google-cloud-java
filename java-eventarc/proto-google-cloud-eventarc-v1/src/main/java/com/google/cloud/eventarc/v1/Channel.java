@@ -321,7 +321,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -374,7 +376,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
   /**
    *
    *
@@ -472,7 +476,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 6;
@@ -521,11 +525,13 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int PROVIDER_FIELD_NUMBER = 7;
-  private volatile java.lang.Object provider_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object provider_ = "";
   /**
    *
    *
@@ -656,7 +662,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 9;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -689,14 +695,15 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.eventarc.v1.Channel.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.eventarc.v1.Channel.State result =
-        com.google.cloud.eventarc.v1.Channel.State.valueOf(state_);
+        com.google.cloud.eventarc.v1.Channel.State.forNumber(state_);
     return result == null ? com.google.cloud.eventarc.v1.Channel.State.UNRECOGNIZED : result;
   }
 
   public static final int ACTIVATION_TOKEN_FIELD_NUMBER = 10;
-  private volatile java.lang.Object activationToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object activationToken_ = "";
   /**
    *
    *
@@ -747,7 +754,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CRYPTO_KEY_NAME_FIELD_NUMBER = 11;
-  private volatile java.lang.Object cryptoKeyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cryptoKeyName_ = "";
   /**
    *
    *
@@ -1098,30 +1107,23 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       uid_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       provider_ = "";
-
       state_ = 0;
-
       activationToken_ = "";
-
       cryptoKeyName_ = "";
-
       transportCase_ = 0;
       transport_ = null;
       return this;
@@ -1150,28 +1152,45 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.eventarc.v1.Channel buildPartial() {
       com.google.cloud.eventarc.v1.Channel result = new com.google.cloud.eventarc.v1.Channel(this);
-      result.name_ = name_;
-      result.uid_ = uid_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.provider_ = provider_;
-      if (transportCase_ == 8) {
-        result.transport_ = transport_;
-      }
-      result.state_ = state_;
-      result.activationToken_ = activationToken_;
-      result.cryptoKeyName_ = cryptoKeyName_;
-      result.transportCase_ = transportCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.eventarc.v1.Channel result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uid_ = uid_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.provider_ = provider_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.activationToken_ = activationToken_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.cryptoKeyName_ = cryptoKeyName_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.eventarc.v1.Channel result) {
+      result.transportCase_ = transportCase_;
+      result.transport_ = this.transport_;
     }
 
     @java.lang.Override
@@ -1221,10 +1240,12 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.eventarc.v1.Channel.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1235,6 +1256,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getProvider().isEmpty()) {
         provider_ = other.provider_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -1242,10 +1264,12 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getActivationToken().isEmpty()) {
         activationToken_ = other.activationToken_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getCryptoKeyName().isEmpty()) {
         cryptoKeyName_ = other.cryptoKeyName_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       switch (other.getTransportCase()) {
@@ -1290,31 +1314,31 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 42:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             case 58:
               {
                 provider_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             case 66:
@@ -1327,19 +1351,19 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             case 72:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 72
             case 82:
               {
                 activationToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 82
             case 90:
               {
                 cryptoKeyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 90
             default:
@@ -1372,6 +1396,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1440,8 +1466,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1459,8 +1485,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1483,8 +1509,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1556,8 +1582,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1575,8 +1601,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUid() {
-
       uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1599,8 +1625,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1625,7 +1651,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1666,11 +1692,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1687,11 +1713,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1707,17 +1733,18 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1732,14 +1759,13 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1754,7 +1780,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1826,7 +1852,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1867,11 +1893,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1888,11 +1914,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1908,17 +1934,18 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1933,14 +1960,13 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1955,7 +1981,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2077,8 +2103,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       provider_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2097,8 +2123,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProvider() {
-
       provider_ = getDefaultInstance().getProvider();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2122,8 +2148,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       provider_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2307,8 +2333,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2327,9 +2353,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.eventarc.v1.Channel.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.eventarc.v1.Channel.State result =
-          com.google.cloud.eventarc.v1.Channel.State.valueOf(state_);
+          com.google.cloud.eventarc.v1.Channel.State.forNumber(state_);
       return result == null ? com.google.cloud.eventarc.v1.Channel.State.UNRECOGNIZED : result;
     }
     /**
@@ -2350,7 +2375,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2369,7 +2394,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       state_ = 0;
       onChanged();
       return this;
@@ -2439,8 +2464,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       activationToken_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2457,8 +2482,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearActivationToken() {
-
       activationToken_ = getDefaultInstance().getActivationToken();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2480,8 +2505,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       activationToken_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2562,8 +2587,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cryptoKeyName_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2584,8 +2609,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCryptoKeyName() {
-
       cryptoKeyName_ = getDefaultInstance().getCryptoKeyName();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2611,8 +2636,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cryptoKeyName_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

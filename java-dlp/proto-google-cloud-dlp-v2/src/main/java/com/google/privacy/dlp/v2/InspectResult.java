@@ -68,6 +68,8 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FINDINGS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.Finding> findings_;
   /**
    *
@@ -137,7 +139,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FINDINGS_TRUNCATED_FIELD_NUMBER = 2;
-  private boolean findingsTruncated_;
+  private boolean findingsTruncated_ = false;
   /**
    *
    *
@@ -366,6 +368,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (findingsBuilder_ == null) {
         findings_ = java.util.Collections.emptyList();
       } else {
@@ -374,7 +377,6 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       findingsTruncated_ = false;
-
       return this;
     }
 
@@ -402,7 +404,15 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.InspectResult buildPartial() {
       com.google.privacy.dlp.v2.InspectResult result =
           new com.google.privacy.dlp.v2.InspectResult(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.InspectResult result) {
       if (findingsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           findings_ = java.util.Collections.unmodifiableList(findings_);
@@ -412,9 +422,13 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.findings_ = findingsBuilder_.build();
       }
-      result.findingsTruncated_ = findingsTruncated_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.InspectResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.findingsTruncated_ = findingsTruncated_;
+      }
     }
 
     @java.lang.Override
@@ -534,7 +548,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 findingsTruncated_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -945,6 +959,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
     public Builder setFindingsTruncated(boolean value) {
 
       findingsTruncated_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -965,7 +980,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFindingsTruncated() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       findingsTruncated_ = false;
       onChanged();
       return this;

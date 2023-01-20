@@ -69,7 +69,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -174,11 +176,15 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.InputConfigOrBuilder getInputConfigOrBuilder() {
-    return getInputConfig();
+    return inputConfig_ == null
+        ? com.google.cloud.datalabeling.v1beta1.InputConfig.getDefaultInstance()
+        : inputConfig_;
   }
 
   public static final int USER_EMAIL_ADDRESS_FIELD_NUMBER = 3;
-  private volatile java.lang.Object userEmailAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userEmailAddress_ = "";
   /**
    *
    *
@@ -449,16 +455,14 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-      } else {
-        inputConfig_ = null;
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
       userEmailAddress_ = "";
-
       return this;
     }
 
@@ -486,15 +490,25 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datalabeling.v1beta1.ImportDataRequest buildPartial() {
       com.google.cloud.datalabeling.v1beta1.ImportDataRequest result =
           new com.google.cloud.datalabeling.v1beta1.ImportDataRequest(this);
-      result.name_ = name_;
-      if (inputConfigBuilder_ == null) {
-        result.inputConfig_ = inputConfig_;
-      } else {
-        result.inputConfig_ = inputConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.userEmailAddress_ = userEmailAddress_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.ImportDataRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.inputConfig_ =
+            inputConfigBuilder_ == null ? inputConfig_ : inputConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.userEmailAddress_ = userEmailAddress_;
+      }
     }
 
     @java.lang.Override
@@ -545,6 +559,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasInputConfig()) {
@@ -552,6 +567,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getUserEmailAddress().isEmpty()) {
         userEmailAddress_ = other.userEmailAddress_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -583,19 +599,19 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 userEmailAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -614,6 +630,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -685,8 +703,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -705,8 +723,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -730,8 +748,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -756,7 +774,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the inputConfig field is set.
      */
     public boolean hasInputConfig() {
-      return inputConfigBuilder_ != null || inputConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -797,11 +815,11 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         inputConfig_ = value;
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -819,11 +837,11 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
         com.google.cloud.datalabeling.v1beta1.InputConfig.Builder builderForValue) {
       if (inputConfigBuilder_ == null) {
         inputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -839,19 +857,19 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeInputConfig(com.google.cloud.datalabeling.v1beta1.InputConfig value) {
       if (inputConfigBuilder_ == null) {
-        if (inputConfig_ != null) {
-          inputConfig_ =
-              com.google.cloud.datalabeling.v1beta1.InputConfig.newBuilder(inputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && inputConfig_ != null
+            && inputConfig_
+                != com.google.cloud.datalabeling.v1beta1.InputConfig.getDefaultInstance()) {
+          getInputConfigBuilder().mergeFrom(value);
         } else {
           inputConfig_ = value;
         }
-        onChanged();
       } else {
         inputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -866,14 +884,13 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearInputConfig() {
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-        onChanged();
-      } else {
-        inputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -888,7 +905,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.InputConfig.Builder getInputConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
@@ -1004,8 +1021,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       userEmailAddress_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1022,8 +1039,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearUserEmailAddress() {
-
       userEmailAddress_ = getDefaultInstance().getUserEmailAddress();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1045,8 +1062,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       userEmailAddress_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

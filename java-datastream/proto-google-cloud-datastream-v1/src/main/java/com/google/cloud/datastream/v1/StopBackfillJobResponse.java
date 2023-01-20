@@ -110,7 +110,9 @@ public final class StopBackfillJobResponse extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.datastream.v1.StreamObjectOrBuilder getObjectOrBuilder() {
-    return getObject();
+    return object_ == null
+        ? com.google.cloud.datastream.v1.StreamObject.getDefaultInstance()
+        : object_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -316,10 +318,10 @@ public final class StopBackfillJobResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (objectBuilder_ == null) {
-        object_ = null;
-      } else {
-        object_ = null;
+      bitField0_ = 0;
+      object_ = null;
+      if (objectBuilder_ != null) {
+        objectBuilder_.dispose();
         objectBuilder_ = null;
       }
       return this;
@@ -349,13 +351,18 @@ public final class StopBackfillJobResponse extends com.google.protobuf.Generated
     public com.google.cloud.datastream.v1.StopBackfillJobResponse buildPartial() {
       com.google.cloud.datastream.v1.StopBackfillJobResponse result =
           new com.google.cloud.datastream.v1.StopBackfillJobResponse(this);
-      if (objectBuilder_ == null) {
-        result.object_ = object_;
-      } else {
-        result.object_ = objectBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.StopBackfillJobResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.object_ = objectBuilder_ == null ? object_ : objectBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -436,7 +443,7 @@ public final class StopBackfillJobResponse extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getObjectFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -456,6 +463,8 @@ public final class StopBackfillJobResponse extends com.google.protobuf.Generated
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.datastream.v1.StreamObject object_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datastream.v1.StreamObject,
@@ -474,7 +483,7 @@ public final class StopBackfillJobResponse extends com.google.protobuf.Generated
      * @return Whether the object field is set.
      */
     public boolean hasObject() {
-      return objectBuilder_ != null || object_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -511,11 +520,11 @@ public final class StopBackfillJobResponse extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         object_ = value;
-        onChanged();
       } else {
         objectBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -530,11 +539,11 @@ public final class StopBackfillJobResponse extends com.google.protobuf.Generated
     public Builder setObject(com.google.cloud.datastream.v1.StreamObject.Builder builderForValue) {
       if (objectBuilder_ == null) {
         object_ = builderForValue.build();
-        onChanged();
       } else {
         objectBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -548,19 +557,18 @@ public final class StopBackfillJobResponse extends com.google.protobuf.Generated
      */
     public Builder mergeObject(com.google.cloud.datastream.v1.StreamObject value) {
       if (objectBuilder_ == null) {
-        if (object_ != null) {
-          object_ =
-              com.google.cloud.datastream.v1.StreamObject.newBuilder(object_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && object_ != null
+            && object_ != com.google.cloud.datastream.v1.StreamObject.getDefaultInstance()) {
+          getObjectBuilder().mergeFrom(value);
         } else {
           object_ = value;
         }
-        onChanged();
       } else {
         objectBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -573,14 +581,13 @@ public final class StopBackfillJobResponse extends com.google.protobuf.Generated
      * <code>.google.cloud.datastream.v1.StreamObject object = 1;</code>
      */
     public Builder clearObject() {
-      if (objectBuilder_ == null) {
-        object_ = null;
-        onChanged();
-      } else {
-        object_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      object_ = null;
+      if (objectBuilder_ != null) {
+        objectBuilder_.dispose();
         objectBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -593,7 +600,7 @@ public final class StopBackfillJobResponse extends com.google.protobuf.Generated
      * <code>.google.cloud.datastream.v1.StreamObject object = 1;</code>
      */
     public com.google.cloud.datastream.v1.StreamObject.Builder getObjectBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getObjectFieldBuilder().getBuilder();
     }

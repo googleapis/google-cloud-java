@@ -989,6 +989,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (oracleExcludedObjectsBuilder_ != null) {
           oracleExcludedObjectsBuilder_.clear();
         }
@@ -1027,30 +1028,31 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.datastream.v1.Stream.BackfillAllStrategy buildPartial() {
         com.google.cloud.datastream.v1.Stream.BackfillAllStrategy result =
             new com.google.cloud.datastream.v1.Stream.BackfillAllStrategy(this);
-        if (excludedObjectsCase_ == 1) {
-          if (oracleExcludedObjectsBuilder_ == null) {
-            result.excludedObjects_ = excludedObjects_;
-          } else {
-            result.excludedObjects_ = oracleExcludedObjectsBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (excludedObjectsCase_ == 2) {
-          if (mysqlExcludedObjectsBuilder_ == null) {
-            result.excludedObjects_ = excludedObjects_;
-          } else {
-            result.excludedObjects_ = mysqlExcludedObjectsBuilder_.build();
-          }
-        }
-        if (excludedObjectsCase_ == 3) {
-          if (postgresqlExcludedObjectsBuilder_ == null) {
-            result.excludedObjects_ = excludedObjects_;
-          } else {
-            result.excludedObjects_ = postgresqlExcludedObjectsBuilder_.build();
-          }
-        }
-        result.excludedObjectsCase_ = excludedObjectsCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.datastream.v1.Stream.BackfillAllStrategy result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.datastream.v1.Stream.BackfillAllStrategy result) {
+        result.excludedObjectsCase_ = excludedObjectsCase_;
+        result.excludedObjects_ = this.excludedObjects_;
+        if (excludedObjectsCase_ == 1 && oracleExcludedObjectsBuilder_ != null) {
+          result.excludedObjects_ = oracleExcludedObjectsBuilder_.build();
+        }
+        if (excludedObjectsCase_ == 2 && mysqlExcludedObjectsBuilder_ != null) {
+          result.excludedObjects_ = mysqlExcludedObjectsBuilder_.build();
+        }
+        if (excludedObjectsCase_ == 3 && postgresqlExcludedObjectsBuilder_ != null) {
+          result.excludedObjects_ = postgresqlExcludedObjectsBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1199,6 +1201,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.datastream.v1.OracleRdbms,
@@ -1408,7 +1412,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         }
         excludedObjectsCase_ = 1;
         onChanged();
-        ;
         return oracleExcludedObjectsBuilder_;
       }
 
@@ -1619,7 +1622,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         }
         excludedObjectsCase_ = 2;
         onChanged();
-        ;
         return mysqlExcludedObjectsBuilder_;
       }
 
@@ -1834,7 +1836,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         }
         excludedObjectsCase_ = 3;
         onChanged();
-        ;
         return postgresqlExcludedObjectsBuilder_;
       }
 
@@ -2382,7 +2383,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -2476,7 +2479,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
@@ -2525,7 +2528,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 4;
@@ -2541,6 +2544,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -2598,7 +2602,10 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -2627,7 +2634,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -2726,7 +2735,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datastream.v1.SourceConfigOrBuilder getSourceConfigOrBuilder() {
-    return getSourceConfig();
+    return sourceConfig_ == null
+        ? com.google.cloud.datastream.v1.SourceConfig.getDefaultInstance()
+        : sourceConfig_;
   }
 
   public static final int DESTINATION_CONFIG_FIELD_NUMBER = 7;
@@ -2780,11 +2791,13 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datastream.v1.DestinationConfigOrBuilder getDestinationConfigOrBuilder() {
-    return getDestinationConfig();
+    return destinationConfig_ == null
+        ? com.google.cloud.datastream.v1.DestinationConfig.getDefaultInstance()
+        : destinationConfig_;
   }
 
   public static final int STATE_FIELD_NUMBER = 8;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -2813,9 +2826,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datastream.v1.Stream.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datastream.v1.Stream.State result =
-        com.google.cloud.datastream.v1.Stream.State.valueOf(state_);
+        com.google.cloud.datastream.v1.Stream.State.forNumber(state_);
     return result == null ? com.google.cloud.datastream.v1.Stream.State.UNRECOGNIZED : result;
   }
 
@@ -2927,6 +2939,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERRORS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.Error> errors_;
   /**
    *
@@ -3006,7 +3020,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CUSTOMER_MANAGED_ENCRYPTION_KEY_FIELD_NUMBER = 10;
-  private volatile java.lang.Object customerManagedEncryptionKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customerManagedEncryptionKey_ = "";
   /**
    *
    *
@@ -3459,37 +3475,31 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       displayName_ = "";
-
-      if (sourceConfigBuilder_ == null) {
-        sourceConfig_ = null;
-      } else {
-        sourceConfig_ = null;
+      sourceConfig_ = null;
+      if (sourceConfigBuilder_ != null) {
+        sourceConfigBuilder_.dispose();
         sourceConfigBuilder_ = null;
       }
-      if (destinationConfigBuilder_ == null) {
-        destinationConfig_ = null;
-      } else {
-        destinationConfig_ = null;
+      destinationConfig_ = null;
+      if (destinationConfigBuilder_ != null) {
+        destinationConfigBuilder_.dispose();
         destinationConfigBuilder_ = null;
       }
       state_ = 0;
-
       if (backfillAllBuilder_ != null) {
         backfillAllBuilder_.clear();
       }
@@ -3502,9 +3512,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         errors_ = null;
         errorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000400);
       customerManagedEncryptionKey_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       backfillStrategyCase_ = 0;
       backfillStrategy_ = null;
       return this;
@@ -3534,64 +3543,75 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1.Stream buildPartial() {
       com.google.cloud.datastream.v1.Stream result =
           new com.google.cloud.datastream.v1.Stream(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.displayName_ = displayName_;
-      if (sourceConfigBuilder_ == null) {
-        result.sourceConfig_ = sourceConfig_;
-      } else {
-        result.sourceConfig_ = sourceConfigBuilder_.build();
-      }
-      if (destinationConfigBuilder_ == null) {
-        result.destinationConfig_ = destinationConfig_;
-      } else {
-        result.destinationConfig_ = destinationConfigBuilder_.build();
-      }
-      result.state_ = state_;
-      if (backfillStrategyCase_ == 101) {
-        if (backfillAllBuilder_ == null) {
-          result.backfillStrategy_ = backfillStrategy_;
-        } else {
-          result.backfillStrategy_ = backfillAllBuilder_.build();
-        }
-      }
-      if (backfillStrategyCase_ == 102) {
-        if (backfillNoneBuilder_ == null) {
-          result.backfillStrategy_ = backfillStrategy_;
-        } else {
-          result.backfillStrategy_ = backfillNoneBuilder_.build();
-        }
-      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.datastream.v1.Stream result) {
       if (errorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.errors_ = errors_;
       } else {
         result.errors_ = errorsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.Stream result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.sourceConfig_ =
+            sourceConfigBuilder_ == null ? sourceConfig_ : sourceConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.destinationConfig_ =
+            destinationConfigBuilder_ == null
+                ? destinationConfig_
+                : destinationConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.state_ = state_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.customerManagedEncryptionKey_ = customerManagedEncryptionKey_;
         to_bitField0_ |= 0x00000001;
       }
-      result.customerManagedEncryptionKey_ = customerManagedEncryptionKey_;
-      result.bitField0_ = to_bitField0_;
+      result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datastream.v1.Stream result) {
       result.backfillStrategyCase_ = backfillStrategyCase_;
-      onBuilt();
-      return result;
+      result.backfillStrategy_ = this.backfillStrategy_;
+      if (backfillStrategyCase_ == 101 && backfillAllBuilder_ != null) {
+        result.backfillStrategy_ = backfillAllBuilder_.build();
+      }
+      if (backfillStrategyCase_ == 102 && backfillNoneBuilder_ != null) {
+        result.backfillStrategy_ = backfillNoneBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3641,6 +3661,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.datastream.v1.Stream.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -3650,8 +3671,10 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000008;
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasSourceConfig()) {
@@ -3667,7 +3690,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         if (!other.errors_.isEmpty()) {
           if (errors_.isEmpty()) {
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureErrorsIsMutable();
             errors_.addAll(other.errors_);
@@ -3680,7 +3703,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             errorsBuilder_.dispose();
             errorsBuilder_ = null;
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000400);
             errorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getErrorsFieldBuilder()
@@ -3691,8 +3714,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasCustomerManagedEncryptionKey()) {
-        bitField0_ |= 0x00000004;
         customerManagedEncryptionKey_ = other.customerManagedEncryptionKey_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       switch (other.getBackfillStrategyCase()) {
@@ -3740,19 +3763,19 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -3764,31 +3787,32 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getSourceConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     getDestinationConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 64:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             case 74:
@@ -3807,7 +3831,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 customerManagedEncryptionKey_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 82
             case 810:
@@ -3916,8 +3940,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3933,8 +3957,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -3955,8 +3979,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3981,7 +4005,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -4022,11 +4046,11 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -4043,11 +4067,11 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -4063,17 +4087,18 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -4088,14 +4113,13 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4110,7 +4134,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -4182,7 +4206,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -4223,11 +4247,11 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -4244,11 +4268,11 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -4264,17 +4288,18 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -4289,14 +4314,13 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4311,7 +4335,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -4374,14 +4398,14 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return labels_;
     }
 
@@ -4433,8 +4457,10 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -4463,6 +4489,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -4485,6 +4512,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -4503,8 +4531,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -4518,6 +4546,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -4582,8 +4611,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4599,8 +4628,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -4621,8 +4650,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4647,7 +4676,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceConfig field is set.
      */
     public boolean hasSourceConfig() {
-      return sourceConfigBuilder_ != null || sourceConfig_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -4688,11 +4717,11 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sourceConfig_ = value;
-        onChanged();
       } else {
         sourceConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -4710,11 +4739,11 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.datastream.v1.SourceConfig.Builder builderForValue) {
       if (sourceConfigBuilder_ == null) {
         sourceConfig_ = builderForValue.build();
-        onChanged();
       } else {
         sourceConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -4730,19 +4759,18 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSourceConfig(com.google.cloud.datastream.v1.SourceConfig value) {
       if (sourceConfigBuilder_ == null) {
-        if (sourceConfig_ != null) {
-          sourceConfig_ =
-              com.google.cloud.datastream.v1.SourceConfig.newBuilder(sourceConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && sourceConfig_ != null
+            && sourceConfig_ != com.google.cloud.datastream.v1.SourceConfig.getDefaultInstance()) {
+          getSourceConfigBuilder().mergeFrom(value);
         } else {
           sourceConfig_ = value;
         }
-        onChanged();
       } else {
         sourceConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -4757,14 +4785,13 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSourceConfig() {
-      if (sourceConfigBuilder_ == null) {
-        sourceConfig_ = null;
-        onChanged();
-      } else {
-        sourceConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      sourceConfig_ = null;
+      if (sourceConfigBuilder_ != null) {
+        sourceConfigBuilder_.dispose();
         sourceConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4779,7 +4806,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.datastream.v1.SourceConfig.Builder getSourceConfigBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getSourceConfigFieldBuilder().getBuilder();
     }
@@ -4851,7 +4878,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the destinationConfig field is set.
      */
     public boolean hasDestinationConfig() {
-      return destinationConfigBuilder_ != null || destinationConfig_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -4892,11 +4919,11 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         destinationConfig_ = value;
-        onChanged();
       } else {
         destinationConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4914,11 +4941,11 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.datastream.v1.DestinationConfig.Builder builderForValue) {
       if (destinationConfigBuilder_ == null) {
         destinationConfig_ = builderForValue.build();
-        onChanged();
       } else {
         destinationConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4934,19 +4961,19 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDestinationConfig(com.google.cloud.datastream.v1.DestinationConfig value) {
       if (destinationConfigBuilder_ == null) {
-        if (destinationConfig_ != null) {
-          destinationConfig_ =
-              com.google.cloud.datastream.v1.DestinationConfig.newBuilder(destinationConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && destinationConfig_ != null
+            && destinationConfig_
+                != com.google.cloud.datastream.v1.DestinationConfig.getDefaultInstance()) {
+          getDestinationConfigBuilder().mergeFrom(value);
         } else {
           destinationConfig_ = value;
         }
-        onChanged();
       } else {
         destinationConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4961,14 +4988,13 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDestinationConfig() {
-      if (destinationConfigBuilder_ == null) {
-        destinationConfig_ = null;
-        onChanged();
-      } else {
-        destinationConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      destinationConfig_ = null;
+      if (destinationConfigBuilder_ != null) {
+        destinationConfigBuilder_.dispose();
         destinationConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4983,7 +5009,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.datastream.v1.DestinationConfig.Builder getDestinationConfigBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getDestinationConfigFieldBuilder().getBuilder();
     }
@@ -5065,8 +5091,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -5083,9 +5109,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.datastream.v1.Stream.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datastream.v1.Stream.State result =
-          com.google.cloud.datastream.v1.Stream.State.valueOf(state_);
+          com.google.cloud.datastream.v1.Stream.State.forNumber(state_);
       return result == null ? com.google.cloud.datastream.v1.Stream.State.UNRECOGNIZED : result;
     }
     /**
@@ -5104,7 +5129,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -5121,7 +5146,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       state_ = 0;
       onChanged();
       return this;
@@ -5347,7 +5372,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       backfillStrategyCase_ = 101;
       onChanged();
-      ;
       return backfillAllBuilder_;
     }
 
@@ -5565,7 +5589,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       backfillStrategyCase_ = 102;
       onChanged();
-      ;
       return backfillNoneBuilder_;
     }
 
@@ -5573,9 +5596,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         errors_ = new java.util.ArrayList<com.google.cloud.datastream.v1.Error>(errors_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -5812,7 +5835,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         errorsBuilder_.clear();
@@ -5947,7 +5970,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datastream.v1.Error,
                 com.google.cloud.datastream.v1.Error.Builder,
                 com.google.cloud.datastream.v1.ErrorOrBuilder>(
-                errors_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                errors_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
         errors_ = null;
       }
       return errorsBuilder_;
@@ -5971,7 +5994,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the customerManagedEncryptionKey field is set.
      */
     public boolean hasCustomerManagedEncryptionKey() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -6048,8 +6071,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       customerManagedEncryptionKey_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -6070,8 +6093,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCustomerManagedEncryptionKey() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       customerManagedEncryptionKey_ = getDefaultInstance().getCustomerManagedEncryptionKey();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -6097,8 +6120,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       customerManagedEncryptionKey_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

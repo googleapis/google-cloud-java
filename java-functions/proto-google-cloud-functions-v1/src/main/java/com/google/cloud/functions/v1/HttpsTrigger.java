@@ -236,7 +236,9 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object url_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object url_ = "";
   /**
    *
    *
@@ -285,7 +287,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECURITY_LEVEL_FIELD_NUMBER = 2;
-  private int securityLevel_;
+  private int securityLevel_ = 0;
   /**
    *
    *
@@ -314,9 +316,8 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel getSecurityLevel() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel result =
-        com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel.valueOf(securityLevel_);
+        com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel.forNumber(securityLevel_);
     return result == null
         ? com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel.UNRECOGNIZED
         : result;
@@ -532,10 +533,9 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       url_ = "";
-
       securityLevel_ = 0;
-
       return this;
     }
 
@@ -563,10 +563,21 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.functions.v1.HttpsTrigger buildPartial() {
       com.google.cloud.functions.v1.HttpsTrigger result =
           new com.google.cloud.functions.v1.HttpsTrigger(this);
-      result.url_ = url_;
-      result.securityLevel_ = securityLevel_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v1.HttpsTrigger result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.url_ = url_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.securityLevel_ = securityLevel_;
+      }
     }
 
     @java.lang.Override
@@ -616,6 +627,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.functions.v1.HttpsTrigger.getDefaultInstance()) return this;
       if (!other.getUrl().isEmpty()) {
         url_ = other.url_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.securityLevel_ != 0) {
@@ -650,13 +662,13 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 url_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 securityLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -675,6 +687,8 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object url_ = "";
     /**
@@ -737,8 +751,8 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       url_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -754,8 +768,8 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUrl() {
-
       url_ = getDefaultInstance().getUrl();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -776,8 +790,8 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       url_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -811,8 +825,8 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSecurityLevelValue(int value) {
-
       securityLevel_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -829,9 +843,8 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel getSecurityLevel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel result =
-          com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel.valueOf(securityLevel_);
+          com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel.forNumber(securityLevel_);
       return result == null
           ? com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel.UNRECOGNIZED
           : result;
@@ -853,7 +866,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       securityLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -870,7 +883,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSecurityLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       securityLevel_ = 0;
       onChanged();
       return this;

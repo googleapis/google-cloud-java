@@ -502,7 +502,7 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 1;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -531,14 +531,13 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datastream.v1.BackfillJob.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datastream.v1.BackfillJob.State result =
-        com.google.cloud.datastream.v1.BackfillJob.State.valueOf(state_);
+        com.google.cloud.datastream.v1.BackfillJob.State.forNumber(state_);
     return result == null ? com.google.cloud.datastream.v1.BackfillJob.State.UNRECOGNIZED : result;
   }
 
   public static final int TRIGGER_FIELD_NUMBER = 2;
-  private int trigger_;
+  private int trigger_ = 0;
   /**
    *
    *
@@ -567,9 +566,8 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datastream.v1.BackfillJob.Trigger getTrigger() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datastream.v1.BackfillJob.Trigger result =
-        com.google.cloud.datastream.v1.BackfillJob.Trigger.valueOf(trigger_);
+        com.google.cloud.datastream.v1.BackfillJob.Trigger.forNumber(trigger_);
     return result == null
         ? com.google.cloud.datastream.v1.BackfillJob.Trigger.UNRECOGNIZED
         : result;
@@ -626,7 +624,9 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastStartTimeOrBuilder() {
-    return getLastStartTime();
+    return lastStartTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastStartTime_;
   }
 
   public static final int LAST_END_TIME_FIELD_NUMBER = 4;
@@ -678,10 +678,12 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastEndTimeOrBuilder() {
-    return getLastEndTime();
+    return lastEndTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastEndTime_;
   }
 
   public static final int ERRORS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.Error> errors_;
   /**
    *
@@ -1007,20 +1009,17 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       state_ = 0;
-
       trigger_ = 0;
-
-      if (lastStartTimeBuilder_ == null) {
-        lastStartTime_ = null;
-      } else {
-        lastStartTime_ = null;
+      lastStartTime_ = null;
+      if (lastStartTimeBuilder_ != null) {
+        lastStartTimeBuilder_.dispose();
         lastStartTimeBuilder_ = null;
       }
-      if (lastEndTimeBuilder_ == null) {
-        lastEndTime_ = null;
-      } else {
-        lastEndTime_ = null;
+      lastEndTime_ = null;
+      if (lastEndTimeBuilder_ != null) {
+        lastEndTimeBuilder_.dispose();
         lastEndTimeBuilder_ = null;
       }
       if (errorsBuilder_ == null) {
@@ -1029,7 +1028,7 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
         errors_ = null;
         errorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -1057,30 +1056,42 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1.BackfillJob buildPartial() {
       com.google.cloud.datastream.v1.BackfillJob result =
           new com.google.cloud.datastream.v1.BackfillJob(this);
-      int from_bitField0_ = bitField0_;
-      result.state_ = state_;
-      result.trigger_ = trigger_;
-      if (lastStartTimeBuilder_ == null) {
-        result.lastStartTime_ = lastStartTime_;
-      } else {
-        result.lastStartTime_ = lastStartTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (lastEndTimeBuilder_ == null) {
-        result.lastEndTime_ = lastEndTime_;
-      } else {
-        result.lastEndTime_ = lastEndTimeBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.datastream.v1.BackfillJob result) {
       if (errorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.errors_ = errors_;
       } else {
         result.errors_ = errorsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.BackfillJob result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.trigger_ = trigger_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.lastStartTime_ =
+            lastStartTimeBuilder_ == null ? lastStartTime_ : lastStartTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.lastEndTime_ =
+            lastEndTimeBuilder_ == null ? lastEndTime_ : lastEndTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1144,7 +1155,7 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
         if (!other.errors_.isEmpty()) {
           if (errors_.isEmpty()) {
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureErrorsIsMutable();
             errors_.addAll(other.errors_);
@@ -1157,7 +1168,7 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
             errorsBuilder_.dispose();
             errorsBuilder_ = null;
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             errorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getErrorsFieldBuilder()
@@ -1196,25 +1207,25 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 trigger_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getLastStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getLastEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1278,8 +1289,8 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1296,9 +1307,8 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.datastream.v1.BackfillJob.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datastream.v1.BackfillJob.State result =
-          com.google.cloud.datastream.v1.BackfillJob.State.valueOf(state_);
+          com.google.cloud.datastream.v1.BackfillJob.State.forNumber(state_);
       return result == null
           ? com.google.cloud.datastream.v1.BackfillJob.State.UNRECOGNIZED
           : result;
@@ -1319,7 +1329,7 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1336,7 +1346,7 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = 0;
       onChanged();
       return this;
@@ -1371,8 +1381,8 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTriggerValue(int value) {
-
       trigger_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1389,9 +1399,8 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.datastream.v1.BackfillJob.Trigger getTrigger() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datastream.v1.BackfillJob.Trigger result =
-          com.google.cloud.datastream.v1.BackfillJob.Trigger.valueOf(trigger_);
+          com.google.cloud.datastream.v1.BackfillJob.Trigger.forNumber(trigger_);
       return result == null
           ? com.google.cloud.datastream.v1.BackfillJob.Trigger.UNRECOGNIZED
           : result;
@@ -1412,7 +1421,7 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       trigger_ = value.getNumber();
       onChanged();
       return this;
@@ -1429,7 +1438,7 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTrigger() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       trigger_ = 0;
       onChanged();
       return this;
@@ -1455,7 +1464,7 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastStartTime field is set.
      */
     public boolean hasLastStartTime() {
-      return lastStartTimeBuilder_ != null || lastStartTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1496,11 +1505,11 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastStartTime_ = value;
-        onChanged();
       } else {
         lastStartTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1517,11 +1526,11 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastStartTimeBuilder_ == null) {
         lastStartTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastStartTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1537,19 +1546,18 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastStartTime(com.google.protobuf.Timestamp value) {
       if (lastStartTimeBuilder_ == null) {
-        if (lastStartTime_ != null) {
-          lastStartTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastStartTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && lastStartTime_ != null
+            && lastStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastStartTimeBuilder().mergeFrom(value);
         } else {
           lastStartTime_ = value;
         }
-        onChanged();
       } else {
         lastStartTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1564,14 +1572,13 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLastStartTime() {
-      if (lastStartTimeBuilder_ == null) {
-        lastStartTime_ = null;
-        onChanged();
-      } else {
-        lastStartTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      lastStartTime_ = null;
+      if (lastStartTimeBuilder_ != null) {
+        lastStartTimeBuilder_.dispose();
         lastStartTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1586,7 +1593,7 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getLastStartTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getLastStartTimeFieldBuilder().getBuilder();
     }
@@ -1658,7 +1665,7 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastEndTime field is set.
      */
     public boolean hasLastEndTime() {
-      return lastEndTimeBuilder_ != null || lastEndTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1699,11 +1706,11 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastEndTime_ = value;
-        onChanged();
       } else {
         lastEndTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1720,11 +1727,11 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastEndTimeBuilder_ == null) {
         lastEndTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastEndTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1740,19 +1747,18 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastEndTime(com.google.protobuf.Timestamp value) {
       if (lastEndTimeBuilder_ == null) {
-        if (lastEndTime_ != null) {
-          lastEndTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastEndTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && lastEndTime_ != null
+            && lastEndTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastEndTimeBuilder().mergeFrom(value);
         } else {
           lastEndTime_ = value;
         }
-        onChanged();
       } else {
         lastEndTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1767,14 +1773,13 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLastEndTime() {
-      if (lastEndTimeBuilder_ == null) {
-        lastEndTime_ = null;
-        onChanged();
-      } else {
-        lastEndTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      lastEndTime_ = null;
+      if (lastEndTimeBuilder_ != null) {
+        lastEndTimeBuilder_.dispose();
         lastEndTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1789,7 +1794,7 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getLastEndTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getLastEndTimeFieldBuilder().getBuilder();
     }
@@ -1845,9 +1850,9 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         errors_ = new java.util.ArrayList<com.google.cloud.datastream.v1.Error>(errors_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2084,7 +2089,7 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         errorsBuilder_.clear();
@@ -2219,7 +2224,7 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datastream.v1.Error,
                 com.google.cloud.datastream.v1.Error.Builder,
                 com.google.cloud.datastream.v1.ErrorOrBuilder>(
-                errors_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                errors_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         errors_ = null;
       }
       return errorsBuilder_;

@@ -66,7 +66,7 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
   }
 
   public static final int IOU_THRESHOLD_FIELD_NUMBER = 1;
-  private float iouThreshold_;
+  private float iouThreshold_ = 0F;
   /**
    *
    *
@@ -288,8 +288,8 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       iouThreshold_ = 0F;
-
       return this;
     }
 
@@ -319,9 +319,19 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
     public com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions buildPartial() {
       com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions result =
           new com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions(this);
-      result.iouThreshold_ = iouThreshold_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.iouThreshold_ = iouThreshold_;
+      }
     }
 
     @java.lang.Override
@@ -405,7 +415,7 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
             case 13:
               {
                 iouThreshold_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             default:
@@ -424,6 +434,8 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private float iouThreshold_;
     /**
@@ -464,6 +476,7 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
     public Builder setIouThreshold(float value) {
 
       iouThreshold_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -483,7 +496,7 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearIouThreshold() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       iouThreshold_ = 0F;
       onChanged();
       return this;

@@ -210,7 +210,9 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -875,8 +877,8 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (connectionProfileBuilder_ != null) {
         connectionProfileBuilder_.clear();
       }
@@ -921,42 +923,39 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     public com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest buildPartial() {
       com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest result =
           new com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest(this);
-      result.parent_ = parent_;
-      if (targetCase_ == 200) {
-        if (connectionProfileBuilder_ == null) {
-          result.target_ = target_;
-        } else {
-          result.target_ = connectionProfileBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (targetCase_ == 201) {
-        result.target_ = target_;
-      }
-      if (depthCase_ == 3) {
-        result.depth_ = depth_;
-      }
-      if (depthCase_ == 4) {
-        result.depth_ = depth_;
-      }
-      if (dataObjectCase_ == 100) {
-        if (oracleRdbmsBuilder_ == null) {
-          result.dataObject_ = dataObject_;
-        } else {
-          result.dataObject_ = oracleRdbmsBuilder_.build();
-        }
-      }
-      if (dataObjectCase_ == 101) {
-        if (mysqlRdbmsBuilder_ == null) {
-          result.dataObject_ = dataObject_;
-        } else {
-          result.dataObject_ = mysqlRdbmsBuilder_.build();
-        }
-      }
-      result.targetCase_ = targetCase_;
-      result.depthCase_ = depthCase_;
-      result.dataObjectCase_ = dataObjectCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest result) {
+      result.targetCase_ = targetCase_;
+      result.target_ = this.target_;
+      if (targetCase_ == 200 && connectionProfileBuilder_ != null) {
+        result.target_ = connectionProfileBuilder_.build();
+      }
+      result.depthCase_ = depthCase_;
+      result.depth_ = this.depth_;
+      result.dataObjectCase_ = dataObjectCase_;
+      result.dataObject_ = this.dataObject_;
+      if (dataObjectCase_ == 100 && oracleRdbmsBuilder_ != null) {
+        result.dataObject_ = oracleRdbmsBuilder_.build();
+      }
+      if (dataObjectCase_ == 101 && mysqlRdbmsBuilder_ != null) {
+        result.dataObject_ = mysqlRdbmsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1010,6 +1009,7 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getTargetCase()) {
@@ -1091,7 +1091,7 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 24:
@@ -1191,6 +1191,8 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object parent_ = "";
     /**
      *
@@ -1261,8 +1263,8 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1281,8 +1283,8 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1306,8 +1308,8 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1523,7 +1525,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       }
       targetCase_ = 200;
       onChanged();
-      ;
       return connectionProfileBuilder_;
     }
 
@@ -1708,6 +1709,7 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder setRecursive(boolean value) {
+
       depthCase_ = 3;
       depth_ = value;
       onChanged();
@@ -1778,6 +1780,7 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder setRecursionDepth(int value) {
+
       depthCase_ = 4;
       depth_ = value;
       onChanged();
@@ -2010,7 +2013,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       }
       dataObjectCase_ = 100;
       onChanged();
-      ;
       return oracleRdbmsBuilder_;
     }
 
@@ -2221,7 +2223,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       }
       dataObjectCase_ = 101;
       onChanged();
-      ;
       return mysqlRdbmsBuilder_;
     }
 

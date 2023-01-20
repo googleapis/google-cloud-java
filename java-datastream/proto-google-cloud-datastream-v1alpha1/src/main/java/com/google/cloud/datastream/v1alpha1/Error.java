@@ -81,7 +81,9 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REASON_FIELD_NUMBER = 1;
-  private volatile java.lang.Object reason_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reason_ = "";
   /**
    *
    *
@@ -130,7 +132,9 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERROR_UUID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object errorUuid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object errorUuid_ = "";
   /**
    *
    *
@@ -181,7 +185,9 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -272,7 +278,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getErrorTimeOrBuilder() {
-    return getErrorTime();
+    return errorTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : errorTime_;
   }
 
   public static final int DETAILS_FIELD_NUMBER = 5;
@@ -288,6 +294,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> details_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetDetails() {
@@ -345,7 +352,10 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; details = 5;</code>
    */
   @java.lang.Override
-  public java.lang.String getDetailsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getDetailsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -639,16 +649,13 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       reason_ = "";
-
       errorUuid_ = "";
-
       message_ = "";
-
-      if (errorTimeBuilder_ == null) {
-        errorTime_ = null;
-      } else {
-        errorTime_ = null;
+      errorTime_ = null;
+      if (errorTimeBuilder_ != null) {
+        errorTimeBuilder_.dispose();
         errorTimeBuilder_ = null;
       }
       internalGetMutableDetails().clear();
@@ -679,19 +686,31 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1alpha1.Error buildPartial() {
       com.google.cloud.datastream.v1alpha1.Error result =
           new com.google.cloud.datastream.v1alpha1.Error(this);
-      int from_bitField0_ = bitField0_;
-      result.reason_ = reason_;
-      result.errorUuid_ = errorUuid_;
-      result.message_ = message_;
-      if (errorTimeBuilder_ == null) {
-        result.errorTime_ = errorTime_;
-      } else {
-        result.errorTime_ = errorTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.details_ = internalGetDetails();
-      result.details_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1alpha1.Error result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.reason_ = reason_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.errorUuid_ = errorUuid_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.message_ = message_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.errorTime_ = errorTimeBuilder_ == null ? errorTime_ : errorTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.details_ = internalGetDetails();
+        result.details_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -741,20 +760,24 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.datastream.v1alpha1.Error.getDefaultInstance()) return this;
       if (!other.getReason().isEmpty()) {
         reason_ = other.reason_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getErrorUuid().isEmpty()) {
         errorUuid_ = other.errorUuid_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasErrorTime()) {
         mergeErrorTime(other.getErrorTime());
       }
       internalGetMutableDetails().mergeFrom(other.internalGetDetails());
+      bitField0_ |= 0x00000010;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -784,25 +807,25 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 reason_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 errorUuid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 message_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getErrorTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -814,6 +837,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableDetails()
                     .getMutableMap()
                     .put(details__.getKey(), details__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -896,8 +920,8 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       reason_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -913,8 +937,8 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReason() {
-
       reason_ = getDefaultInstance().getReason();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -935,8 +959,8 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       reason_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1005,8 +1029,8 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       errorUuid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1023,8 +1047,8 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearErrorUuid() {
-
       errorUuid_ = getDefaultInstance().getErrorUuid();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1046,8 +1070,8 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       errorUuid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1113,8 +1137,8 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       message_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1130,8 +1154,8 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1152,8 +1176,8 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       message_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1176,7 +1200,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the errorTime field is set.
      */
     public boolean hasErrorTime() {
-      return errorTimeBuilder_ != null || errorTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1211,11 +1235,11 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         errorTime_ = value;
-        onChanged();
       } else {
         errorTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1230,11 +1254,11 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     public Builder setErrorTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (errorTimeBuilder_ == null) {
         errorTime_ = builderForValue.build();
-        onChanged();
       } else {
         errorTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1248,17 +1272,18 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeErrorTime(com.google.protobuf.Timestamp value) {
       if (errorTimeBuilder_ == null) {
-        if (errorTime_ != null) {
-          errorTime_ =
-              com.google.protobuf.Timestamp.newBuilder(errorTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && errorTime_ != null
+            && errorTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getErrorTimeBuilder().mergeFrom(value);
         } else {
           errorTime_ = value;
         }
-        onChanged();
       } else {
         errorTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1271,14 +1296,13 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp error_time = 4;</code>
      */
     public Builder clearErrorTime() {
-      if (errorTimeBuilder_ == null) {
-        errorTime_ = null;
-        onChanged();
-      } else {
-        errorTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      errorTime_ = null;
+      if (errorTimeBuilder_ != null) {
+        errorTimeBuilder_.dispose();
         errorTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1291,7 +1315,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp error_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getErrorTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getErrorTimeFieldBuilder().getBuilder();
     }
@@ -1348,14 +1372,14 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableDetails() {
-      onChanged();
-      ;
       if (details_ == null) {
         details_ = com.google.protobuf.MapField.newMapField(DetailsDefaultEntryHolder.defaultEntry);
       }
       if (!details_.isMutable()) {
         details_ = details_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return details_;
     }
 
@@ -1407,8 +1431,10 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; details = 5;</code>
      */
     @java.lang.Override
-    public java.lang.String getDetailsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getDetailsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1437,6 +1463,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearDetails() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableDetails().getMutableMap().clear();
       return this;
     }
@@ -1459,6 +1486,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDetails() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableDetails().getMutableMap();
     }
     /**
@@ -1477,8 +1505,8 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableDetails().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1492,6 +1520,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllDetails(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDetails().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 

@@ -69,7 +69,9 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -124,7 +126,7 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
   }
 
   public static final int VIEW_FIELD_NUMBER = 6;
-  private int view_;
+  private int view_ = 0;
   /**
    *
    *
@@ -167,9 +169,8 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.gaming.v1.GameServerClusterView getView() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gaming.v1.GameServerClusterView result =
-        com.google.cloud.gaming.v1.GameServerClusterView.valueOf(view_);
+        com.google.cloud.gaming.v1.GameServerClusterView.forNumber(view_);
     return result == null ? com.google.cloud.gaming.v1.GameServerClusterView.UNRECOGNIZED : result;
   }
 
@@ -384,10 +385,9 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       view_ = 0;
-
       return this;
     }
 
@@ -415,10 +415,21 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
     public com.google.cloud.gaming.v1.GetGameServerClusterRequest buildPartial() {
       com.google.cloud.gaming.v1.GetGameServerClusterRequest result =
           new com.google.cloud.gaming.v1.GetGameServerClusterRequest(this);
-      result.name_ = name_;
-      result.view_ = view_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gaming.v1.GetGameServerClusterRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.view_ = view_;
+      }
     }
 
     @java.lang.Override
@@ -469,6 +480,7 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.view_ != 0) {
@@ -503,13 +515,13 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 48:
               {
                 view_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 48
             default:
@@ -528,6 +540,8 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -599,8 +613,8 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -619,8 +633,8 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -644,8 +658,8 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -693,8 +707,8 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
-
       view_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -718,9 +732,8 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
      */
     @java.lang.Override
     public com.google.cloud.gaming.v1.GameServerClusterView getView() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gaming.v1.GameServerClusterView result =
-          com.google.cloud.gaming.v1.GameServerClusterView.valueOf(view_);
+          com.google.cloud.gaming.v1.GameServerClusterView.forNumber(view_);
       return result == null
           ? com.google.cloud.gaming.v1.GameServerClusterView.UNRECOGNIZED
           : result;
@@ -748,7 +761,7 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       view_ = value.getNumber();
       onChanged();
       return this;
@@ -772,7 +785,7 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearView() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       view_ = 0;
       onChanged();
       return this;

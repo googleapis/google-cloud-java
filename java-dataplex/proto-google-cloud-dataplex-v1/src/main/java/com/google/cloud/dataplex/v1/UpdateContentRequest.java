@@ -111,7 +111,7 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int CONTENT_FIELD_NUMBER = 2;
@@ -163,11 +163,11 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.ContentOrBuilder getContentOrBuilder() {
-    return getContent();
+    return content_ == null ? com.google.cloud.dataplex.v1.Content.getDefaultInstance() : content_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -410,20 +410,18 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      bitField0_ = 0;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-      if (contentBuilder_ == null) {
-        content_ = null;
-      } else {
-        content_ = null;
+      content_ = null;
+      if (contentBuilder_ != null) {
+        contentBuilder_.dispose();
         contentBuilder_ = null;
       }
       validateOnly_ = false;
-
       return this;
     }
 
@@ -451,19 +449,24 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dataplex.v1.UpdateContentRequest buildPartial() {
       com.google.cloud.dataplex.v1.UpdateContentRequest result =
           new com.google.cloud.dataplex.v1.UpdateContentRequest(this);
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (contentBuilder_ == null) {
-        result.content_ = content_;
-      } else {
-        result.content_ = contentBuilder_.build();
-      }
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.UpdateContentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.content_ = contentBuilder_ == null ? content_ : contentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -550,19 +553,19 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getContentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -581,6 +584,8 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -601,7 +606,7 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -640,11 +645,11 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -660,11 +665,11 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -679,17 +684,18 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -703,14 +709,13 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -724,7 +729,7 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -795,7 +800,7 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the content field is set.
      */
     public boolean hasContent() {
-      return contentBuilder_ != null || content_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -838,11 +843,11 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         content_ = value;
-        onChanged();
       } else {
         contentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -860,11 +865,11 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
     public Builder setContent(com.google.cloud.dataplex.v1.Content.Builder builderForValue) {
       if (contentBuilder_ == null) {
         content_ = builderForValue.build();
-        onChanged();
       } else {
         contentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -881,19 +886,18 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeContent(com.google.cloud.dataplex.v1.Content value) {
       if (contentBuilder_ == null) {
-        if (content_ != null) {
-          content_ =
-              com.google.cloud.dataplex.v1.Content.newBuilder(content_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && content_ != null
+            && content_ != com.google.cloud.dataplex.v1.Content.getDefaultInstance()) {
+          getContentBuilder().mergeFrom(value);
         } else {
           content_ = value;
         }
-        onChanged();
       } else {
         contentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -909,14 +913,13 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearContent() {
-      if (contentBuilder_ == null) {
-        content_ = null;
-        onChanged();
-      } else {
-        content_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      content_ = null;
+      if (contentBuilder_ != null) {
+        contentBuilder_.dispose();
         contentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -932,7 +935,7 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.dataplex.v1.Content.Builder getContentBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getContentFieldBuilder().getBuilder();
     }
@@ -1019,6 +1022,7 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1035,7 +1039,7 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       validateOnly_ = false;
       onChanged();
       return this;

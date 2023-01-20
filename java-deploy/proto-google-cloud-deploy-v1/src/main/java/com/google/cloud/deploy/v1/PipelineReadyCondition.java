@@ -67,7 +67,7 @@ public final class PipelineReadyCondition extends com.google.protobuf.GeneratedM
   }
 
   public static final int STATUS_FIELD_NUMBER = 3;
-  private boolean status_;
+  private boolean status_ = false;
   /**
    *
    *
@@ -130,7 +130,7 @@ public final class PipelineReadyCondition extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -345,12 +345,11 @@ public final class PipelineReadyCondition extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       status_ = false;
-
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       return this;
@@ -380,14 +379,21 @@ public final class PipelineReadyCondition extends com.google.protobuf.GeneratedM
     public com.google.cloud.deploy.v1.PipelineReadyCondition buildPartial() {
       com.google.cloud.deploy.v1.PipelineReadyCondition result =
           new com.google.cloud.deploy.v1.PipelineReadyCondition(this);
-      result.status_ = status_;
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.PipelineReadyCondition result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.status_ = status_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -471,13 +477,13 @@ public final class PipelineReadyCondition extends com.google.protobuf.GeneratedM
             case 24:
               {
                 status_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             default:
@@ -496,6 +502,8 @@ public final class PipelineReadyCondition extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean status_;
     /**
@@ -534,6 +542,7 @@ public final class PipelineReadyCondition extends com.google.protobuf.GeneratedM
     public Builder setStatus(boolean value) {
 
       status_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -552,7 +561,7 @@ public final class PipelineReadyCondition extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       status_ = false;
       onChanged();
       return this;
@@ -576,7 +585,7 @@ public final class PipelineReadyCondition extends com.google.protobuf.GeneratedM
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -613,11 +622,11 @@ public final class PipelineReadyCondition extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -632,11 +641,11 @@ public final class PipelineReadyCondition extends com.google.protobuf.GeneratedM
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -650,17 +659,18 @@ public final class PipelineReadyCondition extends com.google.protobuf.GeneratedM
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -673,14 +683,13 @@ public final class PipelineReadyCondition extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp update_time = 4;</code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -693,7 +702,7 @@ public final class PipelineReadyCondition extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp update_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }

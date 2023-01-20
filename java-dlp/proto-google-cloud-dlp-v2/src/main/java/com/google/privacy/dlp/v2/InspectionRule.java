@@ -444,6 +444,7 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (hotwordRuleBuilder_ != null) {
         hotwordRuleBuilder_.clear();
       }
@@ -479,23 +480,27 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.InspectionRule buildPartial() {
       com.google.privacy.dlp.v2.InspectionRule result =
           new com.google.privacy.dlp.v2.InspectionRule(this);
-      if (typeCase_ == 1) {
-        if (hotwordRuleBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = hotwordRuleBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (typeCase_ == 2) {
-        if (exclusionRuleBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = exclusionRuleBuilder_.build();
-        }
-      }
-      result.typeCase_ = typeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.InspectionRule result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.InspectionRule result) {
+      result.typeCase_ = typeCase_;
+      result.type_ = this.type_;
+      if (typeCase_ == 1 && hotwordRuleBuilder_ != null) {
+        result.type_ = hotwordRuleBuilder_.build();
+      }
+      if (typeCase_ == 2 && exclusionRuleBuilder_ != null) {
+        result.type_ = exclusionRuleBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -627,6 +632,8 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule,
@@ -855,7 +862,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 1;
       onChanged();
-      ;
       return hotwordRuleBuilder_;
     }
 
@@ -1063,7 +1069,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 2;
       onChanged();
-      ;
       return exclusionRuleBuilder_;
     }
 

@@ -249,7 +249,7 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
   }
 
   public static final int CONTAINER_TYPE_FIELD_NUMBER = 3;
-  private int containerType_;
+  private int containerType_ = 0;
   /**
    *
    *
@@ -280,9 +280,8 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.TransformationContainerType getContainerType() {
-    @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.TransformationContainerType result =
-        com.google.privacy.dlp.v2.TransformationContainerType.valueOf(containerType_);
+        com.google.privacy.dlp.v2.TransformationContainerType.forNumber(containerType_);
     return result == null
         ? com.google.privacy.dlp.v2.TransformationContainerType.UNRECOGNIZED
         : result;
@@ -526,11 +525,11 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (recordTransformationBuilder_ != null) {
         recordTransformationBuilder_.clear();
       }
       containerType_ = 0;
-
       locationTypeCase_ = 0;
       locationType_ = null;
       return this;
@@ -560,20 +559,27 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
     public com.google.privacy.dlp.v2.TransformationLocation buildPartial() {
       com.google.privacy.dlp.v2.TransformationLocation result =
           new com.google.privacy.dlp.v2.TransformationLocation(this);
-      if (locationTypeCase_ == 1) {
-        result.locationType_ = locationType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (locationTypeCase_ == 2) {
-        if (recordTransformationBuilder_ == null) {
-          result.locationType_ = locationType_;
-        } else {
-          result.locationType_ = recordTransformationBuilder_.build();
-        }
-      }
-      result.containerType_ = containerType_;
-      result.locationTypeCase_ = locationTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.TransformationLocation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.containerType_ = containerType_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.TransformationLocation result) {
+      result.locationTypeCase_ = locationTypeCase_;
+      result.locationType_ = this.locationType_;
+      if (locationTypeCase_ == 2 && recordTransformationBuilder_ != null) {
+        result.locationType_ = recordTransformationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -686,7 +692,7 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
             case 24:
               {
                 containerType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -719,6 +725,8 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -1086,7 +1094,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
       }
       locationTypeCase_ = 2;
       onChanged();
-      ;
       return recordTransformationBuilder_;
     }
 
@@ -1121,8 +1128,8 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setContainerTypeValue(int value) {
-
       containerType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1140,9 +1147,8 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.TransformationContainerType getContainerType() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.TransformationContainerType result =
-          com.google.privacy.dlp.v2.TransformationContainerType.valueOf(containerType_);
+          com.google.privacy.dlp.v2.TransformationContainerType.forNumber(containerType_);
       return result == null
           ? com.google.privacy.dlp.v2.TransformationContainerType.UNRECOGNIZED
           : result;
@@ -1164,7 +1170,7 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       containerType_ = value.getNumber();
       onChanged();
       return this;
@@ -1182,7 +1188,7 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearContainerType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       containerType_ = 0;
       onChanged();
       return this;

@@ -72,7 +72,9 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -129,7 +131,9 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int QUERY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object query_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object query_ = "";
   /**
    *
    *
@@ -178,6 +182,8 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int LANGUAGES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList languages_;
   /**
    *
@@ -243,6 +249,8 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int TYPES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList types_;
   /**
    *
@@ -354,7 +362,7 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.Int32ValueOrBuilder getLimitOrBuilder() {
-    return getLimit();
+    return limit_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : limit_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -613,18 +621,16 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       query_ = "";
-
       languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       types_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (limitBuilder_ == null) {
-        limit_ = null;
-      } else {
-        limit_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      limit_ = null;
+      if (limitBuilder_ != null) {
+        limitBuilder_.dispose();
         limitBuilder_ = null;
       }
       return this;
@@ -656,26 +662,40 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest buildPartial() {
       com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest result =
           new com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      result.query_ = query_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        languages_ = languages_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.languages_ = languages_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        types_ = types_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.types_ = types_;
-      if (limitBuilder_ == null) {
-        result.limit_ = limit_;
-      } else {
-        result.limit_ = limitBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        languages_ = languages_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.languages_ = languages_;
+      if (((bitField0_ & 0x00000008) != 0)) {
+        types_ = types_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.types_ = types_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.query_ = query_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.limit_ = limitBuilder_ == null ? limit_ : limitBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -729,16 +749,18 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getQuery().isEmpty()) {
         query_ = other.query_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.languages_.isEmpty()) {
         if (languages_.isEmpty()) {
           languages_ = other.languages_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureLanguagesIsMutable();
           languages_.addAll(other.languages_);
@@ -748,7 +770,7 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
       if (!other.types_.isEmpty()) {
         if (types_.isEmpty()) {
           types_ = other.types_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureTypesIsMutable();
           types_.addAll(other.types_);
@@ -787,13 +809,13 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 query_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -813,7 +835,7 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
             case 50:
               {
                 input.readMessage(getLimitFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             default:
@@ -908,8 +930,8 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -929,8 +951,8 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -955,8 +977,8 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1022,8 +1044,8 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       query_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1039,8 +1061,8 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearQuery() {
-
       query_ = getDefaultInstance().getQuery();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1061,8 +1083,8 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       query_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1071,9 +1093,9 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLanguagesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         languages_ = new com.google.protobuf.LazyStringArrayList(languages_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1216,7 +1238,7 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearLanguages() {
       languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1248,9 +1270,9 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTypesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         types_ = new com.google.protobuf.LazyStringArrayList(types_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1401,7 +1423,7 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearTypes() {
       types_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1448,7 +1470,7 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the limit field is set.
      */
     public boolean hasLimit() {
-      return limitBuilder_ != null || limit_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1483,11 +1505,11 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         limit_ = value;
-        onChanged();
       } else {
         limitBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1502,11 +1524,11 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
     public Builder setLimit(com.google.protobuf.Int32Value.Builder builderForValue) {
       if (limitBuilder_ == null) {
         limit_ = builderForValue.build();
-        onChanged();
       } else {
         limitBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1520,17 +1542,18 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeLimit(com.google.protobuf.Int32Value value) {
       if (limitBuilder_ == null) {
-        if (limit_ != null) {
-          limit_ =
-              com.google.protobuf.Int32Value.newBuilder(limit_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && limit_ != null
+            && limit_ != com.google.protobuf.Int32Value.getDefaultInstance()) {
+          getLimitBuilder().mergeFrom(value);
         } else {
           limit_ = value;
         }
-        onChanged();
       } else {
         limitBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1543,14 +1566,13 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Int32Value limit = 6;</code>
      */
     public Builder clearLimit() {
-      if (limitBuilder_ == null) {
-        limit_ = null;
-        onChanged();
-      } else {
-        limit_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      limit_ = null;
+      if (limitBuilder_ != null) {
+        limitBuilder_.dispose();
         limitBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1563,7 +1585,7 @@ public final class SearchPublicKgRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Int32Value limit = 6;</code>
      */
     public com.google.protobuf.Int32Value.Builder getLimitBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getLimitFieldBuilder().getBuilder();
     }

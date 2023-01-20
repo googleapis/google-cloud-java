@@ -121,11 +121,13 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.ContainerOrBuilder getContainerDetailsOrBuilder() {
-    return getContainerDetails();
+    return containerDetails_ == null
+        ? com.google.privacy.dlp.v2.Container.getDefaultInstance()
+        : containerDetails_;
   }
 
   public static final int FILE_OFFSET_FIELD_NUMBER = 2;
-  private long fileOffset_;
+  private long fileOffset_ = 0L;
   /**
    *
    *
@@ -146,7 +148,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ROW_OFFSET_FIELD_NUMBER = 3;
-  private long rowOffset_;
+  private long rowOffset_ = 0L;
   /**
    *
    *
@@ -222,7 +224,9 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.TableOptionsOrBuilder getTableOptionsOrBuilder() {
-    return getTableOptions();
+    return tableOptions_ == null
+        ? com.google.privacy.dlp.v2.TableOptions.getDefaultInstance()
+        : tableOptions_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 5;
@@ -238,6 +242,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -328,7 +333,10 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -638,20 +646,17 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (containerDetailsBuilder_ == null) {
-        containerDetails_ = null;
-      } else {
-        containerDetails_ = null;
+      bitField0_ = 0;
+      containerDetails_ = null;
+      if (containerDetailsBuilder_ != null) {
+        containerDetailsBuilder_.dispose();
         containerDetailsBuilder_ = null;
       }
       fileOffset_ = 0L;
-
       rowOffset_ = 0L;
-
-      if (tableOptionsBuilder_ == null) {
-        tableOptions_ = null;
-      } else {
-        tableOptions_ = null;
+      tableOptions_ = null;
+      if (tableOptionsBuilder_ != null) {
+        tableOptionsBuilder_.dispose();
         tableOptionsBuilder_ = null;
       }
       internalGetMutableLabels().clear();
@@ -682,23 +687,33 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
     public com.google.privacy.dlp.v2.HybridFindingDetails buildPartial() {
       com.google.privacy.dlp.v2.HybridFindingDetails result =
           new com.google.privacy.dlp.v2.HybridFindingDetails(this);
-      int from_bitField0_ = bitField0_;
-      if (containerDetailsBuilder_ == null) {
-        result.containerDetails_ = containerDetails_;
-      } else {
-        result.containerDetails_ = containerDetailsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.fileOffset_ = fileOffset_;
-      result.rowOffset_ = rowOffset_;
-      if (tableOptionsBuilder_ == null) {
-        result.tableOptions_ = tableOptions_;
-      } else {
-        result.tableOptions_ = tableOptionsBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.HybridFindingDetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.containerDetails_ =
+            containerDetailsBuilder_ == null ? containerDetails_ : containerDetailsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fileOffset_ = fileOffset_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.rowOffset_ = rowOffset_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.tableOptions_ =
+            tableOptionsBuilder_ == null ? tableOptions_ : tableOptionsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -759,6 +774,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
         mergeTableOptions(other.getTableOptions());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000010;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -789,25 +805,25 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     getContainerDetailsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 fileOffset_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 rowOffset_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getTableOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -819,6 +835,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -858,7 +875,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * @return Whether the containerDetails field is set.
      */
     public boolean hasContainerDetails() {
-      return containerDetailsBuilder_ != null || containerDetails_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -895,11 +912,11 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         containerDetails_ = value;
-        onChanged();
       } else {
         containerDetailsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -915,11 +932,11 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
         com.google.privacy.dlp.v2.Container.Builder builderForValue) {
       if (containerDetailsBuilder_ == null) {
         containerDetails_ = builderForValue.build();
-        onChanged();
       } else {
         containerDetailsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -933,19 +950,18 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeContainerDetails(com.google.privacy.dlp.v2.Container value) {
       if (containerDetailsBuilder_ == null) {
-        if (containerDetails_ != null) {
-          containerDetails_ =
-              com.google.privacy.dlp.v2.Container.newBuilder(containerDetails_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && containerDetails_ != null
+            && containerDetails_ != com.google.privacy.dlp.v2.Container.getDefaultInstance()) {
+          getContainerDetailsBuilder().mergeFrom(value);
         } else {
           containerDetails_ = value;
         }
-        onChanged();
       } else {
         containerDetailsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -958,14 +974,13 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * <code>.google.privacy.dlp.v2.Container container_details = 1;</code>
      */
     public Builder clearContainerDetails() {
-      if (containerDetailsBuilder_ == null) {
-        containerDetails_ = null;
-        onChanged();
-      } else {
-        containerDetails_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      containerDetails_ = null;
+      if (containerDetailsBuilder_ != null) {
+        containerDetailsBuilder_.dispose();
         containerDetailsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -978,7 +993,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * <code>.google.privacy.dlp.v2.Container container_details = 1;</code>
      */
     public com.google.privacy.dlp.v2.Container.Builder getContainerDetailsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getContainerDetailsFieldBuilder().getBuilder();
     }
@@ -1063,6 +1078,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
     public Builder setFileOffset(long value) {
 
       fileOffset_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1081,7 +1097,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearFileOffset() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       fileOffset_ = 0L;
       onChanged();
       return this;
@@ -1122,6 +1138,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
     public Builder setRowOffset(long value) {
 
       rowOffset_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1139,7 +1156,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRowOffset() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       rowOffset_ = 0L;
       onChanged();
       return this;
@@ -1167,7 +1184,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * @return Whether the tableOptions field is set.
      */
     public boolean hasTableOptions() {
-      return tableOptionsBuilder_ != null || tableOptions_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1212,11 +1229,11 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         tableOptions_ = value;
-        onChanged();
       } else {
         tableOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1235,11 +1252,11 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
     public Builder setTableOptions(com.google.privacy.dlp.v2.TableOptions.Builder builderForValue) {
       if (tableOptionsBuilder_ == null) {
         tableOptions_ = builderForValue.build();
-        onChanged();
       } else {
         tableOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1257,19 +1274,18 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeTableOptions(com.google.privacy.dlp.v2.TableOptions value) {
       if (tableOptionsBuilder_ == null) {
-        if (tableOptions_ != null) {
-          tableOptions_ =
-              com.google.privacy.dlp.v2.TableOptions.newBuilder(tableOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && tableOptions_ != null
+            && tableOptions_ != com.google.privacy.dlp.v2.TableOptions.getDefaultInstance()) {
+          getTableOptionsBuilder().mergeFrom(value);
         } else {
           tableOptions_ = value;
         }
-        onChanged();
       } else {
         tableOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1286,14 +1302,13 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * <code>.google.privacy.dlp.v2.TableOptions table_options = 4;</code>
      */
     public Builder clearTableOptions() {
-      if (tableOptionsBuilder_ == null) {
-        tableOptions_ = null;
-        onChanged();
-      } else {
-        tableOptions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      tableOptions_ = null;
+      if (tableOptionsBuilder_ != null) {
+        tableOptionsBuilder_.dispose();
         tableOptionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1310,7 +1325,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * <code>.google.privacy.dlp.v2.TableOptions table_options = 4;</code>
      */
     public com.google.privacy.dlp.v2.TableOptions.Builder getTableOptionsBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getTableOptionsFieldBuilder().getBuilder();
     }
@@ -1377,14 +1392,14 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return labels_;
     }
 
@@ -1469,8 +1484,10 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1510,6 +1527,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -1543,6 +1561,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -1572,8 +1591,8 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1598,6 +1617,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 

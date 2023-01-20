@@ -122,7 +122,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int NODE_POOL_FIELD_NUMBER = 2;
@@ -170,11 +170,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.edgecontainer.v1.NodePoolOrBuilder getNodePoolOrBuilder() {
-    return getNodePool();
+    return nodePool_ == null
+        ? com.google.cloud.edgecontainer.v1.NodePool.getDefaultInstance()
+        : nodePool_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -452,20 +456,18 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      bitField0_ = 0;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-      if (nodePoolBuilder_ == null) {
-        nodePool_ = null;
-      } else {
-        nodePool_ = null;
+      nodePool_ = null;
+      if (nodePoolBuilder_ != null) {
+        nodePoolBuilder_.dispose();
         nodePoolBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -493,19 +495,24 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.edgecontainer.v1.UpdateNodePoolRequest buildPartial() {
       com.google.cloud.edgecontainer.v1.UpdateNodePoolRequest result =
           new com.google.cloud.edgecontainer.v1.UpdateNodePoolRequest(this);
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (nodePoolBuilder_ == null) {
-        result.nodePool_ = nodePool_;
-      } else {
-        result.nodePool_ = nodePoolBuilder_.build();
-      }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.edgecontainer.v1.UpdateNodePoolRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nodePool_ = nodePoolBuilder_ == null ? nodePool_ : nodePoolBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -562,6 +569,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -593,19 +601,19 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getNodePoolFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -624,6 +632,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -647,7 +657,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -692,11 +702,11 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -715,11 +725,11 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -737,17 +747,18 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -764,14 +775,13 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -788,7 +798,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -862,7 +872,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the nodePool field is set.
      */
     public boolean hasNodePool() {
-      return nodePoolBuilder_ != null || nodePool_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -899,11 +909,11 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         nodePool_ = value;
-        onChanged();
       } else {
         nodePoolBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -918,11 +928,11 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public Builder setNodePool(com.google.cloud.edgecontainer.v1.NodePool.Builder builderForValue) {
       if (nodePoolBuilder_ == null) {
         nodePool_ = builderForValue.build();
-        onChanged();
       } else {
         nodePoolBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -936,19 +946,18 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeNodePool(com.google.cloud.edgecontainer.v1.NodePool value) {
       if (nodePoolBuilder_ == null) {
-        if (nodePool_ != null) {
-          nodePool_ =
-              com.google.cloud.edgecontainer.v1.NodePool.newBuilder(nodePool_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && nodePool_ != null
+            && nodePool_ != com.google.cloud.edgecontainer.v1.NodePool.getDefaultInstance()) {
+          getNodePoolBuilder().mergeFrom(value);
         } else {
           nodePool_ = value;
         }
-        onChanged();
       } else {
         nodePoolBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -961,14 +970,13 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.edgecontainer.v1.NodePool node_pool = 2;</code>
      */
     public Builder clearNodePool() {
-      if (nodePoolBuilder_ == null) {
-        nodePool_ = null;
-        onChanged();
-      } else {
-        nodePool_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      nodePool_ = null;
+      if (nodePoolBuilder_ != null) {
+        nodePoolBuilder_.dispose();
         nodePoolBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -981,7 +989,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.edgecontainer.v1.NodePool node_pool = 2;</code>
      */
     public com.google.cloud.edgecontainer.v1.NodePool.Builder getNodePoolBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getNodePoolFieldBuilder().getBuilder();
     }
@@ -1096,8 +1104,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1115,8 +1123,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1139,8 +1147,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

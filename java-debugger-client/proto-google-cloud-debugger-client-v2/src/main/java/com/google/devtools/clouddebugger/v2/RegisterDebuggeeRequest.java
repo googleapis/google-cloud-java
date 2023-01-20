@@ -122,7 +122,9 @@ public final class RegisterDebuggeeRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.devtools.clouddebugger.v2.DebuggeeOrBuilder getDebuggeeOrBuilder() {
-    return getDebuggee();
+    return debuggee_ == null
+        ? com.google.devtools.clouddebugger.v2.Debuggee.getDefaultInstance()
+        : debuggee_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -328,10 +330,10 @@ public final class RegisterDebuggeeRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (debuggeeBuilder_ == null) {
-        debuggee_ = null;
-      } else {
-        debuggee_ = null;
+      bitField0_ = 0;
+      debuggee_ = null;
+      if (debuggeeBuilder_ != null) {
+        debuggeeBuilder_.dispose();
         debuggeeBuilder_ = null;
       }
       return this;
@@ -362,13 +364,19 @@ public final class RegisterDebuggeeRequest extends com.google.protobuf.Generated
     public com.google.devtools.clouddebugger.v2.RegisterDebuggeeRequest buildPartial() {
       com.google.devtools.clouddebugger.v2.RegisterDebuggeeRequest result =
           new com.google.devtools.clouddebugger.v2.RegisterDebuggeeRequest(this);
-      if (debuggeeBuilder_ == null) {
-        result.debuggee_ = debuggee_;
-      } else {
-        result.debuggee_ = debuggeeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.clouddebugger.v2.RegisterDebuggeeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.debuggee_ = debuggeeBuilder_ == null ? debuggee_ : debuggeeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -450,7 +458,7 @@ public final class RegisterDebuggeeRequest extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getDebuggeeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -469,6 +477,8 @@ public final class RegisterDebuggeeRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.devtools.clouddebugger.v2.Debuggee debuggee_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -492,7 +502,7 @@ public final class RegisterDebuggeeRequest extends com.google.protobuf.Generated
      * @return Whether the debuggee field is set.
      */
     public boolean hasDebuggee() {
-      return debuggeeBuilder_ != null || debuggee_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -537,11 +547,11 @@ public final class RegisterDebuggeeRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         debuggee_ = value;
-        onChanged();
       } else {
         debuggeeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -561,11 +571,11 @@ public final class RegisterDebuggeeRequest extends com.google.protobuf.Generated
         com.google.devtools.clouddebugger.v2.Debuggee.Builder builderForValue) {
       if (debuggeeBuilder_ == null) {
         debuggee_ = builderForValue.build();
-        onChanged();
       } else {
         debuggeeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -583,19 +593,18 @@ public final class RegisterDebuggeeRequest extends com.google.protobuf.Generated
      */
     public Builder mergeDebuggee(com.google.devtools.clouddebugger.v2.Debuggee value) {
       if (debuggeeBuilder_ == null) {
-        if (debuggee_ != null) {
-          debuggee_ =
-              com.google.devtools.clouddebugger.v2.Debuggee.newBuilder(debuggee_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && debuggee_ != null
+            && debuggee_ != com.google.devtools.clouddebugger.v2.Debuggee.getDefaultInstance()) {
+          getDebuggeeBuilder().mergeFrom(value);
         } else {
           debuggee_ = value;
         }
-        onChanged();
       } else {
         debuggeeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -612,14 +621,13 @@ public final class RegisterDebuggeeRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearDebuggee() {
-      if (debuggeeBuilder_ == null) {
-        debuggee_ = null;
-        onChanged();
-      } else {
-        debuggee_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      debuggee_ = null;
+      if (debuggeeBuilder_ != null) {
+        debuggeeBuilder_.dispose();
         debuggeeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -636,7 +644,7 @@ public final class RegisterDebuggeeRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.devtools.clouddebugger.v2.Debuggee.Builder getDebuggeeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDebuggeeFieldBuilder().getBuilder();
     }

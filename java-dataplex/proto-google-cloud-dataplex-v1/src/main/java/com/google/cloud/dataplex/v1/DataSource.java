@@ -400,6 +400,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -429,12 +430,21 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.DataSource buildPartial() {
       com.google.cloud.dataplex.v1.DataSource result =
           new com.google.cloud.dataplex.v1.DataSource(this);
-      if (sourceCase_ == 100) {
-        result.source_ = source_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.DataSource result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataplex.v1.DataSource result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
     }
 
     @java.lang.Override
@@ -558,6 +568,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *

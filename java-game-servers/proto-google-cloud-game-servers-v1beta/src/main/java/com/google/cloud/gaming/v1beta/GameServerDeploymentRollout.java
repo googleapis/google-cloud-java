@@ -72,7 +72,9 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -172,7 +174,7 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
@@ -221,11 +223,13 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int DEFAULT_GAME_SERVER_CONFIG_FIELD_NUMBER = 4;
-  private volatile java.lang.Object defaultGameServerConfig_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object defaultGameServerConfig_ = "";
   /**
    *
    *
@@ -278,6 +282,8 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
   }
 
   public static final int GAME_SERVER_CONFIG_OVERRIDES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gaming.v1beta.GameServerConfigOverride>
       gameServerConfigOverrides_;
   /**
@@ -371,7 +377,9 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
   }
 
   public static final int ETAG_FIELD_NUMBER = 6;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -678,31 +686,27 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       defaultGameServerConfig_ = "";
-
       if (gameServerConfigOverridesBuilder_ == null) {
         gameServerConfigOverrides_ = java.util.Collections.emptyList();
       } else {
         gameServerConfigOverrides_ = null;
         gameServerConfigOverridesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       etag_ = "";
-
       return this;
     }
 
@@ -730,32 +734,45 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
     public com.google.cloud.gaming.v1beta.GameServerDeploymentRollout buildPartial() {
       com.google.cloud.gaming.v1beta.GameServerDeploymentRollout result =
           new com.google.cloud.gaming.v1beta.GameServerDeploymentRollout(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.defaultGameServerConfig_ = defaultGameServerConfig_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gaming.v1beta.GameServerDeploymentRollout result) {
       if (gameServerConfigOverridesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           gameServerConfigOverrides_ =
               java.util.Collections.unmodifiableList(gameServerConfigOverrides_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.gameServerConfigOverrides_ = gameServerConfigOverrides_;
       } else {
         result.gameServerConfigOverrides_ = gameServerConfigOverridesBuilder_.build();
       }
-      result.etag_ = etag_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gaming.v1beta.GameServerDeploymentRollout result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.defaultGameServerConfig_ = defaultGameServerConfig_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -806,6 +823,7 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -816,13 +834,14 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
       }
       if (!other.getDefaultGameServerConfig().isEmpty()) {
         defaultGameServerConfig_ = other.defaultGameServerConfig_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (gameServerConfigOverridesBuilder_ == null) {
         if (!other.gameServerConfigOverrides_.isEmpty()) {
           if (gameServerConfigOverrides_.isEmpty()) {
             gameServerConfigOverrides_ = other.gameServerConfigOverrides_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureGameServerConfigOverridesIsMutable();
             gameServerConfigOverrides_.addAll(other.gameServerConfigOverrides_);
@@ -835,7 +854,7 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
             gameServerConfigOverridesBuilder_.dispose();
             gameServerConfigOverridesBuilder_ = null;
             gameServerConfigOverrides_ = other.gameServerConfigOverrides_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             gameServerConfigOverridesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getGameServerConfigOverridesFieldBuilder()
@@ -847,6 +866,7 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -878,25 +898,25 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 defaultGameServerConfig_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -916,7 +936,7 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
             case 50:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -1008,8 +1028,8 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1028,8 +1048,8 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1053,8 +1073,8 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1079,7 +1099,7 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1120,11 +1140,11 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1141,11 +1161,11 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1161,17 +1181,18 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1186,14 +1207,13 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1208,7 +1228,7 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1280,7 +1300,7 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1321,11 +1341,11 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1342,11 +1362,11 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1362,17 +1382,18 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1387,14 +1408,13 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1409,7 +1429,7 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1528,8 +1548,8 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       defaultGameServerConfig_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1547,8 +1567,8 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearDefaultGameServerConfig() {
-
       defaultGameServerConfig_ = getDefaultInstance().getDefaultGameServerConfig();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1571,8 +1591,8 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       defaultGameServerConfig_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1581,11 +1601,11 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
         gameServerConfigOverrides_ = java.util.Collections.emptyList();
 
     private void ensureGameServerConfigOverridesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         gameServerConfigOverrides_ =
             new java.util.ArrayList<com.google.cloud.gaming.v1beta.GameServerConfigOverride>(
                 gameServerConfigOverrides_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1853,7 +1873,7 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
     public Builder clearGameServerConfigOverrides() {
       if (gameServerConfigOverridesBuilder_ == null) {
         gameServerConfigOverrides_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         gameServerConfigOverridesBuilder_.clear();
@@ -2010,7 +2030,7 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
                 com.google.cloud.gaming.v1beta.GameServerConfigOverride.Builder,
                 com.google.cloud.gaming.v1beta.GameServerConfigOverrideOrBuilder>(
                 gameServerConfigOverrides_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         gameServerConfigOverrides_ = null;
@@ -2079,8 +2099,8 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2096,8 +2116,8 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2118,8 +2138,8 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

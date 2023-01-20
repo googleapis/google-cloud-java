@@ -110,7 +110,9 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.TimeSegmentOrBuilder getTimeSegmentOrBuilder() {
-    return getTimeSegment();
+    return timeSegment_ == null
+        ? com.google.cloud.datalabeling.v1beta1.TimeSegment.getDefaultInstance()
+        : timeSegment_;
   }
 
   public static final int ANNOTATION_SPEC_FIELD_NUMBER = 2;
@@ -159,7 +161,9 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder
       getAnnotationSpecOrBuilder() {
-    return getAnnotationSpec();
+    return annotationSpec_ == null
+        ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
+        : annotationSpec_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -381,16 +385,15 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (timeSegmentBuilder_ == null) {
-        timeSegment_ = null;
-      } else {
-        timeSegment_ = null;
+      bitField0_ = 0;
+      timeSegment_ = null;
+      if (timeSegmentBuilder_ != null) {
+        timeSegmentBuilder_.dispose();
         timeSegmentBuilder_ = null;
       }
-      if (annotationSpecBuilder_ == null) {
-        annotationSpec_ = null;
-      } else {
-        annotationSpec_ = null;
+      annotationSpec_ = null;
+      if (annotationSpecBuilder_ != null) {
+        annotationSpecBuilder_.dispose();
         annotationSpecBuilder_ = null;
       }
       return this;
@@ -422,18 +425,24 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
     public com.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation buildPartial() {
       com.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation result =
           new com.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation(this);
-      if (timeSegmentBuilder_ == null) {
-        result.timeSegment_ = timeSegment_;
-      } else {
-        result.timeSegment_ = timeSegmentBuilder_.build();
-      }
-      if (annotationSpecBuilder_ == null) {
-        result.annotationSpec_ = annotationSpec_;
-      } else {
-        result.annotationSpec_ = annotationSpecBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.timeSegment_ =
+            timeSegmentBuilder_ == null ? timeSegment_ : timeSegmentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.annotationSpec_ =
+            annotationSpecBuilder_ == null ? annotationSpec_ : annotationSpecBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -520,13 +529,13 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
             case 10:
               {
                 input.readMessage(getTimeSegmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getAnnotationSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -546,6 +555,8 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.datalabeling.v1beta1.TimeSegment timeSegment_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.TimeSegment,
@@ -564,7 +575,7 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
      * @return Whether the timeSegment field is set.
      */
     public boolean hasTimeSegment() {
-      return timeSegmentBuilder_ != null || timeSegment_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -601,11 +612,11 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         timeSegment_ = value;
-        onChanged();
       } else {
         timeSegmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -621,11 +632,11 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
         com.google.cloud.datalabeling.v1beta1.TimeSegment.Builder builderForValue) {
       if (timeSegmentBuilder_ == null) {
         timeSegment_ = builderForValue.build();
-        onChanged();
       } else {
         timeSegmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -639,19 +650,19 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
      */
     public Builder mergeTimeSegment(com.google.cloud.datalabeling.v1beta1.TimeSegment value) {
       if (timeSegmentBuilder_ == null) {
-        if (timeSegment_ != null) {
-          timeSegment_ =
-              com.google.cloud.datalabeling.v1beta1.TimeSegment.newBuilder(timeSegment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && timeSegment_ != null
+            && timeSegment_
+                != com.google.cloud.datalabeling.v1beta1.TimeSegment.getDefaultInstance()) {
+          getTimeSegmentBuilder().mergeFrom(value);
         } else {
           timeSegment_ = value;
         }
-        onChanged();
       } else {
         timeSegmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -664,14 +675,13 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
      * <code>.google.cloud.datalabeling.v1beta1.TimeSegment time_segment = 1;</code>
      */
     public Builder clearTimeSegment() {
-      if (timeSegmentBuilder_ == null) {
-        timeSegment_ = null;
-        onChanged();
-      } else {
-        timeSegment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      timeSegment_ = null;
+      if (timeSegmentBuilder_ != null) {
+        timeSegmentBuilder_.dispose();
         timeSegmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -684,7 +694,7 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
      * <code>.google.cloud.datalabeling.v1beta1.TimeSegment time_segment = 1;</code>
      */
     public com.google.cloud.datalabeling.v1beta1.TimeSegment.Builder getTimeSegmentBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTimeSegmentFieldBuilder().getBuilder();
     }
@@ -750,7 +760,7 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
      * @return Whether the annotationSpec field is set.
      */
     public boolean hasAnnotationSpec() {
-      return annotationSpecBuilder_ != null || annotationSpec_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -787,11 +797,11 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         annotationSpec_ = value;
-        onChanged();
       } else {
         annotationSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -807,11 +817,11 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
         com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder builderForValue) {
       if (annotationSpecBuilder_ == null) {
         annotationSpec_ = builderForValue.build();
-        onChanged();
       } else {
         annotationSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -825,19 +835,19 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
      */
     public Builder mergeAnnotationSpec(com.google.cloud.datalabeling.v1beta1.AnnotationSpec value) {
       if (annotationSpecBuilder_ == null) {
-        if (annotationSpec_ != null) {
-          annotationSpec_ =
-              com.google.cloud.datalabeling.v1beta1.AnnotationSpec.newBuilder(annotationSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && annotationSpec_ != null
+            && annotationSpec_
+                != com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()) {
+          getAnnotationSpecBuilder().mergeFrom(value);
         } else {
           annotationSpec_ = value;
         }
-        onChanged();
       } else {
         annotationSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -850,14 +860,13 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 2;</code>
      */
     public Builder clearAnnotationSpec() {
-      if (annotationSpecBuilder_ == null) {
-        annotationSpec_ = null;
-        onChanged();
-      } else {
-        annotationSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      annotationSpec_ = null;
+      if (annotationSpecBuilder_ != null) {
+        annotationSpecBuilder_.dispose();
         annotationSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -870,7 +879,7 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 2;</code>
      */
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder getAnnotationSpecBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAnnotationSpecFieldBuilder().getBuilder();
     }

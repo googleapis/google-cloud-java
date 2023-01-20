@@ -507,9 +507,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.type.DayOfWeek getDayOfWeekValue() {
     if (typeCase_ == 8) {
-      @SuppressWarnings("deprecation")
       com.google.type.DayOfWeek result =
-          com.google.type.DayOfWeek.valueOf((java.lang.Integer) type_);
+          com.google.type.DayOfWeek.forNumber((java.lang.Integer) type_);
       return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
     }
     return com.google.type.DayOfWeek.DAY_OF_WEEK_UNSPECIFIED;
@@ -833,6 +832,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (timestampValueBuilder_ != null) {
         timestampValueBuilder_.clear();
       }
@@ -870,45 +870,30 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.privacy.dlp.v2.Value buildPartial() {
       com.google.privacy.dlp.v2.Value result = new com.google.privacy.dlp.v2.Value(this);
-      if (typeCase_ == 1) {
-        result.type_ = type_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (typeCase_ == 2) {
-        result.type_ = type_;
-      }
-      if (typeCase_ == 3) {
-        result.type_ = type_;
-      }
-      if (typeCase_ == 4) {
-        result.type_ = type_;
-      }
-      if (typeCase_ == 5) {
-        if (timestampValueBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = timestampValueBuilder_.build();
-        }
-      }
-      if (typeCase_ == 6) {
-        if (timeValueBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = timeValueBuilder_.build();
-        }
-      }
-      if (typeCase_ == 7) {
-        if (dateValueBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = dateValueBuilder_.build();
-        }
-      }
-      if (typeCase_ == 8) {
-        result.type_ = type_;
-      }
-      result.typeCase_ = typeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.Value result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.Value result) {
+      result.typeCase_ = typeCase_;
+      result.type_ = this.type_;
+      if (typeCase_ == 5 && timestampValueBuilder_ != null) {
+        result.type_ = timestampValueBuilder_.build();
+      }
+      if (typeCase_ == 6 && timeValueBuilder_ != null) {
+        result.type_ = timeValueBuilder_.build();
+      }
+      if (typeCase_ == 7 && dateValueBuilder_ != null) {
+        result.type_ = dateValueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1111,6 +1096,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
@@ -1155,6 +1142,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIntegerValue(long value) {
+
       typeCase_ = 1;
       type_ = value;
       onChanged();
@@ -1224,6 +1212,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFloatValue(double value) {
+
       typeCase_ = 2;
       type_ = value;
       onChanged();
@@ -1427,6 +1416,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBooleanValue(boolean value) {
+
       typeCase_ = 4;
       type_ = value;
       onChanged();
@@ -1653,7 +1643,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 5;
       onChanged();
-      ;
       return timestampValueBuilder_;
     }
 
@@ -1858,7 +1847,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 6;
       onChanged();
-      ;
       return timeValueBuilder_;
     }
 
@@ -2057,7 +2045,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 7;
       onChanged();
-      ;
       return dateValueBuilder_;
     }
 
@@ -2126,9 +2113,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.type.DayOfWeek getDayOfWeekValue() {
       if (typeCase_ == 8) {
-        @SuppressWarnings("deprecation")
         com.google.type.DayOfWeek result =
-            com.google.type.DayOfWeek.valueOf((java.lang.Integer) type_);
+            com.google.type.DayOfWeek.forNumber((java.lang.Integer) type_);
         return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
       }
       return com.google.type.DayOfWeek.DAY_OF_WEEK_UNSPECIFIED;

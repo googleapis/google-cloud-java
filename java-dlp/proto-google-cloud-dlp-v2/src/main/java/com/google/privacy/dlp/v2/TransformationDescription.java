@@ -71,7 +71,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -100,14 +100,15 @@ public final class TransformationDescription extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.TransformationType getType() {
-    @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.TransformationType result =
-        com.google.privacy.dlp.v2.TransformationType.valueOf(type_);
+        com.google.privacy.dlp.v2.TransformationType.forNumber(type_);
     return result == null ? com.google.privacy.dlp.v2.TransformationType.UNRECOGNIZED : result;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -162,7 +163,9 @@ public final class TransformationDescription extends com.google.protobuf.Generat
   }
 
   public static final int CONDITION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object condition_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object condition_ = "";
   /**
    *
    *
@@ -269,7 +272,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder() {
-    return getInfoType();
+    return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -506,16 +509,13 @@ public final class TransformationDescription extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       description_ = "";
-
       condition_ = "";
-
-      if (infoTypeBuilder_ == null) {
-        infoType_ = null;
-      } else {
-        infoType_ = null;
+      infoType_ = null;
+      if (infoTypeBuilder_ != null) {
+        infoTypeBuilder_.dispose();
         infoTypeBuilder_ = null;
       }
       return this;
@@ -545,16 +545,27 @@ public final class TransformationDescription extends com.google.protobuf.Generat
     public com.google.privacy.dlp.v2.TransformationDescription buildPartial() {
       com.google.privacy.dlp.v2.TransformationDescription result =
           new com.google.privacy.dlp.v2.TransformationDescription(this);
-      result.type_ = type_;
-      result.description_ = description_;
-      result.condition_ = condition_;
-      if (infoTypeBuilder_ == null) {
-        result.infoType_ = infoType_;
-      } else {
-        result.infoType_ = infoTypeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.TransformationDescription result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.condition_ = condition_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.infoType_ = infoTypeBuilder_ == null ? infoType_ : infoTypeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -608,10 +619,12 @@ public final class TransformationDescription extends com.google.protobuf.Generat
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getCondition().isEmpty()) {
         condition_ = other.condition_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasInfoType()) {
@@ -646,25 +659,25 @@ public final class TransformationDescription extends com.google.protobuf.Generat
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 condition_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getInfoTypeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -683,6 +696,8 @@ public final class TransformationDescription extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int type_ = 0;
     /**
@@ -713,8 +728,8 @@ public final class TransformationDescription extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -731,9 +746,8 @@ public final class TransformationDescription extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.TransformationType getType() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.TransformationType result =
-          com.google.privacy.dlp.v2.TransformationType.valueOf(type_);
+          com.google.privacy.dlp.v2.TransformationType.forNumber(type_);
       return result == null ? com.google.privacy.dlp.v2.TransformationType.UNRECOGNIZED : result;
     }
     /**
@@ -752,7 +766,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -769,7 +783,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -845,8 +859,8 @@ public final class TransformationDescription extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -865,8 +879,8 @@ public final class TransformationDescription extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -890,8 +904,8 @@ public final class TransformationDescription extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -981,8 +995,8 @@ public final class TransformationDescription extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       condition_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1006,8 +1020,8 @@ public final class TransformationDescription extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearCondition() {
-
       condition_ = getDefaultInstance().getCondition();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1036,8 +1050,8 @@ public final class TransformationDescription extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       condition_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1060,7 +1074,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
      * @return Whether the infoType field is set.
      */
     public boolean hasInfoType() {
-      return infoTypeBuilder_ != null || infoType_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1097,11 +1111,11 @@ public final class TransformationDescription extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         infoType_ = value;
-        onChanged();
       } else {
         infoTypeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1116,11 +1130,11 @@ public final class TransformationDescription extends com.google.protobuf.Generat
     public Builder setInfoType(com.google.privacy.dlp.v2.InfoType.Builder builderForValue) {
       if (infoTypeBuilder_ == null) {
         infoType_ = builderForValue.build();
-        onChanged();
       } else {
         infoTypeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1134,19 +1148,18 @@ public final class TransformationDescription extends com.google.protobuf.Generat
      */
     public Builder mergeInfoType(com.google.privacy.dlp.v2.InfoType value) {
       if (infoTypeBuilder_ == null) {
-        if (infoType_ != null) {
-          infoType_ =
-              com.google.privacy.dlp.v2.InfoType.newBuilder(infoType_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && infoType_ != null
+            && infoType_ != com.google.privacy.dlp.v2.InfoType.getDefaultInstance()) {
+          getInfoTypeBuilder().mergeFrom(value);
         } else {
           infoType_ = value;
         }
-        onChanged();
       } else {
         infoTypeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1159,14 +1172,13 @@ public final class TransformationDescription extends com.google.protobuf.Generat
      * <code>.google.privacy.dlp.v2.InfoType info_type = 4;</code>
      */
     public Builder clearInfoType() {
-      if (infoTypeBuilder_ == null) {
-        infoType_ = null;
-        onChanged();
-      } else {
-        infoType_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      infoType_ = null;
+      if (infoTypeBuilder_ != null) {
+        infoTypeBuilder_.dispose();
         infoTypeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1179,7 +1191,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
      * <code>.google.privacy.dlp.v2.InfoType info_type = 4;</code>
      */
     public com.google.privacy.dlp.v2.InfoType.Builder getInfoTypeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getInfoTypeFieldBuilder().getBuilder();
     }

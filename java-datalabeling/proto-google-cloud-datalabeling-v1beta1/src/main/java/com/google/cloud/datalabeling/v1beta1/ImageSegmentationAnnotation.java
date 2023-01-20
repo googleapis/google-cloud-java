@@ -96,6 +96,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
                         com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.datalabeling.v1beta1.AnnotationSpec>
       annotationColors_;
@@ -172,8 +173,11 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationColorsOrDefault(
-      java.lang.String key, com.google.cloud.datalabeling.v1beta1.AnnotationSpec defaultValue) {
+  public /* nullable */ com.google.cloud.datalabeling.v1beta1.AnnotationSpec
+      getAnnotationColorsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.datalabeling.v1beta1.AnnotationSpec defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -209,7 +213,9 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
   }
 
   public static final int MIME_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object mimeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mimeType_ = "";
   /**
    *
    *
@@ -258,7 +264,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
   }
 
   public static final int IMAGE_BYTES_FIELD_NUMBER = 3;
-  private com.google.protobuf.ByteString imageBytes_;
+  private com.google.protobuf.ByteString imageBytes_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -523,11 +529,10 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableAnnotationColors().clear();
       mimeType_ = "";
-
       imageBytes_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -556,13 +561,26 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
     public com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation buildPartial() {
       com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation result =
           new com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation(this);
-      int from_bitField0_ = bitField0_;
-      result.annotationColors_ = internalGetAnnotationColors();
-      result.annotationColors_.makeImmutable();
-      result.mimeType_ = mimeType_;
-      result.imageBytes_ = imageBytes_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.annotationColors_ = internalGetAnnotationColors();
+        result.annotationColors_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.mimeType_ = mimeType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.imageBytes_ = imageBytes_;
+      }
     }
 
     @java.lang.Override
@@ -614,8 +632,10 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
           == com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation.getDefaultInstance())
         return this;
       internalGetMutableAnnotationColors().mergeFrom(other.internalGetAnnotationColors());
+      bitField0_ |= 0x00000001;
       if (!other.getMimeType().isEmpty()) {
         mimeType_ = other.mimeType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getImageBytes() != com.google.protobuf.ByteString.EMPTY) {
@@ -658,18 +678,19 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
                 internalGetMutableAnnotationColors()
                     .getMutableMap()
                     .put(annotationColors__.getKey(), annotationColors__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 mimeType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 imageBytes_ = input.readBytes();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -708,8 +729,6 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.datalabeling.v1beta1.AnnotationSpec>
         internalGetMutableAnnotationColors() {
-      onChanged();
-      ;
       if (annotationColors_ == null) {
         annotationColors_ =
             com.google.protobuf.MapField.newMapField(
@@ -718,6 +737,8 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       if (!annotationColors_.isMutable()) {
         annotationColors_ = annotationColors_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return annotationColors_;
     }
 
@@ -783,8 +804,11 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationColorsOrDefault(
-        java.lang.String key, com.google.cloud.datalabeling.v1beta1.AnnotationSpec defaultValue) {
+    public /* nullable */ com.google.cloud.datalabeling.v1beta1.AnnotationSpec
+        getAnnotationColorsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.datalabeling.v1beta1.AnnotationSpec defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -820,6 +844,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
     }
 
     public Builder clearAnnotationColors() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableAnnotationColors().getMutableMap().clear();
       return this;
     }
@@ -847,6 +872,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.datalabeling.v1beta1.AnnotationSpec>
         getMutableAnnotationColors() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableAnnotationColors().getMutableMap();
     }
     /**
@@ -870,8 +896,8 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAnnotationColors().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -891,6 +917,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
         java.util.Map<java.lang.String, com.google.cloud.datalabeling.v1beta1.AnnotationSpec>
             values) {
       internalGetMutableAnnotationColors().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -955,8 +982,8 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       mimeType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -972,8 +999,8 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearMimeType() {
-
       mimeType_ = getDefaultInstance().getMimeType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -994,8 +1021,8 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mimeType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1032,8 +1059,8 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       imageBytes_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1049,7 +1076,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearImageBytes() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       imageBytes_ = getDefaultInstance().getImageBytes();
       onChanged();
       return this;

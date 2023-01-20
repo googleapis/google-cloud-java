@@ -115,7 +115,9 @@ public final class LabelTextEntityExtractionOperationMetadata
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder
       getBasicConfigOrBuilder() {
-    return getBasicConfig();
+    return basicConfig_ == null
+        ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
+        : basicConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -333,10 +335,10 @@ public final class LabelTextEntityExtractionOperationMetadata
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (basicConfigBuilder_ == null) {
-        basicConfig_ = null;
-      } else {
-        basicConfig_ = null;
+      bitField0_ = 0;
+      basicConfig_ = null;
+      if (basicConfigBuilder_ != null) {
+        basicConfigBuilder_.dispose();
         basicConfigBuilder_ = null;
       }
       return this;
@@ -372,13 +374,20 @@ public final class LabelTextEntityExtractionOperationMetadata
       com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata result =
           new com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata(
               this);
-      if (basicConfigBuilder_ == null) {
-        result.basicConfig_ = basicConfig_;
-      } else {
-        result.basicConfig_ = basicConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.basicConfig_ =
+            basicConfigBuilder_ == null ? basicConfig_ : basicConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -465,7 +474,7 @@ public final class LabelTextEntityExtractionOperationMetadata
             case 10:
               {
                 input.readMessage(getBasicConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -485,6 +494,8 @@ public final class LabelTextEntityExtractionOperationMetadata
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basicConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig,
@@ -503,7 +514,7 @@ public final class LabelTextEntityExtractionOperationMetadata
      * @return Whether the basicConfig field is set.
      */
     public boolean hasBasicConfig() {
-      return basicConfigBuilder_ != null || basicConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -541,11 +552,11 @@ public final class LabelTextEntityExtractionOperationMetadata
           throw new NullPointerException();
         }
         basicConfig_ = value;
-        onChanged();
       } else {
         basicConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -561,11 +572,11 @@ public final class LabelTextEntityExtractionOperationMetadata
         com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder builderForValue) {
       if (basicConfigBuilder_ == null) {
         basicConfig_ = builderForValue.build();
-        onChanged();
       } else {
         basicConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -580,19 +591,20 @@ public final class LabelTextEntityExtractionOperationMetadata
     public Builder mergeBasicConfig(
         com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig value) {
       if (basicConfigBuilder_ == null) {
-        if (basicConfig_ != null) {
-          basicConfig_ =
-              com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.newBuilder(basicConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && basicConfig_ != null
+            && basicConfig_
+                != com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig
+                    .getDefaultInstance()) {
+          getBasicConfigBuilder().mergeFrom(value);
         } else {
           basicConfig_ = value;
         }
-        onChanged();
       } else {
         basicConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -605,14 +617,13 @@ public final class LabelTextEntityExtractionOperationMetadata
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 1;</code>
      */
     public Builder clearBasicConfig() {
-      if (basicConfigBuilder_ == null) {
-        basicConfig_ = null;
-        onChanged();
-      } else {
-        basicConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      basicConfig_ = null;
+      if (basicConfigBuilder_ != null) {
+        basicConfigBuilder_.dispose();
         basicConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -626,7 +637,7 @@ public final class LabelTextEntityExtractionOperationMetadata
      */
     public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder
         getBasicConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBasicConfigFieldBuilder().getBuilder();
     }

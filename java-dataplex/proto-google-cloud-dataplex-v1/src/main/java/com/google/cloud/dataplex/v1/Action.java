@@ -1197,7 +1197,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ASSET_FIELD_NUMBER = 1;
-    private volatile java.lang.Object asset_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object asset_ = "";
     /**
      *
      *
@@ -1450,8 +1452,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         asset_ = "";
-
         return this;
       }
 
@@ -1480,9 +1482,19 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataplex.v1.Action.FailedSecurityPolicyApply buildPartial() {
         com.google.cloud.dataplex.v1.Action.FailedSecurityPolicyApply result =
             new com.google.cloud.dataplex.v1.Action.FailedSecurityPolicyApply(this);
-        result.asset_ = asset_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.Action.FailedSecurityPolicyApply result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.asset_ = asset_;
+        }
       }
 
       @java.lang.Override
@@ -1537,6 +1549,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getAsset().isEmpty()) {
           asset_ = other.asset_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1568,7 +1581,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   asset_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1587,6 +1600,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object asset_ = "";
       /**
@@ -1652,8 +1667,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         asset_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1670,8 +1685,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAsset() {
-
         asset_ = getDefaultInstance().getAsset();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1693,8 +1708,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         asset_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1928,6 +1943,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SAMPLED_DATA_LOCATIONS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList sampledDataLocations_;
     /**
      *
@@ -1993,7 +2010,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int EXPECTED_FORMAT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object expectedFormat_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object expectedFormat_ = "";
     /**
      *
      *
@@ -2042,7 +2061,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NEW_FORMAT_FIELD_NUMBER = 3;
-    private volatile java.lang.Object newFormat_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object newFormat_ = "";
     /**
      *
      *
@@ -2316,12 +2337,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         expectedFormat_ = "";
-
         newFormat_ = "";
-
         return this;
       }
 
@@ -2349,16 +2369,31 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataplex.v1.Action.InvalidDataFormat buildPartial() {
         com.google.cloud.dataplex.v1.Action.InvalidDataFormat result =
             new com.google.cloud.dataplex.v1.Action.InvalidDataFormat(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dataplex.v1.Action.InvalidDataFormat result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           sampledDataLocations_ = sampledDataLocations_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.sampledDataLocations_ = sampledDataLocations_;
-        result.expectedFormat_ = expectedFormat_;
-        result.newFormat_ = newFormat_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dataplex.v1.Action.InvalidDataFormat result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.expectedFormat_ = expectedFormat_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.newFormat_ = newFormat_;
+        }
       }
 
       @java.lang.Override
@@ -2421,10 +2456,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getExpectedFormat().isEmpty()) {
           expectedFormat_ = other.expectedFormat_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getNewFormat().isEmpty()) {
           newFormat_ = other.newFormat_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2463,13 +2500,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               case 18:
                 {
                   expectedFormat_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   newFormat_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -2730,8 +2767,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         expectedFormat_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2747,8 +2784,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearExpectedFormat() {
-
         expectedFormat_ = getDefaultInstance().getExpectedFormat();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2769,8 +2806,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         expectedFormat_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2836,8 +2873,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         newFormat_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2853,8 +2890,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearNewFormat() {
-
         newFormat_ = getDefaultInstance().getNewFormat();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -2875,8 +2912,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         newFormat_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3326,7 +3363,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TABLE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object table_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object table_ = "";
     /**
      *
      *
@@ -3375,7 +3414,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int EXISTING_SCHEMA_FIELD_NUMBER = 2;
-    private volatile java.lang.Object existingSchema_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object existingSchema_ = "";
     /**
      *
      *
@@ -3426,7 +3467,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NEW_SCHEMA_FIELD_NUMBER = 3;
-    private volatile java.lang.Object newSchema_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object newSchema_ = "";
     /**
      *
      *
@@ -3477,6 +3520,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SAMPLED_DATA_LOCATIONS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList sampledDataLocations_;
     /**
      *
@@ -3542,7 +3587,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SCHEMA_CHANGE_FIELD_NUMBER = 5;
-    private int schemaChange_;
+    private int schemaChange_ = 0;
     /**
      *
      *
@@ -3574,9 +3619,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema.SchemaChange
         getSchemaChange() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema.SchemaChange result =
-          com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema.SchemaChange.valueOf(
+          com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema.SchemaChange.forNumber(
               schemaChange_);
       return result == null
           ? com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema.SchemaChange.UNRECOGNIZED
@@ -3833,16 +3877,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         table_ = "";
-
         existingSchema_ = "";
-
         newSchema_ = "";
-
         sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         schemaChange_ = 0;
-
         return this;
       }
 
@@ -3871,18 +3912,38 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema buildPartial() {
         com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema result =
             new com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema(this);
-        int from_bitField0_ = bitField0_;
-        result.table_ = table_;
-        result.existingSchema_ = existingSchema_;
-        result.newSchema_ = newSchema_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          sampledDataLocations_ = sampledDataLocations_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.sampledDataLocations_ = sampledDataLocations_;
-        result.schemaChange_ = schemaChange_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema result) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          sampledDataLocations_ = sampledDataLocations_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.sampledDataLocations_ = sampledDataLocations_;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.table_ = table_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.existingSchema_ = existingSchema_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.newSchema_ = newSchema_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.schemaChange_ = schemaChange_;
+        }
       }
 
       @java.lang.Override
@@ -3936,20 +3997,23 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getTable().isEmpty()) {
           table_ = other.table_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getExistingSchema().isEmpty()) {
           existingSchema_ = other.existingSchema_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getNewSchema().isEmpty()) {
           newSchema_ = other.newSchema_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.sampledDataLocations_.isEmpty()) {
           if (sampledDataLocations_.isEmpty()) {
             sampledDataLocations_ = other.sampledDataLocations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureSampledDataLocationsIsMutable();
             sampledDataLocations_.addAll(other.sampledDataLocations_);
@@ -3988,19 +4052,19 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   table_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   existingSchema_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   newSchema_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
@@ -4013,7 +4077,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               case 40:
                 {
                   schemaChange_ = input.readEnum();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               default:
@@ -4096,8 +4160,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         table_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4113,8 +4177,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTable() {
-
         table_ = getDefaultInstance().getTable();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -4135,8 +4199,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         table_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4205,8 +4269,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         existingSchema_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4223,8 +4287,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearExistingSchema() {
-
         existingSchema_ = getDefaultInstance().getExistingSchema();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -4246,8 +4310,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         existingSchema_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4316,8 +4380,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         newSchema_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4334,8 +4398,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearNewSchema() {
-
         newSchema_ = getDefaultInstance().getNewSchema();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -4357,8 +4421,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         newSchema_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4367,10 +4431,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureSampledDataLocationsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           sampledDataLocations_ =
               new com.google.protobuf.LazyStringArrayList(sampledDataLocations_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
         }
       }
       /**
@@ -4513,7 +4577,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearSampledDataLocations() {
         sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -4574,8 +4638,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setSchemaChangeValue(int value) {
-
         schemaChange_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -4595,9 +4659,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema.SchemaChange
           getSchemaChange() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema.SchemaChange result =
-            com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema.SchemaChange.valueOf(
+            com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema.SchemaChange.forNumber(
                 schemaChange_);
         return result == null
             ? com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema.SchemaChange.UNRECOGNIZED
@@ -4622,7 +4685,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000010;
         schemaChange_ = value.getNumber();
         onChanged();
         return this;
@@ -4641,7 +4704,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSchemaChange() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         schemaChange_ = 0;
         onChanged();
         return this;
@@ -4959,7 +5022,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int EXPECTED_STRUCTURE_FIELD_NUMBER = 1;
-    private int expectedStructure_;
+    private int expectedStructure_ = 0;
     /**
      *
      *
@@ -4993,9 +5056,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.dataplex.v1.Action.InvalidDataPartition.PartitionStructure
         getExpectedStructure() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataplex.v1.Action.InvalidDataPartition.PartitionStructure result =
-          com.google.cloud.dataplex.v1.Action.InvalidDataPartition.PartitionStructure.valueOf(
+          com.google.cloud.dataplex.v1.Action.InvalidDataPartition.PartitionStructure.forNumber(
               expectedStructure_);
       return result == null
           ? com.google.cloud.dataplex.v1.Action.InvalidDataPartition.PartitionStructure.UNRECOGNIZED
@@ -5208,8 +5270,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         expectedStructure_ = 0;
-
         return this;
       }
 
@@ -5237,9 +5299,18 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataplex.v1.Action.InvalidDataPartition buildPartial() {
         com.google.cloud.dataplex.v1.Action.InvalidDataPartition result =
             new com.google.cloud.dataplex.v1.Action.InvalidDataPartition(this);
-        result.expectedStructure_ = expectedStructure_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dataplex.v1.Action.InvalidDataPartition result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.expectedStructure_ = expectedStructure_;
+        }
       }
 
       @java.lang.Override
@@ -5322,7 +5393,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   expectedStructure_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               default:
@@ -5341,6 +5412,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int expectedStructure_ = 0;
       /**
@@ -5375,8 +5448,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setExpectedStructureValue(int value) {
-
         expectedStructure_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5396,9 +5469,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.dataplex.v1.Action.InvalidDataPartition.PartitionStructure
           getExpectedStructure() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dataplex.v1.Action.InvalidDataPartition.PartitionStructure result =
-            com.google.cloud.dataplex.v1.Action.InvalidDataPartition.PartitionStructure.valueOf(
+            com.google.cloud.dataplex.v1.Action.InvalidDataPartition.PartitionStructure.forNumber(
                 expectedStructure_);
         return result == null
             ? com.google.cloud.dataplex.v1.Action.InvalidDataPartition.PartitionStructure
@@ -5424,7 +5496,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         expectedStructure_ = value.getNumber();
         onChanged();
         return this;
@@ -5443,7 +5515,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearExpectedStructure() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         expectedStructure_ = 0;
         onChanged();
         return this;
@@ -6437,7 +6509,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CATEGORY_FIELD_NUMBER = 1;
-  private int category_;
+  private int category_ = 0;
   /**
    *
    *
@@ -6466,14 +6538,15 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.Action.Category getCategory() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dataplex.v1.Action.Category result =
-        com.google.cloud.dataplex.v1.Action.Category.valueOf(category_);
+        com.google.cloud.dataplex.v1.Action.Category.forNumber(category_);
     return result == null ? com.google.cloud.dataplex.v1.Action.Category.UNRECOGNIZED : result;
   }
 
   public static final int ISSUE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object issue_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object issue_ = "";
   /**
    *
    *
@@ -6564,11 +6637,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDetectTimeOrBuilder() {
-    return getDetectTime();
+    return detectTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : detectTime_;
   }
 
   public static final int NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -6627,7 +6702,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LAKE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object lake_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object lake_ = "";
   /**
    *
    *
@@ -6682,7 +6759,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ZONE_FIELD_NUMBER = 7;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -6737,7 +6816,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASSET_FIELD_NUMBER = 8;
-  private volatile java.lang.Object asset_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object asset_ = "";
   /**
    *
    *
@@ -6792,6 +6873,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_LOCATIONS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList dataLocations_;
   /**
    *
@@ -7707,26 +7790,20 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       category_ = 0;
-
       issue_ = "";
-
-      if (detectTimeBuilder_ == null) {
-        detectTime_ = null;
-      } else {
-        detectTime_ = null;
+      detectTime_ = null;
+      if (detectTimeBuilder_ != null) {
+        detectTimeBuilder_.dispose();
         detectTimeBuilder_ = null;
       }
       name_ = "";
-
       lake_ = "";
-
       zone_ = "";
-
       asset_ = "";
-
       dataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000080);
       if (invalidDataFormatBuilder_ != null) {
         invalidDataFormatBuilder_.clear();
       }
@@ -7779,82 +7856,75 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.dataplex.v1.Action buildPartial() {
       com.google.cloud.dataplex.v1.Action result = new com.google.cloud.dataplex.v1.Action(this);
-      int from_bitField0_ = bitField0_;
-      result.category_ = category_;
-      result.issue_ = issue_;
-      if (detectTimeBuilder_ == null) {
-        result.detectTime_ = detectTime_;
-      } else {
-        result.detectTime_ = detectTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.name_ = name_;
-      result.lake_ = lake_;
-      result.zone_ = zone_;
-      result.asset_ = asset_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        dataLocations_ = dataLocations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.dataLocations_ = dataLocations_;
-      if (detailsCase_ == 10) {
-        if (invalidDataFormatBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = invalidDataFormatBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 11) {
-        if (incompatibleDataSchemaBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = incompatibleDataSchemaBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 12) {
-        if (invalidDataPartitionBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = invalidDataPartitionBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 13) {
-        if (missingDataBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = missingDataBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 14) {
-        if (missingResourceBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = missingResourceBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 15) {
-        if (unauthorizedResourceBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = unauthorizedResourceBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 21) {
-        if (failedSecurityPolicyApplyBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = failedSecurityPolicyApplyBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 22) {
-        if (invalidDataOrganizationBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = invalidDataOrganizationBuilder_.build();
-        }
-      }
-      result.detailsCase_ = detailsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataplex.v1.Action result) {
+      if (((bitField0_ & 0x00000080) != 0)) {
+        dataLocations_ = dataLocations_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      }
+      result.dataLocations_ = dataLocations_;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.Action result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.category_ = category_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.issue_ = issue_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.detectTime_ = detectTimeBuilder_ == null ? detectTime_ : detectTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.lake_ = lake_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.zone_ = zone_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.asset_ = asset_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataplex.v1.Action result) {
+      result.detailsCase_ = detailsCase_;
+      result.details_ = this.details_;
+      if (detailsCase_ == 10 && invalidDataFormatBuilder_ != null) {
+        result.details_ = invalidDataFormatBuilder_.build();
+      }
+      if (detailsCase_ == 11 && incompatibleDataSchemaBuilder_ != null) {
+        result.details_ = incompatibleDataSchemaBuilder_.build();
+      }
+      if (detailsCase_ == 12 && invalidDataPartitionBuilder_ != null) {
+        result.details_ = invalidDataPartitionBuilder_.build();
+      }
+      if (detailsCase_ == 13 && missingDataBuilder_ != null) {
+        result.details_ = missingDataBuilder_.build();
+      }
+      if (detailsCase_ == 14 && missingResourceBuilder_ != null) {
+        result.details_ = missingResourceBuilder_.build();
+      }
+      if (detailsCase_ == 15 && unauthorizedResourceBuilder_ != null) {
+        result.details_ = unauthorizedResourceBuilder_.build();
+      }
+      if (detailsCase_ == 21 && failedSecurityPolicyApplyBuilder_ != null) {
+        result.details_ = failedSecurityPolicyApplyBuilder_.build();
+      }
+      if (detailsCase_ == 22 && invalidDataOrganizationBuilder_ != null) {
+        result.details_ = invalidDataOrganizationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -7907,6 +7977,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getIssue().isEmpty()) {
         issue_ = other.issue_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasDetectTime()) {
@@ -7914,24 +7985,28 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getLake().isEmpty()) {
         lake_ = other.lake_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getAsset().isEmpty()) {
         asset_ = other.asset_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.dataLocations_.isEmpty()) {
         if (dataLocations_.isEmpty()) {
           dataLocations_ = other.dataLocations_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureDataLocationsIsMutable();
           dataLocations_.addAll(other.dataLocations_);
@@ -8013,43 +8088,43 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 category_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 issue_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 input.readMessage(getDetectTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
               {
                 lake_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 58:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 66:
               {
                 asset_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 74:
@@ -8175,8 +8250,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCategoryValue(int value) {
-
       category_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -8193,9 +8268,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dataplex.v1.Action.Category getCategory() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataplex.v1.Action.Category result =
-          com.google.cloud.dataplex.v1.Action.Category.valueOf(category_);
+          com.google.cloud.dataplex.v1.Action.Category.forNumber(category_);
       return result == null ? com.google.cloud.dataplex.v1.Action.Category.UNRECOGNIZED : result;
     }
     /**
@@ -8214,7 +8288,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       category_ = value.getNumber();
       onChanged();
       return this;
@@ -8231,7 +8305,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCategory() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       category_ = 0;
       onChanged();
       return this;
@@ -8298,8 +8372,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       issue_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -8315,8 +8389,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIssue() {
-
       issue_ = getDefaultInstance().getIssue();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -8337,8 +8411,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       issue_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -8361,7 +8435,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the detectTime field is set.
      */
     public boolean hasDetectTime() {
-      return detectTimeBuilder_ != null || detectTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -8398,11 +8472,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         detectTime_ = value;
-        onChanged();
       } else {
         detectTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -8417,11 +8491,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public Builder setDetectTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (detectTimeBuilder_ == null) {
         detectTime_ = builderForValue.build();
-        onChanged();
       } else {
         detectTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -8435,17 +8509,18 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDetectTime(com.google.protobuf.Timestamp value) {
       if (detectTimeBuilder_ == null) {
-        if (detectTime_ != null) {
-          detectTime_ =
-              com.google.protobuf.Timestamp.newBuilder(detectTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && detectTime_ != null
+            && detectTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDetectTimeBuilder().mergeFrom(value);
         } else {
           detectTime_ = value;
         }
-        onChanged();
       } else {
         detectTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -8458,14 +8533,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp detect_time = 4;</code>
      */
     public Builder clearDetectTime() {
-      if (detectTimeBuilder_ == null) {
-        detectTime_ = null;
-        onChanged();
-      } else {
-        detectTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      detectTime_ = null;
+      if (detectTimeBuilder_ != null) {
+        detectTimeBuilder_.dispose();
         detectTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -8478,7 +8552,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp detect_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getDetectTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDetectTimeFieldBuilder().getBuilder();
     }
@@ -8602,8 +8676,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -8624,8 +8698,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -8651,8 +8725,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -8727,8 +8801,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       lake_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -8747,8 +8821,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLake() {
-
       lake_ = getDefaultInstance().getLake();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -8772,8 +8846,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       lake_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -8848,8 +8922,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -8868,8 +8942,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -8893,8 +8967,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -8969,8 +9043,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       asset_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -8989,8 +9063,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAsset() {
-
       asset_ = getDefaultInstance().getAsset();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -9014,8 +9088,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       asset_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -9024,9 +9098,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDataLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         dataLocations_ = new com.google.protobuf.LazyStringArrayList(dataLocations_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -9193,7 +9267,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDataLocations() {
       dataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -9435,7 +9509,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 10;
       onChanged();
-      ;
       return invalidDataFormatBuilder_;
     }
 
@@ -9661,7 +9734,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 11;
       onChanged();
-      ;
       return incompatibleDataSchemaBuilder_;
     }
 
@@ -9894,7 +9966,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 12;
       onChanged();
-      ;
       return invalidDataPartitionBuilder_;
     }
 
@@ -10104,7 +10175,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 13;
       onChanged();
-      ;
       return missingDataBuilder_;
     }
 
@@ -10316,7 +10386,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 14;
       onChanged();
-      ;
       return missingResourceBuilder_;
     }
 
@@ -10549,7 +10618,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 15;
       onChanged();
-      ;
       return unauthorizedResourceBuilder_;
     }
 
@@ -10785,7 +10853,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 21;
       onChanged();
-      ;
       return failedSecurityPolicyApplyBuilder_;
     }
 
@@ -11021,7 +11088,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 22;
       onChanged();
-      ;
       return invalidDataOrganizationBuilder_;
     }
 

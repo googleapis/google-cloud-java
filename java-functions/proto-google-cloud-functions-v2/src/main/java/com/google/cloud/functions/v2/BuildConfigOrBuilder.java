@@ -285,7 +285,6 @@ public interface BuildConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; environment_variables = 6;</code>
    */
-
   /* nullable */
   java.lang.String getEnvironmentVariablesOrDefault(
       java.lang.String key,

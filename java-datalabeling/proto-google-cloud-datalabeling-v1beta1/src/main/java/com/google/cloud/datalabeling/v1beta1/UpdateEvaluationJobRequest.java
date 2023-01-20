@@ -116,7 +116,9 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationJobOrBuilder getEvaluationJobOrBuilder() {
-    return getEvaluationJob();
+    return evaluationJob_ == null
+        ? com.google.cloud.datalabeling.v1beta1.EvaluationJob.getDefaultInstance()
+        : evaluationJob_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -183,7 +185,7 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -403,16 +405,15 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (evaluationJobBuilder_ == null) {
-        evaluationJob_ = null;
-      } else {
-        evaluationJob_ = null;
+      bitField0_ = 0;
+      evaluationJob_ = null;
+      if (evaluationJobBuilder_ != null) {
+        evaluationJobBuilder_.dispose();
         evaluationJobBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -443,18 +444,23 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
     public com.google.cloud.datalabeling.v1beta1.UpdateEvaluationJobRequest buildPartial() {
       com.google.cloud.datalabeling.v1beta1.UpdateEvaluationJobRequest result =
           new com.google.cloud.datalabeling.v1beta1.UpdateEvaluationJobRequest(this);
-      if (evaluationJobBuilder_ == null) {
-        result.evaluationJob_ = evaluationJob_;
-      } else {
-        result.evaluationJob_ = evaluationJobBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datalabeling.v1beta1.UpdateEvaluationJobRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.evaluationJob_ =
+            evaluationJobBuilder_ == null ? evaluationJob_ : evaluationJobBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -540,13 +546,13 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
             case 10:
               {
                 input.readMessage(getEvaluationJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -565,6 +571,8 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.datalabeling.v1beta1.EvaluationJob evaluationJob_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -586,7 +594,7 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * @return Whether the evaluationJob field is set.
      */
     public boolean hasEvaluationJob() {
-      return evaluationJobBuilder_ != null || evaluationJob_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -627,11 +635,11 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         evaluationJob_ = value;
-        onChanged();
       } else {
         evaluationJobBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -649,11 +657,11 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
         com.google.cloud.datalabeling.v1beta1.EvaluationJob.Builder builderForValue) {
       if (evaluationJobBuilder_ == null) {
         evaluationJob_ = builderForValue.build();
-        onChanged();
       } else {
         evaluationJobBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -669,19 +677,19 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      */
     public Builder mergeEvaluationJob(com.google.cloud.datalabeling.v1beta1.EvaluationJob value) {
       if (evaluationJobBuilder_ == null) {
-        if (evaluationJob_ != null) {
-          evaluationJob_ =
-              com.google.cloud.datalabeling.v1beta1.EvaluationJob.newBuilder(evaluationJob_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && evaluationJob_ != null
+            && evaluationJob_
+                != com.google.cloud.datalabeling.v1beta1.EvaluationJob.getDefaultInstance()) {
+          getEvaluationJobBuilder().mergeFrom(value);
         } else {
           evaluationJob_ = value;
         }
-        onChanged();
       } else {
         evaluationJobBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -696,14 +704,13 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearEvaluationJob() {
-      if (evaluationJobBuilder_ == null) {
-        evaluationJob_ = null;
-        onChanged();
-      } else {
-        evaluationJob_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      evaluationJob_ = null;
+      if (evaluationJobBuilder_ != null) {
+        evaluationJobBuilder_.dispose();
         evaluationJobBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -718,7 +725,7 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.EvaluationJob.Builder getEvaluationJobBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getEvaluationJobFieldBuilder().getBuilder();
     }
@@ -796,7 +803,7 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -847,11 +854,11 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -873,11 +880,11 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -898,17 +905,18 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -928,14 +936,13 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -955,7 +962,7 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

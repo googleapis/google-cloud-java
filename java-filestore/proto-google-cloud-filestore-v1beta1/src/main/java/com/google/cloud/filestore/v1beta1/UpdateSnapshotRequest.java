@@ -114,7 +114,7 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int SNAPSHOT_FIELD_NUMBER = 2;
@@ -168,7 +168,9 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.filestore.v1beta1.SnapshotOrBuilder getSnapshotOrBuilder() {
-    return getSnapshot();
+    return snapshot_ == null
+        ? com.google.cloud.filestore.v1beta1.Snapshot.getDefaultInstance()
+        : snapshot_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -388,16 +390,15 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      bitField0_ = 0;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-      if (snapshotBuilder_ == null) {
-        snapshot_ = null;
-      } else {
-        snapshot_ = null;
+      snapshot_ = null;
+      if (snapshotBuilder_ != null) {
+        snapshotBuilder_.dispose();
         snapshotBuilder_ = null;
       }
       return this;
@@ -427,18 +428,21 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.filestore.v1beta1.UpdateSnapshotRequest buildPartial() {
       com.google.cloud.filestore.v1beta1.UpdateSnapshotRequest result =
           new com.google.cloud.filestore.v1beta1.UpdateSnapshotRequest(this);
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      if (snapshotBuilder_ == null) {
-        result.snapshot_ = snapshot_;
-      } else {
-        result.snapshot_ = snapshotBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.filestore.v1beta1.UpdateSnapshotRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.snapshot_ = snapshotBuilder_ == null ? snapshot_ : snapshotBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -522,13 +526,13 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSnapshotFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -547,6 +551,8 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -568,7 +574,7 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -609,11 +615,11 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -630,11 +636,11 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -650,17 +656,18 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -675,14 +682,13 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -697,7 +703,7 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -769,7 +775,7 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the snapshot field is set.
      */
     public boolean hasSnapshot() {
-      return snapshotBuilder_ != null || snapshot_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -810,11 +816,11 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         snapshot_ = value;
-        onChanged();
       } else {
         snapshotBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -832,11 +838,11 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.filestore.v1beta1.Snapshot.Builder builderForValue) {
       if (snapshotBuilder_ == null) {
         snapshot_ = builderForValue.build();
-        onChanged();
       } else {
         snapshotBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -852,19 +858,18 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeSnapshot(com.google.cloud.filestore.v1beta1.Snapshot value) {
       if (snapshotBuilder_ == null) {
-        if (snapshot_ != null) {
-          snapshot_ =
-              com.google.cloud.filestore.v1beta1.Snapshot.newBuilder(snapshot_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && snapshot_ != null
+            && snapshot_ != com.google.cloud.filestore.v1beta1.Snapshot.getDefaultInstance()) {
+          getSnapshotBuilder().mergeFrom(value);
         } else {
           snapshot_ = value;
         }
-        onChanged();
       } else {
         snapshotBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -879,14 +884,13 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearSnapshot() {
-      if (snapshotBuilder_ == null) {
-        snapshot_ = null;
-        onChanged();
-      } else {
-        snapshot_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      snapshot_ = null;
+      if (snapshotBuilder_ != null) {
+        snapshotBuilder_.dispose();
         snapshotBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -901,7 +905,7 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.filestore.v1beta1.Snapshot.Builder getSnapshotBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSnapshotFieldBuilder().getBuilder();
     }

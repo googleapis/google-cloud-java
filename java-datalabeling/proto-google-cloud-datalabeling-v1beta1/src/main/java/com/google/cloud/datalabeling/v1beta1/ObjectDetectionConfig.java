@@ -72,7 +72,9 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ANNOTATION_SPEC_SET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object annotationSpecSet_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object annotationSpecSet_ = "";
   /**
    *
    *
@@ -121,7 +123,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int EXTRACTION_FRAME_RATE_FIELD_NUMBER = 3;
-  private double extractionFrameRate_;
+  private double extractionFrameRate_ = 0D;
   /**
    *
    *
@@ -353,10 +355,9 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       annotationSpecSet_ = "";
-
       extractionFrameRate_ = 0D;
-
       return this;
     }
 
@@ -384,10 +385,21 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
     public com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig buildPartial() {
       com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig result =
           new com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig(this);
-      result.annotationSpecSet_ = annotationSpecSet_;
-      result.extractionFrameRate_ = extractionFrameRate_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.annotationSpecSet_ = annotationSpecSet_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.extractionFrameRate_ = extractionFrameRate_;
+      }
     }
 
     @java.lang.Override
@@ -438,6 +450,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getAnnotationSpecSet().isEmpty()) {
         annotationSpecSet_ = other.annotationSpecSet_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getExtractionFrameRate() != 0D) {
@@ -472,13 +485,13 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 annotationSpecSet_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 25:
               {
                 extractionFrameRate_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 25
             default:
@@ -497,6 +510,8 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object annotationSpecSet_ = "";
     /**
@@ -559,8 +574,8 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       annotationSpecSet_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -576,8 +591,8 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearAnnotationSpecSet() {
-
       annotationSpecSet_ = getDefaultInstance().getAnnotationSpecSet();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -598,8 +613,8 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       annotationSpecSet_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -635,6 +650,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
     public Builder setExtractionFrameRate(double value) {
 
       extractionFrameRate_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -650,7 +666,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearExtractionFrameRate() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       extractionFrameRate_ = 0D;
       onChanged();
       return this;

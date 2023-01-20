@@ -66,7 +66,7 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROW_INDEX_FIELD_NUMBER = 1;
-  private long rowIndex_;
+  private long rowIndex_ = 0L;
   /**
    *
    *
@@ -284,8 +284,8 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       rowIndex_ = 0L;
-
       return this;
     }
 
@@ -313,9 +313,18 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.TableLocation buildPartial() {
       com.google.privacy.dlp.v2.TableLocation result =
           new com.google.privacy.dlp.v2.TableLocation(this);
-      result.rowIndex_ = rowIndex_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.TableLocation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.rowIndex_ = rowIndex_;
+      }
     }
 
     @java.lang.Override
@@ -395,7 +404,7 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 rowIndex_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -414,6 +423,8 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long rowIndex_;
     /**
@@ -456,6 +467,7 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
     public Builder setRowIndex(long value) {
 
       rowIndex_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -476,7 +488,7 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRowIndex() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       rowIndex_ = 0L;
       onChanged();
       return this;

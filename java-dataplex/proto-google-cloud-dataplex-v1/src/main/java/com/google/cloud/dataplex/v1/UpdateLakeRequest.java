@@ -111,7 +111,7 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int LAKE_FIELD_NUMBER = 2;
@@ -160,11 +160,11 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.LakeOrBuilder getLakeOrBuilder() {
-    return getLake();
+    return lake_ == null ? com.google.cloud.dataplex.v1.Lake.getDefaultInstance() : lake_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -407,20 +407,18 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      bitField0_ = 0;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-      if (lakeBuilder_ == null) {
-        lake_ = null;
-      } else {
-        lake_ = null;
+      lake_ = null;
+      if (lakeBuilder_ != null) {
+        lakeBuilder_.dispose();
         lakeBuilder_ = null;
       }
       validateOnly_ = false;
-
       return this;
     }
 
@@ -448,19 +446,24 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dataplex.v1.UpdateLakeRequest buildPartial() {
       com.google.cloud.dataplex.v1.UpdateLakeRequest result =
           new com.google.cloud.dataplex.v1.UpdateLakeRequest(this);
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (lakeBuilder_ == null) {
-        result.lake_ = lake_;
-      } else {
-        result.lake_ = lakeBuilder_.build();
-      }
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.UpdateLakeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.lake_ = lakeBuilder_ == null ? lake_ : lakeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -546,19 +549,19 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getLakeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -577,6 +580,8 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -597,7 +602,7 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -636,11 +641,11 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -656,11 +661,11 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -675,17 +680,18 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -699,14 +705,13 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -720,7 +725,7 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -790,7 +795,7 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the lake field is set.
      */
     public boolean hasLake() {
-      return lakeBuilder_ != null || lake_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -829,11 +834,11 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         lake_ = value;
-        onChanged();
       } else {
         lakeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -850,11 +855,11 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
     public Builder setLake(com.google.cloud.dataplex.v1.Lake.Builder builderForValue) {
       if (lakeBuilder_ == null) {
         lake_ = builderForValue.build();
-        onChanged();
       } else {
         lakeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -870,17 +875,18 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeLake(com.google.cloud.dataplex.v1.Lake value) {
       if (lakeBuilder_ == null) {
-        if (lake_ != null) {
-          lake_ =
-              com.google.cloud.dataplex.v1.Lake.newBuilder(lake_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && lake_ != null
+            && lake_ != com.google.cloud.dataplex.v1.Lake.getDefaultInstance()) {
+          getLakeBuilder().mergeFrom(value);
         } else {
           lake_ = value;
         }
-        onChanged();
       } else {
         lakeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -895,14 +901,13 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearLake() {
-      if (lakeBuilder_ == null) {
-        lake_ = null;
-        onChanged();
-      } else {
-        lake_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      lake_ = null;
+      if (lakeBuilder_ != null) {
+        lakeBuilder_.dispose();
         lakeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -917,7 +922,7 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.dataplex.v1.Lake.Builder getLakeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getLakeFieldBuilder().getBuilder();
     }
@@ -1000,6 +1005,7 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1016,7 +1022,7 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       validateOnly_ = false;
       onChanged();
       return this;

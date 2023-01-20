@@ -71,7 +71,9 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
   }
 
   public static final int HOST_FIELD_NUMBER = 1;
-  private volatile java.lang.Object host_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object host_ = "";
   /**
    *
    *
@@ -120,7 +122,7 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
   }
 
   public static final int PORT_FIELD_NUMBER = 2;
-  private int port_;
+  private int port_ = 0;
   /**
    *
    *
@@ -138,7 +140,9 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
   }
 
   public static final int USERNAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object username_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object username_ = "";
   /**
    *
    *
@@ -189,7 +193,9 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
   }
 
   public static final int PASSWORD_FIELD_NUMBER = 4;
-  private volatile java.lang.Object password_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object password_ = "";
   /**
    *
    *
@@ -246,7 +252,7 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
   }
 
   public static final int PASSWORD_SET_FIELD_NUMBER = 5;
-  private boolean passwordSet_;
+  private boolean passwordSet_ = false;
   /**
    *
    *
@@ -306,11 +312,13 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.clouddms.v1.SslConfigOrBuilder getSslOrBuilder() {
-    return getSsl();
+    return ssl_ == null ? com.google.cloud.clouddms.v1.SslConfig.getDefaultInstance() : ssl_;
   }
 
   public static final int CLOUD_SQL_ID_FIELD_NUMBER = 7;
-  private volatile java.lang.Object cloudSqlId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cloudSqlId_ = "";
   /**
    *
    *
@@ -616,24 +624,18 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       host_ = "";
-
       port_ = 0;
-
       username_ = "";
-
       password_ = "";
-
       passwordSet_ = false;
-
-      if (sslBuilder_ == null) {
-        ssl_ = null;
-      } else {
-        ssl_ = null;
+      ssl_ = null;
+      if (sslBuilder_ != null) {
+        sslBuilder_.dispose();
         sslBuilder_ = null;
       }
       cloudSqlId_ = "";
-
       return this;
     }
 
@@ -661,19 +663,36 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
     public com.google.cloud.clouddms.v1.MySqlConnectionProfile buildPartial() {
       com.google.cloud.clouddms.v1.MySqlConnectionProfile result =
           new com.google.cloud.clouddms.v1.MySqlConnectionProfile(this);
-      result.host_ = host_;
-      result.port_ = port_;
-      result.username_ = username_;
-      result.password_ = password_;
-      result.passwordSet_ = passwordSet_;
-      if (sslBuilder_ == null) {
-        result.ssl_ = ssl_;
-      } else {
-        result.ssl_ = sslBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.cloudSqlId_ = cloudSqlId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.clouddms.v1.MySqlConnectionProfile result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.host_ = host_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.port_ = port_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.username_ = username_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.password_ = password_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.passwordSet_ = passwordSet_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.ssl_ = sslBuilder_ == null ? ssl_ : sslBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.cloudSqlId_ = cloudSqlId_;
+      }
     }
 
     @java.lang.Override
@@ -724,6 +743,7 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getHost().isEmpty()) {
         host_ = other.host_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getPort() != 0) {
@@ -731,10 +751,12 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
       }
       if (!other.getUsername().isEmpty()) {
         username_ = other.username_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getPassword().isEmpty()) {
         password_ = other.password_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getPasswordSet() != false) {
@@ -745,6 +767,7 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
       }
       if (!other.getCloudSqlId().isEmpty()) {
         cloudSqlId_ = other.cloudSqlId_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -776,43 +799,43 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
             case 10:
               {
                 host_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 port_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 username_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 password_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 passwordSet_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getSslFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 cloudSqlId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -831,6 +854,8 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object host_ = "";
     /**
@@ -893,8 +918,8 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       host_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -910,8 +935,8 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearHost() {
-
       host_ = getDefaultInstance().getHost();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -932,8 +957,8 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       host_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -969,6 +994,7 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
     public Builder setPort(int value) {
 
       port_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -984,7 +1010,7 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       port_ = 0;
       onChanged();
       return this;
@@ -1054,8 +1080,8 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       username_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1072,8 +1098,8 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearUsername() {
-
       username_ = getDefaultInstance().getUsername();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1095,8 +1121,8 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       username_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1174,8 +1200,8 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       password_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1195,8 +1221,8 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPassword() {
-
       password_ = getDefaultInstance().getPassword();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1221,8 +1247,8 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       password_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1258,6 +1284,7 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
     public Builder setPasswordSet(boolean value) {
 
       passwordSet_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1273,7 +1300,7 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPasswordSet() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       passwordSet_ = false;
       onChanged();
       return this;
@@ -1297,7 +1324,7 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      * @return Whether the ssl field is set.
      */
     public boolean hasSsl() {
-      return sslBuilder_ != null || ssl_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1332,11 +1359,11 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         ssl_ = value;
-        onChanged();
       } else {
         sslBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1351,11 +1378,11 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
     public Builder setSsl(com.google.cloud.clouddms.v1.SslConfig.Builder builderForValue) {
       if (sslBuilder_ == null) {
         ssl_ = builderForValue.build();
-        onChanged();
       } else {
         sslBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1369,19 +1396,18 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      */
     public Builder mergeSsl(com.google.cloud.clouddms.v1.SslConfig value) {
       if (sslBuilder_ == null) {
-        if (ssl_ != null) {
-          ssl_ =
-              com.google.cloud.clouddms.v1.SslConfig.newBuilder(ssl_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && ssl_ != null
+            && ssl_ != com.google.cloud.clouddms.v1.SslConfig.getDefaultInstance()) {
+          getSslBuilder().mergeFrom(value);
         } else {
           ssl_ = value;
         }
-        onChanged();
       } else {
         sslBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1394,14 +1420,13 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.clouddms.v1.SslConfig ssl = 6;</code>
      */
     public Builder clearSsl() {
-      if (sslBuilder_ == null) {
-        ssl_ = null;
-        onChanged();
-      } else {
-        ssl_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      ssl_ = null;
+      if (sslBuilder_ != null) {
+        sslBuilder_.dispose();
         sslBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1414,7 +1439,7 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.clouddms.v1.SslConfig ssl = 6;</code>
      */
     public com.google.cloud.clouddms.v1.SslConfig.Builder getSslBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getSslFieldBuilder().getBuilder();
     }
@@ -1524,8 +1549,8 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       cloudSqlId_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1542,8 +1567,8 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCloudSqlId() {
-
       cloudSqlId_ = getDefaultInstance().getCloudSqlId();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1565,8 +1590,8 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cloudSqlId_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

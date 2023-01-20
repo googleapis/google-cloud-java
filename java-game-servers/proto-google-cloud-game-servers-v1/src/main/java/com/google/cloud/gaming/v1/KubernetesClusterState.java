@@ -362,7 +362,9 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
   }
 
   public static final int AGONES_VERSION_INSTALLED_FIELD_NUMBER = 1;
-  private volatile java.lang.Object agonesVersionInstalled_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object agonesVersionInstalled_ = "";
   /**
    *
    *
@@ -413,7 +415,9 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
   }
 
   public static final int KUBERNETES_VERSION_INSTALLED_FIELD_NUMBER = 2;
-  private volatile java.lang.Object kubernetesVersionInstalled_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kubernetesVersionInstalled_ = "";
   /**
    *
    *
@@ -466,7 +470,7 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
   }
 
   public static final int INSTALLATION_STATE_FIELD_NUMBER = 3;
-  private int installationState_;
+  private int installationState_ = 0;
   /**
    *
    *
@@ -500,9 +504,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.gaming.v1.KubernetesClusterState.InstallationState
       getInstallationState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gaming.v1.KubernetesClusterState.InstallationState result =
-        com.google.cloud.gaming.v1.KubernetesClusterState.InstallationState.valueOf(
+        com.google.cloud.gaming.v1.KubernetesClusterState.InstallationState.forNumber(
             installationState_);
     return result == null
         ? com.google.cloud.gaming.v1.KubernetesClusterState.InstallationState.UNRECOGNIZED
@@ -510,7 +513,9 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
   }
 
   public static final int VERSION_INSTALLED_ERROR_MESSAGE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object versionInstalledErrorMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object versionInstalledErrorMessage_ = "";
   /**
    *
    *
@@ -561,7 +566,9 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
   }
 
   public static final int PROVIDER_FIELD_NUMBER = 5;
-  private volatile java.lang.Object provider_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object provider_ = "";
   /**
    *
    *
@@ -614,7 +621,9 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
   }
 
   public static final int AGONES_VERSION_TARGETED_FIELD_NUMBER = 6;
-  private volatile java.lang.Object agonesVersionTargeted_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object agonesVersionTargeted_ = "";
   /**
    *
    *
@@ -915,18 +924,13 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       agonesVersionInstalled_ = "";
-
       kubernetesVersionInstalled_ = "";
-
       installationState_ = 0;
-
       versionInstalledErrorMessage_ = "";
-
       provider_ = "";
-
       agonesVersionTargeted_ = "";
-
       return this;
     }
 
@@ -954,14 +958,33 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
     public com.google.cloud.gaming.v1.KubernetesClusterState buildPartial() {
       com.google.cloud.gaming.v1.KubernetesClusterState result =
           new com.google.cloud.gaming.v1.KubernetesClusterState(this);
-      result.agonesVersionInstalled_ = agonesVersionInstalled_;
-      result.kubernetesVersionInstalled_ = kubernetesVersionInstalled_;
-      result.installationState_ = installationState_;
-      result.versionInstalledErrorMessage_ = versionInstalledErrorMessage_;
-      result.provider_ = provider_;
-      result.agonesVersionTargeted_ = agonesVersionTargeted_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gaming.v1.KubernetesClusterState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.agonesVersionInstalled_ = agonesVersionInstalled_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.kubernetesVersionInstalled_ = kubernetesVersionInstalled_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.installationState_ = installationState_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.versionInstalledErrorMessage_ = versionInstalledErrorMessage_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.provider_ = provider_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.agonesVersionTargeted_ = agonesVersionTargeted_;
+      }
     }
 
     @java.lang.Override
@@ -1012,10 +1035,12 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getAgonesVersionInstalled().isEmpty()) {
         agonesVersionInstalled_ = other.agonesVersionInstalled_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getKubernetesVersionInstalled().isEmpty()) {
         kubernetesVersionInstalled_ = other.kubernetesVersionInstalled_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.installationState_ != 0) {
@@ -1023,14 +1048,17 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
       }
       if (!other.getVersionInstalledErrorMessage().isEmpty()) {
         versionInstalledErrorMessage_ = other.versionInstalledErrorMessage_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getProvider().isEmpty()) {
         provider_ = other.provider_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getAgonesVersionTargeted().isEmpty()) {
         agonesVersionTargeted_ = other.agonesVersionTargeted_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1062,37 +1090,37 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
             case 10:
               {
                 agonesVersionInstalled_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 kubernetesVersionInstalled_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 installationState_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 versionInstalledErrorMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 provider_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 agonesVersionTargeted_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -1111,6 +1139,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object agonesVersionInstalled_ = "";
     /**
@@ -1179,8 +1209,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       agonesVersionInstalled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1198,8 +1228,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearAgonesVersionInstalled() {
-
       agonesVersionInstalled_ = getDefaultInstance().getAgonesVersionInstalled();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1222,8 +1252,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       agonesVersionInstalled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1295,8 +1325,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       kubernetesVersionInstalled_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1314,8 +1344,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearKubernetesVersionInstalled() {
-
       kubernetesVersionInstalled_ = getDefaultInstance().getKubernetesVersionInstalled();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1338,8 +1368,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kubernetesVersionInstalled_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1377,8 +1407,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setInstallationStateValue(int value) {
-
       installationState_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1398,9 +1428,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public com.google.cloud.gaming.v1.KubernetesClusterState.InstallationState
         getInstallationState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gaming.v1.KubernetesClusterState.InstallationState result =
-          com.google.cloud.gaming.v1.KubernetesClusterState.InstallationState.valueOf(
+          com.google.cloud.gaming.v1.KubernetesClusterState.InstallationState.forNumber(
               installationState_);
       return result == null
           ? com.google.cloud.gaming.v1.KubernetesClusterState.InstallationState.UNRECOGNIZED
@@ -1425,7 +1454,7 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       installationState_ = value.getNumber();
       onChanged();
       return this;
@@ -1444,7 +1473,7 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearInstallationState() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       installationState_ = 0;
       onChanged();
       return this;
@@ -1517,8 +1546,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       versionInstalledErrorMessage_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1536,8 +1565,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearVersionInstalledErrorMessage() {
-
       versionInstalledErrorMessage_ = getDefaultInstance().getVersionInstalledErrorMessage();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1560,8 +1589,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       versionInstalledErrorMessage_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1633,8 +1662,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       provider_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1652,8 +1681,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearProvider() {
-
       provider_ = getDefaultInstance().getProvider();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1676,8 +1705,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       provider_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1743,8 +1772,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       agonesVersionTargeted_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1760,8 +1789,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearAgonesVersionTargeted() {
-
       agonesVersionTargeted_ = getDefaultInstance().getAgonesVersionTargeted();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1782,8 +1811,8 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       agonesVersionTargeted_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

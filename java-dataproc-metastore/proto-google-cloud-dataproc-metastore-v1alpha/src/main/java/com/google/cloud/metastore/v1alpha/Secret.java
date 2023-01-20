@@ -395,6 +395,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       valueCase_ = 0;
       value_ = null;
       return this;
@@ -424,12 +425,21 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.metastore.v1alpha.Secret buildPartial() {
       com.google.cloud.metastore.v1alpha.Secret result =
           new com.google.cloud.metastore.v1alpha.Secret(this);
-      if (valueCase_ == 2) {
-        result.value_ = value_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.valueCase_ = valueCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1alpha.Secret result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.metastore.v1alpha.Secret result) {
+      result.valueCase_ = valueCase_;
+      result.value_ = this.value_;
     }
 
     @java.lang.Override
@@ -553,6 +563,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *

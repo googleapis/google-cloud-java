@@ -165,7 +165,9 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
   }
 
   public static final int NAMESPACE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object namespace_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object namespace_ = "";
   /**
    *
    *
@@ -440,11 +442,11 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gkeClusterReferenceBuilder_ != null) {
         gkeClusterReferenceBuilder_.clear();
       }
       namespace_ = "";
-
       clusterReferenceCase_ = 0;
       clusterReference_ = null;
       return this;
@@ -475,17 +477,29 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
     public com.google.cloud.gaming.v1beta.GameServerClusterConnectionInfo buildPartial() {
       com.google.cloud.gaming.v1beta.GameServerClusterConnectionInfo result =
           new com.google.cloud.gaming.v1beta.GameServerClusterConnectionInfo(this);
-      if (clusterReferenceCase_ == 7) {
-        if (gkeClusterReferenceBuilder_ == null) {
-          result.clusterReference_ = clusterReference_;
-        } else {
-          result.clusterReference_ = gkeClusterReferenceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.namespace_ = namespace_;
-      result.clusterReferenceCase_ = clusterReferenceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gaming.v1beta.GameServerClusterConnectionInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.namespace_ = namespace_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.gaming.v1beta.GameServerClusterConnectionInfo result) {
+      result.clusterReferenceCase_ = clusterReferenceCase_;
+      result.clusterReference_ = this.clusterReference_;
+      if (clusterReferenceCase_ == 7 && gkeClusterReferenceBuilder_ != null) {
+        result.clusterReference_ = gkeClusterReferenceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -537,6 +551,7 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
         return this;
       if (!other.getNamespace().isEmpty()) {
         namespace_ = other.namespace_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       switch (other.getClusterReferenceCase()) {
@@ -579,7 +594,7 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
             case 42:
               {
                 namespace_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 42
             case 58:
@@ -619,6 +634,8 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gaming.v1beta.GkeClusterReference,
@@ -832,7 +849,6 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
       }
       clusterReferenceCase_ = 7;
       onChanged();
-      ;
       return gkeClusterReferenceBuilder_;
     }
 
@@ -903,8 +919,8 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       namespace_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -922,8 +938,8 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearNamespace() {
-
       namespace_ = getDefaultInstance().getNamespace();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -946,8 +962,8 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       namespace_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

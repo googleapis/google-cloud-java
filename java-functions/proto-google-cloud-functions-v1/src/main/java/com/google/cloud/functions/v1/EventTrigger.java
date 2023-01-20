@@ -71,7 +71,9 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EVENT_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object eventType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object eventType_ = "";
   /**
    *
    *
@@ -142,7 +144,9 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -219,7 +223,9 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -318,7 +324,9 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.functions.v1.FailurePolicyOrBuilder getFailurePolicyOrBuilder() {
-    return getFailurePolicy();
+    return failurePolicy_ == null
+        ? com.google.cloud.functions.v1.FailurePolicy.getDefaultInstance()
+        : failurePolicy_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -551,16 +559,13 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       eventType_ = "";
-
       resource_ = "";
-
       service_ = "";
-
-      if (failurePolicyBuilder_ == null) {
-        failurePolicy_ = null;
-      } else {
-        failurePolicy_ = null;
+      failurePolicy_ = null;
+      if (failurePolicyBuilder_ != null) {
+        failurePolicyBuilder_.dispose();
         failurePolicyBuilder_ = null;
       }
       return this;
@@ -590,16 +595,28 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.functions.v1.EventTrigger buildPartial() {
       com.google.cloud.functions.v1.EventTrigger result =
           new com.google.cloud.functions.v1.EventTrigger(this);
-      result.eventType_ = eventType_;
-      result.resource_ = resource_;
-      result.service_ = service_;
-      if (failurePolicyBuilder_ == null) {
-        result.failurePolicy_ = failurePolicy_;
-      } else {
-        result.failurePolicy_ = failurePolicyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v1.EventTrigger result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.eventType_ = eventType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resource_ = resource_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.service_ = service_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.failurePolicy_ =
+            failurePolicyBuilder_ == null ? failurePolicy_ : failurePolicyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -649,14 +666,17 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.functions.v1.EventTrigger.getDefaultInstance()) return this;
       if (!other.getEventType().isEmpty()) {
         eventType_ = other.eventType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getService().isEmpty()) {
         service_ = other.service_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasFailurePolicy()) {
@@ -691,25 +711,25 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 eventType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 service_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 42:
               {
                 input.readMessage(getFailurePolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -728,6 +748,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object eventType_ = "";
     /**
@@ -823,8 +845,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       eventType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -851,8 +873,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEventType() {
-
       eventType_ = getDefaultInstance().getEventType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -884,8 +906,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       eventType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -993,8 +1015,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1024,8 +1046,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1060,8 +1082,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1136,8 +1158,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       service_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1156,8 +1178,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1181,8 +1203,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       service_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1205,7 +1227,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the failurePolicy field is set.
      */
     public boolean hasFailurePolicy() {
-      return failurePolicyBuilder_ != null || failurePolicy_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1242,11 +1264,11 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         failurePolicy_ = value;
-        onChanged();
       } else {
         failurePolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1262,11 +1284,11 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.functions.v1.FailurePolicy.Builder builderForValue) {
       if (failurePolicyBuilder_ == null) {
         failurePolicy_ = builderForValue.build();
-        onChanged();
       } else {
         failurePolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1280,19 +1302,18 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeFailurePolicy(com.google.cloud.functions.v1.FailurePolicy value) {
       if (failurePolicyBuilder_ == null) {
-        if (failurePolicy_ != null) {
-          failurePolicy_ =
-              com.google.cloud.functions.v1.FailurePolicy.newBuilder(failurePolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && failurePolicy_ != null
+            && failurePolicy_ != com.google.cloud.functions.v1.FailurePolicy.getDefaultInstance()) {
+          getFailurePolicyBuilder().mergeFrom(value);
         } else {
           failurePolicy_ = value;
         }
-        onChanged();
       } else {
         failurePolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1305,14 +1326,13 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.functions.v1.FailurePolicy failure_policy = 5;</code>
      */
     public Builder clearFailurePolicy() {
-      if (failurePolicyBuilder_ == null) {
-        failurePolicy_ = null;
-        onChanged();
-      } else {
-        failurePolicy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      failurePolicy_ = null;
+      if (failurePolicyBuilder_ != null) {
+        failurePolicyBuilder_.dispose();
         failurePolicyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1325,7 +1345,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.functions.v1.FailurePolicy failure_policy = 5;</code>
      */
     public com.google.cloud.functions.v1.FailurePolicy.Builder getFailurePolicyBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getFailurePolicyFieldBuilder().getBuilder();
     }

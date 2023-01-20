@@ -69,7 +69,9 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object image_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object image_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TAG_FIELD_NUMBER = 2;
-  private volatile java.lang.Object tag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tag_ = "";
   /**
    *
    *
@@ -375,10 +379,9 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       image_ = "";
-
       tag_ = "";
-
       return this;
     }
 
@@ -406,10 +409,21 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.BuildArtifact buildPartial() {
       com.google.cloud.deploy.v1.BuildArtifact result =
           new com.google.cloud.deploy.v1.BuildArtifact(this);
-      result.image_ = image_;
-      result.tag_ = tag_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.BuildArtifact result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.image_ = image_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tag_ = tag_;
+      }
     }
 
     @java.lang.Override
@@ -459,10 +473,12 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.deploy.v1.BuildArtifact.getDefaultInstance()) return this;
       if (!other.getImage().isEmpty()) {
         image_ = other.image_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTag().isEmpty()) {
         tag_ = other.tag_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -494,13 +510,13 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 tag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 image_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             default:
@@ -519,6 +535,8 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object image_ = "";
     /**
@@ -581,8 +599,8 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       image_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -598,8 +616,8 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImage() {
-
       image_ = getDefaultInstance().getImage();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -620,8 +638,8 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       image_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -693,8 +711,8 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       tag_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -712,8 +730,8 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTag() {
-
       tag_ = getDefaultInstance().getTag();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -736,8 +754,8 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tag_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

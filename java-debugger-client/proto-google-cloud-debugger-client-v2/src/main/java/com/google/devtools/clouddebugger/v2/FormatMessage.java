@@ -69,7 +69,9 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FORMAT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object format_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object format_ = "";
   /**
    *
    *
@@ -130,6 +132,8 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARAMETERS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList parameters_;
   /**
    *
@@ -403,10 +407,10 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       format_ = "";
-
       parameters_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -434,15 +438,28 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.clouddebugger.v2.FormatMessage buildPartial() {
       com.google.devtools.clouddebugger.v2.FormatMessage result =
           new com.google.devtools.clouddebugger.v2.FormatMessage(this);
-      int from_bitField0_ = bitField0_;
-      result.format_ = format_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        parameters_ = parameters_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.parameters_ = parameters_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.devtools.clouddebugger.v2.FormatMessage result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        parameters_ = parameters_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.parameters_ = parameters_;
+    }
+
+    private void buildPartial0(com.google.devtools.clouddebugger.v2.FormatMessage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.format_ = format_;
+      }
     }
 
     @java.lang.Override
@@ -493,12 +510,13 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getFormat().isEmpty()) {
         format_ = other.format_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.parameters_.isEmpty()) {
         if (parameters_.isEmpty()) {
           parameters_ = other.parameters_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureParametersIsMutable();
           parameters_.addAll(other.parameters_);
@@ -534,7 +552,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 format_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -642,8 +660,8 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       format_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -665,8 +683,8 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFormat() {
-
       format_ = getDefaultInstance().getFormat();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -693,8 +711,8 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       format_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -703,9 +721,9 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureParametersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         parameters_ = new com.google.protobuf.LazyStringArrayList(parameters_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -840,7 +858,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearParameters() {
       parameters_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

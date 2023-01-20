@@ -238,7 +238,7 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int RENEWAL_METHOD_FIELD_NUMBER = 3;
-  private int renewalMethod_;
+  private int renewalMethod_ = 0;
   /**
    *
    *
@@ -271,16 +271,15 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.domains.v1.ManagementSettings.RenewalMethod getRenewalMethod() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.domains.v1.ManagementSettings.RenewalMethod result =
-        com.google.cloud.domains.v1.ManagementSettings.RenewalMethod.valueOf(renewalMethod_);
+        com.google.cloud.domains.v1.ManagementSettings.RenewalMethod.forNumber(renewalMethod_);
     return result == null
         ? com.google.cloud.domains.v1.ManagementSettings.RenewalMethod.UNRECOGNIZED
         : result;
   }
 
   public static final int TRANSFER_LOCK_STATE_FIELD_NUMBER = 4;
-  private int transferLockState_;
+  private int transferLockState_ = 0;
   /**
    *
    *
@@ -309,9 +308,8 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.domains.v1.TransferLockState getTransferLockState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.domains.v1.TransferLockState result =
-        com.google.cloud.domains.v1.TransferLockState.valueOf(transferLockState_);
+        com.google.cloud.domains.v1.TransferLockState.forNumber(transferLockState_);
     return result == null ? com.google.cloud.domains.v1.TransferLockState.UNRECOGNIZED : result;
   }
 
@@ -529,10 +527,9 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       renewalMethod_ = 0;
-
       transferLockState_ = 0;
-
       return this;
     }
 
@@ -560,10 +557,21 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.domains.v1.ManagementSettings buildPartial() {
       com.google.cloud.domains.v1.ManagementSettings result =
           new com.google.cloud.domains.v1.ManagementSettings(this);
-      result.renewalMethod_ = renewalMethod_;
-      result.transferLockState_ = transferLockState_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.domains.v1.ManagementSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.renewalMethod_ = renewalMethod_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.transferLockState_ = transferLockState_;
+      }
     }
 
     @java.lang.Override
@@ -646,13 +654,13 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
             case 24:
               {
                 renewalMethod_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 24
             case 32:
               {
                 transferLockState_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 32
             default:
@@ -671,6 +679,8 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int renewalMethod_ = 0;
     /**
@@ -705,8 +715,8 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setRenewalMethodValue(int value) {
-
       renewalMethod_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -725,9 +735,8 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.cloud.domains.v1.ManagementSettings.RenewalMethod getRenewalMethod() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.domains.v1.ManagementSettings.RenewalMethod result =
-          com.google.cloud.domains.v1.ManagementSettings.RenewalMethod.valueOf(renewalMethod_);
+          com.google.cloud.domains.v1.ManagementSettings.RenewalMethod.forNumber(renewalMethod_);
       return result == null
           ? com.google.cloud.domains.v1.ManagementSettings.RenewalMethod.UNRECOGNIZED
           : result;
@@ -751,7 +760,7 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       renewalMethod_ = value.getNumber();
       onChanged();
       return this;
@@ -770,7 +779,7 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRenewalMethod() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       renewalMethod_ = 0;
       onChanged();
       return this;
@@ -805,8 +814,8 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setTransferLockStateValue(int value) {
-
       transferLockState_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -823,9 +832,8 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.cloud.domains.v1.TransferLockState getTransferLockState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.domains.v1.TransferLockState result =
-          com.google.cloud.domains.v1.TransferLockState.valueOf(transferLockState_);
+          com.google.cloud.domains.v1.TransferLockState.forNumber(transferLockState_);
       return result == null ? com.google.cloud.domains.v1.TransferLockState.UNRECOGNIZED : result;
     }
     /**
@@ -844,7 +852,7 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       transferLockState_ = value.getNumber();
       onChanged();
       return this;
@@ -861,7 +869,7 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTransferLockState() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       transferLockState_ = 0;
       onChanged();
       return this;

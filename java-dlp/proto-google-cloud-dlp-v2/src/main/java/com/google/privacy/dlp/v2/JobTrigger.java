@@ -757,6 +757,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (scheduleBuilder_ != null) {
           scheduleBuilder_.clear();
         }
@@ -792,23 +793,27 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       public com.google.privacy.dlp.v2.JobTrigger.Trigger buildPartial() {
         com.google.privacy.dlp.v2.JobTrigger.Trigger result =
             new com.google.privacy.dlp.v2.JobTrigger.Trigger(this);
-        if (triggerCase_ == 1) {
-          if (scheduleBuilder_ == null) {
-            result.trigger_ = trigger_;
-          } else {
-            result.trigger_ = scheduleBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (triggerCase_ == 2) {
-          if (manualBuilder_ == null) {
-            result.trigger_ = trigger_;
-          } else {
-            result.trigger_ = manualBuilder_.build();
-          }
-        }
-        result.triggerCase_ = triggerCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.privacy.dlp.v2.JobTrigger.Trigger result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(com.google.privacy.dlp.v2.JobTrigger.Trigger result) {
+        result.triggerCase_ = triggerCase_;
+        result.trigger_ = this.trigger_;
+        if (triggerCase_ == 1 && scheduleBuilder_ != null) {
+          result.trigger_ = scheduleBuilder_.build();
+        }
+        if (triggerCase_ == 2 && manualBuilder_ != null) {
+          result.trigger_ = manualBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -942,6 +947,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.Schedule,
@@ -1146,7 +1153,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         }
         triggerCase_ = 1;
         onChanged();
-        ;
         return scheduleBuilder_;
       }
 
@@ -1353,7 +1359,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         }
         triggerCase_ = 2;
         onChanged();
-        ;
         return manualBuilder_;
       }
 
@@ -1466,7 +1471,9 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1519,7 +1526,9 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -1568,7 +1577,9 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -1668,6 +1679,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRIGGERS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.JobTrigger.Trigger> triggers_;
   /**
    *
@@ -1747,6 +1760,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERRORS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.Error> errors_;
   /**
    *
@@ -1886,7 +1901,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 8;
@@ -1935,7 +1950,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int LAST_RUN_TIME_FIELD_NUMBER = 9;
@@ -1987,11 +2002,11 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastRunTimeOrBuilder() {
-    return getLastRunTime();
+    return lastRunTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastRunTime_;
   }
 
   public static final int STATUS_FIELD_NUMBER = 10;
-  private int status_;
+  private int status_ = 0;
   /**
    *
    *
@@ -2024,9 +2039,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.JobTrigger.Status getStatus() {
-    @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.JobTrigger.Status result =
-        com.google.privacy.dlp.v2.JobTrigger.Status.valueOf(status_);
+        com.google.privacy.dlp.v2.JobTrigger.Status.forNumber(status_);
     return result == null ? com.google.privacy.dlp.v2.JobTrigger.Status.UNRECOGNIZED : result;
   }
 
@@ -2341,12 +2355,10 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
       if (inspectJobBuilder_ != null) {
         inspectJobBuilder_.clear();
       }
@@ -2356,34 +2368,30 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         triggers_ = null;
         triggersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
       } else {
         errors_ = null;
         errorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      if (lastRunTimeBuilder_ == null) {
-        lastRunTime_ = null;
-      } else {
-        lastRunTime_ = null;
+      lastRunTime_ = null;
+      if (lastRunTimeBuilder_ != null) {
+        lastRunTimeBuilder_.dispose();
         lastRunTimeBuilder_ = null;
       }
       status_ = 0;
-
       jobCase_ = 0;
       job_ = null;
       return this;
@@ -2412,54 +2420,68 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.privacy.dlp.v2.JobTrigger buildPartial() {
       com.google.privacy.dlp.v2.JobTrigger result = new com.google.privacy.dlp.v2.JobTrigger(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      if (jobCase_ == 4) {
-        if (inspectJobBuilder_ == null) {
-          result.job_ = job_;
-        } else {
-          result.job_ = inspectJobBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.JobTrigger result) {
       if (triggersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           triggers_ = java.util.Collections.unmodifiableList(triggers_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.triggers_ = triggers_;
       } else {
         result.triggers_ = triggersBuilder_.build();
       }
       if (errorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.errors_ = errors_;
       } else {
         result.errors_ = errorsBuilder_.build();
       }
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.JobTrigger result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
       }
-      if (lastRunTimeBuilder_ == null) {
-        result.lastRunTime_ = lastRunTime_;
-      } else {
-        result.lastRunTime_ = lastRunTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
       }
-      result.status_ = status_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.lastRunTime_ =
+            lastRunTimeBuilder_ == null ? lastRunTime_ : lastRunTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.status_ = status_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.JobTrigger result) {
       result.jobCase_ = jobCase_;
-      onBuilt();
-      return result;
+      result.job_ = this.job_;
+      if (jobCase_ == 4 && inspectJobBuilder_ != null) {
+        result.job_ = inspectJobBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2509,21 +2531,24 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.privacy.dlp.v2.JobTrigger.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (triggersBuilder_ == null) {
         if (!other.triggers_.isEmpty()) {
           if (triggers_.isEmpty()) {
             triggers_ = other.triggers_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureTriggersIsMutable();
             triggers_.addAll(other.triggers_);
@@ -2536,7 +2561,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
             triggersBuilder_.dispose();
             triggersBuilder_ = null;
             triggers_ = other.triggers_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             triggersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTriggersFieldBuilder()
@@ -2550,7 +2575,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         if (!other.errors_.isEmpty()) {
           if (errors_.isEmpty()) {
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureErrorsIsMutable();
             errors_.addAll(other.errors_);
@@ -2563,7 +2588,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
             errorsBuilder_.dispose();
             errorsBuilder_ = null;
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
             errorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getErrorsFieldBuilder()
@@ -2625,19 +2650,19 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -2674,25 +2699,25 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getLastRunTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 80:
               {
                 status_ = input.readEnum();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 80
             default:
@@ -2795,8 +2820,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2814,8 +2839,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2838,8 +2863,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2905,8 +2930,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2922,8 +2947,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2944,8 +2969,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3011,8 +3036,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3028,8 +3053,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3050,8 +3075,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3262,7 +3287,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       jobCase_ = 4;
       onChanged();
-      ;
       return inspectJobBuilder_;
     }
 
@@ -3270,10 +3294,10 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTriggersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         triggers_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.JobTrigger.Trigger>(triggers_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -3511,7 +3535,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTriggers() {
       if (triggersBuilder_ == null) {
         triggers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         triggersBuilder_.clear();
@@ -3647,7 +3671,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.JobTrigger.Trigger,
                 com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder,
                 com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder>(
-                triggers_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                triggers_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         triggers_ = null;
       }
       return triggersBuilder_;
@@ -3657,9 +3681,9 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>(errors_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -3927,7 +3951,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         errorsBuilder_.clear();
@@ -4083,7 +4107,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.Error,
                 com.google.privacy.dlp.v2.Error.Builder,
                 com.google.privacy.dlp.v2.ErrorOrBuilder>(
-                errors_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                errors_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         errors_ = null;
       }
       return errorsBuilder_;
@@ -4109,7 +4133,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -4150,11 +4174,11 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4171,11 +4195,11 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4191,17 +4215,18 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4216,14 +4241,13 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4238,7 +4262,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -4310,7 +4334,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -4351,11 +4375,11 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4372,11 +4396,11 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4392,17 +4416,18 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4417,14 +4442,13 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4439,7 +4463,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -4511,7 +4535,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastRunTime field is set.
      */
     public boolean hasLastRunTime() {
-      return lastRunTimeBuilder_ != null || lastRunTime_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -4552,11 +4576,11 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastRunTime_ = value;
-        onChanged();
       } else {
         lastRunTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -4573,11 +4597,11 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastRunTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastRunTimeBuilder_ == null) {
         lastRunTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastRunTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -4593,19 +4617,18 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastRunTime(com.google.protobuf.Timestamp value) {
       if (lastRunTimeBuilder_ == null) {
-        if (lastRunTime_ != null) {
-          lastRunTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastRunTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && lastRunTime_ != null
+            && lastRunTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastRunTimeBuilder().mergeFrom(value);
         } else {
           lastRunTime_ = value;
         }
-        onChanged();
       } else {
         lastRunTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -4620,14 +4643,13 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLastRunTime() {
-      if (lastRunTimeBuilder_ == null) {
-        lastRunTime_ = null;
-        onChanged();
-      } else {
-        lastRunTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      lastRunTime_ = null;
+      if (lastRunTimeBuilder_ != null) {
+        lastRunTimeBuilder_.dispose();
         lastRunTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4642,7 +4664,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getLastRunTimeBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getLastRunTimeFieldBuilder().getBuilder();
     }
@@ -4727,8 +4749,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
-
       status_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4747,9 +4769,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.JobTrigger.Status getStatus() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.JobTrigger.Status result =
-          com.google.privacy.dlp.v2.JobTrigger.Status.valueOf(status_);
+          com.google.privacy.dlp.v2.JobTrigger.Status.forNumber(status_);
       return result == null ? com.google.privacy.dlp.v2.JobTrigger.Status.UNRECOGNIZED : result;
     }
     /**
@@ -4770,7 +4791,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -4789,7 +4810,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       status_ = 0;
       onChanged();
       return this;

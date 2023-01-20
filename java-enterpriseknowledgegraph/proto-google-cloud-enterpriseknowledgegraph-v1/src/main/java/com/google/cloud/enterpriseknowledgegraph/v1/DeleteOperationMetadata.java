@@ -114,7 +114,9 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.enterpriseknowledgegraph.v1.CommonOperationMetadataOrBuilder
       getCommonMetadataOrBuilder() {
-    return getCommonMetadata();
+    return commonMetadata_ == null
+        ? com.google.cloud.enterpriseknowledgegraph.v1.CommonOperationMetadata.getDefaultInstance()
+        : commonMetadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -322,10 +324,10 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (commonMetadataBuilder_ == null) {
-        commonMetadata_ = null;
-      } else {
-        commonMetadata_ = null;
+      bitField0_ = 0;
+      commonMetadata_ = null;
+      if (commonMetadataBuilder_ != null) {
+        commonMetadataBuilder_.dispose();
         commonMetadataBuilder_ = null;
       }
       return this;
@@ -357,13 +359,20 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
     public com.google.cloud.enterpriseknowledgegraph.v1.DeleteOperationMetadata buildPartial() {
       com.google.cloud.enterpriseknowledgegraph.v1.DeleteOperationMetadata result =
           new com.google.cloud.enterpriseknowledgegraph.v1.DeleteOperationMetadata(this);
-      if (commonMetadataBuilder_ == null) {
-        result.commonMetadata_ = commonMetadata_;
-      } else {
-        result.commonMetadata_ = commonMetadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.enterpriseknowledgegraph.v1.DeleteOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.commonMetadata_ =
+            commonMetadataBuilder_ == null ? commonMetadata_ : commonMetadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -447,7 +456,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getCommonMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -466,6 +475,8 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.enterpriseknowledgegraph.v1.CommonOperationMetadata commonMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -486,7 +497,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
      * @return Whether the commonMetadata field is set.
      */
     public boolean hasCommonMetadata() {
-      return commonMetadataBuilder_ != null || commonMetadata_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -528,11 +539,11 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         commonMetadata_ = value;
-        onChanged();
       } else {
         commonMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -550,11 +561,11 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
             builderForValue) {
       if (commonMetadataBuilder_ == null) {
         commonMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         commonMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -570,20 +581,20 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
     public Builder mergeCommonMetadata(
         com.google.cloud.enterpriseknowledgegraph.v1.CommonOperationMetadata value) {
       if (commonMetadataBuilder_ == null) {
-        if (commonMetadata_ != null) {
-          commonMetadata_ =
-              com.google.cloud.enterpriseknowledgegraph.v1.CommonOperationMetadata.newBuilder(
-                      commonMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && commonMetadata_ != null
+            && commonMetadata_
+                != com.google.cloud.enterpriseknowledgegraph.v1.CommonOperationMetadata
+                    .getDefaultInstance()) {
+          getCommonMetadataBuilder().mergeFrom(value);
         } else {
           commonMetadata_ = value;
         }
-        onChanged();
       } else {
         commonMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -597,14 +608,13 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearCommonMetadata() {
-      if (commonMetadataBuilder_ == null) {
-        commonMetadata_ = null;
-        onChanged();
-      } else {
-        commonMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      commonMetadata_ = null;
+      if (commonMetadataBuilder_ != null) {
+        commonMetadataBuilder_.dispose();
         commonMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -619,7 +629,7 @@ public final class DeleteOperationMetadata extends com.google.protobuf.Generated
      */
     public com.google.cloud.enterpriseknowledgegraph.v1.CommonOperationMetadata.Builder
         getCommonMetadataBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCommonMetadataFieldBuilder().getBuilder();
     }

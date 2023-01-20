@@ -468,9 +468,8 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
     public com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket
         getMinimumRiskScore() {
       if (valueCase_ == 1) {
-        @SuppressWarnings("deprecation")
         com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket result =
-            com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket.valueOf(
+            com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket.forNumber(
                 (java.lang.Integer) value_);
         return result == null
             ? com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket.UNRECOGNIZED
@@ -532,9 +531,8 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
     public com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket
         getMinimumSensitivityScore() {
       if (valueCase_ == 2) {
-        @SuppressWarnings("deprecation")
         com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket result =
-            com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket.valueOf(
+            com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket.forNumber(
                 (java.lang.Integer) value_);
         return result == null
             ? com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket.UNRECOGNIZED
@@ -775,6 +773,7 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         valueCase_ = 0;
         value_ = null;
         return this;
@@ -807,15 +806,23 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
       public com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubCondition buildPartial() {
         com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubCondition result =
             new com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubCondition(this);
-        if (valueCase_ == 1) {
-          result.value_ = value_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (valueCase_ == 2) {
-          result.value_ = value_;
-        }
-        result.valueCase_ = valueCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubCondition result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubCondition result) {
+        result.valueCase_ = valueCase_;
+        result.value_ = this.value_;
       }
 
       @java.lang.Override
@@ -956,6 +963,8 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
         return this;
       }
 
+      private int bitField0_;
+
       /**
        *
        *
@@ -1030,9 +1039,8 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
       public com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket
           getMinimumRiskScore() {
         if (valueCase_ == 1) {
-          @SuppressWarnings("deprecation")
           com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket result =
-              com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket.valueOf(
+              com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket.forNumber(
                   (java.lang.Integer) value_);
           return result == null
               ? com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket.UNRECOGNIZED
@@ -1161,9 +1169,8 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
       public com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket
           getMinimumSensitivityScore() {
         if (valueCase_ == 2) {
-          @SuppressWarnings("deprecation")
           com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket result =
-              com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket.valueOf(
+              com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket.forNumber(
                   (java.lang.Integer) value_);
           return result == null
               ? com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket.UNRECOGNIZED
@@ -1600,7 +1607,7 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
     }
 
     public static final int LOGICAL_OPERATOR_FIELD_NUMBER = 1;
-    private int logicalOperator_;
+    private int logicalOperator_ = 0;
     /**
      *
      *
@@ -1635,11 +1642,10 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
     public com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions
             .PubSubLogicalOperator
         getLogicalOperator() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions.PubSubLogicalOperator
           result =
               com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions
-                  .PubSubLogicalOperator.valueOf(logicalOperator_);
+                  .PubSubLogicalOperator.forNumber(logicalOperator_);
       return result == null
           ? com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions
               .PubSubLogicalOperator.UNRECOGNIZED
@@ -1647,6 +1653,8 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
     }
 
     public static final int CONDITIONS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubCondition>
         conditions_;
     /**
@@ -1951,15 +1959,15 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         logicalOperator_ = 0;
-
         if (conditionsBuilder_ == null) {
           conditions_ = java.util.Collections.emptyList();
         } else {
           conditions_ = null;
           conditionsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1990,19 +1998,33 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
       public com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions buildPartial() {
         com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions result =
             new com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions(this);
-        int from_bitField0_ = bitField0_;
-        result.logicalOperator_ = logicalOperator_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions result) {
         if (conditionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             conditions_ = java.util.Collections.unmodifiableList(conditions_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.conditions_ = conditions_;
         } else {
           result.conditions_ = conditionsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.logicalOperator_ = logicalOperator_;
+        }
       }
 
       @java.lang.Override
@@ -2064,7 +2086,7 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
           if (!other.conditions_.isEmpty()) {
             if (conditions_.isEmpty()) {
               conditions_ = other.conditions_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureConditionsIsMutable();
               conditions_.addAll(other.conditions_);
@@ -2077,7 +2099,7 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
               conditionsBuilder_.dispose();
               conditionsBuilder_ = null;
               conditions_ = other.conditions_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               conditionsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getConditionsFieldBuilder()
@@ -2116,7 +2138,7 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
               case 8:
                 {
                   logicalOperator_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
@@ -2186,8 +2208,8 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder setLogicalOperatorValue(int value) {
-
         logicalOperator_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2208,11 +2230,10 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
       public com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions
               .PubSubLogicalOperator
           getLogicalOperator() {
-        @SuppressWarnings("deprecation")
         com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions.PubSubLogicalOperator
             result =
                 com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions
-                    .PubSubLogicalOperator.valueOf(logicalOperator_);
+                    .PubSubLogicalOperator.forNumber(logicalOperator_);
         return result == null
             ? com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions
                 .PubSubLogicalOperator.UNRECOGNIZED
@@ -2239,7 +2260,7 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         logicalOperator_ = value.getNumber();
         onChanged();
         return this;
@@ -2258,7 +2279,7 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder clearLogicalOperator() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         logicalOperator_ = 0;
         onChanged();
         return this;
@@ -2268,12 +2289,12 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
           conditions_ = java.util.Collections.emptyList();
 
       private void ensureConditionsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           conditions_ =
               new java.util.ArrayList<
                   com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubCondition>(
                   conditions_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -2523,7 +2544,7 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
       public Builder clearConditions() {
         if (conditionsBuilder_ == null) {
           conditions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           conditionsBuilder_.clear();
@@ -2671,7 +2692,7 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
                   com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubCondition,
                   com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubCondition.Builder,
                   com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubConditionOrBuilder>(
-                  conditions_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  conditions_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
           conditions_ = null;
         }
         return conditionsBuilder_;
@@ -2795,7 +2816,10 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
   @java.lang.Override
   public com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressionsOrBuilder
       getExpressionsOrBuilder() {
-    return getExpressions();
+    return expressions_ == null
+        ? com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions
+            .getDefaultInstance()
+        : expressions_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3000,10 +3024,10 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (expressionsBuilder_ == null) {
-        expressions_ = null;
-      } else {
-        expressions_ = null;
+      bitField0_ = 0;
+      expressions_ = null;
+      if (expressionsBuilder_ != null) {
+        expressionsBuilder_.dispose();
         expressionsBuilder_ = null;
       }
       return this;
@@ -3033,13 +3057,19 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
     public com.google.privacy.dlp.v2.DataProfilePubSubCondition buildPartial() {
       com.google.privacy.dlp.v2.DataProfilePubSubCondition result =
           new com.google.privacy.dlp.v2.DataProfilePubSubCondition(this);
-      if (expressionsBuilder_ == null) {
-        result.expressions_ = expressions_;
-      } else {
-        result.expressions_ = expressionsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.DataProfilePubSubCondition result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.expressions_ =
+            expressionsBuilder_ == null ? expressions_ : expressionsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3120,7 +3150,7 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
             case 10:
               {
                 input.readMessage(getExpressionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -3139,6 +3169,8 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions expressions_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3159,7 +3191,7 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
      * @return Whether the expressions field is set.
      */
     public boolean hasExpressions() {
-      return expressionsBuilder_ != null || expressions_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -3200,11 +3232,11 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         expressions_ = value;
-        onChanged();
       } else {
         expressionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3222,11 +3254,11 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
             builderForValue) {
       if (expressionsBuilder_ == null) {
         expressions_ = builderForValue.build();
-        onChanged();
       } else {
         expressionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3242,20 +3274,20 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
     public Builder mergeExpressions(
         com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions value) {
       if (expressionsBuilder_ == null) {
-        if (expressions_ != null) {
-          expressions_ =
-              com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions.newBuilder(
-                      expressions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && expressions_ != null
+            && expressions_
+                != com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions
+                    .getDefaultInstance()) {
+          getExpressionsBuilder().mergeFrom(value);
         } else {
           expressions_ = value;
         }
-        onChanged();
       } else {
         expressionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3269,14 +3301,13 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearExpressions() {
-      if (expressionsBuilder_ == null) {
-        expressions_ = null;
-        onChanged();
-      } else {
-        expressions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      expressions_ = null;
+      if (expressionsBuilder_ != null) {
+        expressionsBuilder_.dispose();
         expressionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3291,7 +3322,7 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
      */
     public com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions.Builder
         getExpressionsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getExpressionsFieldBuilder().getBuilder();
     }

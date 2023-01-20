@@ -242,7 +242,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CONFIDENCE_THRESHOLD_FIELD_NUMBER = 1;
-    private float confidenceThreshold_;
+    private float confidenceThreshold_ = 0F;
     /**
      *
      *
@@ -268,7 +268,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RECALL_FIELD_NUMBER = 2;
-    private float recall_;
+    private float recall_ = 0F;
     /**
      *
      *
@@ -286,7 +286,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PRECISION_FIELD_NUMBER = 3;
-    private float precision_;
+    private float precision_ = 0F;
     /**
      *
      *
@@ -304,7 +304,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int F1_SCORE_FIELD_NUMBER = 4;
-    private float f1Score_;
+    private float f1Score_ = 0F;
     /**
      *
      *
@@ -322,7 +322,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RECALL_AT1_FIELD_NUMBER = 5;
-    private float recallAt1_;
+    private float recallAt1_ = 0F;
     /**
      *
      *
@@ -340,7 +340,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PRECISION_AT1_FIELD_NUMBER = 6;
-    private float precisionAt1_;
+    private float precisionAt1_ = 0F;
     /**
      *
      *
@@ -358,7 +358,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int F1_SCORE_AT1_FIELD_NUMBER = 7;
-    private float f1ScoreAt1_;
+    private float f1ScoreAt1_ = 0F;
     /**
      *
      *
@@ -376,7 +376,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RECALL_AT5_FIELD_NUMBER = 8;
-    private float recallAt5_;
+    private float recallAt5_ = 0F;
     /**
      *
      *
@@ -394,7 +394,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PRECISION_AT5_FIELD_NUMBER = 9;
-    private float precisionAt5_;
+    private float precisionAt5_ = 0F;
     /**
      *
      *
@@ -412,7 +412,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int F1_SCORE_AT5_FIELD_NUMBER = 10;
-    private float f1ScoreAt5_;
+    private float f1ScoreAt5_ = 0F;
     /**
      *
      *
@@ -714,26 +714,17 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         confidenceThreshold_ = 0F;
-
         recall_ = 0F;
-
         precision_ = 0F;
-
         f1Score_ = 0F;
-
         recallAt1_ = 0F;
-
         precisionAt1_ = 0F;
-
         f1ScoreAt1_ = 0F;
-
         recallAt5_ = 0F;
-
         precisionAt5_ = 0F;
-
         f1ScoreAt5_ = 0F;
-
         return this;
       }
 
@@ -764,18 +755,46 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry buildPartial() {
         com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry result =
             new com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry(this);
-        result.confidenceThreshold_ = confidenceThreshold_;
-        result.recall_ = recall_;
-        result.precision_ = precision_;
-        result.f1Score_ = f1Score_;
-        result.recallAt1_ = recallAt1_;
-        result.precisionAt1_ = precisionAt1_;
-        result.f1ScoreAt1_ = f1ScoreAt1_;
-        result.recallAt5_ = recallAt5_;
-        result.precisionAt5_ = precisionAt5_;
-        result.f1ScoreAt5_ = f1ScoreAt5_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.confidenceThreshold_ = confidenceThreshold_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.recall_ = recall_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.precision_ = precision_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.f1Score_ = f1Score_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.recallAt1_ = recallAt1_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.precisionAt1_ = precisionAt1_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.f1ScoreAt1_ = f1ScoreAt1_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.recallAt5_ = recallAt5_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.precisionAt5_ = precisionAt5_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.f1ScoreAt5_ = f1ScoreAt5_;
+        }
       }
 
       @java.lang.Override
@@ -888,61 +907,61 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
               case 13:
                 {
                   confidenceThreshold_ = input.readFloat();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 13
               case 21:
                 {
                   recall_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               case 29:
                 {
                   precision_ = input.readFloat();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 29
               case 37:
                 {
                   f1Score_ = input.readFloat();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 37
               case 45:
                 {
                   recallAt1_ = input.readFloat();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 45
               case 53:
                 {
                   precisionAt1_ = input.readFloat();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 53
               case 61:
                 {
                   f1ScoreAt1_ = input.readFloat();
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 61
               case 69:
                 {
                   recallAt5_ = input.readFloat();
-
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 69
               case 77:
                 {
                   precisionAt5_ = input.readFloat();
-
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 77
               case 85:
                 {
                   f1ScoreAt5_ = input.readFloat();
-
+                  bitField0_ |= 0x00000200;
                   break;
                 } // case 85
               default:
@@ -961,6 +980,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private float confidenceThreshold_;
       /**
@@ -1009,6 +1030,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public Builder setConfidenceThreshold(float value) {
 
         confidenceThreshold_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1032,7 +1054,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearConfidenceThreshold() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         confidenceThreshold_ = 0F;
         onChanged();
         return this;
@@ -1069,6 +1091,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public Builder setRecall(float value) {
 
         recall_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1084,7 +1107,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearRecall() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         recall_ = 0F;
         onChanged();
         return this;
@@ -1121,6 +1144,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public Builder setPrecision(float value) {
 
         precision_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1136,7 +1160,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPrecision() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         precision_ = 0F;
         onChanged();
         return this;
@@ -1173,6 +1197,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public Builder setF1Score(float value) {
 
         f1Score_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1188,7 +1213,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearF1Score() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         f1Score_ = 0F;
         onChanged();
         return this;
@@ -1225,6 +1250,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public Builder setRecallAt1(float value) {
 
         recallAt1_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1240,7 +1266,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearRecallAt1() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         recallAt1_ = 0F;
         onChanged();
         return this;
@@ -1277,6 +1303,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public Builder setPrecisionAt1(float value) {
 
         precisionAt1_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1292,7 +1319,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPrecisionAt1() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         precisionAt1_ = 0F;
         onChanged();
         return this;
@@ -1329,6 +1356,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public Builder setF1ScoreAt1(float value) {
 
         f1ScoreAt1_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1344,7 +1372,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearF1ScoreAt1() {
-
+        bitField0_ = (bitField0_ & ~0x00000040);
         f1ScoreAt1_ = 0F;
         onChanged();
         return this;
@@ -1381,6 +1409,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public Builder setRecallAt5(float value) {
 
         recallAt5_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1396,7 +1425,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearRecallAt5() {
-
+        bitField0_ = (bitField0_ & ~0x00000080);
         recallAt5_ = 0F;
         onChanged();
         return this;
@@ -1433,6 +1462,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public Builder setPrecisionAt5(float value) {
 
         precisionAt5_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1448,7 +1478,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPrecisionAt5() {
-
+        bitField0_ = (bitField0_ & ~0x00000100);
         precisionAt5_ = 0F;
         onChanged();
         return this;
@@ -1485,6 +1515,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public Builder setF1ScoreAt5(float value) {
 
         f1ScoreAt5_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1500,7 +1531,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearF1ScoreAt5() {
-
+        bitField0_ = (bitField0_ & ~0x00000200);
         f1ScoreAt5_ = 0F;
         onChanged();
         return this;
@@ -1625,11 +1656,13 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder
       getAnnotationSpecOrBuilder() {
-    return getAnnotationSpec();
+    return annotationSpec_ == null
+        ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
+        : annotationSpec_;
   }
 
   public static final int AREA_UNDER_CURVE_FIELD_NUMBER = 2;
-  private float areaUnderCurve_;
+  private float areaUnderCurve_ = 0F;
   /**
    *
    *
@@ -1648,6 +1681,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONFIDENCE_METRICS_ENTRIES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry>
       confidenceMetricsEntries_;
   /**
@@ -1737,7 +1772,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEAN_AVERAGE_PRECISION_FIELD_NUMBER = 4;
-  private float meanAveragePrecision_;
+  private float meanAveragePrecision_ = 0F;
   /**
    *
    *
@@ -1982,23 +2017,21 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (annotationSpecBuilder_ == null) {
-        annotationSpec_ = null;
-      } else {
-        annotationSpec_ = null;
+      bitField0_ = 0;
+      annotationSpec_ = null;
+      if (annotationSpecBuilder_ != null) {
+        annotationSpecBuilder_.dispose();
         annotationSpecBuilder_ = null;
       }
       areaUnderCurve_ = 0F;
-
       if (confidenceMetricsEntriesBuilder_ == null) {
         confidenceMetricsEntries_ = java.util.Collections.emptyList();
       } else {
         confidenceMetricsEntries_ = null;
         confidenceMetricsEntriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       meanAveragePrecision_ = 0F;
-
       return this;
     }
 
@@ -2026,26 +2059,39 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.PrCurve buildPartial() {
       com.google.cloud.datalabeling.v1beta1.PrCurve result =
           new com.google.cloud.datalabeling.v1beta1.PrCurve(this);
-      int from_bitField0_ = bitField0_;
-      if (annotationSpecBuilder_ == null) {
-        result.annotationSpec_ = annotationSpec_;
-      } else {
-        result.annotationSpec_ = annotationSpecBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.areaUnderCurve_ = areaUnderCurve_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.datalabeling.v1beta1.PrCurve result) {
       if (confidenceMetricsEntriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           confidenceMetricsEntries_ =
               java.util.Collections.unmodifiableList(confidenceMetricsEntries_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.confidenceMetricsEntries_ = confidenceMetricsEntries_;
       } else {
         result.confidenceMetricsEntries_ = confidenceMetricsEntriesBuilder_.build();
       }
-      result.meanAveragePrecision_ = meanAveragePrecision_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.PrCurve result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.annotationSpec_ =
+            annotationSpecBuilder_ == null ? annotationSpec_ : annotationSpecBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.areaUnderCurve_ = areaUnderCurve_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.meanAveragePrecision_ = meanAveragePrecision_;
+      }
     }
 
     @java.lang.Override
@@ -2103,7 +2149,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         if (!other.confidenceMetricsEntries_.isEmpty()) {
           if (confidenceMetricsEntries_.isEmpty()) {
             confidenceMetricsEntries_ = other.confidenceMetricsEntries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureConfidenceMetricsEntriesIsMutable();
             confidenceMetricsEntries_.addAll(other.confidenceMetricsEntries_);
@@ -2116,7 +2162,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
             confidenceMetricsEntriesBuilder_.dispose();
             confidenceMetricsEntriesBuilder_ = null;
             confidenceMetricsEntries_ = other.confidenceMetricsEntries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             confidenceMetricsEntriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConfidenceMetricsEntriesFieldBuilder()
@@ -2158,13 +2204,13 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getAnnotationSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 21:
               {
                 areaUnderCurve_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             case 26:
@@ -2185,7 +2231,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
             case 37:
               {
                 meanAveragePrecision_ = input.readFloat();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 37
             default:
@@ -2227,7 +2273,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the annotationSpec field is set.
      */
     public boolean hasAnnotationSpec() {
-      return annotationSpecBuilder_ != null || annotationSpec_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -2268,11 +2314,11 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         annotationSpec_ = value;
-        onChanged();
       } else {
         annotationSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2290,11 +2336,11 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder builderForValue) {
       if (annotationSpecBuilder_ == null) {
         annotationSpec_ = builderForValue.build();
-        onChanged();
       } else {
         annotationSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2310,19 +2356,19 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAnnotationSpec(com.google.cloud.datalabeling.v1beta1.AnnotationSpec value) {
       if (annotationSpecBuilder_ == null) {
-        if (annotationSpec_ != null) {
-          annotationSpec_ =
-              com.google.cloud.datalabeling.v1beta1.AnnotationSpec.newBuilder(annotationSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && annotationSpec_ != null
+            && annotationSpec_
+                != com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()) {
+          getAnnotationSpecBuilder().mergeFrom(value);
         } else {
           annotationSpec_ = value;
         }
-        onChanged();
       } else {
         annotationSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2337,14 +2383,13 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
      */
     public Builder clearAnnotationSpec() {
-      if (annotationSpecBuilder_ == null) {
-        annotationSpec_ = null;
-        onChanged();
-      } else {
-        annotationSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      annotationSpec_ = null;
+      if (annotationSpecBuilder_ != null) {
+        annotationSpecBuilder_.dispose();
         annotationSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2359,7 +2404,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
      */
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder getAnnotationSpecBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAnnotationSpecFieldBuilder().getBuilder();
     }
@@ -2445,6 +2490,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     public Builder setAreaUnderCurve(float value) {
 
       areaUnderCurve_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2461,7 +2507,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAreaUnderCurve() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       areaUnderCurve_ = 0F;
       onChanged();
       return this;
@@ -2471,12 +2517,12 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         confidenceMetricsEntries_ = java.util.Collections.emptyList();
 
     private void ensureConfidenceMetricsEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         confidenceMetricsEntries_ =
             new java.util.ArrayList<
                 com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry>(
                 confidenceMetricsEntries_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2737,7 +2783,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     public Builder clearConfidenceMetricsEntries() {
       if (confidenceMetricsEntriesBuilder_ == null) {
         confidenceMetricsEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         confidenceMetricsEntriesBuilder_.clear();
@@ -2892,7 +2938,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.Builder,
                 com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntryOrBuilder>(
                 confidenceMetricsEntries_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         confidenceMetricsEntries_ = null;
@@ -2931,6 +2977,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     public Builder setMeanAveragePrecision(float value) {
 
       meanAveragePrecision_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2946,7 +2993,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMeanAveragePrecision() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       meanAveragePrecision_ = 0F;
       onChanged();
       return this;

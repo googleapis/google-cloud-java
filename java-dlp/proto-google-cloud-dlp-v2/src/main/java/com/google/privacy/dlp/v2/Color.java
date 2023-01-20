@@ -65,7 +65,7 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RED_FIELD_NUMBER = 1;
-  private float red_;
+  private float red_ = 0F;
   /**
    *
    *
@@ -83,7 +83,7 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GREEN_FIELD_NUMBER = 2;
-  private float green_;
+  private float green_ = 0F;
   /**
    *
    *
@@ -101,7 +101,7 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BLUE_FIELD_NUMBER = 3;
-  private float blue_;
+  private float blue_ = 0F;
   /**
    *
    *
@@ -333,12 +333,10 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       red_ = 0F;
-
       green_ = 0F;
-
       blue_ = 0F;
-
       return this;
     }
 
@@ -365,11 +363,24 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.privacy.dlp.v2.Color buildPartial() {
       com.google.privacy.dlp.v2.Color result = new com.google.privacy.dlp.v2.Color(this);
-      result.red_ = red_;
-      result.green_ = green_;
-      result.blue_ = blue_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.Color result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.red_ = red_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.green_ = green_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.blue_ = blue_;
+      }
     }
 
     @java.lang.Override
@@ -455,19 +466,19 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
             case 13:
               {
                 red_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             case 21:
               {
                 green_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             case 29:
               {
                 blue_ = input.readFloat();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29
             default:
@@ -486,6 +497,8 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private float red_;
     /**
@@ -518,6 +531,7 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
     public Builder setRed(float value) {
 
       red_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -533,7 +547,7 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRed() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       red_ = 0F;
       onChanged();
       return this;
@@ -570,6 +584,7 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
     public Builder setGreen(float value) {
 
       green_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -585,7 +600,7 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGreen() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       green_ = 0F;
       onChanged();
       return this;
@@ -622,6 +637,7 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
     public Builder setBlue(float value) {
 
       blue_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -637,7 +653,7 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBlue() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       blue_ = 0F;
       onChanged();
       return this;

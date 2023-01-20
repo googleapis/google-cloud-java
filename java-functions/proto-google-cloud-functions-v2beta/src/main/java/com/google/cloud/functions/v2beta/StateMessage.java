@@ -249,7 +249,7 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SEVERITY_FIELD_NUMBER = 1;
-  private int severity_;
+  private int severity_ = 0;
   /**
    *
    *
@@ -278,16 +278,17 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.functions.v2beta.StateMessage.Severity getSeverity() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.functions.v2beta.StateMessage.Severity result =
-        com.google.cloud.functions.v2beta.StateMessage.Severity.valueOf(severity_);
+        com.google.cloud.functions.v2beta.StateMessage.Severity.forNumber(severity_);
     return result == null
         ? com.google.cloud.functions.v2beta.StateMessage.Severity.UNRECOGNIZED
         : result;
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -336,7 +337,9 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -603,12 +606,10 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       severity_ = 0;
-
       type_ = "";
-
       message_ = "";
-
       return this;
     }
 
@@ -636,11 +637,24 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.functions.v2beta.StateMessage buildPartial() {
       com.google.cloud.functions.v2beta.StateMessage result =
           new com.google.cloud.functions.v2beta.StateMessage(this);
-      result.severity_ = severity_;
-      result.type_ = type_;
-      result.message_ = message_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v2beta.StateMessage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.severity_ = severity_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.message_ = message_;
+      }
     }
 
     @java.lang.Override
@@ -693,10 +707,12 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -728,19 +744,19 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 severity_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 message_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -759,6 +775,8 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int severity_ = 0;
     /**
@@ -789,8 +807,8 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSeverityValue(int value) {
-
       severity_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -807,9 +825,8 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.functions.v2beta.StateMessage.Severity getSeverity() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.functions.v2beta.StateMessage.Severity result =
-          com.google.cloud.functions.v2beta.StateMessage.Severity.valueOf(severity_);
+          com.google.cloud.functions.v2beta.StateMessage.Severity.forNumber(severity_);
       return result == null
           ? com.google.cloud.functions.v2beta.StateMessage.Severity.UNRECOGNIZED
           : result;
@@ -830,7 +847,7 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       severity_ = value.getNumber();
       onChanged();
       return this;
@@ -847,7 +864,7 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSeverity() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       severity_ = 0;
       onChanged();
       return this;
@@ -914,8 +931,8 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -931,8 +948,8 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -953,8 +970,8 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1020,8 +1037,8 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       message_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1037,8 +1054,8 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1059,8 +1076,8 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       message_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -780,7 +780,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           }
 
           public static final int MIN_LENGTH_FIELD_NUMBER = 1;
-          private long minLength_;
+          private long minLength_ = 0L;
           /**
            *
            *
@@ -799,7 +799,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           }
 
           public static final int MAX_LENGTH_FIELD_NUMBER = 2;
-          private long maxLength_;
+          private long maxLength_ = 0L;
           /**
            *
            *
@@ -818,7 +818,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           }
 
           public static final int AVERAGE_LENGTH_FIELD_NUMBER = 3;
-          private double averageLength_;
+          private double averageLength_ = 0D;
           /**
            *
            *
@@ -1094,12 +1094,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             @java.lang.Override
             public Builder clear() {
               super.clear();
+              bitField0_ = 0;
               minLength_ = 0L;
-
               maxLength_ = 0L;
-
               averageLength_ = 0D;
-
               return this;
             }
 
@@ -1139,11 +1137,27 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
                   result =
                       new com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo
                           .StringFieldInfo(this);
-              result.minLength_ = minLength_;
-              result.maxLength_ = maxLength_;
-              result.averageLength_ = averageLength_;
+              if (bitField0_ != 0) {
+                buildPartial0(result);
+              }
               onBuilt();
               return result;
+            }
+
+            private void buildPartial0(
+                com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo
+                        .StringFieldInfo
+                    result) {
+              int from_bitField0_ = bitField0_;
+              if (((from_bitField0_ & 0x00000001) != 0)) {
+                result.minLength_ = minLength_;
+              }
+              if (((from_bitField0_ & 0x00000002) != 0)) {
+                result.maxLength_ = maxLength_;
+              }
+              if (((from_bitField0_ & 0x00000004) != 0)) {
+                result.averageLength_ = averageLength_;
+              }
             }
 
             @java.lang.Override
@@ -1242,19 +1256,19 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
                     case 8:
                       {
                         minLength_ = input.readInt64();
-
+                        bitField0_ |= 0x00000001;
                         break;
                       } // case 8
                     case 16:
                       {
                         maxLength_ = input.readInt64();
-
+                        bitField0_ |= 0x00000002;
                         break;
                       } // case 16
                     case 25:
                       {
                         averageLength_ = input.readDouble();
-
+                        bitField0_ |= 0x00000004;
                         break;
                       } // case 25
                     default:
@@ -1273,6 +1287,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
               } // finally
               return this;
             }
+
+            private int bitField0_;
 
             private long minLength_;
             /**
@@ -1307,6 +1323,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             public Builder setMinLength(long value) {
 
               minLength_ = value;
+              bitField0_ |= 0x00000001;
               onChanged();
               return this;
             }
@@ -1323,7 +1340,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return This builder for chaining.
              */
             public Builder clearMinLength() {
-
+              bitField0_ = (bitField0_ & ~0x00000001);
               minLength_ = 0L;
               onChanged();
               return this;
@@ -1362,6 +1379,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             public Builder setMaxLength(long value) {
 
               maxLength_ = value;
+              bitField0_ |= 0x00000002;
               onChanged();
               return this;
             }
@@ -1378,7 +1396,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return This builder for chaining.
              */
             public Builder clearMaxLength() {
-
+              bitField0_ = (bitField0_ & ~0x00000002);
               maxLength_ = 0L;
               onChanged();
               return this;
@@ -1417,6 +1435,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             public Builder setAverageLength(double value) {
 
               averageLength_ = value;
+              bitField0_ |= 0x00000004;
               onChanged();
               return this;
             }
@@ -1433,7 +1452,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return This builder for chaining.
              */
             public Builder clearAverageLength() {
-
+              bitField0_ = (bitField0_ & ~0x00000004);
               averageLength_ = 0D;
               onChanged();
               return this;
@@ -1697,7 +1716,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           }
 
           public static final int AVERAGE_FIELD_NUMBER = 1;
-          private double average_;
+          private double average_ = 0D;
           /**
            *
            *
@@ -1717,7 +1736,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           }
 
           public static final int STANDARD_DEVIATION_FIELD_NUMBER = 3;
-          private double standardDeviation_;
+          private double standardDeviation_ = 0D;
           /**
            *
            *
@@ -1737,7 +1756,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           }
 
           public static final int MIN_FIELD_NUMBER = 4;
-          private long min_;
+          private long min_ = 0L;
           /**
            *
            *
@@ -1757,6 +1776,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           }
 
           public static final int QUARTILES_FIELD_NUMBER = 6;
+
+          @SuppressWarnings("serial")
           private com.google.protobuf.Internal.LongList quartiles_;
           /**
            *
@@ -1836,7 +1857,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           private int quartilesMemoizedSerializedSize = -1;
 
           public static final int MAX_FIELD_NUMBER = 5;
-          private long max_;
+          private long max_ = 0L;
           /**
            *
            *
@@ -2155,16 +2176,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             @java.lang.Override
             public Builder clear() {
               super.clear();
+              bitField0_ = 0;
               average_ = 0D;
-
               standardDeviation_ = 0D;
-
               min_ = 0L;
-
               quartiles_ = emptyLongList();
-              bitField0_ = (bitField0_ & ~0x00000001);
               max_ = 0L;
-
               return this;
             }
 
@@ -2204,18 +2221,42 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
                   result =
                       new com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo
                           .IntegerFieldInfo(this);
-              int from_bitField0_ = bitField0_;
-              result.average_ = average_;
-              result.standardDeviation_ = standardDeviation_;
-              result.min_ = min_;
-              if (((bitField0_ & 0x00000001) != 0)) {
-                quartiles_.makeImmutable();
-                bitField0_ = (bitField0_ & ~0x00000001);
+              buildPartialRepeatedFields(result);
+              if (bitField0_ != 0) {
+                buildPartial0(result);
               }
-              result.quartiles_ = quartiles_;
-              result.max_ = max_;
               onBuilt();
               return result;
+            }
+
+            private void buildPartialRepeatedFields(
+                com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo
+                        .IntegerFieldInfo
+                    result) {
+              if (((bitField0_ & 0x00000008) != 0)) {
+                quartiles_.makeImmutable();
+                bitField0_ = (bitField0_ & ~0x00000008);
+              }
+              result.quartiles_ = quartiles_;
+            }
+
+            private void buildPartial0(
+                com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo
+                        .IntegerFieldInfo
+                    result) {
+              int from_bitField0_ = bitField0_;
+              if (((from_bitField0_ & 0x00000001) != 0)) {
+                result.average_ = average_;
+              }
+              if (((from_bitField0_ & 0x00000002) != 0)) {
+                result.standardDeviation_ = standardDeviation_;
+              }
+              if (((from_bitField0_ & 0x00000004) != 0)) {
+                result.min_ = min_;
+              }
+              if (((from_bitField0_ & 0x00000010) != 0)) {
+                result.max_ = max_;
+              }
             }
 
             @java.lang.Override
@@ -2288,7 +2329,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
               if (!other.quartiles_.isEmpty()) {
                 if (quartiles_.isEmpty()) {
                   quartiles_ = other.quartiles_;
-                  bitField0_ = (bitField0_ & ~0x00000001);
+                  bitField0_ = (bitField0_ & ~0x00000008);
                 } else {
                   ensureQuartilesIsMutable();
                   quartiles_.addAll(other.quartiles_);
@@ -2327,25 +2368,25 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
                     case 9:
                       {
                         average_ = input.readDouble();
-
+                        bitField0_ |= 0x00000001;
                         break;
                       } // case 9
                     case 25:
                       {
                         standardDeviation_ = input.readDouble();
-
+                        bitField0_ |= 0x00000002;
                         break;
                       } // case 25
                     case 32:
                       {
                         min_ = input.readInt64();
-
+                        bitField0_ |= 0x00000004;
                         break;
                       } // case 32
                     case 40:
                       {
                         max_ = input.readInt64();
-
+                        bitField0_ |= 0x00000010;
                         break;
                       } // case 40
                     case 48:
@@ -2420,6 +2461,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             public Builder setAverage(double value) {
 
               average_ = value;
+              bitField0_ |= 0x00000001;
               onChanged();
               return this;
             }
@@ -2437,7 +2479,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return This builder for chaining.
              */
             public Builder clearAverage() {
-
+              bitField0_ = (bitField0_ & ~0x00000001);
               average_ = 0D;
               onChanged();
               return this;
@@ -2478,6 +2520,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             public Builder setStandardDeviation(double value) {
 
               standardDeviation_ = value;
+              bitField0_ |= 0x00000002;
               onChanged();
               return this;
             }
@@ -2495,7 +2538,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return This builder for chaining.
              */
             public Builder clearStandardDeviation() {
-
+              bitField0_ = (bitField0_ & ~0x00000002);
               standardDeviation_ = 0D;
               onChanged();
               return this;
@@ -2536,6 +2579,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             public Builder setMin(long value) {
 
               min_ = value;
+              bitField0_ |= 0x00000004;
               onChanged();
               return this;
             }
@@ -2553,7 +2597,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return This builder for chaining.
              */
             public Builder clearMin() {
-
+              bitField0_ = (bitField0_ & ~0x00000004);
               min_ = 0L;
               onChanged();
               return this;
@@ -2562,9 +2606,9 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             private com.google.protobuf.Internal.LongList quartiles_ = emptyLongList();
 
             private void ensureQuartilesIsMutable() {
-              if (!((bitField0_ & 0x00000001) != 0)) {
+              if (!((bitField0_ & 0x00000008) != 0)) {
                 quartiles_ = mutableCopy(quartiles_);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
               }
             }
             /**
@@ -2589,7 +2633,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return A list containing the quartiles.
              */
             public java.util.List<java.lang.Long> getQuartilesList() {
-              return ((bitField0_ & 0x00000001) != 0)
+              return ((bitField0_ & 0x00000008) != 0)
                   ? java.util.Collections.unmodifiableList(quartiles_)
                   : quartiles_;
             }
@@ -2666,6 +2710,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return This builder for chaining.
              */
             public Builder setQuartiles(int index, long value) {
+
               ensureQuartilesIsMutable();
               quartiles_.setLong(index, value);
               onChanged();
@@ -2694,6 +2739,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return This builder for chaining.
              */
             public Builder addQuartiles(long value) {
+
               ensureQuartilesIsMutable();
               quartiles_.addLong(value);
               onChanged();
@@ -2750,7 +2796,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              */
             public Builder clearQuartiles() {
               quartiles_ = emptyLongList();
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
               onChanged();
               return this;
             }
@@ -2790,6 +2836,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             public Builder setMax(long value) {
 
               max_ = value;
+              bitField0_ |= 0x00000010;
               onChanged();
               return this;
             }
@@ -2807,7 +2854,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return This builder for chaining.
              */
             public Builder clearMax() {
-
+              bitField0_ = (bitField0_ & ~0x00000010);
               max_ = 0L;
               onChanged();
               return this;
@@ -3070,7 +3117,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           }
 
           public static final int AVERAGE_FIELD_NUMBER = 1;
-          private double average_;
+          private double average_ = 0D;
           /**
            *
            *
@@ -3089,7 +3136,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           }
 
           public static final int STANDARD_DEVIATION_FIELD_NUMBER = 3;
-          private double standardDeviation_;
+          private double standardDeviation_ = 0D;
           /**
            *
            *
@@ -3109,7 +3156,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           }
 
           public static final int MIN_FIELD_NUMBER = 4;
-          private double min_;
+          private double min_ = 0D;
           /**
            *
            *
@@ -3129,6 +3176,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           }
 
           public static final int QUARTILES_FIELD_NUMBER = 6;
+
+          @SuppressWarnings("serial")
           private com.google.protobuf.Internal.DoubleList quartiles_;
           /**
            *
@@ -3208,7 +3257,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           private int quartilesMemoizedSerializedSize = -1;
 
           public static final int MAX_FIELD_NUMBER = 5;
-          private double max_;
+          private double max_ = 0D;
           /**
            *
            *
@@ -3530,16 +3579,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             @java.lang.Override
             public Builder clear() {
               super.clear();
+              bitField0_ = 0;
               average_ = 0D;
-
               standardDeviation_ = 0D;
-
               min_ = 0D;
-
               quartiles_ = emptyDoubleList();
-              bitField0_ = (bitField0_ & ~0x00000001);
               max_ = 0D;
-
               return this;
             }
 
@@ -3579,18 +3624,42 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
                   result =
                       new com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo
                           .DoubleFieldInfo(this);
-              int from_bitField0_ = bitField0_;
-              result.average_ = average_;
-              result.standardDeviation_ = standardDeviation_;
-              result.min_ = min_;
-              if (((bitField0_ & 0x00000001) != 0)) {
-                quartiles_.makeImmutable();
-                bitField0_ = (bitField0_ & ~0x00000001);
+              buildPartialRepeatedFields(result);
+              if (bitField0_ != 0) {
+                buildPartial0(result);
               }
-              result.quartiles_ = quartiles_;
-              result.max_ = max_;
               onBuilt();
               return result;
+            }
+
+            private void buildPartialRepeatedFields(
+                com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo
+                        .DoubleFieldInfo
+                    result) {
+              if (((bitField0_ & 0x00000008) != 0)) {
+                quartiles_.makeImmutable();
+                bitField0_ = (bitField0_ & ~0x00000008);
+              }
+              result.quartiles_ = quartiles_;
+            }
+
+            private void buildPartial0(
+                com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo
+                        .DoubleFieldInfo
+                    result) {
+              int from_bitField0_ = bitField0_;
+              if (((from_bitField0_ & 0x00000001) != 0)) {
+                result.average_ = average_;
+              }
+              if (((from_bitField0_ & 0x00000002) != 0)) {
+                result.standardDeviation_ = standardDeviation_;
+              }
+              if (((from_bitField0_ & 0x00000004) != 0)) {
+                result.min_ = min_;
+              }
+              if (((from_bitField0_ & 0x00000010) != 0)) {
+                result.max_ = max_;
+              }
             }
 
             @java.lang.Override
@@ -3663,7 +3732,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
               if (!other.quartiles_.isEmpty()) {
                 if (quartiles_.isEmpty()) {
                   quartiles_ = other.quartiles_;
-                  bitField0_ = (bitField0_ & ~0x00000001);
+                  bitField0_ = (bitField0_ & ~0x00000008);
                 } else {
                   ensureQuartilesIsMutable();
                   quartiles_.addAll(other.quartiles_);
@@ -3702,25 +3771,25 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
                     case 9:
                       {
                         average_ = input.readDouble();
-
+                        bitField0_ |= 0x00000001;
                         break;
                       } // case 9
                     case 25:
                       {
                         standardDeviation_ = input.readDouble();
-
+                        bitField0_ |= 0x00000002;
                         break;
                       } // case 25
                     case 33:
                       {
                         min_ = input.readDouble();
-
+                        bitField0_ |= 0x00000004;
                         break;
                       } // case 33
                     case 41:
                       {
                         max_ = input.readDouble();
-
+                        bitField0_ |= 0x00000010;
                         break;
                       } // case 41
                     case 49:
@@ -3793,6 +3862,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             public Builder setAverage(double value) {
 
               average_ = value;
+              bitField0_ |= 0x00000001;
               onChanged();
               return this;
             }
@@ -3809,7 +3879,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return This builder for chaining.
              */
             public Builder clearAverage() {
-
+              bitField0_ = (bitField0_ & ~0x00000001);
               average_ = 0D;
               onChanged();
               return this;
@@ -3850,6 +3920,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             public Builder setStandardDeviation(double value) {
 
               standardDeviation_ = value;
+              bitField0_ |= 0x00000002;
               onChanged();
               return this;
             }
@@ -3867,7 +3938,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return This builder for chaining.
              */
             public Builder clearStandardDeviation() {
-
+              bitField0_ = (bitField0_ & ~0x00000002);
               standardDeviation_ = 0D;
               onChanged();
               return this;
@@ -3908,6 +3979,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             public Builder setMin(double value) {
 
               min_ = value;
+              bitField0_ |= 0x00000004;
               onChanged();
               return this;
             }
@@ -3925,7 +3997,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return This builder for chaining.
              */
             public Builder clearMin() {
-
+              bitField0_ = (bitField0_ & ~0x00000004);
               min_ = 0D;
               onChanged();
               return this;
@@ -3934,9 +4006,9 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             private com.google.protobuf.Internal.DoubleList quartiles_ = emptyDoubleList();
 
             private void ensureQuartilesIsMutable() {
-              if (!((bitField0_ & 0x00000001) != 0)) {
+              if (!((bitField0_ & 0x00000008) != 0)) {
                 quartiles_ = mutableCopy(quartiles_);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
               }
             }
             /**
@@ -3961,7 +4033,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return A list containing the quartiles.
              */
             public java.util.List<java.lang.Double> getQuartilesList() {
-              return ((bitField0_ & 0x00000001) != 0)
+              return ((bitField0_ & 0x00000008) != 0)
                   ? java.util.Collections.unmodifiableList(quartiles_)
                   : quartiles_;
             }
@@ -4038,6 +4110,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return This builder for chaining.
              */
             public Builder setQuartiles(int index, double value) {
+
               ensureQuartilesIsMutable();
               quartiles_.setDouble(index, value);
               onChanged();
@@ -4066,6 +4139,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return This builder for chaining.
              */
             public Builder addQuartiles(double value) {
+
               ensureQuartilesIsMutable();
               quartiles_.addDouble(value);
               onChanged();
@@ -4122,7 +4196,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              */
             public Builder clearQuartiles() {
               quartiles_ = emptyDoubleList();
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
               onChanged();
               return this;
             }
@@ -4162,6 +4236,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             public Builder setMax(double value) {
 
               max_ = value;
+              bitField0_ |= 0x00000010;
               onChanged();
               return this;
             }
@@ -4179,7 +4254,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return This builder for chaining.
              */
             public Builder clearMax() {
-
+              bitField0_ = (bitField0_ & ~0x00000010);
               max_ = 0D;
               onChanged();
               return this;
@@ -4354,7 +4429,9 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           }
 
           public static final int VALUE_FIELD_NUMBER = 1;
-          private volatile java.lang.Object value_;
+
+          @SuppressWarnings("serial")
+          private volatile java.lang.Object value_ = "";
           /**
            *
            *
@@ -4403,7 +4480,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           }
 
           public static final int COUNT_FIELD_NUMBER = 2;
-          private long count_;
+          private long count_ = 0L;
           /**
            *
            *
@@ -4665,10 +4742,9 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             @java.lang.Override
             public Builder clear() {
               super.clear();
+              bitField0_ = 0;
               value_ = "";
-
               count_ = 0L;
-
               return this;
             }
 
@@ -4706,10 +4782,23 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
                   result =
                       new com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo
                           .TopNValue(this);
-              result.value_ = value_;
-              result.count_ = count_;
+              if (bitField0_ != 0) {
+                buildPartial0(result);
+              }
               onBuilt();
               return result;
+            }
+
+            private void buildPartial0(
+                com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue
+                    result) {
+              int from_bitField0_ = bitField0_;
+              if (((from_bitField0_ & 0x00000001) != 0)) {
+                result.value_ = value_;
+              }
+              if (((from_bitField0_ & 0x00000002) != 0)) {
+                result.count_ = count_;
+              }
             }
 
             @java.lang.Override
@@ -4771,6 +4860,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
                       .TopNValue.getDefaultInstance()) return this;
               if (!other.getValue().isEmpty()) {
                 value_ = other.value_;
+                bitField0_ |= 0x00000001;
                 onChanged();
               }
               if (other.getCount() != 0L) {
@@ -4805,13 +4895,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
                     case 10:
                       {
                         value_ = input.readStringRequireUtf8();
-
+                        bitField0_ |= 0x00000001;
                         break;
                       } // case 10
                     case 16:
                       {
                         count_ = input.readInt64();
-
+                        bitField0_ |= 0x00000002;
                         break;
                       } // case 16
                     default:
@@ -4830,6 +4920,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
               } // finally
               return this;
             }
+
+            private int bitField0_;
 
             private java.lang.Object value_ = "";
             /**
@@ -4892,8 +4984,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
               if (value == null) {
                 throw new NullPointerException();
               }
-
               value_ = value;
+              bitField0_ |= 0x00000001;
               onChanged();
               return this;
             }
@@ -4909,8 +5001,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return This builder for chaining.
              */
             public Builder clearValue() {
-
               value_ = getDefaultInstance().getValue();
+              bitField0_ = (bitField0_ & ~0x00000001);
               onChanged();
               return this;
             }
@@ -4931,8 +5023,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
                 throw new NullPointerException();
               }
               checkByteStringIsUtf8(value);
-
               value_ = value;
+              bitField0_ |= 0x00000001;
               onChanged();
               return this;
             }
@@ -4968,6 +5060,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             public Builder setCount(long value) {
 
               count_ = value;
+              bitField0_ |= 0x00000002;
               onChanged();
               return this;
             }
@@ -4983,7 +5076,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              * @return This builder for chaining.
              */
             public Builder clearCount() {
-
+              bitField0_ = (bitField0_ & ~0x00000002);
               count_ = 0L;
               onChanged();
               return this;
@@ -5111,7 +5204,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
         }
 
         public static final int NULL_RATIO_FIELD_NUMBER = 2;
-        private double nullRatio_;
+        private double nullRatio_ = 0D;
         /**
          *
          *
@@ -5129,7 +5222,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
         }
 
         public static final int DISTINCT_RATIO_FIELD_NUMBER = 3;
-        private double distinctRatio_;
+        private double distinctRatio_ = 0D;
         /**
          *
          *
@@ -5148,6 +5241,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
         }
 
         public static final int TOP_N_VALUES_FIELD_NUMBER = 4;
+
+        @SuppressWarnings("serial")
         private java.util.List<
                 com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue>
             topNValues_;
@@ -5771,17 +5866,16 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             nullRatio_ = 0D;
-
             distinctRatio_ = 0D;
-
             if (topNValuesBuilder_ == null) {
               topNValues_ = java.util.Collections.emptyList();
             } else {
               topNValues_ = null;
               topNValuesBuilder_.clear();
             }
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             if (stringProfileBuilder_ != null) {
               stringProfileBuilder_.clear();
             }
@@ -5824,42 +5918,52 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
               buildPartial() {
             com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo result =
                 new com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo(this);
-            int from_bitField0_ = bitField0_;
-            result.nullRatio_ = nullRatio_;
-            result.distinctRatio_ = distinctRatio_;
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            buildPartialOneofs(result);
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo result) {
             if (topNValuesBuilder_ == null) {
-              if (((bitField0_ & 0x00000001) != 0)) {
+              if (((bitField0_ & 0x00000004) != 0)) {
                 topNValues_ = java.util.Collections.unmodifiableList(topNValues_);
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000004);
               }
               result.topNValues_ = topNValues_;
             } else {
               result.topNValues_ = topNValuesBuilder_.build();
             }
-            if (fieldInfoCase_ == 101) {
-              if (stringProfileBuilder_ == null) {
-                result.fieldInfo_ = fieldInfo_;
-              } else {
-                result.fieldInfo_ = stringProfileBuilder_.build();
-              }
+          }
+
+          private void buildPartial0(
+              com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.nullRatio_ = nullRatio_;
             }
-            if (fieldInfoCase_ == 102) {
-              if (integerProfileBuilder_ == null) {
-                result.fieldInfo_ = fieldInfo_;
-              } else {
-                result.fieldInfo_ = integerProfileBuilder_.build();
-              }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.distinctRatio_ = distinctRatio_;
             }
-            if (fieldInfoCase_ == 103) {
-              if (doubleProfileBuilder_ == null) {
-                result.fieldInfo_ = fieldInfo_;
-              } else {
-                result.fieldInfo_ = doubleProfileBuilder_.build();
-              }
-            }
+          }
+
+          private void buildPartialOneofs(
+              com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo result) {
             result.fieldInfoCase_ = fieldInfoCase_;
-            onBuilt();
-            return result;
+            result.fieldInfo_ = this.fieldInfo_;
+            if (fieldInfoCase_ == 101 && stringProfileBuilder_ != null) {
+              result.fieldInfo_ = stringProfileBuilder_.build();
+            }
+            if (fieldInfoCase_ == 102 && integerProfileBuilder_ != null) {
+              result.fieldInfo_ = integerProfileBuilder_.build();
+            }
+            if (fieldInfoCase_ == 103 && doubleProfileBuilder_ != null) {
+              result.fieldInfo_ = doubleProfileBuilder_.build();
+            }
           }
 
           @java.lang.Override
@@ -5925,7 +6029,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
               if (!other.topNValues_.isEmpty()) {
                 if (topNValues_.isEmpty()) {
                   topNValues_ = other.topNValues_;
-                  bitField0_ = (bitField0_ & ~0x00000001);
+                  bitField0_ = (bitField0_ & ~0x00000004);
                 } else {
                   ensureTopNValuesIsMutable();
                   topNValues_.addAll(other.topNValues_);
@@ -5938,7 +6042,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
                   topNValuesBuilder_.dispose();
                   topNValuesBuilder_ = null;
                   topNValues_ = other.topNValues_;
-                  bitField0_ = (bitField0_ & ~0x00000001);
+                  bitField0_ = (bitField0_ & ~0x00000004);
                   topNValuesBuilder_ =
                       com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                           ? getTopNValuesFieldBuilder()
@@ -5998,13 +6102,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
                   case 17:
                     {
                       nullRatio_ = input.readDouble();
-
+                      bitField0_ |= 0x00000001;
                       break;
                     } // case 17
                   case 25:
                     {
                       distinctRatio_ = input.readDouble();
-
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 25
                   case 34:
@@ -6109,6 +6213,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           public Builder setNullRatio(double value) {
 
             nullRatio_ = value;
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -6124,7 +6229,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            * @return This builder for chaining.
            */
           public Builder clearNullRatio() {
-
+            bitField0_ = (bitField0_ & ~0x00000001);
             nullRatio_ = 0D;
             onChanged();
             return this;
@@ -6163,6 +6268,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           public Builder setDistinctRatio(double value) {
 
             distinctRatio_ = value;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -6179,7 +6285,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            * @return This builder for chaining.
            */
           public Builder clearDistinctRatio() {
-
+            bitField0_ = (bitField0_ & ~0x00000002);
             distinctRatio_ = 0D;
             onChanged();
             return this;
@@ -6191,12 +6297,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
               topNValues_ = java.util.Collections.emptyList();
 
           private void ensureTopNValuesIsMutable() {
-            if (!((bitField0_ & 0x00000001) != 0)) {
+            if (!((bitField0_ & 0x00000004) != 0)) {
               topNValues_ =
                   new java.util.ArrayList<
                       com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo
                           .TopNValue>(topNValues_);
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000004;
             }
           }
 
@@ -6494,7 +6600,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           public Builder clearTopNValues() {
             if (topNValuesBuilder_ == null) {
               topNValues_ = java.util.Collections.emptyList();
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               onChanged();
             } else {
               topNValuesBuilder_.clear();
@@ -6676,7 +6782,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
                       com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo
                           .TopNValueOrBuilder>(
                       topNValues_,
-                      ((bitField0_ & 0x00000001) != 0),
+                      ((bitField0_ & 0x00000004) != 0),
                       getParentForChildren(),
                       isClean());
               topNValues_ = null;
@@ -6947,7 +7053,6 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             }
             fieldInfoCase_ = 101;
             onChanged();
-            ;
             return stringProfileBuilder_;
           }
 
@@ -7214,7 +7319,6 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             }
             fieldInfoCase_ = 102;
             onChanged();
-            ;
             return integerProfileBuilder_;
           }
 
@@ -7481,7 +7585,6 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             }
             fieldInfoCase_ = 103;
             onChanged();
-            ;
             return doubleProfileBuilder_;
           }
 
@@ -7555,7 +7658,9 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
       }
 
       public static final int NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object name_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object name_ = "";
       /**
        *
        *
@@ -7604,7 +7709,9 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
       }
 
       public static final int TYPE_FIELD_NUMBER = 2;
-      private volatile java.lang.Object type_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object type_ = "";
       /**
        *
        *
@@ -7683,7 +7790,9 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
       }
 
       public static final int MODE_FIELD_NUMBER = 3;
-      private volatile java.lang.Object mode_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object mode_ = "";
       /**
        *
        *
@@ -7787,7 +7896,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfoOrBuilder
           getProfileOrBuilder() {
-        return getProfile();
+        return profile_ == null
+            ? com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo
+                .getDefaultInstance()
+            : profile_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -8022,16 +8134,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           name_ = "";
-
           type_ = "";
-
           mode_ = "";
-
-          if (profileBuilder_ == null) {
-            profile_ = null;
-          } else {
-            profile_ = null;
+          profile_ = null;
+          if (profileBuilder_ != null) {
+            profileBuilder_.dispose();
             profileBuilder_ = null;
           }
           return this;
@@ -8062,16 +8171,28 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
         public com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field buildPartial() {
           com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field result =
               new com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field(this);
-          result.name_ = name_;
-          result.type_ = type_;
-          result.mode_ = mode_;
-          if (profileBuilder_ == null) {
-            result.profile_ = profile_;
-          } else {
-            result.profile_ = profileBuilder_.build();
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.name_ = name_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.type_ = type_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.mode_ = mode_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.profile_ = profileBuilder_ == null ? profile_ : profileBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -8126,14 +8247,17 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             return this;
           if (!other.getName().isEmpty()) {
             name_ = other.name_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getType().isEmpty()) {
             type_ = other.type_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           if (!other.getMode().isEmpty()) {
             mode_ = other.mode_;
+            bitField0_ |= 0x00000004;
             onChanged();
           }
           if (other.hasProfile()) {
@@ -8168,25 +8292,25 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
                 case 10:
                   {
                     name_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     type_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 case 26:
                   {
                     mode_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 26
                 case 34:
                   {
                     input.readMessage(getProfileFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 34
                 default:
@@ -8205,6 +8329,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object name_ = "";
         /**
@@ -8267,8 +8393,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           if (value == null) {
             throw new NullPointerException();
           }
-
           name_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -8284,8 +8410,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          * @return This builder for chaining.
          */
         public Builder clearName() {
-
           name_ = getDefaultInstance().getName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -8306,8 +8432,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           name_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -8418,8 +8544,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           if (value == null) {
             throw new NullPointerException();
           }
-
           type_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -8450,8 +8576,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          * @return This builder for chaining.
          */
         public Builder clearType() {
-
           type_ = getDefaultInstance().getType();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -8487,8 +8613,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           type_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -8563,8 +8689,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           if (value == null) {
             throw new NullPointerException();
           }
-
           mode_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -8583,8 +8709,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          * @return This builder for chaining.
          */
         public Builder clearMode() {
-
           mode_ = getDefaultInstance().getMode();
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
@@ -8608,8 +8734,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           mode_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -8633,7 +8759,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          * @return Whether the profile field is set.
          */
         public boolean hasProfile() {
-          return profileBuilder_ != null || profile_ != null;
+          return ((bitField0_ & 0x00000008) != 0);
         }
         /**
          *
@@ -8675,11 +8801,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
               throw new NullPointerException();
             }
             profile_ = value;
-            onChanged();
           } else {
             profileBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -8697,11 +8823,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
                 builderForValue) {
           if (profileBuilder_ == null) {
             profile_ = builderForValue.build();
-            onChanged();
           } else {
             profileBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -8717,20 +8843,20 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
         public Builder mergeProfile(
             com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo value) {
           if (profileBuilder_ == null) {
-            if (profile_ != null) {
-              profile_ =
-                  com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo
-                      .newBuilder(profile_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000008) != 0)
+                && profile_ != null
+                && profile_
+                    != com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo
+                        .getDefaultInstance()) {
+              getProfileBuilder().mergeFrom(value);
             } else {
               profile_ = value;
             }
-            onChanged();
           } else {
             profileBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -8744,14 +8870,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          * </code>
          */
         public Builder clearProfile() {
-          if (profileBuilder_ == null) {
-            profile_ = null;
-            onChanged();
-          } else {
-            profile_ = null;
+          bitField0_ = (bitField0_ & ~0x00000008);
+          profile_ = null;
+          if (profileBuilder_ != null) {
+            profileBuilder_.dispose();
             profileBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -8766,7 +8891,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          */
         public com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.Builder
             getProfileBuilder() {
-
+          bitField0_ |= 0x00000008;
           onChanged();
           return getProfileFieldBuilder().getBuilder();
         }
@@ -8887,6 +9012,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int FIELDS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field> fields_;
     /**
      *
@@ -9161,6 +9288,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (fieldsBuilder_ == null) {
           fields_ = java.util.Collections.emptyList();
         } else {
@@ -9195,7 +9323,16 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
       public com.google.cloud.dataplex.v1.DataProfileResult.Profile buildPartial() {
         com.google.cloud.dataplex.v1.DataProfileResult.Profile result =
             new com.google.cloud.dataplex.v1.DataProfileResult.Profile(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dataplex.v1.DataProfileResult.Profile result) {
         if (fieldsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             fields_ = java.util.Collections.unmodifiableList(fields_);
@@ -9205,8 +9342,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
         } else {
           result.fields_ = fieldsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dataplex.v1.DataProfileResult.Profile result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -9774,7 +9913,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ROW_COUNT_FIELD_NUMBER = 3;
-  private long rowCount_;
+  private long rowCount_ = 0L;
   /**
    *
    *
@@ -9837,7 +9976,9 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.DataProfileResult.ProfileOrBuilder getProfileOrBuilder() {
-    return getProfile();
+    return profile_ == null
+        ? com.google.cloud.dataplex.v1.DataProfileResult.Profile.getDefaultInstance()
+        : profile_;
   }
 
   public static final int SCANNED_DATA_FIELD_NUMBER = 5;
@@ -9885,7 +10026,9 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.ScannedDataOrBuilder getScannedDataOrBuilder() {
-    return getScannedData();
+    return scannedData_ == null
+        ? com.google.cloud.dataplex.v1.ScannedData.getDefaultInstance()
+        : scannedData_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -10114,18 +10257,16 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       rowCount_ = 0L;
-
-      if (profileBuilder_ == null) {
-        profile_ = null;
-      } else {
-        profile_ = null;
+      profile_ = null;
+      if (profileBuilder_ != null) {
+        profileBuilder_.dispose();
         profileBuilder_ = null;
       }
-      if (scannedDataBuilder_ == null) {
-        scannedData_ = null;
-      } else {
-        scannedData_ = null;
+      scannedData_ = null;
+      if (scannedDataBuilder_ != null) {
+        scannedDataBuilder_.dispose();
         scannedDataBuilder_ = null;
       }
       return this;
@@ -10155,19 +10296,25 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dataplex.v1.DataProfileResult buildPartial() {
       com.google.cloud.dataplex.v1.DataProfileResult result =
           new com.google.cloud.dataplex.v1.DataProfileResult(this);
-      result.rowCount_ = rowCount_;
-      if (profileBuilder_ == null) {
-        result.profile_ = profile_;
-      } else {
-        result.profile_ = profileBuilder_.build();
-      }
-      if (scannedDataBuilder_ == null) {
-        result.scannedData_ = scannedData_;
-      } else {
-        result.scannedData_ = scannedDataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.DataProfileResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.rowCount_ = rowCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.profile_ = profileBuilder_ == null ? profile_ : profileBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.scannedData_ =
+            scannedDataBuilder_ == null ? scannedData_ : scannedDataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -10253,19 +10400,19 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             case 24:
               {
                 rowCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getProfileFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getScannedDataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             default:
@@ -10284,6 +10431,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long rowCount_;
     /**
@@ -10318,6 +10467,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
     public Builder setRowCount(long value) {
 
       rowCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -10334,7 +10484,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRowCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       rowCount_ = 0L;
       onChanged();
       return this;
@@ -10358,7 +10508,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      * @return Whether the profile field is set.
      */
     public boolean hasProfile() {
-      return profileBuilder_ != null || profile_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -10395,11 +10545,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         profile_ = value;
-        onChanged();
       } else {
         profileBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -10415,11 +10565,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
         com.google.cloud.dataplex.v1.DataProfileResult.Profile.Builder builderForValue) {
       if (profileBuilder_ == null) {
         profile_ = builderForValue.build();
-        onChanged();
       } else {
         profileBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -10433,19 +10583,19 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeProfile(com.google.cloud.dataplex.v1.DataProfileResult.Profile value) {
       if (profileBuilder_ == null) {
-        if (profile_ != null) {
-          profile_ =
-              com.google.cloud.dataplex.v1.DataProfileResult.Profile.newBuilder(profile_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && profile_ != null
+            && profile_
+                != com.google.cloud.dataplex.v1.DataProfileResult.Profile.getDefaultInstance()) {
+          getProfileBuilder().mergeFrom(value);
         } else {
           profile_ = value;
         }
-        onChanged();
       } else {
         profileBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -10458,14 +10608,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
      */
     public Builder clearProfile() {
-      if (profileBuilder_ == null) {
-        profile_ = null;
-        onChanged();
-      } else {
-        profile_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      profile_ = null;
+      if (profileBuilder_ != null) {
+        profileBuilder_.dispose();
         profileBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -10478,7 +10627,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
      */
     public com.google.cloud.dataplex.v1.DataProfileResult.Profile.Builder getProfileBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getProfileFieldBuilder().getBuilder();
     }
@@ -10544,7 +10693,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      * @return Whether the scannedData field is set.
      */
     public boolean hasScannedData() {
-      return scannedDataBuilder_ != null || scannedData_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -10581,11 +10730,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         scannedData_ = value;
-        onChanged();
       } else {
         scannedDataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -10601,11 +10750,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
         com.google.cloud.dataplex.v1.ScannedData.Builder builderForValue) {
       if (scannedDataBuilder_ == null) {
         scannedData_ = builderForValue.build();
-        onChanged();
       } else {
         scannedDataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -10619,19 +10768,18 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeScannedData(com.google.cloud.dataplex.v1.ScannedData value) {
       if (scannedDataBuilder_ == null) {
-        if (scannedData_ != null) {
-          scannedData_ =
-              com.google.cloud.dataplex.v1.ScannedData.newBuilder(scannedData_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && scannedData_ != null
+            && scannedData_ != com.google.cloud.dataplex.v1.ScannedData.getDefaultInstance()) {
+          getScannedDataBuilder().mergeFrom(value);
         } else {
           scannedData_ = value;
         }
-        onChanged();
       } else {
         scannedDataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -10644,14 +10792,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
      */
     public Builder clearScannedData() {
-      if (scannedDataBuilder_ == null) {
-        scannedData_ = null;
-        onChanged();
-      } else {
-        scannedData_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      scannedData_ = null;
+      if (scannedDataBuilder_ != null) {
+        scannedDataBuilder_.dispose();
         scannedDataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -10664,7 +10811,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
      */
     public com.google.cloud.dataplex.v1.ScannedData.Builder getScannedDataBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getScannedDataFieldBuilder().getBuilder();
     }

@@ -235,11 +235,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
-      return getField();
+      return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
     }
 
     public static final int CUSTOM_TAG_FIELD_NUMBER = 2;
-    private volatile java.lang.Object customTag_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object customTag_ = "";
     /**
      *
      *
@@ -508,14 +510,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (fieldBuilder_ == null) {
-          field_ = null;
-        } else {
-          field_ = null;
+        bitField0_ = 0;
+        field_ = null;
+        if (fieldBuilder_ != null) {
+          fieldBuilder_.dispose();
           fieldBuilder_ = null;
         }
         customTag_ = "";
-
         return this;
       }
 
@@ -544,14 +545,22 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
       public com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField buildPartial() {
         com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField result =
             new com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField(this);
-        if (fieldBuilder_ == null) {
-          result.field_ = field_;
-        } else {
-          result.field_ = fieldBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.customTag_ = customTag_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.field_ = fieldBuilder_ == null ? field_ : fieldBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.customTag_ = customTag_;
+        }
       }
 
       @java.lang.Override
@@ -609,6 +618,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
         }
         if (!other.getCustomTag().isEmpty()) {
           customTag_ = other.customTag_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -640,13 +650,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
               case 10:
                 {
                   input.readMessage(getFieldFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   customTag_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -666,6 +676,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.privacy.dlp.v2.FieldId field_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.FieldId,
@@ -684,7 +696,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
        * @return Whether the field field is set.
        */
       public boolean hasField() {
-        return fieldBuilder_ != null || field_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -719,11 +731,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
             throw new NullPointerException();
           }
           field_ = value;
-          onChanged();
         } else {
           fieldBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -738,11 +750,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
       public Builder setField(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
         if (fieldBuilder_ == null) {
           field_ = builderForValue.build();
-          onChanged();
         } else {
           fieldBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -756,19 +768,18 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
        */
       public Builder mergeField(com.google.privacy.dlp.v2.FieldId value) {
         if (fieldBuilder_ == null) {
-          if (field_ != null) {
-            field_ =
-                com.google.privacy.dlp.v2.FieldId.newBuilder(field_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && field_ != null
+              && field_ != com.google.privacy.dlp.v2.FieldId.getDefaultInstance()) {
+            getFieldBuilder().mergeFrom(value);
           } else {
             field_ = value;
           }
-          onChanged();
         } else {
           fieldBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -781,14 +792,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
        * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
        */
       public Builder clearField() {
-        if (fieldBuilder_ == null) {
-          field_ = null;
-          onChanged();
-        } else {
-          field_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        field_ = null;
+        if (fieldBuilder_ != null) {
+          fieldBuilder_.dispose();
           fieldBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -801,7 +811,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
        * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
        */
       public com.google.privacy.dlp.v2.FieldId.Builder getFieldBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getFieldFieldBuilder().getBuilder();
       }
@@ -914,8 +924,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         customTag_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -933,8 +943,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearCustomTag() {
-
         customTag_ = getDefaultInstance().getCustomTag();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -957,8 +967,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         customTag_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1076,10 +1086,12 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder() {
-    return getTable();
+    return table_ == null ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance() : table_;
   }
 
   public static final int QUASI_IDS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField> quasiIds_;
   /**
    *
@@ -1215,7 +1227,9 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getRelativeFrequencyOrBuilder() {
-    return getRelativeFrequency();
+    return relativeFrequency_ == null
+        ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance()
+        : relativeFrequency_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1451,10 +1465,10 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (tableBuilder_ == null) {
-        table_ = null;
-      } else {
-        table_ = null;
+      bitField0_ = 0;
+      table_ = null;
+      if (tableBuilder_ != null) {
+        tableBuilder_.dispose();
         tableBuilder_ = null;
       }
       if (quasiIdsBuilder_ == null) {
@@ -1463,11 +1477,10 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
         quasiIds_ = null;
         quasiIdsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (relativeFrequencyBuilder_ == null) {
-        relativeFrequency_ = null;
-      } else {
-        relativeFrequency_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      relativeFrequency_ = null;
+      if (relativeFrequencyBuilder_ != null) {
+        relativeFrequencyBuilder_.dispose();
         relativeFrequencyBuilder_ = null;
       }
       return this;
@@ -1497,28 +1510,37 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
     public com.google.privacy.dlp.v2.StatisticalTable buildPartial() {
       com.google.privacy.dlp.v2.StatisticalTable result =
           new com.google.privacy.dlp.v2.StatisticalTable(this);
-      int from_bitField0_ = bitField0_;
-      if (tableBuilder_ == null) {
-        result.table_ = table_;
-      } else {
-        result.table_ = tableBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.StatisticalTable result) {
       if (quasiIdsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           quasiIds_ = java.util.Collections.unmodifiableList(quasiIds_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.quasiIds_ = quasiIds_;
       } else {
         result.quasiIds_ = quasiIdsBuilder_.build();
       }
-      if (relativeFrequencyBuilder_ == null) {
-        result.relativeFrequency_ = relativeFrequency_;
-      } else {
-        result.relativeFrequency_ = relativeFrequencyBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.StatisticalTable result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.table_ = tableBuilder_ == null ? table_ : tableBuilder_.build();
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.relativeFrequency_ =
+            relativeFrequencyBuilder_ == null
+                ? relativeFrequency_
+                : relativeFrequencyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1573,7 +1595,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
         if (!other.quasiIds_.isEmpty()) {
           if (quasiIds_.isEmpty()) {
             quasiIds_ = other.quasiIds_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureQuasiIdsIsMutable();
             quasiIds_.addAll(other.quasiIds_);
@@ -1586,7 +1608,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
             quasiIdsBuilder_.dispose();
             quasiIdsBuilder_ = null;
             quasiIds_ = other.quasiIds_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             quasiIdsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getQuasiIdsFieldBuilder()
@@ -1643,13 +1665,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     getRelativeFrequencyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getTableFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             default:
@@ -1691,7 +1713,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      * @return Whether the table field is set.
      */
     public boolean hasTable() {
-      return tableBuilder_ != null || table_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1732,11 +1754,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         table_ = value;
-        onChanged();
       } else {
         tableBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1753,11 +1775,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
     public Builder setTable(com.google.privacy.dlp.v2.BigQueryTable.Builder builderForValue) {
       if (tableBuilder_ == null) {
         table_ = builderForValue.build();
-        onChanged();
       } else {
         tableBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1773,19 +1795,18 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTable(com.google.privacy.dlp.v2.BigQueryTable value) {
       if (tableBuilder_ == null) {
-        if (table_ != null) {
-          table_ =
-              com.google.privacy.dlp.v2.BigQueryTable.newBuilder(table_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && table_ != null
+            && table_ != com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()) {
+          getTableBuilder().mergeFrom(value);
         } else {
           table_ = value;
         }
-        onChanged();
       } else {
         tableBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1800,14 +1821,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearTable() {
-      if (tableBuilder_ == null) {
-        table_ = null;
-        onChanged();
-      } else {
-        table_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      table_ = null;
+      if (tableBuilder_ != null) {
+        tableBuilder_.dispose();
         tableBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1822,7 +1842,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.privacy.dlp.v2.BigQueryTable.Builder getTableBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTableFieldBuilder().getBuilder();
     }
@@ -1878,11 +1898,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
         quasiIds_ = java.util.Collections.emptyList();
 
     private void ensureQuasiIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         quasiIds_ =
             new java.util.ArrayList<
                 com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField>(quasiIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2128,7 +2148,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
     public Builder clearQuasiIds() {
       if (quasiIdsBuilder_ == null) {
         quasiIds_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         quasiIdsBuilder_.clear();
@@ -2272,7 +2292,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
                 com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField,
                 com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField.Builder,
                 com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierFieldOrBuilder>(
-                quasiIds_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                quasiIds_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         quasiIds_ = null;
       }
       return quasiIdsBuilder_;
@@ -2299,7 +2319,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      * @return Whether the relativeFrequency field is set.
      */
     public boolean hasRelativeFrequency() {
-      return relativeFrequencyBuilder_ != null || relativeFrequency_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2342,11 +2362,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         relativeFrequency_ = value;
-        onChanged();
       } else {
         relativeFrequencyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2364,11 +2384,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
     public Builder setRelativeFrequency(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (relativeFrequencyBuilder_ == null) {
         relativeFrequency_ = builderForValue.build();
-        onChanged();
       } else {
         relativeFrequencyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2385,19 +2405,18 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeRelativeFrequency(com.google.privacy.dlp.v2.FieldId value) {
       if (relativeFrequencyBuilder_ == null) {
-        if (relativeFrequency_ != null) {
-          relativeFrequency_ =
-              com.google.privacy.dlp.v2.FieldId.newBuilder(relativeFrequency_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && relativeFrequency_ != null
+            && relativeFrequency_ != com.google.privacy.dlp.v2.FieldId.getDefaultInstance()) {
+          getRelativeFrequencyBuilder().mergeFrom(value);
         } else {
           relativeFrequency_ = value;
         }
-        onChanged();
       } else {
         relativeFrequencyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2413,14 +2432,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearRelativeFrequency() {
-      if (relativeFrequencyBuilder_ == null) {
-        relativeFrequency_ = null;
-        onChanged();
-      } else {
-        relativeFrequency_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      relativeFrequency_ = null;
+      if (relativeFrequencyBuilder_ != null) {
+        relativeFrequencyBuilder_.dispose();
         relativeFrequencyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2436,7 +2454,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder getRelativeFrequencyBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getRelativeFrequencyFieldBuilder().getBuilder();
     }

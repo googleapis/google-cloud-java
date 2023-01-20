@@ -69,7 +69,9 @@ public final class ProcessLinks extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROCESS_FIELD_NUMBER = 1;
-  private volatile java.lang.Object process_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object process_ = "";
   /**
    *
    *
@@ -120,6 +122,8 @@ public final class ProcessLinks extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LINKS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.lineage.v1.ProcessLinkInfo> links_;
   /**
    *
@@ -417,15 +421,15 @@ public final class ProcessLinks extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       process_ = "";
-
       if (linksBuilder_ == null) {
         links_ = java.util.Collections.emptyList();
       } else {
         links_ = null;
         linksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -453,19 +457,32 @@ public final class ProcessLinks extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.lineage.v1.ProcessLinks buildPartial() {
       com.google.cloud.datacatalog.lineage.v1.ProcessLinks result =
           new com.google.cloud.datacatalog.lineage.v1.ProcessLinks(this);
-      int from_bitField0_ = bitField0_;
-      result.process_ = process_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datacatalog.lineage.v1.ProcessLinks result) {
       if (linksBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           links_ = java.util.Collections.unmodifiableList(links_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.links_ = links_;
       } else {
         result.links_ = linksBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.lineage.v1.ProcessLinks result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.process_ = process_;
+      }
     }
 
     @java.lang.Override
@@ -516,13 +533,14 @@ public final class ProcessLinks extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getProcess().isEmpty()) {
         process_ = other.process_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (linksBuilder_ == null) {
         if (!other.links_.isEmpty()) {
           if (links_.isEmpty()) {
             links_ = other.links_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureLinksIsMutable();
             links_.addAll(other.links_);
@@ -535,7 +553,7 @@ public final class ProcessLinks extends com.google.protobuf.GeneratedMessageV3
             linksBuilder_.dispose();
             linksBuilder_ = null;
             links_ = other.links_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             linksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLinksFieldBuilder()
@@ -574,7 +592,7 @@ public final class ProcessLinks extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 process_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -674,8 +692,8 @@ public final class ProcessLinks extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       process_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -692,8 +710,8 @@ public final class ProcessLinks extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProcess() {
-
       process_ = getDefaultInstance().getProcess();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -715,8 +733,8 @@ public final class ProcessLinks extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       process_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -725,11 +743,11 @@ public final class ProcessLinks extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureLinksIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         links_ =
             new java.util.ArrayList<com.google.cloud.datacatalog.lineage.v1.ProcessLinkInfo>(
                 links_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -994,7 +1012,7 @@ public final class ProcessLinks extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLinks() {
       if (linksBuilder_ == null) {
         links_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         linksBuilder_.clear();
@@ -1149,7 +1167,7 @@ public final class ProcessLinks extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datacatalog.lineage.v1.ProcessLinkInfo,
                 com.google.cloud.datacatalog.lineage.v1.ProcessLinkInfo.Builder,
                 com.google.cloud.datacatalog.lineage.v1.ProcessLinkInfoOrBuilder>(
-                links_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                links_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         links_ = null;
       }
       return linksBuilder_;

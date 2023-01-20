@@ -460,6 +460,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int WORDS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList words_;
       /**
        *
@@ -735,6 +737,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           words_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000001);
           return this;
@@ -765,14 +768,26 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList buildPartial() {
           com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList result =
               new com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList result) {
           if (((bitField0_ & 0x00000001) != 0)) {
             words_ = words_.getUnmodifiableView();
             bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.words_ = words_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList result) {
+          int from_bitField0_ = bitField0_;
         }
 
         @java.lang.Override
@@ -1544,6 +1559,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (wordListBuilder_ != null) {
           wordListBuilder_.clear();
         }
@@ -1579,23 +1595,27 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       public com.google.privacy.dlp.v2.CustomInfoType.Dictionary buildPartial() {
         com.google.privacy.dlp.v2.CustomInfoType.Dictionary result =
             new com.google.privacy.dlp.v2.CustomInfoType.Dictionary(this);
-        if (sourceCase_ == 1) {
-          if (wordListBuilder_ == null) {
-            result.source_ = source_;
-          } else {
-            result.source_ = wordListBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (sourceCase_ == 3) {
-          if (cloudStoragePathBuilder_ == null) {
-            result.source_ = source_;
-          } else {
-            result.source_ = cloudStoragePathBuilder_.build();
-          }
-        }
-        result.sourceCase_ = sourceCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.privacy.dlp.v2.CustomInfoType.Dictionary result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(com.google.privacy.dlp.v2.CustomInfoType.Dictionary result) {
+        result.sourceCase_ = sourceCase_;
+        result.source_ = this.source_;
+        if (sourceCase_ == 1 && wordListBuilder_ != null) {
+          result.source_ = wordListBuilder_.build();
+        }
+        if (sourceCase_ == 3 && cloudStoragePathBuilder_ != null) {
+          result.source_ = cloudStoragePathBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1731,6 +1751,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList,
@@ -1945,7 +1967,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         }
         sourceCase_ = 1;
         onChanged();
-        ;
         return wordListBuilder_;
       }
 
@@ -2164,7 +2185,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         }
         sourceCase_ = 3;
         onChanged();
-        ;
         return cloudStoragePathBuilder_;
       }
 
@@ -2358,7 +2378,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PATTERN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object pattern_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pattern_ = "";
     /**
      *
      *
@@ -2411,6 +2433,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GROUP_INDEXES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList groupIndexes_;
     /**
      *
@@ -2687,10 +2711,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         pattern_ = "";
-
         groupIndexes_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -2718,15 +2741,28 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       public com.google.privacy.dlp.v2.CustomInfoType.Regex buildPartial() {
         com.google.privacy.dlp.v2.CustomInfoType.Regex result =
             new com.google.privacy.dlp.v2.CustomInfoType.Regex(this);
-        int from_bitField0_ = bitField0_;
-        result.pattern_ = pattern_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          groupIndexes_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.groupIndexes_ = groupIndexes_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.privacy.dlp.v2.CustomInfoType.Regex result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          groupIndexes_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.groupIndexes_ = groupIndexes_;
+      }
+
+      private void buildPartial0(com.google.privacy.dlp.v2.CustomInfoType.Regex result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.pattern_ = pattern_;
+        }
       }
 
       @java.lang.Override
@@ -2779,12 +2815,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getPattern().isEmpty()) {
           pattern_ = other.pattern_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.groupIndexes_.isEmpty()) {
           if (groupIndexes_.isEmpty()) {
             groupIndexes_ = other.groupIndexes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureGroupIndexesIsMutable();
             groupIndexes_.addAll(other.groupIndexes_);
@@ -2820,7 +2857,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   pattern_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
@@ -2927,8 +2964,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         pattern_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2946,8 +2983,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPattern() {
-
         pattern_ = getDefaultInstance().getPattern();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2970,8 +3007,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         pattern_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2979,9 +3016,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       private com.google.protobuf.Internal.IntList groupIndexes_ = emptyIntList();
 
       private void ensureGroupIndexesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           groupIndexes_ = mutableCopy(groupIndexes_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -2997,7 +3034,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the groupIndexes.
        */
       public java.util.List<java.lang.Integer> getGroupIndexesList() {
-        return ((bitField0_ & 0x00000001) != 0)
+        return ((bitField0_ & 0x00000002) != 0)
             ? java.util.Collections.unmodifiableList(groupIndexes_)
             : groupIndexes_;
       }
@@ -3047,6 +3084,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setGroupIndexes(int index, int value) {
+
         ensureGroupIndexesIsMutable();
         groupIndexes_.setInt(index, value);
         onChanged();
@@ -3066,6 +3104,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder addGroupIndexes(int value) {
+
         ensureGroupIndexesIsMutable();
         groupIndexes_.addInt(value);
         onChanged();
@@ -3104,7 +3143,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearGroupIndexes() {
         groupIndexes_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -3795,7 +3834,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int WINDOW_BEFORE_FIELD_NUMBER = 1;
-      private int windowBefore_;
+      private int windowBefore_ = 0;
       /**
        *
        *
@@ -3817,7 +3856,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int WINDOW_AFTER_FIELD_NUMBER = 2;
-      private int windowAfter_;
+      private int windowAfter_ = 0;
       /**
        *
        *
@@ -4047,10 +4086,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           windowBefore_ = 0;
-
           windowAfter_ = 0;
-
           return this;
         }
 
@@ -4080,10 +4118,22 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity buildPartial() {
           com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity result =
               new com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity(this);
-          result.windowBefore_ = windowBefore_;
-          result.windowAfter_ = windowAfter_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.windowBefore_ = windowBefore_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.windowAfter_ = windowAfter_;
+          }
         }
 
         @java.lang.Override
@@ -4172,13 +4222,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
                 case 8:
                   {
                     windowBefore_ = input.readInt32();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 16:
                   {
                     windowAfter_ = input.readInt32();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 default:
@@ -4197,6 +4247,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private int windowBefore_;
         /**
@@ -4237,6 +4289,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         public Builder setWindowBefore(int value) {
 
           windowBefore_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -4256,7 +4309,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearWindowBefore() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           windowBefore_ = 0;
           onChanged();
           return this;
@@ -4293,6 +4346,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         public Builder setWindowAfter(int value) {
 
           windowAfter_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -4308,7 +4362,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearWindowAfter() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           windowAfter_ = 0;
           onChanged();
           return this;
@@ -4607,9 +4661,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.privacy.dlp.v2.Likelihood getFixedLikelihood() {
         if (adjustmentCase_ == 1) {
-          @SuppressWarnings("deprecation")
           com.google.privacy.dlp.v2.Likelihood result =
-              com.google.privacy.dlp.v2.Likelihood.valueOf((java.lang.Integer) adjustment_);
+              com.google.privacy.dlp.v2.Likelihood.forNumber((java.lang.Integer) adjustment_);
           return result == null ? com.google.privacy.dlp.v2.Likelihood.UNRECOGNIZED : result;
         }
         return com.google.privacy.dlp.v2.Likelihood.LIKELIHOOD_UNSPECIFIED;
@@ -4908,6 +4961,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           adjustmentCase_ = 0;
           adjustment_ = null;
           return this;
@@ -4941,15 +4995,23 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             buildPartial() {
           com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment result =
               new com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment(this);
-          if (adjustmentCase_ == 1) {
-            result.adjustment_ = adjustment_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          if (adjustmentCase_ == 2) {
-            result.adjustment_ = adjustment_;
-          }
-          result.adjustmentCase_ = adjustmentCase_;
+          buildPartialOneofs(result);
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment result) {
+          result.adjustmentCase_ = adjustmentCase_;
+          result.adjustment_ = this.adjustment_;
         }
 
         @java.lang.Override
@@ -5092,6 +5154,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private int bitField0_;
+
         /**
          *
          *
@@ -5157,9 +5221,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public com.google.privacy.dlp.v2.Likelihood getFixedLikelihood() {
           if (adjustmentCase_ == 1) {
-            @SuppressWarnings("deprecation")
             com.google.privacy.dlp.v2.Likelihood result =
-                com.google.privacy.dlp.v2.Likelihood.valueOf((java.lang.Integer) adjustment_);
+                com.google.privacy.dlp.v2.Likelihood.forNumber((java.lang.Integer) adjustment_);
             return result == null ? com.google.privacy.dlp.v2.Likelihood.UNRECOGNIZED : result;
           }
           return com.google.privacy.dlp.v2.Likelihood.LIKELIHOOD_UNSPECIFIED;
@@ -5270,6 +5333,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setRelativeLikelihood(int value) {
+
           adjustmentCase_ = 2;
           adjustment_ = value;
           onChanged();
@@ -5616,7 +5680,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder getHotwordRegexOrBuilder() {
-        return getHotwordRegex();
+        return hotwordRegex_ == null
+            ? com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance()
+            : hotwordRegex_;
       }
 
       public static final int PROXIMITY_FIELD_NUMBER = 2;
@@ -5698,7 +5764,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.ProximityOrBuilder
           getProximityOrBuilder() {
-        return getProximity();
+        return proximity_ == null
+            ? com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.getDefaultInstance()
+            : proximity_;
       }
 
       public static final int LIKELIHOOD_ADJUSTMENT_FIELD_NUMBER = 3;
@@ -5756,7 +5824,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustmentOrBuilder
           getLikelihoodAdjustmentOrBuilder() {
-        return getLikelihoodAdjustment();
+        return likelihoodAdjustment_ == null
+            ? com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+                .getDefaultInstance()
+            : likelihoodAdjustment_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -5998,22 +6069,20 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          if (hotwordRegexBuilder_ == null) {
-            hotwordRegex_ = null;
-          } else {
-            hotwordRegex_ = null;
+          bitField0_ = 0;
+          hotwordRegex_ = null;
+          if (hotwordRegexBuilder_ != null) {
+            hotwordRegexBuilder_.dispose();
             hotwordRegexBuilder_ = null;
           }
-          if (proximityBuilder_ == null) {
-            proximity_ = null;
-          } else {
-            proximity_ = null;
+          proximity_ = null;
+          if (proximityBuilder_ != null) {
+            proximityBuilder_.dispose();
             proximityBuilder_ = null;
           }
-          if (likelihoodAdjustmentBuilder_ == null) {
-            likelihoodAdjustment_ = null;
-          } else {
-            likelihoodAdjustment_ = null;
+          likelihoodAdjustment_ = null;
+          if (likelihoodAdjustmentBuilder_ != null) {
+            likelihoodAdjustmentBuilder_.dispose();
             likelihoodAdjustmentBuilder_ = null;
           }
           return this;
@@ -6046,23 +6115,29 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule buildPartial() {
           com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule result =
               new com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule(this);
-          if (hotwordRegexBuilder_ == null) {
-            result.hotwordRegex_ = hotwordRegex_;
-          } else {
-            result.hotwordRegex_ = hotwordRegexBuilder_.build();
-          }
-          if (proximityBuilder_ == null) {
-            result.proximity_ = proximity_;
-          } else {
-            result.proximity_ = proximityBuilder_.build();
-          }
-          if (likelihoodAdjustmentBuilder_ == null) {
-            result.likelihoodAdjustment_ = likelihoodAdjustment_;
-          } else {
-            result.likelihoodAdjustment_ = likelihoodAdjustmentBuilder_.build();
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.hotwordRegex_ =
+                hotwordRegexBuilder_ == null ? hotwordRegex_ : hotwordRegexBuilder_.build();
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.proximity_ = proximityBuilder_ == null ? proximity_ : proximityBuilder_.build();
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.likelihoodAdjustment_ =
+                likelihoodAdjustmentBuilder_ == null
+                    ? likelihoodAdjustment_
+                    : likelihoodAdjustmentBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -6155,20 +6230,20 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
                   {
                     input.readMessage(
                         getHotwordRegexFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     input.readMessage(getProximityFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 case 26:
                   {
                     input.readMessage(
                         getLikelihoodAdjustmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 26
                 default:
@@ -6188,6 +6263,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private int bitField0_;
+
         private com.google.privacy.dlp.v2.CustomInfoType.Regex hotwordRegex_;
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.privacy.dlp.v2.CustomInfoType.Regex,
@@ -6206,7 +6283,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the hotwordRegex field is set.
          */
         public boolean hasHotwordRegex() {
-          return hotwordRegexBuilder_ != null || hotwordRegex_ != null;
+          return ((bitField0_ & 0x00000001) != 0);
         }
         /**
          *
@@ -6243,11 +6320,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             hotwordRegex_ = value;
-            onChanged();
           } else {
             hotwordRegexBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -6263,11 +6340,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder builderForValue) {
           if (hotwordRegexBuilder_ == null) {
             hotwordRegex_ = builderForValue.build();
-            onChanged();
           } else {
             hotwordRegexBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -6281,19 +6358,19 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder mergeHotwordRegex(com.google.privacy.dlp.v2.CustomInfoType.Regex value) {
           if (hotwordRegexBuilder_ == null) {
-            if (hotwordRegex_ != null) {
-              hotwordRegex_ =
-                  com.google.privacy.dlp.v2.CustomInfoType.Regex.newBuilder(hotwordRegex_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000001) != 0)
+                && hotwordRegex_ != null
+                && hotwordRegex_
+                    != com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance()) {
+              getHotwordRegexBuilder().mergeFrom(value);
             } else {
               hotwordRegex_ = value;
             }
-            onChanged();
           } else {
             hotwordRegexBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -6306,14 +6383,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
          */
         public Builder clearHotwordRegex() {
-          if (hotwordRegexBuilder_ == null) {
-            hotwordRegex_ = null;
-            onChanged();
-          } else {
-            hotwordRegex_ = null;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          hotwordRegex_ = null;
+          if (hotwordRegexBuilder_ != null) {
+            hotwordRegexBuilder_.dispose();
             hotwordRegexBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -6326,7 +6402,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
          */
         public com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder getHotwordRegexBuilder() {
-
+          bitField0_ |= 0x00000001;
           onChanged();
           return getHotwordRegexFieldBuilder().getBuilder();
         }
@@ -6403,7 +6479,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the proximity field is set.
          */
         public boolean hasProximity() {
-          return proximityBuilder_ != null || proximity_ != null;
+          return ((bitField0_ & 0x00000002) != 0);
         }
         /**
          *
@@ -6464,11 +6540,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             proximity_ = value;
-            onChanged();
           } else {
             proximityBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -6496,11 +6572,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
                 builderForValue) {
           if (proximityBuilder_ == null) {
             proximity_ = builderForValue.build();
-            onChanged();
           } else {
             proximityBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -6526,20 +6602,20 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         public Builder mergeProximity(
             com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity value) {
           if (proximityBuilder_ == null) {
-            if (proximity_ != null) {
-              proximity_ =
-                  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.newBuilder(
-                          proximity_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000002) != 0)
+                && proximity_ != null
+                && proximity_
+                    != com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity
+                        .getDefaultInstance()) {
+              getProximityBuilder().mergeFrom(value);
             } else {
               proximity_ = value;
             }
-            onChanged();
           } else {
             proximityBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -6563,14 +6639,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
          */
         public Builder clearProximity() {
-          if (proximityBuilder_ == null) {
-            proximity_ = null;
-            onChanged();
-          } else {
-            proximity_ = null;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          proximity_ = null;
+          if (proximityBuilder_ != null) {
+            proximityBuilder_.dispose();
             proximityBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -6595,7 +6670,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          */
         public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder
             getProximityBuilder() {
-
+          bitField0_ |= 0x00000002;
           onChanged();
           return getProximityFieldBuilder().getBuilder();
         }
@@ -6689,7 +6764,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the likelihoodAdjustment field is set.
          */
         public boolean hasLikelihoodAdjustment() {
-          return likelihoodAdjustmentBuilder_ != null || likelihoodAdjustment_ != null;
+          return ((bitField0_ & 0x00000004) != 0);
         }
         /**
          *
@@ -6733,11 +6808,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             likelihoodAdjustment_ = value;
-            onChanged();
           } else {
             likelihoodAdjustmentBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -6756,11 +6831,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
                 builderForValue) {
           if (likelihoodAdjustmentBuilder_ == null) {
             likelihoodAdjustment_ = builderForValue.build();
-            onChanged();
           } else {
             likelihoodAdjustmentBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -6777,20 +6852,20 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         public Builder mergeLikelihoodAdjustment(
             com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment value) {
           if (likelihoodAdjustmentBuilder_ == null) {
-            if (likelihoodAdjustment_ != null) {
-              likelihoodAdjustment_ =
-                  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
-                      .newBuilder(likelihoodAdjustment_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000004) != 0)
+                && likelihoodAdjustment_ != null
+                && likelihoodAdjustment_
+                    != com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+                        .getDefaultInstance()) {
+              getLikelihoodAdjustmentBuilder().mergeFrom(value);
             } else {
               likelihoodAdjustment_ = value;
             }
-            onChanged();
           } else {
             likelihoodAdjustmentBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -6805,14 +6880,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         public Builder clearLikelihoodAdjustment() {
-          if (likelihoodAdjustmentBuilder_ == null) {
-            likelihoodAdjustment_ = null;
-            onChanged();
-          } else {
-            likelihoodAdjustment_ = null;
+          bitField0_ = (bitField0_ & ~0x00000004);
+          likelihoodAdjustment_ = null;
+          if (likelihoodAdjustmentBuilder_ != null) {
+            likelihoodAdjustmentBuilder_.dispose();
             likelihoodAdjustmentBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -6828,7 +6902,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          */
         public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.Builder
             getLikelihoodAdjustmentBuilder() {
-
+          bitField0_ |= 0x00000004;
           onChanged();
           return getLikelihoodAdjustmentFieldBuilder().getBuilder();
         }
@@ -7272,6 +7346,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (hotwordRuleBuilder_ != null) {
           hotwordRuleBuilder_.clear();
         }
@@ -7304,16 +7379,25 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule buildPartial() {
         com.google.privacy.dlp.v2.CustomInfoType.DetectionRule result =
             new com.google.privacy.dlp.v2.CustomInfoType.DetectionRule(this);
-        if (typeCase_ == 1) {
-          if (hotwordRuleBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = hotwordRuleBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.typeCase_ = typeCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule result) {
+        result.typeCase_ = typeCase_;
+        result.type_ = this.type_;
+        if (typeCase_ == 1 && hotwordRuleBuilder_ != null) {
+          result.type_ = hotwordRuleBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -7437,6 +7521,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule,
@@ -7665,7 +7751,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         }
         typeCase_ = 1;
         onChanged();
-        ;
         return hotwordRuleBuilder_;
       }
 
@@ -7844,11 +7929,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder() {
-    return getInfoType();
+    return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
   }
 
   public static final int LIKELIHOOD_FIELD_NUMBER = 6;
-  private int likelihood_;
+  private int likelihood_ = 0;
   /**
    *
    *
@@ -7881,9 +7966,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.Likelihood getLikelihood() {
-    @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.Likelihood result =
-        com.google.privacy.dlp.v2.Likelihood.valueOf(likelihood_);
+        com.google.privacy.dlp.v2.Likelihood.forNumber(likelihood_);
     return result == null ? com.google.privacy.dlp.v2.Likelihood.UNRECOGNIZED : result;
   }
 
@@ -8099,6 +8183,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DETECTION_RULES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule> detectionRules_;
   /**
    *
@@ -8180,7 +8266,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXCLUSION_TYPE_FIELD_NUMBER = 8;
-  private int exclusionType_;
+  private int exclusionType_ = 0;
   /**
    *
    *
@@ -8211,9 +8297,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.CustomInfoType.ExclusionType getExclusionType() {
-    @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.CustomInfoType.ExclusionType result =
-        com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.valueOf(exclusionType_);
+        com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.forNumber(exclusionType_);
     return result == null
         ? com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.UNRECOGNIZED
         : result;
@@ -8523,14 +8608,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (infoTypeBuilder_ == null) {
-        infoType_ = null;
-      } else {
-        infoType_ = null;
+      bitField0_ = 0;
+      infoType_ = null;
+      if (infoTypeBuilder_ != null) {
+        infoTypeBuilder_.dispose();
         infoTypeBuilder_ = null;
       }
       likelihood_ = 0;
-
       if (dictionaryBuilder_ != null) {
         dictionaryBuilder_.clear();
       }
@@ -8549,9 +8633,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         detectionRules_ = null;
         detectionRulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000040);
       exclusionType_ = 0;
-
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -8581,54 +8664,55 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.CustomInfoType buildPartial() {
       com.google.privacy.dlp.v2.CustomInfoType result =
           new com.google.privacy.dlp.v2.CustomInfoType(this);
-      int from_bitField0_ = bitField0_;
-      if (infoTypeBuilder_ == null) {
-        result.infoType_ = infoType_;
-      } else {
-        result.infoType_ = infoTypeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.likelihood_ = likelihood_;
-      if (typeCase_ == 2) {
-        if (dictionaryBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = dictionaryBuilder_.build();
-        }
-      }
-      if (typeCase_ == 3) {
-        if (regexBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = regexBuilder_.build();
-        }
-      }
-      if (typeCase_ == 4) {
-        if (surrogateTypeBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = surrogateTypeBuilder_.build();
-        }
-      }
-      if (typeCase_ == 5) {
-        if (storedTypeBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = storedTypeBuilder_.build();
-        }
-      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.CustomInfoType result) {
       if (detectionRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           detectionRules_ = java.util.Collections.unmodifiableList(detectionRules_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.detectionRules_ = detectionRules_;
       } else {
         result.detectionRules_ = detectionRulesBuilder_.build();
       }
-      result.exclusionType_ = exclusionType_;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.CustomInfoType result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.infoType_ = infoTypeBuilder_ == null ? infoType_ : infoTypeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.likelihood_ = likelihood_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.exclusionType_ = exclusionType_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.CustomInfoType result) {
       result.typeCase_ = typeCase_;
-      onBuilt();
-      return result;
+      result.type_ = this.type_;
+      if (typeCase_ == 2 && dictionaryBuilder_ != null) {
+        result.type_ = dictionaryBuilder_.build();
+      }
+      if (typeCase_ == 3 && regexBuilder_ != null) {
+        result.type_ = regexBuilder_.build();
+      }
+      if (typeCase_ == 4 && surrogateTypeBuilder_ != null) {
+        result.type_ = surrogateTypeBuilder_.build();
+      }
+      if (typeCase_ == 5 && storedTypeBuilder_ != null) {
+        result.type_ = storedTypeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -8686,7 +8770,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         if (!other.detectionRules_.isEmpty()) {
           if (detectionRules_.isEmpty()) {
             detectionRules_ = other.detectionRules_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureDetectionRulesIsMutable();
             detectionRules_.addAll(other.detectionRules_);
@@ -8699,7 +8783,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             detectionRulesBuilder_.dispose();
             detectionRulesBuilder_ = null;
             detectionRules_ = other.detectionRules_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000040);
             detectionRulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDetectionRulesFieldBuilder()
@@ -8767,7 +8851,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getInfoTypeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -8797,7 +8881,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             case 48:
               {
                 likelihood_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 48
             case 58:
@@ -8817,7 +8901,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             case 64:
               {
                 exclusionType_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             default:
@@ -8876,7 +8960,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the infoType field is set.
      */
     public boolean hasInfoType() {
-      return infoTypeBuilder_ != null || infoType_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -8923,11 +9007,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         infoType_ = value;
-        onChanged();
       } else {
         infoTypeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -8947,11 +9031,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     public Builder setInfoType(com.google.privacy.dlp.v2.InfoType.Builder builderForValue) {
       if (infoTypeBuilder_ == null) {
         infoType_ = builderForValue.build();
-        onChanged();
       } else {
         infoTypeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -8970,19 +9054,18 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeInfoType(com.google.privacy.dlp.v2.InfoType value) {
       if (infoTypeBuilder_ == null) {
-        if (infoType_ != null) {
-          infoType_ =
-              com.google.privacy.dlp.v2.InfoType.newBuilder(infoType_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && infoType_ != null
+            && infoType_ != com.google.privacy.dlp.v2.InfoType.getDefaultInstance()) {
+          getInfoTypeBuilder().mergeFrom(value);
         } else {
           infoType_ = value;
         }
-        onChanged();
       } else {
         infoTypeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -9000,14 +9083,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
      */
     public Builder clearInfoType() {
-      if (infoTypeBuilder_ == null) {
-        infoType_ = null;
-        onChanged();
-      } else {
-        infoType_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      infoType_ = null;
+      if (infoTypeBuilder_ != null) {
+        infoTypeBuilder_.dispose();
         infoTypeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -9025,7 +9107,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
      */
     public com.google.privacy.dlp.v2.InfoType.Builder getInfoTypeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getInfoTypeFieldBuilder().getBuilder();
     }
@@ -9116,8 +9198,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLikelihoodValue(int value) {
-
       likelihood_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -9136,9 +9218,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.Likelihood getLikelihood() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.Likelihood result =
-          com.google.privacy.dlp.v2.Likelihood.valueOf(likelihood_);
+          com.google.privacy.dlp.v2.Likelihood.forNumber(likelihood_);
       return result == null ? com.google.privacy.dlp.v2.Likelihood.UNRECOGNIZED : result;
     }
     /**
@@ -9159,7 +9240,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       likelihood_ = value.getNumber();
       onChanged();
       return this;
@@ -9178,7 +9259,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLikelihood() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       likelihood_ = 0;
       onChanged();
       return this;
@@ -9390,7 +9471,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 2;
       onChanged();
-      ;
       return dictionaryBuilder_;
     }
 
@@ -9600,7 +9680,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 3;
       onChanged();
-      ;
       return regexBuilder_;
     }
 
@@ -9823,7 +9902,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 4;
       onChanged();
-      ;
       return surrogateTypeBuilder_;
     }
 
@@ -10038,7 +10116,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 5;
       onChanged();
-      ;
       return storedTypeBuilder_;
     }
 
@@ -10046,11 +10123,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDetectionRulesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         detectionRules_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>(
                 detectionRules_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -10303,7 +10380,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDetectionRules() {
       if (detectionRulesBuilder_ == null) {
         detectionRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         detectionRulesBuilder_.clear();
@@ -10452,7 +10529,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder,
                 com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder>(
                 detectionRules_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         detectionRules_ = null;
@@ -10491,8 +10568,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setExclusionTypeValue(int value) {
-
       exclusionType_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -10510,9 +10587,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.CustomInfoType.ExclusionType getExclusionType() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.CustomInfoType.ExclusionType result =
-          com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.valueOf(exclusionType_);
+          com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.forNumber(exclusionType_);
       return result == null
           ? com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.UNRECOGNIZED
           : result;
@@ -10534,7 +10610,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       exclusionType_ = value.getNumber();
       onChanged();
       return this;
@@ -10552,7 +10628,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExclusionType() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       exclusionType_ = 0;
       onChanged();
       return this;

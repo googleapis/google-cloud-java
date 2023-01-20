@@ -68,7 +68,9 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_CONTENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object textContent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object textContent_ = "";
   /**
    *
    *
@@ -313,8 +315,8 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       textContent_ = "";
-
       return this;
     }
 
@@ -342,9 +344,18 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.TextPayload buildPartial() {
       com.google.cloud.datalabeling.v1beta1.TextPayload result =
           new com.google.cloud.datalabeling.v1beta1.TextPayload(this);
-      result.textContent_ = textContent_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.TextPayload result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.textContent_ = textContent_;
+      }
     }
 
     @java.lang.Override
@@ -395,6 +406,7 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getTextContent().isEmpty()) {
         textContent_ = other.textContent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -426,7 +438,7 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 textContent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -445,6 +457,8 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object textContent_ = "";
     /**
@@ -507,8 +521,8 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       textContent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -524,8 +538,8 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTextContent() {
-
       textContent_ = getDefaultInstance().getTextContent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -546,8 +560,8 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       textContent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

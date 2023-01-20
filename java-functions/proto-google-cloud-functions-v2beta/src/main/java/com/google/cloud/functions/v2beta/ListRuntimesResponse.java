@@ -525,7 +525,9 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -574,7 +576,9 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     }
 
     public static final int DISPLAY_NAME_FIELD_NUMBER = 5;
-    private volatile java.lang.Object displayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
     /**
      *
      *
@@ -623,7 +627,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     }
 
     public static final int STAGE_FIELD_NUMBER = 2;
-    private int stage_;
+    private int stage_ = 0;
     /**
      *
      *
@@ -652,15 +656,16 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.functions.v2beta.ListRuntimesResponse.RuntimeStage getStage() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.functions.v2beta.ListRuntimesResponse.RuntimeStage result =
-          com.google.cloud.functions.v2beta.ListRuntimesResponse.RuntimeStage.valueOf(stage_);
+          com.google.cloud.functions.v2beta.ListRuntimesResponse.RuntimeStage.forNumber(stage_);
       return result == null
           ? com.google.cloud.functions.v2beta.ListRuntimesResponse.RuntimeStage.UNRECOGNIZED
           : result;
     }
 
     public static final int WARNINGS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList warnings_;
     /**
      *
@@ -722,7 +727,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     }
 
     public static final int ENVIRONMENT_FIELD_NUMBER = 4;
-    private int environment_;
+    private int environment_ = 0;
     /**
      *
      *
@@ -751,9 +756,8 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.functions.v2beta.Environment getEnvironment() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.functions.v2beta.Environment result =
-          com.google.cloud.functions.v2beta.Environment.valueOf(environment_);
+          com.google.cloud.functions.v2beta.Environment.forNumber(environment_);
       return result == null ? com.google.cloud.functions.v2beta.Environment.UNRECOGNIZED : result;
     }
 
@@ -1009,16 +1013,13 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         displayName_ = "";
-
         stage_ = 0;
-
         warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         environment_ = 0;
-
         return this;
       }
 
@@ -1047,18 +1048,38 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       public com.google.cloud.functions.v2beta.ListRuntimesResponse.Runtime buildPartial() {
         com.google.cloud.functions.v2beta.ListRuntimesResponse.Runtime result =
             new com.google.cloud.functions.v2beta.ListRuntimesResponse.Runtime(this);
-        int from_bitField0_ = bitField0_;
-        result.name_ = name_;
-        result.displayName_ = displayName_;
-        result.stage_ = stage_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          warnings_ = warnings_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.warnings_ = warnings_;
-        result.environment_ = environment_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.functions.v2beta.ListRuntimesResponse.Runtime result) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          warnings_ = warnings_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.warnings_ = warnings_;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.functions.v2beta.ListRuntimesResponse.Runtime result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.displayName_ = displayName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.stage_ = stage_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.environment_ = environment_;
+        }
       }
 
       @java.lang.Override
@@ -1113,10 +1134,12 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.stage_ != 0) {
@@ -1125,7 +1148,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         if (!other.warnings_.isEmpty()) {
           if (warnings_.isEmpty()) {
             warnings_ = other.warnings_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureWarningsIsMutable();
             warnings_.addAll(other.warnings_);
@@ -1164,13 +1187,13 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   stage_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 16
               case 26:
@@ -1183,13 +1206,13 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
               case 32:
                 {
                   environment_ = input.readEnum();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 32
               case 42:
                 {
                   displayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 42
               default:
@@ -1272,8 +1295,8 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1289,8 +1312,8 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1311,8 +1334,8 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1378,8 +1401,8 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
         displayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1395,8 +1418,8 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
-
         displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1417,8 +1440,8 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         displayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1452,8 +1475,8 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder setStageValue(int value) {
-
         stage_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1470,9 +1493,8 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
        */
       @java.lang.Override
       public com.google.cloud.functions.v2beta.ListRuntimesResponse.RuntimeStage getStage() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.functions.v2beta.ListRuntimesResponse.RuntimeStage result =
-            com.google.cloud.functions.v2beta.ListRuntimesResponse.RuntimeStage.valueOf(stage_);
+            com.google.cloud.functions.v2beta.ListRuntimesResponse.RuntimeStage.forNumber(stage_);
         return result == null
             ? com.google.cloud.functions.v2beta.ListRuntimesResponse.RuntimeStage.UNRECOGNIZED
             : result;
@@ -1494,7 +1516,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         stage_ = value.getNumber();
         onChanged();
         return this;
@@ -1511,7 +1533,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearStage() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         stage_ = 0;
         onChanged();
         return this;
@@ -1521,9 +1543,9 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureWarningsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           warnings_ = new com.google.protobuf.LazyStringArrayList(warnings_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
         }
       }
       /**
@@ -1658,7 +1680,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
        */
       public Builder clearWarnings() {
         warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1714,8 +1736,8 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder setEnvironmentValue(int value) {
-
         environment_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1732,9 +1754,8 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
        */
       @java.lang.Override
       public com.google.cloud.functions.v2beta.Environment getEnvironment() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.functions.v2beta.Environment result =
-            com.google.cloud.functions.v2beta.Environment.valueOf(environment_);
+            com.google.cloud.functions.v2beta.Environment.forNumber(environment_);
         return result == null ? com.google.cloud.functions.v2beta.Environment.UNRECOGNIZED : result;
       }
       /**
@@ -1753,7 +1774,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000010;
         environment_ = value.getNumber();
         onChanged();
         return this;
@@ -1770,7 +1791,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearEnvironment() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         environment_ = 0;
         onChanged();
         return this;
@@ -1844,6 +1865,8 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int RUNTIMES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.functions.v2beta.ListRuntimesResponse.Runtime> runtimes_;
   /**
    *
@@ -2115,6 +2138,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (runtimesBuilder_ == null) {
         runtimes_ = java.util.Collections.emptyList();
       } else {
@@ -2149,7 +2173,16 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.functions.v2beta.ListRuntimesResponse buildPartial() {
       com.google.cloud.functions.v2beta.ListRuntimesResponse result =
           new com.google.cloud.functions.v2beta.ListRuntimesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.functions.v2beta.ListRuntimesResponse result) {
       if (runtimesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           runtimes_ = java.util.Collections.unmodifiableList(runtimes_);
@@ -2159,8 +2192,10 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       } else {
         result.runtimes_ = runtimesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v2beta.ListRuntimesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

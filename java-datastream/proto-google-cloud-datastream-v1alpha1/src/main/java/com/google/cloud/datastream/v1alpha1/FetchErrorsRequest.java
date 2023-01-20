@@ -68,7 +68,9 @@ public final class FetchErrorsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int STREAM_FIELD_NUMBER = 1;
-  private volatile java.lang.Object stream_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stream_ = "";
   /**
    *
    *
@@ -314,8 +316,8 @@ public final class FetchErrorsRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       stream_ = "";
-
       return this;
     }
 
@@ -343,9 +345,18 @@ public final class FetchErrorsRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.datastream.v1alpha1.FetchErrorsRequest buildPartial() {
       com.google.cloud.datastream.v1alpha1.FetchErrorsRequest result =
           new com.google.cloud.datastream.v1alpha1.FetchErrorsRequest(this);
-      result.stream_ = stream_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1alpha1.FetchErrorsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.stream_ = stream_;
+      }
     }
 
     @java.lang.Override
@@ -396,6 +407,7 @@ public final class FetchErrorsRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getStream().isEmpty()) {
         stream_ = other.stream_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -427,7 +439,7 @@ public final class FetchErrorsRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 stream_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -446,6 +458,8 @@ public final class FetchErrorsRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object stream_ = "";
     /**
@@ -508,8 +522,8 @@ public final class FetchErrorsRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       stream_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -525,8 +539,8 @@ public final class FetchErrorsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearStream() {
-
       stream_ = getDefaultInstance().getStream();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -547,8 +561,8 @@ public final class FetchErrorsRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       stream_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -70,7 +70,9 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ROLLOUT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object rollout_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rollout_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PHASE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object phaseId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object phaseId_ = "";
   /**
    *
    *
@@ -176,7 +180,9 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int JOB_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object jobId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object jobId_ = "";
   /**
    *
    *
@@ -439,12 +445,10 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       rollout_ = "";
-
       phaseId_ = "";
-
       jobId_ = "";
-
       return this;
     }
 
@@ -472,11 +476,24 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.deploy.v1.RetryJobRequest buildPartial() {
       com.google.cloud.deploy.v1.RetryJobRequest result =
           new com.google.cloud.deploy.v1.RetryJobRequest(this);
-      result.rollout_ = rollout_;
-      result.phaseId_ = phaseId_;
-      result.jobId_ = jobId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.RetryJobRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.rollout_ = rollout_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.phaseId_ = phaseId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.jobId_ = jobId_;
+      }
     }
 
     @java.lang.Override
@@ -526,14 +543,17 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.deploy.v1.RetryJobRequest.getDefaultInstance()) return this;
       if (!other.getRollout().isEmpty()) {
         rollout_ = other.rollout_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPhaseId().isEmpty()) {
         phaseId_ = other.phaseId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getJobId().isEmpty()) {
         jobId_ = other.jobId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -565,19 +585,19 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 rollout_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 phaseId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 jobId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -596,6 +616,8 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object rollout_ = "";
     /**
@@ -670,8 +692,8 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       rollout_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -691,8 +713,8 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearRollout() {
-
       rollout_ = getDefaultInstance().getRollout();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -717,8 +739,8 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       rollout_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -784,8 +806,8 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       phaseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -801,8 +823,8 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPhaseId() {
-
       phaseId_ = getDefaultInstance().getPhaseId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -823,8 +845,8 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       phaseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -890,8 +912,8 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       jobId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -907,8 +929,8 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearJobId() {
-
       jobId_ = getDefaultInstance().getJobId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -929,8 +951,8 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       jobId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

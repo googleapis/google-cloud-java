@@ -279,7 +279,9 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BUILD_FIELD_NUMBER = 1;
-  private volatile java.lang.Object build_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object build_ = "";
   /**
    *
    *
@@ -334,7 +336,9 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARTIFACT_URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object artifactUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object artifactUri_ = "";
   /**
    *
    *
@@ -385,7 +389,9 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EVENT_LOG_PATH_FIELD_NUMBER = 3;
-  private volatile java.lang.Object eventLogPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object eventLogPath_ = "";
   /**
    *
    *
@@ -434,7 +440,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FAILURE_CAUSE_FIELD_NUMBER = 4;
-  private int failureCause_;
+  private int failureCause_ = 0;
   /**
    *
    *
@@ -469,16 +475,17 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.VerifyJobRun.FailureCause getFailureCause() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.deploy.v1.VerifyJobRun.FailureCause result =
-        com.google.cloud.deploy.v1.VerifyJobRun.FailureCause.valueOf(failureCause_);
+        com.google.cloud.deploy.v1.VerifyJobRun.FailureCause.forNumber(failureCause_);
     return result == null
         ? com.google.cloud.deploy.v1.VerifyJobRun.FailureCause.UNRECOGNIZED
         : result;
   }
 
   public static final int FAILURE_MESSAGE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object failureMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object failureMessage_ = "";
   /**
    *
    *
@@ -762,16 +769,12 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       build_ = "";
-
       artifactUri_ = "";
-
       eventLogPath_ = "";
-
       failureCause_ = 0;
-
       failureMessage_ = "";
-
       return this;
     }
 
@@ -799,13 +802,30 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.VerifyJobRun buildPartial() {
       com.google.cloud.deploy.v1.VerifyJobRun result =
           new com.google.cloud.deploy.v1.VerifyJobRun(this);
-      result.build_ = build_;
-      result.artifactUri_ = artifactUri_;
-      result.eventLogPath_ = eventLogPath_;
-      result.failureCause_ = failureCause_;
-      result.failureMessage_ = failureMessage_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.VerifyJobRun result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.build_ = build_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.artifactUri_ = artifactUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.eventLogPath_ = eventLogPath_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.failureCause_ = failureCause_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.failureMessage_ = failureMessage_;
+      }
     }
 
     @java.lang.Override
@@ -855,14 +875,17 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.deploy.v1.VerifyJobRun.getDefaultInstance()) return this;
       if (!other.getBuild().isEmpty()) {
         build_ = other.build_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getArtifactUri().isEmpty()) {
         artifactUri_ = other.artifactUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getEventLogPath().isEmpty()) {
         eventLogPath_ = other.eventLogPath_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.failureCause_ != 0) {
@@ -870,6 +893,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getFailureMessage().isEmpty()) {
         failureMessage_ = other.failureMessage_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -901,31 +925,31 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 build_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 artifactUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 eventLogPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 failureCause_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 failureMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -944,6 +968,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object build_ = "";
     /**
@@ -1015,8 +1041,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       build_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1035,8 +1061,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBuild() {
-
       build_ = getDefaultInstance().getBuild();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1060,8 +1086,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       build_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1130,8 +1156,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       artifactUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1148,8 +1174,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearArtifactUri() {
-
       artifactUri_ = getDefaultInstance().getArtifactUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1171,8 +1197,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       artifactUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1238,8 +1264,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       eventLogPath_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1255,8 +1281,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEventLogPath() {
-
       eventLogPath_ = getDefaultInstance().getEventLogPath();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1277,8 +1303,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       eventLogPath_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1318,8 +1344,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFailureCauseValue(int value) {
-
       failureCause_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1339,9 +1365,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.VerifyJobRun.FailureCause getFailureCause() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.deploy.v1.VerifyJobRun.FailureCause result =
-          com.google.cloud.deploy.v1.VerifyJobRun.FailureCause.valueOf(failureCause_);
+          com.google.cloud.deploy.v1.VerifyJobRun.FailureCause.forNumber(failureCause_);
       return result == null
           ? com.google.cloud.deploy.v1.VerifyJobRun.FailureCause.UNRECOGNIZED
           : result;
@@ -1365,7 +1390,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       failureCause_ = value.getNumber();
       onChanged();
       return this;
@@ -1385,7 +1410,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFailureCause() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       failureCause_ = 0;
       onChanged();
       return this;
@@ -1452,8 +1477,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       failureMessage_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1469,8 +1494,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFailureMessage() {
-
       failureMessage_ = getDefaultInstance().getFailureMessage();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1491,8 +1516,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       failureMessage_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

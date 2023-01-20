@@ -69,7 +69,9 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SCHEMA_FIELD_NUMBER = 1;
-  private volatile java.lang.Object schema_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object schema_ = "";
   /**
    *
    *
@@ -118,6 +120,8 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int POSTGRESQL_TABLES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.PostgresqlTable> postgresqlTables_;
   /**
    *
@@ -395,15 +399,15 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       schema_ = "";
-
       if (postgresqlTablesBuilder_ == null) {
         postgresqlTables_ = java.util.Collections.emptyList();
       } else {
         postgresqlTables_ = null;
         postgresqlTablesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -431,19 +435,32 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.datastream.v1.PostgresqlSchema buildPartial() {
       com.google.cloud.datastream.v1.PostgresqlSchema result =
           new com.google.cloud.datastream.v1.PostgresqlSchema(this);
-      int from_bitField0_ = bitField0_;
-      result.schema_ = schema_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datastream.v1.PostgresqlSchema result) {
       if (postgresqlTablesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           postgresqlTables_ = java.util.Collections.unmodifiableList(postgresqlTables_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.postgresqlTables_ = postgresqlTables_;
       } else {
         result.postgresqlTables_ = postgresqlTablesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.PostgresqlSchema result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.schema_ = schema_;
+      }
     }
 
     @java.lang.Override
@@ -494,13 +511,14 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getSchema().isEmpty()) {
         schema_ = other.schema_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (postgresqlTablesBuilder_ == null) {
         if (!other.postgresqlTables_.isEmpty()) {
           if (postgresqlTables_.isEmpty()) {
             postgresqlTables_ = other.postgresqlTables_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePostgresqlTablesIsMutable();
             postgresqlTables_.addAll(other.postgresqlTables_);
@@ -513,7 +531,7 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
             postgresqlTablesBuilder_.dispose();
             postgresqlTablesBuilder_ = null;
             postgresqlTables_ = other.postgresqlTables_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             postgresqlTablesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPostgresqlTablesFieldBuilder()
@@ -552,7 +570,7 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 schema_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -648,8 +666,8 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       schema_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -665,8 +683,8 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSchema() {
-
       schema_ = getDefaultInstance().getSchema();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -687,8 +705,8 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       schema_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -697,11 +715,11 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensurePostgresqlTablesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         postgresqlTables_ =
             new java.util.ArrayList<com.google.cloud.datastream.v1.PostgresqlTable>(
                 postgresqlTables_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -920,7 +938,7 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
     public Builder clearPostgresqlTables() {
       if (postgresqlTablesBuilder_ == null) {
         postgresqlTables_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         postgresqlTablesBuilder_.clear();
@@ -1046,7 +1064,7 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.datastream.v1.PostgresqlTable.Builder,
                 com.google.cloud.datastream.v1.PostgresqlTableOrBuilder>(
                 postgresqlTables_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         postgresqlTables_ = null;

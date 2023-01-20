@@ -118,7 +118,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 2;
@@ -164,7 +164,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int CRON_JOB_DURATION_FIELD_NUMBER = 3;
@@ -215,11 +215,15 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getCronJobDurationOrBuilder() {
-    return getCronJobDuration();
+    return cronJobDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : cronJobDuration_;
   }
 
   public static final int CRON_SPEC_FIELD_NUMBER = 4;
-  private volatile java.lang.Object cronSpec_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cronSpec_ = "";
   /**
    *
    *
@@ -517,26 +521,23 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      bitField0_ = 0;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-      if (cronJobDurationBuilder_ == null) {
-        cronJobDuration_ = null;
-      } else {
-        cronJobDuration_ = null;
+      cronJobDuration_ = null;
+      if (cronJobDurationBuilder_ != null) {
+        cronJobDurationBuilder_.dispose();
         cronJobDurationBuilder_ = null;
       }
       cronSpec_ = "";
-
       return this;
     }
 
@@ -564,24 +565,28 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gaming.v1beta.Schedule buildPartial() {
       com.google.cloud.gaming.v1beta.Schedule result =
           new com.google.cloud.gaming.v1beta.Schedule(this);
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      if (cronJobDurationBuilder_ == null) {
-        result.cronJobDuration_ = cronJobDuration_;
-      } else {
-        result.cronJobDuration_ = cronJobDurationBuilder_.build();
-      }
-      result.cronSpec_ = cronSpec_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gaming.v1beta.Schedule result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.cronJobDuration_ =
+            cronJobDurationBuilder_ == null ? cronJobDuration_ : cronJobDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.cronSpec_ = cronSpec_;
+      }
     }
 
     @java.lang.Override
@@ -640,6 +645,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCronSpec().isEmpty()) {
         cronSpec_ = other.cronSpec_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -671,25 +677,25 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCronJobDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 cronSpec_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -709,6 +715,8 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.Timestamp startTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -727,7 +735,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -762,11 +770,11 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -781,11 +789,11 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -799,17 +807,18 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -822,14 +831,13 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -842,7 +850,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -906,7 +914,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -941,11 +949,11 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -960,11 +968,11 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -978,17 +986,18 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1001,14 +1010,13 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1021,7 +1029,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -1086,7 +1094,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the cronJobDuration field is set.
      */
     public boolean hasCronJobDuration() {
-      return cronJobDurationBuilder_ != null || cronJobDuration_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1125,11 +1133,11 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         cronJobDuration_ = value;
-        onChanged();
       } else {
         cronJobDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1145,11 +1153,11 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public Builder setCronJobDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (cronJobDurationBuilder_ == null) {
         cronJobDuration_ = builderForValue.build();
-        onChanged();
       } else {
         cronJobDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1164,19 +1172,18 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCronJobDuration(com.google.protobuf.Duration value) {
       if (cronJobDurationBuilder_ == null) {
-        if (cronJobDuration_ != null) {
-          cronJobDuration_ =
-              com.google.protobuf.Duration.newBuilder(cronJobDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && cronJobDuration_ != null
+            && cronJobDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getCronJobDurationBuilder().mergeFrom(value);
         } else {
           cronJobDuration_ = value;
         }
-        onChanged();
       } else {
         cronJobDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1190,14 +1197,13 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration cron_job_duration = 3;</code>
      */
     public Builder clearCronJobDuration() {
-      if (cronJobDurationBuilder_ == null) {
-        cronJobDuration_ = null;
-        onChanged();
-      } else {
-        cronJobDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      cronJobDuration_ = null;
+      if (cronJobDurationBuilder_ != null) {
+        cronJobDurationBuilder_.dispose();
         cronJobDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1211,7 +1217,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration cron_job_duration = 3;</code>
      */
     public com.google.protobuf.Duration.Builder getCronJobDurationBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCronJobDurationFieldBuilder().getBuilder();
     }
@@ -1328,8 +1334,8 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cronSpec_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1347,8 +1353,8 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCronSpec() {
-
       cronSpec_ = getDefaultInstance().getCronSpec();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1371,8 +1377,8 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cronSpec_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

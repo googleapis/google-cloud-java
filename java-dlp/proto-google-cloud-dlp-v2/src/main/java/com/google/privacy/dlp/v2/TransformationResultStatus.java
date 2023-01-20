@@ -60,7 +60,7 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
   }
 
   public static final int RESULT_STATUS_TYPE_FIELD_NUMBER = 1;
-  private int resultStatusType_;
+  private int resultStatusType_ = 0;
   /**
    *
    *
@@ -91,9 +91,8 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.TransformationResultStatusType getResultStatusType() {
-    @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.TransformationResultStatusType result =
-        com.google.privacy.dlp.v2.TransformationResultStatusType.valueOf(resultStatusType_);
+        com.google.privacy.dlp.v2.TransformationResultStatusType.forNumber(resultStatusType_);
     return result == null
         ? com.google.privacy.dlp.v2.TransformationResultStatusType.UNRECOGNIZED
         : result;
@@ -142,7 +141,7 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getDetailsOrBuilder() {
-    return getDetails();
+    return details_ == null ? com.google.rpc.Status.getDefaultInstance() : details_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -352,12 +351,11 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resultStatusType_ = 0;
-
-      if (detailsBuilder_ == null) {
-        details_ = null;
-      } else {
-        details_ = null;
+      details_ = null;
+      if (detailsBuilder_ != null) {
+        detailsBuilder_.dispose();
         detailsBuilder_ = null;
       }
       return this;
@@ -387,14 +385,21 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
     public com.google.privacy.dlp.v2.TransformationResultStatus buildPartial() {
       com.google.privacy.dlp.v2.TransformationResultStatus result =
           new com.google.privacy.dlp.v2.TransformationResultStatus(this);
-      result.resultStatusType_ = resultStatusType_;
-      if (detailsBuilder_ == null) {
-        result.details_ = details_;
-      } else {
-        result.details_ = detailsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.TransformationResultStatus result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resultStatusType_ = resultStatusType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.details_ = detailsBuilder_ == null ? details_ : detailsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -478,13 +483,13 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
             case 8:
               {
                 resultStatusType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getDetailsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -503,6 +508,8 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int resultStatusType_ = 0;
     /**
@@ -535,8 +542,8 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setResultStatusTypeValue(int value) {
-
       resultStatusType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -554,9 +561,8 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.TransformationResultStatusType getResultStatusType() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.TransformationResultStatusType result =
-          com.google.privacy.dlp.v2.TransformationResultStatusType.valueOf(resultStatusType_);
+          com.google.privacy.dlp.v2.TransformationResultStatusType.forNumber(resultStatusType_);
       return result == null
           ? com.google.privacy.dlp.v2.TransformationResultStatusType.UNRECOGNIZED
           : result;
@@ -579,7 +585,7 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       resultStatusType_ = value.getNumber();
       onChanged();
       return this;
@@ -597,7 +603,7 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearResultStatusType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       resultStatusType_ = 0;
       onChanged();
       return this;
@@ -619,7 +625,7 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
      * @return Whether the details field is set.
      */
     public boolean hasDetails() {
-      return detailsBuilder_ != null || details_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -654,11 +660,11 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         details_ = value;
-        onChanged();
       } else {
         detailsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -673,11 +679,11 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
     public Builder setDetails(com.google.rpc.Status.Builder builderForValue) {
       if (detailsBuilder_ == null) {
         details_ = builderForValue.build();
-        onChanged();
       } else {
         detailsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -691,16 +697,18 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
      */
     public Builder mergeDetails(com.google.rpc.Status value) {
       if (detailsBuilder_ == null) {
-        if (details_ != null) {
-          details_ = com.google.rpc.Status.newBuilder(details_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && details_ != null
+            && details_ != com.google.rpc.Status.getDefaultInstance()) {
+          getDetailsBuilder().mergeFrom(value);
         } else {
           details_ = value;
         }
-        onChanged();
       } else {
         detailsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -713,14 +721,13 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
      * <code>.google.rpc.Status details = 2;</code>
      */
     public Builder clearDetails() {
-      if (detailsBuilder_ == null) {
-        details_ = null;
-        onChanged();
-      } else {
-        details_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      details_ = null;
+      if (detailsBuilder_ != null) {
+        detailsBuilder_.dispose();
         detailsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -733,7 +740,7 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
      * <code>.google.rpc.Status details = 2;</code>
      */
     public com.google.rpc.Status.Builder getDetailsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDetailsFieldBuilder().getBuilder();
     }

@@ -112,7 +112,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -141,9 +141,8 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.MetadataType getType() {
-    @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.MetadataType result =
-        com.google.privacy.dlp.v2.MetadataType.valueOf(type_);
+        com.google.privacy.dlp.v2.MetadataType.forNumber(type_);
     return result == null ? com.google.privacy.dlp.v2.MetadataType.UNRECOGNIZED : result;
   }
 
@@ -419,8 +418,8 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       if (storageLabelBuilder_ != null) {
         storageLabelBuilder_.clear();
       }
@@ -453,17 +452,27 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
     public com.google.privacy.dlp.v2.MetadataLocation buildPartial() {
       com.google.privacy.dlp.v2.MetadataLocation result =
           new com.google.privacy.dlp.v2.MetadataLocation(this);
-      result.type_ = type_;
-      if (labelCase_ == 3) {
-        if (storageLabelBuilder_ == null) {
-          result.label_ = label_;
-        } else {
-          result.label_ = storageLabelBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.labelCase_ = labelCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.MetadataLocation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.MetadataLocation result) {
+      result.labelCase_ = labelCase_;
+      result.label_ = this.label_;
+      if (labelCase_ == 3 && storageLabelBuilder_ != null) {
+        result.label_ = storageLabelBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -554,7 +563,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 26:
@@ -594,6 +603,8 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int bitField0_;
+
     private int type_ = 0;
     /**
      *
@@ -623,8 +634,8 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -641,9 +652,8 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.MetadataType getType() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.MetadataType result =
-          com.google.privacy.dlp.v2.MetadataType.valueOf(type_);
+          com.google.privacy.dlp.v2.MetadataType.forNumber(type_);
       return result == null ? com.google.privacy.dlp.v2.MetadataType.UNRECOGNIZED : result;
     }
     /**
@@ -662,7 +672,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -679,7 +689,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -891,7 +901,6 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
       }
       labelCase_ = 3;
       onChanged();
-      ;
       return storageLabelBuilder_;
     }
 

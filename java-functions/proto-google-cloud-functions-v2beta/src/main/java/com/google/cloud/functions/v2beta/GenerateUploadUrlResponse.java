@@ -68,7 +68,9 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
   }
 
   public static final int UPLOAD_URL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object uploadUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uploadUrl_ = "";
   /**
    *
    *
@@ -180,7 +182,9 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.functions.v2beta.StorageSourceOrBuilder getStorageSourceOrBuilder() {
-    return getStorageSource();
+    return storageSource_ == null
+        ? com.google.cloud.functions.v2beta.StorageSource.getDefaultInstance()
+        : storageSource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -395,12 +399,11 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       uploadUrl_ = "";
-
-      if (storageSourceBuilder_ == null) {
-        storageSource_ = null;
-      } else {
-        storageSource_ = null;
+      storageSource_ = null;
+      if (storageSourceBuilder_ != null) {
+        storageSourceBuilder_.dispose();
         storageSourceBuilder_ = null;
       }
       return this;
@@ -430,14 +433,22 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
     public com.google.cloud.functions.v2beta.GenerateUploadUrlResponse buildPartial() {
       com.google.cloud.functions.v2beta.GenerateUploadUrlResponse result =
           new com.google.cloud.functions.v2beta.GenerateUploadUrlResponse(this);
-      result.uploadUrl_ = uploadUrl_;
-      if (storageSourceBuilder_ == null) {
-        result.storageSource_ = storageSource_;
-      } else {
-        result.storageSource_ = storageSourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v2beta.GenerateUploadUrlResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.uploadUrl_ = uploadUrl_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.storageSource_ =
+            storageSourceBuilder_ == null ? storageSource_ : storageSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -488,6 +499,7 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
         return this;
       if (!other.getUploadUrl().isEmpty()) {
         uploadUrl_ = other.uploadUrl_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasStorageSource()) {
@@ -522,13 +534,13 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
             case 10:
               {
                 uploadUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getStorageSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -547,6 +559,8 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object uploadUrl_ = "";
     /**
@@ -615,8 +629,8 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       uploadUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -634,8 +648,8 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearUploadUrl() {
-
       uploadUrl_ = getDefaultInstance().getUploadUrl();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -658,8 +672,8 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uploadUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -687,7 +701,7 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
      * @return Whether the storageSource field is set.
      */
     public boolean hasStorageSource() {
-      return storageSourceBuilder_ != null || storageSource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -734,11 +748,11 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         storageSource_ = value;
-        onChanged();
       } else {
         storageSourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -759,11 +773,11 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
         com.google.cloud.functions.v2beta.StorageSource.Builder builderForValue) {
       if (storageSourceBuilder_ == null) {
         storageSource_ = builderForValue.build();
-        onChanged();
       } else {
         storageSourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -782,19 +796,19 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
      */
     public Builder mergeStorageSource(com.google.cloud.functions.v2beta.StorageSource value) {
       if (storageSourceBuilder_ == null) {
-        if (storageSource_ != null) {
-          storageSource_ =
-              com.google.cloud.functions.v2beta.StorageSource.newBuilder(storageSource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && storageSource_ != null
+            && storageSource_
+                != com.google.cloud.functions.v2beta.StorageSource.getDefaultInstance()) {
+          getStorageSourceBuilder().mergeFrom(value);
         } else {
           storageSource_ = value;
         }
-        onChanged();
       } else {
         storageSourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -812,14 +826,13 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
      * <code>.google.cloud.functions.v2beta.StorageSource storage_source = 2;</code>
      */
     public Builder clearStorageSource() {
-      if (storageSourceBuilder_ == null) {
-        storageSource_ = null;
-        onChanged();
-      } else {
-        storageSource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      storageSource_ = null;
+      if (storageSourceBuilder_ != null) {
+        storageSourceBuilder_.dispose();
         storageSourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -837,7 +850,7 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
      * <code>.google.cloud.functions.v2beta.StorageSource storage_source = 2;</code>
      */
     public com.google.cloud.functions.v2beta.StorageSource.Builder getStorageSourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getStorageSourceFieldBuilder().getBuilder();
     }

@@ -250,7 +250,9 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -299,7 +301,7 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 2;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -328,13 +330,14 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datastream.v1.Validation.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datastream.v1.Validation.State result =
-        com.google.cloud.datastream.v1.Validation.State.valueOf(state_);
+        com.google.cloud.datastream.v1.Validation.State.forNumber(state_);
     return result == null ? com.google.cloud.datastream.v1.Validation.State.UNRECOGNIZED : result;
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.ValidationMessage> message_;
   /**
    *
@@ -404,7 +407,9 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CODE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object code_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object code_ = "";
   /**
    *
    *
@@ -678,19 +683,17 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       description_ = "";
-
       state_ = 0;
-
       if (messageBuilder_ == null) {
         message_ = java.util.Collections.emptyList();
       } else {
         message_ = null;
         messageBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       code_ = "";
-
       return this;
     }
 
@@ -718,21 +721,37 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1.Validation buildPartial() {
       com.google.cloud.datastream.v1.Validation result =
           new com.google.cloud.datastream.v1.Validation(this);
-      int from_bitField0_ = bitField0_;
-      result.description_ = description_;
-      result.state_ = state_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.datastream.v1.Validation result) {
       if (messageBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           message_ = java.util.Collections.unmodifiableList(message_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.message_ = message_;
       } else {
         result.message_ = messageBuilder_.build();
       }
-      result.code_ = code_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.Validation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.code_ = code_;
+      }
     }
 
     @java.lang.Override
@@ -782,6 +801,7 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.datastream.v1.Validation.getDefaultInstance()) return this;
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -791,7 +811,7 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
         if (!other.message_.isEmpty()) {
           if (message_.isEmpty()) {
             message_ = other.message_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureMessageIsMutable();
             message_.addAll(other.message_);
@@ -804,7 +824,7 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
             messageBuilder_.dispose();
             messageBuilder_ = null;
             message_ = other.message_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             messageBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMessageFieldBuilder()
@@ -816,6 +836,7 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCode().isEmpty()) {
         code_ = other.code_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -847,13 +868,13 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -873,7 +894,7 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 code_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -956,8 +977,8 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -973,8 +994,8 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -995,8 +1016,8 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1030,8 +1051,8 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1048,9 +1069,8 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.datastream.v1.Validation.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datastream.v1.Validation.State result =
-          com.google.cloud.datastream.v1.Validation.State.valueOf(state_);
+          com.google.cloud.datastream.v1.Validation.State.forNumber(state_);
       return result == null ? com.google.cloud.datastream.v1.Validation.State.UNRECOGNIZED : result;
     }
     /**
@@ -1069,7 +1089,7 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1086,7 +1106,7 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       state_ = 0;
       onChanged();
       return this;
@@ -1096,10 +1116,10 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMessageIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         message_ =
             new java.util.ArrayList<com.google.cloud.datastream.v1.ValidationMessage>(message_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1315,7 +1335,7 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMessage() {
       if (messageBuilder_ == null) {
         message_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         messageBuilder_.clear();
@@ -1438,7 +1458,7 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datastream.v1.ValidationMessage,
                 com.google.cloud.datastream.v1.ValidationMessage.Builder,
                 com.google.cloud.datastream.v1.ValidationMessageOrBuilder>(
-                message_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                message_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         message_ = null;
       }
       return messageBuilder_;
@@ -1505,8 +1525,8 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       code_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1522,8 +1542,8 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
       code_ = getDefaultInstance().getCode();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1544,8 +1564,8 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       code_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -119,7 +119,9 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.DataScanOrBuilder getDataScanOrBuilder() {
-    return getDataScan();
+    return dataScan_ == null
+        ? com.google.cloud.dataplex.v1.DataScan.getDefaultInstance()
+        : dataScan_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -168,7 +170,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -387,16 +389,15 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (dataScanBuilder_ == null) {
-        dataScan_ = null;
-      } else {
-        dataScan_ = null;
+      bitField0_ = 0;
+      dataScan_ = null;
+      if (dataScanBuilder_ != null) {
+        dataScanBuilder_.dispose();
         dataScanBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -426,18 +427,21 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.dataplex.v1.UpdateDataScanRequest buildPartial() {
       com.google.cloud.dataplex.v1.UpdateDataScanRequest result =
           new com.google.cloud.dataplex.v1.UpdateDataScanRequest(this);
-      if (dataScanBuilder_ == null) {
-        result.dataScan_ = dataScan_;
-      } else {
-        result.dataScan_ = dataScanBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.UpdateDataScanRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dataScan_ = dataScanBuilder_ == null ? dataScan_ : dataScanBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -521,13 +525,13 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getDataScanFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -546,6 +550,8 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dataplex.v1.DataScan dataScan_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -568,7 +574,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the dataScan field is set.
      */
     public boolean hasDataScan() {
-      return dataScanBuilder_ != null || dataScan_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -611,11 +617,11 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         dataScan_ = value;
-        onChanged();
       } else {
         dataScanBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -633,11 +639,11 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
     public Builder setDataScan(com.google.cloud.dataplex.v1.DataScan.Builder builderForValue) {
       if (dataScanBuilder_ == null) {
         dataScan_ = builderForValue.build();
-        onChanged();
       } else {
         dataScanBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -654,19 +660,18 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeDataScan(com.google.cloud.dataplex.v1.DataScan value) {
       if (dataScanBuilder_ == null) {
-        if (dataScan_ != null) {
-          dataScan_ =
-              com.google.cloud.dataplex.v1.DataScan.newBuilder(dataScan_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && dataScan_ != null
+            && dataScan_ != com.google.cloud.dataplex.v1.DataScan.getDefaultInstance()) {
+          getDataScanBuilder().mergeFrom(value);
         } else {
           dataScan_ = value;
         }
-        onChanged();
       } else {
         dataScanBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -682,14 +687,13 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearDataScan() {
-      if (dataScanBuilder_ == null) {
-        dataScan_ = null;
-        onChanged();
-      } else {
-        dataScan_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      dataScan_ = null;
+      if (dataScanBuilder_ != null) {
+        dataScanBuilder_.dispose();
         dataScanBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -705,7 +709,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.dataplex.v1.DataScan.Builder getDataScanBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDataScanFieldBuilder().getBuilder();
     }
@@ -778,7 +782,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -817,11 +821,11 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -837,11 +841,11 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -856,17 +860,18 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -880,14 +885,13 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -901,7 +905,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

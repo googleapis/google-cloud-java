@@ -74,7 +74,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -174,7 +178,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FULL_PATH_FIELD_NUMBER = 3;
-  private volatile java.lang.Object fullPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fullPath_ = "";
   /**
    *
    *
@@ -229,7 +235,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROOT_PATH_FIELD_NUMBER = 4;
-  private volatile java.lang.Object rootPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rootPath_ = "";
   /**
    *
    *
@@ -288,7 +296,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RELATIVE_PATH_FIELD_NUMBER = 5;
-  private volatile java.lang.Object relativePath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object relativePath_ = "";
   /**
    *
    *
@@ -398,11 +408,13 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int VERSION_FIELD_NUMBER = 7;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -707,24 +719,18 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = "";
-
       projectId_ = "";
-
       fullPath_ = "";
-
       rootPath_ = "";
-
       relativePath_ = "";
-
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       version_ = "";
-
       return this;
     }
 
@@ -751,19 +757,36 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.privacy.dlp.v2.Container buildPartial() {
       com.google.privacy.dlp.v2.Container result = new com.google.privacy.dlp.v2.Container(this);
-      result.type_ = type_;
-      result.projectId_ = projectId_;
-      result.fullPath_ = fullPath_;
-      result.rootPath_ = rootPath_;
-      result.relativePath_ = relativePath_;
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.version_ = version_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.Container result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.fullPath_ = fullPath_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.rootPath_ = rootPath_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.relativePath_ = relativePath_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.version_ = version_;
+      }
     }
 
     @java.lang.Override
@@ -813,22 +836,27 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.privacy.dlp.v2.Container.getDefaultInstance()) return this;
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getFullPath().isEmpty()) {
         fullPath_ = other.fullPath_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getRootPath().isEmpty()) {
         rootPath_ = other.rootPath_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getRelativePath().isEmpty()) {
         relativePath_ = other.relativePath_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasUpdateTime()) {
@@ -836,6 +864,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -867,43 +896,43 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 fullPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 rootPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 relativePath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -922,6 +951,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object type_ = "";
     /**
@@ -984,8 +1015,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1001,8 +1032,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1023,8 +1054,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1093,8 +1124,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1111,8 +1142,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1134,8 +1165,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1210,8 +1241,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       fullPath_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1230,8 +1261,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFullPath() {
-
       fullPath_ = getDefaultInstance().getFullPath();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1255,8 +1286,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fullPath_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1337,8 +1368,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       rootPath_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1359,8 +1390,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRootPath() {
-
       rootPath_ = getDefaultInstance().getRootPath();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1386,8 +1417,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       rootPath_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1468,8 +1499,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       relativePath_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1490,8 +1521,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRelativePath() {
-
       relativePath_ = getDefaultInstance().getRelativePath();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1517,8 +1548,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       relativePath_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1544,7 +1575,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1587,11 +1618,11 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1609,11 +1640,11 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1630,17 +1661,18 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1656,14 +1688,13 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp update_time = 6;</code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1679,7 +1710,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp update_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1797,8 +1828,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1815,8 +1846,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1838,8 +1869,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

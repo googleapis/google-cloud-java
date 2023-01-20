@@ -75,7 +75,9 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int METHOD_FIELD_NUMBER = 1;
-  private volatile java.lang.Object method_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object method_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int URL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object url_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object url_ = "";
   /**
    *
    *
@@ -173,7 +177,9 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int USER_AGENT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object userAgent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userAgent_ = "";
   /**
    *
    *
@@ -222,7 +228,9 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int REFERRER_FIELD_NUMBER = 4;
-  private volatile java.lang.Object referrer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object referrer_ = "";
   /**
    *
    *
@@ -271,7 +279,7 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int RESPONSE_STATUS_CODE_FIELD_NUMBER = 5;
-  private int responseStatusCode_;
+  private int responseStatusCode_ = 0;
   /**
    *
    *
@@ -289,7 +297,9 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int REMOTE_IP_FIELD_NUMBER = 6;
-  private volatile java.lang.Object remoteIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object remoteIp_ = "";
   /**
    *
    *
@@ -591,18 +601,13 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       method_ = "";
-
       url_ = "";
-
       userAgent_ = "";
-
       referrer_ = "";
-
       responseStatusCode_ = 0;
-
       remoteIp_ = "";
-
       return this;
     }
 
@@ -632,14 +637,34 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
     public com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext buildPartial() {
       com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext result =
           new com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext(this);
-      result.method_ = method_;
-      result.url_ = url_;
-      result.userAgent_ = userAgent_;
-      result.referrer_ = referrer_;
-      result.responseStatusCode_ = responseStatusCode_;
-      result.remoteIp_ = remoteIp_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.method_ = method_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.url_ = url_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.userAgent_ = userAgent_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.referrer_ = referrer_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.responseStatusCode_ = responseStatusCode_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.remoteIp_ = remoteIp_;
+      }
     }
 
     @java.lang.Override
@@ -693,18 +718,22 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
               .getDefaultInstance()) return this;
       if (!other.getMethod().isEmpty()) {
         method_ = other.method_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUrl().isEmpty()) {
         url_ = other.url_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getUserAgent().isEmpty()) {
         userAgent_ = other.userAgent_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getReferrer().isEmpty()) {
         referrer_ = other.referrer_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getResponseStatusCode() != 0) {
@@ -712,6 +741,7 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getRemoteIp().isEmpty()) {
         remoteIp_ = other.remoteIp_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -743,37 +773,37 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 method_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 url_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 userAgent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 referrer_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 responseStatusCode_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 remoteIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -792,6 +822,8 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object method_ = "";
     /**
@@ -854,8 +886,8 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       method_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -871,8 +903,8 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMethod() {
-
       method_ = getDefaultInstance().getMethod();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -893,8 +925,8 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       method_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -960,8 +992,8 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       url_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -977,8 +1009,8 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearUrl() {
-
       url_ = getDefaultInstance().getUrl();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -999,8 +1031,8 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       url_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1066,8 +1098,8 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       userAgent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1083,8 +1115,8 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearUserAgent() {
-
       userAgent_ = getDefaultInstance().getUserAgent();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1105,8 +1137,8 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       userAgent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1172,8 +1204,8 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       referrer_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1189,8 +1221,8 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearReferrer() {
-
       referrer_ = getDefaultInstance().getReferrer();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1211,8 +1243,8 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       referrer_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1248,6 +1280,7 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
     public Builder setResponseStatusCode(int value) {
 
       responseStatusCode_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1263,7 +1296,7 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearResponseStatusCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       responseStatusCode_ = 0;
       onChanged();
       return this;
@@ -1339,8 +1372,8 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       remoteIp_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1359,8 +1392,8 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRemoteIp() {
-
       remoteIp_ = getDefaultInstance().getRemoteIp();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1384,8 +1417,8 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       remoteIp_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

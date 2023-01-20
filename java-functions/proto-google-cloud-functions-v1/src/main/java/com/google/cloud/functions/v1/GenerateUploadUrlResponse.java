@@ -68,7 +68,9 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
   }
 
   public static final int UPLOAD_URL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object uploadUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uploadUrl_ = "";
   /**
    *
    *
@@ -318,8 +320,8 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       uploadUrl_ = "";
-
       return this;
     }
 
@@ -347,9 +349,18 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
     public com.google.cloud.functions.v1.GenerateUploadUrlResponse buildPartial() {
       com.google.cloud.functions.v1.GenerateUploadUrlResponse result =
           new com.google.cloud.functions.v1.GenerateUploadUrlResponse(this);
-      result.uploadUrl_ = uploadUrl_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v1.GenerateUploadUrlResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.uploadUrl_ = uploadUrl_;
+      }
     }
 
     @java.lang.Override
@@ -400,6 +411,7 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
         return this;
       if (!other.getUploadUrl().isEmpty()) {
         uploadUrl_ = other.uploadUrl_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -431,7 +443,7 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
             case 10:
               {
                 uploadUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -450,6 +462,8 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object uploadUrl_ = "";
     /**
@@ -518,8 +532,8 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       uploadUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -537,8 +551,8 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearUploadUrl() {
-
       uploadUrl_ = getDefaultInstance().getUploadUrl();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -561,8 +575,8 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uploadUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

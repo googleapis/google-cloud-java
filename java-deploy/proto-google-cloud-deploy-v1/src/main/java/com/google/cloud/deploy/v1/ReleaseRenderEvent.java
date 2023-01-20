@@ -70,7 +70,9 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int RELEASE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object release_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object release_ = "";
   /**
    *
    *
@@ -376,10 +380,9 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       message_ = "";
-
       release_ = "";
-
       return this;
     }
 
@@ -407,10 +410,21 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.deploy.v1.ReleaseRenderEvent buildPartial() {
       com.google.cloud.deploy.v1.ReleaseRenderEvent result =
           new com.google.cloud.deploy.v1.ReleaseRenderEvent(this);
-      result.message_ = message_;
-      result.release_ = release_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.ReleaseRenderEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.message_ = message_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.release_ = release_;
+      }
     }
 
     @java.lang.Override
@@ -460,10 +474,12 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       if (other == com.google.cloud.deploy.v1.ReleaseRenderEvent.getDefaultInstance()) return this;
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRelease().isEmpty()) {
         release_ = other.release_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -495,13 +511,13 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 message_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 release_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -520,6 +536,8 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object message_ = "";
     /**
@@ -585,8 +603,8 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -603,8 +621,8 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -626,8 +644,8 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -693,8 +711,8 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       release_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -710,8 +728,8 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRelease() {
-
       release_ = getDefaultInstance().getRelease();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -732,8 +750,8 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       release_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

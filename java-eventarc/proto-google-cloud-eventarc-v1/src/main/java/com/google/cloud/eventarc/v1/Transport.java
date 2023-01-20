@@ -376,6 +376,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (pubsubBuilder_ != null) {
         pubsubBuilder_.clear();
       }
@@ -408,16 +409,24 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.eventarc.v1.Transport buildPartial() {
       com.google.cloud.eventarc.v1.Transport result =
           new com.google.cloud.eventarc.v1.Transport(this);
-      if (intermediaryCase_ == 1) {
-        if (pubsubBuilder_ == null) {
-          result.intermediary_ = intermediary_;
-        } else {
-          result.intermediary_ = pubsubBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.intermediaryCase_ = intermediaryCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.eventarc.v1.Transport result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.eventarc.v1.Transport result) {
+      result.intermediaryCase_ = intermediaryCase_;
+      result.intermediary_ = this.intermediary_;
+      if (intermediaryCase_ == 1 && pubsubBuilder_ != null) {
+        result.intermediary_ = pubsubBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -538,6 +547,8 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.eventarc.v1.Pubsub,
@@ -753,7 +764,6 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
       }
       intermediaryCase_ = 1;
       onChanged();
-      ;
       return pubsubBuilder_;
     }
 

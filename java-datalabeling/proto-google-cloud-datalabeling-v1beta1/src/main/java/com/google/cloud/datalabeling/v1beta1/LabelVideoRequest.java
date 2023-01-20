@@ -553,7 +553,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -659,11 +661,13 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder
       getBasicConfigOrBuilder() {
-    return getBasicConfig();
+    return basicConfig_ == null
+        ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
+        : basicConfig_;
   }
 
   public static final int FEATURE_FIELD_NUMBER = 3;
-  private int feature_;
+  private int feature_ = 0;
   /**
    *
    *
@@ -696,9 +700,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature getFeature() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature result =
-        com.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature.valueOf(feature_);
+        com.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature.forNumber(feature_);
     return result == null
         ? com.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature.UNRECOGNIZED
         : result;
@@ -1002,6 +1005,7 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (videoClassificationConfigBuilder_ != null) {
         videoClassificationConfigBuilder_.clear();
       }
@@ -1015,15 +1019,12 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         eventConfigBuilder_.clear();
       }
       parent_ = "";
-
-      if (basicConfigBuilder_ == null) {
-        basicConfig_ = null;
-      } else {
-        basicConfig_ = null;
+      basicConfig_ = null;
+      if (basicConfigBuilder_ != null) {
+        basicConfigBuilder_.dispose();
         basicConfigBuilder_ = null;
       }
       feature_ = 0;
-
       requestConfigCase_ = 0;
       requestConfig_ = null;
       return this;
@@ -1053,44 +1054,44 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datalabeling.v1beta1.LabelVideoRequest buildPartial() {
       com.google.cloud.datalabeling.v1beta1.LabelVideoRequest result =
           new com.google.cloud.datalabeling.v1beta1.LabelVideoRequest(this);
-      if (requestConfigCase_ == 4) {
-        if (videoClassificationConfigBuilder_ == null) {
-          result.requestConfig_ = requestConfig_;
-        } else {
-          result.requestConfig_ = videoClassificationConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (requestConfigCase_ == 5) {
-        if (objectDetectionConfigBuilder_ == null) {
-          result.requestConfig_ = requestConfig_;
-        } else {
-          result.requestConfig_ = objectDetectionConfigBuilder_.build();
-        }
-      }
-      if (requestConfigCase_ == 6) {
-        if (objectTrackingConfigBuilder_ == null) {
-          result.requestConfig_ = requestConfig_;
-        } else {
-          result.requestConfig_ = objectTrackingConfigBuilder_.build();
-        }
-      }
-      if (requestConfigCase_ == 7) {
-        if (eventConfigBuilder_ == null) {
-          result.requestConfig_ = requestConfig_;
-        } else {
-          result.requestConfig_ = eventConfigBuilder_.build();
-        }
-      }
-      result.parent_ = parent_;
-      if (basicConfigBuilder_ == null) {
-        result.basicConfig_ = basicConfig_;
-      } else {
-        result.basicConfig_ = basicConfigBuilder_.build();
-      }
-      result.feature_ = feature_;
-      result.requestConfigCase_ = requestConfigCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.LabelVideoRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.basicConfig_ =
+            basicConfigBuilder_ == null ? basicConfig_ : basicConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.feature_ = feature_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.datalabeling.v1beta1.LabelVideoRequest result) {
+      result.requestConfigCase_ = requestConfigCase_;
+      result.requestConfig_ = this.requestConfig_;
+      if (requestConfigCase_ == 4 && videoClassificationConfigBuilder_ != null) {
+        result.requestConfig_ = videoClassificationConfigBuilder_.build();
+      }
+      if (requestConfigCase_ == 5 && objectDetectionConfigBuilder_ != null) {
+        result.requestConfig_ = objectDetectionConfigBuilder_.build();
+      }
+      if (requestConfigCase_ == 6 && objectTrackingConfigBuilder_ != null) {
+        result.requestConfig_ = objectTrackingConfigBuilder_.build();
+      }
+      if (requestConfigCase_ == 7 && eventConfigBuilder_ != null) {
+        result.requestConfig_ = eventConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1141,6 +1142,7 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasBasicConfig()) {
@@ -1204,19 +1206,19 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getBasicConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 18
             case 24:
               {
                 feature_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 24
             case 34:
@@ -1276,6 +1278,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig,
@@ -1528,7 +1532,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       }
       requestConfigCase_ = 4;
       onChanged();
-      ;
       return videoClassificationConfigBuilder_;
     }
 
@@ -1772,7 +1775,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       }
       requestConfigCase_ = 5;
       onChanged();
-      ;
       return objectDetectionConfigBuilder_;
     }
 
@@ -2016,7 +2018,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       }
       requestConfigCase_ = 6;
       onChanged();
-      ;
       return objectTrackingConfigBuilder_;
     }
 
@@ -2245,7 +2246,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       }
       requestConfigCase_ = 7;
       onChanged();
-      ;
       return eventConfigBuilder_;
     }
 
@@ -2319,8 +2319,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2339,8 +2339,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2364,8 +2364,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2390,7 +2390,7 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the basicConfig field is set.
      */
     public boolean hasBasicConfig() {
-      return basicConfigBuilder_ != null || basicConfig_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2432,11 +2432,11 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         basicConfig_ = value;
-        onChanged();
       } else {
         basicConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2454,11 +2454,11 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder builderForValue) {
       if (basicConfigBuilder_ == null) {
         basicConfig_ = builderForValue.build();
-        onChanged();
       } else {
         basicConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2475,19 +2475,20 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     public Builder mergeBasicConfig(
         com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig value) {
       if (basicConfigBuilder_ == null) {
-        if (basicConfig_ != null) {
-          basicConfig_ =
-              com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.newBuilder(basicConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && basicConfig_ != null
+            && basicConfig_
+                != com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig
+                    .getDefaultInstance()) {
+          getBasicConfigBuilder().mergeFrom(value);
         } else {
           basicConfig_ = value;
         }
-        onChanged();
       } else {
         basicConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2502,14 +2503,13 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearBasicConfig() {
-      if (basicConfigBuilder_ == null) {
-        basicConfig_ = null;
-        onChanged();
-      } else {
-        basicConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      basicConfig_ = null;
+      if (basicConfigBuilder_ != null) {
+        basicConfigBuilder_.dispose();
         basicConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2525,7 +2525,7 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder
         getBasicConfigBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getBasicConfigFieldBuilder().getBuilder();
     }
@@ -2611,8 +2611,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setFeatureValue(int value) {
-
       feature_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2631,9 +2631,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature getFeature() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature result =
-          com.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature.valueOf(feature_);
+          com.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature.forNumber(feature_);
       return result == null
           ? com.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature.UNRECOGNIZED
           : result;
@@ -2657,7 +2656,7 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       feature_ = value.getNumber();
       onChanged();
       return this;
@@ -2676,7 +2675,7 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFeature() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       feature_ = 0;
       onChanged();
       return this;

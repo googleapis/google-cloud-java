@@ -290,7 +290,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.ValueOrBuilder getMinValueOrBuilder() {
-      return getMinValue();
+      return minValue_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : minValue_;
     }
 
     public static final int MAX_VALUE_FIELD_NUMBER = 2;
@@ -336,10 +336,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.ValueOrBuilder getMaxValueOrBuilder() {
-      return getMaxValue();
+      return maxValue_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : maxValue_;
     }
 
     public static final int QUANTILE_VALUES_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.privacy.dlp.v2.Value> quantileValues_;
     /**
      *
@@ -652,16 +654,15 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (minValueBuilder_ == null) {
-          minValue_ = null;
-        } else {
-          minValue_ = null;
+        bitField0_ = 0;
+        minValue_ = null;
+        if (minValueBuilder_ != null) {
+          minValueBuilder_.dispose();
           minValueBuilder_ = null;
         }
-        if (maxValueBuilder_ == null) {
-          maxValue_ = null;
-        } else {
-          maxValue_ = null;
+        maxValue_ = null;
+        if (maxValueBuilder_ != null) {
+          maxValueBuilder_.dispose();
           maxValueBuilder_ = null;
         }
         if (quantileValuesBuilder_ == null) {
@@ -670,7 +671,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           quantileValues_ = null;
           quantileValuesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -702,28 +703,36 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           buildPartial() {
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult result =
             new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult(this);
-        int from_bitField0_ = bitField0_;
-        if (minValueBuilder_ == null) {
-          result.minValue_ = minValue_;
-        } else {
-          result.minValue_ = minValueBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (maxValueBuilder_ == null) {
-          result.maxValue_ = maxValue_;
-        } else {
-          result.maxValue_ = maxValueBuilder_.build();
-        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult result) {
         if (quantileValuesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             quantileValues_ = java.util.Collections.unmodifiableList(quantileValues_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.quantileValues_ = quantileValues_;
         } else {
           result.quantileValues_ = quantileValuesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.minValue_ = minValueBuilder_ == null ? minValue_ : minValueBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxValue_ = maxValueBuilder_ == null ? maxValue_ : maxValueBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -789,7 +798,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           if (!other.quantileValues_.isEmpty()) {
             if (quantileValues_.isEmpty()) {
               quantileValues_ = other.quantileValues_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureQuantileValuesIsMutable();
               quantileValues_.addAll(other.quantileValues_);
@@ -802,7 +811,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
               quantileValuesBuilder_.dispose();
               quantileValuesBuilder_ = null;
               quantileValues_ = other.quantileValues_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               quantileValuesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getQuantileValuesFieldBuilder()
@@ -841,13 +850,13 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
               case 10:
                 {
                   input.readMessage(getMinValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getMaxValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 34:
@@ -900,7 +909,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * @return Whether the minValue field is set.
        */
       public boolean hasMinValue() {
-        return minValueBuilder_ != null || minValue_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -937,11 +946,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             throw new NullPointerException();
           }
           minValue_ = value;
-          onChanged();
         } else {
           minValueBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -956,11 +965,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       public Builder setMinValue(com.google.privacy.dlp.v2.Value.Builder builderForValue) {
         if (minValueBuilder_ == null) {
           minValue_ = builderForValue.build();
-          onChanged();
         } else {
           minValueBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -974,19 +983,18 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        */
       public Builder mergeMinValue(com.google.privacy.dlp.v2.Value value) {
         if (minValueBuilder_ == null) {
-          if (minValue_ != null) {
-            minValue_ =
-                com.google.privacy.dlp.v2.Value.newBuilder(minValue_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && minValue_ != null
+              && minValue_ != com.google.privacy.dlp.v2.Value.getDefaultInstance()) {
+            getMinValueBuilder().mergeFrom(value);
           } else {
             minValue_ = value;
           }
-          onChanged();
         } else {
           minValueBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -999,14 +1007,13 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * <code>.google.privacy.dlp.v2.Value min_value = 1;</code>
        */
       public Builder clearMinValue() {
-        if (minValueBuilder_ == null) {
-          minValue_ = null;
-          onChanged();
-        } else {
-          minValue_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        minValue_ = null;
+        if (minValueBuilder_ != null) {
+          minValueBuilder_.dispose();
           minValueBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1019,7 +1026,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * <code>.google.privacy.dlp.v2.Value min_value = 1;</code>
        */
       public com.google.privacy.dlp.v2.Value.Builder getMinValueBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getMinValueFieldBuilder().getBuilder();
       }
@@ -1085,7 +1092,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * @return Whether the maxValue field is set.
        */
       public boolean hasMaxValue() {
-        return maxValueBuilder_ != null || maxValue_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1122,11 +1129,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             throw new NullPointerException();
           }
           maxValue_ = value;
-          onChanged();
         } else {
           maxValueBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1141,11 +1148,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       public Builder setMaxValue(com.google.privacy.dlp.v2.Value.Builder builderForValue) {
         if (maxValueBuilder_ == null) {
           maxValue_ = builderForValue.build();
-          onChanged();
         } else {
           maxValueBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1159,19 +1166,18 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        */
       public Builder mergeMaxValue(com.google.privacy.dlp.v2.Value value) {
         if (maxValueBuilder_ == null) {
-          if (maxValue_ != null) {
-            maxValue_ =
-                com.google.privacy.dlp.v2.Value.newBuilder(maxValue_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && maxValue_ != null
+              && maxValue_ != com.google.privacy.dlp.v2.Value.getDefaultInstance()) {
+            getMaxValueBuilder().mergeFrom(value);
           } else {
             maxValue_ = value;
           }
-          onChanged();
         } else {
           maxValueBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1184,14 +1190,13 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * <code>.google.privacy.dlp.v2.Value max_value = 2;</code>
        */
       public Builder clearMaxValue() {
-        if (maxValueBuilder_ == null) {
-          maxValue_ = null;
-          onChanged();
-        } else {
-          maxValue_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maxValue_ = null;
+        if (maxValueBuilder_ != null) {
+          maxValueBuilder_.dispose();
           maxValueBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1204,7 +1209,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * <code>.google.privacy.dlp.v2.Value max_value = 2;</code>
        */
       public com.google.privacy.dlp.v2.Value.Builder getMaxValueBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getMaxValueFieldBuilder().getBuilder();
       }
@@ -1256,10 +1261,10 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           java.util.Collections.emptyList();
 
       private void ensureQuantileValuesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           quantileValues_ =
               new java.util.ArrayList<com.google.privacy.dlp.v2.Value>(quantileValues_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
         }
       }
 
@@ -1485,7 +1490,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       public Builder clearQuantileValues() {
         if (quantileValuesBuilder_ == null) {
           quantileValues_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           quantileValuesBuilder_.clear();
@@ -1615,7 +1620,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                   com.google.privacy.dlp.v2.Value.Builder,
                   com.google.privacy.dlp.v2.ValueOrBuilder>(
                   quantileValues_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           quantileValues_ = null;
@@ -1987,7 +1992,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int VALUE_FREQUENCY_LOWER_BOUND_FIELD_NUMBER = 1;
-      private long valueFrequencyLowerBound_;
+      private long valueFrequencyLowerBound_ = 0L;
       /**
        *
        *
@@ -2005,7 +2010,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int VALUE_FREQUENCY_UPPER_BOUND_FIELD_NUMBER = 2;
-      private long valueFrequencyUpperBound_;
+      private long valueFrequencyUpperBound_ = 0L;
       /**
        *
        *
@@ -2023,7 +2028,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int BUCKET_SIZE_FIELD_NUMBER = 3;
-      private long bucketSize_;
+      private long bucketSize_ = 0L;
       /**
        *
        *
@@ -2041,6 +2046,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int BUCKET_VALUES_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.privacy.dlp.v2.ValueFrequency> bucketValues_;
       /**
        *
@@ -2115,7 +2122,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int BUCKET_VALUE_COUNT_FIELD_NUMBER = 5;
-      private long bucketValueCount_;
+      private long bucketValueCount_ = 0L;
       /**
        *
        *
@@ -2406,21 +2413,18 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           valueFrequencyLowerBound_ = 0L;
-
           valueFrequencyUpperBound_ = 0L;
-
           bucketSize_ = 0L;
-
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
           } else {
             bucketValues_ = null;
             bucketValuesBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           bucketValueCount_ = 0L;
-
           return this;
         }
 
@@ -2460,22 +2464,46 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
               result =
                   new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult
                       .CategoricalStatsHistogramBucket(this);
-          int from_bitField0_ = bitField0_;
-          result.valueFrequencyLowerBound_ = valueFrequencyLowerBound_;
-          result.valueFrequencyUpperBound_ = valueFrequencyUpperBound_;
-          result.bucketSize_ = bucketSize_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult
+                    .CategoricalStatsHistogramBucket
+                result) {
           if (bucketValuesBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0)) {
+            if (((bitField0_ & 0x00000008) != 0)) {
               bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             }
             result.bucketValues_ = bucketValues_;
           } else {
             result.bucketValues_ = bucketValuesBuilder_.build();
           }
-          result.bucketValueCount_ = bucketValueCount_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult
+                    .CategoricalStatsHistogramBucket
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.valueFrequencyLowerBound_ = valueFrequencyLowerBound_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.valueFrequencyUpperBound_ = valueFrequencyUpperBound_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.bucketSize_ = bucketSize_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.bucketValueCount_ = bucketValueCount_;
+          }
         }
 
         @java.lang.Override
@@ -2549,7 +2577,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             if (!other.bucketValues_.isEmpty()) {
               if (bucketValues_.isEmpty()) {
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
               } else {
                 ensureBucketValuesIsMutable();
                 bucketValues_.addAll(other.bucketValues_);
@@ -2562,7 +2590,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 bucketValuesBuilder_.dispose();
                 bucketValuesBuilder_ = null;
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
                 bucketValuesBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getBucketValuesFieldBuilder()
@@ -2604,19 +2632,19 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 case 8:
                   {
                     valueFrequencyLowerBound_ = input.readInt64();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 16:
                   {
                     valueFrequencyUpperBound_ = input.readInt64();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 case 24:
                   {
                     bucketSize_ = input.readInt64();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 24
                 case 34:
@@ -2635,7 +2663,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 case 40:
                   {
                     bucketValueCount_ = input.readInt64();
-
+                    bitField0_ |= 0x00000010;
                     break;
                   } // case 40
                 default:
@@ -2688,6 +2716,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setValueFrequencyLowerBound(long value) {
 
           valueFrequencyLowerBound_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2703,7 +2732,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearValueFrequencyLowerBound() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           valueFrequencyLowerBound_ = 0L;
           onChanged();
           return this;
@@ -2740,6 +2769,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setValueFrequencyUpperBound(long value) {
 
           valueFrequencyUpperBound_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2755,7 +2785,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearValueFrequencyUpperBound() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           valueFrequencyUpperBound_ = 0L;
           onChanged();
           return this;
@@ -2792,6 +2822,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setBucketSize(long value) {
 
           bucketSize_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2807,7 +2838,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearBucketSize() {
-
+          bitField0_ = (bitField0_ & ~0x00000004);
           bucketSize_ = 0L;
           onChanged();
           return this;
@@ -2817,10 +2848,10 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             java.util.Collections.emptyList();
 
         private void ensureBucketValuesIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000008) != 0)) {
             bucketValues_ =
                 new java.util.ArrayList<com.google.privacy.dlp.v2.ValueFrequency>(bucketValues_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000008;
           }
         }
 
@@ -3047,7 +3078,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder clearBucketValues() {
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             onChanged();
           } else {
             bucketValuesBuilder_.clear();
@@ -3178,7 +3209,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     com.google.privacy.dlp.v2.ValueFrequency.Builder,
                     com.google.privacy.dlp.v2.ValueFrequencyOrBuilder>(
                     bucketValues_,
-                    ((bitField0_ & 0x00000001) != 0),
+                    ((bitField0_ & 0x00000008) != 0),
                     getParentForChildren(),
                     isClean());
             bucketValues_ = null;
@@ -3217,6 +3248,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setBucketValueCount(long value) {
 
           bucketValueCount_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -3232,7 +3264,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearBucketValueCount() {
-
+          bitField0_ = (bitField0_ & ~0x00000010);
           bucketValueCount_ = 0L;
           onChanged();
           return this;
@@ -3311,6 +3343,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     }
 
     public static final int VALUE_FREQUENCY_HISTOGRAM_BUCKETS_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult
                 .CategoricalStatsHistogramBucket>
@@ -3618,6 +3652,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (valueFrequencyHistogramBucketsBuilder_ == null) {
           valueFrequencyHistogramBuckets_ = java.util.Collections.emptyList();
         } else {
@@ -3656,7 +3691,16 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           buildPartial() {
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult result =
             new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult result) {
         if (valueFrequencyHistogramBucketsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             valueFrequencyHistogramBuckets_ =
@@ -3667,8 +3711,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         } else {
           result.valueFrequencyHistogramBuckets_ = valueFrequencyHistogramBucketsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -4597,6 +4644,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int QUASI_IDS_VALUES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.privacy.dlp.v2.Value> quasiIdsValues_;
       /**
        *
@@ -4676,7 +4725,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int EQUIVALENCE_CLASS_SIZE_FIELD_NUMBER = 2;
-      private long equivalenceClassSize_;
+      private long equivalenceClassSize_ = 0L;
       /**
        *
        *
@@ -4940,6 +4989,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (quasiIdsValuesBuilder_ == null) {
             quasiIdsValues_ = java.util.Collections.emptyList();
           } else {
@@ -4948,7 +4998,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           }
           bitField0_ = (bitField0_ & ~0x00000001);
           equivalenceClassSize_ = 0L;
-
           return this;
         }
 
@@ -4988,7 +5037,18 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
               result =
                   new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
                       .KAnonymityEquivalenceClass(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
+                    .KAnonymityEquivalenceClass
+                result) {
           if (quasiIdsValuesBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               quasiIdsValues_ = java.util.Collections.unmodifiableList(quasiIdsValues_);
@@ -4998,9 +5058,16 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           } else {
             result.quasiIdsValues_ = quasiIdsValuesBuilder_.build();
           }
-          result.equivalenceClassSize_ = equivalenceClassSize_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
+                    .KAnonymityEquivalenceClass
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.equivalenceClassSize_ = equivalenceClassSize_;
+          }
         }
 
         @java.lang.Override
@@ -5133,7 +5200,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 case 16:
                   {
                     equivalenceClassSize_ = input.readInt64();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 default:
@@ -5577,6 +5644,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setEquivalenceClassSize(long value) {
 
           equivalenceClassSize_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -5593,7 +5661,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearEquivalenceClassSize() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           equivalenceClassSize_ = 0L;
           onChanged();
           return this;
@@ -5859,7 +5927,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int EQUIVALENCE_CLASS_SIZE_LOWER_BOUND_FIELD_NUMBER = 1;
-      private long equivalenceClassSizeLowerBound_;
+      private long equivalenceClassSizeLowerBound_ = 0L;
       /**
        *
        *
@@ -5877,7 +5945,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int EQUIVALENCE_CLASS_SIZE_UPPER_BOUND_FIELD_NUMBER = 2;
-      private long equivalenceClassSizeUpperBound_;
+      private long equivalenceClassSizeUpperBound_ = 0L;
       /**
        *
        *
@@ -5895,7 +5963,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int BUCKET_SIZE_FIELD_NUMBER = 3;
-      private long bucketSize_;
+      private long bucketSize_ = 0L;
       /**
        *
        *
@@ -5913,6 +5981,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int BUCKET_VALUES_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
       private java.util.List<
               com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
                   .KAnonymityEquivalenceClass>
@@ -6010,7 +6080,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int BUCKET_VALUE_COUNT_FIELD_NUMBER = 5;
-      private long bucketValueCount_;
+      private long bucketValueCount_ = 0L;
       /**
        *
        *
@@ -6309,21 +6379,18 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           equivalenceClassSizeLowerBound_ = 0L;
-
           equivalenceClassSizeUpperBound_ = 0L;
-
           bucketSize_ = 0L;
-
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
           } else {
             bucketValues_ = null;
             bucketValuesBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           bucketValueCount_ = 0L;
-
           return this;
         }
 
@@ -6363,22 +6430,46 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
               result =
                   new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
                       .KAnonymityHistogramBucket(this);
-          int from_bitField0_ = bitField0_;
-          result.equivalenceClassSizeLowerBound_ = equivalenceClassSizeLowerBound_;
-          result.equivalenceClassSizeUpperBound_ = equivalenceClassSizeUpperBound_;
-          result.bucketSize_ = bucketSize_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
+                    .KAnonymityHistogramBucket
+                result) {
           if (bucketValuesBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0)) {
+            if (((bitField0_ & 0x00000008) != 0)) {
               bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             }
             result.bucketValues_ = bucketValues_;
           } else {
             result.bucketValues_ = bucketValuesBuilder_.build();
           }
-          result.bucketValueCount_ = bucketValueCount_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
+                    .KAnonymityHistogramBucket
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.equivalenceClassSizeLowerBound_ = equivalenceClassSizeLowerBound_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.equivalenceClassSizeUpperBound_ = equivalenceClassSizeUpperBound_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.bucketSize_ = bucketSize_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.bucketValueCount_ = bucketValueCount_;
+          }
         }
 
         @java.lang.Override
@@ -6452,7 +6543,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             if (!other.bucketValues_.isEmpty()) {
               if (bucketValues_.isEmpty()) {
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
               } else {
                 ensureBucketValuesIsMutable();
                 bucketValues_.addAll(other.bucketValues_);
@@ -6465,7 +6556,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 bucketValuesBuilder_.dispose();
                 bucketValuesBuilder_ = null;
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
                 bucketValuesBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getBucketValuesFieldBuilder()
@@ -6507,19 +6598,19 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 case 8:
                   {
                     equivalenceClassSizeLowerBound_ = input.readInt64();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 16:
                   {
                     equivalenceClassSizeUpperBound_ = input.readInt64();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 case 24:
                   {
                     bucketSize_ = input.readInt64();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 24
                 case 34:
@@ -6542,7 +6633,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 case 40:
                   {
                     bucketValueCount_ = input.readInt64();
-
+                    bitField0_ |= 0x00000010;
                     break;
                   } // case 40
                 default:
@@ -6595,6 +6686,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setEquivalenceClassSizeLowerBound(long value) {
 
           equivalenceClassSizeLowerBound_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -6610,7 +6702,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearEquivalenceClassSizeLowerBound() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           equivalenceClassSizeLowerBound_ = 0L;
           onChanged();
           return this;
@@ -6647,6 +6739,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setEquivalenceClassSizeUpperBound(long value) {
 
           equivalenceClassSizeUpperBound_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -6662,7 +6755,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearEquivalenceClassSizeUpperBound() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           equivalenceClassSizeUpperBound_ = 0L;
           onChanged();
           return this;
@@ -6699,6 +6792,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setBucketSize(long value) {
 
           bucketSize_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -6714,7 +6808,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearBucketSize() {
-
+          bitField0_ = (bitField0_ & ~0x00000004);
           bucketSize_ = 0L;
           onChanged();
           return this;
@@ -6726,12 +6820,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             bucketValues_ = java.util.Collections.emptyList();
 
         private void ensureBucketValuesIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000008) != 0)) {
             bucketValues_ =
                 new java.util.ArrayList<
                     com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
                         .KAnonymityEquivalenceClass>(bucketValues_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000008;
           }
         }
 
@@ -7011,7 +7105,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder clearBucketValues() {
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             onChanged();
           } else {
             bucketValuesBuilder_.clear();
@@ -7179,7 +7273,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
                         .KAnonymityEquivalenceClassOrBuilder>(
                     bucketValues_,
-                    ((bitField0_ & 0x00000001) != 0),
+                    ((bitField0_ & 0x00000008) != 0),
                     getParentForChildren(),
                     isClean());
             bucketValues_ = null;
@@ -7218,6 +7312,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setBucketValueCount(long value) {
 
           bucketValueCount_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -7233,7 +7328,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearBucketValueCount() {
-
+          bitField0_ = (bitField0_ & ~0x00000010);
           bucketValueCount_ = 0L;
           onChanged();
           return this;
@@ -7312,6 +7407,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     }
 
     public static final int EQUIVALENCE_CLASS_HISTOGRAM_BUCKETS_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
                 .KAnonymityHistogramBucket>
@@ -7612,6 +7709,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (equivalenceClassHistogramBucketsBuilder_ == null) {
           equivalenceClassHistogramBuckets_ = java.util.Collections.emptyList();
         } else {
@@ -7650,7 +7748,16 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           buildPartial() {
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult result =
             new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult result) {
         if (equivalenceClassHistogramBucketsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             equivalenceClassHistogramBuckets_ =
@@ -7662,8 +7769,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           result.equivalenceClassHistogramBuckets_ =
               equivalenceClassHistogramBucketsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -8649,6 +8759,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int QUASI_IDS_VALUES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.privacy.dlp.v2.Value> quasiIdsValues_;
       /**
        *
@@ -8723,7 +8835,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int EQUIVALENCE_CLASS_SIZE_FIELD_NUMBER = 2;
-      private long equivalenceClassSize_;
+      private long equivalenceClassSize_ = 0L;
       /**
        *
        *
@@ -8741,7 +8853,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int NUM_DISTINCT_SENSITIVE_VALUES_FIELD_NUMBER = 3;
-      private long numDistinctSensitiveValues_;
+      private long numDistinctSensitiveValues_ = 0L;
       /**
        *
        *
@@ -8759,6 +8871,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int TOP_SENSITIVE_VALUES_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.privacy.dlp.v2.ValueFrequency> topSensitiveValues_;
       /**
        *
@@ -9098,6 +9212,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (quasiIdsValuesBuilder_ == null) {
             quasiIdsValues_ = java.util.Collections.emptyList();
           } else {
@@ -9106,16 +9221,14 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           }
           bitField0_ = (bitField0_ & ~0x00000001);
           equivalenceClassSize_ = 0L;
-
           numDistinctSensitiveValues_ = 0L;
-
           if (topSensitiveValuesBuilder_ == null) {
             topSensitiveValues_ = java.util.Collections.emptyList();
           } else {
             topSensitiveValues_ = null;
             topSensitiveValuesBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -9155,7 +9268,18 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
               result =
                   new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
                       .LDiversityEquivalenceClass(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
+                    .LDiversityEquivalenceClass
+                result) {
           if (quasiIdsValuesBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               quasiIdsValues_ = java.util.Collections.unmodifiableList(quasiIdsValues_);
@@ -9165,19 +9289,28 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           } else {
             result.quasiIdsValues_ = quasiIdsValuesBuilder_.build();
           }
-          result.equivalenceClassSize_ = equivalenceClassSize_;
-          result.numDistinctSensitiveValues_ = numDistinctSensitiveValues_;
           if (topSensitiveValuesBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) != 0)) {
+            if (((bitField0_ & 0x00000008) != 0)) {
               topSensitiveValues_ = java.util.Collections.unmodifiableList(topSensitiveValues_);
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
             }
             result.topSensitiveValues_ = topSensitiveValues_;
           } else {
             result.topSensitiveValues_ = topSensitiveValuesBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
+                    .LDiversityEquivalenceClass
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.equivalenceClassSize_ = equivalenceClassSize_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.numDistinctSensitiveValues_ = numDistinctSensitiveValues_;
+          }
         }
 
         @java.lang.Override
@@ -9275,7 +9408,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             if (!other.topSensitiveValues_.isEmpty()) {
               if (topSensitiveValues_.isEmpty()) {
                 topSensitiveValues_ = other.topSensitiveValues_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000008);
               } else {
                 ensureTopSensitiveValuesIsMutable();
                 topSensitiveValues_.addAll(other.topSensitiveValues_);
@@ -9288,7 +9421,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 topSensitiveValuesBuilder_.dispose();
                 topSensitiveValuesBuilder_ = null;
                 topSensitiveValues_ = other.topSensitiveValues_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000008);
                 topSensitiveValuesBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getTopSensitiveValuesFieldBuilder()
@@ -9340,13 +9473,13 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 case 16:
                   {
                     equivalenceClassSize_ = input.readInt64();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 case 24:
                   {
                     numDistinctSensitiveValues_ = input.readInt64();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 24
                 case 34:
@@ -9783,6 +9916,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setEquivalenceClassSize(long value) {
 
           equivalenceClassSize_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -9798,7 +9932,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearEquivalenceClassSize() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           equivalenceClassSize_ = 0L;
           onChanged();
           return this;
@@ -9835,6 +9969,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setNumDistinctSensitiveValues(long value) {
 
           numDistinctSensitiveValues_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -9850,7 +9985,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearNumDistinctSensitiveValues() {
-
+          bitField0_ = (bitField0_ & ~0x00000004);
           numDistinctSensitiveValues_ = 0L;
           onChanged();
           return this;
@@ -9860,11 +9995,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             java.util.Collections.emptyList();
 
         private void ensureTopSensitiveValuesIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!((bitField0_ & 0x00000008) != 0)) {
             topSensitiveValues_ =
                 new java.util.ArrayList<com.google.privacy.dlp.v2.ValueFrequency>(
                     topSensitiveValues_);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000008;
           }
         }
 
@@ -10083,7 +10218,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder clearTopSensitiveValues() {
           if (topSensitiveValuesBuilder_ == null) {
             topSensitiveValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
             onChanged();
           } else {
             topSensitiveValuesBuilder_.clear();
@@ -10209,7 +10344,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     com.google.privacy.dlp.v2.ValueFrequency.Builder,
                     com.google.privacy.dlp.v2.ValueFrequencyOrBuilder>(
                     topSensitiveValues_,
-                    ((bitField0_ & 0x00000002) != 0),
+                    ((bitField0_ & 0x00000008) != 0),
                     getParentForChildren(),
                     isClean());
             topSensitiveValues_ = null;
@@ -10479,7 +10614,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int SENSITIVE_VALUE_FREQUENCY_LOWER_BOUND_FIELD_NUMBER = 1;
-      private long sensitiveValueFrequencyLowerBound_;
+      private long sensitiveValueFrequencyLowerBound_ = 0L;
       /**
        *
        *
@@ -10498,7 +10633,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int SENSITIVE_VALUE_FREQUENCY_UPPER_BOUND_FIELD_NUMBER = 2;
-      private long sensitiveValueFrequencyUpperBound_;
+      private long sensitiveValueFrequencyUpperBound_ = 0L;
       /**
        *
        *
@@ -10517,7 +10652,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int BUCKET_SIZE_FIELD_NUMBER = 3;
-      private long bucketSize_;
+      private long bucketSize_ = 0L;
       /**
        *
        *
@@ -10535,6 +10670,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int BUCKET_VALUES_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
       private java.util.List<
               com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
                   .LDiversityEquivalenceClass>
@@ -10632,7 +10769,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int BUCKET_VALUE_COUNT_FIELD_NUMBER = 5;
-      private long bucketValueCount_;
+      private long bucketValueCount_ = 0L;
       /**
        *
        *
@@ -10931,21 +11068,18 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           sensitiveValueFrequencyLowerBound_ = 0L;
-
           sensitiveValueFrequencyUpperBound_ = 0L;
-
           bucketSize_ = 0L;
-
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
           } else {
             bucketValues_ = null;
             bucketValuesBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           bucketValueCount_ = 0L;
-
           return this;
         }
 
@@ -10985,22 +11119,46 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
               result =
                   new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
                       .LDiversityHistogramBucket(this);
-          int from_bitField0_ = bitField0_;
-          result.sensitiveValueFrequencyLowerBound_ = sensitiveValueFrequencyLowerBound_;
-          result.sensitiveValueFrequencyUpperBound_ = sensitiveValueFrequencyUpperBound_;
-          result.bucketSize_ = bucketSize_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
+                    .LDiversityHistogramBucket
+                result) {
           if (bucketValuesBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0)) {
+            if (((bitField0_ & 0x00000008) != 0)) {
               bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             }
             result.bucketValues_ = bucketValues_;
           } else {
             result.bucketValues_ = bucketValuesBuilder_.build();
           }
-          result.bucketValueCount_ = bucketValueCount_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
+                    .LDiversityHistogramBucket
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.sensitiveValueFrequencyLowerBound_ = sensitiveValueFrequencyLowerBound_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.sensitiveValueFrequencyUpperBound_ = sensitiveValueFrequencyUpperBound_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.bucketSize_ = bucketSize_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.bucketValueCount_ = bucketValueCount_;
+          }
         }
 
         @java.lang.Override
@@ -11074,7 +11232,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             if (!other.bucketValues_.isEmpty()) {
               if (bucketValues_.isEmpty()) {
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
               } else {
                 ensureBucketValuesIsMutable();
                 bucketValues_.addAll(other.bucketValues_);
@@ -11087,7 +11245,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 bucketValuesBuilder_.dispose();
                 bucketValuesBuilder_ = null;
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
                 bucketValuesBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getBucketValuesFieldBuilder()
@@ -11129,19 +11287,19 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 case 8:
                   {
                     sensitiveValueFrequencyLowerBound_ = input.readInt64();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 16:
                   {
                     sensitiveValueFrequencyUpperBound_ = input.readInt64();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 case 24:
                   {
                     bucketSize_ = input.readInt64();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 24
                 case 34:
@@ -11164,7 +11322,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 case 40:
                   {
                     bucketValueCount_ = input.readInt64();
-
+                    bitField0_ |= 0x00000010;
                     break;
                   } // case 40
                 default:
@@ -11219,6 +11377,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setSensitiveValueFrequencyLowerBound(long value) {
 
           sensitiveValueFrequencyLowerBound_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -11235,7 +11394,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearSensitiveValueFrequencyLowerBound() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           sensitiveValueFrequencyLowerBound_ = 0L;
           onChanged();
           return this;
@@ -11274,6 +11433,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setSensitiveValueFrequencyUpperBound(long value) {
 
           sensitiveValueFrequencyUpperBound_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -11290,7 +11450,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearSensitiveValueFrequencyUpperBound() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           sensitiveValueFrequencyUpperBound_ = 0L;
           onChanged();
           return this;
@@ -11327,6 +11487,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setBucketSize(long value) {
 
           bucketSize_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -11342,7 +11503,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearBucketSize() {
-
+          bitField0_ = (bitField0_ & ~0x00000004);
           bucketSize_ = 0L;
           onChanged();
           return this;
@@ -11354,12 +11515,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             bucketValues_ = java.util.Collections.emptyList();
 
         private void ensureBucketValuesIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000008) != 0)) {
             bucketValues_ =
                 new java.util.ArrayList<
                     com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
                         .LDiversityEquivalenceClass>(bucketValues_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000008;
           }
         }
 
@@ -11639,7 +11800,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder clearBucketValues() {
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             onChanged();
           } else {
             bucketValuesBuilder_.clear();
@@ -11807,7 +11968,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
                         .LDiversityEquivalenceClassOrBuilder>(
                     bucketValues_,
-                    ((bitField0_ & 0x00000001) != 0),
+                    ((bitField0_ & 0x00000008) != 0),
                     getParentForChildren(),
                     isClean());
             bucketValues_ = null;
@@ -11846,6 +12007,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setBucketValueCount(long value) {
 
           bucketValueCount_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -11861,7 +12023,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearBucketValueCount() {
-
+          bitField0_ = (bitField0_ & ~0x00000010);
           bucketValueCount_ = 0L;
           onChanged();
           return this;
@@ -11940,6 +12102,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     }
 
     public static final int SENSITIVE_VALUE_FREQUENCY_HISTOGRAM_BUCKETS_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
                 .LDiversityHistogramBucket>
@@ -12240,6 +12404,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (sensitiveValueFrequencyHistogramBucketsBuilder_ == null) {
           sensitiveValueFrequencyHistogramBuckets_ = java.util.Collections.emptyList();
         } else {
@@ -12278,7 +12443,16 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           buildPartial() {
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult result =
             new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult result) {
         if (sensitiveValueFrequencyHistogramBucketsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             sensitiveValueFrequencyHistogramBuckets_ =
@@ -12291,8 +12465,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           result.sensitiveValueFrequencyHistogramBuckets_ =
               sensitiveValueFrequencyHistogramBucketsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -13248,6 +13425,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int QUASI_IDS_VALUES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.privacy.dlp.v2.Value> quasiIdsValues_;
       /**
        *
@@ -13317,7 +13496,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int ESTIMATED_ANONYMITY_FIELD_NUMBER = 2;
-      private long estimatedAnonymity_;
+      private long estimatedAnonymity_ = 0L;
       /**
        *
        *
@@ -13580,6 +13759,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (quasiIdsValuesBuilder_ == null) {
             quasiIdsValues_ = java.util.Collections.emptyList();
           } else {
@@ -13588,7 +13768,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           }
           bitField0_ = (bitField0_ & ~0x00000001);
           estimatedAnonymity_ = 0L;
-
           return this;
         }
 
@@ -13628,7 +13807,18 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
               result =
                   new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
                       .KMapEstimationQuasiIdValues(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
+                    .KMapEstimationQuasiIdValues
+                result) {
           if (quasiIdsValuesBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               quasiIdsValues_ = java.util.Collections.unmodifiableList(quasiIdsValues_);
@@ -13638,9 +13828,16 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           } else {
             result.quasiIdsValues_ = quasiIdsValuesBuilder_.build();
           }
-          result.estimatedAnonymity_ = estimatedAnonymity_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
+                    .KMapEstimationQuasiIdValues
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.estimatedAnonymity_ = estimatedAnonymity_;
+          }
         }
 
         @java.lang.Override
@@ -13773,7 +13970,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 case 16:
                   {
                     estimatedAnonymity_ = input.readInt64();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 default:
@@ -14179,6 +14376,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setEstimatedAnonymity(long value) {
 
           estimatedAnonymity_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -14194,7 +14392,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearEstimatedAnonymity() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           estimatedAnonymity_ = 0L;
           onChanged();
           return this;
@@ -14468,7 +14666,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int MIN_ANONYMITY_FIELD_NUMBER = 1;
-      private long minAnonymity_;
+      private long minAnonymity_ = 0L;
       /**
        *
        *
@@ -14486,7 +14684,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int MAX_ANONYMITY_FIELD_NUMBER = 2;
-      private long maxAnonymity_;
+      private long maxAnonymity_ = 0L;
       /**
        *
        *
@@ -14504,7 +14702,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int BUCKET_SIZE_FIELD_NUMBER = 5;
-      private long bucketSize_;
+      private long bucketSize_ = 0L;
       /**
        *
        *
@@ -14522,6 +14720,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int BUCKET_VALUES_FIELD_NUMBER = 6;
+
+      @SuppressWarnings("serial")
       private java.util.List<
               com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
                   .KMapEstimationQuasiIdValues>
@@ -14619,7 +14819,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int BUCKET_VALUE_COUNT_FIELD_NUMBER = 7;
-      private long bucketValueCount_;
+      private long bucketValueCount_ = 0L;
       /**
        *
        *
@@ -14915,21 +15115,18 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           minAnonymity_ = 0L;
-
           maxAnonymity_ = 0L;
-
           bucketSize_ = 0L;
-
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
           } else {
             bucketValues_ = null;
             bucketValuesBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           bucketValueCount_ = 0L;
-
           return this;
         }
 
@@ -14969,22 +15166,46 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
               result =
                   new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
                       .KMapEstimationHistogramBucket(this);
-          int from_bitField0_ = bitField0_;
-          result.minAnonymity_ = minAnonymity_;
-          result.maxAnonymity_ = maxAnonymity_;
-          result.bucketSize_ = bucketSize_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
+                    .KMapEstimationHistogramBucket
+                result) {
           if (bucketValuesBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0)) {
+            if (((bitField0_ & 0x00000008) != 0)) {
               bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             }
             result.bucketValues_ = bucketValues_;
           } else {
             result.bucketValues_ = bucketValuesBuilder_.build();
           }
-          result.bucketValueCount_ = bucketValueCount_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
+                    .KMapEstimationHistogramBucket
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.minAnonymity_ = minAnonymity_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.maxAnonymity_ = maxAnonymity_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.bucketSize_ = bucketSize_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.bucketValueCount_ = bucketValueCount_;
+          }
         }
 
         @java.lang.Override
@@ -15058,7 +15279,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             if (!other.bucketValues_.isEmpty()) {
               if (bucketValues_.isEmpty()) {
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
               } else {
                 ensureBucketValuesIsMutable();
                 bucketValues_.addAll(other.bucketValues_);
@@ -15071,7 +15292,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 bucketValuesBuilder_.dispose();
                 bucketValuesBuilder_ = null;
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
                 bucketValuesBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getBucketValuesFieldBuilder()
@@ -15113,19 +15334,19 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 case 8:
                   {
                     minAnonymity_ = input.readInt64();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 16:
                   {
                     maxAnonymity_ = input.readInt64();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 case 40:
                   {
                     bucketSize_ = input.readInt64();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 40
                 case 50:
@@ -15148,7 +15369,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 case 56:
                   {
                     bucketValueCount_ = input.readInt64();
-
+                    bitField0_ |= 0x00000010;
                     break;
                   } // case 56
                 default:
@@ -15201,6 +15422,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setMinAnonymity(long value) {
 
           minAnonymity_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -15216,7 +15438,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearMinAnonymity() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           minAnonymity_ = 0L;
           onChanged();
           return this;
@@ -15253,6 +15475,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setMaxAnonymity(long value) {
 
           maxAnonymity_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -15268,7 +15491,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearMaxAnonymity() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           maxAnonymity_ = 0L;
           onChanged();
           return this;
@@ -15305,6 +15528,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setBucketSize(long value) {
 
           bucketSize_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -15320,7 +15544,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearBucketSize() {
-
+          bitField0_ = (bitField0_ & ~0x00000004);
           bucketSize_ = 0L;
           onChanged();
           return this;
@@ -15332,12 +15556,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             bucketValues_ = java.util.Collections.emptyList();
 
         private void ensureBucketValuesIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000008) != 0)) {
             bucketValues_ =
                 new java.util.ArrayList<
                     com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
                         .KMapEstimationQuasiIdValues>(bucketValues_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000008;
           }
         }
 
@@ -15617,7 +15841,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder clearBucketValues() {
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             onChanged();
           } else {
             bucketValuesBuilder_.clear();
@@ -15785,7 +16009,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
                         .KMapEstimationQuasiIdValuesOrBuilder>(
                     bucketValues_,
-                    ((bitField0_ & 0x00000001) != 0),
+                    ((bitField0_ & 0x00000008) != 0),
                     getParentForChildren(),
                     isClean());
             bucketValues_ = null;
@@ -15824,6 +16048,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setBucketValueCount(long value) {
 
           bucketValueCount_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -15839,7 +16064,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearBucketValueCount() {
-
+          bitField0_ = (bitField0_ & ~0x00000010);
           bucketValueCount_ = 0L;
           onChanged();
           return this;
@@ -15918,6 +16143,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     }
 
     public static final int K_MAP_ESTIMATION_HISTOGRAM_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
                 .KMapEstimationHistogramBucket>
@@ -16259,6 +16486,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (kMapEstimationHistogramBuilder_ == null) {
           kMapEstimationHistogram_ = java.util.Collections.emptyList();
         } else {
@@ -16297,7 +16525,16 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           buildPartial() {
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult result =
             new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult result) {
         if (kMapEstimationHistogramBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             kMapEstimationHistogram_ =
@@ -16308,8 +16545,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         } else {
           result.kMapEstimationHistogram_ = kMapEstimationHistogramBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -17396,6 +17636,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int QUASI_IDS_VALUES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.privacy.dlp.v2.Value> quasiIdsValues_;
       /**
        *
@@ -17465,7 +17707,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int ESTIMATED_PROBABILITY_FIELD_NUMBER = 2;
-      private double estimatedProbability_;
+      private double estimatedProbability_ = 0D;
       /**
        *
        *
@@ -17740,6 +17982,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (quasiIdsValuesBuilder_ == null) {
             quasiIdsValues_ = java.util.Collections.emptyList();
           } else {
@@ -17748,7 +17991,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           }
           bitField0_ = (bitField0_ & ~0x00000001);
           estimatedProbability_ = 0D;
-
           return this;
         }
 
@@ -17789,7 +18031,18 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
               result =
                   new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
                       .DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
+                    .DeltaPresenceEstimationQuasiIdValues
+                result) {
           if (quasiIdsValuesBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               quasiIdsValues_ = java.util.Collections.unmodifiableList(quasiIdsValues_);
@@ -17799,9 +18052,16 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           } else {
             result.quasiIdsValues_ = quasiIdsValuesBuilder_.build();
           }
-          result.estimatedProbability_ = estimatedProbability_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
+                    .DeltaPresenceEstimationQuasiIdValues
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.estimatedProbability_ = estimatedProbability_;
+          }
         }
 
         @java.lang.Override
@@ -17935,7 +18195,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 case 17:
                   {
                     estimatedProbability_ = input.readDouble();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 17
                 default:
@@ -18355,6 +18615,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setEstimatedProbability(double value) {
 
           estimatedProbability_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -18377,7 +18638,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearEstimatedProbability() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           estimatedProbability_ = 0D;
           onChanged();
           return this;
@@ -18652,7 +18913,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int MIN_PROBABILITY_FIELD_NUMBER = 1;
-      private double minProbability_;
+      private double minProbability_ = 0D;
       /**
        *
        *
@@ -18670,7 +18931,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int MAX_PROBABILITY_FIELD_NUMBER = 2;
-      private double maxProbability_;
+      private double maxProbability_ = 0D;
       /**
        *
        *
@@ -18688,7 +18949,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int BUCKET_SIZE_FIELD_NUMBER = 5;
-      private long bucketSize_;
+      private long bucketSize_ = 0L;
       /**
        *
        *
@@ -18706,6 +18967,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int BUCKET_VALUES_FIELD_NUMBER = 6;
+
+      @SuppressWarnings("serial")
       private java.util.List<
               com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
                   .DeltaPresenceEstimationQuasiIdValues>
@@ -18803,7 +19066,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       public static final int BUCKET_VALUE_COUNT_FIELD_NUMBER = 7;
-      private long bucketValueCount_;
+      private long bucketValueCount_ = 0L;
       /**
        *
        *
@@ -19109,21 +19372,18 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           minProbability_ = 0D;
-
           maxProbability_ = 0D;
-
           bucketSize_ = 0L;
-
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
           } else {
             bucketValues_ = null;
             bucketValuesBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           bucketValueCount_ = 0L;
-
           return this;
         }
 
@@ -19164,22 +19424,46 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
               result =
                   new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
                       .DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket(this);
-          int from_bitField0_ = bitField0_;
-          result.minProbability_ = minProbability_;
-          result.maxProbability_ = maxProbability_;
-          result.bucketSize_ = bucketSize_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
+                    .DeltaPresenceEstimationHistogramBucket
+                result) {
           if (bucketValuesBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0)) {
+            if (((bitField0_ & 0x00000008) != 0)) {
               bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             }
             result.bucketValues_ = bucketValues_;
           } else {
             result.bucketValues_ = bucketValuesBuilder_.build();
           }
-          result.bucketValueCount_ = bucketValueCount_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
+                    .DeltaPresenceEstimationHistogramBucket
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.minProbability_ = minProbability_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.maxProbability_ = maxProbability_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.bucketSize_ = bucketSize_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.bucketValueCount_ = bucketValueCount_;
+          }
         }
 
         @java.lang.Override
@@ -19254,7 +19538,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             if (!other.bucketValues_.isEmpty()) {
               if (bucketValues_.isEmpty()) {
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
               } else {
                 ensureBucketValuesIsMutable();
                 bucketValues_.addAll(other.bucketValues_);
@@ -19267,7 +19551,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 bucketValuesBuilder_.dispose();
                 bucketValuesBuilder_ = null;
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000008);
                 bucketValuesBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getBucketValuesFieldBuilder()
@@ -19309,19 +19593,19 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 case 9:
                   {
                     minProbability_ = input.readDouble();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 9
                 case 17:
                   {
                     maxProbability_ = input.readDouble();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 17
                 case 40:
                   {
                     bucketSize_ = input.readInt64();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 40
                 case 50:
@@ -19345,7 +19629,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 case 56:
                   {
                     bucketValueCount_ = input.readInt64();
-
+                    bitField0_ |= 0x00000010;
                     break;
                   } // case 56
                 default:
@@ -19398,6 +19682,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setMinProbability(double value) {
 
           minProbability_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -19413,7 +19698,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearMinProbability() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           minProbability_ = 0D;
           onChanged();
           return this;
@@ -19450,6 +19735,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setMaxProbability(double value) {
 
           maxProbability_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -19465,7 +19751,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearMaxProbability() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           maxProbability_ = 0D;
           onChanged();
           return this;
@@ -19502,6 +19788,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setBucketSize(long value) {
 
           bucketSize_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -19517,7 +19804,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearBucketSize() {
-
+          bitField0_ = (bitField0_ & ~0x00000004);
           bucketSize_ = 0L;
           onChanged();
           return this;
@@ -19529,13 +19816,13 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             bucketValues_ = java.util.Collections.emptyList();
 
         private void ensureBucketValuesIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000008) != 0)) {
             bucketValues_ =
                 new java.util.ArrayList<
                     com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
                         .DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues>(
                     bucketValues_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000008;
           }
         }
 
@@ -19815,7 +20102,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder clearBucketValues() {
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             onChanged();
           } else {
             bucketValuesBuilder_.clear();
@@ -19987,7 +20274,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                         .DeltaPresenceEstimationResult
                         .DeltaPresenceEstimationQuasiIdValuesOrBuilder>(
                     bucketValues_,
-                    ((bitField0_ & 0x00000001) != 0),
+                    ((bitField0_ & 0x00000008) != 0),
                     getParentForChildren(),
                     isClean());
             bucketValues_ = null;
@@ -20026,6 +20313,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder setBucketValueCount(long value) {
 
           bucketValueCount_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -20041,7 +20329,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          * @return This builder for chaining.
          */
         public Builder clearBucketValueCount() {
-
+          bitField0_ = (bitField0_ & ~0x00000010);
           bucketValueCount_ = 0L;
           onChanged();
           return this;
@@ -20121,6 +20409,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     }
 
     public static final int DELTA_PRESENCE_ESTIMATION_HISTOGRAM_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
                 .DeltaPresenceEstimationHistogramBucket>
@@ -20480,6 +20770,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (deltaPresenceEstimationHistogramBuilder_ == null) {
           deltaPresenceEstimationHistogram_ = java.util.Collections.emptyList();
         } else {
@@ -20521,7 +20812,17 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             result =
                 new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
                     .DeltaPresenceEstimationResult(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
+              result) {
         if (deltaPresenceEstimationHistogramBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             deltaPresenceEstimationHistogram_ =
@@ -20533,8 +20834,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           result.deltaPresenceEstimationHistogram_ =
               deltaPresenceEstimationHistogramBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
+              result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -21470,7 +21775,9 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder getJobConfigOrBuilder() {
-      return getJobConfig();
+      return jobConfig_ == null
+          ? com.google.privacy.dlp.v2.RiskAnalysisJobConfig.getDefaultInstance()
+          : jobConfig_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -21704,10 +22011,10 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (jobConfigBuilder_ == null) {
-          jobConfig_ = null;
-        } else {
-          jobConfig_ = null;
+        bitField0_ = 0;
+        jobConfig_ = null;
+        if (jobConfigBuilder_ != null) {
+          jobConfigBuilder_.dispose();
           jobConfigBuilder_ = null;
         }
         return this;
@@ -21743,13 +22050,20 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions result =
             new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions(
                 this);
-        if (jobConfigBuilder_ == null) {
-          result.jobConfig_ = jobConfig_;
-        } else {
-          result.jobConfig_ = jobConfigBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.jobConfig_ = jobConfigBuilder_ == null ? jobConfig_ : jobConfigBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -21839,7 +22153,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
               case 10:
                 {
                   input.readMessage(getJobConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -21859,6 +22173,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.privacy.dlp.v2.RiskAnalysisJobConfig jobConfig_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.RiskAnalysisJobConfig,
@@ -21877,7 +22193,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * @return Whether the jobConfig field is set.
        */
       public boolean hasJobConfig() {
-        return jobConfigBuilder_ != null || jobConfig_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -21914,11 +22230,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             throw new NullPointerException();
           }
           jobConfig_ = value;
-          onChanged();
         } else {
           jobConfigBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -21934,11 +22250,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           com.google.privacy.dlp.v2.RiskAnalysisJobConfig.Builder builderForValue) {
         if (jobConfigBuilder_ == null) {
           jobConfig_ = builderForValue.build();
-          onChanged();
         } else {
           jobConfigBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -21952,19 +22268,19 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        */
       public Builder mergeJobConfig(com.google.privacy.dlp.v2.RiskAnalysisJobConfig value) {
         if (jobConfigBuilder_ == null) {
-          if (jobConfig_ != null) {
-            jobConfig_ =
-                com.google.privacy.dlp.v2.RiskAnalysisJobConfig.newBuilder(jobConfig_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && jobConfig_ != null
+              && jobConfig_
+                  != com.google.privacy.dlp.v2.RiskAnalysisJobConfig.getDefaultInstance()) {
+            getJobConfigBuilder().mergeFrom(value);
           } else {
             jobConfig_ = value;
           }
-          onChanged();
         } else {
           jobConfigBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -21977,14 +22293,13 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig job_config = 1;</code>
        */
       public Builder clearJobConfig() {
-        if (jobConfigBuilder_ == null) {
-          jobConfig_ = null;
-          onChanged();
-        } else {
-          jobConfig_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        jobConfig_ = null;
+        if (jobConfigBuilder_ != null) {
+          jobConfigBuilder_.dispose();
           jobConfigBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -21997,7 +22312,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig job_config = 1;</code>
        */
       public com.google.privacy.dlp.v2.RiskAnalysisJobConfig.Builder getJobConfigBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getJobConfigFieldBuilder().getBuilder();
       }
@@ -22219,7 +22534,9 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.PrivacyMetricOrBuilder getRequestedPrivacyMetricOrBuilder() {
-    return getRequestedPrivacyMetric();
+    return requestedPrivacyMetric_ == null
+        ? com.google.privacy.dlp.v2.PrivacyMetric.getDefaultInstance()
+        : requestedPrivacyMetric_;
   }
 
   public static final int REQUESTED_SOURCE_TABLE_FIELD_NUMBER = 2;
@@ -22267,7 +22584,9 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getRequestedSourceTableOrBuilder() {
-    return getRequestedSourceTable();
+    return requestedSourceTable_ == null
+        ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
+        : requestedSourceTable_;
   }
 
   public static final int NUMERICAL_STATS_RESULT_FIELD_NUMBER = 3;
@@ -22697,7 +23016,10 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
           .RequestedRiskAnalysisOptionsOrBuilder
       getRequestedOptionsOrBuilder() {
-    return getRequestedOptions();
+    return requestedOptions_ == null
+        ? com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+            .getDefaultInstance()
+        : requestedOptions_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -23050,16 +23372,15 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (requestedPrivacyMetricBuilder_ == null) {
-        requestedPrivacyMetric_ = null;
-      } else {
-        requestedPrivacyMetric_ = null;
+      bitField0_ = 0;
+      requestedPrivacyMetric_ = null;
+      if (requestedPrivacyMetricBuilder_ != null) {
+        requestedPrivacyMetricBuilder_.dispose();
         requestedPrivacyMetricBuilder_ = null;
       }
-      if (requestedSourceTableBuilder_ == null) {
-        requestedSourceTable_ = null;
-      } else {
-        requestedSourceTable_ = null;
+      requestedSourceTable_ = null;
+      if (requestedSourceTableBuilder_ != null) {
+        requestedSourceTableBuilder_.dispose();
         requestedSourceTableBuilder_ = null;
       }
       if (numericalStatsResultBuilder_ != null) {
@@ -23080,10 +23401,9 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       if (deltaPresenceEstimationResultBuilder_ != null) {
         deltaPresenceEstimationResultBuilder_.clear();
       }
-      if (requestedOptionsBuilder_ == null) {
-        requestedOptions_ = null;
-      } else {
-        requestedOptions_ = null;
+      requestedOptions_ = null;
+      if (requestedOptionsBuilder_ != null) {
+        requestedOptionsBuilder_.dispose();
         requestedOptionsBuilder_ = null;
       }
       resultCase_ = 0;
@@ -23115,66 +23435,55 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails buildPartial() {
       com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails result =
           new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails(this);
-      if (requestedPrivacyMetricBuilder_ == null) {
-        result.requestedPrivacyMetric_ = requestedPrivacyMetric_;
-      } else {
-        result.requestedPrivacyMetric_ = requestedPrivacyMetricBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (requestedSourceTableBuilder_ == null) {
-        result.requestedSourceTable_ = requestedSourceTable_;
-      } else {
-        result.requestedSourceTable_ = requestedSourceTableBuilder_.build();
-      }
-      if (resultCase_ == 3) {
-        if (numericalStatsResultBuilder_ == null) {
-          result.result_ = result_;
-        } else {
-          result.result_ = numericalStatsResultBuilder_.build();
-        }
-      }
-      if (resultCase_ == 4) {
-        if (categoricalStatsResultBuilder_ == null) {
-          result.result_ = result_;
-        } else {
-          result.result_ = categoricalStatsResultBuilder_.build();
-        }
-      }
-      if (resultCase_ == 5) {
-        if (kAnonymityResultBuilder_ == null) {
-          result.result_ = result_;
-        } else {
-          result.result_ = kAnonymityResultBuilder_.build();
-        }
-      }
-      if (resultCase_ == 6) {
-        if (lDiversityResultBuilder_ == null) {
-          result.result_ = result_;
-        } else {
-          result.result_ = lDiversityResultBuilder_.build();
-        }
-      }
-      if (resultCase_ == 7) {
-        if (kMapEstimationResultBuilder_ == null) {
-          result.result_ = result_;
-        } else {
-          result.result_ = kMapEstimationResultBuilder_.build();
-        }
-      }
-      if (resultCase_ == 9) {
-        if (deltaPresenceEstimationResultBuilder_ == null) {
-          result.result_ = result_;
-        } else {
-          result.result_ = deltaPresenceEstimationResultBuilder_.build();
-        }
-      }
-      if (requestedOptionsBuilder_ == null) {
-        result.requestedOptions_ = requestedOptions_;
-      } else {
-        result.requestedOptions_ = requestedOptionsBuilder_.build();
-      }
-      result.resultCase_ = resultCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.requestedPrivacyMetric_ =
+            requestedPrivacyMetricBuilder_ == null
+                ? requestedPrivacyMetric_
+                : requestedPrivacyMetricBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestedSourceTable_ =
+            requestedSourceTableBuilder_ == null
+                ? requestedSourceTable_
+                : requestedSourceTableBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.requestedOptions_ =
+            requestedOptionsBuilder_ == null ? requestedOptions_ : requestedOptionsBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails result) {
+      result.resultCase_ = resultCase_;
+      result.result_ = this.result_;
+      if (resultCase_ == 3 && numericalStatsResultBuilder_ != null) {
+        result.result_ = numericalStatsResultBuilder_.build();
+      }
+      if (resultCase_ == 4 && categoricalStatsResultBuilder_ != null) {
+        result.result_ = categoricalStatsResultBuilder_.build();
+      }
+      if (resultCase_ == 5 && kAnonymityResultBuilder_ != null) {
+        result.result_ = kAnonymityResultBuilder_.build();
+      }
+      if (resultCase_ == 6 && lDiversityResultBuilder_ != null) {
+        result.result_ = lDiversityResultBuilder_.build();
+      }
+      if (resultCase_ == 7 && kMapEstimationResultBuilder_ != null) {
+        result.result_ = kMapEstimationResultBuilder_.build();
+      }
+      if (resultCase_ == 9 && deltaPresenceEstimationResultBuilder_ != null) {
+        result.result_ = deltaPresenceEstimationResultBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -23298,14 +23607,14 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
               {
                 input.readMessage(
                     getRequestedPrivacyMetricFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getRequestedSourceTableFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -23354,7 +23663,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
               {
                 input.readMessage(
                     getRequestedOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             default:
@@ -23388,6 +23697,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.privacy.dlp.v2.PrivacyMetric requestedPrivacyMetric_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.PrivacyMetric,
@@ -23406,7 +23717,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * @return Whether the requestedPrivacyMetric field is set.
      */
     public boolean hasRequestedPrivacyMetric() {
-      return requestedPrivacyMetricBuilder_ != null || requestedPrivacyMetric_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -23443,11 +23754,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         requestedPrivacyMetric_ = value;
-        onChanged();
       } else {
         requestedPrivacyMetricBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -23463,11 +23774,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         com.google.privacy.dlp.v2.PrivacyMetric.Builder builderForValue) {
       if (requestedPrivacyMetricBuilder_ == null) {
         requestedPrivacyMetric_ = builderForValue.build();
-        onChanged();
       } else {
         requestedPrivacyMetricBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -23481,19 +23792,19 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      */
     public Builder mergeRequestedPrivacyMetric(com.google.privacy.dlp.v2.PrivacyMetric value) {
       if (requestedPrivacyMetricBuilder_ == null) {
-        if (requestedPrivacyMetric_ != null) {
-          requestedPrivacyMetric_ =
-              com.google.privacy.dlp.v2.PrivacyMetric.newBuilder(requestedPrivacyMetric_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && requestedPrivacyMetric_ != null
+            && requestedPrivacyMetric_
+                != com.google.privacy.dlp.v2.PrivacyMetric.getDefaultInstance()) {
+          getRequestedPrivacyMetricBuilder().mergeFrom(value);
         } else {
           requestedPrivacyMetric_ = value;
         }
-        onChanged();
       } else {
         requestedPrivacyMetricBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -23506,14 +23817,13 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * <code>.google.privacy.dlp.v2.PrivacyMetric requested_privacy_metric = 1;</code>
      */
     public Builder clearRequestedPrivacyMetric() {
-      if (requestedPrivacyMetricBuilder_ == null) {
-        requestedPrivacyMetric_ = null;
-        onChanged();
-      } else {
-        requestedPrivacyMetric_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      requestedPrivacyMetric_ = null;
+      if (requestedPrivacyMetricBuilder_ != null) {
+        requestedPrivacyMetricBuilder_.dispose();
         requestedPrivacyMetricBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -23526,7 +23836,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * <code>.google.privacy.dlp.v2.PrivacyMetric requested_privacy_metric = 1;</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.Builder getRequestedPrivacyMetricBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRequestedPrivacyMetricFieldBuilder().getBuilder();
     }
@@ -23592,7 +23902,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * @return Whether the requestedSourceTable field is set.
      */
     public boolean hasRequestedSourceTable() {
-      return requestedSourceTableBuilder_ != null || requestedSourceTable_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -23629,11 +23939,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         requestedSourceTable_ = value;
-        onChanged();
       } else {
         requestedSourceTableBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -23649,11 +23959,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         com.google.privacy.dlp.v2.BigQueryTable.Builder builderForValue) {
       if (requestedSourceTableBuilder_ == null) {
         requestedSourceTable_ = builderForValue.build();
-        onChanged();
       } else {
         requestedSourceTableBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -23667,19 +23977,19 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      */
     public Builder mergeRequestedSourceTable(com.google.privacy.dlp.v2.BigQueryTable value) {
       if (requestedSourceTableBuilder_ == null) {
-        if (requestedSourceTable_ != null) {
-          requestedSourceTable_ =
-              com.google.privacy.dlp.v2.BigQueryTable.newBuilder(requestedSourceTable_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && requestedSourceTable_ != null
+            && requestedSourceTable_
+                != com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()) {
+          getRequestedSourceTableBuilder().mergeFrom(value);
         } else {
           requestedSourceTable_ = value;
         }
-        onChanged();
       } else {
         requestedSourceTableBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -23692,14 +24002,13 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * <code>.google.privacy.dlp.v2.BigQueryTable requested_source_table = 2;</code>
      */
     public Builder clearRequestedSourceTable() {
-      if (requestedSourceTableBuilder_ == null) {
-        requestedSourceTable_ = null;
-        onChanged();
-      } else {
-        requestedSourceTable_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      requestedSourceTable_ = null;
+      if (requestedSourceTableBuilder_ != null) {
+        requestedSourceTableBuilder_.dispose();
         requestedSourceTableBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -23712,7 +24021,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * <code>.google.privacy.dlp.v2.BigQueryTable requested_source_table = 2;</code>
      */
     public com.google.privacy.dlp.v2.BigQueryTable.Builder getRequestedSourceTableBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRequestedSourceTableFieldBuilder().getBuilder();
     }
@@ -24003,7 +24312,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
       resultCase_ = 3;
       onChanged();
-      ;
       return numericalStatsResultBuilder_;
     }
 
@@ -24252,7 +24560,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
       resultCase_ = 4;
       onChanged();
-      ;
       return categoricalStatsResultBuilder_;
     }
 
@@ -24494,7 +24801,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
       resultCase_ = 5;
       onChanged();
-      ;
       return kAnonymityResultBuilder_;
     }
 
@@ -24736,7 +25042,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
       resultCase_ = 6;
       onChanged();
-      ;
       return lDiversityResultBuilder_;
     }
 
@@ -24983,7 +25288,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
       resultCase_ = 7;
       onChanged();
-      ;
       return kMapEstimationResultBuilder_;
     }
 
@@ -25244,7 +25548,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
       resultCase_ = 9;
       onChanged();
-      ;
       return deltaPresenceEstimationResultBuilder_;
     }
 
@@ -25271,7 +25574,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * @return Whether the requestedOptions field is set.
      */
     public boolean hasRequestedOptions() {
-      return requestedOptionsBuilder_ != null || requestedOptions_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -25315,11 +25618,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         requestedOptions_ = value;
-        onChanged();
       } else {
         requestedOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -25338,11 +25641,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             builderForValue) {
       if (requestedOptionsBuilder_ == null) {
         requestedOptions_ = builderForValue.build();
-        onChanged();
       } else {
         requestedOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -25359,20 +25662,20 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     public Builder mergeRequestedOptions(
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions value) {
       if (requestedOptionsBuilder_ == null) {
-        if (requestedOptions_ != null) {
-          requestedOptions_ =
-              com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
-                  .newBuilder(requestedOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && requestedOptions_ != null
+            && requestedOptions_
+                != com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+                    .RequestedRiskAnalysisOptions.getDefaultInstance()) {
+          getRequestedOptionsBuilder().mergeFrom(value);
         } else {
           requestedOptions_ = value;
         }
-        onChanged();
       } else {
         requestedOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -25387,14 +25690,13 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearRequestedOptions() {
-      if (requestedOptionsBuilder_ == null) {
-        requestedOptions_ = null;
-        onChanged();
-      } else {
-        requestedOptions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      requestedOptions_ = null;
+      if (requestedOptionsBuilder_ != null) {
+        requestedOptionsBuilder_.dispose();
         requestedOptionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -25411,7 +25713,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
             .Builder
         getRequestedOptionsBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getRequestedOptionsFieldBuilder().getBuilder();
     }

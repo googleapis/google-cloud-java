@@ -69,7 +69,9 @@ public final class FleetConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FLEET_SPEC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object fleetSpec_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fleetSpec_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class FleetConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -373,10 +377,9 @@ public final class FleetConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       fleetSpec_ = "";
-
       name_ = "";
-
       return this;
     }
 
@@ -404,10 +407,21 @@ public final class FleetConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gaming.v1.FleetConfig buildPartial() {
       com.google.cloud.gaming.v1.FleetConfig result =
           new com.google.cloud.gaming.v1.FleetConfig(this);
-      result.fleetSpec_ = fleetSpec_;
-      result.name_ = name_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gaming.v1.FleetConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fleetSpec_ = fleetSpec_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -457,10 +471,12 @@ public final class FleetConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.gaming.v1.FleetConfig.getDefaultInstance()) return this;
       if (!other.getFleetSpec().isEmpty()) {
         fleetSpec_ = other.fleetSpec_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -492,13 +508,13 @@ public final class FleetConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 fleetSpec_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -517,6 +533,8 @@ public final class FleetConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object fleetSpec_ = "";
     /**
@@ -582,8 +600,8 @@ public final class FleetConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       fleetSpec_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -600,8 +618,8 @@ public final class FleetConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFleetSpec() {
-
       fleetSpec_ = getDefaultInstance().getFleetSpec();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -623,8 +641,8 @@ public final class FleetConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fleetSpec_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -690,8 +708,8 @@ public final class FleetConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -707,8 +725,8 @@ public final class FleetConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -729,8 +747,8 @@ public final class FleetConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

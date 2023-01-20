@@ -70,7 +70,9 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -119,6 +121,8 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUPPORTED_VERSIONS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.SkaffoldVersion> supportedVersions_;
   /**
    *
@@ -199,7 +203,9 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEFAULT_SKAFFOLD_VERSION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object defaultSkaffoldVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object defaultSkaffoldVersion_ = "";
   /**
    *
    *
@@ -465,17 +471,16 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (supportedVersionsBuilder_ == null) {
         supportedVersions_ = java.util.Collections.emptyList();
       } else {
         supportedVersions_ = null;
         supportedVersionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       defaultSkaffoldVersion_ = "";
-
       return this;
     }
 
@@ -502,20 +507,34 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.deploy.v1.Config buildPartial() {
       com.google.cloud.deploy.v1.Config result = new com.google.cloud.deploy.v1.Config(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.deploy.v1.Config result) {
       if (supportedVersionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           supportedVersions_ = java.util.Collections.unmodifiableList(supportedVersions_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.supportedVersions_ = supportedVersions_;
       } else {
         result.supportedVersions_ = supportedVersionsBuilder_.build();
       }
-      result.defaultSkaffoldVersion_ = defaultSkaffoldVersion_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.Config result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.defaultSkaffoldVersion_ = defaultSkaffoldVersion_;
+      }
     }
 
     @java.lang.Override
@@ -565,13 +584,14 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.deploy.v1.Config.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (supportedVersionsBuilder_ == null) {
         if (!other.supportedVersions_.isEmpty()) {
           if (supportedVersions_.isEmpty()) {
             supportedVersions_ = other.supportedVersions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSupportedVersionsIsMutable();
             supportedVersions_.addAll(other.supportedVersions_);
@@ -584,7 +604,7 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
             supportedVersionsBuilder_.dispose();
             supportedVersionsBuilder_ = null;
             supportedVersions_ = other.supportedVersions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             supportedVersionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSupportedVersionsFieldBuilder()
@@ -596,6 +616,7 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDefaultSkaffoldVersion().isEmpty()) {
         defaultSkaffoldVersion_ = other.defaultSkaffoldVersion_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -627,7 +648,7 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -646,7 +667,7 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 defaultSkaffoldVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -729,8 +750,8 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -746,8 +767,8 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -768,8 +789,8 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -778,10 +799,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSupportedVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         supportedVersions_ =
             new java.util.ArrayList<com.google.cloud.deploy.v1.SkaffoldVersion>(supportedVersions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1021,7 +1042,7 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSupportedVersions() {
       if (supportedVersionsBuilder_ == null) {
         supportedVersions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         supportedVersionsBuilder_.clear();
@@ -1161,7 +1182,7 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.deploy.v1.SkaffoldVersion.Builder,
                 com.google.cloud.deploy.v1.SkaffoldVersionOrBuilder>(
                 supportedVersions_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         supportedVersions_ = null;
@@ -1236,8 +1257,8 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       defaultSkaffoldVersion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1255,8 +1276,8 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDefaultSkaffoldVersion() {
-
       defaultSkaffoldVersion_ = getDefaultInstance().getDefaultSkaffoldVersion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1279,8 +1300,8 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       defaultSkaffoldVersion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

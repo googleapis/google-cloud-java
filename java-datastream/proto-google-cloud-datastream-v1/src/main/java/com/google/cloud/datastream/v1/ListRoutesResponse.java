@@ -70,6 +70,8 @@ public final class ListRoutesResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ROUTES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.Route> routes_;
   /**
    *
@@ -139,7 +141,9 @@ public final class ListRoutesResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -190,6 +194,8 @@ public final class ListRoutesResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int UNREACHABLE_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList unreachable_;
   /**
    *
@@ -474,6 +480,7 @@ public final class ListRoutesResponse extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (routesBuilder_ == null) {
         routes_ = java.util.Collections.emptyList();
       } else {
@@ -482,9 +489,8 @@ public final class ListRoutesResponse extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -512,7 +518,16 @@ public final class ListRoutesResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.datastream.v1.ListRoutesResponse buildPartial() {
       com.google.cloud.datastream.v1.ListRoutesResponse result =
           new com.google.cloud.datastream.v1.ListRoutesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datastream.v1.ListRoutesResponse result) {
       if (routesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           routes_ = java.util.Collections.unmodifiableList(routes_);
@@ -522,14 +537,18 @@ public final class ListRoutesResponse extends com.google.protobuf.GeneratedMessa
       } else {
         result.routes_ = routesBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         unreachable_ = unreachable_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.unreachable_ = unreachable_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.ListRoutesResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -607,12 +626,13 @@ public final class ListRoutesResponse extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.unreachable_.isEmpty()) {
         if (unreachable_.isEmpty()) {
           unreachable_ = other.unreachable_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureUnreachableIsMutable();
           unreachable_.addAll(other.unreachable_);
@@ -661,7 +681,7 @@ public final class ListRoutesResponse extends com.google.protobuf.GeneratedMessa
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1102,8 +1122,8 @@ public final class ListRoutesResponse extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1120,8 +1140,8 @@ public final class ListRoutesResponse extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1143,8 +1163,8 @@ public final class ListRoutesResponse extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1153,9 +1173,9 @@ public final class ListRoutesResponse extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureUnreachableIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         unreachable_ = new com.google.protobuf.LazyStringArrayList(unreachable_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1290,7 +1310,7 @@ public final class ListRoutesResponse extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearUnreachable() {
       unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

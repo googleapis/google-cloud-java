@@ -68,7 +68,9 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
   }
 
   public static final int OBJECT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object object_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object object_ = "";
   /**
    *
    *
@@ -318,8 +320,8 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       object_ = "";
-
       return this;
     }
 
@@ -347,9 +349,18 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
     public com.google.cloud.datastream.v1.StartBackfillJobRequest buildPartial() {
       com.google.cloud.datastream.v1.StartBackfillJobRequest result =
           new com.google.cloud.datastream.v1.StartBackfillJobRequest(this);
-      result.object_ = object_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.StartBackfillJobRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.object_ = object_;
+      }
     }
 
     @java.lang.Override
@@ -400,6 +411,7 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getObject().isEmpty()) {
         object_ = other.object_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -431,7 +443,7 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
             case 10:
               {
                 object_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -450,6 +462,8 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object object_ = "";
     /**
@@ -518,8 +532,8 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       object_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -537,8 +551,8 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearObject() {
-
       object_ = getDefaultInstance().getObject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -561,8 +575,8 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       object_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

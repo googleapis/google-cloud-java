@@ -300,7 +300,10 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int USAGES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> usages_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.deploy.v1.ExecutionConfig.ExecutionEnvironmentUsage>
       usages_converter_ =
@@ -309,9 +312,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
               com.google.cloud.deploy.v1.ExecutionConfig.ExecutionEnvironmentUsage>() {
             public com.google.cloud.deploy.v1.ExecutionConfig.ExecutionEnvironmentUsage convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.deploy.v1.ExecutionConfig.ExecutionEnvironmentUsage result =
-                  com.google.cloud.deploy.v1.ExecutionConfig.ExecutionEnvironmentUsage.valueOf(
+                  com.google.cloud.deploy.v1.ExecutionConfig.ExecutionEnvironmentUsage.forNumber(
                       from);
               return result == null
                   ? com.google.cloud.deploy.v1.ExecutionConfig.ExecutionEnvironmentUsage
@@ -527,7 +529,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int WORKER_POOL_FIELD_NUMBER = 4;
-  private volatile java.lang.Object workerPool_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workerPool_ = "";
   /**
    *
    *
@@ -586,7 +590,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object serviceAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
   /**
    *
    *
@@ -639,7 +645,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ARTIFACT_STORAGE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object artifactStorage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object artifactStorage_ = "";
   /**
    *
    *
@@ -750,7 +758,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getExecutionTimeoutOrBuilder() {
-    return getExecutionTimeout();
+    return executionTimeout_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : executionTimeout_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1046,6 +1056,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       usages_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
       if (defaultPoolBuilder_ != null) {
@@ -1055,15 +1066,11 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
         privatePoolBuilder_.clear();
       }
       workerPool_ = "";
-
       serviceAccount_ = "";
-
       artifactStorage_ = "";
-
-      if (executionTimeoutBuilder_ == null) {
-        executionTimeout_ = null;
-      } else {
-        executionTimeout_ = null;
+      executionTimeout_ = null;
+      if (executionTimeoutBuilder_ != null) {
+        executionTimeoutBuilder_.dispose();
         executionTimeoutBuilder_ = null;
       }
       executionEnvironmentCase_ = 0;
@@ -1095,37 +1102,49 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.deploy.v1.ExecutionConfig buildPartial() {
       com.google.cloud.deploy.v1.ExecutionConfig result =
           new com.google.cloud.deploy.v1.ExecutionConfig(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.deploy.v1.ExecutionConfig result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         usages_ = java.util.Collections.unmodifiableList(usages_);
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.usages_ = usages_;
-      if (executionEnvironmentCase_ == 2) {
-        if (defaultPoolBuilder_ == null) {
-          result.executionEnvironment_ = executionEnvironment_;
-        } else {
-          result.executionEnvironment_ = defaultPoolBuilder_.build();
-        }
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.ExecutionConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.workerPool_ = workerPool_;
       }
-      if (executionEnvironmentCase_ == 3) {
-        if (privatePoolBuilder_ == null) {
-          result.executionEnvironment_ = executionEnvironment_;
-        } else {
-          result.executionEnvironment_ = privatePoolBuilder_.build();
-        }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
       }
-      result.workerPool_ = workerPool_;
-      result.serviceAccount_ = serviceAccount_;
-      result.artifactStorage_ = artifactStorage_;
-      if (executionTimeoutBuilder_ == null) {
-        result.executionTimeout_ = executionTimeout_;
-      } else {
-        result.executionTimeout_ = executionTimeoutBuilder_.build();
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.artifactStorage_ = artifactStorage_;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.executionTimeout_ =
+            executionTimeoutBuilder_ == null ? executionTimeout_ : executionTimeoutBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.deploy.v1.ExecutionConfig result) {
       result.executionEnvironmentCase_ = executionEnvironmentCase_;
-      onBuilt();
-      return result;
+      result.executionEnvironment_ = this.executionEnvironment_;
+      if (executionEnvironmentCase_ == 2 && defaultPoolBuilder_ != null) {
+        result.executionEnvironment_ = defaultPoolBuilder_.build();
+      }
+      if (executionEnvironmentCase_ == 3 && privatePoolBuilder_ != null) {
+        result.executionEnvironment_ = privatePoolBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1185,14 +1204,17 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getWorkerPool().isEmpty()) {
         workerPool_ = other.workerPool_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getArtifactStorage().isEmpty()) {
         artifactStorage_ = other.artifactStorage_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasExecutionTimeout()) {
@@ -1274,26 +1296,26 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
             case 34:
               {
                 workerPool_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 artifactStorage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     getExecutionTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -1804,7 +1826,6 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       }
       executionEnvironmentCase_ = 2;
       onChanged();
-      ;
       return defaultPoolBuilder_;
     }
 
@@ -2032,7 +2053,6 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       }
       executionEnvironmentCase_ = 3;
       onChanged();
-      ;
       return privatePoolBuilder_;
     }
 
@@ -2112,8 +2132,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       workerPool_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2134,8 +2154,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearWorkerPool() {
-
       workerPool_ = getDefaultInstance().getWorkerPool();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2161,8 +2181,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workerPool_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2234,8 +2254,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2253,8 +2273,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearServiceAccount() {
-
       serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2277,8 +2297,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2353,8 +2373,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       artifactStorage_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2373,8 +2393,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearArtifactStorage() {
-
       artifactStorage_ = getDefaultInstance().getArtifactStorage();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2398,8 +2418,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       artifactStorage_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2426,7 +2446,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
      * @return Whether the executionTimeout field is set.
      */
     public boolean hasExecutionTimeout() {
-      return executionTimeoutBuilder_ != null || executionTimeout_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2471,11 +2491,11 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         executionTimeout_ = value;
-        onChanged();
       } else {
         executionTimeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2494,11 +2514,11 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     public Builder setExecutionTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (executionTimeoutBuilder_ == null) {
         executionTimeout_ = builderForValue.build();
-        onChanged();
       } else {
         executionTimeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2516,19 +2536,18 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeExecutionTimeout(com.google.protobuf.Duration value) {
       if (executionTimeoutBuilder_ == null) {
-        if (executionTimeout_ != null) {
-          executionTimeout_ =
-              com.google.protobuf.Duration.newBuilder(executionTimeout_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && executionTimeout_ != null
+            && executionTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getExecutionTimeoutBuilder().mergeFrom(value);
         } else {
           executionTimeout_ = value;
         }
-        onChanged();
       } else {
         executionTimeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2545,14 +2564,13 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearExecutionTimeout() {
-      if (executionTimeoutBuilder_ == null) {
-        executionTimeout_ = null;
-        onChanged();
-      } else {
-        executionTimeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      executionTimeout_ = null;
+      if (executionTimeoutBuilder_ != null) {
+        executionTimeoutBuilder_.dispose();
         executionTimeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2569,7 +2587,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.protobuf.Duration.Builder getExecutionTimeoutBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getExecutionTimeoutFieldBuilder().getBuilder();
     }

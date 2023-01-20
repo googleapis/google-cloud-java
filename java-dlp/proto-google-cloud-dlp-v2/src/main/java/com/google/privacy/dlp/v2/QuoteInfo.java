@@ -370,6 +370,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (dateTimeBuilder_ != null) {
         dateTimeBuilder_.clear();
       }
@@ -401,16 +402,24 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.privacy.dlp.v2.QuoteInfo buildPartial() {
       com.google.privacy.dlp.v2.QuoteInfo result = new com.google.privacy.dlp.v2.QuoteInfo(this);
-      if (parsedQuoteCase_ == 2) {
-        if (dateTimeBuilder_ == null) {
-          result.parsedQuote_ = parsedQuote_;
-        } else {
-          result.parsedQuote_ = dateTimeBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.parsedQuoteCase_ = parsedQuoteCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.QuoteInfo result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.QuoteInfo result) {
+      result.parsedQuoteCase_ = parsedQuoteCase_;
+      result.parsedQuote_ = this.parsedQuote_;
+      if (parsedQuoteCase_ == 2 && dateTimeBuilder_ != null) {
+        result.parsedQuote_ = dateTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -531,6 +540,8 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.DateTime,
@@ -737,7 +748,6 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       parsedQuoteCase_ = 2;
       onChanged();
-      ;
       return dateTimeBuilder_;
     }
 

@@ -170,7 +170,6 @@ public interface FederationOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -286,7 +285,6 @@ public interface FederationOrBuilder
    * map&lt;int32, .google.cloud.metastore.v1alpha.BackendMetastore&gt; backend_metastores = 6;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.metastore.v1alpha.BackendMetastore getBackendMetastoresOrDefault(
       int key,

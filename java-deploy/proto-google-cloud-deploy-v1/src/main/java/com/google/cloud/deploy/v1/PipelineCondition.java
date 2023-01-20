@@ -111,7 +111,9 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.deploy.v1.PipelineReadyConditionOrBuilder
       getPipelineReadyConditionOrBuilder() {
-    return getPipelineReadyCondition();
+    return pipelineReadyCondition_ == null
+        ? com.google.cloud.deploy.v1.PipelineReadyCondition.getDefaultInstance()
+        : pipelineReadyCondition_;
   }
 
   public static final int TARGETS_PRESENT_CONDITION_FIELD_NUMBER = 3;
@@ -160,7 +162,9 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.deploy.v1.TargetsPresentConditionOrBuilder
       getTargetsPresentConditionOrBuilder() {
-    return getTargetsPresentCondition();
+    return targetsPresentCondition_ == null
+        ? com.google.cloud.deploy.v1.TargetsPresentCondition.getDefaultInstance()
+        : targetsPresentCondition_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -381,16 +385,15 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (pipelineReadyConditionBuilder_ == null) {
-        pipelineReadyCondition_ = null;
-      } else {
-        pipelineReadyCondition_ = null;
+      bitField0_ = 0;
+      pipelineReadyCondition_ = null;
+      if (pipelineReadyConditionBuilder_ != null) {
+        pipelineReadyConditionBuilder_.dispose();
         pipelineReadyConditionBuilder_ = null;
       }
-      if (targetsPresentConditionBuilder_ == null) {
-        targetsPresentCondition_ = null;
-      } else {
-        targetsPresentCondition_ = null;
+      targetsPresentCondition_ = null;
+      if (targetsPresentConditionBuilder_ != null) {
+        targetsPresentConditionBuilder_.dispose();
         targetsPresentConditionBuilder_ = null;
       }
       return this;
@@ -420,18 +423,27 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.deploy.v1.PipelineCondition buildPartial() {
       com.google.cloud.deploy.v1.PipelineCondition result =
           new com.google.cloud.deploy.v1.PipelineCondition(this);
-      if (pipelineReadyConditionBuilder_ == null) {
-        result.pipelineReadyCondition_ = pipelineReadyCondition_;
-      } else {
-        result.pipelineReadyCondition_ = pipelineReadyConditionBuilder_.build();
-      }
-      if (targetsPresentConditionBuilder_ == null) {
-        result.targetsPresentCondition_ = targetsPresentCondition_;
-      } else {
-        result.targetsPresentCondition_ = targetsPresentConditionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.PipelineCondition result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.pipelineReadyCondition_ =
+            pipelineReadyConditionBuilder_ == null
+                ? pipelineReadyCondition_
+                : pipelineReadyConditionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetsPresentCondition_ =
+            targetsPresentConditionBuilder_ == null
+                ? targetsPresentCondition_
+                : targetsPresentConditionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -515,14 +527,14 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     getPipelineReadyConditionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(
                     getTargetsPresentConditionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -542,6 +554,8 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.deploy.v1.PipelineReadyCondition pipelineReadyCondition_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.PipelineReadyCondition,
@@ -560,7 +574,7 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
      * @return Whether the pipelineReadyCondition field is set.
      */
     public boolean hasPipelineReadyCondition() {
-      return pipelineReadyConditionBuilder_ != null || pipelineReadyCondition_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -598,11 +612,11 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         pipelineReadyCondition_ = value;
-        onChanged();
       } else {
         pipelineReadyConditionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -618,11 +632,11 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
         com.google.cloud.deploy.v1.PipelineReadyCondition.Builder builderForValue) {
       if (pipelineReadyConditionBuilder_ == null) {
         pipelineReadyCondition_ = builderForValue.build();
-        onChanged();
       } else {
         pipelineReadyConditionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -637,19 +651,19 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
     public Builder mergePipelineReadyCondition(
         com.google.cloud.deploy.v1.PipelineReadyCondition value) {
       if (pipelineReadyConditionBuilder_ == null) {
-        if (pipelineReadyCondition_ != null) {
-          pipelineReadyCondition_ =
-              com.google.cloud.deploy.v1.PipelineReadyCondition.newBuilder(pipelineReadyCondition_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && pipelineReadyCondition_ != null
+            && pipelineReadyCondition_
+                != com.google.cloud.deploy.v1.PipelineReadyCondition.getDefaultInstance()) {
+          getPipelineReadyConditionBuilder().mergeFrom(value);
         } else {
           pipelineReadyCondition_ = value;
         }
-        onChanged();
       } else {
         pipelineReadyConditionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -662,14 +676,13 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.deploy.v1.PipelineReadyCondition pipeline_ready_condition = 1;</code>
      */
     public Builder clearPipelineReadyCondition() {
-      if (pipelineReadyConditionBuilder_ == null) {
-        pipelineReadyCondition_ = null;
-        onChanged();
-      } else {
-        pipelineReadyCondition_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      pipelineReadyCondition_ = null;
+      if (pipelineReadyConditionBuilder_ != null) {
+        pipelineReadyConditionBuilder_.dispose();
         pipelineReadyConditionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -683,7 +696,7 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.deploy.v1.PipelineReadyCondition.Builder
         getPipelineReadyConditionBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPipelineReadyConditionFieldBuilder().getBuilder();
     }
@@ -750,7 +763,7 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
      * @return Whether the targetsPresentCondition field is set.
      */
     public boolean hasTargetsPresentCondition() {
-      return targetsPresentConditionBuilder_ != null || targetsPresentCondition_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -788,11 +801,11 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         targetsPresentCondition_ = value;
-        onChanged();
       } else {
         targetsPresentConditionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -808,11 +821,11 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
         com.google.cloud.deploy.v1.TargetsPresentCondition.Builder builderForValue) {
       if (targetsPresentConditionBuilder_ == null) {
         targetsPresentCondition_ = builderForValue.build();
-        onChanged();
       } else {
         targetsPresentConditionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -827,20 +840,19 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
     public Builder mergeTargetsPresentCondition(
         com.google.cloud.deploy.v1.TargetsPresentCondition value) {
       if (targetsPresentConditionBuilder_ == null) {
-        if (targetsPresentCondition_ != null) {
-          targetsPresentCondition_ =
-              com.google.cloud.deploy.v1.TargetsPresentCondition.newBuilder(
-                      targetsPresentCondition_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && targetsPresentCondition_ != null
+            && targetsPresentCondition_
+                != com.google.cloud.deploy.v1.TargetsPresentCondition.getDefaultInstance()) {
+          getTargetsPresentConditionBuilder().mergeFrom(value);
         } else {
           targetsPresentCondition_ = value;
         }
-        onChanged();
       } else {
         targetsPresentConditionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -853,14 +865,13 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.deploy.v1.TargetsPresentCondition targets_present_condition = 3;</code>
      */
     public Builder clearTargetsPresentCondition() {
-      if (targetsPresentConditionBuilder_ == null) {
-        targetsPresentCondition_ = null;
-        onChanged();
-      } else {
-        targetsPresentCondition_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      targetsPresentCondition_ = null;
+      if (targetsPresentConditionBuilder_ != null) {
+        targetsPresentConditionBuilder_.dispose();
         targetsPresentConditionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -874,7 +885,7 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.deploy.v1.TargetsPresentCondition.Builder
         getTargetsPresentConditionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTargetsPresentConditionFieldBuilder().getBuilder();
     }

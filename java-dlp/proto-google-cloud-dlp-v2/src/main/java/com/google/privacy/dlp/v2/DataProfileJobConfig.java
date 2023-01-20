@@ -119,11 +119,15 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.DataProfileLocationOrBuilder getLocationOrBuilder() {
-    return getLocation();
+    return location_ == null
+        ? com.google.privacy.dlp.v2.DataProfileLocation.getDefaultInstance()
+        : location_;
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -176,6 +180,8 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int INSPECT_TEMPLATES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList inspectTemplates_;
   /**
    *
@@ -285,6 +291,8 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DATA_PROFILE_ACTIONS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.DataProfileAction> dataProfileActions_;
   /**
    *
@@ -598,23 +606,22 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (locationBuilder_ == null) {
-        location_ = null;
-      } else {
-        location_ = null;
+      bitField0_ = 0;
+      location_ = null;
+      if (locationBuilder_ != null) {
+        locationBuilder_.dispose();
         locationBuilder_ = null;
       }
       projectId_ = "";
-
       inspectTemplates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (dataProfileActionsBuilder_ == null) {
         dataProfileActions_ = java.util.Collections.emptyList();
       } else {
         dataProfileActions_ = null;
         dataProfileActionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -642,29 +649,39 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     public com.google.privacy.dlp.v2.DataProfileJobConfig buildPartial() {
       com.google.privacy.dlp.v2.DataProfileJobConfig result =
           new com.google.privacy.dlp.v2.DataProfileJobConfig(this);
-      int from_bitField0_ = bitField0_;
-      if (locationBuilder_ == null) {
-        result.location_ = location_;
-      } else {
-        result.location_ = locationBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.projectId_ = projectId_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.DataProfileJobConfig result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         inspectTemplates_ = inspectTemplates_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.inspectTemplates_ = inspectTemplates_;
       if (dataProfileActionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           dataProfileActions_ = java.util.Collections.unmodifiableList(dataProfileActions_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.dataProfileActions_ = dataProfileActions_;
       } else {
         result.dataProfileActions_ = dataProfileActionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.DataProfileJobConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.location_ = locationBuilder_ == null ? location_ : locationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.projectId_ = projectId_;
+      }
     }
 
     @java.lang.Override
@@ -717,12 +734,13 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.inspectTemplates_.isEmpty()) {
         if (inspectTemplates_.isEmpty()) {
           inspectTemplates_ = other.inspectTemplates_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureInspectTemplatesIsMutable();
           inspectTemplates_.addAll(other.inspectTemplates_);
@@ -733,7 +751,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         if (!other.dataProfileActions_.isEmpty()) {
           if (dataProfileActions_.isEmpty()) {
             dataProfileActions_ = other.dataProfileActions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureDataProfileActionsIsMutable();
             dataProfileActions_.addAll(other.dataProfileActions_);
@@ -746,7 +764,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
             dataProfileActionsBuilder_.dispose();
             dataProfileActionsBuilder_ = null;
             dataProfileActions_ = other.dataProfileActions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
             dataProfileActionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDataProfileActionsFieldBuilder()
@@ -785,13 +803,13 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getLocationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 42:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 42
             case 50:
@@ -851,7 +869,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the location field is set.
      */
     public boolean hasLocation() {
-      return locationBuilder_ != null || location_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -888,11 +906,11 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         location_ = value;
-        onChanged();
       } else {
         locationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -908,11 +926,11 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         com.google.privacy.dlp.v2.DataProfileLocation.Builder builderForValue) {
       if (locationBuilder_ == null) {
         location_ = builderForValue.build();
-        onChanged();
       } else {
         locationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -926,19 +944,18 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeLocation(com.google.privacy.dlp.v2.DataProfileLocation value) {
       if (locationBuilder_ == null) {
-        if (location_ != null) {
-          location_ =
-              com.google.privacy.dlp.v2.DataProfileLocation.newBuilder(location_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && location_ != null
+            && location_ != com.google.privacy.dlp.v2.DataProfileLocation.getDefaultInstance()) {
+          getLocationBuilder().mergeFrom(value);
         } else {
           location_ = value;
         }
-        onChanged();
       } else {
         locationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -951,14 +968,13 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * <code>.google.privacy.dlp.v2.DataProfileLocation location = 1;</code>
      */
     public Builder clearLocation() {
-      if (locationBuilder_ == null) {
-        location_ = null;
-        onChanged();
-      } else {
-        location_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      location_ = null;
+      if (locationBuilder_ != null) {
+        locationBuilder_.dispose();
         locationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -971,7 +987,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * <code>.google.privacy.dlp.v2.DataProfileLocation location = 1;</code>
      */
     public com.google.privacy.dlp.v2.DataProfileLocation.Builder getLocationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
@@ -1086,8 +1102,8 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1105,8 +1121,8 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1129,8 +1145,8 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1139,9 +1155,9 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInspectTemplatesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         inspectTemplates_ = new com.google.protobuf.LazyStringArrayList(inspectTemplates_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1372,7 +1388,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      */
     public Builder clearInspectTemplates() {
       inspectTemplates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1415,11 +1431,11 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureDataProfileActionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         dataProfileActions_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.DataProfileAction>(
                 dataProfileActions_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1637,7 +1653,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     public Builder clearDataProfileActions() {
       if (dataProfileActionsBuilder_ == null) {
         dataProfileActions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         dataProfileActionsBuilder_.clear();
@@ -1763,7 +1779,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
                 com.google.privacy.dlp.v2.DataProfileAction.Builder,
                 com.google.privacy.dlp.v2.DataProfileActionOrBuilder>(
                 dataProfileActions_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         dataProfileActions_ = null;

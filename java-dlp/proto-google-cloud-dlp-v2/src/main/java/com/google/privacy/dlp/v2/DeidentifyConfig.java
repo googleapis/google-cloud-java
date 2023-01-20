@@ -332,7 +332,9 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.privacy.dlp.v2.TransformationErrorHandlingOrBuilder
       getTransformationErrorHandlingOrBuilder() {
-    return getTransformationErrorHandling();
+    return transformationErrorHandling_ == null
+        ? com.google.privacy.dlp.v2.TransformationErrorHandling.getDefaultInstance()
+        : transformationErrorHandling_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -594,6 +596,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (infoTypeTransformationsBuilder_ != null) {
         infoTypeTransformationsBuilder_.clear();
       }
@@ -603,10 +606,9 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       if (imageTransformationsBuilder_ != null) {
         imageTransformationsBuilder_.clear();
       }
-      if (transformationErrorHandlingBuilder_ == null) {
-        transformationErrorHandling_ = null;
-      } else {
-        transformationErrorHandling_ = null;
+      transformationErrorHandling_ = null;
+      if (transformationErrorHandlingBuilder_ != null) {
+        transformationErrorHandlingBuilder_.dispose();
         transformationErrorHandlingBuilder_ = null;
       }
       transformationCase_ = 0;
@@ -638,35 +640,36 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     public com.google.privacy.dlp.v2.DeidentifyConfig buildPartial() {
       com.google.privacy.dlp.v2.DeidentifyConfig result =
           new com.google.privacy.dlp.v2.DeidentifyConfig(this);
-      if (transformationCase_ == 1) {
-        if (infoTypeTransformationsBuilder_ == null) {
-          result.transformation_ = transformation_;
-        } else {
-          result.transformation_ = infoTypeTransformationsBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (transformationCase_ == 2) {
-        if (recordTransformationsBuilder_ == null) {
-          result.transformation_ = transformation_;
-        } else {
-          result.transformation_ = recordTransformationsBuilder_.build();
-        }
-      }
-      if (transformationCase_ == 4) {
-        if (imageTransformationsBuilder_ == null) {
-          result.transformation_ = transformation_;
-        } else {
-          result.transformation_ = imageTransformationsBuilder_.build();
-        }
-      }
-      if (transformationErrorHandlingBuilder_ == null) {
-        result.transformationErrorHandling_ = transformationErrorHandling_;
-      } else {
-        result.transformationErrorHandling_ = transformationErrorHandlingBuilder_.build();
-      }
-      result.transformationCase_ = transformationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.DeidentifyConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.transformationErrorHandling_ =
+            transformationErrorHandlingBuilder_ == null
+                ? transformationErrorHandling_
+                : transformationErrorHandlingBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.DeidentifyConfig result) {
+      result.transformationCase_ = transformationCase_;
+      result.transformation_ = this.transformation_;
+      if (transformationCase_ == 1 && infoTypeTransformationsBuilder_ != null) {
+        result.transformation_ = infoTypeTransformationsBuilder_.build();
+      }
+      if (transformationCase_ == 2 && recordTransformationsBuilder_ != null) {
+        result.transformation_ = recordTransformationsBuilder_.build();
+      }
+      if (transformationCase_ == 4 && imageTransformationsBuilder_ != null) {
+        result.transformation_ = imageTransformationsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -782,7 +785,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     getTransformationErrorHandlingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
@@ -822,6 +825,8 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.InfoTypeTransformations,
@@ -1043,7 +1048,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       }
       transformationCase_ = 1;
       onChanged();
-      ;
       return infoTypeTransformationsBuilder_;
     }
 
@@ -1275,7 +1279,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       }
       transformationCase_ = 2;
       onChanged();
-      ;
       return recordTransformationsBuilder_;
     }
 
@@ -1487,7 +1490,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       }
       transformationCase_ = 4;
       onChanged();
-      ;
       return imageTransformationsBuilder_;
     }
 
@@ -1511,7 +1513,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the transformationErrorHandling field is set.
      */
     public boolean hasTransformationErrorHandling() {
-      return transformationErrorHandlingBuilder_ != null || transformationErrorHandling_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1553,11 +1555,11 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         transformationErrorHandling_ = value;
-        onChanged();
       } else {
         transformationErrorHandlingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1575,11 +1577,11 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
         com.google.privacy.dlp.v2.TransformationErrorHandling.Builder builderForValue) {
       if (transformationErrorHandlingBuilder_ == null) {
         transformationErrorHandling_ = builderForValue.build();
-        onChanged();
       } else {
         transformationErrorHandlingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1596,20 +1598,19 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeTransformationErrorHandling(
         com.google.privacy.dlp.v2.TransformationErrorHandling value) {
       if (transformationErrorHandlingBuilder_ == null) {
-        if (transformationErrorHandling_ != null) {
-          transformationErrorHandling_ =
-              com.google.privacy.dlp.v2.TransformationErrorHandling.newBuilder(
-                      transformationErrorHandling_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && transformationErrorHandling_ != null
+            && transformationErrorHandling_
+                != com.google.privacy.dlp.v2.TransformationErrorHandling.getDefaultInstance()) {
+          getTransformationErrorHandlingBuilder().mergeFrom(value);
         } else {
           transformationErrorHandling_ = value;
         }
-        onChanged();
       } else {
         transformationErrorHandlingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1624,14 +1625,13 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearTransformationErrorHandling() {
-      if (transformationErrorHandlingBuilder_ == null) {
-        transformationErrorHandling_ = null;
-        onChanged();
-      } else {
-        transformationErrorHandling_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      transformationErrorHandling_ = null;
+      if (transformationErrorHandlingBuilder_ != null) {
+        transformationErrorHandlingBuilder_.dispose();
         transformationErrorHandlingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1647,7 +1647,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.privacy.dlp.v2.TransformationErrorHandling.Builder
         getTransformationErrorHandlingBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getTransformationErrorHandlingFieldBuilder().getBuilder();
     }

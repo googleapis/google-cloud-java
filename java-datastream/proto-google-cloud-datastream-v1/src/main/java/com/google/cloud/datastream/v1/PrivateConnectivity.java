@@ -68,7 +68,9 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PRIVATE_CONNECTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object privateConnection_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object privateConnection_ = "";
   /**
    *
    *
@@ -319,8 +321,8 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       privateConnection_ = "";
-
       return this;
     }
 
@@ -348,9 +350,18 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
     public com.google.cloud.datastream.v1.PrivateConnectivity buildPartial() {
       com.google.cloud.datastream.v1.PrivateConnectivity result =
           new com.google.cloud.datastream.v1.PrivateConnectivity(this);
-      result.privateConnection_ = privateConnection_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.PrivateConnectivity result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.privateConnection_ = privateConnection_;
+      }
     }
 
     @java.lang.Override
@@ -401,6 +412,7 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getPrivateConnection().isEmpty()) {
         privateConnection_ = other.privateConnection_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -432,7 +444,7 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 privateConnection_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -451,6 +463,8 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object privateConnection_ = "";
     /**
@@ -522,8 +536,8 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       privateConnection_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -542,8 +556,8 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearPrivateConnection() {
-
       privateConnection_ = getDefaultInstance().getPrivateConnection();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -567,8 +581,8 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       privateConnection_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

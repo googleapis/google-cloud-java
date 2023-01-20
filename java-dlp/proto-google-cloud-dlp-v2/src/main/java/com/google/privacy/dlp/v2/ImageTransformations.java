@@ -419,6 +419,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       }
 
       public static final int INFO_TYPES_FIELD_NUMBER = 5;
+
+      @SuppressWarnings("serial")
       private java.util.List<com.google.privacy.dlp.v2.InfoType> infoTypes_;
       /**
        *
@@ -733,6 +735,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (infoTypesBuilder_ == null) {
             infoTypes_ = java.util.Collections.emptyList();
           } else {
@@ -774,7 +777,17 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
               result =
                   new com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation
                       .SelectedInfoTypes(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.SelectedInfoTypes
+                result) {
           if (infoTypesBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               infoTypes_ = java.util.Collections.unmodifiableList(infoTypes_);
@@ -784,8 +797,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           } else {
             result.infoTypes_ = infoTypesBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.SelectedInfoTypes
+                result) {
+          int from_bitField0_ = bitField0_;
         }
 
         @java.lang.Override
@@ -2619,7 +2636,9 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.ColorOrBuilder getRedactionColorOrBuilder() {
-      return getRedactionColor();
+      return redactionColor_ == null
+          ? com.google.privacy.dlp.v2.Color.getDefaultInstance()
+          : redactionColor_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2898,6 +2917,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (selectedInfoTypesBuilder_ != null) {
           selectedInfoTypesBuilder_.clear();
         }
@@ -2907,10 +2927,9 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         if (allTextBuilder_ != null) {
           allTextBuilder_.clear();
         }
-        if (redactionColorBuilder_ == null) {
-          redactionColor_ = null;
-        } else {
-          redactionColor_ = null;
+        redactionColor_ = null;
+        if (redactionColorBuilder_ != null) {
+          redactionColorBuilder_.dispose();
           redactionColorBuilder_ = null;
         }
         targetCase_ = 0;
@@ -2944,35 +2963,36 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       public com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation buildPartial() {
         com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation result =
             new com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation(this);
-        if (targetCase_ == 4) {
-          if (selectedInfoTypesBuilder_ == null) {
-            result.target_ = target_;
-          } else {
-            result.target_ = selectedInfoTypesBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (targetCase_ == 5) {
-          if (allInfoTypesBuilder_ == null) {
-            result.target_ = target_;
-          } else {
-            result.target_ = allInfoTypesBuilder_.build();
-          }
-        }
-        if (targetCase_ == 6) {
-          if (allTextBuilder_ == null) {
-            result.target_ = target_;
-          } else {
-            result.target_ = allTextBuilder_.build();
-          }
-        }
-        if (redactionColorBuilder_ == null) {
-          result.redactionColor_ = redactionColor_;
-        } else {
-          result.redactionColor_ = redactionColorBuilder_.build();
-        }
-        result.targetCase_ = targetCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.redactionColor_ =
+              redactionColorBuilder_ == null ? redactionColor_ : redactionColorBuilder_.build();
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation result) {
+        result.targetCase_ = targetCase_;
+        result.target_ = this.target_;
+        if (targetCase_ == 4 && selectedInfoTypesBuilder_ != null) {
+          result.target_ = selectedInfoTypesBuilder_.build();
+        }
+        if (targetCase_ == 5 && allInfoTypesBuilder_ != null) {
+          result.target_ = allInfoTypesBuilder_.build();
+        }
+        if (targetCase_ == 6 && allTextBuilder_ != null) {
+          result.target_ = allTextBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3080,7 +3100,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
                 {
                   input.readMessage(
                       getRedactionColorFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 26
               case 34:
@@ -3132,6 +3152,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.SelectedInfoTypes,
@@ -3391,7 +3413,6 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         }
         targetCase_ = 4;
         onChanged();
-        ;
         return selectedInfoTypesBuilder_;
       }
 
@@ -3663,7 +3684,6 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         }
         targetCase_ = 5;
         onChanged();
-        ;
         return allInfoTypesBuilder_;
       }
 
@@ -3911,7 +3931,6 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         }
         targetCase_ = 6;
         onChanged();
-        ;
         return allTextBuilder_;
       }
 
@@ -3934,7 +3953,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        * @return Whether the redactionColor field is set.
        */
       public boolean hasRedactionColor() {
-        return redactionColorBuilder_ != null || redactionColor_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -3973,11 +3992,11 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
             throw new NullPointerException();
           }
           redactionColor_ = value;
-          onChanged();
         } else {
           redactionColorBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -3993,11 +4012,11 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       public Builder setRedactionColor(com.google.privacy.dlp.v2.Color.Builder builderForValue) {
         if (redactionColorBuilder_ == null) {
           redactionColor_ = builderForValue.build();
-          onChanged();
         } else {
           redactionColorBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -4012,19 +4031,18 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        */
       public Builder mergeRedactionColor(com.google.privacy.dlp.v2.Color value) {
         if (redactionColorBuilder_ == null) {
-          if (redactionColor_ != null) {
-            redactionColor_ =
-                com.google.privacy.dlp.v2.Color.newBuilder(redactionColor_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && redactionColor_ != null
+              && redactionColor_ != com.google.privacy.dlp.v2.Color.getDefaultInstance()) {
+            getRedactionColorBuilder().mergeFrom(value);
           } else {
             redactionColor_ = value;
           }
-          onChanged();
         } else {
           redactionColorBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -4038,14 +4056,13 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        * <code>.google.privacy.dlp.v2.Color redaction_color = 3;</code>
        */
       public Builder clearRedactionColor() {
-        if (redactionColorBuilder_ == null) {
-          redactionColor_ = null;
-          onChanged();
-        } else {
-          redactionColor_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        redactionColor_ = null;
+        if (redactionColorBuilder_ != null) {
+          redactionColorBuilder_.dispose();
           redactionColorBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -4059,7 +4076,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        * <code>.google.privacy.dlp.v2.Color redaction_color = 3;</code>
        */
       public com.google.privacy.dlp.v2.Color.Builder getRedactionColorBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getRedactionColorFieldBuilder().getBuilder();
       }
@@ -4177,6 +4194,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TRANSFORMS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation>
       transforms_;
   /**
@@ -4424,6 +4443,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (transformsBuilder_ == null) {
         transforms_ = java.util.Collections.emptyList();
       } else {
@@ -4458,7 +4478,15 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     public com.google.privacy.dlp.v2.ImageTransformations buildPartial() {
       com.google.privacy.dlp.v2.ImageTransformations result =
           new com.google.privacy.dlp.v2.ImageTransformations(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.ImageTransformations result) {
       if (transformsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           transforms_ = java.util.Collections.unmodifiableList(transforms_);
@@ -4468,8 +4496,10 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       } else {
         result.transforms_ = transformsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.ImageTransformations result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

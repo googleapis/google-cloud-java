@@ -70,7 +70,9 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int PANEL_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object panelId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object panelId_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -168,7 +172,7 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PANEL_POSITION_FIELD_NUMBER = 4;
-  private int panelPosition_;
+  private int panelPosition_ = 0;
   /**
    *
    *
@@ -207,7 +211,7 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TOTAL_PANELS_FIELD_NUMBER = 5;
-  private int totalPanels_;
+  private int totalPanels_ = 0;
   /**
    *
    *
@@ -479,14 +483,11 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       panelId_ = "";
-
       displayName_ = "";
-
       panelPosition_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       totalPanels_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -514,21 +515,31 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1beta.PanelInfo buildPartial() {
       com.google.cloud.discoveryengine.v1beta.PanelInfo result =
           new com.google.cloud.discoveryengine.v1beta.PanelInfo(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.discoveryengine.v1beta.PanelInfo result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.panelId_ = panelId_;
-      result.displayName_ = displayName_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.panelId_ = panelId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.panelPosition_ = panelPosition_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.totalPanels_ = totalPanels_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -579,10 +590,12 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getPanelId().isEmpty()) {
         panelId_ = other.panelId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPanelPosition()) {
@@ -620,25 +633,25 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 panelId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 26:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 32:
               {
                 panelPosition_ = input.readInt32();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             case 40:
               {
                 totalPanels_ = input.readInt32();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             default:
@@ -721,8 +734,8 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       panelId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -738,8 +751,8 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPanelId() {
-
       panelId_ = getDefaultInstance().getPanelId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -760,8 +773,8 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       panelId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -827,8 +840,8 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -844,8 +857,8 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -866,8 +879,8 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -889,7 +902,7 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPanelPosition() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -925,8 +938,9 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPanelPosition(int value) {
-      bitField0_ |= 0x00000001;
+
       panelPosition_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -945,7 +959,7 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPanelPosition() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       panelPosition_ = 0;
       onChanged();
       return this;
@@ -968,7 +982,7 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasTotalPanels() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1004,8 +1018,9 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTotalPanels(int value) {
-      bitField0_ |= 0x00000002;
+
       totalPanels_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1024,7 +1039,7 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTotalPanels() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       totalPanels_ = 0;
       onChanged();
       return this;

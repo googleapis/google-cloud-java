@@ -69,6 +69,8 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CLUSTER_IPV4_CIDR_BLOCKS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList clusterIpv4CidrBlocks_;
   /**
    *
@@ -142,6 +144,8 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SERVICES_IPV4_CIDR_BLOCKS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList servicesIpv4CidrBlocks_;
   /**
    *
@@ -437,6 +441,7 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       clusterIpv4CidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       servicesIpv4CidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -468,7 +473,16 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.edgecontainer.v1.ClusterNetworking buildPartial() {
       com.google.cloud.edgecontainer.v1.ClusterNetworking result =
           new com.google.cloud.edgecontainer.v1.ClusterNetworking(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.edgecontainer.v1.ClusterNetworking result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         clusterIpv4CidrBlocks_ = clusterIpv4CidrBlocks_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -479,8 +493,10 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.servicesIpv4CidrBlocks_ = servicesIpv4CidrBlocks_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.edgecontainer.v1.ClusterNetworking result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

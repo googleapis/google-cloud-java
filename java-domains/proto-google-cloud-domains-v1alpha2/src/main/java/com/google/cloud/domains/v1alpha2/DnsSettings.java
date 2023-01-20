@@ -411,6 +411,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAME_SERVERS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList nameServers_;
     /**
      *
@@ -480,6 +482,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DS_RECORDS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord> dsRecords_;
     /**
      *
@@ -778,6 +782,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         nameServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         if (dsRecordsBuilder_ == null) {
@@ -814,7 +819,16 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.domains.v1alpha2.DnsSettings.CustomDns buildPartial() {
         com.google.cloud.domains.v1alpha2.DnsSettings.CustomDns result =
             new com.google.cloud.domains.v1alpha2.DnsSettings.CustomDns(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.domains.v1alpha2.DnsSettings.CustomDns result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           nameServers_ = nameServers_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -829,8 +843,10 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.dsRecords_ = dsRecordsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.domains.v1alpha2.DnsSettings.CustomDns result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -1861,6 +1877,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAME_SERVERS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList nameServers_;
     /**
      *
@@ -1934,7 +1952,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DS_STATE_FIELD_NUMBER = 2;
-    private int dsState_;
+    private int dsState_ = 0;
     /**
      *
      *
@@ -1969,15 +1987,16 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.domains.v1alpha2.DnsSettings.DsState getDsState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.domains.v1alpha2.DnsSettings.DsState result =
-          com.google.cloud.domains.v1alpha2.DnsSettings.DsState.valueOf(dsState_);
+          com.google.cloud.domains.v1alpha2.DnsSettings.DsState.forNumber(dsState_);
       return result == null
           ? com.google.cloud.domains.v1alpha2.DnsSettings.DsState.UNRECOGNIZED
           : result;
     }
 
     public static final int DS_RECORDS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord> dsRecords_;
     /**
      *
@@ -2302,17 +2321,17 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         nameServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         dsState_ = 0;
-
         if (dsRecordsBuilder_ == null) {
           dsRecords_ = java.util.Collections.emptyList();
         } else {
           dsRecords_ = null;
           dsRecordsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -2341,24 +2360,38 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDns buildPartial() {
         com.google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDns result =
             new com.google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDns(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDns result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           nameServers_ = nameServers_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.nameServers_ = nameServers_;
-        result.dsState_ = dsState_;
         if (dsRecordsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             dsRecords_ = java.util.Collections.unmodifiableList(dsRecords_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.dsRecords_ = dsRecords_;
         } else {
           result.dsRecords_ = dsRecordsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDns result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.dsState_ = dsState_;
+        }
       }
 
       @java.lang.Override
@@ -2428,7 +2461,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           if (!other.dsRecords_.isEmpty()) {
             if (dsRecords_.isEmpty()) {
               dsRecords_ = other.dsRecords_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureDsRecordsIsMutable();
               dsRecords_.addAll(other.dsRecords_);
@@ -2441,7 +2474,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
               dsRecordsBuilder_.dispose();
               dsRecordsBuilder_ = null;
               dsRecords_ = other.dsRecords_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               dsRecordsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getDsRecordsFieldBuilder()
@@ -2487,7 +2520,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
               case 16:
                 {
                   dsState_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
@@ -2753,8 +2786,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setDsStateValue(int value) {
-
         dsState_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2774,9 +2807,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.domains.v1alpha2.DnsSettings.DsState getDsState() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.domains.v1alpha2.DnsSettings.DsState result =
-            com.google.cloud.domains.v1alpha2.DnsSettings.DsState.valueOf(dsState_);
+            com.google.cloud.domains.v1alpha2.DnsSettings.DsState.forNumber(dsState_);
         return result == null
             ? com.google.cloud.domains.v1alpha2.DnsSettings.DsState.UNRECOGNIZED
             : result;
@@ -2800,7 +2832,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         dsState_ = value.getNumber();
         onChanged();
         return this;
@@ -2820,7 +2852,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDsState() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         dsState_ = 0;
         onChanged();
         return this;
@@ -2830,11 +2862,11 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           java.util.Collections.emptyList();
 
       private void ensureDsRecordsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           dsRecords_ =
               new java.util.ArrayList<com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord>(
                   dsRecords_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
         }
       }
 
@@ -3100,7 +3132,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public Builder clearDsRecords() {
         if (dsRecordsBuilder_ == null) {
           dsRecords_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           dsRecordsBuilder_.clear();
@@ -3256,7 +3288,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord,
                   com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.Builder,
                   com.google.cloud.domains.v1alpha2.DnsSettings.DsRecordOrBuilder>(
-                  dsRecords_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                  dsRecords_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
           dsRecords_ = null;
         }
         return dsRecordsBuilder_;
@@ -4170,7 +4202,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int KEY_TAG_FIELD_NUMBER = 1;
-    private int keyTag_;
+    private int keyTag_ = 0;
     /**
      *
      *
@@ -4188,7 +4220,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ALGORITHM_FIELD_NUMBER = 2;
-    private int algorithm_;
+    private int algorithm_ = 0;
     /**
      *
      *
@@ -4217,16 +4249,15 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.Algorithm getAlgorithm() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.Algorithm result =
-          com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.Algorithm.valueOf(algorithm_);
+          com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.Algorithm.forNumber(algorithm_);
       return result == null
           ? com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.Algorithm.UNRECOGNIZED
           : result;
     }
 
     public static final int DIGEST_TYPE_FIELD_NUMBER = 3;
-    private int digestType_;
+    private int digestType_ = 0;
     /**
      *
      *
@@ -4255,16 +4286,17 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.DigestType getDigestType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.DigestType result =
-          com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.DigestType.valueOf(digestType_);
+          com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.DigestType.forNumber(digestType_);
       return result == null
           ? com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.DigestType.UNRECOGNIZED
           : result;
     }
 
     public static final int DIGEST_FIELD_NUMBER = 4;
-    private volatile java.lang.Object digest_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object digest_ = "";
     /**
      *
      *
@@ -4551,14 +4583,11 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         keyTag_ = 0;
-
         algorithm_ = 0;
-
         digestType_ = 0;
-
         digest_ = "";
-
         return this;
       }
 
@@ -4586,12 +4615,27 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord buildPartial() {
         com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord result =
             new com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord(this);
-        result.keyTag_ = keyTag_;
-        result.algorithm_ = algorithm_;
-        result.digestType_ = digestType_;
-        result.digest_ = digest_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.keyTag_ = keyTag_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.algorithm_ = algorithm_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.digestType_ = digestType_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.digest_ = digest_;
+        }
       }
 
       @java.lang.Override
@@ -4653,6 +4697,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getDigest().isEmpty()) {
           digest_ = other.digest_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -4684,25 +4729,25 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   keyTag_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   algorithm_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   digestType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 34:
                 {
                   digest_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               default:
@@ -4721,6 +4766,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int keyTag_;
       /**
@@ -4753,6 +4800,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public Builder setKeyTag(int value) {
 
         keyTag_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4768,7 +4816,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearKeyTag() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         keyTag_ = 0;
         onChanged();
         return this;
@@ -4803,8 +4851,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setAlgorithmValue(int value) {
-
         algorithm_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4821,9 +4869,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.Algorithm getAlgorithm() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.Algorithm result =
-            com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.Algorithm.valueOf(algorithm_);
+            com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.Algorithm.forNumber(algorithm_);
         return result == null
             ? com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.Algorithm.UNRECOGNIZED
             : result;
@@ -4845,7 +4892,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         algorithm_ = value.getNumber();
         onChanged();
         return this;
@@ -4862,7 +4909,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAlgorithm() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         algorithm_ = 0;
         onChanged();
         return this;
@@ -4899,8 +4946,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setDigestTypeValue(int value) {
-
         digestType_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4918,9 +4965,9 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.DigestType getDigestType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.DigestType result =
-            com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.DigestType.valueOf(digestType_);
+            com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.DigestType.forNumber(
+                digestType_);
         return result == null
             ? com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.DigestType.UNRECOGNIZED
             : result;
@@ -4943,7 +4990,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         digestType_ = value.getNumber();
         onChanged();
         return this;
@@ -4961,7 +5008,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDigestType() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         digestType_ = 0;
         onChanged();
         return this;
@@ -5028,8 +5075,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         digest_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -5045,8 +5092,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDigest() {
-
         digest_ = getDefaultInstance().getDigest();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -5067,8 +5114,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         digest_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -5342,7 +5389,9 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int HOST_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object hostName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object hostName_ = "";
     /**
      *
      *
@@ -5391,6 +5440,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int IPV4_ADDRESSES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList ipv4Addresses_;
     /**
      *
@@ -5460,6 +5511,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int IPV6_ADDRESSES_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList ipv6Addresses_;
     /**
      *
@@ -5765,12 +5818,12 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         hostName_ = "";
-
         ipv4Addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        ipv6Addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
+        ipv6Addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -5798,20 +5851,33 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord buildPartial() {
         com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord result =
             new com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord(this);
-        int from_bitField0_ = bitField0_;
-        result.hostName_ = hostName_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          ipv4Addresses_ = ipv4Addresses_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.ipv4Addresses_ = ipv4Addresses_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          ipv6Addresses_ = ipv6Addresses_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.ipv6Addresses_ = ipv6Addresses_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          ipv4Addresses_ = ipv4Addresses_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.ipv4Addresses_ = ipv4Addresses_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          ipv6Addresses_ = ipv6Addresses_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.ipv6Addresses_ = ipv6Addresses_;
+      }
+
+      private void buildPartial0(com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.hostName_ = hostName_;
+        }
       }
 
       @java.lang.Override
@@ -5864,12 +5930,13 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getHostName().isEmpty()) {
           hostName_ = other.hostName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.ipv4Addresses_.isEmpty()) {
           if (ipv4Addresses_.isEmpty()) {
             ipv4Addresses_ = other.ipv4Addresses_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureIpv4AddressesIsMutable();
             ipv4Addresses_.addAll(other.ipv4Addresses_);
@@ -5879,7 +5946,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         if (!other.ipv6Addresses_.isEmpty()) {
           if (ipv6Addresses_.isEmpty()) {
             ipv6Addresses_ = other.ipv6Addresses_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureIpv6AddressesIsMutable();
             ipv6Addresses_.addAll(other.ipv6Addresses_);
@@ -5915,7 +5982,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   hostName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -6012,8 +6079,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         hostName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6029,8 +6096,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearHostName() {
-
         hostName_ = getDefaultInstance().getHostName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -6051,8 +6118,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         hostName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6061,9 +6128,9 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureIpv4AddressesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           ipv4Addresses_ = new com.google.protobuf.LazyStringArrayList(ipv4Addresses_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -6214,7 +6281,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearIpv4Addresses() {
         ipv4Addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -6247,9 +6314,9 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureIpv6AddressesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           ipv6Addresses_ = new com.google.protobuf.LazyStringArrayList(ipv6Addresses_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
         }
       }
       /**
@@ -6400,7 +6467,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearIpv6Addresses() {
         ipv6Addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -6650,6 +6717,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GLUE_RECORDS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord> glueRecords_;
   /**
    *
@@ -6961,6 +7030,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (customDnsBuilder_ != null) {
         customDnsBuilder_.clear();
       }
@@ -6973,7 +7043,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         glueRecords_ = null;
         glueRecordsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       dnsProviderCase_ = 0;
       dnsProvider_ = null;
       return this;
@@ -7003,33 +7073,40 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.domains.v1alpha2.DnsSettings buildPartial() {
       com.google.cloud.domains.v1alpha2.DnsSettings result =
           new com.google.cloud.domains.v1alpha2.DnsSettings(this);
-      int from_bitField0_ = bitField0_;
-      if (dnsProviderCase_ == 1) {
-        if (customDnsBuilder_ == null) {
-          result.dnsProvider_ = dnsProvider_;
-        } else {
-          result.dnsProvider_ = customDnsBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (dnsProviderCase_ == 2) {
-        if (googleDomainsDnsBuilder_ == null) {
-          result.dnsProvider_ = dnsProvider_;
-        } else {
-          result.dnsProvider_ = googleDomainsDnsBuilder_.build();
-        }
-      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.domains.v1alpha2.DnsSettings result) {
       if (glueRecordsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           glueRecords_ = java.util.Collections.unmodifiableList(glueRecords_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.glueRecords_ = glueRecords_;
       } else {
         result.glueRecords_ = glueRecordsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.domains.v1alpha2.DnsSettings result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.domains.v1alpha2.DnsSettings result) {
       result.dnsProviderCase_ = dnsProviderCase_;
-      onBuilt();
-      return result;
+      result.dnsProvider_ = this.dnsProvider_;
+      if (dnsProviderCase_ == 1 && customDnsBuilder_ != null) {
+        result.dnsProvider_ = customDnsBuilder_.build();
+      }
+      if (dnsProviderCase_ == 2 && googleDomainsDnsBuilder_ != null) {
+        result.dnsProvider_ = googleDomainsDnsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -7081,7 +7158,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         if (!other.glueRecords_.isEmpty()) {
           if (glueRecords_.isEmpty()) {
             glueRecords_ = other.glueRecords_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureGlueRecordsIsMutable();
             glueRecords_.addAll(other.glueRecords_);
@@ -7094,7 +7171,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
             glueRecordsBuilder_.dispose();
             glueRecordsBuilder_ = null;
             glueRecords_ = other.glueRecords_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             glueRecordsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getGlueRecordsFieldBuilder()
@@ -7415,7 +7492,6 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
       dnsProviderCase_ = 1;
       onChanged();
-      ;
       return customDnsBuilder_;
     }
 
@@ -7650,7 +7726,6 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
       dnsProviderCase_ = 2;
       onChanged();
-      ;
       return googleDomainsDnsBuilder_;
     }
 
@@ -7658,11 +7733,11 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureGlueRecordsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         glueRecords_ =
             new java.util.ArrayList<com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord>(
                 glueRecords_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -7884,7 +7959,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public Builder clearGlueRecords() {
       if (glueRecordsBuilder_ == null) {
         glueRecords_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         glueRecordsBuilder_.clear();
@@ -8013,7 +8088,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord,
                 com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord.Builder,
                 com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecordOrBuilder>(
-                glueRecords_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                glueRecords_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         glueRecords_ = null;
       }
       return glueRecordsBuilder_;

@@ -70,7 +70,9 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
   }
 
   public static final int DELIVERY_PIPELINE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object deliveryPipelineId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deliveryPipelineId_ = "";
   /**
    *
    *
@@ -224,11 +228,15 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.DeliveryPipelineOrBuilder getDeliveryPipelineOrBuilder() {
-    return getDeliveryPipeline();
+    return deliveryPipeline_ == null
+        ? com.google.cloud.deploy.v1.DeliveryPipeline.getDefaultInstance()
+        : deliveryPipeline_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -297,7 +305,7 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 5;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -554,20 +562,16 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       deliveryPipelineId_ = "";
-
-      if (deliveryPipelineBuilder_ == null) {
-        deliveryPipeline_ = null;
-      } else {
-        deliveryPipeline_ = null;
+      deliveryPipeline_ = null;
+      if (deliveryPipelineBuilder_ != null) {
+        deliveryPipelineBuilder_.dispose();
         deliveryPipelineBuilder_ = null;
       }
       requestId_ = "";
-
       validateOnly_ = false;
-
       return this;
     }
 
@@ -595,17 +599,31 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
     public com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest buildPartial() {
       com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest result =
           new com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest(this);
-      result.parent_ = parent_;
-      result.deliveryPipelineId_ = deliveryPipelineId_;
-      if (deliveryPipelineBuilder_ == null) {
-        result.deliveryPipeline_ = deliveryPipeline_;
-      } else {
-        result.deliveryPipeline_ = deliveryPipelineBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deliveryPipelineId_ = deliveryPipelineId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.deliveryPipeline_ =
+            deliveryPipelineBuilder_ == null ? deliveryPipeline_ : deliveryPipelineBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -656,10 +674,12 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDeliveryPipelineId().isEmpty()) {
         deliveryPipelineId_ = other.deliveryPipelineId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasDeliveryPipeline()) {
@@ -667,6 +687,7 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -701,32 +722,32 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 deliveryPipelineId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getDeliveryPipelineFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -745,6 +766,8 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -816,8 +839,8 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -836,8 +859,8 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -861,8 +884,8 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -928,8 +951,8 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       deliveryPipelineId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -945,8 +968,8 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearDeliveryPipelineId() {
-
       deliveryPipelineId_ = getDefaultInstance().getDeliveryPipelineId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -967,8 +990,8 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deliveryPipelineId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -993,7 +1016,7 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
      * @return Whether the deliveryPipeline field is set.
      */
     public boolean hasDeliveryPipeline() {
-      return deliveryPipelineBuilder_ != null || deliveryPipeline_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1034,11 +1057,11 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         deliveryPipeline_ = value;
-        onChanged();
       } else {
         deliveryPipelineBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1056,11 +1079,11 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
         com.google.cloud.deploy.v1.DeliveryPipeline.Builder builderForValue) {
       if (deliveryPipelineBuilder_ == null) {
         deliveryPipeline_ = builderForValue.build();
-        onChanged();
       } else {
         deliveryPipelineBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1076,19 +1099,19 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
      */
     public Builder mergeDeliveryPipeline(com.google.cloud.deploy.v1.DeliveryPipeline value) {
       if (deliveryPipelineBuilder_ == null) {
-        if (deliveryPipeline_ != null) {
-          deliveryPipeline_ =
-              com.google.cloud.deploy.v1.DeliveryPipeline.newBuilder(deliveryPipeline_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && deliveryPipeline_ != null
+            && deliveryPipeline_
+                != com.google.cloud.deploy.v1.DeliveryPipeline.getDefaultInstance()) {
+          getDeliveryPipelineBuilder().mergeFrom(value);
         } else {
           deliveryPipeline_ = value;
         }
-        onChanged();
       } else {
         deliveryPipelineBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1103,14 +1126,13 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearDeliveryPipeline() {
-      if (deliveryPipelineBuilder_ == null) {
-        deliveryPipeline_ = null;
-        onChanged();
-      } else {
-        deliveryPipeline_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      deliveryPipeline_ = null;
+      if (deliveryPipelineBuilder_ != null) {
+        deliveryPipelineBuilder_.dispose();
         deliveryPipelineBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1125,7 +1147,7 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.cloud.deploy.v1.DeliveryPipeline.Builder getDeliveryPipelineBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDeliveryPipelineFieldBuilder().getBuilder();
     }
@@ -1268,8 +1290,8 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1295,8 +1317,8 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1327,8 +1349,8 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1366,6 +1388,7 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1382,7 +1405,7 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       validateOnly_ = false;
       onChanged();
       return this;

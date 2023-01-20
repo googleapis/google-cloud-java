@@ -68,7 +68,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   }
 
   public static final int CLUSTER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object cluster_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cluster_ = "";
   /**
    *
    *
@@ -318,8 +320,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       cluster_ = "";
-
       return this;
     }
 
@@ -348,9 +350,19 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     public com.google.cloud.edgecontainer.v1.GenerateAccessTokenRequest buildPartial() {
       com.google.cloud.edgecontainer.v1.GenerateAccessTokenRequest result =
           new com.google.cloud.edgecontainer.v1.GenerateAccessTokenRequest(this);
-      result.cluster_ = cluster_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.edgecontainer.v1.GenerateAccessTokenRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cluster_ = cluster_;
+      }
     }
 
     @java.lang.Override
@@ -402,6 +414,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getCluster().isEmpty()) {
         cluster_ = other.cluster_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -433,7 +446,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
             case 10:
               {
                 cluster_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -452,6 +465,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object cluster_ = "";
     /**
@@ -520,8 +535,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       cluster_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -539,8 +554,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearCluster() {
-
       cluster_ = getDefaultInstance().getCluster();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -563,8 +578,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cluster_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

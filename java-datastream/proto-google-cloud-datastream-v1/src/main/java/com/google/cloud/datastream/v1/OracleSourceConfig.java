@@ -1034,7 +1034,9 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.datastream.v1.OracleRdbmsOrBuilder getIncludeObjectsOrBuilder() {
-    return getIncludeObjects();
+    return includeObjects_ == null
+        ? com.google.cloud.datastream.v1.OracleRdbms.getDefaultInstance()
+        : includeObjects_;
   }
 
   public static final int EXCLUDE_OBJECTS_FIELD_NUMBER = 2;
@@ -1082,11 +1084,13 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.datastream.v1.OracleRdbmsOrBuilder getExcludeObjectsOrBuilder() {
-    return getExcludeObjects();
+    return excludeObjects_ == null
+        ? com.google.cloud.datastream.v1.OracleRdbms.getDefaultInstance()
+        : excludeObjects_;
   }
 
   public static final int MAX_CONCURRENT_CDC_TASKS_FIELD_NUMBER = 3;
-  private int maxConcurrentCdcTasks_;
+  private int maxConcurrentCdcTasks_ = 0;
   /**
    *
    *
@@ -1498,20 +1502,18 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (includeObjectsBuilder_ == null) {
-        includeObjects_ = null;
-      } else {
-        includeObjects_ = null;
+      bitField0_ = 0;
+      includeObjects_ = null;
+      if (includeObjectsBuilder_ != null) {
+        includeObjectsBuilder_.dispose();
         includeObjectsBuilder_ = null;
       }
-      if (excludeObjectsBuilder_ == null) {
-        excludeObjects_ = null;
-      } else {
-        excludeObjects_ = null;
+      excludeObjects_ = null;
+      if (excludeObjectsBuilder_ != null) {
+        excludeObjectsBuilder_.dispose();
         excludeObjectsBuilder_ = null;
       }
       maxConcurrentCdcTasks_ = 0;
-
       if (dropLargeObjectsBuilder_ != null) {
         dropLargeObjectsBuilder_.clear();
       }
@@ -1547,34 +1549,38 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.datastream.v1.OracleSourceConfig buildPartial() {
       com.google.cloud.datastream.v1.OracleSourceConfig result =
           new com.google.cloud.datastream.v1.OracleSourceConfig(this);
-      if (includeObjectsBuilder_ == null) {
-        result.includeObjects_ = includeObjects_;
-      } else {
-        result.includeObjects_ = includeObjectsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (excludeObjectsBuilder_ == null) {
-        result.excludeObjects_ = excludeObjects_;
-      } else {
-        result.excludeObjects_ = excludeObjectsBuilder_.build();
-      }
-      result.maxConcurrentCdcTasks_ = maxConcurrentCdcTasks_;
-      if (largeObjectsHandlingCase_ == 100) {
-        if (dropLargeObjectsBuilder_ == null) {
-          result.largeObjectsHandling_ = largeObjectsHandling_;
-        } else {
-          result.largeObjectsHandling_ = dropLargeObjectsBuilder_.build();
-        }
-      }
-      if (largeObjectsHandlingCase_ == 102) {
-        if (streamLargeObjectsBuilder_ == null) {
-          result.largeObjectsHandling_ = largeObjectsHandling_;
-        } else {
-          result.largeObjectsHandling_ = streamLargeObjectsBuilder_.build();
-        }
-      }
-      result.largeObjectsHandlingCase_ = largeObjectsHandlingCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.OracleSourceConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.includeObjects_ =
+            includeObjectsBuilder_ == null ? includeObjects_ : includeObjectsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.excludeObjects_ =
+            excludeObjectsBuilder_ == null ? excludeObjects_ : excludeObjectsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.maxConcurrentCdcTasks_ = maxConcurrentCdcTasks_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datastream.v1.OracleSourceConfig result) {
+      result.largeObjectsHandlingCase_ = largeObjectsHandlingCase_;
+      result.largeObjectsHandling_ = this.largeObjectsHandling_;
+      if (largeObjectsHandlingCase_ == 100 && dropLargeObjectsBuilder_ != null) {
+        result.largeObjectsHandling_ = dropLargeObjectsBuilder_.build();
+      }
+      if (largeObjectsHandlingCase_ == 102 && streamLargeObjectsBuilder_ != null) {
+        result.largeObjectsHandling_ = streamLargeObjectsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1677,19 +1683,19 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getIncludeObjectsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getExcludeObjectsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 maxConcurrentCdcTasks_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 802:
@@ -1737,6 +1743,8 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.datastream.v1.OracleRdbms includeObjects_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datastream.v1.OracleRdbms,
@@ -1755,7 +1763,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      * @return Whether the includeObjects field is set.
      */
     public boolean hasIncludeObjects() {
-      return includeObjectsBuilder_ != null || includeObjects_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1792,11 +1800,11 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         includeObjects_ = value;
-        onChanged();
       } else {
         includeObjectsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1812,11 +1820,11 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         com.google.cloud.datastream.v1.OracleRdbms.Builder builderForValue) {
       if (includeObjectsBuilder_ == null) {
         includeObjects_ = builderForValue.build();
-        onChanged();
       } else {
         includeObjectsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1830,19 +1838,18 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeIncludeObjects(com.google.cloud.datastream.v1.OracleRdbms value) {
       if (includeObjectsBuilder_ == null) {
-        if (includeObjects_ != null) {
-          includeObjects_ =
-              com.google.cloud.datastream.v1.OracleRdbms.newBuilder(includeObjects_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && includeObjects_ != null
+            && includeObjects_ != com.google.cloud.datastream.v1.OracleRdbms.getDefaultInstance()) {
+          getIncludeObjectsBuilder().mergeFrom(value);
         } else {
           includeObjects_ = value;
         }
-        onChanged();
       } else {
         includeObjectsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1855,14 +1862,13 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.datastream.v1.OracleRdbms include_objects = 1;</code>
      */
     public Builder clearIncludeObjects() {
-      if (includeObjectsBuilder_ == null) {
-        includeObjects_ = null;
-        onChanged();
-      } else {
-        includeObjects_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      includeObjects_ = null;
+      if (includeObjectsBuilder_ != null) {
+        includeObjectsBuilder_.dispose();
         includeObjectsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1875,7 +1881,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.datastream.v1.OracleRdbms include_objects = 1;</code>
      */
     public com.google.cloud.datastream.v1.OracleRdbms.Builder getIncludeObjectsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getIncludeObjectsFieldBuilder().getBuilder();
     }
@@ -1941,7 +1947,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      * @return Whether the excludeObjects field is set.
      */
     public boolean hasExcludeObjects() {
-      return excludeObjectsBuilder_ != null || excludeObjects_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1978,11 +1984,11 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         excludeObjects_ = value;
-        onChanged();
       } else {
         excludeObjectsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1998,11 +2004,11 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         com.google.cloud.datastream.v1.OracleRdbms.Builder builderForValue) {
       if (excludeObjectsBuilder_ == null) {
         excludeObjects_ = builderForValue.build();
-        onChanged();
       } else {
         excludeObjectsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2016,19 +2022,18 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeExcludeObjects(com.google.cloud.datastream.v1.OracleRdbms value) {
       if (excludeObjectsBuilder_ == null) {
-        if (excludeObjects_ != null) {
-          excludeObjects_ =
-              com.google.cloud.datastream.v1.OracleRdbms.newBuilder(excludeObjects_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && excludeObjects_ != null
+            && excludeObjects_ != com.google.cloud.datastream.v1.OracleRdbms.getDefaultInstance()) {
+          getExcludeObjectsBuilder().mergeFrom(value);
         } else {
           excludeObjects_ = value;
         }
-        onChanged();
       } else {
         excludeObjectsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2041,14 +2046,13 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.datastream.v1.OracleRdbms exclude_objects = 2;</code>
      */
     public Builder clearExcludeObjects() {
-      if (excludeObjectsBuilder_ == null) {
-        excludeObjects_ = null;
-        onChanged();
-      } else {
-        excludeObjects_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      excludeObjects_ = null;
+      if (excludeObjectsBuilder_ != null) {
+        excludeObjectsBuilder_.dispose();
         excludeObjectsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2061,7 +2065,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.datastream.v1.OracleRdbms exclude_objects = 2;</code>
      */
     public com.google.cloud.datastream.v1.OracleRdbms.Builder getExcludeObjectsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getExcludeObjectsFieldBuilder().getBuilder();
     }
@@ -2142,6 +2146,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     public Builder setMaxConcurrentCdcTasks(int value) {
 
       maxConcurrentCdcTasks_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2158,7 +2163,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMaxConcurrentCdcTasks() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       maxConcurrentCdcTasks_ = 0;
       onChanged();
       return this;
@@ -2405,7 +2410,6 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       }
       largeObjectsHandlingCase_ = 100;
       onChanged();
-      ;
       return dropLargeObjectsBuilder_;
     }
 
@@ -2650,7 +2654,6 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       }
       largeObjectsHandlingCase_ = 102;
       onChanged();
-      ;
       return streamLargeObjectsBuilder_;
     }
 

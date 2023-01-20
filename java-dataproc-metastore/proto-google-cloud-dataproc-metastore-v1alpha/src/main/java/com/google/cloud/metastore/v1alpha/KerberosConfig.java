@@ -116,11 +116,15 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.metastore.v1alpha.SecretOrBuilder getKeytabOrBuilder() {
-    return getKeytab();
+    return keytab_ == null
+        ? com.google.cloud.metastore.v1alpha.Secret.getDefaultInstance()
+        : keytab_;
   }
 
   public static final int PRINCIPAL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object principal_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object principal_ = "";
   /**
    *
    *
@@ -173,7 +177,9 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KRB5_CONFIG_GCS_URI_FIELD_NUMBER = 3;
-  private volatile java.lang.Object krb5ConfigGcsUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object krb5ConfigGcsUri_ = "";
   /**
    *
    *
@@ -445,16 +451,14 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (keytabBuilder_ == null) {
-        keytab_ = null;
-      } else {
-        keytab_ = null;
+      bitField0_ = 0;
+      keytab_ = null;
+      if (keytabBuilder_ != null) {
+        keytabBuilder_.dispose();
         keytabBuilder_ = null;
       }
       principal_ = "";
-
       krb5ConfigGcsUri_ = "";
-
       return this;
     }
 
@@ -482,15 +486,24 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.metastore.v1alpha.KerberosConfig buildPartial() {
       com.google.cloud.metastore.v1alpha.KerberosConfig result =
           new com.google.cloud.metastore.v1alpha.KerberosConfig(this);
-      if (keytabBuilder_ == null) {
-        result.keytab_ = keytab_;
-      } else {
-        result.keytab_ = keytabBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.principal_ = principal_;
-      result.krb5ConfigGcsUri_ = krb5ConfigGcsUri_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1alpha.KerberosConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.keytab_ = keytabBuilder_ == null ? keytab_ : keytabBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.principal_ = principal_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.krb5ConfigGcsUri_ = krb5ConfigGcsUri_;
+      }
     }
 
     @java.lang.Override
@@ -544,10 +557,12 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getPrincipal().isEmpty()) {
         principal_ = other.principal_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getKrb5ConfigGcsUri().isEmpty()) {
         krb5ConfigGcsUri_ = other.krb5ConfigGcsUri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -579,19 +594,19 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getKeytabFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 principal_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 krb5ConfigGcsUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -610,6 +625,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.metastore.v1alpha.Secret keytab_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -630,7 +647,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the keytab field is set.
      */
     public boolean hasKeytab() {
-      return keytabBuilder_ != null || keytab_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -669,11 +686,11 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         keytab_ = value;
-        onChanged();
       } else {
         keytabBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -689,11 +706,11 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setKeytab(com.google.cloud.metastore.v1alpha.Secret.Builder builderForValue) {
       if (keytabBuilder_ == null) {
         keytab_ = builderForValue.build();
-        onChanged();
       } else {
         keytabBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -708,19 +725,18 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeKeytab(com.google.cloud.metastore.v1alpha.Secret value) {
       if (keytabBuilder_ == null) {
-        if (keytab_ != null) {
-          keytab_ =
-              com.google.cloud.metastore.v1alpha.Secret.newBuilder(keytab_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && keytab_ != null
+            && keytab_ != com.google.cloud.metastore.v1alpha.Secret.getDefaultInstance()) {
+          getKeytabBuilder().mergeFrom(value);
         } else {
           keytab_ = value;
         }
-        onChanged();
       } else {
         keytabBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -734,14 +750,13 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.metastore.v1alpha.Secret keytab = 1;</code>
      */
     public Builder clearKeytab() {
-      if (keytabBuilder_ == null) {
-        keytab_ = null;
-        onChanged();
-      } else {
-        keytab_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      keytab_ = null;
+      if (keytabBuilder_ != null) {
+        keytabBuilder_.dispose();
         keytabBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -755,7 +770,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.metastore.v1alpha.Secret keytab = 1;</code>
      */
     public com.google.cloud.metastore.v1alpha.Secret.Builder getKeytabBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getKeytabFieldBuilder().getBuilder();
     }
@@ -872,8 +887,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       principal_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -891,8 +906,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPrincipal() {
-
       principal_ = getDefaultInstance().getPrincipal();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -915,8 +930,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       principal_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -988,8 +1003,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       krb5ConfigGcsUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1007,8 +1022,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKrb5ConfigGcsUri() {
-
       krb5ConfigGcsUri_ = getDefaultInstance().getKrb5ConfigGcsUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1031,8 +1046,8 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       krb5ConfigGcsUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

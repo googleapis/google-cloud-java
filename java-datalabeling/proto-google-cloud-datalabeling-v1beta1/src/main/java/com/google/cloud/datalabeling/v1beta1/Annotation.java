@@ -72,7 +72,9 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -123,7 +125,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ANNOTATION_SOURCE_FIELD_NUMBER = 2;
-  private int annotationSource_;
+  private int annotationSource_ = 0;
   /**
    *
    *
@@ -152,9 +154,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSource getAnnotationSource() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.AnnotationSource result =
-        com.google.cloud.datalabeling.v1beta1.AnnotationSource.valueOf(annotationSource_);
+        com.google.cloud.datalabeling.v1beta1.AnnotationSource.forNumber(annotationSource_);
     return result == null
         ? com.google.cloud.datalabeling.v1beta1.AnnotationSource.UNRECOGNIZED
         : result;
@@ -209,7 +210,9 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationValueOrBuilder
       getAnnotationValueOrBuilder() {
-    return getAnnotationValue();
+    return annotationValue_ == null
+        ? com.google.cloud.datalabeling.v1beta1.AnnotationValue.getDefaultInstance()
+        : annotationValue_;
   }
 
   public static final int ANNOTATION_METADATA_FIELD_NUMBER = 4;
@@ -261,11 +264,13 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationMetadataOrBuilder
       getAnnotationMetadataOrBuilder() {
-    return getAnnotationMetadata();
+    return annotationMetadata_ == null
+        ? com.google.cloud.datalabeling.v1beta1.AnnotationMetadata.getDefaultInstance()
+        : annotationMetadata_;
   }
 
   public static final int ANNOTATION_SENTIMENT_FIELD_NUMBER = 6;
-  private int annotationSentiment_;
+  private int annotationSentiment_ = 0;
   /**
    *
    *
@@ -294,9 +299,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSentiment getAnnotationSentiment() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.AnnotationSentiment result =
-        com.google.cloud.datalabeling.v1beta1.AnnotationSentiment.valueOf(annotationSentiment_);
+        com.google.cloud.datalabeling.v1beta1.AnnotationSentiment.forNumber(annotationSentiment_);
     return result == null
         ? com.google.cloud.datalabeling.v1beta1.AnnotationSentiment.UNRECOGNIZED
         : result;
@@ -557,24 +561,20 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       annotationSource_ = 0;
-
-      if (annotationValueBuilder_ == null) {
-        annotationValue_ = null;
-      } else {
-        annotationValue_ = null;
+      annotationValue_ = null;
+      if (annotationValueBuilder_ != null) {
+        annotationValueBuilder_.dispose();
         annotationValueBuilder_ = null;
       }
-      if (annotationMetadataBuilder_ == null) {
-        annotationMetadata_ = null;
-      } else {
-        annotationMetadata_ = null;
+      annotationMetadata_ = null;
+      if (annotationMetadataBuilder_ != null) {
+        annotationMetadataBuilder_.dispose();
         annotationMetadataBuilder_ = null;
       }
       annotationSentiment_ = 0;
-
       return this;
     }
 
@@ -602,21 +602,34 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.Annotation buildPartial() {
       com.google.cloud.datalabeling.v1beta1.Annotation result =
           new com.google.cloud.datalabeling.v1beta1.Annotation(this);
-      result.name_ = name_;
-      result.annotationSource_ = annotationSource_;
-      if (annotationValueBuilder_ == null) {
-        result.annotationValue_ = annotationValue_;
-      } else {
-        result.annotationValue_ = annotationValueBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (annotationMetadataBuilder_ == null) {
-        result.annotationMetadata_ = annotationMetadata_;
-      } else {
-        result.annotationMetadata_ = annotationMetadataBuilder_.build();
-      }
-      result.annotationSentiment_ = annotationSentiment_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.Annotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.annotationSource_ = annotationSource_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.annotationValue_ =
+            annotationValueBuilder_ == null ? annotationValue_ : annotationValueBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.annotationMetadata_ =
+            annotationMetadataBuilder_ == null
+                ? annotationMetadata_
+                : annotationMetadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.annotationSentiment_ = annotationSentiment_;
+      }
     }
 
     @java.lang.Override
@@ -667,6 +680,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.annotationSource_ != 0) {
@@ -710,32 +724,32 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 annotationSource_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getAnnotationValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getAnnotationMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 48:
               {
                 annotationSentiment_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 48
             default:
@@ -754,6 +768,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -819,8 +835,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -837,8 +853,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -860,8 +876,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -895,8 +911,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAnnotationSourceValue(int value) {
-
       annotationSource_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -913,9 +929,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationSource getAnnotationSource() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.AnnotationSource result =
-          com.google.cloud.datalabeling.v1beta1.AnnotationSource.valueOf(annotationSource_);
+          com.google.cloud.datalabeling.v1beta1.AnnotationSource.forNumber(annotationSource_);
       return result == null
           ? com.google.cloud.datalabeling.v1beta1.AnnotationSource.UNRECOGNIZED
           : result;
@@ -937,7 +952,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       annotationSource_ = value.getNumber();
       onChanged();
       return this;
@@ -954,7 +969,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAnnotationSource() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       annotationSource_ = 0;
       onChanged();
       return this;
@@ -979,7 +994,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the annotationValue field is set.
      */
     public boolean hasAnnotationValue() {
-      return annotationValueBuilder_ != null || annotationValue_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1018,11 +1033,11 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         annotationValue_ = value;
-        onChanged();
       } else {
         annotationValueBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1039,11 +1054,11 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.datalabeling.v1beta1.AnnotationValue.Builder builderForValue) {
       if (annotationValueBuilder_ == null) {
         annotationValue_ = builderForValue.build();
-        onChanged();
       } else {
         annotationValueBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1059,19 +1074,19 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAnnotationValue(
         com.google.cloud.datalabeling.v1beta1.AnnotationValue value) {
       if (annotationValueBuilder_ == null) {
-        if (annotationValue_ != null) {
-          annotationValue_ =
-              com.google.cloud.datalabeling.v1beta1.AnnotationValue.newBuilder(annotationValue_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && annotationValue_ != null
+            && annotationValue_
+                != com.google.cloud.datalabeling.v1beta1.AnnotationValue.getDefaultInstance()) {
+          getAnnotationValueBuilder().mergeFrom(value);
         } else {
           annotationValue_ = value;
         }
-        onChanged();
       } else {
         annotationValueBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1085,14 +1100,13 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationValue annotation_value = 3;</code>
      */
     public Builder clearAnnotationValue() {
-      if (annotationValueBuilder_ == null) {
-        annotationValue_ = null;
-        onChanged();
-      } else {
-        annotationValue_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      annotationValue_ = null;
+      if (annotationValueBuilder_ != null) {
+        annotationValueBuilder_.dispose();
         annotationValueBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1107,7 +1121,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.datalabeling.v1beta1.AnnotationValue.Builder
         getAnnotationValueBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAnnotationValueFieldBuilder().getBuilder();
     }
@@ -1177,7 +1191,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the annotationMetadata field is set.
      */
     public boolean hasAnnotationMetadata() {
-      return annotationMetadataBuilder_ != null || annotationMetadata_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1217,11 +1231,11 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         annotationMetadata_ = value;
-        onChanged();
       } else {
         annotationMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1238,11 +1252,11 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.datalabeling.v1beta1.AnnotationMetadata.Builder builderForValue) {
       if (annotationMetadataBuilder_ == null) {
         annotationMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         annotationMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1258,20 +1272,19 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAnnotationMetadata(
         com.google.cloud.datalabeling.v1beta1.AnnotationMetadata value) {
       if (annotationMetadataBuilder_ == null) {
-        if (annotationMetadata_ != null) {
-          annotationMetadata_ =
-              com.google.cloud.datalabeling.v1beta1.AnnotationMetadata.newBuilder(
-                      annotationMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && annotationMetadata_ != null
+            && annotationMetadata_
+                != com.google.cloud.datalabeling.v1beta1.AnnotationMetadata.getDefaultInstance()) {
+          getAnnotationMetadataBuilder().mergeFrom(value);
         } else {
           annotationMetadata_ = value;
         }
-        onChanged();
       } else {
         annotationMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1285,14 +1298,13 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationMetadata annotation_metadata = 4;</code>
      */
     public Builder clearAnnotationMetadata() {
-      if (annotationMetadataBuilder_ == null) {
-        annotationMetadata_ = null;
-        onChanged();
-      } else {
-        annotationMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      annotationMetadata_ = null;
+      if (annotationMetadataBuilder_ != null) {
+        annotationMetadataBuilder_.dispose();
         annotationMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1307,7 +1319,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.datalabeling.v1beta1.AnnotationMetadata.Builder
         getAnnotationMetadataBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getAnnotationMetadataFieldBuilder().getBuilder();
     }
@@ -1387,8 +1399,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAnnotationSentimentValue(int value) {
-
       annotationSentiment_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1405,9 +1417,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationSentiment getAnnotationSentiment() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.AnnotationSentiment result =
-          com.google.cloud.datalabeling.v1beta1.AnnotationSentiment.valueOf(annotationSentiment_);
+          com.google.cloud.datalabeling.v1beta1.AnnotationSentiment.forNumber(annotationSentiment_);
       return result == null
           ? com.google.cloud.datalabeling.v1beta1.AnnotationSentiment.UNRECOGNIZED
           : result;
@@ -1429,7 +1440,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       annotationSentiment_ = value.getNumber();
       onChanged();
       return this;
@@ -1446,7 +1457,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAnnotationSentiment() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       annotationSentiment_ = 0;
       onChanged();
       return this;

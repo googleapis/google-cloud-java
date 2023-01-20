@@ -406,7 +406,6 @@ public interface TriggerOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -502,7 +501,6 @@ public interface TriggerOrBuilder
    * map&lt;string, .google.cloud.eventarc.v1.StateCondition&gt; conditions = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-
   /* nullable */
   com.google.cloud.eventarc.v1.StateCondition getConditionsOrDefault(
       java.lang.String key,

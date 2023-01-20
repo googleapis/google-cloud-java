@@ -108,7 +108,7 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.KeyOrBuilder getEntityKeyOrBuilder() {
-    return getEntityKey();
+    return entityKey_ == null ? com.google.privacy.dlp.v2.Key.getDefaultInstance() : entityKey_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -312,10 +312,10 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (entityKeyBuilder_ == null) {
-        entityKey_ = null;
-      } else {
-        entityKey_ = null;
+      bitField0_ = 0;
+      entityKey_ = null;
+      if (entityKeyBuilder_ != null) {
+        entityKeyBuilder_.dispose();
         entityKeyBuilder_ = null;
       }
       return this;
@@ -345,13 +345,18 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.DatastoreKey buildPartial() {
       com.google.privacy.dlp.v2.DatastoreKey result =
           new com.google.privacy.dlp.v2.DatastoreKey(this);
-      if (entityKeyBuilder_ == null) {
-        result.entityKey_ = entityKey_;
-      } else {
-        result.entityKey_ = entityKeyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.DatastoreKey result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.entityKey_ = entityKeyBuilder_ == null ? entityKey_ : entityKeyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -431,7 +436,7 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getEntityKeyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -451,6 +456,8 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.privacy.dlp.v2.Key entityKey_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.Key,
@@ -469,7 +476,7 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the entityKey field is set.
      */
     public boolean hasEntityKey() {
-      return entityKeyBuilder_ != null || entityKey_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -504,11 +511,11 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         entityKey_ = value;
-        onChanged();
       } else {
         entityKeyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -523,11 +530,11 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
     public Builder setEntityKey(com.google.privacy.dlp.v2.Key.Builder builderForValue) {
       if (entityKeyBuilder_ == null) {
         entityKey_ = builderForValue.build();
-        onChanged();
       } else {
         entityKeyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -541,17 +548,18 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEntityKey(com.google.privacy.dlp.v2.Key value) {
       if (entityKeyBuilder_ == null) {
-        if (entityKey_ != null) {
-          entityKey_ =
-              com.google.privacy.dlp.v2.Key.newBuilder(entityKey_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && entityKey_ != null
+            && entityKey_ != com.google.privacy.dlp.v2.Key.getDefaultInstance()) {
+          getEntityKeyBuilder().mergeFrom(value);
         } else {
           entityKey_ = value;
         }
-        onChanged();
       } else {
         entityKeyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -564,14 +572,13 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.Key entity_key = 1;</code>
      */
     public Builder clearEntityKey() {
-      if (entityKeyBuilder_ == null) {
-        entityKey_ = null;
-        onChanged();
-      } else {
-        entityKey_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      entityKey_ = null;
+      if (entityKeyBuilder_ != null) {
+        entityKeyBuilder_.dispose();
         entityKeyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -584,7 +591,7 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.Key entity_key = 1;</code>
      */
     public com.google.privacy.dlp.v2.Key.Builder getEntityKeyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getEntityKeyFieldBuilder().getBuilder();
     }

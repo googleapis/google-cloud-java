@@ -70,7 +70,9 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -173,11 +175,15 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.cloud.eventarc.v1.ChannelConnectionOrBuilder getChannelConnectionOrBuilder() {
-    return getChannelConnection();
+    return channelConnection_ == null
+        ? com.google.cloud.eventarc.v1.ChannelConnection.getDefaultInstance()
+        : channelConnection_;
   }
 
   public static final int CHANNEL_CONNECTION_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object channelConnectionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object channelConnectionId_ = "";
   /**
    *
    *
@@ -446,16 +452,14 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (channelConnectionBuilder_ == null) {
-        channelConnection_ = null;
-      } else {
-        channelConnection_ = null;
+      channelConnection_ = null;
+      if (channelConnectionBuilder_ != null) {
+        channelConnectionBuilder_.dispose();
         channelConnectionBuilder_ = null;
       }
       channelConnectionId_ = "";
-
       return this;
     }
 
@@ -483,15 +487,27 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
     public com.google.cloud.eventarc.v1.CreateChannelConnectionRequest buildPartial() {
       com.google.cloud.eventarc.v1.CreateChannelConnectionRequest result =
           new com.google.cloud.eventarc.v1.CreateChannelConnectionRequest(this);
-      result.parent_ = parent_;
-      if (channelConnectionBuilder_ == null) {
-        result.channelConnection_ = channelConnection_;
-      } else {
-        result.channelConnection_ = channelConnectionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.channelConnectionId_ = channelConnectionId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.eventarc.v1.CreateChannelConnectionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.channelConnection_ =
+            channelConnectionBuilder_ == null
+                ? channelConnection_
+                : channelConnectionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.channelConnectionId_ = channelConnectionId_;
+      }
     }
 
     @java.lang.Override
@@ -542,6 +558,7 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasChannelConnection()) {
@@ -549,6 +566,7 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
       }
       if (!other.getChannelConnectionId().isEmpty()) {
         channelConnectionId_ = other.channelConnectionId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -580,20 +598,20 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getChannelConnectionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 channelConnectionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -612,6 +630,8 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -680,8 +700,8 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -699,8 +719,8 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -723,8 +743,8 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -749,7 +769,7 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
      * @return Whether the channelConnection field is set.
      */
     public boolean hasChannelConnection() {
-      return channelConnectionBuilder_ != null || channelConnection_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -790,11 +810,11 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         channelConnection_ = value;
-        onChanged();
       } else {
         channelConnectionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -812,11 +832,11 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
         com.google.cloud.eventarc.v1.ChannelConnection.Builder builderForValue) {
       if (channelConnectionBuilder_ == null) {
         channelConnection_ = builderForValue.build();
-        onChanged();
       } else {
         channelConnectionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -832,19 +852,19 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
      */
     public Builder mergeChannelConnection(com.google.cloud.eventarc.v1.ChannelConnection value) {
       if (channelConnectionBuilder_ == null) {
-        if (channelConnection_ != null) {
-          channelConnection_ =
-              com.google.cloud.eventarc.v1.ChannelConnection.newBuilder(channelConnection_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && channelConnection_ != null
+            && channelConnection_
+                != com.google.cloud.eventarc.v1.ChannelConnection.getDefaultInstance()) {
+          getChannelConnectionBuilder().mergeFrom(value);
         } else {
           channelConnection_ = value;
         }
-        onChanged();
       } else {
         channelConnectionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -859,14 +879,13 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearChannelConnection() {
-      if (channelConnectionBuilder_ == null) {
-        channelConnection_ = null;
-        onChanged();
-      } else {
-        channelConnection_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      channelConnection_ = null;
+      if (channelConnectionBuilder_ != null) {
+        channelConnectionBuilder_.dispose();
         channelConnectionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -881,7 +900,7 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
      * </code>
      */
     public com.google.cloud.eventarc.v1.ChannelConnection.Builder getChannelConnectionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getChannelConnectionFieldBuilder().getBuilder();
     }
@@ -994,8 +1013,8 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       channelConnectionId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1011,8 +1030,8 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearChannelConnectionId() {
-
       channelConnectionId_ = getDefaultInstance().getChannelConnectionId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1033,8 +1052,8 @@ public final class CreateChannelConnectionRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       channelConnectionId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

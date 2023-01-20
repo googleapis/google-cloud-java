@@ -85,7 +85,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 14;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -138,7 +140,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUOTE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object quote_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object quote_ = "";
   /**
    *
    *
@@ -240,11 +244,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder() {
-    return getInfoType();
+    return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
   }
 
   public static final int LIKELIHOOD_FIELD_NUMBER = 3;
-  private int likelihood_;
+  private int likelihood_ = 0;
   /**
    *
    *
@@ -273,9 +277,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.Likelihood getLikelihood() {
-    @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.Likelihood result =
-        com.google.privacy.dlp.v2.Likelihood.valueOf(likelihood_);
+        com.google.privacy.dlp.v2.Likelihood.forNumber(likelihood_);
     return result == null ? com.google.privacy.dlp.v2.Likelihood.UNRECOGNIZED : result;
   }
 
@@ -322,7 +325,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.LocationOrBuilder getLocationOrBuilder() {
-    return getLocation();
+    return location_ == null ? com.google.privacy.dlp.v2.Location.getDefaultInstance() : location_;
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 6;
@@ -368,7 +371,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int QUOTE_INFO_FIELD_NUMBER = 7;
@@ -422,11 +425,15 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.QuoteInfoOrBuilder getQuoteInfoOrBuilder() {
-    return getQuoteInfo();
+    return quoteInfo_ == null
+        ? com.google.privacy.dlp.v2.QuoteInfo.getDefaultInstance()
+        : quoteInfo_;
   }
 
   public static final int RESOURCE_NAME_FIELD_NUMBER = 8;
-  private volatile java.lang.Object resourceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceName_ = "";
   /**
    *
    *
@@ -475,7 +482,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRIGGER_NAME_FIELD_NUMBER = 9;
-  private volatile java.lang.Object triggerName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object triggerName_ = "";
   /**
    *
    *
@@ -536,6 +545,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -617,7 +627,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -698,11 +711,15 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getJobCreateTimeOrBuilder() {
-    return getJobCreateTime();
+    return jobCreateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : jobCreateTime_;
   }
 
   public static final int JOB_NAME_FIELD_NUMBER = 13;
-  private volatile java.lang.Object jobName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object jobName_ = "";
   /**
    *
    *
@@ -751,7 +768,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FINDING_ID_FIELD_NUMBER = 15;
-  private volatile java.lang.Object findingId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object findingId_ = "";
   /**
    *
    *
@@ -1155,51 +1174,40 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       quote_ = "";
-
-      if (infoTypeBuilder_ == null) {
-        infoType_ = null;
-      } else {
-        infoType_ = null;
+      infoType_ = null;
+      if (infoTypeBuilder_ != null) {
+        infoTypeBuilder_.dispose();
         infoTypeBuilder_ = null;
       }
       likelihood_ = 0;
-
-      if (locationBuilder_ == null) {
-        location_ = null;
-      } else {
-        location_ = null;
+      location_ = null;
+      if (locationBuilder_ != null) {
+        locationBuilder_.dispose();
         locationBuilder_ = null;
       }
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (quoteInfoBuilder_ == null) {
-        quoteInfo_ = null;
-      } else {
-        quoteInfo_ = null;
+      quoteInfo_ = null;
+      if (quoteInfoBuilder_ != null) {
+        quoteInfoBuilder_.dispose();
         quoteInfoBuilder_ = null;
       }
       resourceName_ = "";
-
       triggerName_ = "";
-
       internalGetMutableLabels().clear();
-      if (jobCreateTimeBuilder_ == null) {
-        jobCreateTime_ = null;
-      } else {
-        jobCreateTime_ = null;
+      jobCreateTime_ = null;
+      if (jobCreateTimeBuilder_ != null) {
+        jobCreateTimeBuilder_.dispose();
         jobCreateTimeBuilder_ = null;
       }
       jobName_ = "";
-
       findingId_ = "";
-
       return this;
     }
 
@@ -1226,43 +1234,56 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.privacy.dlp.v2.Finding buildPartial() {
       com.google.privacy.dlp.v2.Finding result = new com.google.privacy.dlp.v2.Finding(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.quote_ = quote_;
-      if (infoTypeBuilder_ == null) {
-        result.infoType_ = infoType_;
-      } else {
-        result.infoType_ = infoTypeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.likelihood_ = likelihood_;
-      if (locationBuilder_ == null) {
-        result.location_ = location_;
-      } else {
-        result.location_ = locationBuilder_.build();
-      }
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (quoteInfoBuilder_ == null) {
-        result.quoteInfo_ = quoteInfo_;
-      } else {
-        result.quoteInfo_ = quoteInfoBuilder_.build();
-      }
-      result.resourceName_ = resourceName_;
-      result.triggerName_ = triggerName_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (jobCreateTimeBuilder_ == null) {
-        result.jobCreateTime_ = jobCreateTime_;
-      } else {
-        result.jobCreateTime_ = jobCreateTimeBuilder_.build();
-      }
-      result.jobName_ = jobName_;
-      result.findingId_ = findingId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.Finding result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.quote_ = quote_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.infoType_ = infoTypeBuilder_ == null ? infoType_ : infoTypeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.likelihood_ = likelihood_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.location_ = locationBuilder_ == null ? location_ : locationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.quoteInfo_ = quoteInfoBuilder_ == null ? quoteInfo_ : quoteInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.resourceName_ = resourceName_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.triggerName_ = triggerName_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.jobCreateTime_ =
+            jobCreateTimeBuilder_ == null ? jobCreateTime_ : jobCreateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.jobName_ = jobName_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.findingId_ = findingId_;
+      }
     }
 
     @java.lang.Override
@@ -1312,10 +1333,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.privacy.dlp.v2.Finding.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getQuote().isEmpty()) {
         quote_ = other.quote_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasInfoType()) {
@@ -1335,22 +1358,27 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getResourceName().isEmpty()) {
         resourceName_ = other.resourceName_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getTriggerName().isEmpty()) {
         triggerName_ = other.triggerName_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000200;
       if (other.hasJobCreateTime()) {
         mergeJobCreateTime(other.getJobCreateTime());
       }
       if (!other.getJobName().isEmpty()) {
         jobName_ = other.jobName_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.getFindingId().isEmpty()) {
         findingId_ = other.findingId_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1382,49 +1410,49 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 quote_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getInfoTypeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 24:
               {
                 likelihood_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getLocationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getQuoteInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 resourceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 triggerName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
@@ -1436,30 +1464,31 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getJobCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 106:
               {
                 jobName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 106
             case 114:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 114
             case 122:
               {
                 findingId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 122
             default:
@@ -1548,8 +1577,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1567,8 +1596,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1591,8 +1620,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1670,8 +1699,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       quote_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1691,8 +1720,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearQuote() {
-
       quote_ = getDefaultInstance().getQuote();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1717,8 +1746,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       quote_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1742,7 +1771,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the infoType field is set.
      */
     public boolean hasInfoType() {
-      return infoTypeBuilder_ != null || infoType_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1781,11 +1810,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         infoType_ = value;
-        onChanged();
       } else {
         infoTypeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1801,11 +1830,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder setInfoType(com.google.privacy.dlp.v2.InfoType.Builder builderForValue) {
       if (infoTypeBuilder_ == null) {
         infoType_ = builderForValue.build();
-        onChanged();
       } else {
         infoTypeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1820,19 +1849,18 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeInfoType(com.google.privacy.dlp.v2.InfoType value) {
       if (infoTypeBuilder_ == null) {
-        if (infoType_ != null) {
-          infoType_ =
-              com.google.privacy.dlp.v2.InfoType.newBuilder(infoType_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && infoType_ != null
+            && infoType_ != com.google.privacy.dlp.v2.InfoType.getDefaultInstance()) {
+          getInfoTypeBuilder().mergeFrom(value);
         } else {
           infoType_ = value;
         }
-        onChanged();
       } else {
         infoTypeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1846,14 +1874,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
      */
     public Builder clearInfoType() {
-      if (infoTypeBuilder_ == null) {
-        infoType_ = null;
-        onChanged();
-      } else {
-        infoType_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      infoType_ = null;
+      if (infoTypeBuilder_ != null) {
+        infoTypeBuilder_.dispose();
         infoTypeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1867,7 +1894,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
      */
     public com.google.privacy.dlp.v2.InfoType.Builder getInfoTypeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getInfoTypeFieldBuilder().getBuilder();
     }
@@ -1946,8 +1973,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLikelihoodValue(int value) {
-
       likelihood_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1964,9 +1991,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.Likelihood getLikelihood() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.Likelihood result =
-          com.google.privacy.dlp.v2.Likelihood.valueOf(likelihood_);
+          com.google.privacy.dlp.v2.Likelihood.forNumber(likelihood_);
       return result == null ? com.google.privacy.dlp.v2.Likelihood.UNRECOGNIZED : result;
     }
     /**
@@ -1985,7 +2011,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       likelihood_ = value.getNumber();
       onChanged();
       return this;
@@ -2002,7 +2028,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLikelihood() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       likelihood_ = 0;
       onChanged();
       return this;
@@ -2026,7 +2052,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the location field is set.
      */
     public boolean hasLocation() {
-      return locationBuilder_ != null || location_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2063,11 +2089,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         location_ = value;
-        onChanged();
       } else {
         locationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2082,11 +2108,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder setLocation(com.google.privacy.dlp.v2.Location.Builder builderForValue) {
       if (locationBuilder_ == null) {
         location_ = builderForValue.build();
-        onChanged();
       } else {
         locationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2100,19 +2126,18 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLocation(com.google.privacy.dlp.v2.Location value) {
       if (locationBuilder_ == null) {
-        if (location_ != null) {
-          location_ =
-              com.google.privacy.dlp.v2.Location.newBuilder(location_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && location_ != null
+            && location_ != com.google.privacy.dlp.v2.Location.getDefaultInstance()) {
+          getLocationBuilder().mergeFrom(value);
         } else {
           location_ = value;
         }
-        onChanged();
       } else {
         locationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2125,14 +2150,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.Location location = 4;</code>
      */
     public Builder clearLocation() {
-      if (locationBuilder_ == null) {
-        location_ = null;
-        onChanged();
-      } else {
-        location_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      location_ = null;
+      if (locationBuilder_ != null) {
+        locationBuilder_.dispose();
         locationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2145,7 +2169,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.Location location = 4;</code>
      */
     public com.google.privacy.dlp.v2.Location.Builder getLocationBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
@@ -2211,7 +2235,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2248,11 +2272,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2267,11 +2291,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2285,17 +2309,18 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2308,14 +2333,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2328,7 +2352,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2396,7 +2420,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the quoteInfo field is set.
      */
     public boolean hasQuoteInfo() {
-      return quoteInfoBuilder_ != null || quoteInfo_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2437,11 +2461,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         quoteInfo_ = value;
-        onChanged();
       } else {
         quoteInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2458,11 +2482,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder setQuoteInfo(com.google.privacy.dlp.v2.QuoteInfo.Builder builderForValue) {
       if (quoteInfoBuilder_ == null) {
         quoteInfo_ = builderForValue.build();
-        onChanged();
       } else {
         quoteInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2478,19 +2502,18 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeQuoteInfo(com.google.privacy.dlp.v2.QuoteInfo value) {
       if (quoteInfoBuilder_ == null) {
-        if (quoteInfo_ != null) {
-          quoteInfo_ =
-              com.google.privacy.dlp.v2.QuoteInfo.newBuilder(quoteInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && quoteInfo_ != null
+            && quoteInfo_ != com.google.privacy.dlp.v2.QuoteInfo.getDefaultInstance()) {
+          getQuoteInfoBuilder().mergeFrom(value);
         } else {
           quoteInfo_ = value;
         }
-        onChanged();
       } else {
         quoteInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2505,14 +2528,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.QuoteInfo quote_info = 7;</code>
      */
     public Builder clearQuoteInfo() {
-      if (quoteInfoBuilder_ == null) {
-        quoteInfo_ = null;
-        onChanged();
-      } else {
-        quoteInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      quoteInfo_ = null;
+      if (quoteInfoBuilder_ != null) {
+        quoteInfoBuilder_.dispose();
         quoteInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2527,7 +2549,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.QuoteInfo quote_info = 7;</code>
      */
     public com.google.privacy.dlp.v2.QuoteInfo.Builder getQuoteInfoBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getQuoteInfoFieldBuilder().getBuilder();
     }
@@ -2640,8 +2662,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceName_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2657,8 +2679,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceName() {
-
       resourceName_ = getDefaultInstance().getResourceName();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2679,8 +2701,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceName_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2746,8 +2768,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       triggerName_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2763,8 +2785,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTriggerName() {
-
       triggerName_ = getDefaultInstance().getTriggerName();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2785,8 +2807,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       triggerName_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2802,14 +2824,14 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000200;
+      onChanged();
       return labels_;
     }
 
@@ -2885,8 +2907,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 10;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2923,6 +2947,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2953,6 +2978,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000200;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2979,8 +3005,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -3002,6 +3028,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -3023,7 +3050,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the jobCreateTime field is set.
      */
     public boolean hasJobCreateTime() {
-      return jobCreateTimeBuilder_ != null || jobCreateTime_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3060,11 +3087,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         jobCreateTime_ = value;
-        onChanged();
       } else {
         jobCreateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3079,11 +3106,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder setJobCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (jobCreateTimeBuilder_ == null) {
         jobCreateTime_ = builderForValue.build();
-        onChanged();
       } else {
         jobCreateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3097,19 +3124,18 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeJobCreateTime(com.google.protobuf.Timestamp value) {
       if (jobCreateTimeBuilder_ == null) {
-        if (jobCreateTime_ != null) {
-          jobCreateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(jobCreateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && jobCreateTime_ != null
+            && jobCreateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getJobCreateTimeBuilder().mergeFrom(value);
         } else {
           jobCreateTime_ = value;
         }
-        onChanged();
       } else {
         jobCreateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3122,14 +3148,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp job_create_time = 11;</code>
      */
     public Builder clearJobCreateTime() {
-      if (jobCreateTimeBuilder_ == null) {
-        jobCreateTime_ = null;
-        onChanged();
-      } else {
-        jobCreateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      jobCreateTime_ = null;
+      if (jobCreateTimeBuilder_ != null) {
+        jobCreateTimeBuilder_.dispose();
         jobCreateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3142,7 +3167,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp job_create_time = 11;</code>
      */
     public com.google.protobuf.Timestamp.Builder getJobCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getJobCreateTimeFieldBuilder().getBuilder();
     }
@@ -3251,8 +3276,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       jobName_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3268,8 +3293,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearJobName() {
-
       jobName_ = getDefaultInstance().getJobName();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3290,8 +3315,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       jobName_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3357,8 +3382,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       findingId_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3374,8 +3399,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFindingId() {
-
       findingId_ = getDefaultInstance().getFindingId();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3396,8 +3421,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       findingId_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

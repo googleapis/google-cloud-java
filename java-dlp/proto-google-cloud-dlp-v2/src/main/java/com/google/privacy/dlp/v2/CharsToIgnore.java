@@ -460,9 +460,8 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore getCommonCharactersToIgnore() {
     if (charactersCase_ == 2) {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore result =
-          com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore.valueOf(
+          com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore.forNumber(
               (java.lang.Integer) characters_);
       return result == null
           ? com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore.UNRECOGNIZED
@@ -698,6 +697,7 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       charactersCase_ = 0;
       characters_ = null;
       return this;
@@ -727,15 +727,21 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.CharsToIgnore buildPartial() {
       com.google.privacy.dlp.v2.CharsToIgnore result =
           new com.google.privacy.dlp.v2.CharsToIgnore(this);
-      if (charactersCase_ == 1) {
-        result.characters_ = characters_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (charactersCase_ == 2) {
-        result.characters_ = characters_;
-      }
-      result.charactersCase_ = charactersCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.CharsToIgnore result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.CharsToIgnore result) {
+      result.charactersCase_ = charactersCase_;
+      result.characters_ = this.characters_;
     }
 
     @java.lang.Override
@@ -871,6 +877,8 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -1084,9 +1092,8 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore
         getCommonCharactersToIgnore() {
       if (charactersCase_ == 2) {
-        @SuppressWarnings("deprecation")
         com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore result =
-            com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore.valueOf(
+            com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore.forNumber(
                 (java.lang.Integer) characters_);
         return result == null
             ? com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore.UNRECOGNIZED

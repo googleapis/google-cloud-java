@@ -116,7 +116,9 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
-    return getCryptoKey();
+    return cryptoKey_ == null
+        ? com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance()
+        : cryptoKey_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -327,10 +329,10 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (cryptoKeyBuilder_ == null) {
-        cryptoKey_ = null;
-      } else {
-        cryptoKey_ = null;
+      bitField0_ = 0;
+      cryptoKey_ = null;
+      if (cryptoKeyBuilder_ != null) {
+        cryptoKeyBuilder_.dispose();
         cryptoKeyBuilder_ = null;
       }
       return this;
@@ -360,13 +362,18 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
     public com.google.privacy.dlp.v2.CryptoHashConfig buildPartial() {
       com.google.privacy.dlp.v2.CryptoHashConfig result =
           new com.google.privacy.dlp.v2.CryptoHashConfig(this);
-      if (cryptoKeyBuilder_ == null) {
-        result.cryptoKey_ = cryptoKey_;
-      } else {
-        result.cryptoKey_ = cryptoKeyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.CryptoHashConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cryptoKey_ = cryptoKeyBuilder_ == null ? cryptoKey_ : cryptoKeyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -446,7 +453,7 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 input.readMessage(getCryptoKeyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -466,6 +473,8 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.privacy.dlp.v2.CryptoKey cryptoKey_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.CryptoKey,
@@ -484,7 +493,7 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the cryptoKey field is set.
      */
     public boolean hasCryptoKey() {
-      return cryptoKeyBuilder_ != null || cryptoKey_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -521,11 +530,11 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         cryptoKey_ = value;
-        onChanged();
       } else {
         cryptoKeyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -540,11 +549,11 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
     public Builder setCryptoKey(com.google.privacy.dlp.v2.CryptoKey.Builder builderForValue) {
       if (cryptoKeyBuilder_ == null) {
         cryptoKey_ = builderForValue.build();
-        onChanged();
       } else {
         cryptoKeyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -558,19 +567,18 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCryptoKey(com.google.privacy.dlp.v2.CryptoKey value) {
       if (cryptoKeyBuilder_ == null) {
-        if (cryptoKey_ != null) {
-          cryptoKey_ =
-              com.google.privacy.dlp.v2.CryptoKey.newBuilder(cryptoKey_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && cryptoKey_ != null
+            && cryptoKey_ != com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance()) {
+          getCryptoKeyBuilder().mergeFrom(value);
         } else {
           cryptoKey_ = value;
         }
-        onChanged();
       } else {
         cryptoKeyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -583,14 +591,13 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
      */
     public Builder clearCryptoKey() {
-      if (cryptoKeyBuilder_ == null) {
-        cryptoKey_ = null;
-        onChanged();
-      } else {
-        cryptoKey_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      cryptoKey_ = null;
+      if (cryptoKeyBuilder_ != null) {
+        cryptoKeyBuilder_.dispose();
         cryptoKeyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -603,7 +610,7 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
      */
     public com.google.privacy.dlp.v2.CryptoKey.Builder getCryptoKeyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCryptoKeyFieldBuilder().getBuilder();
     }

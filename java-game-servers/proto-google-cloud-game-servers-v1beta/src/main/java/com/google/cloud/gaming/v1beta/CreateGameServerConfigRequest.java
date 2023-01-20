@@ -69,7 +69,9 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
   }
 
   public static final int CONFIG_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object configId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object configId_ = "";
   /**
    *
    *
@@ -223,7 +227,9 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.gaming.v1beta.GameServerConfigOrBuilder getGameServerConfigOrBuilder() {
-    return getGameServerConfig();
+    return gameServerConfig_ == null
+        ? com.google.cloud.gaming.v1beta.GameServerConfig.getDefaultInstance()
+        : gameServerConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -447,14 +453,12 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       configId_ = "";
-
-      if (gameServerConfigBuilder_ == null) {
-        gameServerConfig_ = null;
-      } else {
-        gameServerConfig_ = null;
+      gameServerConfig_ = null;
+      if (gameServerConfigBuilder_ != null) {
+        gameServerConfigBuilder_.dispose();
         gameServerConfigBuilder_ = null;
       }
       return this;
@@ -485,15 +489,26 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
     public com.google.cloud.gaming.v1beta.CreateGameServerConfigRequest buildPartial() {
       com.google.cloud.gaming.v1beta.CreateGameServerConfigRequest result =
           new com.google.cloud.gaming.v1beta.CreateGameServerConfigRequest(this);
-      result.parent_ = parent_;
-      result.configId_ = configId_;
-      if (gameServerConfigBuilder_ == null) {
-        result.gameServerConfig_ = gameServerConfig_;
-      } else {
-        result.gameServerConfig_ = gameServerConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gaming.v1beta.CreateGameServerConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.configId_ = configId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.gameServerConfig_ =
+            gameServerConfigBuilder_ == null ? gameServerConfig_ : gameServerConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -545,10 +560,12 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getConfigId().isEmpty()) {
         configId_ = other.configId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasGameServerConfig()) {
@@ -583,20 +600,20 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 configId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getGameServerConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -615,6 +632,8 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -686,8 +705,8 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -706,8 +725,8 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -731,8 +750,8 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -798,8 +817,8 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       configId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -815,8 +834,8 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearConfigId() {
-
       configId_ = getDefaultInstance().getConfigId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -837,8 +856,8 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       configId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -863,7 +882,7 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
      * @return Whether the gameServerConfig field is set.
      */
     public boolean hasGameServerConfig() {
-      return gameServerConfigBuilder_ != null || gameServerConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -904,11 +923,11 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         gameServerConfig_ = value;
-        onChanged();
       } else {
         gameServerConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -926,11 +945,11 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
         com.google.cloud.gaming.v1beta.GameServerConfig.Builder builderForValue) {
       if (gameServerConfigBuilder_ == null) {
         gameServerConfig_ = builderForValue.build();
-        onChanged();
       } else {
         gameServerConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -946,19 +965,19 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
      */
     public Builder mergeGameServerConfig(com.google.cloud.gaming.v1beta.GameServerConfig value) {
       if (gameServerConfigBuilder_ == null) {
-        if (gameServerConfig_ != null) {
-          gameServerConfig_ =
-              com.google.cloud.gaming.v1beta.GameServerConfig.newBuilder(gameServerConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && gameServerConfig_ != null
+            && gameServerConfig_
+                != com.google.cloud.gaming.v1beta.GameServerConfig.getDefaultInstance()) {
+          getGameServerConfigBuilder().mergeFrom(value);
         } else {
           gameServerConfig_ = value;
         }
-        onChanged();
       } else {
         gameServerConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -973,14 +992,13 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearGameServerConfig() {
-      if (gameServerConfigBuilder_ == null) {
-        gameServerConfig_ = null;
-        onChanged();
-      } else {
-        gameServerConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      gameServerConfig_ = null;
+      if (gameServerConfigBuilder_ != null) {
+        gameServerConfigBuilder_.dispose();
         gameServerConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -995,7 +1013,7 @@ public final class CreateGameServerConfigRequest extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.cloud.gaming.v1beta.GameServerConfig.Builder getGameServerConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getGameServerConfigFieldBuilder().getBuilder();
     }

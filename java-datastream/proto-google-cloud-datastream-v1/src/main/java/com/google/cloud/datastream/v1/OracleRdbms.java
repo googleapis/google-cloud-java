@@ -68,6 +68,8 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ORACLE_SCHEMAS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.OracleSchema> oracleSchemas_;
   /**
    *
@@ -335,6 +337,7 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (oracleSchemasBuilder_ == null) {
         oracleSchemas_ = java.util.Collections.emptyList();
       } else {
@@ -369,7 +372,15 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1.OracleRdbms buildPartial() {
       com.google.cloud.datastream.v1.OracleRdbms result =
           new com.google.cloud.datastream.v1.OracleRdbms(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.datastream.v1.OracleRdbms result) {
       if (oracleSchemasBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           oracleSchemas_ = java.util.Collections.unmodifiableList(oracleSchemas_);
@@ -379,8 +390,10 @@ public final class OracleRdbms extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.oracleSchemas_ = oracleSchemasBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.OracleRdbms result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

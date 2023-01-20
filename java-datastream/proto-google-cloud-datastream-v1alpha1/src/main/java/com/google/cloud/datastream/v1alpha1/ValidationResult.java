@@ -68,6 +68,8 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int VALIDATIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1alpha1.Validation> validations_;
   /**
    *
@@ -342,6 +344,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (validationsBuilder_ == null) {
         validations_ = java.util.Collections.emptyList();
       } else {
@@ -376,7 +379,16 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.datastream.v1alpha1.ValidationResult buildPartial() {
       com.google.cloud.datastream.v1alpha1.ValidationResult result =
           new com.google.cloud.datastream.v1alpha1.ValidationResult(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datastream.v1alpha1.ValidationResult result) {
       if (validationsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           validations_ = java.util.Collections.unmodifiableList(validations_);
@@ -386,8 +398,10 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       } else {
         result.validations_ = validationsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1alpha1.ValidationResult result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

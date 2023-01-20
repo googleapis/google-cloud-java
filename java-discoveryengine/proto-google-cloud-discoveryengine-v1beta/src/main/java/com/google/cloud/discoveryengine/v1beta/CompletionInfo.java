@@ -69,7 +69,9 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SELECTED_SUGGESTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object selectedSuggestion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selectedSuggestion_ = "";
   /**
    *
    *
@@ -118,7 +120,7 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SELECTED_POSITION_FIELD_NUMBER = 2;
-  private int selectedPosition_;
+  private int selectedPosition_ = 0;
   /**
    *
    *
@@ -344,10 +346,9 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       selectedSuggestion_ = "";
-
       selectedPosition_ = 0;
-
       return this;
     }
 
@@ -375,10 +376,21 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1beta.CompletionInfo buildPartial() {
       com.google.cloud.discoveryengine.v1beta.CompletionInfo result =
           new com.google.cloud.discoveryengine.v1beta.CompletionInfo(this);
-      result.selectedSuggestion_ = selectedSuggestion_;
-      result.selectedPosition_ = selectedPosition_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.discoveryengine.v1beta.CompletionInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.selectedSuggestion_ = selectedSuggestion_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.selectedPosition_ = selectedPosition_;
+      }
     }
 
     @java.lang.Override
@@ -429,6 +441,7 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getSelectedSuggestion().isEmpty()) {
         selectedSuggestion_ = other.selectedSuggestion_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getSelectedPosition() != 0) {
@@ -463,13 +476,13 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 selectedSuggestion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 selectedPosition_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -488,6 +501,8 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object selectedSuggestion_ = "";
     /**
@@ -550,8 +565,8 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       selectedSuggestion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -567,8 +582,8 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelectedSuggestion() {
-
       selectedSuggestion_ = getDefaultInstance().getSelectedSuggestion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -589,8 +604,8 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       selectedSuggestion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -628,6 +643,7 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setSelectedPosition(int value) {
 
       selectedPosition_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -644,7 +660,7 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelectedPosition() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       selectedPosition_ = 0;
       onChanged();
       return this;

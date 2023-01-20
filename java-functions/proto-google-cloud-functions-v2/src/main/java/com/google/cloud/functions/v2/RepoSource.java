@@ -342,7 +342,9 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -393,7 +395,9 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REPO_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object repoName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object repoName_ = "";
   /**
    *
    *
@@ -442,7 +446,9 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIR_FIELD_NUMBER = 6;
-  private volatile java.lang.Object dir_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dir_ = "";
   /**
    *
    *
@@ -497,7 +503,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INVERT_REGEX_FIELD_NUMBER = 7;
-  private boolean invertRegex_;
+  private boolean invertRegex_ = false;
   /**
    *
    *
@@ -786,14 +792,11 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       repoName_ = "";
-
       dir_ = "";
-
       invertRegex_ = false;
-
       revisionCase_ = 0;
       revision_ = null;
       return this;
@@ -823,22 +826,33 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.functions.v2.RepoSource buildPartial() {
       com.google.cloud.functions.v2.RepoSource result =
           new com.google.cloud.functions.v2.RepoSource(this);
-      if (revisionCase_ == 3) {
-        result.revision_ = revision_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (revisionCase_ == 4) {
-        result.revision_ = revision_;
-      }
-      if (revisionCase_ == 5) {
-        result.revision_ = revision_;
-      }
-      result.projectId_ = projectId_;
-      result.repoName_ = repoName_;
-      result.dir_ = dir_;
-      result.invertRegex_ = invertRegex_;
-      result.revisionCase_ = revisionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v2.RepoSource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.repoName_ = repoName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.dir_ = dir_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.invertRegex_ = invertRegex_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.functions.v2.RepoSource result) {
+      result.revisionCase_ = revisionCase_;
+      result.revision_ = this.revision_;
     }
 
     @java.lang.Override
@@ -888,14 +902,17 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.functions.v2.RepoSource.getDefaultInstance()) return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getRepoName().isEmpty()) {
         repoName_ = other.repoName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDir().isEmpty()) {
         dir_ = other.dir_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.getInvertRegex() != false) {
@@ -957,13 +974,13 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
               {
                 repoName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 18
             case 26:
@@ -990,13 +1007,13 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
             case 50:
               {
                 dir_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 56:
               {
                 invertRegex_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             default:
@@ -1029,6 +1046,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -1520,8 +1539,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1538,8 +1557,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1561,8 +1580,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1628,8 +1647,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       repoName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1645,8 +1664,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRepoName() {
-
       repoName_ = getDefaultInstance().getRepoName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1667,8 +1686,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       repoName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1743,8 +1762,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dir_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1763,8 +1782,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDir() {
-
       dir_ = getDefaultInstance().getDir();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1788,8 +1807,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dir_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1827,6 +1846,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
     public Builder setInvertRegex(boolean value) {
 
       invertRegex_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1843,7 +1863,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInvertRegex() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       invertRegex_ = false;
       onChanged();
       return this;

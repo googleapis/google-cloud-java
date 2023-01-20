@@ -69,7 +69,9 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
   }
 
   public static final int EMAIL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object email_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object email_ = "";
   /**
    *
    *
@@ -118,7 +120,7 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
   }
 
   public static final int MIN_ACCEPTABLE_MEAN_AVERAGE_PRECISION_FIELD_NUMBER = 2;
-  private double minAcceptableMeanAveragePrecision_;
+  private double minAcceptableMeanAveragePrecision_ = 0D;
   /**
    *
    *
@@ -354,10 +356,9 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       email_ = "";
-
       minAcceptableMeanAveragePrecision_ = 0D;
-
       return this;
     }
 
@@ -386,10 +387,22 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
     public com.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig buildPartial() {
       com.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig result =
           new com.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig(this);
-      result.email_ = email_;
-      result.minAcceptableMeanAveragePrecision_ = minAcceptableMeanAveragePrecision_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.email_ = email_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.minAcceptableMeanAveragePrecision_ = minAcceptableMeanAveragePrecision_;
+      }
     }
 
     @java.lang.Override
@@ -441,6 +454,7 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
         return this;
       if (!other.getEmail().isEmpty()) {
         email_ = other.email_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getMinAcceptableMeanAveragePrecision() != 0D) {
@@ -475,13 +489,13 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
             case 10:
               {
                 email_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 17:
               {
                 minAcceptableMeanAveragePrecision_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             default:
@@ -500,6 +514,8 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object email_ = "";
     /**
@@ -562,8 +578,8 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       email_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -579,8 +595,8 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearEmail() {
-
       email_ = getDefaultInstance().getEmail();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -601,8 +617,8 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       email_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -646,6 +662,7 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
     public Builder setMinAcceptableMeanAveragePrecision(double value) {
 
       minAcceptableMeanAveragePrecision_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -665,7 +682,7 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearMinAcceptableMeanAveragePrecision() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       minAcceptableMeanAveragePrecision_ = 0D;
       onChanged();
       return this;

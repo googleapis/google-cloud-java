@@ -116,7 +116,9 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object value_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object value_ = "";
   /**
    *
    *
@@ -273,7 +275,9 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LABEL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object label_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object label_ = "";
   /**
    *
    *
@@ -565,8 +569,8 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       value_ = "";
-
       if (expireTimeBuilder_ != null) {
         expireTimeBuilder_.clear();
       }
@@ -574,7 +578,6 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
         ttlBuilder_.clear();
       }
       label_ = "";
-
       expirationCase_ = 0;
       expiration_ = null;
       return this;
@@ -604,25 +607,33 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.clouddms.v1.SqlAclEntry buildPartial() {
       com.google.cloud.clouddms.v1.SqlAclEntry result =
           new com.google.cloud.clouddms.v1.SqlAclEntry(this);
-      result.value_ = value_;
-      if (expirationCase_ == 10) {
-        if (expireTimeBuilder_ == null) {
-          result.expiration_ = expiration_;
-        } else {
-          result.expiration_ = expireTimeBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (expirationCase_ == 11) {
-        if (ttlBuilder_ == null) {
-          result.expiration_ = expiration_;
-        } else {
-          result.expiration_ = ttlBuilder_.build();
-        }
-      }
-      result.label_ = label_;
-      result.expirationCase_ = expirationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.clouddms.v1.SqlAclEntry result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.value_ = value_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.label_ = label_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.clouddms.v1.SqlAclEntry result) {
+      result.expirationCase_ = expirationCase_;
+      result.expiration_ = this.expiration_;
+      if (expirationCase_ == 10 && expireTimeBuilder_ != null) {
+        result.expiration_ = expireTimeBuilder_.build();
+      }
+      if (expirationCase_ == 11 && ttlBuilder_ != null) {
+        result.expiration_ = ttlBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -672,10 +683,12 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.clouddms.v1.SqlAclEntry.getDefaultInstance()) return this;
       if (!other.getValue().isEmpty()) {
         value_ = other.value_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getLabel().isEmpty()) {
         label_ = other.label_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       switch (other.getExpirationCase()) {
@@ -723,13 +736,13 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 value_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 label_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 82:
@@ -774,6 +787,8 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object value_ = "";
     /**
@@ -836,8 +851,8 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       value_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -853,8 +868,8 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-
       value_ = getDefaultInstance().getValue();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -875,8 +890,8 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       value_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1101,7 +1116,6 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
       }
       expirationCase_ = 10;
       onChanged();
-      ;
       return expireTimeBuilder_;
     }
 
@@ -1307,7 +1321,6 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
       }
       expirationCase_ = 11;
       onChanged();
-      ;
       return ttlBuilder_;
     }
 
@@ -1372,8 +1385,8 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       label_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1389,8 +1402,8 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLabel() {
-
       label_ = getDefaultInstance().getLabel();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1411,8 +1424,8 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       label_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

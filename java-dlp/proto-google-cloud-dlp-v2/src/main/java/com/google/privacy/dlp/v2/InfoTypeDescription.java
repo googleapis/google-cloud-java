@@ -73,7 +73,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -171,16 +175,18 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SUPPORTED_BY_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> supportedBy_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.privacy.dlp.v2.InfoTypeSupportedBy>
       supportedBy_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.privacy.dlp.v2.InfoTypeSupportedBy>() {
             public com.google.privacy.dlp.v2.InfoTypeSupportedBy convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.privacy.dlp.v2.InfoTypeSupportedBy result =
-                  com.google.privacy.dlp.v2.InfoTypeSupportedBy.valueOf(from);
+                  com.google.privacy.dlp.v2.InfoTypeSupportedBy.forNumber(from);
               return result == null
                   ? com.google.privacy.dlp.v2.InfoTypeSupportedBy.UNRECOGNIZED
                   : result;
@@ -269,7 +275,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   private int supportedByMemoizedSerializedSize;
 
   public static final int DESCRIPTION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -320,6 +328,8 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   }
 
   public static final int VERSIONS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.VersionDescription> versions_;
   /**
    *
@@ -389,6 +399,8 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   }
 
   public static final int CATEGORIES_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.InfoTypeCategory> categories_;
   /**
    *
@@ -719,28 +731,26 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       supportedBy_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = "";
-
       if (versionsBuilder_ == null) {
         versions_ = java.util.Collections.emptyList();
       } else {
         versions_ = null;
         versionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (categoriesBuilder_ == null) {
         categories_ = java.util.Collections.emptyList();
       } else {
         categories_ = null;
         categoriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -768,35 +778,51 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.InfoTypeDescription buildPartial() {
       com.google.privacy.dlp.v2.InfoTypeDescription result =
           new com.google.privacy.dlp.v2.InfoTypeDescription(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.InfoTypeDescription result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         supportedBy_ = java.util.Collections.unmodifiableList(supportedBy_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.supportedBy_ = supportedBy_;
-      result.description_ = description_;
       if (versionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           versions_ = java.util.Collections.unmodifiableList(versions_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.versions_ = versions_;
       } else {
         result.versions_ = versionsBuilder_.build();
       }
       if (categoriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           categories_ = java.util.Collections.unmodifiableList(categories_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.categories_ = categories_;
       } else {
         result.categories_ = categoriesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.InfoTypeDescription result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.description_ = description_;
+      }
     }
 
     @java.lang.Override
@@ -846,16 +872,18 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       if (other == com.google.privacy.dlp.v2.InfoTypeDescription.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.supportedBy_.isEmpty()) {
         if (supportedBy_.isEmpty()) {
           supportedBy_ = other.supportedBy_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureSupportedByIsMutable();
           supportedBy_.addAll(other.supportedBy_);
@@ -864,13 +892,14 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (versionsBuilder_ == null) {
         if (!other.versions_.isEmpty()) {
           if (versions_.isEmpty()) {
             versions_ = other.versions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureVersionsIsMutable();
             versions_.addAll(other.versions_);
@@ -883,7 +912,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
             versionsBuilder_.dispose();
             versionsBuilder_ = null;
             versions_ = other.versions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
             versionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVersionsFieldBuilder()
@@ -897,7 +926,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         if (!other.categories_.isEmpty()) {
           if (categories_.isEmpty()) {
             categories_ = other.categories_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureCategoriesIsMutable();
             categories_.addAll(other.categories_);
@@ -910,7 +939,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
             categoriesBuilder_.dispose();
             categoriesBuilder_ = null;
             categories_ = other.categories_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
             categoriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCategoriesFieldBuilder()
@@ -949,13 +978,13 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
@@ -980,7 +1009,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
             case 34:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 74:
@@ -1089,8 +1118,8 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1106,8 +1135,8 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1128,8 +1157,8 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1195,8 +1224,8 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1212,8 +1241,8 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1234,8 +1263,8 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1243,9 +1272,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     private java.util.List<java.lang.Integer> supportedBy_ = java.util.Collections.emptyList();
 
     private void ensureSupportedByIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         supportedBy_ = new java.util.ArrayList<java.lang.Integer>(supportedBy_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1370,7 +1399,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
      */
     public Builder clearSupportedBy() {
       supportedBy_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1525,8 +1554,8 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1543,8 +1572,8 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1566,8 +1595,8 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1576,10 +1605,10 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         versions_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.VersionDescription>(versions_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1795,7 +1824,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public Builder clearVersions() {
       if (versionsBuilder_ == null) {
         versions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         versionsBuilder_.clear();
@@ -1917,7 +1946,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
                 com.google.privacy.dlp.v2.VersionDescription,
                 com.google.privacy.dlp.v2.VersionDescription.Builder,
                 com.google.privacy.dlp.v2.VersionDescriptionOrBuilder>(
-                versions_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                versions_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         versions_ = null;
       }
       return versionsBuilder_;
@@ -1927,10 +1956,10 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         categories_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.InfoTypeCategory>(categories_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2146,7 +2175,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public Builder clearCategories() {
       if (categoriesBuilder_ == null) {
         categories_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         categoriesBuilder_.clear();
@@ -2268,7 +2297,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
                 com.google.privacy.dlp.v2.InfoTypeCategory,
                 com.google.privacy.dlp.v2.InfoTypeCategory.Builder,
                 com.google.privacy.dlp.v2.InfoTypeCategoryOrBuilder>(
-                categories_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                categories_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         categories_ = null;
       }
       return categoriesBuilder_;

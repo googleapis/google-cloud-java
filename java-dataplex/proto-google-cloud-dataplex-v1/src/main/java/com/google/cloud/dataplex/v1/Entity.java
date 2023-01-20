@@ -467,7 +467,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int COMPATIBLE_FIELD_NUMBER = 1;
-      private boolean compatible_;
+      private boolean compatible_ = false;
       /**
        *
        *
@@ -486,7 +486,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int REASON_FIELD_NUMBER = 2;
-      private volatile java.lang.Object reason_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object reason_ = "";
       /**
        *
        *
@@ -750,10 +752,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           compatible_ = false;
-
           reason_ = "";
-
           return this;
         }
 
@@ -785,10 +786,22 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
             buildPartial() {
           com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.Compatibility result =
               new com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.Compatibility(this);
-          result.compatible_ = compatible_;
-          result.reason_ = reason_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.Compatibility result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.compatible_ = compatible_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.reason_ = reason_;
+          }
         }
 
         @java.lang.Override
@@ -848,6 +861,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
           }
           if (!other.getReason().isEmpty()) {
             reason_ = other.reason_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -879,13 +893,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
                 case 8:
                   {
                     compatible_ = input.readBool();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 18:
                   {
                     reason_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 default:
@@ -904,6 +918,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private boolean compatible_;
         /**
@@ -938,6 +954,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         public Builder setCompatible(boolean value) {
 
           compatible_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -954,7 +971,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearCompatible() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           compatible_ = false;
           onChanged();
           return this;
@@ -1024,8 +1041,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           reason_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1042,8 +1059,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearReason() {
-
           reason_ = getDefaultInstance().getReason();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -1065,8 +1082,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           reason_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1193,7 +1210,10 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.CompatibilityOrBuilder
         getHiveMetastoreOrBuilder() {
-      return getHiveMetastore();
+      return hiveMetastore_ == null
+          ? com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.Compatibility
+              .getDefaultInstance()
+          : hiveMetastore_;
     }
 
     public static final int BIGQUERY_FIELD_NUMBER = 2;
@@ -1249,7 +1269,10 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.CompatibilityOrBuilder
         getBigqueryOrBuilder() {
-      return getBigquery();
+      return bigquery_ == null
+          ? com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.Compatibility
+              .getDefaultInstance()
+          : bigquery_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1471,16 +1494,15 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (hiveMetastoreBuilder_ == null) {
-          hiveMetastore_ = null;
-        } else {
-          hiveMetastore_ = null;
+        bitField0_ = 0;
+        hiveMetastore_ = null;
+        if (hiveMetastoreBuilder_ != null) {
+          hiveMetastoreBuilder_.dispose();
           hiveMetastoreBuilder_ = null;
         }
-        if (bigqueryBuilder_ == null) {
-          bigquery_ = null;
-        } else {
-          bigquery_ = null;
+        bigquery_ = null;
+        if (bigqueryBuilder_ != null) {
+          bigqueryBuilder_.dispose();
           bigqueryBuilder_ = null;
         }
         return this;
@@ -1510,18 +1532,22 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataplex.v1.Entity.CompatibilityStatus buildPartial() {
         com.google.cloud.dataplex.v1.Entity.CompatibilityStatus result =
             new com.google.cloud.dataplex.v1.Entity.CompatibilityStatus(this);
-        if (hiveMetastoreBuilder_ == null) {
-          result.hiveMetastore_ = hiveMetastore_;
-        } else {
-          result.hiveMetastore_ = hiveMetastoreBuilder_.build();
-        }
-        if (bigqueryBuilder_ == null) {
-          result.bigquery_ = bigquery_;
-        } else {
-          result.bigquery_ = bigqueryBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dataplex.v1.Entity.CompatibilityStatus result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.hiveMetastore_ =
+              hiveMetastoreBuilder_ == null ? hiveMetastore_ : hiveMetastoreBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.bigquery_ = bigqueryBuilder_ == null ? bigquery_ : bigqueryBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1607,13 +1633,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   input.readMessage(getHiveMetastoreFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getBigqueryFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -1632,6 +1658,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.Compatibility hiveMetastore_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1653,7 +1681,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the hiveMetastore field is set.
        */
       public boolean hasHiveMetastore() {
-        return hiveMetastoreBuilder_ != null || hiveMetastore_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1697,11 +1725,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           hiveMetastore_ = value;
-          onChanged();
         } else {
           hiveMetastoreBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1720,11 +1748,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
               builderForValue) {
         if (hiveMetastoreBuilder_ == null) {
           hiveMetastore_ = builderForValue.build();
-          onChanged();
         } else {
           hiveMetastoreBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1741,20 +1769,20 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeHiveMetastore(
           com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.Compatibility value) {
         if (hiveMetastoreBuilder_ == null) {
-          if (hiveMetastore_ != null) {
-            hiveMetastore_ =
-                com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.Compatibility.newBuilder(
-                        hiveMetastore_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && hiveMetastore_ != null
+              && hiveMetastore_
+                  != com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.Compatibility
+                      .getDefaultInstance()) {
+            getHiveMetastoreBuilder().mergeFrom(value);
           } else {
             hiveMetastore_ = value;
           }
-          onChanged();
         } else {
           hiveMetastoreBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1769,14 +1797,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearHiveMetastore() {
-        if (hiveMetastoreBuilder_ == null) {
-          hiveMetastore_ = null;
-          onChanged();
-        } else {
-          hiveMetastore_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        hiveMetastore_ = null;
+        if (hiveMetastoreBuilder_ != null) {
+          hiveMetastoreBuilder_.dispose();
           hiveMetastoreBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1792,7 +1819,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.Compatibility.Builder
           getHiveMetastoreBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getHiveMetastoreFieldBuilder().getBuilder();
       }
@@ -1866,7 +1893,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the bigquery field is set.
        */
       public boolean hasBigquery() {
-        return bigqueryBuilder_ != null || bigquery_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1909,11 +1936,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           bigquery_ = value;
-          onChanged();
         } else {
           bigqueryBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1932,11 +1959,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
               builderForValue) {
         if (bigqueryBuilder_ == null) {
           bigquery_ = builderForValue.build();
-          onChanged();
         } else {
           bigqueryBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1953,20 +1980,20 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeBigquery(
           com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.Compatibility value) {
         if (bigqueryBuilder_ == null) {
-          if (bigquery_ != null) {
-            bigquery_ =
-                com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.Compatibility.newBuilder(
-                        bigquery_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && bigquery_ != null
+              && bigquery_
+                  != com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.Compatibility
+                      .getDefaultInstance()) {
+            getBigqueryBuilder().mergeFrom(value);
           } else {
             bigquery_ = value;
           }
-          onChanged();
         } else {
           bigqueryBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1981,14 +2008,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearBigquery() {
-        if (bigqueryBuilder_ == null) {
-          bigquery_ = null;
-          onChanged();
-        } else {
-          bigquery_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        bigquery_ = null;
+        if (bigqueryBuilder_ != null) {
+          bigqueryBuilder_.dispose();
           bigqueryBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2004,7 +2030,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.Compatibility.Builder
           getBigqueryBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getBigqueryFieldBuilder().getBuilder();
       }
@@ -2123,7 +2149,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -2178,7 +2206,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -2227,7 +2257,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -2323,7 +2355,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 6;
@@ -2372,11 +2404,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int ID_FIELD_NUMBER = 7;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -2435,7 +2469,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ETAG_FIELD_NUMBER = 8;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -2486,7 +2522,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 10;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -2519,14 +2555,15 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.Entity.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dataplex.v1.Entity.Type result =
-        com.google.cloud.dataplex.v1.Entity.Type.valueOf(type_);
+        com.google.cloud.dataplex.v1.Entity.Type.forNumber(type_);
     return result == null ? com.google.cloud.dataplex.v1.Entity.Type.UNRECOGNIZED : result;
   }
 
   public static final int ASSET_FIELD_NUMBER = 11;
-  private volatile java.lang.Object asset_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object asset_ = "";
   /**
    *
    *
@@ -2583,7 +2620,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_PATH_FIELD_NUMBER = 12;
-  private volatile java.lang.Object dataPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataPath_ = "";
   /**
    *
    *
@@ -2644,7 +2683,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_PATH_PATTERN_FIELD_NUMBER = 13;
-  private volatile java.lang.Object dataPathPattern_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataPathPattern_ = "";
   /**
    *
    *
@@ -2697,7 +2738,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CATALOG_ENTRY_FIELD_NUMBER = 14;
-  private volatile java.lang.Object catalogEntry_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object catalogEntry_ = "";
   /**
    *
    *
@@ -2746,7 +2789,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SYSTEM_FIELD_NUMBER = 15;
-  private int system_;
+  private int system_ = 0;
   /**
    *
    *
@@ -2779,9 +2822,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.StorageSystem getSystem() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dataplex.v1.StorageSystem result =
-        com.google.cloud.dataplex.v1.StorageSystem.valueOf(system_);
+        com.google.cloud.dataplex.v1.StorageSystem.forNumber(system_);
     return result == null ? com.google.cloud.dataplex.v1.StorageSystem.UNRECOGNIZED : result;
   }
 
@@ -2839,7 +2881,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.StorageFormatOrBuilder getFormatOrBuilder() {
-    return getFormat();
+    return format_ == null
+        ? com.google.cloud.dataplex.v1.StorageFormat.getDefaultInstance()
+        : format_;
   }
 
   public static final int COMPATIBILITY_FIELD_NUMBER = 19;
@@ -2894,7 +2938,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.dataplex.v1.Entity.CompatibilityStatusOrBuilder
       getCompatibilityOrBuilder() {
-    return getCompatibility();
+    return compatibility_ == null
+        ? com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.getDefaultInstance()
+        : compatibility_;
   }
 
   public static final int SCHEMA_FIELD_NUMBER = 50;
@@ -2949,7 +2995,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.SchemaOrBuilder getSchemaOrBuilder() {
-    return getSchema();
+    return schema_ == null ? com.google.cloud.dataplex.v1.Schema.getDefaultInstance() : schema_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3309,56 +3355,41 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       id_ = "";
-
       etag_ = "";
-
       type_ = 0;
-
       asset_ = "";
-
       dataPath_ = "";
-
       dataPathPattern_ = "";
-
       catalogEntry_ = "";
-
       system_ = 0;
-
-      if (formatBuilder_ == null) {
-        format_ = null;
-      } else {
-        format_ = null;
+      format_ = null;
+      if (formatBuilder_ != null) {
+        formatBuilder_.dispose();
         formatBuilder_ = null;
       }
-      if (compatibilityBuilder_ == null) {
-        compatibility_ = null;
-      } else {
-        compatibility_ = null;
+      compatibility_ = null;
+      if (compatibilityBuilder_ != null) {
+        compatibilityBuilder_.dispose();
         compatibilityBuilder_ = null;
       }
-      if (schemaBuilder_ == null) {
-        schema_ = null;
-      } else {
-        schema_ = null;
+      schema_ = null;
+      if (schemaBuilder_ != null) {
+        schemaBuilder_.dispose();
         schemaBuilder_ = null;
       }
       return this;
@@ -3387,44 +3418,64 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.dataplex.v1.Entity buildPartial() {
       com.google.cloud.dataplex.v1.Entity result = new com.google.cloud.dataplex.v1.Entity(this);
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.id_ = id_;
-      result.etag_ = etag_;
-      result.type_ = type_;
-      result.asset_ = asset_;
-      result.dataPath_ = dataPath_;
-      result.dataPathPattern_ = dataPathPattern_;
-      result.catalogEntry_ = catalogEntry_;
-      result.system_ = system_;
-      if (formatBuilder_ == null) {
-        result.format_ = format_;
-      } else {
-        result.format_ = formatBuilder_.build();
-      }
-      if (compatibilityBuilder_ == null) {
-        result.compatibility_ = compatibility_;
-      } else {
-        result.compatibility_ = compatibilityBuilder_.build();
-      }
-      if (schemaBuilder_ == null) {
-        result.schema_ = schema_;
-      } else {
-        result.schema_ = schemaBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.Entity result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.asset_ = asset_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.dataPath_ = dataPath_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.dataPathPattern_ = dataPathPattern_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.catalogEntry_ = catalogEntry_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.system_ = system_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.format_ = formatBuilder_ == null ? format_ : formatBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.compatibility_ =
+            compatibilityBuilder_ == null ? compatibility_ : compatibilityBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.schema_ = schemaBuilder_ == null ? schema_ : schemaBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3474,14 +3525,17 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dataplex.v1.Entity.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -3492,10 +3546,12 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -3503,18 +3559,22 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getAsset().isEmpty()) {
         asset_ = other.asset_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getDataPath().isEmpty()) {
         dataPath_ = other.dataPath_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.getDataPathPattern().isEmpty()) {
         dataPathPattern_ = other.dataPathPattern_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getCatalogEntry().isEmpty()) {
         catalogEntry_ = other.catalogEntry_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.system_ != 0) {
@@ -3558,97 +3618,97 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 42:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 58:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 66:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 80:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 80
             case 90:
               {
                 asset_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 90
             case 98:
               {
                 dataPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 98
             case 106:
               {
                 dataPathPattern_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 106
             case 114:
               {
                 catalogEntry_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 114
             case 120:
               {
                 system_ = input.readEnum();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 120
             case 130:
               {
                 input.readMessage(getFormatFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 130
             case 154:
               {
                 input.readMessage(getCompatibilityFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 154
             case 402:
               {
                 input.readMessage(getSchemaFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 402
             default:
@@ -3667,6 +3727,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -3738,8 +3800,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3758,8 +3820,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -3783,8 +3845,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3850,8 +3912,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3867,8 +3929,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -3889,8 +3951,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3959,8 +4021,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3977,8 +4039,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -4000,8 +4062,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4026,7 +4088,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -4067,11 +4129,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -4088,11 +4150,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -4108,17 +4170,18 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -4133,14 +4196,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4155,7 +4217,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -4227,7 +4289,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -4268,11 +4330,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -4289,11 +4351,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -4309,17 +4371,18 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -4334,14 +4397,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4356,7 +4418,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -4484,8 +4546,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4506,8 +4568,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -4533,8 +4595,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4603,8 +4665,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4621,8 +4683,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -4644,8 +4706,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4683,8 +4745,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4703,9 +4765,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dataplex.v1.Entity.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataplex.v1.Entity.Type result =
-          com.google.cloud.dataplex.v1.Entity.Type.valueOf(type_);
+          com.google.cloud.dataplex.v1.Entity.Type.forNumber(type_);
       return result == null ? com.google.cloud.dataplex.v1.Entity.Type.UNRECOGNIZED : result;
     }
     /**
@@ -4726,7 +4787,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -4745,7 +4806,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       type_ = 0;
       onChanged();
       return this;
@@ -4824,8 +4885,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       asset_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4845,8 +4906,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAsset() {
-
       asset_ = getDefaultInstance().getAsset();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -4871,8 +4932,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       asset_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4956,8 +5017,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataPath_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4979,8 +5040,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDataPath() {
-
       dataPath_ = getDefaultInstance().getDataPath();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -5007,8 +5068,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataPath_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5080,8 +5141,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataPathPattern_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5099,8 +5160,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDataPathPattern() {
-
       dataPathPattern_ = getDefaultInstance().getDataPathPattern();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -5123,8 +5184,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataPathPattern_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5190,8 +5251,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       catalogEntry_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5207,8 +5268,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCatalogEntry() {
-
       catalogEntry_ = getDefaultInstance().getCatalogEntry();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -5229,8 +5290,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       catalogEntry_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5268,8 +5329,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSystemValue(int value) {
-
       system_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5288,9 +5349,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dataplex.v1.StorageSystem getSystem() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataplex.v1.StorageSystem result =
-          com.google.cloud.dataplex.v1.StorageSystem.valueOf(system_);
+          com.google.cloud.dataplex.v1.StorageSystem.forNumber(system_);
       return result == null ? com.google.cloud.dataplex.v1.StorageSystem.UNRECOGNIZED : result;
     }
     /**
@@ -5311,7 +5371,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00001000;
       system_ = value.getNumber();
       onChanged();
       return this;
@@ -5330,7 +5390,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSystem() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       system_ = 0;
       onChanged();
       return this;
@@ -5357,7 +5417,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the format field is set.
      */
     public boolean hasFormat() {
-      return formatBuilder_ != null || format_ != null;
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -5400,11 +5460,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         format_ = value;
-        onChanged();
       } else {
         formatBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -5422,11 +5482,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     public Builder setFormat(com.google.cloud.dataplex.v1.StorageFormat.Builder builderForValue) {
       if (formatBuilder_ == null) {
         format_ = builderForValue.build();
-        onChanged();
       } else {
         formatBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -5443,19 +5503,18 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeFormat(com.google.cloud.dataplex.v1.StorageFormat value) {
       if (formatBuilder_ == null) {
-        if (format_ != null) {
-          format_ =
-              com.google.cloud.dataplex.v1.StorageFormat.newBuilder(format_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00002000) != 0)
+            && format_ != null
+            && format_ != com.google.cloud.dataplex.v1.StorageFormat.getDefaultInstance()) {
+          getFormatBuilder().mergeFrom(value);
         } else {
           format_ = value;
         }
-        onChanged();
       } else {
         formatBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -5471,14 +5530,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearFormat() {
-      if (formatBuilder_ == null) {
-        format_ = null;
-        onChanged();
-      } else {
-        format_ = null;
+      bitField0_ = (bitField0_ & ~0x00002000);
+      format_ = null;
+      if (formatBuilder_ != null) {
+        formatBuilder_.dispose();
         formatBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5494,7 +5552,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.dataplex.v1.StorageFormat.Builder getFormatBuilder() {
-
+      bitField0_ |= 0x00002000;
       onChanged();
       return getFormatFieldBuilder().getBuilder();
     }
@@ -5568,7 +5626,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the compatibility field is set.
      */
     public boolean hasCompatibility() {
-      return compatibilityBuilder_ != null || compatibility_ != null;
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -5609,11 +5667,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         compatibility_ = value;
-        onChanged();
       } else {
         compatibilityBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -5631,11 +5689,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.Builder builderForValue) {
       if (compatibilityBuilder_ == null) {
         compatibility_ = builderForValue.build();
-        onChanged();
       } else {
         compatibilityBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -5652,19 +5710,19 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCompatibility(
         com.google.cloud.dataplex.v1.Entity.CompatibilityStatus value) {
       if (compatibilityBuilder_ == null) {
-        if (compatibility_ != null) {
-          compatibility_ =
-              com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.newBuilder(compatibility_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00004000) != 0)
+            && compatibility_ != null
+            && compatibility_
+                != com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.getDefaultInstance()) {
+          getCompatibilityBuilder().mergeFrom(value);
         } else {
           compatibility_ = value;
         }
-        onChanged();
       } else {
         compatibilityBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -5679,14 +5737,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCompatibility() {
-      if (compatibilityBuilder_ == null) {
-        compatibility_ = null;
-        onChanged();
-      } else {
-        compatibility_ = null;
+      bitField0_ = (bitField0_ & ~0x00004000);
+      compatibility_ = null;
+      if (compatibilityBuilder_ != null) {
+        compatibilityBuilder_.dispose();
         compatibilityBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5702,7 +5759,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dataplex.v1.Entity.CompatibilityStatus.Builder
         getCompatibilityBuilder() {
-
+      bitField0_ |= 0x00004000;
       onChanged();
       return getCompatibilityFieldBuilder().getBuilder();
     }
@@ -5776,7 +5833,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the schema field is set.
      */
     public boolean hasSchema() {
-      return schemaBuilder_ != null || schema_ != null;
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -5817,11 +5874,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         schema_ = value;
-        onChanged();
       } else {
         schemaBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -5839,11 +5896,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     public Builder setSchema(com.google.cloud.dataplex.v1.Schema.Builder builderForValue) {
       if (schemaBuilder_ == null) {
         schema_ = builderForValue.build();
-        onChanged();
       } else {
         schemaBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -5860,19 +5917,18 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSchema(com.google.cloud.dataplex.v1.Schema value) {
       if (schemaBuilder_ == null) {
-        if (schema_ != null) {
-          schema_ =
-              com.google.cloud.dataplex.v1.Schema.newBuilder(schema_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00008000) != 0)
+            && schema_ != null
+            && schema_ != com.google.cloud.dataplex.v1.Schema.getDefaultInstance()) {
+          getSchemaBuilder().mergeFrom(value);
         } else {
           schema_ = value;
         }
-        onChanged();
       } else {
         schemaBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -5888,14 +5944,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSchema() {
-      if (schemaBuilder_ == null) {
-        schema_ = null;
-        onChanged();
-      } else {
-        schema_ = null;
+      bitField0_ = (bitField0_ & ~0x00008000);
+      schema_ = null;
+      if (schemaBuilder_ != null) {
+        schemaBuilder_.dispose();
         schemaBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5911,7 +5966,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.dataplex.v1.Schema.Builder getSchemaBuilder() {
-
+      bitField0_ |= 0x00008000;
       onChanged();
       return getSchemaFieldBuilder().getBuilder();
     }

@@ -287,7 +287,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.ValueOrBuilder getMinOrBuilder() {
-      return getMin();
+      return min_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : min_;
     }
 
     public static final int MAX_FIELD_NUMBER = 2;
@@ -333,7 +333,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.ValueOrBuilder getMaxOrBuilder() {
-      return getMax();
+      return max_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : max_;
     }
 
     public static final int REPLACEMENT_VALUE_FIELD_NUMBER = 3;
@@ -387,7 +387,9 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.ValueOrBuilder getReplacementValueOrBuilder() {
-      return getReplacementValue();
+      return replacementValue_ == null
+          ? com.google.privacy.dlp.v2.Value.getDefaultInstance()
+          : replacementValue_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -622,22 +624,20 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (minBuilder_ == null) {
-          min_ = null;
-        } else {
-          min_ = null;
+        bitField0_ = 0;
+        min_ = null;
+        if (minBuilder_ != null) {
+          minBuilder_.dispose();
           minBuilder_ = null;
         }
-        if (maxBuilder_ == null) {
-          max_ = null;
-        } else {
-          max_ = null;
+        max_ = null;
+        if (maxBuilder_ != null) {
+          maxBuilder_.dispose();
           maxBuilder_ = null;
         }
-        if (replacementValueBuilder_ == null) {
-          replacementValue_ = null;
-        } else {
-          replacementValue_ = null;
+        replacementValue_ = null;
+        if (replacementValueBuilder_ != null) {
+          replacementValueBuilder_.dispose();
           replacementValueBuilder_ = null;
         }
         return this;
@@ -667,23 +667,27 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       public com.google.privacy.dlp.v2.BucketingConfig.Bucket buildPartial() {
         com.google.privacy.dlp.v2.BucketingConfig.Bucket result =
             new com.google.privacy.dlp.v2.BucketingConfig.Bucket(this);
-        if (minBuilder_ == null) {
-          result.min_ = min_;
-        } else {
-          result.min_ = minBuilder_.build();
-        }
-        if (maxBuilder_ == null) {
-          result.max_ = max_;
-        } else {
-          result.max_ = maxBuilder_.build();
-        }
-        if (replacementValueBuilder_ == null) {
-          result.replacementValue_ = replacementValue_;
-        } else {
-          result.replacementValue_ = replacementValueBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.privacy.dlp.v2.BucketingConfig.Bucket result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.min_ = minBuilder_ == null ? min_ : minBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.max_ = maxBuilder_ == null ? max_ : maxBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.replacementValue_ =
+              replacementValueBuilder_ == null
+                  ? replacementValue_
+                  : replacementValueBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -772,20 +776,20 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
               case 10:
                 {
                   input.readMessage(getMinFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getMaxFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(
                       getReplacementValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -804,6 +808,8 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.privacy.dlp.v2.Value min_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -824,7 +830,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        * @return Whether the min field is set.
        */
       public boolean hasMin() {
-        return minBuilder_ != null || min_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -861,11 +867,11 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
             throw new NullPointerException();
           }
           min_ = value;
-          onChanged();
         } else {
           minBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -881,11 +887,11 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       public Builder setMin(com.google.privacy.dlp.v2.Value.Builder builderForValue) {
         if (minBuilder_ == null) {
           min_ = builderForValue.build();
-          onChanged();
         } else {
           minBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -900,16 +906,18 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        */
       public Builder mergeMin(com.google.privacy.dlp.v2.Value value) {
         if (minBuilder_ == null) {
-          if (min_ != null) {
-            min_ = com.google.privacy.dlp.v2.Value.newBuilder(min_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && min_ != null
+              && min_ != com.google.privacy.dlp.v2.Value.getDefaultInstance()) {
+            getMinBuilder().mergeFrom(value);
           } else {
             min_ = value;
           }
-          onChanged();
         } else {
           minBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -923,14 +931,13 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        * <code>.google.privacy.dlp.v2.Value min = 1;</code>
        */
       public Builder clearMin() {
-        if (minBuilder_ == null) {
-          min_ = null;
-          onChanged();
-        } else {
-          min_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        min_ = null;
+        if (minBuilder_ != null) {
+          minBuilder_.dispose();
           minBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -944,7 +951,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        * <code>.google.privacy.dlp.v2.Value min = 1;</code>
        */
       public com.google.privacy.dlp.v2.Value.Builder getMinBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getMinFieldBuilder().getBuilder();
       }
@@ -1010,7 +1017,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        * @return Whether the max field is set.
        */
       public boolean hasMax() {
-        return maxBuilder_ != null || max_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1045,11 +1052,11 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
             throw new NullPointerException();
           }
           max_ = value;
-          onChanged();
         } else {
           maxBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1064,11 +1071,11 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       public Builder setMax(com.google.privacy.dlp.v2.Value.Builder builderForValue) {
         if (maxBuilder_ == null) {
           max_ = builderForValue.build();
-          onChanged();
         } else {
           maxBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1082,16 +1089,18 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        */
       public Builder mergeMax(com.google.privacy.dlp.v2.Value value) {
         if (maxBuilder_ == null) {
-          if (max_ != null) {
-            max_ = com.google.privacy.dlp.v2.Value.newBuilder(max_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && max_ != null
+              && max_ != com.google.privacy.dlp.v2.Value.getDefaultInstance()) {
+            getMaxBuilder().mergeFrom(value);
           } else {
             max_ = value;
           }
-          onChanged();
         } else {
           maxBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1104,14 +1113,13 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        * <code>.google.privacy.dlp.v2.Value max = 2;</code>
        */
       public Builder clearMax() {
-        if (maxBuilder_ == null) {
-          max_ = null;
-          onChanged();
-        } else {
-          max_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        max_ = null;
+        if (maxBuilder_ != null) {
+          maxBuilder_.dispose();
           maxBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1124,7 +1132,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        * <code>.google.privacy.dlp.v2.Value max = 2;</code>
        */
       public com.google.privacy.dlp.v2.Value.Builder getMaxBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getMaxFieldBuilder().getBuilder();
       }
@@ -1190,7 +1198,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        * @return Whether the replacementValue field is set.
        */
       public boolean hasReplacementValue() {
-        return replacementValueBuilder_ != null || replacementValue_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1231,11 +1239,11 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
             throw new NullPointerException();
           }
           replacementValue_ = value;
-          onChanged();
         } else {
           replacementValueBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1252,11 +1260,11 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       public Builder setReplacementValue(com.google.privacy.dlp.v2.Value.Builder builderForValue) {
         if (replacementValueBuilder_ == null) {
           replacementValue_ = builderForValue.build();
-          onChanged();
         } else {
           replacementValueBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1272,19 +1280,18 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        */
       public Builder mergeReplacementValue(com.google.privacy.dlp.v2.Value value) {
         if (replacementValueBuilder_ == null) {
-          if (replacementValue_ != null) {
-            replacementValue_ =
-                com.google.privacy.dlp.v2.Value.newBuilder(replacementValue_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && replacementValue_ != null
+              && replacementValue_ != com.google.privacy.dlp.v2.Value.getDefaultInstance()) {
+            getReplacementValueBuilder().mergeFrom(value);
           } else {
             replacementValue_ = value;
           }
-          onChanged();
         } else {
           replacementValueBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1299,14 +1306,13 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        * </code>
        */
       public Builder clearReplacementValue() {
-        if (replacementValueBuilder_ == null) {
-          replacementValue_ = null;
-          onChanged();
-        } else {
-          replacementValue_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        replacementValue_ = null;
+        if (replacementValueBuilder_ != null) {
+          replacementValueBuilder_.dispose();
           replacementValueBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1321,7 +1327,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        * </code>
        */
       public com.google.privacy.dlp.v2.Value.Builder getReplacementValueBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getReplacementValueFieldBuilder().getBuilder();
       }
@@ -1438,6 +1444,8 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int BUCKETS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.BucketingConfig.Bucket> buckets_;
   /**
    *
@@ -1713,6 +1721,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (bucketsBuilder_ == null) {
         buckets_ = java.util.Collections.emptyList();
       } else {
@@ -1747,7 +1756,15 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.BucketingConfig buildPartial() {
       com.google.privacy.dlp.v2.BucketingConfig result =
           new com.google.privacy.dlp.v2.BucketingConfig(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.BucketingConfig result) {
       if (bucketsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           buckets_ = java.util.Collections.unmodifiableList(buckets_);
@@ -1757,8 +1774,10 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       } else {
         result.buckets_ = bucketsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.BucketingConfig result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

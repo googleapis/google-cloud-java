@@ -69,7 +69,9 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int INSTANCE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object instanceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceId_ = "";
   /**
    *
    *
@@ -227,7 +231,9 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.filestore.v1.InstanceOrBuilder getInstanceOrBuilder() {
-    return getInstance();
+    return instance_ == null
+        ? com.google.cloud.filestore.v1.Instance.getDefaultInstance()
+        : instance_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -450,14 +456,12 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       instanceId_ = "";
-
-      if (instanceBuilder_ == null) {
-        instance_ = null;
-      } else {
-        instance_ = null;
+      instance_ = null;
+      if (instanceBuilder_ != null) {
+        instanceBuilder_.dispose();
         instanceBuilder_ = null;
       }
       return this;
@@ -487,15 +491,24 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.filestore.v1.CreateInstanceRequest buildPartial() {
       com.google.cloud.filestore.v1.CreateInstanceRequest result =
           new com.google.cloud.filestore.v1.CreateInstanceRequest(this);
-      result.parent_ = parent_;
-      result.instanceId_ = instanceId_;
-      if (instanceBuilder_ == null) {
-        result.instance_ = instance_;
-      } else {
-        result.instance_ = instanceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.filestore.v1.CreateInstanceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instanceId_ = instanceId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.instance_ = instanceBuilder_ == null ? instance_ : instanceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -546,10 +559,12 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getInstanceId().isEmpty()) {
         instanceId_ = other.instanceId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasInstance()) {
@@ -584,19 +599,19 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 instanceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getInstanceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -615,6 +630,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -689,8 +706,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -710,8 +727,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -736,8 +753,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -806,8 +823,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -824,8 +841,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearInstanceId() {
-
       instanceId_ = getDefaultInstance().getInstanceId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -847,8 +864,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -873,7 +890,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the instance field is set.
      */
     public boolean hasInstance() {
-      return instanceBuilder_ != null || instance_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -914,11 +931,11 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         instance_ = value;
-        onChanged();
       } else {
         instanceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -935,11 +952,11 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
     public Builder setInstance(com.google.cloud.filestore.v1.Instance.Builder builderForValue) {
       if (instanceBuilder_ == null) {
         instance_ = builderForValue.build();
-        onChanged();
       } else {
         instanceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -955,19 +972,18 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeInstance(com.google.cloud.filestore.v1.Instance value) {
       if (instanceBuilder_ == null) {
-        if (instance_ != null) {
-          instance_ =
-              com.google.cloud.filestore.v1.Instance.newBuilder(instance_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && instance_ != null
+            && instance_ != com.google.cloud.filestore.v1.Instance.getDefaultInstance()) {
+          getInstanceBuilder().mergeFrom(value);
         } else {
           instance_ = value;
         }
-        onChanged();
       } else {
         instanceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -982,14 +998,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearInstance() {
-      if (instanceBuilder_ == null) {
-        instance_ = null;
-        onChanged();
-      } else {
-        instance_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      instance_ = null;
+      if (instanceBuilder_ != null) {
+        instanceBuilder_.dispose();
         instanceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1004,7 +1019,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.filestore.v1.Instance.Builder getInstanceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getInstanceFieldBuilder().getBuilder();
     }

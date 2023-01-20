@@ -70,7 +70,9 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int RELEASE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object releaseId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object releaseId_ = "";
   /**
    *
    *
@@ -221,11 +225,13 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.ReleaseOrBuilder getReleaseOrBuilder() {
-    return getRelease();
+    return release_ == null ? com.google.cloud.deploy.v1.Release.getDefaultInstance() : release_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -294,7 +300,7 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 5;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -550,20 +556,16 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       releaseId_ = "";
-
-      if (releaseBuilder_ == null) {
-        release_ = null;
-      } else {
-        release_ = null;
+      release_ = null;
+      if (releaseBuilder_ != null) {
+        releaseBuilder_.dispose();
         releaseBuilder_ = null;
       }
       requestId_ = "";
-
       validateOnly_ = false;
-
       return this;
     }
 
@@ -591,17 +593,30 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.deploy.v1.CreateReleaseRequest buildPartial() {
       com.google.cloud.deploy.v1.CreateReleaseRequest result =
           new com.google.cloud.deploy.v1.CreateReleaseRequest(this);
-      result.parent_ = parent_;
-      result.releaseId_ = releaseId_;
-      if (releaseBuilder_ == null) {
-        result.release_ = release_;
-      } else {
-        result.release_ = releaseBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.CreateReleaseRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.releaseId_ = releaseId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.release_ = releaseBuilder_ == null ? release_ : releaseBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -652,10 +667,12 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getReleaseId().isEmpty()) {
         releaseId_ = other.releaseId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRelease()) {
@@ -663,6 +680,7 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -697,31 +715,31 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 releaseId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getReleaseFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -740,6 +758,8 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -814,8 +834,8 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -835,8 +855,8 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -861,8 +881,8 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -928,8 +948,8 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       releaseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -945,8 +965,8 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearReleaseId() {
-
       releaseId_ = getDefaultInstance().getReleaseId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -967,8 +987,8 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       releaseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -992,7 +1012,7 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the release field is set.
      */
     public boolean hasRelease() {
-      return releaseBuilder_ != null || release_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1031,11 +1051,11 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         release_ = value;
-        onChanged();
       } else {
         releaseBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1051,11 +1071,11 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
     public Builder setRelease(com.google.cloud.deploy.v1.Release.Builder builderForValue) {
       if (releaseBuilder_ == null) {
         release_ = builderForValue.build();
-        onChanged();
       } else {
         releaseBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1070,19 +1090,18 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeRelease(com.google.cloud.deploy.v1.Release value) {
       if (releaseBuilder_ == null) {
-        if (release_ != null) {
-          release_ =
-              com.google.cloud.deploy.v1.Release.newBuilder(release_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && release_ != null
+            && release_ != com.google.cloud.deploy.v1.Release.getDefaultInstance()) {
+          getReleaseBuilder().mergeFrom(value);
         } else {
           release_ = value;
         }
-        onChanged();
       } else {
         releaseBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1096,14 +1115,13 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearRelease() {
-      if (releaseBuilder_ == null) {
-        release_ = null;
-        onChanged();
-      } else {
-        release_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      release_ = null;
+      if (releaseBuilder_ != null) {
+        releaseBuilder_.dispose();
         releaseBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1117,7 +1135,7 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.deploy.v1.Release.Builder getReleaseBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getReleaseFieldBuilder().getBuilder();
     }
@@ -1258,8 +1276,8 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1285,8 +1303,8 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1317,8 +1335,8 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1356,6 +1374,7 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1372,7 +1391,7 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       validateOnly_ = false;
       onChanged();
       return this;
